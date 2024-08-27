@@ -63,217 +63,220 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAlarmConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AlarmConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AlarmConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AlarmConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetApplyOnlyAtCronInterval())
-                {
-                    context.Writer.WritePropertyName("ApplyOnlyAtCronInterval");
-                    context.Writer.Write(publicRequest.ApplyOnlyAtCronInterval.Value);
-                }
-
-                if(publicRequest.IsSetAssociationName())
-                {
-                    context.Writer.WritePropertyName("AssociationName");
-                    context.Writer.Write(publicRequest.AssociationName);
-                }
-
-                if(publicRequest.IsSetAutomationTargetParameterName())
-                {
-                    context.Writer.WritePropertyName("AutomationTargetParameterName");
-                    context.Writer.Write(publicRequest.AutomationTargetParameterName);
-                }
-
-                if(publicRequest.IsSetCalendarNames())
-                {
-                    context.Writer.WritePropertyName("CalendarNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCalendarNamesListValue in publicRequest.CalendarNames)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAlarmConfiguration())
                     {
-                            context.Writer.Write(publicRequestCalendarNamesListValue);
+                        context.Writer.WritePropertyName("AlarmConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AlarmConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AlarmConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetComplianceSeverity())
-                {
-                    context.Writer.WritePropertyName("ComplianceSeverity");
-                    context.Writer.Write(publicRequest.ComplianceSeverity);
-                }
-
-                if(publicRequest.IsSetDocumentVersion())
-                {
-                    context.Writer.WritePropertyName("DocumentVersion");
-                    context.Writer.Write(publicRequest.DocumentVersion);
-                }
-
-                if(publicRequest.IsSetDuration())
-                {
-                    context.Writer.WritePropertyName("Duration");
-                    context.Writer.Write(publicRequest.Duration.Value);
-                }
-
-                if(publicRequest.IsSetInstanceId())
-                {
-                    context.Writer.WritePropertyName("InstanceId");
-                    context.Writer.Write(publicRequest.InstanceId);
-                }
-
-                if(publicRequest.IsSetMaxConcurrency())
-                {
-                    context.Writer.WritePropertyName("MaxConcurrency");
-                    context.Writer.Write(publicRequest.MaxConcurrency);
-                }
-
-                if(publicRequest.IsSetMaxErrors())
-                {
-                    context.Writer.WritePropertyName("MaxErrors");
-                    context.Writer.Write(publicRequest.MaxErrors);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetOutputLocation())
-                {
-                    context.Writer.WritePropertyName("OutputLocation");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = InstanceAssociationOutputLocationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OutputLocation, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetParameters())
-                {
-                    context.Writer.WritePropertyName("Parameters");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestParametersKvp in publicRequest.Parameters)
+                    if(publicRequest.IsSetApplyOnlyAtCronInterval())
                     {
-                        context.Writer.WritePropertyName(publicRequestParametersKvp.Key);
-                        var publicRequestParametersValue = publicRequestParametersKvp.Value;
+                        context.Writer.WritePropertyName("ApplyOnlyAtCronInterval");
+                        context.Writer.Write(publicRequest.ApplyOnlyAtCronInterval.Value);
+                    }
 
+                    if(publicRequest.IsSetAssociationName())
+                    {
+                        context.Writer.WritePropertyName("AssociationName");
+                        context.Writer.Write(publicRequest.AssociationName);
+                    }
+
+                    if(publicRequest.IsSetAutomationTargetParameterName())
+                    {
+                        context.Writer.WritePropertyName("AutomationTargetParameterName");
+                        context.Writer.Write(publicRequest.AutomationTargetParameterName);
+                    }
+
+                    if(publicRequest.IsSetCalendarNames())
+                    {
+                        context.Writer.WritePropertyName("CalendarNames");
                         context.Writer.WriteArrayStart();
-                        foreach(var publicRequestParametersValueListValue in publicRequestParametersValue)
+                        foreach(var publicRequestCalendarNamesListValue in publicRequest.CalendarNames)
                         {
-                                context.Writer.Write(publicRequestParametersValueListValue);
+                                context.Writer.Write(publicRequestCalendarNamesListValue);
                         }
                         context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetScheduleExpression())
-                {
-                    context.Writer.WritePropertyName("ScheduleExpression");
-                    context.Writer.Write(publicRequest.ScheduleExpression);
-                }
-
-                if(publicRequest.IsSetScheduleOffset())
-                {
-                    context.Writer.WritePropertyName("ScheduleOffset");
-                    context.Writer.Write(publicRequest.ScheduleOffset.Value);
-                }
-
-                if(publicRequest.IsSetSyncCompliance())
-                {
-                    context.Writer.WritePropertyName("SyncCompliance");
-                    context.Writer.Write(publicRequest.SyncCompliance);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetComplianceSeverity())
                     {
+                        context.Writer.WritePropertyName("ComplianceSeverity");
+                        context.Writer.Write(publicRequest.ComplianceSeverity);
+                    }
+
+                    if(publicRequest.IsSetDocumentVersion())
+                    {
+                        context.Writer.WritePropertyName("DocumentVersion");
+                        context.Writer.Write(publicRequest.DocumentVersion);
+                    }
+
+                    if(publicRequest.IsSetDuration())
+                    {
+                        context.Writer.WritePropertyName("Duration");
+                        context.Writer.Write(publicRequest.Duration.Value);
+                    }
+
+                    if(publicRequest.IsSetInstanceId())
+                    {
+                        context.Writer.WritePropertyName("InstanceId");
+                        context.Writer.Write(publicRequest.InstanceId);
+                    }
+
+                    if(publicRequest.IsSetMaxConcurrency())
+                    {
+                        context.Writer.WritePropertyName("MaxConcurrency");
+                        context.Writer.Write(publicRequest.MaxConcurrency);
+                    }
+
+                    if(publicRequest.IsSetMaxErrors())
+                    {
+                        context.Writer.WritePropertyName("MaxErrors");
+                        context.Writer.Write(publicRequest.MaxErrors);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetOutputLocation())
+                    {
+                        context.Writer.WritePropertyName("OutputLocation");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = InstanceAssociationOutputLocationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OutputLocation, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTargetLocations())
-                {
-                    context.Writer.WritePropertyName("TargetLocations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTargetLocationsListValue in publicRequest.TargetLocations)
+                    if(publicRequest.IsSetParameters())
                     {
+                        context.Writer.WritePropertyName("Parameters");
                         context.Writer.WriteObjectStart();
-
-                        var marshaller = TargetLocationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTargetLocationsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetTargetMaps())
-                {
-                    context.Writer.WritePropertyName("TargetMaps");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTargetMapsListValue in publicRequest.TargetMaps)
-                    {
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTargetMapsListValueKvp in publicRequestTargetMapsListValue)
+                        foreach (var publicRequestParametersKvp in publicRequest.Parameters)
                         {
-                            context.Writer.WritePropertyName(publicRequestTargetMapsListValueKvp.Key);
-                            var publicRequestTargetMapsListValueValue = publicRequestTargetMapsListValueKvp.Value;
+                            context.Writer.WritePropertyName(publicRequestParametersKvp.Key);
+                            var publicRequestParametersValue = publicRequestParametersKvp.Value;
 
                             context.Writer.WriteArrayStart();
-                            foreach(var publicRequestTargetMapsListValueValueListValue in publicRequestTargetMapsListValueValue)
+                            foreach(var publicRequestParametersValueListValue in publicRequestParametersValue)
                             {
-                                    context.Writer.Write(publicRequestTargetMapsListValueValueListValue);
+                                    context.Writer.Write(publicRequestParametersValueListValue);
                             }
                             context.Writer.WriteArrayEnd();
                         }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTargets())
-                {
-                    context.Writer.WritePropertyName("Targets");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTargetsListValue in publicRequest.Targets)
+                    if(publicRequest.IsSetScheduleExpression())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TargetMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTargetsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("ScheduleExpression");
+                        context.Writer.Write(publicRequest.ScheduleExpression);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetScheduleOffset())
+                    {
+                        context.Writer.WritePropertyName("ScheduleOffset");
+                        context.Writer.Write(publicRequest.ScheduleOffset.Value);
+                    }
+
+                    if(publicRequest.IsSetSyncCompliance())
+                    {
+                        context.Writer.WritePropertyName("SyncCompliance");
+                        context.Writer.Write(publicRequest.SyncCompliance);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTargetLocations())
+                    {
+                        context.Writer.WritePropertyName("TargetLocations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTargetLocationsListValue in publicRequest.TargetLocations)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TargetLocationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTargetLocationsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTargetMaps())
+                    {
+                        context.Writer.WritePropertyName("TargetMaps");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTargetMapsListValue in publicRequest.TargetMaps)
+                        {
+                            context.Writer.WriteObjectStart();
+                            foreach (var publicRequestTargetMapsListValueKvp in publicRequestTargetMapsListValue)
+                            {
+                                context.Writer.WritePropertyName(publicRequestTargetMapsListValueKvp.Key);
+                                var publicRequestTargetMapsListValueValue = publicRequestTargetMapsListValueKvp.Value;
+
+                                context.Writer.WriteArrayStart();
+                                foreach(var publicRequestTargetMapsListValueValueListValue in publicRequestTargetMapsListValueValue)
+                                {
+                                        context.Writer.Write(publicRequestTargetMapsListValueValueListValue);
+                                }
+                                context.Writer.WriteArrayEnd();
+                            }
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTargets())
+                    {
+                        context.Writer.WritePropertyName("Targets");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTargetsListValue in publicRequest.Targets)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TargetMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTargetsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

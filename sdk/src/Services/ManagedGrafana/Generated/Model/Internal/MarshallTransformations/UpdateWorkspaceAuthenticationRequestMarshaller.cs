@@ -64,37 +64,40 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
                 throw new AmazonManagedGrafanaException("Request object does not have required field WorkspaceId set");
             request.AddPathResource("{workspaceId}", StringUtils.FromString(publicRequest.WorkspaceId));
             request.ResourcePath = "/workspaces/{workspaceId}/authentication";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAuthenticationProviders())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("authenticationProviders");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAuthenticationProvidersListValue in publicRequest.AuthenticationProviders)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAuthenticationProviders())
                     {
-                            context.Writer.Write(publicRequestAuthenticationProvidersListValue);
+                        context.Writer.WritePropertyName("authenticationProviders");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAuthenticationProvidersListValue in publicRequest.AuthenticationProviders)
+                        {
+                                context.Writer.Write(publicRequestAuthenticationProvidersListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetSamlConfiguration())
+                    {
+                        context.Writer.WritePropertyName("samlConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SamlConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SamlConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSamlConfiguration())
-                {
-                    context.Writer.WritePropertyName("samlConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SamlConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SamlConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

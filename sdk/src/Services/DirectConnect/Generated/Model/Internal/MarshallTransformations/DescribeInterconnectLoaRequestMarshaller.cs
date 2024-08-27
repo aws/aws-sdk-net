@@ -63,33 +63,36 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetInterconnectId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("interconnectId");
-                    context.Writer.Write(publicRequest.InterconnectId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetInterconnectId())
+                    {
+                        context.Writer.WritePropertyName("interconnectId");
+                        context.Writer.Write(publicRequest.InterconnectId);
+                    }
+
+                    if(publicRequest.IsSetLoaContentType())
+                    {
+                        context.Writer.WritePropertyName("loaContentType");
+                        context.Writer.Write(publicRequest.LoaContentType);
+                    }
+
+                    if(publicRequest.IsSetProviderName())
+                    {
+                        context.Writer.WritePropertyName("providerName");
+                        context.Writer.Write(publicRequest.ProviderName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetLoaContentType())
-                {
-                    context.Writer.WritePropertyName("loaContentType");
-                    context.Writer.Write(publicRequest.LoaContentType);
-                }
-
-                if(publicRequest.IsSetProviderName())
-                {
-                    context.Writer.WritePropertyName("providerName");
-                    context.Writer.Write(publicRequest.ProviderName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

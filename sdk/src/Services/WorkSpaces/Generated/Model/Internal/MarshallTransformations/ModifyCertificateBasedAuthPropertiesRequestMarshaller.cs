@@ -63,43 +63,46 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCertificateBasedAuthProperties())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CertificateBasedAuthProperties");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CertificateBasedAuthPropertiesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CertificateBasedAuthProperties, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPropertiesToDelete())
-                {
-                    context.Writer.WritePropertyName("PropertiesToDelete");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPropertiesToDeleteListValue in publicRequest.PropertiesToDelete)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCertificateBasedAuthProperties())
                     {
-                            context.Writer.Write(publicRequestPropertiesToDeleteListValue);
+                        context.Writer.WritePropertyName("CertificateBasedAuthProperties");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CertificateBasedAuthPropertiesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CertificateBasedAuthProperties, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetPropertiesToDelete())
+                    {
+                        context.Writer.WritePropertyName("PropertiesToDelete");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPropertiesToDeleteListValue in publicRequest.PropertiesToDelete)
+                        {
+                                context.Writer.Write(publicRequestPropertiesToDeleteListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetResourceId())
+                    {
+                        context.Writer.WritePropertyName("ResourceId");
+                        context.Writer.Write(publicRequest.ResourceId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetResourceId())
-                {
-                    context.Writer.WritePropertyName("ResourceId");
-                    context.Writer.Write(publicRequest.ResourceId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

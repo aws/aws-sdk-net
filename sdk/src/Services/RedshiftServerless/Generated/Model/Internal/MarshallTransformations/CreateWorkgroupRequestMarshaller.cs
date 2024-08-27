@@ -63,117 +63,120 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBaseCapacity())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("baseCapacity");
-                    context.Writer.Write(publicRequest.BaseCapacity.Value);
-                }
-
-                if(publicRequest.IsSetConfigParameters())
-                {
-                    context.Writer.WritePropertyName("configParameters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestConfigParametersListValue in publicRequest.ConfigParameters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBaseCapacity())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ConfigParameterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestConfigParametersListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("baseCapacity");
+                        context.Writer.Write(publicRequest.BaseCapacity.Value);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetEnhancedVpcRouting())
-                {
-                    context.Writer.WritePropertyName("enhancedVpcRouting");
-                    context.Writer.Write(publicRequest.EnhancedVpcRouting.Value);
-                }
-
-                if(publicRequest.IsSetIpAddressType())
-                {
-                    context.Writer.WritePropertyName("ipAddressType");
-                    context.Writer.Write(publicRequest.IpAddressType);
-                }
-
-                if(publicRequest.IsSetMaxCapacity())
-                {
-                    context.Writer.WritePropertyName("maxCapacity");
-                    context.Writer.Write(publicRequest.MaxCapacity.Value);
-                }
-
-                if(publicRequest.IsSetNamespaceName())
-                {
-                    context.Writer.WritePropertyName("namespaceName");
-                    context.Writer.Write(publicRequest.NamespaceName);
-                }
-
-                if(publicRequest.IsSetPort())
-                {
-                    context.Writer.WritePropertyName("port");
-                    context.Writer.Write(publicRequest.Port.Value);
-                }
-
-                if(publicRequest.IsSetPubliclyAccessible())
-                {
-                    context.Writer.WritePropertyName("publiclyAccessible");
-                    context.Writer.Write(publicRequest.PubliclyAccessible.Value);
-                }
-
-                if(publicRequest.IsSetSecurityGroupIds())
-                {
-                    context.Writer.WritePropertyName("securityGroupIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSecurityGroupIdsListValue in publicRequest.SecurityGroupIds)
+                    if(publicRequest.IsSetConfigParameters())
                     {
-                            context.Writer.Write(publicRequestSecurityGroupIdsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
+                        context.Writer.WritePropertyName("configParameters");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestConfigParametersListValue in publicRequest.ConfigParameters)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                if(publicRequest.IsSetSubnetIds())
-                {
-                    context.Writer.WritePropertyName("subnetIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSubnetIdsListValue in publicRequest.SubnetIds)
+                            var marshaller = ConfigParameterMarshaller.Instance;
+                            marshaller.Marshall(publicRequestConfigParametersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetEnhancedVpcRouting())
                     {
-                            context.Writer.Write(publicRequestSubnetIdsListValue);
+                        context.Writer.WritePropertyName("enhancedVpcRouting");
+                        context.Writer.Write(publicRequest.EnhancedVpcRouting.Value);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetIpAddressType())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("ipAddressType");
+                        context.Writer.Write(publicRequest.IpAddressType);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetMaxCapacity())
+                    {
+                        context.Writer.WritePropertyName("maxCapacity");
+                        context.Writer.Write(publicRequest.MaxCapacity.Value);
+                    }
+
+                    if(publicRequest.IsSetNamespaceName())
+                    {
+                        context.Writer.WritePropertyName("namespaceName");
+                        context.Writer.Write(publicRequest.NamespaceName);
+                    }
+
+                    if(publicRequest.IsSetPort())
+                    {
+                        context.Writer.WritePropertyName("port");
+                        context.Writer.Write(publicRequest.Port.Value);
+                    }
+
+                    if(publicRequest.IsSetPubliclyAccessible())
+                    {
+                        context.Writer.WritePropertyName("publiclyAccessible");
+                        context.Writer.Write(publicRequest.PubliclyAccessible.Value);
+                    }
+
+                    if(publicRequest.IsSetSecurityGroupIds())
+                    {
+                        context.Writer.WritePropertyName("securityGroupIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSecurityGroupIdsListValue in publicRequest.SecurityGroupIds)
+                        {
+                                context.Writer.Write(publicRequestSecurityGroupIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSubnetIds())
+                    {
+                        context.Writer.WritePropertyName("subnetIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSubnetIdsListValue in publicRequest.SubnetIds)
+                        {
+                                context.Writer.Write(publicRequestSubnetIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetWorkgroupName())
+                    {
+                        context.Writer.WritePropertyName("workgroupName");
+                        context.Writer.Write(publicRequest.WorkgroupName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetWorkgroupName())
-                {
-                    context.Writer.WritePropertyName("workgroupName");
-                    context.Writer.Write(publicRequest.WorkgroupName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

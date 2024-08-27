@@ -61,50 +61,53 @@ namespace Amazon.PinpointSMSVoice.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v1/sms-voice/voice/message";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCallerId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CallerId");
-                    context.Writer.Write(publicRequest.CallerId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCallerId())
+                    {
+                        context.Writer.WritePropertyName("CallerId");
+                        context.Writer.Write(publicRequest.CallerId);
+                    }
+
+                    if(publicRequest.IsSetConfigurationSetName())
+                    {
+                        context.Writer.WritePropertyName("ConfigurationSetName");
+                        context.Writer.Write(publicRequest.ConfigurationSetName);
+                    }
+
+                    if(publicRequest.IsSetContent())
+                    {
+                        context.Writer.WritePropertyName("Content");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = VoiceMessageContentMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Content, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDestinationPhoneNumber())
+                    {
+                        context.Writer.WritePropertyName("DestinationPhoneNumber");
+                        context.Writer.Write(publicRequest.DestinationPhoneNumber);
+                    }
+
+                    if(publicRequest.IsSetOriginationPhoneNumber())
+                    {
+                        context.Writer.WritePropertyName("OriginationPhoneNumber");
+                        context.Writer.Write(publicRequest.OriginationPhoneNumber);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetConfigurationSetName())
-                {
-                    context.Writer.WritePropertyName("ConfigurationSetName");
-                    context.Writer.Write(publicRequest.ConfigurationSetName);
-                }
-
-                if(publicRequest.IsSetContent())
-                {
-                    context.Writer.WritePropertyName("Content");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = VoiceMessageContentMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Content, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDestinationPhoneNumber())
-                {
-                    context.Writer.WritePropertyName("DestinationPhoneNumber");
-                    context.Writer.Write(publicRequest.DestinationPhoneNumber);
-                }
-
-                if(publicRequest.IsSetOriginationPhoneNumber())
-                {
-                    context.Writer.WritePropertyName("OriginationPhoneNumber");
-                    context.Writer.Write(publicRequest.OriginationPhoneNumber);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

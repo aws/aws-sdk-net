@@ -63,44 +63,47 @@ namespace Amazon.ECRPublic.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMaxResults())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetRegistryId())
-                {
-                    context.Writer.WritePropertyName("registryId");
-                    context.Writer.Write(publicRequest.RegistryId);
-                }
-
-                if(publicRequest.IsSetRepositoryNames())
-                {
-                    context.Writer.WritePropertyName("repositoryNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRepositoryNamesListValue in publicRequest.RepositoryNames)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMaxResults())
                     {
-                            context.Writer.Write(publicRequestRepositoryNamesListValue);
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetRegistryId())
+                    {
+                        context.Writer.WritePropertyName("registryId");
+                        context.Writer.Write(publicRequest.RegistryId);
+                    }
+
+                    if(publicRequest.IsSetRepositoryNames())
+                    {
+                        context.Writer.WritePropertyName("repositoryNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRepositoryNamesListValue in publicRequest.RepositoryNames)
+                        {
+                                context.Writer.Write(publicRequestRepositoryNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

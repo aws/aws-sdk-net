@@ -61,33 +61,36 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/get-application";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApplicationArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ApplicationArn");
-                    context.Writer.Write(publicRequest.ApplicationArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApplicationArn())
+                    {
+                        context.Writer.WritePropertyName("ApplicationArn");
+                        context.Writer.Write(publicRequest.ApplicationArn);
+                    }
+
+                    if(publicRequest.IsSetApplicationId())
+                    {
+                        context.Writer.WritePropertyName("ApplicationId");
+                        context.Writer.Write(publicRequest.ApplicationId);
+                    }
+
+                    if(publicRequest.IsSetAppRegistryArn())
+                    {
+                        context.Writer.WritePropertyName("AppRegistryArn");
+                        context.Writer.Write(publicRequest.AppRegistryArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetApplicationId())
-                {
-                    context.Writer.WritePropertyName("ApplicationId");
-                    context.Writer.Write(publicRequest.ApplicationId);
-                }
-
-                if(publicRequest.IsSetAppRegistryArn())
-                {
-                    context.Writer.WritePropertyName("AppRegistryArn");
-                    context.Writer.Write(publicRequest.AppRegistryArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

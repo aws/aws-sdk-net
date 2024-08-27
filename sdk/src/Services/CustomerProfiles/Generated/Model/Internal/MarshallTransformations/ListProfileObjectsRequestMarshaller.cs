@@ -70,38 +70,41 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("next-token", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/domains/{DomainName}/profiles/objects";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetObjectFilter())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ObjectFilter");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetObjectFilter())
+                    {
+                        context.Writer.WritePropertyName("ObjectFilter");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = ObjectFilterMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ObjectFilter, context);
+                        var marshaller = ObjectFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ObjectFilter, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetObjectTypeName())
+                    {
+                        context.Writer.WritePropertyName("ObjectTypeName");
+                        context.Writer.Write(publicRequest.ObjectTypeName);
+                    }
+
+                    if(publicRequest.IsSetProfileId())
+                    {
+                        context.Writer.WritePropertyName("ProfileId");
+                        context.Writer.Write(publicRequest.ProfileId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetObjectTypeName())
-                {
-                    context.Writer.WritePropertyName("ObjectTypeName");
-                    context.Writer.Write(publicRequest.ObjectTypeName);
-                }
-
-                if(publicRequest.IsSetProfileId())
-                {
-                    context.Writer.WritePropertyName("ProfileId");
-                    context.Writer.Write(publicRequest.ProfileId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             request.UseQueryString = true;

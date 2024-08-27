@@ -63,62 +63,65 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetHostname())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Hostname");
-                    context.Writer.Write(publicRequest.Hostname);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetHostname())
+                    {
+                        context.Writer.WritePropertyName("Hostname");
+                        context.Writer.Write(publicRequest.Hostname);
+                    }
+
+                    if(publicRequest.IsSetInstanceIdentity())
+                    {
+                        context.Writer.WritePropertyName("InstanceIdentity");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = InstanceIdentityMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.InstanceIdentity, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetPrivateIp())
+                    {
+                        context.Writer.WritePropertyName("PrivateIp");
+                        context.Writer.Write(publicRequest.PrivateIp);
+                    }
+
+                    if(publicRequest.IsSetPublicIp())
+                    {
+                        context.Writer.WritePropertyName("PublicIp");
+                        context.Writer.Write(publicRequest.PublicIp);
+                    }
+
+                    if(publicRequest.IsSetRsaPublicKey())
+                    {
+                        context.Writer.WritePropertyName("RsaPublicKey");
+                        context.Writer.Write(publicRequest.RsaPublicKey);
+                    }
+
+                    if(publicRequest.IsSetRsaPublicKeyFingerprint())
+                    {
+                        context.Writer.WritePropertyName("RsaPublicKeyFingerprint");
+                        context.Writer.Write(publicRequest.RsaPublicKeyFingerprint);
+                    }
+
+                    if(publicRequest.IsSetStackId())
+                    {
+                        context.Writer.WritePropertyName("StackId");
+                        context.Writer.Write(publicRequest.StackId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetInstanceIdentity())
-                {
-                    context.Writer.WritePropertyName("InstanceIdentity");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = InstanceIdentityMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.InstanceIdentity, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPrivateIp())
-                {
-                    context.Writer.WritePropertyName("PrivateIp");
-                    context.Writer.Write(publicRequest.PrivateIp);
-                }
-
-                if(publicRequest.IsSetPublicIp())
-                {
-                    context.Writer.WritePropertyName("PublicIp");
-                    context.Writer.Write(publicRequest.PublicIp);
-                }
-
-                if(publicRequest.IsSetRsaPublicKey())
-                {
-                    context.Writer.WritePropertyName("RsaPublicKey");
-                    context.Writer.Write(publicRequest.RsaPublicKey);
-                }
-
-                if(publicRequest.IsSetRsaPublicKeyFingerprint())
-                {
-                    context.Writer.WritePropertyName("RsaPublicKeyFingerprint");
-                    context.Writer.Write(publicRequest.RsaPublicKeyFingerprint);
-                }
-
-                if(publicRequest.IsSetStackId())
-                {
-                    context.Writer.WritePropertyName("StackId");
-                    context.Writer.Write(publicRequest.StackId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

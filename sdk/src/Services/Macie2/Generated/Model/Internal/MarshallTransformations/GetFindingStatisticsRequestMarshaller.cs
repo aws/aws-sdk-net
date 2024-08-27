@@ -61,49 +61,52 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/findings/statistics";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFindingCriteria())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("findingCriteria");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFindingCriteria())
+                    {
+                        context.Writer.WritePropertyName("findingCriteria");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = FindingCriteriaMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.FindingCriteria, context);
+                        var marshaller = FindingCriteriaMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.FindingCriteria, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetGroupBy())
+                    {
+                        context.Writer.WritePropertyName("groupBy");
+                        context.Writer.Write(publicRequest.GroupBy);
+                    }
+
+                    if(publicRequest.IsSetSize())
+                    {
+                        context.Writer.WritePropertyName("size");
+                        context.Writer.Write(publicRequest.Size.Value);
+                    }
+
+                    if(publicRequest.IsSetSortCriteria())
+                    {
+                        context.Writer.WritePropertyName("sortCriteria");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = FindingStatisticsSortCriteriaMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SortCriteria, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetGroupBy())
-                {
-                    context.Writer.WritePropertyName("groupBy");
-                    context.Writer.Write(publicRequest.GroupBy);
-                }
-
-                if(publicRequest.IsSetSize())
-                {
-                    context.Writer.WritePropertyName("size");
-                    context.Writer.Write(publicRequest.Size.Value);
-                }
-
-                if(publicRequest.IsSetSortCriteria())
-                {
-                    context.Writer.WritePropertyName("sortCriteria");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = FindingStatisticsSortCriteriaMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SortCriteria, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

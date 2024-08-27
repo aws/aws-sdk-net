@@ -63,49 +63,52 @@ namespace Amazon.DAX.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAvailabilityZones())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AvailabilityZones");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAvailabilityZonesListValue in publicRequest.AvailabilityZones)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAvailabilityZones())
                     {
-                            context.Writer.Write(publicRequestAvailabilityZonesListValue);
+                        context.Writer.WritePropertyName("AvailabilityZones");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAvailabilityZonesListValue in publicRequest.AvailabilityZones)
+                        {
+                                context.Writer.Write(publicRequestAvailabilityZonesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetClusterName())
-                {
-                    context.Writer.WritePropertyName("ClusterName");
-                    context.Writer.Write(publicRequest.ClusterName);
-                }
-
-                if(publicRequest.IsSetNewReplicationFactor())
-                {
-                    context.Writer.WritePropertyName("NewReplicationFactor");
-                    context.Writer.Write(publicRequest.NewReplicationFactor.Value);
-                }
-
-                if(publicRequest.IsSetNodeIdsToRemove())
-                {
-                    context.Writer.WritePropertyName("NodeIdsToRemove");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestNodeIdsToRemoveListValue in publicRequest.NodeIdsToRemove)
+                    if(publicRequest.IsSetClusterName())
                     {
-                            context.Writer.Write(publicRequestNodeIdsToRemoveListValue);
+                        context.Writer.WritePropertyName("ClusterName");
+                        context.Writer.Write(publicRequest.ClusterName);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetNewReplicationFactor())
+                    {
+                        context.Writer.WritePropertyName("NewReplicationFactor");
+                        context.Writer.Write(publicRequest.NewReplicationFactor.Value);
+                    }
+
+                    if(publicRequest.IsSetNodeIdsToRemove())
+                    {
+                        context.Writer.WritePropertyName("NodeIdsToRemove");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestNodeIdsToRemoveListValue in publicRequest.NodeIdsToRemove)
+                        {
+                                context.Writer.Write(publicRequestNodeIdsToRemoveListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

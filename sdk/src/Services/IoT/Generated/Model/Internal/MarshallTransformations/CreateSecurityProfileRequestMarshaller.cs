@@ -64,110 +64,113 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field SecurityProfileName set");
             request.AddPathResource("{securityProfileName}", StringUtils.FromString(publicRequest.SecurityProfileName));
             request.ResourcePath = "/security-profiles/{securityProfileName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAdditionalMetricsToRetain())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("additionalMetricsToRetain");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAdditionalMetricsToRetainListValue in publicRequest.AdditionalMetricsToRetain)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAdditionalMetricsToRetain())
                     {
-                            context.Writer.Write(publicRequestAdditionalMetricsToRetainListValue);
+                        context.Writer.WritePropertyName("additionalMetricsToRetain");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAdditionalMetricsToRetainListValue in publicRequest.AdditionalMetricsToRetain)
+                        {
+                                context.Writer.Write(publicRequestAdditionalMetricsToRetainListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetAdditionalMetricsToRetainV2())
-                {
-                    context.Writer.WritePropertyName("additionalMetricsToRetainV2");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAdditionalMetricsToRetainV2ListValue in publicRequest.AdditionalMetricsToRetainV2)
+                    if(publicRequest.IsSetAdditionalMetricsToRetainV2())
                     {
+                        context.Writer.WritePropertyName("additionalMetricsToRetainV2");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAdditionalMetricsToRetainV2ListValue in publicRequest.AdditionalMetricsToRetainV2)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = MetricToRetainMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAdditionalMetricsToRetainV2ListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetAlertTargets())
+                    {
+                        context.Writer.WritePropertyName("alertTargets");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestAlertTargetsKvp in publicRequest.AlertTargets)
+                        {
+                            context.Writer.WritePropertyName(publicRequestAlertTargetsKvp.Key);
+                            var publicRequestAlertTargetsValue = publicRequestAlertTargetsKvp.Value;
+
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = AlertTargetMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAlertTargetsValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetBehaviors())
+                    {
+                        context.Writer.WritePropertyName("behaviors");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestBehaviorsListValue in publicRequest.Behaviors)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = BehaviorMarshaller.Instance;
+                            marshaller.Marshall(publicRequestBehaviorsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetMetricsExportConfig())
+                    {
+                        context.Writer.WritePropertyName("metricsExportConfig");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = MetricToRetainMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAdditionalMetricsToRetainV2ListValue, context);
+                        var marshaller = MetricsExportConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.MetricsExportConfig, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetAlertTargets())
-                {
-                    context.Writer.WritePropertyName("alertTargets");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestAlertTargetsKvp in publicRequest.AlertTargets)
+                    if(publicRequest.IsSetSecurityProfileDescription())
                     {
-                        context.Writer.WritePropertyName(publicRequestAlertTargetsKvp.Key);
-                        var publicRequestAlertTargetsValue = publicRequestAlertTargetsKvp.Value;
-
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AlertTargetMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAlertTargetsValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("securityProfileDescription");
+                        context.Writer.Write(publicRequest.SecurityProfileDescription);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetBehaviors())
-                {
-                    context.Writer.WritePropertyName("behaviors");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestBehaviorsListValue in publicRequest.Behaviors)
+                    if(publicRequest.IsSetTags())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = BehaviorMarshaller.Instance;
-                        marshaller.Marshall(publicRequestBehaviorsListValue, context);
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMetricsExportConfig())
-                {
-                    context.Writer.WritePropertyName("metricsExportConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MetricsExportConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.MetricsExportConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSecurityProfileDescription())
-                {
-                    context.Writer.WritePropertyName("securityProfileDescription");
-                    context.Writer.Write(publicRequest.SecurityProfileDescription);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

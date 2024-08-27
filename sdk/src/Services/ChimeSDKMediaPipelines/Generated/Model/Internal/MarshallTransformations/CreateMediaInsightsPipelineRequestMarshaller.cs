@@ -61,95 +61,98 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/media-insights-pipelines";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientRequestToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetKinesisVideoStreamRecordingSourceRuntimeConfiguration())
-                {
-                    context.Writer.WritePropertyName("KinesisVideoStreamRecordingSourceRuntimeConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = KinesisVideoStreamRecordingSourceRuntimeConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.KinesisVideoStreamRecordingSourceRuntimeConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetKinesisVideoStreamSourceRuntimeConfiguration())
-                {
-                    context.Writer.WritePropertyName("KinesisVideoStreamSourceRuntimeConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = KinesisVideoStreamSourceRuntimeConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.KinesisVideoStreamSourceRuntimeConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMediaInsightsPipelineConfigurationArn())
-                {
-                    context.Writer.WritePropertyName("MediaInsightsPipelineConfigurationArn");
-                    context.Writer.Write(publicRequest.MediaInsightsPipelineConfigurationArn);
-                }
-
-                if(publicRequest.IsSetMediaInsightsRuntimeMetadata())
-                {
-                    context.Writer.WritePropertyName("MediaInsightsRuntimeMetadata");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestMediaInsightsRuntimeMetadataKvp in publicRequest.MediaInsightsRuntimeMetadata)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientRequestToken())
                     {
-                        context.Writer.WritePropertyName(publicRequestMediaInsightsRuntimeMetadataKvp.Key);
-                        var publicRequestMediaInsightsRuntimeMetadataValue = publicRequestMediaInsightsRuntimeMetadataKvp.Value;
-
-                            context.Writer.Write(publicRequestMediaInsightsRuntimeMetadataValue);
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(publicRequest.ClientRequestToken);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetS3RecordingSinkRuntimeConfiguration())
-                {
-                    context.Writer.WritePropertyName("S3RecordingSinkRuntimeConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = S3RecordingSinkRuntimeConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.S3RecordingSinkRuntimeConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    else if(!(publicRequest.IsSetClientRequestToken()))
                     {
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetKinesisVideoStreamRecordingSourceRuntimeConfiguration())
+                    {
+                        context.Writer.WritePropertyName("KinesisVideoStreamRecordingSourceRuntimeConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = KinesisVideoStreamRecordingSourceRuntimeConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.KinesisVideoStreamRecordingSourceRuntimeConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetKinesisVideoStreamSourceRuntimeConfiguration())
+                    {
+                        context.Writer.WritePropertyName("KinesisVideoStreamSourceRuntimeConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = KinesisVideoStreamSourceRuntimeConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.KinesisVideoStreamSourceRuntimeConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetMediaInsightsPipelineConfigurationArn())
+                    {
+                        context.Writer.WritePropertyName("MediaInsightsPipelineConfigurationArn");
+                        context.Writer.Write(publicRequest.MediaInsightsPipelineConfigurationArn);
+                    }
+
+                    if(publicRequest.IsSetMediaInsightsRuntimeMetadata())
+                    {
+                        context.Writer.WritePropertyName("MediaInsightsRuntimeMetadata");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestMediaInsightsRuntimeMetadataKvp in publicRequest.MediaInsightsRuntimeMetadata)
+                        {
+                            context.Writer.WritePropertyName(publicRequestMediaInsightsRuntimeMetadataKvp.Key);
+                            var publicRequestMediaInsightsRuntimeMetadataValue = publicRequestMediaInsightsRuntimeMetadataKvp.Value;
+
+                                context.Writer.Write(publicRequestMediaInsightsRuntimeMetadataValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetS3RecordingSinkRuntimeConfiguration())
+                    {
+                        context.Writer.WritePropertyName("S3RecordingSinkRuntimeConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = S3RecordingSinkRuntimeConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.S3RecordingSinkRuntimeConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,37 +63,40 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetListenerArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ListenerArn");
-                    context.Writer.Write(publicRequest.ListenerArn);
-                }
-
-                if(publicRequest.IsSetPortRanges())
-                {
-                    context.Writer.WritePropertyName("PortRanges");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPortRangesListValue in publicRequest.PortRanges)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetListenerArn())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = PortRangeMarshaller.Instance;
-                        marshaller.Marshall(publicRequestPortRangesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("ListenerArn");
+                        context.Writer.Write(publicRequest.ListenerArn);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetPortRanges())
+                    {
+                        context.Writer.WritePropertyName("PortRanges");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPortRangesListValue in publicRequest.PortRanges)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = PortRangeMarshaller.Instance;
+                            marshaller.Marshall(publicRequestPortRangesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,57 +63,60 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApplicationName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("applicationName");
-                    context.Writer.Write(publicRequest.ApplicationName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApplicationName())
+                    {
+                        context.Writer.WritePropertyName("applicationName");
+                        context.Writer.Write(publicRequest.ApplicationName);
+                    }
+
+                    if(publicRequest.IsSetDeployed())
+                    {
+                        context.Writer.WritePropertyName("deployed");
+                        context.Writer.Write(publicRequest.Deployed);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetS3Bucket())
+                    {
+                        context.Writer.WritePropertyName("s3Bucket");
+                        context.Writer.Write(publicRequest.S3Bucket);
+                    }
+
+                    if(publicRequest.IsSetS3KeyPrefix())
+                    {
+                        context.Writer.WritePropertyName("s3KeyPrefix");
+                        context.Writer.Write(publicRequest.S3KeyPrefix);
+                    }
+
+                    if(publicRequest.IsSetSortBy())
+                    {
+                        context.Writer.WritePropertyName("sortBy");
+                        context.Writer.Write(publicRequest.SortBy);
+                    }
+
+                    if(publicRequest.IsSetSortOrder())
+                    {
+                        context.Writer.WritePropertyName("sortOrder");
+                        context.Writer.Write(publicRequest.SortOrder);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDeployed())
-                {
-                    context.Writer.WritePropertyName("deployed");
-                    context.Writer.Write(publicRequest.Deployed);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetS3Bucket())
-                {
-                    context.Writer.WritePropertyName("s3Bucket");
-                    context.Writer.Write(publicRequest.S3Bucket);
-                }
-
-                if(publicRequest.IsSetS3KeyPrefix())
-                {
-                    context.Writer.WritePropertyName("s3KeyPrefix");
-                    context.Writer.Write(publicRequest.S3KeyPrefix);
-                }
-
-                if(publicRequest.IsSetSortBy())
-                {
-                    context.Writer.WritePropertyName("sortBy");
-                    context.Writer.Write(publicRequest.SortBy);
-                }
-
-                if(publicRequest.IsSetSortOrder())
-                {
-                    context.Writer.WritePropertyName("sortOrder");
-                    context.Writer.Write(publicRequest.SortOrder);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

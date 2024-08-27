@@ -63,55 +63,58 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetNodesToAdd())
-                {
-                    context.Writer.WritePropertyName("nodesToAdd");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestNodesToAddListValue in publicRequest.NodesToAdd)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
-                            context.Writer.Write(publicRequestNodesToAddListValue);
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetNodesToRemove())
-                {
-                    context.Writer.WritePropertyName("nodesToRemove");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestNodesToRemoveListValue in publicRequest.NodesToRemove)
+                    if(publicRequest.IsSetName())
                     {
-                            context.Writer.Write(publicRequestNodesToRemoveListValue);
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetNodesToAdd())
+                    {
+                        context.Writer.WritePropertyName("nodesToAdd");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestNodesToAddListValue in publicRequest.NodesToAdd)
+                        {
+                                context.Writer.Write(publicRequestNodesToAddListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetNodesToRemove())
+                    {
+                        context.Writer.WritePropertyName("nodesToRemove");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestNodesToRemoveListValue in publicRequest.NodesToRemove)
+                        {
+                                context.Writer.Write(publicRequestNodesToRemoveListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetStatus())
+                    {
+                        context.Writer.WritePropertyName("status");
+                        context.Writer.Write(publicRequest.Status);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetStatus())
-                {
-                    context.Writer.WritePropertyName("status");
-                    context.Writer.Write(publicRequest.Status);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

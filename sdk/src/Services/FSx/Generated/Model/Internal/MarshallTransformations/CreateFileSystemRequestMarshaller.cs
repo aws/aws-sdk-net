@@ -63,138 +63,141 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientRequestToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetFileSystemType())
-                {
-                    context.Writer.WritePropertyName("FileSystemType");
-                    context.Writer.Write(publicRequest.FileSystemType);
-                }
-
-                if(publicRequest.IsSetFileSystemTypeVersion())
-                {
-                    context.Writer.WritePropertyName("FileSystemTypeVersion");
-                    context.Writer.Write(publicRequest.FileSystemTypeVersion);
-                }
-
-                if(publicRequest.IsSetKmsKeyId())
-                {
-                    context.Writer.WritePropertyName("KmsKeyId");
-                    context.Writer.Write(publicRequest.KmsKeyId);
-                }
-
-                if(publicRequest.IsSetLustreConfiguration())
-                {
-                    context.Writer.WritePropertyName("LustreConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CreateFileSystemLustreConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LustreConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOntapConfiguration())
-                {
-                    context.Writer.WritePropertyName("OntapConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CreateFileSystemOntapConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OntapConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOpenZFSConfiguration())
-                {
-                    context.Writer.WritePropertyName("OpenZFSConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CreateFileSystemOpenZFSConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OpenZFSConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSecurityGroupIds())
-                {
-                    context.Writer.WritePropertyName("SecurityGroupIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSecurityGroupIdsListValue in publicRequest.SecurityGroupIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientRequestToken())
                     {
-                            context.Writer.Write(publicRequestSecurityGroupIdsListValue);
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(publicRequest.ClientRequestToken);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetStorageCapacity())
-                {
-                    context.Writer.WritePropertyName("StorageCapacity");
-                    context.Writer.Write(publicRequest.StorageCapacity.Value);
-                }
-
-                if(publicRequest.IsSetStorageType())
-                {
-                    context.Writer.WritePropertyName("StorageType");
-                    context.Writer.Write(publicRequest.StorageType);
-                }
-
-                if(publicRequest.IsSetSubnetIds())
-                {
-                    context.Writer.WritePropertyName("SubnetIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSubnetIdsListValue in publicRequest.SubnetIds)
+                    else if(!(publicRequest.IsSetClientRequestToken()))
                     {
-                            context.Writer.Write(publicRequestSubnetIdsListValue);
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
                     }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetFileSystemType())
                     {
+                        context.Writer.WritePropertyName("FileSystemType");
+                        context.Writer.Write(publicRequest.FileSystemType);
+                    }
+
+                    if(publicRequest.IsSetFileSystemTypeVersion())
+                    {
+                        context.Writer.WritePropertyName("FileSystemTypeVersion");
+                        context.Writer.Write(publicRequest.FileSystemTypeVersion);
+                    }
+
+                    if(publicRequest.IsSetKmsKeyId())
+                    {
+                        context.Writer.WritePropertyName("KmsKeyId");
+                        context.Writer.Write(publicRequest.KmsKeyId);
+                    }
+
+                    if(publicRequest.IsSetLustreConfiguration())
+                    {
+                        context.Writer.WritePropertyName("LustreConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = CreateFileSystemLustreConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.LustreConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetOntapConfiguration())
+                    {
+                        context.Writer.WritePropertyName("OntapConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CreateFileSystemOntapConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OntapConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetOpenZFSConfiguration())
+                    {
+                        context.Writer.WritePropertyName("OpenZFSConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CreateFileSystemOpenZFSConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OpenZFSConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSecurityGroupIds())
+                    {
+                        context.Writer.WritePropertyName("SecurityGroupIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSecurityGroupIdsListValue in publicRequest.SecurityGroupIds)
+                        {
+                                context.Writer.Write(publicRequestSecurityGroupIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetStorageCapacity())
+                    {
+                        context.Writer.WritePropertyName("StorageCapacity");
+                        context.Writer.Write(publicRequest.StorageCapacity.Value);
+                    }
+
+                    if(publicRequest.IsSetStorageType())
+                    {
+                        context.Writer.WritePropertyName("StorageType");
+                        context.Writer.Write(publicRequest.StorageType);
+                    }
+
+                    if(publicRequest.IsSetSubnetIds())
+                    {
+                        context.Writer.WritePropertyName("SubnetIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSubnetIdsListValue in publicRequest.SubnetIds)
+                        {
+                                context.Writer.Write(publicRequestSubnetIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetWindowsConfiguration())
+                    {
+                        context.Writer.WritePropertyName("WindowsConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CreateFileSystemWindowsConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.WindowsConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetWindowsConfiguration())
-                {
-                    context.Writer.WritePropertyName("WindowsConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CreateFileSystemWindowsConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.WindowsConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

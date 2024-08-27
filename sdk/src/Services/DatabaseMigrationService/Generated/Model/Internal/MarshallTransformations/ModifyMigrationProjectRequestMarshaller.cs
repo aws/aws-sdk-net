@@ -63,88 +63,91 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetInstanceProfileIdentifier())
-                {
-                    context.Writer.WritePropertyName("InstanceProfileIdentifier");
-                    context.Writer.Write(publicRequest.InstanceProfileIdentifier);
-                }
-
-                if(publicRequest.IsSetMigrationProjectIdentifier())
-                {
-                    context.Writer.WritePropertyName("MigrationProjectIdentifier");
-                    context.Writer.Write(publicRequest.MigrationProjectIdentifier);
-                }
-
-                if(publicRequest.IsSetMigrationProjectName())
-                {
-                    context.Writer.WritePropertyName("MigrationProjectName");
-                    context.Writer.Write(publicRequest.MigrationProjectName);
-                }
-
-                if(publicRequest.IsSetSchemaConversionApplicationAttributes())
-                {
-                    context.Writer.WritePropertyName("SchemaConversionApplicationAttributes");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SCApplicationAttributesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SchemaConversionApplicationAttributes, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSourceDataProviderDescriptors())
-                {
-                    context.Writer.WritePropertyName("SourceDataProviderDescriptors");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSourceDataProviderDescriptorsListValue in publicRequest.SourceDataProviderDescriptors)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetInstanceProfileIdentifier())
+                    {
+                        context.Writer.WritePropertyName("InstanceProfileIdentifier");
+                        context.Writer.Write(publicRequest.InstanceProfileIdentifier);
+                    }
+
+                    if(publicRequest.IsSetMigrationProjectIdentifier())
+                    {
+                        context.Writer.WritePropertyName("MigrationProjectIdentifier");
+                        context.Writer.Write(publicRequest.MigrationProjectIdentifier);
+                    }
+
+                    if(publicRequest.IsSetMigrationProjectName())
+                    {
+                        context.Writer.WritePropertyName("MigrationProjectName");
+                        context.Writer.Write(publicRequest.MigrationProjectName);
+                    }
+
+                    if(publicRequest.IsSetSchemaConversionApplicationAttributes())
+                    {
+                        context.Writer.WritePropertyName("SchemaConversionApplicationAttributes");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = DataProviderDescriptorDefinitionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSourceDataProviderDescriptorsListValue, context);
+                        var marshaller = SCApplicationAttributesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SchemaConversionApplicationAttributes, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTargetDataProviderDescriptors())
-                {
-                    context.Writer.WritePropertyName("TargetDataProviderDescriptors");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTargetDataProviderDescriptorsListValue in publicRequest.TargetDataProviderDescriptors)
+                    if(publicRequest.IsSetSourceDataProviderDescriptors())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("SourceDataProviderDescriptors");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSourceDataProviderDescriptorsListValue in publicRequest.SourceDataProviderDescriptors)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = DataProviderDescriptorDefinitionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTargetDataProviderDescriptorsListValue, context);
+                            var marshaller = DataProviderDescriptorDefinitionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSourceDataProviderDescriptorsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTargetDataProviderDescriptors())
+                    {
+                        context.Writer.WritePropertyName("TargetDataProviderDescriptors");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTargetDataProviderDescriptorsListValue in publicRequest.TargetDataProviderDescriptors)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = DataProviderDescriptorDefinitionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTargetDataProviderDescriptorsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTransformationRules())
+                    {
+                        context.Writer.WritePropertyName("TransformationRules");
+                        context.Writer.Write(publicRequest.TransformationRules);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTransformationRules())
-                {
-                    context.Writer.WritePropertyName("TransformationRules");
-                    context.Writer.Write(publicRequest.TransformationRules);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

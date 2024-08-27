@@ -61,85 +61,88 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/packaging_configurations";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCmafPackage())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("cmafPackage");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CmafPackageMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CmafPackage, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDashPackage())
-                {
-                    context.Writer.WritePropertyName("dashPackage");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DashPackageMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DashPackage, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetHlsPackage())
-                {
-                    context.Writer.WritePropertyName("hlsPackage");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = HlsPackageMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.HlsPackage, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetId())
-                {
-                    context.Writer.WritePropertyName("id");
-                    context.Writer.Write(publicRequest.Id);
-                }
-
-                if(publicRequest.IsSetMssPackage())
-                {
-                    context.Writer.WritePropertyName("mssPackage");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MssPackageMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.MssPackage, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPackagingGroupId())
-                {
-                    context.Writer.WritePropertyName("packagingGroupId");
-                    context.Writer.Write(publicRequest.PackagingGroupId);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCmafPackage())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
+                        context.Writer.WritePropertyName("cmafPackage");
+                        context.Writer.WriteObjectStart();
 
-                            context.Writer.Write(publicRequestTagsValue);
+                        var marshaller = CmafPackageMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CmafPackage, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetDashPackage())
+                    {
+                        context.Writer.WritePropertyName("dashPackage");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DashPackageMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DashPackage, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetHlsPackage())
+                    {
+                        context.Writer.WritePropertyName("hlsPackage");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = HlsPackageMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.HlsPackage, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetId())
+                    {
+                        context.Writer.WritePropertyName("id");
+                        context.Writer.Write(publicRequest.Id);
+                    }
+
+                    if(publicRequest.IsSetMssPackage())
+                    {
+                        context.Writer.WritePropertyName("mssPackage");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MssPackageMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.MssPackage, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetPackagingGroupId())
+                    {
+                        context.Writer.WritePropertyName("packagingGroupId");
+                        context.Writer.Write(publicRequest.PackagingGroupId);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

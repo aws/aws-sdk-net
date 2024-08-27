@@ -63,38 +63,41 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetShardCount())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ShardCount");
-                    context.Writer.Write(publicRequest.ShardCount.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetShardCount())
+                    {
+                        context.Writer.WritePropertyName("ShardCount");
+                        context.Writer.Write(publicRequest.ShardCount.Value);
+                    }
+
+                    if(publicRequest.IsSetStreamModeDetails())
+                    {
+                        context.Writer.WritePropertyName("StreamModeDetails");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = StreamModeDetailsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.StreamModeDetails, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetStreamName())
+                    {
+                        context.Writer.WritePropertyName("StreamName");
+                        context.Writer.Write(publicRequest.StreamName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetStreamModeDetails())
-                {
-                    context.Writer.WritePropertyName("StreamModeDetails");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = StreamModeDetailsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.StreamModeDetails, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetStreamName())
-                {
-                    context.Writer.WritePropertyName("StreamName");
-                    context.Writer.Write(publicRequest.StreamName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

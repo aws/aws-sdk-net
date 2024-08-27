@@ -61,38 +61,41 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/GetResourceLFTags";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCatalogId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CatalogId");
-                    context.Writer.Write(publicRequest.CatalogId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCatalogId())
+                    {
+                        context.Writer.WritePropertyName("CatalogId");
+                        context.Writer.Write(publicRequest.CatalogId);
+                    }
+
+                    if(publicRequest.IsSetResource())
+                    {
+                        context.Writer.WritePropertyName("Resource");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ResourceMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Resource, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetShowAssignedLFTags())
+                    {
+                        context.Writer.WritePropertyName("ShowAssignedLFTags");
+                        context.Writer.Write(publicRequest.ShowAssignedLFTags.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetResource())
-                {
-                    context.Writer.WritePropertyName("Resource");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ResourceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Resource, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetShowAssignedLFTags())
-                {
-                    context.Writer.WritePropertyName("ShowAssignedLFTags");
-                    context.Writer.Write(publicRequest.ShowAssignedLFTags.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

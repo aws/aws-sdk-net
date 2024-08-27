@@ -64,72 +64,75 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 throw new AmazonChimeException("Request object does not have required field VoiceConnectorId set");
             request.AddPathResource("{voiceConnectorId}", StringUtils.FromString(publicRequest.VoiceConnectorId));
             request.ResourcePath = "/voice-connectors/{voiceConnectorId}/proxy-sessions";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCapabilities())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Capabilities");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCapabilitiesListValue in publicRequest.Capabilities)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCapabilities())
                     {
-                            context.Writer.Write(publicRequestCapabilitiesListValue);
+                        context.Writer.WritePropertyName("Capabilities");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCapabilitiesListValue in publicRequest.Capabilities)
+                        {
+                                context.Writer.Write(publicRequestCapabilitiesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetExpiryMinutes())
-                {
-                    context.Writer.WritePropertyName("ExpiryMinutes");
-                    context.Writer.Write(publicRequest.ExpiryMinutes.Value);
-                }
-
-                if(publicRequest.IsSetGeoMatchLevel())
-                {
-                    context.Writer.WritePropertyName("GeoMatchLevel");
-                    context.Writer.Write(publicRequest.GeoMatchLevel);
-                }
-
-                if(publicRequest.IsSetGeoMatchParams())
-                {
-                    context.Writer.WritePropertyName("GeoMatchParams");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = GeoMatchParamsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.GeoMatchParams, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetNumberSelectionBehavior())
-                {
-                    context.Writer.WritePropertyName("NumberSelectionBehavior");
-                    context.Writer.Write(publicRequest.NumberSelectionBehavior);
-                }
-
-                if(publicRequest.IsSetParticipantPhoneNumbers())
-                {
-                    context.Writer.WritePropertyName("ParticipantPhoneNumbers");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestParticipantPhoneNumbersListValue in publicRequest.ParticipantPhoneNumbers)
+                    if(publicRequest.IsSetExpiryMinutes())
                     {
-                            context.Writer.Write(publicRequestParticipantPhoneNumbersListValue);
+                        context.Writer.WritePropertyName("ExpiryMinutes");
+                        context.Writer.Write(publicRequest.ExpiryMinutes.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetGeoMatchLevel())
+                    {
+                        context.Writer.WritePropertyName("GeoMatchLevel");
+                        context.Writer.Write(publicRequest.GeoMatchLevel);
+                    }
+
+                    if(publicRequest.IsSetGeoMatchParams())
+                    {
+                        context.Writer.WritePropertyName("GeoMatchParams");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = GeoMatchParamsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.GeoMatchParams, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetNumberSelectionBehavior())
+                    {
+                        context.Writer.WritePropertyName("NumberSelectionBehavior");
+                        context.Writer.Write(publicRequest.NumberSelectionBehavior);
+                    }
+
+                    if(publicRequest.IsSetParticipantPhoneNumbers())
+                    {
+                        context.Writer.WritePropertyName("ParticipantPhoneNumbers");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestParticipantPhoneNumbersListValue in publicRequest.ParticipantPhoneNumbers)
+                        {
+                                context.Writer.Write(publicRequestParticipantPhoneNumbersListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

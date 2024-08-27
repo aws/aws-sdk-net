@@ -63,69 +63,72 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAnswerKey())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AnswerKey");
-                    context.Writer.Write(publicRequest.AnswerKey);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAnswerKey())
+                    {
+                        context.Writer.WritePropertyName("AnswerKey");
+                        context.Writer.Write(publicRequest.AnswerKey);
+                    }
+
+                    if(publicRequest.IsSetAutoGranted())
+                    {
+                        context.Writer.WritePropertyName("AutoGranted");
+                        context.Writer.Write(publicRequest.AutoGranted.Value);
+                    }
+
+                    if(publicRequest.IsSetAutoGrantedValue())
+                    {
+                        context.Writer.WritePropertyName("AutoGrantedValue");
+                        context.Writer.Write(publicRequest.AutoGrantedValue.Value);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetQualificationTypeId())
+                    {
+                        context.Writer.WritePropertyName("QualificationTypeId");
+                        context.Writer.Write(publicRequest.QualificationTypeId);
+                    }
+
+                    if(publicRequest.IsSetQualificationTypeStatus())
+                    {
+                        context.Writer.WritePropertyName("QualificationTypeStatus");
+                        context.Writer.Write(publicRequest.QualificationTypeStatus);
+                    }
+
+                    if(publicRequest.IsSetRetryDelayInSeconds())
+                    {
+                        context.Writer.WritePropertyName("RetryDelayInSeconds");
+                        context.Writer.Write(publicRequest.RetryDelayInSeconds.Value);
+                    }
+
+                    if(publicRequest.IsSetTest())
+                    {
+                        context.Writer.WritePropertyName("Test");
+                        context.Writer.Write(publicRequest.Test);
+                    }
+
+                    if(publicRequest.IsSetTestDurationInSeconds())
+                    {
+                        context.Writer.WritePropertyName("TestDurationInSeconds");
+                        context.Writer.Write(publicRequest.TestDurationInSeconds.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetAutoGranted())
-                {
-                    context.Writer.WritePropertyName("AutoGranted");
-                    context.Writer.Write(publicRequest.AutoGranted.Value);
-                }
-
-                if(publicRequest.IsSetAutoGrantedValue())
-                {
-                    context.Writer.WritePropertyName("AutoGrantedValue");
-                    context.Writer.Write(publicRequest.AutoGrantedValue.Value);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetQualificationTypeId())
-                {
-                    context.Writer.WritePropertyName("QualificationTypeId");
-                    context.Writer.Write(publicRequest.QualificationTypeId);
-                }
-
-                if(publicRequest.IsSetQualificationTypeStatus())
-                {
-                    context.Writer.WritePropertyName("QualificationTypeStatus");
-                    context.Writer.Write(publicRequest.QualificationTypeStatus);
-                }
-
-                if(publicRequest.IsSetRetryDelayInSeconds())
-                {
-                    context.Writer.WritePropertyName("RetryDelayInSeconds");
-                    context.Writer.Write(publicRequest.RetryDelayInSeconds.Value);
-                }
-
-                if(publicRequest.IsSetTest())
-                {
-                    context.Writer.WritePropertyName("Test");
-                    context.Writer.Write(publicRequest.Test);
-                }
-
-                if(publicRequest.IsSetTestDurationInSeconds())
-                {
-                    context.Writer.WritePropertyName("TestDurationInSeconds");
-                    context.Writer.Write(publicRequest.TestDurationInSeconds.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

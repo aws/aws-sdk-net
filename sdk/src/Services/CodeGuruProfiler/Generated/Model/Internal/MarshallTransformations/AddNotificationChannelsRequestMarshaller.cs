@@ -64,31 +64,34 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
                 throw new AmazonCodeGuruProfilerException("Request object does not have required field ProfilingGroupName set");
             request.AddPathResource("{profilingGroupName}", StringUtils.FromString(publicRequest.ProfilingGroupName));
             request.ResourcePath = "/profilingGroups/{profilingGroupName}/notificationConfiguration";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetChannels())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("channels");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestChannelsListValue in publicRequest.Channels)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetChannels())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("channels");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestChannelsListValue in publicRequest.Channels)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = ChannelMarshaller.Instance;
-                        marshaller.Marshall(publicRequestChannelsListValue, context);
+                            var marshaller = ChannelMarshaller.Instance;
+                            marshaller.Marshall(publicRequestChannelsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

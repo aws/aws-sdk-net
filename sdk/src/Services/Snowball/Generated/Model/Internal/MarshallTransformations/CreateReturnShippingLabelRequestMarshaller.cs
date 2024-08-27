@@ -63,27 +63,30 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetJobId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("JobId");
-                    context.Writer.Write(publicRequest.JobId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetJobId())
+                    {
+                        context.Writer.WritePropertyName("JobId");
+                        context.Writer.Write(publicRequest.JobId);
+                    }
+
+                    if(publicRequest.IsSetShippingOption())
+                    {
+                        context.Writer.WritePropertyName("ShippingOption");
+                        context.Writer.Write(publicRequest.ShippingOption);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetShippingOption())
-                {
-                    context.Writer.WritePropertyName("ShippingOption");
-                    context.Writer.Write(publicRequest.ShippingOption);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

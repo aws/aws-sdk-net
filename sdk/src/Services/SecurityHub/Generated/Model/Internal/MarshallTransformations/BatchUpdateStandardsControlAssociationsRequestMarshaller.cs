@@ -61,31 +61,34 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             request.HttpMethod = "PATCH";
 
             request.ResourcePath = "/associations";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetStandardsControlAssociationUpdates())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("StandardsControlAssociationUpdates");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestStandardsControlAssociationUpdatesListValue in publicRequest.StandardsControlAssociationUpdates)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetStandardsControlAssociationUpdates())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("StandardsControlAssociationUpdates");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestStandardsControlAssociationUpdatesListValue in publicRequest.StandardsControlAssociationUpdates)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = StandardsControlAssociationUpdateMarshaller.Instance;
-                        marshaller.Marshall(publicRequestStandardsControlAssociationUpdatesListValue, context);
+                            var marshaller = StandardsControlAssociationUpdateMarshaller.Instance;
+                            marshaller.Marshall(publicRequestStandardsControlAssociationUpdatesListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

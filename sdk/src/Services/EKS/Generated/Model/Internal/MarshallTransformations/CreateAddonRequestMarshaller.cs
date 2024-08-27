@@ -64,86 +64,89 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 throw new AmazonEKSException("Request object does not have required field ClusterName set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.ClusterName));
             request.ResourcePath = "/clusters/{name}/addons";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAddonName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("addonName");
-                    context.Writer.Write(publicRequest.AddonName);
-                }
-
-                if(publicRequest.IsSetAddonVersion())
-                {
-                    context.Writer.WritePropertyName("addonVersion");
-                    context.Writer.Write(publicRequest.AddonVersion);
-                }
-
-                if(publicRequest.IsSetClientRequestToken())
-                {
-                    context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetConfigurationValues())
-                {
-                    context.Writer.WritePropertyName("configurationValues");
-                    context.Writer.Write(publicRequest.ConfigurationValues);
-                }
-
-                if(publicRequest.IsSetPodIdentityAssociations())
-                {
-                    context.Writer.WritePropertyName("podIdentityAssociations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPodIdentityAssociationsListValue in publicRequest.PodIdentityAssociations)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAddonName())
                     {
+                        context.Writer.WritePropertyName("addonName");
+                        context.Writer.Write(publicRequest.AddonName);
+                    }
+
+                    if(publicRequest.IsSetAddonVersion())
+                    {
+                        context.Writer.WritePropertyName("addonVersion");
+                        context.Writer.Write(publicRequest.AddonVersion);
+                    }
+
+                    if(publicRequest.IsSetClientRequestToken())
+                    {
+                        context.Writer.WritePropertyName("clientRequestToken");
+                        context.Writer.Write(publicRequest.ClientRequestToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientRequestToken()))
+                    {
+                        context.Writer.WritePropertyName("clientRequestToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetConfigurationValues())
+                    {
+                        context.Writer.WritePropertyName("configurationValues");
+                        context.Writer.Write(publicRequest.ConfigurationValues);
+                    }
+
+                    if(publicRequest.IsSetPodIdentityAssociations())
+                    {
+                        context.Writer.WritePropertyName("podIdentityAssociations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPodIdentityAssociationsListValue in publicRequest.PodIdentityAssociations)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = AddonPodIdentityAssociationsMarshaller.Instance;
+                            marshaller.Marshall(publicRequestPodIdentityAssociationsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetResolveConflicts())
+                    {
+                        context.Writer.WritePropertyName("resolveConflicts");
+                        context.Writer.Write(publicRequest.ResolveConflicts);
+                    }
+
+                    if(publicRequest.IsSetServiceAccountRoleArn())
+                    {
+                        context.Writer.WritePropertyName("serviceAccountRoleArn");
+                        context.Writer.Write(publicRequest.ServiceAccountRoleArn);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
 
-                        var marshaller = AddonPodIdentityAssociationsMarshaller.Instance;
-                        marshaller.Marshall(publicRequestPodIdentityAssociationsListValue, context);
-
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetResolveConflicts())
-                {
-                    context.Writer.WritePropertyName("resolveConflicts");
-                    context.Writer.Write(publicRequest.ResolveConflicts);
-                }
-
-                if(publicRequest.IsSetServiceAccountRoleArn())
-                {
-                    context.Writer.WritePropertyName("serviceAccountRoleArn");
-                    context.Writer.Write(publicRequest.ServiceAccountRoleArn);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

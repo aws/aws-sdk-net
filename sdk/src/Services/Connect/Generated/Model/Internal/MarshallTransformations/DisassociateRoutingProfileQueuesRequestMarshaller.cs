@@ -67,31 +67,34 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field RoutingProfileId set");
             request.AddPathResource("{RoutingProfileId}", StringUtils.FromString(publicRequest.RoutingProfileId));
             request.ResourcePath = "/routing-profiles/{InstanceId}/{RoutingProfileId}/disassociate-queues";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetQueueReferences())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("QueueReferences");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestQueueReferencesListValue in publicRequest.QueueReferences)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetQueueReferences())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("QueueReferences");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestQueueReferencesListValue in publicRequest.QueueReferences)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = RoutingProfileQueueReferenceMarshaller.Instance;
-                        marshaller.Marshall(publicRequestQueueReferencesListValue, context);
+                            var marshaller = RoutingProfileQueueReferenceMarshaller.Instance;
+                            marshaller.Marshall(publicRequestQueueReferencesListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

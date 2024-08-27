@@ -64,42 +64,45 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                 throw new AmazonGreengrassException("Request object does not have required field FunctionDefinitionId set");
             request.AddPathResource("{FunctionDefinitionId}", StringUtils.FromString(publicRequest.FunctionDefinitionId));
             request.ResourcePath = "/greengrass/definition/functions/{FunctionDefinitionId}/versions";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDefaultConfig())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DefaultConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = FunctionDefaultConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DefaultConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetFunctions())
-                {
-                    context.Writer.WritePropertyName("Functions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFunctionsListValue in publicRequest.Functions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDefaultConfig())
                     {
+                        context.Writer.WritePropertyName("DefaultConfig");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = FunctionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFunctionsListValue, context);
+                        var marshaller = FunctionDefaultConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DefaultConfig, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetFunctions())
+                    {
+                        context.Writer.WritePropertyName("Functions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFunctionsListValue in publicRequest.Functions)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = FunctionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFunctionsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

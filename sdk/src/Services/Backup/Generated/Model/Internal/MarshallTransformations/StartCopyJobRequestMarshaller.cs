@@ -61,56 +61,59 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/copy-jobs";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDestinationBackupVaultArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DestinationBackupVaultArn");
-                    context.Writer.Write(publicRequest.DestinationBackupVaultArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDestinationBackupVaultArn())
+                    {
+                        context.Writer.WritePropertyName("DestinationBackupVaultArn");
+                        context.Writer.Write(publicRequest.DestinationBackupVaultArn);
+                    }
+
+                    if(publicRequest.IsSetIamRoleArn())
+                    {
+                        context.Writer.WritePropertyName("IamRoleArn");
+                        context.Writer.Write(publicRequest.IamRoleArn);
+                    }
+
+                    if(publicRequest.IsSetIdempotencyToken())
+                    {
+                        context.Writer.WritePropertyName("IdempotencyToken");
+                        context.Writer.Write(publicRequest.IdempotencyToken);
+                    }
+
+                    if(publicRequest.IsSetLifecycle())
+                    {
+                        context.Writer.WritePropertyName("Lifecycle");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LifecycleMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Lifecycle, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRecoveryPointArn())
+                    {
+                        context.Writer.WritePropertyName("RecoveryPointArn");
+                        context.Writer.Write(publicRequest.RecoveryPointArn);
+                    }
+
+                    if(publicRequest.IsSetSourceBackupVaultName())
+                    {
+                        context.Writer.WritePropertyName("SourceBackupVaultName");
+                        context.Writer.Write(publicRequest.SourceBackupVaultName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetIamRoleArn())
-                {
-                    context.Writer.WritePropertyName("IamRoleArn");
-                    context.Writer.Write(publicRequest.IamRoleArn);
-                }
-
-                if(publicRequest.IsSetIdempotencyToken())
-                {
-                    context.Writer.WritePropertyName("IdempotencyToken");
-                    context.Writer.Write(publicRequest.IdempotencyToken);
-                }
-
-                if(publicRequest.IsSetLifecycle())
-                {
-                    context.Writer.WritePropertyName("Lifecycle");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LifecycleMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Lifecycle, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRecoveryPointArn())
-                {
-                    context.Writer.WritePropertyName("RecoveryPointArn");
-                    context.Writer.Write(publicRequest.RecoveryPointArn);
-                }
-
-                if(publicRequest.IsSetSourceBackupVaultName())
-                {
-                    context.Writer.WritePropertyName("SourceBackupVaultName");
-                    context.Writer.Write(publicRequest.SourceBackupVaultName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

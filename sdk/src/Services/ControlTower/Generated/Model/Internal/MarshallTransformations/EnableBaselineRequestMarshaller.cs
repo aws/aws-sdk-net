@@ -61,63 +61,66 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/enable-baseline";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBaselineIdentifier())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("baselineIdentifier");
-                    context.Writer.Write(publicRequest.BaselineIdentifier);
-                }
-
-                if(publicRequest.IsSetBaselineVersion())
-                {
-                    context.Writer.WritePropertyName("baselineVersion");
-                    context.Writer.Write(publicRequest.BaselineVersion);
-                }
-
-                if(publicRequest.IsSetParameters())
-                {
-                    context.Writer.WritePropertyName("parameters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestParametersListValue in publicRequest.Parameters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBaselineIdentifier())
                     {
+                        context.Writer.WritePropertyName("baselineIdentifier");
+                        context.Writer.Write(publicRequest.BaselineIdentifier);
+                    }
+
+                    if(publicRequest.IsSetBaselineVersion())
+                    {
+                        context.Writer.WritePropertyName("baselineVersion");
+                        context.Writer.Write(publicRequest.BaselineVersion);
+                    }
+
+                    if(publicRequest.IsSetParameters())
+                    {
+                        context.Writer.WritePropertyName("parameters");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestParametersListValue in publicRequest.Parameters)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = EnabledBaselineParameterMarshaller.Instance;
+                            marshaller.Marshall(publicRequestParametersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
 
-                        var marshaller = EnabledBaselineParameterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestParametersListValue, context);
-
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetTargetIdentifier())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("targetIdentifier");
+                        context.Writer.Write(publicRequest.TargetIdentifier);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTargetIdentifier())
-                {
-                    context.Writer.WritePropertyName("targetIdentifier");
-                    context.Writer.Write(publicRequest.TargetIdentifier);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,54 +63,57 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDatasetGroupArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("datasetGroupArn");
-                    context.Writer.Write(publicRequest.DatasetGroupArn);
-                }
-
-                if(publicRequest.IsSetMetrics())
-                {
-                    context.Writer.WritePropertyName("metrics");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMetricsListValue in publicRequest.Metrics)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDatasetGroupArn())
                     {
+                        context.Writer.WritePropertyName("datasetGroupArn");
+                        context.Writer.Write(publicRequest.DatasetGroupArn);
+                    }
+
+                    if(publicRequest.IsSetMetrics())
+                    {
+                        context.Writer.WritePropertyName("metrics");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMetricsListValue in publicRequest.Metrics)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = MetricAttributeMarshaller.Instance;
+                            marshaller.Marshall(publicRequestMetricsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetMetricsOutputConfig())
+                    {
+                        context.Writer.WritePropertyName("metricsOutputConfig");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = MetricAttributeMarshaller.Instance;
-                        marshaller.Marshall(publicRequestMetricsListValue, context);
+                        var marshaller = MetricAttributionOutputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.MetricsOutputConfig, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMetricsOutputConfig())
-                {
-                    context.Writer.WritePropertyName("metricsOutputConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MetricAttributionOutputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.MetricsOutputConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

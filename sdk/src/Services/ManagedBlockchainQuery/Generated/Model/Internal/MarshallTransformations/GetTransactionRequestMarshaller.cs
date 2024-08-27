@@ -61,33 +61,36 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/get-transaction";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetNetwork())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("network");
-                    context.Writer.Write(publicRequest.Network);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetNetwork())
+                    {
+                        context.Writer.WritePropertyName("network");
+                        context.Writer.Write(publicRequest.Network);
+                    }
+
+                    if(publicRequest.IsSetTransactionHash())
+                    {
+                        context.Writer.WritePropertyName("transactionHash");
+                        context.Writer.Write(publicRequest.TransactionHash);
+                    }
+
+                    if(publicRequest.IsSetTransactionId())
+                    {
+                        context.Writer.WritePropertyName("transactionId");
+                        context.Writer.Write(publicRequest.TransactionId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTransactionHash())
-                {
-                    context.Writer.WritePropertyName("transactionHash");
-                    context.Writer.Write(publicRequest.TransactionHash);
-                }
-
-                if(publicRequest.IsSetTransactionId())
-                {
-                    context.Writer.WritePropertyName("transactionId");
-                    context.Writer.Write(publicRequest.TransactionId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

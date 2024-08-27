@@ -61,39 +61,42 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/signing-jobs/with-payload";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetPayload())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("payload");
-                    context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.Payload));
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetPayload())
+                    {
+                        context.Writer.WritePropertyName("payload");
+                        context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.Payload));
+                    }
+
+                    if(publicRequest.IsSetPayloadFormat())
+                    {
+                        context.Writer.WritePropertyName("payloadFormat");
+                        context.Writer.Write(publicRequest.PayloadFormat);
+                    }
+
+                    if(publicRequest.IsSetProfileName())
+                    {
+                        context.Writer.WritePropertyName("profileName");
+                        context.Writer.Write(publicRequest.ProfileName);
+                    }
+
+                    if(publicRequest.IsSetProfileOwner())
+                    {
+                        context.Writer.WritePropertyName("profileOwner");
+                        context.Writer.Write(publicRequest.ProfileOwner);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPayloadFormat())
-                {
-                    context.Writer.WritePropertyName("payloadFormat");
-                    context.Writer.Write(publicRequest.PayloadFormat);
-                }
-
-                if(publicRequest.IsSetProfileName())
-                {
-                    context.Writer.WritePropertyName("profileName");
-                    context.Writer.Write(publicRequest.ProfileName);
-                }
-
-                if(publicRequest.IsSetProfileOwner())
-                {
-                    context.Writer.WritePropertyName("profileOwner");
-                    context.Writer.Write(publicRequest.ProfileOwner);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

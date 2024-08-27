@@ -63,123 +63,126 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeploymentInstanceType())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DeploymentInstanceType");
-                    context.Writer.Write(publicRequest.DeploymentInstanceType);
-                }
-
-                if(publicRequest.IsSetModelSource())
-                {
-                    context.Writer.WritePropertyName("ModelSource");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OptimizationJobModelSourceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ModelSource, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOptimizationConfigs())
-                {
-                    context.Writer.WritePropertyName("OptimizationConfigs");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestOptimizationConfigsListValue in publicRequest.OptimizationConfigs)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDeploymentInstanceType())
                     {
+                        context.Writer.WritePropertyName("DeploymentInstanceType");
+                        context.Writer.Write(publicRequest.DeploymentInstanceType);
+                    }
+
+                    if(publicRequest.IsSetModelSource())
+                    {
+                        context.Writer.WritePropertyName("ModelSource");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = OptimizationConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequestOptimizationConfigsListValue, context);
+                        var marshaller = OptimizationJobModelSourceMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ModelSource, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetOptimizationEnvironment())
-                {
-                    context.Writer.WritePropertyName("OptimizationEnvironment");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestOptimizationEnvironmentKvp in publicRequest.OptimizationEnvironment)
+                    if(publicRequest.IsSetOptimizationConfigs())
                     {
-                        context.Writer.WritePropertyName(publicRequestOptimizationEnvironmentKvp.Key);
-                        var publicRequestOptimizationEnvironmentValue = publicRequestOptimizationEnvironmentKvp.Value;
+                        context.Writer.WritePropertyName("OptimizationConfigs");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestOptimizationConfigsListValue in publicRequest.OptimizationConfigs)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                            context.Writer.Write(publicRequestOptimizationEnvironmentValue);
+                            var marshaller = OptimizationConfigMarshaller.Instance;
+                            marshaller.Marshall(publicRequestOptimizationConfigsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetOptimizationJobName())
-                {
-                    context.Writer.WritePropertyName("OptimizationJobName");
-                    context.Writer.Write(publicRequest.OptimizationJobName);
-                }
-
-                if(publicRequest.IsSetOutputConfig())
-                {
-                    context.Writer.WritePropertyName("OutputConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OptimizationJobOutputConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OutputConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("RoleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetStoppingCondition())
-                {
-                    context.Writer.WritePropertyName("StoppingCondition");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = StoppingConditionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.StoppingCondition, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetOptimizationEnvironment())
                     {
+                        context.Writer.WritePropertyName("OptimizationEnvironment");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestOptimizationEnvironmentKvp in publicRequest.OptimizationEnvironment)
+                        {
+                            context.Writer.WritePropertyName(publicRequestOptimizationEnvironmentKvp.Key);
+                            var publicRequestOptimizationEnvironmentValue = publicRequestOptimizationEnvironmentKvp.Value;
+
+                                context.Writer.Write(publicRequestOptimizationEnvironmentValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetOptimizationJobName())
+                    {
+                        context.Writer.WritePropertyName("OptimizationJobName");
+                        context.Writer.Write(publicRequest.OptimizationJobName);
+                    }
+
+                    if(publicRequest.IsSetOutputConfig())
+                    {
+                        context.Writer.WritePropertyName("OutputConfig");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = OptimizationJobOutputConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OutputConfig, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("RoleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    if(publicRequest.IsSetStoppingCondition())
+                    {
+                        context.Writer.WritePropertyName("StoppingCondition");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = StoppingConditionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.StoppingCondition, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetVpcConfig())
+                    {
+                        context.Writer.WritePropertyName("VpcConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = OptimizationVpcConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.VpcConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetVpcConfig())
-                {
-                    context.Writer.WritePropertyName("VpcConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OptimizationVpcConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.VpcConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

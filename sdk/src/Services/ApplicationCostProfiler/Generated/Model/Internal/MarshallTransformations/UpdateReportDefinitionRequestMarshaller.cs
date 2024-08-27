@@ -64,44 +64,47 @@ namespace Amazon.ApplicationCostProfiler.Model.Internal.MarshallTransformations
                 throw new AmazonApplicationCostProfilerException("Request object does not have required field ReportId set");
             request.AddPathResource("{reportId}", StringUtils.FromString(publicRequest.ReportId));
             request.ResourcePath = "/reportDefinition/{reportId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDestinationS3Location())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("destinationS3Location");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDestinationS3Location())
+                    {
+                        context.Writer.WritePropertyName("destinationS3Location");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = S3LocationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DestinationS3Location, context);
+                        var marshaller = S3LocationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DestinationS3Location, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetFormat())
+                    {
+                        context.Writer.WritePropertyName("format");
+                        context.Writer.Write(publicRequest.Format);
+                    }
+
+                    if(publicRequest.IsSetReportDescription())
+                    {
+                        context.Writer.WritePropertyName("reportDescription");
+                        context.Writer.Write(publicRequest.ReportDescription);
+                    }
+
+                    if(publicRequest.IsSetReportFrequency())
+                    {
+                        context.Writer.WritePropertyName("reportFrequency");
+                        context.Writer.Write(publicRequest.ReportFrequency);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetFormat())
-                {
-                    context.Writer.WritePropertyName("format");
-                    context.Writer.Write(publicRequest.Format);
-                }
-
-                if(publicRequest.IsSetReportDescription())
-                {
-                    context.Writer.WritePropertyName("reportDescription");
-                    context.Writer.Write(publicRequest.ReportDescription);
-                }
-
-                if(publicRequest.IsSetReportFrequency())
-                {
-                    context.Writer.WritePropertyName("reportFrequency");
-                    context.Writer.Write(publicRequest.ReportFrequency);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,39 +63,42 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMigrationProjectIdentifier())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("MigrationProjectIdentifier");
-                    context.Writer.Write(publicRequest.MigrationProjectIdentifier);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMigrationProjectIdentifier())
+                    {
+                        context.Writer.WritePropertyName("MigrationProjectIdentifier");
+                        context.Writer.Write(publicRequest.MigrationProjectIdentifier);
+                    }
+
+                    if(publicRequest.IsSetOrigin())
+                    {
+                        context.Writer.WritePropertyName("Origin");
+                        context.Writer.Write(publicRequest.Origin);
+                    }
+
+                    if(publicRequest.IsSetRefresh())
+                    {
+                        context.Writer.WritePropertyName("Refresh");
+                        context.Writer.Write(publicRequest.Refresh.Value);
+                    }
+
+                    if(publicRequest.IsSetSelectionRules())
+                    {
+                        context.Writer.WritePropertyName("SelectionRules");
+                        context.Writer.Write(publicRequest.SelectionRules);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetOrigin())
-                {
-                    context.Writer.WritePropertyName("Origin");
-                    context.Writer.Write(publicRequest.Origin);
-                }
-
-                if(publicRequest.IsSetRefresh())
-                {
-                    context.Writer.WritePropertyName("Refresh");
-                    context.Writer.Write(publicRequest.Refresh.Value);
-                }
-
-                if(publicRequest.IsSetSelectionRules())
-                {
-                    context.Writer.WritePropertyName("SelectionRules");
-                    context.Writer.Write(publicRequest.SelectionRules);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

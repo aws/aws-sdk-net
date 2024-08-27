@@ -67,44 +67,47 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                 throw new AmazonMQException("Request object does not have required field Username set");
             request.AddPathResource("{username}", StringUtils.FromString(publicRequest.Username));
             request.ResourcePath = "/v1/brokers/{broker-id}/users/{username}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConsoleAccess())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("consoleAccess");
-                    context.Writer.Write(publicRequest.ConsoleAccess.Value);
-                }
-
-                if(publicRequest.IsSetGroups())
-                {
-                    context.Writer.WritePropertyName("groups");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestGroupsListValue in publicRequest.Groups)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConsoleAccess())
                     {
-                            context.Writer.Write(publicRequestGroupsListValue);
+                        context.Writer.WritePropertyName("consoleAccess");
+                        context.Writer.Write(publicRequest.ConsoleAccess.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetGroups())
+                    {
+                        context.Writer.WritePropertyName("groups");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestGroupsListValue in publicRequest.Groups)
+                        {
+                                context.Writer.Write(publicRequestGroupsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetPassword())
+                    {
+                        context.Writer.WritePropertyName("password");
+                        context.Writer.Write(publicRequest.Password);
+                    }
+
+                    if(publicRequest.IsSetReplicationUser())
+                    {
+                        context.Writer.WritePropertyName("replicationUser");
+                        context.Writer.Write(publicRequest.ReplicationUser.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPassword())
-                {
-                    context.Writer.WritePropertyName("password");
-                    context.Writer.Write(publicRequest.Password);
-                }
-
-                if(publicRequest.IsSetReplicationUser())
-                {
-                    context.Writer.WritePropertyName("replicationUser");
-                    context.Writer.Write(publicRequest.ReplicationUser.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

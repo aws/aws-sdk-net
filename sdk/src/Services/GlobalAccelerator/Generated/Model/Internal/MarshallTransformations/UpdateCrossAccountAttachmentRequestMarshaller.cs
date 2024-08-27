@@ -63,81 +63,84 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAddPrincipals())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AddPrincipals");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAddPrincipalsListValue in publicRequest.AddPrincipals)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAddPrincipals())
                     {
-                            context.Writer.Write(publicRequestAddPrincipalsListValue);
+                        context.Writer.WritePropertyName("AddPrincipals");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAddPrincipalsListValue in publicRequest.AddPrincipals)
+                        {
+                                context.Writer.Write(publicRequestAddPrincipalsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetAddResources())
-                {
-                    context.Writer.WritePropertyName("AddResources");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAddResourcesListValue in publicRequest.AddResources)
+                    if(publicRequest.IsSetAddResources())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("AddResources");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAddResourcesListValue in publicRequest.AddResources)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = ResourceMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAddResourcesListValue, context);
+                            var marshaller = ResourceMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAddResourcesListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetAttachmentArn())
-                {
-                    context.Writer.WritePropertyName("AttachmentArn");
-                    context.Writer.Write(publicRequest.AttachmentArn);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetRemovePrincipals())
-                {
-                    context.Writer.WritePropertyName("RemovePrincipals");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRemovePrincipalsListValue in publicRequest.RemovePrincipals)
+                    if(publicRequest.IsSetAttachmentArn())
                     {
-                            context.Writer.Write(publicRequestRemovePrincipalsListValue);
+                        context.Writer.WritePropertyName("AttachmentArn");
+                        context.Writer.Write(publicRequest.AttachmentArn);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetRemoveResources())
-                {
-                    context.Writer.WritePropertyName("RemoveResources");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRemoveResourcesListValue in publicRequest.RemoveResources)
+                    if(publicRequest.IsSetName())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ResourceMarshaller.Instance;
-                        marshaller.Marshall(publicRequestRemoveResourcesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetRemovePrincipals())
+                    {
+                        context.Writer.WritePropertyName("RemovePrincipals");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRemovePrincipalsListValue in publicRequest.RemovePrincipals)
+                        {
+                                context.Writer.Write(publicRequestRemovePrincipalsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetRemoveResources())
+                    {
+                        context.Writer.WritePropertyName("RemoveResources");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRemoveResourcesListValue in publicRequest.RemoveResources)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ResourceMarshaller.Instance;
+                            marshaller.Marshall(publicRequestRemoveResourcesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -61,39 +61,42 @@ namespace Amazon.ARCZonalShift.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/zonalshifts";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAwayFrom())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("awayFrom");
-                    context.Writer.Write(publicRequest.AwayFrom);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAwayFrom())
+                    {
+                        context.Writer.WritePropertyName("awayFrom");
+                        context.Writer.Write(publicRequest.AwayFrom);
+                    }
+
+                    if(publicRequest.IsSetComment())
+                    {
+                        context.Writer.WritePropertyName("comment");
+                        context.Writer.Write(publicRequest.Comment);
+                    }
+
+                    if(publicRequest.IsSetExpiresIn())
+                    {
+                        context.Writer.WritePropertyName("expiresIn");
+                        context.Writer.Write(publicRequest.ExpiresIn);
+                    }
+
+                    if(publicRequest.IsSetResourceIdentifier())
+                    {
+                        context.Writer.WritePropertyName("resourceIdentifier");
+                        context.Writer.Write(publicRequest.ResourceIdentifier);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetComment())
-                {
-                    context.Writer.WritePropertyName("comment");
-                    context.Writer.Write(publicRequest.Comment);
-                }
-
-                if(publicRequest.IsSetExpiresIn())
-                {
-                    context.Writer.WritePropertyName("expiresIn");
-                    context.Writer.Write(publicRequest.ExpiresIn);
-                }
-
-                if(publicRequest.IsSetResourceIdentifier())
-                {
-                    context.Writer.WritePropertyName("resourceIdentifier");
-                    context.Writer.Write(publicRequest.ResourceIdentifier);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

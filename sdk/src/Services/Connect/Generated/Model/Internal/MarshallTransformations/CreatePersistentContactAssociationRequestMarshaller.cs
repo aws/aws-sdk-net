@@ -67,33 +67,36 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field InstanceId set");
             request.AddPathResource("{InstanceId}", StringUtils.FromString(publicRequest.InstanceId));
             request.ResourcePath = "/contact/persistent-contact-association/{InstanceId}/{InitialContactId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    if(publicRequest.IsSetRehydrationType())
+                    {
+                        context.Writer.WritePropertyName("RehydrationType");
+                        context.Writer.Write(publicRequest.RehydrationType);
+                    }
+
+                    if(publicRequest.IsSetSourceContactId())
+                    {
+                        context.Writer.WritePropertyName("SourceContactId");
+                        context.Writer.Write(publicRequest.SourceContactId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRehydrationType())
-                {
-                    context.Writer.WritePropertyName("RehydrationType");
-                    context.Writer.Write(publicRequest.RehydrationType);
-                }
-
-                if(publicRequest.IsSetSourceContactId())
-                {
-                    context.Writer.WritePropertyName("SourceContactId");
-                    context.Writer.Write(publicRequest.SourceContactId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

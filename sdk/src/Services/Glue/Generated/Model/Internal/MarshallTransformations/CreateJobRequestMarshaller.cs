@@ -63,234 +63,237 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAllocatedCapacity())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AllocatedCapacity");
-                    context.Writer.Write(publicRequest.AllocatedCapacity.Value);
-                }
-
-                if(publicRequest.IsSetCodeGenConfigurationNodes())
-                {
-                    context.Writer.WritePropertyName("CodeGenConfigurationNodes");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestCodeGenConfigurationNodesKvp in publicRequest.CodeGenConfigurationNodes)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAllocatedCapacity())
                     {
-                        context.Writer.WritePropertyName(publicRequestCodeGenConfigurationNodesKvp.Key);
-                        var publicRequestCodeGenConfigurationNodesValue = publicRequestCodeGenConfigurationNodesKvp.Value;
+                        context.Writer.WritePropertyName("AllocatedCapacity");
+                        context.Writer.Write(publicRequest.AllocatedCapacity.Value);
+                    }
 
+                    if(publicRequest.IsSetCodeGenConfigurationNodes())
+                    {
+                        context.Writer.WritePropertyName("CodeGenConfigurationNodes");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestCodeGenConfigurationNodesKvp in publicRequest.CodeGenConfigurationNodes)
+                        {
+                            context.Writer.WritePropertyName(publicRequestCodeGenConfigurationNodesKvp.Key);
+                            var publicRequestCodeGenConfigurationNodesValue = publicRequestCodeGenConfigurationNodesKvp.Value;
+
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = CodeGenConfigurationNodeMarshaller.Instance;
+                            marshaller.Marshall(publicRequestCodeGenConfigurationNodesValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetCommand())
+                    {
+                        context.Writer.WritePropertyName("Command");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = CodeGenConfigurationNodeMarshaller.Instance;
-                        marshaller.Marshall(publicRequestCodeGenConfigurationNodesValue, context);
+                        var marshaller = JobCommandMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Command, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetCommand())
-                {
-                    context.Writer.WritePropertyName("Command");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = JobCommandMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Command, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetConnections())
-                {
-                    context.Writer.WritePropertyName("Connections");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ConnectionsListMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Connections, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDefaultArguments())
-                {
-                    context.Writer.WritePropertyName("DefaultArguments");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestDefaultArgumentsKvp in publicRequest.DefaultArguments)
+                    if(publicRequest.IsSetConnections())
                     {
-                        context.Writer.WritePropertyName(publicRequestDefaultArgumentsKvp.Key);
-                        var publicRequestDefaultArgumentsValue = publicRequestDefaultArgumentsKvp.Value;
+                        context.Writer.WritePropertyName("Connections");
+                        context.Writer.WriteObjectStart();
 
-                            context.Writer.Write(publicRequestDefaultArgumentsValue);
+                        var marshaller = ConnectionsListMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Connections, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetExecutionClass())
-                {
-                    context.Writer.WritePropertyName("ExecutionClass");
-                    context.Writer.Write(publicRequest.ExecutionClass);
-                }
-
-                if(publicRequest.IsSetExecutionProperty())
-                {
-                    context.Writer.WritePropertyName("ExecutionProperty");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ExecutionPropertyMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ExecutionProperty, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetGlueVersion())
-                {
-                    context.Writer.WritePropertyName("GlueVersion");
-                    context.Writer.Write(publicRequest.GlueVersion);
-                }
-
-                if(publicRequest.IsSetJobMode())
-                {
-                    context.Writer.WritePropertyName("JobMode");
-                    context.Writer.Write(publicRequest.JobMode);
-                }
-
-                if(publicRequest.IsSetJobRunQueuingEnabled())
-                {
-                    context.Writer.WritePropertyName("JobRunQueuingEnabled");
-                    context.Writer.Write(publicRequest.JobRunQueuingEnabled);
-                }
-
-                if(publicRequest.IsSetLogUri())
-                {
-                    context.Writer.WritePropertyName("LogUri");
-                    context.Writer.Write(publicRequest.LogUri);
-                }
-
-                if(publicRequest.IsSetMaintenanceWindow())
-                {
-                    context.Writer.WritePropertyName("MaintenanceWindow");
-                    context.Writer.Write(publicRequest.MaintenanceWindow);
-                }
-
-                if(publicRequest.IsSetMaxCapacity())
-                {
-                    context.Writer.WritePropertyName("MaxCapacity");
-                    if(StringUtils.IsSpecialDoubleValue(publicRequest.MaxCapacity.Value))
+                    if(publicRequest.IsSetDefaultArguments())
                     {
-                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.MaxCapacity.Value));
+                        context.Writer.WritePropertyName("DefaultArguments");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestDefaultArgumentsKvp in publicRequest.DefaultArguments)
+                        {
+                            context.Writer.WritePropertyName(publicRequestDefaultArgumentsKvp.Key);
+                            var publicRequestDefaultArgumentsValue = publicRequestDefaultArgumentsKvp.Value;
+
+                                context.Writer.Write(publicRequestDefaultArgumentsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    else
+
+                    if(publicRequest.IsSetDescription())
                     {
-                        context.Writer.Write(publicRequest.MaxCapacity.Value);
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                }
 
-                if(publicRequest.IsSetMaxRetries())
-                {
-                    context.Writer.WritePropertyName("MaxRetries");
-                    context.Writer.Write(publicRequest.MaxRetries.Value);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetNonOverridableArguments())
-                {
-                    context.Writer.WritePropertyName("NonOverridableArguments");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestNonOverridableArgumentsKvp in publicRequest.NonOverridableArguments)
+                    if(publicRequest.IsSetExecutionClass())
                     {
-                        context.Writer.WritePropertyName(publicRequestNonOverridableArgumentsKvp.Key);
-                        var publicRequestNonOverridableArgumentsValue = publicRequestNonOverridableArgumentsKvp.Value;
-
-                            context.Writer.Write(publicRequestNonOverridableArgumentsValue);
+                        context.Writer.WritePropertyName("ExecutionClass");
+                        context.Writer.Write(publicRequest.ExecutionClass);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetNotificationProperty())
-                {
-                    context.Writer.WritePropertyName("NotificationProperty");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = NotificationPropertyMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.NotificationProperty, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetNumberOfWorkers())
-                {
-                    context.Writer.WritePropertyName("NumberOfWorkers");
-                    context.Writer.Write(publicRequest.NumberOfWorkers.Value);
-                }
-
-                if(publicRequest.IsSetRole())
-                {
-                    context.Writer.WritePropertyName("Role");
-                    context.Writer.Write(publicRequest.Role);
-                }
-
-                if(publicRequest.IsSetSecurityConfiguration())
-                {
-                    context.Writer.WritePropertyName("SecurityConfiguration");
-                    context.Writer.Write(publicRequest.SecurityConfiguration);
-                }
-
-                if(publicRequest.IsSetSourceControlDetails())
-                {
-                    context.Writer.WritePropertyName("SourceControlDetails");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SourceControlDetailsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SourceControlDetails, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetExecutionProperty())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
+                        context.Writer.WritePropertyName("ExecutionProperty");
+                        context.Writer.WriteObjectStart();
 
-                            context.Writer.Write(publicRequestTagsValue);
+                        var marshaller = ExecutionPropertyMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ExecutionProperty, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetGlueVersion())
+                    {
+                        context.Writer.WritePropertyName("GlueVersion");
+                        context.Writer.Write(publicRequest.GlueVersion);
+                    }
+
+                    if(publicRequest.IsSetJobMode())
+                    {
+                        context.Writer.WritePropertyName("JobMode");
+                        context.Writer.Write(publicRequest.JobMode);
+                    }
+
+                    if(publicRequest.IsSetJobRunQueuingEnabled())
+                    {
+                        context.Writer.WritePropertyName("JobRunQueuingEnabled");
+                        context.Writer.Write(publicRequest.JobRunQueuingEnabled.Value);
+                    }
+
+                    if(publicRequest.IsSetLogUri())
+                    {
+                        context.Writer.WritePropertyName("LogUri");
+                        context.Writer.Write(publicRequest.LogUri);
+                    }
+
+                    if(publicRequest.IsSetMaintenanceWindow())
+                    {
+                        context.Writer.WritePropertyName("MaintenanceWindow");
+                        context.Writer.Write(publicRequest.MaintenanceWindow);
+                    }
+
+                    if(publicRequest.IsSetMaxCapacity())
+                    {
+                        context.Writer.WritePropertyName("MaxCapacity");
+                        if(StringUtils.IsSpecialDoubleValue(publicRequest.MaxCapacity.Value))
+                        {
+                            context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.MaxCapacity.Value));
+                        }
+                        else
+                        {
+                            context.Writer.Write(publicRequest.MaxCapacity.Value);
+                        }
+                    }
+
+                    if(publicRequest.IsSetMaxRetries())
+                    {
+                        context.Writer.WritePropertyName("MaxRetries");
+                        context.Writer.Write(publicRequest.MaxRetries.Value);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetNonOverridableArguments())
+                    {
+                        context.Writer.WritePropertyName("NonOverridableArguments");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestNonOverridableArgumentsKvp in publicRequest.NonOverridableArguments)
+                        {
+                            context.Writer.WritePropertyName(publicRequestNonOverridableArgumentsKvp.Key);
+                            var publicRequestNonOverridableArgumentsValue = publicRequestNonOverridableArgumentsKvp.Value;
+
+                                context.Writer.Write(publicRequestNonOverridableArgumentsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetNotificationProperty())
+                    {
+                        context.Writer.WritePropertyName("NotificationProperty");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = NotificationPropertyMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.NotificationProperty, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetNumberOfWorkers())
+                    {
+                        context.Writer.WritePropertyName("NumberOfWorkers");
+                        context.Writer.Write(publicRequest.NumberOfWorkers.Value);
+                    }
+
+                    if(publicRequest.IsSetRole())
+                    {
+                        context.Writer.WritePropertyName("Role");
+                        context.Writer.Write(publicRequest.Role);
+                    }
+
+                    if(publicRequest.IsSetSecurityConfiguration())
+                    {
+                        context.Writer.WritePropertyName("SecurityConfiguration");
+                        context.Writer.Write(publicRequest.SecurityConfiguration);
+                    }
+
+                    if(publicRequest.IsSetSourceControlDetails())
+                    {
+                        context.Writer.WritePropertyName("SourceControlDetails");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SourceControlDetailsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SourceControlDetails, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTimeout())
+                    {
+                        context.Writer.WritePropertyName("Timeout");
+                        context.Writer.Write(publicRequest.Timeout.Value);
+                    }
+
+                    if(publicRequest.IsSetWorkerType())
+                    {
+                        context.Writer.WritePropertyName("WorkerType");
+                        context.Writer.Write(publicRequest.WorkerType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTimeout())
-                {
-                    context.Writer.WritePropertyName("Timeout");
-                    context.Writer.Write(publicRequest.Timeout.Value);
-                }
-
-                if(publicRequest.IsSetWorkerType())
-                {
-                    context.Writer.WritePropertyName("WorkerType");
-                    context.Writer.Write(publicRequest.WorkerType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

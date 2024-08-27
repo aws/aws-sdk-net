@@ -74,13 +74,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProficiencyLevel())
             {
                 context.Writer.WritePropertyName("ProficiencyLevel");
-                if(StringUtils.IsSpecialFloatValue(requestObject.ProficiencyLevel))
+                if(StringUtils.IsSpecialFloatValue(requestObject.ProficiencyLevel.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.ProficiencyLevel));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.ProficiencyLevel.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.ProficiencyLevel);
+                    context.Writer.Write(requestObject.ProficiencyLevel.Value);
                 }
             }
 

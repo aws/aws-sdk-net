@@ -63,116 +63,119 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBillingModeOverride())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("BillingModeOverride");
-                    context.Writer.Write(publicRequest.BillingModeOverride);
-                }
-
-                if(publicRequest.IsSetGlobalSecondaryIndexOverride())
-                {
-                    context.Writer.WritePropertyName("GlobalSecondaryIndexOverride");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestGlobalSecondaryIndexOverrideListValue in publicRequest.GlobalSecondaryIndexOverride)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBillingModeOverride())
                     {
+                        context.Writer.WritePropertyName("BillingModeOverride");
+                        context.Writer.Write(publicRequest.BillingModeOverride);
+                    }
+
+                    if(publicRequest.IsSetGlobalSecondaryIndexOverride())
+                    {
+                        context.Writer.WritePropertyName("GlobalSecondaryIndexOverride");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestGlobalSecondaryIndexOverrideListValue in publicRequest.GlobalSecondaryIndexOverride)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = GlobalSecondaryIndexMarshaller.Instance;
+                            marshaller.Marshall(publicRequestGlobalSecondaryIndexOverrideListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetLocalSecondaryIndexOverride())
+                    {
+                        context.Writer.WritePropertyName("LocalSecondaryIndexOverride");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLocalSecondaryIndexOverrideListValue in publicRequest.LocalSecondaryIndexOverride)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = LocalSecondaryIndexMarshaller.Instance;
+                            marshaller.Marshall(publicRequestLocalSecondaryIndexOverrideListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetOnDemandThroughputOverride())
+                    {
+                        context.Writer.WritePropertyName("OnDemandThroughputOverride");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = GlobalSecondaryIndexMarshaller.Instance;
-                        marshaller.Marshall(publicRequestGlobalSecondaryIndexOverrideListValue, context);
+                        var marshaller = OnDemandThroughputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OnDemandThroughputOverride, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetLocalSecondaryIndexOverride())
-                {
-                    context.Writer.WritePropertyName("LocalSecondaryIndexOverride");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLocalSecondaryIndexOverrideListValue in publicRequest.LocalSecondaryIndexOverride)
+                    if(publicRequest.IsSetProvisionedThroughputOverride())
                     {
+                        context.Writer.WritePropertyName("ProvisionedThroughputOverride");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = LocalSecondaryIndexMarshaller.Instance;
-                        marshaller.Marshall(publicRequestLocalSecondaryIndexOverrideListValue, context);
+                        var marshaller = ProvisionedThroughputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ProvisionedThroughputOverride, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetRestoreDateTime())
+                    {
+                        context.Writer.WritePropertyName("RestoreDateTime");
+                        context.Writer.Write(publicRequest.RestoreDateTime.Value);
+                    }
+
+                    if(publicRequest.IsSetSourceTableArn())
+                    {
+                        context.Writer.WritePropertyName("SourceTableArn");
+                        context.Writer.Write(publicRequest.SourceTableArn);
+                    }
+
+                    if(publicRequest.IsSetSourceTableName())
+                    {
+                        context.Writer.WritePropertyName("SourceTableName");
+                        context.Writer.Write(publicRequest.SourceTableName);
+                    }
+
+                    if(publicRequest.IsSetSSESpecificationOverride())
+                    {
+                        context.Writer.WritePropertyName("SSESpecificationOverride");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SSESpecificationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SSESpecificationOverride, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTargetTableName())
+                    {
+                        context.Writer.WritePropertyName("TargetTableName");
+                        context.Writer.Write(publicRequest.TargetTableName);
+                    }
+
+                    if(publicRequest.IsSetUseLatestRestorableTime())
+                    {
+                        context.Writer.WritePropertyName("UseLatestRestorableTime");
+                        context.Writer.Write(publicRequest.UseLatestRestorableTime.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetOnDemandThroughputOverride())
-                {
-                    context.Writer.WritePropertyName("OnDemandThroughputOverride");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OnDemandThroughputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OnDemandThroughputOverride, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetProvisionedThroughputOverride())
-                {
-                    context.Writer.WritePropertyName("ProvisionedThroughputOverride");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ProvisionedThroughputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ProvisionedThroughputOverride, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRestoreDateTime())
-                {
-                    context.Writer.WritePropertyName("RestoreDateTime");
-                    context.Writer.Write(publicRequest.RestoreDateTime.Value);
-                }
-
-                if(publicRequest.IsSetSourceTableArn())
-                {
-                    context.Writer.WritePropertyName("SourceTableArn");
-                    context.Writer.Write(publicRequest.SourceTableArn);
-                }
-
-                if(publicRequest.IsSetSourceTableName())
-                {
-                    context.Writer.WritePropertyName("SourceTableName");
-                    context.Writer.Write(publicRequest.SourceTableName);
-                }
-
-                if(publicRequest.IsSetSSESpecificationOverride())
-                {
-                    context.Writer.WritePropertyName("SSESpecificationOverride");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SSESpecificationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SSESpecificationOverride, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTargetTableName())
-                {
-                    context.Writer.WritePropertyName("TargetTableName");
-                    context.Writer.Write(publicRequest.TargetTableName);
-                }
-
-                if(publicRequest.IsSetUseLatestRestorableTime())
-                {
-                    context.Writer.WritePropertyName("UseLatestRestorableTime");
-                    context.Writer.Write(publicRequest.UseLatestRestorableTime.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

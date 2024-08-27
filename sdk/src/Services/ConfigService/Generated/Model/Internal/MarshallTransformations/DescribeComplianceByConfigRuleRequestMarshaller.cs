@@ -63,43 +63,46 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetComplianceTypes())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ComplianceTypes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestComplianceTypesListValue in publicRequest.ComplianceTypes)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetComplianceTypes())
                     {
-                            context.Writer.Write(publicRequestComplianceTypesListValue);
+                        context.Writer.WritePropertyName("ComplianceTypes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestComplianceTypesListValue in publicRequest.ComplianceTypes)
+                        {
+                                context.Writer.Write(publicRequestComplianceTypesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetConfigRuleNames())
-                {
-                    context.Writer.WritePropertyName("ConfigRuleNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestConfigRuleNamesListValue in publicRequest.ConfigRuleNames)
+                    if(publicRequest.IsSetConfigRuleNames())
                     {
-                            context.Writer.Write(publicRequestConfigRuleNamesListValue);
+                        context.Writer.WritePropertyName("ConfigRuleNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestConfigRuleNamesListValue in publicRequest.ConfigRuleNames)
+                        {
+                                context.Writer.Write(publicRequestConfigRuleNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

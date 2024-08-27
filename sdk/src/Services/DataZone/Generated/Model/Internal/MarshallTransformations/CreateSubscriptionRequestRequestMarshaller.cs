@@ -64,64 +64,67 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 throw new AmazonDataZoneException("Request object does not have required field DomainIdentifier set");
             request.AddPathResource("{domainIdentifier}", StringUtils.FromString(publicRequest.DomainIdentifier));
             request.ResourcePath = "/v2/domains/{domainIdentifier}/subscription-requests";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetRequestReason())
-                {
-                    context.Writer.WritePropertyName("requestReason");
-                    context.Writer.Write(publicRequest.RequestReason);
-                }
-
-                if(publicRequest.IsSetSubscribedListings())
-                {
-                    context.Writer.WritePropertyName("subscribedListings");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSubscribedListingsListValue in publicRequest.SubscribedListings)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SubscribedListingInputMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSubscribedListingsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetSubscribedPrincipals())
-                {
-                    context.Writer.WritePropertyName("subscribedPrincipals");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSubscribedPrincipalsListValue in publicRequest.SubscribedPrincipals)
+                    else if(!(publicRequest.IsSetClientToken()))
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SubscribedPrincipalInputMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSubscribedPrincipalsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
                     }
-                    context.Writer.WriteArrayEnd();
+                    if(publicRequest.IsSetRequestReason())
+                    {
+                        context.Writer.WritePropertyName("requestReason");
+                        context.Writer.Write(publicRequest.RequestReason);
+                    }
+
+                    if(publicRequest.IsSetSubscribedListings())
+                    {
+                        context.Writer.WritePropertyName("subscribedListings");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSubscribedListingsListValue in publicRequest.SubscribedListings)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = SubscribedListingInputMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSubscribedListingsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSubscribedPrincipals())
+                    {
+                        context.Writer.WritePropertyName("subscribedPrincipals");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSubscribedPrincipalsListValue in publicRequest.SubscribedPrincipals)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = SubscribedPrincipalInputMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSubscribedPrincipalsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

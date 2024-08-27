@@ -61,33 +61,36 @@ namespace Amazon.KinesisVideoSignalingChannels.Model.Internal.MarshallTransforma
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v1/send-alexa-offer-to-master";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetChannelARN())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ChannelARN");
-                    context.Writer.Write(publicRequest.ChannelARN);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetChannelARN())
+                    {
+                        context.Writer.WritePropertyName("ChannelARN");
+                        context.Writer.Write(publicRequest.ChannelARN);
+                    }
+
+                    if(publicRequest.IsSetMessagePayload())
+                    {
+                        context.Writer.WritePropertyName("MessagePayload");
+                        context.Writer.Write(publicRequest.MessagePayload);
+                    }
+
+                    if(publicRequest.IsSetSenderClientId())
+                    {
+                        context.Writer.WritePropertyName("SenderClientId");
+                        context.Writer.Write(publicRequest.SenderClientId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMessagePayload())
-                {
-                    context.Writer.WritePropertyName("MessagePayload");
-                    context.Writer.Write(publicRequest.MessagePayload);
-                }
-
-                if(publicRequest.IsSetSenderClientId())
-                {
-                    context.Writer.WritePropertyName("SenderClientId");
-                    context.Writer.Write(publicRequest.SenderClientId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

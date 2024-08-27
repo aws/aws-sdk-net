@@ -61,60 +61,63 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/usage/statistics";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFilterBy())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("filterBy");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFilterByListValue in publicRequest.FilterBy)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFilterBy())
                     {
+                        context.Writer.WritePropertyName("filterBy");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFilterByListValue in publicRequest.FilterBy)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = UsageStatisticsFilterMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFilterByListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetSortBy())
+                    {
+                        context.Writer.WritePropertyName("sortBy");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = UsageStatisticsFilterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFilterByListValue, context);
+                        var marshaller = UsageStatisticsSortByMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SortBy, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTimeRange())
+                    {
+                        context.Writer.WritePropertyName("timeRange");
+                        context.Writer.Write(publicRequest.TimeRange);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetSortBy())
-                {
-                    context.Writer.WritePropertyName("sortBy");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UsageStatisticsSortByMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SortBy, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTimeRange())
-                {
-                    context.Writer.WritePropertyName("timeRange");
-                    context.Writer.Write(publicRequest.TimeRange);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

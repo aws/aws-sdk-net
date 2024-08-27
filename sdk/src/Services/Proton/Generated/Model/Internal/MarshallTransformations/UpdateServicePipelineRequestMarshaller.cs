@@ -63,45 +63,48 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeploymentType())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("deploymentType");
-                    context.Writer.Write(publicRequest.DeploymentType);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDeploymentType())
+                    {
+                        context.Writer.WritePropertyName("deploymentType");
+                        context.Writer.Write(publicRequest.DeploymentType);
+                    }
+
+                    if(publicRequest.IsSetServiceName())
+                    {
+                        context.Writer.WritePropertyName("serviceName");
+                        context.Writer.Write(publicRequest.ServiceName);
+                    }
+
+                    if(publicRequest.IsSetSpec())
+                    {
+                        context.Writer.WritePropertyName("spec");
+                        context.Writer.Write(publicRequest.Spec);
+                    }
+
+                    if(publicRequest.IsSetTemplateMajorVersion())
+                    {
+                        context.Writer.WritePropertyName("templateMajorVersion");
+                        context.Writer.Write(publicRequest.TemplateMajorVersion);
+                    }
+
+                    if(publicRequest.IsSetTemplateMinorVersion())
+                    {
+                        context.Writer.WritePropertyName("templateMinorVersion");
+                        context.Writer.Write(publicRequest.TemplateMinorVersion);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetServiceName())
-                {
-                    context.Writer.WritePropertyName("serviceName");
-                    context.Writer.Write(publicRequest.ServiceName);
-                }
-
-                if(publicRequest.IsSetSpec())
-                {
-                    context.Writer.WritePropertyName("spec");
-                    context.Writer.Write(publicRequest.Spec);
-                }
-
-                if(publicRequest.IsSetTemplateMajorVersion())
-                {
-                    context.Writer.WritePropertyName("templateMajorVersion");
-                    context.Writer.Write(publicRequest.TemplateMajorVersion);
-                }
-
-                if(publicRequest.IsSetTemplateMinorVersion())
-                {
-                    context.Writer.WritePropertyName("templateMinorVersion");
-                    context.Writer.Write(publicRequest.TemplateMinorVersion);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

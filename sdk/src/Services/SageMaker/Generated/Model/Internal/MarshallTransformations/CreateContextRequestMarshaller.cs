@@ -63,74 +63,77 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetContextName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ContextName");
-                    context.Writer.Write(publicRequest.ContextName);
-                }
-
-                if(publicRequest.IsSetContextType())
-                {
-                    context.Writer.WritePropertyName("ContextType");
-                    context.Writer.Write(publicRequest.ContextType);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetProperties())
-                {
-                    context.Writer.WritePropertyName("Properties");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestPropertiesKvp in publicRequest.Properties)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetContextName())
                     {
-                        context.Writer.WritePropertyName(publicRequestPropertiesKvp.Key);
-                        var publicRequestPropertiesValue = publicRequestPropertiesKvp.Value;
-
-                            context.Writer.Write(publicRequestPropertiesValue);
+                        context.Writer.WritePropertyName("ContextName");
+                        context.Writer.Write(publicRequest.ContextName);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetSource())
-                {
-                    context.Writer.WritePropertyName("Source");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ContextSourceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Source, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetContextType())
                     {
+                        context.Writer.WritePropertyName("ContextType");
+                        context.Writer.Write(publicRequest.ContextType);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetProperties())
+                    {
+                        context.Writer.WritePropertyName("Properties");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestPropertiesKvp in publicRequest.Properties)
+                        {
+                            context.Writer.WritePropertyName(publicRequestPropertiesKvp.Key);
+                            var publicRequestPropertiesValue = publicRequestPropertiesKvp.Value;
+
+                                context.Writer.Write(publicRequestPropertiesValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSource())
+                    {
+                        context.Writer.WritePropertyName("Source");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = ContextSourceMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Source, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

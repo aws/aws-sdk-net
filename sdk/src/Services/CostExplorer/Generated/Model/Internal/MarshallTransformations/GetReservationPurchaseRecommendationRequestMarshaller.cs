@@ -63,85 +63,88 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccountId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AccountId");
-                    context.Writer.Write(publicRequest.AccountId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccountId())
+                    {
+                        context.Writer.WritePropertyName("AccountId");
+                        context.Writer.Write(publicRequest.AccountId);
+                    }
+
+                    if(publicRequest.IsSetAccountScope())
+                    {
+                        context.Writer.WritePropertyName("AccountScope");
+                        context.Writer.Write(publicRequest.AccountScope);
+                    }
+
+                    if(publicRequest.IsSetFilter())
+                    {
+                        context.Writer.WritePropertyName("Filter");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ExpressionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Filter, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetLookbackPeriodInDays())
+                    {
+                        context.Writer.WritePropertyName("LookbackPeriodInDays");
+                        context.Writer.Write(publicRequest.LookbackPeriodInDays);
+                    }
+
+                    if(publicRequest.IsSetNextPageToken())
+                    {
+                        context.Writer.WritePropertyName("NextPageToken");
+                        context.Writer.Write(publicRequest.NextPageToken);
+                    }
+
+                    if(publicRequest.IsSetPageSize())
+                    {
+                        context.Writer.WritePropertyName("PageSize");
+                        context.Writer.Write(publicRequest.PageSize.Value);
+                    }
+
+                    if(publicRequest.IsSetPaymentOption())
+                    {
+                        context.Writer.WritePropertyName("PaymentOption");
+                        context.Writer.Write(publicRequest.PaymentOption);
+                    }
+
+                    if(publicRequest.IsSetService())
+                    {
+                        context.Writer.WritePropertyName("Service");
+                        context.Writer.Write(publicRequest.Service);
+                    }
+
+                    if(publicRequest.IsSetServiceSpecification())
+                    {
+                        context.Writer.WritePropertyName("ServiceSpecification");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ServiceSpecificationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ServiceSpecification, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTermInYears())
+                    {
+                        context.Writer.WritePropertyName("TermInYears");
+                        context.Writer.Write(publicRequest.TermInYears);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetAccountScope())
-                {
-                    context.Writer.WritePropertyName("AccountScope");
-                    context.Writer.Write(publicRequest.AccountScope);
-                }
-
-                if(publicRequest.IsSetFilter())
-                {
-                    context.Writer.WritePropertyName("Filter");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ExpressionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Filter, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetLookbackPeriodInDays())
-                {
-                    context.Writer.WritePropertyName("LookbackPeriodInDays");
-                    context.Writer.Write(publicRequest.LookbackPeriodInDays);
-                }
-
-                if(publicRequest.IsSetNextPageToken())
-                {
-                    context.Writer.WritePropertyName("NextPageToken");
-                    context.Writer.Write(publicRequest.NextPageToken);
-                }
-
-                if(publicRequest.IsSetPageSize())
-                {
-                    context.Writer.WritePropertyName("PageSize");
-                    context.Writer.Write(publicRequest.PageSize.Value);
-                }
-
-                if(publicRequest.IsSetPaymentOption())
-                {
-                    context.Writer.WritePropertyName("PaymentOption");
-                    context.Writer.Write(publicRequest.PaymentOption);
-                }
-
-                if(publicRequest.IsSetService())
-                {
-                    context.Writer.WritePropertyName("Service");
-                    context.Writer.Write(publicRequest.Service);
-                }
-
-                if(publicRequest.IsSetServiceSpecification())
-                {
-                    context.Writer.WritePropertyName("ServiceSpecification");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ServiceSpecificationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ServiceSpecification, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTermInYears())
-                {
-                    context.Writer.WritePropertyName("TermInYears");
-                    context.Writer.Write(publicRequest.TermInYears);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

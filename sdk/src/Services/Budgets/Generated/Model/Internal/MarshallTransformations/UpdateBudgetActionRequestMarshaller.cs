@@ -63,89 +63,92 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccountId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AccountId");
-                    context.Writer.Write(publicRequest.AccountId);
-                }
-
-                if(publicRequest.IsSetActionId())
-                {
-                    context.Writer.WritePropertyName("ActionId");
-                    context.Writer.Write(publicRequest.ActionId);
-                }
-
-                if(publicRequest.IsSetActionThreshold())
-                {
-                    context.Writer.WritePropertyName("ActionThreshold");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ActionThresholdMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ActionThreshold, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetApprovalModel())
-                {
-                    context.Writer.WritePropertyName("ApprovalModel");
-                    context.Writer.Write(publicRequest.ApprovalModel);
-                }
-
-                if(publicRequest.IsSetBudgetName())
-                {
-                    context.Writer.WritePropertyName("BudgetName");
-                    context.Writer.Write(publicRequest.BudgetName);
-                }
-
-                if(publicRequest.IsSetDefinition())
-                {
-                    context.Writer.WritePropertyName("Definition");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DefinitionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Definition, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetExecutionRoleArn())
-                {
-                    context.Writer.WritePropertyName("ExecutionRoleArn");
-                    context.Writer.Write(publicRequest.ExecutionRoleArn);
-                }
-
-                if(publicRequest.IsSetNotificationType())
-                {
-                    context.Writer.WritePropertyName("NotificationType");
-                    context.Writer.Write(publicRequest.NotificationType);
-                }
-
-                if(publicRequest.IsSetSubscribers())
-                {
-                    context.Writer.WritePropertyName("Subscribers");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSubscribersListValue in publicRequest.Subscribers)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccountId())
                     {
+                        context.Writer.WritePropertyName("AccountId");
+                        context.Writer.Write(publicRequest.AccountId);
+                    }
+
+                    if(publicRequest.IsSetActionId())
+                    {
+                        context.Writer.WritePropertyName("ActionId");
+                        context.Writer.Write(publicRequest.ActionId);
+                    }
+
+                    if(publicRequest.IsSetActionThreshold())
+                    {
+                        context.Writer.WritePropertyName("ActionThreshold");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = SubscriberMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSubscribersListValue, context);
+                        var marshaller = ActionThresholdMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ActionThreshold, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetApprovalModel())
+                    {
+                        context.Writer.WritePropertyName("ApprovalModel");
+                        context.Writer.Write(publicRequest.ApprovalModel);
+                    }
+
+                    if(publicRequest.IsSetBudgetName())
+                    {
+                        context.Writer.WritePropertyName("BudgetName");
+                        context.Writer.Write(publicRequest.BudgetName);
+                    }
+
+                    if(publicRequest.IsSetDefinition())
+                    {
+                        context.Writer.WritePropertyName("Definition");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DefinitionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Definition, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetExecutionRoleArn())
+                    {
+                        context.Writer.WritePropertyName("ExecutionRoleArn");
+                        context.Writer.Write(publicRequest.ExecutionRoleArn);
+                    }
+
+                    if(publicRequest.IsSetNotificationType())
+                    {
+                        context.Writer.WritePropertyName("NotificationType");
+                        context.Writer.Write(publicRequest.NotificationType);
+                    }
+
+                    if(publicRequest.IsSetSubscribers())
+                    {
+                        context.Writer.WritePropertyName("Subscribers");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSubscribersListValue in publicRequest.Subscribers)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = SubscriberMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSubscribersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

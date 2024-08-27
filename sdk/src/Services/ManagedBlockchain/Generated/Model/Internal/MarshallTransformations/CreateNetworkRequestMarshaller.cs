@@ -61,97 +61,100 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/networks";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientRequestToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetFramework())
-                {
-                    context.Writer.WritePropertyName("Framework");
-                    context.Writer.Write(publicRequest.Framework);
-                }
-
-                if(publicRequest.IsSetFrameworkConfiguration())
-                {
-                    context.Writer.WritePropertyName("FrameworkConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = NetworkFrameworkConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.FrameworkConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetFrameworkVersion())
-                {
-                    context.Writer.WritePropertyName("FrameworkVersion");
-                    context.Writer.Write(publicRequest.FrameworkVersion);
-                }
-
-                if(publicRequest.IsSetMemberConfiguration())
-                {
-                    context.Writer.WritePropertyName("MemberConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MemberConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.MemberConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientRequestToken())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(publicRequest.ClientRequestToken);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    else if(!(publicRequest.IsSetClientRequestToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetFramework())
+                    {
+                        context.Writer.WritePropertyName("Framework");
+                        context.Writer.Write(publicRequest.Framework);
+                    }
+
+                    if(publicRequest.IsSetFrameworkConfiguration())
+                    {
+                        context.Writer.WritePropertyName("FrameworkConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = NetworkFrameworkConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.FrameworkConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetFrameworkVersion())
+                    {
+                        context.Writer.WritePropertyName("FrameworkVersion");
+                        context.Writer.Write(publicRequest.FrameworkVersion);
+                    }
+
+                    if(publicRequest.IsSetMemberConfiguration())
+                    {
+                        context.Writer.WritePropertyName("MemberConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MemberConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.MemberConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetVotingPolicy())
+                    {
+                        context.Writer.WritePropertyName("VotingPolicy");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = VotingPolicyMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.VotingPolicy, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetVotingPolicy())
-                {
-                    context.Writer.WritePropertyName("VotingPolicy");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = VotingPolicyMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.VotingPolicy, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

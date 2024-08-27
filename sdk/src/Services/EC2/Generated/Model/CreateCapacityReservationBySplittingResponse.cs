@@ -63,9 +63,9 @@ namespace Amazon.EC2.Model
         /// in the source Capacity Reservation was reduced by this amount. 
         /// </para>
         /// </summary>
-        public int InstanceCount
+        public int? InstanceCount
         {
-            get { return this._instanceCount.GetValueOrDefault(); }
+            get { return this._instanceCount; }
             set { this._instanceCount = value; }
         }
 

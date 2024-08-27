@@ -63,70 +63,73 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetProfilerConfig())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ProfilerConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ProfilerConfigForUpdateMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ProfilerConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetProfilerRuleConfigurations())
-                {
-                    context.Writer.WritePropertyName("ProfilerRuleConfigurations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestProfilerRuleConfigurationsListValue in publicRequest.ProfilerRuleConfigurations)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetProfilerConfig())
                     {
+                        context.Writer.WritePropertyName("ProfilerConfig");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = ProfilerRuleConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestProfilerRuleConfigurationsListValue, context);
+                        var marshaller = ProfilerConfigForUpdateMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ProfilerConfig, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetProfilerRuleConfigurations())
+                    {
+                        context.Writer.WritePropertyName("ProfilerRuleConfigurations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestProfilerRuleConfigurationsListValue in publicRequest.ProfilerRuleConfigurations)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ProfilerRuleConfigurationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestProfilerRuleConfigurationsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetRemoteDebugConfig())
+                    {
+                        context.Writer.WritePropertyName("RemoteDebugConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RemoteDebugConfigForUpdateMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RemoteDebugConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetResourceConfig())
+                    {
+                        context.Writer.WritePropertyName("ResourceConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ResourceConfigForUpdateMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ResourceConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTrainingJobName())
+                    {
+                        context.Writer.WritePropertyName("TrainingJobName");
+                        context.Writer.Write(publicRequest.TrainingJobName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRemoteDebugConfig())
-                {
-                    context.Writer.WritePropertyName("RemoteDebugConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RemoteDebugConfigForUpdateMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RemoteDebugConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetResourceConfig())
-                {
-                    context.Writer.WritePropertyName("ResourceConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ResourceConfigForUpdateMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ResourceConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTrainingJobName())
-                {
-                    context.Writer.WritePropertyName("TrainingJobName");
-                    context.Writer.Write(publicRequest.TrainingJobName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

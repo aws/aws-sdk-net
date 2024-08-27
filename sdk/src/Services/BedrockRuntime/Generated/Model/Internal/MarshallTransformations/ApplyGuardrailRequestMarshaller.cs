@@ -67,37 +67,40 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                 throw new AmazonBedrockRuntimeException("Request object does not have required field GuardrailVersion set");
             request.AddPathResource("{guardrailVersion}", StringUtils.FromString(publicRequest.GuardrailVersion));
             request.ResourcePath = "/guardrail/{guardrailIdentifier}/version/{guardrailVersion}/apply";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetContent())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("content");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestContentListValue in publicRequest.Content)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetContent())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("content");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestContentListValue in publicRequest.Content)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = GuardrailContentBlockMarshaller.Instance;
-                        marshaller.Marshall(publicRequestContentListValue, context);
+                            var marshaller = GuardrailContentBlockMarshaller.Instance;
+                            marshaller.Marshall(publicRequestContentListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetSource())
+                    {
+                        context.Writer.WritePropertyName("source");
+                        context.Writer.Write(publicRequest.Source);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSource())
-                {
-                    context.Writer.WritePropertyName("source");
-                    context.Writer.Write(publicRequest.Source);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

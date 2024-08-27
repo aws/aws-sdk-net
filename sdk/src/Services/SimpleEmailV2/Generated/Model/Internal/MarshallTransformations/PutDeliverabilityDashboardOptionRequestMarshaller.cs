@@ -61,37 +61,40 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/v2/email/deliverability-dashboard";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDashboardEnabled())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DashboardEnabled");
-                    context.Writer.Write(publicRequest.DashboardEnabled.Value);
-                }
-
-                if(publicRequest.IsSetSubscribedDomains())
-                {
-                    context.Writer.WritePropertyName("SubscribedDomains");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSubscribedDomainsListValue in publicRequest.SubscribedDomains)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDashboardEnabled())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DomainDeliverabilityTrackingOptionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSubscribedDomainsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("DashboardEnabled");
+                        context.Writer.Write(publicRequest.DashboardEnabled.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetSubscribedDomains())
+                    {
+                        context.Writer.WritePropertyName("SubscribedDomains");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSubscribedDomainsListValue in publicRequest.SubscribedDomains)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = DomainDeliverabilityTrackingOptionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSubscribedDomainsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

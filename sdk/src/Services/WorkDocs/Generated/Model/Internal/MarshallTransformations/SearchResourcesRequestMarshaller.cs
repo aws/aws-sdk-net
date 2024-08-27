@@ -61,88 +61,91 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/api/v1/search";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAdditionalResponseFields())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AdditionalResponseFields");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAdditionalResponseFieldsListValue in publicRequest.AdditionalResponseFields)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAdditionalResponseFields())
                     {
-                            context.Writer.Write(publicRequestAdditionalResponseFieldsListValue);
+                        context.Writer.WritePropertyName("AdditionalResponseFields");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAdditionalResponseFieldsListValue in publicRequest.AdditionalResponseFields)
+                        {
+                                context.Writer.Write(publicRequestAdditionalResponseFieldsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetFilters())
-                {
-                    context.Writer.WritePropertyName("Filters");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = FiltersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Filters, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetLimit())
-                {
-                    context.Writer.WritePropertyName("Limit");
-                    context.Writer.Write(publicRequest.Limit.Value);
-                }
-
-                if(publicRequest.IsSetMarker())
-                {
-                    context.Writer.WritePropertyName("Marker");
-                    context.Writer.Write(publicRequest.Marker);
-                }
-
-                if(publicRequest.IsSetOrderBy())
-                {
-                    context.Writer.WritePropertyName("OrderBy");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestOrderByListValue in publicRequest.OrderBy)
+                    if(publicRequest.IsSetFilters())
                     {
+                        context.Writer.WritePropertyName("Filters");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = SearchSortResultMarshaller.Instance;
-                        marshaller.Marshall(publicRequestOrderByListValue, context);
+                        var marshaller = FiltersMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Filters, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetOrganizationId())
-                {
-                    context.Writer.WritePropertyName("OrganizationId");
-                    context.Writer.Write(publicRequest.OrganizationId);
-                }
-
-                if(publicRequest.IsSetQueryScopes())
-                {
-                    context.Writer.WritePropertyName("QueryScopes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestQueryScopesListValue in publicRequest.QueryScopes)
+                    if(publicRequest.IsSetLimit())
                     {
-                            context.Writer.Write(publicRequestQueryScopesListValue);
+                        context.Writer.WritePropertyName("Limit");
+                        context.Writer.Write(publicRequest.Limit.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetMarker())
+                    {
+                        context.Writer.WritePropertyName("Marker");
+                        context.Writer.Write(publicRequest.Marker);
+                    }
+
+                    if(publicRequest.IsSetOrderBy())
+                    {
+                        context.Writer.WritePropertyName("OrderBy");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestOrderByListValue in publicRequest.OrderBy)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = SearchSortResultMarshaller.Instance;
+                            marshaller.Marshall(publicRequestOrderByListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetOrganizationId())
+                    {
+                        context.Writer.WritePropertyName("OrganizationId");
+                        context.Writer.Write(publicRequest.OrganizationId);
+                    }
+
+                    if(publicRequest.IsSetQueryScopes())
+                    {
+                        context.Writer.WritePropertyName("QueryScopes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestQueryScopesListValue in publicRequest.QueryScopes)
+                        {
+                                context.Writer.Write(publicRequestQueryScopesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetQueryText())
+                    {
+                        context.Writer.WritePropertyName("QueryText");
+                        context.Writer.Write(publicRequest.QueryText);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetQueryText())
-                {
-                    context.Writer.WritePropertyName("QueryText");
-                    context.Writer.Write(publicRequest.QueryText);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

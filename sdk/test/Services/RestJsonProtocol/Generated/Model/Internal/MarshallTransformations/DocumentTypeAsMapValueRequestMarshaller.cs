@@ -61,29 +61,32 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/DocumentTypeAsMapValue";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDocValuedMap())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("docValuedMap");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestDocValuedMapKvp in publicRequest.DocValuedMap)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDocValuedMap())
                     {
-                        context.Writer.WritePropertyName(publicRequestDocValuedMapKvp.Key);
-                        var publicRequestDocValuedMapValue = publicRequestDocValuedMapKvp.Value;
+                        context.Writer.WritePropertyName("docValuedMap");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestDocValuedMapKvp in publicRequest.DocValuedMap)
+                        {
+                            context.Writer.WritePropertyName(publicRequestDocValuedMapKvp.Key);
+                            var publicRequestDocValuedMapValue = publicRequestDocValuedMapKvp.Value;
 
-                        Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, publicRequestDocValuedMapValue);
+                            Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, publicRequestDocValuedMapValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -50,9 +50,9 @@ namespace Amazon.ECS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -93,9 +93,9 @@ namespace Amazon.ECS.Model
         /// must run for 300 seconds before it can be restarted.
         /// </para>
         /// </summary>
-        public int RestartAttemptPeriod
+        public int? RestartAttemptPeriod
         {
-            get { return this._restartAttemptPeriod.GetValueOrDefault(); }
+            get { return this._restartAttemptPeriod; }
             set { this._restartAttemptPeriod = value; }
         }
 

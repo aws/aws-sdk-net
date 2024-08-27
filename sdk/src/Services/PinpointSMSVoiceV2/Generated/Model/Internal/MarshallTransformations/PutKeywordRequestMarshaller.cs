@@ -63,39 +63,42 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetKeyword())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Keyword");
-                    context.Writer.Write(publicRequest.Keyword);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetKeyword())
+                    {
+                        context.Writer.WritePropertyName("Keyword");
+                        context.Writer.Write(publicRequest.Keyword);
+                    }
+
+                    if(publicRequest.IsSetKeywordAction())
+                    {
+                        context.Writer.WritePropertyName("KeywordAction");
+                        context.Writer.Write(publicRequest.KeywordAction);
+                    }
+
+                    if(publicRequest.IsSetKeywordMessage())
+                    {
+                        context.Writer.WritePropertyName("KeywordMessage");
+                        context.Writer.Write(publicRequest.KeywordMessage);
+                    }
+
+                    if(publicRequest.IsSetOriginationIdentity())
+                    {
+                        context.Writer.WritePropertyName("OriginationIdentity");
+                        context.Writer.Write(publicRequest.OriginationIdentity);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetKeywordAction())
-                {
-                    context.Writer.WritePropertyName("KeywordAction");
-                    context.Writer.Write(publicRequest.KeywordAction);
-                }
-
-                if(publicRequest.IsSetKeywordMessage())
-                {
-                    context.Writer.WritePropertyName("KeywordMessage");
-                    context.Writer.Write(publicRequest.KeywordMessage);
-                }
-
-                if(publicRequest.IsSetOriginationIdentity())
-                {
-                    context.Writer.WritePropertyName("OriginationIdentity");
-                    context.Writer.Write(publicRequest.OriginationIdentity);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

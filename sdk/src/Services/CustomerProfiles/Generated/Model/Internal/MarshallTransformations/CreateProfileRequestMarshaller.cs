@@ -64,181 +64,184 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 throw new AmazonCustomerProfilesException("Request object does not have required field DomainName set");
             request.AddPathResource("{DomainName}", StringUtils.FromString(publicRequest.DomainName));
             request.ResourcePath = "/domains/{DomainName}/profiles";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccountNumber())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AccountNumber");
-                    context.Writer.Write(publicRequest.AccountNumber);
-                }
-
-                if(publicRequest.IsSetAdditionalInformation())
-                {
-                    context.Writer.WritePropertyName("AdditionalInformation");
-                    context.Writer.Write(publicRequest.AdditionalInformation);
-                }
-
-                if(publicRequest.IsSetAddress())
-                {
-                    context.Writer.WritePropertyName("Address");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AddressMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Address, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetAttributes())
-                {
-                    context.Writer.WritePropertyName("Attributes");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestAttributesKvp in publicRequest.Attributes)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccountNumber())
                     {
-                        context.Writer.WritePropertyName(publicRequestAttributesKvp.Key);
-                        var publicRequestAttributesValue = publicRequestAttributesKvp.Value;
-
-                            context.Writer.Write(publicRequestAttributesValue);
+                        context.Writer.WritePropertyName("AccountNumber");
+                        context.Writer.Write(publicRequest.AccountNumber);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetAdditionalInformation())
+                    {
+                        context.Writer.WritePropertyName("AdditionalInformation");
+                        context.Writer.Write(publicRequest.AdditionalInformation);
+                    }
+
+                    if(publicRequest.IsSetAddress())
+                    {
+                        context.Writer.WritePropertyName("Address");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AddressMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Address, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetAttributes())
+                    {
+                        context.Writer.WritePropertyName("Attributes");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestAttributesKvp in publicRequest.Attributes)
+                        {
+                            context.Writer.WritePropertyName(publicRequestAttributesKvp.Key);
+                            var publicRequestAttributesValue = publicRequestAttributesKvp.Value;
+
+                                context.Writer.Write(publicRequestAttributesValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetBillingAddress())
+                    {
+                        context.Writer.WritePropertyName("BillingAddress");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AddressMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.BillingAddress, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetBirthDate())
+                    {
+                        context.Writer.WritePropertyName("BirthDate");
+                        context.Writer.Write(publicRequest.BirthDate);
+                    }
+
+                    if(publicRequest.IsSetBusinessEmailAddress())
+                    {
+                        context.Writer.WritePropertyName("BusinessEmailAddress");
+                        context.Writer.Write(publicRequest.BusinessEmailAddress);
+                    }
+
+                    if(publicRequest.IsSetBusinessName())
+                    {
+                        context.Writer.WritePropertyName("BusinessName");
+                        context.Writer.Write(publicRequest.BusinessName);
+                    }
+
+                    if(publicRequest.IsSetBusinessPhoneNumber())
+                    {
+                        context.Writer.WritePropertyName("BusinessPhoneNumber");
+                        context.Writer.Write(publicRequest.BusinessPhoneNumber);
+                    }
+
+                    if(publicRequest.IsSetEmailAddress())
+                    {
+                        context.Writer.WritePropertyName("EmailAddress");
+                        context.Writer.Write(publicRequest.EmailAddress);
+                    }
+
+                    if(publicRequest.IsSetFirstName())
+                    {
+                        context.Writer.WritePropertyName("FirstName");
+                        context.Writer.Write(publicRequest.FirstName);
+                    }
+
+                    if(publicRequest.IsSetGender())
+                    {
+                        context.Writer.WritePropertyName("Gender");
+                        context.Writer.Write(publicRequest.Gender);
+                    }
+
+                    if(publicRequest.IsSetGenderString())
+                    {
+                        context.Writer.WritePropertyName("GenderString");
+                        context.Writer.Write(publicRequest.GenderString);
+                    }
+
+                    if(publicRequest.IsSetHomePhoneNumber())
+                    {
+                        context.Writer.WritePropertyName("HomePhoneNumber");
+                        context.Writer.Write(publicRequest.HomePhoneNumber);
+                    }
+
+                    if(publicRequest.IsSetLastName())
+                    {
+                        context.Writer.WritePropertyName("LastName");
+                        context.Writer.Write(publicRequest.LastName);
+                    }
+
+                    if(publicRequest.IsSetMailingAddress())
+                    {
+                        context.Writer.WritePropertyName("MailingAddress");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AddressMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.MailingAddress, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetMiddleName())
+                    {
+                        context.Writer.WritePropertyName("MiddleName");
+                        context.Writer.Write(publicRequest.MiddleName);
+                    }
+
+                    if(publicRequest.IsSetMobilePhoneNumber())
+                    {
+                        context.Writer.WritePropertyName("MobilePhoneNumber");
+                        context.Writer.Write(publicRequest.MobilePhoneNumber);
+                    }
+
+                    if(publicRequest.IsSetPartyType())
+                    {
+                        context.Writer.WritePropertyName("PartyType");
+                        context.Writer.Write(publicRequest.PartyType);
+                    }
+
+                    if(publicRequest.IsSetPartyTypeString())
+                    {
+                        context.Writer.WritePropertyName("PartyTypeString");
+                        context.Writer.Write(publicRequest.PartyTypeString);
+                    }
+
+                    if(publicRequest.IsSetPersonalEmailAddress())
+                    {
+                        context.Writer.WritePropertyName("PersonalEmailAddress");
+                        context.Writer.Write(publicRequest.PersonalEmailAddress);
+                    }
+
+                    if(publicRequest.IsSetPhoneNumber())
+                    {
+                        context.Writer.WritePropertyName("PhoneNumber");
+                        context.Writer.Write(publicRequest.PhoneNumber);
+                    }
+
+                    if(publicRequest.IsSetShippingAddress())
+                    {
+                        context.Writer.WritePropertyName("ShippingAddress");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AddressMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ShippingAddress, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetBillingAddress())
-                {
-                    context.Writer.WritePropertyName("BillingAddress");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AddressMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.BillingAddress, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetBirthDate())
-                {
-                    context.Writer.WritePropertyName("BirthDate");
-                    context.Writer.Write(publicRequest.BirthDate);
-                }
-
-                if(publicRequest.IsSetBusinessEmailAddress())
-                {
-                    context.Writer.WritePropertyName("BusinessEmailAddress");
-                    context.Writer.Write(publicRequest.BusinessEmailAddress);
-                }
-
-                if(publicRequest.IsSetBusinessName())
-                {
-                    context.Writer.WritePropertyName("BusinessName");
-                    context.Writer.Write(publicRequest.BusinessName);
-                }
-
-                if(publicRequest.IsSetBusinessPhoneNumber())
-                {
-                    context.Writer.WritePropertyName("BusinessPhoneNumber");
-                    context.Writer.Write(publicRequest.BusinessPhoneNumber);
-                }
-
-                if(publicRequest.IsSetEmailAddress())
-                {
-                    context.Writer.WritePropertyName("EmailAddress");
-                    context.Writer.Write(publicRequest.EmailAddress);
-                }
-
-                if(publicRequest.IsSetFirstName())
-                {
-                    context.Writer.WritePropertyName("FirstName");
-                    context.Writer.Write(publicRequest.FirstName);
-                }
-
-                if(publicRequest.IsSetGender())
-                {
-                    context.Writer.WritePropertyName("Gender");
-                    context.Writer.Write(publicRequest.Gender);
-                }
-
-                if(publicRequest.IsSetGenderString())
-                {
-                    context.Writer.WritePropertyName("GenderString");
-                    context.Writer.Write(publicRequest.GenderString);
-                }
-
-                if(publicRequest.IsSetHomePhoneNumber())
-                {
-                    context.Writer.WritePropertyName("HomePhoneNumber");
-                    context.Writer.Write(publicRequest.HomePhoneNumber);
-                }
-
-                if(publicRequest.IsSetLastName())
-                {
-                    context.Writer.WritePropertyName("LastName");
-                    context.Writer.Write(publicRequest.LastName);
-                }
-
-                if(publicRequest.IsSetMailingAddress())
-                {
-                    context.Writer.WritePropertyName("MailingAddress");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AddressMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.MailingAddress, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMiddleName())
-                {
-                    context.Writer.WritePropertyName("MiddleName");
-                    context.Writer.Write(publicRequest.MiddleName);
-                }
-
-                if(publicRequest.IsSetMobilePhoneNumber())
-                {
-                    context.Writer.WritePropertyName("MobilePhoneNumber");
-                    context.Writer.Write(publicRequest.MobilePhoneNumber);
-                }
-
-                if(publicRequest.IsSetPartyType())
-                {
-                    context.Writer.WritePropertyName("PartyType");
-                    context.Writer.Write(publicRequest.PartyType);
-                }
-
-                if(publicRequest.IsSetPartyTypeString())
-                {
-                    context.Writer.WritePropertyName("PartyTypeString");
-                    context.Writer.Write(publicRequest.PartyTypeString);
-                }
-
-                if(publicRequest.IsSetPersonalEmailAddress())
-                {
-                    context.Writer.WritePropertyName("PersonalEmailAddress");
-                    context.Writer.Write(publicRequest.PersonalEmailAddress);
-                }
-
-                if(publicRequest.IsSetPhoneNumber())
-                {
-                    context.Writer.WritePropertyName("PhoneNumber");
-                    context.Writer.Write(publicRequest.PhoneNumber);
-                }
-
-                if(publicRequest.IsSetShippingAddress())
-                {
-                    context.Writer.WritePropertyName("ShippingAddress");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AddressMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ShippingAddress, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

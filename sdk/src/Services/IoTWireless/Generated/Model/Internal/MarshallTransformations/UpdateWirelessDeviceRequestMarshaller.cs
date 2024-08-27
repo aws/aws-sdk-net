@@ -64,50 +64,53 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 throw new AmazonIoTWirelessException("Request object does not have required field Id set");
             request.AddPathResource("{Id}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = "/wireless-devices/{Id}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetDestinationName())
+                    {
+                        context.Writer.WritePropertyName("DestinationName");
+                        context.Writer.Write(publicRequest.DestinationName);
+                    }
+
+                    if(publicRequest.IsSetLoRaWAN())
+                    {
+                        context.Writer.WritePropertyName("LoRaWAN");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LoRaWANUpdateDeviceMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.LoRaWAN, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetPositioning())
+                    {
+                        context.Writer.WritePropertyName("Positioning");
+                        context.Writer.Write(publicRequest.Positioning);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDestinationName())
-                {
-                    context.Writer.WritePropertyName("DestinationName");
-                    context.Writer.Write(publicRequest.DestinationName);
-                }
-
-                if(publicRequest.IsSetLoRaWAN())
-                {
-                    context.Writer.WritePropertyName("LoRaWAN");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LoRaWANUpdateDeviceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LoRaWAN, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetPositioning())
-                {
-                    context.Writer.WritePropertyName("Positioning");
-                    context.Writer.Write(publicRequest.Positioning);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

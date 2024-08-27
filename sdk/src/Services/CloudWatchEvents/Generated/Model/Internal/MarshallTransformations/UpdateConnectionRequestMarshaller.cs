@@ -63,44 +63,47 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAuthorizationType())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AuthorizationType");
-                    context.Writer.Write(publicRequest.AuthorizationType);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAuthorizationType())
+                    {
+                        context.Writer.WritePropertyName("AuthorizationType");
+                        context.Writer.Write(publicRequest.AuthorizationType);
+                    }
+
+                    if(publicRequest.IsSetAuthParameters())
+                    {
+                        context.Writer.WritePropertyName("AuthParameters");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = UpdateConnectionAuthRequestParametersMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AuthParameters, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetAuthParameters())
-                {
-                    context.Writer.WritePropertyName("AuthParameters");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UpdateConnectionAuthRequestParametersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AuthParameters, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

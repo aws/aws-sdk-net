@@ -63,41 +63,44 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMLModelId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("MLModelId");
-                    context.Writer.Write(publicRequest.MLModelId);
-                }
-
-                if(publicRequest.IsSetPredictEndpoint())
-                {
-                    context.Writer.WritePropertyName("PredictEndpoint");
-                    context.Writer.Write(publicRequest.PredictEndpoint);
-                }
-
-                if(publicRequest.IsSetRecord())
-                {
-                    context.Writer.WritePropertyName("Record");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestRecordKvp in publicRequest.Record)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMLModelId())
                     {
-                        context.Writer.WritePropertyName(publicRequestRecordKvp.Key);
-                        var publicRequestRecordValue = publicRequestRecordKvp.Value;
-
-                            context.Writer.Write(publicRequestRecordValue);
+                        context.Writer.WritePropertyName("MLModelId");
+                        context.Writer.Write(publicRequest.MLModelId);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetPredictEndpoint())
+                    {
+                        context.Writer.WritePropertyName("PredictEndpoint");
+                        context.Writer.Write(publicRequest.PredictEndpoint);
+                    }
+
+                    if(publicRequest.IsSetRecord())
+                    {
+                        context.Writer.WritePropertyName("Record");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestRecordKvp in publicRequest.Record)
+                        {
+                            context.Writer.WritePropertyName(publicRequestRecordKvp.Key);
+                            var publicRequestRecordValue = publicRequestRecordKvp.Value;
+
+                                context.Writer.Write(publicRequestRecordValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

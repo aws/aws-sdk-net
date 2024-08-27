@@ -63,75 +63,78 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetEncrypted())
+                    {
+                        context.Writer.WritePropertyName("encrypted");
+                        context.Writer.Write(publicRequest.Encrypted.Value);
+                    }
+
+                    if(publicRequest.IsSetFrequency())
+                    {
+                        context.Writer.WritePropertyName("frequency");
+                        context.Writer.Write(publicRequest.Frequency.Value);
+                    }
+
+                    if(publicRequest.IsSetKmsKeyId())
+                    {
+                        context.Writer.WritePropertyName("kmsKeyId");
+                        context.Writer.Write(publicRequest.KmsKeyId);
+                    }
+
+                    if(publicRequest.IsSetLicenseType())
+                    {
+                        context.Writer.WritePropertyName("licenseType");
+                        context.Writer.Write(publicRequest.LicenseType);
+                    }
+
+                    if(publicRequest.IsSetNumberOfRecentAmisToKeep())
+                    {
+                        context.Writer.WritePropertyName("numberOfRecentAmisToKeep");
+                        context.Writer.Write(publicRequest.NumberOfRecentAmisToKeep.Value);
+                    }
+
+                    if(publicRequest.IsSetRoleName())
+                    {
+                        context.Writer.WritePropertyName("roleName");
+                        context.Writer.Write(publicRequest.RoleName);
+                    }
+
+                    if(publicRequest.IsSetRunOnce())
+                    {
+                        context.Writer.WritePropertyName("runOnce");
+                        context.Writer.Write(publicRequest.RunOnce.Value);
+                    }
+
+                    if(publicRequest.IsSetSeedReplicationTime())
+                    {
+                        context.Writer.WritePropertyName("seedReplicationTime");
+                        context.Writer.Write(publicRequest.SeedReplicationTime.Value);
+                    }
+
+                    if(publicRequest.IsSetServerId())
+                    {
+                        context.Writer.WritePropertyName("serverId");
+                        context.Writer.Write(publicRequest.ServerId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEncrypted())
-                {
-                    context.Writer.WritePropertyName("encrypted");
-                    context.Writer.Write(publicRequest.Encrypted.Value);
-                }
-
-                if(publicRequest.IsSetFrequency())
-                {
-                    context.Writer.WritePropertyName("frequency");
-                    context.Writer.Write(publicRequest.Frequency.Value);
-                }
-
-                if(publicRequest.IsSetKmsKeyId())
-                {
-                    context.Writer.WritePropertyName("kmsKeyId");
-                    context.Writer.Write(publicRequest.KmsKeyId);
-                }
-
-                if(publicRequest.IsSetLicenseType())
-                {
-                    context.Writer.WritePropertyName("licenseType");
-                    context.Writer.Write(publicRequest.LicenseType);
-                }
-
-                if(publicRequest.IsSetNumberOfRecentAmisToKeep())
-                {
-                    context.Writer.WritePropertyName("numberOfRecentAmisToKeep");
-                    context.Writer.Write(publicRequest.NumberOfRecentAmisToKeep.Value);
-                }
-
-                if(publicRequest.IsSetRoleName())
-                {
-                    context.Writer.WritePropertyName("roleName");
-                    context.Writer.Write(publicRequest.RoleName);
-                }
-
-                if(publicRequest.IsSetRunOnce())
-                {
-                    context.Writer.WritePropertyName("runOnce");
-                    context.Writer.Write(publicRequest.RunOnce.Value);
-                }
-
-                if(publicRequest.IsSetSeedReplicationTime())
-                {
-                    context.Writer.WritePropertyName("seedReplicationTime");
-                    context.Writer.Write(publicRequest.SeedReplicationTime.Value);
-                }
-
-                if(publicRequest.IsSetServerId())
-                {
-                    context.Writer.WritePropertyName("serverId");
-                    context.Writer.Write(publicRequest.ServerId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -61,43 +61,46 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/jobs";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeviceIds())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DeviceIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDeviceIdsListValue in publicRequest.DeviceIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDeviceIds())
                     {
-                            context.Writer.Write(publicRequestDeviceIdsListValue);
+                        context.Writer.WritePropertyName("DeviceIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDeviceIdsListValue in publicRequest.DeviceIds)
+                        {
+                                context.Writer.Write(publicRequestDeviceIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDeviceJobConfig())
+                    {
+                        context.Writer.WritePropertyName("DeviceJobConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DeviceJobConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DeviceJobConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetJobType())
+                    {
+                        context.Writer.WritePropertyName("JobType");
+                        context.Writer.Write(publicRequest.JobType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDeviceJobConfig())
-                {
-                    context.Writer.WritePropertyName("DeviceJobConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DeviceJobConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DeviceJobConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetJobType())
-                {
-                    context.Writer.WritePropertyName("JobType");
-                    context.Writer.Write(publicRequest.JobType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

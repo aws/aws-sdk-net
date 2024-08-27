@@ -61,98 +61,101 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/network-analyzer-configurations";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientRequestToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetMulticastGroups())
-                {
-                    context.Writer.WritePropertyName("MulticastGroups");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMulticastGroupsListValue in publicRequest.MulticastGroups)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientRequestToken())
                     {
-                            context.Writer.Write(publicRequestMulticastGroupsListValue);
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(publicRequest.ClientRequestToken);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    else if(!(publicRequest.IsSetClientRequestToken()))
                     {
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetMulticastGroups())
+                    {
+                        context.Writer.WritePropertyName("MulticastGroups");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMulticastGroupsListValue in publicRequest.MulticastGroups)
+                        {
+                                context.Writer.Write(publicRequestMulticastGroupsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTraceContent())
+                    {
+                        context.Writer.WritePropertyName("TraceContent");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = TraceContentMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TraceContent, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTraceContent())
-                {
-                    context.Writer.WritePropertyName("TraceContent");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TraceContentMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TraceContent, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetWirelessDevices())
-                {
-                    context.Writer.WritePropertyName("WirelessDevices");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestWirelessDevicesListValue in publicRequest.WirelessDevices)
+                    if(publicRequest.IsSetWirelessDevices())
                     {
-                            context.Writer.Write(publicRequestWirelessDevicesListValue);
+                        context.Writer.WritePropertyName("WirelessDevices");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestWirelessDevicesListValue in publicRequest.WirelessDevices)
+                        {
+                                context.Writer.Write(publicRequestWirelessDevicesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetWirelessGateways())
-                {
-                    context.Writer.WritePropertyName("WirelessGateways");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestWirelessGatewaysListValue in publicRequest.WirelessGateways)
+                    if(publicRequest.IsSetWirelessGateways())
                     {
-                            context.Writer.Write(publicRequestWirelessGatewaysListValue);
+                        context.Writer.WritePropertyName("WirelessGateways");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestWirelessGatewaysListValue in publicRequest.WirelessGateways)
+                        {
+                                context.Writer.Write(publicRequestWirelessGatewaysListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

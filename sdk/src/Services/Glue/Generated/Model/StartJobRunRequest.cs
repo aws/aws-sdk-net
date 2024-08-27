@@ -203,9 +203,9 @@ namespace Amazon.Glue.Model
         /// populated, the job run will not be considered for queueing.
         /// </para>
         /// </summary>
-        public bool JobRunQueuingEnabled
+        public bool? JobRunQueuingEnabled
         {
-            get { return this._jobRunQueuingEnabled.GetValueOrDefault(); }
+            get { return this._jobRunQueuingEnabled; }
             set { this._jobRunQueuingEnabled = value; }
         }
 

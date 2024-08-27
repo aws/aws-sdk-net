@@ -63,55 +63,58 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAutoScalingConfigurationName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AutoScalingConfigurationName");
-                    context.Writer.Write(publicRequest.AutoScalingConfigurationName);
-                }
-
-                if(publicRequest.IsSetMaxConcurrency())
-                {
-                    context.Writer.WritePropertyName("MaxConcurrency");
-                    context.Writer.Write(publicRequest.MaxConcurrency.Value);
-                }
-
-                if(publicRequest.IsSetMaxSize())
-                {
-                    context.Writer.WritePropertyName("MaxSize");
-                    context.Writer.Write(publicRequest.MaxSize.Value);
-                }
-
-                if(publicRequest.IsSetMinSize())
-                {
-                    context.Writer.WritePropertyName("MinSize");
-                    context.Writer.Write(publicRequest.MinSize.Value);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAutoScalingConfigurationName())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("AutoScalingConfigurationName");
+                        context.Writer.Write(publicRequest.AutoScalingConfigurationName);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetMaxConcurrency())
+                    {
+                        context.Writer.WritePropertyName("MaxConcurrency");
+                        context.Writer.Write(publicRequest.MaxConcurrency.Value);
+                    }
+
+                    if(publicRequest.IsSetMaxSize())
+                    {
+                        context.Writer.WritePropertyName("MaxSize");
+                        context.Writer.Write(publicRequest.MaxSize.Value);
+                    }
+
+                    if(publicRequest.IsSetMinSize())
+                    {
+                        context.Writer.WritePropertyName("MinSize");
+                        context.Writer.Write(publicRequest.MinSize.Value);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

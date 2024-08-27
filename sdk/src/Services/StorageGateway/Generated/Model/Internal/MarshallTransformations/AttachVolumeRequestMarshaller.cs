@@ -63,45 +63,48 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDiskId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DiskId");
-                    context.Writer.Write(publicRequest.DiskId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDiskId())
+                    {
+                        context.Writer.WritePropertyName("DiskId");
+                        context.Writer.Write(publicRequest.DiskId);
+                    }
+
+                    if(publicRequest.IsSetGatewayARN())
+                    {
+                        context.Writer.WritePropertyName("GatewayARN");
+                        context.Writer.Write(publicRequest.GatewayARN);
+                    }
+
+                    if(publicRequest.IsSetNetworkInterfaceId())
+                    {
+                        context.Writer.WritePropertyName("NetworkInterfaceId");
+                        context.Writer.Write(publicRequest.NetworkInterfaceId);
+                    }
+
+                    if(publicRequest.IsSetTargetName())
+                    {
+                        context.Writer.WritePropertyName("TargetName");
+                        context.Writer.Write(publicRequest.TargetName);
+                    }
+
+                    if(publicRequest.IsSetVolumeARN())
+                    {
+                        context.Writer.WritePropertyName("VolumeARN");
+                        context.Writer.Write(publicRequest.VolumeARN);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetGatewayARN())
-                {
-                    context.Writer.WritePropertyName("GatewayARN");
-                    context.Writer.Write(publicRequest.GatewayARN);
-                }
-
-                if(publicRequest.IsSetNetworkInterfaceId())
-                {
-                    context.Writer.WritePropertyName("NetworkInterfaceId");
-                    context.Writer.Write(publicRequest.NetworkInterfaceId);
-                }
-
-                if(publicRequest.IsSetTargetName())
-                {
-                    context.Writer.WritePropertyName("TargetName");
-                    context.Writer.Write(publicRequest.TargetName);
-                }
-
-                if(publicRequest.IsSetVolumeARN())
-                {
-                    context.Writer.WritePropertyName("VolumeARN");
-                    context.Writer.Write(publicRequest.VolumeARN);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

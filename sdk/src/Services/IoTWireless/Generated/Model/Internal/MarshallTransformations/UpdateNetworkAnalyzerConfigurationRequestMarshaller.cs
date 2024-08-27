@@ -64,98 +64,101 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 throw new AmazonIoTWirelessException("Request object does not have required field ConfigurationName set");
             request.AddPathResource("{ConfigurationName}", StringUtils.FromString(publicRequest.ConfigurationName));
             request.ResourcePath = "/network-analyzer-configurations/{ConfigurationName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetMulticastGroupsToAdd())
-                {
-                    context.Writer.WritePropertyName("MulticastGroupsToAdd");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMulticastGroupsToAddListValue in publicRequest.MulticastGroupsToAdd)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
-                            context.Writer.Write(publicRequestMulticastGroupsToAddListValue);
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetMulticastGroupsToRemove())
-                {
-                    context.Writer.WritePropertyName("MulticastGroupsToRemove");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMulticastGroupsToRemoveListValue in publicRequest.MulticastGroupsToRemove)
+                    if(publicRequest.IsSetMulticastGroupsToAdd())
                     {
-                            context.Writer.Write(publicRequestMulticastGroupsToRemoveListValue);
+                        context.Writer.WritePropertyName("MulticastGroupsToAdd");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMulticastGroupsToAddListValue in publicRequest.MulticastGroupsToAdd)
+                        {
+                                context.Writer.Write(publicRequestMulticastGroupsToAddListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTraceContent())
-                {
-                    context.Writer.WritePropertyName("TraceContent");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TraceContentMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TraceContent, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetWirelessDevicesToAdd())
-                {
-                    context.Writer.WritePropertyName("WirelessDevicesToAdd");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestWirelessDevicesToAddListValue in publicRequest.WirelessDevicesToAdd)
+                    if(publicRequest.IsSetMulticastGroupsToRemove())
                     {
-                            context.Writer.Write(publicRequestWirelessDevicesToAddListValue);
+                        context.Writer.WritePropertyName("MulticastGroupsToRemove");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMulticastGroupsToRemoveListValue in publicRequest.MulticastGroupsToRemove)
+                        {
+                                context.Writer.Write(publicRequestMulticastGroupsToRemoveListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetWirelessDevicesToRemove())
-                {
-                    context.Writer.WritePropertyName("WirelessDevicesToRemove");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestWirelessDevicesToRemoveListValue in publicRequest.WirelessDevicesToRemove)
+                    if(publicRequest.IsSetTraceContent())
                     {
-                            context.Writer.Write(publicRequestWirelessDevicesToRemoveListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
+                        context.Writer.WritePropertyName("TraceContent");
+                        context.Writer.WriteObjectStart();
 
-                if(publicRequest.IsSetWirelessGatewaysToAdd())
-                {
-                    context.Writer.WritePropertyName("WirelessGatewaysToAdd");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestWirelessGatewaysToAddListValue in publicRequest.WirelessGatewaysToAdd)
+                        var marshaller = TraceContentMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TraceContent, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetWirelessDevicesToAdd())
                     {
-                            context.Writer.Write(publicRequestWirelessGatewaysToAddListValue);
+                        context.Writer.WritePropertyName("WirelessDevicesToAdd");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestWirelessDevicesToAddListValue in publicRequest.WirelessDevicesToAdd)
+                        {
+                                context.Writer.Write(publicRequestWirelessDevicesToAddListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetWirelessGatewaysToRemove())
-                {
-                    context.Writer.WritePropertyName("WirelessGatewaysToRemove");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestWirelessGatewaysToRemoveListValue in publicRequest.WirelessGatewaysToRemove)
+                    if(publicRequest.IsSetWirelessDevicesToRemove())
                     {
-                            context.Writer.Write(publicRequestWirelessGatewaysToRemoveListValue);
+                        context.Writer.WritePropertyName("WirelessDevicesToRemove");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestWirelessDevicesToRemoveListValue in publicRequest.WirelessDevicesToRemove)
+                        {
+                                context.Writer.Write(publicRequestWirelessDevicesToRemoveListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetWirelessGatewaysToAdd())
+                    {
+                        context.Writer.WritePropertyName("WirelessGatewaysToAdd");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestWirelessGatewaysToAddListValue in publicRequest.WirelessGatewaysToAdd)
+                        {
+                                context.Writer.Write(publicRequestWirelessGatewaysToAddListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetWirelessGatewaysToRemove())
+                    {
+                        context.Writer.WritePropertyName("WirelessGatewaysToRemove");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestWirelessGatewaysToRemoveListValue in publicRequest.WirelessGatewaysToRemove)
+                        {
+                                context.Writer.Write(publicRequestWirelessGatewaysToRemoveListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

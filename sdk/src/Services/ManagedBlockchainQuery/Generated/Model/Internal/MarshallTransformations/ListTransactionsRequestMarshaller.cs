@@ -61,83 +61,86 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/list-transactions";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAddress())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("address");
-                    context.Writer.Write(publicRequest.Address);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAddress())
+                    {
+                        context.Writer.WritePropertyName("address");
+                        context.Writer.Write(publicRequest.Address);
+                    }
+
+                    if(publicRequest.IsSetConfirmationStatusFilter())
+                    {
+                        context.Writer.WritePropertyName("confirmationStatusFilter");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ConfirmationStatusFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ConfirmationStatusFilter, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetFromBlockchainInstant())
+                    {
+                        context.Writer.WritePropertyName("fromBlockchainInstant");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = BlockchainInstantMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.FromBlockchainInstant, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNetwork())
+                    {
+                        context.Writer.WritePropertyName("network");
+                        context.Writer.Write(publicRequest.Network);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetSort())
+                    {
+                        context.Writer.WritePropertyName("sort");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ListTransactionsSortMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Sort, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetToBlockchainInstant())
+                    {
+                        context.Writer.WritePropertyName("toBlockchainInstant");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = BlockchainInstantMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ToBlockchainInstant, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetConfirmationStatusFilter())
-                {
-                    context.Writer.WritePropertyName("confirmationStatusFilter");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ConfirmationStatusFilterMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ConfirmationStatusFilter, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetFromBlockchainInstant())
-                {
-                    context.Writer.WritePropertyName("fromBlockchainInstant");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = BlockchainInstantMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.FromBlockchainInstant, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNetwork())
-                {
-                    context.Writer.WritePropertyName("network");
-                    context.Writer.Write(publicRequest.Network);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetSort())
-                {
-                    context.Writer.WritePropertyName("sort");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ListTransactionsSortMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Sort, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetToBlockchainInstant())
-                {
-                    context.Writer.WritePropertyName("toBlockchainInstant");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = BlockchainInstantMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ToBlockchainInstant, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

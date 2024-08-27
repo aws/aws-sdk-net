@@ -61,95 +61,98 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/fuota-tasks";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientRequestToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetFirmwareUpdateImage())
-                {
-                    context.Writer.WritePropertyName("FirmwareUpdateImage");
-                    context.Writer.Write(publicRequest.FirmwareUpdateImage);
-                }
-
-                if(publicRequest.IsSetFirmwareUpdateRole())
-                {
-                    context.Writer.WritePropertyName("FirmwareUpdateRole");
-                    context.Writer.Write(publicRequest.FirmwareUpdateRole);
-                }
-
-                if(publicRequest.IsSetFragmentIntervalMS())
-                {
-                    context.Writer.WritePropertyName("FragmentIntervalMS");
-                    context.Writer.Write(publicRequest.FragmentIntervalMS.Value);
-                }
-
-                if(publicRequest.IsSetFragmentSizeBytes())
-                {
-                    context.Writer.WritePropertyName("FragmentSizeBytes");
-                    context.Writer.Write(publicRequest.FragmentSizeBytes.Value);
-                }
-
-                if(publicRequest.IsSetLoRaWAN())
-                {
-                    context.Writer.WritePropertyName("LoRaWAN");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LoRaWANFuotaTaskMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LoRaWAN, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetRedundancyPercent())
-                {
-                    context.Writer.WritePropertyName("RedundancyPercent");
-                    context.Writer.Write(publicRequest.RedundancyPercent.Value);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientRequestToken())
                     {
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(publicRequest.ClientRequestToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientRequestToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetFirmwareUpdateImage())
+                    {
+                        context.Writer.WritePropertyName("FirmwareUpdateImage");
+                        context.Writer.Write(publicRequest.FirmwareUpdateImage);
+                    }
+
+                    if(publicRequest.IsSetFirmwareUpdateRole())
+                    {
+                        context.Writer.WritePropertyName("FirmwareUpdateRole");
+                        context.Writer.Write(publicRequest.FirmwareUpdateRole);
+                    }
+
+                    if(publicRequest.IsSetFragmentIntervalMS())
+                    {
+                        context.Writer.WritePropertyName("FragmentIntervalMS");
+                        context.Writer.Write(publicRequest.FragmentIntervalMS.Value);
+                    }
+
+                    if(publicRequest.IsSetFragmentSizeBytes())
+                    {
+                        context.Writer.WritePropertyName("FragmentSizeBytes");
+                        context.Writer.Write(publicRequest.FragmentSizeBytes.Value);
+                    }
+
+                    if(publicRequest.IsSetLoRaWAN())
+                    {
+                        context.Writer.WritePropertyName("LoRaWAN");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = LoRaWANFuotaTaskMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.LoRaWAN, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetRedundancyPercent())
+                    {
+                        context.Writer.WritePropertyName("RedundancyPercent");
+                        context.Writer.Write(publicRequest.RedundancyPercent.Value);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -61,38 +61,41 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/DisassociateApplications";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccountID())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("accountID");
-                    context.Writer.Write(publicRequest.AccountID);
-                }
-
-                if(publicRequest.IsSetApplicationIDs())
-                {
-                    context.Writer.WritePropertyName("applicationIDs");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestApplicationIDsListValue in publicRequest.ApplicationIDs)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccountID())
                     {
-                            context.Writer.Write(publicRequestApplicationIDsListValue);
+                        context.Writer.WritePropertyName("accountID");
+                        context.Writer.Write(publicRequest.AccountID);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetApplicationIDs())
+                    {
+                        context.Writer.WritePropertyName("applicationIDs");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestApplicationIDsListValue in publicRequest.ApplicationIDs)
+                        {
+                                context.Writer.Write(publicRequestApplicationIDsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetWaveID())
+                    {
+                        context.Writer.WritePropertyName("waveID");
+                        context.Writer.Write(publicRequest.WaveID);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetWaveID())
-                {
-                    context.Writer.WritePropertyName("waveID");
-                    context.Writer.Write(publicRequest.WaveID);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

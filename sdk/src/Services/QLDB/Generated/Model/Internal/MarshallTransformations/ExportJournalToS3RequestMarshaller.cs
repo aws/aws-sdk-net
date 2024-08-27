@@ -64,50 +64,53 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
                 throw new AmazonQLDBException("Request object does not have required field Name set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/ledgers/{name}/journal-s3-exports";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetExclusiveEndTime())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ExclusiveEndTime");
-                    context.Writer.Write(publicRequest.ExclusiveEndTime.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetExclusiveEndTime())
+                    {
+                        context.Writer.WritePropertyName("ExclusiveEndTime");
+                        context.Writer.Write(publicRequest.ExclusiveEndTime.Value);
+                    }
+
+                    if(publicRequest.IsSetInclusiveStartTime())
+                    {
+                        context.Writer.WritePropertyName("InclusiveStartTime");
+                        context.Writer.Write(publicRequest.InclusiveStartTime.Value);
+                    }
+
+                    if(publicRequest.IsSetOutputFormat())
+                    {
+                        context.Writer.WritePropertyName("OutputFormat");
+                        context.Writer.Write(publicRequest.OutputFormat);
+                    }
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("RoleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    if(publicRequest.IsSetS3ExportConfiguration())
+                    {
+                        context.Writer.WritePropertyName("S3ExportConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = S3ExportConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.S3ExportConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetInclusiveStartTime())
-                {
-                    context.Writer.WritePropertyName("InclusiveStartTime");
-                    context.Writer.Write(publicRequest.InclusiveStartTime.Value);
-                }
-
-                if(publicRequest.IsSetOutputFormat())
-                {
-                    context.Writer.WritePropertyName("OutputFormat");
-                    context.Writer.Write(publicRequest.OutputFormat);
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("RoleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetS3ExportConfiguration())
-                {
-                    context.Writer.WritePropertyName("S3ExportConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = S3ExportConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.S3ExportConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

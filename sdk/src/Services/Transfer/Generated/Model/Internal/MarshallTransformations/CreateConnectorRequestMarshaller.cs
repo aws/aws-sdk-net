@@ -63,77 +63,80 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccessRole())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AccessRole");
-                    context.Writer.Write(publicRequest.AccessRole);
-                }
-
-                if(publicRequest.IsSetAs2Config())
-                {
-                    context.Writer.WritePropertyName("As2Config");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = As2ConnectorConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.As2Config, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetLoggingRole())
-                {
-                    context.Writer.WritePropertyName("LoggingRole");
-                    context.Writer.Write(publicRequest.LoggingRole);
-                }
-
-                if(publicRequest.IsSetSecurityPolicyName())
-                {
-                    context.Writer.WritePropertyName("SecurityPolicyName");
-                    context.Writer.Write(publicRequest.SecurityPolicyName);
-                }
-
-                if(publicRequest.IsSetSftpConfig())
-                {
-                    context.Writer.WritePropertyName("SftpConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SftpConnectorConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SftpConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccessRole())
                     {
+                        context.Writer.WritePropertyName("AccessRole");
+                        context.Writer.Write(publicRequest.AccessRole);
+                    }
+
+                    if(publicRequest.IsSetAs2Config())
+                    {
+                        context.Writer.WritePropertyName("As2Config");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = As2ConnectorConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.As2Config, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetLoggingRole())
+                    {
+                        context.Writer.WritePropertyName("LoggingRole");
+                        context.Writer.Write(publicRequest.LoggingRole);
+                    }
+
+                    if(publicRequest.IsSetSecurityPolicyName())
+                    {
+                        context.Writer.WritePropertyName("SecurityPolicyName");
+                        context.Writer.Write(publicRequest.SecurityPolicyName);
+                    }
+
+                    if(publicRequest.IsSetSftpConfig())
+                    {
+                        context.Writer.WritePropertyName("SftpConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SftpConnectorConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SftpConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetUrl())
+                    {
+                        context.Writer.WritePropertyName("Url");
+                        context.Writer.Write(publicRequest.Url);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetUrl())
-                {
-                    context.Writer.WritePropertyName("Url");
-                    context.Writer.Write(publicRequest.Url);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -61,38 +61,41 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/CreateLFTag";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCatalogId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CatalogId");
-                    context.Writer.Write(publicRequest.CatalogId);
-                }
-
-                if(publicRequest.IsSetTagKey())
-                {
-                    context.Writer.WritePropertyName("TagKey");
-                    context.Writer.Write(publicRequest.TagKey);
-                }
-
-                if(publicRequest.IsSetTagValues())
-                {
-                    context.Writer.WritePropertyName("TagValues");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagValuesListValue in publicRequest.TagValues)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCatalogId())
                     {
-                            context.Writer.Write(publicRequestTagValuesListValue);
+                        context.Writer.WritePropertyName("CatalogId");
+                        context.Writer.Write(publicRequest.CatalogId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTagKey())
+                    {
+                        context.Writer.WritePropertyName("TagKey");
+                        context.Writer.Write(publicRequest.TagKey);
+                    }
+
+                    if(publicRequest.IsSetTagValues())
+                    {
+                        context.Writer.WritePropertyName("TagValues");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagValuesListValue in publicRequest.TagValues)
+                        {
+                                context.Writer.Write(publicRequestTagValuesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

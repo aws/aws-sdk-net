@@ -202,9 +202,9 @@ namespace Amazon.Bedrock.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=24, Max=168)]
-        public int TimeoutDurationInHours
+        public int? TimeoutDurationInHours
         {
-            get { return this._timeoutDurationInHours.GetValueOrDefault(); }
+            get { return this._timeoutDurationInHours; }
             set { this._timeoutDurationInHours = value; }
         }
 

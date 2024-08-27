@@ -63,71 +63,74 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFaviconS3Location())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("FaviconS3Location");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = S3LocationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.FaviconS3Location, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetFooterLinks())
-                {
-                    context.Writer.WritePropertyName("FooterLinks");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFooterLinksListValue in publicRequest.FooterLinks)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFaviconS3Location())
                     {
+                        context.Writer.WritePropertyName("FaviconS3Location");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = ThemeFooterLinkMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFooterLinksListValue, context);
+                        var marshaller = S3LocationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.FaviconS3Location, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetFooterLinks())
+                    {
+                        context.Writer.WritePropertyName("FooterLinks");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFooterLinksListValue in publicRequest.FooterLinks)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ThemeFooterLinkMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFooterLinksListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetOrganizationLogoS3Location())
+                    {
+                        context.Writer.WritePropertyName("OrganizationLogoS3Location");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = S3LocationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OrganizationLogoS3Location, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetStackName())
+                    {
+                        context.Writer.WritePropertyName("StackName");
+                        context.Writer.Write(publicRequest.StackName);
+                    }
+
+                    if(publicRequest.IsSetThemeStyling())
+                    {
+                        context.Writer.WritePropertyName("ThemeStyling");
+                        context.Writer.Write(publicRequest.ThemeStyling);
+                    }
+
+                    if(publicRequest.IsSetTitleText())
+                    {
+                        context.Writer.WritePropertyName("TitleText");
+                        context.Writer.Write(publicRequest.TitleText);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetOrganizationLogoS3Location())
-                {
-                    context.Writer.WritePropertyName("OrganizationLogoS3Location");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = S3LocationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OrganizationLogoS3Location, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetStackName())
-                {
-                    context.Writer.WritePropertyName("StackName");
-                    context.Writer.Write(publicRequest.StackName);
-                }
-
-                if(publicRequest.IsSetThemeStyling())
-                {
-                    context.Writer.WritePropertyName("ThemeStyling");
-                    context.Writer.Write(publicRequest.ThemeStyling);
-                }
-
-                if(publicRequest.IsSetTitleText())
-                {
-                    context.Writer.WritePropertyName("TitleText");
-                    context.Writer.Write(publicRequest.TitleText);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

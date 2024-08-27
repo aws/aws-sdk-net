@@ -63,33 +63,36 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetProblemId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ProblemId");
-                    context.Writer.Write(publicRequest.ProblemId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetProblemId())
+                    {
+                        context.Writer.WritePropertyName("ProblemId");
+                        context.Writer.Write(publicRequest.ProblemId);
+                    }
+
+                    if(publicRequest.IsSetUpdateStatus())
+                    {
+                        context.Writer.WritePropertyName("UpdateStatus");
+                        context.Writer.Write(publicRequest.UpdateStatus);
+                    }
+
+                    if(publicRequest.IsSetVisibility())
+                    {
+                        context.Writer.WritePropertyName("Visibility");
+                        context.Writer.Write(publicRequest.Visibility);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetUpdateStatus())
-                {
-                    context.Writer.WritePropertyName("UpdateStatus");
-                    context.Writer.Write(publicRequest.UpdateStatus);
-                }
-
-                if(publicRequest.IsSetVisibility())
-                {
-                    context.Writer.WritePropertyName("Visibility");
-                    context.Writer.Write(publicRequest.Visibility);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -61,78 +61,81 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/deploymentstrategies";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeploymentDurationInMinutes())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DeploymentDurationInMinutes");
-                    context.Writer.Write(publicRequest.DeploymentDurationInMinutes.Value);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetFinalBakeTimeInMinutes())
-                {
-                    context.Writer.WritePropertyName("FinalBakeTimeInMinutes");
-                    context.Writer.Write(publicRequest.FinalBakeTimeInMinutes.Value);
-                }
-
-                if(publicRequest.IsSetGrowthFactor())
-                {
-                    context.Writer.WritePropertyName("GrowthFactor");
-                    if(StringUtils.IsSpecialFloatValue(publicRequest.GrowthFactor.Value))
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDeploymentDurationInMinutes())
                     {
-                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.GrowthFactor.Value));
+                        context.Writer.WritePropertyName("DeploymentDurationInMinutes");
+                        context.Writer.Write(publicRequest.DeploymentDurationInMinutes.Value);
                     }
-                    else
+
+                    if(publicRequest.IsSetDescription())
                     {
-                        context.Writer.Write(publicRequest.GrowthFactor.Value);
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                }
 
-                if(publicRequest.IsSetGrowthType())
-                {
-                    context.Writer.WritePropertyName("GrowthType");
-                    context.Writer.Write(publicRequest.GrowthType);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetReplicateTo())
-                {
-                    context.Writer.WritePropertyName("ReplicateTo");
-                    context.Writer.Write(publicRequest.ReplicateTo);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetFinalBakeTimeInMinutes())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("FinalBakeTimeInMinutes");
+                        context.Writer.Write(publicRequest.FinalBakeTimeInMinutes.Value);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetGrowthFactor())
+                    {
+                        context.Writer.WritePropertyName("GrowthFactor");
+                        if(StringUtils.IsSpecialFloatValue(publicRequest.GrowthFactor.Value))
+                        {
+                            context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.GrowthFactor.Value));
+                        }
+                        else
+                        {
+                            context.Writer.Write(publicRequest.GrowthFactor.Value);
+                        }
+                    }
+
+                    if(publicRequest.IsSetGrowthType())
+                    {
+                        context.Writer.WritePropertyName("GrowthType");
+                        context.Writer.Write(publicRequest.GrowthType);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetReplicateTo())
+                    {
+                        context.Writer.WritePropertyName("ReplicateTo");
+                        context.Writer.Write(publicRequest.ReplicateTo);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

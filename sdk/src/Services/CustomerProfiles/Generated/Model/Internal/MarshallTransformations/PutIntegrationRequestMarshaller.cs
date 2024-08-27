@@ -64,66 +64,69 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 throw new AmazonCustomerProfilesException("Request object does not have required field DomainName set");
             request.AddPathResource("{DomainName}", StringUtils.FromString(publicRequest.DomainName));
             request.ResourcePath = "/domains/{DomainName}/integrations";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFlowDefinition())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("FlowDefinition");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = FlowDefinitionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.FlowDefinition, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetObjectTypeName())
-                {
-                    context.Writer.WritePropertyName("ObjectTypeName");
-                    context.Writer.Write(publicRequest.ObjectTypeName);
-                }
-
-                if(publicRequest.IsSetObjectTypeNames())
-                {
-                    context.Writer.WritePropertyName("ObjectTypeNames");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestObjectTypeNamesKvp in publicRequest.ObjectTypeNames)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFlowDefinition())
                     {
-                        context.Writer.WritePropertyName(publicRequestObjectTypeNamesKvp.Key);
-                        var publicRequestObjectTypeNamesValue = publicRequestObjectTypeNamesKvp.Value;
+                        context.Writer.WritePropertyName("FlowDefinition");
+                        context.Writer.WriteObjectStart();
 
-                            context.Writer.Write(publicRequestObjectTypeNamesValue);
+                        var marshaller = FlowDefinitionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.FlowDefinition, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetObjectTypeName())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("ObjectTypeName");
+                        context.Writer.Write(publicRequest.ObjectTypeName);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetObjectTypeNames())
+                    {
+                        context.Writer.WritePropertyName("ObjectTypeNames");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestObjectTypeNamesKvp in publicRequest.ObjectTypeNames)
+                        {
+                            context.Writer.WritePropertyName(publicRequestObjectTypeNamesKvp.Key);
+                            var publicRequestObjectTypeNamesValue = publicRequestObjectTypeNamesKvp.Value;
+
+                                context.Writer.Write(publicRequestObjectTypeNamesValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetUri())
+                    {
+                        context.Writer.WritePropertyName("Uri");
+                        context.Writer.Write(publicRequest.Uri);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetUri())
-                {
-                    context.Writer.WritePropertyName("Uri");
-                    context.Writer.Write(publicRequest.Uri);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

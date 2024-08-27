@@ -63,53 +63,56 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLocation())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Location");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LocationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Location, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSinks())
-                {
-                    context.Writer.WritePropertyName("Sinks");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSinksListValue in publicRequest.Sinks)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetLocation())
                     {
+                        context.Writer.WritePropertyName("Location");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = CatalogEntryMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSinksListValue, context);
+                        var marshaller = LocationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Location, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetSinks())
+                    {
+                        context.Writer.WritePropertyName("Sinks");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSinksListValue in publicRequest.Sinks)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = CatalogEntryMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSinksListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSource())
+                    {
+                        context.Writer.WritePropertyName("Source");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CatalogEntryMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Source, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSource())
-                {
-                    context.Writer.WritePropertyName("Source");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CatalogEntryMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Source, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

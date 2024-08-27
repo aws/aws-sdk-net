@@ -67,26 +67,29 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
                 throw new AmazonAppIntegrationsServiceException("Request object does not have required field DataIntegrationIdentifier set");
             request.AddPathResource("{Identifier}", StringUtils.FromString(publicRequest.DataIntegrationIdentifier));
             request.ResourcePath = "/dataIntegrations/{Identifier}/associations/{DataIntegrationAssociationIdentifier}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetExecutionConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ExecutionConfiguration");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetExecutionConfiguration())
+                    {
+                        context.Writer.WritePropertyName("ExecutionConfiguration");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = ExecutionConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ExecutionConfiguration, context);
+                        var marshaller = ExecutionConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ExecutionConfiguration, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

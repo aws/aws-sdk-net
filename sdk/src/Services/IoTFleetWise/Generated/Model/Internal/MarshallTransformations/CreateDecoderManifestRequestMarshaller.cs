@@ -63,81 +63,84 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetModelManifestArn())
-                {
-                    context.Writer.WritePropertyName("modelManifestArn");
-                    context.Writer.Write(publicRequest.ModelManifestArn);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetNetworkInterfaces())
-                {
-                    context.Writer.WritePropertyName("networkInterfaces");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestNetworkInterfacesListValue in publicRequest.NetworkInterfaces)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = NetworkInterfaceMarshaller.Instance;
-                        marshaller.Marshall(publicRequestNetworkInterfacesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetSignalDecoders())
-                {
-                    context.Writer.WritePropertyName("signalDecoders");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSignalDecodersListValue in publicRequest.SignalDecoders)
+                    if(publicRequest.IsSetModelManifestArn())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SignalDecoderMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSignalDecodersListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("modelManifestArn");
+                        context.Writer.Write(publicRequest.ModelManifestArn);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetName())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetNetworkInterfaces())
+                    {
+                        context.Writer.WritePropertyName("networkInterfaces");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestNetworkInterfacesListValue in publicRequest.NetworkInterfaces)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = NetworkInterfaceMarshaller.Instance;
+                            marshaller.Marshall(publicRequestNetworkInterfacesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSignalDecoders())
+                    {
+                        context.Writer.WritePropertyName("signalDecoders");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSignalDecodersListValue in publicRequest.SignalDecoders)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = SignalDecoderMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSignalDecodersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

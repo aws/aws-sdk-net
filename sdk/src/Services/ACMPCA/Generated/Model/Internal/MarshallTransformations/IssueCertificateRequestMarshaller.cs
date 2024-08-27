@@ -63,78 +63,81 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApiPassthrough())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ApiPassthrough");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApiPassthrough())
+                    {
+                        context.Writer.WritePropertyName("ApiPassthrough");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = ApiPassthroughMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ApiPassthrough, context);
+                        var marshaller = ApiPassthroughMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ApiPassthrough, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetCertificateAuthorityArn())
+                    {
+                        context.Writer.WritePropertyName("CertificateAuthorityArn");
+                        context.Writer.Write(publicRequest.CertificateAuthorityArn);
+                    }
+
+                    if(publicRequest.IsSetCsr())
+                    {
+                        context.Writer.WritePropertyName("Csr");
+                        context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.Csr));
+                    }
+
+                    if(publicRequest.IsSetIdempotencyToken())
+                    {
+                        context.Writer.WritePropertyName("IdempotencyToken");
+                        context.Writer.Write(publicRequest.IdempotencyToken);
+                    }
+
+                    if(publicRequest.IsSetSigningAlgorithm())
+                    {
+                        context.Writer.WritePropertyName("SigningAlgorithm");
+                        context.Writer.Write(publicRequest.SigningAlgorithm);
+                    }
+
+                    if(publicRequest.IsSetTemplateArn())
+                    {
+                        context.Writer.WritePropertyName("TemplateArn");
+                        context.Writer.Write(publicRequest.TemplateArn);
+                    }
+
+                    if(publicRequest.IsSetValidity())
+                    {
+                        context.Writer.WritePropertyName("Validity");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ValidityMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Validity, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetValidityNotBefore())
+                    {
+                        context.Writer.WritePropertyName("ValidityNotBefore");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ValidityMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ValidityNotBefore, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCertificateAuthorityArn())
-                {
-                    context.Writer.WritePropertyName("CertificateAuthorityArn");
-                    context.Writer.Write(publicRequest.CertificateAuthorityArn);
-                }
-
-                if(publicRequest.IsSetCsr())
-                {
-                    context.Writer.WritePropertyName("Csr");
-                    context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.Csr));
-                }
-
-                if(publicRequest.IsSetIdempotencyToken())
-                {
-                    context.Writer.WritePropertyName("IdempotencyToken");
-                    context.Writer.Write(publicRequest.IdempotencyToken);
-                }
-
-                if(publicRequest.IsSetSigningAlgorithm())
-                {
-                    context.Writer.WritePropertyName("SigningAlgorithm");
-                    context.Writer.Write(publicRequest.SigningAlgorithm);
-                }
-
-                if(publicRequest.IsSetTemplateArn())
-                {
-                    context.Writer.WritePropertyName("TemplateArn");
-                    context.Writer.Write(publicRequest.TemplateArn);
-                }
-
-                if(publicRequest.IsSetValidity())
-                {
-                    context.Writer.WritePropertyName("Validity");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ValidityMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Validity, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetValidityNotBefore())
-                {
-                    context.Writer.WritePropertyName("ValidityNotBefore");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ValidityMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ValidityNotBefore, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

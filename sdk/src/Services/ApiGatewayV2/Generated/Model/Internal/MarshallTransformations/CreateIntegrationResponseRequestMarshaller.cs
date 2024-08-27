@@ -67,61 +67,64 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 throw new AmazonApiGatewayV2Exception("Request object does not have required field IntegrationId set");
             request.AddPathResource("{integrationId}", StringUtils.FromString(publicRequest.IntegrationId));
             request.ResourcePath = "/v2/apis/{apiId}/integrations/{integrationId}/integrationresponses";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetContentHandlingStrategy())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("contentHandlingStrategy");
-                    context.Writer.Write(publicRequest.ContentHandlingStrategy);
-                }
-
-                if(publicRequest.IsSetIntegrationResponseKey())
-                {
-                    context.Writer.WritePropertyName("integrationResponseKey");
-                    context.Writer.Write(publicRequest.IntegrationResponseKey);
-                }
-
-                if(publicRequest.IsSetResponseParameters())
-                {
-                    context.Writer.WritePropertyName("responseParameters");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestResponseParametersKvp in publicRequest.ResponseParameters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetContentHandlingStrategy())
                     {
-                        context.Writer.WritePropertyName(publicRequestResponseParametersKvp.Key);
-                        var publicRequestResponseParametersValue = publicRequestResponseParametersKvp.Value;
-
-                            context.Writer.Write(publicRequestResponseParametersValue);
+                        context.Writer.WritePropertyName("contentHandlingStrategy");
+                        context.Writer.Write(publicRequest.ContentHandlingStrategy);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetResponseTemplates())
-                {
-                    context.Writer.WritePropertyName("responseTemplates");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestResponseTemplatesKvp in publicRequest.ResponseTemplates)
+                    if(publicRequest.IsSetIntegrationResponseKey())
                     {
-                        context.Writer.WritePropertyName(publicRequestResponseTemplatesKvp.Key);
-                        var publicRequestResponseTemplatesValue = publicRequestResponseTemplatesKvp.Value;
-
-                            context.Writer.Write(publicRequestResponseTemplatesValue);
+                        context.Writer.WritePropertyName("integrationResponseKey");
+                        context.Writer.Write(publicRequest.IntegrationResponseKey);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetResponseParameters())
+                    {
+                        context.Writer.WritePropertyName("responseParameters");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestResponseParametersKvp in publicRequest.ResponseParameters)
+                        {
+                            context.Writer.WritePropertyName(publicRequestResponseParametersKvp.Key);
+                            var publicRequestResponseParametersValue = publicRequestResponseParametersKvp.Value;
+
+                                context.Writer.Write(publicRequestResponseParametersValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetResponseTemplates())
+                    {
+                        context.Writer.WritePropertyName("responseTemplates");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestResponseTemplatesKvp in publicRequest.ResponseTemplates)
+                        {
+                            context.Writer.WritePropertyName(publicRequestResponseTemplatesKvp.Key);
+                            var publicRequestResponseTemplatesValue = publicRequestResponseTemplatesKvp.Value;
+
+                                context.Writer.Write(publicRequestResponseTemplatesValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTemplateSelectionExpression())
+                    {
+                        context.Writer.WritePropertyName("templateSelectionExpression");
+                        context.Writer.Write(publicRequest.TemplateSelectionExpression);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTemplateSelectionExpression())
-                {
-                    context.Writer.WritePropertyName("templateSelectionExpression");
-                    context.Writer.Write(publicRequest.TemplateSelectionExpression);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

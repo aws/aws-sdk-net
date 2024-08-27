@@ -64,53 +64,56 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
                 throw new AmazonNimbleStudioException("Request object does not have required field StudioId set");
             request.AddPathResource("{studioId}", StringUtils.FromString(publicRequest.StudioId));
             request.ResourcePath = "/2020-08-01/studios/{studioId}/streaming-sessions";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEc2InstanceType())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ec2InstanceType");
-                    context.Writer.Write(publicRequest.Ec2InstanceType);
-                }
-
-                if(publicRequest.IsSetLaunchProfileId())
-                {
-                    context.Writer.WritePropertyName("launchProfileId");
-                    context.Writer.Write(publicRequest.LaunchProfileId);
-                }
-
-                if(publicRequest.IsSetOwnedBy())
-                {
-                    context.Writer.WritePropertyName("ownedBy");
-                    context.Writer.Write(publicRequest.OwnedBy);
-                }
-
-                if(publicRequest.IsSetStreamingImageId())
-                {
-                    context.Writer.WritePropertyName("streamingImageId");
-                    context.Writer.Write(publicRequest.StreamingImageId);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEc2InstanceType())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("ec2InstanceType");
+                        context.Writer.Write(publicRequest.Ec2InstanceType);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetLaunchProfileId())
+                    {
+                        context.Writer.WritePropertyName("launchProfileId");
+                        context.Writer.Write(publicRequest.LaunchProfileId);
+                    }
+
+                    if(publicRequest.IsSetOwnedBy())
+                    {
+                        context.Writer.WritePropertyName("ownedBy");
+                        context.Writer.Write(publicRequest.OwnedBy);
+                    }
+
+                    if(publicRequest.IsSetStreamingImageId())
+                    {
+                        context.Writer.WritePropertyName("streamingImageId");
+                        context.Writer.Write(publicRequest.StreamingImageId);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

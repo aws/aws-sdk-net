@@ -64,31 +64,34 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
                 throw new AmazonCloudWatchEvidentlyException("Request object does not have required field Project set");
             request.AddPathResource("{project}", StringUtils.FromString(publicRequest.Project));
             request.ResourcePath = "/projects/{project}/evaluations";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetRequests())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("requests");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRequestsListValue in publicRequest.Requests)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetRequests())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("requests");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRequestsListValue in publicRequest.Requests)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = EvaluationRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequestRequestsListValue, context);
+                            var marshaller = EvaluationRequestMarshaller.Instance;
+                            marshaller.Marshall(publicRequestRequestsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

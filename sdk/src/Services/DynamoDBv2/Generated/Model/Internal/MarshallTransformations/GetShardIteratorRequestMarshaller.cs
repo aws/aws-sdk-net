@@ -63,39 +63,42 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetSequenceNumber())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("SequenceNumber");
-                    context.Writer.Write(publicRequest.SequenceNumber);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetSequenceNumber())
+                    {
+                        context.Writer.WritePropertyName("SequenceNumber");
+                        context.Writer.Write(publicRequest.SequenceNumber);
+                    }
+
+                    if(publicRequest.IsSetShardId())
+                    {
+                        context.Writer.WritePropertyName("ShardId");
+                        context.Writer.Write(publicRequest.ShardId);
+                    }
+
+                    if(publicRequest.IsSetShardIteratorType())
+                    {
+                        context.Writer.WritePropertyName("ShardIteratorType");
+                        context.Writer.Write(publicRequest.ShardIteratorType);
+                    }
+
+                    if(publicRequest.IsSetStreamArn())
+                    {
+                        context.Writer.WritePropertyName("StreamArn");
+                        context.Writer.Write(publicRequest.StreamArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetShardId())
-                {
-                    context.Writer.WritePropertyName("ShardId");
-                    context.Writer.Write(publicRequest.ShardId);
-                }
-
-                if(publicRequest.IsSetShardIteratorType())
-                {
-                    context.Writer.WritePropertyName("ShardIteratorType");
-                    context.Writer.Write(publicRequest.ShardIteratorType);
-                }
-
-                if(publicRequest.IsSetStreamArn())
-                {
-                    context.Writer.WritePropertyName("StreamArn");
-                    context.Writer.Write(publicRequest.StreamArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

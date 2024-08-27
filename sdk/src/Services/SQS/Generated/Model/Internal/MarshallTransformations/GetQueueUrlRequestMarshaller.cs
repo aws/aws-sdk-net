@@ -63,27 +63,30 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetQueueName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("QueueName");
-                    context.Writer.Write(publicRequest.QueueName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetQueueName())
+                    {
+                        context.Writer.WritePropertyName("QueueName");
+                        context.Writer.Write(publicRequest.QueueName);
+                    }
+
+                    if(publicRequest.IsSetQueueOwnerAWSAccountId())
+                    {
+                        context.Writer.WritePropertyName("QueueOwnerAWSAccountId");
+                        context.Writer.Write(publicRequest.QueueOwnerAWSAccountId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetQueueOwnerAWSAccountId())
-                {
-                    context.Writer.WritePropertyName("QueueOwnerAWSAccountId");
-                    context.Writer.Write(publicRequest.QueueOwnerAWSAccountId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -64,37 +64,40 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
                 throw new AmazonNimbleStudioException("Request object does not have required field StudioId set");
             request.AddPathResource("{studioId}", StringUtils.FromString(publicRequest.StudioId));
             request.ResourcePath = "/2020-08-01/studios/{studioId}/membership";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetIdentityStoreId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("identityStoreId");
-                    context.Writer.Write(publicRequest.IdentityStoreId);
-                }
-
-                if(publicRequest.IsSetMembers())
-                {
-                    context.Writer.WritePropertyName("members");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMembersListValue in publicRequest.Members)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetIdentityStoreId())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = NewStudioMemberMarshaller.Instance;
-                        marshaller.Marshall(publicRequestMembersListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("identityStoreId");
+                        context.Writer.Write(publicRequest.IdentityStoreId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetMembers())
+                    {
+                        context.Writer.WritePropertyName("members");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMembersListValue in publicRequest.Members)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = NewStudioMemberMarshaller.Instance;
+                            marshaller.Marshall(publicRequestMembersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

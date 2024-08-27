@@ -63,93 +63,96 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAllowUnassociatedTargets())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AllowUnassociatedTargets");
-                    context.Writer.Write(publicRequest.AllowUnassociatedTargets.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAllowUnassociatedTargets())
+                    {
+                        context.Writer.WritePropertyName("AllowUnassociatedTargets");
+                        context.Writer.Write(publicRequest.AllowUnassociatedTargets.Value);
+                    }
+
+                    if(publicRequest.IsSetCutoff())
+                    {
+                        context.Writer.WritePropertyName("Cutoff");
+                        context.Writer.Write(publicRequest.Cutoff.Value);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetDuration())
+                    {
+                        context.Writer.WritePropertyName("Duration");
+                        context.Writer.Write(publicRequest.Duration.Value);
+                    }
+
+                    if(publicRequest.IsSetEnabled())
+                    {
+                        context.Writer.WritePropertyName("Enabled");
+                        context.Writer.Write(publicRequest.Enabled.Value);
+                    }
+
+                    if(publicRequest.IsSetEndDate())
+                    {
+                        context.Writer.WritePropertyName("EndDate");
+                        context.Writer.Write(publicRequest.EndDate);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetReplace())
+                    {
+                        context.Writer.WritePropertyName("Replace");
+                        context.Writer.Write(publicRequest.Replace.Value);
+                    }
+
+                    if(publicRequest.IsSetSchedule())
+                    {
+                        context.Writer.WritePropertyName("Schedule");
+                        context.Writer.Write(publicRequest.Schedule);
+                    }
+
+                    if(publicRequest.IsSetScheduleOffset())
+                    {
+                        context.Writer.WritePropertyName("ScheduleOffset");
+                        context.Writer.Write(publicRequest.ScheduleOffset.Value);
+                    }
+
+                    if(publicRequest.IsSetScheduleTimezone())
+                    {
+                        context.Writer.WritePropertyName("ScheduleTimezone");
+                        context.Writer.Write(publicRequest.ScheduleTimezone);
+                    }
+
+                    if(publicRequest.IsSetStartDate())
+                    {
+                        context.Writer.WritePropertyName("StartDate");
+                        context.Writer.Write(publicRequest.StartDate);
+                    }
+
+                    if(publicRequest.IsSetWindowId())
+                    {
+                        context.Writer.WritePropertyName("WindowId");
+                        context.Writer.Write(publicRequest.WindowId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCutoff())
-                {
-                    context.Writer.WritePropertyName("Cutoff");
-                    context.Writer.Write(publicRequest.Cutoff.Value);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetDuration())
-                {
-                    context.Writer.WritePropertyName("Duration");
-                    context.Writer.Write(publicRequest.Duration.Value);
-                }
-
-                if(publicRequest.IsSetEnabled())
-                {
-                    context.Writer.WritePropertyName("Enabled");
-                    context.Writer.Write(publicRequest.Enabled.Value);
-                }
-
-                if(publicRequest.IsSetEndDate())
-                {
-                    context.Writer.WritePropertyName("EndDate");
-                    context.Writer.Write(publicRequest.EndDate);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetReplace())
-                {
-                    context.Writer.WritePropertyName("Replace");
-                    context.Writer.Write(publicRequest.Replace.Value);
-                }
-
-                if(publicRequest.IsSetSchedule())
-                {
-                    context.Writer.WritePropertyName("Schedule");
-                    context.Writer.Write(publicRequest.Schedule);
-                }
-
-                if(publicRequest.IsSetScheduleOffset())
-                {
-                    context.Writer.WritePropertyName("ScheduleOffset");
-                    context.Writer.Write(publicRequest.ScheduleOffset.Value);
-                }
-
-                if(publicRequest.IsSetScheduleTimezone())
-                {
-                    context.Writer.WritePropertyName("ScheduleTimezone");
-                    context.Writer.Write(publicRequest.ScheduleTimezone);
-                }
-
-                if(publicRequest.IsSetStartDate())
-                {
-                    context.Writer.WritePropertyName("StartDate");
-                    context.Writer.Write(publicRequest.StartDate);
-                }
-
-                if(publicRequest.IsSetWindowId())
-                {
-                    context.Writer.WritePropertyName("WindowId");
-                    context.Writer.Write(publicRequest.WindowId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

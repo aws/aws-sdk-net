@@ -63,37 +63,40 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetIds())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ids");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestIdsListValue in publicRequest.Ids)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetIds())
                     {
-                            context.Writer.Write(publicRequestIdsListValue);
+                        context.Writer.WritePropertyName("ids");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestIdsListValue in publicRequest.Ids)
+                        {
+                                context.Writer.Write(publicRequestIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetNames())
+                    {
+                        context.Writer.WritePropertyName("names");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestNamesListValue in publicRequest.Names)
+                        {
+                                context.Writer.Write(publicRequestNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetNames())
-                {
-                    context.Writer.WritePropertyName("names");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestNamesListValue in publicRequest.Names)
-                    {
-                            context.Writer.Write(publicRequestNamesListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

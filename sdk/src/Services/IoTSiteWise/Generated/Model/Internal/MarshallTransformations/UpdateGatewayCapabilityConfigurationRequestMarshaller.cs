@@ -64,27 +64,30 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 throw new AmazonIoTSiteWiseException("Request object does not have required field GatewayId set");
             request.AddPathResource("{gatewayId}", StringUtils.FromString(publicRequest.GatewayId));
             request.ResourcePath = "/20200301/gateways/{gatewayId}/capability";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCapabilityConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("capabilityConfiguration");
-                    context.Writer.Write(publicRequest.CapabilityConfiguration);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCapabilityConfiguration())
+                    {
+                        context.Writer.WritePropertyName("capabilityConfiguration");
+                        context.Writer.Write(publicRequest.CapabilityConfiguration);
+                    }
+
+                    if(publicRequest.IsSetCapabilityNamespace())
+                    {
+                        context.Writer.WritePropertyName("capabilityNamespace");
+                        context.Writer.Write(publicRequest.CapabilityNamespace);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCapabilityNamespace())
-                {
-                    context.Writer.WritePropertyName("capabilityNamespace");
-                    context.Writer.Write(publicRequest.CapabilityNamespace);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

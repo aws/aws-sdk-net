@@ -63,72 +63,75 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApplicationIds())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ApplicationIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestApplicationIdsListValue in publicRequest.ApplicationIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApplicationIds())
                     {
-                            context.Writer.Write(publicRequestApplicationIdsListValue);
+                        context.Writer.WritePropertyName("ApplicationIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestApplicationIdsListValue in publicRequest.ApplicationIds)
+                        {
+                                context.Writer.Write(publicRequestApplicationIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetComputeTypeNames())
-                {
-                    context.Writer.WritePropertyName("ComputeTypeNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestComputeTypeNamesListValue in publicRequest.ComputeTypeNames)
+                    if(publicRequest.IsSetComputeTypeNames())
                     {
-                            context.Writer.Write(publicRequestComputeTypeNamesListValue);
+                        context.Writer.WritePropertyName("ComputeTypeNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestComputeTypeNamesListValue in publicRequest.ComputeTypeNames)
+                        {
+                                context.Writer.Write(publicRequestComputeTypeNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetLicenseType())
-                {
-                    context.Writer.WritePropertyName("LicenseType");
-                    context.Writer.Write(publicRequest.LicenseType);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetOperatingSystemNames())
-                {
-                    context.Writer.WritePropertyName("OperatingSystemNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestOperatingSystemNamesListValue in publicRequest.OperatingSystemNames)
+                    if(publicRequest.IsSetLicenseType())
                     {
-                            context.Writer.Write(publicRequestOperatingSystemNamesListValue);
+                        context.Writer.WritePropertyName("LicenseType");
+                        context.Writer.Write(publicRequest.LicenseType);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetOperatingSystemNames())
+                    {
+                        context.Writer.WritePropertyName("OperatingSystemNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestOperatingSystemNamesListValue in publicRequest.OperatingSystemNames)
+                        {
+                                context.Writer.Write(publicRequestOperatingSystemNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetOwner())
+                    {
+                        context.Writer.WritePropertyName("Owner");
+                        context.Writer.Write(publicRequest.Owner);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetOwner())
-                {
-                    context.Writer.WritePropertyName("Owner");
-                    context.Writer.Write(publicRequest.Owner);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

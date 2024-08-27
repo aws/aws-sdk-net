@@ -63,45 +63,48 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetInstanceArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("InstanceArn");
-                    context.Writer.Write(publicRequest.InstanceArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetInstanceArn())
+                    {
+                        context.Writer.WritePropertyName("InstanceArn");
+                        context.Writer.Write(publicRequest.InstanceArn);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetPermissionSetArn())
+                    {
+                        context.Writer.WritePropertyName("PermissionSetArn");
+                        context.Writer.Write(publicRequest.PermissionSetArn);
+                    }
+
+                    if(publicRequest.IsSetProvisioningStatus())
+                    {
+                        context.Writer.WritePropertyName("ProvisioningStatus");
+                        context.Writer.Write(publicRequest.ProvisioningStatus);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetPermissionSetArn())
-                {
-                    context.Writer.WritePropertyName("PermissionSetArn");
-                    context.Writer.Write(publicRequest.PermissionSetArn);
-                }
-
-                if(publicRequest.IsSetProvisioningStatus())
-                {
-                    context.Writer.WritePropertyName("ProvisioningStatus");
-                    context.Writer.Write(publicRequest.ProvisioningStatus);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

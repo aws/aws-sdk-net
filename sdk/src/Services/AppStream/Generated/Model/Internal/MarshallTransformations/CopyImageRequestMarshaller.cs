@@ -63,39 +63,42 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDestinationImageDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DestinationImageDescription");
-                    context.Writer.Write(publicRequest.DestinationImageDescription);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDestinationImageDescription())
+                    {
+                        context.Writer.WritePropertyName("DestinationImageDescription");
+                        context.Writer.Write(publicRequest.DestinationImageDescription);
+                    }
+
+                    if(publicRequest.IsSetDestinationImageName())
+                    {
+                        context.Writer.WritePropertyName("DestinationImageName");
+                        context.Writer.Write(publicRequest.DestinationImageName);
+                    }
+
+                    if(publicRequest.IsSetDestinationRegion())
+                    {
+                        context.Writer.WritePropertyName("DestinationRegion");
+                        context.Writer.Write(publicRequest.DestinationRegion);
+                    }
+
+                    if(publicRequest.IsSetSourceImageName())
+                    {
+                        context.Writer.WritePropertyName("SourceImageName");
+                        context.Writer.Write(publicRequest.SourceImageName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDestinationImageName())
-                {
-                    context.Writer.WritePropertyName("DestinationImageName");
-                    context.Writer.Write(publicRequest.DestinationImageName);
-                }
-
-                if(publicRequest.IsSetDestinationRegion())
-                {
-                    context.Writer.WritePropertyName("DestinationRegion");
-                    context.Writer.Write(publicRequest.DestinationRegion);
-                }
-
-                if(publicRequest.IsSetSourceImageName())
-                {
-                    context.Writer.WritePropertyName("SourceImageName");
-                    context.Writer.Write(publicRequest.SourceImageName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,38 +63,41 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetInstanceArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("InstanceArn");
-                    context.Writer.Write(publicRequest.InstanceArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetInstanceArn())
+                    {
+                        context.Writer.WritePropertyName("InstanceArn");
+                        context.Writer.Write(publicRequest.InstanceArn);
+                    }
+
+                    if(publicRequest.IsSetPermissionsBoundary())
+                    {
+                        context.Writer.WritePropertyName("PermissionsBoundary");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PermissionsBoundaryMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.PermissionsBoundary, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetPermissionSetArn())
+                    {
+                        context.Writer.WritePropertyName("PermissionSetArn");
+                        context.Writer.Write(publicRequest.PermissionSetArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPermissionsBoundary())
-                {
-                    context.Writer.WritePropertyName("PermissionsBoundary");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PermissionsBoundaryMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PermissionsBoundary, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPermissionSetArn())
-                {
-                    context.Writer.WritePropertyName("PermissionSetArn");
-                    context.Writer.Write(publicRequest.PermissionSetArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

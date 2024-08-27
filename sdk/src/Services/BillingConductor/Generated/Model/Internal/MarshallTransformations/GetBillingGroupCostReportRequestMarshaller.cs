@@ -61,55 +61,58 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/get-billing-group-cost-report";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Arn");
-                    context.Writer.Write(publicRequest.Arn);
-                }
-
-                if(publicRequest.IsSetBillingPeriodRange())
-                {
-                    context.Writer.WritePropertyName("BillingPeriodRange");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = BillingPeriodRangeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.BillingPeriodRange, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetGroupBy())
-                {
-                    context.Writer.WritePropertyName("GroupBy");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestGroupByListValue in publicRequest.GroupBy)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetArn())
                     {
-                            context.Writer.Write(publicRequestGroupByListValue);
+                        context.Writer.WritePropertyName("Arn");
+                        context.Writer.Write(publicRequest.Arn);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetBillingPeriodRange())
+                    {
+                        context.Writer.WritePropertyName("BillingPeriodRange");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = BillingPeriodRangeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.BillingPeriodRange, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetGroupBy())
+                    {
+                        context.Writer.WritePropertyName("GroupBy");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestGroupByListValue in publicRequest.GroupBy)
+                        {
+                                context.Writer.Write(publicRequestGroupByListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

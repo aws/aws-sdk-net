@@ -64,96 +64,99 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 throw new AmazonAPIGatewayException("Request object does not have required field RestApiId set");
             request.AddPathResource("{restapi_id}", StringUtils.FromString(publicRequest.RestApiId));
             request.ResourcePath = "/restapis/{restapi_id}/stages";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCacheClusterEnabled())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("cacheClusterEnabled");
-                    context.Writer.Write(publicRequest.CacheClusterEnabled.Value);
-                }
-
-                if(publicRequest.IsSetCacheClusterSize())
-                {
-                    context.Writer.WritePropertyName("cacheClusterSize");
-                    context.Writer.Write(publicRequest.CacheClusterSize);
-                }
-
-                if(publicRequest.IsSetCanarySettings())
-                {
-                    context.Writer.WritePropertyName("canarySettings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CanarySettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CanarySettings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDeploymentId())
-                {
-                    context.Writer.WritePropertyName("deploymentId");
-                    context.Writer.Write(publicRequest.DeploymentId);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetDocumentationVersion())
-                {
-                    context.Writer.WritePropertyName("documentationVersion");
-                    context.Writer.Write(publicRequest.DocumentationVersion);
-                }
-
-                if(publicRequest.IsSetStageName())
-                {
-                    context.Writer.WritePropertyName("stageName");
-                    context.Writer.Write(publicRequest.StageName);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCacheClusterEnabled())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("cacheClusterEnabled");
+                        context.Writer.Write(publicRequest.CacheClusterEnabled.Value);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetTracingEnabled())
-                {
-                    context.Writer.WritePropertyName("tracingEnabled");
-                    context.Writer.Write(publicRequest.TracingEnabled.Value);
-                }
-
-                if(publicRequest.IsSetVariables())
-                {
-                    context.Writer.WritePropertyName("variables");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestVariablesKvp in publicRequest.Variables)
+                    if(publicRequest.IsSetCacheClusterSize())
                     {
-                        context.Writer.WritePropertyName(publicRequestVariablesKvp.Key);
-                        var publicRequestVariablesValue = publicRequestVariablesKvp.Value;
-
-                            context.Writer.Write(publicRequestVariablesValue);
+                        context.Writer.WritePropertyName("cacheClusterSize");
+                        context.Writer.Write(publicRequest.CacheClusterSize);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetCanarySettings())
+                    {
+                        context.Writer.WritePropertyName("canarySettings");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CanarySettingsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CanarySettings, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDeploymentId())
+                    {
+                        context.Writer.WritePropertyName("deploymentId");
+                        context.Writer.Write(publicRequest.DeploymentId);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetDocumentationVersion())
+                    {
+                        context.Writer.WritePropertyName("documentationVersion");
+                        context.Writer.Write(publicRequest.DocumentationVersion);
+                    }
+
+                    if(publicRequest.IsSetStageName())
+                    {
+                        context.Writer.WritePropertyName("stageName");
+                        context.Writer.Write(publicRequest.StageName);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTracingEnabled())
+                    {
+                        context.Writer.WritePropertyName("tracingEnabled");
+                        context.Writer.Write(publicRequest.TracingEnabled.Value);
+                    }
+
+                    if(publicRequest.IsSetVariables())
+                    {
+                        context.Writer.WritePropertyName("variables");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestVariablesKvp in publicRequest.Variables)
+                        {
+                            context.Writer.WritePropertyName(publicRequestVariablesKvp.Key);
+                            var publicRequestVariablesValue = publicRequestVariablesKvp.Value;
+
+                                context.Writer.Write(publicRequestVariablesValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

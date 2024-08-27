@@ -65,31 +65,34 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
                 throw new AmazonChimeSDKMeetingsException("Request object does not have required field MeetingId set");
             request.AddPathResource("{MeetingId}", StringUtils.FromString(publicRequest.MeetingId));
             request.ResourcePath = "/meetings/{MeetingId}/attendees";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAttendees())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Attendees");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAttendeesListValue in publicRequest.Attendees)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAttendees())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("Attendees");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAttendeesListValue in publicRequest.Attendees)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = CreateAttendeeRequestItemMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAttendeesListValue, context);
+                            var marshaller = CreateAttendeeRequestItemMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAttendeesListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,65 +63,68 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetMemberDefinitions())
-                {
-                    context.Writer.WritePropertyName("MemberDefinitions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMemberDefinitionsListValue in publicRequest.MemberDefinitions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetMemberDefinitions())
+                    {
+                        context.Writer.WritePropertyName("MemberDefinitions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMemberDefinitionsListValue in publicRequest.MemberDefinitions)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = MemberDefinitionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestMemberDefinitionsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetNotificationConfiguration())
+                    {
+                        context.Writer.WritePropertyName("NotificationConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = MemberDefinitionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestMemberDefinitionsListValue, context);
+                        var marshaller = NotificationConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.NotificationConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetWorkerAccessConfiguration())
+                    {
+                        context.Writer.WritePropertyName("WorkerAccessConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = WorkerAccessConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.WorkerAccessConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetWorkteamName())
+                    {
+                        context.Writer.WritePropertyName("WorkteamName");
+                        context.Writer.Write(publicRequest.WorkteamName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetNotificationConfiguration())
-                {
-                    context.Writer.WritePropertyName("NotificationConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = NotificationConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.NotificationConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetWorkerAccessConfiguration())
-                {
-                    context.Writer.WritePropertyName("WorkerAccessConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = WorkerAccessConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.WorkerAccessConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetWorkteamName())
-                {
-                    context.Writer.WritePropertyName("WorkteamName");
-                    context.Writer.Write(publicRequest.WorkteamName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

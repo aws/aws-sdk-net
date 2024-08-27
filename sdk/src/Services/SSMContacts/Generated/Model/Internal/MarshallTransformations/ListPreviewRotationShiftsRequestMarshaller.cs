@@ -63,89 +63,92 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEndTime())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("EndTime");
-                    context.Writer.Write(publicRequest.EndTime.Value);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetMembers())
-                {
-                    context.Writer.WritePropertyName("Members");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMembersListValue in publicRequest.Members)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEndTime())
                     {
-                            context.Writer.Write(publicRequestMembersListValue);
+                        context.Writer.WritePropertyName("EndTime");
+                        context.Writer.Write(publicRequest.EndTime.Value);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetOverrides())
-                {
-                    context.Writer.WritePropertyName("Overrides");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestOverridesListValue in publicRequest.Overrides)
+                    if(publicRequest.IsSetMaxResults())
                     {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetMembers())
+                    {
+                        context.Writer.WritePropertyName("Members");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMembersListValue in publicRequest.Members)
+                        {
+                                context.Writer.Write(publicRequestMembersListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetOverrides())
+                    {
+                        context.Writer.WritePropertyName("Overrides");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestOverridesListValue in publicRequest.Overrides)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = PreviewOverrideMarshaller.Instance;
+                            marshaller.Marshall(publicRequestOverridesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetRecurrence())
+                    {
+                        context.Writer.WritePropertyName("Recurrence");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = PreviewOverrideMarshaller.Instance;
-                        marshaller.Marshall(publicRequestOverridesListValue, context);
+                        var marshaller = RecurrenceSettingsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Recurrence, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetRotationStartTime())
+                    {
+                        context.Writer.WritePropertyName("RotationStartTime");
+                        context.Writer.Write(publicRequest.RotationStartTime.Value);
+                    }
+
+                    if(publicRequest.IsSetStartTime())
+                    {
+                        context.Writer.WritePropertyName("StartTime");
+                        context.Writer.Write(publicRequest.StartTime.Value);
+                    }
+
+                    if(publicRequest.IsSetTimeZoneId())
+                    {
+                        context.Writer.WritePropertyName("TimeZoneId");
+                        context.Writer.Write(publicRequest.TimeZoneId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRecurrence())
-                {
-                    context.Writer.WritePropertyName("Recurrence");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RecurrenceSettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Recurrence, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRotationStartTime())
-                {
-                    context.Writer.WritePropertyName("RotationStartTime");
-                    context.Writer.Write(publicRequest.RotationStartTime.Value);
-                }
-
-                if(publicRequest.IsSetStartTime())
-                {
-                    context.Writer.WritePropertyName("StartTime");
-                    context.Writer.Write(publicRequest.StartTime.Value);
-                }
-
-                if(publicRequest.IsSetTimeZoneId())
-                {
-                    context.Writer.WritePropertyName("TimeZoneId");
-                    context.Writer.Write(publicRequest.TimeZoneId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

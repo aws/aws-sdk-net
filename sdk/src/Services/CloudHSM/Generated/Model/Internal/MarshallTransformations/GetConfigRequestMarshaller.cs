@@ -63,38 +63,41 @@ namespace Amazon.CloudHSM.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientArn");
-                    context.Writer.Write(publicRequest.ClientArn);
-                }
-
-                if(publicRequest.IsSetClientVersion())
-                {
-                    context.Writer.WritePropertyName("ClientVersion");
-                    context.Writer.Write(publicRequest.ClientVersion);
-                }
-
-                if(publicRequest.IsSetHapgList())
-                {
-                    context.Writer.WritePropertyName("HapgList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestHapgListListValue in publicRequest.HapgList)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientArn())
                     {
-                            context.Writer.Write(publicRequestHapgListListValue);
+                        context.Writer.WritePropertyName("ClientArn");
+                        context.Writer.Write(publicRequest.ClientArn);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetClientVersion())
+                    {
+                        context.Writer.WritePropertyName("ClientVersion");
+                        context.Writer.Write(publicRequest.ClientVersion);
+                    }
+
+                    if(publicRequest.IsSetHapgList())
+                    {
+                        context.Writer.WritePropertyName("HapgList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestHapgListListValue in publicRequest.HapgList)
+                        {
+                                context.Writer.Write(publicRequestHapgListListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

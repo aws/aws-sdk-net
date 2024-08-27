@@ -63,27 +63,30 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetQueryString())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("QueryString");
-                    context.Writer.Write(publicRequest.QueryString);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetQueryString())
+                    {
+                        context.Writer.WritePropertyName("QueryString");
+                        context.Writer.Write(publicRequest.QueryString);
+                    }
+
+                    if(publicRequest.IsSetValidateOnly())
+                    {
+                        context.Writer.WritePropertyName("ValidateOnly");
+                        context.Writer.Write(publicRequest.ValidateOnly.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetValidateOnly())
-                {
-                    context.Writer.WritePropertyName("ValidateOnly");
-                    context.Writer.Write(publicRequest.ValidateOnly.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

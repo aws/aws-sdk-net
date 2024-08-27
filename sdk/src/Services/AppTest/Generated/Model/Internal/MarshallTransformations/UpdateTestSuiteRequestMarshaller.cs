@@ -64,64 +64,67 @@ namespace Amazon.AppTest.Model.Internal.MarshallTransformations
                 throw new AmazonAppTestException("Request object does not have required field TestSuiteId set");
             request.AddPathResource("{testSuiteId}", StringUtils.FromString(publicRequest.TestSuiteId));
             request.ResourcePath = "/testsuites/{testSuiteId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAfterSteps())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("afterSteps");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAfterStepsListValue in publicRequest.AfterSteps)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAfterSteps())
                     {
+                        context.Writer.WritePropertyName("afterSteps");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAfterStepsListValue in publicRequest.AfterSteps)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = StepMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAfterStepsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetBeforeSteps())
+                    {
+                        context.Writer.WritePropertyName("beforeSteps");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestBeforeStepsListValue in publicRequest.BeforeSteps)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = StepMarshaller.Instance;
+                            marshaller.Marshall(publicRequestBeforeStepsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetTestCases())
+                    {
+                        context.Writer.WritePropertyName("testCases");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = StepMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAfterStepsListValue, context);
+                        var marshaller = TestCasesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TestCases, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetBeforeSteps())
-                {
-                    context.Writer.WritePropertyName("beforeSteps");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestBeforeStepsListValue in publicRequest.BeforeSteps)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = StepMarshaller.Instance;
-                        marshaller.Marshall(publicRequestBeforeStepsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetTestCases())
-                {
-                    context.Writer.WritePropertyName("testCases");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TestCasesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TestCases, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

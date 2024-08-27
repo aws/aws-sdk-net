@@ -63,39 +63,42 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDbPassword())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DbPassword");
-                    context.Writer.Write(publicRequest.DbPassword);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDbPassword())
+                    {
+                        context.Writer.WritePropertyName("DbPassword");
+                        context.Writer.Write(publicRequest.DbPassword);
+                    }
+
+                    if(publicRequest.IsSetDbUser())
+                    {
+                        context.Writer.WritePropertyName("DbUser");
+                        context.Writer.Write(publicRequest.DbUser);
+                    }
+
+                    if(publicRequest.IsSetRdsDbInstanceArn())
+                    {
+                        context.Writer.WritePropertyName("RdsDbInstanceArn");
+                        context.Writer.Write(publicRequest.RdsDbInstanceArn);
+                    }
+
+                    if(publicRequest.IsSetStackId())
+                    {
+                        context.Writer.WritePropertyName("StackId");
+                        context.Writer.Write(publicRequest.StackId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDbUser())
-                {
-                    context.Writer.WritePropertyName("DbUser");
-                    context.Writer.Write(publicRequest.DbUser);
-                }
-
-                if(publicRequest.IsSetRdsDbInstanceArn())
-                {
-                    context.Writer.WritePropertyName("RdsDbInstanceArn");
-                    context.Writer.Write(publicRequest.RdsDbInstanceArn);
-                }
-
-                if(publicRequest.IsSetStackId())
-                {
-                    context.Writer.WritePropertyName("StackId");
-                    context.Writer.Write(publicRequest.StackId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

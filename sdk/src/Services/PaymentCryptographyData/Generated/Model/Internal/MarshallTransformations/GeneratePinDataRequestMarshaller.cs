@@ -61,56 +61,59 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/pindata/generate";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEncryptionKeyIdentifier())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("EncryptionKeyIdentifier");
-                    context.Writer.Write(publicRequest.EncryptionKeyIdentifier);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEncryptionKeyIdentifier())
+                    {
+                        context.Writer.WritePropertyName("EncryptionKeyIdentifier");
+                        context.Writer.Write(publicRequest.EncryptionKeyIdentifier);
+                    }
+
+                    if(publicRequest.IsSetGenerationAttributes())
+                    {
+                        context.Writer.WritePropertyName("GenerationAttributes");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PinGenerationAttributesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.GenerationAttributes, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetGenerationKeyIdentifier())
+                    {
+                        context.Writer.WritePropertyName("GenerationKeyIdentifier");
+                        context.Writer.Write(publicRequest.GenerationKeyIdentifier);
+                    }
+
+                    if(publicRequest.IsSetPinBlockFormat())
+                    {
+                        context.Writer.WritePropertyName("PinBlockFormat");
+                        context.Writer.Write(publicRequest.PinBlockFormat);
+                    }
+
+                    if(publicRequest.IsSetPinDataLength())
+                    {
+                        context.Writer.WritePropertyName("PinDataLength");
+                        context.Writer.Write(publicRequest.PinDataLength.Value);
+                    }
+
+                    if(publicRequest.IsSetPrimaryAccountNumber())
+                    {
+                        context.Writer.WritePropertyName("PrimaryAccountNumber");
+                        context.Writer.Write(publicRequest.PrimaryAccountNumber);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetGenerationAttributes())
-                {
-                    context.Writer.WritePropertyName("GenerationAttributes");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PinGenerationAttributesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.GenerationAttributes, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetGenerationKeyIdentifier())
-                {
-                    context.Writer.WritePropertyName("GenerationKeyIdentifier");
-                    context.Writer.Write(publicRequest.GenerationKeyIdentifier);
-                }
-
-                if(publicRequest.IsSetPinBlockFormat())
-                {
-                    context.Writer.WritePropertyName("PinBlockFormat");
-                    context.Writer.Write(publicRequest.PinBlockFormat);
-                }
-
-                if(publicRequest.IsSetPinDataLength())
-                {
-                    context.Writer.WritePropertyName("PinDataLength");
-                    context.Writer.Write(publicRequest.PinDataLength.Value);
-                }
-
-                if(publicRequest.IsSetPrimaryAccountNumber())
-                {
-                    context.Writer.WritePropertyName("PrimaryAccountNumber");
-                    context.Writer.Write(publicRequest.PrimaryAccountNumber);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

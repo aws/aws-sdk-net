@@ -61,27 +61,30 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/disable-control";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetControlIdentifier())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("controlIdentifier");
-                    context.Writer.Write(publicRequest.ControlIdentifier);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetControlIdentifier())
+                    {
+                        context.Writer.WritePropertyName("controlIdentifier");
+                        context.Writer.Write(publicRequest.ControlIdentifier);
+                    }
+
+                    if(publicRequest.IsSetTargetIdentifier())
+                    {
+                        context.Writer.WritePropertyName("targetIdentifier");
+                        context.Writer.Write(publicRequest.TargetIdentifier);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTargetIdentifier())
-                {
-                    context.Writer.WritePropertyName("targetIdentifier");
-                    context.Writer.Write(publicRequest.TargetIdentifier);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

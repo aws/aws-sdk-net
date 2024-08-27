@@ -63,74 +63,77 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAttachmentSetId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("attachmentSetId");
-                    context.Writer.Write(publicRequest.AttachmentSetId);
-                }
-
-                if(publicRequest.IsSetCategoryCode())
-                {
-                    context.Writer.WritePropertyName("categoryCode");
-                    context.Writer.Write(publicRequest.CategoryCode);
-                }
-
-                if(publicRequest.IsSetCcEmailAddresses())
-                {
-                    context.Writer.WritePropertyName("ccEmailAddresses");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCcEmailAddressesListValue in publicRequest.CcEmailAddresses)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAttachmentSetId())
                     {
-                            context.Writer.Write(publicRequestCcEmailAddressesListValue);
+                        context.Writer.WritePropertyName("attachmentSetId");
+                        context.Writer.Write(publicRequest.AttachmentSetId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetCategoryCode())
+                    {
+                        context.Writer.WritePropertyName("categoryCode");
+                        context.Writer.Write(publicRequest.CategoryCode);
+                    }
+
+                    if(publicRequest.IsSetCcEmailAddresses())
+                    {
+                        context.Writer.WritePropertyName("ccEmailAddresses");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCcEmailAddressesListValue in publicRequest.CcEmailAddresses)
+                        {
+                                context.Writer.Write(publicRequestCcEmailAddressesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetCommunicationBody())
+                    {
+                        context.Writer.WritePropertyName("communicationBody");
+                        context.Writer.Write(publicRequest.CommunicationBody);
+                    }
+
+                    if(publicRequest.IsSetIssueType())
+                    {
+                        context.Writer.WritePropertyName("issueType");
+                        context.Writer.Write(publicRequest.IssueType);
+                    }
+
+                    if(publicRequest.IsSetLanguage())
+                    {
+                        context.Writer.WritePropertyName("language");
+                        context.Writer.Write(publicRequest.Language);
+                    }
+
+                    if(publicRequest.IsSetServiceCode())
+                    {
+                        context.Writer.WritePropertyName("serviceCode");
+                        context.Writer.Write(publicRequest.ServiceCode);
+                    }
+
+                    if(publicRequest.IsSetSeverityCode())
+                    {
+                        context.Writer.WritePropertyName("severityCode");
+                        context.Writer.Write(publicRequest.SeverityCode);
+                    }
+
+                    if(publicRequest.IsSetSubject())
+                    {
+                        context.Writer.WritePropertyName("subject");
+                        context.Writer.Write(publicRequest.Subject);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCommunicationBody())
-                {
-                    context.Writer.WritePropertyName("communicationBody");
-                    context.Writer.Write(publicRequest.CommunicationBody);
-                }
-
-                if(publicRequest.IsSetIssueType())
-                {
-                    context.Writer.WritePropertyName("issueType");
-                    context.Writer.Write(publicRequest.IssueType);
-                }
-
-                if(publicRequest.IsSetLanguage())
-                {
-                    context.Writer.WritePropertyName("language");
-                    context.Writer.Write(publicRequest.Language);
-                }
-
-                if(publicRequest.IsSetServiceCode())
-                {
-                    context.Writer.WritePropertyName("serviceCode");
-                    context.Writer.Write(publicRequest.ServiceCode);
-                }
-
-                if(publicRequest.IsSetSeverityCode())
-                {
-                    context.Writer.WritePropertyName("severityCode");
-                    context.Writer.Write(publicRequest.SeverityCode);
-                }
-
-                if(publicRequest.IsSetSubject())
-                {
-                    context.Writer.WritePropertyName("subject");
-                    context.Writer.Write(publicRequest.Subject);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

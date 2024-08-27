@@ -63,80 +63,83 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConflictDetailLevel())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("conflictDetailLevel");
-                    context.Writer.Write(publicRequest.ConflictDetailLevel);
-                }
-
-                if(publicRequest.IsSetConflictResolutionStrategy())
-                {
-                    context.Writer.WritePropertyName("conflictResolutionStrategy");
-                    context.Writer.Write(publicRequest.ConflictResolutionStrategy);
-                }
-
-                if(publicRequest.IsSetDestinationCommitSpecifier())
-                {
-                    context.Writer.WritePropertyName("destinationCommitSpecifier");
-                    context.Writer.Write(publicRequest.DestinationCommitSpecifier);
-                }
-
-                if(publicRequest.IsSetFilePaths())
-                {
-                    context.Writer.WritePropertyName("filePaths");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFilePathsListValue in publicRequest.FilePaths)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConflictDetailLevel())
                     {
-                            context.Writer.Write(publicRequestFilePathsListValue);
+                        context.Writer.WritePropertyName("conflictDetailLevel");
+                        context.Writer.Write(publicRequest.ConflictDetailLevel);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetConflictResolutionStrategy())
+                    {
+                        context.Writer.WritePropertyName("conflictResolutionStrategy");
+                        context.Writer.Write(publicRequest.ConflictResolutionStrategy);
+                    }
+
+                    if(publicRequest.IsSetDestinationCommitSpecifier())
+                    {
+                        context.Writer.WritePropertyName("destinationCommitSpecifier");
+                        context.Writer.Write(publicRequest.DestinationCommitSpecifier);
+                    }
+
+                    if(publicRequest.IsSetFilePaths())
+                    {
+                        context.Writer.WritePropertyName("filePaths");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFilePathsListValue in publicRequest.FilePaths)
+                        {
+                                context.Writer.Write(publicRequestFilePathsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetMaxConflictFiles())
+                    {
+                        context.Writer.WritePropertyName("maxConflictFiles");
+                        context.Writer.Write(publicRequest.MaxConflictFiles.Value);
+                    }
+
+                    if(publicRequest.IsSetMaxMergeHunks())
+                    {
+                        context.Writer.WritePropertyName("maxMergeHunks");
+                        context.Writer.Write(publicRequest.MaxMergeHunks.Value);
+                    }
+
+                    if(publicRequest.IsSetMergeOption())
+                    {
+                        context.Writer.WritePropertyName("mergeOption");
+                        context.Writer.Write(publicRequest.MergeOption);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetRepositoryName())
+                    {
+                        context.Writer.WritePropertyName("repositoryName");
+                        context.Writer.Write(publicRequest.RepositoryName);
+                    }
+
+                    if(publicRequest.IsSetSourceCommitSpecifier())
+                    {
+                        context.Writer.WritePropertyName("sourceCommitSpecifier");
+                        context.Writer.Write(publicRequest.SourceCommitSpecifier);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMaxConflictFiles())
-                {
-                    context.Writer.WritePropertyName("maxConflictFiles");
-                    context.Writer.Write(publicRequest.MaxConflictFiles.Value);
-                }
-
-                if(publicRequest.IsSetMaxMergeHunks())
-                {
-                    context.Writer.WritePropertyName("maxMergeHunks");
-                    context.Writer.Write(publicRequest.MaxMergeHunks.Value);
-                }
-
-                if(publicRequest.IsSetMergeOption())
-                {
-                    context.Writer.WritePropertyName("mergeOption");
-                    context.Writer.Write(publicRequest.MergeOption);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetRepositoryName())
-                {
-                    context.Writer.WritePropertyName("repositoryName");
-                    context.Writer.Write(publicRequest.RepositoryName);
-                }
-
-                if(publicRequest.IsSetSourceCommitSpecifier())
-                {
-                    context.Writer.WritePropertyName("sourceCommitSpecifier");
-                    context.Writer.Write(publicRequest.SourceCommitSpecifier);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

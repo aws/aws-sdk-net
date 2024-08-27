@@ -64,52 +64,55 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                 throw new AmazonWorkSpacesWebException("Request object does not have required field IdentityProviderArn set");
             request.AddPathResource("{identityProviderArn+}", StringUtils.FromString(publicRequest.IdentityProviderArn.TrimStart('/')));
             request.ResourcePath = "/identityProviders/{identityProviderArn+}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetIdentityProviderDetails())
-                {
-                    context.Writer.WritePropertyName("identityProviderDetails");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestIdentityProviderDetailsKvp in publicRequest.IdentityProviderDetails)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
-                        context.Writer.WritePropertyName(publicRequestIdentityProviderDetailsKvp.Key);
-                        var publicRequestIdentityProviderDetailsValue = publicRequestIdentityProviderDetailsKvp.Value;
-
-                            context.Writer.Write(publicRequestIdentityProviderDetailsValue);
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetIdentityProviderDetails())
+                    {
+                        context.Writer.WritePropertyName("identityProviderDetails");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestIdentityProviderDetailsKvp in publicRequest.IdentityProviderDetails)
+                        {
+                            context.Writer.WritePropertyName(publicRequestIdentityProviderDetailsKvp.Key);
+                            var publicRequestIdentityProviderDetailsValue = publicRequestIdentityProviderDetailsKvp.Value;
+
+                                context.Writer.Write(publicRequestIdentityProviderDetailsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetIdentityProviderName())
+                    {
+                        context.Writer.WritePropertyName("identityProviderName");
+                        context.Writer.Write(publicRequest.IdentityProviderName);
+                    }
+
+                    if(publicRequest.IsSetIdentityProviderType())
+                    {
+                        context.Writer.WritePropertyName("identityProviderType");
+                        context.Writer.Write(publicRequest.IdentityProviderType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetIdentityProviderName())
-                {
-                    context.Writer.WritePropertyName("identityProviderName");
-                    context.Writer.Write(publicRequest.IdentityProviderName);
-                }
-
-                if(publicRequest.IsSetIdentityProviderType())
-                {
-                    context.Writer.WritePropertyName("identityProviderType");
-                    context.Writer.Write(publicRequest.IdentityProviderType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

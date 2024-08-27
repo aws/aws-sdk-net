@@ -63,51 +63,54 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMapRunArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("mapRunArn");
-                    context.Writer.Write(publicRequest.MapRunArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMapRunArn())
+                    {
+                        context.Writer.WritePropertyName("mapRunArn");
+                        context.Writer.Write(publicRequest.MapRunArn);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetRedriveFilter())
+                    {
+                        context.Writer.WritePropertyName("redriveFilter");
+                        context.Writer.Write(publicRequest.RedriveFilter);
+                    }
+
+                    if(publicRequest.IsSetStateMachineArn())
+                    {
+                        context.Writer.WritePropertyName("stateMachineArn");
+                        context.Writer.Write(publicRequest.StateMachineArn);
+                    }
+
+                    if(publicRequest.IsSetStatusFilter())
+                    {
+                        context.Writer.WritePropertyName("statusFilter");
+                        context.Writer.Write(publicRequest.StatusFilter);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetRedriveFilter())
-                {
-                    context.Writer.WritePropertyName("redriveFilter");
-                    context.Writer.Write(publicRequest.RedriveFilter);
-                }
-
-                if(publicRequest.IsSetStateMachineArn())
-                {
-                    context.Writer.WritePropertyName("stateMachineArn");
-                    context.Writer.Write(publicRequest.StateMachineArn);
-                }
-
-                if(publicRequest.IsSetStatusFilter())
-                {
-                    context.Writer.WritePropertyName("statusFilter");
-                    context.Writer.Write(publicRequest.StatusFilter);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

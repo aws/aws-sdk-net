@@ -63,45 +63,48 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCluster())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("cluster");
-                    context.Writer.Write(publicRequest.Cluster);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCluster())
+                    {
+                        context.Writer.WritePropertyName("cluster");
+                        context.Writer.Write(publicRequest.Cluster);
+                    }
+
+                    if(publicRequest.IsSetCommand())
+                    {
+                        context.Writer.WritePropertyName("command");
+                        context.Writer.Write(publicRequest.Command);
+                    }
+
+                    if(publicRequest.IsSetContainer())
+                    {
+                        context.Writer.WritePropertyName("container");
+                        context.Writer.Write(publicRequest.Container);
+                    }
+
+                    if(publicRequest.IsSetInteractive())
+                    {
+                        context.Writer.WritePropertyName("interactive");
+                        context.Writer.Write(publicRequest.Interactive.Value);
+                    }
+
+                    if(publicRequest.IsSetTask())
+                    {
+                        context.Writer.WritePropertyName("task");
+                        context.Writer.Write(publicRequest.Task);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCommand())
-                {
-                    context.Writer.WritePropertyName("command");
-                    context.Writer.Write(publicRequest.Command);
-                }
-
-                if(publicRequest.IsSetContainer())
-                {
-                    context.Writer.WritePropertyName("container");
-                    context.Writer.Write(publicRequest.Container);
-                }
-
-                if(publicRequest.IsSetInteractive())
-                {
-                    context.Writer.WritePropertyName("interactive");
-                    context.Writer.Write(publicRequest.Interactive.Value);
-                }
-
-                if(publicRequest.IsSetTask())
-                {
-                    context.Writer.WritePropertyName("task");
-                    context.Writer.Write(publicRequest.Task);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

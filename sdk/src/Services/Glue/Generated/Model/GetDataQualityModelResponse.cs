@@ -45,9 +45,9 @@ namespace Amazon.Glue.Model
         /// The timestamp when the data quality model training completed.
         /// </para>
         /// </summary>
-        public DateTime CompletedOn
+        public DateTime? CompletedOn
         {
-            get { return this._completedOn.GetValueOrDefault(); }
+            get { return this._completedOn; }
             set { this._completedOn = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.Glue.Model
         /// The timestamp when the data quality model training started.
         /// </para>
         /// </summary>
-        public DateTime StartedOn
+        public DateTime? StartedOn
         {
-            get { return this._startedOn.GetValueOrDefault(); }
+            get { return this._startedOn; }
             set { this._startedOn = value; }
         }
 

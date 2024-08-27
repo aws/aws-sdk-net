@@ -61,77 +61,80 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/jobs";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAdaptiveIngestion())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("adaptiveIngestion");
-                    context.Writer.Write(publicRequest.AdaptiveIngestion.Value);
-                }
-
-                if(publicRequest.IsSetDeleteFilesAfterImport())
-                {
-                    context.Writer.WritePropertyName("deleteFilesAfterImport");
-                    context.Writer.Write(publicRequest.DeleteFilesAfterImport.Value);
-                }
-
-                if(publicRequest.IsSetErrorReportLocation())
-                {
-                    context.Writer.WritePropertyName("errorReportLocation");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ErrorReportLocationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ErrorReportLocation, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetFiles())
-                {
-                    context.Writer.WritePropertyName("files");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFilesListValue in publicRequest.Files)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAdaptiveIngestion())
                     {
+                        context.Writer.WritePropertyName("adaptiveIngestion");
+                        context.Writer.Write(publicRequest.AdaptiveIngestion.Value);
+                    }
+
+                    if(publicRequest.IsSetDeleteFilesAfterImport())
+                    {
+                        context.Writer.WritePropertyName("deleteFilesAfterImport");
+                        context.Writer.Write(publicRequest.DeleteFilesAfterImport.Value);
+                    }
+
+                    if(publicRequest.IsSetErrorReportLocation())
+                    {
+                        context.Writer.WritePropertyName("errorReportLocation");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = FileMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFilesListValue, context);
+                        var marshaller = ErrorReportLocationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ErrorReportLocation, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetFiles())
+                    {
+                        context.Writer.WritePropertyName("files");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFilesListValue in publicRequest.Files)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = FileMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFilesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetJobConfiguration())
+                    {
+                        context.Writer.WritePropertyName("jobConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = JobConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.JobConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetJobName())
+                    {
+                        context.Writer.WritePropertyName("jobName");
+                        context.Writer.Write(publicRequest.JobName);
+                    }
+
+                    if(publicRequest.IsSetJobRoleArn())
+                    {
+                        context.Writer.WritePropertyName("jobRoleArn");
+                        context.Writer.Write(publicRequest.JobRoleArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetJobConfiguration())
-                {
-                    context.Writer.WritePropertyName("jobConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = JobConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.JobConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetJobName())
-                {
-                    context.Writer.WritePropertyName("jobName");
-                    context.Writer.Write(publicRequest.JobName);
-                }
-
-                if(publicRequest.IsSetJobRoleArn())
-                {
-                    context.Writer.WritePropertyName("jobRoleArn");
-                    context.Writer.Write(publicRequest.JobRoleArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

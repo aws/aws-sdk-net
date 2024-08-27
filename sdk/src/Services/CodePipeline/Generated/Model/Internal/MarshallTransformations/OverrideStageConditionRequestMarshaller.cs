@@ -63,39 +63,42 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConditionType())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("conditionType");
-                    context.Writer.Write(publicRequest.ConditionType);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConditionType())
+                    {
+                        context.Writer.WritePropertyName("conditionType");
+                        context.Writer.Write(publicRequest.ConditionType);
+                    }
+
+                    if(publicRequest.IsSetPipelineExecutionId())
+                    {
+                        context.Writer.WritePropertyName("pipelineExecutionId");
+                        context.Writer.Write(publicRequest.PipelineExecutionId);
+                    }
+
+                    if(publicRequest.IsSetPipelineName())
+                    {
+                        context.Writer.WritePropertyName("pipelineName");
+                        context.Writer.Write(publicRequest.PipelineName);
+                    }
+
+                    if(publicRequest.IsSetStageName())
+                    {
+                        context.Writer.WritePropertyName("stageName");
+                        context.Writer.Write(publicRequest.StageName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPipelineExecutionId())
-                {
-                    context.Writer.WritePropertyName("pipelineExecutionId");
-                    context.Writer.Write(publicRequest.PipelineExecutionId);
-                }
-
-                if(publicRequest.IsSetPipelineName())
-                {
-                    context.Writer.WritePropertyName("pipelineName");
-                    context.Writer.Write(publicRequest.PipelineName);
-                }
-
-                if(publicRequest.IsSetStageName())
-                {
-                    context.Writer.WritePropertyName("stageName");
-                    context.Writer.Write(publicRequest.StageName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

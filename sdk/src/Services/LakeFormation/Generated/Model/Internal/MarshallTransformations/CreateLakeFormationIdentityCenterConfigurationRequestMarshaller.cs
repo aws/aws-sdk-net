@@ -61,54 +61,57 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/CreateLakeFormationIdentityCenterConfiguration";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCatalogId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CatalogId");
-                    context.Writer.Write(publicRequest.CatalogId);
-                }
-
-                if(publicRequest.IsSetExternalFiltering())
-                {
-                    context.Writer.WritePropertyName("ExternalFiltering");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ExternalFilteringConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ExternalFiltering, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetInstanceArn())
-                {
-                    context.Writer.WritePropertyName("InstanceArn");
-                    context.Writer.Write(publicRequest.InstanceArn);
-                }
-
-                if(publicRequest.IsSetShareRecipients())
-                {
-                    context.Writer.WritePropertyName("ShareRecipients");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestShareRecipientsListValue in publicRequest.ShareRecipients)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCatalogId())
                     {
+                        context.Writer.WritePropertyName("CatalogId");
+                        context.Writer.Write(publicRequest.CatalogId);
+                    }
+
+                    if(publicRequest.IsSetExternalFiltering())
+                    {
+                        context.Writer.WritePropertyName("ExternalFiltering");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = DataLakePrincipalMarshaller.Instance;
-                        marshaller.Marshall(publicRequestShareRecipientsListValue, context);
+                        var marshaller = ExternalFilteringConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ExternalFiltering, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetInstanceArn())
+                    {
+                        context.Writer.WritePropertyName("InstanceArn");
+                        context.Writer.Write(publicRequest.InstanceArn);
+                    }
+
+                    if(publicRequest.IsSetShareRecipients())
+                    {
+                        context.Writer.WritePropertyName("ShareRecipients");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestShareRecipientsListValue in publicRequest.ShareRecipients)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = DataLakePrincipalMarshaller.Instance;
+                            marshaller.Marshall(publicRequestShareRecipientsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

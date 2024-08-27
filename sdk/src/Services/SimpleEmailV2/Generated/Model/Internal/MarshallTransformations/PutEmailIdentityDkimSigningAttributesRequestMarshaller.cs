@@ -64,32 +64,35 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 throw new AmazonSimpleEmailServiceV2Exception("Request object does not have required field EmailIdentity set");
             request.AddPathResource("{EmailIdentity}", StringUtils.FromString(publicRequest.EmailIdentity));
             request.ResourcePath = "/v1/email/identities/{EmailIdentity}/dkim/signing";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetSigningAttributes())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("SigningAttributes");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetSigningAttributes())
+                    {
+                        context.Writer.WritePropertyName("SigningAttributes");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = DkimSigningAttributesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SigningAttributes, context);
+                        var marshaller = DkimSigningAttributesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SigningAttributes, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSigningAttributesOrigin())
+                    {
+                        context.Writer.WritePropertyName("SigningAttributesOrigin");
+                        context.Writer.Write(publicRequest.SigningAttributesOrigin);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSigningAttributesOrigin())
-                {
-                    context.Writer.WritePropertyName("SigningAttributesOrigin");
-                    context.Writer.Write(publicRequest.SigningAttributesOrigin);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

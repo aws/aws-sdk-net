@@ -44,9 +44,9 @@ namespace Amazon.Connect.Model
         /// routing&#x2028; step, if expiry was configured for this routing step.
         /// </para>
         /// </summary>
-        public int DurationInSeconds
+        public int? DurationInSeconds
         {
-            get { return this._durationInSeconds.GetValueOrDefault(); }
+            get { return this._durationInSeconds; }
             set { this._durationInSeconds = value; }
         }
 

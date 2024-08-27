@@ -63,52 +63,55 @@ namespace Amazon.MarketplaceEntitlementService.Model.Internal.MarshallTransforma
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFilter())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Filter");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestFilterKvp in publicRequest.Filter)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFilter())
                     {
-                        context.Writer.WritePropertyName(publicRequestFilterKvp.Key);
-                        var publicRequestFilterValue = publicRequestFilterKvp.Value;
-
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestFilterValueListValue in publicRequestFilterValue)
+                        context.Writer.WritePropertyName("Filter");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestFilterKvp in publicRequest.Filter)
                         {
-                                context.Writer.Write(publicRequestFilterValueListValue);
+                            context.Writer.WritePropertyName(publicRequestFilterKvp.Key);
+                            var publicRequestFilterValue = publicRequestFilterKvp.Value;
+
+                            context.Writer.WriteArrayStart();
+                            foreach(var publicRequestFilterValueListValue in publicRequestFilterValue)
+                            {
+                                    context.Writer.Write(publicRequestFilterValueListValue);
+                            }
+                            context.Writer.WriteArrayEnd();
                         }
-                        context.Writer.WriteArrayEnd();
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetProductCode())
+                    {
+                        context.Writer.WritePropertyName("ProductCode");
+                        context.Writer.Write(publicRequest.ProductCode);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetProductCode())
-                {
-                    context.Writer.WritePropertyName("ProductCode");
-                    context.Writer.Write(publicRequest.ProductCode);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -73,32 +73,35 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/sequencestore/{sequenceStoreId}/upload/{uploadId}/parts";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFilter())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("filter");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFilter())
+                    {
+                        context.Writer.WritePropertyName("filter");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = ReadSetUploadPartListFilterMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Filter, context);
+                        var marshaller = ReadSetUploadPartListFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Filter, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetPartSource())
+                    {
+                        context.Writer.WritePropertyName("partSource");
+                        context.Writer.Write(publicRequest.PartSource);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPartSource())
-                {
-                    context.Writer.WritePropertyName("partSource");
-                    context.Writer.Write(publicRequest.PartSource);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             request.UseQueryString = true;

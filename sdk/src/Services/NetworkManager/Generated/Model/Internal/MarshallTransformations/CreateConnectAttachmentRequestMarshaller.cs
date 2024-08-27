@@ -61,71 +61,74 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/connect-attachments";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetCoreNetworkId())
-                {
-                    context.Writer.WritePropertyName("CoreNetworkId");
-                    context.Writer.Write(publicRequest.CoreNetworkId);
-                }
-
-                if(publicRequest.IsSetEdgeLocation())
-                {
-                    context.Writer.WritePropertyName("EdgeLocation");
-                    context.Writer.Write(publicRequest.EdgeLocation);
-                }
-
-                if(publicRequest.IsSetOptions())
-                {
-                    context.Writer.WritePropertyName("Options");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ConnectAttachmentOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Options, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetCoreNetworkId())
+                    {
+                        context.Writer.WritePropertyName("CoreNetworkId");
+                        context.Writer.Write(publicRequest.CoreNetworkId);
+                    }
+
+                    if(publicRequest.IsSetEdgeLocation())
+                    {
+                        context.Writer.WritePropertyName("EdgeLocation");
+                        context.Writer.Write(publicRequest.EdgeLocation);
+                    }
+
+                    if(publicRequest.IsSetOptions())
+                    {
+                        context.Writer.WritePropertyName("Options");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = ConnectAttachmentOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Options, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTransportAttachmentId())
+                    {
+                        context.Writer.WritePropertyName("TransportAttachmentId");
+                        context.Writer.Write(publicRequest.TransportAttachmentId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTransportAttachmentId())
-                {
-                    context.Writer.WritePropertyName("TransportAttachmentId");
-                    context.Writer.Write(publicRequest.TransportAttachmentId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

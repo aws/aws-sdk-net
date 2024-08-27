@@ -63,49 +63,52 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientRequestToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetOptions())
-                {
-                    context.Writer.WritePropertyName("Options");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestOptionsListValue in publicRequest.Options)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientRequestToken())
                     {
-                            context.Writer.Write(publicRequestOptionsListValue);
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(publicRequest.ClientRequestToken);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    else if(!(publicRequest.IsSetClientRequestToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetOptions())
+                    {
+                        context.Writer.WritePropertyName("Options");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestOptionsListValue in publicRequest.Options)
+                        {
+                                context.Writer.Write(publicRequestOptionsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSnapshotId())
+                    {
+                        context.Writer.WritePropertyName("SnapshotId");
+                        context.Writer.Write(publicRequest.SnapshotId);
+                    }
+
+                    if(publicRequest.IsSetVolumeId())
+                    {
+                        context.Writer.WritePropertyName("VolumeId");
+                        context.Writer.Write(publicRequest.VolumeId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSnapshotId())
-                {
-                    context.Writer.WritePropertyName("SnapshotId");
-                    context.Writer.Write(publicRequest.SnapshotId);
-                }
-
-                if(publicRequest.IsSetVolumeId())
-                {
-                    context.Writer.WritePropertyName("VolumeId");
-                    context.Writer.Write(publicRequest.VolumeId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

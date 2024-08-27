@@ -61,103 +61,106 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/2017-08-29/jobTemplates";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccelerationSettings())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("accelerationSettings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AccelerationSettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AccelerationSettings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetCategory())
-                {
-                    context.Writer.WritePropertyName("category");
-                    context.Writer.Write(publicRequest.Category);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetHopDestinations())
-                {
-                    context.Writer.WritePropertyName("hopDestinations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestHopDestinationsListValue in publicRequest.HopDestinations)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccelerationSettings())
                     {
+                        context.Writer.WritePropertyName("accelerationSettings");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = HopDestinationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestHopDestinationsListValue, context);
+                        var marshaller = AccelerationSettingsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AccelerationSettings, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetPriority())
-                {
-                    context.Writer.WritePropertyName("priority");
-                    context.Writer.Write(publicRequest.Priority.Value);
-                }
-
-                if(publicRequest.IsSetQueue())
-                {
-                    context.Writer.WritePropertyName("queue");
-                    context.Writer.Write(publicRequest.Queue);
-                }
-
-                if(publicRequest.IsSetSettings())
-                {
-                    context.Writer.WritePropertyName("settings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = JobTemplateSettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Settings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetStatusUpdateInterval())
-                {
-                    context.Writer.WritePropertyName("statusUpdateInterval");
-                    context.Writer.Write(publicRequest.StatusUpdateInterval);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetCategory())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("category");
+                        context.Writer.Write(publicRequest.Category);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetHopDestinations())
+                    {
+                        context.Writer.WritePropertyName("hopDestinations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestHopDestinationsListValue in publicRequest.HopDestinations)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = HopDestinationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestHopDestinationsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetPriority())
+                    {
+                        context.Writer.WritePropertyName("priority");
+                        context.Writer.Write(publicRequest.Priority.Value);
+                    }
+
+                    if(publicRequest.IsSetQueue())
+                    {
+                        context.Writer.WritePropertyName("queue");
+                        context.Writer.Write(publicRequest.Queue);
+                    }
+
+                    if(publicRequest.IsSetSettings())
+                    {
+                        context.Writer.WritePropertyName("settings");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = JobTemplateSettingsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Settings, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetStatusUpdateInterval())
+                    {
+                        context.Writer.WritePropertyName("statusUpdateInterval");
+                        context.Writer.Write(publicRequest.StatusUpdateInterval);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

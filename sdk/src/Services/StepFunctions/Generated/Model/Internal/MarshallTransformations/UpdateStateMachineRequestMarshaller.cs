@@ -63,78 +63,81 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDefinition())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("definition");
-                    context.Writer.Write(publicRequest.Definition);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDefinition())
+                    {
+                        context.Writer.WritePropertyName("definition");
+                        context.Writer.Write(publicRequest.Definition);
+                    }
+
+                    if(publicRequest.IsSetEncryptionConfiguration())
+                    {
+                        context.Writer.WritePropertyName("encryptionConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EncryptionConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetLoggingConfiguration())
+                    {
+                        context.Writer.WritePropertyName("loggingConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LoggingConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.LoggingConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetPublish())
+                    {
+                        context.Writer.WritePropertyName("publish");
+                        context.Writer.Write(publicRequest.Publish.Value);
+                    }
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("roleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    if(publicRequest.IsSetStateMachineArn())
+                    {
+                        context.Writer.WritePropertyName("stateMachineArn");
+                        context.Writer.Write(publicRequest.StateMachineArn);
+                    }
+
+                    if(publicRequest.IsSetTracingConfiguration())
+                    {
+                        context.Writer.WritePropertyName("tracingConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TracingConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TracingConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetVersionDescription())
+                    {
+                        context.Writer.WritePropertyName("versionDescription");
+                        context.Writer.Write(publicRequest.VersionDescription);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEncryptionConfiguration())
-                {
-                    context.Writer.WritePropertyName("encryptionConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EncryptionConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetLoggingConfiguration())
-                {
-                    context.Writer.WritePropertyName("loggingConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LoggingConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LoggingConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPublish())
-                {
-                    context.Writer.WritePropertyName("publish");
-                    context.Writer.Write(publicRequest.Publish.Value);
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("roleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetStateMachineArn())
-                {
-                    context.Writer.WritePropertyName("stateMachineArn");
-                    context.Writer.Write(publicRequest.StateMachineArn);
-                }
-
-                if(publicRequest.IsSetTracingConfiguration())
-                {
-                    context.Writer.WritePropertyName("tracingConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TracingConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TracingConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetVersionDescription())
-                {
-                    context.Writer.WritePropertyName("versionDescription");
-                    context.Writer.Write(publicRequest.VersionDescription);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -64,48 +64,51 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 throw new AmazonMediaConnectException("Request object does not have required field BridgeArn set");
             request.AddPathResource("{bridgeArn}", StringUtils.FromString(publicRequest.BridgeArn));
             request.ResourcePath = "/v1/bridges/{bridgeArn}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEgressGatewayBridge())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("egressGatewayBridge");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEgressGatewayBridge())
+                    {
+                        context.Writer.WritePropertyName("egressGatewayBridge");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = UpdateEgressGatewayBridgeRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EgressGatewayBridge, context);
+                        var marshaller = UpdateEgressGatewayBridgeRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EgressGatewayBridge, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetIngressGatewayBridge())
+                    {
+                        context.Writer.WritePropertyName("ingressGatewayBridge");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = UpdateIngressGatewayBridgeRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.IngressGatewayBridge, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSourceFailoverConfig())
+                    {
+                        context.Writer.WritePropertyName("sourceFailoverConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = UpdateFailoverConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SourceFailoverConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetIngressGatewayBridge())
-                {
-                    context.Writer.WritePropertyName("ingressGatewayBridge");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UpdateIngressGatewayBridgeRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.IngressGatewayBridge, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSourceFailoverConfig())
-                {
-                    context.Writer.WritePropertyName("sourceFailoverConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UpdateFailoverConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SourceFailoverConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

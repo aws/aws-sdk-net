@@ -63,26 +63,29 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetTaskDefinitions())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("taskDefinitions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTaskDefinitionsListValue in publicRequest.TaskDefinitions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetTaskDefinitions())
                     {
-                            context.Writer.Write(publicRequestTaskDefinitionsListValue);
+                        context.Writer.WritePropertyName("taskDefinitions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTaskDefinitionsListValue in publicRequest.TaskDefinitions)
+                        {
+                                context.Writer.Write(publicRequestTaskDefinitionsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

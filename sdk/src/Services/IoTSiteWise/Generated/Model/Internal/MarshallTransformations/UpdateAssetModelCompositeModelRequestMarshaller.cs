@@ -67,60 +67,63 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 throw new AmazonIoTSiteWiseException("Request object does not have required field AssetModelId set");
             request.AddPathResource("{assetModelId}", StringUtils.FromString(publicRequest.AssetModelId));
             request.ResourcePath = "/asset-models/{assetModelId}/composite-models/{assetModelCompositeModelId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAssetModelCompositeModelDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("assetModelCompositeModelDescription");
-                    context.Writer.Write(publicRequest.AssetModelCompositeModelDescription);
-                }
-
-                if(publicRequest.IsSetAssetModelCompositeModelExternalId())
-                {
-                    context.Writer.WritePropertyName("assetModelCompositeModelExternalId");
-                    context.Writer.Write(publicRequest.AssetModelCompositeModelExternalId);
-                }
-
-                if(publicRequest.IsSetAssetModelCompositeModelName())
-                {
-                    context.Writer.WritePropertyName("assetModelCompositeModelName");
-                    context.Writer.Write(publicRequest.AssetModelCompositeModelName);
-                }
-
-                if(publicRequest.IsSetAssetModelCompositeModelProperties())
-                {
-                    context.Writer.WritePropertyName("assetModelCompositeModelProperties");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAssetModelCompositeModelPropertiesListValue in publicRequest.AssetModelCompositeModelProperties)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAssetModelCompositeModelDescription())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AssetModelPropertyMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAssetModelCompositeModelPropertiesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("assetModelCompositeModelDescription");
+                        context.Writer.Write(publicRequest.AssetModelCompositeModelDescription);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetAssetModelCompositeModelExternalId())
+                    {
+                        context.Writer.WritePropertyName("assetModelCompositeModelExternalId");
+                        context.Writer.Write(publicRequest.AssetModelCompositeModelExternalId);
+                    }
+
+                    if(publicRequest.IsSetAssetModelCompositeModelName())
+                    {
+                        context.Writer.WritePropertyName("assetModelCompositeModelName");
+                        context.Writer.Write(publicRequest.AssetModelCompositeModelName);
+                    }
+
+                    if(publicRequest.IsSetAssetModelCompositeModelProperties())
+                    {
+                        context.Writer.WritePropertyName("assetModelCompositeModelProperties");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAssetModelCompositeModelPropertiesListValue in publicRequest.AssetModelCompositeModelProperties)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = AssetModelPropertyMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAssetModelCompositeModelPropertiesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

@@ -63,78 +63,81 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConstraints())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Constraints");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = GrantConstraintsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Constraints, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDryRun())
-                {
-                    context.Writer.WritePropertyName("DryRun");
-                    context.Writer.Write(publicRequest.DryRun.Value);
-                }
-
-                if(publicRequest.IsSetGranteePrincipal())
-                {
-                    context.Writer.WritePropertyName("GranteePrincipal");
-                    context.Writer.Write(publicRequest.GranteePrincipal);
-                }
-
-                if(publicRequest.IsSetGrantTokens())
-                {
-                    context.Writer.WritePropertyName("GrantTokens");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestGrantTokensListValue in publicRequest.GrantTokens)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConstraints())
                     {
-                            context.Writer.Write(publicRequestGrantTokensListValue);
+                        context.Writer.WritePropertyName("Constraints");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = GrantConstraintsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Constraints, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetKeyId())
-                {
-                    context.Writer.WritePropertyName("KeyId");
-                    context.Writer.Write(publicRequest.KeyId);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetOperations())
-                {
-                    context.Writer.WritePropertyName("Operations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestOperationsListValue in publicRequest.Operations)
+                    if(publicRequest.IsSetDryRun())
                     {
-                            context.Writer.Write(publicRequestOperationsListValue);
+                        context.Writer.WritePropertyName("DryRun");
+                        context.Writer.Write(publicRequest.DryRun.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetGranteePrincipal())
+                    {
+                        context.Writer.WritePropertyName("GranteePrincipal");
+                        context.Writer.Write(publicRequest.GranteePrincipal);
+                    }
+
+                    if(publicRequest.IsSetGrantTokens())
+                    {
+                        context.Writer.WritePropertyName("GrantTokens");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestGrantTokensListValue in publicRequest.GrantTokens)
+                        {
+                                context.Writer.Write(publicRequestGrantTokensListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetKeyId())
+                    {
+                        context.Writer.WritePropertyName("KeyId");
+                        context.Writer.Write(publicRequest.KeyId);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetOperations())
+                    {
+                        context.Writer.WritePropertyName("Operations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestOperationsListValue in publicRequest.Operations)
+                        {
+                                context.Writer.Write(publicRequestOperationsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetRetiringPrincipal())
+                    {
+                        context.Writer.WritePropertyName("RetiringPrincipal");
+                        context.Writer.Write(publicRequest.RetiringPrincipal);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRetiringPrincipal())
-                {
-                    context.Writer.WritePropertyName("RetiringPrincipal");
-                    context.Writer.Write(publicRequest.RetiringPrincipal);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

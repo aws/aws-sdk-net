@@ -63,82 +63,85 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientRequestToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetExecutionParameters())
-                {
-                    context.Writer.WritePropertyName("ExecutionParameters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestExecutionParametersListValue in publicRequest.ExecutionParameters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientRequestToken())
                     {
-                            context.Writer.Write(publicRequestExecutionParametersListValue);
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(publicRequest.ClientRequestToken);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    else if(!(publicRequest.IsSetClientRequestToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetExecutionParameters())
+                    {
+                        context.Writer.WritePropertyName("ExecutionParameters");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestExecutionParametersListValue in publicRequest.ExecutionParameters)
+                        {
+                                context.Writer.Write(publicRequestExecutionParametersListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetQueryExecutionContext())
+                    {
+                        context.Writer.WritePropertyName("QueryExecutionContext");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = QueryExecutionContextMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.QueryExecutionContext, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetQueryString())
+                    {
+                        context.Writer.WritePropertyName("QueryString");
+                        context.Writer.Write(publicRequest.QueryString);
+                    }
+
+                    if(publicRequest.IsSetResultConfiguration())
+                    {
+                        context.Writer.WritePropertyName("ResultConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ResultConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ResultConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetResultReuseConfiguration())
+                    {
+                        context.Writer.WritePropertyName("ResultReuseConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ResultReuseConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ResultReuseConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetWorkGroup())
+                    {
+                        context.Writer.WritePropertyName("WorkGroup");
+                        context.Writer.Write(publicRequest.WorkGroup);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetQueryExecutionContext())
-                {
-                    context.Writer.WritePropertyName("QueryExecutionContext");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = QueryExecutionContextMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.QueryExecutionContext, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetQueryString())
-                {
-                    context.Writer.WritePropertyName("QueryString");
-                    context.Writer.Write(publicRequest.QueryString);
-                }
-
-                if(publicRequest.IsSetResultConfiguration())
-                {
-                    context.Writer.WritePropertyName("ResultConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ResultConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ResultConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetResultReuseConfiguration())
-                {
-                    context.Writer.WritePropertyName("ResultReuseConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ResultReuseConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ResultReuseConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetWorkGroup())
-                {
-                    context.Writer.WritePropertyName("WorkGroup");
-                    context.Writer.Write(publicRequest.WorkGroup);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

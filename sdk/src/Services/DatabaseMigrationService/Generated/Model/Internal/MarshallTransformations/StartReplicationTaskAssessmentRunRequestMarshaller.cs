@@ -63,79 +63,82 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAssessmentRunName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AssessmentRunName");
-                    context.Writer.Write(publicRequest.AssessmentRunName);
-                }
-
-                if(publicRequest.IsSetExclude())
-                {
-                    context.Writer.WritePropertyName("Exclude");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestExcludeListValue in publicRequest.Exclude)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAssessmentRunName())
                     {
-                            context.Writer.Write(publicRequestExcludeListValue);
+                        context.Writer.WritePropertyName("AssessmentRunName");
+                        context.Writer.Write(publicRequest.AssessmentRunName);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetIncludeOnly())
-                {
-                    context.Writer.WritePropertyName("IncludeOnly");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestIncludeOnlyListValue in publicRequest.IncludeOnly)
+                    if(publicRequest.IsSetExclude())
                     {
-                            context.Writer.Write(publicRequestIncludeOnlyListValue);
+                        context.Writer.WritePropertyName("Exclude");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestExcludeListValue in publicRequest.Exclude)
+                        {
+                                context.Writer.Write(publicRequestExcludeListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetIncludeOnly())
+                    {
+                        context.Writer.WritePropertyName("IncludeOnly");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestIncludeOnlyListValue in publicRequest.IncludeOnly)
+                        {
+                                context.Writer.Write(publicRequestIncludeOnlyListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetReplicationTaskArn())
+                    {
+                        context.Writer.WritePropertyName("ReplicationTaskArn");
+                        context.Writer.Write(publicRequest.ReplicationTaskArn);
+                    }
+
+                    if(publicRequest.IsSetResultEncryptionMode())
+                    {
+                        context.Writer.WritePropertyName("ResultEncryptionMode");
+                        context.Writer.Write(publicRequest.ResultEncryptionMode);
+                    }
+
+                    if(publicRequest.IsSetResultKmsKeyArn())
+                    {
+                        context.Writer.WritePropertyName("ResultKmsKeyArn");
+                        context.Writer.Write(publicRequest.ResultKmsKeyArn);
+                    }
+
+                    if(publicRequest.IsSetResultLocationBucket())
+                    {
+                        context.Writer.WritePropertyName("ResultLocationBucket");
+                        context.Writer.Write(publicRequest.ResultLocationBucket);
+                    }
+
+                    if(publicRequest.IsSetResultLocationFolder())
+                    {
+                        context.Writer.WritePropertyName("ResultLocationFolder");
+                        context.Writer.Write(publicRequest.ResultLocationFolder);
+                    }
+
+                    if(publicRequest.IsSetServiceAccessRoleArn())
+                    {
+                        context.Writer.WritePropertyName("ServiceAccessRoleArn");
+                        context.Writer.Write(publicRequest.ServiceAccessRoleArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetReplicationTaskArn())
-                {
-                    context.Writer.WritePropertyName("ReplicationTaskArn");
-                    context.Writer.Write(publicRequest.ReplicationTaskArn);
-                }
-
-                if(publicRequest.IsSetResultEncryptionMode())
-                {
-                    context.Writer.WritePropertyName("ResultEncryptionMode");
-                    context.Writer.Write(publicRequest.ResultEncryptionMode);
-                }
-
-                if(publicRequest.IsSetResultKmsKeyArn())
-                {
-                    context.Writer.WritePropertyName("ResultKmsKeyArn");
-                    context.Writer.Write(publicRequest.ResultKmsKeyArn);
-                }
-
-                if(publicRequest.IsSetResultLocationBucket())
-                {
-                    context.Writer.WritePropertyName("ResultLocationBucket");
-                    context.Writer.Write(publicRequest.ResultLocationBucket);
-                }
-
-                if(publicRequest.IsSetResultLocationFolder())
-                {
-                    context.Writer.WritePropertyName("ResultLocationFolder");
-                    context.Writer.Write(publicRequest.ResultLocationFolder);
-                }
-
-                if(publicRequest.IsSetServiceAccessRoleArn())
-                {
-                    context.Writer.WritePropertyName("ServiceAccessRoleArn");
-                    context.Writer.Write(publicRequest.ServiceAccessRoleArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,53 +63,56 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAddLicenseSpecifications())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AddLicenseSpecifications");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAddLicenseSpecificationsListValue in publicRequest.AddLicenseSpecifications)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAddLicenseSpecifications())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("AddLicenseSpecifications");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAddLicenseSpecificationsListValue in publicRequest.AddLicenseSpecifications)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = LicenseSpecificationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAddLicenseSpecificationsListValue, context);
+                            var marshaller = LicenseSpecificationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAddLicenseSpecificationsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetRemoveLicenseSpecifications())
-                {
-                    context.Writer.WritePropertyName("RemoveLicenseSpecifications");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRemoveLicenseSpecificationsListValue in publicRequest.RemoveLicenseSpecifications)
+                    if(publicRequest.IsSetRemoveLicenseSpecifications())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("RemoveLicenseSpecifications");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRemoveLicenseSpecificationsListValue in publicRequest.RemoveLicenseSpecifications)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = LicenseSpecificationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestRemoveLicenseSpecificationsListValue, context);
+                            var marshaller = LicenseSpecificationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestRemoveLicenseSpecificationsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetResourceArn())
+                    {
+                        context.Writer.WritePropertyName("ResourceArn");
+                        context.Writer.Write(publicRequest.ResourceArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetResourceArn())
-                {
-                    context.Writer.WritePropertyName("ResourceArn");
-                    context.Writer.Write(publicRequest.ResourceArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

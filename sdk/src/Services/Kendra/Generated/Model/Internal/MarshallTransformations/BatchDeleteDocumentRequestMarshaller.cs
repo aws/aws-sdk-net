@@ -63,43 +63,46 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDataSourceSyncJobMetricTarget())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DataSourceSyncJobMetricTarget");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DataSourceSyncJobMetricTargetMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DataSourceSyncJobMetricTarget, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDocumentIdList())
-                {
-                    context.Writer.WritePropertyName("DocumentIdList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDocumentIdListListValue in publicRequest.DocumentIdList)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDataSourceSyncJobMetricTarget())
                     {
-                            context.Writer.Write(publicRequestDocumentIdListListValue);
+                        context.Writer.WritePropertyName("DataSourceSyncJobMetricTarget");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DataSourceSyncJobMetricTargetMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DataSourceSyncJobMetricTarget, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDocumentIdList())
+                    {
+                        context.Writer.WritePropertyName("DocumentIdList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDocumentIdListListValue in publicRequest.DocumentIdList)
+                        {
+                                context.Writer.Write(publicRequestDocumentIdListListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetIndexId())
+                    {
+                        context.Writer.WritePropertyName("IndexId");
+                        context.Writer.Write(publicRequest.IndexId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetIndexId())
-                {
-                    context.Writer.WritePropertyName("IndexId");
-                    context.Writer.Write(publicRequest.IndexId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

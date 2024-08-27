@@ -64,45 +64,48 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 throw new AmazonSimpleEmailServiceV2Exception("Request object does not have required field TemplateName set");
             request.AddPathResource("{TemplateName}", StringUtils.FromString(publicRequest.TemplateName));
             request.ResourcePath = "/v2/email/custom-verification-email-templates/{TemplateName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFailureRedirectionURL())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("FailureRedirectionURL");
-                    context.Writer.Write(publicRequest.FailureRedirectionURL);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFailureRedirectionURL())
+                    {
+                        context.Writer.WritePropertyName("FailureRedirectionURL");
+                        context.Writer.Write(publicRequest.FailureRedirectionURL);
+                    }
+
+                    if(publicRequest.IsSetFromEmailAddress())
+                    {
+                        context.Writer.WritePropertyName("FromEmailAddress");
+                        context.Writer.Write(publicRequest.FromEmailAddress);
+                    }
+
+                    if(publicRequest.IsSetSuccessRedirectionURL())
+                    {
+                        context.Writer.WritePropertyName("SuccessRedirectionURL");
+                        context.Writer.Write(publicRequest.SuccessRedirectionURL);
+                    }
+
+                    if(publicRequest.IsSetTemplateContent())
+                    {
+                        context.Writer.WritePropertyName("TemplateContent");
+                        context.Writer.Write(publicRequest.TemplateContent);
+                    }
+
+                    if(publicRequest.IsSetTemplateSubject())
+                    {
+                        context.Writer.WritePropertyName("TemplateSubject");
+                        context.Writer.Write(publicRequest.TemplateSubject);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetFromEmailAddress())
-                {
-                    context.Writer.WritePropertyName("FromEmailAddress");
-                    context.Writer.Write(publicRequest.FromEmailAddress);
-                }
-
-                if(publicRequest.IsSetSuccessRedirectionURL())
-                {
-                    context.Writer.WritePropertyName("SuccessRedirectionURL");
-                    context.Writer.Write(publicRequest.SuccessRedirectionURL);
-                }
-
-                if(publicRequest.IsSetTemplateContent())
-                {
-                    context.Writer.WritePropertyName("TemplateContent");
-                    context.Writer.Write(publicRequest.TemplateContent);
-                }
-
-                if(publicRequest.IsSetTemplateSubject())
-                {
-                    context.Writer.WritePropertyName("TemplateSubject");
-                    context.Writer.Write(publicRequest.TemplateSubject);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

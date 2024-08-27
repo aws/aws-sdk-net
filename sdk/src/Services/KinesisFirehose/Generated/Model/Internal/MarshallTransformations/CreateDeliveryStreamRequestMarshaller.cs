@@ -63,186 +63,189 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAmazonOpenSearchServerlessDestinationConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AmazonOpenSearchServerlessDestinationConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AmazonOpenSearchServerlessDestinationConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AmazonOpenSearchServerlessDestinationConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetAmazonopensearchserviceDestinationConfiguration())
-                {
-                    context.Writer.WritePropertyName("AmazonopensearchserviceDestinationConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AmazonopensearchserviceDestinationConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AmazonopensearchserviceDestinationConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDeliveryStreamEncryptionConfigurationInput())
-                {
-                    context.Writer.WritePropertyName("DeliveryStreamEncryptionConfigurationInput");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DeliveryStreamEncryptionConfigurationInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DeliveryStreamEncryptionConfigurationInput, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDeliveryStreamName())
-                {
-                    context.Writer.WritePropertyName("DeliveryStreamName");
-                    context.Writer.Write(publicRequest.DeliveryStreamName);
-                }
-
-                if(publicRequest.IsSetDeliveryStreamType())
-                {
-                    context.Writer.WritePropertyName("DeliveryStreamType");
-                    context.Writer.Write(publicRequest.DeliveryStreamType);
-                }
-
-                if(publicRequest.IsSetElasticsearchDestinationConfiguration())
-                {
-                    context.Writer.WritePropertyName("ElasticsearchDestinationConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ElasticsearchDestinationConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ElasticsearchDestinationConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetExtendedS3DestinationConfiguration())
-                {
-                    context.Writer.WritePropertyName("ExtendedS3DestinationConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ExtendedS3DestinationConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ExtendedS3DestinationConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetHttpEndpointDestinationConfiguration())
-                {
-                    context.Writer.WritePropertyName("HttpEndpointDestinationConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = HttpEndpointDestinationConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.HttpEndpointDestinationConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetIcebergDestinationConfiguration())
-                {
-                    context.Writer.WritePropertyName("IcebergDestinationConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = IcebergDestinationConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.IcebergDestinationConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetKinesisStreamSourceConfiguration())
-                {
-                    context.Writer.WritePropertyName("KinesisStreamSourceConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = KinesisStreamSourceConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.KinesisStreamSourceConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMSKSourceConfiguration())
-                {
-                    context.Writer.WritePropertyName("MSKSourceConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MSKSourceConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.MSKSourceConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRedshiftDestinationConfiguration())
-                {
-                    context.Writer.WritePropertyName("RedshiftDestinationConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RedshiftDestinationConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RedshiftDestinationConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetS3DestinationConfiguration())
-                {
-                    context.Writer.WritePropertyName("S3DestinationConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = S3DestinationConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.S3DestinationConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSnowflakeDestinationConfiguration())
-                {
-                    context.Writer.WritePropertyName("SnowflakeDestinationConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SnowflakeDestinationConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SnowflakeDestinationConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSplunkDestinationConfiguration())
-                {
-                    context.Writer.WritePropertyName("SplunkDestinationConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SplunkDestinationConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SplunkDestinationConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAmazonOpenSearchServerlessDestinationConfiguration())
                     {
+                        context.Writer.WritePropertyName("AmazonOpenSearchServerlessDestinationConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = AmazonOpenSearchServerlessDestinationConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AmazonOpenSearchServerlessDestinationConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetAmazonopensearchserviceDestinationConfiguration())
+                    {
+                        context.Writer.WritePropertyName("AmazonopensearchserviceDestinationConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AmazonopensearchserviceDestinationConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AmazonopensearchserviceDestinationConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDeliveryStreamEncryptionConfigurationInput())
+                    {
+                        context.Writer.WritePropertyName("DeliveryStreamEncryptionConfigurationInput");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DeliveryStreamEncryptionConfigurationInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DeliveryStreamEncryptionConfigurationInput, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDeliveryStreamName())
+                    {
+                        context.Writer.WritePropertyName("DeliveryStreamName");
+                        context.Writer.Write(publicRequest.DeliveryStreamName);
+                    }
+
+                    if(publicRequest.IsSetDeliveryStreamType())
+                    {
+                        context.Writer.WritePropertyName("DeliveryStreamType");
+                        context.Writer.Write(publicRequest.DeliveryStreamType);
+                    }
+
+                    if(publicRequest.IsSetElasticsearchDestinationConfiguration())
+                    {
+                        context.Writer.WritePropertyName("ElasticsearchDestinationConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ElasticsearchDestinationConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ElasticsearchDestinationConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetExtendedS3DestinationConfiguration())
+                    {
+                        context.Writer.WritePropertyName("ExtendedS3DestinationConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ExtendedS3DestinationConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ExtendedS3DestinationConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetHttpEndpointDestinationConfiguration())
+                    {
+                        context.Writer.WritePropertyName("HttpEndpointDestinationConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = HttpEndpointDestinationConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.HttpEndpointDestinationConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetIcebergDestinationConfiguration())
+                    {
+                        context.Writer.WritePropertyName("IcebergDestinationConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = IcebergDestinationConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.IcebergDestinationConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetKinesisStreamSourceConfiguration())
+                    {
+                        context.Writer.WritePropertyName("KinesisStreamSourceConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = KinesisStreamSourceConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.KinesisStreamSourceConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetMSKSourceConfiguration())
+                    {
+                        context.Writer.WritePropertyName("MSKSourceConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MSKSourceConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.MSKSourceConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRedshiftDestinationConfiguration())
+                    {
+                        context.Writer.WritePropertyName("RedshiftDestinationConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RedshiftDestinationConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RedshiftDestinationConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetS3DestinationConfiguration())
+                    {
+                        context.Writer.WritePropertyName("S3DestinationConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = S3DestinationConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.S3DestinationConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSnowflakeDestinationConfiguration())
+                    {
+                        context.Writer.WritePropertyName("SnowflakeDestinationConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SnowflakeDestinationConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SnowflakeDestinationConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSplunkDestinationConfiguration())
+                    {
+                        context.Writer.WritePropertyName("SplunkDestinationConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SplunkDestinationConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SplunkDestinationConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

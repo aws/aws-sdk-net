@@ -63,49 +63,52 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMfaConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("MfaConfiguration");
-                    context.Writer.Write(publicRequest.MfaConfiguration);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMfaConfiguration())
+                    {
+                        context.Writer.WritePropertyName("MfaConfiguration");
+                        context.Writer.Write(publicRequest.MfaConfiguration);
+                    }
+
+                    if(publicRequest.IsSetSmsMfaConfiguration())
+                    {
+                        context.Writer.WritePropertyName("SmsMfaConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SmsMfaConfigTypeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SmsMfaConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSoftwareTokenMfaConfiguration())
+                    {
+                        context.Writer.WritePropertyName("SoftwareTokenMfaConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SoftwareTokenMfaConfigTypeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SoftwareTokenMfaConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetUserPoolId())
+                    {
+                        context.Writer.WritePropertyName("UserPoolId");
+                        context.Writer.Write(publicRequest.UserPoolId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSmsMfaConfiguration())
-                {
-                    context.Writer.WritePropertyName("SmsMfaConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SmsMfaConfigTypeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SmsMfaConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSoftwareTokenMfaConfiguration())
-                {
-                    context.Writer.WritePropertyName("SoftwareTokenMfaConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SoftwareTokenMfaConfigTypeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SoftwareTokenMfaConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetUserPoolId())
-                {
-                    context.Writer.WritePropertyName("UserPoolId");
-                    context.Writer.Write(publicRequest.UserPoolId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

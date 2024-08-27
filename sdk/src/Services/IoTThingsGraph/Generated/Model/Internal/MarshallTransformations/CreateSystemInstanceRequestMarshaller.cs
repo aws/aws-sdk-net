@@ -63,77 +63,80 @@ namespace Amazon.IoTThingsGraph.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDefinition())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("definition");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DefinitionDocumentMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Definition, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetFlowActionsRoleArn())
-                {
-                    context.Writer.WritePropertyName("flowActionsRoleArn");
-                    context.Writer.Write(publicRequest.FlowActionsRoleArn);
-                }
-
-                if(publicRequest.IsSetGreengrassGroupName())
-                {
-                    context.Writer.WritePropertyName("greengrassGroupName");
-                    context.Writer.Write(publicRequest.GreengrassGroupName);
-                }
-
-                if(publicRequest.IsSetMetricsConfiguration())
-                {
-                    context.Writer.WritePropertyName("metricsConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MetricsConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.MetricsConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetS3BucketName())
-                {
-                    context.Writer.WritePropertyName("s3BucketName");
-                    context.Writer.Write(publicRequest.S3BucketName);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDefinition())
                     {
+                        context.Writer.WritePropertyName("definition");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = DefinitionDocumentMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Definition, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetFlowActionsRoleArn())
+                    {
+                        context.Writer.WritePropertyName("flowActionsRoleArn");
+                        context.Writer.Write(publicRequest.FlowActionsRoleArn);
+                    }
+
+                    if(publicRequest.IsSetGreengrassGroupName())
+                    {
+                        context.Writer.WritePropertyName("greengrassGroupName");
+                        context.Writer.Write(publicRequest.GreengrassGroupName);
+                    }
+
+                    if(publicRequest.IsSetMetricsConfiguration())
+                    {
+                        context.Writer.WritePropertyName("metricsConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MetricsConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.MetricsConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetS3BucketName())
+                    {
+                        context.Writer.WritePropertyName("s3BucketName");
+                        context.Writer.Write(publicRequest.S3BucketName);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTarget())
+                    {
+                        context.Writer.WritePropertyName("target");
+                        context.Writer.Write(publicRequest.Target);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTarget())
-                {
-                    context.Writer.WritePropertyName("target");
-                    context.Writer.Write(publicRequest.Target);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -61,99 +61,102 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/model-import-jobs";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientRequestToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                if(publicRequest.IsSetImportedModelKmsKeyId())
-                {
-                    context.Writer.WritePropertyName("importedModelKmsKeyId");
-                    context.Writer.Write(publicRequest.ImportedModelKmsKeyId);
-                }
-
-                if(publicRequest.IsSetImportedModelName())
-                {
-                    context.Writer.WritePropertyName("importedModelName");
-                    context.Writer.Write(publicRequest.ImportedModelName);
-                }
-
-                if(publicRequest.IsSetImportedModelTags())
-                {
-                    context.Writer.WritePropertyName("importedModelTags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestImportedModelTagsListValue in publicRequest.ImportedModelTags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientRequestToken())
                     {
+                        context.Writer.WritePropertyName("clientRequestToken");
+                        context.Writer.Write(publicRequest.ClientRequestToken);
+                    }
+
+                    if(publicRequest.IsSetImportedModelKmsKeyId())
+                    {
+                        context.Writer.WritePropertyName("importedModelKmsKeyId");
+                        context.Writer.Write(publicRequest.ImportedModelKmsKeyId);
+                    }
+
+                    if(publicRequest.IsSetImportedModelName())
+                    {
+                        context.Writer.WritePropertyName("importedModelName");
+                        context.Writer.Write(publicRequest.ImportedModelName);
+                    }
+
+                    if(publicRequest.IsSetImportedModelTags())
+                    {
+                        context.Writer.WritePropertyName("importedModelTags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestImportedModelTagsListValue in publicRequest.ImportedModelTags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestImportedModelTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetJobName())
+                    {
+                        context.Writer.WritePropertyName("jobName");
+                        context.Writer.Write(publicRequest.JobName);
+                    }
+
+                    if(publicRequest.IsSetJobTags())
+                    {
+                        context.Writer.WritePropertyName("jobTags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestJobTagsListValue in publicRequest.JobTags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestJobTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetModelDataSource())
+                    {
+                        context.Writer.WritePropertyName("modelDataSource");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestImportedModelTagsListValue, context);
+                        var marshaller = ModelDataSourceMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ModelDataSource, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetJobName())
-                {
-                    context.Writer.WritePropertyName("jobName");
-                    context.Writer.Write(publicRequest.JobName);
-                }
-
-                if(publicRequest.IsSetJobTags())
-                {
-                    context.Writer.WritePropertyName("jobTags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestJobTagsListValue in publicRequest.JobTags)
+                    if(publicRequest.IsSetRoleArn())
                     {
+                        context.Writer.WritePropertyName("roleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    if(publicRequest.IsSetVpcConfig())
+                    {
+                        context.Writer.WritePropertyName("vpcConfig");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestJobTagsListValue, context);
+                        var marshaller = VpcConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.VpcConfig, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetModelDataSource())
-                {
-                    context.Writer.WritePropertyName("modelDataSource");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ModelDataSourceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ModelDataSource, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("roleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetVpcConfig())
-                {
-                    context.Writer.WritePropertyName("vpcConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = VpcConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.VpcConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

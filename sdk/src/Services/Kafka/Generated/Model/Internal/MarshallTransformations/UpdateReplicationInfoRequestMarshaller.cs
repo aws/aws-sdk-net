@@ -64,55 +64,58 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 throw new AmazonKafkaException("Request object does not have required field ReplicatorArn set");
             request.AddPathResource("{replicatorArn}", StringUtils.FromString(publicRequest.ReplicatorArn));
             request.ResourcePath = "/replication/v1/replicators/{replicatorArn}/replication-info";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConsumerGroupReplication())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("consumerGroupReplication");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConsumerGroupReplication())
+                    {
+                        context.Writer.WritePropertyName("consumerGroupReplication");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = ConsumerGroupReplicationUpdateMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ConsumerGroupReplication, context);
+                        var marshaller = ConsumerGroupReplicationUpdateMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ConsumerGroupReplication, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetCurrentVersion())
+                    {
+                        context.Writer.WritePropertyName("currentVersion");
+                        context.Writer.Write(publicRequest.CurrentVersion);
+                    }
+
+                    if(publicRequest.IsSetSourceKafkaClusterArn())
+                    {
+                        context.Writer.WritePropertyName("sourceKafkaClusterArn");
+                        context.Writer.Write(publicRequest.SourceKafkaClusterArn);
+                    }
+
+                    if(publicRequest.IsSetTargetKafkaClusterArn())
+                    {
+                        context.Writer.WritePropertyName("targetKafkaClusterArn");
+                        context.Writer.Write(publicRequest.TargetKafkaClusterArn);
+                    }
+
+                    if(publicRequest.IsSetTopicReplication())
+                    {
+                        context.Writer.WritePropertyName("topicReplication");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TopicReplicationUpdateMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TopicReplication, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCurrentVersion())
-                {
-                    context.Writer.WritePropertyName("currentVersion");
-                    context.Writer.Write(publicRequest.CurrentVersion);
-                }
-
-                if(publicRequest.IsSetSourceKafkaClusterArn())
-                {
-                    context.Writer.WritePropertyName("sourceKafkaClusterArn");
-                    context.Writer.Write(publicRequest.SourceKafkaClusterArn);
-                }
-
-                if(publicRequest.IsSetTargetKafkaClusterArn())
-                {
-                    context.Writer.WritePropertyName("targetKafkaClusterArn");
-                    context.Writer.Write(publicRequest.TargetKafkaClusterArn);
-                }
-
-                if(publicRequest.IsSetTopicReplication())
-                {
-                    context.Writer.WritePropertyName("topicReplication");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TopicReplicationUpdateMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TopicReplication, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -64,43 +64,46 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 throw new AmazonKafkaException("Request object does not have required field ClusterArn set");
             request.AddPathResource("{clusterArn}", StringUtils.FromString(publicRequest.ClusterArn));
             request.ResourcePath = "/v1/clusters/{clusterArn}/security";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientAuthentication())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientAuthentication");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientAuthentication())
+                    {
+                        context.Writer.WritePropertyName("clientAuthentication");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = ClientAuthenticationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ClientAuthentication, context);
+                        var marshaller = ClientAuthenticationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ClientAuthentication, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetCurrentVersion())
+                    {
+                        context.Writer.WritePropertyName("currentVersion");
+                        context.Writer.Write(publicRequest.CurrentVersion);
+                    }
+
+                    if(publicRequest.IsSetEncryptionInfo())
+                    {
+                        context.Writer.WritePropertyName("encryptionInfo");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EncryptionInfoMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EncryptionInfo, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCurrentVersion())
-                {
-                    context.Writer.WritePropertyName("currentVersion");
-                    context.Writer.Write(publicRequest.CurrentVersion);
-                }
-
-                if(publicRequest.IsSetEncryptionInfo())
-                {
-                    context.Writer.WritePropertyName("encryptionInfo");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EncryptionInfoMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EncryptionInfo, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

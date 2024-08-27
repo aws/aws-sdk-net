@@ -63,50 +63,53 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetExcludeAppPackagesFromCleanup())
-                {
-                    context.Writer.WritePropertyName("excludeAppPackagesFromCleanup");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestExcludeAppPackagesFromCleanupListValue in publicRequest.ExcludeAppPackagesFromCleanup)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
-                            context.Writer.Write(publicRequestExcludeAppPackagesFromCleanupListValue);
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetExcludeAppPackagesFromCleanup())
+                    {
+                        context.Writer.WritePropertyName("excludeAppPackagesFromCleanup");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestExcludeAppPackagesFromCleanupListValue in publicRequest.ExcludeAppPackagesFromCleanup)
+                        {
+                                context.Writer.Write(publicRequestExcludeAppPackagesFromCleanupListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetPackageCleanup())
+                    {
+                        context.Writer.WritePropertyName("packageCleanup");
+                        context.Writer.Write(publicRequest.PackageCleanup.Value);
+                    }
+
+                    if(publicRequest.IsSetRebootAfterUse())
+                    {
+                        context.Writer.WritePropertyName("rebootAfterUse");
+                        context.Writer.Write(publicRequest.RebootAfterUse.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetPackageCleanup())
-                {
-                    context.Writer.WritePropertyName("packageCleanup");
-                    context.Writer.Write(publicRequest.PackageCleanup.Value);
-                }
-
-                if(publicRequest.IsSetRebootAfterUse())
-                {
-                    context.Writer.WritePropertyName("rebootAfterUse");
-                    context.Writer.Write(publicRequest.RebootAfterUse.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

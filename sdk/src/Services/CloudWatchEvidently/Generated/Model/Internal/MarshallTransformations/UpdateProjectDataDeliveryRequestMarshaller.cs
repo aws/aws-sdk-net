@@ -64,37 +64,40 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
                 throw new AmazonCloudWatchEvidentlyException("Request object does not have required field Project set");
             request.AddPathResource("{project}", StringUtils.FromString(publicRequest.Project));
             request.ResourcePath = "/projects/{project}/data-delivery";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCloudWatchLogs())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("cloudWatchLogs");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCloudWatchLogs())
+                    {
+                        context.Writer.WritePropertyName("cloudWatchLogs");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = CloudWatchLogsDestinationConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CloudWatchLogs, context);
+                        var marshaller = CloudWatchLogsDestinationConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CloudWatchLogs, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetS3Destination())
+                    {
+                        context.Writer.WritePropertyName("s3Destination");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = S3DestinationConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.S3Destination, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetS3Destination())
-                {
-                    context.Writer.WritePropertyName("s3Destination");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = S3DestinationConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.S3Destination, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

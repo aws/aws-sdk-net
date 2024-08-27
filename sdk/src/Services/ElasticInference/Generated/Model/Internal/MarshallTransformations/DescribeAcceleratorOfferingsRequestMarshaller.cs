@@ -61,32 +61,35 @@ namespace Amazon.ElasticInference.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/describe-accelerator-offerings";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAcceleratorTypes())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("acceleratorTypes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAcceleratorTypesListValue in publicRequest.AcceleratorTypes)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAcceleratorTypes())
                     {
-                            context.Writer.Write(publicRequestAcceleratorTypesListValue);
+                        context.Writer.WritePropertyName("acceleratorTypes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAcceleratorTypesListValue in publicRequest.AcceleratorTypes)
+                        {
+                                context.Writer.Write(publicRequestAcceleratorTypesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetLocationType())
+                    {
+                        context.Writer.WritePropertyName("locationType");
+                        context.Writer.Write(publicRequest.LocationType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetLocationType())
-                {
-                    context.Writer.WritePropertyName("locationType");
-                    context.Writer.Write(publicRequest.LocationType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

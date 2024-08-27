@@ -63,60 +63,63 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCatalogId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CatalogId");
-                    context.Writer.Write(publicRequest.CatalogId);
-                }
-
-                if(publicRequest.IsSetColumnStatisticsList())
-                {
-                    context.Writer.WritePropertyName("ColumnStatisticsList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestColumnStatisticsListListValue in publicRequest.ColumnStatisticsList)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCatalogId())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ColumnStatisticsMarshaller.Instance;
-                        marshaller.Marshall(publicRequestColumnStatisticsListListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("CatalogId");
+                        context.Writer.Write(publicRequest.CatalogId);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDatabaseName())
-                {
-                    context.Writer.WritePropertyName("DatabaseName");
-                    context.Writer.Write(publicRequest.DatabaseName);
-                }
-
-                if(publicRequest.IsSetPartitionValues())
-                {
-                    context.Writer.WritePropertyName("PartitionValues");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPartitionValuesListValue in publicRequest.PartitionValues)
+                    if(publicRequest.IsSetColumnStatisticsList())
                     {
-                            context.Writer.Write(publicRequestPartitionValuesListValue);
+                        context.Writer.WritePropertyName("ColumnStatisticsList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestColumnStatisticsListListValue in publicRequest.ColumnStatisticsList)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ColumnStatisticsMarshaller.Instance;
+                            marshaller.Marshall(publicRequestColumnStatisticsListListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDatabaseName())
+                    {
+                        context.Writer.WritePropertyName("DatabaseName");
+                        context.Writer.Write(publicRequest.DatabaseName);
+                    }
+
+                    if(publicRequest.IsSetPartitionValues())
+                    {
+                        context.Writer.WritePropertyName("PartitionValues");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPartitionValuesListValue in publicRequest.PartitionValues)
+                        {
+                                context.Writer.Write(publicRequestPartitionValuesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTableName())
+                    {
+                        context.Writer.WritePropertyName("TableName");
+                        context.Writer.Write(publicRequest.TableName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTableName())
-                {
-                    context.Writer.WritePropertyName("TableName");
-                    context.Writer.Write(publicRequest.TableName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,33 +63,36 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFinalRelationalDatabaseSnapshotName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("finalRelationalDatabaseSnapshotName");
-                    context.Writer.Write(publicRequest.FinalRelationalDatabaseSnapshotName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFinalRelationalDatabaseSnapshotName())
+                    {
+                        context.Writer.WritePropertyName("finalRelationalDatabaseSnapshotName");
+                        context.Writer.Write(publicRequest.FinalRelationalDatabaseSnapshotName);
+                    }
+
+                    if(publicRequest.IsSetRelationalDatabaseName())
+                    {
+                        context.Writer.WritePropertyName("relationalDatabaseName");
+                        context.Writer.Write(publicRequest.RelationalDatabaseName);
+                    }
+
+                    if(publicRequest.IsSetSkipFinalSnapshot())
+                    {
+                        context.Writer.WritePropertyName("skipFinalSnapshot");
+                        context.Writer.Write(publicRequest.SkipFinalSnapshot.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRelationalDatabaseName())
-                {
-                    context.Writer.WritePropertyName("relationalDatabaseName");
-                    context.Writer.Write(publicRequest.RelationalDatabaseName);
-                }
-
-                if(publicRequest.IsSetSkipFinalSnapshot())
-                {
-                    context.Writer.WritePropertyName("skipFinalSnapshot");
-                    context.Writer.Write(publicRequest.SkipFinalSnapshot.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

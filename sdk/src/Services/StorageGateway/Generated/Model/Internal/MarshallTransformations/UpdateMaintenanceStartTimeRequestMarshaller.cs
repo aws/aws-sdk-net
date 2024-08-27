@@ -63,56 +63,59 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDayOfMonth())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DayOfMonth");
-                    context.Writer.Write(publicRequest.DayOfMonth.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDayOfMonth())
+                    {
+                        context.Writer.WritePropertyName("DayOfMonth");
+                        context.Writer.Write(publicRequest.DayOfMonth.Value);
+                    }
+
+                    if(publicRequest.IsSetDayOfWeek())
+                    {
+                        context.Writer.WritePropertyName("DayOfWeek");
+                        context.Writer.Write(publicRequest.DayOfWeek.Value);
+                    }
+
+                    if(publicRequest.IsSetGatewayARN())
+                    {
+                        context.Writer.WritePropertyName("GatewayARN");
+                        context.Writer.Write(publicRequest.GatewayARN);
+                    }
+
+                    if(publicRequest.IsSetHourOfDay())
+                    {
+                        context.Writer.WritePropertyName("HourOfDay");
+                        context.Writer.Write(publicRequest.HourOfDay.Value);
+                    }
+
+                    if(publicRequest.IsSetMinuteOfHour())
+                    {
+                        context.Writer.WritePropertyName("MinuteOfHour");
+                        context.Writer.Write(publicRequest.MinuteOfHour.Value);
+                    }
+
+                    if(publicRequest.IsSetSoftwareUpdatePreferences())
+                    {
+                        context.Writer.WritePropertyName("SoftwareUpdatePreferences");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SoftwareUpdatePreferencesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SoftwareUpdatePreferences, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDayOfWeek())
-                {
-                    context.Writer.WritePropertyName("DayOfWeek");
-                    context.Writer.Write(publicRequest.DayOfWeek.Value);
-                }
-
-                if(publicRequest.IsSetGatewayARN())
-                {
-                    context.Writer.WritePropertyName("GatewayARN");
-                    context.Writer.Write(publicRequest.GatewayARN);
-                }
-
-                if(publicRequest.IsSetHourOfDay())
-                {
-                    context.Writer.WritePropertyName("HourOfDay");
-                    context.Writer.Write(publicRequest.HourOfDay.Value);
-                }
-
-                if(publicRequest.IsSetMinuteOfHour())
-                {
-                    context.Writer.WritePropertyName("MinuteOfHour");
-                    context.Writer.Write(publicRequest.MinuteOfHour.Value);
-                }
-
-                if(publicRequest.IsSetSoftwareUpdatePreferences())
-                {
-                    context.Writer.WritePropertyName("SoftwareUpdatePreferences");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SoftwareUpdatePreferencesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SoftwareUpdatePreferences, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

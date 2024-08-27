@@ -63,65 +63,68 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLocale())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("locale");
-                    context.Writer.Write(publicRequest.Locale);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetOrganizationEntityAccountFilters())
-                {
-                    context.Writer.WritePropertyName("organizationEntityAccountFilters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestOrganizationEntityAccountFiltersListValue in publicRequest.OrganizationEntityAccountFilters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetLocale())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EntityAccountFilterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestOrganizationEntityAccountFiltersListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("locale");
+                        context.Writer.Write(publicRequest.Locale);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetOrganizationEntityFilters())
-                {
-                    context.Writer.WritePropertyName("organizationEntityFilters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestOrganizationEntityFiltersListValue in publicRequest.OrganizationEntityFilters)
+                    if(publicRequest.IsSetMaxResults())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EventAccountFilterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestOrganizationEntityFiltersListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetOrganizationEntityAccountFilters())
+                    {
+                        context.Writer.WritePropertyName("organizationEntityAccountFilters");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestOrganizationEntityAccountFiltersListValue in publicRequest.OrganizationEntityAccountFilters)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = EntityAccountFilterMarshaller.Instance;
+                            marshaller.Marshall(publicRequestOrganizationEntityAccountFiltersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetOrganizationEntityFilters())
+                    {
+                        context.Writer.WritePropertyName("organizationEntityFilters");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestOrganizationEntityFiltersListValue in publicRequest.OrganizationEntityFilters)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = EventAccountFilterMarshaller.Instance;
+                            marshaller.Marshall(publicRequestOrganizationEntityFiltersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

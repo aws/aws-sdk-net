@@ -61,37 +61,40 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/add-draft-app-version-resource-mappings";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAppArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("appArn");
-                    context.Writer.Write(publicRequest.AppArn);
-                }
-
-                if(publicRequest.IsSetResourceMappings())
-                {
-                    context.Writer.WritePropertyName("resourceMappings");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestResourceMappingsListValue in publicRequest.ResourceMappings)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAppArn())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ResourceMappingMarshaller.Instance;
-                        marshaller.Marshall(publicRequestResourceMappingsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("appArn");
+                        context.Writer.Write(publicRequest.AppArn);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetResourceMappings())
+                    {
+                        context.Writer.WritePropertyName("resourceMappings");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestResourceMappingsListValue in publicRequest.ResourceMappings)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ResourceMappingMarshaller.Instance;
+                            marshaller.Marshall(publicRequestResourceMappingsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

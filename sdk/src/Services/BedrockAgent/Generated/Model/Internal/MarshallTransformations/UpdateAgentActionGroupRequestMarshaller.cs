@@ -70,72 +70,75 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 throw new AmazonBedrockAgentException("Request object does not have required field AgentVersion set");
             request.AddPathResource("{agentVersion}", StringUtils.FromString(publicRequest.AgentVersion));
             request.ResourcePath = "/agents/{agentId}/agentversions/{agentVersion}/actiongroups/{actionGroupId}/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetActionGroupExecutor())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("actionGroupExecutor");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetActionGroupExecutor())
+                    {
+                        context.Writer.WritePropertyName("actionGroupExecutor");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = ActionGroupExecutorMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ActionGroupExecutor, context);
+                        var marshaller = ActionGroupExecutorMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ActionGroupExecutor, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetActionGroupName())
+                    {
+                        context.Writer.WritePropertyName("actionGroupName");
+                        context.Writer.Write(publicRequest.ActionGroupName);
+                    }
+
+                    if(publicRequest.IsSetActionGroupState())
+                    {
+                        context.Writer.WritePropertyName("actionGroupState");
+                        context.Writer.Write(publicRequest.ActionGroupState);
+                    }
+
+                    if(publicRequest.IsSetApiSchema())
+                    {
+                        context.Writer.WritePropertyName("apiSchema");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = APISchemaMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ApiSchema, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetFunctionSchema())
+                    {
+                        context.Writer.WritePropertyName("functionSchema");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = FunctionSchemaMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.FunctionSchema, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetParentActionGroupSignature())
+                    {
+                        context.Writer.WritePropertyName("parentActionGroupSignature");
+                        context.Writer.Write(publicRequest.ParentActionGroupSignature);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetActionGroupName())
-                {
-                    context.Writer.WritePropertyName("actionGroupName");
-                    context.Writer.Write(publicRequest.ActionGroupName);
-                }
-
-                if(publicRequest.IsSetActionGroupState())
-                {
-                    context.Writer.WritePropertyName("actionGroupState");
-                    context.Writer.Write(publicRequest.ActionGroupState);
-                }
-
-                if(publicRequest.IsSetApiSchema())
-                {
-                    context.Writer.WritePropertyName("apiSchema");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = APISchemaMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ApiSchema, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetFunctionSchema())
-                {
-                    context.Writer.WritePropertyName("functionSchema");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = FunctionSchemaMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.FunctionSchema, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetParentActionGroupSignature())
-                {
-                    context.Writer.WritePropertyName("parentActionGroupSignature");
-                    context.Writer.Write(publicRequest.ParentActionGroupSignature);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

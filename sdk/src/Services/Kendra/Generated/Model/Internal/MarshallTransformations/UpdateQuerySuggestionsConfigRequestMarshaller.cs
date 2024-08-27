@@ -63,62 +63,65 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAttributeSuggestionsConfig())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AttributeSuggestionsConfig");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAttributeSuggestionsConfig())
+                    {
+                        context.Writer.WritePropertyName("AttributeSuggestionsConfig");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = AttributeSuggestionsUpdateConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AttributeSuggestionsConfig, context);
+                        var marshaller = AttributeSuggestionsUpdateConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AttributeSuggestionsConfig, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetIncludeQueriesWithoutUserInformation())
+                    {
+                        context.Writer.WritePropertyName("IncludeQueriesWithoutUserInformation");
+                        context.Writer.Write(publicRequest.IncludeQueriesWithoutUserInformation.Value);
+                    }
+
+                    if(publicRequest.IsSetIndexId())
+                    {
+                        context.Writer.WritePropertyName("IndexId");
+                        context.Writer.Write(publicRequest.IndexId);
+                    }
+
+                    if(publicRequest.IsSetMinimumNumberOfQueryingUsers())
+                    {
+                        context.Writer.WritePropertyName("MinimumNumberOfQueryingUsers");
+                        context.Writer.Write(publicRequest.MinimumNumberOfQueryingUsers.Value);
+                    }
+
+                    if(publicRequest.IsSetMinimumQueryCount())
+                    {
+                        context.Writer.WritePropertyName("MinimumQueryCount");
+                        context.Writer.Write(publicRequest.MinimumQueryCount.Value);
+                    }
+
+                    if(publicRequest.IsSetMode())
+                    {
+                        context.Writer.WritePropertyName("Mode");
+                        context.Writer.Write(publicRequest.Mode);
+                    }
+
+                    if(publicRequest.IsSetQueryLogLookBackWindowInDays())
+                    {
+                        context.Writer.WritePropertyName("QueryLogLookBackWindowInDays");
+                        context.Writer.Write(publicRequest.QueryLogLookBackWindowInDays.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetIncludeQueriesWithoutUserInformation())
-                {
-                    context.Writer.WritePropertyName("IncludeQueriesWithoutUserInformation");
-                    context.Writer.Write(publicRequest.IncludeQueriesWithoutUserInformation.Value);
-                }
-
-                if(publicRequest.IsSetIndexId())
-                {
-                    context.Writer.WritePropertyName("IndexId");
-                    context.Writer.Write(publicRequest.IndexId);
-                }
-
-                if(publicRequest.IsSetMinimumNumberOfQueryingUsers())
-                {
-                    context.Writer.WritePropertyName("MinimumNumberOfQueryingUsers");
-                    context.Writer.Write(publicRequest.MinimumNumberOfQueryingUsers.Value);
-                }
-
-                if(publicRequest.IsSetMinimumQueryCount())
-                {
-                    context.Writer.WritePropertyName("MinimumQueryCount");
-                    context.Writer.Write(publicRequest.MinimumQueryCount.Value);
-                }
-
-                if(publicRequest.IsSetMode())
-                {
-                    context.Writer.WritePropertyName("Mode");
-                    context.Writer.Write(publicRequest.Mode);
-                }
-
-                if(publicRequest.IsSetQueryLogLookBackWindowInDays())
-                {
-                    context.Writer.WritePropertyName("QueryLogLookBackWindowInDays");
-                    context.Writer.Write(publicRequest.QueryLogLookBackWindowInDays.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,97 +63,100 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCloudWatchLogsLogGroupArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CloudWatchLogsLogGroupArn");
-                    context.Writer.Write(publicRequest.CloudWatchLogsLogGroupArn);
-                }
-
-                if(publicRequest.IsSetCloudWatchLogsRoleArn())
-                {
-                    context.Writer.WritePropertyName("CloudWatchLogsRoleArn");
-                    context.Writer.Write(publicRequest.CloudWatchLogsRoleArn);
-                }
-
-                if(publicRequest.IsSetEnableLogFileValidation())
-                {
-                    context.Writer.WritePropertyName("EnableLogFileValidation");
-                    context.Writer.Write(publicRequest.EnableLogFileValidation.Value);
-                }
-
-                if(publicRequest.IsSetIncludeGlobalServiceEvents())
-                {
-                    context.Writer.WritePropertyName("IncludeGlobalServiceEvents");
-                    context.Writer.Write(publicRequest.IncludeGlobalServiceEvents.Value);
-                }
-
-                if(publicRequest.IsSetIsMultiRegionTrail())
-                {
-                    context.Writer.WritePropertyName("IsMultiRegionTrail");
-                    context.Writer.Write(publicRequest.IsMultiRegionTrail.Value);
-                }
-
-                if(publicRequest.IsSetIsOrganizationTrail())
-                {
-                    context.Writer.WritePropertyName("IsOrganizationTrail");
-                    context.Writer.Write(publicRequest.IsOrganizationTrail.Value);
-                }
-
-                if(publicRequest.IsSetKmsKeyId())
-                {
-                    context.Writer.WritePropertyName("KmsKeyId");
-                    context.Writer.Write(publicRequest.KmsKeyId);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetS3BucketName())
-                {
-                    context.Writer.WritePropertyName("S3BucketName");
-                    context.Writer.Write(publicRequest.S3BucketName);
-                }
-
-                if(publicRequest.IsSetS3KeyPrefix())
-                {
-                    context.Writer.WritePropertyName("S3KeyPrefix");
-                    context.Writer.Write(publicRequest.S3KeyPrefix);
-                }
-
-                if(publicRequest.IsSetSnsTopicName())
-                {
-                    context.Writer.WritePropertyName("SnsTopicName");
-                    context.Writer.Write(publicRequest.SnsTopicName);
-                }
-
-                if(publicRequest.IsSetTagsList())
-                {
-                    context.Writer.WritePropertyName("TagsList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListListValue in publicRequest.TagsList)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCloudWatchLogsLogGroupArn())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("CloudWatchLogsLogGroupArn");
+                        context.Writer.Write(publicRequest.CloudWatchLogsLogGroupArn);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetCloudWatchLogsRoleArn())
+                    {
+                        context.Writer.WritePropertyName("CloudWatchLogsRoleArn");
+                        context.Writer.Write(publicRequest.CloudWatchLogsRoleArn);
+                    }
+
+                    if(publicRequest.IsSetEnableLogFileValidation())
+                    {
+                        context.Writer.WritePropertyName("EnableLogFileValidation");
+                        context.Writer.Write(publicRequest.EnableLogFileValidation.Value);
+                    }
+
+                    if(publicRequest.IsSetIncludeGlobalServiceEvents())
+                    {
+                        context.Writer.WritePropertyName("IncludeGlobalServiceEvents");
+                        context.Writer.Write(publicRequest.IncludeGlobalServiceEvents.Value);
+                    }
+
+                    if(publicRequest.IsSetIsMultiRegionTrail())
+                    {
+                        context.Writer.WritePropertyName("IsMultiRegionTrail");
+                        context.Writer.Write(publicRequest.IsMultiRegionTrail.Value);
+                    }
+
+                    if(publicRequest.IsSetIsOrganizationTrail())
+                    {
+                        context.Writer.WritePropertyName("IsOrganizationTrail");
+                        context.Writer.Write(publicRequest.IsOrganizationTrail.Value);
+                    }
+
+                    if(publicRequest.IsSetKmsKeyId())
+                    {
+                        context.Writer.WritePropertyName("KmsKeyId");
+                        context.Writer.Write(publicRequest.KmsKeyId);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetS3BucketName())
+                    {
+                        context.Writer.WritePropertyName("S3BucketName");
+                        context.Writer.Write(publicRequest.S3BucketName);
+                    }
+
+                    if(publicRequest.IsSetS3KeyPrefix())
+                    {
+                        context.Writer.WritePropertyName("S3KeyPrefix");
+                        context.Writer.Write(publicRequest.S3KeyPrefix);
+                    }
+
+                    if(publicRequest.IsSetSnsTopicName())
+                    {
+                        context.Writer.WritePropertyName("SnsTopicName");
+                        context.Writer.Write(publicRequest.SnsTopicName);
+                    }
+
+                    if(publicRequest.IsSetTagsList())
+                    {
+                        context.Writer.WritePropertyName("TagsList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListListValue in publicRequest.TagsList)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

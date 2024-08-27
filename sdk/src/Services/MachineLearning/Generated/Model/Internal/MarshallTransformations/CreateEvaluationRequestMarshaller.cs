@@ -63,39 +63,42 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEvaluationDataSourceId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("EvaluationDataSourceId");
-                    context.Writer.Write(publicRequest.EvaluationDataSourceId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEvaluationDataSourceId())
+                    {
+                        context.Writer.WritePropertyName("EvaluationDataSourceId");
+                        context.Writer.Write(publicRequest.EvaluationDataSourceId);
+                    }
+
+                    if(publicRequest.IsSetEvaluationId())
+                    {
+                        context.Writer.WritePropertyName("EvaluationId");
+                        context.Writer.Write(publicRequest.EvaluationId);
+                    }
+
+                    if(publicRequest.IsSetEvaluationName())
+                    {
+                        context.Writer.WritePropertyName("EvaluationName");
+                        context.Writer.Write(publicRequest.EvaluationName);
+                    }
+
+                    if(publicRequest.IsSetMLModelId())
+                    {
+                        context.Writer.WritePropertyName("MLModelId");
+                        context.Writer.Write(publicRequest.MLModelId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEvaluationId())
-                {
-                    context.Writer.WritePropertyName("EvaluationId");
-                    context.Writer.Write(publicRequest.EvaluationId);
-                }
-
-                if(publicRequest.IsSetEvaluationName())
-                {
-                    context.Writer.WritePropertyName("EvaluationName");
-                    context.Writer.Write(publicRequest.EvaluationName);
-                }
-
-                if(publicRequest.IsSetMLModelId())
-                {
-                    context.Writer.WritePropertyName("MLModelId");
-                    context.Writer.Write(publicRequest.MLModelId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

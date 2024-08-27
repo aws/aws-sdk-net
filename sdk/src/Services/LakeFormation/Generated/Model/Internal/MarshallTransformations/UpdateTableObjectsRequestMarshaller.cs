@@ -61,55 +61,58 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/UpdateTableObjects";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCatalogId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CatalogId");
-                    context.Writer.Write(publicRequest.CatalogId);
-                }
-
-                if(publicRequest.IsSetDatabaseName())
-                {
-                    context.Writer.WritePropertyName("DatabaseName");
-                    context.Writer.Write(publicRequest.DatabaseName);
-                }
-
-                if(publicRequest.IsSetTableName())
-                {
-                    context.Writer.WritePropertyName("TableName");
-                    context.Writer.Write(publicRequest.TableName);
-                }
-
-                if(publicRequest.IsSetTransactionId())
-                {
-                    context.Writer.WritePropertyName("TransactionId");
-                    context.Writer.Write(publicRequest.TransactionId);
-                }
-
-                if(publicRequest.IsSetWriteOperations())
-                {
-                    context.Writer.WritePropertyName("WriteOperations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestWriteOperationsListValue in publicRequest.WriteOperations)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCatalogId())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = WriteOperationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestWriteOperationsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("CatalogId");
+                        context.Writer.Write(publicRequest.CatalogId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDatabaseName())
+                    {
+                        context.Writer.WritePropertyName("DatabaseName");
+                        context.Writer.Write(publicRequest.DatabaseName);
+                    }
+
+                    if(publicRequest.IsSetTableName())
+                    {
+                        context.Writer.WritePropertyName("TableName");
+                        context.Writer.Write(publicRequest.TableName);
+                    }
+
+                    if(publicRequest.IsSetTransactionId())
+                    {
+                        context.Writer.WritePropertyName("TransactionId");
+                        context.Writer.Write(publicRequest.TransactionId);
+                    }
+
+                    if(publicRequest.IsSetWriteOperations())
+                    {
+                        context.Writer.WritePropertyName("WriteOperations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestWriteOperationsListValue in publicRequest.WriteOperations)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = WriteOperationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestWriteOperationsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

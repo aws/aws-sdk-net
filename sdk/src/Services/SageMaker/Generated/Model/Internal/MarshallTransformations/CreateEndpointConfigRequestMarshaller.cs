@@ -63,131 +63,134 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAsyncInferenceConfig())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AsyncInferenceConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AsyncInferenceConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AsyncInferenceConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDataCaptureConfig())
-                {
-                    context.Writer.WritePropertyName("DataCaptureConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DataCaptureConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DataCaptureConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEnableNetworkIsolation())
-                {
-                    context.Writer.WritePropertyName("EnableNetworkIsolation");
-                    context.Writer.Write(publicRequest.EnableNetworkIsolation.Value);
-                }
-
-                if(publicRequest.IsSetEndpointConfigName())
-                {
-                    context.Writer.WritePropertyName("EndpointConfigName");
-                    context.Writer.Write(publicRequest.EndpointConfigName);
-                }
-
-                if(publicRequest.IsSetExecutionRoleArn())
-                {
-                    context.Writer.WritePropertyName("ExecutionRoleArn");
-                    context.Writer.Write(publicRequest.ExecutionRoleArn);
-                }
-
-                if(publicRequest.IsSetExplainerConfig())
-                {
-                    context.Writer.WritePropertyName("ExplainerConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ExplainerConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ExplainerConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetKmsKeyId())
-                {
-                    context.Writer.WritePropertyName("KmsKeyId");
-                    context.Writer.Write(publicRequest.KmsKeyId);
-                }
-
-                if(publicRequest.IsSetProductionVariants())
-                {
-                    context.Writer.WritePropertyName("ProductionVariants");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestProductionVariantsListValue in publicRequest.ProductionVariants)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAsyncInferenceConfig())
                     {
+                        context.Writer.WritePropertyName("AsyncInferenceConfig");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = ProductionVariantMarshaller.Instance;
-                        marshaller.Marshall(publicRequestProductionVariantsListValue, context);
+                        var marshaller = AsyncInferenceConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AsyncInferenceConfig, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetShadowProductionVariants())
-                {
-                    context.Writer.WritePropertyName("ShadowProductionVariants");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestShadowProductionVariantsListValue in publicRequest.ShadowProductionVariants)
+                    if(publicRequest.IsSetDataCaptureConfig())
                     {
+                        context.Writer.WritePropertyName("DataCaptureConfig");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = ProductionVariantMarshaller.Instance;
-                        marshaller.Marshall(publicRequestShadowProductionVariantsListValue, context);
+                        var marshaller = DataCaptureConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DataCaptureConfig, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetEnableNetworkIsolation())
                     {
+                        context.Writer.WritePropertyName("EnableNetworkIsolation");
+                        context.Writer.Write(publicRequest.EnableNetworkIsolation.Value);
+                    }
+
+                    if(publicRequest.IsSetEndpointConfigName())
+                    {
+                        context.Writer.WritePropertyName("EndpointConfigName");
+                        context.Writer.Write(publicRequest.EndpointConfigName);
+                    }
+
+                    if(publicRequest.IsSetExecutionRoleArn())
+                    {
+                        context.Writer.WritePropertyName("ExecutionRoleArn");
+                        context.Writer.Write(publicRequest.ExecutionRoleArn);
+                    }
+
+                    if(publicRequest.IsSetExplainerConfig())
+                    {
+                        context.Writer.WritePropertyName("ExplainerConfig");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = ExplainerConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ExplainerConfig, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetKmsKeyId())
+                    {
+                        context.Writer.WritePropertyName("KmsKeyId");
+                        context.Writer.Write(publicRequest.KmsKeyId);
+                    }
+
+                    if(publicRequest.IsSetProductionVariants())
+                    {
+                        context.Writer.WritePropertyName("ProductionVariants");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestProductionVariantsListValue in publicRequest.ProductionVariants)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ProductionVariantMarshaller.Instance;
+                            marshaller.Marshall(publicRequestProductionVariantsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetShadowProductionVariants())
+                    {
+                        context.Writer.WritePropertyName("ShadowProductionVariants");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestShadowProductionVariantsListValue in publicRequest.ShadowProductionVariants)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ProductionVariantMarshaller.Instance;
+                            marshaller.Marshall(publicRequestShadowProductionVariantsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetVpcConfig())
+                    {
+                        context.Writer.WritePropertyName("VpcConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = VpcConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.VpcConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetVpcConfig())
-                {
-                    context.Writer.WritePropertyName("VpcConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = VpcConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.VpcConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

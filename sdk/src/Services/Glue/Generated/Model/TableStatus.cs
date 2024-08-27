@@ -124,9 +124,9 @@ namespace Amazon.Glue.Model
         /// An ISO 8601 formatted date string indicating the time that the change was initiated.
         /// </para>
         /// </summary>
-        public DateTime RequestTime
+        public DateTime? RequestTime
         {
-            get { return this._requestTime.GetValueOrDefault(); }
+            get { return this._requestTime; }
             set { this._requestTime = value; }
         }
 
@@ -181,9 +181,9 @@ namespace Amazon.Glue.Model
         /// An ISO 8601 formatted date string indicating the time that the state was last updated.
         /// </para>
         /// </summary>
-        public DateTime UpdateTime
+        public DateTime? UpdateTime
         {
-            get { return this._updateTime.GetValueOrDefault(); }
+            get { return this._updateTime; }
             set { this._updateTime = value; }
         }
 

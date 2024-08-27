@@ -61,61 +61,64 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/list-servers";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFilterValue())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("filterValue");
-                    context.Writer.Write(publicRequest.FilterValue);
-                }
-
-                if(publicRequest.IsSetGroupIdFilter())
-                {
-                    context.Writer.WritePropertyName("groupIdFilter");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestGroupIdFilterListValue in publicRequest.GroupIdFilter)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFilterValue())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = GroupMarshaller.Instance;
-                        marshaller.Marshall(publicRequestGroupIdFilterListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("filterValue");
+                        context.Writer.Write(publicRequest.FilterValue);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetGroupIdFilter())
+                    {
+                        context.Writer.WritePropertyName("groupIdFilter");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestGroupIdFilterListValue in publicRequest.GroupIdFilter)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = GroupMarshaller.Instance;
+                            marshaller.Marshall(publicRequestGroupIdFilterListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetServerCriteria())
+                    {
+                        context.Writer.WritePropertyName("serverCriteria");
+                        context.Writer.Write(publicRequest.ServerCriteria);
+                    }
+
+                    if(publicRequest.IsSetSort())
+                    {
+                        context.Writer.WritePropertyName("sort");
+                        context.Writer.Write(publicRequest.Sort);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetServerCriteria())
-                {
-                    context.Writer.WritePropertyName("serverCriteria");
-                    context.Writer.Write(publicRequest.ServerCriteria);
-                }
-
-                if(publicRequest.IsSetSort())
-                {
-                    context.Writer.WritePropertyName("sort");
-                    context.Writer.Write(publicRequest.Sort);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

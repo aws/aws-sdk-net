@@ -63,84 +63,87 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDatasetGroupArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("datasetGroupArn");
-                    context.Writer.Write(publicRequest.DatasetGroupArn);
-                }
-
-                if(publicRequest.IsSetEventType())
-                {
-                    context.Writer.WritePropertyName("eventType");
-                    context.Writer.Write(publicRequest.EventType);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetPerformAutoML())
-                {
-                    context.Writer.WritePropertyName("performAutoML");
-                    context.Writer.Write(publicRequest.PerformAutoML.Value);
-                }
-
-                if(publicRequest.IsSetPerformAutoTraining())
-                {
-                    context.Writer.WritePropertyName("performAutoTraining");
-                    context.Writer.Write(publicRequest.PerformAutoTraining.Value);
-                }
-
-                if(publicRequest.IsSetPerformHPO())
-                {
-                    context.Writer.WritePropertyName("performHPO");
-                    context.Writer.Write(publicRequest.PerformHPO.Value);
-                }
-
-                if(publicRequest.IsSetRecipeArn())
-                {
-                    context.Writer.WritePropertyName("recipeArn");
-                    context.Writer.Write(publicRequest.RecipeArn);
-                }
-
-                if(publicRequest.IsSetSolutionConfig())
-                {
-                    context.Writer.WritePropertyName("solutionConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SolutionConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SolutionConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDatasetGroupArn())
                     {
+                        context.Writer.WritePropertyName("datasetGroupArn");
+                        context.Writer.Write(publicRequest.DatasetGroupArn);
+                    }
+
+                    if(publicRequest.IsSetEventType())
+                    {
+                        context.Writer.WritePropertyName("eventType");
+                        context.Writer.Write(publicRequest.EventType);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetPerformAutoML())
+                    {
+                        context.Writer.WritePropertyName("performAutoML");
+                        context.Writer.Write(publicRequest.PerformAutoML.Value);
+                    }
+
+                    if(publicRequest.IsSetPerformAutoTraining())
+                    {
+                        context.Writer.WritePropertyName("performAutoTraining");
+                        context.Writer.Write(publicRequest.PerformAutoTraining.Value);
+                    }
+
+                    if(publicRequest.IsSetPerformHPO())
+                    {
+                        context.Writer.WritePropertyName("performHPO");
+                        context.Writer.Write(publicRequest.PerformHPO.Value);
+                    }
+
+                    if(publicRequest.IsSetRecipeArn())
+                    {
+                        context.Writer.WritePropertyName("recipeArn");
+                        context.Writer.Write(publicRequest.RecipeArn);
+                    }
+
+                    if(publicRequest.IsSetSolutionConfig())
+                    {
+                        context.Writer.WritePropertyName("solutionConfig");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = SolutionConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SolutionConfig, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

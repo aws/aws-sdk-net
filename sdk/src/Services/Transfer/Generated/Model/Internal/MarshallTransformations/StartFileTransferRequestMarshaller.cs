@@ -63,55 +63,58 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConnectorId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ConnectorId");
-                    context.Writer.Write(publicRequest.ConnectorId);
-                }
-
-                if(publicRequest.IsSetLocalDirectoryPath())
-                {
-                    context.Writer.WritePropertyName("LocalDirectoryPath");
-                    context.Writer.Write(publicRequest.LocalDirectoryPath);
-                }
-
-                if(publicRequest.IsSetRemoteDirectoryPath())
-                {
-                    context.Writer.WritePropertyName("RemoteDirectoryPath");
-                    context.Writer.Write(publicRequest.RemoteDirectoryPath);
-                }
-
-                if(publicRequest.IsSetRetrieveFilePaths())
-                {
-                    context.Writer.WritePropertyName("RetrieveFilePaths");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRetrieveFilePathsListValue in publicRequest.RetrieveFilePaths)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConnectorId())
                     {
-                            context.Writer.Write(publicRequestRetrieveFilePathsListValue);
+                        context.Writer.WritePropertyName("ConnectorId");
+                        context.Writer.Write(publicRequest.ConnectorId);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetSendFilePaths())
-                {
-                    context.Writer.WritePropertyName("SendFilePaths");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSendFilePathsListValue in publicRequest.SendFilePaths)
+                    if(publicRequest.IsSetLocalDirectoryPath())
                     {
-                            context.Writer.Write(publicRequestSendFilePathsListValue);
+                        context.Writer.WritePropertyName("LocalDirectoryPath");
+                        context.Writer.Write(publicRequest.LocalDirectoryPath);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetRemoteDirectoryPath())
+                    {
+                        context.Writer.WritePropertyName("RemoteDirectoryPath");
+                        context.Writer.Write(publicRequest.RemoteDirectoryPath);
+                    }
+
+                    if(publicRequest.IsSetRetrieveFilePaths())
+                    {
+                        context.Writer.WritePropertyName("RetrieveFilePaths");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRetrieveFilePathsListValue in publicRequest.RetrieveFilePaths)
+                        {
+                                context.Writer.Write(publicRequestRetrieveFilePathsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSendFilePaths())
+                    {
+                        context.Writer.WritePropertyName("SendFilePaths");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSendFilePathsListValue in publicRequest.SendFilePaths)
+                        {
+                                context.Writer.Write(publicRequestSendFilePathsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -61,50 +61,53 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/mac/verify";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetKeyIdentifier())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("KeyIdentifier");
-                    context.Writer.Write(publicRequest.KeyIdentifier);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetKeyIdentifier())
+                    {
+                        context.Writer.WritePropertyName("KeyIdentifier");
+                        context.Writer.Write(publicRequest.KeyIdentifier);
+                    }
+
+                    if(publicRequest.IsSetMac())
+                    {
+                        context.Writer.WritePropertyName("Mac");
+                        context.Writer.Write(publicRequest.Mac);
+                    }
+
+                    if(publicRequest.IsSetMacLength())
+                    {
+                        context.Writer.WritePropertyName("MacLength");
+                        context.Writer.Write(publicRequest.MacLength.Value);
+                    }
+
+                    if(publicRequest.IsSetMessageData())
+                    {
+                        context.Writer.WritePropertyName("MessageData");
+                        context.Writer.Write(publicRequest.MessageData);
+                    }
+
+                    if(publicRequest.IsSetVerificationAttributes())
+                    {
+                        context.Writer.WritePropertyName("VerificationAttributes");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MacAttributesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.VerificationAttributes, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMac())
-                {
-                    context.Writer.WritePropertyName("Mac");
-                    context.Writer.Write(publicRequest.Mac);
-                }
-
-                if(publicRequest.IsSetMacLength())
-                {
-                    context.Writer.WritePropertyName("MacLength");
-                    context.Writer.Write(publicRequest.MacLength.Value);
-                }
-
-                if(publicRequest.IsSetMessageData())
-                {
-                    context.Writer.WritePropertyName("MessageData");
-                    context.Writer.Write(publicRequest.MessageData);
-                }
-
-                if(publicRequest.IsSetVerificationAttributes())
-                {
-                    context.Writer.WritePropertyName("VerificationAttributes");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MacAttributesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.VerificationAttributes, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

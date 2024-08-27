@@ -67,79 +67,82 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field DashboardId set");
             request.AddPathResource("{DashboardId}", StringUtils.FromString(publicRequest.DashboardId));
             request.ResourcePath = "/accounts/{AwsAccountId}/dashboards/{DashboardId}/permissions";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetGrantLinkPermissions())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("GrantLinkPermissions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestGrantLinkPermissionsListValue in publicRequest.GrantLinkPermissions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetGrantLinkPermissions())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("GrantLinkPermissions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestGrantLinkPermissionsListValue in publicRequest.GrantLinkPermissions)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = ResourcePermissionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestGrantLinkPermissionsListValue, context);
+                            var marshaller = ResourcePermissionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestGrantLinkPermissionsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetGrantPermissions())
+                    {
+                        context.Writer.WritePropertyName("GrantPermissions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestGrantPermissionsListValue in publicRequest.GrantPermissions)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ResourcePermissionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestGrantPermissionsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetRevokeLinkPermissions())
+                    {
+                        context.Writer.WritePropertyName("RevokeLinkPermissions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRevokeLinkPermissionsListValue in publicRequest.RevokeLinkPermissions)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ResourcePermissionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestRevokeLinkPermissionsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetRevokePermissions())
+                    {
+                        context.Writer.WritePropertyName("RevokePermissions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRevokePermissionsListValue in publicRequest.RevokePermissions)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ResourcePermissionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestRevokePermissionsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetGrantPermissions())
-                {
-                    context.Writer.WritePropertyName("GrantPermissions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestGrantPermissionsListValue in publicRequest.GrantPermissions)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ResourcePermissionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestGrantPermissionsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetRevokeLinkPermissions())
-                {
-                    context.Writer.WritePropertyName("RevokeLinkPermissions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRevokeLinkPermissionsListValue in publicRequest.RevokeLinkPermissions)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ResourcePermissionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestRevokeLinkPermissionsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetRevokePermissions())
-                {
-                    context.Writer.WritePropertyName("RevokePermissions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRevokePermissionsListValue in publicRequest.RevokePermissions)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ResourcePermissionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestRevokePermissionsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

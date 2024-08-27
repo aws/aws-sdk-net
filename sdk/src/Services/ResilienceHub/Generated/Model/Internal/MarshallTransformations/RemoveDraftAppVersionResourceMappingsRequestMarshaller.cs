@@ -61,87 +61,90 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/remove-draft-app-version-resource-mappings";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAppArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("appArn");
-                    context.Writer.Write(publicRequest.AppArn);
-                }
-
-                if(publicRequest.IsSetAppRegistryAppNames())
-                {
-                    context.Writer.WritePropertyName("appRegistryAppNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAppRegistryAppNamesListValue in publicRequest.AppRegistryAppNames)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAppArn())
                     {
-                            context.Writer.Write(publicRequestAppRegistryAppNamesListValue);
+                        context.Writer.WritePropertyName("appArn");
+                        context.Writer.Write(publicRequest.AppArn);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetEksSourceNames())
-                {
-                    context.Writer.WritePropertyName("eksSourceNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEksSourceNamesListValue in publicRequest.EksSourceNames)
+                    if(publicRequest.IsSetAppRegistryAppNames())
                     {
-                            context.Writer.Write(publicRequestEksSourceNamesListValue);
+                        context.Writer.WritePropertyName("appRegistryAppNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAppRegistryAppNamesListValue in publicRequest.AppRegistryAppNames)
+                        {
+                                context.Writer.Write(publicRequestAppRegistryAppNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetLogicalStackNames())
-                {
-                    context.Writer.WritePropertyName("logicalStackNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLogicalStackNamesListValue in publicRequest.LogicalStackNames)
+                    if(publicRequest.IsSetEksSourceNames())
                     {
-                            context.Writer.Write(publicRequestLogicalStackNamesListValue);
+                        context.Writer.WritePropertyName("eksSourceNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestEksSourceNamesListValue in publicRequest.EksSourceNames)
+                        {
+                                context.Writer.Write(publicRequestEksSourceNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetResourceGroupNames())
-                {
-                    context.Writer.WritePropertyName("resourceGroupNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestResourceGroupNamesListValue in publicRequest.ResourceGroupNames)
+                    if(publicRequest.IsSetLogicalStackNames())
                     {
-                            context.Writer.Write(publicRequestResourceGroupNamesListValue);
+                        context.Writer.WritePropertyName("logicalStackNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLogicalStackNamesListValue in publicRequest.LogicalStackNames)
+                        {
+                                context.Writer.Write(publicRequestLogicalStackNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetResourceNames())
-                {
-                    context.Writer.WritePropertyName("resourceNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestResourceNamesListValue in publicRequest.ResourceNames)
+                    if(publicRequest.IsSetResourceGroupNames())
                     {
-                            context.Writer.Write(publicRequestResourceNamesListValue);
+                        context.Writer.WritePropertyName("resourceGroupNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestResourceGroupNamesListValue in publicRequest.ResourceGroupNames)
+                        {
+                                context.Writer.Write(publicRequestResourceGroupNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTerraformSourceNames())
-                {
-                    context.Writer.WritePropertyName("terraformSourceNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTerraformSourceNamesListValue in publicRequest.TerraformSourceNames)
+                    if(publicRequest.IsSetResourceNames())
                     {
-                            context.Writer.Write(publicRequestTerraformSourceNamesListValue);
+                        context.Writer.WritePropertyName("resourceNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestResourceNamesListValue in publicRequest.ResourceNames)
+                        {
+                                context.Writer.Write(publicRequestResourceNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTerraformSourceNames())
+                    {
+                        context.Writer.WritePropertyName("terraformSourceNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTerraformSourceNamesListValue in publicRequest.TerraformSourceNames)
+                        {
+                                context.Writer.Write(publicRequestTerraformSourceNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

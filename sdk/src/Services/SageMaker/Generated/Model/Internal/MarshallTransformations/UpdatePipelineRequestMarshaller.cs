@@ -63,67 +63,70 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetParallelismConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ParallelismConfiguration");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetParallelismConfiguration())
+                    {
+                        context.Writer.WritePropertyName("ParallelismConfiguration");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = ParallelismConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ParallelismConfiguration, context);
+                        var marshaller = ParallelismConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ParallelismConfiguration, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetPipelineDefinition())
+                    {
+                        context.Writer.WritePropertyName("PipelineDefinition");
+                        context.Writer.Write(publicRequest.PipelineDefinition);
+                    }
+
+                    if(publicRequest.IsSetPipelineDefinitionS3Location())
+                    {
+                        context.Writer.WritePropertyName("PipelineDefinitionS3Location");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PipelineDefinitionS3LocationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.PipelineDefinitionS3Location, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetPipelineDescription())
+                    {
+                        context.Writer.WritePropertyName("PipelineDescription");
+                        context.Writer.Write(publicRequest.PipelineDescription);
+                    }
+
+                    if(publicRequest.IsSetPipelineDisplayName())
+                    {
+                        context.Writer.WritePropertyName("PipelineDisplayName");
+                        context.Writer.Write(publicRequest.PipelineDisplayName);
+                    }
+
+                    if(publicRequest.IsSetPipelineName())
+                    {
+                        context.Writer.WritePropertyName("PipelineName");
+                        context.Writer.Write(publicRequest.PipelineName);
+                    }
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("RoleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPipelineDefinition())
-                {
-                    context.Writer.WritePropertyName("PipelineDefinition");
-                    context.Writer.Write(publicRequest.PipelineDefinition);
-                }
-
-                if(publicRequest.IsSetPipelineDefinitionS3Location())
-                {
-                    context.Writer.WritePropertyName("PipelineDefinitionS3Location");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PipelineDefinitionS3LocationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PipelineDefinitionS3Location, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPipelineDescription())
-                {
-                    context.Writer.WritePropertyName("PipelineDescription");
-                    context.Writer.Write(publicRequest.PipelineDescription);
-                }
-
-                if(publicRequest.IsSetPipelineDisplayName())
-                {
-                    context.Writer.WritePropertyName("PipelineDisplayName");
-                    context.Writer.Write(publicRequest.PipelineDisplayName);
-                }
-
-                if(publicRequest.IsSetPipelineName())
-                {
-                    context.Writer.WritePropertyName("PipelineName");
-                    context.Writer.Write(publicRequest.PipelineName);
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("RoleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

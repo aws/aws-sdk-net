@@ -64,87 +64,90 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 throw new AmazonDataZoneException("Request object does not have required field DomainIdentifier set");
             request.AddPathResource("{domainIdentifier}", StringUtils.FromString(publicRequest.DomainIdentifier));
             request.ResourcePath = "/v2/domains/{domainIdentifier}/data-products";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetFormsInput())
-                {
-                    context.Writer.WritePropertyName("formsInput");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFormsInputListValue in publicRequest.FormsInput)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = FormInputMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFormsInputListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetGlossaryTerms())
-                {
-                    context.Writer.WritePropertyName("glossaryTerms");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestGlossaryTermsListValue in publicRequest.GlossaryTerms)
+                    else if(!(publicRequest.IsSetClientToken()))
                     {
-                            context.Writer.Write(publicRequestGlossaryTermsListValue);
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
                     }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetItems())
-                {
-                    context.Writer.WritePropertyName("items");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestItemsListValue in publicRequest.Items)
+                    if(publicRequest.IsSetDescription())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DataProductItemMarshaller.Instance;
-                        marshaller.Marshall(publicRequestItemsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetFormsInput())
+                    {
+                        context.Writer.WritePropertyName("formsInput");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFormsInputListValue in publicRequest.FormsInput)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = FormInputMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFormsInputListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetGlossaryTerms())
+                    {
+                        context.Writer.WritePropertyName("glossaryTerms");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestGlossaryTermsListValue in publicRequest.GlossaryTerms)
+                        {
+                                context.Writer.Write(publicRequestGlossaryTermsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetItems())
+                    {
+                        context.Writer.WritePropertyName("items");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestItemsListValue in publicRequest.Items)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = DataProductItemMarshaller.Instance;
+                            marshaller.Marshall(publicRequestItemsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetOwningProjectIdentifier())
+                    {
+                        context.Writer.WritePropertyName("owningProjectIdentifier");
+                        context.Writer.Write(publicRequest.OwningProjectIdentifier);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetOwningProjectIdentifier())
-                {
-                    context.Writer.WritePropertyName("owningProjectIdentifier");
-                    context.Writer.Write(publicRequest.OwningProjectIdentifier);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

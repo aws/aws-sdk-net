@@ -61,144 +61,147 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/CreateContainerRecipe";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetComponents())
-                {
-                    context.Writer.WritePropertyName("components");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestComponentsListValue in publicRequest.Components)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetComponents())
+                    {
+                        context.Writer.WritePropertyName("components");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestComponentsListValue in publicRequest.Components)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ComponentConfigurationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestComponentsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetContainerType())
+                    {
+                        context.Writer.WritePropertyName("containerType");
+                        context.Writer.Write(publicRequest.ContainerType);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetDockerfileTemplateData())
+                    {
+                        context.Writer.WritePropertyName("dockerfileTemplateData");
+                        context.Writer.Write(publicRequest.DockerfileTemplateData);
+                    }
+
+                    if(publicRequest.IsSetDockerfileTemplateUri())
+                    {
+                        context.Writer.WritePropertyName("dockerfileTemplateUri");
+                        context.Writer.Write(publicRequest.DockerfileTemplateUri);
+                    }
+
+                    if(publicRequest.IsSetImageOsVersionOverride())
+                    {
+                        context.Writer.WritePropertyName("imageOsVersionOverride");
+                        context.Writer.Write(publicRequest.ImageOsVersionOverride);
+                    }
+
+                    if(publicRequest.IsSetInstanceConfiguration())
+                    {
+                        context.Writer.WritePropertyName("instanceConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = ComponentConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestComponentsListValue, context);
+                        var marshaller = InstanceConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.InstanceConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetContainerType())
-                {
-                    context.Writer.WritePropertyName("containerType");
-                    context.Writer.Write(publicRequest.ContainerType);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetDockerfileTemplateData())
-                {
-                    context.Writer.WritePropertyName("dockerfileTemplateData");
-                    context.Writer.Write(publicRequest.DockerfileTemplateData);
-                }
-
-                if(publicRequest.IsSetDockerfileTemplateUri())
-                {
-                    context.Writer.WritePropertyName("dockerfileTemplateUri");
-                    context.Writer.Write(publicRequest.DockerfileTemplateUri);
-                }
-
-                if(publicRequest.IsSetImageOsVersionOverride())
-                {
-                    context.Writer.WritePropertyName("imageOsVersionOverride");
-                    context.Writer.Write(publicRequest.ImageOsVersionOverride);
-                }
-
-                if(publicRequest.IsSetInstanceConfiguration())
-                {
-                    context.Writer.WritePropertyName("instanceConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = InstanceConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.InstanceConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetKmsKeyId())
-                {
-                    context.Writer.WritePropertyName("kmsKeyId");
-                    context.Writer.Write(publicRequest.KmsKeyId);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetParentImage())
-                {
-                    context.Writer.WritePropertyName("parentImage");
-                    context.Writer.Write(publicRequest.ParentImage);
-                }
-
-                if(publicRequest.IsSetPlatformOverride())
-                {
-                    context.Writer.WritePropertyName("platformOverride");
-                    context.Writer.Write(publicRequest.PlatformOverride);
-                }
-
-                if(publicRequest.IsSetSemanticVersion())
-                {
-                    context.Writer.WritePropertyName("semanticVersion");
-                    context.Writer.Write(publicRequest.SemanticVersion);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetKmsKeyId())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("kmsKeyId");
+                        context.Writer.Write(publicRequest.KmsKeyId);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetParentImage())
+                    {
+                        context.Writer.WritePropertyName("parentImage");
+                        context.Writer.Write(publicRequest.ParentImage);
+                    }
+
+                    if(publicRequest.IsSetPlatformOverride())
+                    {
+                        context.Writer.WritePropertyName("platformOverride");
+                        context.Writer.Write(publicRequest.PlatformOverride);
+                    }
+
+                    if(publicRequest.IsSetSemanticVersion())
+                    {
+                        context.Writer.WritePropertyName("semanticVersion");
+                        context.Writer.Write(publicRequest.SemanticVersion);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTargetRepository())
+                    {
+                        context.Writer.WritePropertyName("targetRepository");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TargetContainerRepositoryMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TargetRepository, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetWorkingDirectory())
+                    {
+                        context.Writer.WritePropertyName("workingDirectory");
+                        context.Writer.Write(publicRequest.WorkingDirectory);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTargetRepository())
-                {
-                    context.Writer.WritePropertyName("targetRepository");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TargetContainerRepositoryMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TargetRepository, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetWorkingDirectory())
-                {
-                    context.Writer.WritePropertyName("workingDirectory");
-                    context.Writer.Write(publicRequest.WorkingDirectory);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

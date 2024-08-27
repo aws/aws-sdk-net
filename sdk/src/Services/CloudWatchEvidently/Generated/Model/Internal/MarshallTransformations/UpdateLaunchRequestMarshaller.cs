@@ -67,70 +67,73 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
                 throw new AmazonCloudWatchEvidentlyException("Request object does not have required field Project set");
             request.AddPathResource("{project}", StringUtils.FromString(publicRequest.Project));
             request.ResourcePath = "/projects/{project}/launches/{launch}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetGroups())
-                {
-                    context.Writer.WritePropertyName("groups");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestGroupsListValue in publicRequest.Groups)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetGroups())
+                    {
+                        context.Writer.WritePropertyName("groups");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestGroupsListValue in publicRequest.Groups)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = LaunchGroupConfigMarshaller.Instance;
+                            marshaller.Marshall(publicRequestGroupsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetMetricMonitors())
+                    {
+                        context.Writer.WritePropertyName("metricMonitors");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMetricMonitorsListValue in publicRequest.MetricMonitors)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = MetricMonitorConfigMarshaller.Instance;
+                            marshaller.Marshall(publicRequestMetricMonitorsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetRandomizationSalt())
+                    {
+                        context.Writer.WritePropertyName("randomizationSalt");
+                        context.Writer.Write(publicRequest.RandomizationSalt);
+                    }
+
+                    if(publicRequest.IsSetScheduledSplitsConfig())
+                    {
+                        context.Writer.WritePropertyName("scheduledSplitsConfig");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = LaunchGroupConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequestGroupsListValue, context);
+                        var marshaller = ScheduledSplitsLaunchConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ScheduledSplitsConfig, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMetricMonitors())
-                {
-                    context.Writer.WritePropertyName("metricMonitors");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMetricMonitorsListValue in publicRequest.MetricMonitors)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = MetricMonitorConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequestMetricMonitorsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetRandomizationSalt())
-                {
-                    context.Writer.WritePropertyName("randomizationSalt");
-                    context.Writer.Write(publicRequest.RandomizationSalt);
-                }
-
-                if(publicRequest.IsSetScheduledSplitsConfig())
-                {
-                    context.Writer.WritePropertyName("scheduledSplitsConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ScheduledSplitsLaunchConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ScheduledSplitsConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

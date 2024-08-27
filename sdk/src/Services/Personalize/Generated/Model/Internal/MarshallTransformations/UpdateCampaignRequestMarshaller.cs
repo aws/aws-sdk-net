@@ -63,44 +63,47 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCampaignArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("campaignArn");
-                    context.Writer.Write(publicRequest.CampaignArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCampaignArn())
+                    {
+                        context.Writer.WritePropertyName("campaignArn");
+                        context.Writer.Write(publicRequest.CampaignArn);
+                    }
+
+                    if(publicRequest.IsSetCampaignConfig())
+                    {
+                        context.Writer.WritePropertyName("campaignConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CampaignConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CampaignConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetMinProvisionedTPS())
+                    {
+                        context.Writer.WritePropertyName("minProvisionedTPS");
+                        context.Writer.Write(publicRequest.MinProvisionedTPS.Value);
+                    }
+
+                    if(publicRequest.IsSetSolutionVersionArn())
+                    {
+                        context.Writer.WritePropertyName("solutionVersionArn");
+                        context.Writer.Write(publicRequest.SolutionVersionArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCampaignConfig())
-                {
-                    context.Writer.WritePropertyName("campaignConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CampaignConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CampaignConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMinProvisionedTPS())
-                {
-                    context.Writer.WritePropertyName("minProvisionedTPS");
-                    context.Writer.Write(publicRequest.MinProvisionedTPS.Value);
-                }
-
-                if(publicRequest.IsSetSolutionVersionArn())
-                {
-                    context.Writer.WritePropertyName("solutionVersionArn");
-                    context.Writer.Write(publicRequest.SolutionVersionArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

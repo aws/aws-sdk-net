@@ -67,46 +67,49 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field InstanceId set");
             request.AddPathResource("{InstanceId}", StringUtils.FromString(publicRequest.InstanceId));
             request.ResourcePath = "/contacts/{InstanceId}/{ContactId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetReferences())
-                {
-                    context.Writer.WritePropertyName("References");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestReferencesKvp in publicRequest.References)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
-                        context.Writer.WritePropertyName(publicRequestReferencesKvp.Key);
-                        var publicRequestReferencesValue = publicRequestReferencesKvp.Value;
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
 
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetReferences())
+                    {
+                        context.Writer.WritePropertyName("References");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestReferencesKvp in publicRequest.References)
+                        {
+                            context.Writer.WritePropertyName(publicRequestReferencesKvp.Key);
+                            var publicRequestReferencesValue = publicRequestReferencesKvp.Value;
 
-                        var marshaller = ReferenceMarshaller.Instance;
-                        marshaller.Marshall(publicRequestReferencesValue, context);
+                            context.Writer.WriteObjectStart();
 
+                            var marshaller = ReferenceMarshaller.Instance;
+                            marshaller.Marshall(publicRequestReferencesValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

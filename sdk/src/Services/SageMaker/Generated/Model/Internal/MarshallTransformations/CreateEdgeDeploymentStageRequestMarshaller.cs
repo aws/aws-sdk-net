@@ -63,37 +63,40 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEdgeDeploymentPlanName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("EdgeDeploymentPlanName");
-                    context.Writer.Write(publicRequest.EdgeDeploymentPlanName);
-                }
-
-                if(publicRequest.IsSetStages())
-                {
-                    context.Writer.WritePropertyName("Stages");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestStagesListValue in publicRequest.Stages)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEdgeDeploymentPlanName())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DeploymentStageMarshaller.Instance;
-                        marshaller.Marshall(publicRequestStagesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("EdgeDeploymentPlanName");
+                        context.Writer.Write(publicRequest.EdgeDeploymentPlanName);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetStages())
+                    {
+                        context.Writer.WritePropertyName("Stages");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestStagesListValue in publicRequest.Stages)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = DeploymentStageMarshaller.Instance;
+                            marshaller.Marshall(publicRequestStagesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

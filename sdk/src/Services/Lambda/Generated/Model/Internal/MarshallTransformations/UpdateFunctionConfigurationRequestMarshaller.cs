@@ -64,178 +64,181 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 throw new AmazonLambdaException("Request object does not have required field FunctionName set");
             request.AddPathResource("{FunctionName}", StringUtils.FromString(publicRequest.FunctionName));
             request.ResourcePath = "/2015-03-31/functions/{FunctionName}/configuration";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeadLetterConfig())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DeadLetterConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DeadLetterConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DeadLetterConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetEnvironment())
-                {
-                    context.Writer.WritePropertyName("Environment");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EnvironmentMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Environment, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEphemeralStorage())
-                {
-                    context.Writer.WritePropertyName("EphemeralStorage");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EphemeralStorageMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EphemeralStorage, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetFileSystemConfigs())
-                {
-                    context.Writer.WritePropertyName("FileSystemConfigs");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFileSystemConfigsListValue in publicRequest.FileSystemConfigs)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDeadLetterConfig())
                     {
+                        context.Writer.WritePropertyName("DeadLetterConfig");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = FileSystemConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFileSystemConfigsListValue, context);
+                        var marshaller = DeadLetterConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DeadLetterConfig, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetHandler())
-                {
-                    context.Writer.WritePropertyName("Handler");
-                    context.Writer.Write(publicRequest.Handler);
-                }
-
-                if(publicRequest.IsSetImageConfig())
-                {
-                    context.Writer.WritePropertyName("ImageConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ImageConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ImageConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetKMSKeyArn())
-                {
-                    context.Writer.WritePropertyName("KMSKeyArn");
-                    context.Writer.Write(publicRequest.KMSKeyArn);
-                }
-
-                if(publicRequest.IsSetLayers())
-                {
-                    context.Writer.WritePropertyName("Layers");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLayersListValue in publicRequest.Layers)
+                    if(publicRequest.IsSetDescription())
                     {
-                            context.Writer.Write(publicRequestLayersListValue);
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetEnvironment())
+                    {
+                        context.Writer.WritePropertyName("Environment");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EnvironmentMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Environment, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetEphemeralStorage())
+                    {
+                        context.Writer.WritePropertyName("EphemeralStorage");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EphemeralStorageMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EphemeralStorage, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetFileSystemConfigs())
+                    {
+                        context.Writer.WritePropertyName("FileSystemConfigs");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFileSystemConfigsListValue in publicRequest.FileSystemConfigs)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = FileSystemConfigMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFileSystemConfigsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetHandler())
+                    {
+                        context.Writer.WritePropertyName("Handler");
+                        context.Writer.Write(publicRequest.Handler);
+                    }
+
+                    if(publicRequest.IsSetImageConfig())
+                    {
+                        context.Writer.WritePropertyName("ImageConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ImageConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ImageConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetKMSKeyArn())
+                    {
+                        context.Writer.WritePropertyName("KMSKeyArn");
+                        context.Writer.Write(publicRequest.KMSKeyArn);
+                    }
+
+                    if(publicRequest.IsSetLayers())
+                    {
+                        context.Writer.WritePropertyName("Layers");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLayersListValue in publicRequest.Layers)
+                        {
+                                context.Writer.Write(publicRequestLayersListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetLoggingConfig())
+                    {
+                        context.Writer.WritePropertyName("LoggingConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LoggingConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.LoggingConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetMemorySize())
+                    {
+                        context.Writer.WritePropertyName("MemorySize");
+                        context.Writer.Write(publicRequest.MemorySize.Value);
+                    }
+
+                    if(publicRequest.IsSetRevisionId())
+                    {
+                        context.Writer.WritePropertyName("RevisionId");
+                        context.Writer.Write(publicRequest.RevisionId);
+                    }
+
+                    if(publicRequest.IsSetRole())
+                    {
+                        context.Writer.WritePropertyName("Role");
+                        context.Writer.Write(publicRequest.Role);
+                    }
+
+                    if(publicRequest.IsSetRuntime())
+                    {
+                        context.Writer.WritePropertyName("Runtime");
+                        context.Writer.Write(publicRequest.Runtime);
+                    }
+
+                    if(publicRequest.IsSetSnapStart())
+                    {
+                        context.Writer.WritePropertyName("SnapStart");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SnapStartMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SnapStart, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTimeout())
+                    {
+                        context.Writer.WritePropertyName("Timeout");
+                        context.Writer.Write(publicRequest.Timeout.Value);
+                    }
+
+                    if(publicRequest.IsSetTracingConfig())
+                    {
+                        context.Writer.WritePropertyName("TracingConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TracingConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TracingConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetVpcConfig())
+                    {
+                        context.Writer.WritePropertyName("VpcConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = VpcConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.VpcConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetLoggingConfig())
-                {
-                    context.Writer.WritePropertyName("LoggingConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LoggingConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LoggingConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMemorySize())
-                {
-                    context.Writer.WritePropertyName("MemorySize");
-                    context.Writer.Write(publicRequest.MemorySize.Value);
-                }
-
-                if(publicRequest.IsSetRevisionId())
-                {
-                    context.Writer.WritePropertyName("RevisionId");
-                    context.Writer.Write(publicRequest.RevisionId);
-                }
-
-                if(publicRequest.IsSetRole())
-                {
-                    context.Writer.WritePropertyName("Role");
-                    context.Writer.Write(publicRequest.Role);
-                }
-
-                if(publicRequest.IsSetRuntime())
-                {
-                    context.Writer.WritePropertyName("Runtime");
-                    context.Writer.Write(publicRequest.Runtime);
-                }
-
-                if(publicRequest.IsSetSnapStart())
-                {
-                    context.Writer.WritePropertyName("SnapStart");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SnapStartMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SnapStart, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTimeout())
-                {
-                    context.Writer.WritePropertyName("Timeout");
-                    context.Writer.Write(publicRequest.Timeout.Value);
-                }
-
-                if(publicRequest.IsSetTracingConfig())
-                {
-                    context.Writer.WritePropertyName("TracingConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TracingConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TracingConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetVpcConfig())
-                {
-                    context.Writer.WritePropertyName("VpcConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = VpcConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.VpcConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

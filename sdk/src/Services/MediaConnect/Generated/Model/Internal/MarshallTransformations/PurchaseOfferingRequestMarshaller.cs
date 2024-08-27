@@ -64,27 +64,30 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 throw new AmazonMediaConnectException("Request object does not have required field OfferingArn set");
             request.AddPathResource("{offeringArn}", StringUtils.FromString(publicRequest.OfferingArn));
             request.ResourcePath = "/v1/offerings/{offeringArn}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetReservationName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("reservationName");
-                    context.Writer.Write(publicRequest.ReservationName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetReservationName())
+                    {
+                        context.Writer.WritePropertyName("reservationName");
+                        context.Writer.Write(publicRequest.ReservationName);
+                    }
+
+                    if(publicRequest.IsSetStart())
+                    {
+                        context.Writer.WritePropertyName("start");
+                        context.Writer.Write(publicRequest.Start);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetStart())
-                {
-                    context.Writer.WritePropertyName("start");
-                    context.Writer.Write(publicRequest.Start);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

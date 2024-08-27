@@ -63,75 +63,78 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetActivateCaseSensitiveIdentifier())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("activateCaseSensitiveIdentifier");
-                    context.Writer.Write(publicRequest.ActivateCaseSensitiveIdentifier.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetActivateCaseSensitiveIdentifier())
+                    {
+                        context.Writer.WritePropertyName("activateCaseSensitiveIdentifier");
+                        context.Writer.Write(publicRequest.ActivateCaseSensitiveIdentifier.Value);
+                    }
+
+                    if(publicRequest.IsSetNamespaceName())
+                    {
+                        context.Writer.WritePropertyName("namespaceName");
+                        context.Writer.Write(publicRequest.NamespaceName);
+                    }
+
+                    if(publicRequest.IsSetNewTableName())
+                    {
+                        context.Writer.WritePropertyName("newTableName");
+                        context.Writer.Write(publicRequest.NewTableName);
+                    }
+
+                    if(publicRequest.IsSetRecoveryPointId())
+                    {
+                        context.Writer.WritePropertyName("recoveryPointId");
+                        context.Writer.Write(publicRequest.RecoveryPointId);
+                    }
+
+                    if(publicRequest.IsSetSourceDatabaseName())
+                    {
+                        context.Writer.WritePropertyName("sourceDatabaseName");
+                        context.Writer.Write(publicRequest.SourceDatabaseName);
+                    }
+
+                    if(publicRequest.IsSetSourceSchemaName())
+                    {
+                        context.Writer.WritePropertyName("sourceSchemaName");
+                        context.Writer.Write(publicRequest.SourceSchemaName);
+                    }
+
+                    if(publicRequest.IsSetSourceTableName())
+                    {
+                        context.Writer.WritePropertyName("sourceTableName");
+                        context.Writer.Write(publicRequest.SourceTableName);
+                    }
+
+                    if(publicRequest.IsSetTargetDatabaseName())
+                    {
+                        context.Writer.WritePropertyName("targetDatabaseName");
+                        context.Writer.Write(publicRequest.TargetDatabaseName);
+                    }
+
+                    if(publicRequest.IsSetTargetSchemaName())
+                    {
+                        context.Writer.WritePropertyName("targetSchemaName");
+                        context.Writer.Write(publicRequest.TargetSchemaName);
+                    }
+
+                    if(publicRequest.IsSetWorkgroupName())
+                    {
+                        context.Writer.WritePropertyName("workgroupName");
+                        context.Writer.Write(publicRequest.WorkgroupName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetNamespaceName())
-                {
-                    context.Writer.WritePropertyName("namespaceName");
-                    context.Writer.Write(publicRequest.NamespaceName);
-                }
-
-                if(publicRequest.IsSetNewTableName())
-                {
-                    context.Writer.WritePropertyName("newTableName");
-                    context.Writer.Write(publicRequest.NewTableName);
-                }
-
-                if(publicRequest.IsSetRecoveryPointId())
-                {
-                    context.Writer.WritePropertyName("recoveryPointId");
-                    context.Writer.Write(publicRequest.RecoveryPointId);
-                }
-
-                if(publicRequest.IsSetSourceDatabaseName())
-                {
-                    context.Writer.WritePropertyName("sourceDatabaseName");
-                    context.Writer.Write(publicRequest.SourceDatabaseName);
-                }
-
-                if(publicRequest.IsSetSourceSchemaName())
-                {
-                    context.Writer.WritePropertyName("sourceSchemaName");
-                    context.Writer.Write(publicRequest.SourceSchemaName);
-                }
-
-                if(publicRequest.IsSetSourceTableName())
-                {
-                    context.Writer.WritePropertyName("sourceTableName");
-                    context.Writer.Write(publicRequest.SourceTableName);
-                }
-
-                if(publicRequest.IsSetTargetDatabaseName())
-                {
-                    context.Writer.WritePropertyName("targetDatabaseName");
-                    context.Writer.Write(publicRequest.TargetDatabaseName);
-                }
-
-                if(publicRequest.IsSetTargetSchemaName())
-                {
-                    context.Writer.WritePropertyName("targetSchemaName");
-                    context.Writer.Write(publicRequest.TargetSchemaName);
-                }
-
-                if(publicRequest.IsSetWorkgroupName())
-                {
-                    context.Writer.WritePropertyName("workgroupName");
-                    context.Writer.Write(publicRequest.WorkgroupName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

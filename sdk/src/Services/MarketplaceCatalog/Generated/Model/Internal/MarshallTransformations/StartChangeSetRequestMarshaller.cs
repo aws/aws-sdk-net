@@ -61,76 +61,79 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/StartChangeSet";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCatalog())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Catalog");
-                    context.Writer.Write(publicRequest.Catalog);
-                }
-
-                if(publicRequest.IsSetChangeSet())
-                {
-                    context.Writer.WritePropertyName("ChangeSet");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestChangeSetListValue in publicRequest.ChangeSet)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCatalog())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ChangeMarshaller.Instance;
-                        marshaller.Marshall(publicRequestChangeSetListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("Catalog");
+                        context.Writer.Write(publicRequest.Catalog);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetChangeSetName())
-                {
-                    context.Writer.WritePropertyName("ChangeSetName");
-                    context.Writer.Write(publicRequest.ChangeSetName);
-                }
-
-                if(publicRequest.IsSetChangeSetTags())
-                {
-                    context.Writer.WritePropertyName("ChangeSetTags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestChangeSetTagsListValue in publicRequest.ChangeSetTags)
+                    if(publicRequest.IsSetChangeSet())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("ChangeSet");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestChangeSetListValue in publicRequest.ChangeSet)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestChangeSetTagsListValue, context);
+                            var marshaller = ChangeMarshaller.Instance;
+                            marshaller.Marshall(publicRequestChangeSetListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetChangeSetName())
+                    {
+                        context.Writer.WritePropertyName("ChangeSetName");
+                        context.Writer.Write(publicRequest.ChangeSetName);
+                    }
+
+                    if(publicRequest.IsSetChangeSetTags())
+                    {
+                        context.Writer.WritePropertyName("ChangeSetTags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestChangeSetTagsListValue in publicRequest.ChangeSetTags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestChangeSetTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetClientRequestToken())
+                    {
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(publicRequest.ClientRequestToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientRequestToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetIntent())
+                    {
+                        context.Writer.WritePropertyName("Intent");
+                        context.Writer.Write(publicRequest.Intent);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetClientRequestToken())
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetIntent())
-                {
-                    context.Writer.WritePropertyName("Intent");
-                    context.Writer.Write(publicRequest.Intent);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -61,89 +61,92 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/profiles";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAcceptRoleSessionName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("acceptRoleSessionName");
-                    context.Writer.Write(publicRequest.AcceptRoleSessionName.Value);
-                }
-
-                if(publicRequest.IsSetDurationSeconds())
-                {
-                    context.Writer.WritePropertyName("durationSeconds");
-                    context.Writer.Write(publicRequest.DurationSeconds.Value);
-                }
-
-                if(publicRequest.IsSetEnabled())
-                {
-                    context.Writer.WritePropertyName("enabled");
-                    context.Writer.Write(publicRequest.Enabled.Value);
-                }
-
-                if(publicRequest.IsSetManagedPolicyArns())
-                {
-                    context.Writer.WritePropertyName("managedPolicyArns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestManagedPolicyArnsListValue in publicRequest.ManagedPolicyArns)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAcceptRoleSessionName())
                     {
-                            context.Writer.Write(publicRequestManagedPolicyArnsListValue);
+                        context.Writer.WritePropertyName("acceptRoleSessionName");
+                        context.Writer.Write(publicRequest.AcceptRoleSessionName.Value);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetRequireInstanceProperties())
-                {
-                    context.Writer.WritePropertyName("requireInstanceProperties");
-                    context.Writer.Write(publicRequest.RequireInstanceProperties.Value);
-                }
-
-                if(publicRequest.IsSetRoleArns())
-                {
-                    context.Writer.WritePropertyName("roleArns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRoleArnsListValue in publicRequest.RoleArns)
+                    if(publicRequest.IsSetDurationSeconds())
                     {
-                            context.Writer.Write(publicRequestRoleArnsListValue);
+                        context.Writer.WritePropertyName("durationSeconds");
+                        context.Writer.Write(publicRequest.DurationSeconds.Value);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetSessionPolicy())
-                {
-                    context.Writer.WritePropertyName("sessionPolicy");
-                    context.Writer.Write(publicRequest.SessionPolicy);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetEnabled())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("enabled");
+                        context.Writer.Write(publicRequest.Enabled.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetManagedPolicyArns())
+                    {
+                        context.Writer.WritePropertyName("managedPolicyArns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestManagedPolicyArnsListValue in publicRequest.ManagedPolicyArns)
+                        {
+                                context.Writer.Write(publicRequestManagedPolicyArnsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetRequireInstanceProperties())
+                    {
+                        context.Writer.WritePropertyName("requireInstanceProperties");
+                        context.Writer.Write(publicRequest.RequireInstanceProperties.Value);
+                    }
+
+                    if(publicRequest.IsSetRoleArns())
+                    {
+                        context.Writer.WritePropertyName("roleArns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRoleArnsListValue in publicRequest.RoleArns)
+                        {
+                                context.Writer.Write(publicRequestRoleArnsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSessionPolicy())
+                    {
+                        context.Writer.WritePropertyName("sessionPolicy");
+                        context.Writer.Write(publicRequest.SessionPolicy);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

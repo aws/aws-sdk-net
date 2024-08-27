@@ -61,71 +61,74 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/GetTemporaryGluePartitionCredentials";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAuditContext())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AuditContext");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AuditContextMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AuditContext, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDurationSeconds())
-                {
-                    context.Writer.WritePropertyName("DurationSeconds");
-                    context.Writer.Write(publicRequest.DurationSeconds.Value);
-                }
-
-                if(publicRequest.IsSetPartition())
-                {
-                    context.Writer.WritePropertyName("Partition");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PartitionValueListMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Partition, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPermissions())
-                {
-                    context.Writer.WritePropertyName("Permissions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPermissionsListValue in publicRequest.Permissions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAuditContext())
                     {
-                            context.Writer.Write(publicRequestPermissionsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
+                        context.Writer.WritePropertyName("AuditContext");
+                        context.Writer.WriteObjectStart();
 
-                if(publicRequest.IsSetSupportedPermissionTypes())
-                {
-                    context.Writer.WritePropertyName("SupportedPermissionTypes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSupportedPermissionTypesListValue in publicRequest.SupportedPermissionTypes)
+                        var marshaller = AuditContextMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AuditContext, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDurationSeconds())
                     {
-                            context.Writer.Write(publicRequestSupportedPermissionTypesListValue);
+                        context.Writer.WritePropertyName("DurationSeconds");
+                        context.Writer.Write(publicRequest.DurationSeconds.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetPartition())
+                    {
+                        context.Writer.WritePropertyName("Partition");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PartitionValueListMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Partition, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetPermissions())
+                    {
+                        context.Writer.WritePropertyName("Permissions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPermissionsListValue in publicRequest.Permissions)
+                        {
+                                context.Writer.Write(publicRequestPermissionsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSupportedPermissionTypes())
+                    {
+                        context.Writer.WritePropertyName("SupportedPermissionTypes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSupportedPermissionTypesListValue in publicRequest.SupportedPermissionTypes)
+                        {
+                                context.Writer.Write(publicRequestSupportedPermissionTypesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTableArn())
+                    {
+                        context.Writer.WritePropertyName("TableArn");
+                        context.Writer.Write(publicRequest.TableArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTableArn())
-                {
-                    context.Writer.WritePropertyName("TableArn");
-                    context.Writer.Write(publicRequest.TableArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

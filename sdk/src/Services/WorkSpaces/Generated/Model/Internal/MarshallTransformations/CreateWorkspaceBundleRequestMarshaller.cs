@@ -63,82 +63,85 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBundleDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("BundleDescription");
-                    context.Writer.Write(publicRequest.BundleDescription);
-                }
-
-                if(publicRequest.IsSetBundleName())
-                {
-                    context.Writer.WritePropertyName("BundleName");
-                    context.Writer.Write(publicRequest.BundleName);
-                }
-
-                if(publicRequest.IsSetComputeType())
-                {
-                    context.Writer.WritePropertyName("ComputeType");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ComputeTypeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ComputeType, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetImageId())
-                {
-                    context.Writer.WritePropertyName("ImageId");
-                    context.Writer.Write(publicRequest.ImageId);
-                }
-
-                if(publicRequest.IsSetRootStorage())
-                {
-                    context.Writer.WritePropertyName("RootStorage");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RootStorageMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RootStorage, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBundleDescription())
                     {
+                        context.Writer.WritePropertyName("BundleDescription");
+                        context.Writer.Write(publicRequest.BundleDescription);
+                    }
+
+                    if(publicRequest.IsSetBundleName())
+                    {
+                        context.Writer.WritePropertyName("BundleName");
+                        context.Writer.Write(publicRequest.BundleName);
+                    }
+
+                    if(publicRequest.IsSetComputeType())
+                    {
+                        context.Writer.WritePropertyName("ComputeType");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = ComputeTypeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ComputeType, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetImageId())
+                    {
+                        context.Writer.WritePropertyName("ImageId");
+                        context.Writer.Write(publicRequest.ImageId);
+                    }
+
+                    if(publicRequest.IsSetRootStorage())
+                    {
+                        context.Writer.WritePropertyName("RootStorage");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RootStorageMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RootStorage, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetUserStorage())
+                    {
+                        context.Writer.WritePropertyName("UserStorage");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = UserStorageMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.UserStorage, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetUserStorage())
-                {
-                    context.Writer.WritePropertyName("UserStorage");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UserStorageMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.UserStorage, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

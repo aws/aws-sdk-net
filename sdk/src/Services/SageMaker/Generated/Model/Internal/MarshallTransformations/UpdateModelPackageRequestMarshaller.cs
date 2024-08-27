@@ -63,102 +63,105 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAdditionalInferenceSpecificationsToAdd())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AdditionalInferenceSpecificationsToAdd");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAdditionalInferenceSpecificationsToAddListValue in publicRequest.AdditionalInferenceSpecificationsToAdd)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAdditionalInferenceSpecificationsToAdd())
                     {
+                        context.Writer.WritePropertyName("AdditionalInferenceSpecificationsToAdd");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAdditionalInferenceSpecificationsToAddListValue in publicRequest.AdditionalInferenceSpecificationsToAdd)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = AdditionalInferenceSpecificationDefinitionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAdditionalInferenceSpecificationsToAddListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetApprovalDescription())
+                    {
+                        context.Writer.WritePropertyName("ApprovalDescription");
+                        context.Writer.Write(publicRequest.ApprovalDescription);
+                    }
+
+                    if(publicRequest.IsSetCustomerMetadataProperties())
+                    {
+                        context.Writer.WritePropertyName("CustomerMetadataProperties");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestCustomerMetadataPropertiesKvp in publicRequest.CustomerMetadataProperties)
+                        {
+                            context.Writer.WritePropertyName(publicRequestCustomerMetadataPropertiesKvp.Key);
+                            var publicRequestCustomerMetadataPropertiesValue = publicRequestCustomerMetadataPropertiesKvp.Value;
+
+                                context.Writer.Write(publicRequestCustomerMetadataPropertiesValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetCustomerMetadataPropertiesToRemove())
+                    {
+                        context.Writer.WritePropertyName("CustomerMetadataPropertiesToRemove");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCustomerMetadataPropertiesToRemoveListValue in publicRequest.CustomerMetadataPropertiesToRemove)
+                        {
+                                context.Writer.Write(publicRequestCustomerMetadataPropertiesToRemoveListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetInferenceSpecification())
+                    {
+                        context.Writer.WritePropertyName("InferenceSpecification");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = AdditionalInferenceSpecificationDefinitionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAdditionalInferenceSpecificationsToAddListValue, context);
+                        var marshaller = InferenceSpecificationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.InferenceSpecification, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetApprovalDescription())
-                {
-                    context.Writer.WritePropertyName("ApprovalDescription");
-                    context.Writer.Write(publicRequest.ApprovalDescription);
-                }
-
-                if(publicRequest.IsSetCustomerMetadataProperties())
-                {
-                    context.Writer.WritePropertyName("CustomerMetadataProperties");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestCustomerMetadataPropertiesKvp in publicRequest.CustomerMetadataProperties)
+                    if(publicRequest.IsSetModelApprovalStatus())
                     {
-                        context.Writer.WritePropertyName(publicRequestCustomerMetadataPropertiesKvp.Key);
-                        var publicRequestCustomerMetadataPropertiesValue = publicRequestCustomerMetadataPropertiesKvp.Value;
-
-                            context.Writer.Write(publicRequestCustomerMetadataPropertiesValue);
+                        context.Writer.WritePropertyName("ModelApprovalStatus");
+                        context.Writer.Write(publicRequest.ModelApprovalStatus);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetCustomerMetadataPropertiesToRemove())
-                {
-                    context.Writer.WritePropertyName("CustomerMetadataPropertiesToRemove");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCustomerMetadataPropertiesToRemoveListValue in publicRequest.CustomerMetadataPropertiesToRemove)
+                    if(publicRequest.IsSetModelCard())
                     {
-                            context.Writer.Write(publicRequestCustomerMetadataPropertiesToRemoveListValue);
+                        context.Writer.WritePropertyName("ModelCard");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ModelPackageModelCardMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ModelCard, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetModelPackageArn())
+                    {
+                        context.Writer.WritePropertyName("ModelPackageArn");
+                        context.Writer.Write(publicRequest.ModelPackageArn);
+                    }
+
+                    if(publicRequest.IsSetSourceUri())
+                    {
+                        context.Writer.WritePropertyName("SourceUri");
+                        context.Writer.Write(publicRequest.SourceUri);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetInferenceSpecification())
-                {
-                    context.Writer.WritePropertyName("InferenceSpecification");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = InferenceSpecificationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.InferenceSpecification, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetModelApprovalStatus())
-                {
-                    context.Writer.WritePropertyName("ModelApprovalStatus");
-                    context.Writer.Write(publicRequest.ModelApprovalStatus);
-                }
-
-                if(publicRequest.IsSetModelCard())
-                {
-                    context.Writer.WritePropertyName("ModelCard");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ModelPackageModelCardMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ModelCard, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetModelPackageArn())
-                {
-                    context.Writer.WritePropertyName("ModelPackageArn");
-                    context.Writer.Write(publicRequest.ModelPackageArn);
-                }
-
-                if(publicRequest.IsSetSourceUri())
-                {
-                    context.Writer.WritePropertyName("SourceUri");
-                    context.Writer.Write(publicRequest.SourceUri);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

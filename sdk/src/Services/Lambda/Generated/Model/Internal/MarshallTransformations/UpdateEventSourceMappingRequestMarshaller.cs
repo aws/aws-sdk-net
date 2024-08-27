@@ -64,146 +64,149 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 throw new AmazonLambdaException("Request object does not have required field UUID set");
             request.AddPathResource("{UUID}", StringUtils.FromString(publicRequest.UUID));
             request.ResourcePath = "/2015-03-31/event-source-mappings/{UUID}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBatchSize())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("BatchSize");
-                    context.Writer.Write(publicRequest.BatchSize.Value);
-                }
-
-                if(publicRequest.IsSetBisectBatchOnFunctionError())
-                {
-                    context.Writer.WritePropertyName("BisectBatchOnFunctionError");
-                    context.Writer.Write(publicRequest.BisectBatchOnFunctionError.Value);
-                }
-
-                if(publicRequest.IsSetDestinationConfig())
-                {
-                    context.Writer.WritePropertyName("DestinationConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DestinationConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DestinationConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDocumentDBEventSourceConfig())
-                {
-                    context.Writer.WritePropertyName("DocumentDBEventSourceConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DocumentDBEventSourceConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DocumentDBEventSourceConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEnabled())
-                {
-                    context.Writer.WritePropertyName("Enabled");
-                    context.Writer.Write(publicRequest.Enabled.Value);
-                }
-
-                if(publicRequest.IsSetFilterCriteria())
-                {
-                    context.Writer.WritePropertyName("FilterCriteria");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = FilterCriteriaMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.FilterCriteria, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetFunctionName())
-                {
-                    context.Writer.WritePropertyName("FunctionName");
-                    context.Writer.Write(publicRequest.FunctionName);
-                }
-
-                if(publicRequest.IsSetFunctionResponseTypes())
-                {
-                    context.Writer.WritePropertyName("FunctionResponseTypes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFunctionResponseTypesListValue in publicRequest.FunctionResponseTypes)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBatchSize())
                     {
-                            context.Writer.Write(publicRequestFunctionResponseTypesListValue);
+                        context.Writer.WritePropertyName("BatchSize");
+                        context.Writer.Write(publicRequest.BatchSize.Value);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetKMSKeyArn())
-                {
-                    context.Writer.WritePropertyName("KMSKeyArn");
-                    context.Writer.Write(publicRequest.KMSKeyArn);
-                }
-
-                if(publicRequest.IsSetMaximumBatchingWindowInSeconds())
-                {
-                    context.Writer.WritePropertyName("MaximumBatchingWindowInSeconds");
-                    context.Writer.Write(publicRequest.MaximumBatchingWindowInSeconds.Value);
-                }
-
-                if(publicRequest.IsSetMaximumRecordAgeInSeconds())
-                {
-                    context.Writer.WritePropertyName("MaximumRecordAgeInSeconds");
-                    context.Writer.Write(publicRequest.MaximumRecordAgeInSeconds.Value);
-                }
-
-                if(publicRequest.IsSetMaximumRetryAttempts())
-                {
-                    context.Writer.WritePropertyName("MaximumRetryAttempts");
-                    context.Writer.Write(publicRequest.MaximumRetryAttempts.Value);
-                }
-
-                if(publicRequest.IsSetParallelizationFactor())
-                {
-                    context.Writer.WritePropertyName("ParallelizationFactor");
-                    context.Writer.Write(publicRequest.ParallelizationFactor.Value);
-                }
-
-                if(publicRequest.IsSetScalingConfig())
-                {
-                    context.Writer.WritePropertyName("ScalingConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ScalingConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ScalingConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSourceAccessConfigurations())
-                {
-                    context.Writer.WritePropertyName("SourceAccessConfigurations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSourceAccessConfigurationsListValue in publicRequest.SourceAccessConfigurations)
+                    if(publicRequest.IsSetBisectBatchOnFunctionError())
                     {
+                        context.Writer.WritePropertyName("BisectBatchOnFunctionError");
+                        context.Writer.Write(publicRequest.BisectBatchOnFunctionError.Value);
+                    }
+
+                    if(publicRequest.IsSetDestinationConfig())
+                    {
+                        context.Writer.WritePropertyName("DestinationConfig");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = SourceAccessConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSourceAccessConfigurationsListValue, context);
+                        var marshaller = DestinationConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DestinationConfig, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDocumentDBEventSourceConfig())
+                    {
+                        context.Writer.WritePropertyName("DocumentDBEventSourceConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DocumentDBEventSourceConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DocumentDBEventSourceConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetEnabled())
+                    {
+                        context.Writer.WritePropertyName("Enabled");
+                        context.Writer.Write(publicRequest.Enabled.Value);
+                    }
+
+                    if(publicRequest.IsSetFilterCriteria())
+                    {
+                        context.Writer.WritePropertyName("FilterCriteria");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = FilterCriteriaMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.FilterCriteria, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetFunctionName())
+                    {
+                        context.Writer.WritePropertyName("FunctionName");
+                        context.Writer.Write(publicRequest.FunctionName);
+                    }
+
+                    if(publicRequest.IsSetFunctionResponseTypes())
+                    {
+                        context.Writer.WritePropertyName("FunctionResponseTypes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFunctionResponseTypesListValue in publicRequest.FunctionResponseTypes)
+                        {
+                                context.Writer.Write(publicRequestFunctionResponseTypesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetKMSKeyArn())
+                    {
+                        context.Writer.WritePropertyName("KMSKeyArn");
+                        context.Writer.Write(publicRequest.KMSKeyArn);
+                    }
+
+                    if(publicRequest.IsSetMaximumBatchingWindowInSeconds())
+                    {
+                        context.Writer.WritePropertyName("MaximumBatchingWindowInSeconds");
+                        context.Writer.Write(publicRequest.MaximumBatchingWindowInSeconds.Value);
+                    }
+
+                    if(publicRequest.IsSetMaximumRecordAgeInSeconds())
+                    {
+                        context.Writer.WritePropertyName("MaximumRecordAgeInSeconds");
+                        context.Writer.Write(publicRequest.MaximumRecordAgeInSeconds.Value);
+                    }
+
+                    if(publicRequest.IsSetMaximumRetryAttempts())
+                    {
+                        context.Writer.WritePropertyName("MaximumRetryAttempts");
+                        context.Writer.Write(publicRequest.MaximumRetryAttempts.Value);
+                    }
+
+                    if(publicRequest.IsSetParallelizationFactor())
+                    {
+                        context.Writer.WritePropertyName("ParallelizationFactor");
+                        context.Writer.Write(publicRequest.ParallelizationFactor.Value);
+                    }
+
+                    if(publicRequest.IsSetScalingConfig())
+                    {
+                        context.Writer.WritePropertyName("ScalingConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ScalingConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ScalingConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSourceAccessConfigurations())
+                    {
+                        context.Writer.WritePropertyName("SourceAccessConfigurations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSourceAccessConfigurationsListValue in publicRequest.SourceAccessConfigurations)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = SourceAccessConfigurationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSourceAccessConfigurationsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTumblingWindowInSeconds())
+                    {
+                        context.Writer.WritePropertyName("TumblingWindowInSeconds");
+                        context.Writer.Write(publicRequest.TumblingWindowInSeconds.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTumblingWindowInSeconds())
-                {
-                    context.Writer.WritePropertyName("TumblingWindowInSeconds");
-                    context.Writer.Write(publicRequest.TumblingWindowInSeconds.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

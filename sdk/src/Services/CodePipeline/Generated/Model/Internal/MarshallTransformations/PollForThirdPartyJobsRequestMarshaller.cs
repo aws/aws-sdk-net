@@ -63,32 +63,35 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetActionTypeId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("actionTypeId");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetActionTypeId())
+                    {
+                        context.Writer.WritePropertyName("actionTypeId");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = ActionTypeIdMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ActionTypeId, context);
+                        var marshaller = ActionTypeIdMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ActionTypeId, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetMaxBatchSize())
+                    {
+                        context.Writer.WritePropertyName("maxBatchSize");
+                        context.Writer.Write(publicRequest.MaxBatchSize.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMaxBatchSize())
-                {
-                    context.Writer.WritePropertyName("maxBatchSize");
-                    context.Writer.Write(publicRequest.MaxBatchSize.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

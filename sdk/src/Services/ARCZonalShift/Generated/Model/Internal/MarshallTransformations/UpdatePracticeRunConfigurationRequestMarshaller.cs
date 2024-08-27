@@ -64,69 +64,72 @@ namespace Amazon.ARCZonalShift.Model.Internal.MarshallTransformations
                 throw new AmazonARCZonalShiftException("Request object does not have required field ResourceIdentifier set");
             request.AddPathResource("{resourceIdentifier}", StringUtils.FromString(publicRequest.ResourceIdentifier));
             request.ResourcePath = "/configuration/{resourceIdentifier}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBlockedDates())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("blockedDates");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestBlockedDatesListValue in publicRequest.BlockedDates)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBlockedDates())
                     {
-                            context.Writer.Write(publicRequestBlockedDatesListValue);
+                        context.Writer.WritePropertyName("blockedDates");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestBlockedDatesListValue in publicRequest.BlockedDates)
+                        {
+                                context.Writer.Write(publicRequestBlockedDatesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetBlockedWindows())
+                    {
+                        context.Writer.WritePropertyName("blockedWindows");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestBlockedWindowsListValue in publicRequest.BlockedWindows)
+                        {
+                                context.Writer.Write(publicRequestBlockedWindowsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetBlockingAlarms())
+                    {
+                        context.Writer.WritePropertyName("blockingAlarms");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestBlockingAlarmsListValue in publicRequest.BlockingAlarms)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ControlConditionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestBlockingAlarmsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetOutcomeAlarms())
+                    {
+                        context.Writer.WritePropertyName("outcomeAlarms");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestOutcomeAlarmsListValue in publicRequest.OutcomeAlarms)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ControlConditionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestOutcomeAlarmsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetBlockedWindows())
-                {
-                    context.Writer.WritePropertyName("blockedWindows");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestBlockedWindowsListValue in publicRequest.BlockedWindows)
-                    {
-                            context.Writer.Write(publicRequestBlockedWindowsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetBlockingAlarms())
-                {
-                    context.Writer.WritePropertyName("blockingAlarms");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestBlockingAlarmsListValue in publicRequest.BlockingAlarms)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ControlConditionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestBlockingAlarmsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetOutcomeAlarms())
-                {
-                    context.Writer.WritePropertyName("outcomeAlarms");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestOutcomeAlarmsListValue in publicRequest.OutcomeAlarms)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ControlConditionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestOutcomeAlarmsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

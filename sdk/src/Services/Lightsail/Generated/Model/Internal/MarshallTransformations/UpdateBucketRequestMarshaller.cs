@@ -63,60 +63,63 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccessLogConfig())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("accessLogConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = BucketAccessLogConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AccessLogConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetAccessRules())
-                {
-                    context.Writer.WritePropertyName("accessRules");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AccessRulesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AccessRules, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetBucketName())
-                {
-                    context.Writer.WritePropertyName("bucketName");
-                    context.Writer.Write(publicRequest.BucketName);
-                }
-
-                if(publicRequest.IsSetReadonlyAccessAccounts())
-                {
-                    context.Writer.WritePropertyName("readonlyAccessAccounts");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestReadonlyAccessAccountsListValue in publicRequest.ReadonlyAccessAccounts)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccessLogConfig())
                     {
-                            context.Writer.Write(publicRequestReadonlyAccessAccountsListValue);
+                        context.Writer.WritePropertyName("accessLogConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = BucketAccessLogConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AccessLogConfig, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetAccessRules())
+                    {
+                        context.Writer.WritePropertyName("accessRules");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AccessRulesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AccessRules, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetBucketName())
+                    {
+                        context.Writer.WritePropertyName("bucketName");
+                        context.Writer.Write(publicRequest.BucketName);
+                    }
+
+                    if(publicRequest.IsSetReadonlyAccessAccounts())
+                    {
+                        context.Writer.WritePropertyName("readonlyAccessAccounts");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestReadonlyAccessAccountsListValue in publicRequest.ReadonlyAccessAccounts)
+                        {
+                                context.Writer.Write(publicRequestReadonlyAccessAccountsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetVersioning())
+                    {
+                        context.Writer.WritePropertyName("versioning");
+                        context.Writer.Write(publicRequest.Versioning);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetVersioning())
-                {
-                    context.Writer.WritePropertyName("versioning");
-                    context.Writer.Write(publicRequest.Versioning);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,80 +63,83 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDefaultChildPolicy())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("defaultChildPolicy");
-                    context.Writer.Write(publicRequest.DefaultChildPolicy);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDefaultChildPolicy())
+                    {
+                        context.Writer.WritePropertyName("defaultChildPolicy");
+                        context.Writer.Write(publicRequest.DefaultChildPolicy);
+                    }
+
+                    if(publicRequest.IsSetDefaultExecutionStartToCloseTimeout())
+                    {
+                        context.Writer.WritePropertyName("defaultExecutionStartToCloseTimeout");
+                        context.Writer.Write(publicRequest.DefaultExecutionStartToCloseTimeout);
+                    }
+
+                    if(publicRequest.IsSetDefaultLambdaRole())
+                    {
+                        context.Writer.WritePropertyName("defaultLambdaRole");
+                        context.Writer.Write(publicRequest.DefaultLambdaRole);
+                    }
+
+                    if(publicRequest.IsSetDefaultTaskList())
+                    {
+                        context.Writer.WritePropertyName("defaultTaskList");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TaskListMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DefaultTaskList, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDefaultTaskPriority())
+                    {
+                        context.Writer.WritePropertyName("defaultTaskPriority");
+                        context.Writer.Write(publicRequest.DefaultTaskPriority);
+                    }
+
+                    if(publicRequest.IsSetDefaultTaskStartToCloseTimeout())
+                    {
+                        context.Writer.WritePropertyName("defaultTaskStartToCloseTimeout");
+                        context.Writer.Write(publicRequest.DefaultTaskStartToCloseTimeout);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetDomain())
+                    {
+                        context.Writer.WritePropertyName("domain");
+                        context.Writer.Write(publicRequest.Domain);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetVersion())
+                    {
+                        context.Writer.WritePropertyName("version");
+                        context.Writer.Write(publicRequest.Version);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDefaultExecutionStartToCloseTimeout())
-                {
-                    context.Writer.WritePropertyName("defaultExecutionStartToCloseTimeout");
-                    context.Writer.Write(publicRequest.DefaultExecutionStartToCloseTimeout);
-                }
-
-                if(publicRequest.IsSetDefaultLambdaRole())
-                {
-                    context.Writer.WritePropertyName("defaultLambdaRole");
-                    context.Writer.Write(publicRequest.DefaultLambdaRole);
-                }
-
-                if(publicRequest.IsSetDefaultTaskList())
-                {
-                    context.Writer.WritePropertyName("defaultTaskList");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TaskListMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DefaultTaskList, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDefaultTaskPriority())
-                {
-                    context.Writer.WritePropertyName("defaultTaskPriority");
-                    context.Writer.Write(publicRequest.DefaultTaskPriority);
-                }
-
-                if(publicRequest.IsSetDefaultTaskStartToCloseTimeout())
-                {
-                    context.Writer.WritePropertyName("defaultTaskStartToCloseTimeout");
-                    context.Writer.Write(publicRequest.DefaultTaskStartToCloseTimeout);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetDomain())
-                {
-                    context.Writer.WritePropertyName("domain");
-                    context.Writer.Write(publicRequest.Domain);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetVersion())
-                {
-                    context.Writer.WritePropertyName("version");
-                    context.Writer.Write(publicRequest.Version);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

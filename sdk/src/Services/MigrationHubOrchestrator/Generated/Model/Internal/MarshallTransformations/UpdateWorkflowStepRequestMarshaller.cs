@@ -64,111 +64,114 @@ namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
                 throw new AmazonMigrationHubOrchestratorException("Request object does not have required field Id set");
             request.AddPathResource("{id}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = "/workflowstep/{id}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetNext())
-                {
-                    context.Writer.WritePropertyName("next");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestNextListValue in publicRequest.Next)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
-                            context.Writer.Write(publicRequestNextListValue);
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetOutputs())
-                {
-                    context.Writer.WritePropertyName("outputs");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestOutputsListValue in publicRequest.Outputs)
+                    if(publicRequest.IsSetName())
                     {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetNext())
+                    {
+                        context.Writer.WritePropertyName("next");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestNextListValue in publicRequest.Next)
+                        {
+                                context.Writer.Write(publicRequestNextListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetOutputs())
+                    {
+                        context.Writer.WritePropertyName("outputs");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestOutputsListValue in publicRequest.Outputs)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = WorkflowStepOutputMarshaller.Instance;
+                            marshaller.Marshall(publicRequestOutputsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetPrevious())
+                    {
+                        context.Writer.WritePropertyName("previous");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPreviousListValue in publicRequest.Previous)
+                        {
+                                context.Writer.Write(publicRequestPreviousListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetStatus())
+                    {
+                        context.Writer.WritePropertyName("status");
+                        context.Writer.Write(publicRequest.Status);
+                    }
+
+                    if(publicRequest.IsSetStepActionType())
+                    {
+                        context.Writer.WritePropertyName("stepActionType");
+                        context.Writer.Write(publicRequest.StepActionType);
+                    }
+
+                    if(publicRequest.IsSetStepGroupId())
+                    {
+                        context.Writer.WritePropertyName("stepGroupId");
+                        context.Writer.Write(publicRequest.StepGroupId);
+                    }
+
+                    if(publicRequest.IsSetStepTarget())
+                    {
+                        context.Writer.WritePropertyName("stepTarget");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestStepTargetListValue in publicRequest.StepTarget)
+                        {
+                                context.Writer.Write(publicRequestStepTargetListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetWorkflowId())
+                    {
+                        context.Writer.WritePropertyName("workflowId");
+                        context.Writer.Write(publicRequest.WorkflowId);
+                    }
+
+                    if(publicRequest.IsSetWorkflowStepAutomationConfiguration())
+                    {
+                        context.Writer.WritePropertyName("workflowStepAutomationConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = WorkflowStepOutputMarshaller.Instance;
-                        marshaller.Marshall(publicRequestOutputsListValue, context);
+                        var marshaller = WorkflowStepAutomationConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.WorkflowStepAutomationConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPrevious())
-                {
-                    context.Writer.WritePropertyName("previous");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPreviousListValue in publicRequest.Previous)
-                    {
-                            context.Writer.Write(publicRequestPreviousListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetStatus())
-                {
-                    context.Writer.WritePropertyName("status");
-                    context.Writer.Write(publicRequest.Status);
-                }
-
-                if(publicRequest.IsSetStepActionType())
-                {
-                    context.Writer.WritePropertyName("stepActionType");
-                    context.Writer.Write(publicRequest.StepActionType);
-                }
-
-                if(publicRequest.IsSetStepGroupId())
-                {
-                    context.Writer.WritePropertyName("stepGroupId");
-                    context.Writer.Write(publicRequest.StepGroupId);
-                }
-
-                if(publicRequest.IsSetStepTarget())
-                {
-                    context.Writer.WritePropertyName("stepTarget");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestStepTargetListValue in publicRequest.StepTarget)
-                    {
-                            context.Writer.Write(publicRequestStepTargetListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetWorkflowId())
-                {
-                    context.Writer.WritePropertyName("workflowId");
-                    context.Writer.Write(publicRequest.WorkflowId);
-                }
-
-                if(publicRequest.IsSetWorkflowStepAutomationConfiguration())
-                {
-                    context.Writer.WritePropertyName("workflowStepAutomationConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = WorkflowStepAutomationConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.WorkflowStepAutomationConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

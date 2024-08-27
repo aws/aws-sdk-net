@@ -64,50 +64,53 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 throw new AmazonDataZoneException("Request object does not have required field DomainIdentifier set");
             request.AddPathResource("{domainIdentifier}", StringUtils.FromString(publicRequest.DomainIdentifier));
             request.ResourcePath = "/v2/domains/{domainIdentifier}/listings/change-set";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAction())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("action");
-                    context.Writer.Write(publicRequest.Action);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAction())
+                    {
+                        context.Writer.WritePropertyName("action");
+                        context.Writer.Write(publicRequest.Action);
+                    }
+
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetEntityIdentifier())
+                    {
+                        context.Writer.WritePropertyName("entityIdentifier");
+                        context.Writer.Write(publicRequest.EntityIdentifier);
+                    }
+
+                    if(publicRequest.IsSetEntityRevision())
+                    {
+                        context.Writer.WritePropertyName("entityRevision");
+                        context.Writer.Write(publicRequest.EntityRevision);
+                    }
+
+                    if(publicRequest.IsSetEntityType())
+                    {
+                        context.Writer.WritePropertyName("entityType");
+                        context.Writer.Write(publicRequest.EntityType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetEntityIdentifier())
-                {
-                    context.Writer.WritePropertyName("entityIdentifier");
-                    context.Writer.Write(publicRequest.EntityIdentifier);
-                }
-
-                if(publicRequest.IsSetEntityRevision())
-                {
-                    context.Writer.WritePropertyName("entityRevision");
-                    context.Writer.Write(publicRequest.EntityRevision);
-                }
-
-                if(publicRequest.IsSetEntityType())
-                {
-                    context.Writer.WritePropertyName("entityType");
-                    context.Writer.Write(publicRequest.EntityType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -61,48 +61,51 @@ namespace Amazon.ResourceExplorer2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/UpdateView";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFilters())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Filters");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SearchFilterMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Filters, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetIncludedProperties())
-                {
-                    context.Writer.WritePropertyName("IncludedProperties");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestIncludedPropertiesListValue in publicRequest.IncludedProperties)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFilters())
                     {
+                        context.Writer.WritePropertyName("Filters");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = IncludedPropertyMarshaller.Instance;
-                        marshaller.Marshall(publicRequestIncludedPropertiesListValue, context);
+                        var marshaller = SearchFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Filters, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetIncludedProperties())
+                    {
+                        context.Writer.WritePropertyName("IncludedProperties");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestIncludedPropertiesListValue in publicRequest.IncludedProperties)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = IncludedPropertyMarshaller.Instance;
+                            marshaller.Marshall(publicRequestIncludedPropertiesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetViewArn())
+                    {
+                        context.Writer.WritePropertyName("ViewArn");
+                        context.Writer.Write(publicRequest.ViewArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetViewArn())
-                {
-                    context.Writer.WritePropertyName("ViewArn");
-                    context.Writer.Write(publicRequest.ViewArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

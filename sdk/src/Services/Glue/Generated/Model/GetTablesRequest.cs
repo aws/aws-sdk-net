@@ -144,9 +144,9 @@ namespace Amazon.Glue.Model
         /// an Glue Data Catalog view.
         /// </para>
         /// </summary>
-        public bool IncludeStatusDetails
+        public bool? IncludeStatusDetails
         {
-            get { return this._includeStatusDetails.GetValueOrDefault(); }
+            get { return this._includeStatusDetails; }
             set { this._includeStatusDetails = value; }
         }
 

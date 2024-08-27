@@ -61,121 +61,124 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/userSettings";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAdditionalEncryptionContext())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("additionalEncryptionContext");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestAdditionalEncryptionContextKvp in publicRequest.AdditionalEncryptionContext)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAdditionalEncryptionContext())
                     {
-                        context.Writer.WritePropertyName(publicRequestAdditionalEncryptionContextKvp.Key);
-                        var publicRequestAdditionalEncryptionContextValue = publicRequestAdditionalEncryptionContextKvp.Value;
+                        context.Writer.WritePropertyName("additionalEncryptionContext");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestAdditionalEncryptionContextKvp in publicRequest.AdditionalEncryptionContext)
+                        {
+                            context.Writer.WritePropertyName(publicRequestAdditionalEncryptionContextKvp.Key);
+                            var publicRequestAdditionalEncryptionContextValue = publicRequestAdditionalEncryptionContextKvp.Value;
 
-                            context.Writer.Write(publicRequestAdditionalEncryptionContextValue);
+                                context.Writer.Write(publicRequestAdditionalEncryptionContextValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetCookieSynchronizationConfiguration())
-                {
-                    context.Writer.WritePropertyName("cookieSynchronizationConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CookieSynchronizationConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CookieSynchronizationConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetCopyAllowed())
-                {
-                    context.Writer.WritePropertyName("copyAllowed");
-                    context.Writer.Write(publicRequest.CopyAllowed);
-                }
-
-                if(publicRequest.IsSetCustomerManagedKey())
-                {
-                    context.Writer.WritePropertyName("customerManagedKey");
-                    context.Writer.Write(publicRequest.CustomerManagedKey);
-                }
-
-                if(publicRequest.IsSetDeepLinkAllowed())
-                {
-                    context.Writer.WritePropertyName("deepLinkAllowed");
-                    context.Writer.Write(publicRequest.DeepLinkAllowed);
-                }
-
-                if(publicRequest.IsSetDisconnectTimeoutInMinutes())
-                {
-                    context.Writer.WritePropertyName("disconnectTimeoutInMinutes");
-                    context.Writer.Write(publicRequest.DisconnectTimeoutInMinutes.Value);
-                }
-
-                if(publicRequest.IsSetDownloadAllowed())
-                {
-                    context.Writer.WritePropertyName("downloadAllowed");
-                    context.Writer.Write(publicRequest.DownloadAllowed);
-                }
-
-                if(publicRequest.IsSetIdleDisconnectTimeoutInMinutes())
-                {
-                    context.Writer.WritePropertyName("idleDisconnectTimeoutInMinutes");
-                    context.Writer.Write(publicRequest.IdleDisconnectTimeoutInMinutes.Value);
-                }
-
-                if(publicRequest.IsSetPasteAllowed())
-                {
-                    context.Writer.WritePropertyName("pasteAllowed");
-                    context.Writer.Write(publicRequest.PasteAllowed);
-                }
-
-                if(publicRequest.IsSetPrintAllowed())
-                {
-                    context.Writer.WritePropertyName("printAllowed");
-                    context.Writer.Write(publicRequest.PrintAllowed);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetClientToken())
                     {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetCookieSynchronizationConfiguration())
+                    {
+                        context.Writer.WritePropertyName("cookieSynchronizationConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = CookieSynchronizationConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CookieSynchronizationConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetCopyAllowed())
+                    {
+                        context.Writer.WritePropertyName("copyAllowed");
+                        context.Writer.Write(publicRequest.CopyAllowed);
+                    }
+
+                    if(publicRequest.IsSetCustomerManagedKey())
+                    {
+                        context.Writer.WritePropertyName("customerManagedKey");
+                        context.Writer.Write(publicRequest.CustomerManagedKey);
+                    }
+
+                    if(publicRequest.IsSetDeepLinkAllowed())
+                    {
+                        context.Writer.WritePropertyName("deepLinkAllowed");
+                        context.Writer.Write(publicRequest.DeepLinkAllowed);
+                    }
+
+                    if(publicRequest.IsSetDisconnectTimeoutInMinutes())
+                    {
+                        context.Writer.WritePropertyName("disconnectTimeoutInMinutes");
+                        context.Writer.Write(publicRequest.DisconnectTimeoutInMinutes.Value);
+                    }
+
+                    if(publicRequest.IsSetDownloadAllowed())
+                    {
+                        context.Writer.WritePropertyName("downloadAllowed");
+                        context.Writer.Write(publicRequest.DownloadAllowed);
+                    }
+
+                    if(publicRequest.IsSetIdleDisconnectTimeoutInMinutes())
+                    {
+                        context.Writer.WritePropertyName("idleDisconnectTimeoutInMinutes");
+                        context.Writer.Write(publicRequest.IdleDisconnectTimeoutInMinutes.Value);
+                    }
+
+                    if(publicRequest.IsSetPasteAllowed())
+                    {
+                        context.Writer.WritePropertyName("pasteAllowed");
+                        context.Writer.Write(publicRequest.PasteAllowed);
+                    }
+
+                    if(publicRequest.IsSetPrintAllowed())
+                    {
+                        context.Writer.WritePropertyName("printAllowed");
+                        context.Writer.Write(publicRequest.PrintAllowed);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetUploadAllowed())
+                    {
+                        context.Writer.WritePropertyName("uploadAllowed");
+                        context.Writer.Write(publicRequest.UploadAllowed);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetUploadAllowed())
-                {
-                    context.Writer.WritePropertyName("uploadAllowed");
-                    context.Writer.Write(publicRequest.UploadAllowed);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

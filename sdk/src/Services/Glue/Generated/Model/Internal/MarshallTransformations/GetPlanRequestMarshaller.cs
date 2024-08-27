@@ -63,89 +63,92 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAdditionalPlanOptionsMap())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AdditionalPlanOptionsMap");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestAdditionalPlanOptionsMapKvp in publicRequest.AdditionalPlanOptionsMap)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAdditionalPlanOptionsMap())
                     {
-                        context.Writer.WritePropertyName(publicRequestAdditionalPlanOptionsMapKvp.Key);
-                        var publicRequestAdditionalPlanOptionsMapValue = publicRequestAdditionalPlanOptionsMapKvp.Value;
+                        context.Writer.WritePropertyName("AdditionalPlanOptionsMap");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestAdditionalPlanOptionsMapKvp in publicRequest.AdditionalPlanOptionsMap)
+                        {
+                            context.Writer.WritePropertyName(publicRequestAdditionalPlanOptionsMapKvp.Key);
+                            var publicRequestAdditionalPlanOptionsMapValue = publicRequestAdditionalPlanOptionsMapKvp.Value;
 
-                            context.Writer.Write(publicRequestAdditionalPlanOptionsMapValue);
+                                context.Writer.Write(publicRequestAdditionalPlanOptionsMapValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetLanguage())
-                {
-                    context.Writer.WritePropertyName("Language");
-                    context.Writer.Write(publicRequest.Language);
-                }
-
-                if(publicRequest.IsSetLocation())
-                {
-                    context.Writer.WritePropertyName("Location");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LocationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Location, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMapping())
-                {
-                    context.Writer.WritePropertyName("Mapping");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMappingListValue in publicRequest.Mapping)
+                    if(publicRequest.IsSetLanguage())
                     {
+                        context.Writer.WritePropertyName("Language");
+                        context.Writer.Write(publicRequest.Language);
+                    }
+
+                    if(publicRequest.IsSetLocation())
+                    {
+                        context.Writer.WritePropertyName("Location");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = MappingEntryMarshaller.Instance;
-                        marshaller.Marshall(publicRequestMappingListValue, context);
+                        var marshaller = LocationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Location, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetSinks())
-                {
-                    context.Writer.WritePropertyName("Sinks");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSinksListValue in publicRequest.Sinks)
+                    if(publicRequest.IsSetMapping())
                     {
+                        context.Writer.WritePropertyName("Mapping");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMappingListValue in publicRequest.Mapping)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = MappingEntryMarshaller.Instance;
+                            marshaller.Marshall(publicRequestMappingListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSinks())
+                    {
+                        context.Writer.WritePropertyName("Sinks");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSinksListValue in publicRequest.Sinks)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = CatalogEntryMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSinksListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSource())
+                    {
+                        context.Writer.WritePropertyName("Source");
                         context.Writer.WriteObjectStart();
 
                         var marshaller = CatalogEntryMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSinksListValue, context);
+                        marshaller.Marshall(publicRequest.Source, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSource())
-                {
-                    context.Writer.WritePropertyName("Source");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CatalogEntryMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Source, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

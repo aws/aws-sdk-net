@@ -61,192 +61,195 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/2015-01-01/es/domain";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccessPolicies())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AccessPolicies");
-                    context.Writer.Write(publicRequest.AccessPolicies);
-                }
-
-                if(publicRequest.IsSetAdvancedOptions())
-                {
-                    context.Writer.WritePropertyName("AdvancedOptions");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestAdvancedOptionsKvp in publicRequest.AdvancedOptions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccessPolicies())
                     {
-                        context.Writer.WritePropertyName(publicRequestAdvancedOptionsKvp.Key);
-                        var publicRequestAdvancedOptionsValue = publicRequestAdvancedOptionsKvp.Value;
-
-                            context.Writer.Write(publicRequestAdvancedOptionsValue);
+                        context.Writer.WritePropertyName("AccessPolicies");
+                        context.Writer.Write(publicRequest.AccessPolicies);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetAdvancedSecurityOptions())
-                {
-                    context.Writer.WritePropertyName("AdvancedSecurityOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AdvancedSecurityOptionsInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AdvancedSecurityOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetAutoTuneOptions())
-                {
-                    context.Writer.WritePropertyName("AutoTuneOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AutoTuneOptionsInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AutoTuneOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetCognitoOptions())
-                {
-                    context.Writer.WritePropertyName("CognitoOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CognitoOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CognitoOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDomainEndpointOptions())
-                {
-                    context.Writer.WritePropertyName("DomainEndpointOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DomainEndpointOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DomainEndpointOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDomainName())
-                {
-                    context.Writer.WritePropertyName("DomainName");
-                    context.Writer.Write(publicRequest.DomainName);
-                }
-
-                if(publicRequest.IsSetEBSOptions())
-                {
-                    context.Writer.WritePropertyName("EBSOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EBSOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EBSOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetElasticsearchClusterConfig())
-                {
-                    context.Writer.WritePropertyName("ElasticsearchClusterConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ElasticsearchClusterConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ElasticsearchClusterConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetElasticsearchVersion())
-                {
-                    context.Writer.WritePropertyName("ElasticsearchVersion");
-                    context.Writer.Write(publicRequest.ElasticsearchVersion);
-                }
-
-                if(publicRequest.IsSetEncryptionAtRestOptions())
-                {
-                    context.Writer.WritePropertyName("EncryptionAtRestOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EncryptionAtRestOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EncryptionAtRestOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetLogPublishingOptions())
-                {
-                    context.Writer.WritePropertyName("LogPublishingOptions");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestLogPublishingOptionsKvp in publicRequest.LogPublishingOptions)
+                    if(publicRequest.IsSetAdvancedOptions())
                     {
-                        context.Writer.WritePropertyName(publicRequestLogPublishingOptionsKvp.Key);
-                        var publicRequestLogPublishingOptionsValue = publicRequestLogPublishingOptionsKvp.Value;
+                        context.Writer.WritePropertyName("AdvancedOptions");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestAdvancedOptionsKvp in publicRequest.AdvancedOptions)
+                        {
+                            context.Writer.WritePropertyName(publicRequestAdvancedOptionsKvp.Key);
+                            var publicRequestAdvancedOptionsValue = publicRequestAdvancedOptionsKvp.Value;
 
+                                context.Writer.Write(publicRequestAdvancedOptionsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetAdvancedSecurityOptions())
+                    {
+                        context.Writer.WritePropertyName("AdvancedSecurityOptions");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = LogPublishingOptionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestLogPublishingOptionsValue, context);
+                        var marshaller = AdvancedSecurityOptionsInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AdvancedSecurityOptions, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetNodeToNodeEncryptionOptions())
-                {
-                    context.Writer.WritePropertyName("NodeToNodeEncryptionOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = NodeToNodeEncryptionOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.NodeToNodeEncryptionOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSnapshotOptions())
-                {
-                    context.Writer.WritePropertyName("SnapshotOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SnapshotOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SnapshotOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTagList())
-                {
-                    context.Writer.WritePropertyName("TagList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagListListValue in publicRequest.TagList)
+                    if(publicRequest.IsSetAutoTuneOptions())
                     {
+                        context.Writer.WritePropertyName("AutoTuneOptions");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagListListValue, context);
+                        var marshaller = AutoTuneOptionsInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AutoTuneOptions, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetCognitoOptions())
+                    {
+                        context.Writer.WritePropertyName("CognitoOptions");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CognitoOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CognitoOptions, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDomainEndpointOptions())
+                    {
+                        context.Writer.WritePropertyName("DomainEndpointOptions");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DomainEndpointOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DomainEndpointOptions, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDomainName())
+                    {
+                        context.Writer.WritePropertyName("DomainName");
+                        context.Writer.Write(publicRequest.DomainName);
+                    }
+
+                    if(publicRequest.IsSetEBSOptions())
+                    {
+                        context.Writer.WritePropertyName("EBSOptions");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EBSOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EBSOptions, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetElasticsearchClusterConfig())
+                    {
+                        context.Writer.WritePropertyName("ElasticsearchClusterConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ElasticsearchClusterConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ElasticsearchClusterConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetElasticsearchVersion())
+                    {
+                        context.Writer.WritePropertyName("ElasticsearchVersion");
+                        context.Writer.Write(publicRequest.ElasticsearchVersion);
+                    }
+
+                    if(publicRequest.IsSetEncryptionAtRestOptions())
+                    {
+                        context.Writer.WritePropertyName("EncryptionAtRestOptions");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EncryptionAtRestOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EncryptionAtRestOptions, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetLogPublishingOptions())
+                    {
+                        context.Writer.WritePropertyName("LogPublishingOptions");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestLogPublishingOptionsKvp in publicRequest.LogPublishingOptions)
+                        {
+                            context.Writer.WritePropertyName(publicRequestLogPublishingOptionsKvp.Key);
+                            var publicRequestLogPublishingOptionsValue = publicRequestLogPublishingOptionsKvp.Value;
+
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = LogPublishingOptionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestLogPublishingOptionsValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetNodeToNodeEncryptionOptions())
+                    {
+                        context.Writer.WritePropertyName("NodeToNodeEncryptionOptions");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = NodeToNodeEncryptionOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.NodeToNodeEncryptionOptions, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSnapshotOptions())
+                    {
+                        context.Writer.WritePropertyName("SnapshotOptions");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SnapshotOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SnapshotOptions, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTagList())
+                    {
+                        context.Writer.WritePropertyName("TagList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagListListValue in publicRequest.TagList)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagListListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetVPCOptions())
+                    {
+                        context.Writer.WritePropertyName("VPCOptions");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = VPCOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.VPCOptions, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetVPCOptions())
-                {
-                    context.Writer.WritePropertyName("VPCOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = VPCOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.VPCOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

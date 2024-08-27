@@ -64,34 +64,37 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                 throw new AmazonElasticFileSystemException("Request object does not have required field FileSystemId set");
             request.AddPathResource("{FileSystemId}", StringUtils.FromString(publicRequest.FileSystemId));
             request.ResourcePath = "/2015-02-01/file-systems/{FileSystemId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetProvisionedThroughputInMibps())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ProvisionedThroughputInMibps");
-                    if(StringUtils.IsSpecialDoubleValue(publicRequest.ProvisionedThroughputInMibps.Value))
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetProvisionedThroughputInMibps())
                     {
-                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.ProvisionedThroughputInMibps.Value));
+                        context.Writer.WritePropertyName("ProvisionedThroughputInMibps");
+                        if(StringUtils.IsSpecialDoubleValue(publicRequest.ProvisionedThroughputInMibps.Value))
+                        {
+                            context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.ProvisionedThroughputInMibps.Value));
+                        }
+                        else
+                        {
+                            context.Writer.Write(publicRequest.ProvisionedThroughputInMibps.Value);
+                        }
                     }
-                    else
+
+                    if(publicRequest.IsSetThroughputMode())
                     {
-                        context.Writer.Write(publicRequest.ProvisionedThroughputInMibps.Value);
+                        context.Writer.WritePropertyName("ThroughputMode");
+                        context.Writer.Write(publicRequest.ThroughputMode);
                     }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetThroughputMode())
-                {
-                    context.Writer.WritePropertyName("ThroughputMode");
-                    context.Writer.Write(publicRequest.ThroughputMode);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

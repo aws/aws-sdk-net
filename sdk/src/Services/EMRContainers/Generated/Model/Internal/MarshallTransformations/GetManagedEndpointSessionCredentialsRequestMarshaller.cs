@@ -67,50 +67,53 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
                 throw new AmazonEMRContainersException("Request object does not have required field VirtualClusterIdentifier set");
             request.AddPathResource("{virtualClusterId}", StringUtils.FromString(publicRequest.VirtualClusterIdentifier));
             request.ResourcePath = "/virtualclusters/{virtualClusterId}/endpoints/{endpointId}/credentials";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetCredentialType())
+                    {
+                        context.Writer.WritePropertyName("credentialType");
+                        context.Writer.Write(publicRequest.CredentialType);
+                    }
+
+                    if(publicRequest.IsSetDurationInSeconds())
+                    {
+                        context.Writer.WritePropertyName("durationInSeconds");
+                        context.Writer.Write(publicRequest.DurationInSeconds.Value);
+                    }
+
+                    if(publicRequest.IsSetExecutionRoleArn())
+                    {
+                        context.Writer.WritePropertyName("executionRoleArn");
+                        context.Writer.Write(publicRequest.ExecutionRoleArn);
+                    }
+
+                    if(publicRequest.IsSetLogContext())
+                    {
+                        context.Writer.WritePropertyName("logContext");
+                        context.Writer.Write(publicRequest.LogContext);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetCredentialType())
-                {
-                    context.Writer.WritePropertyName("credentialType");
-                    context.Writer.Write(publicRequest.CredentialType);
-                }
-
-                if(publicRequest.IsSetDurationInSeconds())
-                {
-                    context.Writer.WritePropertyName("durationInSeconds");
-                    context.Writer.Write(publicRequest.DurationInSeconds.Value);
-                }
-
-                if(publicRequest.IsSetExecutionRoleArn())
-                {
-                    context.Writer.WritePropertyName("executionRoleArn");
-                    context.Writer.Write(publicRequest.ExecutionRoleArn);
-                }
-
-                if(publicRequest.IsSetLogContext())
-                {
-                    context.Writer.WritePropertyName("logContext");
-                    context.Writer.Write(publicRequest.LogContext);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

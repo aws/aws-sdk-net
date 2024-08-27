@@ -64,100 +64,103 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                 throw new AmazonMQException("Request object does not have required field BrokerId set");
             request.AddPathResource("{broker-id}", StringUtils.FromString(publicRequest.BrokerId));
             request.ResourcePath = "/v1/brokers/{broker-id}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAuthenticationStrategy())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("authenticationStrategy");
-                    context.Writer.Write(publicRequest.AuthenticationStrategy);
-                }
-
-                if(publicRequest.IsSetAutoMinorVersionUpgrade())
-                {
-                    context.Writer.WritePropertyName("autoMinorVersionUpgrade");
-                    context.Writer.Write(publicRequest.AutoMinorVersionUpgrade.Value);
-                }
-
-                if(publicRequest.IsSetConfiguration())
-                {
-                    context.Writer.WritePropertyName("configuration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ConfigurationIdMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Configuration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDataReplicationMode())
-                {
-                    context.Writer.WritePropertyName("dataReplicationMode");
-                    context.Writer.Write(publicRequest.DataReplicationMode);
-                }
-
-                if(publicRequest.IsSetEngineVersion())
-                {
-                    context.Writer.WritePropertyName("engineVersion");
-                    context.Writer.Write(publicRequest.EngineVersion);
-                }
-
-                if(publicRequest.IsSetHostInstanceType())
-                {
-                    context.Writer.WritePropertyName("hostInstanceType");
-                    context.Writer.Write(publicRequest.HostInstanceType);
-                }
-
-                if(publicRequest.IsSetLdapServerMetadata())
-                {
-                    context.Writer.WritePropertyName("ldapServerMetadata");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LdapServerMetadataInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LdapServerMetadata, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetLogs())
-                {
-                    context.Writer.WritePropertyName("logs");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LogsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Logs, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMaintenanceWindowStartTime())
-                {
-                    context.Writer.WritePropertyName("maintenanceWindowStartTime");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = WeeklyStartTimeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.MaintenanceWindowStartTime, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSecurityGroups())
-                {
-                    context.Writer.WritePropertyName("securityGroups");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSecurityGroupsListValue in publicRequest.SecurityGroups)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAuthenticationStrategy())
                     {
-                            context.Writer.Write(publicRequestSecurityGroupsListValue);
+                        context.Writer.WritePropertyName("authenticationStrategy");
+                        context.Writer.Write(publicRequest.AuthenticationStrategy);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetAutoMinorVersionUpgrade())
+                    {
+                        context.Writer.WritePropertyName("autoMinorVersionUpgrade");
+                        context.Writer.Write(publicRequest.AutoMinorVersionUpgrade.Value);
+                    }
+
+                    if(publicRequest.IsSetConfiguration())
+                    {
+                        context.Writer.WritePropertyName("configuration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ConfigurationIdMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Configuration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDataReplicationMode())
+                    {
+                        context.Writer.WritePropertyName("dataReplicationMode");
+                        context.Writer.Write(publicRequest.DataReplicationMode);
+                    }
+
+                    if(publicRequest.IsSetEngineVersion())
+                    {
+                        context.Writer.WritePropertyName("engineVersion");
+                        context.Writer.Write(publicRequest.EngineVersion);
+                    }
+
+                    if(publicRequest.IsSetHostInstanceType())
+                    {
+                        context.Writer.WritePropertyName("hostInstanceType");
+                        context.Writer.Write(publicRequest.HostInstanceType);
+                    }
+
+                    if(publicRequest.IsSetLdapServerMetadata())
+                    {
+                        context.Writer.WritePropertyName("ldapServerMetadata");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LdapServerMetadataInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.LdapServerMetadata, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetLogs())
+                    {
+                        context.Writer.WritePropertyName("logs");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LogsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Logs, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetMaintenanceWindowStartTime())
+                    {
+                        context.Writer.WritePropertyName("maintenanceWindowStartTime");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = WeeklyStartTimeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.MaintenanceWindowStartTime, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSecurityGroups())
+                    {
+                        context.Writer.WritePropertyName("securityGroups");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSecurityGroupsListValue in publicRequest.SecurityGroups)
+                        {
+                                context.Writer.Write(publicRequestSecurityGroupsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

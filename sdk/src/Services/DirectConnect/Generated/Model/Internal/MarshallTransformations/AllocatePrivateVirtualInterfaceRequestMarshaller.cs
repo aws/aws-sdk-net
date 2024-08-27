@@ -63,38 +63,41 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConnectionId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("connectionId");
-                    context.Writer.Write(publicRequest.ConnectionId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConnectionId())
+                    {
+                        context.Writer.WritePropertyName("connectionId");
+                        context.Writer.Write(publicRequest.ConnectionId);
+                    }
+
+                    if(publicRequest.IsSetNewPrivateVirtualInterfaceAllocation())
+                    {
+                        context.Writer.WritePropertyName("newPrivateVirtualInterfaceAllocation");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = NewPrivateVirtualInterfaceAllocationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.NewPrivateVirtualInterfaceAllocation, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetOwnerAccount())
+                    {
+                        context.Writer.WritePropertyName("ownerAccount");
+                        context.Writer.Write(publicRequest.OwnerAccount);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetNewPrivateVirtualInterfaceAllocation())
-                {
-                    context.Writer.WritePropertyName("newPrivateVirtualInterfaceAllocation");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = NewPrivateVirtualInterfaceAllocationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.NewPrivateVirtualInterfaceAllocation, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOwnerAccount())
-                {
-                    context.Writer.WritePropertyName("ownerAccount");
-                    context.Writer.Write(publicRequest.OwnerAccount);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

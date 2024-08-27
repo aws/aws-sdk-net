@@ -64,81 +64,84 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
                 throw new AmazonAppConfigException("Request object does not have required field ApplicationId set");
             request.AddPathResource("{ApplicationId}", StringUtils.FromString(publicRequest.ApplicationId));
             request.ResourcePath = "/applications/{ApplicationId}/configurationprofiles";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetKmsKeyIdentifier())
-                {
-                    context.Writer.WritePropertyName("KmsKeyIdentifier");
-                    context.Writer.Write(publicRequest.KmsKeyIdentifier);
-                }
-
-                if(publicRequest.IsSetLocationUri())
-                {
-                    context.Writer.WritePropertyName("LocationUri");
-                    context.Writer.Write(publicRequest.LocationUri);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetRetrievalRoleArn())
-                {
-                    context.Writer.WritePropertyName("RetrievalRoleArn");
-                    context.Writer.Write(publicRequest.RetrievalRoleArn);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetType())
-                {
-                    context.Writer.WritePropertyName("Type");
-                    context.Writer.Write(publicRequest.Type);
-                }
-
-                if(publicRequest.IsSetValidators())
-                {
-                    context.Writer.WritePropertyName("Validators");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestValidatorsListValue in publicRequest.Validators)
+                    if(publicRequest.IsSetKmsKeyIdentifier())
                     {
+                        context.Writer.WritePropertyName("KmsKeyIdentifier");
+                        context.Writer.Write(publicRequest.KmsKeyIdentifier);
+                    }
+
+                    if(publicRequest.IsSetLocationUri())
+                    {
+                        context.Writer.WritePropertyName("LocationUri");
+                        context.Writer.Write(publicRequest.LocationUri);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetRetrievalRoleArn())
+                    {
+                        context.Writer.WritePropertyName("RetrievalRoleArn");
+                        context.Writer.Write(publicRequest.RetrievalRoleArn);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
 
-                        var marshaller = ValidatorMarshaller.Instance;
-                        marshaller.Marshall(publicRequestValidatorsListValue, context);
-
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetType())
+                    {
+                        context.Writer.WritePropertyName("Type");
+                        context.Writer.Write(publicRequest.Type);
+                    }
+
+                    if(publicRequest.IsSetValidators())
+                    {
+                        context.Writer.WritePropertyName("Validators");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestValidatorsListValue in publicRequest.Validators)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ValidatorMarshaller.Instance;
+                            marshaller.Marshall(publicRequestValidatorsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

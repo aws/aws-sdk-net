@@ -63,86 +63,89 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEndTime())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("endTime");
-                    context.Writer.Write(publicRequest.EndTime.Value);
-                }
-
-                if(publicRequest.IsSetFilterPattern())
-                {
-                    context.Writer.WritePropertyName("filterPattern");
-                    context.Writer.Write(publicRequest.FilterPattern);
-                }
-
-                if(publicRequest.IsSetInterleaved())
-                {
-                    context.Writer.WritePropertyName("interleaved");
-                    context.Writer.Write(publicRequest.Interleaved.Value);
-                }
-
-                if(publicRequest.IsSetLimit())
-                {
-                    context.Writer.WritePropertyName("limit");
-                    context.Writer.Write(publicRequest.Limit.Value);
-                }
-
-                if(publicRequest.IsSetLogGroupIdentifier())
-                {
-                    context.Writer.WritePropertyName("logGroupIdentifier");
-                    context.Writer.Write(publicRequest.LogGroupIdentifier);
-                }
-
-                if(publicRequest.IsSetLogGroupName())
-                {
-                    context.Writer.WritePropertyName("logGroupName");
-                    context.Writer.Write(publicRequest.LogGroupName);
-                }
-
-                if(publicRequest.IsSetLogStreamNamePrefix())
-                {
-                    context.Writer.WritePropertyName("logStreamNamePrefix");
-                    context.Writer.Write(publicRequest.LogStreamNamePrefix);
-                }
-
-                if(publicRequest.IsSetLogStreamNames())
-                {
-                    context.Writer.WritePropertyName("logStreamNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLogStreamNamesListValue in publicRequest.LogStreamNames)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEndTime())
                     {
-                            context.Writer.Write(publicRequestLogStreamNamesListValue);
+                        context.Writer.WritePropertyName("endTime");
+                        context.Writer.Write(publicRequest.EndTime.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetFilterPattern())
+                    {
+                        context.Writer.WritePropertyName("filterPattern");
+                        context.Writer.Write(publicRequest.FilterPattern);
+                    }
+
+                    if(publicRequest.IsSetInterleaved())
+                    {
+                        context.Writer.WritePropertyName("interleaved");
+                        context.Writer.Write(publicRequest.Interleaved.Value);
+                    }
+
+                    if(publicRequest.IsSetLimit())
+                    {
+                        context.Writer.WritePropertyName("limit");
+                        context.Writer.Write(publicRequest.Limit.Value);
+                    }
+
+                    if(publicRequest.IsSetLogGroupIdentifier())
+                    {
+                        context.Writer.WritePropertyName("logGroupIdentifier");
+                        context.Writer.Write(publicRequest.LogGroupIdentifier);
+                    }
+
+                    if(publicRequest.IsSetLogGroupName())
+                    {
+                        context.Writer.WritePropertyName("logGroupName");
+                        context.Writer.Write(publicRequest.LogGroupName);
+                    }
+
+                    if(publicRequest.IsSetLogStreamNamePrefix())
+                    {
+                        context.Writer.WritePropertyName("logStreamNamePrefix");
+                        context.Writer.Write(publicRequest.LogStreamNamePrefix);
+                    }
+
+                    if(publicRequest.IsSetLogStreamNames())
+                    {
+                        context.Writer.WritePropertyName("logStreamNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLogStreamNamesListValue in publicRequest.LogStreamNames)
+                        {
+                                context.Writer.Write(publicRequestLogStreamNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetStartTime())
+                    {
+                        context.Writer.WritePropertyName("startTime");
+                        context.Writer.Write(publicRequest.StartTime.Value);
+                    }
+
+                    if(publicRequest.IsSetUnmask())
+                    {
+                        context.Writer.WritePropertyName("unmask");
+                        context.Writer.Write(publicRequest.Unmask.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetStartTime())
-                {
-                    context.Writer.WritePropertyName("startTime");
-                    context.Writer.Write(publicRequest.StartTime.Value);
-                }
-
-                if(publicRequest.IsSetUnmask())
-                {
-                    context.Writer.WritePropertyName("unmask");
-                    context.Writer.Write(publicRequest.Unmask.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

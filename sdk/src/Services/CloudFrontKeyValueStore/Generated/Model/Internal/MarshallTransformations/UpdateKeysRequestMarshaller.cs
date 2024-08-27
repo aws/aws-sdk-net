@@ -64,47 +64,50 @@ namespace Amazon.CloudFrontKeyValueStore.Model.Internal.MarshallTransformations
                 throw new AmazonCloudFrontKeyValueStoreException("Request object does not have required field KvsARN set");
             request.AddPathResource("{KvsARN}", StringUtils.FromString(publicRequest.KvsARN));
             request.ResourcePath = "/key-value-stores/{KvsARN}/keys";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeletes())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Deletes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDeletesListValue in publicRequest.Deletes)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDeletes())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("Deletes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDeletesListValue in publicRequest.Deletes)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = DeleteKeyRequestListItemMarshaller.Instance;
-                        marshaller.Marshall(publicRequestDeletesListValue, context);
+                            var marshaller = DeleteKeyRequestListItemMarshaller.Instance;
+                            marshaller.Marshall(publicRequestDeletesListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetPuts())
+                    {
+                        context.Writer.WritePropertyName("Puts");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPutsListValue in publicRequest.Puts)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = PutKeyRequestListItemMarshaller.Instance;
+                            marshaller.Marshall(publicRequestPutsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPuts())
-                {
-                    context.Writer.WritePropertyName("Puts");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPutsListValue in publicRequest.Puts)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = PutKeyRequestListItemMarshaller.Instance;
-                        marshaller.Marshall(publicRequestPutsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

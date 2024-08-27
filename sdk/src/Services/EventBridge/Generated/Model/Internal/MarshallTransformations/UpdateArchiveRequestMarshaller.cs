@@ -63,39 +63,42 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetArchiveName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ArchiveName");
-                    context.Writer.Write(publicRequest.ArchiveName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetArchiveName())
+                    {
+                        context.Writer.WritePropertyName("ArchiveName");
+                        context.Writer.Write(publicRequest.ArchiveName);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetEventPattern())
+                    {
+                        context.Writer.WritePropertyName("EventPattern");
+                        context.Writer.Write(publicRequest.EventPattern);
+                    }
+
+                    if(publicRequest.IsSetRetentionDays())
+                    {
+                        context.Writer.WritePropertyName("RetentionDays");
+                        context.Writer.Write(publicRequest.RetentionDays.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetEventPattern())
-                {
-                    context.Writer.WritePropertyName("EventPattern");
-                    context.Writer.Write(publicRequest.EventPattern);
-                }
-
-                if(publicRequest.IsSetRetentionDays())
-                {
-                    context.Writer.WritePropertyName("RetentionDays");
-                    context.Writer.Write(publicRequest.RetentionDays.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

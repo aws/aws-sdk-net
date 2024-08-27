@@ -61,91 +61,94 @@ namespace Amazon.PersonalizeRuntime.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/personalize-ranking";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCampaignArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("campaignArn");
-                    context.Writer.Write(publicRequest.CampaignArn);
-                }
-
-                if(publicRequest.IsSetContext())
-                {
-                    context.Writer.WritePropertyName("context");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestContextKvp in publicRequest.Context)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCampaignArn())
                     {
-                        context.Writer.WritePropertyName(publicRequestContextKvp.Key);
-                        var publicRequestContextValue = publicRequestContextKvp.Value;
-
-                            context.Writer.Write(publicRequestContextValue);
+                        context.Writer.WritePropertyName("campaignArn");
+                        context.Writer.Write(publicRequest.CampaignArn);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetFilterArn())
-                {
-                    context.Writer.WritePropertyName("filterArn");
-                    context.Writer.Write(publicRequest.FilterArn);
-                }
-
-                if(publicRequest.IsSetFilterValues())
-                {
-                    context.Writer.WritePropertyName("filterValues");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestFilterValuesKvp in publicRequest.FilterValues)
+                    if(publicRequest.IsSetContext())
                     {
-                        context.Writer.WritePropertyName(publicRequestFilterValuesKvp.Key);
-                        var publicRequestFilterValuesValue = publicRequestFilterValuesKvp.Value;
-
-                            context.Writer.Write(publicRequestFilterValuesValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetInputList())
-                {
-                    context.Writer.WritePropertyName("inputList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestInputListListValue in publicRequest.InputList)
-                    {
-                            context.Writer.Write(publicRequestInputListListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetMetadataColumns())
-                {
-                    context.Writer.WritePropertyName("metadataColumns");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestMetadataColumnsKvp in publicRequest.MetadataColumns)
-                    {
-                        context.Writer.WritePropertyName(publicRequestMetadataColumnsKvp.Key);
-                        var publicRequestMetadataColumnsValue = publicRequestMetadataColumnsKvp.Value;
-
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestMetadataColumnsValueListValue in publicRequestMetadataColumnsValue)
+                        context.Writer.WritePropertyName("context");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestContextKvp in publicRequest.Context)
                         {
-                                context.Writer.Write(publicRequestMetadataColumnsValueListValue);
+                            context.Writer.WritePropertyName(publicRequestContextKvp.Key);
+                            var publicRequestContextValue = publicRequestContextKvp.Value;
+
+                                context.Writer.Write(publicRequestContextValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetFilterArn())
+                    {
+                        context.Writer.WritePropertyName("filterArn");
+                        context.Writer.Write(publicRequest.FilterArn);
+                    }
+
+                    if(publicRequest.IsSetFilterValues())
+                    {
+                        context.Writer.WritePropertyName("filterValues");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestFilterValuesKvp in publicRequest.FilterValues)
+                        {
+                            context.Writer.WritePropertyName(publicRequestFilterValuesKvp.Key);
+                            var publicRequestFilterValuesValue = publicRequestFilterValuesKvp.Value;
+
+                                context.Writer.Write(publicRequestFilterValuesValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetInputList())
+                    {
+                        context.Writer.WritePropertyName("inputList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestInputListListValue in publicRequest.InputList)
+                        {
+                                context.Writer.Write(publicRequestInputListListValue);
                         }
                         context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetMetadataColumns())
+                    {
+                        context.Writer.WritePropertyName("metadataColumns");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestMetadataColumnsKvp in publicRequest.MetadataColumns)
+                        {
+                            context.Writer.WritePropertyName(publicRequestMetadataColumnsKvp.Key);
+                            var publicRequestMetadataColumnsValue = publicRequestMetadataColumnsKvp.Value;
+
+                            context.Writer.WriteArrayStart();
+                            foreach(var publicRequestMetadataColumnsValueListValue in publicRequestMetadataColumnsValue)
+                            {
+                                    context.Writer.Write(publicRequestMetadataColumnsValueListValue);
+                            }
+                            context.Writer.WriteArrayEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetUserId())
+                    {
+                        context.Writer.WritePropertyName("userId");
+                        context.Writer.Write(publicRequest.UserId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetUserId())
-                {
-                    context.Writer.WritePropertyName("userId");
-                    context.Writer.Write(publicRequest.UserId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

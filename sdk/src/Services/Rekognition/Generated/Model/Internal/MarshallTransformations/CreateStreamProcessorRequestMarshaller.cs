@@ -63,118 +63,121 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDataSharingPreference())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DataSharingPreference");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = StreamProcessorDataSharingPreferenceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DataSharingPreference, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetInput())
-                {
-                    context.Writer.WritePropertyName("Input");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = StreamProcessorInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Input, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetKmsKeyId())
-                {
-                    context.Writer.WritePropertyName("KmsKeyId");
-                    context.Writer.Write(publicRequest.KmsKeyId);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetNotificationChannel())
-                {
-                    context.Writer.WritePropertyName("NotificationChannel");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = StreamProcessorNotificationChannelMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.NotificationChannel, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOutput())
-                {
-                    context.Writer.WritePropertyName("Output");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = StreamProcessorOutputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Output, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRegionsOfInterest())
-                {
-                    context.Writer.WritePropertyName("RegionsOfInterest");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRegionsOfInterestListValue in publicRequest.RegionsOfInterest)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDataSharingPreference())
                     {
+                        context.Writer.WritePropertyName("DataSharingPreference");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = RegionOfInterestMarshaller.Instance;
-                        marshaller.Marshall(publicRequestRegionsOfInterestListValue, context);
+                        var marshaller = StreamProcessorDataSharingPreferenceMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DataSharingPreference, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("RoleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetSettings())
-                {
-                    context.Writer.WritePropertyName("Settings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = StreamProcessorSettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Settings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetInput())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
+                        context.Writer.WritePropertyName("Input");
+                        context.Writer.WriteObjectStart();
 
-                            context.Writer.Write(publicRequestTagsValue);
+                        var marshaller = StreamProcessorInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Input, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetKmsKeyId())
+                    {
+                        context.Writer.WritePropertyName("KmsKeyId");
+                        context.Writer.Write(publicRequest.KmsKeyId);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetNotificationChannel())
+                    {
+                        context.Writer.WritePropertyName("NotificationChannel");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = StreamProcessorNotificationChannelMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.NotificationChannel, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetOutput())
+                    {
+                        context.Writer.WritePropertyName("Output");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = StreamProcessorOutputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Output, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRegionsOfInterest())
+                    {
+                        context.Writer.WritePropertyName("RegionsOfInterest");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRegionsOfInterestListValue in publicRequest.RegionsOfInterest)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = RegionOfInterestMarshaller.Instance;
+                            marshaller.Marshall(publicRequestRegionsOfInterestListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("RoleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    if(publicRequest.IsSetSettings())
+                    {
+                        context.Writer.WritePropertyName("Settings");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = StreamProcessorSettingsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Settings, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

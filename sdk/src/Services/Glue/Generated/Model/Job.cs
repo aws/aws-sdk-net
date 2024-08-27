@@ -368,9 +368,9 @@ namespace Amazon.Glue.Model
         /// job run field will be used.
         /// </para>
         /// </summary>
-        public bool JobRunQueuingEnabled
+        public bool? JobRunQueuingEnabled
         {
-            get { return this._jobRunQueuingEnabled.GetValueOrDefault(); }
+            get { return this._jobRunQueuingEnabled; }
             set { this._jobRunQueuingEnabled = value; }
         }
 

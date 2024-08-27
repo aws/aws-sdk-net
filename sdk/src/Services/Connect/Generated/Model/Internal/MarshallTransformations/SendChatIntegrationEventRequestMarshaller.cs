@@ -61,55 +61,58 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/chat-integration-event";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDestinationId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DestinationId");
-                    context.Writer.Write(publicRequest.DestinationId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDestinationId())
+                    {
+                        context.Writer.WritePropertyName("DestinationId");
+                        context.Writer.Write(publicRequest.DestinationId);
+                    }
+
+                    if(publicRequest.IsSetEvent())
+                    {
+                        context.Writer.WritePropertyName("Event");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ChatEventMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Event, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetNewSessionDetails())
+                    {
+                        context.Writer.WritePropertyName("NewSessionDetails");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = NewSessionDetailsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.NewSessionDetails, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSourceId())
+                    {
+                        context.Writer.WritePropertyName("SourceId");
+                        context.Writer.Write(publicRequest.SourceId);
+                    }
+
+                    if(publicRequest.IsSetSubtype())
+                    {
+                        context.Writer.WritePropertyName("Subtype");
+                        context.Writer.Write(publicRequest.Subtype);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEvent())
-                {
-                    context.Writer.WritePropertyName("Event");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ChatEventMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Event, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetNewSessionDetails())
-                {
-                    context.Writer.WritePropertyName("NewSessionDetails");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = NewSessionDetailsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.NewSessionDetails, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSourceId())
-                {
-                    context.Writer.WritePropertyName("SourceId");
-                    context.Writer.Write(publicRequest.SourceId);
-                }
-
-                if(publicRequest.IsSetSubtype())
-                {
-                    context.Writer.WritePropertyName("Subtype");
-                    context.Writer.Write(publicRequest.Subtype);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

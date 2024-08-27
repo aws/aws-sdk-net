@@ -63,102 +63,105 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetExcludes())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Excludes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestExcludesListValue in publicRequest.Excludes)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetExcludes())
                     {
+                        context.Writer.WritePropertyName("Excludes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestExcludesListValue in publicRequest.Excludes)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = FilterRuleMarshaller.Instance;
+                            marshaller.Marshall(publicRequestExcludesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetIncludes())
+                    {
+                        context.Writer.WritePropertyName("Includes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestIncludesListValue in publicRequest.Includes)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = FilterRuleMarshaller.Instance;
+                            marshaller.Marshall(publicRequestIncludesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetManifestConfig())
+                    {
+                        context.Writer.WritePropertyName("ManifestConfig");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = FilterRuleMarshaller.Instance;
-                        marshaller.Marshall(publicRequestExcludesListValue, context);
+                        var marshaller = ManifestConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ManifestConfig, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetIncludes())
-                {
-                    context.Writer.WritePropertyName("Includes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestIncludesListValue in publicRequest.Includes)
+                    if(publicRequest.IsSetOverrideOptions())
                     {
+                        context.Writer.WritePropertyName("OverrideOptions");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = FilterRuleMarshaller.Instance;
-                        marshaller.Marshall(publicRequestIncludesListValue, context);
+                        var marshaller = OptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OverrideOptions, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetManifestConfig())
-                {
-                    context.Writer.WritePropertyName("ManifestConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ManifestConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ManifestConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOverrideOptions())
-                {
-                    context.Writer.WritePropertyName("OverrideOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OverrideOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetTags())
                     {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagListEntryMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTaskArn())
+                    {
+                        context.Writer.WritePropertyName("TaskArn");
+                        context.Writer.Write(publicRequest.TaskArn);
+                    }
+
+                    if(publicRequest.IsSetTaskReportConfig())
+                    {
+                        context.Writer.WritePropertyName("TaskReportConfig");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagListEntryMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = TaskReportConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TaskReportConfig, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTaskArn())
-                {
-                    context.Writer.WritePropertyName("TaskArn");
-                    context.Writer.Write(publicRequest.TaskArn);
-                }
-
-                if(publicRequest.IsSetTaskReportConfig())
-                {
-                    context.Writer.WritePropertyName("TaskReportConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TaskReportConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TaskReportConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

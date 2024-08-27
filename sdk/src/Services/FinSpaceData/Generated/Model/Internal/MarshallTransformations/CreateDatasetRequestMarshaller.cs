@@ -61,83 +61,86 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/datasetsv2";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAlias())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("alias");
-                    context.Writer.Write(publicRequest.Alias);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAlias())
+                    {
+                        context.Writer.WritePropertyName("alias");
+                        context.Writer.Write(publicRequest.Alias);
+                    }
+
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetDatasetDescription())
+                    {
+                        context.Writer.WritePropertyName("datasetDescription");
+                        context.Writer.Write(publicRequest.DatasetDescription);
+                    }
+
+                    if(publicRequest.IsSetDatasetTitle())
+                    {
+                        context.Writer.WritePropertyName("datasetTitle");
+                        context.Writer.Write(publicRequest.DatasetTitle);
+                    }
+
+                    if(publicRequest.IsSetKind())
+                    {
+                        context.Writer.WritePropertyName("kind");
+                        context.Writer.Write(publicRequest.Kind);
+                    }
+
+                    if(publicRequest.IsSetOwnerInfo())
+                    {
+                        context.Writer.WritePropertyName("ownerInfo");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DatasetOwnerInfoMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OwnerInfo, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetPermissionGroupParams())
+                    {
+                        context.Writer.WritePropertyName("permissionGroupParams");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PermissionGroupParamsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.PermissionGroupParams, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSchemaDefinition())
+                    {
+                        context.Writer.WritePropertyName("schemaDefinition");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SchemaUnionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SchemaDefinition, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDatasetDescription())
-                {
-                    context.Writer.WritePropertyName("datasetDescription");
-                    context.Writer.Write(publicRequest.DatasetDescription);
-                }
-
-                if(publicRequest.IsSetDatasetTitle())
-                {
-                    context.Writer.WritePropertyName("datasetTitle");
-                    context.Writer.Write(publicRequest.DatasetTitle);
-                }
-
-                if(publicRequest.IsSetKind())
-                {
-                    context.Writer.WritePropertyName("kind");
-                    context.Writer.Write(publicRequest.Kind);
-                }
-
-                if(publicRequest.IsSetOwnerInfo())
-                {
-                    context.Writer.WritePropertyName("ownerInfo");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DatasetOwnerInfoMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OwnerInfo, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPermissionGroupParams())
-                {
-                    context.Writer.WritePropertyName("permissionGroupParams");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PermissionGroupParamsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PermissionGroupParams, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSchemaDefinition())
-                {
-                    context.Writer.WritePropertyName("schemaDefinition");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SchemaUnionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SchemaDefinition, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

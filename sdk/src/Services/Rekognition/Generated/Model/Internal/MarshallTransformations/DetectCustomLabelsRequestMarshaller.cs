@@ -63,51 +63,54 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetImage())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Image");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ImageMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Image, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetMinConfidence())
-                {
-                    context.Writer.WritePropertyName("MinConfidence");
-                    if(StringUtils.IsSpecialFloatValue(publicRequest.MinConfidence.Value))
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetImage())
                     {
-                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.MinConfidence.Value));
+                        context.Writer.WritePropertyName("Image");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ImageMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Image, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    else
+
+                    if(publicRequest.IsSetMaxResults())
                     {
-                        context.Writer.Write(publicRequest.MinConfidence.Value);
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
                     }
+
+                    if(publicRequest.IsSetMinConfidence())
+                    {
+                        context.Writer.WritePropertyName("MinConfidence");
+                        if(StringUtils.IsSpecialFloatValue(publicRequest.MinConfidence.Value))
+                        {
+                            context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.MinConfidence.Value));
+                        }
+                        else
+                        {
+                            context.Writer.Write(publicRequest.MinConfidence.Value);
+                        }
+                    }
+
+                    if(publicRequest.IsSetProjectVersionArn())
+                    {
+                        context.Writer.WritePropertyName("ProjectVersionArn");
+                        context.Writer.Write(publicRequest.ProjectVersionArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetProjectVersionArn())
-                {
-                    context.Writer.WritePropertyName("ProjectVersionArn");
-                    context.Writer.Write(publicRequest.ProjectVersionArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

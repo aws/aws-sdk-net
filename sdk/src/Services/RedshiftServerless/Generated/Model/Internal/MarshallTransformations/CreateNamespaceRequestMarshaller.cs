@@ -63,107 +63,110 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAdminPasswordSecretKmsKeyId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("adminPasswordSecretKmsKeyId");
-                    context.Writer.Write(publicRequest.AdminPasswordSecretKmsKeyId);
-                }
-
-                if(publicRequest.IsSetAdminUsername())
-                {
-                    context.Writer.WritePropertyName("adminUsername");
-                    context.Writer.Write(publicRequest.AdminUsername);
-                }
-
-                if(publicRequest.IsSetAdminUserPassword())
-                {
-                    context.Writer.WritePropertyName("adminUserPassword");
-                    context.Writer.Write(publicRequest.AdminUserPassword);
-                }
-
-                if(publicRequest.IsSetDbName())
-                {
-                    context.Writer.WritePropertyName("dbName");
-                    context.Writer.Write(publicRequest.DbName);
-                }
-
-                if(publicRequest.IsSetDefaultIamRoleArn())
-                {
-                    context.Writer.WritePropertyName("defaultIamRoleArn");
-                    context.Writer.Write(publicRequest.DefaultIamRoleArn);
-                }
-
-                if(publicRequest.IsSetIamRoles())
-                {
-                    context.Writer.WritePropertyName("iamRoles");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestIamRolesListValue in publicRequest.IamRoles)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAdminPasswordSecretKmsKeyId())
                     {
-                            context.Writer.Write(publicRequestIamRolesListValue);
+                        context.Writer.WritePropertyName("adminPasswordSecretKmsKeyId");
+                        context.Writer.Write(publicRequest.AdminPasswordSecretKmsKeyId);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetKmsKeyId())
-                {
-                    context.Writer.WritePropertyName("kmsKeyId");
-                    context.Writer.Write(publicRequest.KmsKeyId);
-                }
-
-                if(publicRequest.IsSetLogExports())
-                {
-                    context.Writer.WritePropertyName("logExports");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLogExportsListValue in publicRequest.LogExports)
+                    if(publicRequest.IsSetAdminUsername())
                     {
-                            context.Writer.Write(publicRequestLogExportsListValue);
+                        context.Writer.WritePropertyName("adminUsername");
+                        context.Writer.Write(publicRequest.AdminUsername);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetManageAdminPassword())
-                {
-                    context.Writer.WritePropertyName("manageAdminPassword");
-                    context.Writer.Write(publicRequest.ManageAdminPassword.Value);
-                }
-
-                if(publicRequest.IsSetNamespaceName())
-                {
-                    context.Writer.WritePropertyName("namespaceName");
-                    context.Writer.Write(publicRequest.NamespaceName);
-                }
-
-                if(publicRequest.IsSetRedshiftIdcApplicationArn())
-                {
-                    context.Writer.WritePropertyName("redshiftIdcApplicationArn");
-                    context.Writer.Write(publicRequest.RedshiftIdcApplicationArn);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetAdminUserPassword())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("adminUserPassword");
+                        context.Writer.Write(publicRequest.AdminUserPassword);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDbName())
+                    {
+                        context.Writer.WritePropertyName("dbName");
+                        context.Writer.Write(publicRequest.DbName);
+                    }
+
+                    if(publicRequest.IsSetDefaultIamRoleArn())
+                    {
+                        context.Writer.WritePropertyName("defaultIamRoleArn");
+                        context.Writer.Write(publicRequest.DefaultIamRoleArn);
+                    }
+
+                    if(publicRequest.IsSetIamRoles())
+                    {
+                        context.Writer.WritePropertyName("iamRoles");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestIamRolesListValue in publicRequest.IamRoles)
+                        {
+                                context.Writer.Write(publicRequestIamRolesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetKmsKeyId())
+                    {
+                        context.Writer.WritePropertyName("kmsKeyId");
+                        context.Writer.Write(publicRequest.KmsKeyId);
+                    }
+
+                    if(publicRequest.IsSetLogExports())
+                    {
+                        context.Writer.WritePropertyName("logExports");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLogExportsListValue in publicRequest.LogExports)
+                        {
+                                context.Writer.Write(publicRequestLogExportsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetManageAdminPassword())
+                    {
+                        context.Writer.WritePropertyName("manageAdminPassword");
+                        context.Writer.Write(publicRequest.ManageAdminPassword.Value);
+                    }
+
+                    if(publicRequest.IsSetNamespaceName())
+                    {
+                        context.Writer.WritePropertyName("namespaceName");
+                        context.Writer.Write(publicRequest.NamespaceName);
+                    }
+
+                    if(publicRequest.IsSetRedshiftIdcApplicationArn())
+                    {
+                        context.Writer.WritePropertyName("redshiftIdcApplicationArn");
+                        context.Writer.Write(publicRequest.RedshiftIdcApplicationArn);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

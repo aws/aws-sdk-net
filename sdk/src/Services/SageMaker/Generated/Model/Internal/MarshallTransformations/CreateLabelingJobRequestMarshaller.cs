@@ -63,110 +63,113 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetHumanTaskConfig())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("HumanTaskConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = HumanTaskConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.HumanTaskConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetInputConfig())
-                {
-                    context.Writer.WritePropertyName("InputConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LabelingJobInputConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.InputConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetLabelAttributeName())
-                {
-                    context.Writer.WritePropertyName("LabelAttributeName");
-                    context.Writer.Write(publicRequest.LabelAttributeName);
-                }
-
-                if(publicRequest.IsSetLabelCategoryConfigS3Uri())
-                {
-                    context.Writer.WritePropertyName("LabelCategoryConfigS3Uri");
-                    context.Writer.Write(publicRequest.LabelCategoryConfigS3Uri);
-                }
-
-                if(publicRequest.IsSetLabelingJobAlgorithmsConfig())
-                {
-                    context.Writer.WritePropertyName("LabelingJobAlgorithmsConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LabelingJobAlgorithmsConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LabelingJobAlgorithmsConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetLabelingJobName())
-                {
-                    context.Writer.WritePropertyName("LabelingJobName");
-                    context.Writer.Write(publicRequest.LabelingJobName);
-                }
-
-                if(publicRequest.IsSetOutputConfig())
-                {
-                    context.Writer.WritePropertyName("OutputConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LabelingJobOutputConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OutputConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("RoleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetStoppingConditions())
-                {
-                    context.Writer.WritePropertyName("StoppingConditions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LabelingJobStoppingConditionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.StoppingConditions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetHumanTaskConfig())
                     {
+                        context.Writer.WritePropertyName("HumanTaskConfig");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = HumanTaskConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.HumanTaskConfig, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetInputConfig())
+                    {
+                        context.Writer.WritePropertyName("InputConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LabelingJobInputConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.InputConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetLabelAttributeName())
+                    {
+                        context.Writer.WritePropertyName("LabelAttributeName");
+                        context.Writer.Write(publicRequest.LabelAttributeName);
+                    }
+
+                    if(publicRequest.IsSetLabelCategoryConfigS3Uri())
+                    {
+                        context.Writer.WritePropertyName("LabelCategoryConfigS3Uri");
+                        context.Writer.Write(publicRequest.LabelCategoryConfigS3Uri);
+                    }
+
+                    if(publicRequest.IsSetLabelingJobAlgorithmsConfig())
+                    {
+                        context.Writer.WritePropertyName("LabelingJobAlgorithmsConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LabelingJobAlgorithmsConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.LabelingJobAlgorithmsConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetLabelingJobName())
+                    {
+                        context.Writer.WritePropertyName("LabelingJobName");
+                        context.Writer.Write(publicRequest.LabelingJobName);
+                    }
+
+                    if(publicRequest.IsSetOutputConfig())
+                    {
+                        context.Writer.WritePropertyName("OutputConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LabelingJobOutputConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OutputConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("RoleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    if(publicRequest.IsSetStoppingConditions())
+                    {
+                        context.Writer.WritePropertyName("StoppingConditions");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LabelingJobStoppingConditionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.StoppingConditions, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,77 +63,80 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetInputConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("inputConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ModelInputConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.InputConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetInvokeModelEndpointRoleArn())
-                {
-                    context.Writer.WritePropertyName("invokeModelEndpointRoleArn");
-                    context.Writer.Write(publicRequest.InvokeModelEndpointRoleArn);
-                }
-
-                if(publicRequest.IsSetModelEndpoint())
-                {
-                    context.Writer.WritePropertyName("modelEndpoint");
-                    context.Writer.Write(publicRequest.ModelEndpoint);
-                }
-
-                if(publicRequest.IsSetModelEndpointStatus())
-                {
-                    context.Writer.WritePropertyName("modelEndpointStatus");
-                    context.Writer.Write(publicRequest.ModelEndpointStatus);
-                }
-
-                if(publicRequest.IsSetModelSource())
-                {
-                    context.Writer.WritePropertyName("modelSource");
-                    context.Writer.Write(publicRequest.ModelSource);
-                }
-
-                if(publicRequest.IsSetOutputConfiguration())
-                {
-                    context.Writer.WritePropertyName("outputConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ModelOutputConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OutputConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetInputConfiguration())
                     {
+                        context.Writer.WritePropertyName("inputConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = ModelInputConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.InputConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetInvokeModelEndpointRoleArn())
+                    {
+                        context.Writer.WritePropertyName("invokeModelEndpointRoleArn");
+                        context.Writer.Write(publicRequest.InvokeModelEndpointRoleArn);
+                    }
+
+                    if(publicRequest.IsSetModelEndpoint())
+                    {
+                        context.Writer.WritePropertyName("modelEndpoint");
+                        context.Writer.Write(publicRequest.ModelEndpoint);
+                    }
+
+                    if(publicRequest.IsSetModelEndpointStatus())
+                    {
+                        context.Writer.WritePropertyName("modelEndpointStatus");
+                        context.Writer.Write(publicRequest.ModelEndpointStatus);
+                    }
+
+                    if(publicRequest.IsSetModelSource())
+                    {
+                        context.Writer.WritePropertyName("modelSource");
+                        context.Writer.Write(publicRequest.ModelSource);
+                    }
+
+                    if(publicRequest.IsSetOutputConfiguration())
+                    {
+                        context.Writer.WritePropertyName("outputConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ModelOutputConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OutputConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

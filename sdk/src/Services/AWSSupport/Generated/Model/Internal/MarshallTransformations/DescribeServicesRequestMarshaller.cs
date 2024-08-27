@@ -63,32 +63,35 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLanguage())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("language");
-                    context.Writer.Write(publicRequest.Language);
-                }
-
-                if(publicRequest.IsSetServiceCodeList())
-                {
-                    context.Writer.WritePropertyName("serviceCodeList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestServiceCodeListListValue in publicRequest.ServiceCodeList)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetLanguage())
                     {
-                            context.Writer.Write(publicRequestServiceCodeListListValue);
+                        context.Writer.WritePropertyName("language");
+                        context.Writer.Write(publicRequest.Language);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetServiceCodeList())
+                    {
+                        context.Writer.WritePropertyName("serviceCodeList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestServiceCodeListListValue in publicRequest.ServiceCodeList)
+                        {
+                                context.Writer.Write(publicRequestServiceCodeListListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

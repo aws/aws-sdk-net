@@ -63,26 +63,29 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDevEndpointNames())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DevEndpointNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDevEndpointNamesListValue in publicRequest.DevEndpointNames)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDevEndpointNames())
                     {
-                            context.Writer.Write(publicRequestDevEndpointNamesListValue);
+                        context.Writer.WritePropertyName("DevEndpointNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDevEndpointNamesListValue in publicRequest.DevEndpointNames)
+                        {
+                                context.Writer.Write(publicRequestDevEndpointNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

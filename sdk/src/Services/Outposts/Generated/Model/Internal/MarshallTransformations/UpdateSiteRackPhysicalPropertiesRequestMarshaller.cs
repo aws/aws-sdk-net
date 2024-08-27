@@ -64,69 +64,72 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
                 throw new AmazonOutpostsException("Request object does not have required field SiteId set");
             request.AddPathResource("{SiteId}", StringUtils.FromString(publicRequest.SiteId));
             request.ResourcePath = "/sites/{SiteId}/rackPhysicalProperties";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFiberOpticCableType())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("FiberOpticCableType");
-                    context.Writer.Write(publicRequest.FiberOpticCableType);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFiberOpticCableType())
+                    {
+                        context.Writer.WritePropertyName("FiberOpticCableType");
+                        context.Writer.Write(publicRequest.FiberOpticCableType);
+                    }
+
+                    if(publicRequest.IsSetMaximumSupportedWeightLbs())
+                    {
+                        context.Writer.WritePropertyName("MaximumSupportedWeightLbs");
+                        context.Writer.Write(publicRequest.MaximumSupportedWeightLbs);
+                    }
+
+                    if(publicRequest.IsSetOpticalStandard())
+                    {
+                        context.Writer.WritePropertyName("OpticalStandard");
+                        context.Writer.Write(publicRequest.OpticalStandard);
+                    }
+
+                    if(publicRequest.IsSetPowerConnector())
+                    {
+                        context.Writer.WritePropertyName("PowerConnector");
+                        context.Writer.Write(publicRequest.PowerConnector);
+                    }
+
+                    if(publicRequest.IsSetPowerDrawKva())
+                    {
+                        context.Writer.WritePropertyName("PowerDrawKva");
+                        context.Writer.Write(publicRequest.PowerDrawKva);
+                    }
+
+                    if(publicRequest.IsSetPowerFeedDrop())
+                    {
+                        context.Writer.WritePropertyName("PowerFeedDrop");
+                        context.Writer.Write(publicRequest.PowerFeedDrop);
+                    }
+
+                    if(publicRequest.IsSetPowerPhase())
+                    {
+                        context.Writer.WritePropertyName("PowerPhase");
+                        context.Writer.Write(publicRequest.PowerPhase);
+                    }
+
+                    if(publicRequest.IsSetUplinkCount())
+                    {
+                        context.Writer.WritePropertyName("UplinkCount");
+                        context.Writer.Write(publicRequest.UplinkCount);
+                    }
+
+                    if(publicRequest.IsSetUplinkGbps())
+                    {
+                        context.Writer.WritePropertyName("UplinkGbps");
+                        context.Writer.Write(publicRequest.UplinkGbps);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMaximumSupportedWeightLbs())
-                {
-                    context.Writer.WritePropertyName("MaximumSupportedWeightLbs");
-                    context.Writer.Write(publicRequest.MaximumSupportedWeightLbs);
-                }
-
-                if(publicRequest.IsSetOpticalStandard())
-                {
-                    context.Writer.WritePropertyName("OpticalStandard");
-                    context.Writer.Write(publicRequest.OpticalStandard);
-                }
-
-                if(publicRequest.IsSetPowerConnector())
-                {
-                    context.Writer.WritePropertyName("PowerConnector");
-                    context.Writer.Write(publicRequest.PowerConnector);
-                }
-
-                if(publicRequest.IsSetPowerDrawKva())
-                {
-                    context.Writer.WritePropertyName("PowerDrawKva");
-                    context.Writer.Write(publicRequest.PowerDrawKva);
-                }
-
-                if(publicRequest.IsSetPowerFeedDrop())
-                {
-                    context.Writer.WritePropertyName("PowerFeedDrop");
-                    context.Writer.Write(publicRequest.PowerFeedDrop);
-                }
-
-                if(publicRequest.IsSetPowerPhase())
-                {
-                    context.Writer.WritePropertyName("PowerPhase");
-                    context.Writer.Write(publicRequest.PowerPhase);
-                }
-
-                if(publicRequest.IsSetUplinkCount())
-                {
-                    context.Writer.WritePropertyName("UplinkCount");
-                    context.Writer.Write(publicRequest.UplinkCount);
-                }
-
-                if(publicRequest.IsSetUplinkGbps())
-                {
-                    context.Writer.WritePropertyName("UplinkGbps");
-                    context.Writer.Write(publicRequest.UplinkGbps);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

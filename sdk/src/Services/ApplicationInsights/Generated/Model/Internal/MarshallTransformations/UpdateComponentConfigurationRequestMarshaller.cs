@@ -63,51 +63,54 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAutoConfigEnabled())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AutoConfigEnabled");
-                    context.Writer.Write(publicRequest.AutoConfigEnabled.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAutoConfigEnabled())
+                    {
+                        context.Writer.WritePropertyName("AutoConfigEnabled");
+                        context.Writer.Write(publicRequest.AutoConfigEnabled.Value);
+                    }
+
+                    if(publicRequest.IsSetComponentConfiguration())
+                    {
+                        context.Writer.WritePropertyName("ComponentConfiguration");
+                        context.Writer.Write(publicRequest.ComponentConfiguration);
+                    }
+
+                    if(publicRequest.IsSetComponentName())
+                    {
+                        context.Writer.WritePropertyName("ComponentName");
+                        context.Writer.Write(publicRequest.ComponentName);
+                    }
+
+                    if(publicRequest.IsSetMonitor())
+                    {
+                        context.Writer.WritePropertyName("Monitor");
+                        context.Writer.Write(publicRequest.Monitor.Value);
+                    }
+
+                    if(publicRequest.IsSetResourceGroupName())
+                    {
+                        context.Writer.WritePropertyName("ResourceGroupName");
+                        context.Writer.Write(publicRequest.ResourceGroupName);
+                    }
+
+                    if(publicRequest.IsSetTier())
+                    {
+                        context.Writer.WritePropertyName("Tier");
+                        context.Writer.Write(publicRequest.Tier);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetComponentConfiguration())
-                {
-                    context.Writer.WritePropertyName("ComponentConfiguration");
-                    context.Writer.Write(publicRequest.ComponentConfiguration);
-                }
-
-                if(publicRequest.IsSetComponentName())
-                {
-                    context.Writer.WritePropertyName("ComponentName");
-                    context.Writer.Write(publicRequest.ComponentName);
-                }
-
-                if(publicRequest.IsSetMonitor())
-                {
-                    context.Writer.WritePropertyName("Monitor");
-                    context.Writer.Write(publicRequest.Monitor.Value);
-                }
-
-                if(publicRequest.IsSetResourceGroupName())
-                {
-                    context.Writer.WritePropertyName("ResourceGroupName");
-                    context.Writer.Write(publicRequest.ResourceGroupName);
-                }
-
-                if(publicRequest.IsSetTier())
-                {
-                    context.Writer.WritePropertyName("Tier");
-                    context.Writer.Write(publicRequest.Tier);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

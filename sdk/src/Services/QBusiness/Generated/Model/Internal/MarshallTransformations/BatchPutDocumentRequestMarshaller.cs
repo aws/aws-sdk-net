@@ -67,43 +67,46 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                 throw new AmazonQBusinessException("Request object does not have required field IndexId set");
             request.AddPathResource("{indexId}", StringUtils.FromString(publicRequest.IndexId));
             request.ResourcePath = "/applications/{applicationId}/indices/{indexId}/documents";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDataSourceSyncId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("dataSourceSyncId");
-                    context.Writer.Write(publicRequest.DataSourceSyncId);
-                }
-
-                if(publicRequest.IsSetDocuments())
-                {
-                    context.Writer.WritePropertyName("documents");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDocumentsListValue in publicRequest.Documents)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDataSourceSyncId())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DocumentMarshaller.Instance;
-                        marshaller.Marshall(publicRequestDocumentsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("dataSourceSyncId");
+                        context.Writer.Write(publicRequest.DataSourceSyncId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDocuments())
+                    {
+                        context.Writer.WritePropertyName("documents");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDocumentsListValue in publicRequest.Documents)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = DocumentMarshaller.Instance;
+                            marshaller.Marshall(publicRequestDocumentsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("roleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("roleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

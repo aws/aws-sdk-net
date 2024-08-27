@@ -61,32 +61,35 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/pricingplan";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBundleNames())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("bundleNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestBundleNamesListValue in publicRequest.BundleNames)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBundleNames())
                     {
-                            context.Writer.Write(publicRequestBundleNamesListValue);
+                        context.Writer.WritePropertyName("bundleNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestBundleNamesListValue in publicRequest.BundleNames)
+                        {
+                                context.Writer.Write(publicRequestBundleNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetPricingMode())
+                    {
+                        context.Writer.WritePropertyName("pricingMode");
+                        context.Writer.Write(publicRequest.PricingMode);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPricingMode())
-                {
-                    context.Writer.WritePropertyName("pricingMode");
-                    context.Writer.Write(publicRequest.PricingMode);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

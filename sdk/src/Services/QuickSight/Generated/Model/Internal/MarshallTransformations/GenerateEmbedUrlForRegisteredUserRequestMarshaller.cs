@@ -64,49 +64,52 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field AwsAccountId set");
             request.AddPathResource("{AwsAccountId}", StringUtils.FromString(publicRequest.AwsAccountId));
             request.ResourcePath = "/accounts/{AwsAccountId}/embed-url/registered-user";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAllowedDomains())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AllowedDomains");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAllowedDomainsListValue in publicRequest.AllowedDomains)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAllowedDomains())
                     {
-                            context.Writer.Write(publicRequestAllowedDomainsListValue);
+                        context.Writer.WritePropertyName("AllowedDomains");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAllowedDomainsListValue in publicRequest.AllowedDomains)
+                        {
+                                context.Writer.Write(publicRequestAllowedDomainsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetExperienceConfiguration())
+                    {
+                        context.Writer.WritePropertyName("ExperienceConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RegisteredUserEmbeddingExperienceConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ExperienceConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSessionLifetimeInMinutes())
+                    {
+                        context.Writer.WritePropertyName("SessionLifetimeInMinutes");
+                        context.Writer.Write(publicRequest.SessionLifetimeInMinutes.Value);
+                    }
+
+                    if(publicRequest.IsSetUserArn())
+                    {
+                        context.Writer.WritePropertyName("UserArn");
+                        context.Writer.Write(publicRequest.UserArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetExperienceConfiguration())
-                {
-                    context.Writer.WritePropertyName("ExperienceConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RegisteredUserEmbeddingExperienceConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ExperienceConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSessionLifetimeInMinutes())
-                {
-                    context.Writer.WritePropertyName("SessionLifetimeInMinutes");
-                    context.Writer.Write(publicRequest.SessionLifetimeInMinutes.Value);
-                }
-
-                if(publicRequest.IsSetUserArn())
-                {
-                    context.Writer.WritePropertyName("UserArn");
-                    context.Writer.Write(publicRequest.UserArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

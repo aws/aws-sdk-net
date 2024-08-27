@@ -63,72 +63,75 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConformancePackInputParameters())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ConformancePackInputParameters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestConformancePackInputParametersListValue in publicRequest.ConformancePackInputParameters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConformancePackInputParameters())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("ConformancePackInputParameters");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestConformancePackInputParametersListValue in publicRequest.ConformancePackInputParameters)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = ConformancePackInputParameterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestConformancePackInputParametersListValue, context);
+                            var marshaller = ConformancePackInputParameterMarshaller.Instance;
+                            marshaller.Marshall(publicRequestConformancePackInputParametersListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDeliveryS3Bucket())
-                {
-                    context.Writer.WritePropertyName("DeliveryS3Bucket");
-                    context.Writer.Write(publicRequest.DeliveryS3Bucket);
-                }
-
-                if(publicRequest.IsSetDeliveryS3KeyPrefix())
-                {
-                    context.Writer.WritePropertyName("DeliveryS3KeyPrefix");
-                    context.Writer.Write(publicRequest.DeliveryS3KeyPrefix);
-                }
-
-                if(publicRequest.IsSetExcludedAccounts())
-                {
-                    context.Writer.WritePropertyName("ExcludedAccounts");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestExcludedAccountsListValue in publicRequest.ExcludedAccounts)
+                    if(publicRequest.IsSetDeliveryS3Bucket())
                     {
-                            context.Writer.Write(publicRequestExcludedAccountsListValue);
+                        context.Writer.WritePropertyName("DeliveryS3Bucket");
+                        context.Writer.Write(publicRequest.DeliveryS3Bucket);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDeliveryS3KeyPrefix())
+                    {
+                        context.Writer.WritePropertyName("DeliveryS3KeyPrefix");
+                        context.Writer.Write(publicRequest.DeliveryS3KeyPrefix);
+                    }
+
+                    if(publicRequest.IsSetExcludedAccounts())
+                    {
+                        context.Writer.WritePropertyName("ExcludedAccounts");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestExcludedAccountsListValue in publicRequest.ExcludedAccounts)
+                        {
+                                context.Writer.Write(publicRequestExcludedAccountsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetOrganizationConformancePackName())
+                    {
+                        context.Writer.WritePropertyName("OrganizationConformancePackName");
+                        context.Writer.Write(publicRequest.OrganizationConformancePackName);
+                    }
+
+                    if(publicRequest.IsSetTemplateBody())
+                    {
+                        context.Writer.WritePropertyName("TemplateBody");
+                        context.Writer.Write(publicRequest.TemplateBody);
+                    }
+
+                    if(publicRequest.IsSetTemplateS3Uri())
+                    {
+                        context.Writer.WritePropertyName("TemplateS3Uri");
+                        context.Writer.Write(publicRequest.TemplateS3Uri);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetOrganizationConformancePackName())
-                {
-                    context.Writer.WritePropertyName("OrganizationConformancePackName");
-                    context.Writer.Write(publicRequest.OrganizationConformancePackName);
-                }
-
-                if(publicRequest.IsSetTemplateBody())
-                {
-                    context.Writer.WritePropertyName("TemplateBody");
-                    context.Writer.Write(publicRequest.TemplateBody);
-                }
-
-                if(publicRequest.IsSetTemplateS3Uri())
-                {
-                    context.Writer.WritePropertyName("TemplateS3Uri");
-                    context.Writer.Write(publicRequest.TemplateS3Uri);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

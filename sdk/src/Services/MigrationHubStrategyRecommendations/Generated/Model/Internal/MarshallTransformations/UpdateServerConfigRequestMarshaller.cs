@@ -61,32 +61,35 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/update-server-config/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetServerId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("serverId");
-                    context.Writer.Write(publicRequest.ServerId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetServerId())
+                    {
+                        context.Writer.WritePropertyName("serverId");
+                        context.Writer.Write(publicRequest.ServerId);
+                    }
+
+                    if(publicRequest.IsSetStrategyOption())
+                    {
+                        context.Writer.WritePropertyName("strategyOption");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = StrategyOptionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.StrategyOption, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetStrategyOption())
-                {
-                    context.Writer.WritePropertyName("strategyOption");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = StrategyOptionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.StrategyOption, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

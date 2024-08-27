@@ -43,9 +43,9 @@ namespace Amazon.Glue.Model
         /// The timestamp after which statistics should be included in the results.
         /// </para>
         /// </summary>
-        public DateTime RecordedAfter
+        public DateTime? RecordedAfter
         {
-            get { return this._recordedAfter.GetValueOrDefault(); }
+            get { return this._recordedAfter; }
             set { this._recordedAfter = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.Glue.Model
         /// The timestamp before which statistics should be included in the results.
         /// </para>
         /// </summary>
-        public DateTime RecordedBefore
+        public DateTime? RecordedBefore
         {
-            get { return this._recordedBefore.GetValueOrDefault(); }
+            get { return this._recordedBefore; }
             set { this._recordedBefore = value; }
         }
 

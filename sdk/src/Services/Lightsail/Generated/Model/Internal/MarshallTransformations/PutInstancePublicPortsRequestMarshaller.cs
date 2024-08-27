@@ -63,37 +63,40 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetInstanceName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("instanceName");
-                    context.Writer.Write(publicRequest.InstanceName);
-                }
-
-                if(publicRequest.IsSetPortInfos())
-                {
-                    context.Writer.WritePropertyName("portInfos");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPortInfosListValue in publicRequest.PortInfos)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetInstanceName())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = PortInfoMarshaller.Instance;
-                        marshaller.Marshall(publicRequestPortInfosListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("instanceName");
+                        context.Writer.Write(publicRequest.InstanceName);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetPortInfos())
+                    {
+                        context.Writer.WritePropertyName("portInfos");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPortInfosListValue in publicRequest.PortInfos)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = PortInfoMarshaller.Instance;
+                            marshaller.Marshall(publicRequestPortInfosListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,32 +63,35 @@ namespace Amazon.BCMDataExports.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetExport())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Export");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetExport())
+                    {
+                        context.Writer.WritePropertyName("Export");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = ExportMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Export, context);
+                        var marshaller = ExportMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Export, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetExportArn())
+                    {
+                        context.Writer.WritePropertyName("ExportArn");
+                        context.Writer.Write(publicRequest.ExportArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetExportArn())
-                {
-                    context.Writer.WritePropertyName("ExportArn");
-                    context.Writer.Write(publicRequest.ExportArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -67,58 +67,61 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 throw new AmazonMediaTailorException("Request object does not have required field ProgramName set");
             request.AddPathResource("{ProgramName}", StringUtils.FromString(publicRequest.ProgramName));
             request.ResourcePath = "/channel/{ChannelName}/program/{ProgramName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAdBreaks())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AdBreaks");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAdBreaksListValue in publicRequest.AdBreaks)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAdBreaks())
                     {
+                        context.Writer.WritePropertyName("AdBreaks");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAdBreaksListValue in publicRequest.AdBreaks)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = AdBreakMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAdBreaksListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetAudienceMedia())
+                    {
+                        context.Writer.WritePropertyName("AudienceMedia");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAudienceMediaListValue in publicRequest.AudienceMedia)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = AudienceMediaMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAudienceMediaListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetScheduleConfiguration())
+                    {
+                        context.Writer.WritePropertyName("ScheduleConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = AdBreakMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAdBreaksListValue, context);
+                        var marshaller = UpdateProgramScheduleConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ScheduleConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetAudienceMedia())
-                {
-                    context.Writer.WritePropertyName("AudienceMedia");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAudienceMediaListValue in publicRequest.AudienceMedia)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AudienceMediaMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAudienceMediaListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetScheduleConfiguration())
-                {
-                    context.Writer.WritePropertyName("ScheduleConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UpdateProgramScheduleConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ScheduleConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

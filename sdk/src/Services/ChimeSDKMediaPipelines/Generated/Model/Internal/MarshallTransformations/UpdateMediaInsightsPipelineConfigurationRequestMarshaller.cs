@@ -64,48 +64,51 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
                 throw new AmazonChimeSDKMediaPipelinesException("Request object does not have required field Identifier set");
             request.AddPathResource("{identifier}", StringUtils.FromString(publicRequest.Identifier));
             request.ResourcePath = "/media-insights-pipeline-configurations/{identifier}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetElements())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Elements");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestElementsListValue in publicRequest.Elements)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetElements())
                     {
+                        context.Writer.WritePropertyName("Elements");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestElementsListValue in publicRequest.Elements)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = MediaInsightsPipelineConfigurationElementMarshaller.Instance;
+                            marshaller.Marshall(publicRequestElementsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetRealTimeAlertConfiguration())
+                    {
+                        context.Writer.WritePropertyName("RealTimeAlertConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = MediaInsightsPipelineConfigurationElementMarshaller.Instance;
-                        marshaller.Marshall(publicRequestElementsListValue, context);
+                        var marshaller = RealTimeAlertConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RealTimeAlertConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetResourceAccessRoleArn())
+                    {
+                        context.Writer.WritePropertyName("ResourceAccessRoleArn");
+                        context.Writer.Write(publicRequest.ResourceAccessRoleArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRealTimeAlertConfiguration())
-                {
-                    context.Writer.WritePropertyName("RealTimeAlertConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RealTimeAlertConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RealTimeAlertConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetResourceAccessRoleArn())
-                {
-                    context.Writer.WritePropertyName("ResourceAccessRoleArn");
-                    context.Writer.Write(publicRequest.ResourceAccessRoleArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

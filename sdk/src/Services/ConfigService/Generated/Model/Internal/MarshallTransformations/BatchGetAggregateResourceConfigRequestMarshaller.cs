@@ -63,37 +63,40 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConfigurationAggregatorName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ConfigurationAggregatorName");
-                    context.Writer.Write(publicRequest.ConfigurationAggregatorName);
-                }
-
-                if(publicRequest.IsSetResourceIdentifiers())
-                {
-                    context.Writer.WritePropertyName("ResourceIdentifiers");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestResourceIdentifiersListValue in publicRequest.ResourceIdentifiers)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConfigurationAggregatorName())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AggregateResourceIdentifierMarshaller.Instance;
-                        marshaller.Marshall(publicRequestResourceIdentifiersListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("ConfigurationAggregatorName");
+                        context.Writer.Write(publicRequest.ConfigurationAggregatorName);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetResourceIdentifiers())
+                    {
+                        context.Writer.WritePropertyName("ResourceIdentifiers");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestResourceIdentifiersListValue in publicRequest.ResourceIdentifiers)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = AggregateResourceIdentifierMarshaller.Instance;
+                            marshaller.Marshall(publicRequestResourceIdentifiersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

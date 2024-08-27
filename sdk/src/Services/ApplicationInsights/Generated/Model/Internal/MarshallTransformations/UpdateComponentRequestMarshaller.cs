@@ -63,44 +63,47 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetComponentName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ComponentName");
-                    context.Writer.Write(publicRequest.ComponentName);
-                }
-
-                if(publicRequest.IsSetNewComponentName())
-                {
-                    context.Writer.WritePropertyName("NewComponentName");
-                    context.Writer.Write(publicRequest.NewComponentName);
-                }
-
-                if(publicRequest.IsSetResourceGroupName())
-                {
-                    context.Writer.WritePropertyName("ResourceGroupName");
-                    context.Writer.Write(publicRequest.ResourceGroupName);
-                }
-
-                if(publicRequest.IsSetResourceList())
-                {
-                    context.Writer.WritePropertyName("ResourceList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestResourceListListValue in publicRequest.ResourceList)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetComponentName())
                     {
-                            context.Writer.Write(publicRequestResourceListListValue);
+                        context.Writer.WritePropertyName("ComponentName");
+                        context.Writer.Write(publicRequest.ComponentName);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetNewComponentName())
+                    {
+                        context.Writer.WritePropertyName("NewComponentName");
+                        context.Writer.Write(publicRequest.NewComponentName);
+                    }
+
+                    if(publicRequest.IsSetResourceGroupName())
+                    {
+                        context.Writer.WritePropertyName("ResourceGroupName");
+                        context.Writer.Write(publicRequest.ResourceGroupName);
+                    }
+
+                    if(publicRequest.IsSetResourceList())
+                    {
+                        context.Writer.WritePropertyName("ResourceList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestResourceListListValue in publicRequest.ResourceList)
+                        {
+                                context.Writer.Write(publicRequestResourceListListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

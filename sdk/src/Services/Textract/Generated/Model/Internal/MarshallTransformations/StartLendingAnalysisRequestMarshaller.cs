@@ -63,66 +63,69 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientRequestToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientRequestToken())
+                    {
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(publicRequest.ClientRequestToken);
+                    }
+
+                    if(publicRequest.IsSetDocumentLocation())
+                    {
+                        context.Writer.WritePropertyName("DocumentLocation");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DocumentLocationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DocumentLocation, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetJobTag())
+                    {
+                        context.Writer.WritePropertyName("JobTag");
+                        context.Writer.Write(publicRequest.JobTag);
+                    }
+
+                    if(publicRequest.IsSetKMSKeyId())
+                    {
+                        context.Writer.WritePropertyName("KMSKeyId");
+                        context.Writer.Write(publicRequest.KMSKeyId);
+                    }
+
+                    if(publicRequest.IsSetNotificationChannel())
+                    {
+                        context.Writer.WritePropertyName("NotificationChannel");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = NotificationChannelMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.NotificationChannel, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetOutputConfig())
+                    {
+                        context.Writer.WritePropertyName("OutputConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = OutputConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OutputConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDocumentLocation())
-                {
-                    context.Writer.WritePropertyName("DocumentLocation");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DocumentLocationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DocumentLocation, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetJobTag())
-                {
-                    context.Writer.WritePropertyName("JobTag");
-                    context.Writer.Write(publicRequest.JobTag);
-                }
-
-                if(publicRequest.IsSetKMSKeyId())
-                {
-                    context.Writer.WritePropertyName("KMSKeyId");
-                    context.Writer.Write(publicRequest.KMSKeyId);
-                }
-
-                if(publicRequest.IsSetNotificationChannel())
-                {
-                    context.Writer.WritePropertyName("NotificationChannel");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = NotificationChannelMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.NotificationChannel, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOutputConfig())
-                {
-                    context.Writer.WritePropertyName("OutputConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OutputConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OutputConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

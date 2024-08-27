@@ -64,33 +64,36 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 throw new AmazonMediaLiveException("Request object does not have required field InputDeviceId set");
             request.AddPathResource("{inputDeviceId}", StringUtils.FromString(publicRequest.InputDeviceId));
             request.ResourcePath = "/prod/inputDevices/{inputDeviceId}/transfer";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetTargetCustomerId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("targetCustomerId");
-                    context.Writer.Write(publicRequest.TargetCustomerId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetTargetCustomerId())
+                    {
+                        context.Writer.WritePropertyName("targetCustomerId");
+                        context.Writer.Write(publicRequest.TargetCustomerId);
+                    }
+
+                    if(publicRequest.IsSetTargetRegion())
+                    {
+                        context.Writer.WritePropertyName("targetRegion");
+                        context.Writer.Write(publicRequest.TargetRegion);
+                    }
+
+                    if(publicRequest.IsSetTransferMessage())
+                    {
+                        context.Writer.WritePropertyName("transferMessage");
+                        context.Writer.Write(publicRequest.TransferMessage);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTargetRegion())
-                {
-                    context.Writer.WritePropertyName("targetRegion");
-                    context.Writer.Write(publicRequest.TargetRegion);
-                }
-
-                if(publicRequest.IsSetTransferMessage())
-                {
-                    context.Writer.WritePropertyName("transferMessage");
-                    context.Writer.Write(publicRequest.TransferMessage);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

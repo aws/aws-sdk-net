@@ -64,90 +64,93 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 throw new AmazonBedrockAgentException("Request object does not have required field AgentId set");
             request.AddPathResource("{agentId}", StringUtils.FromString(publicRequest.AgentId));
             request.ResourcePath = "/agents/{agentId}/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAgentName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("agentName");
-                    context.Writer.Write(publicRequest.AgentName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAgentName())
+                    {
+                        context.Writer.WritePropertyName("agentName");
+                        context.Writer.Write(publicRequest.AgentName);
+                    }
+
+                    if(publicRequest.IsSetAgentResourceRoleArn())
+                    {
+                        context.Writer.WritePropertyName("agentResourceRoleArn");
+                        context.Writer.Write(publicRequest.AgentResourceRoleArn);
+                    }
+
+                    if(publicRequest.IsSetCustomerEncryptionKeyArn())
+                    {
+                        context.Writer.WritePropertyName("customerEncryptionKeyArn");
+                        context.Writer.Write(publicRequest.CustomerEncryptionKeyArn);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetFoundationModel())
+                    {
+                        context.Writer.WritePropertyName("foundationModel");
+                        context.Writer.Write(publicRequest.FoundationModel);
+                    }
+
+                    if(publicRequest.IsSetGuardrailConfiguration())
+                    {
+                        context.Writer.WritePropertyName("guardrailConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = GuardrailConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.GuardrailConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetIdleSessionTTLInSeconds())
+                    {
+                        context.Writer.WritePropertyName("idleSessionTTLInSeconds");
+                        context.Writer.Write(publicRequest.IdleSessionTTLInSeconds.Value);
+                    }
+
+                    if(publicRequest.IsSetInstruction())
+                    {
+                        context.Writer.WritePropertyName("instruction");
+                        context.Writer.Write(publicRequest.Instruction);
+                    }
+
+                    if(publicRequest.IsSetMemoryConfiguration())
+                    {
+                        context.Writer.WritePropertyName("memoryConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MemoryConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.MemoryConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetPromptOverrideConfiguration())
+                    {
+                        context.Writer.WritePropertyName("promptOverrideConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PromptOverrideConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.PromptOverrideConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetAgentResourceRoleArn())
-                {
-                    context.Writer.WritePropertyName("agentResourceRoleArn");
-                    context.Writer.Write(publicRequest.AgentResourceRoleArn);
-                }
-
-                if(publicRequest.IsSetCustomerEncryptionKeyArn())
-                {
-                    context.Writer.WritePropertyName("customerEncryptionKeyArn");
-                    context.Writer.Write(publicRequest.CustomerEncryptionKeyArn);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetFoundationModel())
-                {
-                    context.Writer.WritePropertyName("foundationModel");
-                    context.Writer.Write(publicRequest.FoundationModel);
-                }
-
-                if(publicRequest.IsSetGuardrailConfiguration())
-                {
-                    context.Writer.WritePropertyName("guardrailConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = GuardrailConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.GuardrailConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetIdleSessionTTLInSeconds())
-                {
-                    context.Writer.WritePropertyName("idleSessionTTLInSeconds");
-                    context.Writer.Write(publicRequest.IdleSessionTTLInSeconds.Value);
-                }
-
-                if(publicRequest.IsSetInstruction())
-                {
-                    context.Writer.WritePropertyName("instruction");
-                    context.Writer.Write(publicRequest.Instruction);
-                }
-
-                if(publicRequest.IsSetMemoryConfiguration())
-                {
-                    context.Writer.WritePropertyName("memoryConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MemoryConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.MemoryConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPromptOverrideConfiguration())
-                {
-                    context.Writer.WritePropertyName("promptOverrideConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PromptOverrideConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PromptOverrideConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

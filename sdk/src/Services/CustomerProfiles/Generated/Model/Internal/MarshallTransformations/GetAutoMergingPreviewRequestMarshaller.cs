@@ -64,50 +64,53 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 throw new AmazonCustomerProfilesException("Request object does not have required field DomainName set");
             request.AddPathResource("{DomainName}", StringUtils.FromString(publicRequest.DomainName));
             request.ResourcePath = "/domains/{DomainName}/identity-resolution-jobs/auto-merging-preview";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConflictResolution())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ConflictResolution");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ConflictResolutionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ConflictResolution, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetConsolidation())
-                {
-                    context.Writer.WritePropertyName("Consolidation");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ConsolidationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Consolidation, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMinAllowedConfidenceScoreForMerging())
-                {
-                    context.Writer.WritePropertyName("MinAllowedConfidenceScoreForMerging");
-                    if(StringUtils.IsSpecialDoubleValue(publicRequest.MinAllowedConfidenceScoreForMerging.Value))
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConflictResolution())
                     {
-                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.MinAllowedConfidenceScoreForMerging.Value));
+                        context.Writer.WritePropertyName("ConflictResolution");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ConflictResolutionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ConflictResolution, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    else
+
+                    if(publicRequest.IsSetConsolidation())
                     {
-                        context.Writer.Write(publicRequest.MinAllowedConfidenceScoreForMerging.Value);
+                        context.Writer.WritePropertyName("Consolidation");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ConsolidationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Consolidation, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
+
+                    if(publicRequest.IsSetMinAllowedConfidenceScoreForMerging())
+                    {
+                        context.Writer.WritePropertyName("MinAllowedConfidenceScoreForMerging");
+                        if(StringUtils.IsSpecialDoubleValue(publicRequest.MinAllowedConfidenceScoreForMerging.Value))
+                        {
+                            context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.MinAllowedConfidenceScoreForMerging.Value));
+                        }
+                        else
+                        {
+                            context.Writer.Write(publicRequest.MinAllowedConfidenceScoreForMerging.Value);
+                        }
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

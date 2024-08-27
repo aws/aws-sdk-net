@@ -64,26 +64,29 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                 throw new AmazonGreengrassException("Request object does not have required field ThingName set");
             request.AddPathResource("{ThingName}", StringUtils.FromString(publicRequest.ThingName));
             request.ResourcePath = "/greengrass/things/{ThingName}/runtimeconfig";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetTelemetryConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("TelemetryConfiguration");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetTelemetryConfiguration())
+                    {
+                        context.Writer.WritePropertyName("TelemetryConfiguration");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = TelemetryConfigurationUpdateMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TelemetryConfiguration, context);
+                        var marshaller = TelemetryConfigurationUpdateMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TelemetryConfiguration, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

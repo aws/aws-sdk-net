@@ -61,49 +61,52 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/thing-groups/updateThingGroupsForThing";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetOverrideDynamicGroups())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("overrideDynamicGroups");
-                    context.Writer.Write(publicRequest.OverrideDynamicGroups.Value);
-                }
-
-                if(publicRequest.IsSetThingGroupsToAdd())
-                {
-                    context.Writer.WritePropertyName("thingGroupsToAdd");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestThingGroupsToAddListValue in publicRequest.ThingGroupsToAdd)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetOverrideDynamicGroups())
                     {
-                            context.Writer.Write(publicRequestThingGroupsToAddListValue);
+                        context.Writer.WritePropertyName("overrideDynamicGroups");
+                        context.Writer.Write(publicRequest.OverrideDynamicGroups.Value);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetThingGroupsToRemove())
-                {
-                    context.Writer.WritePropertyName("thingGroupsToRemove");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestThingGroupsToRemoveListValue in publicRequest.ThingGroupsToRemove)
+                    if(publicRequest.IsSetThingGroupsToAdd())
                     {
-                            context.Writer.Write(publicRequestThingGroupsToRemoveListValue);
+                        context.Writer.WritePropertyName("thingGroupsToAdd");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestThingGroupsToAddListValue in publicRequest.ThingGroupsToAdd)
+                        {
+                                context.Writer.Write(publicRequestThingGroupsToAddListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetThingGroupsToRemove())
+                    {
+                        context.Writer.WritePropertyName("thingGroupsToRemove");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestThingGroupsToRemoveListValue in publicRequest.ThingGroupsToRemove)
+                        {
+                                context.Writer.Write(publicRequestThingGroupsToRemoveListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetThingName())
+                    {
+                        context.Writer.WritePropertyName("thingName");
+                        context.Writer.Write(publicRequest.ThingName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetThingName())
-                {
-                    context.Writer.WritePropertyName("thingName");
-                    context.Writer.Write(publicRequest.ThingName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

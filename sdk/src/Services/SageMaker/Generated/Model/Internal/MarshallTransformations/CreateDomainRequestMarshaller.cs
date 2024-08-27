@@ -63,117 +63,120 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAppNetworkAccessType())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AppNetworkAccessType");
-                    context.Writer.Write(publicRequest.AppNetworkAccessType);
-                }
-
-                if(publicRequest.IsSetAppSecurityGroupManagement())
-                {
-                    context.Writer.WritePropertyName("AppSecurityGroupManagement");
-                    context.Writer.Write(publicRequest.AppSecurityGroupManagement);
-                }
-
-                if(publicRequest.IsSetAuthMode())
-                {
-                    context.Writer.WritePropertyName("AuthMode");
-                    context.Writer.Write(publicRequest.AuthMode);
-                }
-
-                if(publicRequest.IsSetDefaultSpaceSettings())
-                {
-                    context.Writer.WritePropertyName("DefaultSpaceSettings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DefaultSpaceSettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DefaultSpaceSettings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDefaultUserSettings())
-                {
-                    context.Writer.WritePropertyName("DefaultUserSettings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UserSettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DefaultUserSettings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDomainName())
-                {
-                    context.Writer.WritePropertyName("DomainName");
-                    context.Writer.Write(publicRequest.DomainName);
-                }
-
-                if(publicRequest.IsSetDomainSettings())
-                {
-                    context.Writer.WritePropertyName("DomainSettings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DomainSettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DomainSettings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetHomeEfsFileSystemKmsKeyId())
-                {
-                    context.Writer.WritePropertyName("HomeEfsFileSystemKmsKeyId");
-                    context.Writer.Write(publicRequest.HomeEfsFileSystemKmsKeyId);
-                }
-
-                if(publicRequest.IsSetKmsKeyId())
-                {
-                    context.Writer.WritePropertyName("KmsKeyId");
-                    context.Writer.Write(publicRequest.KmsKeyId);
-                }
-
-                if(publicRequest.IsSetSubnetIds())
-                {
-                    context.Writer.WritePropertyName("SubnetIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSubnetIdsListValue in publicRequest.SubnetIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAppNetworkAccessType())
                     {
-                            context.Writer.Write(publicRequestSubnetIdsListValue);
+                        context.Writer.WritePropertyName("AppNetworkAccessType");
+                        context.Writer.Write(publicRequest.AppNetworkAccessType);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetAppSecurityGroupManagement())
                     {
+                        context.Writer.WritePropertyName("AppSecurityGroupManagement");
+                        context.Writer.Write(publicRequest.AppSecurityGroupManagement);
+                    }
+
+                    if(publicRequest.IsSetAuthMode())
+                    {
+                        context.Writer.WritePropertyName("AuthMode");
+                        context.Writer.Write(publicRequest.AuthMode);
+                    }
+
+                    if(publicRequest.IsSetDefaultSpaceSettings())
+                    {
+                        context.Writer.WritePropertyName("DefaultSpaceSettings");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = DefaultSpaceSettingsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DefaultSpaceSettings, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDefaultUserSettings())
+                    {
+                        context.Writer.WritePropertyName("DefaultUserSettings");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = UserSettingsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DefaultUserSettings, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDomainName())
+                    {
+                        context.Writer.WritePropertyName("DomainName");
+                        context.Writer.Write(publicRequest.DomainName);
+                    }
+
+                    if(publicRequest.IsSetDomainSettings())
+                    {
+                        context.Writer.WritePropertyName("DomainSettings");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DomainSettingsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DomainSettings, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetHomeEfsFileSystemKmsKeyId())
+                    {
+                        context.Writer.WritePropertyName("HomeEfsFileSystemKmsKeyId");
+                        context.Writer.Write(publicRequest.HomeEfsFileSystemKmsKeyId);
+                    }
+
+                    if(publicRequest.IsSetKmsKeyId())
+                    {
+                        context.Writer.WritePropertyName("KmsKeyId");
+                        context.Writer.Write(publicRequest.KmsKeyId);
+                    }
+
+                    if(publicRequest.IsSetSubnetIds())
+                    {
+                        context.Writer.WritePropertyName("SubnetIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSubnetIdsListValue in publicRequest.SubnetIds)
+                        {
+                                context.Writer.Write(publicRequestSubnetIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetVpcId())
+                    {
+                        context.Writer.WritePropertyName("VpcId");
+                        context.Writer.Write(publicRequest.VpcId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetVpcId())
-                {
-                    context.Writer.WritePropertyName("VpcId");
-                    context.Writer.Write(publicRequest.VpcId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

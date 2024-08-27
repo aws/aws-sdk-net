@@ -63,81 +63,84 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAggregators())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Aggregators");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAggregatorsListValue in publicRequest.Aggregators)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAggregators())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("Aggregators");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAggregatorsListValue in publicRequest.Aggregators)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = OpsAggregatorMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAggregatorsListValue, context);
+                            var marshaller = OpsAggregatorMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAggregatorsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetFilters())
-                {
-                    context.Writer.WritePropertyName("Filters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFiltersListValue in publicRequest.Filters)
+                    if(publicRequest.IsSetFilters())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("Filters");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFiltersListValue in publicRequest.Filters)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = OpsFilterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFiltersListValue, context);
+                            var marshaller = OpsFilterMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFiltersListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetResultAttributes())
-                {
-                    context.Writer.WritePropertyName("ResultAttributes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestResultAttributesListValue in publicRequest.ResultAttributes)
+                    if(publicRequest.IsSetMaxResults())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = OpsResultAttributeMarshaller.Instance;
-                        marshaller.Marshall(publicRequestResultAttributesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetResultAttributes())
+                    {
+                        context.Writer.WritePropertyName("ResultAttributes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestResultAttributesListValue in publicRequest.ResultAttributes)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = OpsResultAttributeMarshaller.Instance;
+                            marshaller.Marshall(publicRequestResultAttributesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSyncName())
+                    {
+                        context.Writer.WritePropertyName("SyncName");
+                        context.Writer.Write(publicRequest.SyncName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSyncName())
-                {
-                    context.Writer.WritePropertyName("SyncName");
-                    context.Writer.Write(publicRequest.SyncName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

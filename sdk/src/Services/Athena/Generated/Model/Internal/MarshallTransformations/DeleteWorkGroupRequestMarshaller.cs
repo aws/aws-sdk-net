@@ -63,27 +63,30 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetRecursiveDeleteOption())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("RecursiveDeleteOption");
-                    context.Writer.Write(publicRequest.RecursiveDeleteOption.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetRecursiveDeleteOption())
+                    {
+                        context.Writer.WritePropertyName("RecursiveDeleteOption");
+                        context.Writer.Write(publicRequest.RecursiveDeleteOption.Value);
+                    }
+
+                    if(publicRequest.IsSetWorkGroup())
+                    {
+                        context.Writer.WritePropertyName("WorkGroup");
+                        context.Writer.Write(publicRequest.WorkGroup);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetWorkGroup())
-                {
-                    context.Writer.WritePropertyName("WorkGroup");
-                    context.Writer.Write(publicRequest.WorkGroup);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

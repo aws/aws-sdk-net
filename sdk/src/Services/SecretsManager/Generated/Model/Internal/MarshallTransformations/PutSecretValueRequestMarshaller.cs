@@ -63,61 +63,64 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientRequestToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetRotationToken())
-                {
-                    context.Writer.WritePropertyName("RotationToken");
-                    context.Writer.Write(publicRequest.RotationToken);
-                }
-
-                if(publicRequest.IsSetSecretBinary())
-                {
-                    context.Writer.WritePropertyName("SecretBinary");
-                    context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.SecretBinary));
-                }
-
-                if(publicRequest.IsSetSecretId())
-                {
-                    context.Writer.WritePropertyName("SecretId");
-                    context.Writer.Write(publicRequest.SecretId);
-                }
-
-                if(publicRequest.IsSetSecretString())
-                {
-                    context.Writer.WritePropertyName("SecretString");
-                    context.Writer.Write(publicRequest.SecretString);
-                }
-
-                if(publicRequest.IsSetVersionStages())
-                {
-                    context.Writer.WritePropertyName("VersionStages");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestVersionStagesListValue in publicRequest.VersionStages)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientRequestToken())
                     {
-                            context.Writer.Write(publicRequestVersionStagesListValue);
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(publicRequest.ClientRequestToken);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    else if(!(publicRequest.IsSetClientRequestToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetRotationToken())
+                    {
+                        context.Writer.WritePropertyName("RotationToken");
+                        context.Writer.Write(publicRequest.RotationToken);
+                    }
+
+                    if(publicRequest.IsSetSecretBinary())
+                    {
+                        context.Writer.WritePropertyName("SecretBinary");
+                        context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.SecretBinary));
+                    }
+
+                    if(publicRequest.IsSetSecretId())
+                    {
+                        context.Writer.WritePropertyName("SecretId");
+                        context.Writer.Write(publicRequest.SecretId);
+                    }
+
+                    if(publicRequest.IsSetSecretString())
+                    {
+                        context.Writer.WritePropertyName("SecretString");
+                        context.Writer.Write(publicRequest.SecretString);
+                    }
+
+                    if(publicRequest.IsSetVersionStages())
+                    {
+                        context.Writer.WritePropertyName("VersionStages");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestVersionStagesListValue in publicRequest.VersionStages)
+                        {
+                                context.Writer.Write(publicRequestVersionStagesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

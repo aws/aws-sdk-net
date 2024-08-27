@@ -63,78 +63,81 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAttributeNames())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AttributeNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAttributeNamesListValue in publicRequest.AttributeNames)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAttributeNames())
                     {
-                            context.Writer.Write(publicRequestAttributeNamesListValue);
+                        context.Writer.WritePropertyName("AttributeNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAttributeNamesListValue in publicRequest.AttributeNames)
+                        {
+                                context.Writer.Write(publicRequestAttributeNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetMaxNumberOfMessages())
-                {
-                    context.Writer.WritePropertyName("MaxNumberOfMessages");
-                    context.Writer.Write(publicRequest.MaxNumberOfMessages.Value);
-                }
-
-                if(publicRequest.IsSetMessageAttributeNames())
-                {
-                    context.Writer.WritePropertyName("MessageAttributeNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMessageAttributeNamesListValue in publicRequest.MessageAttributeNames)
+                    if(publicRequest.IsSetMaxNumberOfMessages())
                     {
-                            context.Writer.Write(publicRequestMessageAttributeNamesListValue);
+                        context.Writer.WritePropertyName("MaxNumberOfMessages");
+                        context.Writer.Write(publicRequest.MaxNumberOfMessages.Value);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetMessageSystemAttributeNames())
-                {
-                    context.Writer.WritePropertyName("MessageSystemAttributeNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMessageSystemAttributeNamesListValue in publicRequest.MessageSystemAttributeNames)
+                    if(publicRequest.IsSetMessageAttributeNames())
                     {
-                            context.Writer.Write(publicRequestMessageSystemAttributeNamesListValue);
+                        context.Writer.WritePropertyName("MessageAttributeNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMessageAttributeNamesListValue in publicRequest.MessageAttributeNames)
+                        {
+                                context.Writer.Write(publicRequestMessageAttributeNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetMessageSystemAttributeNames())
+                    {
+                        context.Writer.WritePropertyName("MessageSystemAttributeNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMessageSystemAttributeNamesListValue in publicRequest.MessageSystemAttributeNames)
+                        {
+                                context.Writer.Write(publicRequestMessageSystemAttributeNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetQueueUrl())
+                    {
+                        context.Writer.WritePropertyName("QueueUrl");
+                        context.Writer.Write(publicRequest.QueueUrl);
+                    }
+
+                    if(publicRequest.IsSetReceiveRequestAttemptId())
+                    {
+                        context.Writer.WritePropertyName("ReceiveRequestAttemptId");
+                        context.Writer.Write(publicRequest.ReceiveRequestAttemptId);
+                    }
+
+                    if(publicRequest.IsSetVisibilityTimeout())
+                    {
+                        context.Writer.WritePropertyName("VisibilityTimeout");
+                        context.Writer.Write(publicRequest.VisibilityTimeout.Value);
+                    }
+
+                    if(publicRequest.IsSetWaitTimeSeconds())
+                    {
+                        context.Writer.WritePropertyName("WaitTimeSeconds");
+                        context.Writer.Write(publicRequest.WaitTimeSeconds.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetQueueUrl())
-                {
-                    context.Writer.WritePropertyName("QueueUrl");
-                    context.Writer.Write(publicRequest.QueueUrl);
-                }
-
-                if(publicRequest.IsSetReceiveRequestAttemptId())
-                {
-                    context.Writer.WritePropertyName("ReceiveRequestAttemptId");
-                    context.Writer.Write(publicRequest.ReceiveRequestAttemptId);
-                }
-
-                if(publicRequest.IsSetVisibilityTimeout())
-                {
-                    context.Writer.WritePropertyName("VisibilityTimeout");
-                    context.Writer.Write(publicRequest.VisibilityTimeout.Value);
-                }
-
-                if(publicRequest.IsSetWaitTimeSeconds())
-                {
-                    context.Writer.WritePropertyName("WaitTimeSeconds");
-                    context.Writer.Write(publicRequest.WaitTimeSeconds.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

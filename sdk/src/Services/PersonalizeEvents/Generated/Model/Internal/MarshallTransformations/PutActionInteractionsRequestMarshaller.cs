@@ -61,37 +61,40 @@ namespace Amazon.PersonalizeEvents.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/action-interactions";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetActionInteractions())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("actionInteractions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestActionInteractionsListValue in publicRequest.ActionInteractions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetActionInteractions())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("actionInteractions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestActionInteractionsListValue in publicRequest.ActionInteractions)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = ActionInteractionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestActionInteractionsListValue, context);
+                            var marshaller = ActionInteractionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestActionInteractionsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTrackingId())
+                    {
+                        context.Writer.WritePropertyName("trackingId");
+                        context.Writer.Write(publicRequest.TrackingId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTrackingId())
-                {
-                    context.Writer.WritePropertyName("trackingId");
-                    context.Writer.Write(publicRequest.TrackingId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

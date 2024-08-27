@@ -77,9 +77,9 @@ namespace Amazon.Bedrock.Model
         /// The time at which the batch inference job ended.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -133,9 +133,9 @@ namespace Amazon.Bedrock.Model
         /// The time at which the batch inference job times or timed out.
         /// </para>
         /// </summary>
-        public DateTime JobExpirationTime
+        public DateTime? JobExpirationTime
         {
-            get { return this._jobExpirationTime.GetValueOrDefault(); }
+            get { return this._jobExpirationTime; }
             set { this._jobExpirationTime = value; }
         }
 
@@ -170,9 +170,9 @@ namespace Amazon.Bedrock.Model
         /// The time at which the batch inference job was last modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 
@@ -287,9 +287,9 @@ namespace Amazon.Bedrock.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime SubmitTime
+        public DateTime? SubmitTime
         {
-            get { return this._submitTime.GetValueOrDefault(); }
+            get { return this._submitTime; }
             set { this._submitTime = value; }
         }
 
@@ -306,9 +306,9 @@ namespace Amazon.Bedrock.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=24, Max=168)]
-        public int TimeoutDurationInHours
+        public int? TimeoutDurationInHours
         {
-            get { return this._timeoutDurationInHours.GetValueOrDefault(); }
+            get { return this._timeoutDurationInHours; }
             set { this._timeoutDurationInHours = value; }
         }
 

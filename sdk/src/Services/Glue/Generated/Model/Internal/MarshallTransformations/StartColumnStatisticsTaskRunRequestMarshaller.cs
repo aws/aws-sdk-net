@@ -63,69 +63,72 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCatalogID())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CatalogID");
-                    context.Writer.Write(publicRequest.CatalogID);
-                }
-
-                if(publicRequest.IsSetColumnNameList())
-                {
-                    context.Writer.WritePropertyName("ColumnNameList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestColumnNameListListValue in publicRequest.ColumnNameList)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCatalogID())
                     {
-                            context.Writer.Write(publicRequestColumnNameListListValue);
+                        context.Writer.WritePropertyName("CatalogID");
+                        context.Writer.Write(publicRequest.CatalogID);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDatabaseName())
-                {
-                    context.Writer.WritePropertyName("DatabaseName");
-                    context.Writer.Write(publicRequest.DatabaseName);
-                }
-
-                if(publicRequest.IsSetRole())
-                {
-                    context.Writer.WritePropertyName("Role");
-                    context.Writer.Write(publicRequest.Role);
-                }
-
-                if(publicRequest.IsSetSampleSize())
-                {
-                    context.Writer.WritePropertyName("SampleSize");
-                    if(StringUtils.IsSpecialDoubleValue(publicRequest.SampleSize.Value))
+                    if(publicRequest.IsSetColumnNameList())
                     {
-                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.SampleSize.Value));
+                        context.Writer.WritePropertyName("ColumnNameList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestColumnNameListListValue in publicRequest.ColumnNameList)
+                        {
+                                context.Writer.Write(publicRequestColumnNameListListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    else
+
+                    if(publicRequest.IsSetDatabaseName())
                     {
-                        context.Writer.Write(publicRequest.SampleSize.Value);
+                        context.Writer.WritePropertyName("DatabaseName");
+                        context.Writer.Write(publicRequest.DatabaseName);
                     }
+
+                    if(publicRequest.IsSetRole())
+                    {
+                        context.Writer.WritePropertyName("Role");
+                        context.Writer.Write(publicRequest.Role);
+                    }
+
+                    if(publicRequest.IsSetSampleSize())
+                    {
+                        context.Writer.WritePropertyName("SampleSize");
+                        if(StringUtils.IsSpecialDoubleValue(publicRequest.SampleSize.Value))
+                        {
+                            context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.SampleSize.Value));
+                        }
+                        else
+                        {
+                            context.Writer.Write(publicRequest.SampleSize.Value);
+                        }
+                    }
+
+                    if(publicRequest.IsSetSecurityConfiguration())
+                    {
+                        context.Writer.WritePropertyName("SecurityConfiguration");
+                        context.Writer.Write(publicRequest.SecurityConfiguration);
+                    }
+
+                    if(publicRequest.IsSetTableName())
+                    {
+                        context.Writer.WritePropertyName("TableName");
+                        context.Writer.Write(publicRequest.TableName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSecurityConfiguration())
-                {
-                    context.Writer.WritePropertyName("SecurityConfiguration");
-                    context.Writer.Write(publicRequest.SecurityConfiguration);
-                }
-
-                if(publicRequest.IsSetTableName())
-                {
-                    context.Writer.WritePropertyName("TableName");
-                    context.Writer.Write(publicRequest.TableName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -67,32 +67,35 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
                 throw new AmazonManagedBlockchainException("Request object does not have required field NodeId set");
             request.AddPathResource("{nodeId}", StringUtils.FromString(publicRequest.NodeId));
             request.ResourcePath = "/networks/{networkId}/nodes/{nodeId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLogPublishingConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("LogPublishingConfiguration");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetLogPublishingConfiguration())
+                    {
+                        context.Writer.WritePropertyName("LogPublishingConfiguration");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = NodeLogPublishingConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LogPublishingConfiguration, context);
+                        var marshaller = NodeLogPublishingConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.LogPublishingConfiguration, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetMemberId())
+                    {
+                        context.Writer.WritePropertyName("MemberId");
+                        context.Writer.Write(publicRequest.MemberId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMemberId())
-                {
-                    context.Writer.WritePropertyName("MemberId");
-                    context.Writer.Write(publicRequest.MemberId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

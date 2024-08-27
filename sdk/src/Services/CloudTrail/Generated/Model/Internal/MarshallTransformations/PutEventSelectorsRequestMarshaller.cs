@@ -63,53 +63,56 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAdvancedEventSelectors())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AdvancedEventSelectors");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAdvancedEventSelectorsListValue in publicRequest.AdvancedEventSelectors)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAdvancedEventSelectors())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("AdvancedEventSelectors");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAdvancedEventSelectorsListValue in publicRequest.AdvancedEventSelectors)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = AdvancedEventSelectorMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAdvancedEventSelectorsListValue, context);
+                            var marshaller = AdvancedEventSelectorMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAdvancedEventSelectorsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetEventSelectors())
-                {
-                    context.Writer.WritePropertyName("EventSelectors");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEventSelectorsListValue in publicRequest.EventSelectors)
+                    if(publicRequest.IsSetEventSelectors())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("EventSelectors");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestEventSelectorsListValue in publicRequest.EventSelectors)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = EventSelectorMarshaller.Instance;
-                        marshaller.Marshall(publicRequestEventSelectorsListValue, context);
+                            var marshaller = EventSelectorMarshaller.Instance;
+                            marshaller.Marshall(publicRequestEventSelectorsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTrailName())
+                    {
+                        context.Writer.WritePropertyName("TrailName");
+                        context.Writer.Write(publicRequest.TrailName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTrailName())
-                {
-                    context.Writer.WritePropertyName("TrailName");
-                    context.Writer.Write(publicRequest.TrailName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

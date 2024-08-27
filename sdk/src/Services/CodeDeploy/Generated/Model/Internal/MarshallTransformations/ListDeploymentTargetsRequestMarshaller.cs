@@ -63,46 +63,49 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeploymentId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("deploymentId");
-                    context.Writer.Write(publicRequest.DeploymentId);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetTargetFilters())
-                {
-                    context.Writer.WritePropertyName("targetFilters");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTargetFiltersKvp in publicRequest.TargetFilters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDeploymentId())
                     {
-                        context.Writer.WritePropertyName(publicRequestTargetFiltersKvp.Key);
-                        var publicRequestTargetFiltersValue = publicRequestTargetFiltersKvp.Value;
-
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTargetFiltersValueListValue in publicRequestTargetFiltersValue)
-                        {
-                                context.Writer.Write(publicRequestTargetFiltersValueListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
+                        context.Writer.WritePropertyName("deploymentId");
+                        context.Writer.Write(publicRequest.DeploymentId);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetTargetFilters())
+                    {
+                        context.Writer.WritePropertyName("targetFilters");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTargetFiltersKvp in publicRequest.TargetFilters)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTargetFiltersKvp.Key);
+                            var publicRequestTargetFiltersValue = publicRequestTargetFiltersKvp.Value;
+
+                            context.Writer.WriteArrayStart();
+                            foreach(var publicRequestTargetFiltersValueListValue in publicRequestTargetFiltersValue)
+                            {
+                                    context.Writer.Write(publicRequestTargetFiltersValueListValue);
+                            }
+                            context.Writer.WriteArrayEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

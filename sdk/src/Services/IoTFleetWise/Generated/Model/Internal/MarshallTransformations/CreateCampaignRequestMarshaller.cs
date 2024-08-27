@@ -63,151 +63,154 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCollectionScheme())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("collectionScheme");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CollectionSchemeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CollectionScheme, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetCompression())
-                {
-                    context.Writer.WritePropertyName("compression");
-                    context.Writer.Write(publicRequest.Compression);
-                }
-
-                if(publicRequest.IsSetDataDestinationConfigs())
-                {
-                    context.Writer.WritePropertyName("dataDestinationConfigs");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDataDestinationConfigsListValue in publicRequest.DataDestinationConfigs)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCollectionScheme())
                     {
+                        context.Writer.WritePropertyName("collectionScheme");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = DataDestinationConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequestDataDestinationConfigsListValue, context);
+                        var marshaller = CollectionSchemeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CollectionScheme, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDataExtraDimensions())
-                {
-                    context.Writer.WritePropertyName("dataExtraDimensions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDataExtraDimensionsListValue in publicRequest.DataExtraDimensions)
+                    if(publicRequest.IsSetCompression())
                     {
-                            context.Writer.Write(publicRequestDataExtraDimensionsListValue);
+                        context.Writer.WritePropertyName("compression");
+                        context.Writer.Write(publicRequest.Compression);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetDiagnosticsMode())
-                {
-                    context.Writer.WritePropertyName("diagnosticsMode");
-                    context.Writer.Write(publicRequest.DiagnosticsMode);
-                }
-
-                if(publicRequest.IsSetExpiryTime())
-                {
-                    context.Writer.WritePropertyName("expiryTime");
-                    context.Writer.Write(publicRequest.ExpiryTime.Value);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetPostTriggerCollectionDuration())
-                {
-                    context.Writer.WritePropertyName("postTriggerCollectionDuration");
-                    context.Writer.Write(publicRequest.PostTriggerCollectionDuration.Value);
-                }
-
-                if(publicRequest.IsSetPriority())
-                {
-                    context.Writer.WritePropertyName("priority");
-                    context.Writer.Write(publicRequest.Priority.Value);
-                }
-
-                if(publicRequest.IsSetSignalCatalogArn())
-                {
-                    context.Writer.WritePropertyName("signalCatalogArn");
-                    context.Writer.Write(publicRequest.SignalCatalogArn);
-                }
-
-                if(publicRequest.IsSetSignalsToCollect())
-                {
-                    context.Writer.WritePropertyName("signalsToCollect");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSignalsToCollectListValue in publicRequest.SignalsToCollect)
+                    if(publicRequest.IsSetDataDestinationConfigs())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("dataDestinationConfigs");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDataDestinationConfigsListValue in publicRequest.DataDestinationConfigs)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = SignalInformationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSignalsToCollectListValue, context);
+                            var marshaller = DataDestinationConfigMarshaller.Instance;
+                            marshaller.Marshall(publicRequestDataDestinationConfigsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetSpoolingMode())
-                {
-                    context.Writer.WritePropertyName("spoolingMode");
-                    context.Writer.Write(publicRequest.SpoolingMode);
-                }
-
-                if(publicRequest.IsSetStartTime())
-                {
-                    context.Writer.WritePropertyName("startTime");
-                    context.Writer.Write(publicRequest.StartTime.Value);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetDataExtraDimensions())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("dataExtraDimensions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDataExtraDimensionsListValue in publicRequest.DataExtraDimensions)
+                        {
+                                context.Writer.Write(publicRequestDataExtraDimensionsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetDiagnosticsMode())
+                    {
+                        context.Writer.WritePropertyName("diagnosticsMode");
+                        context.Writer.Write(publicRequest.DiagnosticsMode);
+                    }
+
+                    if(publicRequest.IsSetExpiryTime())
+                    {
+                        context.Writer.WritePropertyName("expiryTime");
+                        context.Writer.Write(publicRequest.ExpiryTime.Value);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetPostTriggerCollectionDuration())
+                    {
+                        context.Writer.WritePropertyName("postTriggerCollectionDuration");
+                        context.Writer.Write(publicRequest.PostTriggerCollectionDuration.Value);
+                    }
+
+                    if(publicRequest.IsSetPriority())
+                    {
+                        context.Writer.WritePropertyName("priority");
+                        context.Writer.Write(publicRequest.Priority.Value);
+                    }
+
+                    if(publicRequest.IsSetSignalCatalogArn())
+                    {
+                        context.Writer.WritePropertyName("signalCatalogArn");
+                        context.Writer.Write(publicRequest.SignalCatalogArn);
+                    }
+
+                    if(publicRequest.IsSetSignalsToCollect())
+                    {
+                        context.Writer.WritePropertyName("signalsToCollect");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSignalsToCollectListValue in publicRequest.SignalsToCollect)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = SignalInformationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSignalsToCollectListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSpoolingMode())
+                    {
+                        context.Writer.WritePropertyName("spoolingMode");
+                        context.Writer.Write(publicRequest.SpoolingMode);
+                    }
+
+                    if(publicRequest.IsSetStartTime())
+                    {
+                        context.Writer.WritePropertyName("startTime");
+                        context.Writer.Write(publicRequest.StartTime.Value);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTargetArn())
+                    {
+                        context.Writer.WritePropertyName("targetArn");
+                        context.Writer.Write(publicRequest.TargetArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTargetArn())
-                {
-                    context.Writer.WritePropertyName("targetArn");
-                    context.Writer.Write(publicRequest.TargetArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

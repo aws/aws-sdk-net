@@ -43,9 +43,9 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// Contains information about the input tokens from the foundation model usage.
         /// </para>
         /// </summary>
-        public int InputTokens
+        public int? InputTokens
         {
-            get { return this._inputTokens.GetValueOrDefault(); }
+            get { return this._inputTokens; }
             set { this._inputTokens = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// Contains information about the output tokens from the foundation model usage.
         /// </para>
         /// </summary>
-        public int OutputTokens
+        public int? OutputTokens
         {
-            get { return this._outputTokens.GetValueOrDefault(); }
+            get { return this._outputTokens; }
             set { this._outputTokens = value; }
         }
 

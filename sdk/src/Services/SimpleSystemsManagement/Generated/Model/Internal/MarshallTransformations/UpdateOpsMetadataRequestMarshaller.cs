@@ -63,51 +63,54 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetKeysToDelete())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("KeysToDelete");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestKeysToDeleteListValue in publicRequest.KeysToDelete)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetKeysToDelete())
                     {
-                            context.Writer.Write(publicRequestKeysToDeleteListValue);
+                        context.Writer.WritePropertyName("KeysToDelete");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestKeysToDeleteListValue in publicRequest.KeysToDelete)
+                        {
+                                context.Writer.Write(publicRequestKeysToDeleteListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetMetadataToUpdate())
-                {
-                    context.Writer.WritePropertyName("MetadataToUpdate");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestMetadataToUpdateKvp in publicRequest.MetadataToUpdate)
+                    if(publicRequest.IsSetMetadataToUpdate())
                     {
-                        context.Writer.WritePropertyName(publicRequestMetadataToUpdateKvp.Key);
-                        var publicRequestMetadataToUpdateValue = publicRequestMetadataToUpdateKvp.Value;
-
+                        context.Writer.WritePropertyName("MetadataToUpdate");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestMetadataToUpdateKvp in publicRequest.MetadataToUpdate)
+                        {
+                            context.Writer.WritePropertyName(publicRequestMetadataToUpdateKvp.Key);
+                            var publicRequestMetadataToUpdateValue = publicRequestMetadataToUpdateKvp.Value;
 
-                        var marshaller = MetadataValueMarshaller.Instance;
-                        marshaller.Marshall(publicRequestMetadataToUpdateValue, context);
+                            context.Writer.WriteObjectStart();
 
+                            var marshaller = MetadataValueMarshaller.Instance;
+                            marshaller.Marshall(publicRequestMetadataToUpdateValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetOpsMetadataArn())
+                    {
+                        context.Writer.WritePropertyName("OpsMetadataArn");
+                        context.Writer.Write(publicRequest.OpsMetadataArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetOpsMetadataArn())
-                {
-                    context.Writer.WritePropertyName("OpsMetadataArn");
-                    context.Writer.Write(publicRequest.OpsMetadataArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

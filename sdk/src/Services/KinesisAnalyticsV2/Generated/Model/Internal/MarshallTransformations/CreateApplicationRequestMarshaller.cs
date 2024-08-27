@@ -63,88 +63,91 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApplicationConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ApplicationConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ApplicationConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ApplicationConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetApplicationDescription())
-                {
-                    context.Writer.WritePropertyName("ApplicationDescription");
-                    context.Writer.Write(publicRequest.ApplicationDescription);
-                }
-
-                if(publicRequest.IsSetApplicationMode())
-                {
-                    context.Writer.WritePropertyName("ApplicationMode");
-                    context.Writer.Write(publicRequest.ApplicationMode);
-                }
-
-                if(publicRequest.IsSetApplicationName())
-                {
-                    context.Writer.WritePropertyName("ApplicationName");
-                    context.Writer.Write(publicRequest.ApplicationName);
-                }
-
-                if(publicRequest.IsSetCloudWatchLoggingOptions())
-                {
-                    context.Writer.WritePropertyName("CloudWatchLoggingOptions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCloudWatchLoggingOptionsListValue in publicRequest.CloudWatchLoggingOptions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApplicationConfiguration())
                     {
+                        context.Writer.WritePropertyName("ApplicationConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = CloudWatchLoggingOptionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestCloudWatchLoggingOptionsListValue, context);
+                        var marshaller = ApplicationConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ApplicationConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetRuntimeEnvironment())
-                {
-                    context.Writer.WritePropertyName("RuntimeEnvironment");
-                    context.Writer.Write(publicRequest.RuntimeEnvironment);
-                }
-
-                if(publicRequest.IsSetServiceExecutionRole())
-                {
-                    context.Writer.WritePropertyName("ServiceExecutionRole");
-                    context.Writer.Write(publicRequest.ServiceExecutionRole);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetApplicationDescription())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("ApplicationDescription");
+                        context.Writer.Write(publicRequest.ApplicationDescription);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetApplicationMode())
+                    {
+                        context.Writer.WritePropertyName("ApplicationMode");
+                        context.Writer.Write(publicRequest.ApplicationMode);
+                    }
+
+                    if(publicRequest.IsSetApplicationName())
+                    {
+                        context.Writer.WritePropertyName("ApplicationName");
+                        context.Writer.Write(publicRequest.ApplicationName);
+                    }
+
+                    if(publicRequest.IsSetCloudWatchLoggingOptions())
+                    {
+                        context.Writer.WritePropertyName("CloudWatchLoggingOptions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCloudWatchLoggingOptionsListValue in publicRequest.CloudWatchLoggingOptions)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = CloudWatchLoggingOptionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestCloudWatchLoggingOptionsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetRuntimeEnvironment())
+                    {
+                        context.Writer.WritePropertyName("RuntimeEnvironment");
+                        context.Writer.Write(publicRequest.RuntimeEnvironment);
+                    }
+
+                    if(publicRequest.IsSetServiceExecutionRole())
+                    {
+                        context.Writer.WritePropertyName("ServiceExecutionRole");
+                        context.Writer.Write(publicRequest.ServiceExecutionRole);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

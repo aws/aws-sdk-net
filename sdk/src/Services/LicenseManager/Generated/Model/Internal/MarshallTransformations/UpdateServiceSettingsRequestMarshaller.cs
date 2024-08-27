@@ -63,44 +63,47 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEnableCrossAccountsDiscovery())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("EnableCrossAccountsDiscovery");
-                    context.Writer.Write(publicRequest.EnableCrossAccountsDiscovery.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEnableCrossAccountsDiscovery())
+                    {
+                        context.Writer.WritePropertyName("EnableCrossAccountsDiscovery");
+                        context.Writer.Write(publicRequest.EnableCrossAccountsDiscovery.Value);
+                    }
+
+                    if(publicRequest.IsSetOrganizationConfiguration())
+                    {
+                        context.Writer.WritePropertyName("OrganizationConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = OrganizationConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OrganizationConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetS3BucketArn())
+                    {
+                        context.Writer.WritePropertyName("S3BucketArn");
+                        context.Writer.Write(publicRequest.S3BucketArn);
+                    }
+
+                    if(publicRequest.IsSetSnsTopicArn())
+                    {
+                        context.Writer.WritePropertyName("SnsTopicArn");
+                        context.Writer.Write(publicRequest.SnsTopicArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetOrganizationConfiguration())
-                {
-                    context.Writer.WritePropertyName("OrganizationConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OrganizationConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OrganizationConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetS3BucketArn())
-                {
-                    context.Writer.WritePropertyName("S3BucketArn");
-                    context.Writer.Write(publicRequest.S3BucketArn);
-                }
-
-                if(publicRequest.IsSetSnsTopicArn())
-                {
-                    context.Writer.WritePropertyName("SnsTopicArn");
-                    context.Writer.Write(publicRequest.SnsTopicArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -61,37 +61,40 @@ namespace Amazon.PersonalizeEvents.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/users";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDatasetArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("datasetArn");
-                    context.Writer.Write(publicRequest.DatasetArn);
-                }
-
-                if(publicRequest.IsSetUsers())
-                {
-                    context.Writer.WritePropertyName("users");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestUsersListValue in publicRequest.Users)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDatasetArn())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = UserMarshaller.Instance;
-                        marshaller.Marshall(publicRequestUsersListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("datasetArn");
+                        context.Writer.Write(publicRequest.DatasetArn);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetUsers())
+                    {
+                        context.Writer.WritePropertyName("users");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestUsersListValue in publicRequest.Users)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = UserMarshaller.Instance;
+                            marshaller.Marshall(publicRequestUsersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

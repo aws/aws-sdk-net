@@ -63,33 +63,36 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAuditReportResponseFormat())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AuditReportResponseFormat");
-                    context.Writer.Write(publicRequest.AuditReportResponseFormat);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAuditReportResponseFormat())
+                    {
+                        context.Writer.WritePropertyName("AuditReportResponseFormat");
+                        context.Writer.Write(publicRequest.AuditReportResponseFormat);
+                    }
+
+                    if(publicRequest.IsSetCertificateAuthorityArn())
+                    {
+                        context.Writer.WritePropertyName("CertificateAuthorityArn");
+                        context.Writer.Write(publicRequest.CertificateAuthorityArn);
+                    }
+
+                    if(publicRequest.IsSetS3BucketName())
+                    {
+                        context.Writer.WritePropertyName("S3BucketName");
+                        context.Writer.Write(publicRequest.S3BucketName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCertificateAuthorityArn())
-                {
-                    context.Writer.WritePropertyName("CertificateAuthorityArn");
-                    context.Writer.Write(publicRequest.CertificateAuthorityArn);
-                }
-
-                if(publicRequest.IsSetS3BucketName())
-                {
-                    context.Writer.WritePropertyName("S3BucketName");
-                    context.Writer.Write(publicRequest.S3BucketName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

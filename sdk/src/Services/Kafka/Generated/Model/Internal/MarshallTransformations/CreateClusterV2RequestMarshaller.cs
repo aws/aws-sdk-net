@@ -61,57 +61,60 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/api/v2/clusters";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClusterName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clusterName");
-                    context.Writer.Write(publicRequest.ClusterName);
-                }
-
-                if(publicRequest.IsSetProvisioned())
-                {
-                    context.Writer.WritePropertyName("provisioned");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ProvisionedRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Provisioned, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetServerless())
-                {
-                    context.Writer.WritePropertyName("serverless");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ServerlessRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Serverless, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClusterName())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("clusterName");
+                        context.Writer.Write(publicRequest.ClusterName);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetProvisioned())
+                    {
+                        context.Writer.WritePropertyName("provisioned");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ProvisionedRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Provisioned, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetServerless())
+                    {
+                        context.Writer.WritePropertyName("serverless");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ServerlessRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Serverless, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

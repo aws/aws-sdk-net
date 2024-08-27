@@ -64,27 +64,30 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 throw new AmazonSimpleEmailServiceV2Exception("Request object does not have required field EmailIdentity set");
             request.AddPathResource("{EmailIdentity}", StringUtils.FromString(publicRequest.EmailIdentity));
             request.ResourcePath = "/v2/email/identities/{EmailIdentity}/mail-from";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBehaviorOnMxFailure())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("BehaviorOnMxFailure");
-                    context.Writer.Write(publicRequest.BehaviorOnMxFailure);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBehaviorOnMxFailure())
+                    {
+                        context.Writer.WritePropertyName("BehaviorOnMxFailure");
+                        context.Writer.Write(publicRequest.BehaviorOnMxFailure);
+                    }
+
+                    if(publicRequest.IsSetMailFromDomain())
+                    {
+                        context.Writer.WritePropertyName("MailFromDomain");
+                        context.Writer.Write(publicRequest.MailFromDomain);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMailFromDomain())
-                {
-                    context.Writer.WritePropertyName("MailFromDomain");
-                    context.Writer.Write(publicRequest.MailFromDomain);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

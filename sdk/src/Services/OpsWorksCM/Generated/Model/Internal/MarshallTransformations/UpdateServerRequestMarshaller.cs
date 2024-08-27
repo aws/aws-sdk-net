@@ -63,45 +63,48 @@ namespace Amazon.OpsWorksCM.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBackupRetentionCount())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("BackupRetentionCount");
-                    context.Writer.Write(publicRequest.BackupRetentionCount.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBackupRetentionCount())
+                    {
+                        context.Writer.WritePropertyName("BackupRetentionCount");
+                        context.Writer.Write(publicRequest.BackupRetentionCount.Value);
+                    }
+
+                    if(publicRequest.IsSetDisableAutomatedBackup())
+                    {
+                        context.Writer.WritePropertyName("DisableAutomatedBackup");
+                        context.Writer.Write(publicRequest.DisableAutomatedBackup.Value);
+                    }
+
+                    if(publicRequest.IsSetPreferredBackupWindow())
+                    {
+                        context.Writer.WritePropertyName("PreferredBackupWindow");
+                        context.Writer.Write(publicRequest.PreferredBackupWindow);
+                    }
+
+                    if(publicRequest.IsSetPreferredMaintenanceWindow())
+                    {
+                        context.Writer.WritePropertyName("PreferredMaintenanceWindow");
+                        context.Writer.Write(publicRequest.PreferredMaintenanceWindow);
+                    }
+
+                    if(publicRequest.IsSetServerName())
+                    {
+                        context.Writer.WritePropertyName("ServerName");
+                        context.Writer.Write(publicRequest.ServerName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDisableAutomatedBackup())
-                {
-                    context.Writer.WritePropertyName("DisableAutomatedBackup");
-                    context.Writer.Write(publicRequest.DisableAutomatedBackup.Value);
-                }
-
-                if(publicRequest.IsSetPreferredBackupWindow())
-                {
-                    context.Writer.WritePropertyName("PreferredBackupWindow");
-                    context.Writer.Write(publicRequest.PreferredBackupWindow);
-                }
-
-                if(publicRequest.IsSetPreferredMaintenanceWindow())
-                {
-                    context.Writer.WritePropertyName("PreferredMaintenanceWindow");
-                    context.Writer.Write(publicRequest.PreferredMaintenanceWindow);
-                }
-
-                if(publicRequest.IsSetServerName())
-                {
-                    context.Writer.WritePropertyName("ServerName");
-                    context.Writer.Write(publicRequest.ServerName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

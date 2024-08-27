@@ -63,55 +63,58 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAppArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("appArn");
-                    context.Writer.Write(publicRequest.AppArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAppArn())
+                    {
+                        context.Writer.WritePropertyName("appArn");
+                        context.Writer.Write(publicRequest.AppArn);
+                    }
+
+                    if(publicRequest.IsSetConfiguration())
+                    {
+                        context.Writer.WritePropertyName("configuration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ScheduleRunConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Configuration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDevicePoolArn())
+                    {
+                        context.Writer.WritePropertyName("devicePoolArn");
+                        context.Writer.Write(publicRequest.DevicePoolArn);
+                    }
+
+                    if(publicRequest.IsSetTest())
+                    {
+                        context.Writer.WritePropertyName("test");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ScheduleRunTestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Test, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTestType())
+                    {
+                        context.Writer.WritePropertyName("testType");
+                        context.Writer.Write(publicRequest.TestType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetConfiguration())
-                {
-                    context.Writer.WritePropertyName("configuration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ScheduleRunConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Configuration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDevicePoolArn())
-                {
-                    context.Writer.WritePropertyName("devicePoolArn");
-                    context.Writer.Write(publicRequest.DevicePoolArn);
-                }
-
-                if(publicRequest.IsSetTest())
-                {
-                    context.Writer.WritePropertyName("test");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ScheduleRunTestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Test, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTestType())
-                {
-                    context.Writer.WritePropertyName("testType");
-                    context.Writer.Write(publicRequest.TestType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

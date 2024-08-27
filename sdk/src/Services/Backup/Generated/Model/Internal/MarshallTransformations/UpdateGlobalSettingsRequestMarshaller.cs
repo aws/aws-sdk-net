@@ -61,29 +61,32 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/global-settings";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetGlobalSettings())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("GlobalSettings");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestGlobalSettingsKvp in publicRequest.GlobalSettings)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetGlobalSettings())
                     {
-                        context.Writer.WritePropertyName(publicRequestGlobalSettingsKvp.Key);
-                        var publicRequestGlobalSettingsValue = publicRequestGlobalSettingsKvp.Value;
+                        context.Writer.WritePropertyName("GlobalSettings");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestGlobalSettingsKvp in publicRequest.GlobalSettings)
+                        {
+                            context.Writer.WritePropertyName(publicRequestGlobalSettingsKvp.Key);
+                            var publicRequestGlobalSettingsValue = publicRequestGlobalSettingsKvp.Value;
 
-                            context.Writer.Write(publicRequestGlobalSettingsValue);
+                                context.Writer.Write(publicRequestGlobalSettingsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

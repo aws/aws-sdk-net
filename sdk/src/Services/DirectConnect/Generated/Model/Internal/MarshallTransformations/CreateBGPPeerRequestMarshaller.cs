@@ -63,32 +63,35 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetNewBGPPeer())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("newBGPPeer");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetNewBGPPeer())
+                    {
+                        context.Writer.WritePropertyName("newBGPPeer");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = NewBGPPeerMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.NewBGPPeer, context);
+                        var marshaller = NewBGPPeerMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.NewBGPPeer, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetVirtualInterfaceId())
+                    {
+                        context.Writer.WritePropertyName("virtualInterfaceId");
+                        context.Writer.Write(publicRequest.VirtualInterfaceId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetVirtualInterfaceId())
-                {
-                    context.Writer.WritePropertyName("virtualInterfaceId");
-                    context.Writer.Write(publicRequest.VirtualInterfaceId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,39 +63,42 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDestinationKmsKeyId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("destinationKmsKeyId");
-                    context.Writer.Write(publicRequest.DestinationKmsKeyId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDestinationKmsKeyId())
+                    {
+                        context.Writer.WritePropertyName("destinationKmsKeyId");
+                        context.Writer.Write(publicRequest.DestinationKmsKeyId);
+                    }
+
+                    if(publicRequest.IsSetDestinationRegion())
+                    {
+                        context.Writer.WritePropertyName("destinationRegion");
+                        context.Writer.Write(publicRequest.DestinationRegion);
+                    }
+
+                    if(publicRequest.IsSetNamespaceName())
+                    {
+                        context.Writer.WritePropertyName("namespaceName");
+                        context.Writer.Write(publicRequest.NamespaceName);
+                    }
+
+                    if(publicRequest.IsSetSnapshotRetentionPeriod())
+                    {
+                        context.Writer.WritePropertyName("snapshotRetentionPeriod");
+                        context.Writer.Write(publicRequest.SnapshotRetentionPeriod.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDestinationRegion())
-                {
-                    context.Writer.WritePropertyName("destinationRegion");
-                    context.Writer.Write(publicRequest.DestinationRegion);
-                }
-
-                if(publicRequest.IsSetNamespaceName())
-                {
-                    context.Writer.WritePropertyName("namespaceName");
-                    context.Writer.Write(publicRequest.NamespaceName);
-                }
-
-                if(publicRequest.IsSetSnapshotRetentionPeriod())
-                {
-                    context.Writer.WritePropertyName("snapshotRetentionPeriod");
-                    context.Writer.Write(publicRequest.SnapshotRetentionPeriod.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

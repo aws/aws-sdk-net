@@ -63,113 +63,116 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAgentArns())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AgentArns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAgentArnsListValue in publicRequest.AgentArns)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAgentArns())
                     {
-                            context.Writer.Write(publicRequestAgentArnsListValue);
+                        context.Writer.WritePropertyName("AgentArns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAgentArnsListValue in publicRequest.AgentArns)
+                        {
+                                context.Writer.Write(publicRequestAgentArnsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetAuthenticationType())
-                {
-                    context.Writer.WritePropertyName("AuthenticationType");
-                    context.Writer.Write(publicRequest.AuthenticationType);
-                }
-
-                if(publicRequest.IsSetBlockSize())
-                {
-                    context.Writer.WritePropertyName("BlockSize");
-                    context.Writer.Write(publicRequest.BlockSize.Value);
-                }
-
-                if(publicRequest.IsSetKerberosKeytab())
-                {
-                    context.Writer.WritePropertyName("KerberosKeytab");
-                    context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.KerberosKeytab));
-                }
-
-                if(publicRequest.IsSetKerberosKrb5Conf())
-                {
-                    context.Writer.WritePropertyName("KerberosKrb5Conf");
-                    context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.KerberosKrb5Conf));
-                }
-
-                if(publicRequest.IsSetKerberosPrincipal())
-                {
-                    context.Writer.WritePropertyName("KerberosPrincipal");
-                    context.Writer.Write(publicRequest.KerberosPrincipal);
-                }
-
-                if(publicRequest.IsSetKmsKeyProviderUri())
-                {
-                    context.Writer.WritePropertyName("KmsKeyProviderUri");
-                    context.Writer.Write(publicRequest.KmsKeyProviderUri);
-                }
-
-                if(publicRequest.IsSetLocationArn())
-                {
-                    context.Writer.WritePropertyName("LocationArn");
-                    context.Writer.Write(publicRequest.LocationArn);
-                }
-
-                if(publicRequest.IsSetNameNodes())
-                {
-                    context.Writer.WritePropertyName("NameNodes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestNameNodesListValue in publicRequest.NameNodes)
+                    if(publicRequest.IsSetAuthenticationType())
                     {
+                        context.Writer.WritePropertyName("AuthenticationType");
+                        context.Writer.Write(publicRequest.AuthenticationType);
+                    }
+
+                    if(publicRequest.IsSetBlockSize())
+                    {
+                        context.Writer.WritePropertyName("BlockSize");
+                        context.Writer.Write(publicRequest.BlockSize.Value);
+                    }
+
+                    if(publicRequest.IsSetKerberosKeytab())
+                    {
+                        context.Writer.WritePropertyName("KerberosKeytab");
+                        context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.KerberosKeytab));
+                    }
+
+                    if(publicRequest.IsSetKerberosKrb5Conf())
+                    {
+                        context.Writer.WritePropertyName("KerberosKrb5Conf");
+                        context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.KerberosKrb5Conf));
+                    }
+
+                    if(publicRequest.IsSetKerberosPrincipal())
+                    {
+                        context.Writer.WritePropertyName("KerberosPrincipal");
+                        context.Writer.Write(publicRequest.KerberosPrincipal);
+                    }
+
+                    if(publicRequest.IsSetKmsKeyProviderUri())
+                    {
+                        context.Writer.WritePropertyName("KmsKeyProviderUri");
+                        context.Writer.Write(publicRequest.KmsKeyProviderUri);
+                    }
+
+                    if(publicRequest.IsSetLocationArn())
+                    {
+                        context.Writer.WritePropertyName("LocationArn");
+                        context.Writer.Write(publicRequest.LocationArn);
+                    }
+
+                    if(publicRequest.IsSetNameNodes())
+                    {
+                        context.Writer.WritePropertyName("NameNodes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestNameNodesListValue in publicRequest.NameNodes)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = HdfsNameNodeMarshaller.Instance;
+                            marshaller.Marshall(publicRequestNameNodesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetQopConfiguration())
+                    {
+                        context.Writer.WritePropertyName("QopConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = HdfsNameNodeMarshaller.Instance;
-                        marshaller.Marshall(publicRequestNameNodesListValue, context);
+                        var marshaller = QopConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.QopConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetReplicationFactor())
+                    {
+                        context.Writer.WritePropertyName("ReplicationFactor");
+                        context.Writer.Write(publicRequest.ReplicationFactor.Value);
+                    }
+
+                    if(publicRequest.IsSetSimpleUser())
+                    {
+                        context.Writer.WritePropertyName("SimpleUser");
+                        context.Writer.Write(publicRequest.SimpleUser);
+                    }
+
+                    if(publicRequest.IsSetSubdirectory())
+                    {
+                        context.Writer.WritePropertyName("Subdirectory");
+                        context.Writer.Write(publicRequest.Subdirectory);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetQopConfiguration())
-                {
-                    context.Writer.WritePropertyName("QopConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = QopConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.QopConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetReplicationFactor())
-                {
-                    context.Writer.WritePropertyName("ReplicationFactor");
-                    context.Writer.Write(publicRequest.ReplicationFactor.Value);
-                }
-
-                if(publicRequest.IsSetSimpleUser())
-                {
-                    context.Writer.WritePropertyName("SimpleUser");
-                    context.Writer.Write(publicRequest.SimpleUser);
-                }
-
-                if(publicRequest.IsSetSubdirectory())
-                {
-                    context.Writer.WritePropertyName("Subdirectory");
-                    context.Writer.Write(publicRequest.Subdirectory);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,71 +63,74 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetExternalEventsDetail())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("externalEventsDetail");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ExternalEventsDetailMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ExternalEventsDetail, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetIngestedEventsDetail())
-                {
-                    context.Writer.WritePropertyName("ingestedEventsDetail");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = IngestedEventsDetailMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.IngestedEventsDetail, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMajorVersionNumber())
-                {
-                    context.Writer.WritePropertyName("majorVersionNumber");
-                    context.Writer.Write(publicRequest.MajorVersionNumber);
-                }
-
-                if(publicRequest.IsSetModelId())
-                {
-                    context.Writer.WritePropertyName("modelId");
-                    context.Writer.Write(publicRequest.ModelId);
-                }
-
-                if(publicRequest.IsSetModelType())
-                {
-                    context.Writer.WritePropertyName("modelType");
-                    context.Writer.Write(publicRequest.ModelType);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetExternalEventsDetail())
                     {
+                        context.Writer.WritePropertyName("externalEventsDetail");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = ExternalEventsDetailMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ExternalEventsDetail, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetIngestedEventsDetail())
+                    {
+                        context.Writer.WritePropertyName("ingestedEventsDetail");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = IngestedEventsDetailMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.IngestedEventsDetail, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetMajorVersionNumber())
+                    {
+                        context.Writer.WritePropertyName("majorVersionNumber");
+                        context.Writer.Write(publicRequest.MajorVersionNumber);
+                    }
+
+                    if(publicRequest.IsSetModelId())
+                    {
+                        context.Writer.WritePropertyName("modelId");
+                        context.Writer.Write(publicRequest.ModelId);
+                    }
+
+                    if(publicRequest.IsSetModelType())
+                    {
+                        context.Writer.WritePropertyName("modelType");
+                        context.Writer.Write(publicRequest.ModelType);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

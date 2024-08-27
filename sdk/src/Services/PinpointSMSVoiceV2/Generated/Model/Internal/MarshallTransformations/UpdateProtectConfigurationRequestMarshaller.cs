@@ -63,27 +63,30 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeletionProtectionEnabled())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DeletionProtectionEnabled");
-                    context.Writer.Write(publicRequest.DeletionProtectionEnabled.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDeletionProtectionEnabled())
+                    {
+                        context.Writer.WritePropertyName("DeletionProtectionEnabled");
+                        context.Writer.Write(publicRequest.DeletionProtectionEnabled.Value);
+                    }
+
+                    if(publicRequest.IsSetProtectConfigurationId())
+                    {
+                        context.Writer.WritePropertyName("ProtectConfigurationId");
+                        context.Writer.Write(publicRequest.ProtectConfigurationId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetProtectConfigurationId())
-                {
-                    context.Writer.WritePropertyName("ProtectConfigurationId");
-                    context.Writer.Write(publicRequest.ProtectConfigurationId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -61,67 +61,70 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v1/updatecomputeenvironment";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetComputeEnvironment())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("computeEnvironment");
-                    context.Writer.Write(publicRequest.ComputeEnvironment);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetComputeEnvironment())
+                    {
+                        context.Writer.WritePropertyName("computeEnvironment");
+                        context.Writer.Write(publicRequest.ComputeEnvironment);
+                    }
+
+                    if(publicRequest.IsSetComputeResources())
+                    {
+                        context.Writer.WritePropertyName("computeResources");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ComputeResourceUpdateMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ComputeResources, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetContext())
+                    {
+                        context.Writer.WritePropertyName("context");
+                        context.Writer.Write(publicRequest.Context);
+                    }
+
+                    if(publicRequest.IsSetServiceRole())
+                    {
+                        context.Writer.WritePropertyName("serviceRole");
+                        context.Writer.Write(publicRequest.ServiceRole);
+                    }
+
+                    if(publicRequest.IsSetState())
+                    {
+                        context.Writer.WritePropertyName("state");
+                        context.Writer.Write(publicRequest.State);
+                    }
+
+                    if(publicRequest.IsSetUnmanagedvCpus())
+                    {
+                        context.Writer.WritePropertyName("unmanagedvCpus");
+                        context.Writer.Write(publicRequest.UnmanagedvCpus.Value);
+                    }
+
+                    if(publicRequest.IsSetUpdatePolicy())
+                    {
+                        context.Writer.WritePropertyName("updatePolicy");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = UpdatePolicyMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.UpdatePolicy, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetComputeResources())
-                {
-                    context.Writer.WritePropertyName("computeResources");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ComputeResourceUpdateMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ComputeResources, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetContext())
-                {
-                    context.Writer.WritePropertyName("context");
-                    context.Writer.Write(publicRequest.Context);
-                }
-
-                if(publicRequest.IsSetServiceRole())
-                {
-                    context.Writer.WritePropertyName("serviceRole");
-                    context.Writer.Write(publicRequest.ServiceRole);
-                }
-
-                if(publicRequest.IsSetState())
-                {
-                    context.Writer.WritePropertyName("state");
-                    context.Writer.Write(publicRequest.State);
-                }
-
-                if(publicRequest.IsSetUnmanagedvCpus())
-                {
-                    context.Writer.WritePropertyName("unmanagedvCpus");
-                    context.Writer.Write(publicRequest.UnmanagedvCpus.Value);
-                }
-
-                if(publicRequest.IsSetUpdatePolicy())
-                {
-                    context.Writer.WritePropertyName("updatePolicy");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UpdatePolicyMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.UpdatePolicy, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

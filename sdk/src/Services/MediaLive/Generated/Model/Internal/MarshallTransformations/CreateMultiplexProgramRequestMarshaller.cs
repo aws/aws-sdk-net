@@ -64,43 +64,46 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 throw new AmazonMediaLiveException("Request object does not have required field MultiplexId set");
             request.AddPathResource("{multiplexId}", StringUtils.FromString(publicRequest.MultiplexId));
             request.ResourcePath = "/prod/multiplexes/{multiplexId}/programs";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMultiplexProgramSettings())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("multiplexProgramSettings");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMultiplexProgramSettings())
+                    {
+                        context.Writer.WritePropertyName("multiplexProgramSettings");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = MultiplexProgramSettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.MultiplexProgramSettings, context);
+                        var marshaller = MultiplexProgramSettingsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.MultiplexProgramSettings, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetProgramName())
+                    {
+                        context.Writer.WritePropertyName("programName");
+                        context.Writer.Write(publicRequest.ProgramName);
+                    }
+
+                    if(publicRequest.IsSetRequestId())
+                    {
+                        context.Writer.WritePropertyName("requestId");
+                        context.Writer.Write(publicRequest.RequestId);
+                    }
+
+                    else if(!(publicRequest.IsSetRequestId()))
+                    {
+                        context.Writer.WritePropertyName("requestId");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetProgramName())
-                {
-                    context.Writer.WritePropertyName("programName");
-                    context.Writer.Write(publicRequest.ProgramName);
-                }
-
-                if(publicRequest.IsSetRequestId())
-                {
-                    context.Writer.WritePropertyName("requestId");
-                    context.Writer.Write(publicRequest.RequestId);
-                }
-
-                else if(!(publicRequest.IsSetRequestId()))
-                {
-                    context.Writer.WritePropertyName("requestId");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

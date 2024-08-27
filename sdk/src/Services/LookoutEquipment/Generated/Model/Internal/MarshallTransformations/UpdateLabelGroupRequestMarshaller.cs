@@ -63,32 +63,35 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFaultCodes())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("FaultCodes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFaultCodesListValue in publicRequest.FaultCodes)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFaultCodes())
                     {
-                            context.Writer.Write(publicRequestFaultCodesListValue);
+                        context.Writer.WritePropertyName("FaultCodes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFaultCodesListValue in publicRequest.FaultCodes)
+                        {
+                                context.Writer.Write(publicRequestFaultCodesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetLabelGroupName())
+                    {
+                        context.Writer.WritePropertyName("LabelGroupName");
+                        context.Writer.Write(publicRequest.LabelGroupName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetLabelGroupName())
-                {
-                    context.Writer.WritePropertyName("LabelGroupName");
-                    context.Writer.Write(publicRequest.LabelGroupName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

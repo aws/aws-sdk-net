@@ -61,27 +61,30 @@ namespace Amazon.KinesisVideoWebRTCStorage.Model.Internal.MarshallTransformation
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/joinStorageSessionAsViewer";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetChannelArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("channelArn");
-                    context.Writer.Write(publicRequest.ChannelArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetChannelArn())
+                    {
+                        context.Writer.WritePropertyName("channelArn");
+                        context.Writer.Write(publicRequest.ChannelArn);
+                    }
+
+                    if(publicRequest.IsSetClientId())
+                    {
+                        context.Writer.WritePropertyName("clientId");
+                        context.Writer.Write(publicRequest.ClientId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetClientId())
-                {
-                    context.Writer.WritePropertyName("clientId");
-                    context.Writer.Write(publicRequest.ClientId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

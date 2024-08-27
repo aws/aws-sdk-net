@@ -63,67 +63,70 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetHealthStatus())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("HealthStatus");
-                    context.Writer.Write(publicRequest.HealthStatus);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNamespaceName())
-                {
-                    context.Writer.WritePropertyName("NamespaceName");
-                    context.Writer.Write(publicRequest.NamespaceName);
-                }
-
-                if(publicRequest.IsSetOptionalParameters())
-                {
-                    context.Writer.WritePropertyName("OptionalParameters");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestOptionalParametersKvp in publicRequest.OptionalParameters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetHealthStatus())
                     {
-                        context.Writer.WritePropertyName(publicRequestOptionalParametersKvp.Key);
-                        var publicRequestOptionalParametersValue = publicRequestOptionalParametersKvp.Value;
-
-                            context.Writer.Write(publicRequestOptionalParametersValue);
+                        context.Writer.WritePropertyName("HealthStatus");
+                        context.Writer.Write(publicRequest.HealthStatus);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetQueryParameters())
-                {
-                    context.Writer.WritePropertyName("QueryParameters");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestQueryParametersKvp in publicRequest.QueryParameters)
+                    if(publicRequest.IsSetMaxResults())
                     {
-                        context.Writer.WritePropertyName(publicRequestQueryParametersKvp.Key);
-                        var publicRequestQueryParametersValue = publicRequestQueryParametersKvp.Value;
-
-                            context.Writer.Write(publicRequestQueryParametersValue);
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetNamespaceName())
+                    {
+                        context.Writer.WritePropertyName("NamespaceName");
+                        context.Writer.Write(publicRequest.NamespaceName);
+                    }
+
+                    if(publicRequest.IsSetOptionalParameters())
+                    {
+                        context.Writer.WritePropertyName("OptionalParameters");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestOptionalParametersKvp in publicRequest.OptionalParameters)
+                        {
+                            context.Writer.WritePropertyName(publicRequestOptionalParametersKvp.Key);
+                            var publicRequestOptionalParametersValue = publicRequestOptionalParametersKvp.Value;
+
+                                context.Writer.Write(publicRequestOptionalParametersValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetQueryParameters())
+                    {
+                        context.Writer.WritePropertyName("QueryParameters");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestQueryParametersKvp in publicRequest.QueryParameters)
+                        {
+                            context.Writer.WritePropertyName(publicRequestQueryParametersKvp.Key);
+                            var publicRequestQueryParametersValue = publicRequestQueryParametersKvp.Value;
+
+                                context.Writer.Write(publicRequestQueryParametersValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetServiceName())
+                    {
+                        context.Writer.WritePropertyName("ServiceName");
+                        context.Writer.Write(publicRequest.ServiceName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetServiceName())
-                {
-                    context.Writer.WritePropertyName("ServiceName");
-                    context.Writer.Write(publicRequest.ServiceName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

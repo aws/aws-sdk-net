@@ -63,56 +63,59 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetDestination())
+                    {
+                        context.Writer.WritePropertyName("Destination");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ReplayDestinationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Destination, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetEventEndTime())
+                    {
+                        context.Writer.WritePropertyName("EventEndTime");
+                        context.Writer.Write(publicRequest.EventEndTime.Value);
+                    }
+
+                    if(publicRequest.IsSetEventSourceArn())
+                    {
+                        context.Writer.WritePropertyName("EventSourceArn");
+                        context.Writer.Write(publicRequest.EventSourceArn);
+                    }
+
+                    if(publicRequest.IsSetEventStartTime())
+                    {
+                        context.Writer.WritePropertyName("EventStartTime");
+                        context.Writer.Write(publicRequest.EventStartTime.Value);
+                    }
+
+                    if(publicRequest.IsSetReplayName())
+                    {
+                        context.Writer.WritePropertyName("ReplayName");
+                        context.Writer.Write(publicRequest.ReplayName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDestination())
-                {
-                    context.Writer.WritePropertyName("Destination");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ReplayDestinationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Destination, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEventEndTime())
-                {
-                    context.Writer.WritePropertyName("EventEndTime");
-                    context.Writer.Write(publicRequest.EventEndTime.Value);
-                }
-
-                if(publicRequest.IsSetEventSourceArn())
-                {
-                    context.Writer.WritePropertyName("EventSourceArn");
-                    context.Writer.Write(publicRequest.EventSourceArn);
-                }
-
-                if(publicRequest.IsSetEventStartTime())
-                {
-                    context.Writer.WritePropertyName("EventStartTime");
-                    context.Writer.Write(publicRequest.EventStartTime.Value);
-                }
-
-                if(publicRequest.IsSetReplayName())
-                {
-                    context.Writer.WritePropertyName("ReplayName");
-                    context.Writer.Write(publicRequest.ReplayName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

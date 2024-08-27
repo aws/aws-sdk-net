@@ -61,44 +61,47 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/cardvalidationdata/verify";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetKeyIdentifier())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("KeyIdentifier");
-                    context.Writer.Write(publicRequest.KeyIdentifier);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetKeyIdentifier())
+                    {
+                        context.Writer.WritePropertyName("KeyIdentifier");
+                        context.Writer.Write(publicRequest.KeyIdentifier);
+                    }
+
+                    if(publicRequest.IsSetPrimaryAccountNumber())
+                    {
+                        context.Writer.WritePropertyName("PrimaryAccountNumber");
+                        context.Writer.Write(publicRequest.PrimaryAccountNumber);
+                    }
+
+                    if(publicRequest.IsSetValidationData())
+                    {
+                        context.Writer.WritePropertyName("ValidationData");
+                        context.Writer.Write(publicRequest.ValidationData);
+                    }
+
+                    if(publicRequest.IsSetVerificationAttributes())
+                    {
+                        context.Writer.WritePropertyName("VerificationAttributes");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CardVerificationAttributesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.VerificationAttributes, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPrimaryAccountNumber())
-                {
-                    context.Writer.WritePropertyName("PrimaryAccountNumber");
-                    context.Writer.Write(publicRequest.PrimaryAccountNumber);
-                }
-
-                if(publicRequest.IsSetValidationData())
-                {
-                    context.Writer.WritePropertyName("ValidationData");
-                    context.Writer.Write(publicRequest.ValidationData);
-                }
-
-                if(publicRequest.IsSetVerificationAttributes())
-                {
-                    context.Writer.WritePropertyName("VerificationAttributes");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CardVerificationAttributesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.VerificationAttributes, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

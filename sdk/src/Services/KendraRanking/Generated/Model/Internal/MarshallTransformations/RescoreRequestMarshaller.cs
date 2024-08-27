@@ -63,43 +63,46 @@ namespace Amazon.KendraRanking.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDocuments())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Documents");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDocumentsListValue in publicRequest.Documents)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDocuments())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("Documents");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDocumentsListValue in publicRequest.Documents)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = DocumentMarshaller.Instance;
-                        marshaller.Marshall(publicRequestDocumentsListValue, context);
+                            var marshaller = DocumentMarshaller.Instance;
+                            marshaller.Marshall(publicRequestDocumentsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetRescoreExecutionPlanId())
+                    {
+                        context.Writer.WritePropertyName("RescoreExecutionPlanId");
+                        context.Writer.Write(publicRequest.RescoreExecutionPlanId);
+                    }
+
+                    if(publicRequest.IsSetSearchQuery())
+                    {
+                        context.Writer.WritePropertyName("SearchQuery");
+                        context.Writer.Write(publicRequest.SearchQuery);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRescoreExecutionPlanId())
-                {
-                    context.Writer.WritePropertyName("RescoreExecutionPlanId");
-                    context.Writer.Write(publicRequest.RescoreExecutionPlanId);
-                }
-
-                if(publicRequest.IsSetSearchQuery())
-                {
-                    context.Writer.WritePropertyName("SearchQuery");
-                    context.Writer.Write(publicRequest.SearchQuery);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

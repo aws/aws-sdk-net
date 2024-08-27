@@ -55,9 +55,9 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property AribCaptionsPid.
         /// </summary>
-        public int AribCaptionsPid
+        public int? AribCaptionsPid
         {
-            get { return this._aribCaptionsPid.GetValueOrDefault(); }
+            get { return this._aribCaptionsPid; }
             set { this._aribCaptionsPid = value; }
         }
 
@@ -130,9 +130,9 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property EcmPid.
         /// </summary>
-        public int EcmPid
+        public int? EcmPid
         {
-            get { return this._ecmPid.GetValueOrDefault(); }
+            get { return this._ecmPid; }
             set { this._ecmPid = value; }
         }
 
@@ -265,9 +265,9 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property Smpte2038Pid.
         /// </summary>
-        public int Smpte2038Pid
+        public int? Smpte2038Pid
         {
-            get { return this._smpte2038Pid.GetValueOrDefault(); }
+            get { return this._smpte2038Pid; }
             set { this._smpte2038Pid = value; }
         }
 

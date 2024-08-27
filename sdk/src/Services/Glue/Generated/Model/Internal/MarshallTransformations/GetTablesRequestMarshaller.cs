@@ -63,74 +63,77 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAttributesToGet())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AttributesToGet");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAttributesToGetListValue in publicRequest.AttributesToGet)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAttributesToGet())
                     {
-                            context.Writer.Write(publicRequestAttributesToGetListValue);
+                        context.Writer.WritePropertyName("AttributesToGet");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAttributesToGetListValue in publicRequest.AttributesToGet)
+                        {
+                                context.Writer.Write(publicRequestAttributesToGetListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetCatalogId())
+                    {
+                        context.Writer.WritePropertyName("CatalogId");
+                        context.Writer.Write(publicRequest.CatalogId);
+                    }
+
+                    if(publicRequest.IsSetDatabaseName())
+                    {
+                        context.Writer.WritePropertyName("DatabaseName");
+                        context.Writer.Write(publicRequest.DatabaseName);
+                    }
+
+                    if(publicRequest.IsSetExpression())
+                    {
+                        context.Writer.WritePropertyName("Expression");
+                        context.Writer.Write(publicRequest.Expression);
+                    }
+
+                    if(publicRequest.IsSetIncludeStatusDetails())
+                    {
+                        context.Writer.WritePropertyName("IncludeStatusDetails");
+                        context.Writer.Write(publicRequest.IncludeStatusDetails.Value);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetQueryAsOfTime())
+                    {
+                        context.Writer.WritePropertyName("QueryAsOfTime");
+                        context.Writer.Write(publicRequest.QueryAsOfTime.Value);
+                    }
+
+                    if(publicRequest.IsSetTransactionId())
+                    {
+                        context.Writer.WritePropertyName("TransactionId");
+                        context.Writer.Write(publicRequest.TransactionId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCatalogId())
-                {
-                    context.Writer.WritePropertyName("CatalogId");
-                    context.Writer.Write(publicRequest.CatalogId);
-                }
-
-                if(publicRequest.IsSetDatabaseName())
-                {
-                    context.Writer.WritePropertyName("DatabaseName");
-                    context.Writer.Write(publicRequest.DatabaseName);
-                }
-
-                if(publicRequest.IsSetExpression())
-                {
-                    context.Writer.WritePropertyName("Expression");
-                    context.Writer.Write(publicRequest.Expression);
-                }
-
-                if(publicRequest.IsSetIncludeStatusDetails())
-                {
-                    context.Writer.WritePropertyName("IncludeStatusDetails");
-                    context.Writer.Write(publicRequest.IncludeStatusDetails);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetQueryAsOfTime())
-                {
-                    context.Writer.WritePropertyName("QueryAsOfTime");
-                    context.Writer.Write(publicRequest.QueryAsOfTime.Value);
-                }
-
-                if(publicRequest.IsSetTransactionId())
-                {
-                    context.Writer.WritePropertyName("TransactionId");
-                    context.Writer.Write(publicRequest.TransactionId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

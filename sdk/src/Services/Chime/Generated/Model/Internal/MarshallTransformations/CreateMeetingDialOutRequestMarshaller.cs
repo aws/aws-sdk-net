@@ -64,33 +64,36 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 throw new AmazonChimeException("Request object does not have required field MeetingId set");
             request.AddPathResource("{meetingId}", StringUtils.FromString(publicRequest.MeetingId));
             request.ResourcePath = "/meetings/{meetingId}/dial-outs";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFromPhoneNumber())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("FromPhoneNumber");
-                    context.Writer.Write(publicRequest.FromPhoneNumber);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFromPhoneNumber())
+                    {
+                        context.Writer.WritePropertyName("FromPhoneNumber");
+                        context.Writer.Write(publicRequest.FromPhoneNumber);
+                    }
+
+                    if(publicRequest.IsSetJoinToken())
+                    {
+                        context.Writer.WritePropertyName("JoinToken");
+                        context.Writer.Write(publicRequest.JoinToken);
+                    }
+
+                    if(publicRequest.IsSetToPhoneNumber())
+                    {
+                        context.Writer.WritePropertyName("ToPhoneNumber");
+                        context.Writer.Write(publicRequest.ToPhoneNumber);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetJoinToken())
-                {
-                    context.Writer.WritePropertyName("JoinToken");
-                    context.Writer.Write(publicRequest.JoinToken);
-                }
-
-                if(publicRequest.IsSetToPhoneNumber())
-                {
-                    context.Writer.WritePropertyName("ToPhoneNumber");
-                    context.Writer.Write(publicRequest.ToPhoneNumber);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

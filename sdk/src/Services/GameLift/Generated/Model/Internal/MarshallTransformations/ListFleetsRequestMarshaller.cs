@@ -63,45 +63,48 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBuildId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("BuildId");
-                    context.Writer.Write(publicRequest.BuildId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBuildId())
+                    {
+                        context.Writer.WritePropertyName("BuildId");
+                        context.Writer.Write(publicRequest.BuildId);
+                    }
+
+                    if(publicRequest.IsSetContainerGroupDefinitionName())
+                    {
+                        context.Writer.WritePropertyName("ContainerGroupDefinitionName");
+                        context.Writer.Write(publicRequest.ContainerGroupDefinitionName);
+                    }
+
+                    if(publicRequest.IsSetLimit())
+                    {
+                        context.Writer.WritePropertyName("Limit");
+                        context.Writer.Write(publicRequest.Limit.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetScriptId())
+                    {
+                        context.Writer.WritePropertyName("ScriptId");
+                        context.Writer.Write(publicRequest.ScriptId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetContainerGroupDefinitionName())
-                {
-                    context.Writer.WritePropertyName("ContainerGroupDefinitionName");
-                    context.Writer.Write(publicRequest.ContainerGroupDefinitionName);
-                }
-
-                if(publicRequest.IsSetLimit())
-                {
-                    context.Writer.WritePropertyName("Limit");
-                    context.Writer.Write(publicRequest.Limit.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetScriptId())
-                {
-                    context.Writer.WritePropertyName("ScriptId");
-                    context.Writer.Write(publicRequest.ScriptId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

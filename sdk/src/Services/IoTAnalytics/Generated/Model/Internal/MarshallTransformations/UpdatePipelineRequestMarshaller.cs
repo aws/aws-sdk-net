@@ -64,31 +64,34 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
                 throw new AmazonIoTAnalyticsException("Request object does not have required field PipelineName set");
             request.AddPathResource("{pipelineName}", StringUtils.FromString(publicRequest.PipelineName));
             request.ResourcePath = "/pipelines/{pipelineName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetPipelineActivities())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("pipelineActivities");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPipelineActivitiesListValue in publicRequest.PipelineActivities)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetPipelineActivities())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("pipelineActivities");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPipelineActivitiesListValue in publicRequest.PipelineActivities)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = PipelineActivityMarshaller.Instance;
-                        marshaller.Marshall(publicRequestPipelineActivitiesListValue, context);
+                            var marshaller = PipelineActivityMarshaller.Instance;
+                            marshaller.Marshall(publicRequestPipelineActivitiesListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

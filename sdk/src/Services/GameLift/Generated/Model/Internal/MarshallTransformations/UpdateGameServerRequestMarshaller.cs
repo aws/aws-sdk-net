@@ -63,45 +63,48 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetGameServerData())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("GameServerData");
-                    context.Writer.Write(publicRequest.GameServerData);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetGameServerData())
+                    {
+                        context.Writer.WritePropertyName("GameServerData");
+                        context.Writer.Write(publicRequest.GameServerData);
+                    }
+
+                    if(publicRequest.IsSetGameServerGroupName())
+                    {
+                        context.Writer.WritePropertyName("GameServerGroupName");
+                        context.Writer.Write(publicRequest.GameServerGroupName);
+                    }
+
+                    if(publicRequest.IsSetGameServerId())
+                    {
+                        context.Writer.WritePropertyName("GameServerId");
+                        context.Writer.Write(publicRequest.GameServerId);
+                    }
+
+                    if(publicRequest.IsSetHealthCheck())
+                    {
+                        context.Writer.WritePropertyName("HealthCheck");
+                        context.Writer.Write(publicRequest.HealthCheck);
+                    }
+
+                    if(publicRequest.IsSetUtilizationStatus())
+                    {
+                        context.Writer.WritePropertyName("UtilizationStatus");
+                        context.Writer.Write(publicRequest.UtilizationStatus);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetGameServerGroupName())
-                {
-                    context.Writer.WritePropertyName("GameServerGroupName");
-                    context.Writer.Write(publicRequest.GameServerGroupName);
-                }
-
-                if(publicRequest.IsSetGameServerId())
-                {
-                    context.Writer.WritePropertyName("GameServerId");
-                    context.Writer.Write(publicRequest.GameServerId);
-                }
-
-                if(publicRequest.IsSetHealthCheck())
-                {
-                    context.Writer.WritePropertyName("HealthCheck");
-                    context.Writer.Write(publicRequest.HealthCheck);
-                }
-
-                if(publicRequest.IsSetUtilizationStatus())
-                {
-                    context.Writer.WritePropertyName("UtilizationStatus");
-                    context.Writer.Write(publicRequest.UtilizationStatus);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

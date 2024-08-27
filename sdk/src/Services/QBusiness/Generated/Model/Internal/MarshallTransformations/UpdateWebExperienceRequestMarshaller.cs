@@ -67,67 +67,70 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                 throw new AmazonQBusinessException("Request object does not have required field WebExperienceId set");
             request.AddPathResource("{webExperienceId}", StringUtils.FromString(publicRequest.WebExperienceId));
             request.ResourcePath = "/applications/{applicationId}/experiences/{webExperienceId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAuthenticationConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("authenticationConfiguration");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAuthenticationConfiguration())
+                    {
+                        context.Writer.WritePropertyName("authenticationConfiguration");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = WebExperienceAuthConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AuthenticationConfiguration, context);
+                        var marshaller = WebExperienceAuthConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AuthenticationConfiguration, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetIdentityProviderConfiguration())
+                    {
+                        context.Writer.WritePropertyName("identityProviderConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = IdentityProviderConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.IdentityProviderConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("roleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    if(publicRequest.IsSetSamplePromptsControlMode())
+                    {
+                        context.Writer.WritePropertyName("samplePromptsControlMode");
+                        context.Writer.Write(publicRequest.SamplePromptsControlMode);
+                    }
+
+                    if(publicRequest.IsSetSubtitle())
+                    {
+                        context.Writer.WritePropertyName("subtitle");
+                        context.Writer.Write(publicRequest.Subtitle);
+                    }
+
+                    if(publicRequest.IsSetTitle())
+                    {
+                        context.Writer.WritePropertyName("title");
+                        context.Writer.Write(publicRequest.Title);
+                    }
+
+                    if(publicRequest.IsSetWelcomeMessage())
+                    {
+                        context.Writer.WritePropertyName("welcomeMessage");
+                        context.Writer.Write(publicRequest.WelcomeMessage);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetIdentityProviderConfiguration())
-                {
-                    context.Writer.WritePropertyName("identityProviderConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = IdentityProviderConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.IdentityProviderConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("roleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetSamplePromptsControlMode())
-                {
-                    context.Writer.WritePropertyName("samplePromptsControlMode");
-                    context.Writer.Write(publicRequest.SamplePromptsControlMode);
-                }
-
-                if(publicRequest.IsSetSubtitle())
-                {
-                    context.Writer.WritePropertyName("subtitle");
-                    context.Writer.Write(publicRequest.Subtitle);
-                }
-
-                if(publicRequest.IsSetTitle())
-                {
-                    context.Writer.WritePropertyName("title");
-                    context.Writer.Write(publicRequest.Title);
-                }
-
-                if(publicRequest.IsSetWelcomeMessage())
-                {
-                    context.Writer.WritePropertyName("welcomeMessage");
-                    context.Writer.Write(publicRequest.WelcomeMessage);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,33 +63,36 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAssignmentId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AssignmentId");
-                    context.Writer.Write(publicRequest.AssignmentId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAssignmentId())
+                    {
+                        context.Writer.WritePropertyName("AssignmentId");
+                        context.Writer.Write(publicRequest.AssignmentId);
+                    }
+
+                    if(publicRequest.IsSetOverrideRejection())
+                    {
+                        context.Writer.WritePropertyName("OverrideRejection");
+                        context.Writer.Write(publicRequest.OverrideRejection.Value);
+                    }
+
+                    if(publicRequest.IsSetRequesterFeedback())
+                    {
+                        context.Writer.WritePropertyName("RequesterFeedback");
+                        context.Writer.Write(publicRequest.RequesterFeedback);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetOverrideRejection())
-                {
-                    context.Writer.WritePropertyName("OverrideRejection");
-                    context.Writer.Write(publicRequest.OverrideRejection.Value);
-                }
-
-                if(publicRequest.IsSetRequesterFeedback())
-                {
-                    context.Writer.WritePropertyName("RequesterFeedback");
-                    context.Writer.Write(publicRequest.RequesterFeedback);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

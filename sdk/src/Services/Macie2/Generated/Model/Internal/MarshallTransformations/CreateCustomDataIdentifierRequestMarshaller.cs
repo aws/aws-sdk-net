@@ -61,102 +61,105 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/custom-data-identifiers";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetIgnoreWords())
-                {
-                    context.Writer.WritePropertyName("ignoreWords");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestIgnoreWordsListValue in publicRequest.IgnoreWords)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
-                            context.Writer.Write(publicRequestIgnoreWordsListValue);
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetKeywords())
-                {
-                    context.Writer.WritePropertyName("keywords");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestKeywordsListValue in publicRequest.Keywords)
+                    else if(!(publicRequest.IsSetClientToken()))
                     {
-                            context.Writer.Write(publicRequestKeywordsListValue);
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
                     }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetMaximumMatchDistance())
-                {
-                    context.Writer.WritePropertyName("maximumMatchDistance");
-                    context.Writer.Write(publicRequest.MaximumMatchDistance.Value);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetRegex())
-                {
-                    context.Writer.WritePropertyName("regex");
-                    context.Writer.Write(publicRequest.Regex);
-                }
-
-                if(publicRequest.IsSetSeverityLevels())
-                {
-                    context.Writer.WritePropertyName("severityLevels");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSeverityLevelsListValue in publicRequest.SeverityLevels)
+                    if(publicRequest.IsSetDescription())
                     {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetIgnoreWords())
+                    {
+                        context.Writer.WritePropertyName("ignoreWords");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestIgnoreWordsListValue in publicRequest.IgnoreWords)
+                        {
+                                context.Writer.Write(publicRequestIgnoreWordsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetKeywords())
+                    {
+                        context.Writer.WritePropertyName("keywords");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestKeywordsListValue in publicRequest.Keywords)
+                        {
+                                context.Writer.Write(publicRequestKeywordsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetMaximumMatchDistance())
+                    {
+                        context.Writer.WritePropertyName("maximumMatchDistance");
+                        context.Writer.Write(publicRequest.MaximumMatchDistance.Value);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetRegex())
+                    {
+                        context.Writer.WritePropertyName("regex");
+                        context.Writer.Write(publicRequest.Regex);
+                    }
+
+                    if(publicRequest.IsSetSeverityLevels())
+                    {
+                        context.Writer.WritePropertyName("severityLevels");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSeverityLevelsListValue in publicRequest.SeverityLevels)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = SeverityLevelMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSeverityLevelsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
 
-                        var marshaller = SeverityLevelMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSeverityLevelsListValue, context);
-
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

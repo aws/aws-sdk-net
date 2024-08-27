@@ -64,48 +64,51 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                 throw new AmazonGroundStationException("Request object does not have required field AgentId set");
             request.AddPathResource("{agentId}", StringUtils.FromString(publicRequest.AgentId));
             request.ResourcePath = "/agent/{agentId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAggregateStatus())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("aggregateStatus");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AggregateStatusMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AggregateStatus, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetComponentStatuses())
-                {
-                    context.Writer.WritePropertyName("componentStatuses");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestComponentStatusesListValue in publicRequest.ComponentStatuses)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAggregateStatus())
                     {
+                        context.Writer.WritePropertyName("aggregateStatus");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = ComponentStatusDataMarshaller.Instance;
-                        marshaller.Marshall(publicRequestComponentStatusesListValue, context);
+                        var marshaller = AggregateStatusMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AggregateStatus, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetComponentStatuses())
+                    {
+                        context.Writer.WritePropertyName("componentStatuses");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestComponentStatusesListValue in publicRequest.ComponentStatuses)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ComponentStatusDataMarshaller.Instance;
+                            marshaller.Marshall(publicRequestComponentStatusesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTaskId())
+                    {
+                        context.Writer.WritePropertyName("taskId");
+                        context.Writer.Write(publicRequest.TaskId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTaskId())
-                {
-                    context.Writer.WritePropertyName("taskId");
-                    context.Writer.Write(publicRequest.TaskId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

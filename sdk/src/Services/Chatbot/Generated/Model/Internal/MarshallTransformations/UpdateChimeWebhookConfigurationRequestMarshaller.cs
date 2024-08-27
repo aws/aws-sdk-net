@@ -61,56 +61,59 @@ namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/update-chime-webhook-configuration";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetChatConfigurationArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ChatConfigurationArn");
-                    context.Writer.Write(publicRequest.ChatConfigurationArn);
-                }
-
-                if(publicRequest.IsSetIamRoleArn())
-                {
-                    context.Writer.WritePropertyName("IamRoleArn");
-                    context.Writer.Write(publicRequest.IamRoleArn);
-                }
-
-                if(publicRequest.IsSetLoggingLevel())
-                {
-                    context.Writer.WritePropertyName("LoggingLevel");
-                    context.Writer.Write(publicRequest.LoggingLevel);
-                }
-
-                if(publicRequest.IsSetSnsTopicArns())
-                {
-                    context.Writer.WritePropertyName("SnsTopicArns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSnsTopicArnsListValue in publicRequest.SnsTopicArns)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetChatConfigurationArn())
                     {
-                            context.Writer.Write(publicRequestSnsTopicArnsListValue);
+                        context.Writer.WritePropertyName("ChatConfigurationArn");
+                        context.Writer.Write(publicRequest.ChatConfigurationArn);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetIamRoleArn())
+                    {
+                        context.Writer.WritePropertyName("IamRoleArn");
+                        context.Writer.Write(publicRequest.IamRoleArn);
+                    }
+
+                    if(publicRequest.IsSetLoggingLevel())
+                    {
+                        context.Writer.WritePropertyName("LoggingLevel");
+                        context.Writer.Write(publicRequest.LoggingLevel);
+                    }
+
+                    if(publicRequest.IsSetSnsTopicArns())
+                    {
+                        context.Writer.WritePropertyName("SnsTopicArns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSnsTopicArnsListValue in publicRequest.SnsTopicArns)
+                        {
+                                context.Writer.Write(publicRequestSnsTopicArnsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetWebhookDescription())
+                    {
+                        context.Writer.WritePropertyName("WebhookDescription");
+                        context.Writer.Write(publicRequest.WebhookDescription);
+                    }
+
+                    if(publicRequest.IsSetWebhookUrl())
+                    {
+                        context.Writer.WritePropertyName("WebhookUrl");
+                        context.Writer.Write(publicRequest.WebhookUrl);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetWebhookDescription())
-                {
-                    context.Writer.WritePropertyName("WebhookDescription");
-                    context.Writer.Write(publicRequest.WebhookDescription);
-                }
-
-                if(publicRequest.IsSetWebhookUrl())
-                {
-                    context.Writer.WritePropertyName("WebhookUrl");
-                    context.Writer.Write(publicRequest.WebhookUrl);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

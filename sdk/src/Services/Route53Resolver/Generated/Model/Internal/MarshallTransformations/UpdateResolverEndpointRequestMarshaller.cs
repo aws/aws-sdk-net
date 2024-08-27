@@ -63,60 +63,63 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetProtocols())
-                {
-                    context.Writer.WritePropertyName("Protocols");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestProtocolsListValue in publicRequest.Protocols)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetName())
                     {
-                            context.Writer.Write(publicRequestProtocolsListValue);
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetResolverEndpointId())
-                {
-                    context.Writer.WritePropertyName("ResolverEndpointId");
-                    context.Writer.Write(publicRequest.ResolverEndpointId);
-                }
-
-                if(publicRequest.IsSetResolverEndpointType())
-                {
-                    context.Writer.WritePropertyName("ResolverEndpointType");
-                    context.Writer.Write(publicRequest.ResolverEndpointType);
-                }
-
-                if(publicRequest.IsSetUpdateIpAddresses())
-                {
-                    context.Writer.WritePropertyName("UpdateIpAddresses");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestUpdateIpAddressesListValue in publicRequest.UpdateIpAddresses)
+                    if(publicRequest.IsSetProtocols())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = UpdateIpAddressMarshaller.Instance;
-                        marshaller.Marshall(publicRequestUpdateIpAddressesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("Protocols");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestProtocolsListValue in publicRequest.Protocols)
+                        {
+                                context.Writer.Write(publicRequestProtocolsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetResolverEndpointId())
+                    {
+                        context.Writer.WritePropertyName("ResolverEndpointId");
+                        context.Writer.Write(publicRequest.ResolverEndpointId);
+                    }
+
+                    if(publicRequest.IsSetResolverEndpointType())
+                    {
+                        context.Writer.WritePropertyName("ResolverEndpointType");
+                        context.Writer.Write(publicRequest.ResolverEndpointType);
+                    }
+
+                    if(publicRequest.IsSetUpdateIpAddresses())
+                    {
+                        context.Writer.WritePropertyName("UpdateIpAddresses");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestUpdateIpAddressesListValue in publicRequest.UpdateIpAddresses)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = UpdateIpAddressMarshaller.Instance;
+                            marshaller.Marshall(publicRequestUpdateIpAddressesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

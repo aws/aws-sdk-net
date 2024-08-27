@@ -63,32 +63,35 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetIncludeShadowTrails())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("includeShadowTrails");
-                    context.Writer.Write(publicRequest.IncludeShadowTrails.Value);
-                }
-
-                if(publicRequest.IsSetTrailNameList())
-                {
-                    context.Writer.WritePropertyName("trailNameList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTrailNameListListValue in publicRequest.TrailNameList)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetIncludeShadowTrails())
                     {
-                            context.Writer.Write(publicRequestTrailNameListListValue);
+                        context.Writer.WritePropertyName("includeShadowTrails");
+                        context.Writer.Write(publicRequest.IncludeShadowTrails.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTrailNameList())
+                    {
+                        context.Writer.WritePropertyName("trailNameList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTrailNameListListValue in publicRequest.TrailNameList)
+                        {
+                                context.Writer.Write(publicRequestTrailNameListListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

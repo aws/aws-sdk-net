@@ -61,59 +61,62 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/prod/batch/delete";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetChannelIds())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("channelIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestChannelIdsListValue in publicRequest.ChannelIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetChannelIds())
                     {
-                            context.Writer.Write(publicRequestChannelIdsListValue);
+                        context.Writer.WritePropertyName("channelIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestChannelIdsListValue in publicRequest.ChannelIds)
+                        {
+                                context.Writer.Write(publicRequestChannelIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetInputIds())
+                    {
+                        context.Writer.WritePropertyName("inputIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestInputIdsListValue in publicRequest.InputIds)
+                        {
+                                context.Writer.Write(publicRequestInputIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetInputSecurityGroupIds())
+                    {
+                        context.Writer.WritePropertyName("inputSecurityGroupIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestInputSecurityGroupIdsListValue in publicRequest.InputSecurityGroupIds)
+                        {
+                                context.Writer.Write(publicRequestInputSecurityGroupIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetMultiplexIds())
+                    {
+                        context.Writer.WritePropertyName("multiplexIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMultiplexIdsListValue in publicRequest.MultiplexIds)
+                        {
+                                context.Writer.Write(publicRequestMultiplexIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetInputIds())
-                {
-                    context.Writer.WritePropertyName("inputIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestInputIdsListValue in publicRequest.InputIds)
-                    {
-                            context.Writer.Write(publicRequestInputIdsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetInputSecurityGroupIds())
-                {
-                    context.Writer.WritePropertyName("inputSecurityGroupIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestInputSecurityGroupIdsListValue in publicRequest.InputSecurityGroupIds)
-                    {
-                            context.Writer.Write(publicRequestInputSecurityGroupIdsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetMultiplexIds())
-                {
-                    context.Writer.WritePropertyName("multiplexIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMultiplexIdsListValue in publicRequest.MultiplexIds)
-                    {
-                            context.Writer.Write(publicRequestMultiplexIdsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

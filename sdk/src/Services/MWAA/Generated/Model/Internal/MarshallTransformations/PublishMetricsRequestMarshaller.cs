@@ -64,31 +64,34 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                 throw new AmazonMWAAException("Request object does not have required field EnvironmentName set");
             request.AddPathResource("{EnvironmentName}", StringUtils.FromString(publicRequest.EnvironmentName));
             request.ResourcePath = "/metrics/environments/{EnvironmentName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMetricData())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("MetricData");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMetricDataListValue in publicRequest.MetricData)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMetricData())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("MetricData");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMetricDataListValue in publicRequest.MetricData)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = MetricDatumMarshaller.Instance;
-                        marshaller.Marshall(publicRequestMetricDataListValue, context);
+                            var marshaller = MetricDatumMarshaller.Instance;
+                            marshaller.Marshall(publicRequestMetricDataListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

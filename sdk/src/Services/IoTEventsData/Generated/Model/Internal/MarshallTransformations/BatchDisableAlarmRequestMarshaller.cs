@@ -61,31 +61,34 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/alarms/disable";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDisableActionRequests())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("disableActionRequests");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDisableActionRequestsListValue in publicRequest.DisableActionRequests)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDisableActionRequests())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("disableActionRequests");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDisableActionRequestsListValue in publicRequest.DisableActionRequests)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = DisableAlarmActionRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequestDisableActionRequestsListValue, context);
+                            var marshaller = DisableAlarmActionRequestMarshaller.Instance;
+                            marshaller.Marshall(publicRequestDisableActionRequestsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

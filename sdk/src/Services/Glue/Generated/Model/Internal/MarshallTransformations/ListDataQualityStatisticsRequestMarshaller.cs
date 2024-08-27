@@ -63,50 +63,53 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMaxResults())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetProfileId())
+                    {
+                        context.Writer.WritePropertyName("ProfileId");
+                        context.Writer.Write(publicRequest.ProfileId);
+                    }
+
+                    if(publicRequest.IsSetStatisticId())
+                    {
+                        context.Writer.WritePropertyName("StatisticId");
+                        context.Writer.Write(publicRequest.StatisticId);
+                    }
+
+                    if(publicRequest.IsSetTimestampFilter())
+                    {
+                        context.Writer.WritePropertyName("TimestampFilter");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TimestampFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TimestampFilter, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetProfileId())
-                {
-                    context.Writer.WritePropertyName("ProfileId");
-                    context.Writer.Write(publicRequest.ProfileId);
-                }
-
-                if(publicRequest.IsSetStatisticId())
-                {
-                    context.Writer.WritePropertyName("StatisticId");
-                    context.Writer.Write(publicRequest.StatisticId);
-                }
-
-                if(publicRequest.IsSetTimestampFilter())
-                {
-                    context.Writer.WritePropertyName("TimestampFilter");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TimestampFilterMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TimestampFilter, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

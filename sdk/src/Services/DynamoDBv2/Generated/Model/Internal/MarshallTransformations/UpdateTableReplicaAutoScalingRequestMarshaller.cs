@@ -63,64 +63,67 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetGlobalSecondaryIndexUpdates())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("GlobalSecondaryIndexUpdates");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestGlobalSecondaryIndexUpdatesListValue in publicRequest.GlobalSecondaryIndexUpdates)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetGlobalSecondaryIndexUpdates())
                     {
+                        context.Writer.WritePropertyName("GlobalSecondaryIndexUpdates");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestGlobalSecondaryIndexUpdatesListValue in publicRequest.GlobalSecondaryIndexUpdates)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = GlobalSecondaryIndexAutoScalingUpdateMarshaller.Instance;
+                            marshaller.Marshall(publicRequestGlobalSecondaryIndexUpdatesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetProvisionedWriteCapacityAutoScalingUpdate())
+                    {
+                        context.Writer.WritePropertyName("ProvisionedWriteCapacityAutoScalingUpdate");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = GlobalSecondaryIndexAutoScalingUpdateMarshaller.Instance;
-                        marshaller.Marshall(publicRequestGlobalSecondaryIndexUpdatesListValue, context);
+                        var marshaller = AutoScalingSettingsUpdateMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ProvisionedWriteCapacityAutoScalingUpdate, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetProvisionedWriteCapacityAutoScalingUpdate())
-                {
-                    context.Writer.WritePropertyName("ProvisionedWriteCapacityAutoScalingUpdate");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AutoScalingSettingsUpdateMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ProvisionedWriteCapacityAutoScalingUpdate, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetReplicaUpdates())
-                {
-                    context.Writer.WritePropertyName("ReplicaUpdates");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestReplicaUpdatesListValue in publicRequest.ReplicaUpdates)
+                    if(publicRequest.IsSetReplicaUpdates())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("ReplicaUpdates");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestReplicaUpdatesListValue in publicRequest.ReplicaUpdates)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = ReplicaAutoScalingUpdateMarshaller.Instance;
-                        marshaller.Marshall(publicRequestReplicaUpdatesListValue, context);
+                            var marshaller = ReplicaAutoScalingUpdateMarshaller.Instance;
+                            marshaller.Marshall(publicRequestReplicaUpdatesListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTableName())
+                    {
+                        context.Writer.WritePropertyName("TableName");
+                        context.Writer.Write(publicRequest.TableName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTableName())
-                {
-                    context.Writer.WritePropertyName("TableName");
-                    context.Writer.Write(publicRequest.TableName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

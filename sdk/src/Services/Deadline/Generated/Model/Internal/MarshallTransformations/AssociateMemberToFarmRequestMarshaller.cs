@@ -67,33 +67,36 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 throw new AmazonDeadlineException("Request object does not have required field PrincipalId set");
             request.AddPathResource("{principalId}", StringUtils.FromString(publicRequest.PrincipalId));
             request.ResourcePath = "/2023-10-12/farms/{farmId}/members/{principalId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetIdentityStoreId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("identityStoreId");
-                    context.Writer.Write(publicRequest.IdentityStoreId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetIdentityStoreId())
+                    {
+                        context.Writer.WritePropertyName("identityStoreId");
+                        context.Writer.Write(publicRequest.IdentityStoreId);
+                    }
+
+                    if(publicRequest.IsSetMembershipLevel())
+                    {
+                        context.Writer.WritePropertyName("membershipLevel");
+                        context.Writer.Write(publicRequest.MembershipLevel);
+                    }
+
+                    if(publicRequest.IsSetPrincipalType())
+                    {
+                        context.Writer.WritePropertyName("principalType");
+                        context.Writer.Write(publicRequest.PrincipalType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMembershipLevel())
-                {
-                    context.Writer.WritePropertyName("membershipLevel");
-                    context.Writer.Write(publicRequest.MembershipLevel);
-                }
-
-                if(publicRequest.IsSetPrincipalType())
-                {
-                    context.Writer.WritePropertyName("principalType");
-                    context.Writer.Write(publicRequest.PrincipalType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

@@ -64,95 +64,98 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                 throw new AmazonDLMException("Request object does not have required field PolicyId set");
             request.AddPathResource("{policyId}", StringUtils.FromString(publicRequest.PolicyId));
             request.ResourcePath = "/policies/{policyId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCopyTags())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CopyTags");
-                    context.Writer.Write(publicRequest.CopyTags.Value);
-                }
-
-                if(publicRequest.IsSetCreateInterval())
-                {
-                    context.Writer.WritePropertyName("CreateInterval");
-                    context.Writer.Write(publicRequest.CreateInterval.Value);
-                }
-
-                if(publicRequest.IsSetCrossRegionCopyTargets())
-                {
-                    context.Writer.WritePropertyName("CrossRegionCopyTargets");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCrossRegionCopyTargetsListValue in publicRequest.CrossRegionCopyTargets)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCopyTags())
                     {
+                        context.Writer.WritePropertyName("CopyTags");
+                        context.Writer.Write(publicRequest.CopyTags.Value);
+                    }
+
+                    if(publicRequest.IsSetCreateInterval())
+                    {
+                        context.Writer.WritePropertyName("CreateInterval");
+                        context.Writer.Write(publicRequest.CreateInterval.Value);
+                    }
+
+                    if(publicRequest.IsSetCrossRegionCopyTargets())
+                    {
+                        context.Writer.WritePropertyName("CrossRegionCopyTargets");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCrossRegionCopyTargetsListValue in publicRequest.CrossRegionCopyTargets)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = CrossRegionCopyTargetMarshaller.Instance;
+                            marshaller.Marshall(publicRequestCrossRegionCopyTargetsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetExclusions())
+                    {
+                        context.Writer.WritePropertyName("Exclusions");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = CrossRegionCopyTargetMarshaller.Instance;
-                        marshaller.Marshall(publicRequestCrossRegionCopyTargetsListValue, context);
+                        var marshaller = ExclusionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Exclusions, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetExecutionRoleArn())
+                    {
+                        context.Writer.WritePropertyName("ExecutionRoleArn");
+                        context.Writer.Write(publicRequest.ExecutionRoleArn);
+                    }
+
+                    if(publicRequest.IsSetExtendDeletion())
+                    {
+                        context.Writer.WritePropertyName("ExtendDeletion");
+                        context.Writer.Write(publicRequest.ExtendDeletion.Value);
+                    }
+
+                    if(publicRequest.IsSetPolicyDetails())
+                    {
+                        context.Writer.WritePropertyName("PolicyDetails");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PolicyDetailsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.PolicyDetails, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRetainInterval())
+                    {
+                        context.Writer.WritePropertyName("RetainInterval");
+                        context.Writer.Write(publicRequest.RetainInterval.Value);
+                    }
+
+                    if(publicRequest.IsSetState())
+                    {
+                        context.Writer.WritePropertyName("State");
+                        context.Writer.Write(publicRequest.State);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetExclusions())
-                {
-                    context.Writer.WritePropertyName("Exclusions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ExclusionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Exclusions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetExecutionRoleArn())
-                {
-                    context.Writer.WritePropertyName("ExecutionRoleArn");
-                    context.Writer.Write(publicRequest.ExecutionRoleArn);
-                }
-
-                if(publicRequest.IsSetExtendDeletion())
-                {
-                    context.Writer.WritePropertyName("ExtendDeletion");
-                    context.Writer.Write(publicRequest.ExtendDeletion.Value);
-                }
-
-                if(publicRequest.IsSetPolicyDetails())
-                {
-                    context.Writer.WritePropertyName("PolicyDetails");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PolicyDetailsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PolicyDetails, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRetainInterval())
-                {
-                    context.Writer.WritePropertyName("RetainInterval");
-                    context.Writer.Write(publicRequest.RetainInterval.Value);
-                }
-
-                if(publicRequest.IsSetState())
-                {
-                    context.Writer.WritePropertyName("State");
-                    context.Writer.Write(publicRequest.State);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

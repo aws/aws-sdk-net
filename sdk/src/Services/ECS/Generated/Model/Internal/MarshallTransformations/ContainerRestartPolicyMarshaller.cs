@@ -51,7 +51,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("enabled");
-                context.Writer.Write(requestObject.Enabled);
+                context.Writer.Write(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetIgnoredExitCodes())
@@ -68,7 +68,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRestartAttemptPeriod())
             {
                 context.Writer.WritePropertyName("restartAttemptPeriod");
-                context.Writer.Write(requestObject.RestartAttemptPeriod);
+                context.Writer.Write(requestObject.RestartAttemptPeriod.Value);
             }
 
         }

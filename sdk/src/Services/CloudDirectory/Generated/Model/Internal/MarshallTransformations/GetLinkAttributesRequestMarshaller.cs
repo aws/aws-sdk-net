@@ -61,43 +61,46 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/amazonclouddirectory/2017-01-11/typedlink/attributes/get";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAttributeNames())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AttributeNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAttributeNamesListValue in publicRequest.AttributeNames)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAttributeNames())
                     {
-                            context.Writer.Write(publicRequestAttributeNamesListValue);
+                        context.Writer.WritePropertyName("AttributeNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAttributeNamesListValue in publicRequest.AttributeNames)
+                        {
+                                context.Writer.Write(publicRequestAttributeNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetConsistencyLevel())
+                    {
+                        context.Writer.WritePropertyName("ConsistencyLevel");
+                        context.Writer.Write(publicRequest.ConsistencyLevel);
+                    }
+
+                    if(publicRequest.IsSetTypedLinkSpecifier())
+                    {
+                        context.Writer.WritePropertyName("TypedLinkSpecifier");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TypedLinkSpecifierMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TypedLinkSpecifier, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetConsistencyLevel())
-                {
-                    context.Writer.WritePropertyName("ConsistencyLevel");
-                    context.Writer.Write(publicRequest.ConsistencyLevel);
-                }
-
-                if(publicRequest.IsSetTypedLinkSpecifier())
-                {
-                    context.Writer.WritePropertyName("TypedLinkSpecifier");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TypedLinkSpecifierMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TypedLinkSpecifier, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

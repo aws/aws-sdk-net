@@ -61,33 +61,36 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/StartExport";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetS3Bucket())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("s3Bucket");
-                    context.Writer.Write(publicRequest.S3Bucket);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetS3Bucket())
+                    {
+                        context.Writer.WritePropertyName("s3Bucket");
+                        context.Writer.Write(publicRequest.S3Bucket);
+                    }
+
+                    if(publicRequest.IsSetS3BucketOwner())
+                    {
+                        context.Writer.WritePropertyName("s3BucketOwner");
+                        context.Writer.Write(publicRequest.S3BucketOwner);
+                    }
+
+                    if(publicRequest.IsSetS3Key())
+                    {
+                        context.Writer.WritePropertyName("s3Key");
+                        context.Writer.Write(publicRequest.S3Key);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetS3BucketOwner())
-                {
-                    context.Writer.WritePropertyName("s3BucketOwner");
-                    context.Writer.Write(publicRequest.S3BucketOwner);
-                }
-
-                if(publicRequest.IsSetS3Key())
-                {
-                    context.Writer.WritePropertyName("s3Key");
-                    context.Writer.Write(publicRequest.S3Key);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

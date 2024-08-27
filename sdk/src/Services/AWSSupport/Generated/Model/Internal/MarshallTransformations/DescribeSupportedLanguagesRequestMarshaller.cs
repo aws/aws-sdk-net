@@ -63,33 +63,36 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCategoryCode())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("categoryCode");
-                    context.Writer.Write(publicRequest.CategoryCode);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCategoryCode())
+                    {
+                        context.Writer.WritePropertyName("categoryCode");
+                        context.Writer.Write(publicRequest.CategoryCode);
+                    }
+
+                    if(publicRequest.IsSetIssueType())
+                    {
+                        context.Writer.WritePropertyName("issueType");
+                        context.Writer.Write(publicRequest.IssueType);
+                    }
+
+                    if(publicRequest.IsSetServiceCode())
+                    {
+                        context.Writer.WritePropertyName("serviceCode");
+                        context.Writer.Write(publicRequest.ServiceCode);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetIssueType())
-                {
-                    context.Writer.WritePropertyName("issueType");
-                    context.Writer.Write(publicRequest.IssueType);
-                }
-
-                if(publicRequest.IsSetServiceCode())
-                {
-                    context.Writer.WritePropertyName("serviceCode");
-                    context.Writer.Write(publicRequest.ServiceCode);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

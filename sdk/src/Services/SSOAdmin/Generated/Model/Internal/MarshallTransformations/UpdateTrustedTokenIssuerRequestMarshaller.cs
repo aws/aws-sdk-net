@@ -63,38 +63,41 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetTrustedTokenIssuerArn())
+                    {
+                        context.Writer.WritePropertyName("TrustedTokenIssuerArn");
+                        context.Writer.Write(publicRequest.TrustedTokenIssuerArn);
+                    }
+
+                    if(publicRequest.IsSetTrustedTokenIssuerConfiguration())
+                    {
+                        context.Writer.WritePropertyName("TrustedTokenIssuerConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TrustedTokenIssuerUpdateConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TrustedTokenIssuerConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTrustedTokenIssuerArn())
-                {
-                    context.Writer.WritePropertyName("TrustedTokenIssuerArn");
-                    context.Writer.Write(publicRequest.TrustedTokenIssuerArn);
-                }
-
-                if(publicRequest.IsSetTrustedTokenIssuerConfiguration())
-                {
-                    context.Writer.WritePropertyName("TrustedTokenIssuerConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TrustedTokenIssuerUpdateConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TrustedTokenIssuerConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

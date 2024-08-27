@@ -63,56 +63,59 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAction())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Action");
-                    context.Writer.Write(publicRequest.Action);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAction())
+                    {
+                        context.Writer.WritePropertyName("Action");
+                        context.Writer.Write(publicRequest.Action);
+                    }
+
+                    if(publicRequest.IsSetCondition())
+                    {
+                        context.Writer.WritePropertyName("Condition");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ConditionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Condition, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetEventBusName())
+                    {
+                        context.Writer.WritePropertyName("EventBusName");
+                        context.Writer.Write(publicRequest.EventBusName);
+                    }
+
+                    if(publicRequest.IsSetPolicy())
+                    {
+                        context.Writer.WritePropertyName("Policy");
+                        context.Writer.Write(publicRequest.Policy);
+                    }
+
+                    if(publicRequest.IsSetPrincipal())
+                    {
+                        context.Writer.WritePropertyName("Principal");
+                        context.Writer.Write(publicRequest.Principal);
+                    }
+
+                    if(publicRequest.IsSetStatementId())
+                    {
+                        context.Writer.WritePropertyName("StatementId");
+                        context.Writer.Write(publicRequest.StatementId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCondition())
-                {
-                    context.Writer.WritePropertyName("Condition");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ConditionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Condition, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEventBusName())
-                {
-                    context.Writer.WritePropertyName("EventBusName");
-                    context.Writer.Write(publicRequest.EventBusName);
-                }
-
-                if(publicRequest.IsSetPolicy())
-                {
-                    context.Writer.WritePropertyName("Policy");
-                    context.Writer.Write(publicRequest.Policy);
-                }
-
-                if(publicRequest.IsSetPrincipal())
-                {
-                    context.Writer.WritePropertyName("Principal");
-                    context.Writer.Write(publicRequest.Principal);
-                }
-
-                if(publicRequest.IsSetStatementId())
-                {
-                    context.Writer.WritePropertyName("StatementId");
-                    context.Writer.Write(publicRequest.StatementId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

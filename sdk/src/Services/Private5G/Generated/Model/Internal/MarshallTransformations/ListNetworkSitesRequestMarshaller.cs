@@ -61,52 +61,55 @@ namespace Amazon.Private5G.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v1/network-sites/list";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFilters())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("filters");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestFiltersKvp in publicRequest.Filters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFilters())
                     {
-                        context.Writer.WritePropertyName(publicRequestFiltersKvp.Key);
-                        var publicRequestFiltersValue = publicRequestFiltersKvp.Value;
-
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestFiltersValueListValue in publicRequestFiltersValue)
+                        context.Writer.WritePropertyName("filters");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestFiltersKvp in publicRequest.Filters)
                         {
-                                context.Writer.Write(publicRequestFiltersValueListValue);
+                            context.Writer.WritePropertyName(publicRequestFiltersKvp.Key);
+                            var publicRequestFiltersValue = publicRequestFiltersKvp.Value;
+
+                            context.Writer.WriteArrayStart();
+                            foreach(var publicRequestFiltersValueListValue in publicRequestFiltersValue)
+                            {
+                                    context.Writer.Write(publicRequestFiltersValueListValue);
+                            }
+                            context.Writer.WriteArrayEnd();
                         }
-                        context.Writer.WriteArrayEnd();
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNetworkArn())
+                    {
+                        context.Writer.WritePropertyName("networkArn");
+                        context.Writer.Write(publicRequest.NetworkArn);
+                    }
+
+                    if(publicRequest.IsSetStartToken())
+                    {
+                        context.Writer.WritePropertyName("startToken");
+                        context.Writer.Write(publicRequest.StartToken);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNetworkArn())
-                {
-                    context.Writer.WritePropertyName("networkArn");
-                    context.Writer.Write(publicRequest.NetworkArn);
-                }
-
-                if(publicRequest.IsSetStartToken())
-                {
-                    context.Writer.WritePropertyName("startToken");
-                    context.Writer.Write(publicRequest.StartToken);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -61,75 +61,78 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/packages/template-job";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetJobTags())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("JobTags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestJobTagsListValue in publicRequest.JobTags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetJobTags())
                     {
+                        context.Writer.WritePropertyName("JobTags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestJobTagsListValue in publicRequest.JobTags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = JobResourceTagsMarshaller.Instance;
+                            marshaller.Marshall(publicRequestJobTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetNodeDescription())
+                    {
+                        context.Writer.WritePropertyName("NodeDescription");
+                        context.Writer.Write(publicRequest.NodeDescription);
+                    }
+
+                    if(publicRequest.IsSetNodeName())
+                    {
+                        context.Writer.WritePropertyName("NodeName");
+                        context.Writer.Write(publicRequest.NodeName);
+                    }
+
+                    if(publicRequest.IsSetOutputPackageName())
+                    {
+                        context.Writer.WritePropertyName("OutputPackageName");
+                        context.Writer.Write(publicRequest.OutputPackageName);
+                    }
+
+                    if(publicRequest.IsSetOutputPackageVersion())
+                    {
+                        context.Writer.WritePropertyName("OutputPackageVersion");
+                        context.Writer.Write(publicRequest.OutputPackageVersion);
+                    }
+
+                    if(publicRequest.IsSetTemplateParameters())
+                    {
+                        context.Writer.WritePropertyName("TemplateParameters");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTemplateParametersKvp in publicRequest.TemplateParameters)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTemplateParametersKvp.Key);
+                            var publicRequestTemplateParametersValue = publicRequestTemplateParametersKvp.Value;
 
-                        var marshaller = JobResourceTagsMarshaller.Instance;
-                        marshaller.Marshall(publicRequestJobTagsListValue, context);
-
+                                context.Writer.Write(publicRequestTemplateParametersValue);
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetNodeDescription())
-                {
-                    context.Writer.WritePropertyName("NodeDescription");
-                    context.Writer.Write(publicRequest.NodeDescription);
-                }
-
-                if(publicRequest.IsSetNodeName())
-                {
-                    context.Writer.WritePropertyName("NodeName");
-                    context.Writer.Write(publicRequest.NodeName);
-                }
-
-                if(publicRequest.IsSetOutputPackageName())
-                {
-                    context.Writer.WritePropertyName("OutputPackageName");
-                    context.Writer.Write(publicRequest.OutputPackageName);
-                }
-
-                if(publicRequest.IsSetOutputPackageVersion())
-                {
-                    context.Writer.WritePropertyName("OutputPackageVersion");
-                    context.Writer.Write(publicRequest.OutputPackageVersion);
-                }
-
-                if(publicRequest.IsSetTemplateParameters())
-                {
-                    context.Writer.WritePropertyName("TemplateParameters");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTemplateParametersKvp in publicRequest.TemplateParameters)
+                    if(publicRequest.IsSetTemplateType())
                     {
-                        context.Writer.WritePropertyName(publicRequestTemplateParametersKvp.Key);
-                        var publicRequestTemplateParametersValue = publicRequestTemplateParametersKvp.Value;
-
-                            context.Writer.Write(publicRequestTemplateParametersValue);
+                        context.Writer.WritePropertyName("TemplateType");
+                        context.Writer.Write(publicRequest.TemplateType);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTemplateType())
-                {
-                    context.Writer.WritePropertyName("TemplateType");
-                    context.Writer.Write(publicRequest.TemplateType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

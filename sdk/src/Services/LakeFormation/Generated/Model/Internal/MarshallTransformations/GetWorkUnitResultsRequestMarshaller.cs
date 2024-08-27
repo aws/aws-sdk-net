@@ -61,33 +61,36 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/GetWorkUnitResults";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetQueryId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("QueryId");
-                    context.Writer.Write(publicRequest.QueryId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetQueryId())
+                    {
+                        context.Writer.WritePropertyName("QueryId");
+                        context.Writer.Write(publicRequest.QueryId);
+                    }
+
+                    if(publicRequest.IsSetWorkUnitId())
+                    {
+                        context.Writer.WritePropertyName("WorkUnitId");
+                        context.Writer.Write(publicRequest.WorkUnitId.Value);
+                    }
+
+                    if(publicRequest.IsSetWorkUnitToken())
+                    {
+                        context.Writer.WritePropertyName("WorkUnitToken");
+                        context.Writer.Write(publicRequest.WorkUnitToken);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetWorkUnitId())
-                {
-                    context.Writer.WritePropertyName("WorkUnitId");
-                    context.Writer.Write(publicRequest.WorkUnitId.Value);
-                }
-
-                if(publicRequest.IsSetWorkUnitToken())
-                {
-                    context.Writer.WritePropertyName("WorkUnitToken");
-                    context.Writer.Write(publicRequest.WorkUnitToken);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

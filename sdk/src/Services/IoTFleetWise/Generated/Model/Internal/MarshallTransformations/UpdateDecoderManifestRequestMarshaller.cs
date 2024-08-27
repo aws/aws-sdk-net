@@ -63,119 +63,122 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetNetworkInterfacesToAdd())
-                {
-                    context.Writer.WritePropertyName("networkInterfacesToAdd");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestNetworkInterfacesToAddListValue in publicRequest.NetworkInterfacesToAdd)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = NetworkInterfaceMarshaller.Instance;
-                        marshaller.Marshall(publicRequestNetworkInterfacesToAddListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetNetworkInterfacesToRemove())
-                {
-                    context.Writer.WritePropertyName("networkInterfacesToRemove");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestNetworkInterfacesToRemoveListValue in publicRequest.NetworkInterfacesToRemove)
+                    if(publicRequest.IsSetName())
                     {
-                            context.Writer.Write(publicRequestNetworkInterfacesToRemoveListValue);
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetNetworkInterfacesToUpdate())
-                {
-                    context.Writer.WritePropertyName("networkInterfacesToUpdate");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestNetworkInterfacesToUpdateListValue in publicRequest.NetworkInterfacesToUpdate)
+                    if(publicRequest.IsSetNetworkInterfacesToAdd())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("networkInterfacesToAdd");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestNetworkInterfacesToAddListValue in publicRequest.NetworkInterfacesToAdd)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = NetworkInterfaceMarshaller.Instance;
-                        marshaller.Marshall(publicRequestNetworkInterfacesToUpdateListValue, context);
+                            var marshaller = NetworkInterfaceMarshaller.Instance;
+                            marshaller.Marshall(publicRequestNetworkInterfacesToAddListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetSignalDecodersToAdd())
-                {
-                    context.Writer.WritePropertyName("signalDecodersToAdd");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSignalDecodersToAddListValue in publicRequest.SignalDecodersToAdd)
+                    if(publicRequest.IsSetNetworkInterfacesToRemove())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SignalDecoderMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSignalDecodersToAddListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("networkInterfacesToRemove");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestNetworkInterfacesToRemoveListValue in publicRequest.NetworkInterfacesToRemove)
+                        {
+                                context.Writer.Write(publicRequestNetworkInterfacesToRemoveListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetSignalDecodersToRemove())
-                {
-                    context.Writer.WritePropertyName("signalDecodersToRemove");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSignalDecodersToRemoveListValue in publicRequest.SignalDecodersToRemove)
+                    if(publicRequest.IsSetNetworkInterfacesToUpdate())
                     {
-                            context.Writer.Write(publicRequestSignalDecodersToRemoveListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
+                        context.Writer.WritePropertyName("networkInterfacesToUpdate");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestNetworkInterfacesToUpdateListValue in publicRequest.NetworkInterfacesToUpdate)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                if(publicRequest.IsSetSignalDecodersToUpdate())
-                {
-                    context.Writer.WritePropertyName("signalDecodersToUpdate");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSignalDecodersToUpdateListValue in publicRequest.SignalDecodersToUpdate)
+                            var marshaller = NetworkInterfaceMarshaller.Instance;
+                            marshaller.Marshall(publicRequestNetworkInterfacesToUpdateListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSignalDecodersToAdd())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("signalDecodersToAdd");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSignalDecodersToAddListValue in publicRequest.SignalDecodersToAdd)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = SignalDecoderMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSignalDecodersToUpdateListValue, context);
+                            var marshaller = SignalDecoderMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSignalDecodersToAddListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetSignalDecodersToRemove())
+                    {
+                        context.Writer.WritePropertyName("signalDecodersToRemove");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSignalDecodersToRemoveListValue in publicRequest.SignalDecodersToRemove)
+                        {
+                                context.Writer.Write(publicRequestSignalDecodersToRemoveListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSignalDecodersToUpdate())
+                    {
+                        context.Writer.WritePropertyName("signalDecodersToUpdate");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSignalDecodersToUpdateListValue in publicRequest.SignalDecodersToUpdate)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = SignalDecoderMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSignalDecodersToUpdateListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetStatus())
+                    {
+                        context.Writer.WritePropertyName("status");
+                        context.Writer.Write(publicRequest.Status);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetStatus())
-                {
-                    context.Writer.WritePropertyName("status");
-                    context.Writer.Write(publicRequest.Status);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

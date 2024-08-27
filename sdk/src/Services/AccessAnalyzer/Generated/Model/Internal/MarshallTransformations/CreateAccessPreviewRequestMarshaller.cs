@@ -61,51 +61,54 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/access-preview";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAnalyzerArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("analyzerArn");
-                    context.Writer.Write(publicRequest.AnalyzerArn);
-                }
-
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetConfigurations())
-                {
-                    context.Writer.WritePropertyName("configurations");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestConfigurationsKvp in publicRequest.Configurations)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAnalyzerArn())
                     {
-                        context.Writer.WritePropertyName(publicRequestConfigurationsKvp.Key);
-                        var publicRequestConfigurationsValue = publicRequestConfigurationsKvp.Value;
+                        context.Writer.WritePropertyName("analyzerArn");
+                        context.Writer.Write(publicRequest.AnalyzerArn);
+                    }
 
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetConfigurations())
+                    {
+                        context.Writer.WritePropertyName("configurations");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestConfigurationsKvp in publicRequest.Configurations)
+                        {
+                            context.Writer.WritePropertyName(publicRequestConfigurationsKvp.Key);
+                            var publicRequestConfigurationsValue = publicRequestConfigurationsKvp.Value;
 
-                        var marshaller = ConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestConfigurationsValue, context);
+                            context.Writer.WriteObjectStart();
 
+                            var marshaller = ConfigurationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestConfigurationsValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

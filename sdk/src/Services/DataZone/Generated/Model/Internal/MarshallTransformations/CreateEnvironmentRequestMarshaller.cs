@@ -64,84 +64,87 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 throw new AmazonDataZoneException("Request object does not have required field DomainIdentifier set");
             request.AddPathResource("{domainIdentifier}", StringUtils.FromString(publicRequest.DomainIdentifier));
             request.ResourcePath = "/v2/domains/{domainIdentifier}/environments";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetEnvironmentAccountIdentifier())
-                {
-                    context.Writer.WritePropertyName("environmentAccountIdentifier");
-                    context.Writer.Write(publicRequest.EnvironmentAccountIdentifier);
-                }
-
-                if(publicRequest.IsSetEnvironmentAccountRegion())
-                {
-                    context.Writer.WritePropertyName("environmentAccountRegion");
-                    context.Writer.Write(publicRequest.EnvironmentAccountRegion);
-                }
-
-                if(publicRequest.IsSetEnvironmentBlueprintIdentifier())
-                {
-                    context.Writer.WritePropertyName("environmentBlueprintIdentifier");
-                    context.Writer.Write(publicRequest.EnvironmentBlueprintIdentifier);
-                }
-
-                if(publicRequest.IsSetEnvironmentProfileIdentifier())
-                {
-                    context.Writer.WritePropertyName("environmentProfileIdentifier");
-                    context.Writer.Write(publicRequest.EnvironmentProfileIdentifier);
-                }
-
-                if(publicRequest.IsSetGlossaryTerms())
-                {
-                    context.Writer.WritePropertyName("glossaryTerms");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestGlossaryTermsListValue in publicRequest.GlossaryTerms)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
-                            context.Writer.Write(publicRequestGlossaryTermsListValue);
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetProjectIdentifier())
-                {
-                    context.Writer.WritePropertyName("projectIdentifier");
-                    context.Writer.Write(publicRequest.ProjectIdentifier);
-                }
-
-                if(publicRequest.IsSetUserParameters())
-                {
-                    context.Writer.WritePropertyName("userParameters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestUserParametersListValue in publicRequest.UserParameters)
+                    if(publicRequest.IsSetEnvironmentAccountIdentifier())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EnvironmentParameterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestUserParametersListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("environmentAccountIdentifier");
+                        context.Writer.Write(publicRequest.EnvironmentAccountIdentifier);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetEnvironmentAccountRegion())
+                    {
+                        context.Writer.WritePropertyName("environmentAccountRegion");
+                        context.Writer.Write(publicRequest.EnvironmentAccountRegion);
+                    }
+
+                    if(publicRequest.IsSetEnvironmentBlueprintIdentifier())
+                    {
+                        context.Writer.WritePropertyName("environmentBlueprintIdentifier");
+                        context.Writer.Write(publicRequest.EnvironmentBlueprintIdentifier);
+                    }
+
+                    if(publicRequest.IsSetEnvironmentProfileIdentifier())
+                    {
+                        context.Writer.WritePropertyName("environmentProfileIdentifier");
+                        context.Writer.Write(publicRequest.EnvironmentProfileIdentifier);
+                    }
+
+                    if(publicRequest.IsSetGlossaryTerms())
+                    {
+                        context.Writer.WritePropertyName("glossaryTerms");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestGlossaryTermsListValue in publicRequest.GlossaryTerms)
+                        {
+                                context.Writer.Write(publicRequestGlossaryTermsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetProjectIdentifier())
+                    {
+                        context.Writer.WritePropertyName("projectIdentifier");
+                        context.Writer.Write(publicRequest.ProjectIdentifier);
+                    }
+
+                    if(publicRequest.IsSetUserParameters())
+                    {
+                        context.Writer.WritePropertyName("userParameters");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestUserParametersListValue in publicRequest.UserParameters)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = EnvironmentParameterMarshaller.Instance;
+                            marshaller.Marshall(publicRequestUserParametersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

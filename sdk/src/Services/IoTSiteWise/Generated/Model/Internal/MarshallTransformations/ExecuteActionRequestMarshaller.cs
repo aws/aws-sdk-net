@@ -61,49 +61,52 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/actions";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetActionDefinitionId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("actionDefinitionId");
-                    context.Writer.Write(publicRequest.ActionDefinitionId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetActionDefinitionId())
+                    {
+                        context.Writer.WritePropertyName("actionDefinitionId");
+                        context.Writer.Write(publicRequest.ActionDefinitionId);
+                    }
+
+                    if(publicRequest.IsSetActionPayload())
+                    {
+                        context.Writer.WritePropertyName("actionPayload");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ActionPayloadMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ActionPayload, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    if(publicRequest.IsSetTargetResource())
+                    {
+                        context.Writer.WritePropertyName("targetResource");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TargetResourceMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TargetResource, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetActionPayload())
-                {
-                    context.Writer.WritePropertyName("actionPayload");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ActionPayloadMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ActionPayload, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                if(publicRequest.IsSetTargetResource())
-                {
-                    context.Writer.WritePropertyName("targetResource");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TargetResourceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TargetResource, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

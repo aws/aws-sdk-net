@@ -63,63 +63,66 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBranch())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Branch");
-                    context.Writer.Write(publicRequest.Branch);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBranch())
+                    {
+                        context.Writer.WritePropertyName("Branch");
+                        context.Writer.Write(publicRequest.Branch);
+                    }
+
+                    if(publicRequest.IsSetConfigFile())
+                    {
+                        context.Writer.WritePropertyName("ConfigFile");
+                        context.Writer.Write(publicRequest.ConfigFile);
+                    }
+
+                    if(publicRequest.IsSetPublishDeploymentStatus())
+                    {
+                        context.Writer.WritePropertyName("PublishDeploymentStatus");
+                        context.Writer.Write(publicRequest.PublishDeploymentStatus);
+                    }
+
+                    if(publicRequest.IsSetRepositoryLinkId())
+                    {
+                        context.Writer.WritePropertyName("RepositoryLinkId");
+                        context.Writer.Write(publicRequest.RepositoryLinkId);
+                    }
+
+                    if(publicRequest.IsSetResourceName())
+                    {
+                        context.Writer.WritePropertyName("ResourceName");
+                        context.Writer.Write(publicRequest.ResourceName);
+                    }
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("RoleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    if(publicRequest.IsSetSyncType())
+                    {
+                        context.Writer.WritePropertyName("SyncType");
+                        context.Writer.Write(publicRequest.SyncType);
+                    }
+
+                    if(publicRequest.IsSetTriggerResourceUpdateOn())
+                    {
+                        context.Writer.WritePropertyName("TriggerResourceUpdateOn");
+                        context.Writer.Write(publicRequest.TriggerResourceUpdateOn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetConfigFile())
-                {
-                    context.Writer.WritePropertyName("ConfigFile");
-                    context.Writer.Write(publicRequest.ConfigFile);
-                }
-
-                if(publicRequest.IsSetPublishDeploymentStatus())
-                {
-                    context.Writer.WritePropertyName("PublishDeploymentStatus");
-                    context.Writer.Write(publicRequest.PublishDeploymentStatus);
-                }
-
-                if(publicRequest.IsSetRepositoryLinkId())
-                {
-                    context.Writer.WritePropertyName("RepositoryLinkId");
-                    context.Writer.Write(publicRequest.RepositoryLinkId);
-                }
-
-                if(publicRequest.IsSetResourceName())
-                {
-                    context.Writer.WritePropertyName("ResourceName");
-                    context.Writer.Write(publicRequest.ResourceName);
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("RoleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetSyncType())
-                {
-                    context.Writer.WritePropertyName("SyncType");
-                    context.Writer.Write(publicRequest.SyncType);
-                }
-
-                if(publicRequest.IsSetTriggerResourceUpdateOn())
-                {
-                    context.Writer.WritePropertyName("TriggerResourceUpdateOn");
-                    context.Writer.Write(publicRequest.TriggerResourceUpdateOn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

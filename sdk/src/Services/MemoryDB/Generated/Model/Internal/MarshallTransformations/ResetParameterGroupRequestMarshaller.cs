@@ -63,38 +63,41 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAllParameters())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AllParameters");
-                    context.Writer.Write(publicRequest.AllParameters.Value);
-                }
-
-                if(publicRequest.IsSetParameterGroupName())
-                {
-                    context.Writer.WritePropertyName("ParameterGroupName");
-                    context.Writer.Write(publicRequest.ParameterGroupName);
-                }
-
-                if(publicRequest.IsSetParameterNames())
-                {
-                    context.Writer.WritePropertyName("ParameterNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestParameterNamesListValue in publicRequest.ParameterNames)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAllParameters())
                     {
-                            context.Writer.Write(publicRequestParameterNamesListValue);
+                        context.Writer.WritePropertyName("AllParameters");
+                        context.Writer.Write(publicRequest.AllParameters.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetParameterGroupName())
+                    {
+                        context.Writer.WritePropertyName("ParameterGroupName");
+                        context.Writer.Write(publicRequest.ParameterGroupName);
+                    }
+
+                    if(publicRequest.IsSetParameterNames())
+                    {
+                        context.Writer.WritePropertyName("ParameterNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestParameterNamesListValue in publicRequest.ParameterNames)
+                        {
+                                context.Writer.Write(publicRequestParameterNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,70 +63,73 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetNodesToAdd())
-                {
-                    context.Writer.WritePropertyName("nodesToAdd");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestNodesToAddListValue in publicRequest.NodesToAdd)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = NodeMarshaller.Instance;
-                        marshaller.Marshall(publicRequestNodesToAddListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetNodesToRemove())
-                {
-                    context.Writer.WritePropertyName("nodesToRemove");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestNodesToRemoveListValue in publicRequest.NodesToRemove)
+                    if(publicRequest.IsSetName())
                     {
-                            context.Writer.Write(publicRequestNodesToRemoveListValue);
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetNodesToUpdate())
-                {
-                    context.Writer.WritePropertyName("nodesToUpdate");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestNodesToUpdateListValue in publicRequest.NodesToUpdate)
+                    if(publicRequest.IsSetNodesToAdd())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("nodesToAdd");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestNodesToAddListValue in publicRequest.NodesToAdd)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = NodeMarshaller.Instance;
-                        marshaller.Marshall(publicRequestNodesToUpdateListValue, context);
+                            var marshaller = NodeMarshaller.Instance;
+                            marshaller.Marshall(publicRequestNodesToAddListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetNodesToRemove())
+                    {
+                        context.Writer.WritePropertyName("nodesToRemove");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestNodesToRemoveListValue in publicRequest.NodesToRemove)
+                        {
+                                context.Writer.Write(publicRequestNodesToRemoveListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetNodesToUpdate())
+                    {
+                        context.Writer.WritePropertyName("nodesToUpdate");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestNodesToUpdateListValue in publicRequest.NodesToUpdate)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = NodeMarshaller.Instance;
+                            marshaller.Marshall(publicRequestNodesToUpdateListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

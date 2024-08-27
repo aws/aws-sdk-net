@@ -67,75 +67,78 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetAssociatedResourceArn())
                 request.Parameters.Add("associatedResourceArn", StringUtils.FromString(publicRequest.AssociatedResourceArn));
             request.ResourcePath = "/attached-files/{InstanceId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetCreatedBy())
-                {
-                    context.Writer.WritePropertyName("CreatedBy");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CreatedByInfoMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CreatedBy, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetFileName())
-                {
-                    context.Writer.WritePropertyName("FileName");
-                    context.Writer.Write(publicRequest.FileName);
-                }
-
-                if(publicRequest.IsSetFileSizeInBytes())
-                {
-                    context.Writer.WritePropertyName("FileSizeInBytes");
-                    context.Writer.Write(publicRequest.FileSizeInBytes.Value);
-                }
-
-                if(publicRequest.IsSetFileUseCaseType())
-                {
-                    context.Writer.WritePropertyName("FileUseCaseType");
-                    context.Writer.Write(publicRequest.FileUseCaseType);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetCreatedBy())
+                    {
+                        context.Writer.WritePropertyName("CreatedBy");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CreatedByInfoMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CreatedBy, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetFileName())
+                    {
+                        context.Writer.WritePropertyName("FileName");
+                        context.Writer.Write(publicRequest.FileName);
+                    }
+
+                    if(publicRequest.IsSetFileSizeInBytes())
+                    {
+                        context.Writer.WritePropertyName("FileSizeInBytes");
+                        context.Writer.Write(publicRequest.FileSizeInBytes.Value);
+                    }
+
+                    if(publicRequest.IsSetFileUseCaseType())
+                    {
+                        context.Writer.WritePropertyName("FileUseCaseType");
+                        context.Writer.Write(publicRequest.FileUseCaseType);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetUrlExpiryInSeconds())
+                    {
+                        context.Writer.WritePropertyName("UrlExpiryInSeconds");
+                        context.Writer.Write(publicRequest.UrlExpiryInSeconds.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetUrlExpiryInSeconds())
-                {
-                    context.Writer.WritePropertyName("UrlExpiryInSeconds");
-                    context.Writer.Write(publicRequest.UrlExpiryInSeconds.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             request.UseQueryString = true;

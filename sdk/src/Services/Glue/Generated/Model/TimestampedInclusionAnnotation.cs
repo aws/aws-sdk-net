@@ -43,9 +43,9 @@ namespace Amazon.Glue.Model
         /// The timestamp when the inclusion annotation was last modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedOn
+        public DateTime? LastModifiedOn
         {
-            get { return this._lastModifiedOn.GetValueOrDefault(); }
+            get { return this._lastModifiedOn; }
             set { this._lastModifiedOn = value; }
         }
 

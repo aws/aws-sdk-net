@@ -63,45 +63,48 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCredentialArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("credentialArn");
-                    context.Writer.Write(publicRequest.CredentialArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCredentialArn())
+                    {
+                        context.Writer.WritePropertyName("credentialArn");
+                        context.Writer.Write(publicRequest.CredentialArn);
+                    }
+
+                    if(publicRequest.IsSetEcrRepositoryPrefix())
+                    {
+                        context.Writer.WritePropertyName("ecrRepositoryPrefix");
+                        context.Writer.Write(publicRequest.EcrRepositoryPrefix);
+                    }
+
+                    if(publicRequest.IsSetRegistryId())
+                    {
+                        context.Writer.WritePropertyName("registryId");
+                        context.Writer.Write(publicRequest.RegistryId);
+                    }
+
+                    if(publicRequest.IsSetUpstreamRegistry())
+                    {
+                        context.Writer.WritePropertyName("upstreamRegistry");
+                        context.Writer.Write(publicRequest.UpstreamRegistry);
+                    }
+
+                    if(publicRequest.IsSetUpstreamRegistryUrl())
+                    {
+                        context.Writer.WritePropertyName("upstreamRegistryUrl");
+                        context.Writer.Write(publicRequest.UpstreamRegistryUrl);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEcrRepositoryPrefix())
-                {
-                    context.Writer.WritePropertyName("ecrRepositoryPrefix");
-                    context.Writer.Write(publicRequest.EcrRepositoryPrefix);
-                }
-
-                if(publicRequest.IsSetRegistryId())
-                {
-                    context.Writer.WritePropertyName("registryId");
-                    context.Writer.Write(publicRequest.RegistryId);
-                }
-
-                if(publicRequest.IsSetUpstreamRegistry())
-                {
-                    context.Writer.WritePropertyName("upstreamRegistry");
-                    context.Writer.Write(publicRequest.UpstreamRegistry);
-                }
-
-                if(publicRequest.IsSetUpstreamRegistryUrl())
-                {
-                    context.Writer.WritePropertyName("upstreamRegistryUrl");
-                    context.Writer.Write(publicRequest.UpstreamRegistryUrl);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,32 +63,35 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCertificateIds())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CertificateIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCertificateIdsListValue in publicRequest.CertificateIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCertificateIds())
                     {
-                            context.Writer.Write(publicRequestCertificateIdsListValue);
+                        context.Writer.WritePropertyName("CertificateIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCertificateIdsListValue in publicRequest.CertificateIds)
+                        {
+                                context.Writer.Write(publicRequestCertificateIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetProfileId())
+                    {
+                        context.Writer.WritePropertyName("ProfileId");
+                        context.Writer.Write(publicRequest.ProfileId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetProfileId())
-                {
-                    context.Writer.WritePropertyName("ProfileId");
-                    context.Writer.Write(publicRequest.ProfileId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

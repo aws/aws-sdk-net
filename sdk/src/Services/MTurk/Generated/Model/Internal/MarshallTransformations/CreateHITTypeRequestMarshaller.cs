@@ -63,67 +63,70 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAssignmentDurationInSeconds())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AssignmentDurationInSeconds");
-                    context.Writer.Write(publicRequest.AssignmentDurationInSeconds.Value);
-                }
-
-                if(publicRequest.IsSetAutoApprovalDelayInSeconds())
-                {
-                    context.Writer.WritePropertyName("AutoApprovalDelayInSeconds");
-                    context.Writer.Write(publicRequest.AutoApprovalDelayInSeconds.Value);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetKeywords())
-                {
-                    context.Writer.WritePropertyName("Keywords");
-                    context.Writer.Write(publicRequest.Keywords);
-                }
-
-                if(publicRequest.IsSetQualificationRequirements())
-                {
-                    context.Writer.WritePropertyName("QualificationRequirements");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestQualificationRequirementsListValue in publicRequest.QualificationRequirements)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAssignmentDurationInSeconds())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = QualificationRequirementMarshaller.Instance;
-                        marshaller.Marshall(publicRequestQualificationRequirementsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("AssignmentDurationInSeconds");
+                        context.Writer.Write(publicRequest.AssignmentDurationInSeconds.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetAutoApprovalDelayInSeconds())
+                    {
+                        context.Writer.WritePropertyName("AutoApprovalDelayInSeconds");
+                        context.Writer.Write(publicRequest.AutoApprovalDelayInSeconds.Value);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetKeywords())
+                    {
+                        context.Writer.WritePropertyName("Keywords");
+                        context.Writer.Write(publicRequest.Keywords);
+                    }
+
+                    if(publicRequest.IsSetQualificationRequirements())
+                    {
+                        context.Writer.WritePropertyName("QualificationRequirements");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestQualificationRequirementsListValue in publicRequest.QualificationRequirements)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = QualificationRequirementMarshaller.Instance;
+                            marshaller.Marshall(publicRequestQualificationRequirementsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetReward())
+                    {
+                        context.Writer.WritePropertyName("Reward");
+                        context.Writer.Write(publicRequest.Reward);
+                    }
+
+                    if(publicRequest.IsSetTitle())
+                    {
+                        context.Writer.WritePropertyName("Title");
+                        context.Writer.Write(publicRequest.Title);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetReward())
-                {
-                    context.Writer.WritePropertyName("Reward");
-                    context.Writer.Write(publicRequest.Reward);
-                }
-
-                if(publicRequest.IsSetTitle())
-                {
-                    context.Writer.WritePropertyName("Title");
-                    context.Writer.Write(publicRequest.Title);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -64,89 +64,92 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                 throw new AmazonNetworkManagerException("Request object does not have required field GlobalNetworkId set");
             request.AddPathResource("{globalNetworkId}", StringUtils.FromString(publicRequest.GlobalNetworkId));
             request.ResourcePath = "/global-networks/{globalNetworkId}/devices";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAWSLocation())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AWSLocation");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AWSLocationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AWSLocation, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetLocation())
-                {
-                    context.Writer.WritePropertyName("Location");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LocationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Location, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetModel())
-                {
-                    context.Writer.WritePropertyName("Model");
-                    context.Writer.Write(publicRequest.Model);
-                }
-
-                if(publicRequest.IsSetSerialNumber())
-                {
-                    context.Writer.WritePropertyName("SerialNumber");
-                    context.Writer.Write(publicRequest.SerialNumber);
-                }
-
-                if(publicRequest.IsSetSiteId())
-                {
-                    context.Writer.WritePropertyName("SiteId");
-                    context.Writer.Write(publicRequest.SiteId);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAWSLocation())
                     {
+                        context.Writer.WritePropertyName("AWSLocation");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = AWSLocationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AWSLocation, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetLocation())
+                    {
+                        context.Writer.WritePropertyName("Location");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LocationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Location, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetModel())
+                    {
+                        context.Writer.WritePropertyName("Model");
+                        context.Writer.Write(publicRequest.Model);
+                    }
+
+                    if(publicRequest.IsSetSerialNumber())
+                    {
+                        context.Writer.WritePropertyName("SerialNumber");
+                        context.Writer.Write(publicRequest.SerialNumber);
+                    }
+
+                    if(publicRequest.IsSetSiteId())
+                    {
+                        context.Writer.WritePropertyName("SiteId");
+                        context.Writer.Write(publicRequest.SiteId);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetType())
+                    {
+                        context.Writer.WritePropertyName("Type");
+                        context.Writer.Write(publicRequest.Type);
+                    }
+
+                    if(publicRequest.IsSetVendor())
+                    {
+                        context.Writer.WritePropertyName("Vendor");
+                        context.Writer.Write(publicRequest.Vendor);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetType())
-                {
-                    context.Writer.WritePropertyName("Type");
-                    context.Writer.Write(publicRequest.Type);
-                }
-
-                if(publicRequest.IsSetVendor())
-                {
-                    context.Writer.WritePropertyName("Vendor");
-                    context.Writer.Write(publicRequest.Vendor);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

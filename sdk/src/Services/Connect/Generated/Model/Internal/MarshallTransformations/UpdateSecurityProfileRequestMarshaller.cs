@@ -67,90 +67,93 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field SecurityProfileId set");
             request.AddPathResource("{SecurityProfileId}", StringUtils.FromString(publicRequest.SecurityProfileId));
             request.ResourcePath = "/security-profiles/{InstanceId}/{SecurityProfileId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAllowedAccessControlHierarchyGroupId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AllowedAccessControlHierarchyGroupId");
-                    context.Writer.Write(publicRequest.AllowedAccessControlHierarchyGroupId);
-                }
-
-                if(publicRequest.IsSetAllowedAccessControlTags())
-                {
-                    context.Writer.WritePropertyName("AllowedAccessControlTags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestAllowedAccessControlTagsKvp in publicRequest.AllowedAccessControlTags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAllowedAccessControlHierarchyGroupId())
                     {
-                        context.Writer.WritePropertyName(publicRequestAllowedAccessControlTagsKvp.Key);
-                        var publicRequestAllowedAccessControlTagsValue = publicRequestAllowedAccessControlTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestAllowedAccessControlTagsValue);
+                        context.Writer.WritePropertyName("AllowedAccessControlHierarchyGroupId");
+                        context.Writer.Write(publicRequest.AllowedAccessControlHierarchyGroupId);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetApplications())
-                {
-                    context.Writer.WritePropertyName("Applications");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestApplicationsListValue in publicRequest.Applications)
+                    if(publicRequest.IsSetAllowedAccessControlTags())
                     {
+                        context.Writer.WritePropertyName("AllowedAccessControlTags");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestAllowedAccessControlTagsKvp in publicRequest.AllowedAccessControlTags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestAllowedAccessControlTagsKvp.Key);
+                            var publicRequestAllowedAccessControlTagsValue = publicRequestAllowedAccessControlTagsKvp.Value;
 
-                        var marshaller = ApplicationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestApplicationsListValue, context);
-
+                                context.Writer.Write(publicRequestAllowedAccessControlTagsValue);
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetHierarchyRestrictedResources())
-                {
-                    context.Writer.WritePropertyName("HierarchyRestrictedResources");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestHierarchyRestrictedResourcesListValue in publicRequest.HierarchyRestrictedResources)
+                    if(publicRequest.IsSetApplications())
                     {
-                            context.Writer.Write(publicRequestHierarchyRestrictedResourcesListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
+                        context.Writer.WritePropertyName("Applications");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestApplicationsListValue in publicRequest.Applications)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                if(publicRequest.IsSetPermissions())
-                {
-                    context.Writer.WritePropertyName("Permissions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPermissionsListValue in publicRequest.Permissions)
+                            var marshaller = ApplicationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestApplicationsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetDescription())
                     {
-                            context.Writer.Write(publicRequestPermissionsListValue);
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTagRestrictedResources())
-                {
-                    context.Writer.WritePropertyName("TagRestrictedResources");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagRestrictedResourcesListValue in publicRequest.TagRestrictedResources)
+                    if(publicRequest.IsSetHierarchyRestrictedResources())
                     {
-                            context.Writer.Write(publicRequestTagRestrictedResourcesListValue);
+                        context.Writer.WritePropertyName("HierarchyRestrictedResources");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestHierarchyRestrictedResourcesListValue in publicRequest.HierarchyRestrictedResources)
+                        {
+                                context.Writer.Write(publicRequestHierarchyRestrictedResourcesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetPermissions())
+                    {
+                        context.Writer.WritePropertyName("Permissions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPermissionsListValue in publicRequest.Permissions)
+                        {
+                                context.Writer.Write(publicRequestPermissionsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTagRestrictedResources())
+                    {
+                        context.Writer.WritePropertyName("TagRestrictedResources");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagRestrictedResourcesListValue in publicRequest.TagRestrictedResources)
+                        {
+                                context.Writer.Write(publicRequestTagRestrictedResourcesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

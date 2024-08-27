@@ -63,82 +63,85 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientRequestToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetParallelismConfiguration())
-                {
-                    context.Writer.WritePropertyName("ParallelismConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ParallelismConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ParallelismConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPipelineExecutionDescription())
-                {
-                    context.Writer.WritePropertyName("PipelineExecutionDescription");
-                    context.Writer.Write(publicRequest.PipelineExecutionDescription);
-                }
-
-                if(publicRequest.IsSetPipelineExecutionDisplayName())
-                {
-                    context.Writer.WritePropertyName("PipelineExecutionDisplayName");
-                    context.Writer.Write(publicRequest.PipelineExecutionDisplayName);
-                }
-
-                if(publicRequest.IsSetPipelineName())
-                {
-                    context.Writer.WritePropertyName("PipelineName");
-                    context.Writer.Write(publicRequest.PipelineName);
-                }
-
-                if(publicRequest.IsSetPipelineParameters())
-                {
-                    context.Writer.WritePropertyName("PipelineParameters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPipelineParametersListValue in publicRequest.PipelineParameters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientRequestToken())
                     {
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(publicRequest.ClientRequestToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientRequestToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetParallelismConfiguration())
+                    {
+                        context.Writer.WritePropertyName("ParallelismConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = ParameterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestPipelineParametersListValue, context);
+                        var marshaller = ParallelismConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ParallelismConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetPipelineExecutionDescription())
+                    {
+                        context.Writer.WritePropertyName("PipelineExecutionDescription");
+                        context.Writer.Write(publicRequest.PipelineExecutionDescription);
+                    }
+
+                    if(publicRequest.IsSetPipelineExecutionDisplayName())
+                    {
+                        context.Writer.WritePropertyName("PipelineExecutionDisplayName");
+                        context.Writer.Write(publicRequest.PipelineExecutionDisplayName);
+                    }
+
+                    if(publicRequest.IsSetPipelineName())
+                    {
+                        context.Writer.WritePropertyName("PipelineName");
+                        context.Writer.Write(publicRequest.PipelineName);
+                    }
+
+                    if(publicRequest.IsSetPipelineParameters())
+                    {
+                        context.Writer.WritePropertyName("PipelineParameters");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPipelineParametersListValue in publicRequest.PipelineParameters)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ParameterMarshaller.Instance;
+                            marshaller.Marshall(publicRequestPipelineParametersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSelectiveExecutionConfig())
+                    {
+                        context.Writer.WritePropertyName("SelectiveExecutionConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SelectiveExecutionConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SelectiveExecutionConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSelectiveExecutionConfig())
-                {
-                    context.Writer.WritePropertyName("SelectiveExecutionConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SelectiveExecutionConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SelectiveExecutionConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

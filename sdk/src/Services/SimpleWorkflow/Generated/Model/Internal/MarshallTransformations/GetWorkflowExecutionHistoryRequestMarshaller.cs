@@ -63,50 +63,53 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDomain())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("domain");
-                    context.Writer.Write(publicRequest.Domain);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDomain())
+                    {
+                        context.Writer.WritePropertyName("domain");
+                        context.Writer.Write(publicRequest.Domain);
+                    }
+
+                    if(publicRequest.IsSetExecution())
+                    {
+                        context.Writer.WritePropertyName("execution");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = WorkflowExecutionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Execution, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetMaximumPageSize())
+                    {
+                        context.Writer.WritePropertyName("maximumPageSize");
+                        context.Writer.Write(publicRequest.MaximumPageSize.Value);
+                    }
+
+                    if(publicRequest.IsSetNextPageToken())
+                    {
+                        context.Writer.WritePropertyName("nextPageToken");
+                        context.Writer.Write(publicRequest.NextPageToken);
+                    }
+
+                    if(publicRequest.IsSetReverseOrder())
+                    {
+                        context.Writer.WritePropertyName("reverseOrder");
+                        context.Writer.Write(publicRequest.ReverseOrder.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetExecution())
-                {
-                    context.Writer.WritePropertyName("execution");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = WorkflowExecutionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Execution, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMaximumPageSize())
-                {
-                    context.Writer.WritePropertyName("maximumPageSize");
-                    context.Writer.Write(publicRequest.MaximumPageSize.Value);
-                }
-
-                if(publicRequest.IsSetNextPageToken())
-                {
-                    context.Writer.WritePropertyName("nextPageToken");
-                    context.Writer.Write(publicRequest.NextPageToken);
-                }
-
-                if(publicRequest.IsSetReverseOrder())
-                {
-                    context.Writer.WritePropertyName("reverseOrder");
-                    context.Writer.Write(publicRequest.ReverseOrder.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

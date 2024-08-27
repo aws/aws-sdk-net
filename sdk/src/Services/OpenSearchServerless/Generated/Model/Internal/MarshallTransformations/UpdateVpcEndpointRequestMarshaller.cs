@@ -63,76 +63,79 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAddSecurityGroupIds())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("addSecurityGroupIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAddSecurityGroupIdsListValue in publicRequest.AddSecurityGroupIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAddSecurityGroupIds())
                     {
-                            context.Writer.Write(publicRequestAddSecurityGroupIdsListValue);
+                        context.Writer.WritePropertyName("addSecurityGroupIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAddSecurityGroupIdsListValue in publicRequest.AddSecurityGroupIds)
+                        {
+                                context.Writer.Write(publicRequestAddSecurityGroupIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetAddSubnetIds())
-                {
-                    context.Writer.WritePropertyName("addSubnetIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAddSubnetIdsListValue in publicRequest.AddSubnetIds)
+                    if(publicRequest.IsSetAddSubnetIds())
                     {
-                            context.Writer.Write(publicRequestAddSubnetIdsListValue);
+                        context.Writer.WritePropertyName("addSubnetIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAddSubnetIdsListValue in publicRequest.AddSubnetIds)
+                        {
+                                context.Writer.Write(publicRequestAddSubnetIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetId())
-                {
-                    context.Writer.WritePropertyName("id");
-                    context.Writer.Write(publicRequest.Id);
-                }
-
-                if(publicRequest.IsSetRemoveSecurityGroupIds())
-                {
-                    context.Writer.WritePropertyName("removeSecurityGroupIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRemoveSecurityGroupIdsListValue in publicRequest.RemoveSecurityGroupIds)
+                    if(publicRequest.IsSetClientToken())
                     {
-                            context.Writer.Write(publicRequestRemoveSecurityGroupIdsListValue);
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetRemoveSubnetIds())
-                {
-                    context.Writer.WritePropertyName("removeSubnetIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRemoveSubnetIdsListValue in publicRequest.RemoveSubnetIds)
+                    else if(!(publicRequest.IsSetClientToken()))
                     {
-                            context.Writer.Write(publicRequestRemoveSubnetIdsListValue);
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
                     }
-                    context.Writer.WriteArrayEnd();
+                    if(publicRequest.IsSetId())
+                    {
+                        context.Writer.WritePropertyName("id");
+                        context.Writer.Write(publicRequest.Id);
+                    }
+
+                    if(publicRequest.IsSetRemoveSecurityGroupIds())
+                    {
+                        context.Writer.WritePropertyName("removeSecurityGroupIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRemoveSecurityGroupIdsListValue in publicRequest.RemoveSecurityGroupIds)
+                        {
+                                context.Writer.Write(publicRequestRemoveSecurityGroupIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetRemoveSubnetIds())
+                    {
+                        context.Writer.WritePropertyName("removeSubnetIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRemoveSubnetIdsListValue in publicRequest.RemoveSubnetIds)
+                        {
+                                context.Writer.Write(publicRequestRemoveSubnetIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

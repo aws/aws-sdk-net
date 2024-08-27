@@ -61,120 +61,123 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/canary";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetArtifactConfig())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ArtifactConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ArtifactConfigInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ArtifactConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetArtifactS3Location())
-                {
-                    context.Writer.WritePropertyName("ArtifactS3Location");
-                    context.Writer.Write(publicRequest.ArtifactS3Location);
-                }
-
-                if(publicRequest.IsSetCode())
-                {
-                    context.Writer.WritePropertyName("Code");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CanaryCodeInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Code, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetExecutionRoleArn())
-                {
-                    context.Writer.WritePropertyName("ExecutionRoleArn");
-                    context.Writer.Write(publicRequest.ExecutionRoleArn);
-                }
-
-                if(publicRequest.IsSetFailureRetentionPeriodInDays())
-                {
-                    context.Writer.WritePropertyName("FailureRetentionPeriodInDays");
-                    context.Writer.Write(publicRequest.FailureRetentionPeriodInDays.Value);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetRunConfig())
-                {
-                    context.Writer.WritePropertyName("RunConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CanaryRunConfigInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RunConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRuntimeVersion())
-                {
-                    context.Writer.WritePropertyName("RuntimeVersion");
-                    context.Writer.Write(publicRequest.RuntimeVersion);
-                }
-
-                if(publicRequest.IsSetSchedule())
-                {
-                    context.Writer.WritePropertyName("Schedule");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CanaryScheduleInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Schedule, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSuccessRetentionPeriodInDays())
-                {
-                    context.Writer.WritePropertyName("SuccessRetentionPeriodInDays");
-                    context.Writer.Write(publicRequest.SuccessRetentionPeriodInDays.Value);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetArtifactConfig())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
+                        context.Writer.WritePropertyName("ArtifactConfig");
+                        context.Writer.WriteObjectStart();
 
-                            context.Writer.Write(publicRequestTagsValue);
+                        var marshaller = ArtifactConfigInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ArtifactConfig, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetArtifactS3Location())
+                    {
+                        context.Writer.WritePropertyName("ArtifactS3Location");
+                        context.Writer.Write(publicRequest.ArtifactS3Location);
+                    }
+
+                    if(publicRequest.IsSetCode())
+                    {
+                        context.Writer.WritePropertyName("Code");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CanaryCodeInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Code, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetExecutionRoleArn())
+                    {
+                        context.Writer.WritePropertyName("ExecutionRoleArn");
+                        context.Writer.Write(publicRequest.ExecutionRoleArn);
+                    }
+
+                    if(publicRequest.IsSetFailureRetentionPeriodInDays())
+                    {
+                        context.Writer.WritePropertyName("FailureRetentionPeriodInDays");
+                        context.Writer.Write(publicRequest.FailureRetentionPeriodInDays.Value);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetRunConfig())
+                    {
+                        context.Writer.WritePropertyName("RunConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CanaryRunConfigInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RunConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRuntimeVersion())
+                    {
+                        context.Writer.WritePropertyName("RuntimeVersion");
+                        context.Writer.Write(publicRequest.RuntimeVersion);
+                    }
+
+                    if(publicRequest.IsSetSchedule())
+                    {
+                        context.Writer.WritePropertyName("Schedule");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CanaryScheduleInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Schedule, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSuccessRetentionPeriodInDays())
+                    {
+                        context.Writer.WritePropertyName("SuccessRetentionPeriodInDays");
+                        context.Writer.Write(publicRequest.SuccessRetentionPeriodInDays.Value);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetVpcConfig())
+                    {
+                        context.Writer.WritePropertyName("VpcConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = VpcConfigInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.VpcConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetVpcConfig())
-                {
-                    context.Writer.WritePropertyName("VpcConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = VpcConfigInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.VpcConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,120 +63,123 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetJobDefinitionName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("JobDefinitionName");
-                    context.Writer.Write(publicRequest.JobDefinitionName);
-                }
-
-                if(publicRequest.IsSetJobResources())
-                {
-                    context.Writer.WritePropertyName("JobResources");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MonitoringResourcesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.JobResources, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetModelBiasAppSpecification())
-                {
-                    context.Writer.WritePropertyName("ModelBiasAppSpecification");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ModelBiasAppSpecificationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ModelBiasAppSpecification, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetModelBiasBaselineConfig())
-                {
-                    context.Writer.WritePropertyName("ModelBiasBaselineConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ModelBiasBaselineConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ModelBiasBaselineConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetModelBiasJobInput())
-                {
-                    context.Writer.WritePropertyName("ModelBiasJobInput");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ModelBiasJobInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ModelBiasJobInput, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetModelBiasJobOutputConfig())
-                {
-                    context.Writer.WritePropertyName("ModelBiasJobOutputConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MonitoringOutputConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ModelBiasJobOutputConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetNetworkConfig())
-                {
-                    context.Writer.WritePropertyName("NetworkConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MonitoringNetworkConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.NetworkConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("RoleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetStoppingCondition())
-                {
-                    context.Writer.WritePropertyName("StoppingCondition");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MonitoringStoppingConditionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.StoppingCondition, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetJobDefinitionName())
                     {
+                        context.Writer.WritePropertyName("JobDefinitionName");
+                        context.Writer.Write(publicRequest.JobDefinitionName);
+                    }
+
+                    if(publicRequest.IsSetJobResources())
+                    {
+                        context.Writer.WritePropertyName("JobResources");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = MonitoringResourcesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.JobResources, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetModelBiasAppSpecification())
+                    {
+                        context.Writer.WritePropertyName("ModelBiasAppSpecification");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ModelBiasAppSpecificationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ModelBiasAppSpecification, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetModelBiasBaselineConfig())
+                    {
+                        context.Writer.WritePropertyName("ModelBiasBaselineConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ModelBiasBaselineConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ModelBiasBaselineConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetModelBiasJobInput())
+                    {
+                        context.Writer.WritePropertyName("ModelBiasJobInput");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ModelBiasJobInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ModelBiasJobInput, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetModelBiasJobOutputConfig())
+                    {
+                        context.Writer.WritePropertyName("ModelBiasJobOutputConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MonitoringOutputConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ModelBiasJobOutputConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetNetworkConfig())
+                    {
+                        context.Writer.WritePropertyName("NetworkConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MonitoringNetworkConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.NetworkConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("RoleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    if(publicRequest.IsSetStoppingCondition())
+                    {
+                        context.Writer.WritePropertyName("StoppingCondition");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MonitoringStoppingConditionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.StoppingCondition, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

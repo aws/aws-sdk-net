@@ -63,86 +63,89 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAuthorName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("authorName");
-                    context.Writer.Write(publicRequest.AuthorName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAuthorName())
+                    {
+                        context.Writer.WritePropertyName("authorName");
+                        context.Writer.Write(publicRequest.AuthorName);
+                    }
+
+                    if(publicRequest.IsSetCommitMessage())
+                    {
+                        context.Writer.WritePropertyName("commitMessage");
+                        context.Writer.Write(publicRequest.CommitMessage);
+                    }
+
+                    if(publicRequest.IsSetConflictDetailLevel())
+                    {
+                        context.Writer.WritePropertyName("conflictDetailLevel");
+                        context.Writer.Write(publicRequest.ConflictDetailLevel);
+                    }
+
+                    if(publicRequest.IsSetConflictResolution())
+                    {
+                        context.Writer.WritePropertyName("conflictResolution");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ConflictResolutionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ConflictResolution, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetConflictResolutionStrategy())
+                    {
+                        context.Writer.WritePropertyName("conflictResolutionStrategy");
+                        context.Writer.Write(publicRequest.ConflictResolutionStrategy);
+                    }
+
+                    if(publicRequest.IsSetDestinationCommitSpecifier())
+                    {
+                        context.Writer.WritePropertyName("destinationCommitSpecifier");
+                        context.Writer.Write(publicRequest.DestinationCommitSpecifier);
+                    }
+
+                    if(publicRequest.IsSetEmail())
+                    {
+                        context.Writer.WritePropertyName("email");
+                        context.Writer.Write(publicRequest.Email);
+                    }
+
+                    if(publicRequest.IsSetKeepEmptyFolders())
+                    {
+                        context.Writer.WritePropertyName("keepEmptyFolders");
+                        context.Writer.Write(publicRequest.KeepEmptyFolders.Value);
+                    }
+
+                    if(publicRequest.IsSetMergeOption())
+                    {
+                        context.Writer.WritePropertyName("mergeOption");
+                        context.Writer.Write(publicRequest.MergeOption);
+                    }
+
+                    if(publicRequest.IsSetRepositoryName())
+                    {
+                        context.Writer.WritePropertyName("repositoryName");
+                        context.Writer.Write(publicRequest.RepositoryName);
+                    }
+
+                    if(publicRequest.IsSetSourceCommitSpecifier())
+                    {
+                        context.Writer.WritePropertyName("sourceCommitSpecifier");
+                        context.Writer.Write(publicRequest.SourceCommitSpecifier);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCommitMessage())
-                {
-                    context.Writer.WritePropertyName("commitMessage");
-                    context.Writer.Write(publicRequest.CommitMessage);
-                }
-
-                if(publicRequest.IsSetConflictDetailLevel())
-                {
-                    context.Writer.WritePropertyName("conflictDetailLevel");
-                    context.Writer.Write(publicRequest.ConflictDetailLevel);
-                }
-
-                if(publicRequest.IsSetConflictResolution())
-                {
-                    context.Writer.WritePropertyName("conflictResolution");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ConflictResolutionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ConflictResolution, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetConflictResolutionStrategy())
-                {
-                    context.Writer.WritePropertyName("conflictResolutionStrategy");
-                    context.Writer.Write(publicRequest.ConflictResolutionStrategy);
-                }
-
-                if(publicRequest.IsSetDestinationCommitSpecifier())
-                {
-                    context.Writer.WritePropertyName("destinationCommitSpecifier");
-                    context.Writer.Write(publicRequest.DestinationCommitSpecifier);
-                }
-
-                if(publicRequest.IsSetEmail())
-                {
-                    context.Writer.WritePropertyName("email");
-                    context.Writer.Write(publicRequest.Email);
-                }
-
-                if(publicRequest.IsSetKeepEmptyFolders())
-                {
-                    context.Writer.WritePropertyName("keepEmptyFolders");
-                    context.Writer.Write(publicRequest.KeepEmptyFolders.Value);
-                }
-
-                if(publicRequest.IsSetMergeOption())
-                {
-                    context.Writer.WritePropertyName("mergeOption");
-                    context.Writer.Write(publicRequest.MergeOption);
-                }
-
-                if(publicRequest.IsSetRepositoryName())
-                {
-                    context.Writer.WritePropertyName("repositoryName");
-                    context.Writer.Write(publicRequest.RepositoryName);
-                }
-
-                if(publicRequest.IsSetSourceCommitSpecifier())
-                {
-                    context.Writer.WritePropertyName("sourceCommitSpecifier");
-                    context.Writer.Write(publicRequest.SourceCommitSpecifier);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

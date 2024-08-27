@@ -61,31 +61,34 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/alarms/enable";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEnableActionRequests())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("enableActionRequests");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEnableActionRequestsListValue in publicRequest.EnableActionRequests)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEnableActionRequests())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("enableActionRequests");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestEnableActionRequestsListValue in publicRequest.EnableActionRequests)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = EnableAlarmActionRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequestEnableActionRequestsListValue, context);
+                            var marshaller = EnableAlarmActionRequestMarshaller.Instance;
+                            marshaller.Marshall(publicRequestEnableActionRequestsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

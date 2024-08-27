@@ -64,44 +64,47 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
                 throw new AmazonFinspaceException("Request object does not have required field EnvironmentId set");
             request.AddPathResource("{environmentId}", StringUtils.FromString(publicRequest.EnvironmentId));
             request.ResourcePath = "/environment/{environmentId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetFederationMode())
+                    {
+                        context.Writer.WritePropertyName("federationMode");
+                        context.Writer.Write(publicRequest.FederationMode);
+                    }
+
+                    if(publicRequest.IsSetFederationParameters())
+                    {
+                        context.Writer.WritePropertyName("federationParameters");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = FederationParametersMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.FederationParameters, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetFederationMode())
-                {
-                    context.Writer.WritePropertyName("federationMode");
-                    context.Writer.Write(publicRequest.FederationMode);
-                }
-
-                if(publicRequest.IsSetFederationParameters())
-                {
-                    context.Writer.WritePropertyName("federationParameters");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = FederationParametersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.FederationParameters, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

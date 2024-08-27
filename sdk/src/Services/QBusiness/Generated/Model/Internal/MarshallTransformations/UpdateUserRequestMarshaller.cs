@@ -67,47 +67,50 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                 throw new AmazonQBusinessException("Request object does not have required field UserId set");
             request.AddPathResource("{userId}", StringUtils.FromString(publicRequest.UserId));
             request.ResourcePath = "/applications/{applicationId}/users/{userId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetUserAliasesToDelete())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("userAliasesToDelete");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestUserAliasesToDeleteListValue in publicRequest.UserAliasesToDelete)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetUserAliasesToDelete())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("userAliasesToDelete");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestUserAliasesToDeleteListValue in publicRequest.UserAliasesToDelete)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = UserAliasMarshaller.Instance;
-                        marshaller.Marshall(publicRequestUserAliasesToDeleteListValue, context);
+                            var marshaller = UserAliasMarshaller.Instance;
+                            marshaller.Marshall(publicRequestUserAliasesToDeleteListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetUserAliasesToUpdate())
+                    {
+                        context.Writer.WritePropertyName("userAliasesToUpdate");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestUserAliasesToUpdateListValue in publicRequest.UserAliasesToUpdate)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = UserAliasMarshaller.Instance;
+                            marshaller.Marshall(publicRequestUserAliasesToUpdateListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetUserAliasesToUpdate())
-                {
-                    context.Writer.WritePropertyName("userAliasesToUpdate");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestUserAliasesToUpdateListValue in publicRequest.UserAliasesToUpdate)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = UserAliasMarshaller.Instance;
-                        marshaller.Marshall(publicRequestUserAliasesToUpdateListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

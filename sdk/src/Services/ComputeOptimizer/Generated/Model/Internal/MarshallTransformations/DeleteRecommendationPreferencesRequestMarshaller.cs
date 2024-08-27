@@ -63,43 +63,46 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetRecommendationPreferenceNames())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("recommendationPreferenceNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRecommendationPreferenceNamesListValue in publicRequest.RecommendationPreferenceNames)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetRecommendationPreferenceNames())
                     {
-                            context.Writer.Write(publicRequestRecommendationPreferenceNamesListValue);
+                        context.Writer.WritePropertyName("recommendationPreferenceNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRecommendationPreferenceNamesListValue in publicRequest.RecommendationPreferenceNames)
+                        {
+                                context.Writer.Write(publicRequestRecommendationPreferenceNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetResourceType())
+                    {
+                        context.Writer.WritePropertyName("resourceType");
+                        context.Writer.Write(publicRequest.ResourceType);
+                    }
+
+                    if(publicRequest.IsSetScope())
+                    {
+                        context.Writer.WritePropertyName("scope");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ScopeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Scope, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetResourceType())
-                {
-                    context.Writer.WritePropertyName("resourceType");
-                    context.Writer.Write(publicRequest.ResourceType);
-                }
-
-                if(publicRequest.IsSetScope())
-                {
-                    context.Writer.WritePropertyName("scope");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ScopeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Scope, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

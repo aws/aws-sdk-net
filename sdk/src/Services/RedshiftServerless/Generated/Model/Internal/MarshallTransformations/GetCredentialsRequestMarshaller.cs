@@ -63,39 +63,42 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCustomDomainName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("customDomainName");
-                    context.Writer.Write(publicRequest.CustomDomainName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCustomDomainName())
+                    {
+                        context.Writer.WritePropertyName("customDomainName");
+                        context.Writer.Write(publicRequest.CustomDomainName);
+                    }
+
+                    if(publicRequest.IsSetDbName())
+                    {
+                        context.Writer.WritePropertyName("dbName");
+                        context.Writer.Write(publicRequest.DbName);
+                    }
+
+                    if(publicRequest.IsSetDurationSeconds())
+                    {
+                        context.Writer.WritePropertyName("durationSeconds");
+                        context.Writer.Write(publicRequest.DurationSeconds.Value);
+                    }
+
+                    if(publicRequest.IsSetWorkgroupName())
+                    {
+                        context.Writer.WritePropertyName("workgroupName");
+                        context.Writer.Write(publicRequest.WorkgroupName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDbName())
-                {
-                    context.Writer.WritePropertyName("dbName");
-                    context.Writer.Write(publicRequest.DbName);
-                }
-
-                if(publicRequest.IsSetDurationSeconds())
-                {
-                    context.Writer.WritePropertyName("durationSeconds");
-                    context.Writer.Write(publicRequest.DurationSeconds.Value);
-                }
-
-                if(publicRequest.IsSetWorkgroupName())
-                {
-                    context.Writer.WritePropertyName("workgroupName");
-                    context.Writer.Write(publicRequest.WorkgroupName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

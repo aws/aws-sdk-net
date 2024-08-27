@@ -61,26 +61,29 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/evaluation-jobs/batch-delete";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetJobIdentifiers())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("jobIdentifiers");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestJobIdentifiersListValue in publicRequest.JobIdentifiers)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetJobIdentifiers())
                     {
-                            context.Writer.Write(publicRequestJobIdentifiersListValue);
+                        context.Writer.WritePropertyName("jobIdentifiers");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestJobIdentifiersListValue in publicRequest.JobIdentifiers)
+                        {
+                                context.Writer.Write(publicRequestJobIdentifiersListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

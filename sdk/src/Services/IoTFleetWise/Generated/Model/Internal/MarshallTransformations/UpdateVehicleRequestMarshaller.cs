@@ -63,53 +63,56 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAttributes())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("attributes");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestAttributesKvp in publicRequest.Attributes)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAttributes())
                     {
-                        context.Writer.WritePropertyName(publicRequestAttributesKvp.Key);
-                        var publicRequestAttributesValue = publicRequestAttributesKvp.Value;
+                        context.Writer.WritePropertyName("attributes");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestAttributesKvp in publicRequest.Attributes)
+                        {
+                            context.Writer.WritePropertyName(publicRequestAttributesKvp.Key);
+                            var publicRequestAttributesValue = publicRequestAttributesKvp.Value;
 
-                            context.Writer.Write(publicRequestAttributesValue);
+                                context.Writer.Write(publicRequestAttributesValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetAttributeUpdateMode())
+                    {
+                        context.Writer.WritePropertyName("attributeUpdateMode");
+                        context.Writer.Write(publicRequest.AttributeUpdateMode);
+                    }
+
+                    if(publicRequest.IsSetDecoderManifestArn())
+                    {
+                        context.Writer.WritePropertyName("decoderManifestArn");
+                        context.Writer.Write(publicRequest.DecoderManifestArn);
+                    }
+
+                    if(publicRequest.IsSetModelManifestArn())
+                    {
+                        context.Writer.WritePropertyName("modelManifestArn");
+                        context.Writer.Write(publicRequest.ModelManifestArn);
+                    }
+
+                    if(publicRequest.IsSetVehicleName())
+                    {
+                        context.Writer.WritePropertyName("vehicleName");
+                        context.Writer.Write(publicRequest.VehicleName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetAttributeUpdateMode())
-                {
-                    context.Writer.WritePropertyName("attributeUpdateMode");
-                    context.Writer.Write(publicRequest.AttributeUpdateMode);
-                }
-
-                if(publicRequest.IsSetDecoderManifestArn())
-                {
-                    context.Writer.WritePropertyName("decoderManifestArn");
-                    context.Writer.Write(publicRequest.DecoderManifestArn);
-                }
-
-                if(publicRequest.IsSetModelManifestArn())
-                {
-                    context.Writer.WritePropertyName("modelManifestArn");
-                    context.Writer.Write(publicRequest.ModelManifestArn);
-                }
-
-                if(publicRequest.IsSetVehicleName())
-                {
-                    context.Writer.WritePropertyName("vehicleName");
-                    context.Writer.Write(publicRequest.VehicleName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

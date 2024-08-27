@@ -61,45 +61,48 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/gremlin/profile";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetChop())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("profile.chop");
-                    context.Writer.Write(publicRequest.Chop.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetChop())
+                    {
+                        context.Writer.WritePropertyName("profile.chop");
+                        context.Writer.Write(publicRequest.Chop.Value);
+                    }
+
+                    if(publicRequest.IsSetGremlinQuery())
+                    {
+                        context.Writer.WritePropertyName("gremlin");
+                        context.Writer.Write(publicRequest.GremlinQuery);
+                    }
+
+                    if(publicRequest.IsSetIndexOps())
+                    {
+                        context.Writer.WritePropertyName("profile.indexOps");
+                        context.Writer.Write(publicRequest.IndexOps.Value);
+                    }
+
+                    if(publicRequest.IsSetResults())
+                    {
+                        context.Writer.WritePropertyName("profile.results");
+                        context.Writer.Write(publicRequest.Results.Value);
+                    }
+
+                    if(publicRequest.IsSetSerializer())
+                    {
+                        context.Writer.WritePropertyName("profile.serializer");
+                        context.Writer.Write(publicRequest.Serializer);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetGremlinQuery())
-                {
-                    context.Writer.WritePropertyName("gremlin");
-                    context.Writer.Write(publicRequest.GremlinQuery);
-                }
-
-                if(publicRequest.IsSetIndexOps())
-                {
-                    context.Writer.WritePropertyName("profile.indexOps");
-                    context.Writer.Write(publicRequest.IndexOps.Value);
-                }
-
-                if(publicRequest.IsSetResults())
-                {
-                    context.Writer.WritePropertyName("profile.results");
-                    context.Writer.Write(publicRequest.Results.Value);
-                }
-
-                if(publicRequest.IsSetSerializer())
-                {
-                    context.Writer.WritePropertyName("profile.serializer");
-                    context.Writer.Write(publicRequest.Serializer);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

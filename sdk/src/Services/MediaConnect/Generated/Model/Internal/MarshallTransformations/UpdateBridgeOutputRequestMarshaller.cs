@@ -67,26 +67,29 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 throw new AmazonMediaConnectException("Request object does not have required field OutputName set");
             request.AddPathResource("{outputName}", StringUtils.FromString(publicRequest.OutputName));
             request.ResourcePath = "/v1/bridges/{bridgeArn}/outputs/{outputName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetNetworkOutput())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("networkOutput");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetNetworkOutput())
+                    {
+                        context.Writer.WritePropertyName("networkOutput");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = UpdateBridgeNetworkOutputRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.NetworkOutput, context);
+                        var marshaller = UpdateBridgeNetworkOutputRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.NetworkOutput, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

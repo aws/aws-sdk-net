@@ -64,52 +64,55 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
                 throw new AmazonAppConfigException("Request object does not have required field DeploymentStrategyId set");
             request.AddPathResource("{DeploymentStrategyId}", StringUtils.FromString(publicRequest.DeploymentStrategyId));
             request.ResourcePath = "/deploymentstrategies/{DeploymentStrategyId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeploymentDurationInMinutes())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DeploymentDurationInMinutes");
-                    context.Writer.Write(publicRequest.DeploymentDurationInMinutes.Value);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetFinalBakeTimeInMinutes())
-                {
-                    context.Writer.WritePropertyName("FinalBakeTimeInMinutes");
-                    context.Writer.Write(publicRequest.FinalBakeTimeInMinutes.Value);
-                }
-
-                if(publicRequest.IsSetGrowthFactor())
-                {
-                    context.Writer.WritePropertyName("GrowthFactor");
-                    if(StringUtils.IsSpecialFloatValue(publicRequest.GrowthFactor.Value))
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDeploymentDurationInMinutes())
                     {
-                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.GrowthFactor.Value));
+                        context.Writer.WritePropertyName("DeploymentDurationInMinutes");
+                        context.Writer.Write(publicRequest.DeploymentDurationInMinutes.Value);
                     }
-                    else
+
+                    if(publicRequest.IsSetDescription())
                     {
-                        context.Writer.Write(publicRequest.GrowthFactor.Value);
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
                     }
+
+                    if(publicRequest.IsSetFinalBakeTimeInMinutes())
+                    {
+                        context.Writer.WritePropertyName("FinalBakeTimeInMinutes");
+                        context.Writer.Write(publicRequest.FinalBakeTimeInMinutes.Value);
+                    }
+
+                    if(publicRequest.IsSetGrowthFactor())
+                    {
+                        context.Writer.WritePropertyName("GrowthFactor");
+                        if(StringUtils.IsSpecialFloatValue(publicRequest.GrowthFactor.Value))
+                        {
+                            context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.GrowthFactor.Value));
+                        }
+                        else
+                        {
+                            context.Writer.Write(publicRequest.GrowthFactor.Value);
+                        }
+                    }
+
+                    if(publicRequest.IsSetGrowthType())
+                    {
+                        context.Writer.WritePropertyName("GrowthType");
+                        context.Writer.Write(publicRequest.GrowthType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetGrowthType())
-                {
-                    context.Writer.WritePropertyName("GrowthType");
-                    context.Writer.Write(publicRequest.GrowthType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

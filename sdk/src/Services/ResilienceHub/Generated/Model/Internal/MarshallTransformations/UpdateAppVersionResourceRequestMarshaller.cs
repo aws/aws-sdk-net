@@ -61,98 +61,101 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/update-app-version-resource";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAdditionalInfo())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("additionalInfo");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestAdditionalInfoKvp in publicRequest.AdditionalInfo)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAdditionalInfo())
                     {
-                        context.Writer.WritePropertyName(publicRequestAdditionalInfoKvp.Key);
-                        var publicRequestAdditionalInfoValue = publicRequestAdditionalInfoKvp.Value;
-
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAdditionalInfoValueListValue in publicRequestAdditionalInfoValue)
+                        context.Writer.WritePropertyName("additionalInfo");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestAdditionalInfoKvp in publicRequest.AdditionalInfo)
                         {
-                                context.Writer.Write(publicRequestAdditionalInfoValueListValue);
+                            context.Writer.WritePropertyName(publicRequestAdditionalInfoKvp.Key);
+                            var publicRequestAdditionalInfoValue = publicRequestAdditionalInfoKvp.Value;
+
+                            context.Writer.WriteArrayStart();
+                            foreach(var publicRequestAdditionalInfoValueListValue in publicRequestAdditionalInfoValue)
+                            {
+                                    context.Writer.Write(publicRequestAdditionalInfoValueListValue);
+                            }
+                            context.Writer.WriteArrayEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetAppArn())
+                    {
+                        context.Writer.WritePropertyName("appArn");
+                        context.Writer.Write(publicRequest.AppArn);
+                    }
+
+                    if(publicRequest.IsSetAppComponents())
+                    {
+                        context.Writer.WritePropertyName("appComponents");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAppComponentsListValue in publicRequest.AppComponents)
+                        {
+                                context.Writer.Write(publicRequestAppComponentsListValue);
                         }
                         context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetAppArn())
-                {
-                    context.Writer.WritePropertyName("appArn");
-                    context.Writer.Write(publicRequest.AppArn);
-                }
-
-                if(publicRequest.IsSetAppComponents())
-                {
-                    context.Writer.WritePropertyName("appComponents");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAppComponentsListValue in publicRequest.AppComponents)
+                    if(publicRequest.IsSetAwsAccountId())
                     {
-                            context.Writer.Write(publicRequestAppComponentsListValue);
+                        context.Writer.WritePropertyName("awsAccountId");
+                        context.Writer.Write(publicRequest.AwsAccountId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetAwsRegion())
+                    {
+                        context.Writer.WritePropertyName("awsRegion");
+                        context.Writer.Write(publicRequest.AwsRegion);
+                    }
+
+                    if(publicRequest.IsSetExcluded())
+                    {
+                        context.Writer.WritePropertyName("excluded");
+                        context.Writer.Write(publicRequest.Excluded.Value);
+                    }
+
+                    if(publicRequest.IsSetLogicalResourceId())
+                    {
+                        context.Writer.WritePropertyName("logicalResourceId");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LogicalResourceIdMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.LogicalResourceId, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetPhysicalResourceId())
+                    {
+                        context.Writer.WritePropertyName("physicalResourceId");
+                        context.Writer.Write(publicRequest.PhysicalResourceId);
+                    }
+
+                    if(publicRequest.IsSetResourceName())
+                    {
+                        context.Writer.WritePropertyName("resourceName");
+                        context.Writer.Write(publicRequest.ResourceName);
+                    }
+
+                    if(publicRequest.IsSetResourceType())
+                    {
+                        context.Writer.WritePropertyName("resourceType");
+                        context.Writer.Write(publicRequest.ResourceType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetAwsAccountId())
-                {
-                    context.Writer.WritePropertyName("awsAccountId");
-                    context.Writer.Write(publicRequest.AwsAccountId);
-                }
-
-                if(publicRequest.IsSetAwsRegion())
-                {
-                    context.Writer.WritePropertyName("awsRegion");
-                    context.Writer.Write(publicRequest.AwsRegion);
-                }
-
-                if(publicRequest.IsSetExcluded())
-                {
-                    context.Writer.WritePropertyName("excluded");
-                    context.Writer.Write(publicRequest.Excluded.Value);
-                }
-
-                if(publicRequest.IsSetLogicalResourceId())
-                {
-                    context.Writer.WritePropertyName("logicalResourceId");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LogicalResourceIdMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LogicalResourceId, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPhysicalResourceId())
-                {
-                    context.Writer.WritePropertyName("physicalResourceId");
-                    context.Writer.Write(publicRequest.PhysicalResourceId);
-                }
-
-                if(publicRequest.IsSetResourceName())
-                {
-                    context.Writer.WritePropertyName("resourceName");
-                    context.Writer.Write(publicRequest.ResourceName);
-                }
-
-                if(publicRequest.IsSetResourceType())
-                {
-                    context.Writer.WritePropertyName("resourceType");
-                    context.Writer.Write(publicRequest.ResourceType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

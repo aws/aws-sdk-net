@@ -64,57 +64,60 @@ namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
                 throw new AmazonMigrationHubOrchestratorException("Request object does not have required field Id set");
             request.AddPathResource("{id}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = "/migrationworkflow/{id}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetInputParameters())
-                {
-                    context.Writer.WritePropertyName("inputParameters");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestInputParametersKvp in publicRequest.InputParameters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
-                        context.Writer.WritePropertyName(publicRequestInputParametersKvp.Key);
-                        var publicRequestInputParametersValue = publicRequestInputParametersKvp.Value;
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
 
+                    if(publicRequest.IsSetInputParameters())
+                    {
+                        context.Writer.WritePropertyName("inputParameters");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestInputParametersKvp in publicRequest.InputParameters)
+                        {
+                            context.Writer.WritePropertyName(publicRequestInputParametersKvp.Key);
+                            var publicRequestInputParametersValue = publicRequestInputParametersKvp.Value;
 
-                        var marshaller = StepInputMarshaller.Instance;
-                        marshaller.Marshall(publicRequestInputParametersValue, context);
+                            context.Writer.WriteObjectStart();
 
+                            var marshaller = StepInputMarshaller.Instance;
+                            marshaller.Marshall(publicRequestInputParametersValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetStepTargets())
-                {
-                    context.Writer.WritePropertyName("stepTargets");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestStepTargetsListValue in publicRequest.StepTargets)
+                    if(publicRequest.IsSetName())
                     {
-                            context.Writer.Write(publicRequestStepTargetsListValue);
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetStepTargets())
+                    {
+                        context.Writer.WritePropertyName("stepTargets");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestStepTargetsListValue in publicRequest.StepTargets)
+                        {
+                                context.Writer.Write(publicRequestStepTargetsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

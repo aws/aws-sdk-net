@@ -61,43 +61,46 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/account-settings";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetResourceTypeManagementPreference())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ResourceTypeManagementPreference");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestResourceTypeManagementPreferenceKvp in publicRequest.ResourceTypeManagementPreference)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetResourceTypeManagementPreference())
                     {
-                        context.Writer.WritePropertyName(publicRequestResourceTypeManagementPreferenceKvp.Key);
-                        var publicRequestResourceTypeManagementPreferenceValue = publicRequestResourceTypeManagementPreferenceKvp.Value;
+                        context.Writer.WritePropertyName("ResourceTypeManagementPreference");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestResourceTypeManagementPreferenceKvp in publicRequest.ResourceTypeManagementPreference)
+                        {
+                            context.Writer.WritePropertyName(publicRequestResourceTypeManagementPreferenceKvp.Key);
+                            var publicRequestResourceTypeManagementPreferenceValue = publicRequestResourceTypeManagementPreferenceKvp.Value;
 
-                            context.Writer.Write(publicRequestResourceTypeManagementPreferenceValue);
+                                context.Writer.Write(publicRequestResourceTypeManagementPreferenceValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetResourceTypeOptInPreference())
+                    {
+                        context.Writer.WritePropertyName("ResourceTypeOptInPreference");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestResourceTypeOptInPreferenceKvp in publicRequest.ResourceTypeOptInPreference)
+                        {
+                            context.Writer.WritePropertyName(publicRequestResourceTypeOptInPreferenceKvp.Key);
+                            var publicRequestResourceTypeOptInPreferenceValue = publicRequestResourceTypeOptInPreferenceKvp.Value;
+
+                                context.Writer.Write(publicRequestResourceTypeOptInPreferenceValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetResourceTypeOptInPreference())
-                {
-                    context.Writer.WritePropertyName("ResourceTypeOptInPreference");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestResourceTypeOptInPreferenceKvp in publicRequest.ResourceTypeOptInPreference)
-                    {
-                        context.Writer.WritePropertyName(publicRequestResourceTypeOptInPreferenceKvp.Key);
-                        var publicRequestResourceTypeOptInPreferenceValue = publicRequestResourceTypeOptInPreferenceKvp.Value;
-
-                            context.Writer.Write(publicRequestResourceTypeOptInPreferenceValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

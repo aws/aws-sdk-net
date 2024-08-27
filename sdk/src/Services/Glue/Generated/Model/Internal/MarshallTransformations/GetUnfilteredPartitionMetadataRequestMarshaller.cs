@@ -63,83 +63,86 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAuditContext())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AuditContext");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AuditContextMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AuditContext, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetCatalogId())
-                {
-                    context.Writer.WritePropertyName("CatalogId");
-                    context.Writer.Write(publicRequest.CatalogId);
-                }
-
-                if(publicRequest.IsSetDatabaseName())
-                {
-                    context.Writer.WritePropertyName("DatabaseName");
-                    context.Writer.Write(publicRequest.DatabaseName);
-                }
-
-                if(publicRequest.IsSetPartitionValues())
-                {
-                    context.Writer.WritePropertyName("PartitionValues");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPartitionValuesListValue in publicRequest.PartitionValues)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAuditContext())
                     {
-                            context.Writer.Write(publicRequestPartitionValuesListValue);
+                        context.Writer.WritePropertyName("AuditContext");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AuditContextMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AuditContext, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetQuerySessionContext())
-                {
-                    context.Writer.WritePropertyName("QuerySessionContext");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = QuerySessionContextMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.QuerySessionContext, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRegion())
-                {
-                    context.Writer.WritePropertyName("Region");
-                    context.Writer.Write(publicRequest.Region);
-                }
-
-                if(publicRequest.IsSetSupportedPermissionTypes())
-                {
-                    context.Writer.WritePropertyName("SupportedPermissionTypes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSupportedPermissionTypesListValue in publicRequest.SupportedPermissionTypes)
+                    if(publicRequest.IsSetCatalogId())
                     {
-                            context.Writer.Write(publicRequestSupportedPermissionTypesListValue);
+                        context.Writer.WritePropertyName("CatalogId");
+                        context.Writer.Write(publicRequest.CatalogId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDatabaseName())
+                    {
+                        context.Writer.WritePropertyName("DatabaseName");
+                        context.Writer.Write(publicRequest.DatabaseName);
+                    }
+
+                    if(publicRequest.IsSetPartitionValues())
+                    {
+                        context.Writer.WritePropertyName("PartitionValues");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPartitionValuesListValue in publicRequest.PartitionValues)
+                        {
+                                context.Writer.Write(publicRequestPartitionValuesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetQuerySessionContext())
+                    {
+                        context.Writer.WritePropertyName("QuerySessionContext");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = QuerySessionContextMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.QuerySessionContext, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRegion())
+                    {
+                        context.Writer.WritePropertyName("Region");
+                        context.Writer.Write(publicRequest.Region);
+                    }
+
+                    if(publicRequest.IsSetSupportedPermissionTypes())
+                    {
+                        context.Writer.WritePropertyName("SupportedPermissionTypes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSupportedPermissionTypesListValue in publicRequest.SupportedPermissionTypes)
+                        {
+                                context.Writer.Write(publicRequestSupportedPermissionTypesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTableName())
+                    {
+                        context.Writer.WritePropertyName("TableName");
+                        context.Writer.Write(publicRequest.TableName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTableName())
-                {
-                    context.Writer.WritePropertyName("TableName");
-                    context.Writer.Write(publicRequest.TableName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

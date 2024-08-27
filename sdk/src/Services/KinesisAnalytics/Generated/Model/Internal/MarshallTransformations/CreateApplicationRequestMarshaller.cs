@@ -63,97 +63,100 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApplicationCode())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ApplicationCode");
-                    context.Writer.Write(publicRequest.ApplicationCode);
-                }
-
-                if(publicRequest.IsSetApplicationDescription())
-                {
-                    context.Writer.WritePropertyName("ApplicationDescription");
-                    context.Writer.Write(publicRequest.ApplicationDescription);
-                }
-
-                if(publicRequest.IsSetApplicationName())
-                {
-                    context.Writer.WritePropertyName("ApplicationName");
-                    context.Writer.Write(publicRequest.ApplicationName);
-                }
-
-                if(publicRequest.IsSetCloudWatchLoggingOptions())
-                {
-                    context.Writer.WritePropertyName("CloudWatchLoggingOptions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCloudWatchLoggingOptionsListValue in publicRequest.CloudWatchLoggingOptions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApplicationCode())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = CloudWatchLoggingOptionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestCloudWatchLoggingOptionsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("ApplicationCode");
+                        context.Writer.Write(publicRequest.ApplicationCode);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetInputs())
-                {
-                    context.Writer.WritePropertyName("Inputs");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestInputsListValue in publicRequest.Inputs)
+                    if(publicRequest.IsSetApplicationDescription())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = InputMarshaller.Instance;
-                        marshaller.Marshall(publicRequestInputsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("ApplicationDescription");
+                        context.Writer.Write(publicRequest.ApplicationDescription);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetOutputs())
-                {
-                    context.Writer.WritePropertyName("Outputs");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestOutputsListValue in publicRequest.Outputs)
+                    if(publicRequest.IsSetApplicationName())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = OutputMarshaller.Instance;
-                        marshaller.Marshall(publicRequestOutputsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("ApplicationName");
+                        context.Writer.Write(publicRequest.ApplicationName);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetCloudWatchLoggingOptions())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("CloudWatchLoggingOptions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCloudWatchLoggingOptionsListValue in publicRequest.CloudWatchLoggingOptions)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                            var marshaller = CloudWatchLoggingOptionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestCloudWatchLoggingOptionsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetInputs())
+                    {
+                        context.Writer.WritePropertyName("Inputs");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestInputsListValue in publicRequest.Inputs)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = InputMarshaller.Instance;
+                            marshaller.Marshall(publicRequestInputsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetOutputs())
+                    {
+                        context.Writer.WritePropertyName("Outputs");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestOutputsListValue in publicRequest.Outputs)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = OutputMarshaller.Instance;
+                            marshaller.Marshall(publicRequestOutputsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

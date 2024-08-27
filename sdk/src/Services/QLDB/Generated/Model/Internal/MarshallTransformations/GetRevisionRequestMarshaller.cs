@@ -64,43 +64,46 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
                 throw new AmazonQLDBException("Request object does not have required field Name set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/ledgers/{name}/revision";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBlockAddress())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("BlockAddress");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBlockAddress())
+                    {
+                        context.Writer.WritePropertyName("BlockAddress");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = ValueHolderMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.BlockAddress, context);
+                        var marshaller = ValueHolderMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.BlockAddress, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDigestTipAddress())
+                    {
+                        context.Writer.WritePropertyName("DigestTipAddress");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ValueHolderMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DigestTipAddress, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDocumentId())
+                    {
+                        context.Writer.WritePropertyName("DocumentId");
+                        context.Writer.Write(publicRequest.DocumentId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDigestTipAddress())
-                {
-                    context.Writer.WritePropertyName("DigestTipAddress");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ValueHolderMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DigestTipAddress, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDocumentId())
-                {
-                    context.Writer.WritePropertyName("DocumentId");
-                    context.Writer.Write(publicRequest.DocumentId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

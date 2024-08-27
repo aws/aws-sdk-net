@@ -61,69 +61,72 @@ namespace Amazon.Ivschat.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/CreateRoom";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLoggingConfigurationIdentifiers())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("loggingConfigurationIdentifiers");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLoggingConfigurationIdentifiersListValue in publicRequest.LoggingConfigurationIdentifiers)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetLoggingConfigurationIdentifiers())
                     {
-                            context.Writer.Write(publicRequestLoggingConfigurationIdentifiersListValue);
+                        context.Writer.WritePropertyName("loggingConfigurationIdentifiers");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLoggingConfigurationIdentifiersListValue in publicRequest.LoggingConfigurationIdentifiers)
+                        {
+                                context.Writer.Write(publicRequestLoggingConfigurationIdentifiersListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetMaximumMessageLength())
-                {
-                    context.Writer.WritePropertyName("maximumMessageLength");
-                    context.Writer.Write(publicRequest.MaximumMessageLength.Value);
-                }
-
-                if(publicRequest.IsSetMaximumMessageRatePerSecond())
-                {
-                    context.Writer.WritePropertyName("maximumMessageRatePerSecond");
-                    context.Writer.Write(publicRequest.MaximumMessageRatePerSecond.Value);
-                }
-
-                if(publicRequest.IsSetMessageReviewHandler())
-                {
-                    context.Writer.WritePropertyName("messageReviewHandler");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MessageReviewHandlerMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.MessageReviewHandler, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetMaximumMessageLength())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("maximumMessageLength");
+                        context.Writer.Write(publicRequest.MaximumMessageLength.Value);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetMaximumMessageRatePerSecond())
+                    {
+                        context.Writer.WritePropertyName("maximumMessageRatePerSecond");
+                        context.Writer.Write(publicRequest.MaximumMessageRatePerSecond.Value);
+                    }
+
+                    if(publicRequest.IsSetMessageReviewHandler())
+                    {
+                        context.Writer.WritePropertyName("messageReviewHandler");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MessageReviewHandlerMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.MessageReviewHandler, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -70,50 +70,53 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 throw new AmazonBedrockAgentRuntimeException("Request object does not have required field SessionId set");
             request.AddPathResource("{sessionId}", StringUtils.FromString(publicRequest.SessionId));
             request.ResourcePath = "/agents/{agentId}/agentAliases/{agentAliasId}/sessions/{sessionId}/text";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEnableTrace())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("enableTrace");
-                    context.Writer.Write(publicRequest.EnableTrace.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEnableTrace())
+                    {
+                        context.Writer.WritePropertyName("enableTrace");
+                        context.Writer.Write(publicRequest.EnableTrace.Value);
+                    }
+
+                    if(publicRequest.IsSetEndSession())
+                    {
+                        context.Writer.WritePropertyName("endSession");
+                        context.Writer.Write(publicRequest.EndSession.Value);
+                    }
+
+                    if(publicRequest.IsSetInputText())
+                    {
+                        context.Writer.WritePropertyName("inputText");
+                        context.Writer.Write(publicRequest.InputText);
+                    }
+
+                    if(publicRequest.IsSetMemoryId())
+                    {
+                        context.Writer.WritePropertyName("memoryId");
+                        context.Writer.Write(publicRequest.MemoryId);
+                    }
+
+                    if(publicRequest.IsSetSessionState())
+                    {
+                        context.Writer.WritePropertyName("sessionState");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SessionStateMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SessionState, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEndSession())
-                {
-                    context.Writer.WritePropertyName("endSession");
-                    context.Writer.Write(publicRequest.EndSession.Value);
-                }
-
-                if(publicRequest.IsSetInputText())
-                {
-                    context.Writer.WritePropertyName("inputText");
-                    context.Writer.Write(publicRequest.InputText);
-                }
-
-                if(publicRequest.IsSetMemoryId())
-                {
-                    context.Writer.WritePropertyName("memoryId");
-                    context.Writer.Write(publicRequest.MemoryId);
-                }
-
-                if(publicRequest.IsSetSessionState())
-                {
-                    context.Writer.WritePropertyName("sessionState");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SessionStateMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SessionState, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

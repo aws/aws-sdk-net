@@ -63,32 +63,35 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConfig())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Config");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConfig())
+                    {
+                        context.Writer.WritePropertyName("Config");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = ResolverRuleConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Config, context);
+                        var marshaller = ResolverRuleConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Config, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetResolverRuleId())
+                    {
+                        context.Writer.WritePropertyName("ResolverRuleId");
+                        context.Writer.Write(publicRequest.ResolverRuleId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetResolverRuleId())
-                {
-                    context.Writer.WritePropertyName("ResolverRuleId");
-                    context.Writer.Write(publicRequest.ResolverRuleId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

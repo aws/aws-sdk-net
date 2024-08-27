@@ -67,31 +67,34 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field UserId set");
             request.AddPathResource("{UserId}", StringUtils.FromString(publicRequest.UserId));
             request.ResourcePath = "/users/{InstanceId}/{UserId}/disassociate-proficiencies";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetUserProficiencies())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("UserProficiencies");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestUserProficienciesListValue in publicRequest.UserProficiencies)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetUserProficiencies())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("UserProficiencies");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestUserProficienciesListValue in publicRequest.UserProficiencies)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = UserProficiencyDisassociateMarshaller.Instance;
-                        marshaller.Marshall(publicRequestUserProficienciesListValue, context);
+                            var marshaller = UserProficiencyDisassociateMarshaller.Instance;
+                            marshaller.Marshall(publicRequestUserProficienciesListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

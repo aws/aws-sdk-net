@@ -34,16 +34,10 @@ namespace Amazon.S3
     public partial class AmazonS3Config : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("S3", "4.0.0.0");
 
         private static readonly AmazonS3EndpointResolver EndpointResolver =
             new AmazonS3EndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("S3", "3.7.400.2");
-=======
-            InternalSDKUtils.BuildUserAgentString("S3", "3.7.402.2");
->>>>>>> 5a152135e000587a58481d3320fe67732d653199
 
         private string _userAgent = UserAgentString;
         ///<summary>

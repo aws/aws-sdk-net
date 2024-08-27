@@ -63,51 +63,54 @@ namespace Amazon.CloudHSM.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEniIp())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("EniIp");
-                    context.Writer.Write(publicRequest.EniIp);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEniIp())
+                    {
+                        context.Writer.WritePropertyName("EniIp");
+                        context.Writer.Write(publicRequest.EniIp);
+                    }
+
+                    if(publicRequest.IsSetExternalId())
+                    {
+                        context.Writer.WritePropertyName("ExternalId");
+                        context.Writer.Write(publicRequest.ExternalId);
+                    }
+
+                    if(publicRequest.IsSetHsmArn())
+                    {
+                        context.Writer.WritePropertyName("HsmArn");
+                        context.Writer.Write(publicRequest.HsmArn);
+                    }
+
+                    if(publicRequest.IsSetIamRoleArn())
+                    {
+                        context.Writer.WritePropertyName("IamRoleArn");
+                        context.Writer.Write(publicRequest.IamRoleArn);
+                    }
+
+                    if(publicRequest.IsSetSubnetId())
+                    {
+                        context.Writer.WritePropertyName("SubnetId");
+                        context.Writer.Write(publicRequest.SubnetId);
+                    }
+
+                    if(publicRequest.IsSetSyslogIp())
+                    {
+                        context.Writer.WritePropertyName("SyslogIp");
+                        context.Writer.Write(publicRequest.SyslogIp);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetExternalId())
-                {
-                    context.Writer.WritePropertyName("ExternalId");
-                    context.Writer.Write(publicRequest.ExternalId);
-                }
-
-                if(publicRequest.IsSetHsmArn())
-                {
-                    context.Writer.WritePropertyName("HsmArn");
-                    context.Writer.Write(publicRequest.HsmArn);
-                }
-
-                if(publicRequest.IsSetIamRoleArn())
-                {
-                    context.Writer.WritePropertyName("IamRoleArn");
-                    context.Writer.Write(publicRequest.IamRoleArn);
-                }
-
-                if(publicRequest.IsSetSubnetId())
-                {
-                    context.Writer.WritePropertyName("SubnetId");
-                    context.Writer.Write(publicRequest.SubnetId);
-                }
-
-                if(publicRequest.IsSetSyslogIp())
-                {
-                    context.Writer.WritePropertyName("SyslogIp");
-                    context.Writer.Write(publicRequest.SyslogIp);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

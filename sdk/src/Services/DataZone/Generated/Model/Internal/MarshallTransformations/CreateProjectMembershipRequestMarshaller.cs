@@ -67,32 +67,35 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 throw new AmazonDataZoneException("Request object does not have required field ProjectIdentifier set");
             request.AddPathResource("{projectIdentifier}", StringUtils.FromString(publicRequest.ProjectIdentifier));
             request.ResourcePath = "/v2/domains/{domainIdentifier}/projects/{projectIdentifier}/createMembership";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDesignation())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("designation");
-                    context.Writer.Write(publicRequest.Designation);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDesignation())
+                    {
+                        context.Writer.WritePropertyName("designation");
+                        context.Writer.Write(publicRequest.Designation);
+                    }
+
+                    if(publicRequest.IsSetMember())
+                    {
+                        context.Writer.WritePropertyName("member");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MemberMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Member, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMember())
-                {
-                    context.Writer.WritePropertyName("member");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MemberMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Member, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

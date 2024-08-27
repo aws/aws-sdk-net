@@ -63,122 +63,125 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                if(publicRequest.IsSetConsumptionConfiguration())
-                {
-                    context.Writer.WritePropertyName("ConsumptionConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ConsumptionConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ConsumptionConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEntitlements())
-                {
-                    context.Writer.WritePropertyName("Entitlements");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEntitlementsListValue in publicRequest.Entitlements)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    if(publicRequest.IsSetConsumptionConfiguration())
+                    {
+                        context.Writer.WritePropertyName("ConsumptionConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = EntitlementMarshaller.Instance;
-                        marshaller.Marshall(publicRequestEntitlementsListValue, context);
+                        var marshaller = ConsumptionConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ConsumptionConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetHomeRegion())
-                {
-                    context.Writer.WritePropertyName("HomeRegion");
-                    context.Writer.Write(publicRequest.HomeRegion);
-                }
-
-                if(publicRequest.IsSetIssuer())
-                {
-                    context.Writer.WritePropertyName("Issuer");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = IssuerMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Issuer, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetLicenseArn())
-                {
-                    context.Writer.WritePropertyName("LicenseArn");
-                    context.Writer.Write(publicRequest.LicenseArn);
-                }
-
-                if(publicRequest.IsSetLicenseMetadata())
-                {
-                    context.Writer.WritePropertyName("LicenseMetadata");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLicenseMetadataListValue in publicRequest.LicenseMetadata)
+                    if(publicRequest.IsSetEntitlements())
                     {
+                        context.Writer.WritePropertyName("Entitlements");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestEntitlementsListValue in publicRequest.Entitlements)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = EntitlementMarshaller.Instance;
+                            marshaller.Marshall(publicRequestEntitlementsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetHomeRegion())
+                    {
+                        context.Writer.WritePropertyName("HomeRegion");
+                        context.Writer.Write(publicRequest.HomeRegion);
+                    }
+
+                    if(publicRequest.IsSetIssuer())
+                    {
+                        context.Writer.WritePropertyName("Issuer");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = MetadataMarshaller.Instance;
-                        marshaller.Marshall(publicRequestLicenseMetadataListValue, context);
+                        var marshaller = IssuerMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Issuer, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetLicenseArn())
+                    {
+                        context.Writer.WritePropertyName("LicenseArn");
+                        context.Writer.Write(publicRequest.LicenseArn);
+                    }
+
+                    if(publicRequest.IsSetLicenseMetadata())
+                    {
+                        context.Writer.WritePropertyName("LicenseMetadata");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLicenseMetadataListValue in publicRequest.LicenseMetadata)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = MetadataMarshaller.Instance;
+                            marshaller.Marshall(publicRequestLicenseMetadataListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetLicenseName())
+                    {
+                        context.Writer.WritePropertyName("LicenseName");
+                        context.Writer.Write(publicRequest.LicenseName);
+                    }
+
+                    if(publicRequest.IsSetProductName())
+                    {
+                        context.Writer.WritePropertyName("ProductName");
+                        context.Writer.Write(publicRequest.ProductName);
+                    }
+
+                    if(publicRequest.IsSetSourceVersion())
+                    {
+                        context.Writer.WritePropertyName("SourceVersion");
+                        context.Writer.Write(publicRequest.SourceVersion);
+                    }
+
+                    if(publicRequest.IsSetStatus())
+                    {
+                        context.Writer.WritePropertyName("Status");
+                        context.Writer.Write(publicRequest.Status);
+                    }
+
+                    if(publicRequest.IsSetValidity())
+                    {
+                        context.Writer.WritePropertyName("Validity");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DatetimeRangeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Validity, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetLicenseName())
-                {
-                    context.Writer.WritePropertyName("LicenseName");
-                    context.Writer.Write(publicRequest.LicenseName);
-                }
-
-                if(publicRequest.IsSetProductName())
-                {
-                    context.Writer.WritePropertyName("ProductName");
-                    context.Writer.Write(publicRequest.ProductName);
-                }
-
-                if(publicRequest.IsSetSourceVersion())
-                {
-                    context.Writer.WritePropertyName("SourceVersion");
-                    context.Writer.Write(publicRequest.SourceVersion);
-                }
-
-                if(publicRequest.IsSetStatus())
-                {
-                    context.Writer.WritePropertyName("Status");
-                    context.Writer.Write(publicRequest.Status);
-                }
-
-                if(publicRequest.IsSetValidity())
-                {
-                    context.Writer.WritePropertyName("Validity");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DatetimeRangeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Validity, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

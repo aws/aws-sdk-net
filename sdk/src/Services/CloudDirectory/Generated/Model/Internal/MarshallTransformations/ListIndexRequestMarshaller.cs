@@ -61,54 +61,57 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/amazonclouddirectory/2017-01-11/index/targets";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetIndexReference())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("IndexReference");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ObjectReferenceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.IndexReference, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetRangesOnIndexedValues())
-                {
-                    context.Writer.WritePropertyName("RangesOnIndexedValues");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRangesOnIndexedValuesListValue in publicRequest.RangesOnIndexedValues)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetIndexReference())
                     {
+                        context.Writer.WritePropertyName("IndexReference");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = ObjectAttributeRangeMarshaller.Instance;
-                        marshaller.Marshall(publicRequestRangesOnIndexedValuesListValue, context);
+                        var marshaller = ObjectReferenceMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.IndexReference, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetRangesOnIndexedValues())
+                    {
+                        context.Writer.WritePropertyName("RangesOnIndexedValues");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRangesOnIndexedValuesListValue in publicRequest.RangesOnIndexedValues)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ObjectAttributeRangeMarshaller.Instance;
+                            marshaller.Marshall(publicRequestRangesOnIndexedValuesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

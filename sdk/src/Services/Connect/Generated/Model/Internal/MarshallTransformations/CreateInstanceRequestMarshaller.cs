@@ -61,65 +61,68 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/instance";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                if(publicRequest.IsSetDirectoryId())
-                {
-                    context.Writer.WritePropertyName("DirectoryId");
-                    context.Writer.Write(publicRequest.DirectoryId);
-                }
-
-                if(publicRequest.IsSetIdentityManagementType())
-                {
-                    context.Writer.WritePropertyName("IdentityManagementType");
-                    context.Writer.Write(publicRequest.IdentityManagementType);
-                }
-
-                if(publicRequest.IsSetInboundCallsEnabled())
-                {
-                    context.Writer.WritePropertyName("InboundCallsEnabled");
-                    context.Writer.Write(publicRequest.InboundCallsEnabled.Value);
-                }
-
-                if(publicRequest.IsSetInstanceAlias())
-                {
-                    context.Writer.WritePropertyName("InstanceAlias");
-                    context.Writer.Write(publicRequest.InstanceAlias);
-                }
-
-                if(publicRequest.IsSetOutboundCallsEnabled())
-                {
-                    context.Writer.WritePropertyName("OutboundCallsEnabled");
-                    context.Writer.Write(publicRequest.OutboundCallsEnabled.Value);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetDirectoryId())
+                    {
+                        context.Writer.WritePropertyName("DirectoryId");
+                        context.Writer.Write(publicRequest.DirectoryId);
+                    }
+
+                    if(publicRequest.IsSetIdentityManagementType())
+                    {
+                        context.Writer.WritePropertyName("IdentityManagementType");
+                        context.Writer.Write(publicRequest.IdentityManagementType);
+                    }
+
+                    if(publicRequest.IsSetInboundCallsEnabled())
+                    {
+                        context.Writer.WritePropertyName("InboundCallsEnabled");
+                        context.Writer.Write(publicRequest.InboundCallsEnabled.Value);
+                    }
+
+                    if(publicRequest.IsSetInstanceAlias())
+                    {
+                        context.Writer.WritePropertyName("InstanceAlias");
+                        context.Writer.Write(publicRequest.InstanceAlias);
+                    }
+
+                    if(publicRequest.IsSetOutboundCallsEnabled())
+                    {
+                        context.Writer.WritePropertyName("OutboundCallsEnabled");
+                        context.Writer.Write(publicRequest.OutboundCallsEnabled.Value);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

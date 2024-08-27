@@ -61,79 +61,82 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/detector";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDataSources())
-                {
-                    context.Writer.WritePropertyName("dataSources");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DataSourceConfigurationsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DataSources, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEnable())
-                {
-                    context.Writer.WritePropertyName("enable");
-                    context.Writer.Write(publicRequest.Enable.Value);
-                }
-
-                if(publicRequest.IsSetFeatures())
-                {
-                    context.Writer.WritePropertyName("features");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFeaturesListValue in publicRequest.Features)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetDataSources())
+                    {
+                        context.Writer.WritePropertyName("dataSources");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = DetectorFeatureConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFeaturesListValue, context);
+                        var marshaller = DataSourceConfigurationsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DataSources, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetFindingPublishingFrequency())
-                {
-                    context.Writer.WritePropertyName("findingPublishingFrequency");
-                    context.Writer.Write(publicRequest.FindingPublishingFrequency);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetEnable())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("enable");
+                        context.Writer.Write(publicRequest.Enable.Value);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetFeatures())
+                    {
+                        context.Writer.WritePropertyName("features");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFeaturesListValue in publicRequest.Features)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = DetectorFeatureConfigurationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFeaturesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetFindingPublishingFrequency())
+                    {
+                        context.Writer.WritePropertyName("findingPublishingFrequency");
+                        context.Writer.Write(publicRequest.FindingPublishingFrequency);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

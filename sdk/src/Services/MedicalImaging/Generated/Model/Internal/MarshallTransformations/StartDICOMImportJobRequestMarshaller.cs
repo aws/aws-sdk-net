@@ -64,56 +64,59 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
                 throw new AmazonMedicalImagingException("Request object does not have required field DatastoreId set");
             request.AddPathResource("{datastoreId}", StringUtils.FromString(publicRequest.DatastoreId));
             request.ResourcePath = "/startDICOMImportJob/datastore/{datastoreId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetDataAccessRoleArn())
+                    {
+                        context.Writer.WritePropertyName("dataAccessRoleArn");
+                        context.Writer.Write(publicRequest.DataAccessRoleArn);
+                    }
+
+                    if(publicRequest.IsSetInputOwnerAccountId())
+                    {
+                        context.Writer.WritePropertyName("inputOwnerAccountId");
+                        context.Writer.Write(publicRequest.InputOwnerAccountId);
+                    }
+
+                    if(publicRequest.IsSetInputS3Uri())
+                    {
+                        context.Writer.WritePropertyName("inputS3Uri");
+                        context.Writer.Write(publicRequest.InputS3Uri);
+                    }
+
+                    if(publicRequest.IsSetJobName())
+                    {
+                        context.Writer.WritePropertyName("jobName");
+                        context.Writer.Write(publicRequest.JobName);
+                    }
+
+                    if(publicRequest.IsSetOutputS3Uri())
+                    {
+                        context.Writer.WritePropertyName("outputS3Uri");
+                        context.Writer.Write(publicRequest.OutputS3Uri);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDataAccessRoleArn())
-                {
-                    context.Writer.WritePropertyName("dataAccessRoleArn");
-                    context.Writer.Write(publicRequest.DataAccessRoleArn);
-                }
-
-                if(publicRequest.IsSetInputOwnerAccountId())
-                {
-                    context.Writer.WritePropertyName("inputOwnerAccountId");
-                    context.Writer.Write(publicRequest.InputOwnerAccountId);
-                }
-
-                if(publicRequest.IsSetInputS3Uri())
-                {
-                    context.Writer.WritePropertyName("inputS3Uri");
-                    context.Writer.Write(publicRequest.InputS3Uri);
-                }
-
-                if(publicRequest.IsSetJobName())
-                {
-                    context.Writer.WritePropertyName("jobName");
-                    context.Writer.Write(publicRequest.JobName);
-                }
-
-                if(publicRequest.IsSetOutputS3Uri())
-                {
-                    context.Writer.WritePropertyName("outputS3Uri");
-                    context.Writer.Write(publicRequest.OutputS3Uri);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

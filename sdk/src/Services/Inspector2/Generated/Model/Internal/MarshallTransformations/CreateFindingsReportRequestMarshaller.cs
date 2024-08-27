@@ -61,43 +61,46 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/reporting/create";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFilterCriteria())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("filterCriteria");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFilterCriteria())
+                    {
+                        context.Writer.WritePropertyName("filterCriteria");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = FilterCriteriaMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.FilterCriteria, context);
+                        var marshaller = FilterCriteriaMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.FilterCriteria, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetReportFormat())
+                    {
+                        context.Writer.WritePropertyName("reportFormat");
+                        context.Writer.Write(publicRequest.ReportFormat);
+                    }
+
+                    if(publicRequest.IsSetS3Destination())
+                    {
+                        context.Writer.WritePropertyName("s3Destination");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DestinationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.S3Destination, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetReportFormat())
-                {
-                    context.Writer.WritePropertyName("reportFormat");
-                    context.Writer.Write(publicRequest.ReportFormat);
-                }
-
-                if(publicRequest.IsSetS3Destination())
-                {
-                    context.Writer.WritePropertyName("s3Destination");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DestinationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.S3Destination, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

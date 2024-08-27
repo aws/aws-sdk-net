@@ -67,26 +67,29 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field QueueId set");
             request.AddPathResource("{QueueId}", StringUtils.FromString(publicRequest.QueueId));
             request.ResourcePath = "/queues/{InstanceId}/{QueueId}/disassociate-quick-connects";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetQuickConnectIds())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("QuickConnectIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestQuickConnectIdsListValue in publicRequest.QuickConnectIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetQuickConnectIds())
                     {
-                            context.Writer.Write(publicRequestQuickConnectIdsListValue);
+                        context.Writer.WritePropertyName("QuickConnectIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestQuickConnectIdsListValue in publicRequest.QuickConnectIds)
+                        {
+                                context.Writer.Write(publicRequestQuickConnectIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

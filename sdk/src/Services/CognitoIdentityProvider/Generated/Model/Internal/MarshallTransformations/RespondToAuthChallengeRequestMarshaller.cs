@@ -63,83 +63,86 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAnalyticsMetadata())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AnalyticsMetadata");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AnalyticsMetadataTypeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AnalyticsMetadata, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetChallengeName())
-                {
-                    context.Writer.WritePropertyName("ChallengeName");
-                    context.Writer.Write(publicRequest.ChallengeName);
-                }
-
-                if(publicRequest.IsSetChallengeResponses())
-                {
-                    context.Writer.WritePropertyName("ChallengeResponses");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestChallengeResponsesKvp in publicRequest.ChallengeResponses)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAnalyticsMetadata())
                     {
-                        context.Writer.WritePropertyName(publicRequestChallengeResponsesKvp.Key);
-                        var publicRequestChallengeResponsesValue = publicRequestChallengeResponsesKvp.Value;
+                        context.Writer.WritePropertyName("AnalyticsMetadata");
+                        context.Writer.WriteObjectStart();
 
-                            context.Writer.Write(publicRequestChallengeResponsesValue);
+                        var marshaller = AnalyticsMetadataTypeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AnalyticsMetadata, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetClientId())
-                {
-                    context.Writer.WritePropertyName("ClientId");
-                    context.Writer.Write(publicRequest.ClientId);
-                }
-
-                if(publicRequest.IsSetClientMetadata())
-                {
-                    context.Writer.WritePropertyName("ClientMetadata");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestClientMetadataKvp in publicRequest.ClientMetadata)
+                    if(publicRequest.IsSetChallengeName())
                     {
-                        context.Writer.WritePropertyName(publicRequestClientMetadataKvp.Key);
-                        var publicRequestClientMetadataValue = publicRequestClientMetadataKvp.Value;
-
-                            context.Writer.Write(publicRequestClientMetadataValue);
+                        context.Writer.WritePropertyName("ChallengeName");
+                        context.Writer.Write(publicRequest.ChallengeName);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetChallengeResponses())
+                    {
+                        context.Writer.WritePropertyName("ChallengeResponses");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestChallengeResponsesKvp in publicRequest.ChallengeResponses)
+                        {
+                            context.Writer.WritePropertyName(publicRequestChallengeResponsesKvp.Key);
+                            var publicRequestChallengeResponsesValue = publicRequestChallengeResponsesKvp.Value;
+
+                                context.Writer.Write(publicRequestChallengeResponsesValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetClientId())
+                    {
+                        context.Writer.WritePropertyName("ClientId");
+                        context.Writer.Write(publicRequest.ClientId);
+                    }
+
+                    if(publicRequest.IsSetClientMetadata())
+                    {
+                        context.Writer.WritePropertyName("ClientMetadata");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestClientMetadataKvp in publicRequest.ClientMetadata)
+                        {
+                            context.Writer.WritePropertyName(publicRequestClientMetadataKvp.Key);
+                            var publicRequestClientMetadataValue = publicRequestClientMetadataKvp.Value;
+
+                                context.Writer.Write(publicRequestClientMetadataValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSession())
+                    {
+                        context.Writer.WritePropertyName("Session");
+                        context.Writer.Write(publicRequest.Session);
+                    }
+
+                    if(publicRequest.IsSetUserContextData())
+                    {
+                        context.Writer.WritePropertyName("UserContextData");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = UserContextDataTypeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.UserContextData, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSession())
-                {
-                    context.Writer.WritePropertyName("Session");
-                    context.Writer.Write(publicRequest.Session);
-                }
-
-                if(publicRequest.IsSetUserContextData())
-                {
-                    context.Writer.WritePropertyName("UserContextData");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UserContextDataTypeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.UserContextData, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -85,7 +85,7 @@ namespace Amazon
         /// <summary>
         /// The Asia Pacific (Malaysia) endpoint.
         /// </summary>
-        public static readonly RegionEndpoint APSoutheast5 = GetEndpoint("ap-southeast-5", "Asia Pacific (Malaysia)");
+        public static readonly RegionEndpoint APSoutheast5 = GetRegionEndpoint("ap-southeast-5", "Asia Pacific (Malaysia)", "aws", "amazonaws.com", @"^(us|eu|ap|sa|ca|me|af|il)\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");
 
         /// <summary>
         /// The Canada (Central) endpoint.

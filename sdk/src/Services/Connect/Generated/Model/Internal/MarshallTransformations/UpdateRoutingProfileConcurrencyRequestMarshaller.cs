@@ -67,31 +67,34 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field RoutingProfileId set");
             request.AddPathResource("{RoutingProfileId}", StringUtils.FromString(publicRequest.RoutingProfileId));
             request.ResourcePath = "/routing-profiles/{InstanceId}/{RoutingProfileId}/concurrency";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMediaConcurrencies())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("MediaConcurrencies");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMediaConcurrenciesListValue in publicRequest.MediaConcurrencies)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMediaConcurrencies())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("MediaConcurrencies");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMediaConcurrenciesListValue in publicRequest.MediaConcurrencies)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = MediaConcurrencyMarshaller.Instance;
-                        marshaller.Marshall(publicRequestMediaConcurrenciesListValue, context);
+                            var marshaller = MediaConcurrencyMarshaller.Instance;
+                            marshaller.Marshall(publicRequestMediaConcurrenciesListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

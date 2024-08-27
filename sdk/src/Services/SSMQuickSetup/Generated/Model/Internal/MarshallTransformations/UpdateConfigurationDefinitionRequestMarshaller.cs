@@ -67,47 +67,50 @@ namespace Amazon.SSMQuickSetup.Model.Internal.MarshallTransformations
                 throw new AmazonSSMQuickSetupException("Request object does not have required field ManagerArn set");
             request.AddPathResource("{ManagerArn}", StringUtils.FromString(publicRequest.ManagerArn));
             request.ResourcePath = "/configurationDefinition/{ManagerArn}/{Id}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLocalDeploymentAdministrationRoleArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("LocalDeploymentAdministrationRoleArn");
-                    context.Writer.Write(publicRequest.LocalDeploymentAdministrationRoleArn);
-                }
-
-                if(publicRequest.IsSetLocalDeploymentExecutionRoleName())
-                {
-                    context.Writer.WritePropertyName("LocalDeploymentExecutionRoleName");
-                    context.Writer.Write(publicRequest.LocalDeploymentExecutionRoleName);
-                }
-
-                if(publicRequest.IsSetParameters())
-                {
-                    context.Writer.WritePropertyName("Parameters");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestParametersKvp in publicRequest.Parameters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetLocalDeploymentAdministrationRoleArn())
                     {
-                        context.Writer.WritePropertyName(publicRequestParametersKvp.Key);
-                        var publicRequestParametersValue = publicRequestParametersKvp.Value;
-
-                            context.Writer.Write(publicRequestParametersValue);
+                        context.Writer.WritePropertyName("LocalDeploymentAdministrationRoleArn");
+                        context.Writer.Write(publicRequest.LocalDeploymentAdministrationRoleArn);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetLocalDeploymentExecutionRoleName())
+                    {
+                        context.Writer.WritePropertyName("LocalDeploymentExecutionRoleName");
+                        context.Writer.Write(publicRequest.LocalDeploymentExecutionRoleName);
+                    }
+
+                    if(publicRequest.IsSetParameters())
+                    {
+                        context.Writer.WritePropertyName("Parameters");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestParametersKvp in publicRequest.Parameters)
+                        {
+                            context.Writer.WritePropertyName(publicRequestParametersKvp.Key);
+                            var publicRequestParametersValue = publicRequestParametersKvp.Value;
+
+                                context.Writer.Write(publicRequestParametersValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTypeVersion())
+                    {
+                        context.Writer.WritePropertyName("TypeVersion");
+                        context.Writer.Write(publicRequest.TypeVersion);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTypeVersion())
-                {
-                    context.Writer.WritePropertyName("TypeVersion");
-                    context.Writer.Write(publicRequest.TypeVersion);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

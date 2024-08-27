@@ -63,83 +63,86 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDelaySeconds())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DelaySeconds");
-                    context.Writer.Write(publicRequest.DelaySeconds.Value);
-                }
-
-                if(publicRequest.IsSetMessageAttributes())
-                {
-                    context.Writer.WritePropertyName("MessageAttributes");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestMessageAttributesKvp in publicRequest.MessageAttributes)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDelaySeconds())
                     {
-                        context.Writer.WritePropertyName(publicRequestMessageAttributesKvp.Key);
-                        var publicRequestMessageAttributesValue = publicRequestMessageAttributesKvp.Value;
+                        context.Writer.WritePropertyName("DelaySeconds");
+                        context.Writer.Write(publicRequest.DelaySeconds.Value);
+                    }
 
+                    if(publicRequest.IsSetMessageAttributes())
+                    {
+                        context.Writer.WritePropertyName("MessageAttributes");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestMessageAttributesKvp in publicRequest.MessageAttributes)
+                        {
+                            context.Writer.WritePropertyName(publicRequestMessageAttributesKvp.Key);
+                            var publicRequestMessageAttributesValue = publicRequestMessageAttributesKvp.Value;
 
-                        var marshaller = MessageAttributeValueMarshaller.Instance;
-                        marshaller.Marshall(publicRequestMessageAttributesValue, context);
+                            context.Writer.WriteObjectStart();
 
+                            var marshaller = MessageAttributeValueMarshaller.Instance;
+                            marshaller.Marshall(publicRequestMessageAttributesValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetMessageBody())
-                {
-                    context.Writer.WritePropertyName("MessageBody");
-                    context.Writer.Write(publicRequest.MessageBody);
-                }
-
-                if(publicRequest.IsSetMessageDeduplicationId())
-                {
-                    context.Writer.WritePropertyName("MessageDeduplicationId");
-                    context.Writer.Write(publicRequest.MessageDeduplicationId);
-                }
-
-                if(publicRequest.IsSetMessageGroupId())
-                {
-                    context.Writer.WritePropertyName("MessageGroupId");
-                    context.Writer.Write(publicRequest.MessageGroupId);
-                }
-
-                if(publicRequest.IsSetMessageSystemAttributes())
-                {
-                    context.Writer.WritePropertyName("MessageSystemAttributes");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestMessageSystemAttributesKvp in publicRequest.MessageSystemAttributes)
+                    if(publicRequest.IsSetMessageBody())
                     {
-                        context.Writer.WritePropertyName(publicRequestMessageSystemAttributesKvp.Key);
-                        var publicRequestMessageSystemAttributesValue = publicRequestMessageSystemAttributesKvp.Value;
+                        context.Writer.WritePropertyName("MessageBody");
+                        context.Writer.Write(publicRequest.MessageBody);
+                    }
 
+                    if(publicRequest.IsSetMessageDeduplicationId())
+                    {
+                        context.Writer.WritePropertyName("MessageDeduplicationId");
+                        context.Writer.Write(publicRequest.MessageDeduplicationId);
+                    }
+
+                    if(publicRequest.IsSetMessageGroupId())
+                    {
+                        context.Writer.WritePropertyName("MessageGroupId");
+                        context.Writer.Write(publicRequest.MessageGroupId);
+                    }
+
+                    if(publicRequest.IsSetMessageSystemAttributes())
+                    {
+                        context.Writer.WritePropertyName("MessageSystemAttributes");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestMessageSystemAttributesKvp in publicRequest.MessageSystemAttributes)
+                        {
+                            context.Writer.WritePropertyName(publicRequestMessageSystemAttributesKvp.Key);
+                            var publicRequestMessageSystemAttributesValue = publicRequestMessageSystemAttributesKvp.Value;
 
-                        var marshaller = MessageSystemAttributeValueMarshaller.Instance;
-                        marshaller.Marshall(publicRequestMessageSystemAttributesValue, context);
+                            context.Writer.WriteObjectStart();
 
+                            var marshaller = MessageSystemAttributeValueMarshaller.Instance;
+                            marshaller.Marshall(publicRequestMessageSystemAttributesValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetQueueUrl())
+                    {
+                        context.Writer.WritePropertyName("QueueUrl");
+                        context.Writer.Write(publicRequest.QueueUrl);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetQueueUrl())
-                {
-                    context.Writer.WritePropertyName("QueueUrl");
-                    context.Writer.Write(publicRequest.QueueUrl);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -64,21 +64,24 @@ namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
                 throw new AmazonChimeSDKIdentityException("Request object does not have required field AppInstanceArn set");
             request.AddPathResource("{appInstanceArn}", StringUtils.FromString(publicRequest.AppInstanceArn));
             request.ResourcePath = "/app-instances/{appInstanceArn}/admins";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAppInstanceAdminArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AppInstanceAdminArn");
-                    context.Writer.Write(publicRequest.AppInstanceAdminArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAppInstanceAdminArn())
+                    {
+                        context.Writer.WritePropertyName("AppInstanceAdminArn");
+                        context.Writer.Write(publicRequest.AppInstanceAdminArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

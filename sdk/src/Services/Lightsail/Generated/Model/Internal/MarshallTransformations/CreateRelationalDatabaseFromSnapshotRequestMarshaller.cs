@@ -63,79 +63,82 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAvailabilityZone())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("availabilityZone");
-                    context.Writer.Write(publicRequest.AvailabilityZone);
-                }
-
-                if(publicRequest.IsSetPubliclyAccessible())
-                {
-                    context.Writer.WritePropertyName("publiclyAccessible");
-                    context.Writer.Write(publicRequest.PubliclyAccessible.Value);
-                }
-
-                if(publicRequest.IsSetRelationalDatabaseBundleId())
-                {
-                    context.Writer.WritePropertyName("relationalDatabaseBundleId");
-                    context.Writer.Write(publicRequest.RelationalDatabaseBundleId);
-                }
-
-                if(publicRequest.IsSetRelationalDatabaseName())
-                {
-                    context.Writer.WritePropertyName("relationalDatabaseName");
-                    context.Writer.Write(publicRequest.RelationalDatabaseName);
-                }
-
-                if(publicRequest.IsSetRelationalDatabaseSnapshotName())
-                {
-                    context.Writer.WritePropertyName("relationalDatabaseSnapshotName");
-                    context.Writer.Write(publicRequest.RelationalDatabaseSnapshotName);
-                }
-
-                if(publicRequest.IsSetRestoreTime())
-                {
-                    context.Writer.WritePropertyName("restoreTime");
-                    context.Writer.Write(publicRequest.RestoreTime.Value);
-                }
-
-                if(publicRequest.IsSetSourceRelationalDatabaseName())
-                {
-                    context.Writer.WritePropertyName("sourceRelationalDatabaseName");
-                    context.Writer.Write(publicRequest.SourceRelationalDatabaseName);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAvailabilityZone())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("availabilityZone");
+                        context.Writer.Write(publicRequest.AvailabilityZone);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetPubliclyAccessible())
+                    {
+                        context.Writer.WritePropertyName("publiclyAccessible");
+                        context.Writer.Write(publicRequest.PubliclyAccessible.Value);
+                    }
+
+                    if(publicRequest.IsSetRelationalDatabaseBundleId())
+                    {
+                        context.Writer.WritePropertyName("relationalDatabaseBundleId");
+                        context.Writer.Write(publicRequest.RelationalDatabaseBundleId);
+                    }
+
+                    if(publicRequest.IsSetRelationalDatabaseName())
+                    {
+                        context.Writer.WritePropertyName("relationalDatabaseName");
+                        context.Writer.Write(publicRequest.RelationalDatabaseName);
+                    }
+
+                    if(publicRequest.IsSetRelationalDatabaseSnapshotName())
+                    {
+                        context.Writer.WritePropertyName("relationalDatabaseSnapshotName");
+                        context.Writer.Write(publicRequest.RelationalDatabaseSnapshotName);
+                    }
+
+                    if(publicRequest.IsSetRestoreTime())
+                    {
+                        context.Writer.WritePropertyName("restoreTime");
+                        context.Writer.Write(publicRequest.RestoreTime.Value);
+                    }
+
+                    if(publicRequest.IsSetSourceRelationalDatabaseName())
+                    {
+                        context.Writer.WritePropertyName("sourceRelationalDatabaseName");
+                        context.Writer.Write(publicRequest.SourceRelationalDatabaseName);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetUseLatestRestorableTime())
+                    {
+                        context.Writer.WritePropertyName("useLatestRestorableTime");
+                        context.Writer.Write(publicRequest.UseLatestRestorableTime.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetUseLatestRestorableTime())
-                {
-                    context.Writer.WritePropertyName("useLatestRestorableTime");
-                    context.Writer.Write(publicRequest.UseLatestRestorableTime.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

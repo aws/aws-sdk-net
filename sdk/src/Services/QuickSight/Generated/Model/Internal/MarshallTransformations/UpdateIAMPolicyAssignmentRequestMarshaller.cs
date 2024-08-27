@@ -70,46 +70,49 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field Namespace set");
             request.AddPathResource("{Namespace}", StringUtils.FromString(publicRequest.Namespace));
             request.ResourcePath = "/accounts/{AwsAccountId}/namespaces/{Namespace}/iam-policy-assignments/{AssignmentName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAssignmentStatus())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AssignmentStatus");
-                    context.Writer.Write(publicRequest.AssignmentStatus);
-                }
-
-                if(publicRequest.IsSetIdentities())
-                {
-                    context.Writer.WritePropertyName("Identities");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestIdentitiesKvp in publicRequest.Identities)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAssignmentStatus())
                     {
-                        context.Writer.WritePropertyName(publicRequestIdentitiesKvp.Key);
-                        var publicRequestIdentitiesValue = publicRequestIdentitiesKvp.Value;
-
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestIdentitiesValueListValue in publicRequestIdentitiesValue)
-                        {
-                                context.Writer.Write(publicRequestIdentitiesValueListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
+                        context.Writer.WritePropertyName("AssignmentStatus");
+                        context.Writer.Write(publicRequest.AssignmentStatus);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetIdentities())
+                    {
+                        context.Writer.WritePropertyName("Identities");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestIdentitiesKvp in publicRequest.Identities)
+                        {
+                            context.Writer.WritePropertyName(publicRequestIdentitiesKvp.Key);
+                            var publicRequestIdentitiesValue = publicRequestIdentitiesKvp.Value;
+
+                            context.Writer.WriteArrayStart();
+                            foreach(var publicRequestIdentitiesValueListValue in publicRequestIdentitiesValue)
+                            {
+                                    context.Writer.Write(publicRequestIdentitiesValueListValue);
+                            }
+                            context.Writer.WriteArrayEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetPolicyArn())
+                    {
+                        context.Writer.WritePropertyName("PolicyArn");
+                        context.Writer.Write(publicRequest.PolicyArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPolicyArn())
-                {
-                    context.Writer.WritePropertyName("PolicyArn");
-                    context.Writer.Write(publicRequest.PolicyArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

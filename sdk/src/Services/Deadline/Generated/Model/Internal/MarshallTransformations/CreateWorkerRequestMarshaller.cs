@@ -67,26 +67,29 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 throw new AmazonDeadlineException("Request object does not have required field FleetId set");
             request.AddPathResource("{fleetId}", StringUtils.FromString(publicRequest.FleetId));
             request.ResourcePath = "/2023-10-12/farms/{farmId}/fleets/{fleetId}/workers";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetHostProperties())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("hostProperties");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetHostProperties())
+                    {
+                        context.Writer.WritePropertyName("hostProperties");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = HostPropertiesRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.HostProperties, context);
+                        var marshaller = HostPropertiesRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.HostProperties, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

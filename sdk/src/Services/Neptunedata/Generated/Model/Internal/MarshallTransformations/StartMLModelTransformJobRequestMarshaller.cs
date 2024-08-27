@@ -61,114 +61,117 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/ml/modeltransform";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBaseProcessingInstanceType())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("baseProcessingInstanceType");
-                    context.Writer.Write(publicRequest.BaseProcessingInstanceType);
-                }
-
-                if(publicRequest.IsSetBaseProcessingInstanceVolumeSizeInGB())
-                {
-                    context.Writer.WritePropertyName("baseProcessingInstanceVolumeSizeInGB");
-                    context.Writer.Write(publicRequest.BaseProcessingInstanceVolumeSizeInGB.Value);
-                }
-
-                if(publicRequest.IsSetCustomModelTransformParameters())
-                {
-                    context.Writer.WritePropertyName("customModelTransformParameters");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CustomModelTransformParametersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CustomModelTransformParameters, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDataProcessingJobId())
-                {
-                    context.Writer.WritePropertyName("dataProcessingJobId");
-                    context.Writer.Write(publicRequest.DataProcessingJobId);
-                }
-
-                if(publicRequest.IsSetId())
-                {
-                    context.Writer.WritePropertyName("id");
-                    context.Writer.Write(publicRequest.Id);
-                }
-
-                if(publicRequest.IsSetMlModelTrainingJobId())
-                {
-                    context.Writer.WritePropertyName("mlModelTrainingJobId");
-                    context.Writer.Write(publicRequest.MlModelTrainingJobId);
-                }
-
-                if(publicRequest.IsSetModelTransformOutputS3Location())
-                {
-                    context.Writer.WritePropertyName("modelTransformOutputS3Location");
-                    context.Writer.Write(publicRequest.ModelTransformOutputS3Location);
-                }
-
-                if(publicRequest.IsSetNeptuneIamRoleArn())
-                {
-                    context.Writer.WritePropertyName("neptuneIamRoleArn");
-                    context.Writer.Write(publicRequest.NeptuneIamRoleArn);
-                }
-
-                if(publicRequest.IsSetS3OutputEncryptionKMSKey())
-                {
-                    context.Writer.WritePropertyName("s3OutputEncryptionKMSKey");
-                    context.Writer.Write(publicRequest.S3OutputEncryptionKMSKey);
-                }
-
-                if(publicRequest.IsSetSagemakerIamRoleArn())
-                {
-                    context.Writer.WritePropertyName("sagemakerIamRoleArn");
-                    context.Writer.Write(publicRequest.SagemakerIamRoleArn);
-                }
-
-                if(publicRequest.IsSetSecurityGroupIds())
-                {
-                    context.Writer.WritePropertyName("securityGroupIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSecurityGroupIdsListValue in publicRequest.SecurityGroupIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBaseProcessingInstanceType())
                     {
-                            context.Writer.Write(publicRequestSecurityGroupIdsListValue);
+                        context.Writer.WritePropertyName("baseProcessingInstanceType");
+                        context.Writer.Write(publicRequest.BaseProcessingInstanceType);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetSubnets())
-                {
-                    context.Writer.WritePropertyName("subnets");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSubnetsListValue in publicRequest.Subnets)
+                    if(publicRequest.IsSetBaseProcessingInstanceVolumeSizeInGB())
                     {
-                            context.Writer.Write(publicRequestSubnetsListValue);
+                        context.Writer.WritePropertyName("baseProcessingInstanceVolumeSizeInGB");
+                        context.Writer.Write(publicRequest.BaseProcessingInstanceVolumeSizeInGB.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetCustomModelTransformParameters())
+                    {
+                        context.Writer.WritePropertyName("customModelTransformParameters");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CustomModelTransformParametersMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CustomModelTransformParameters, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDataProcessingJobId())
+                    {
+                        context.Writer.WritePropertyName("dataProcessingJobId");
+                        context.Writer.Write(publicRequest.DataProcessingJobId);
+                    }
+
+                    if(publicRequest.IsSetId())
+                    {
+                        context.Writer.WritePropertyName("id");
+                        context.Writer.Write(publicRequest.Id);
+                    }
+
+                    if(publicRequest.IsSetMlModelTrainingJobId())
+                    {
+                        context.Writer.WritePropertyName("mlModelTrainingJobId");
+                        context.Writer.Write(publicRequest.MlModelTrainingJobId);
+                    }
+
+                    if(publicRequest.IsSetModelTransformOutputS3Location())
+                    {
+                        context.Writer.WritePropertyName("modelTransformOutputS3Location");
+                        context.Writer.Write(publicRequest.ModelTransformOutputS3Location);
+                    }
+
+                    if(publicRequest.IsSetNeptuneIamRoleArn())
+                    {
+                        context.Writer.WritePropertyName("neptuneIamRoleArn");
+                        context.Writer.Write(publicRequest.NeptuneIamRoleArn);
+                    }
+
+                    if(publicRequest.IsSetS3OutputEncryptionKMSKey())
+                    {
+                        context.Writer.WritePropertyName("s3OutputEncryptionKMSKey");
+                        context.Writer.Write(publicRequest.S3OutputEncryptionKMSKey);
+                    }
+
+                    if(publicRequest.IsSetSagemakerIamRoleArn())
+                    {
+                        context.Writer.WritePropertyName("sagemakerIamRoleArn");
+                        context.Writer.Write(publicRequest.SagemakerIamRoleArn);
+                    }
+
+                    if(publicRequest.IsSetSecurityGroupIds())
+                    {
+                        context.Writer.WritePropertyName("securityGroupIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSecurityGroupIdsListValue in publicRequest.SecurityGroupIds)
+                        {
+                                context.Writer.Write(publicRequestSecurityGroupIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSubnets())
+                    {
+                        context.Writer.WritePropertyName("subnets");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSubnetsListValue in publicRequest.Subnets)
+                        {
+                                context.Writer.Write(publicRequestSubnetsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTrainingJobName())
+                    {
+                        context.Writer.WritePropertyName("trainingJobName");
+                        context.Writer.Write(publicRequest.TrainingJobName);
+                    }
+
+                    if(publicRequest.IsSetVolumeEncryptionKMSKey())
+                    {
+                        context.Writer.WritePropertyName("volumeEncryptionKMSKey");
+                        context.Writer.Write(publicRequest.VolumeEncryptionKMSKey);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTrainingJobName())
-                {
-                    context.Writer.WritePropertyName("trainingJobName");
-                    context.Writer.Write(publicRequest.TrainingJobName);
-                }
-
-                if(publicRequest.IsSetVolumeEncryptionKMSKey())
-                {
-                    context.Writer.WritePropertyName("volumeEncryptionKMSKey");
-                    context.Writer.Write(publicRequest.VolumeEncryptionKMSKey);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

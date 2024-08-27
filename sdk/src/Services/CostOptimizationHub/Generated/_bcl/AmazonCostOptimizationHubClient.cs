@@ -657,8 +657,8 @@ namespace Amazon.CostOptimizationHub
         /// 
         ///  
         /// <para>
-        /// If the account is a management account of an organization, this action can also be
-        /// used to enroll member accounts of the organization.
+        /// If the account is a management account or delegated administrator of an organization,
+        /// this action can also be used to enroll member accounts of the organization.
         /// </para>
         ///  
         /// <para>
@@ -699,8 +699,8 @@ namespace Amazon.CostOptimizationHub
         /// 
         ///  
         /// <para>
-        /// If the account is a management account of an organization, this action can also be
-        /// used to enroll member accounts of the organization.
+        /// If the account is a management account or delegated administrator of an organization,
+        /// this action can also be used to enroll member accounts of the organization.
         /// </para>
         ///  
         /// <para>

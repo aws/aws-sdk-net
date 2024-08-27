@@ -63,69 +63,72 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAuthStrategy())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AuthStrategy");
-                    context.Writer.Write(publicRequest.AuthStrategy);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAuthStrategy())
+                    {
+                        context.Writer.WritePropertyName("AuthStrategy");
+                        context.Writer.Write(publicRequest.AuthStrategy);
+                    }
+
+                    if(publicRequest.IsSetAuthToken())
+                    {
+                        context.Writer.WritePropertyName("AuthToken");
+                        context.Writer.Write(publicRequest.AuthToken);
+                    }
+
+                    if(publicRequest.IsSetBranchName())
+                    {
+                        context.Writer.WritePropertyName("BranchName");
+                        context.Writer.Write(publicRequest.BranchName);
+                    }
+
+                    if(publicRequest.IsSetCommitId())
+                    {
+                        context.Writer.WritePropertyName("CommitId");
+                        context.Writer.Write(publicRequest.CommitId);
+                    }
+
+                    if(publicRequest.IsSetFolder())
+                    {
+                        context.Writer.WritePropertyName("Folder");
+                        context.Writer.Write(publicRequest.Folder);
+                    }
+
+                    if(publicRequest.IsSetJobName())
+                    {
+                        context.Writer.WritePropertyName("JobName");
+                        context.Writer.Write(publicRequest.JobName);
+                    }
+
+                    if(publicRequest.IsSetProvider())
+                    {
+                        context.Writer.WritePropertyName("Provider");
+                        context.Writer.Write(publicRequest.Provider);
+                    }
+
+                    if(publicRequest.IsSetRepositoryName())
+                    {
+                        context.Writer.WritePropertyName("RepositoryName");
+                        context.Writer.Write(publicRequest.RepositoryName);
+                    }
+
+                    if(publicRequest.IsSetRepositoryOwner())
+                    {
+                        context.Writer.WritePropertyName("RepositoryOwner");
+                        context.Writer.Write(publicRequest.RepositoryOwner);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetAuthToken())
-                {
-                    context.Writer.WritePropertyName("AuthToken");
-                    context.Writer.Write(publicRequest.AuthToken);
-                }
-
-                if(publicRequest.IsSetBranchName())
-                {
-                    context.Writer.WritePropertyName("BranchName");
-                    context.Writer.Write(publicRequest.BranchName);
-                }
-
-                if(publicRequest.IsSetCommitId())
-                {
-                    context.Writer.WritePropertyName("CommitId");
-                    context.Writer.Write(publicRequest.CommitId);
-                }
-
-                if(publicRequest.IsSetFolder())
-                {
-                    context.Writer.WritePropertyName("Folder");
-                    context.Writer.Write(publicRequest.Folder);
-                }
-
-                if(publicRequest.IsSetJobName())
-                {
-                    context.Writer.WritePropertyName("JobName");
-                    context.Writer.Write(publicRequest.JobName);
-                }
-
-                if(publicRequest.IsSetProvider())
-                {
-                    context.Writer.WritePropertyName("Provider");
-                    context.Writer.Write(publicRequest.Provider);
-                }
-
-                if(publicRequest.IsSetRepositoryName())
-                {
-                    context.Writer.WritePropertyName("RepositoryName");
-                    context.Writer.Write(publicRequest.RepositoryName);
-                }
-
-                if(publicRequest.IsSetRepositoryOwner())
-                {
-                    context.Writer.WritePropertyName("RepositoryOwner");
-                    context.Writer.Write(publicRequest.RepositoryOwner);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

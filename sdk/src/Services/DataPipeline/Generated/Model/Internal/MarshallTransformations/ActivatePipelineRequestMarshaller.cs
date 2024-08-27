@@ -63,43 +63,46 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetParameterValues())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("parameterValues");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestParameterValuesListValue in publicRequest.ParameterValues)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetParameterValues())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("parameterValues");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestParameterValuesListValue in publicRequest.ParameterValues)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = ParameterValueMarshaller.Instance;
-                        marshaller.Marshall(publicRequestParameterValuesListValue, context);
+                            var marshaller = ParameterValueMarshaller.Instance;
+                            marshaller.Marshall(publicRequestParameterValuesListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetPipelineId())
+                    {
+                        context.Writer.WritePropertyName("pipelineId");
+                        context.Writer.Write(publicRequest.PipelineId);
+                    }
+
+                    if(publicRequest.IsSetStartTimestamp())
+                    {
+                        context.Writer.WritePropertyName("startTimestamp");
+                        context.Writer.Write(publicRequest.StartTimestamp.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPipelineId())
-                {
-                    context.Writer.WritePropertyName("pipelineId");
-                    context.Writer.Write(publicRequest.PipelineId);
-                }
-
-                if(publicRequest.IsSetStartTimestamp())
-                {
-                    context.Writer.WritePropertyName("startTimestamp");
-                    context.Writer.Write(publicRequest.StartTimestamp.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,76 +63,79 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDataStorageConfig())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DataStorageConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = InferenceExperimentDataStorageConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DataStorageConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetModelVariants())
-                {
-                    context.Writer.WritePropertyName("ModelVariants");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestModelVariantsListValue in publicRequest.ModelVariants)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDataStorageConfig())
                     {
+                        context.Writer.WritePropertyName("DataStorageConfig");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = ModelVariantConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequestModelVariantsListValue, context);
+                        var marshaller = InferenceExperimentDataStorageConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DataStorageConfig, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetModelVariants())
+                    {
+                        context.Writer.WritePropertyName("ModelVariants");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestModelVariantsListValue in publicRequest.ModelVariants)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ModelVariantConfigMarshaller.Instance;
+                            marshaller.Marshall(publicRequestModelVariantsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetSchedule())
+                    {
+                        context.Writer.WritePropertyName("Schedule");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = InferenceExperimentScheduleMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Schedule, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetShadowModeConfig())
+                    {
+                        context.Writer.WritePropertyName("ShadowModeConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ShadowModeConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ShadowModeConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetSchedule())
-                {
-                    context.Writer.WritePropertyName("Schedule");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = InferenceExperimentScheduleMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Schedule, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetShadowModeConfig())
-                {
-                    context.Writer.WritePropertyName("ShadowModeConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ShadowModeConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ShadowModeConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -61,27 +61,30 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/account/registerAccount";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDelegatedAdminAccount())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("delegatedAdminAccount");
-                    context.Writer.Write(publicRequest.DelegatedAdminAccount);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDelegatedAdminAccount())
+                    {
+                        context.Writer.WritePropertyName("delegatedAdminAccount");
+                        context.Writer.Write(publicRequest.DelegatedAdminAccount);
+                    }
+
+                    if(publicRequest.IsSetKmsKey())
+                    {
+                        context.Writer.WritePropertyName("kmsKey");
+                        context.Writer.Write(publicRequest.KmsKey);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetKmsKey())
-                {
-                    context.Writer.WritePropertyName("kmsKey");
-                    context.Writer.Write(publicRequest.KmsKey);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

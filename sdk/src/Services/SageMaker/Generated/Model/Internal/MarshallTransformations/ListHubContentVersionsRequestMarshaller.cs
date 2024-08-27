@@ -63,81 +63,84 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCreationTimeAfter())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CreationTimeAfter");
-                    context.Writer.Write(publicRequest.CreationTimeAfter.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCreationTimeAfter())
+                    {
+                        context.Writer.WritePropertyName("CreationTimeAfter");
+                        context.Writer.Write(publicRequest.CreationTimeAfter.Value);
+                    }
+
+                    if(publicRequest.IsSetCreationTimeBefore())
+                    {
+                        context.Writer.WritePropertyName("CreationTimeBefore");
+                        context.Writer.Write(publicRequest.CreationTimeBefore.Value);
+                    }
+
+                    if(publicRequest.IsSetHubContentName())
+                    {
+                        context.Writer.WritePropertyName("HubContentName");
+                        context.Writer.Write(publicRequest.HubContentName);
+                    }
+
+                    if(publicRequest.IsSetHubContentType())
+                    {
+                        context.Writer.WritePropertyName("HubContentType");
+                        context.Writer.Write(publicRequest.HubContentType);
+                    }
+
+                    if(publicRequest.IsSetHubName())
+                    {
+                        context.Writer.WritePropertyName("HubName");
+                        context.Writer.Write(publicRequest.HubName);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetMaxSchemaVersion())
+                    {
+                        context.Writer.WritePropertyName("MaxSchemaVersion");
+                        context.Writer.Write(publicRequest.MaxSchemaVersion);
+                    }
+
+                    if(publicRequest.IsSetMinVersion())
+                    {
+                        context.Writer.WritePropertyName("MinVersion");
+                        context.Writer.Write(publicRequest.MinVersion);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetSortBy())
+                    {
+                        context.Writer.WritePropertyName("SortBy");
+                        context.Writer.Write(publicRequest.SortBy);
+                    }
+
+                    if(publicRequest.IsSetSortOrder())
+                    {
+                        context.Writer.WritePropertyName("SortOrder");
+                        context.Writer.Write(publicRequest.SortOrder);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCreationTimeBefore())
-                {
-                    context.Writer.WritePropertyName("CreationTimeBefore");
-                    context.Writer.Write(publicRequest.CreationTimeBefore.Value);
-                }
-
-                if(publicRequest.IsSetHubContentName())
-                {
-                    context.Writer.WritePropertyName("HubContentName");
-                    context.Writer.Write(publicRequest.HubContentName);
-                }
-
-                if(publicRequest.IsSetHubContentType())
-                {
-                    context.Writer.WritePropertyName("HubContentType");
-                    context.Writer.Write(publicRequest.HubContentType);
-                }
-
-                if(publicRequest.IsSetHubName())
-                {
-                    context.Writer.WritePropertyName("HubName");
-                    context.Writer.Write(publicRequest.HubName);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetMaxSchemaVersion())
-                {
-                    context.Writer.WritePropertyName("MaxSchemaVersion");
-                    context.Writer.Write(publicRequest.MaxSchemaVersion);
-                }
-
-                if(publicRequest.IsSetMinVersion())
-                {
-                    context.Writer.WritePropertyName("MinVersion");
-                    context.Writer.Write(publicRequest.MinVersion);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetSortBy())
-                {
-                    context.Writer.WritePropertyName("SortBy");
-                    context.Writer.Write(publicRequest.SortBy);
-                }
-
-                if(publicRequest.IsSetSortOrder())
-                {
-                    context.Writer.WritePropertyName("SortOrder");
-                    context.Writer.Write(publicRequest.SortOrder);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

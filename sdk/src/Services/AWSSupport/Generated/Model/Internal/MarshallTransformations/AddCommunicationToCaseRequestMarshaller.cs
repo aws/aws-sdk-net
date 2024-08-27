@@ -63,44 +63,47 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAttachmentSetId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("attachmentSetId");
-                    context.Writer.Write(publicRequest.AttachmentSetId);
-                }
-
-                if(publicRequest.IsSetCaseId())
-                {
-                    context.Writer.WritePropertyName("caseId");
-                    context.Writer.Write(publicRequest.CaseId);
-                }
-
-                if(publicRequest.IsSetCcEmailAddresses())
-                {
-                    context.Writer.WritePropertyName("ccEmailAddresses");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCcEmailAddressesListValue in publicRequest.CcEmailAddresses)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAttachmentSetId())
                     {
-                            context.Writer.Write(publicRequestCcEmailAddressesListValue);
+                        context.Writer.WritePropertyName("attachmentSetId");
+                        context.Writer.Write(publicRequest.AttachmentSetId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetCaseId())
+                    {
+                        context.Writer.WritePropertyName("caseId");
+                        context.Writer.Write(publicRequest.CaseId);
+                    }
+
+                    if(publicRequest.IsSetCcEmailAddresses())
+                    {
+                        context.Writer.WritePropertyName("ccEmailAddresses");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCcEmailAddressesListValue in publicRequest.CcEmailAddresses)
+                        {
+                                context.Writer.Write(publicRequestCcEmailAddressesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetCommunicationBody())
+                    {
+                        context.Writer.WritePropertyName("communicationBody");
+                        context.Writer.Write(publicRequest.CommunicationBody);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCommunicationBody())
-                {
-                    context.Writer.WritePropertyName("communicationBody");
-                    context.Writer.Write(publicRequest.CommunicationBody);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

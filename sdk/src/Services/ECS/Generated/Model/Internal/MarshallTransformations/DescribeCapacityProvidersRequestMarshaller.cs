@@ -63,49 +63,52 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCapacityProviders())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("capacityProviders");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCapacityProvidersListValue in publicRequest.CapacityProviders)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCapacityProviders())
                     {
-                            context.Writer.Write(publicRequestCapacityProvidersListValue);
+                        context.Writer.WritePropertyName("capacityProviders");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCapacityProvidersListValue in publicRequest.CapacityProviders)
+                        {
+                                context.Writer.Write(publicRequestCapacityProvidersListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetInclude())
-                {
-                    context.Writer.WritePropertyName("include");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestIncludeListValue in publicRequest.Include)
+                    if(publicRequest.IsSetInclude())
                     {
-                            context.Writer.Write(publicRequestIncludeListValue);
+                        context.Writer.WritePropertyName("include");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestIncludeListValue in publicRequest.Include)
+                        {
+                                context.Writer.Write(publicRequestIncludeListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

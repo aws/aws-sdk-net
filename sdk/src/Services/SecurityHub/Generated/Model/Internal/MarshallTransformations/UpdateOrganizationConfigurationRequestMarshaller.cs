@@ -61,38 +61,41 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/organization/configuration";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAutoEnable())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AutoEnable");
-                    context.Writer.Write(publicRequest.AutoEnable.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAutoEnable())
+                    {
+                        context.Writer.WritePropertyName("AutoEnable");
+                        context.Writer.Write(publicRequest.AutoEnable.Value);
+                    }
+
+                    if(publicRequest.IsSetAutoEnableStandards())
+                    {
+                        context.Writer.WritePropertyName("AutoEnableStandards");
+                        context.Writer.Write(publicRequest.AutoEnableStandards);
+                    }
+
+                    if(publicRequest.IsSetOrganizationConfiguration())
+                    {
+                        context.Writer.WritePropertyName("OrganizationConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = OrganizationConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OrganizationConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetAutoEnableStandards())
-                {
-                    context.Writer.WritePropertyName("AutoEnableStandards");
-                    context.Writer.Write(publicRequest.AutoEnableStandards);
-                }
-
-                if(publicRequest.IsSetOrganizationConfiguration())
-                {
-                    context.Writer.WritePropertyName("OrganizationConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OrganizationConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OrganizationConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

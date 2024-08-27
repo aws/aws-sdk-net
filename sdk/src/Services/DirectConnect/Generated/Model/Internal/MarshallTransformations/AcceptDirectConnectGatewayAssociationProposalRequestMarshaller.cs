@@ -63,49 +63,52 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAssociatedGatewayOwnerAccount())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("associatedGatewayOwnerAccount");
-                    context.Writer.Write(publicRequest.AssociatedGatewayOwnerAccount);
-                }
-
-                if(publicRequest.IsSetDirectConnectGatewayId())
-                {
-                    context.Writer.WritePropertyName("directConnectGatewayId");
-                    context.Writer.Write(publicRequest.DirectConnectGatewayId);
-                }
-
-                if(publicRequest.IsSetOverrideAllowedPrefixesToDirectConnectGateway())
-                {
-                    context.Writer.WritePropertyName("overrideAllowedPrefixesToDirectConnectGateway");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestOverrideAllowedPrefixesToDirectConnectGatewayListValue in publicRequest.OverrideAllowedPrefixesToDirectConnectGateway)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAssociatedGatewayOwnerAccount())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RouteFilterPrefixMarshaller.Instance;
-                        marshaller.Marshall(publicRequestOverrideAllowedPrefixesToDirectConnectGatewayListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("associatedGatewayOwnerAccount");
+                        context.Writer.Write(publicRequest.AssociatedGatewayOwnerAccount);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDirectConnectGatewayId())
+                    {
+                        context.Writer.WritePropertyName("directConnectGatewayId");
+                        context.Writer.Write(publicRequest.DirectConnectGatewayId);
+                    }
+
+                    if(publicRequest.IsSetOverrideAllowedPrefixesToDirectConnectGateway())
+                    {
+                        context.Writer.WritePropertyName("overrideAllowedPrefixesToDirectConnectGateway");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestOverrideAllowedPrefixesToDirectConnectGatewayListValue in publicRequest.OverrideAllowedPrefixesToDirectConnectGateway)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = RouteFilterPrefixMarshaller.Instance;
+                            marshaller.Marshall(publicRequestOverrideAllowedPrefixesToDirectConnectGatewayListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetProposalId())
+                    {
+                        context.Writer.WritePropertyName("proposalId");
+                        context.Writer.Write(publicRequest.ProposalId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetProposalId())
-                {
-                    context.Writer.WritePropertyName("proposalId");
-                    context.Writer.Write(publicRequest.ProposalId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

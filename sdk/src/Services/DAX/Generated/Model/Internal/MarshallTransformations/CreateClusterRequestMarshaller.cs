@@ -63,124 +63,127 @@ namespace Amazon.DAX.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAvailabilityZones())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AvailabilityZones");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAvailabilityZonesListValue in publicRequest.AvailabilityZones)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAvailabilityZones())
                     {
-                            context.Writer.Write(publicRequestAvailabilityZonesListValue);
+                        context.Writer.WritePropertyName("AvailabilityZones");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAvailabilityZonesListValue in publicRequest.AvailabilityZones)
+                        {
+                                context.Writer.Write(publicRequestAvailabilityZonesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetClusterEndpointEncryptionType())
-                {
-                    context.Writer.WritePropertyName("ClusterEndpointEncryptionType");
-                    context.Writer.Write(publicRequest.ClusterEndpointEncryptionType);
-                }
-
-                if(publicRequest.IsSetClusterName())
-                {
-                    context.Writer.WritePropertyName("ClusterName");
-                    context.Writer.Write(publicRequest.ClusterName);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetIamRoleArn())
-                {
-                    context.Writer.WritePropertyName("IamRoleArn");
-                    context.Writer.Write(publicRequest.IamRoleArn);
-                }
-
-                if(publicRequest.IsSetNodeType())
-                {
-                    context.Writer.WritePropertyName("NodeType");
-                    context.Writer.Write(publicRequest.NodeType);
-                }
-
-                if(publicRequest.IsSetNotificationTopicArn())
-                {
-                    context.Writer.WritePropertyName("NotificationTopicArn");
-                    context.Writer.Write(publicRequest.NotificationTopicArn);
-                }
-
-                if(publicRequest.IsSetParameterGroupName())
-                {
-                    context.Writer.WritePropertyName("ParameterGroupName");
-                    context.Writer.Write(publicRequest.ParameterGroupName);
-                }
-
-                if(publicRequest.IsSetPreferredMaintenanceWindow())
-                {
-                    context.Writer.WritePropertyName("PreferredMaintenanceWindow");
-                    context.Writer.Write(publicRequest.PreferredMaintenanceWindow);
-                }
-
-                if(publicRequest.IsSetReplicationFactor())
-                {
-                    context.Writer.WritePropertyName("ReplicationFactor");
-                    context.Writer.Write(publicRequest.ReplicationFactor.Value);
-                }
-
-                if(publicRequest.IsSetSecurityGroupIds())
-                {
-                    context.Writer.WritePropertyName("SecurityGroupIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSecurityGroupIdsListValue in publicRequest.SecurityGroupIds)
+                    if(publicRequest.IsSetClusterEndpointEncryptionType())
                     {
-                            context.Writer.Write(publicRequestSecurityGroupIdsListValue);
+                        context.Writer.WritePropertyName("ClusterEndpointEncryptionType");
+                        context.Writer.Write(publicRequest.ClusterEndpointEncryptionType);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetSSESpecification())
-                {
-                    context.Writer.WritePropertyName("SSESpecification");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SSESpecificationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SSESpecification, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSubnetGroupName())
-                {
-                    context.Writer.WritePropertyName("SubnetGroupName");
-                    context.Writer.Write(publicRequest.SubnetGroupName);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetClusterName())
                     {
+                        context.Writer.WritePropertyName("ClusterName");
+                        context.Writer.Write(publicRequest.ClusterName);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetIamRoleArn())
+                    {
+                        context.Writer.WritePropertyName("IamRoleArn");
+                        context.Writer.Write(publicRequest.IamRoleArn);
+                    }
+
+                    if(publicRequest.IsSetNodeType())
+                    {
+                        context.Writer.WritePropertyName("NodeType");
+                        context.Writer.Write(publicRequest.NodeType);
+                    }
+
+                    if(publicRequest.IsSetNotificationTopicArn())
+                    {
+                        context.Writer.WritePropertyName("NotificationTopicArn");
+                        context.Writer.Write(publicRequest.NotificationTopicArn);
+                    }
+
+                    if(publicRequest.IsSetParameterGroupName())
+                    {
+                        context.Writer.WritePropertyName("ParameterGroupName");
+                        context.Writer.Write(publicRequest.ParameterGroupName);
+                    }
+
+                    if(publicRequest.IsSetPreferredMaintenanceWindow())
+                    {
+                        context.Writer.WritePropertyName("PreferredMaintenanceWindow");
+                        context.Writer.Write(publicRequest.PreferredMaintenanceWindow);
+                    }
+
+                    if(publicRequest.IsSetReplicationFactor())
+                    {
+                        context.Writer.WritePropertyName("ReplicationFactor");
+                        context.Writer.Write(publicRequest.ReplicationFactor.Value);
+                    }
+
+                    if(publicRequest.IsSetSecurityGroupIds())
+                    {
+                        context.Writer.WritePropertyName("SecurityGroupIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSecurityGroupIdsListValue in publicRequest.SecurityGroupIds)
+                        {
+                                context.Writer.Write(publicRequestSecurityGroupIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSSESpecification())
+                    {
+                        context.Writer.WritePropertyName("SSESpecification");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = SSESpecificationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SSESpecification, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetSubnetGroupName())
+                    {
+                        context.Writer.WritePropertyName("SubnetGroupName");
+                        context.Writer.Write(publicRequest.SubnetGroupName);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

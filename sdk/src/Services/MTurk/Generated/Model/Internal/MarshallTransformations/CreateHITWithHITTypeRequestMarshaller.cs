@@ -63,95 +63,98 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAssignmentReviewPolicy())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AssignmentReviewPolicy");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ReviewPolicyMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AssignmentReviewPolicy, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetHITLayoutId())
-                {
-                    context.Writer.WritePropertyName("HITLayoutId");
-                    context.Writer.Write(publicRequest.HITLayoutId);
-                }
-
-                if(publicRequest.IsSetHITLayoutParameters())
-                {
-                    context.Writer.WritePropertyName("HITLayoutParameters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestHITLayoutParametersListValue in publicRequest.HITLayoutParameters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAssignmentReviewPolicy())
                     {
+                        context.Writer.WritePropertyName("AssignmentReviewPolicy");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = HITLayoutParameterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestHITLayoutParametersListValue, context);
+                        var marshaller = ReviewPolicyMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AssignmentReviewPolicy, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetHITLayoutId())
+                    {
+                        context.Writer.WritePropertyName("HITLayoutId");
+                        context.Writer.Write(publicRequest.HITLayoutId);
+                    }
+
+                    if(publicRequest.IsSetHITLayoutParameters())
+                    {
+                        context.Writer.WritePropertyName("HITLayoutParameters");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestHITLayoutParametersListValue in publicRequest.HITLayoutParameters)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = HITLayoutParameterMarshaller.Instance;
+                            marshaller.Marshall(publicRequestHITLayoutParametersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetHITReviewPolicy())
+                    {
+                        context.Writer.WritePropertyName("HITReviewPolicy");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ReviewPolicyMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.HITReviewPolicy, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetHITTypeId())
+                    {
+                        context.Writer.WritePropertyName("HITTypeId");
+                        context.Writer.Write(publicRequest.HITTypeId);
+                    }
+
+                    if(publicRequest.IsSetLifetimeInSeconds())
+                    {
+                        context.Writer.WritePropertyName("LifetimeInSeconds");
+                        context.Writer.Write(publicRequest.LifetimeInSeconds.Value);
+                    }
+
+                    if(publicRequest.IsSetMaxAssignments())
+                    {
+                        context.Writer.WritePropertyName("MaxAssignments");
+                        context.Writer.Write(publicRequest.MaxAssignments.Value);
+                    }
+
+                    if(publicRequest.IsSetQuestion())
+                    {
+                        context.Writer.WritePropertyName("Question");
+                        context.Writer.Write(publicRequest.Question);
+                    }
+
+                    if(publicRequest.IsSetRequesterAnnotation())
+                    {
+                        context.Writer.WritePropertyName("RequesterAnnotation");
+                        context.Writer.Write(publicRequest.RequesterAnnotation);
+                    }
+
+                    if(publicRequest.IsSetUniqueRequestToken())
+                    {
+                        context.Writer.WritePropertyName("UniqueRequestToken");
+                        context.Writer.Write(publicRequest.UniqueRequestToken);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetHITReviewPolicy())
-                {
-                    context.Writer.WritePropertyName("HITReviewPolicy");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ReviewPolicyMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.HITReviewPolicy, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetHITTypeId())
-                {
-                    context.Writer.WritePropertyName("HITTypeId");
-                    context.Writer.Write(publicRequest.HITTypeId);
-                }
-
-                if(publicRequest.IsSetLifetimeInSeconds())
-                {
-                    context.Writer.WritePropertyName("LifetimeInSeconds");
-                    context.Writer.Write(publicRequest.LifetimeInSeconds.Value);
-                }
-
-                if(publicRequest.IsSetMaxAssignments())
-                {
-                    context.Writer.WritePropertyName("MaxAssignments");
-                    context.Writer.Write(publicRequest.MaxAssignments.Value);
-                }
-
-                if(publicRequest.IsSetQuestion())
-                {
-                    context.Writer.WritePropertyName("Question");
-                    context.Writer.Write(publicRequest.Question);
-                }
-
-                if(publicRequest.IsSetRequesterAnnotation())
-                {
-                    context.Writer.WritePropertyName("RequesterAnnotation");
-                    context.Writer.Write(publicRequest.RequesterAnnotation);
-                }
-
-                if(publicRequest.IsSetUniqueRequestToken())
-                {
-                    context.Writer.WritePropertyName("UniqueRequestToken");
-                    context.Writer.Write(publicRequest.UniqueRequestToken);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

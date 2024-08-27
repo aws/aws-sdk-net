@@ -63,56 +63,59 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetIngressPointConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("IngressPointConfiguration");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetIngressPointConfiguration())
+                    {
+                        context.Writer.WritePropertyName("IngressPointConfiguration");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = IngressPointConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.IngressPointConfiguration, context);
+                        var marshaller = IngressPointConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.IngressPointConfiguration, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetIngressPointId())
+                    {
+                        context.Writer.WritePropertyName("IngressPointId");
+                        context.Writer.Write(publicRequest.IngressPointId);
+                    }
+
+                    if(publicRequest.IsSetIngressPointName())
+                    {
+                        context.Writer.WritePropertyName("IngressPointName");
+                        context.Writer.Write(publicRequest.IngressPointName);
+                    }
+
+                    if(publicRequest.IsSetRuleSetId())
+                    {
+                        context.Writer.WritePropertyName("RuleSetId");
+                        context.Writer.Write(publicRequest.RuleSetId);
+                    }
+
+                    if(publicRequest.IsSetStatusToUpdate())
+                    {
+                        context.Writer.WritePropertyName("StatusToUpdate");
+                        context.Writer.Write(publicRequest.StatusToUpdate);
+                    }
+
+                    if(publicRequest.IsSetTrafficPolicyId())
+                    {
+                        context.Writer.WritePropertyName("TrafficPolicyId");
+                        context.Writer.Write(publicRequest.TrafficPolicyId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetIngressPointId())
-                {
-                    context.Writer.WritePropertyName("IngressPointId");
-                    context.Writer.Write(publicRequest.IngressPointId);
-                }
-
-                if(publicRequest.IsSetIngressPointName())
-                {
-                    context.Writer.WritePropertyName("IngressPointName");
-                    context.Writer.Write(publicRequest.IngressPointName);
-                }
-
-                if(publicRequest.IsSetRuleSetId())
-                {
-                    context.Writer.WritePropertyName("RuleSetId");
-                    context.Writer.Write(publicRequest.RuleSetId);
-                }
-
-                if(publicRequest.IsSetStatusToUpdate())
-                {
-                    context.Writer.WritePropertyName("StatusToUpdate");
-                    context.Writer.Write(publicRequest.StatusToUpdate);
-                }
-
-                if(publicRequest.IsSetTrafficPolicyId())
-                {
-                    context.Writer.WritePropertyName("TrafficPolicyId");
-                    context.Writer.Write(publicRequest.TrafficPolicyId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

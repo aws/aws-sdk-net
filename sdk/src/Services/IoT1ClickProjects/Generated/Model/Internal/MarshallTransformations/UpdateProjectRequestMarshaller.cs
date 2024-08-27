@@ -64,32 +64,35 @@ namespace Amazon.IoT1ClickProjects.Model.Internal.MarshallTransformations
                 throw new AmazonIoT1ClickProjectsException("Request object does not have required field ProjectName set");
             request.AddPathResource("{projectName}", StringUtils.FromString(publicRequest.ProjectName));
             request.ResourcePath = "/projects/{projectName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetPlacementTemplate())
+                    {
+                        context.Writer.WritePropertyName("placementTemplate");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PlacementTemplateMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.PlacementTemplate, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPlacementTemplate())
-                {
-                    context.Writer.WritePropertyName("placementTemplate");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PlacementTemplateMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PlacementTemplate, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

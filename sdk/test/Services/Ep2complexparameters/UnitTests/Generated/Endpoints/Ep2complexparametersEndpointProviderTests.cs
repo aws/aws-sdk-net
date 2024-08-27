@@ -23,7 +23,7 @@ using Amazon.Runtime;
 using Amazon.Ep2complexparameters.Endpoints;
 using Amazon.Ep2complexparameters.Internal;
 
-namespace AWSSDK_DotNet35.UnitTests.Endpoints
+namespace AWSSDK_DotNet.UnitTests.Endpoints
 {
     [TestClass]
     public partial class Ep2complexparametersEndpointsTests

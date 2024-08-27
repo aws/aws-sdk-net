@@ -61,61 +61,64 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/cryptogram/verify";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAuthRequestCryptogram())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AuthRequestCryptogram");
-                    context.Writer.Write(publicRequest.AuthRequestCryptogram);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAuthRequestCryptogram())
+                    {
+                        context.Writer.WritePropertyName("AuthRequestCryptogram");
+                        context.Writer.Write(publicRequest.AuthRequestCryptogram);
+                    }
+
+                    if(publicRequest.IsSetAuthResponseAttributes())
+                    {
+                        context.Writer.WritePropertyName("AuthResponseAttributes");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CryptogramAuthResponseMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AuthResponseAttributes, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetKeyIdentifier())
+                    {
+                        context.Writer.WritePropertyName("KeyIdentifier");
+                        context.Writer.Write(publicRequest.KeyIdentifier);
+                    }
+
+                    if(publicRequest.IsSetMajorKeyDerivationMode())
+                    {
+                        context.Writer.WritePropertyName("MajorKeyDerivationMode");
+                        context.Writer.Write(publicRequest.MajorKeyDerivationMode);
+                    }
+
+                    if(publicRequest.IsSetSessionKeyDerivationAttributes())
+                    {
+                        context.Writer.WritePropertyName("SessionKeyDerivationAttributes");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SessionKeyDerivationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SessionKeyDerivationAttributes, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTransactionData())
+                    {
+                        context.Writer.WritePropertyName("TransactionData");
+                        context.Writer.Write(publicRequest.TransactionData);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetAuthResponseAttributes())
-                {
-                    context.Writer.WritePropertyName("AuthResponseAttributes");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CryptogramAuthResponseMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AuthResponseAttributes, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetKeyIdentifier())
-                {
-                    context.Writer.WritePropertyName("KeyIdentifier");
-                    context.Writer.Write(publicRequest.KeyIdentifier);
-                }
-
-                if(publicRequest.IsSetMajorKeyDerivationMode())
-                {
-                    context.Writer.WritePropertyName("MajorKeyDerivationMode");
-                    context.Writer.Write(publicRequest.MajorKeyDerivationMode);
-                }
-
-                if(publicRequest.IsSetSessionKeyDerivationAttributes())
-                {
-                    context.Writer.WritePropertyName("SessionKeyDerivationAttributes");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SessionKeyDerivationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SessionKeyDerivationAttributes, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTransactionData())
-                {
-                    context.Writer.WritePropertyName("TransactionData");
-                    context.Writer.Write(publicRequest.TransactionData);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

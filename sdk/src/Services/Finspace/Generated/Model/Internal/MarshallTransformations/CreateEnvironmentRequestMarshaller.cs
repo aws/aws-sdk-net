@@ -61,86 +61,89 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/environment";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDataBundles())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("dataBundles");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDataBundlesListValue in publicRequest.DataBundles)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDataBundles())
                     {
-                            context.Writer.Write(publicRequestDataBundlesListValue);
+                        context.Writer.WritePropertyName("dataBundles");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDataBundlesListValue in publicRequest.DataBundles)
+                        {
+                                context.Writer.Write(publicRequestDataBundlesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetFederationMode())
-                {
-                    context.Writer.WritePropertyName("federationMode");
-                    context.Writer.Write(publicRequest.FederationMode);
-                }
-
-                if(publicRequest.IsSetFederationParameters())
-                {
-                    context.Writer.WritePropertyName("federationParameters");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = FederationParametersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.FederationParameters, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetKmsKeyId())
-                {
-                    context.Writer.WritePropertyName("kmsKeyId");
-                    context.Writer.Write(publicRequest.KmsKeyId);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetSuperuserParameters())
-                {
-                    context.Writer.WritePropertyName("superuserParameters");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SuperuserParametersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SuperuserParameters, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetDescription())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetFederationMode())
+                    {
+                        context.Writer.WritePropertyName("federationMode");
+                        context.Writer.Write(publicRequest.FederationMode);
+                    }
+
+                    if(publicRequest.IsSetFederationParameters())
+                    {
+                        context.Writer.WritePropertyName("federationParameters");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = FederationParametersMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.FederationParameters, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetKmsKeyId())
+                    {
+                        context.Writer.WritePropertyName("kmsKeyId");
+                        context.Writer.Write(publicRequest.KmsKeyId);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetSuperuserParameters())
+                    {
+                        context.Writer.WritePropertyName("superuserParameters");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SuperuserParametersMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SuperuserParameters, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

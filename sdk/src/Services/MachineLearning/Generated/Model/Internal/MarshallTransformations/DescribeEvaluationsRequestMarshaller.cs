@@ -63,81 +63,84 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEQ())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("EQ");
-                    context.Writer.Write(publicRequest.EQ);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEQ())
+                    {
+                        context.Writer.WritePropertyName("EQ");
+                        context.Writer.Write(publicRequest.EQ);
+                    }
+
+                    if(publicRequest.IsSetFilterVariable())
+                    {
+                        context.Writer.WritePropertyName("FilterVariable");
+                        context.Writer.Write(publicRequest.FilterVariable);
+                    }
+
+                    if(publicRequest.IsSetGE())
+                    {
+                        context.Writer.WritePropertyName("GE");
+                        context.Writer.Write(publicRequest.GE);
+                    }
+
+                    if(publicRequest.IsSetGT())
+                    {
+                        context.Writer.WritePropertyName("GT");
+                        context.Writer.Write(publicRequest.GT);
+                    }
+
+                    if(publicRequest.IsSetLE())
+                    {
+                        context.Writer.WritePropertyName("LE");
+                        context.Writer.Write(publicRequest.LE);
+                    }
+
+                    if(publicRequest.IsSetLimit())
+                    {
+                        context.Writer.WritePropertyName("Limit");
+                        context.Writer.Write(publicRequest.Limit.Value);
+                    }
+
+                    if(publicRequest.IsSetLT())
+                    {
+                        context.Writer.WritePropertyName("LT");
+                        context.Writer.Write(publicRequest.LT);
+                    }
+
+                    if(publicRequest.IsSetNE())
+                    {
+                        context.Writer.WritePropertyName("NE");
+                        context.Writer.Write(publicRequest.NE);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetPrefix())
+                    {
+                        context.Writer.WritePropertyName("Prefix");
+                        context.Writer.Write(publicRequest.Prefix);
+                    }
+
+                    if(publicRequest.IsSetSortOrder())
+                    {
+                        context.Writer.WritePropertyName("SortOrder");
+                        context.Writer.Write(publicRequest.SortOrder);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetFilterVariable())
-                {
-                    context.Writer.WritePropertyName("FilterVariable");
-                    context.Writer.Write(publicRequest.FilterVariable);
-                }
-
-                if(publicRequest.IsSetGE())
-                {
-                    context.Writer.WritePropertyName("GE");
-                    context.Writer.Write(publicRequest.GE);
-                }
-
-                if(publicRequest.IsSetGT())
-                {
-                    context.Writer.WritePropertyName("GT");
-                    context.Writer.Write(publicRequest.GT);
-                }
-
-                if(publicRequest.IsSetLE())
-                {
-                    context.Writer.WritePropertyName("LE");
-                    context.Writer.Write(publicRequest.LE);
-                }
-
-                if(publicRequest.IsSetLimit())
-                {
-                    context.Writer.WritePropertyName("Limit");
-                    context.Writer.Write(publicRequest.Limit.Value);
-                }
-
-                if(publicRequest.IsSetLT())
-                {
-                    context.Writer.WritePropertyName("LT");
-                    context.Writer.Write(publicRequest.LT);
-                }
-
-                if(publicRequest.IsSetNE())
-                {
-                    context.Writer.WritePropertyName("NE");
-                    context.Writer.Write(publicRequest.NE);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetPrefix())
-                {
-                    context.Writer.WritePropertyName("Prefix");
-                    context.Writer.Write(publicRequest.Prefix);
-                }
-
-                if(publicRequest.IsSetSortOrder())
-                {
-                    context.Writer.WritePropertyName("SortOrder");
-                    context.Writer.Write(publicRequest.SortOrder);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

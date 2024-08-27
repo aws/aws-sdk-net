@@ -63,62 +63,65 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientRequestToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                if(publicRequest.IsSetJobTag())
-                {
-                    context.Writer.WritePropertyName("JobTag");
-                    context.Writer.Write(publicRequest.JobTag);
-                }
-
-                if(publicRequest.IsSetMinConfidence())
-                {
-                    context.Writer.WritePropertyName("MinConfidence");
-                    if(StringUtils.IsSpecialFloatValue(publicRequest.MinConfidence.Value))
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientRequestToken())
                     {
-                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.MinConfidence.Value));
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(publicRequest.ClientRequestToken);
                     }
-                    else
+
+                    if(publicRequest.IsSetJobTag())
                     {
-                        context.Writer.Write(publicRequest.MinConfidence.Value);
+                        context.Writer.WritePropertyName("JobTag");
+                        context.Writer.Write(publicRequest.JobTag);
                     }
+
+                    if(publicRequest.IsSetMinConfidence())
+                    {
+                        context.Writer.WritePropertyName("MinConfidence");
+                        if(StringUtils.IsSpecialFloatValue(publicRequest.MinConfidence.Value))
+                        {
+                            context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.MinConfidence.Value));
+                        }
+                        else
+                        {
+                            context.Writer.Write(publicRequest.MinConfidence.Value);
+                        }
+                    }
+
+                    if(publicRequest.IsSetNotificationChannel())
+                    {
+                        context.Writer.WritePropertyName("NotificationChannel");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = NotificationChannelMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.NotificationChannel, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetVideo())
+                    {
+                        context.Writer.WritePropertyName("Video");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = VideoMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Video, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetNotificationChannel())
-                {
-                    context.Writer.WritePropertyName("NotificationChannel");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = NotificationChannelMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.NotificationChannel, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetVideo())
-                {
-                    context.Writer.WritePropertyName("Video");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = VideoMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Video, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

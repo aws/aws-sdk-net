@@ -63,37 +63,40 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApplicationName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ApplicationName");
-                    context.Writer.Write(publicRequest.ApplicationName);
-                }
-
-                if(publicRequest.IsSetInputConfigurations())
-                {
-                    context.Writer.WritePropertyName("InputConfigurations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestInputConfigurationsListValue in publicRequest.InputConfigurations)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApplicationName())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = InputConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestInputConfigurationsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("ApplicationName");
+                        context.Writer.Write(publicRequest.ApplicationName);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetInputConfigurations())
+                    {
+                        context.Writer.WritePropertyName("InputConfigurations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestInputConfigurationsListValue in publicRequest.InputConfigurations)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = InputConfigurationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestInputConfigurationsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

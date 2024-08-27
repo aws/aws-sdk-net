@@ -63,55 +63,58 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                if(publicRequest.IsSetExpirationInDays())
-                {
-                    context.Writer.WritePropertyName("ExpirationInDays");
-                    context.Writer.Write(publicRequest.ExpirationInDays.Value);
-                }
-
-                if(publicRequest.IsSetLicenseArn())
-                {
-                    context.Writer.WritePropertyName("LicenseArn");
-                    context.Writer.Write(publicRequest.LicenseArn);
-                }
-
-                if(publicRequest.IsSetRoleArns())
-                {
-                    context.Writer.WritePropertyName("RoleArns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRoleArnsListValue in publicRequest.RoleArns)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
-                            context.Writer.Write(publicRequestRoleArnsListValue);
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTokenProperties())
-                {
-                    context.Writer.WritePropertyName("TokenProperties");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTokenPropertiesListValue in publicRequest.TokenProperties)
+                    if(publicRequest.IsSetExpirationInDays())
                     {
-                            context.Writer.Write(publicRequestTokenPropertiesListValue);
+                        context.Writer.WritePropertyName("ExpirationInDays");
+                        context.Writer.Write(publicRequest.ExpirationInDays.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetLicenseArn())
+                    {
+                        context.Writer.WritePropertyName("LicenseArn");
+                        context.Writer.Write(publicRequest.LicenseArn);
+                    }
+
+                    if(publicRequest.IsSetRoleArns())
+                    {
+                        context.Writer.WritePropertyName("RoleArns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRoleArnsListValue in publicRequest.RoleArns)
+                        {
+                                context.Writer.Write(publicRequestRoleArnsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTokenProperties())
+                    {
+                        context.Writer.WritePropertyName("TokenProperties");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTokenPropertiesListValue in publicRequest.TokenProperties)
+                        {
+                                context.Writer.Write(publicRequestTokenPropertiesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

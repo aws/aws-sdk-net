@@ -63,57 +63,60 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDatastoreId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DatastoreId");
-                    context.Writer.Write(publicRequest.DatastoreId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDatastoreId())
+                    {
+                        context.Writer.WritePropertyName("DatastoreId");
+                        context.Writer.Write(publicRequest.DatastoreId);
+                    }
+
+                    if(publicRequest.IsSetJobName())
+                    {
+                        context.Writer.WritePropertyName("JobName");
+                        context.Writer.Write(publicRequest.JobName);
+                    }
+
+                    if(publicRequest.IsSetJobStatus())
+                    {
+                        context.Writer.WritePropertyName("JobStatus");
+                        context.Writer.Write(publicRequest.JobStatus);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetSubmittedAfter())
+                    {
+                        context.Writer.WritePropertyName("SubmittedAfter");
+                        context.Writer.Write(publicRequest.SubmittedAfter.Value);
+                    }
+
+                    if(publicRequest.IsSetSubmittedBefore())
+                    {
+                        context.Writer.WritePropertyName("SubmittedBefore");
+                        context.Writer.Write(publicRequest.SubmittedBefore.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetJobName())
-                {
-                    context.Writer.WritePropertyName("JobName");
-                    context.Writer.Write(publicRequest.JobName);
-                }
-
-                if(publicRequest.IsSetJobStatus())
-                {
-                    context.Writer.WritePropertyName("JobStatus");
-                    context.Writer.Write(publicRequest.JobStatus);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetSubmittedAfter())
-                {
-                    context.Writer.WritePropertyName("SubmittedAfter");
-                    context.Writer.Write(publicRequest.SubmittedAfter.Value);
-                }
-
-                if(publicRequest.IsSetSubmittedBefore())
-                {
-                    context.Writer.WritePropertyName("SubmittedBefore");
-                    context.Writer.Write(publicRequest.SubmittedBefore.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

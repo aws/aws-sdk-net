@@ -64,27 +64,30 @@ namespace Amazon.Route53Profiles.Model.Internal.MarshallTransformations
                 throw new AmazonRoute53ProfilesException("Request object does not have required field ProfileResourceAssociationId set");
             request.AddPathResource("{ProfileResourceAssociationId}", StringUtils.FromString(publicRequest.ProfileResourceAssociationId));
             request.ResourcePath = "/profileresourceassociation/{ProfileResourceAssociationId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetResourceProperties())
+                    {
+                        context.Writer.WritePropertyName("ResourceProperties");
+                        context.Writer.Write(publicRequest.ResourceProperties);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetResourceProperties())
-                {
-                    context.Writer.WritePropertyName("ResourceProperties");
-                    context.Writer.Write(publicRequest.ResourceProperties);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

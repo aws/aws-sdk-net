@@ -64,83 +64,86 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 throw new AmazonDataZoneException("Request object does not have required field DomainIdentifier set");
             request.AddPathResource("{domainIdentifier}", StringUtils.FromString(publicRequest.DomainIdentifier));
             request.ResourcePath = "/v2/domains/{domainIdentifier}/types-search";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFilters())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("filters");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = FilterClauseMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Filters, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetManaged())
-                {
-                    context.Writer.WritePropertyName("managed");
-                    context.Writer.Write(publicRequest.Managed.Value);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetSearchIn())
-                {
-                    context.Writer.WritePropertyName("searchIn");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSearchInListValue in publicRequest.SearchIn)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFilters())
                     {
+                        context.Writer.WritePropertyName("filters");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = SearchInItemMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSearchInListValue, context);
+                        var marshaller = FilterClauseMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Filters, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetManaged())
+                    {
+                        context.Writer.WritePropertyName("managed");
+                        context.Writer.Write(publicRequest.Managed.Value);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetSearchIn())
+                    {
+                        context.Writer.WritePropertyName("searchIn");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSearchInListValue in publicRequest.SearchIn)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = SearchInItemMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSearchInListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSearchScope())
+                    {
+                        context.Writer.WritePropertyName("searchScope");
+                        context.Writer.Write(publicRequest.SearchScope);
+                    }
+
+                    if(publicRequest.IsSetSearchText())
+                    {
+                        context.Writer.WritePropertyName("searchText");
+                        context.Writer.Write(publicRequest.SearchText);
+                    }
+
+                    if(publicRequest.IsSetSort())
+                    {
+                        context.Writer.WritePropertyName("sort");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SearchSortMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Sort, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSearchScope())
-                {
-                    context.Writer.WritePropertyName("searchScope");
-                    context.Writer.Write(publicRequest.SearchScope);
-                }
-
-                if(publicRequest.IsSetSearchText())
-                {
-                    context.Writer.WritePropertyName("searchText");
-                    context.Writer.Write(publicRequest.SearchText);
-                }
-
-                if(publicRequest.IsSetSort())
-                {
-                    context.Writer.WritePropertyName("sort");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SearchSortMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Sort, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

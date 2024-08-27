@@ -63,37 +63,40 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetPrimaryRegion())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("PrimaryRegion");
-                    context.Writer.Write(publicRequest.PrimaryRegion);
-                }
-
-                if(publicRequest.IsSetStandbyWorkspaces())
-                {
-                    context.Writer.WritePropertyName("StandbyWorkspaces");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestStandbyWorkspacesListValue in publicRequest.StandbyWorkspaces)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetPrimaryRegion())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = StandbyWorkspaceMarshaller.Instance;
-                        marshaller.Marshall(publicRequestStandbyWorkspacesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("PrimaryRegion");
+                        context.Writer.Write(publicRequest.PrimaryRegion);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetStandbyWorkspaces())
+                    {
+                        context.Writer.WritePropertyName("StandbyWorkspaces");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestStandbyWorkspacesListValue in publicRequest.StandbyWorkspaces)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = StandbyWorkspaceMarshaller.Instance;
+                            marshaller.Marshall(publicRequestStandbyWorkspacesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

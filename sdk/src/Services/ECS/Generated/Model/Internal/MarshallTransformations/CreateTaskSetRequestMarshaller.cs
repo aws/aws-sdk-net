@@ -63,143 +63,146 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCapacityProviderStrategy())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("capacityProviderStrategy");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCapacityProviderStrategyListValue in publicRequest.CapacityProviderStrategy)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCapacityProviderStrategy())
                     {
+                        context.Writer.WritePropertyName("capacityProviderStrategy");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCapacityProviderStrategyListValue in publicRequest.CapacityProviderStrategy)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = CapacityProviderStrategyItemMarshaller.Instance;
+                            marshaller.Marshall(publicRequestCapacityProviderStrategyListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    if(publicRequest.IsSetCluster())
+                    {
+                        context.Writer.WritePropertyName("cluster");
+                        context.Writer.Write(publicRequest.Cluster);
+                    }
+
+                    if(publicRequest.IsSetExternalId())
+                    {
+                        context.Writer.WritePropertyName("externalId");
+                        context.Writer.Write(publicRequest.ExternalId);
+                    }
+
+                    if(publicRequest.IsSetLaunchType())
+                    {
+                        context.Writer.WritePropertyName("launchType");
+                        context.Writer.Write(publicRequest.LaunchType);
+                    }
+
+                    if(publicRequest.IsSetLoadBalancers())
+                    {
+                        context.Writer.WritePropertyName("loadBalancers");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLoadBalancersListValue in publicRequest.LoadBalancers)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = LoadBalancerMarshaller.Instance;
+                            marshaller.Marshall(publicRequestLoadBalancersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetNetworkConfiguration())
+                    {
+                        context.Writer.WritePropertyName("networkConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = CapacityProviderStrategyItemMarshaller.Instance;
-                        marshaller.Marshall(publicRequestCapacityProviderStrategyListValue, context);
+                        var marshaller = NetworkConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.NetworkConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                if(publicRequest.IsSetCluster())
-                {
-                    context.Writer.WritePropertyName("cluster");
-                    context.Writer.Write(publicRequest.Cluster);
-                }
-
-                if(publicRequest.IsSetExternalId())
-                {
-                    context.Writer.WritePropertyName("externalId");
-                    context.Writer.Write(publicRequest.ExternalId);
-                }
-
-                if(publicRequest.IsSetLaunchType())
-                {
-                    context.Writer.WritePropertyName("launchType");
-                    context.Writer.Write(publicRequest.LaunchType);
-                }
-
-                if(publicRequest.IsSetLoadBalancers())
-                {
-                    context.Writer.WritePropertyName("loadBalancers");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLoadBalancersListValue in publicRequest.LoadBalancers)
+                    if(publicRequest.IsSetPlatformVersion())
                     {
+                        context.Writer.WritePropertyName("platformVersion");
+                        context.Writer.Write(publicRequest.PlatformVersion);
+                    }
+
+                    if(publicRequest.IsSetScale())
+                    {
+                        context.Writer.WritePropertyName("scale");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = LoadBalancerMarshaller.Instance;
-                        marshaller.Marshall(publicRequestLoadBalancersListValue, context);
+                        var marshaller = ScaleMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Scale, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetNetworkConfiguration())
-                {
-                    context.Writer.WritePropertyName("networkConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = NetworkConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.NetworkConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPlatformVersion())
-                {
-                    context.Writer.WritePropertyName("platformVersion");
-                    context.Writer.Write(publicRequest.PlatformVersion);
-                }
-
-                if(publicRequest.IsSetScale())
-                {
-                    context.Writer.WritePropertyName("scale");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ScaleMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Scale, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetService())
-                {
-                    context.Writer.WritePropertyName("service");
-                    context.Writer.Write(publicRequest.Service);
-                }
-
-                if(publicRequest.IsSetServiceRegistries())
-                {
-                    context.Writer.WritePropertyName("serviceRegistries");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestServiceRegistriesListValue in publicRequest.ServiceRegistries)
+                    if(publicRequest.IsSetService())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ServiceRegistryMarshaller.Instance;
-                        marshaller.Marshall(publicRequestServiceRegistriesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("service");
+                        context.Writer.Write(publicRequest.Service);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetServiceRegistries())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("serviceRegistries");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestServiceRegistriesListValue in publicRequest.ServiceRegistries)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                            var marshaller = ServiceRegistryMarshaller.Instance;
+                            marshaller.Marshall(publicRequestServiceRegistriesListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTaskDefinition())
+                    {
+                        context.Writer.WritePropertyName("taskDefinition");
+                        context.Writer.Write(publicRequest.TaskDefinition);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTaskDefinition())
-                {
-                    context.Writer.WritePropertyName("taskDefinition");
-                    context.Writer.Write(publicRequest.TaskDefinition);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

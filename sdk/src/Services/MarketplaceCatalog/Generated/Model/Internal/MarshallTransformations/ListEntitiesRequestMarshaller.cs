@@ -61,94 +61,97 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/ListEntities";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCatalog())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Catalog");
-                    context.Writer.Write(publicRequest.Catalog);
-                }
-
-                if(publicRequest.IsSetEntityType())
-                {
-                    context.Writer.WritePropertyName("EntityType");
-                    context.Writer.Write(publicRequest.EntityType);
-                }
-
-                if(publicRequest.IsSetEntityTypeFilters())
-                {
-                    context.Writer.WritePropertyName("EntityTypeFilters");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EntityTypeFiltersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EntityTypeFilters, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEntityTypeSort())
-                {
-                    context.Writer.WritePropertyName("EntityTypeSort");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EntityTypeSortMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EntityTypeSort, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetFilterList())
-                {
-                    context.Writer.WritePropertyName("FilterList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFilterListListValue in publicRequest.FilterList)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCatalog())
                     {
+                        context.Writer.WritePropertyName("Catalog");
+                        context.Writer.Write(publicRequest.Catalog);
+                    }
+
+                    if(publicRequest.IsSetEntityType())
+                    {
+                        context.Writer.WritePropertyName("EntityType");
+                        context.Writer.Write(publicRequest.EntityType);
+                    }
+
+                    if(publicRequest.IsSetEntityTypeFilters())
+                    {
+                        context.Writer.WritePropertyName("EntityTypeFilters");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = FilterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFilterListListValue, context);
+                        var marshaller = EntityTypeFiltersMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EntityTypeFilters, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetEntityTypeSort())
+                    {
+                        context.Writer.WritePropertyName("EntityTypeSort");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EntityTypeSortMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EntityTypeSort, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetFilterList())
+                    {
+                        context.Writer.WritePropertyName("FilterList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFilterListListValue in publicRequest.FilterList)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = FilterMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFilterListListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetOwnershipType())
+                    {
+                        context.Writer.WritePropertyName("OwnershipType");
+                        context.Writer.Write(publicRequest.OwnershipType);
+                    }
+
+                    if(publicRequest.IsSetSort())
+                    {
+                        context.Writer.WritePropertyName("Sort");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SortMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Sort, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetOwnershipType())
-                {
-                    context.Writer.WritePropertyName("OwnershipType");
-                    context.Writer.Write(publicRequest.OwnershipType);
-                }
-
-                if(publicRequest.IsSetSort())
-                {
-                    context.Writer.WritePropertyName("Sort");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SortMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Sort, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

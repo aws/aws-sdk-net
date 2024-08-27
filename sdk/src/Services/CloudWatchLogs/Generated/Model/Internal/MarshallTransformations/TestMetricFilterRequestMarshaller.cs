@@ -63,32 +63,35 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFilterPattern())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("filterPattern");
-                    context.Writer.Write(publicRequest.FilterPattern);
-                }
-
-                if(publicRequest.IsSetLogEventMessages())
-                {
-                    context.Writer.WritePropertyName("logEventMessages");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLogEventMessagesListValue in publicRequest.LogEventMessages)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFilterPattern())
                     {
-                            context.Writer.Write(publicRequestLogEventMessagesListValue);
+                        context.Writer.WritePropertyName("filterPattern");
+                        context.Writer.Write(publicRequest.FilterPattern);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetLogEventMessages())
+                    {
+                        context.Writer.WritePropertyName("logEventMessages");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLogEventMessagesListValue in publicRequest.LogEventMessages)
+                        {
+                                context.Writer.Write(publicRequestLogEventMessagesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

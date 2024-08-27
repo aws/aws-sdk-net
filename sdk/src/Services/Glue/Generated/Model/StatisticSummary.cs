@@ -70,9 +70,9 @@ namespace Amazon.Glue.Model
         /// The value of the statistic.
         /// </para>
         /// </summary>
-        public double DoubleValue
+        public double? DoubleValue
         {
-            get { return this._doubleValue.GetValueOrDefault(); }
+            get { return this._doubleValue; }
             set { this._doubleValue = value; }
         }
 
@@ -144,9 +144,9 @@ namespace Amazon.Glue.Model
         /// The timestamp when the statistic was recorded.
         /// </para>
         /// </summary>
-        public DateTime RecordedOn
+        public DateTime? RecordedOn
         {
-            get { return this._recordedOn.GetValueOrDefault(); }
+            get { return this._recordedOn; }
             set { this._recordedOn = value; }
         }
 

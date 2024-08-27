@@ -64,27 +64,30 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
                 throw new AmazonQLDBException("Request object does not have required field Name set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/ledgers/{name}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeletionProtection())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DeletionProtection");
-                    context.Writer.Write(publicRequest.DeletionProtection.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDeletionProtection())
+                    {
+                        context.Writer.WritePropertyName("DeletionProtection");
+                        context.Writer.Write(publicRequest.DeletionProtection.Value);
+                    }
+
+                    if(publicRequest.IsSetKmsKey())
+                    {
+                        context.Writer.WritePropertyName("KmsKey");
+                        context.Writer.Write(publicRequest.KmsKey);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetKmsKey())
-                {
-                    context.Writer.WritePropertyName("KmsKey");
-                    context.Writer.Write(publicRequest.KmsKey);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

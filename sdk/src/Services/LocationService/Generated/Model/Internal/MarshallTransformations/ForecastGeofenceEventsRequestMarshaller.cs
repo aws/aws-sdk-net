@@ -64,63 +64,66 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 throw new AmazonLocationServiceException("Request object does not have required field CollectionName set");
             request.AddPathResource("{CollectionName}", StringUtils.FromString(publicRequest.CollectionName));
             request.ResourcePath = "/geofencing/v0/collections/{CollectionName}/forecast-geofence-events";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeviceState())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DeviceState");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ForecastGeofenceEventsDeviceStateMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DeviceState, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDistanceUnit())
-                {
-                    context.Writer.WritePropertyName("DistanceUnit");
-                    context.Writer.Write(publicRequest.DistanceUnit);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetSpeedUnit())
-                {
-                    context.Writer.WritePropertyName("SpeedUnit");
-                    context.Writer.Write(publicRequest.SpeedUnit);
-                }
-
-                if(publicRequest.IsSetTimeHorizonMinutes())
-                {
-                    context.Writer.WritePropertyName("TimeHorizonMinutes");
-                    if(StringUtils.IsSpecialDoubleValue(publicRequest.TimeHorizonMinutes.Value))
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDeviceState())
                     {
-                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.TimeHorizonMinutes.Value));
+                        context.Writer.WritePropertyName("DeviceState");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ForecastGeofenceEventsDeviceStateMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DeviceState, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    else
+
+                    if(publicRequest.IsSetDistanceUnit())
                     {
-                        context.Writer.Write(publicRequest.TimeHorizonMinutes.Value);
+                        context.Writer.WritePropertyName("DistanceUnit");
+                        context.Writer.Write(publicRequest.DistanceUnit);
                     }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetSpeedUnit())
+                    {
+                        context.Writer.WritePropertyName("SpeedUnit");
+                        context.Writer.Write(publicRequest.SpeedUnit);
+                    }
+
+                    if(publicRequest.IsSetTimeHorizonMinutes())
+                    {
+                        context.Writer.WritePropertyName("TimeHorizonMinutes");
+                        if(StringUtils.IsSpecialDoubleValue(publicRequest.TimeHorizonMinutes.Value))
+                        {
+                            context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.TimeHorizonMinutes.Value));
+                        }
+                        else
+                        {
+                            context.Writer.Write(publicRequest.TimeHorizonMinutes.Value);
+                        }
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

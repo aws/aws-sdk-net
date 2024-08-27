@@ -63,32 +63,35 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetInclude())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("include");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestIncludeListValue in publicRequest.Include)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetInclude())
                     {
-                            context.Writer.Write(publicRequestIncludeListValue);
+                        context.Writer.WritePropertyName("include");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestIncludeListValue in publicRequest.Include)
+                        {
+                                context.Writer.Write(publicRequestIncludeListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTaskDefinition())
+                    {
+                        context.Writer.WritePropertyName("taskDefinition");
+                        context.Writer.Write(publicRequest.TaskDefinition);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTaskDefinition())
-                {
-                    context.Writer.WritePropertyName("taskDefinition");
-                    context.Writer.Write(publicRequest.TaskDefinition);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

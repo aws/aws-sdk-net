@@ -63,77 +63,80 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDefaultInstanceName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DefaultInstanceName");
-                    context.Writer.Write(publicRequest.DefaultInstanceName);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetExpirationDate())
-                {
-                    context.Writer.WritePropertyName("ExpirationDate");
-                    context.Writer.Write(publicRequest.ExpirationDate.Value);
-                }
-
-                if(publicRequest.IsSetIamRole())
-                {
-                    context.Writer.WritePropertyName("IamRole");
-                    context.Writer.Write(publicRequest.IamRole);
-                }
-
-                if(publicRequest.IsSetRegistrationLimit())
-                {
-                    context.Writer.WritePropertyName("RegistrationLimit");
-                    context.Writer.Write(publicRequest.RegistrationLimit.Value);
-                }
-
-                if(publicRequest.IsSetRegistrationMetadata())
-                {
-                    context.Writer.WritePropertyName("RegistrationMetadata");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRegistrationMetadataListValue in publicRequest.RegistrationMetadata)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDefaultInstanceName())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RegistrationMetadataItemMarshaller.Instance;
-                        marshaller.Marshall(publicRequestRegistrationMetadataListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("DefaultInstanceName");
+                        context.Writer.Write(publicRequest.DefaultInstanceName);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetDescription())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetExpirationDate())
+                    {
+                        context.Writer.WritePropertyName("ExpirationDate");
+                        context.Writer.Write(publicRequest.ExpirationDate.Value);
+                    }
+
+                    if(publicRequest.IsSetIamRole())
+                    {
+                        context.Writer.WritePropertyName("IamRole");
+                        context.Writer.Write(publicRequest.IamRole);
+                    }
+
+                    if(publicRequest.IsSetRegistrationLimit())
+                    {
+                        context.Writer.WritePropertyName("RegistrationLimit");
+                        context.Writer.Write(publicRequest.RegistrationLimit.Value);
+                    }
+
+                    if(publicRequest.IsSetRegistrationMetadata())
+                    {
+                        context.Writer.WritePropertyName("RegistrationMetadata");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRegistrationMetadataListValue in publicRequest.RegistrationMetadata)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = RegistrationMetadataItemMarshaller.Instance;
+                            marshaller.Marshall(publicRequestRegistrationMetadataListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

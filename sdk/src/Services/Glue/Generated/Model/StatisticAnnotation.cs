@@ -101,9 +101,9 @@ namespace Amazon.Glue.Model
         /// The timestamp when the annotated statistic was recorded.
         /// </para>
         /// </summary>
-        public DateTime StatisticRecordedOn
+        public DateTime? StatisticRecordedOn
         {
-            get { return this._statisticRecordedOn.GetValueOrDefault(); }
+            get { return this._statisticRecordedOn; }
             set { this._statisticRecordedOn = value; }
         }
 

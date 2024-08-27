@@ -63,33 +63,36 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAppId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("appId");
-                    context.Writer.Write(publicRequest.AppId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAppId())
+                    {
+                        context.Writer.WritePropertyName("appId");
+                        context.Writer.Write(publicRequest.AppId);
+                    }
+
+                    if(publicRequest.IsSetForceStopAppReplication())
+                    {
+                        context.Writer.WritePropertyName("forceStopAppReplication");
+                        context.Writer.Write(publicRequest.ForceStopAppReplication.Value);
+                    }
+
+                    if(publicRequest.IsSetForceTerminateApp())
+                    {
+                        context.Writer.WritePropertyName("forceTerminateApp");
+                        context.Writer.Write(publicRequest.ForceTerminateApp.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetForceStopAppReplication())
-                {
-                    context.Writer.WritePropertyName("forceStopAppReplication");
-                    context.Writer.Write(publicRequest.ForceStopAppReplication.Value);
-                }
-
-                if(publicRequest.IsSetForceTerminateApp())
-                {
-                    context.Writer.WritePropertyName("forceTerminateApp");
-                    context.Writer.Write(publicRequest.ForceTerminateApp.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

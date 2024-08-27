@@ -64,9 +64,9 @@ namespace Amazon.Inspector2.Model
         ///  The number of findings that have an exploit available. 
         /// </para>
         /// </summary>
-        public long ExploitAvailableCount
+        public long? ExploitAvailableCount
         {
-            get { return this._exploitAvailableCount.GetValueOrDefault(); }
+            get { return this._exploitAvailableCount; }
             set { this._exploitAvailableCount = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.Inspector2.Model
         ///  Details about the number of fixes. 
         /// </para>
         /// </summary>
-        public long FixAvailableCount
+        public long? FixAvailableCount
         {
-            get { return this._fixAvailableCount.GetValueOrDefault(); }
+            get { return this._fixAvailableCount; }
             set { this._fixAvailableCount = value; }
         }
 

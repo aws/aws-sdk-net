@@ -67,43 +67,46 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 throw new AmazonSimpleEmailServiceV2Exception("Request object does not have required field EmailAddress set");
             request.AddPathResource("{EmailAddress}", StringUtils.FromString(publicRequest.EmailAddress));
             request.ResourcePath = "/v2/email/contact-lists/{ContactListName}/contacts/{EmailAddress}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAttributesData())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AttributesData");
-                    context.Writer.Write(publicRequest.AttributesData);
-                }
-
-                if(publicRequest.IsSetTopicPreferences())
-                {
-                    context.Writer.WritePropertyName("TopicPreferences");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTopicPreferencesListValue in publicRequest.TopicPreferences)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAttributesData())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TopicPreferenceMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTopicPreferencesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("AttributesData");
+                        context.Writer.Write(publicRequest.AttributesData);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTopicPreferences())
+                    {
+                        context.Writer.WritePropertyName("TopicPreferences");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTopicPreferencesListValue in publicRequest.TopicPreferences)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TopicPreferenceMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTopicPreferencesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetUnsubscribeAll())
+                    {
+                        context.Writer.WritePropertyName("UnsubscribeAll");
+                        context.Writer.Write(publicRequest.UnsubscribeAll.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetUnsubscribeAll())
-                {
-                    context.Writer.WritePropertyName("UnsubscribeAll");
-                    context.Writer.Write(publicRequest.UnsubscribeAll.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

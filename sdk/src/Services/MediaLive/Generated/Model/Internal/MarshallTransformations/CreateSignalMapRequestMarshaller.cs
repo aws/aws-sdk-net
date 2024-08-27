@@ -61,69 +61,72 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/prod/signal-maps";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCloudWatchAlarmTemplateGroupIdentifiers())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("cloudWatchAlarmTemplateGroupIdentifiers");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCloudWatchAlarmTemplateGroupIdentifiersListValue in publicRequest.CloudWatchAlarmTemplateGroupIdentifiers)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCloudWatchAlarmTemplateGroupIdentifiers())
                     {
-                            context.Writer.Write(publicRequestCloudWatchAlarmTemplateGroupIdentifiersListValue);
+                        context.Writer.WritePropertyName("cloudWatchAlarmTemplateGroupIdentifiers");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCloudWatchAlarmTemplateGroupIdentifiersListValue in publicRequest.CloudWatchAlarmTemplateGroupIdentifiers)
+                        {
+                                context.Writer.Write(publicRequestCloudWatchAlarmTemplateGroupIdentifiersListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetDiscoveryEntryPointArn())
-                {
-                    context.Writer.WritePropertyName("discoveryEntryPointArn");
-                    context.Writer.Write(publicRequest.DiscoveryEntryPointArn);
-                }
-
-                if(publicRequest.IsSetEventBridgeRuleTemplateGroupIdentifiers())
-                {
-                    context.Writer.WritePropertyName("eventBridgeRuleTemplateGroupIdentifiers");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEventBridgeRuleTemplateGroupIdentifiersListValue in publicRequest.EventBridgeRuleTemplateGroupIdentifiers)
+                    if(publicRequest.IsSetDescription())
                     {
-                            context.Writer.Write(publicRequestEventBridgeRuleTemplateGroupIdentifiersListValue);
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetDiscoveryEntryPointArn())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("discoveryEntryPointArn");
+                        context.Writer.Write(publicRequest.DiscoveryEntryPointArn);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetEventBridgeRuleTemplateGroupIdentifiers())
+                    {
+                        context.Writer.WritePropertyName("eventBridgeRuleTemplateGroupIdentifiers");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestEventBridgeRuleTemplateGroupIdentifiersListValue in publicRequest.EventBridgeRuleTemplateGroupIdentifiers)
+                        {
+                                context.Writer.Write(publicRequestEventBridgeRuleTemplateGroupIdentifiersListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

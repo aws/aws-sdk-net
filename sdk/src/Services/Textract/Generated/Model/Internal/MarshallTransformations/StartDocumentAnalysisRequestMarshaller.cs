@@ -63,99 +63,102 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAdaptersConfig())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AdaptersConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AdaptersConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AdaptersConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetClientRequestToken())
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                if(publicRequest.IsSetDocumentLocation())
-                {
-                    context.Writer.WritePropertyName("DocumentLocation");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DocumentLocationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DocumentLocation, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetFeatureTypes())
-                {
-                    context.Writer.WritePropertyName("FeatureTypes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFeatureTypesListValue in publicRequest.FeatureTypes)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAdaptersConfig())
                     {
-                            context.Writer.Write(publicRequestFeatureTypesListValue);
+                        context.Writer.WritePropertyName("AdaptersConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AdaptersConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AdaptersConfig, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetClientRequestToken())
+                    {
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(publicRequest.ClientRequestToken);
+                    }
+
+                    if(publicRequest.IsSetDocumentLocation())
+                    {
+                        context.Writer.WritePropertyName("DocumentLocation");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DocumentLocationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DocumentLocation, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetFeatureTypes())
+                    {
+                        context.Writer.WritePropertyName("FeatureTypes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFeatureTypesListValue in publicRequest.FeatureTypes)
+                        {
+                                context.Writer.Write(publicRequestFeatureTypesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetJobTag())
+                    {
+                        context.Writer.WritePropertyName("JobTag");
+                        context.Writer.Write(publicRequest.JobTag);
+                    }
+
+                    if(publicRequest.IsSetKMSKeyId())
+                    {
+                        context.Writer.WritePropertyName("KMSKeyId");
+                        context.Writer.Write(publicRequest.KMSKeyId);
+                    }
+
+                    if(publicRequest.IsSetNotificationChannel())
+                    {
+                        context.Writer.WritePropertyName("NotificationChannel");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = NotificationChannelMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.NotificationChannel, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetOutputConfig())
+                    {
+                        context.Writer.WritePropertyName("OutputConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = OutputConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OutputConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetQueriesConfig())
+                    {
+                        context.Writer.WritePropertyName("QueriesConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = QueriesConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.QueriesConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetJobTag())
-                {
-                    context.Writer.WritePropertyName("JobTag");
-                    context.Writer.Write(publicRequest.JobTag);
-                }
-
-                if(publicRequest.IsSetKMSKeyId())
-                {
-                    context.Writer.WritePropertyName("KMSKeyId");
-                    context.Writer.Write(publicRequest.KMSKeyId);
-                }
-
-                if(publicRequest.IsSetNotificationChannel())
-                {
-                    context.Writer.WritePropertyName("NotificationChannel");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = NotificationChannelMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.NotificationChannel, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOutputConfig())
-                {
-                    context.Writer.WritePropertyName("OutputConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OutputConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OutputConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetQueriesConfig())
-                {
-                    context.Writer.WritePropertyName("QueriesConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = QueriesConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.QueriesConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

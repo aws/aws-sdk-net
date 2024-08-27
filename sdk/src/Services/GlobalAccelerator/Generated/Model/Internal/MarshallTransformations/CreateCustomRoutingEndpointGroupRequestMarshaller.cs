@@ -63,54 +63,57 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDestinationConfigurations())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DestinationConfigurations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDestinationConfigurationsListValue in publicRequest.DestinationConfigurations)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDestinationConfigurations())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("DestinationConfigurations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDestinationConfigurationsListValue in publicRequest.DestinationConfigurations)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = CustomRoutingDestinationConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestDestinationConfigurationsListValue, context);
+                            var marshaller = CustomRoutingDestinationConfigurationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestDestinationConfigurationsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetEndpointGroupRegion())
+                    {
+                        context.Writer.WritePropertyName("EndpointGroupRegion");
+                        context.Writer.Write(publicRequest.EndpointGroupRegion);
+                    }
+
+                    if(publicRequest.IsSetIdempotencyToken())
+                    {
+                        context.Writer.WritePropertyName("IdempotencyToken");
+                        context.Writer.Write(publicRequest.IdempotencyToken);
+                    }
+
+                    else if(!(publicRequest.IsSetIdempotencyToken()))
+                    {
+                        context.Writer.WritePropertyName("IdempotencyToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetListenerArn())
+                    {
+                        context.Writer.WritePropertyName("ListenerArn");
+                        context.Writer.Write(publicRequest.ListenerArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEndpointGroupRegion())
-                {
-                    context.Writer.WritePropertyName("EndpointGroupRegion");
-                    context.Writer.Write(publicRequest.EndpointGroupRegion);
-                }
-
-                if(publicRequest.IsSetIdempotencyToken())
-                {
-                    context.Writer.WritePropertyName("IdempotencyToken");
-                    context.Writer.Write(publicRequest.IdempotencyToken);
-                }
-
-                else if(!(publicRequest.IsSetIdempotencyToken()))
-                {
-                    context.Writer.WritePropertyName("IdempotencyToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetListenerArn())
-                {
-                    context.Writer.WritePropertyName("ListenerArn");
-                    context.Writer.Write(publicRequest.ListenerArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

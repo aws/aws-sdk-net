@@ -61,39 +61,42 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/PutResourcePolicy";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBypassPolicyLockoutCheck())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("BypassPolicyLockoutCheck");
-                    context.Writer.Write(publicRequest.BypassPolicyLockoutCheck.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBypassPolicyLockoutCheck())
+                    {
+                        context.Writer.WritePropertyName("BypassPolicyLockoutCheck");
+                        context.Writer.Write(publicRequest.BypassPolicyLockoutCheck.Value);
+                    }
+
+                    if(publicRequest.IsSetPolicyDocument())
+                    {
+                        context.Writer.WritePropertyName("PolicyDocument");
+                        context.Writer.Write(publicRequest.PolicyDocument);
+                    }
+
+                    if(publicRequest.IsSetPolicyName())
+                    {
+                        context.Writer.WritePropertyName("PolicyName");
+                        context.Writer.Write(publicRequest.PolicyName);
+                    }
+
+                    if(publicRequest.IsSetPolicyRevisionId())
+                    {
+                        context.Writer.WritePropertyName("PolicyRevisionId");
+                        context.Writer.Write(publicRequest.PolicyRevisionId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPolicyDocument())
-                {
-                    context.Writer.WritePropertyName("PolicyDocument");
-                    context.Writer.Write(publicRequest.PolicyDocument);
-                }
-
-                if(publicRequest.IsSetPolicyName())
-                {
-                    context.Writer.WritePropertyName("PolicyName");
-                    context.Writer.Write(publicRequest.PolicyName);
-                }
-
-                if(publicRequest.IsSetPolicyRevisionId())
-                {
-                    context.Writer.WritePropertyName("PolicyRevisionId");
-                    context.Writer.Write(publicRequest.PolicyRevisionId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

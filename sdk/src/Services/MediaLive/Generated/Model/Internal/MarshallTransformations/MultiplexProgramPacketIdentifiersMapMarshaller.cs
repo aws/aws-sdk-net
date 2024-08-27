@@ -51,7 +51,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAribCaptionsPid())
             {
                 context.Writer.WritePropertyName("aribCaptionsPid");
-                context.Writer.Write(requestObject.AribCaptionsPid);
+                context.Writer.Write(requestObject.AribCaptionsPid.Value);
             }
 
             if(requestObject.IsSetAudioPids())
@@ -79,7 +79,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDvbTeletextPid())
             {
                 context.Writer.WritePropertyName("dvbTeletextPid");
-                context.Writer.Write(requestObject.DvbTeletextPid);
+                context.Writer.Write(requestObject.DvbTeletextPid.Value);
             }
 
             if(requestObject.IsSetDvbTeletextPids())
@@ -96,19 +96,19 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEcmPid())
             {
                 context.Writer.WritePropertyName("ecmPid");
-                context.Writer.Write(requestObject.EcmPid);
+                context.Writer.Write(requestObject.EcmPid.Value);
             }
 
             if(requestObject.IsSetEtvPlatformPid())
             {
                 context.Writer.WritePropertyName("etvPlatformPid");
-                context.Writer.Write(requestObject.EtvPlatformPid);
+                context.Writer.Write(requestObject.EtvPlatformPid.Value);
             }
 
             if(requestObject.IsSetEtvSignalPid())
             {
                 context.Writer.WritePropertyName("etvSignalPid");
-                context.Writer.Write(requestObject.EtvSignalPid);
+                context.Writer.Write(requestObject.EtvSignalPid.Value);
             }
 
             if(requestObject.IsSetKlvDataPids())
@@ -125,19 +125,19 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPcrPid())
             {
                 context.Writer.WritePropertyName("pcrPid");
-                context.Writer.Write(requestObject.PcrPid);
+                context.Writer.Write(requestObject.PcrPid.Value);
             }
 
             if(requestObject.IsSetPmtPid())
             {
                 context.Writer.WritePropertyName("pmtPid");
-                context.Writer.Write(requestObject.PmtPid);
+                context.Writer.Write(requestObject.PmtPid.Value);
             }
 
             if(requestObject.IsSetPrivateMetadataPid())
             {
                 context.Writer.WritePropertyName("privateMetadataPid");
-                context.Writer.Write(requestObject.PrivateMetadataPid);
+                context.Writer.Write(requestObject.PrivateMetadataPid.Value);
             }
 
             if(requestObject.IsSetScte27Pids())
@@ -154,25 +154,25 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetScte35Pid())
             {
                 context.Writer.WritePropertyName("scte35Pid");
-                context.Writer.Write(requestObject.Scte35Pid);
+                context.Writer.Write(requestObject.Scte35Pid.Value);
             }
 
             if(requestObject.IsSetSmpte2038Pid())
             {
                 context.Writer.WritePropertyName("smpte2038Pid");
-                context.Writer.Write(requestObject.Smpte2038Pid);
+                context.Writer.Write(requestObject.Smpte2038Pid.Value);
             }
 
             if(requestObject.IsSetTimedMetadataPid())
             {
                 context.Writer.WritePropertyName("timedMetadataPid");
-                context.Writer.Write(requestObject.TimedMetadataPid);
+                context.Writer.Write(requestObject.TimedMetadataPid.Value);
             }
 
             if(requestObject.IsSetVideoPid())
             {
                 context.Writer.WritePropertyName("videoPid");
-                context.Writer.Write(requestObject.VideoPid);
+                context.Writer.Write(requestObject.VideoPid.Value);
             }
 
         }

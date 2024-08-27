@@ -64,38 +64,41 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 throw new AmazonIoTWirelessException("Request object does not have required field Id set");
             request.AddPathResource("{Id}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = "/wireless-devices/{Id}/data";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetPayloadData())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("PayloadData");
-                    context.Writer.Write(publicRequest.PayloadData);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetPayloadData())
+                    {
+                        context.Writer.WritePropertyName("PayloadData");
+                        context.Writer.Write(publicRequest.PayloadData);
+                    }
+
+                    if(publicRequest.IsSetTransmitMode())
+                    {
+                        context.Writer.WritePropertyName("TransmitMode");
+                        context.Writer.Write(publicRequest.TransmitMode.Value);
+                    }
+
+                    if(publicRequest.IsSetWirelessMetadata())
+                    {
+                        context.Writer.WritePropertyName("WirelessMetadata");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = WirelessMetadataMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.WirelessMetadata, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTransmitMode())
-                {
-                    context.Writer.WritePropertyName("TransmitMode");
-                    context.Writer.Write(publicRequest.TransmitMode.Value);
-                }
-
-                if(publicRequest.IsSetWirelessMetadata())
-                {
-                    context.Writer.WritePropertyName("WirelessMetadata");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = WirelessMetadataMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.WirelessMetadata, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

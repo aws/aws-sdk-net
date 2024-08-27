@@ -61,32 +61,35 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/2015-01-01/es/vpcEndpoints/update";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetVpcEndpointId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("VpcEndpointId");
-                    context.Writer.Write(publicRequest.VpcEndpointId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetVpcEndpointId())
+                    {
+                        context.Writer.WritePropertyName("VpcEndpointId");
+                        context.Writer.Write(publicRequest.VpcEndpointId);
+                    }
+
+                    if(publicRequest.IsSetVpcOptions())
+                    {
+                        context.Writer.WritePropertyName("VpcOptions");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = VPCOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.VpcOptions, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetVpcOptions())
-                {
-                    context.Writer.WritePropertyName("VpcOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = VPCOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.VpcOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

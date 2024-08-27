@@ -64,214 +64,217 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field AwsAccountId set");
             request.AddPathResource("{AwsAccountId}", StringUtils.FromString(publicRequest.AwsAccountId));
             request.ResourcePath = "/accounts/{AwsAccountId}/data-sets";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetColumnGroups())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ColumnGroups");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestColumnGroupsListValue in publicRequest.ColumnGroups)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetColumnGroups())
                     {
+                        context.Writer.WritePropertyName("ColumnGroups");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestColumnGroupsListValue in publicRequest.ColumnGroups)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ColumnGroupMarshaller.Instance;
+                            marshaller.Marshall(publicRequestColumnGroupsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetColumnLevelPermissionRules())
+                    {
+                        context.Writer.WritePropertyName("ColumnLevelPermissionRules");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestColumnLevelPermissionRulesListValue in publicRequest.ColumnLevelPermissionRules)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ColumnLevelPermissionRuleMarshaller.Instance;
+                            marshaller.Marshall(publicRequestColumnLevelPermissionRulesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetDataSetId())
+                    {
+                        context.Writer.WritePropertyName("DataSetId");
+                        context.Writer.Write(publicRequest.DataSetId);
+                    }
+
+                    if(publicRequest.IsSetDatasetParameters())
+                    {
+                        context.Writer.WritePropertyName("DatasetParameters");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDatasetParametersListValue in publicRequest.DatasetParameters)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = DatasetParameterMarshaller.Instance;
+                            marshaller.Marshall(publicRequestDatasetParametersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetDataSetUsageConfiguration())
+                    {
+                        context.Writer.WritePropertyName("DataSetUsageConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = ColumnGroupMarshaller.Instance;
-                        marshaller.Marshall(publicRequestColumnGroupsListValue, context);
+                        var marshaller = DataSetUsageConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DataSetUsageConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetColumnLevelPermissionRules())
-                {
-                    context.Writer.WritePropertyName("ColumnLevelPermissionRules");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestColumnLevelPermissionRulesListValue in publicRequest.ColumnLevelPermissionRules)
+                    if(publicRequest.IsSetFieldFolders())
                     {
+                        context.Writer.WritePropertyName("FieldFolders");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestFieldFoldersKvp in publicRequest.FieldFolders)
+                        {
+                            context.Writer.WritePropertyName(publicRequestFieldFoldersKvp.Key);
+                            var publicRequestFieldFoldersValue = publicRequestFieldFoldersKvp.Value;
+
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = FieldFolderMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFieldFoldersValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetFolderArns())
+                    {
+                        context.Writer.WritePropertyName("FolderArns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFolderArnsListValue in publicRequest.FolderArns)
+                        {
+                                context.Writer.Write(publicRequestFolderArnsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetImportMode())
+                    {
+                        context.Writer.WritePropertyName("ImportMode");
+                        context.Writer.Write(publicRequest.ImportMode);
+                    }
+
+                    if(publicRequest.IsSetLogicalTableMap())
+                    {
+                        context.Writer.WritePropertyName("LogicalTableMap");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestLogicalTableMapKvp in publicRequest.LogicalTableMap)
+                        {
+                            context.Writer.WritePropertyName(publicRequestLogicalTableMapKvp.Key);
+                            var publicRequestLogicalTableMapValue = publicRequestLogicalTableMapKvp.Value;
+
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = LogicalTableMarshaller.Instance;
+                            marshaller.Marshall(publicRequestLogicalTableMapValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetPermissions())
+                    {
+                        context.Writer.WritePropertyName("Permissions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPermissionsListValue in publicRequest.Permissions)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ResourcePermissionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestPermissionsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetPhysicalTableMap())
+                    {
+                        context.Writer.WritePropertyName("PhysicalTableMap");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestPhysicalTableMapKvp in publicRequest.PhysicalTableMap)
+                        {
+                            context.Writer.WritePropertyName(publicRequestPhysicalTableMapKvp.Key);
+                            var publicRequestPhysicalTableMapValue = publicRequestPhysicalTableMapKvp.Value;
+
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = PhysicalTableMarshaller.Instance;
+                            marshaller.Marshall(publicRequestPhysicalTableMapValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRowLevelPermissionDataSet())
+                    {
+                        context.Writer.WritePropertyName("RowLevelPermissionDataSet");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = ColumnLevelPermissionRuleMarshaller.Instance;
-                        marshaller.Marshall(publicRequestColumnLevelPermissionRulesListValue, context);
+                        var marshaller = RowLevelPermissionDataSetMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RowLevelPermissionDataSet, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDataSetId())
-                {
-                    context.Writer.WritePropertyName("DataSetId");
-                    context.Writer.Write(publicRequest.DataSetId);
-                }
-
-                if(publicRequest.IsSetDatasetParameters())
-                {
-                    context.Writer.WritePropertyName("DatasetParameters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDatasetParametersListValue in publicRequest.DatasetParameters)
+                    if(publicRequest.IsSetRowLevelPermissionTagConfiguration())
                     {
+                        context.Writer.WritePropertyName("RowLevelPermissionTagConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = DatasetParameterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestDatasetParametersListValue, context);
+                        var marshaller = RowLevelPermissionTagConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RowLevelPermissionTagConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDataSetUsageConfiguration())
-                {
-                    context.Writer.WritePropertyName("DataSetUsageConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DataSetUsageConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DataSetUsageConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetFieldFolders())
-                {
-                    context.Writer.WritePropertyName("FieldFolders");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestFieldFoldersKvp in publicRequest.FieldFolders)
+                    if(publicRequest.IsSetTags())
                     {
-                        context.Writer.WritePropertyName(publicRequestFieldFoldersKvp.Key);
-                        var publicRequestFieldFoldersValue = publicRequestFieldFoldersKvp.Value;
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        context.Writer.WriteObjectStart();
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
 
-                        var marshaller = FieldFolderMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFieldFoldersValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetFolderArns())
-                {
-                    context.Writer.WritePropertyName("FolderArns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFolderArnsListValue in publicRequest.FolderArns)
-                    {
-                            context.Writer.Write(publicRequestFolderArnsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetImportMode())
-                {
-                    context.Writer.WritePropertyName("ImportMode");
-                    context.Writer.Write(publicRequest.ImportMode);
-                }
-
-                if(publicRequest.IsSetLogicalTableMap())
-                {
-                    context.Writer.WritePropertyName("LogicalTableMap");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestLogicalTableMapKvp in publicRequest.LogicalTableMap)
-                    {
-                        context.Writer.WritePropertyName(publicRequestLogicalTableMapKvp.Key);
-                        var publicRequestLogicalTableMapValue = publicRequestLogicalTableMapKvp.Value;
-
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = LogicalTableMarshaller.Instance;
-                        marshaller.Marshall(publicRequestLogicalTableMapValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetPermissions())
-                {
-                    context.Writer.WritePropertyName("Permissions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPermissionsListValue in publicRequest.Permissions)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ResourcePermissionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestPermissionsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetPhysicalTableMap())
-                {
-                    context.Writer.WritePropertyName("PhysicalTableMap");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestPhysicalTableMapKvp in publicRequest.PhysicalTableMap)
-                    {
-                        context.Writer.WritePropertyName(publicRequestPhysicalTableMapKvp.Key);
-                        var publicRequestPhysicalTableMapValue = publicRequestPhysicalTableMapKvp.Value;
-
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = PhysicalTableMarshaller.Instance;
-                        marshaller.Marshall(publicRequestPhysicalTableMapValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRowLevelPermissionDataSet())
-                {
-                    context.Writer.WritePropertyName("RowLevelPermissionDataSet");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RowLevelPermissionDataSetMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RowLevelPermissionDataSet, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRowLevelPermissionTagConfiguration())
-                {
-                    context.Writer.WritePropertyName("RowLevelPermissionTagConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RowLevelPermissionTagConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RowLevelPermissionTagConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

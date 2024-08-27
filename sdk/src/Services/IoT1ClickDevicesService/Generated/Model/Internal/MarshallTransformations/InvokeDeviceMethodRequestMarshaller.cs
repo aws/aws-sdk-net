@@ -64,32 +64,35 @@ namespace Amazon.IoT1ClickDevicesService.Model.Internal.MarshallTransformations
                 throw new AmazonIoT1ClickDevicesServiceException("Request object does not have required field DeviceId set");
             request.AddPathResource("{deviceId}", StringUtils.FromString(publicRequest.DeviceId));
             request.ResourcePath = "/devices/{deviceId}/methods";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeviceMethod())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("deviceMethod");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDeviceMethod())
+                    {
+                        context.Writer.WritePropertyName("deviceMethod");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = DeviceMethodMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DeviceMethod, context);
+                        var marshaller = DeviceMethodMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DeviceMethod, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDeviceMethodParameters())
+                    {
+                        context.Writer.WritePropertyName("deviceMethodParameters");
+                        context.Writer.Write(publicRequest.DeviceMethodParameters);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDeviceMethodParameters())
-                {
-                    context.Writer.WritePropertyName("deviceMethodParameters");
-                    context.Writer.Write(publicRequest.DeviceMethodParameters);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

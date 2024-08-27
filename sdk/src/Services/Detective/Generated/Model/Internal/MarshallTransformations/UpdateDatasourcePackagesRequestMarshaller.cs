@@ -61,32 +61,35 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/graph/datasources/update";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDatasourcePackages())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DatasourcePackages");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDatasourcePackagesListValue in publicRequest.DatasourcePackages)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDatasourcePackages())
                     {
-                            context.Writer.Write(publicRequestDatasourcePackagesListValue);
+                        context.Writer.WritePropertyName("DatasourcePackages");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDatasourcePackagesListValue in publicRequest.DatasourcePackages)
+                        {
+                                context.Writer.Write(publicRequestDatasourcePackagesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetGraphArn())
+                    {
+                        context.Writer.WritePropertyName("GraphArn");
+                        context.Writer.Write(publicRequest.GraphArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetGraphArn())
-                {
-                    context.Writer.WritePropertyName("GraphArn");
-                    context.Writer.Write(publicRequest.GraphArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

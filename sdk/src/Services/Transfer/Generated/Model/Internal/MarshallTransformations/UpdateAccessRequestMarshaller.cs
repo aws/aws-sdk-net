@@ -63,78 +63,81 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetExternalId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ExternalId");
-                    context.Writer.Write(publicRequest.ExternalId);
-                }
-
-                if(publicRequest.IsSetHomeDirectory())
-                {
-                    context.Writer.WritePropertyName("HomeDirectory");
-                    context.Writer.Write(publicRequest.HomeDirectory);
-                }
-
-                if(publicRequest.IsSetHomeDirectoryMappings())
-                {
-                    context.Writer.WritePropertyName("HomeDirectoryMappings");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestHomeDirectoryMappingsListValue in publicRequest.HomeDirectoryMappings)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetExternalId())
                     {
+                        context.Writer.WritePropertyName("ExternalId");
+                        context.Writer.Write(publicRequest.ExternalId);
+                    }
+
+                    if(publicRequest.IsSetHomeDirectory())
+                    {
+                        context.Writer.WritePropertyName("HomeDirectory");
+                        context.Writer.Write(publicRequest.HomeDirectory);
+                    }
+
+                    if(publicRequest.IsSetHomeDirectoryMappings())
+                    {
+                        context.Writer.WritePropertyName("HomeDirectoryMappings");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestHomeDirectoryMappingsListValue in publicRequest.HomeDirectoryMappings)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = HomeDirectoryMapEntryMarshaller.Instance;
+                            marshaller.Marshall(publicRequestHomeDirectoryMappingsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetHomeDirectoryType())
+                    {
+                        context.Writer.WritePropertyName("HomeDirectoryType");
+                        context.Writer.Write(publicRequest.HomeDirectoryType);
+                    }
+
+                    if(publicRequest.IsSetPolicy())
+                    {
+                        context.Writer.WritePropertyName("Policy");
+                        context.Writer.Write(publicRequest.Policy);
+                    }
+
+                    if(publicRequest.IsSetPosixProfile())
+                    {
+                        context.Writer.WritePropertyName("PosixProfile");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = HomeDirectoryMapEntryMarshaller.Instance;
-                        marshaller.Marshall(publicRequestHomeDirectoryMappingsListValue, context);
+                        var marshaller = PosixProfileMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.PosixProfile, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetRole())
+                    {
+                        context.Writer.WritePropertyName("Role");
+                        context.Writer.Write(publicRequest.Role);
+                    }
+
+                    if(publicRequest.IsSetServerId())
+                    {
+                        context.Writer.WritePropertyName("ServerId");
+                        context.Writer.Write(publicRequest.ServerId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetHomeDirectoryType())
-                {
-                    context.Writer.WritePropertyName("HomeDirectoryType");
-                    context.Writer.Write(publicRequest.HomeDirectoryType);
-                }
-
-                if(publicRequest.IsSetPolicy())
-                {
-                    context.Writer.WritePropertyName("Policy");
-                    context.Writer.Write(publicRequest.Policy);
-                }
-
-                if(publicRequest.IsSetPosixProfile())
-                {
-                    context.Writer.WritePropertyName("PosixProfile");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PosixProfileMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PosixProfile, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRole())
-                {
-                    context.Writer.WritePropertyName("Role");
-                    context.Writer.Write(publicRequest.Role);
-                }
-
-                if(publicRequest.IsSetServerId())
-                {
-                    context.Writer.WritePropertyName("ServerId");
-                    context.Writer.Write(publicRequest.ServerId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

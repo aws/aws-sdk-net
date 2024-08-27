@@ -64,60 +64,63 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 throw new AmazonLambdaException("Request object does not have required field LayerName set");
             request.AddPathResource("{LayerName}", StringUtils.FromString(publicRequest.LayerName));
             request.ResourcePath = "/2018-10-31/layers/{LayerName}/versions";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCompatibleArchitectures())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CompatibleArchitectures");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCompatibleArchitecturesListValue in publicRequest.CompatibleArchitectures)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCompatibleArchitectures())
                     {
-                            context.Writer.Write(publicRequestCompatibleArchitecturesListValue);
+                        context.Writer.WritePropertyName("CompatibleArchitectures");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCompatibleArchitecturesListValue in publicRequest.CompatibleArchitectures)
+                        {
+                                context.Writer.Write(publicRequestCompatibleArchitecturesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetCompatibleRuntimes())
-                {
-                    context.Writer.WritePropertyName("CompatibleRuntimes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCompatibleRuntimesListValue in publicRequest.CompatibleRuntimes)
+                    if(publicRequest.IsSetCompatibleRuntimes())
                     {
-                            context.Writer.Write(publicRequestCompatibleRuntimesListValue);
+                        context.Writer.WritePropertyName("CompatibleRuntimes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCompatibleRuntimesListValue in publicRequest.CompatibleRuntimes)
+                        {
+                                context.Writer.Write(publicRequestCompatibleRuntimesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetContent())
+                    {
+                        context.Writer.WritePropertyName("Content");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LayerVersionContentInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Content, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetLicenseInfo())
+                    {
+                        context.Writer.WritePropertyName("LicenseInfo");
+                        context.Writer.Write(publicRequest.LicenseInfo);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetContent())
-                {
-                    context.Writer.WritePropertyName("Content");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LayerVersionContentInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Content, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetLicenseInfo())
-                {
-                    context.Writer.WritePropertyName("LicenseInfo");
-                    context.Writer.Write(publicRequest.LicenseInfo);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

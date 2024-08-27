@@ -44,9 +44,9 @@ namespace Amazon.EC2.Model
         /// The date and time when the attached EBS status check failed.
         /// </para>
         /// </summary>
-        public DateTime ImpairedSince
+        public DateTime? ImpairedSince
         {
-            get { return this._impairedSince.GetValueOrDefault(); }
+            get { return this._impairedSince; }
             set { this._impairedSince = value; }
         }
 

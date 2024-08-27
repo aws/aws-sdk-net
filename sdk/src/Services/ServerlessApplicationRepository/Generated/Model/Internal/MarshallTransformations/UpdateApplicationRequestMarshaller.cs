@@ -64,56 +64,59 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
                 throw new AmazonServerlessApplicationRepositoryException("Request object does not have required field ApplicationId set");
             request.AddPathResource("{applicationId}", StringUtils.FromString(publicRequest.ApplicationId));
             request.ResourcePath = "/applications/{applicationId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAuthor())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("author");
-                    context.Writer.Write(publicRequest.Author);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetHomePageUrl())
-                {
-                    context.Writer.WritePropertyName("homePageUrl");
-                    context.Writer.Write(publicRequest.HomePageUrl);
-                }
-
-                if(publicRequest.IsSetLabels())
-                {
-                    context.Writer.WritePropertyName("labels");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLabelsListValue in publicRequest.Labels)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAuthor())
                     {
-                            context.Writer.Write(publicRequestLabelsListValue);
+                        context.Writer.WritePropertyName("author");
+                        context.Writer.Write(publicRequest.Author);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetHomePageUrl())
+                    {
+                        context.Writer.WritePropertyName("homePageUrl");
+                        context.Writer.Write(publicRequest.HomePageUrl);
+                    }
+
+                    if(publicRequest.IsSetLabels())
+                    {
+                        context.Writer.WritePropertyName("labels");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLabelsListValue in publicRequest.Labels)
+                        {
+                                context.Writer.Write(publicRequestLabelsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetReadmeBody())
+                    {
+                        context.Writer.WritePropertyName("readmeBody");
+                        context.Writer.Write(publicRequest.ReadmeBody);
+                    }
+
+                    if(publicRequest.IsSetReadmeUrl())
+                    {
+                        context.Writer.WritePropertyName("readmeUrl");
+                        context.Writer.Write(publicRequest.ReadmeUrl);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetReadmeBody())
-                {
-                    context.Writer.WritePropertyName("readmeBody");
-                    context.Writer.Write(publicRequest.ReadmeBody);
-                }
-
-                if(publicRequest.IsSetReadmeUrl())
-                {
-                    context.Writer.WritePropertyName("readmeUrl");
-                    context.Writer.Write(publicRequest.ReadmeUrl);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

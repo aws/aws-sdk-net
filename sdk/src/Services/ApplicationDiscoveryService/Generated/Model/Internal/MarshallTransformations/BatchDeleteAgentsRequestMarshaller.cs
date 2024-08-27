@@ -63,31 +63,34 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeleteAgents())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("deleteAgents");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDeleteAgentsListValue in publicRequest.DeleteAgents)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDeleteAgents())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("deleteAgents");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDeleteAgentsListValue in publicRequest.DeleteAgents)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = DeleteAgentMarshaller.Instance;
-                        marshaller.Marshall(publicRequestDeleteAgentsListValue, context);
+                            var marshaller = DeleteAgentMarshaller.Instance;
+                            marshaller.Marshall(publicRequestDeleteAgentsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

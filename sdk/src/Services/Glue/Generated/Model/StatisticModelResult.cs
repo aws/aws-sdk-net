@@ -47,9 +47,9 @@ namespace Amazon.Glue.Model
         /// The actual value.
         /// </para>
         /// </summary>
-        public double ActualValue
+        public double? ActualValue
         {
-            get { return this._actualValue.GetValueOrDefault(); }
+            get { return this._actualValue; }
             set { this._actualValue = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.Glue.Model
         /// The date.
         /// </para>
         /// </summary>
-        public DateTime Date
+        public DateTime? Date
         {
-            get { return this._date.GetValueOrDefault(); }
+            get { return this._date; }
             set { this._date = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.Glue.Model
         /// The lower bound.
         /// </para>
         /// </summary>
-        public double LowerBound
+        public double? LowerBound
         {
-            get { return this._lowerBound.GetValueOrDefault(); }
+            get { return this._lowerBound; }
             set { this._lowerBound = value; }
         }
 
@@ -119,9 +119,9 @@ namespace Amazon.Glue.Model
         /// The predicted value.
         /// </para>
         /// </summary>
-        public double PredictedValue
+        public double? PredictedValue
         {
-            get { return this._predictedValue.GetValueOrDefault(); }
+            get { return this._predictedValue; }
             set { this._predictedValue = value; }
         }
 
@@ -137,9 +137,9 @@ namespace Amazon.Glue.Model
         /// The upper bound.
         /// </para>
         /// </summary>
-        public double UpperBound
+        public double? UpperBound
         {
-            get { return this._upperBound.GetValueOrDefault(); }
+            get { return this._upperBound; }
             set { this._upperBound = value; }
         }
 

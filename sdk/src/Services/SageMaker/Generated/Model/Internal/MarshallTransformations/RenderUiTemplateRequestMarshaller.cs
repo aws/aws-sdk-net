@@ -63,49 +63,52 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetHumanTaskUiArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("HumanTaskUiArn");
-                    context.Writer.Write(publicRequest.HumanTaskUiArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetHumanTaskUiArn())
+                    {
+                        context.Writer.WritePropertyName("HumanTaskUiArn");
+                        context.Writer.Write(publicRequest.HumanTaskUiArn);
+                    }
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("RoleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    if(publicRequest.IsSetTask())
+                    {
+                        context.Writer.WritePropertyName("Task");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RenderableTaskMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Task, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetUiTemplate())
+                    {
+                        context.Writer.WritePropertyName("UiTemplate");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = UiTemplateMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.UiTemplate, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("RoleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetTask())
-                {
-                    context.Writer.WritePropertyName("Task");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RenderableTaskMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Task, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetUiTemplate())
-                {
-                    context.Writer.WritePropertyName("UiTemplate");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UiTemplateMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.UiTemplate, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

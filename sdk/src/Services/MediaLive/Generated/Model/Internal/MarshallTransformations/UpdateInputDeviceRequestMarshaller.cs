@@ -64,49 +64,52 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 throw new AmazonMediaLiveException("Request object does not have required field InputDeviceId set");
             request.AddPathResource("{inputDeviceId}", StringUtils.FromString(publicRequest.InputDeviceId));
             request.ResourcePath = "/prod/inputDevices/{inputDeviceId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAvailabilityZone())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("availabilityZone");
-                    context.Writer.Write(publicRequest.AvailabilityZone);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAvailabilityZone())
+                    {
+                        context.Writer.WritePropertyName("availabilityZone");
+                        context.Writer.Write(publicRequest.AvailabilityZone);
+                    }
+
+                    if(publicRequest.IsSetHdDeviceSettings())
+                    {
+                        context.Writer.WritePropertyName("hdDeviceSettings");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = InputDeviceConfigurableSettingsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.HdDeviceSettings, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetUhdDeviceSettings())
+                    {
+                        context.Writer.WritePropertyName("uhdDeviceSettings");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = InputDeviceConfigurableSettingsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.UhdDeviceSettings, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetHdDeviceSettings())
-                {
-                    context.Writer.WritePropertyName("hdDeviceSettings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = InputDeviceConfigurableSettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.HdDeviceSettings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetUhdDeviceSettings())
-                {
-                    context.Writer.WritePropertyName("uhdDeviceSettings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = InputDeviceConfigurableSettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.UhdDeviceSettings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

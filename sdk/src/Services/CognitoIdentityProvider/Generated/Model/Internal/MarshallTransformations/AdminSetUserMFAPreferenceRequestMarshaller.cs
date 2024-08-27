@@ -63,49 +63,52 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetSMSMfaSettings())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("SMSMfaSettings");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetSMSMfaSettings())
+                    {
+                        context.Writer.WritePropertyName("SMSMfaSettings");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = SMSMfaSettingsTypeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SMSMfaSettings, context);
+                        var marshaller = SMSMfaSettingsTypeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SMSMfaSettings, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSoftwareTokenMfaSettings())
+                    {
+                        context.Writer.WritePropertyName("SoftwareTokenMfaSettings");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SoftwareTokenMfaSettingsTypeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SoftwareTokenMfaSettings, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetUsername())
+                    {
+                        context.Writer.WritePropertyName("Username");
+                        context.Writer.Write(publicRequest.Username);
+                    }
+
+                    if(publicRequest.IsSetUserPoolId())
+                    {
+                        context.Writer.WritePropertyName("UserPoolId");
+                        context.Writer.Write(publicRequest.UserPoolId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSoftwareTokenMfaSettings())
-                {
-                    context.Writer.WritePropertyName("SoftwareTokenMfaSettings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SoftwareTokenMfaSettingsTypeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SoftwareTokenMfaSettings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetUsername())
-                {
-                    context.Writer.WritePropertyName("Username");
-                    context.Writer.Write(publicRequest.Username);
-                }
-
-                if(publicRequest.IsSetUserPoolId())
-                {
-                    context.Writer.WritePropertyName("UserPoolId");
-                    context.Writer.Write(publicRequest.UserPoolId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

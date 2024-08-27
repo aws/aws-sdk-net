@@ -63,39 +63,42 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAsn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("asn");
-                    context.Writer.Write(publicRequest.Asn.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAsn())
+                    {
+                        context.Writer.WritePropertyName("asn");
+                        context.Writer.Write(publicRequest.Asn.Value);
+                    }
+
+                    if(publicRequest.IsSetBgpPeerId())
+                    {
+                        context.Writer.WritePropertyName("bgpPeerId");
+                        context.Writer.Write(publicRequest.BgpPeerId);
+                    }
+
+                    if(publicRequest.IsSetCustomerAddress())
+                    {
+                        context.Writer.WritePropertyName("customerAddress");
+                        context.Writer.Write(publicRequest.CustomerAddress);
+                    }
+
+                    if(publicRequest.IsSetVirtualInterfaceId())
+                    {
+                        context.Writer.WritePropertyName("virtualInterfaceId");
+                        context.Writer.Write(publicRequest.VirtualInterfaceId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetBgpPeerId())
-                {
-                    context.Writer.WritePropertyName("bgpPeerId");
-                    context.Writer.Write(publicRequest.BgpPeerId);
-                }
-
-                if(publicRequest.IsSetCustomerAddress())
-                {
-                    context.Writer.WritePropertyName("customerAddress");
-                    context.Writer.Write(publicRequest.CustomerAddress);
-                }
-
-                if(publicRequest.IsSetVirtualInterfaceId())
-                {
-                    context.Writer.WritePropertyName("virtualInterfaceId");
-                    context.Writer.Write(publicRequest.VirtualInterfaceId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,43 +63,46 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDomainName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DomainName");
-                    context.Writer.Write(publicRequest.DomainName);
-                }
-
-                if(publicRequest.IsSetFIAuthKey())
-                {
-                    context.Writer.WritePropertyName("FIAuthKey");
-                    context.Writer.Write(publicRequest.FIAuthKey);
-                }
-
-                if(publicRequest.IsSetNameservers())
-                {
-                    context.Writer.WritePropertyName("Nameservers");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestNameserversListValue in publicRequest.Nameservers)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDomainName())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = NameserverMarshaller.Instance;
-                        marshaller.Marshall(publicRequestNameserversListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("DomainName");
+                        context.Writer.Write(publicRequest.DomainName);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetFIAuthKey())
+                    {
+                        context.Writer.WritePropertyName("FIAuthKey");
+                        context.Writer.Write(publicRequest.FIAuthKey);
+                    }
+
+                    if(publicRequest.IsSetNameservers())
+                    {
+                        context.Writer.WritePropertyName("Nameservers");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestNameserversListValue in publicRequest.Nameservers)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = NameserverMarshaller.Instance;
+                            marshaller.Marshall(publicRequestNameserversListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

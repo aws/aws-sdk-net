@@ -51,13 +51,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRecordedAfter())
             {
                 context.Writer.WritePropertyName("RecordedAfter");
-                context.Writer.Write(requestObject.RecordedAfter);
+                context.Writer.Write(requestObject.RecordedAfter.Value);
             }
 
             if(requestObject.IsSetRecordedBefore())
             {
                 context.Writer.WritePropertyName("RecordedBefore");
-                context.Writer.Write(requestObject.RecordedBefore);
+                context.Writer.Write(requestObject.RecordedBefore.Value);
             }
 
         }

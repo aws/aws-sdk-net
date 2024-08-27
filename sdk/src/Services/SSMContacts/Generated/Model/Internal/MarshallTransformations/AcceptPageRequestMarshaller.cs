@@ -63,51 +63,54 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAcceptCode())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AcceptCode");
-                    context.Writer.Write(publicRequest.AcceptCode);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAcceptCode())
+                    {
+                        context.Writer.WritePropertyName("AcceptCode");
+                        context.Writer.Write(publicRequest.AcceptCode);
+                    }
+
+                    if(publicRequest.IsSetAcceptCodeValidation())
+                    {
+                        context.Writer.WritePropertyName("AcceptCodeValidation");
+                        context.Writer.Write(publicRequest.AcceptCodeValidation);
+                    }
+
+                    if(publicRequest.IsSetAcceptType())
+                    {
+                        context.Writer.WritePropertyName("AcceptType");
+                        context.Writer.Write(publicRequest.AcceptType);
+                    }
+
+                    if(publicRequest.IsSetContactChannelId())
+                    {
+                        context.Writer.WritePropertyName("ContactChannelId");
+                        context.Writer.Write(publicRequest.ContactChannelId);
+                    }
+
+                    if(publicRequest.IsSetNote())
+                    {
+                        context.Writer.WritePropertyName("Note");
+                        context.Writer.Write(publicRequest.Note);
+                    }
+
+                    if(publicRequest.IsSetPageId())
+                    {
+                        context.Writer.WritePropertyName("PageId");
+                        context.Writer.Write(publicRequest.PageId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetAcceptCodeValidation())
-                {
-                    context.Writer.WritePropertyName("AcceptCodeValidation");
-                    context.Writer.Write(publicRequest.AcceptCodeValidation);
-                }
-
-                if(publicRequest.IsSetAcceptType())
-                {
-                    context.Writer.WritePropertyName("AcceptType");
-                    context.Writer.Write(publicRequest.AcceptType);
-                }
-
-                if(publicRequest.IsSetContactChannelId())
-                {
-                    context.Writer.WritePropertyName("ContactChannelId");
-                    context.Writer.Write(publicRequest.ContactChannelId);
-                }
-
-                if(publicRequest.IsSetNote())
-                {
-                    context.Writer.WritePropertyName("Note");
-                    context.Writer.Write(publicRequest.Note);
-                }
-
-                if(publicRequest.IsSetPageId())
-                {
-                    context.Writer.WritePropertyName("PageId");
-                    context.Writer.Write(publicRequest.PageId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

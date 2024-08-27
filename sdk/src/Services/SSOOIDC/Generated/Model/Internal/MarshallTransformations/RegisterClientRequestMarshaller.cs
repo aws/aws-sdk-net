@@ -61,72 +61,75 @@ namespace Amazon.SSOOIDC.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/client/register";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientName");
-                    context.Writer.Write(publicRequest.ClientName);
-                }
-
-                if(publicRequest.IsSetClientType())
-                {
-                    context.Writer.WritePropertyName("clientType");
-                    context.Writer.Write(publicRequest.ClientType);
-                }
-
-                if(publicRequest.IsSetEntitledApplicationArn())
-                {
-                    context.Writer.WritePropertyName("entitledApplicationArn");
-                    context.Writer.Write(publicRequest.EntitledApplicationArn);
-                }
-
-                if(publicRequest.IsSetGrantTypes())
-                {
-                    context.Writer.WritePropertyName("grantTypes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestGrantTypesListValue in publicRequest.GrantTypes)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientName())
                     {
-                            context.Writer.Write(publicRequestGrantTypesListValue);
+                        context.Writer.WritePropertyName("clientName");
+                        context.Writer.Write(publicRequest.ClientName);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetIssuerUrl())
-                {
-                    context.Writer.WritePropertyName("issuerUrl");
-                    context.Writer.Write(publicRequest.IssuerUrl);
-                }
-
-                if(publicRequest.IsSetRedirectUris())
-                {
-                    context.Writer.WritePropertyName("redirectUris");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRedirectUrisListValue in publicRequest.RedirectUris)
+                    if(publicRequest.IsSetClientType())
                     {
-                            context.Writer.Write(publicRequestRedirectUrisListValue);
+                        context.Writer.WritePropertyName("clientType");
+                        context.Writer.Write(publicRequest.ClientType);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetScopes())
-                {
-                    context.Writer.WritePropertyName("scopes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestScopesListValue in publicRequest.Scopes)
+                    if(publicRequest.IsSetEntitledApplicationArn())
                     {
-                            context.Writer.Write(publicRequestScopesListValue);
+                        context.Writer.WritePropertyName("entitledApplicationArn");
+                        context.Writer.Write(publicRequest.EntitledApplicationArn);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetGrantTypes())
+                    {
+                        context.Writer.WritePropertyName("grantTypes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestGrantTypesListValue in publicRequest.GrantTypes)
+                        {
+                                context.Writer.Write(publicRequestGrantTypesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetIssuerUrl())
+                    {
+                        context.Writer.WritePropertyName("issuerUrl");
+                        context.Writer.Write(publicRequest.IssuerUrl);
+                    }
+
+                    if(publicRequest.IsSetRedirectUris())
+                    {
+                        context.Writer.WritePropertyName("redirectUris");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRedirectUrisListValue in publicRequest.RedirectUris)
+                        {
+                                context.Writer.Write(publicRequestRedirectUrisListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetScopes())
+                    {
+                        context.Writer.WritePropertyName("scopes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestScopesListValue in publicRequest.Scopes)
+                        {
+                                context.Writer.Write(publicRequestScopesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,90 +63,93 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetClusterIdentifier())
-                {
-                    context.Writer.WritePropertyName("ClusterIdentifier");
-                    context.Writer.Write(publicRequest.ClusterIdentifier);
-                }
-
-                if(publicRequest.IsSetDatabase())
-                {
-                    context.Writer.WritePropertyName("Database");
-                    context.Writer.Write(publicRequest.Database);
-                }
-
-                if(publicRequest.IsSetDbUser())
-                {
-                    context.Writer.WritePropertyName("DbUser");
-                    context.Writer.Write(publicRequest.DbUser);
-                }
-
-                if(publicRequest.IsSetParameters())
-                {
-                    context.Writer.WritePropertyName("Parameters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestParametersListValue in publicRequest.Parameters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SqlParameterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestParametersListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetClusterIdentifier())
+                    {
+                        context.Writer.WritePropertyName("ClusterIdentifier");
+                        context.Writer.Write(publicRequest.ClusterIdentifier);
+                    }
+
+                    if(publicRequest.IsSetDatabase())
+                    {
+                        context.Writer.WritePropertyName("Database");
+                        context.Writer.Write(publicRequest.Database);
+                    }
+
+                    if(publicRequest.IsSetDbUser())
+                    {
+                        context.Writer.WritePropertyName("DbUser");
+                        context.Writer.Write(publicRequest.DbUser);
+                    }
+
+                    if(publicRequest.IsSetParameters())
+                    {
+                        context.Writer.WritePropertyName("Parameters");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestParametersListValue in publicRequest.Parameters)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = SqlParameterMarshaller.Instance;
+                            marshaller.Marshall(publicRequestParametersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSecretArn())
+                    {
+                        context.Writer.WritePropertyName("SecretArn");
+                        context.Writer.Write(publicRequest.SecretArn);
+                    }
+
+                    if(publicRequest.IsSetSql())
+                    {
+                        context.Writer.WritePropertyName("Sql");
+                        context.Writer.Write(publicRequest.Sql);
+                    }
+
+                    if(publicRequest.IsSetStatementName())
+                    {
+                        context.Writer.WritePropertyName("StatementName");
+                        context.Writer.Write(publicRequest.StatementName);
+                    }
+
+                    if(publicRequest.IsSetWithEvent())
+                    {
+                        context.Writer.WritePropertyName("WithEvent");
+                        context.Writer.Write(publicRequest.WithEvent.Value);
+                    }
+
+                    if(publicRequest.IsSetWorkgroupName())
+                    {
+                        context.Writer.WritePropertyName("WorkgroupName");
+                        context.Writer.Write(publicRequest.WorkgroupName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSecretArn())
-                {
-                    context.Writer.WritePropertyName("SecretArn");
-                    context.Writer.Write(publicRequest.SecretArn);
-                }
-
-                if(publicRequest.IsSetSql())
-                {
-                    context.Writer.WritePropertyName("Sql");
-                    context.Writer.Write(publicRequest.Sql);
-                }
-
-                if(publicRequest.IsSetStatementName())
-                {
-                    context.Writer.WritePropertyName("StatementName");
-                    context.Writer.Write(publicRequest.StatementName);
-                }
-
-                if(publicRequest.IsSetWithEvent())
-                {
-                    context.Writer.WritePropertyName("WithEvent");
-                    context.Writer.Write(publicRequest.WithEvent.Value);
-                }
-
-                if(publicRequest.IsSetWorkgroupName())
-                {
-                    context.Writer.WritePropertyName("WorkgroupName");
-                    context.Writer.Write(publicRequest.WorkgroupName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

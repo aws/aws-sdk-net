@@ -63,61 +63,64 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApplicationName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("applicationName");
-                    context.Writer.Write(publicRequest.ApplicationName);
-                }
-
-                if(publicRequest.IsSetCreateTimeRange())
-                {
-                    context.Writer.WritePropertyName("createTimeRange");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TimeRangeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CreateTimeRange, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDeploymentGroupName())
-                {
-                    context.Writer.WritePropertyName("deploymentGroupName");
-                    context.Writer.Write(publicRequest.DeploymentGroupName);
-                }
-
-                if(publicRequest.IsSetExternalId())
-                {
-                    context.Writer.WritePropertyName("externalId");
-                    context.Writer.Write(publicRequest.ExternalId);
-                }
-
-                if(publicRequest.IsSetIncludeOnlyStatuses())
-                {
-                    context.Writer.WritePropertyName("includeOnlyStatuses");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestIncludeOnlyStatusesListValue in publicRequest.IncludeOnlyStatuses)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApplicationName())
                     {
-                            context.Writer.Write(publicRequestIncludeOnlyStatusesListValue);
+                        context.Writer.WritePropertyName("applicationName");
+                        context.Writer.Write(publicRequest.ApplicationName);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetCreateTimeRange())
+                    {
+                        context.Writer.WritePropertyName("createTimeRange");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TimeRangeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CreateTimeRange, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDeploymentGroupName())
+                    {
+                        context.Writer.WritePropertyName("deploymentGroupName");
+                        context.Writer.Write(publicRequest.DeploymentGroupName);
+                    }
+
+                    if(publicRequest.IsSetExternalId())
+                    {
+                        context.Writer.WritePropertyName("externalId");
+                        context.Writer.Write(publicRequest.ExternalId);
+                    }
+
+                    if(publicRequest.IsSetIncludeOnlyStatuses())
+                    {
+                        context.Writer.WritePropertyName("includeOnlyStatuses");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestIncludeOnlyStatusesListValue in publicRequest.IncludeOnlyStatuses)
+                        {
+                                context.Writer.Write(publicRequestIncludeOnlyStatusesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

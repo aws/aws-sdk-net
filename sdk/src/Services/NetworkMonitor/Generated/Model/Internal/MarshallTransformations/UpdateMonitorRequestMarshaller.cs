@@ -64,21 +64,24 @@ namespace Amazon.NetworkMonitor.Model.Internal.MarshallTransformations
                 throw new AmazonNetworkMonitorException("Request object does not have required field MonitorName set");
             request.AddPathResource("{monitorName}", StringUtils.FromString(publicRequest.MonitorName));
             request.ResourcePath = "/monitors/{monitorName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAggregationPeriod())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("aggregationPeriod");
-                    context.Writer.Write(publicRequest.AggregationPeriod.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAggregationPeriod())
+                    {
+                        context.Writer.WritePropertyName("aggregationPeriod");
+                        context.Writer.Write(publicRequest.AggregationPeriod.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

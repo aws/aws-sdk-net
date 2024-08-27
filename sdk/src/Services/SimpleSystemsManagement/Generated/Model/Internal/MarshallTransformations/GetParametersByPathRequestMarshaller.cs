@@ -63,61 +63,64 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMaxResults())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetParameterFilters())
-                {
-                    context.Writer.WritePropertyName("ParameterFilters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestParameterFiltersListValue in publicRequest.ParameterFilters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMaxResults())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ParameterStringFilterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestParameterFiltersListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetParameterFilters())
+                    {
+                        context.Writer.WritePropertyName("ParameterFilters");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestParameterFiltersListValue in publicRequest.ParameterFilters)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ParameterStringFilterMarshaller.Instance;
+                            marshaller.Marshall(publicRequestParameterFiltersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetPath())
+                    {
+                        context.Writer.WritePropertyName("Path");
+                        context.Writer.Write(publicRequest.Path);
+                    }
+
+                    if(publicRequest.IsSetRecursive())
+                    {
+                        context.Writer.WritePropertyName("Recursive");
+                        context.Writer.Write(publicRequest.Recursive.Value);
+                    }
+
+                    if(publicRequest.IsSetWithDecryption())
+                    {
+                        context.Writer.WritePropertyName("WithDecryption");
+                        context.Writer.Write(publicRequest.WithDecryption.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPath())
-                {
-                    context.Writer.WritePropertyName("Path");
-                    context.Writer.Write(publicRequest.Path);
-                }
-
-                if(publicRequest.IsSetRecursive())
-                {
-                    context.Writer.WritePropertyName("Recursive");
-                    context.Writer.Write(publicRequest.Recursive.Value);
-                }
-
-                if(publicRequest.IsSetWithDecryption())
-                {
-                    context.Writer.WritePropertyName("WithDecryption");
-                    context.Writer.Write(publicRequest.WithDecryption.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

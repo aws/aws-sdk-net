@@ -64,33 +64,36 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                 throw new AmazonCleanRoomsMLException("Request object does not have required field ConfiguredAudienceModelArn set");
             request.AddPathResource("{configuredAudienceModelArn}", StringUtils.FromString(publicRequest.ConfiguredAudienceModelArn));
             request.ResourcePath = "/configured-audience-model/{configuredAudienceModelArn}/policy";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConfiguredAudienceModelPolicy())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("configuredAudienceModelPolicy");
-                    context.Writer.Write(publicRequest.ConfiguredAudienceModelPolicy);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConfiguredAudienceModelPolicy())
+                    {
+                        context.Writer.WritePropertyName("configuredAudienceModelPolicy");
+                        context.Writer.Write(publicRequest.ConfiguredAudienceModelPolicy);
+                    }
+
+                    if(publicRequest.IsSetPolicyExistenceCondition())
+                    {
+                        context.Writer.WritePropertyName("policyExistenceCondition");
+                        context.Writer.Write(publicRequest.PolicyExistenceCondition);
+                    }
+
+                    if(publicRequest.IsSetPreviousPolicyHash())
+                    {
+                        context.Writer.WritePropertyName("previousPolicyHash");
+                        context.Writer.Write(publicRequest.PreviousPolicyHash);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPolicyExistenceCondition())
-                {
-                    context.Writer.WritePropertyName("policyExistenceCondition");
-                    context.Writer.Write(publicRequest.PolicyExistenceCondition);
-                }
-
-                if(publicRequest.IsSetPreviousPolicyHash())
-                {
-                    context.Writer.WritePropertyName("previousPolicyHash");
-                    context.Writer.Write(publicRequest.PreviousPolicyHash);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

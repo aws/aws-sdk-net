@@ -63,38 +63,41 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetComponentName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ComponentName");
-                    context.Writer.Write(publicRequest.ComponentName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetComponentName())
+                    {
+                        context.Writer.WritePropertyName("ComponentName");
+                        context.Writer.Write(publicRequest.ComponentName);
+                    }
+
+                    if(publicRequest.IsSetResourceGroupName())
+                    {
+                        context.Writer.WritePropertyName("ResourceGroupName");
+                        context.Writer.Write(publicRequest.ResourceGroupName);
+                    }
+
+                    if(publicRequest.IsSetWorkloadConfiguration())
+                    {
+                        context.Writer.WritePropertyName("WorkloadConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = WorkloadConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.WorkloadConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetResourceGroupName())
-                {
-                    context.Writer.WritePropertyName("ResourceGroupName");
-                    context.Writer.Write(publicRequest.ResourceGroupName);
-                }
-
-                if(publicRequest.IsSetWorkloadConfiguration())
-                {
-                    context.Writer.WritePropertyName("WorkloadConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = WorkloadConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.WorkloadConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

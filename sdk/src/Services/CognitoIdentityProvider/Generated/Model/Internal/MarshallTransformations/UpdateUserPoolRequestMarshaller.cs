@@ -63,192 +63,195 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccountRecoverySetting())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AccountRecoverySetting");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AccountRecoverySettingTypeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AccountRecoverySetting, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetAdminCreateUserConfig())
-                {
-                    context.Writer.WritePropertyName("AdminCreateUserConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AdminCreateUserConfigTypeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AdminCreateUserConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetAutoVerifiedAttributes())
-                {
-                    context.Writer.WritePropertyName("AutoVerifiedAttributes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAutoVerifiedAttributesListValue in publicRequest.AutoVerifiedAttributes)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccountRecoverySetting())
                     {
-                            context.Writer.Write(publicRequestAutoVerifiedAttributesListValue);
+                        context.Writer.WritePropertyName("AccountRecoverySetting");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AccountRecoverySettingTypeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AccountRecoverySetting, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDeletionProtection())
-                {
-                    context.Writer.WritePropertyName("DeletionProtection");
-                    context.Writer.Write(publicRequest.DeletionProtection);
-                }
-
-                if(publicRequest.IsSetDeviceConfiguration())
-                {
-                    context.Writer.WritePropertyName("DeviceConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DeviceConfigurationTypeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DeviceConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEmailConfiguration())
-                {
-                    context.Writer.WritePropertyName("EmailConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EmailConfigurationTypeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EmailConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEmailVerificationMessage())
-                {
-                    context.Writer.WritePropertyName("EmailVerificationMessage");
-                    context.Writer.Write(publicRequest.EmailVerificationMessage);
-                }
-
-                if(publicRequest.IsSetEmailVerificationSubject())
-                {
-                    context.Writer.WritePropertyName("EmailVerificationSubject");
-                    context.Writer.Write(publicRequest.EmailVerificationSubject);
-                }
-
-                if(publicRequest.IsSetLambdaConfig())
-                {
-                    context.Writer.WritePropertyName("LambdaConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LambdaConfigTypeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LambdaConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMfaConfiguration())
-                {
-                    context.Writer.WritePropertyName("MfaConfiguration");
-                    context.Writer.Write(publicRequest.MfaConfiguration);
-                }
-
-                if(publicRequest.IsSetPolicies())
-                {
-                    context.Writer.WritePropertyName("Policies");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UserPoolPolicyTypeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Policies, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSmsAuthenticationMessage())
-                {
-                    context.Writer.WritePropertyName("SmsAuthenticationMessage");
-                    context.Writer.Write(publicRequest.SmsAuthenticationMessage);
-                }
-
-                if(publicRequest.IsSetSmsConfiguration())
-                {
-                    context.Writer.WritePropertyName("SmsConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SmsConfigurationTypeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SmsConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSmsVerificationMessage())
-                {
-                    context.Writer.WritePropertyName("SmsVerificationMessage");
-                    context.Writer.Write(publicRequest.SmsVerificationMessage);
-                }
-
-                if(publicRequest.IsSetUserAttributeUpdateSettings())
-                {
-                    context.Writer.WritePropertyName("UserAttributeUpdateSettings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UserAttributeUpdateSettingsTypeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.UserAttributeUpdateSettings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetUserPoolAddOns())
-                {
-                    context.Writer.WritePropertyName("UserPoolAddOns");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UserPoolAddOnsTypeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.UserPoolAddOns, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetUserPoolId())
-                {
-                    context.Writer.WritePropertyName("UserPoolId");
-                    context.Writer.Write(publicRequest.UserPoolId);
-                }
-
-                if(publicRequest.IsSetUserPoolTags())
-                {
-                    context.Writer.WritePropertyName("UserPoolTags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestUserPoolTagsKvp in publicRequest.UserPoolTags)
+                    if(publicRequest.IsSetAdminCreateUserConfig())
                     {
-                        context.Writer.WritePropertyName(publicRequestUserPoolTagsKvp.Key);
-                        var publicRequestUserPoolTagsValue = publicRequestUserPoolTagsKvp.Value;
+                        context.Writer.WritePropertyName("AdminCreateUserConfig");
+                        context.Writer.WriteObjectStart();
 
-                            context.Writer.Write(publicRequestUserPoolTagsValue);
+                        var marshaller = AdminCreateUserConfigTypeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AdminCreateUserConfig, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetAutoVerifiedAttributes())
+                    {
+                        context.Writer.WritePropertyName("AutoVerifiedAttributes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAutoVerifiedAttributesListValue in publicRequest.AutoVerifiedAttributes)
+                        {
+                                context.Writer.Write(publicRequestAutoVerifiedAttributesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetDeletionProtection())
+                    {
+                        context.Writer.WritePropertyName("DeletionProtection");
+                        context.Writer.Write(publicRequest.DeletionProtection);
+                    }
+
+                    if(publicRequest.IsSetDeviceConfiguration())
+                    {
+                        context.Writer.WritePropertyName("DeviceConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DeviceConfigurationTypeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DeviceConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetEmailConfiguration())
+                    {
+                        context.Writer.WritePropertyName("EmailConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EmailConfigurationTypeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EmailConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetEmailVerificationMessage())
+                    {
+                        context.Writer.WritePropertyName("EmailVerificationMessage");
+                        context.Writer.Write(publicRequest.EmailVerificationMessage);
+                    }
+
+                    if(publicRequest.IsSetEmailVerificationSubject())
+                    {
+                        context.Writer.WritePropertyName("EmailVerificationSubject");
+                        context.Writer.Write(publicRequest.EmailVerificationSubject);
+                    }
+
+                    if(publicRequest.IsSetLambdaConfig())
+                    {
+                        context.Writer.WritePropertyName("LambdaConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LambdaConfigTypeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.LambdaConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetMfaConfiguration())
+                    {
+                        context.Writer.WritePropertyName("MfaConfiguration");
+                        context.Writer.Write(publicRequest.MfaConfiguration);
+                    }
+
+                    if(publicRequest.IsSetPolicies())
+                    {
+                        context.Writer.WritePropertyName("Policies");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = UserPoolPolicyTypeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Policies, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSmsAuthenticationMessage())
+                    {
+                        context.Writer.WritePropertyName("SmsAuthenticationMessage");
+                        context.Writer.Write(publicRequest.SmsAuthenticationMessage);
+                    }
+
+                    if(publicRequest.IsSetSmsConfiguration())
+                    {
+                        context.Writer.WritePropertyName("SmsConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SmsConfigurationTypeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SmsConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSmsVerificationMessage())
+                    {
+                        context.Writer.WritePropertyName("SmsVerificationMessage");
+                        context.Writer.Write(publicRequest.SmsVerificationMessage);
+                    }
+
+                    if(publicRequest.IsSetUserAttributeUpdateSettings())
+                    {
+                        context.Writer.WritePropertyName("UserAttributeUpdateSettings");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = UserAttributeUpdateSettingsTypeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.UserAttributeUpdateSettings, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetUserPoolAddOns())
+                    {
+                        context.Writer.WritePropertyName("UserPoolAddOns");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = UserPoolAddOnsTypeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.UserPoolAddOns, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetUserPoolId())
+                    {
+                        context.Writer.WritePropertyName("UserPoolId");
+                        context.Writer.Write(publicRequest.UserPoolId);
+                    }
+
+                    if(publicRequest.IsSetUserPoolTags())
+                    {
+                        context.Writer.WritePropertyName("UserPoolTags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestUserPoolTagsKvp in publicRequest.UserPoolTags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestUserPoolTagsKvp.Key);
+                            var publicRequestUserPoolTagsValue = publicRequestUserPoolTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestUserPoolTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetVerificationMessageTemplate())
+                    {
+                        context.Writer.WritePropertyName("VerificationMessageTemplate");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = VerificationMessageTemplateTypeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.VerificationMessageTemplate, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetVerificationMessageTemplate())
-                {
-                    context.Writer.WritePropertyName("VerificationMessageTemplate");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = VerificationMessageTemplateTypeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.VerificationMessageTemplate, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

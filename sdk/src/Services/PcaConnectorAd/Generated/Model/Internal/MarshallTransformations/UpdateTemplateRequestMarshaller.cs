@@ -64,32 +64,35 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
                 throw new AmazonPcaConnectorAdException("Request object does not have required field TemplateArn set");
             request.AddPathResource("{TemplateArn}", StringUtils.FromString(publicRequest.TemplateArn));
             request.ResourcePath = "/templates/{TemplateArn}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDefinition())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Definition");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDefinition())
+                    {
+                        context.Writer.WritePropertyName("Definition");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = TemplateDefinitionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Definition, context);
+                        var marshaller = TemplateDefinitionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Definition, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetReenrollAllCertificateHolders())
+                    {
+                        context.Writer.WritePropertyName("ReenrollAllCertificateHolders");
+                        context.Writer.Write(publicRequest.ReenrollAllCertificateHolders.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetReenrollAllCertificateHolders())
-                {
-                    context.Writer.WritePropertyName("ReenrollAllCertificateHolders");
-                    context.Writer.Write(publicRequest.ReenrollAllCertificateHolders.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

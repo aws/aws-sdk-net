@@ -63,75 +63,78 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDataType())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DataType");
-                    context.Writer.Write(publicRequest.DataType);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDataType())
+                    {
+                        context.Writer.WritePropertyName("DataType");
+                        context.Writer.Write(publicRequest.DataType);
+                    }
+
+                    if(publicRequest.IsSetEndTime())
+                    {
+                        context.Writer.WritePropertyName("EndTime");
+                        context.Writer.Write(publicRequest.EndTime.Value);
+                    }
+
+                    if(publicRequest.IsSetErrorCode())
+                    {
+                        context.Writer.WritePropertyName("ErrorCode");
+                        context.Writer.Write(publicRequest.ErrorCode);
+                    }
+
+                    if(publicRequest.IsSetEventName())
+                    {
+                        context.Writer.WritePropertyName("EventName");
+                        context.Writer.Write(publicRequest.EventName);
+                    }
+
+                    if(publicRequest.IsSetEventSource())
+                    {
+                        context.Writer.WritePropertyName("EventSource");
+                        context.Writer.Write(publicRequest.EventSource);
+                    }
+
+                    if(publicRequest.IsSetInsightType())
+                    {
+                        context.Writer.WritePropertyName("InsightType");
+                        context.Writer.Write(publicRequest.InsightType);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetPeriod())
+                    {
+                        context.Writer.WritePropertyName("Period");
+                        context.Writer.Write(publicRequest.Period.Value);
+                    }
+
+                    if(publicRequest.IsSetStartTime())
+                    {
+                        context.Writer.WritePropertyName("StartTime");
+                        context.Writer.Write(publicRequest.StartTime.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEndTime())
-                {
-                    context.Writer.WritePropertyName("EndTime");
-                    context.Writer.Write(publicRequest.EndTime.Value);
-                }
-
-                if(publicRequest.IsSetErrorCode())
-                {
-                    context.Writer.WritePropertyName("ErrorCode");
-                    context.Writer.Write(publicRequest.ErrorCode);
-                }
-
-                if(publicRequest.IsSetEventName())
-                {
-                    context.Writer.WritePropertyName("EventName");
-                    context.Writer.Write(publicRequest.EventName);
-                }
-
-                if(publicRequest.IsSetEventSource())
-                {
-                    context.Writer.WritePropertyName("EventSource");
-                    context.Writer.Write(publicRequest.EventSource);
-                }
-
-                if(publicRequest.IsSetInsightType())
-                {
-                    context.Writer.WritePropertyName("InsightType");
-                    context.Writer.Write(publicRequest.InsightType);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetPeriod())
-                {
-                    context.Writer.WritePropertyName("Period");
-                    context.Writer.Write(publicRequest.Period.Value);
-                }
-
-                if(publicRequest.IsSetStartTime())
-                {
-                    context.Writer.WritePropertyName("StartTime");
-                    context.Writer.Write(publicRequest.StartTime.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

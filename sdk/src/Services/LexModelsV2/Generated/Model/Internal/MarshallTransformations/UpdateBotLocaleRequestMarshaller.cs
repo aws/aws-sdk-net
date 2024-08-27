@@ -70,56 +70,59 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 throw new AmazonLexModelsV2Exception("Request object does not have required field LocaleId set");
             request.AddPathResource("{localeId}", StringUtils.FromString(publicRequest.LocaleId));
             request.ResourcePath = "/bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetGenerativeAISettings())
-                {
-                    context.Writer.WritePropertyName("generativeAISettings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = GenerativeAISettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.GenerativeAISettings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetNluIntentConfidenceThreshold())
-                {
-                    context.Writer.WritePropertyName("nluIntentConfidenceThreshold");
-                    if(StringUtils.IsSpecialDoubleValue(publicRequest.NluIntentConfidenceThreshold.Value))
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
-                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.NluIntentConfidenceThreshold.Value));
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    else
+
+                    if(publicRequest.IsSetGenerativeAISettings())
                     {
-                        context.Writer.Write(publicRequest.NluIntentConfidenceThreshold.Value);
+                        context.Writer.WritePropertyName("generativeAISettings");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = GenerativeAISettingsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.GenerativeAISettings, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
+
+                    if(publicRequest.IsSetNluIntentConfidenceThreshold())
+                    {
+                        context.Writer.WritePropertyName("nluIntentConfidenceThreshold");
+                        if(StringUtils.IsSpecialDoubleValue(publicRequest.NluIntentConfidenceThreshold.Value))
+                        {
+                            context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.NluIntentConfidenceThreshold.Value));
+                        }
+                        else
+                        {
+                            context.Writer.Write(publicRequest.NluIntentConfidenceThreshold.Value);
+                        }
+                    }
+
+                    if(publicRequest.IsSetVoiceSettings())
+                    {
+                        context.Writer.WritePropertyName("voiceSettings");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = VoiceSettingsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.VoiceSettings, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetVoiceSettings())
-                {
-                    context.Writer.WritePropertyName("voiceSettings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = VoiceSettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.VoiceSettings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

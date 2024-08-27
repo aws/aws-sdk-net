@@ -64,59 +64,62 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
                 throw new AmazonNeptuneGraphException("Request object does not have required field SnapshotIdentifier set");
             request.AddPathResource("{snapshotIdentifier}", StringUtils.FromString(publicRequest.SnapshotIdentifier));
             request.ResourcePath = "/snapshots/{snapshotIdentifier}/restore";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeletionProtection())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("deletionProtection");
-                    context.Writer.Write(publicRequest.DeletionProtection.Value);
-                }
-
-                if(publicRequest.IsSetGraphName())
-                {
-                    context.Writer.WritePropertyName("graphName");
-                    context.Writer.Write(publicRequest.GraphName);
-                }
-
-                if(publicRequest.IsSetProvisionedMemory())
-                {
-                    context.Writer.WritePropertyName("provisionedMemory");
-                    context.Writer.Write(publicRequest.ProvisionedMemory.Value);
-                }
-
-                if(publicRequest.IsSetPublicConnectivity())
-                {
-                    context.Writer.WritePropertyName("publicConnectivity");
-                    context.Writer.Write(publicRequest.PublicConnectivity.Value);
-                }
-
-                if(publicRequest.IsSetReplicaCount())
-                {
-                    context.Writer.WritePropertyName("replicaCount");
-                    context.Writer.Write(publicRequest.ReplicaCount.Value);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDeletionProtection())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("deletionProtection");
+                        context.Writer.Write(publicRequest.DeletionProtection.Value);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetGraphName())
+                    {
+                        context.Writer.WritePropertyName("graphName");
+                        context.Writer.Write(publicRequest.GraphName);
+                    }
+
+                    if(publicRequest.IsSetProvisionedMemory())
+                    {
+                        context.Writer.WritePropertyName("provisionedMemory");
+                        context.Writer.Write(publicRequest.ProvisionedMemory.Value);
+                    }
+
+                    if(publicRequest.IsSetPublicConnectivity())
+                    {
+                        context.Writer.WritePropertyName("publicConnectivity");
+                        context.Writer.Write(publicRequest.PublicConnectivity.Value);
+                    }
+
+                    if(publicRequest.IsSetReplicaCount())
+                    {
+                        context.Writer.WritePropertyName("replicaCount");
+                        context.Writer.Write(publicRequest.ReplicaCount.Value);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

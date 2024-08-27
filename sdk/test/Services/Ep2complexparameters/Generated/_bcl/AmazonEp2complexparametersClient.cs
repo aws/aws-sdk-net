@@ -19,6 +19,9 @@
 
 
 using System;
+using System.Runtime.ExceptionServices;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Net;
 
@@ -29,6 +32,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Endpoints;
 
 #pragma warning disable CS1570
 namespace Amazon.Ep2complexparameters
@@ -41,7 +45,6 @@ namespace Amazon.Ep2complexparameters
     public partial class AmazonEp2complexparametersClient : AmazonServiceClient, IAmazonEp2complexparameters
     {
         private static IServiceMetadata serviceMetadata = new AmazonEp2complexparametersMetadata();
-
         #region Constructors
 
         /// <summary>
@@ -99,6 +102,7 @@ namespace Amazon.Ep2complexparameters
         /// <param name="config">The AmazonEp2complexparametersClient Configuration Object</param>
         public AmazonEp2complexparametersClient(AmazonEp2complexparametersConfig config)
             : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+
         /// <summary>
         /// Constructs AmazonEp2complexparametersClient with AWS Credentials
         /// </summary>
@@ -202,14 +206,13 @@ namespace Amazon.Ep2complexparameters
 
         #region Overrides
 
-        
         /// <summary>
         /// Creates the signer for the service.
         /// </summary>
         protected override AbstractAWSSigner CreateSigner()
         {
             return new AWS4Signer();
-        }
+        }    
 
         /// <summary>
         /// Customize the pipeline
@@ -219,7 +222,7 @@ namespace Amazon.Ep2complexparameters
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonEp2complexparametersEndpointResolver());
-        }
+        }    
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>
@@ -248,6 +251,7 @@ namespace Amazon.Ep2complexparameters
 
         #region  EmptyStaticContextOperation
 
+
         /// <summary>
         /// 
         /// </summary>
@@ -264,43 +268,30 @@ namespace Amazon.Ep2complexparameters
             return Invoke<EmptyStaticContextOperationResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the EmptyStaticContextOperation operation.
+        /// 
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EmptyStaticContextOperation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the EmptyStaticContextOperation operation on AmazonEp2complexparametersClient.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEmptyStaticContextOperation
-        ///         operation.</returns>
+        /// <returns>The response from the EmptyStaticContextOperation service method, as returned by Ep2complexparameters.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ep2-complex-parameters-2022-08-24/EmptyStaticContextOperation">REST API Reference for EmptyStaticContextOperation Operation</seealso>
-        public virtual IAsyncResult BeginEmptyStaticContextOperation(EmptyStaticContextOperationRequest request, AsyncCallback callback, object state)
+        public virtual Task<EmptyStaticContextOperationResponse> EmptyStaticContextOperationAsync(EmptyStaticContextOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
             options.RequestMarshaller = EmptyStaticContextOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EmptyStaticContextOperationResponseUnmarshaller.Instance;
-
-            return BeginInvoke(request, options, callback, state);
-        }
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  EmptyStaticContextOperation operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEmptyStaticContextOperation.</param>
-        /// 
-        /// <returns>Returns a  EmptyStaticContextOperationResult from Ep2complexparameters.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ep2-complex-parameters-2022-08-24/EmptyStaticContextOperation">REST API Reference for EmptyStaticContextOperation Operation</seealso>
-        public virtual EmptyStaticContextOperationResponse EndEmptyStaticContextOperation(IAsyncResult asyncResult)
-        {
-            return EndInvoke<EmptyStaticContextOperationResponse>(asyncResult);
+            
+            return InvokeAsync<EmptyStaticContextOperationResponse>(request, options, cancellationToken);
         }
 
         #endregion
         
         #region  ListOfObjectsOperation
+
 
         /// <summary>
         /// 
@@ -318,43 +309,30 @@ namespace Amazon.Ep2complexparameters
             return Invoke<ListOfObjectsOperationResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListOfObjectsOperation operation.
+        /// 
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOfObjectsOperation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListOfObjectsOperation operation on AmazonEp2complexparametersClient.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListOfObjectsOperation
-        ///         operation.</returns>
+        /// <returns>The response from the ListOfObjectsOperation service method, as returned by Ep2complexparameters.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ep2-complex-parameters-2022-08-24/ListOfObjectsOperation">REST API Reference for ListOfObjectsOperation Operation</seealso>
-        public virtual IAsyncResult BeginListOfObjectsOperation(ListOfObjectsOperationRequest request, AsyncCallback callback, object state)
+        public virtual Task<ListOfObjectsOperationResponse> ListOfObjectsOperationAsync(ListOfObjectsOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
             options.RequestMarshaller = ListOfObjectsOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOfObjectsOperationResponseUnmarshaller.Instance;
-
-            return BeginInvoke(request, options, callback, state);
-        }
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  ListOfObjectsOperation operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListOfObjectsOperation.</param>
-        /// 
-        /// <returns>Returns a  ListOfObjectsOperationResult from Ep2complexparameters.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ep2-complex-parameters-2022-08-24/ListOfObjectsOperation">REST API Reference for ListOfObjectsOperation Operation</seealso>
-        public virtual ListOfObjectsOperationResponse EndListOfObjectsOperation(IAsyncResult asyncResult)
-        {
-            return EndInvoke<ListOfObjectsOperationResponse>(asyncResult);
+            
+            return InvokeAsync<ListOfObjectsOperationResponse>(request, options, cancellationToken);
         }
 
         #endregion
         
         #region  MapOperation
+
 
         /// <summary>
         /// 
@@ -372,43 +350,30 @@ namespace Amazon.Ep2complexparameters
             return Invoke<MapOperationResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the MapOperation operation.
+        /// 
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the MapOperation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the MapOperation operation on AmazonEp2complexparametersClient.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndMapOperation
-        ///         operation.</returns>
+        /// <returns>The response from the MapOperation service method, as returned by Ep2complexparameters.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ep2-complex-parameters-2022-08-24/MapOperation">REST API Reference for MapOperation Operation</seealso>
-        public virtual IAsyncResult BeginMapOperation(MapOperationRequest request, AsyncCallback callback, object state)
+        public virtual Task<MapOperationResponse> MapOperationAsync(MapOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
             options.RequestMarshaller = MapOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MapOperationResponseUnmarshaller.Instance;
-
-            return BeginInvoke(request, options, callback, state);
-        }
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  MapOperation operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginMapOperation.</param>
-        /// 
-        /// <returns>Returns a  MapOperationResult from Ep2complexparameters.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ep2-complex-parameters-2022-08-24/MapOperation">REST API Reference for MapOperation Operation</seealso>
-        public virtual MapOperationResponse EndMapOperation(IAsyncResult asyncResult)
-        {
-            return EndInvoke<MapOperationResponse>(asyncResult);
+            
+            return InvokeAsync<MapOperationResponse>(request, options, cancellationToken);
         }
 
         #endregion
         
         #region  NoBindingsOperation
+
 
         /// <summary>
         /// 
@@ -426,43 +391,30 @@ namespace Amazon.Ep2complexparameters
             return Invoke<NoBindingsOperationResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the NoBindingsOperation operation.
+        /// 
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the NoBindingsOperation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the NoBindingsOperation operation on AmazonEp2complexparametersClient.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndNoBindingsOperation
-        ///         operation.</returns>
+        /// <returns>The response from the NoBindingsOperation service method, as returned by Ep2complexparameters.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ep2-complex-parameters-2022-08-24/NoBindingsOperation">REST API Reference for NoBindingsOperation Operation</seealso>
-        public virtual IAsyncResult BeginNoBindingsOperation(NoBindingsOperationRequest request, AsyncCallback callback, object state)
+        public virtual Task<NoBindingsOperationResponse> NoBindingsOperationAsync(NoBindingsOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
             options.RequestMarshaller = NoBindingsOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NoBindingsOperationResponseUnmarshaller.Instance;
-
-            return BeginInvoke(request, options, callback, state);
-        }
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  NoBindingsOperation operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginNoBindingsOperation.</param>
-        /// 
-        /// <returns>Returns a  NoBindingsOperationResult from Ep2complexparameters.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ep2-complex-parameters-2022-08-24/NoBindingsOperation">REST API Reference for NoBindingsOperation Operation</seealso>
-        public virtual NoBindingsOperationResponse EndNoBindingsOperation(IAsyncResult asyncResult)
-        {
-            return EndInvoke<NoBindingsOperationResponse>(asyncResult);
+            
+            return InvokeAsync<NoBindingsOperationResponse>(request, options, cancellationToken);
         }
 
         #endregion
         
         #region  StaticContextOperation
+
 
         /// <summary>
         /// 
@@ -480,38 +432,24 @@ namespace Amazon.Ep2complexparameters
             return Invoke<StaticContextOperationResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the StaticContextOperation operation.
+        /// 
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StaticContextOperation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the StaticContextOperation operation on AmazonEp2complexparametersClient.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStaticContextOperation
-        ///         operation.</returns>
+        /// <returns>The response from the StaticContextOperation service method, as returned by Ep2complexparameters.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ep2-complex-parameters-2022-08-24/StaticContextOperation">REST API Reference for StaticContextOperation Operation</seealso>
-        public virtual IAsyncResult BeginStaticContextOperation(StaticContextOperationRequest request, AsyncCallback callback, object state)
+        public virtual Task<StaticContextOperationResponse> StaticContextOperationAsync(StaticContextOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
             options.RequestMarshaller = StaticContextOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StaticContextOperationResponseUnmarshaller.Instance;
-
-            return BeginInvoke(request, options, callback, state);
-        }
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  StaticContextOperation operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStaticContextOperation.</param>
-        /// 
-        /// <returns>Returns a  StaticContextOperationResult from Ep2complexparameters.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ep2-complex-parameters-2022-08-24/StaticContextOperation">REST API Reference for StaticContextOperation Operation</seealso>
-        public virtual StaticContextOperationResponse EndStaticContextOperation(IAsyncResult asyncResult)
-        {
-            return EndInvoke<StaticContextOperationResponse>(asyncResult);
+            
+            return InvokeAsync<StaticContextOperationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -525,16 +463,8 @@ namespace Amazon.Ep2complexparameters
         /// <returns>The resolved endpoint for the given request.</returns>
         public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
         {
-            var requestContext = new Amazon.Runtime.Internal.RequestContext(false, CreateSigner())
-            {
-                ClientConfig = Config,
-                OriginalRequest = request,
-                Request = new Amazon.Runtime.Internal.DefaultRequest(request, ServiceMetadata.ServiceId)
-            };
-
-            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
-            var resolver = new AmazonEp2complexparametersEndpointResolver();
-            return resolver.GetEndpoint(executionContext);
+            var parameters = new ServiceOperationEndpointParameters(request);
+            return Config.DetermineServiceOperationEndpoint(parameters);
         }
 
         #endregion

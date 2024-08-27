@@ -61,74 +61,77 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/CreateRecordingConfiguration";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDestinationConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("destinationConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DestinationConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DestinationConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetRecordingReconnectWindowSeconds())
-                {
-                    context.Writer.WritePropertyName("recordingReconnectWindowSeconds");
-                    context.Writer.Write(publicRequest.RecordingReconnectWindowSeconds.Value);
-                }
-
-                if(publicRequest.IsSetRenditionConfiguration())
-                {
-                    context.Writer.WritePropertyName("renditionConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RenditionConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RenditionConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDestinationConfiguration())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
+                        context.Writer.WritePropertyName("destinationConfiguration");
+                        context.Writer.WriteObjectStart();
 
-                            context.Writer.Write(publicRequestTagsValue);
+                        var marshaller = DestinationConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DestinationConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetRecordingReconnectWindowSeconds())
+                    {
+                        context.Writer.WritePropertyName("recordingReconnectWindowSeconds");
+                        context.Writer.Write(publicRequest.RecordingReconnectWindowSeconds.Value);
+                    }
+
+                    if(publicRequest.IsSetRenditionConfiguration())
+                    {
+                        context.Writer.WritePropertyName("renditionConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RenditionConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RenditionConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetThumbnailConfiguration())
+                    {
+                        context.Writer.WritePropertyName("thumbnailConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ThumbnailConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ThumbnailConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetThumbnailConfiguration())
-                {
-                    context.Writer.WritePropertyName("thumbnailConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ThumbnailConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ThumbnailConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

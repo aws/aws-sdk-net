@@ -78,9 +78,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=24)]
-        public int PasswordHistorySize
+        public int? PasswordHistorySize
         {
-            get { return this._passwordHistorySize.GetValueOrDefault(); }
+            get { return this._passwordHistorySize; }
             set { this._passwordHistorySize = value; }
         }
 

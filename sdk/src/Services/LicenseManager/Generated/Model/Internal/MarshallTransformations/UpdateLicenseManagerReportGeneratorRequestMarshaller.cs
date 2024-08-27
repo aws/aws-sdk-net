@@ -63,72 +63,75 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetLicenseManagerReportGeneratorArn())
-                {
-                    context.Writer.WritePropertyName("LicenseManagerReportGeneratorArn");
-                    context.Writer.Write(publicRequest.LicenseManagerReportGeneratorArn);
-                }
-
-                if(publicRequest.IsSetReportContext())
-                {
-                    context.Writer.WritePropertyName("ReportContext");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ReportContextMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ReportContext, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetReportFrequency())
-                {
-                    context.Writer.WritePropertyName("ReportFrequency");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ReportFrequencyMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ReportFrequency, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetReportGeneratorName())
-                {
-                    context.Writer.WritePropertyName("ReportGeneratorName");
-                    context.Writer.Write(publicRequest.ReportGeneratorName);
-                }
-
-                if(publicRequest.IsSetType())
-                {
-                    context.Writer.WritePropertyName("Type");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTypeListValue in publicRequest.Type)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
-                            context.Writer.Write(publicRequestTypeListValue);
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetLicenseManagerReportGeneratorArn())
+                    {
+                        context.Writer.WritePropertyName("LicenseManagerReportGeneratorArn");
+                        context.Writer.Write(publicRequest.LicenseManagerReportGeneratorArn);
+                    }
+
+                    if(publicRequest.IsSetReportContext())
+                    {
+                        context.Writer.WritePropertyName("ReportContext");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ReportContextMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ReportContext, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetReportFrequency())
+                    {
+                        context.Writer.WritePropertyName("ReportFrequency");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ReportFrequencyMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ReportFrequency, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetReportGeneratorName())
+                    {
+                        context.Writer.WritePropertyName("ReportGeneratorName");
+                        context.Writer.Write(publicRequest.ReportGeneratorName);
+                    }
+
+                    if(publicRequest.IsSetType())
+                    {
+                        context.Writer.WritePropertyName("Type");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTypeListValue in publicRequest.Type)
+                        {
+                                context.Writer.Write(publicRequestTypeListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

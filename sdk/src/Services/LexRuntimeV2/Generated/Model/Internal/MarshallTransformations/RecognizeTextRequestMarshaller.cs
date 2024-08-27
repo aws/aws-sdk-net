@@ -73,46 +73,49 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
                 throw new AmazonLexRuntimeV2Exception("Request object does not have required field SessionId set");
             request.AddPathResource("{sessionId}", StringUtils.FromString(publicRequest.SessionId));
             request.ResourcePath = "/bots/{botId}/botAliases/{botAliasId}/botLocales/{localeId}/sessions/{sessionId}/text";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetRequestAttributes())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("requestAttributes");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestRequestAttributesKvp in publicRequest.RequestAttributes)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetRequestAttributes())
                     {
-                        context.Writer.WritePropertyName(publicRequestRequestAttributesKvp.Key);
-                        var publicRequestRequestAttributesValue = publicRequestRequestAttributesKvp.Value;
+                        context.Writer.WritePropertyName("requestAttributes");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestRequestAttributesKvp in publicRequest.RequestAttributes)
+                        {
+                            context.Writer.WritePropertyName(publicRequestRequestAttributesKvp.Key);
+                            var publicRequestRequestAttributesValue = publicRequestRequestAttributesKvp.Value;
 
-                            context.Writer.Write(publicRequestRequestAttributesValue);
+                                context.Writer.Write(publicRequestRequestAttributesValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetSessionStateValue())
+                    {
+                        context.Writer.WritePropertyName("sessionState");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SessionStateMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SessionStateValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetText())
+                    {
+                        context.Writer.WritePropertyName("text");
+                        context.Writer.Write(publicRequest.Text);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSessionStateValue())
-                {
-                    context.Writer.WritePropertyName("sessionState");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SessionStateMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SessionStateValue, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetText())
-                {
-                    context.Writer.WritePropertyName("text");
-                    context.Writer.Write(publicRequest.Text);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

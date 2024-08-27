@@ -67,50 +67,53 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 throw new AmazonMediaConnectException("Request object does not have required field MediaStreamName set");
             request.AddPathResource("{mediaStreamName}", StringUtils.FromString(publicRequest.MediaStreamName));
             request.ResourcePath = "/v1/flows/{flowArn}/mediaStreams/{mediaStreamName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAttributes())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("attributes");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAttributes())
+                    {
+                        context.Writer.WritePropertyName("attributes");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = MediaStreamAttributesRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Attributes, context);
+                        var marshaller = MediaStreamAttributesRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Attributes, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetClockRate())
+                    {
+                        context.Writer.WritePropertyName("clockRate");
+                        context.Writer.Write(publicRequest.ClockRate.Value);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetMediaStreamType())
+                    {
+                        context.Writer.WritePropertyName("mediaStreamType");
+                        context.Writer.Write(publicRequest.MediaStreamType);
+                    }
+
+                    if(publicRequest.IsSetVideoFormat())
+                    {
+                        context.Writer.WritePropertyName("videoFormat");
+                        context.Writer.Write(publicRequest.VideoFormat);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetClockRate())
-                {
-                    context.Writer.WritePropertyName("clockRate");
-                    context.Writer.Write(publicRequest.ClockRate.Value);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetMediaStreamType())
-                {
-                    context.Writer.WritePropertyName("mediaStreamType");
-                    context.Writer.Write(publicRequest.MediaStreamType);
-                }
-
-                if(publicRequest.IsSetVideoFormat())
-                {
-                    context.Writer.WritePropertyName("videoFormat");
-                    context.Writer.Write(publicRequest.VideoFormat);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

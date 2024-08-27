@@ -64,90 +64,93 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
                 throw new AmazonAppIntegrationsServiceException("Request object does not have required field DataIntegrationIdentifier set");
             request.AddPathResource("{Identifier}", StringUtils.FromString(publicRequest.DataIntegrationIdentifier));
             request.ResourcePath = "/dataIntegrations/{Identifier}/associations";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientAssociationMetadata())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientAssociationMetadata");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestClientAssociationMetadataKvp in publicRequest.ClientAssociationMetadata)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientAssociationMetadata())
                     {
-                        context.Writer.WritePropertyName(publicRequestClientAssociationMetadataKvp.Key);
-                        var publicRequestClientAssociationMetadataValue = publicRequestClientAssociationMetadataKvp.Value;
-
-                            context.Writer.Write(publicRequestClientAssociationMetadataValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetClientId())
-                {
-                    context.Writer.WritePropertyName("ClientId");
-                    context.Writer.Write(publicRequest.ClientId);
-                }
-
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDestinationURI())
-                {
-                    context.Writer.WritePropertyName("DestinationURI");
-                    context.Writer.Write(publicRequest.DestinationURI);
-                }
-
-                if(publicRequest.IsSetExecutionConfiguration())
-                {
-                    context.Writer.WritePropertyName("ExecutionConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ExecutionConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ExecutionConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetObjectConfiguration())
-                {
-                    context.Writer.WritePropertyName("ObjectConfiguration");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestObjectConfigurationKvp in publicRequest.ObjectConfiguration)
-                    {
-                        context.Writer.WritePropertyName(publicRequestObjectConfigurationKvp.Key);
-                        var publicRequestObjectConfigurationValue = publicRequestObjectConfigurationKvp.Value;
-
+                        context.Writer.WritePropertyName("ClientAssociationMetadata");
                         context.Writer.WriteObjectStart();
-                        foreach (var publicRequestObjectConfigurationValueKvp in publicRequestObjectConfigurationValue)
+                        foreach (var publicRequestClientAssociationMetadataKvp in publicRequest.ClientAssociationMetadata)
                         {
-                            context.Writer.WritePropertyName(publicRequestObjectConfigurationValueKvp.Key);
-                            var publicRequestObjectConfigurationValueValue = publicRequestObjectConfigurationValueKvp.Value;
+                            context.Writer.WritePropertyName(publicRequestClientAssociationMetadataKvp.Key);
+                            var publicRequestClientAssociationMetadataValue = publicRequestClientAssociationMetadataKvp.Value;
 
-                            context.Writer.WriteArrayStart();
-                            foreach(var publicRequestObjectConfigurationValueValueListValue in publicRequestObjectConfigurationValueValue)
-                            {
-                                    context.Writer.Write(publicRequestObjectConfigurationValueValueListValue);
-                            }
-                            context.Writer.WriteArrayEnd();
+                                context.Writer.Write(publicRequestClientAssociationMetadataValue);
                         }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetClientId())
+                    {
+                        context.Writer.WritePropertyName("ClientId");
+                        context.Writer.Write(publicRequest.ClientId);
+                    }
+
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetDestinationURI())
+                    {
+                        context.Writer.WritePropertyName("DestinationURI");
+                        context.Writer.Write(publicRequest.DestinationURI);
+                    }
+
+                    if(publicRequest.IsSetExecutionConfiguration())
+                    {
+                        context.Writer.WritePropertyName("ExecutionConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ExecutionConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ExecutionConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetObjectConfiguration())
+                    {
+                        context.Writer.WritePropertyName("ObjectConfiguration");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestObjectConfigurationKvp in publicRequest.ObjectConfiguration)
+                        {
+                            context.Writer.WritePropertyName(publicRequestObjectConfigurationKvp.Key);
+                            var publicRequestObjectConfigurationValue = publicRequestObjectConfigurationKvp.Value;
+
+                            context.Writer.WriteObjectStart();
+                            foreach (var publicRequestObjectConfigurationValueKvp in publicRequestObjectConfigurationValue)
+                            {
+                                context.Writer.WritePropertyName(publicRequestObjectConfigurationValueKvp.Key);
+                                var publicRequestObjectConfigurationValueValue = publicRequestObjectConfigurationValueKvp.Value;
+
+                                context.Writer.WriteArrayStart();
+                                foreach(var publicRequestObjectConfigurationValueValueListValue in publicRequestObjectConfigurationValueValue)
+                                {
+                                        context.Writer.Write(publicRequestObjectConfigurationValueValueListValue);
+                                }
+                                context.Writer.WriteArrayEnd();
+                            }
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

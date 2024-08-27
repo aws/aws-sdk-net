@@ -63,98 +63,101 @@ namespace Amazon.QLDBSession.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAbortTransaction())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AbortTransaction");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAbortTransaction())
+                    {
+                        context.Writer.WritePropertyName("AbortTransaction");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = AbortTransactionRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AbortTransaction, context);
+                        var marshaller = AbortTransactionRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AbortTransaction, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetCommitTransaction())
+                    {
+                        context.Writer.WritePropertyName("CommitTransaction");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CommitTransactionRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CommitTransaction, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetEndSession())
+                    {
+                        context.Writer.WritePropertyName("EndSession");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EndSessionRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EndSession, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetExecuteStatement())
+                    {
+                        context.Writer.WritePropertyName("ExecuteStatement");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ExecuteStatementRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ExecuteStatement, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetFetchPage())
+                    {
+                        context.Writer.WritePropertyName("FetchPage");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = FetchPageRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.FetchPage, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSessionToken())
+                    {
+                        context.Writer.WritePropertyName("SessionToken");
+                        context.Writer.Write(publicRequest.SessionToken);
+                    }
+
+                    if(publicRequest.IsSetStartSession())
+                    {
+                        context.Writer.WritePropertyName("StartSession");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = StartSessionRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.StartSession, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetStartTransaction())
+                    {
+                        context.Writer.WritePropertyName("StartTransaction");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = StartTransactionRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.StartTransaction, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCommitTransaction())
-                {
-                    context.Writer.WritePropertyName("CommitTransaction");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CommitTransactionRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CommitTransaction, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEndSession())
-                {
-                    context.Writer.WritePropertyName("EndSession");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EndSessionRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EndSession, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetExecuteStatement())
-                {
-                    context.Writer.WritePropertyName("ExecuteStatement");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ExecuteStatementRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ExecuteStatement, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetFetchPage())
-                {
-                    context.Writer.WritePropertyName("FetchPage");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = FetchPageRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.FetchPage, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSessionToken())
-                {
-                    context.Writer.WritePropertyName("SessionToken");
-                    context.Writer.Write(publicRequest.SessionToken);
-                }
-
-                if(publicRequest.IsSetStartSession())
-                {
-                    context.Writer.WritePropertyName("StartSession");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = StartSessionRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.StartSession, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetStartTransaction())
-                {
-                    context.Writer.WritePropertyName("StartTransaction");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = StartTransactionRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.StartTransaction, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

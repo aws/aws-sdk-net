@@ -64,100 +64,103 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 throw new AmazonDataZoneException("Request object does not have required field DomainIdentifier set");
             request.AddPathResource("{domainIdentifier}", StringUtils.FromString(publicRequest.DomainIdentifier));
             request.ResourcePath = "/v2/domains/{domainIdentifier}/assets";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetExternalIdentifier())
-                {
-                    context.Writer.WritePropertyName("externalIdentifier");
-                    context.Writer.Write(publicRequest.ExternalIdentifier);
-                }
-
-                if(publicRequest.IsSetFormsInput())
-                {
-                    context.Writer.WritePropertyName("formsInput");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFormsInputListValue in publicRequest.FormsInput)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetExternalIdentifier())
+                    {
+                        context.Writer.WritePropertyName("externalIdentifier");
+                        context.Writer.Write(publicRequest.ExternalIdentifier);
+                    }
+
+                    if(publicRequest.IsSetFormsInput())
+                    {
+                        context.Writer.WritePropertyName("formsInput");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFormsInputListValue in publicRequest.FormsInput)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = FormInputMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFormsInputListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetGlossaryTerms())
+                    {
+                        context.Writer.WritePropertyName("glossaryTerms");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestGlossaryTermsListValue in publicRequest.GlossaryTerms)
+                        {
+                                context.Writer.Write(publicRequestGlossaryTermsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetOwningProjectIdentifier())
+                    {
+                        context.Writer.WritePropertyName("owningProjectIdentifier");
+                        context.Writer.Write(publicRequest.OwningProjectIdentifier);
+                    }
+
+                    if(publicRequest.IsSetPredictionConfiguration())
+                    {
+                        context.Writer.WritePropertyName("predictionConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = FormInputMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFormsInputListValue, context);
+                        var marshaller = PredictionConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.PredictionConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetGlossaryTerms())
-                {
-                    context.Writer.WritePropertyName("glossaryTerms");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestGlossaryTermsListValue in publicRequest.GlossaryTerms)
+                    if(publicRequest.IsSetTypeIdentifier())
                     {
-                            context.Writer.Write(publicRequestGlossaryTermsListValue);
+                        context.Writer.WritePropertyName("typeIdentifier");
+                        context.Writer.Write(publicRequest.TypeIdentifier);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTypeRevision())
+                    {
+                        context.Writer.WritePropertyName("typeRevision");
+                        context.Writer.Write(publicRequest.TypeRevision);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetOwningProjectIdentifier())
-                {
-                    context.Writer.WritePropertyName("owningProjectIdentifier");
-                    context.Writer.Write(publicRequest.OwningProjectIdentifier);
-                }
-
-                if(publicRequest.IsSetPredictionConfiguration())
-                {
-                    context.Writer.WritePropertyName("predictionConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PredictionConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PredictionConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTypeIdentifier())
-                {
-                    context.Writer.WritePropertyName("typeIdentifier");
-                    context.Writer.Write(publicRequest.TypeIdentifier);
-                }
-
-                if(publicRequest.IsSetTypeRevision())
-                {
-                    context.Writer.WritePropertyName("typeRevision");
-                    context.Writer.Write(publicRequest.TypeRevision);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

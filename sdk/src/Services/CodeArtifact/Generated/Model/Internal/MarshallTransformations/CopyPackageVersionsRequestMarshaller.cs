@@ -82,52 +82,55 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetSourceRepository())
                 request.Parameters.Add("source-repository", StringUtils.FromString(publicRequest.SourceRepository));
             request.ResourcePath = "/v1/package/versions/copy";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAllowOverwrite())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("allowOverwrite");
-                    context.Writer.Write(publicRequest.AllowOverwrite.Value);
-                }
-
-                if(publicRequest.IsSetIncludeFromUpstream())
-                {
-                    context.Writer.WritePropertyName("includeFromUpstream");
-                    context.Writer.Write(publicRequest.IncludeFromUpstream.Value);
-                }
-
-                if(publicRequest.IsSetVersionRevisions())
-                {
-                    context.Writer.WritePropertyName("versionRevisions");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestVersionRevisionsKvp in publicRequest.VersionRevisions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAllowOverwrite())
                     {
-                        context.Writer.WritePropertyName(publicRequestVersionRevisionsKvp.Key);
-                        var publicRequestVersionRevisionsValue = publicRequestVersionRevisionsKvp.Value;
-
-                            context.Writer.Write(publicRequestVersionRevisionsValue);
+                        context.Writer.WritePropertyName("allowOverwrite");
+                        context.Writer.Write(publicRequest.AllowOverwrite.Value);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetVersions())
-                {
-                    context.Writer.WritePropertyName("versions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestVersionsListValue in publicRequest.Versions)
+                    if(publicRequest.IsSetIncludeFromUpstream())
                     {
-                            context.Writer.Write(publicRequestVersionsListValue);
+                        context.Writer.WritePropertyName("includeFromUpstream");
+                        context.Writer.Write(publicRequest.IncludeFromUpstream.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetVersionRevisions())
+                    {
+                        context.Writer.WritePropertyName("versionRevisions");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestVersionRevisionsKvp in publicRequest.VersionRevisions)
+                        {
+                            context.Writer.WritePropertyName(publicRequestVersionRevisionsKvp.Key);
+                            var publicRequestVersionRevisionsValue = publicRequestVersionRevisionsKvp.Value;
+
+                                context.Writer.Write(publicRequestVersionRevisionsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetVersions())
+                    {
+                        context.Writer.WritePropertyName("versions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestVersionsListValue in publicRequest.Versions)
+                        {
+                                context.Writer.Write(publicRequestVersionsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             request.UseQueryString = true;

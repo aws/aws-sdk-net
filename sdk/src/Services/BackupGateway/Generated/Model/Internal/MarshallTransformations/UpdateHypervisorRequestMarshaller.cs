@@ -63,51 +63,54 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetHost())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Host");
-                    context.Writer.Write(publicRequest.Host);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetHost())
+                    {
+                        context.Writer.WritePropertyName("Host");
+                        context.Writer.Write(publicRequest.Host);
+                    }
+
+                    if(publicRequest.IsSetHypervisorArn())
+                    {
+                        context.Writer.WritePropertyName("HypervisorArn");
+                        context.Writer.Write(publicRequest.HypervisorArn);
+                    }
+
+                    if(publicRequest.IsSetLogGroupArn())
+                    {
+                        context.Writer.WritePropertyName("LogGroupArn");
+                        context.Writer.Write(publicRequest.LogGroupArn);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetPassword())
+                    {
+                        context.Writer.WritePropertyName("Password");
+                        context.Writer.Write(publicRequest.Password);
+                    }
+
+                    if(publicRequest.IsSetUsername())
+                    {
+                        context.Writer.WritePropertyName("Username");
+                        context.Writer.Write(publicRequest.Username);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetHypervisorArn())
-                {
-                    context.Writer.WritePropertyName("HypervisorArn");
-                    context.Writer.Write(publicRequest.HypervisorArn);
-                }
-
-                if(publicRequest.IsSetLogGroupArn())
-                {
-                    context.Writer.WritePropertyName("LogGroupArn");
-                    context.Writer.Write(publicRequest.LogGroupArn);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetPassword())
-                {
-                    context.Writer.WritePropertyName("Password");
-                    context.Writer.Write(publicRequest.Password);
-                }
-
-                if(publicRequest.IsSetUsername())
-                {
-                    context.Writer.WritePropertyName("Username");
-                    context.Writer.Write(publicRequest.Username);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

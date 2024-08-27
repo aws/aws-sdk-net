@@ -63,44 +63,47 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccessToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AccessToken");
-                    context.Writer.Write(publicRequest.AccessToken);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccessToken())
+                    {
+                        context.Writer.WritePropertyName("AccessToken");
+                        context.Writer.Write(publicRequest.AccessToken);
+                    }
+
+                    if(publicRequest.IsSetDeviceKey())
+                    {
+                        context.Writer.WritePropertyName("DeviceKey");
+                        context.Writer.Write(publicRequest.DeviceKey);
+                    }
+
+                    if(publicRequest.IsSetDeviceName())
+                    {
+                        context.Writer.WritePropertyName("DeviceName");
+                        context.Writer.Write(publicRequest.DeviceName);
+                    }
+
+                    if(publicRequest.IsSetDeviceSecretVerifierConfig())
+                    {
+                        context.Writer.WritePropertyName("DeviceSecretVerifierConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DeviceSecretVerifierConfigTypeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DeviceSecretVerifierConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDeviceKey())
-                {
-                    context.Writer.WritePropertyName("DeviceKey");
-                    context.Writer.Write(publicRequest.DeviceKey);
-                }
-
-                if(publicRequest.IsSetDeviceName())
-                {
-                    context.Writer.WritePropertyName("DeviceName");
-                    context.Writer.Write(publicRequest.DeviceName);
-                }
-
-                if(publicRequest.IsSetDeviceSecretVerifierConfig())
-                {
-                    context.Writer.WritePropertyName("DeviceSecretVerifierConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DeviceSecretVerifierConfigTypeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DeviceSecretVerifierConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

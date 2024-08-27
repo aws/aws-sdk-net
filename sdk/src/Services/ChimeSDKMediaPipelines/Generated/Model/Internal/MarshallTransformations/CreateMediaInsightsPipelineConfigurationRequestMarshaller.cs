@@ -61,81 +61,84 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/media-insights-pipeline-configurations";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientRequestToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetElements())
-                {
-                    context.Writer.WritePropertyName("Elements");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestElementsListValue in publicRequest.Elements)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientRequestToken())
                     {
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(publicRequest.ClientRequestToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientRequestToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetElements())
+                    {
+                        context.Writer.WritePropertyName("Elements");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestElementsListValue in publicRequest.Elements)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = MediaInsightsPipelineConfigurationElementMarshaller.Instance;
+                            marshaller.Marshall(publicRequestElementsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetMediaInsightsPipelineConfigurationName())
+                    {
+                        context.Writer.WritePropertyName("MediaInsightsPipelineConfigurationName");
+                        context.Writer.Write(publicRequest.MediaInsightsPipelineConfigurationName);
+                    }
+
+                    if(publicRequest.IsSetRealTimeAlertConfiguration())
+                    {
+                        context.Writer.WritePropertyName("RealTimeAlertConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = MediaInsightsPipelineConfigurationElementMarshaller.Instance;
-                        marshaller.Marshall(publicRequestElementsListValue, context);
+                        var marshaller = RealTimeAlertConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RealTimeAlertConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetMediaInsightsPipelineConfigurationName())
-                {
-                    context.Writer.WritePropertyName("MediaInsightsPipelineConfigurationName");
-                    context.Writer.Write(publicRequest.MediaInsightsPipelineConfigurationName);
-                }
-
-                if(publicRequest.IsSetRealTimeAlertConfiguration())
-                {
-                    context.Writer.WritePropertyName("RealTimeAlertConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RealTimeAlertConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RealTimeAlertConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetResourceAccessRoleArn())
-                {
-                    context.Writer.WritePropertyName("ResourceAccessRoleArn");
-                    context.Writer.Write(publicRequest.ResourceAccessRoleArn);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetResourceAccessRoleArn())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("ResourceAccessRoleArn");
+                        context.Writer.Write(publicRequest.ResourceAccessRoleArn);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

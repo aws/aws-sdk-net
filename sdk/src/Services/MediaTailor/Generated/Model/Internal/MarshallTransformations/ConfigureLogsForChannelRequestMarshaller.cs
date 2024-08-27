@@ -61,32 +61,35 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/configureLogs/channel";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetChannelName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ChannelName");
-                    context.Writer.Write(publicRequest.ChannelName);
-                }
-
-                if(publicRequest.IsSetLogTypes())
-                {
-                    context.Writer.WritePropertyName("LogTypes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLogTypesListValue in publicRequest.LogTypes)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetChannelName())
                     {
-                            context.Writer.Write(publicRequestLogTypesListValue);
+                        context.Writer.WritePropertyName("ChannelName");
+                        context.Writer.Write(publicRequest.ChannelName);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetLogTypes())
+                    {
+                        context.Writer.WritePropertyName("LogTypes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLogTypesListValue in publicRequest.LogTypes)
+                        {
+                                context.Writer.Write(publicRequestLogTypesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

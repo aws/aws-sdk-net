@@ -64,33 +64,36 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
                 throw new AmazonAuditManagerException("Request object does not have required field FrameworkId set");
             request.AddPathResource("{frameworkId}", StringUtils.FromString(publicRequest.FrameworkId));
             request.ResourcePath = "/assessmentFrameworks/{frameworkId}/shareRequests";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetComment())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("comment");
-                    context.Writer.Write(publicRequest.Comment);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetComment())
+                    {
+                        context.Writer.WritePropertyName("comment");
+                        context.Writer.Write(publicRequest.Comment);
+                    }
+
+                    if(publicRequest.IsSetDestinationAccount())
+                    {
+                        context.Writer.WritePropertyName("destinationAccount");
+                        context.Writer.Write(publicRequest.DestinationAccount);
+                    }
+
+                    if(publicRequest.IsSetDestinationRegion())
+                    {
+                        context.Writer.WritePropertyName("destinationRegion");
+                        context.Writer.Write(publicRequest.DestinationRegion);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDestinationAccount())
-                {
-                    context.Writer.WritePropertyName("destinationAccount");
-                    context.Writer.Write(publicRequest.DestinationAccount);
-                }
-
-                if(publicRequest.IsSetDestinationRegion())
-                {
-                    context.Writer.WritePropertyName("destinationRegion");
-                    context.Writer.Write(publicRequest.DestinationRegion);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

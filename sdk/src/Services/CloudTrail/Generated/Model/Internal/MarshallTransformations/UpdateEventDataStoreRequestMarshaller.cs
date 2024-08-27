@@ -63,79 +63,82 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAdvancedEventSelectors())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AdvancedEventSelectors");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAdvancedEventSelectorsListValue in publicRequest.AdvancedEventSelectors)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAdvancedEventSelectors())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("AdvancedEventSelectors");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAdvancedEventSelectorsListValue in publicRequest.AdvancedEventSelectors)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = AdvancedEventSelectorMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAdvancedEventSelectorsListValue, context);
+                            var marshaller = AdvancedEventSelectorMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAdvancedEventSelectorsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetBillingMode())
+                    {
+                        context.Writer.WritePropertyName("BillingMode");
+                        context.Writer.Write(publicRequest.BillingMode);
+                    }
+
+                    if(publicRequest.IsSetEventDataStore())
+                    {
+                        context.Writer.WritePropertyName("EventDataStore");
+                        context.Writer.Write(publicRequest.EventDataStore);
+                    }
+
+                    if(publicRequest.IsSetKmsKeyId())
+                    {
+                        context.Writer.WritePropertyName("KmsKeyId");
+                        context.Writer.Write(publicRequest.KmsKeyId);
+                    }
+
+                    if(publicRequest.IsSetMultiRegionEnabled())
+                    {
+                        context.Writer.WritePropertyName("MultiRegionEnabled");
+                        context.Writer.Write(publicRequest.MultiRegionEnabled.Value);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetOrganizationEnabled())
+                    {
+                        context.Writer.WritePropertyName("OrganizationEnabled");
+                        context.Writer.Write(publicRequest.OrganizationEnabled.Value);
+                    }
+
+                    if(publicRequest.IsSetRetentionPeriod())
+                    {
+                        context.Writer.WritePropertyName("RetentionPeriod");
+                        context.Writer.Write(publicRequest.RetentionPeriod.Value);
+                    }
+
+                    if(publicRequest.IsSetTerminationProtectionEnabled())
+                    {
+                        context.Writer.WritePropertyName("TerminationProtectionEnabled");
+                        context.Writer.Write(publicRequest.TerminationProtectionEnabled.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetBillingMode())
-                {
-                    context.Writer.WritePropertyName("BillingMode");
-                    context.Writer.Write(publicRequest.BillingMode);
-                }
-
-                if(publicRequest.IsSetEventDataStore())
-                {
-                    context.Writer.WritePropertyName("EventDataStore");
-                    context.Writer.Write(publicRequest.EventDataStore);
-                }
-
-                if(publicRequest.IsSetKmsKeyId())
-                {
-                    context.Writer.WritePropertyName("KmsKeyId");
-                    context.Writer.Write(publicRequest.KmsKeyId);
-                }
-
-                if(publicRequest.IsSetMultiRegionEnabled())
-                {
-                    context.Writer.WritePropertyName("MultiRegionEnabled");
-                    context.Writer.Write(publicRequest.MultiRegionEnabled.Value);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetOrganizationEnabled())
-                {
-                    context.Writer.WritePropertyName("OrganizationEnabled");
-                    context.Writer.Write(publicRequest.OrganizationEnabled.Value);
-                }
-
-                if(publicRequest.IsSetRetentionPeriod())
-                {
-                    context.Writer.WritePropertyName("RetentionPeriod");
-                    context.Writer.Write(publicRequest.RetentionPeriod.Value);
-                }
-
-                if(publicRequest.IsSetTerminationProtectionEnabled())
-                {
-                    context.Writer.WritePropertyName("TerminationProtectionEnabled");
-                    context.Writer.Write(publicRequest.TerminationProtectionEnabled.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

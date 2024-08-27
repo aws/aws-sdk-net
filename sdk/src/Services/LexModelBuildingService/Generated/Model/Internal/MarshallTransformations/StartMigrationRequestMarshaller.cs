@@ -61,45 +61,48 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/migrations";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMigrationStrategy())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("migrationStrategy");
-                    context.Writer.Write(publicRequest.MigrationStrategy);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMigrationStrategy())
+                    {
+                        context.Writer.WritePropertyName("migrationStrategy");
+                        context.Writer.Write(publicRequest.MigrationStrategy);
+                    }
+
+                    if(publicRequest.IsSetV1BotName())
+                    {
+                        context.Writer.WritePropertyName("v1BotName");
+                        context.Writer.Write(publicRequest.V1BotName);
+                    }
+
+                    if(publicRequest.IsSetV1BotVersion())
+                    {
+                        context.Writer.WritePropertyName("v1BotVersion");
+                        context.Writer.Write(publicRequest.V1BotVersion);
+                    }
+
+                    if(publicRequest.IsSetV2BotName())
+                    {
+                        context.Writer.WritePropertyName("v2BotName");
+                        context.Writer.Write(publicRequest.V2BotName);
+                    }
+
+                    if(publicRequest.IsSetV2BotRole())
+                    {
+                        context.Writer.WritePropertyName("v2BotRole");
+                        context.Writer.Write(publicRequest.V2BotRole);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetV1BotName())
-                {
-                    context.Writer.WritePropertyName("v1BotName");
-                    context.Writer.Write(publicRequest.V1BotName);
-                }
-
-                if(publicRequest.IsSetV1BotVersion())
-                {
-                    context.Writer.WritePropertyName("v1BotVersion");
-                    context.Writer.Write(publicRequest.V1BotVersion);
-                }
-
-                if(publicRequest.IsSetV2BotName())
-                {
-                    context.Writer.WritePropertyName("v2BotName");
-                    context.Writer.Write(publicRequest.V2BotName);
-                }
-
-                if(publicRequest.IsSetV2BotRole())
-                {
-                    context.Writer.WritePropertyName("v2BotRole");
-                    context.Writer.Write(publicRequest.V2BotRole);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

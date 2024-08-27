@@ -64,56 +64,59 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
                 throw new AmazonNeptuneGraphException("Request object does not have required field GraphIdentifier set");
             request.AddPathResource("{graphIdentifier}", StringUtils.FromString(publicRequest.GraphIdentifier));
             request.ResourcePath = "/graphs/{graphIdentifier}/importtasks";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBlankNodeHandling())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("blankNodeHandling");
-                    context.Writer.Write(publicRequest.BlankNodeHandling);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBlankNodeHandling())
+                    {
+                        context.Writer.WritePropertyName("blankNodeHandling");
+                        context.Writer.Write(publicRequest.BlankNodeHandling);
+                    }
+
+                    if(publicRequest.IsSetFailOnError())
+                    {
+                        context.Writer.WritePropertyName("failOnError");
+                        context.Writer.Write(publicRequest.FailOnError.Value);
+                    }
+
+                    if(publicRequest.IsSetFormat())
+                    {
+                        context.Writer.WritePropertyName("format");
+                        context.Writer.Write(publicRequest.Format);
+                    }
+
+                    if(publicRequest.IsSetImportOptions())
+                    {
+                        context.Writer.WritePropertyName("importOptions");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ImportOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ImportOptions, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("roleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    if(publicRequest.IsSetSource())
+                    {
+                        context.Writer.WritePropertyName("source");
+                        context.Writer.Write(publicRequest.Source);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetFailOnError())
-                {
-                    context.Writer.WritePropertyName("failOnError");
-                    context.Writer.Write(publicRequest.FailOnError.Value);
-                }
-
-                if(publicRequest.IsSetFormat())
-                {
-                    context.Writer.WritePropertyName("format");
-                    context.Writer.Write(publicRequest.Format);
-                }
-
-                if(publicRequest.IsSetImportOptions())
-                {
-                    context.Writer.WritePropertyName("importOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ImportOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ImportOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("roleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetSource())
-                {
-                    context.Writer.WritePropertyName("source");
-                    context.Writer.Write(publicRequest.Source);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

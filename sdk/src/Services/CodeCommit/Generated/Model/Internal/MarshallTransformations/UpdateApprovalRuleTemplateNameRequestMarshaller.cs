@@ -63,27 +63,30 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetNewApprovalRuleTemplateName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("newApprovalRuleTemplateName");
-                    context.Writer.Write(publicRequest.NewApprovalRuleTemplateName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetNewApprovalRuleTemplateName())
+                    {
+                        context.Writer.WritePropertyName("newApprovalRuleTemplateName");
+                        context.Writer.Write(publicRequest.NewApprovalRuleTemplateName);
+                    }
+
+                    if(publicRequest.IsSetOldApprovalRuleTemplateName())
+                    {
+                        context.Writer.WritePropertyName("oldApprovalRuleTemplateName");
+                        context.Writer.Write(publicRequest.OldApprovalRuleTemplateName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetOldApprovalRuleTemplateName())
-                {
-                    context.Writer.WritePropertyName("oldApprovalRuleTemplateName");
-                    context.Writer.Write(publicRequest.OldApprovalRuleTemplateName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

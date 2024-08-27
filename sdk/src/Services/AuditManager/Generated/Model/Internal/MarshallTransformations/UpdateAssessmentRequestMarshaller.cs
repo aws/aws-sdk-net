@@ -64,65 +64,68 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
                 throw new AmazonAuditManagerException("Request object does not have required field AssessmentId set");
             request.AddPathResource("{assessmentId}", StringUtils.FromString(publicRequest.AssessmentId));
             request.ResourcePath = "/assessments/{assessmentId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAssessmentDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("assessmentDescription");
-                    context.Writer.Write(publicRequest.AssessmentDescription);
-                }
-
-                if(publicRequest.IsSetAssessmentName())
-                {
-                    context.Writer.WritePropertyName("assessmentName");
-                    context.Writer.Write(publicRequest.AssessmentName);
-                }
-
-                if(publicRequest.IsSetAssessmentReportsDestination())
-                {
-                    context.Writer.WritePropertyName("assessmentReportsDestination");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AssessmentReportsDestinationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AssessmentReportsDestination, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRoles())
-                {
-                    context.Writer.WritePropertyName("roles");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRolesListValue in publicRequest.Roles)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAssessmentDescription())
                     {
+                        context.Writer.WritePropertyName("assessmentDescription");
+                        context.Writer.Write(publicRequest.AssessmentDescription);
+                    }
+
+                    if(publicRequest.IsSetAssessmentName())
+                    {
+                        context.Writer.WritePropertyName("assessmentName");
+                        context.Writer.Write(publicRequest.AssessmentName);
+                    }
+
+                    if(publicRequest.IsSetAssessmentReportsDestination())
+                    {
+                        context.Writer.WritePropertyName("assessmentReportsDestination");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = RoleMarshaller.Instance;
-                        marshaller.Marshall(publicRequestRolesListValue, context);
+                        var marshaller = AssessmentReportsDestinationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AssessmentReportsDestination, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetRoles())
+                    {
+                        context.Writer.WritePropertyName("roles");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRolesListValue in publicRequest.Roles)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = RoleMarshaller.Instance;
+                            marshaller.Marshall(publicRequestRolesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetScope())
+                    {
+                        context.Writer.WritePropertyName("scope");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ScopeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Scope, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetScope())
-                {
-                    context.Writer.WritePropertyName("scope");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ScopeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Scope, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

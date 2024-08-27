@@ -134,7 +134,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("JobRunQueuingEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.JobRunQueuingEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -63,46 +63,49 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetIdentityId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("IdentityId");
-                    context.Writer.Write(publicRequest.IdentityId);
-                }
-
-                if(publicRequest.IsSetLogins())
-                {
-                    context.Writer.WritePropertyName("Logins");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestLoginsKvp in publicRequest.Logins)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetIdentityId())
                     {
-                        context.Writer.WritePropertyName(publicRequestLoginsKvp.Key);
-                        var publicRequestLoginsValue = publicRequestLoginsKvp.Value;
-
-                            context.Writer.Write(publicRequestLoginsValue);
+                        context.Writer.WritePropertyName("IdentityId");
+                        context.Writer.Write(publicRequest.IdentityId);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetLoginsToRemove())
-                {
-                    context.Writer.WritePropertyName("LoginsToRemove");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLoginsToRemoveListValue in publicRequest.LoginsToRemove)
+                    if(publicRequest.IsSetLogins())
                     {
-                            context.Writer.Write(publicRequestLoginsToRemoveListValue);
+                        context.Writer.WritePropertyName("Logins");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestLoginsKvp in publicRequest.Logins)
+                        {
+                            context.Writer.WritePropertyName(publicRequestLoginsKvp.Key);
+                            var publicRequestLoginsValue = publicRequestLoginsKvp.Value;
+
+                                context.Writer.Write(publicRequestLoginsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetLoginsToRemove())
+                    {
+                        context.Writer.WritePropertyName("LoginsToRemove");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLoginsToRemoveListValue in publicRequest.LoginsToRemove)
+                        {
+                                context.Writer.Write(publicRequestLoginsToRemoveListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

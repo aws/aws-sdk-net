@@ -61,49 +61,52 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/organization/overview";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccountIds())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AccountIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAccountIdsListValue in publicRequest.AccountIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccountIds())
                     {
-                            context.Writer.Write(publicRequestAccountIdsListValue);
+                        context.Writer.WritePropertyName("AccountIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAccountIdsListValue in publicRequest.AccountIds)
+                        {
+                                context.Writer.Write(publicRequestAccountIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetFromTime())
-                {
-                    context.Writer.WritePropertyName("FromTime");
-                    context.Writer.Write(publicRequest.FromTime.Value);
-                }
-
-                if(publicRequest.IsSetOrganizationalUnitIds())
-                {
-                    context.Writer.WritePropertyName("OrganizationalUnitIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestOrganizationalUnitIdsListValue in publicRequest.OrganizationalUnitIds)
+                    if(publicRequest.IsSetFromTime())
                     {
-                            context.Writer.Write(publicRequestOrganizationalUnitIdsListValue);
+                        context.Writer.WritePropertyName("FromTime");
+                        context.Writer.Write(publicRequest.FromTime.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetOrganizationalUnitIds())
+                    {
+                        context.Writer.WritePropertyName("OrganizationalUnitIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestOrganizationalUnitIdsListValue in publicRequest.OrganizationalUnitIds)
+                        {
+                                context.Writer.Write(publicRequestOrganizationalUnitIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetToTime())
+                    {
+                        context.Writer.WritePropertyName("ToTime");
+                        context.Writer.Write(publicRequest.ToTime.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetToTime())
-                {
-                    context.Writer.WritePropertyName("ToTime");
-                    context.Writer.Write(publicRequest.ToTime.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

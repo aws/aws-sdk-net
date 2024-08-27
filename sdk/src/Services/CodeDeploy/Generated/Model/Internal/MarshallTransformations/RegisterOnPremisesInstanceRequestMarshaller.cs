@@ -63,33 +63,36 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetIamSessionArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("iamSessionArn");
-                    context.Writer.Write(publicRequest.IamSessionArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetIamSessionArn())
+                    {
+                        context.Writer.WritePropertyName("iamSessionArn");
+                        context.Writer.Write(publicRequest.IamSessionArn);
+                    }
+
+                    if(publicRequest.IsSetIamUserArn())
+                    {
+                        context.Writer.WritePropertyName("iamUserArn");
+                        context.Writer.Write(publicRequest.IamUserArn);
+                    }
+
+                    if(publicRequest.IsSetInstanceName())
+                    {
+                        context.Writer.WritePropertyName("instanceName");
+                        context.Writer.Write(publicRequest.InstanceName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetIamUserArn())
-                {
-                    context.Writer.WritePropertyName("iamUserArn");
-                    context.Writer.Write(publicRequest.IamUserArn);
-                }
-
-                if(publicRequest.IsSetInstanceName())
-                {
-                    context.Writer.WritePropertyName("instanceName");
-                    context.Writer.Write(publicRequest.InstanceName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

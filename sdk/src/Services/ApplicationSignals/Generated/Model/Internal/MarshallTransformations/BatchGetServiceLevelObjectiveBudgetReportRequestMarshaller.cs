@@ -61,32 +61,35 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/budget-report";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetSloIds())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("SloIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSloIdsListValue in publicRequest.SloIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetSloIds())
                     {
-                            context.Writer.Write(publicRequestSloIdsListValue);
+                        context.Writer.WritePropertyName("SloIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSloIdsListValue in publicRequest.SloIds)
+                        {
+                                context.Writer.Write(publicRequestSloIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTimestamp())
+                    {
+                        context.Writer.WritePropertyName("Timestamp");
+                        context.Writer.Write(publicRequest.Timestamp.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTimestamp())
-                {
-                    context.Writer.WritePropertyName("Timestamp");
-                    context.Writer.Write(publicRequest.Timestamp.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

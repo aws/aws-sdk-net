@@ -63,105 +63,108 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAuthorName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("authorName");
-                    context.Writer.Write(publicRequest.AuthorName);
-                }
-
-                if(publicRequest.IsSetBranchName())
-                {
-                    context.Writer.WritePropertyName("branchName");
-                    context.Writer.Write(publicRequest.BranchName);
-                }
-
-                if(publicRequest.IsSetCommitMessage())
-                {
-                    context.Writer.WritePropertyName("commitMessage");
-                    context.Writer.Write(publicRequest.CommitMessage);
-                }
-
-                if(publicRequest.IsSetDeleteFiles())
-                {
-                    context.Writer.WritePropertyName("deleteFiles");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDeleteFilesListValue in publicRequest.DeleteFiles)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAuthorName())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DeleteFileEntryMarshaller.Instance;
-                        marshaller.Marshall(publicRequestDeleteFilesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("authorName");
+                        context.Writer.Write(publicRequest.AuthorName);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetEmail())
-                {
-                    context.Writer.WritePropertyName("email");
-                    context.Writer.Write(publicRequest.Email);
-                }
-
-                if(publicRequest.IsSetKeepEmptyFolders())
-                {
-                    context.Writer.WritePropertyName("keepEmptyFolders");
-                    context.Writer.Write(publicRequest.KeepEmptyFolders.Value);
-                }
-
-                if(publicRequest.IsSetParentCommitId())
-                {
-                    context.Writer.WritePropertyName("parentCommitId");
-                    context.Writer.Write(publicRequest.ParentCommitId);
-                }
-
-                if(publicRequest.IsSetPutFiles())
-                {
-                    context.Writer.WritePropertyName("putFiles");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPutFilesListValue in publicRequest.PutFiles)
+                    if(publicRequest.IsSetBranchName())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = PutFileEntryMarshaller.Instance;
-                        marshaller.Marshall(publicRequestPutFilesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("branchName");
+                        context.Writer.Write(publicRequest.BranchName);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetRepositoryName())
-                {
-                    context.Writer.WritePropertyName("repositoryName");
-                    context.Writer.Write(publicRequest.RepositoryName);
-                }
-
-                if(publicRequest.IsSetSetFileModes())
-                {
-                    context.Writer.WritePropertyName("setFileModes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSetFileModesListValue in publicRequest.SetFileModes)
+                    if(publicRequest.IsSetCommitMessage())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SetFileModeEntryMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSetFileModesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("commitMessage");
+                        context.Writer.Write(publicRequest.CommitMessage);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDeleteFiles())
+                    {
+                        context.Writer.WritePropertyName("deleteFiles");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDeleteFilesListValue in publicRequest.DeleteFiles)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = DeleteFileEntryMarshaller.Instance;
+                            marshaller.Marshall(publicRequestDeleteFilesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetEmail())
+                    {
+                        context.Writer.WritePropertyName("email");
+                        context.Writer.Write(publicRequest.Email);
+                    }
+
+                    if(publicRequest.IsSetKeepEmptyFolders())
+                    {
+                        context.Writer.WritePropertyName("keepEmptyFolders");
+                        context.Writer.Write(publicRequest.KeepEmptyFolders.Value);
+                    }
+
+                    if(publicRequest.IsSetParentCommitId())
+                    {
+                        context.Writer.WritePropertyName("parentCommitId");
+                        context.Writer.Write(publicRequest.ParentCommitId);
+                    }
+
+                    if(publicRequest.IsSetPutFiles())
+                    {
+                        context.Writer.WritePropertyName("putFiles");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPutFilesListValue in publicRequest.PutFiles)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = PutFileEntryMarshaller.Instance;
+                            marshaller.Marshall(publicRequestPutFilesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetRepositoryName())
+                    {
+                        context.Writer.WritePropertyName("repositoryName");
+                        context.Writer.Write(publicRequest.RepositoryName);
+                    }
+
+                    if(publicRequest.IsSetSetFileModes())
+                    {
+                        context.Writer.WritePropertyName("setFileModes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSetFileModesListValue in publicRequest.SetFileModes)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = SetFileModeEntryMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSetFileModesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

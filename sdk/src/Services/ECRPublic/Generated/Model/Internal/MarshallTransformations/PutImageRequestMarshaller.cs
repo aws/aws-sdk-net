@@ -63,51 +63,54 @@ namespace Amazon.ECRPublic.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetImageDigest())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("imageDigest");
-                    context.Writer.Write(publicRequest.ImageDigest);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetImageDigest())
+                    {
+                        context.Writer.WritePropertyName("imageDigest");
+                        context.Writer.Write(publicRequest.ImageDigest);
+                    }
+
+                    if(publicRequest.IsSetImageManifest())
+                    {
+                        context.Writer.WritePropertyName("imageManifest");
+                        context.Writer.Write(publicRequest.ImageManifest);
+                    }
+
+                    if(publicRequest.IsSetImageManifestMediaType())
+                    {
+                        context.Writer.WritePropertyName("imageManifestMediaType");
+                        context.Writer.Write(publicRequest.ImageManifestMediaType);
+                    }
+
+                    if(publicRequest.IsSetImageTag())
+                    {
+                        context.Writer.WritePropertyName("imageTag");
+                        context.Writer.Write(publicRequest.ImageTag);
+                    }
+
+                    if(publicRequest.IsSetRegistryId())
+                    {
+                        context.Writer.WritePropertyName("registryId");
+                        context.Writer.Write(publicRequest.RegistryId);
+                    }
+
+                    if(publicRequest.IsSetRepositoryName())
+                    {
+                        context.Writer.WritePropertyName("repositoryName");
+                        context.Writer.Write(publicRequest.RepositoryName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetImageManifest())
-                {
-                    context.Writer.WritePropertyName("imageManifest");
-                    context.Writer.Write(publicRequest.ImageManifest);
-                }
-
-                if(publicRequest.IsSetImageManifestMediaType())
-                {
-                    context.Writer.WritePropertyName("imageManifestMediaType");
-                    context.Writer.Write(publicRequest.ImageManifestMediaType);
-                }
-
-                if(publicRequest.IsSetImageTag())
-                {
-                    context.Writer.WritePropertyName("imageTag");
-                    context.Writer.Write(publicRequest.ImageTag);
-                }
-
-                if(publicRequest.IsSetRegistryId())
-                {
-                    context.Writer.WritePropertyName("registryId");
-                    context.Writer.Write(publicRequest.RegistryId);
-                }
-
-                if(publicRequest.IsSetRepositoryName())
-                {
-                    context.Writer.WritePropertyName("repositoryName");
-                    context.Writer.Write(publicRequest.RepositoryName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,54 +63,57 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCapabilityId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("capabilityId");
-                    context.Writer.Write(publicRequest.CapabilityId);
-                }
-
-                if(publicRequest.IsSetConfiguration())
-                {
-                    context.Writer.WritePropertyName("configuration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CapabilityConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Configuration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetInstructionsDocuments())
-                {
-                    context.Writer.WritePropertyName("instructionsDocuments");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestInstructionsDocumentsListValue in publicRequest.InstructionsDocuments)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCapabilityId())
                     {
+                        context.Writer.WritePropertyName("capabilityId");
+                        context.Writer.Write(publicRequest.CapabilityId);
+                    }
+
+                    if(publicRequest.IsSetConfiguration())
+                    {
+                        context.Writer.WritePropertyName("configuration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = S3LocationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestInstructionsDocumentsListValue, context);
+                        var marshaller = CapabilityConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Configuration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetInstructionsDocuments())
+                    {
+                        context.Writer.WritePropertyName("instructionsDocuments");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestInstructionsDocumentsListValue in publicRequest.InstructionsDocuments)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = S3LocationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestInstructionsDocumentsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

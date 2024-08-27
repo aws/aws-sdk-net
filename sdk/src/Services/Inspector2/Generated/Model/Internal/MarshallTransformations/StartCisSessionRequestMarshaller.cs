@@ -61,32 +61,35 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/cissession/start";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMessage())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("message");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMessage())
+                    {
+                        context.Writer.WritePropertyName("message");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = StartCisSessionMessageMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Message, context);
+                        var marshaller = StartCisSessionMessageMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Message, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetScanJobId())
+                    {
+                        context.Writer.WritePropertyName("scanJobId");
+                        context.Writer.Write(publicRequest.ScanJobId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetScanJobId())
-                {
-                    context.Writer.WritePropertyName("scanJobId");
-                    context.Writer.Write(publicRequest.ScanJobId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -61,32 +61,35 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/updateMediaStorageConfiguration";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetChannelARN())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ChannelARN");
-                    context.Writer.Write(publicRequest.ChannelARN);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetChannelARN())
+                    {
+                        context.Writer.WritePropertyName("ChannelARN");
+                        context.Writer.Write(publicRequest.ChannelARN);
+                    }
+
+                    if(publicRequest.IsSetMediaStorageConfiguration())
+                    {
+                        context.Writer.WritePropertyName("MediaStorageConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MediaStorageConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.MediaStorageConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMediaStorageConfiguration())
-                {
-                    context.Writer.WritePropertyName("MediaStorageConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MediaStorageConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.MediaStorageConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

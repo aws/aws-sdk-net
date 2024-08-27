@@ -96,9 +96,9 @@ namespace Amazon.EC2.Model
         /// is disabled by default.
         /// </para>
         /// </summary>
-        public bool EnablePrivateGua
+        public bool? EnablePrivateGua
         {
-            get { return this._enablePrivateGua.GetValueOrDefault(); }
+            get { return this._enablePrivateGua; }
             set { this._enablePrivateGua = value; }
         }
 

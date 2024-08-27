@@ -63,72 +63,75 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCompatibleEnvironmentTemplates())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("compatibleEnvironmentTemplates");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCompatibleEnvironmentTemplatesListValue in publicRequest.CompatibleEnvironmentTemplates)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCompatibleEnvironmentTemplates())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("compatibleEnvironmentTemplates");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCompatibleEnvironmentTemplatesListValue in publicRequest.CompatibleEnvironmentTemplates)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = CompatibleEnvironmentTemplateInputMarshaller.Instance;
-                        marshaller.Marshall(publicRequestCompatibleEnvironmentTemplatesListValue, context);
+                            var marshaller = CompatibleEnvironmentTemplateInputMarshaller.Instance;
+                            marshaller.Marshall(publicRequestCompatibleEnvironmentTemplatesListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetMajorVersion())
-                {
-                    context.Writer.WritePropertyName("majorVersion");
-                    context.Writer.Write(publicRequest.MajorVersion);
-                }
-
-                if(publicRequest.IsSetMinorVersion())
-                {
-                    context.Writer.WritePropertyName("minorVersion");
-                    context.Writer.Write(publicRequest.MinorVersion);
-                }
-
-                if(publicRequest.IsSetStatus())
-                {
-                    context.Writer.WritePropertyName("status");
-                    context.Writer.Write(publicRequest.Status);
-                }
-
-                if(publicRequest.IsSetSupportedComponentSources())
-                {
-                    context.Writer.WritePropertyName("supportedComponentSources");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSupportedComponentSourcesListValue in publicRequest.SupportedComponentSources)
+                    if(publicRequest.IsSetDescription())
                     {
-                            context.Writer.Write(publicRequestSupportedComponentSourcesListValue);
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetMajorVersion())
+                    {
+                        context.Writer.WritePropertyName("majorVersion");
+                        context.Writer.Write(publicRequest.MajorVersion);
+                    }
+
+                    if(publicRequest.IsSetMinorVersion())
+                    {
+                        context.Writer.WritePropertyName("minorVersion");
+                        context.Writer.Write(publicRequest.MinorVersion);
+                    }
+
+                    if(publicRequest.IsSetStatus())
+                    {
+                        context.Writer.WritePropertyName("status");
+                        context.Writer.Write(publicRequest.Status);
+                    }
+
+                    if(publicRequest.IsSetSupportedComponentSources())
+                    {
+                        context.Writer.WritePropertyName("supportedComponentSources");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSupportedComponentSourcesListValue in publicRequest.SupportedComponentSources)
+                        {
+                                context.Writer.Write(publicRequestSupportedComponentSourcesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTemplateName())
+                    {
+                        context.Writer.WritePropertyName("templateName");
+                        context.Writer.Write(publicRequest.TemplateName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTemplateName())
-                {
-                    context.Writer.WritePropertyName("templateName");
-                    context.Writer.Write(publicRequest.TemplateName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

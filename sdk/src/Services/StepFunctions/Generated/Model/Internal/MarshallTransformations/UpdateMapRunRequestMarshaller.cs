@@ -63,46 +63,49 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMapRunArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("mapRunArn");
-                    context.Writer.Write(publicRequest.MapRunArn);
-                }
-
-                if(publicRequest.IsSetMaxConcurrency())
-                {
-                    context.Writer.WritePropertyName("maxConcurrency");
-                    context.Writer.Write(publicRequest.MaxConcurrency.Value);
-                }
-
-                if(publicRequest.IsSetToleratedFailureCount())
-                {
-                    context.Writer.WritePropertyName("toleratedFailureCount");
-                    context.Writer.Write(publicRequest.ToleratedFailureCount.Value);
-                }
-
-                if(publicRequest.IsSetToleratedFailurePercentage())
-                {
-                    context.Writer.WritePropertyName("toleratedFailurePercentage");
-                    if(StringUtils.IsSpecialFloatValue(publicRequest.ToleratedFailurePercentage.Value))
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMapRunArn())
                     {
-                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.ToleratedFailurePercentage.Value));
+                        context.Writer.WritePropertyName("mapRunArn");
+                        context.Writer.Write(publicRequest.MapRunArn);
                     }
-                    else
+
+                    if(publicRequest.IsSetMaxConcurrency())
                     {
-                        context.Writer.Write(publicRequest.ToleratedFailurePercentage.Value);
+                        context.Writer.WritePropertyName("maxConcurrency");
+                        context.Writer.Write(publicRequest.MaxConcurrency.Value);
                     }
+
+                    if(publicRequest.IsSetToleratedFailureCount())
+                    {
+                        context.Writer.WritePropertyName("toleratedFailureCount");
+                        context.Writer.Write(publicRequest.ToleratedFailureCount.Value);
+                    }
+
+                    if(publicRequest.IsSetToleratedFailurePercentage())
+                    {
+                        context.Writer.WritePropertyName("toleratedFailurePercentage");
+                        if(StringUtils.IsSpecialFloatValue(publicRequest.ToleratedFailurePercentage.Value))
+                        {
+                            context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.ToleratedFailurePercentage.Value));
+                        }
+                        else
+                        {
+                            context.Writer.Write(publicRequest.ToleratedFailurePercentage.Value);
+                        }
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

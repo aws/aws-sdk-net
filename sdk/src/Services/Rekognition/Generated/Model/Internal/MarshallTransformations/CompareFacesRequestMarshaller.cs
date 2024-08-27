@@ -63,56 +63,59 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetQualityFilter())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("QualityFilter");
-                    context.Writer.Write(publicRequest.QualityFilter);
-                }
-
-                if(publicRequest.IsSetSimilarityThreshold())
-                {
-                    context.Writer.WritePropertyName("SimilarityThreshold");
-                    if(StringUtils.IsSpecialFloatValue(publicRequest.SimilarityThreshold.Value))
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetQualityFilter())
                     {
-                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.SimilarityThreshold.Value));
+                        context.Writer.WritePropertyName("QualityFilter");
+                        context.Writer.Write(publicRequest.QualityFilter);
                     }
-                    else
+
+                    if(publicRequest.IsSetSimilarityThreshold())
                     {
-                        context.Writer.Write(publicRequest.SimilarityThreshold.Value);
+                        context.Writer.WritePropertyName("SimilarityThreshold");
+                        if(StringUtils.IsSpecialFloatValue(publicRequest.SimilarityThreshold.Value))
+                        {
+                            context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.SimilarityThreshold.Value));
+                        }
+                        else
+                        {
+                            context.Writer.Write(publicRequest.SimilarityThreshold.Value);
+                        }
                     }
+
+                    if(publicRequest.IsSetSourceImage())
+                    {
+                        context.Writer.WritePropertyName("SourceImage");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ImageMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SourceImage, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTargetImage())
+                    {
+                        context.Writer.WritePropertyName("TargetImage");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ImageMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TargetImage, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSourceImage())
-                {
-                    context.Writer.WritePropertyName("SourceImage");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ImageMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SourceImage, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTargetImage())
-                {
-                    context.Writer.WritePropertyName("TargetImage");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ImageMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TargetImage, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

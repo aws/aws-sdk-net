@@ -63,60 +63,63 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccountTakeoverRiskConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AccountTakeoverRiskConfiguration");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccountTakeoverRiskConfiguration())
+                    {
+                        context.Writer.WritePropertyName("AccountTakeoverRiskConfiguration");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = AccountTakeoverRiskConfigurationTypeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AccountTakeoverRiskConfiguration, context);
+                        var marshaller = AccountTakeoverRiskConfigurationTypeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AccountTakeoverRiskConfiguration, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetClientId())
+                    {
+                        context.Writer.WritePropertyName("ClientId");
+                        context.Writer.Write(publicRequest.ClientId);
+                    }
+
+                    if(publicRequest.IsSetCompromisedCredentialsRiskConfiguration())
+                    {
+                        context.Writer.WritePropertyName("CompromisedCredentialsRiskConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CompromisedCredentialsRiskConfigurationTypeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CompromisedCredentialsRiskConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRiskExceptionConfiguration())
+                    {
+                        context.Writer.WritePropertyName("RiskExceptionConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RiskExceptionConfigurationTypeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RiskExceptionConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetUserPoolId())
+                    {
+                        context.Writer.WritePropertyName("UserPoolId");
+                        context.Writer.Write(publicRequest.UserPoolId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetClientId())
-                {
-                    context.Writer.WritePropertyName("ClientId");
-                    context.Writer.Write(publicRequest.ClientId);
-                }
-
-                if(publicRequest.IsSetCompromisedCredentialsRiskConfiguration())
-                {
-                    context.Writer.WritePropertyName("CompromisedCredentialsRiskConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CompromisedCredentialsRiskConfigurationTypeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CompromisedCredentialsRiskConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRiskExceptionConfiguration())
-                {
-                    context.Writer.WritePropertyName("RiskExceptionConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RiskExceptionConfigurationTypeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RiskExceptionConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetUserPoolId())
-                {
-                    context.Writer.WritePropertyName("UserPoolId");
-                    context.Writer.Write(publicRequest.UserPoolId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

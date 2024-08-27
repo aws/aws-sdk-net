@@ -61,99 +61,102 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/evaluation-jobs";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientRequestToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetCustomerEncryptionKeyId())
-                {
-                    context.Writer.WritePropertyName("customerEncryptionKeyId");
-                    context.Writer.Write(publicRequest.CustomerEncryptionKeyId);
-                }
-
-                if(publicRequest.IsSetEvaluationConfig())
-                {
-                    context.Writer.WritePropertyName("evaluationConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EvaluationConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EvaluationConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetInferenceConfig())
-                {
-                    context.Writer.WritePropertyName("inferenceConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EvaluationInferenceConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.InferenceConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetJobDescription())
-                {
-                    context.Writer.WritePropertyName("jobDescription");
-                    context.Writer.Write(publicRequest.JobDescription);
-                }
-
-                if(publicRequest.IsSetJobName())
-                {
-                    context.Writer.WritePropertyName("jobName");
-                    context.Writer.Write(publicRequest.JobName);
-                }
-
-                if(publicRequest.IsSetJobTags())
-                {
-                    context.Writer.WritePropertyName("jobTags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestJobTagsListValue in publicRequest.JobTags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientRequestToken())
                     {
+                        context.Writer.WritePropertyName("clientRequestToken");
+                        context.Writer.Write(publicRequest.ClientRequestToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientRequestToken()))
+                    {
+                        context.Writer.WritePropertyName("clientRequestToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetCustomerEncryptionKeyId())
+                    {
+                        context.Writer.WritePropertyName("customerEncryptionKeyId");
+                        context.Writer.Write(publicRequest.CustomerEncryptionKeyId);
+                    }
+
+                    if(publicRequest.IsSetEvaluationConfig())
+                    {
+                        context.Writer.WritePropertyName("evaluationConfig");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestJobTagsListValue, context);
+                        var marshaller = EvaluationConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EvaluationConfig, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetInferenceConfig())
+                    {
+                        context.Writer.WritePropertyName("inferenceConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EvaluationInferenceConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.InferenceConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetJobDescription())
+                    {
+                        context.Writer.WritePropertyName("jobDescription");
+                        context.Writer.Write(publicRequest.JobDescription);
+                    }
+
+                    if(publicRequest.IsSetJobName())
+                    {
+                        context.Writer.WritePropertyName("jobName");
+                        context.Writer.Write(publicRequest.JobName);
+                    }
+
+                    if(publicRequest.IsSetJobTags())
+                    {
+                        context.Writer.WritePropertyName("jobTags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestJobTagsListValue in publicRequest.JobTags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestJobTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetOutputDataConfig())
+                    {
+                        context.Writer.WritePropertyName("outputDataConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EvaluationOutputDataConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OutputDataConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("roleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetOutputDataConfig())
-                {
-                    context.Writer.WritePropertyName("outputDataConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EvaluationOutputDataConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OutputDataConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("roleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

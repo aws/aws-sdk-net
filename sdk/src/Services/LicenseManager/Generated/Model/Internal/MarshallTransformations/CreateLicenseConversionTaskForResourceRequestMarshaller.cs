@@ -63,43 +63,46 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDestinationLicenseContext())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DestinationLicenseContext");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDestinationLicenseContext())
+                    {
+                        context.Writer.WritePropertyName("DestinationLicenseContext");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = LicenseConversionContextMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DestinationLicenseContext, context);
+                        var marshaller = LicenseConversionContextMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DestinationLicenseContext, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetResourceArn())
+                    {
+                        context.Writer.WritePropertyName("ResourceArn");
+                        context.Writer.Write(publicRequest.ResourceArn);
+                    }
+
+                    if(publicRequest.IsSetSourceLicenseContext())
+                    {
+                        context.Writer.WritePropertyName("SourceLicenseContext");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LicenseConversionContextMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SourceLicenseContext, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetResourceArn())
-                {
-                    context.Writer.WritePropertyName("ResourceArn");
-                    context.Writer.Write(publicRequest.ResourceArn);
-                }
-
-                if(publicRequest.IsSetSourceLicenseContext())
-                {
-                    context.Writer.WritePropertyName("SourceLicenseContext");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LicenseConversionContextMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SourceLicenseContext, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 
