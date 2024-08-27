@@ -483,6 +483,36 @@
     <pattern>([0-9a-zA-Z][_-]?)+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Bedrock.Model.GetInferenceProfileRequest.InferenceProfileIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>(arn:aws(|-us-gov|-cn|-iso|-iso-b):bedrock:(|[0-9a-z-]{0,20}):(|[0-9]{12}):inference-profile/)?[a-zA-Z0-9-:.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GetInferenceProfileResponse.Description</property>
+    <min>1</min>
+    <max>500</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GetInferenceProfileResponse.InferenceProfileArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws(|-us-gov|-cn|-iso|-iso-b):bedrock:(|[0-9a-z-]{0,20}):(|[0-9]{12}):inference-profile/[a-zA-Z0-9-:.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GetInferenceProfileResponse.InferenceProfileId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9-:.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GetInferenceProfileResponse.InferenceProfileName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>([0-9a-zA-Z][ _-]?)+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Bedrock.Model.GetModelCopyJobRequest.JobArn</property>
     <min>0</min>
     <max>1011</max>
@@ -828,6 +858,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.ListImportedModelsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>\S*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.ListInferenceProfilesRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.ListInferenceProfilesRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>\S*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.ListInferenceProfilesResponse.NextToken</property>
     <min>1</min>
     <max>2048</max>
     <pattern>\S*</pattern>
@@ -1346,6 +1393,34 @@
     <min>1</min>
     <max>63</max>
     <pattern>([0-9a-zA-Z][_-]?)+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.InferenceProfileModel.ModelArn</property>
+    <pattern>arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}::foundation-model/[a-z0-9-]{1,63}[.]{1}([a-z0-9-]{1,63}[.]){0,2}[a-z0-9-]{1,63}([:][a-z0-9-]{1,63}){0,2}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.InferenceProfileSummary.Description</property>
+    <min>1</min>
+    <max>500</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.InferenceProfileSummary.InferenceProfileArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws(|-us-gov|-cn|-iso|-iso-b):bedrock:(|[0-9a-z-]{0,20}):(|[0-9]{12}):inference-profile/[a-zA-Z0-9-:.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.InferenceProfileSummary.InferenceProfileId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9-:.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.InferenceProfileSummary.InferenceProfileName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>([0-9a-zA-Z][ _-]?)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.ModelCopyJobSummary.FailureMessage</property>

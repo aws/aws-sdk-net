@@ -1030,17 +1030,16 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Creates a job to invoke a model on multiple prompts (batch inference). Format your
-        /// data according to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-prerq.html#batch-inference-data">Format
+        /// Creates a batch inference job to invoke a model on multiple prompts. Format your data
+        /// according to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-data">Format
         /// your inference data</a> and upload it to an Amazon S3 bucket. For more information,
-        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-create.html">Create
-        /// a batch inference job</a>.
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference.html">Process
+        /// multiple prompts with batch inference</a>.
         /// 
         ///  
         /// <para>
         /// The response returns a <c>jobArn</c> that you can use to stop or get details about
-        /// the job. You can check the status of the job by sending a <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetModelCustomizationJob.html">GetModelCustomizationJob</a>
-        /// request.
+        /// the job.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateModelInvocationJob service method.</param>
@@ -1080,17 +1079,16 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Creates a job to invoke a model on multiple prompts (batch inference). Format your
-        /// data according to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-prerq.html#batch-inference-data">Format
+        /// Creates a batch inference job to invoke a model on multiple prompts. Format your data
+        /// according to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-data">Format
         /// your inference data</a> and upload it to an Amazon S3 bucket. For more information,
-        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-create.html">Create
-        /// a batch inference job</a>.
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference.html">Process
+        /// multiple prompts with batch inference</a>.
         /// 
         ///  
         /// <para>
         /// The response returns a <c>jobArn</c> that you can use to stop or get details about
-        /// the job. You can check the status of the job by sending a <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetModelCustomizationJob.html">GetModelCustomizationJob</a>
-        /// request.
+        /// the job.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateModelInvocationJob service method.</param>
@@ -2020,6 +2018,81 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  GetInferenceProfile
+
+
+        /// <summary>
+        /// Gets information about an inference profile. For more information, see the Amazon
+        /// Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInferenceProfile service method.</param>
+        /// 
+        /// <returns>The response from the GetInferenceProfile service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetInferenceProfile">REST API Reference for GetInferenceProfile Operation</seealso>
+        public virtual GetInferenceProfileResponse GetInferenceProfile(GetInferenceProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInferenceProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInferenceProfileResponseUnmarshaller.Instance;
+
+            return Invoke<GetInferenceProfileResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets information about an inference profile. For more information, see the Amazon
+        /// Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInferenceProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetInferenceProfile service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetInferenceProfile">REST API Reference for GetInferenceProfile Operation</seealso>
+        public virtual Task<GetInferenceProfileResponse> GetInferenceProfileAsync(GetInferenceProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInferenceProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInferenceProfileResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetInferenceProfileResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetModelCopyJob
 
 
@@ -2845,6 +2918,71 @@ namespace Amazon.Bedrock
             options.ResponseUnmarshaller = ListImportedModelsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListImportedModelsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListInferenceProfiles
+
+
+        /// <summary>
+        /// Returns a list of inference profiles that you can use.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInferenceProfiles service method.</param>
+        /// 
+        /// <returns>The response from the ListInferenceProfiles service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListInferenceProfiles">REST API Reference for ListInferenceProfiles Operation</seealso>
+        public virtual ListInferenceProfilesResponse ListInferenceProfiles(ListInferenceProfilesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInferenceProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInferenceProfilesResponseUnmarshaller.Instance;
+
+            return Invoke<ListInferenceProfilesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a list of inference profiles that you can use.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInferenceProfiles service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListInferenceProfiles service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListInferenceProfiles">REST API Reference for ListInferenceProfiles Operation</seealso>
+        public virtual Task<ListInferenceProfilesResponse> ListInferenceProfilesAsync(ListInferenceProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInferenceProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInferenceProfilesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListInferenceProfilesResponse>(request, options, cancellationToken);
         }
 
         #endregion

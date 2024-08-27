@@ -963,6 +963,98 @@ namespace Amazon.Bedrock
 
 
     /// <summary>
+    /// Constants used for properties of type InferenceProfileStatus.
+    /// </summary>
+    public class InferenceProfileStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for InferenceProfileStatus
+        /// </summary>
+        public static readonly InferenceProfileStatus ACTIVE = new InferenceProfileStatus("ACTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InferenceProfileStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InferenceProfileStatus FindValue(string value)
+        {
+            return FindValue<InferenceProfileStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InferenceProfileStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InferenceProfileType.
+    /// </summary>
+    public class InferenceProfileType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SYSTEM_DEFINED for InferenceProfileType
+        /// </summary>
+        public static readonly InferenceProfileType SYSTEM_DEFINED = new InferenceProfileType("SYSTEM_DEFINED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InferenceProfileType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InferenceProfileType FindValue(string value)
+        {
+            return FindValue<InferenceProfileType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InferenceProfileType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InferenceType.
     /// </summary>
     public class InferenceType : ConstantClass

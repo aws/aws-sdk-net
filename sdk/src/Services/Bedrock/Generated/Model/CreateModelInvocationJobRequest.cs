@@ -31,17 +31,16 @@ namespace Amazon.Bedrock.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateModelInvocationJob operation.
-    /// Creates a job to invoke a model on multiple prompts (batch inference). Format your
-    /// data according to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-prerq.html#batch-inference-data">Format
+    /// Creates a batch inference job to invoke a model on multiple prompts. Format your data
+    /// according to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-data">Format
     /// your inference data</a> and upload it to an Amazon S3 bucket. For more information,
-    /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-create.html">Create
-    /// a batch inference job</a>.
+    /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference.html">Process
+    /// multiple prompts with batch inference</a>.
     /// 
     ///  
     /// <para>
     /// The response returns a <c>jobArn</c> that you can use to stop or get details about
-    /// the job. You can check the status of the job by sending a <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetModelCustomizationJob.html">GetModelCustomizationJob</a>
-    /// request.
+    /// the job.
     /// </para>
     /// </summary>
     public partial class CreateModelInvocationJobRequest : AmazonBedrockRequest
