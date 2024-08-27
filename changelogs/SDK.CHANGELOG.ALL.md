@@ -1,3 +1,15 @@
+### 3.7.874.0 (2024-08-27 18:19 UTC)
+* Bedrock (3.7.404.0)
+	* Amazon Bedrock SDK updates for Inference Profile.
+* BedrockRuntime (3.7.402.0)
+	* Amazon Bedrock SDK updates for Inference Profile.
+* Chatbot (3.7.401.0)
+	* Update documentation to be consistent with the API docs
+* Omics (3.7.401.0)
+	* Adds data provenance to import jobs from read sets and references
+* Polly (3.7.401.0)
+	* Amazon Polly adds 2 new voices: Jitka (cs-CZ) and Sabrina (de-CH).
+
 ### 3.7.873.0 (2024-08-26 18:17 UTC)
 * IoTSiteWise (3.7.401.0)
 	* AWS IoT SiteWise now supports versioning for asset models. It enables users to retrieve active version of their asset model and perform asset model writes with optimistic lock.
