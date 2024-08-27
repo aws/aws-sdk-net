@@ -99,7 +99,7 @@ namespace Amazon.ComputeOptimizer.Model
         ///  <ul> <li> 
         /// <para>
         /// If you specify the <c>name</c> parameter as <c>Finding</c>, specify <c>Optimized</c>,
-        /// <c>NotOptimized</c>, or <c>Unavailable</c>.
+        /// <c>Underprovisioned</c>, or <c>Overprovisioned</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>

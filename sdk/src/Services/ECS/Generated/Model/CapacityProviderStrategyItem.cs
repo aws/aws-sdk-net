@@ -31,20 +31,23 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// The details of a capacity provider strategy. A capacity provider strategy can be set
-    /// when using the <a>RunTask</a> or <a>CreateCluster</a> APIs or as the default capacity
-    /// provider strategy for a cluster with the <a>CreateCluster</a> API.
+    /// when using the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html">RunTask</a>or
+    /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCluster.html">CreateCluster</a>
+    /// APIs or as the default capacity provider strategy for a cluster with the <c>CreateCluster</c>
+    /// API.
     /// 
     ///  
     /// <para>
     /// Only capacity providers that are already associated with a cluster and have an <c>ACTIVE</c>
-    /// or <c>UPDATING</c> status can be used in a capacity provider strategy. The <a>PutClusterCapacityProviders</a>
+    /// or <c>UPDATING</c> status can be used in a capacity provider strategy. The <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutClusterCapacityProviders.html">PutClusterCapacityProviders</a>
     /// API is used to associate a capacity provider with a cluster.
     /// </para>
     ///  
     /// <para>
     /// If specifying a capacity provider that uses an Auto Scaling group, the capacity provider
     /// must already be created. New Auto Scaling group capacity providers can be created
-    /// with the <a>CreateCapacityProvider</a> API operation.
+    /// with the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateClusterCapacityProvider.html">CreateClusterCapacityProvider</a>
+    /// API operation.
     /// </para>
     ///  
     /// <para>

@@ -85,6 +85,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.QueueTimeAdjustmentSeconds.Value);
                 }
 
+                if(publicRequest.IsSetRoutingCriteria())
+                {
+                    context.Writer.WritePropertyName("RoutingCriteria");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RoutingCriteriaInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RoutingCriteria, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -78,10 +78,22 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     unmarshalledObject.EventSource = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FirehoseConfiguration", targetDepth))
+                {
+                    var unmarshaller = FirehoseConfigurationTypeUnmarshaller.Instance;
+                    unmarshalledObject.FirehoseConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LogLevel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LogLevel = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("S3Configuration", targetDepth))
+                {
+                    var unmarshaller = S3ConfigurationTypeUnmarshaller.Instance;
+                    unmarshalledObject.S3Configuration = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

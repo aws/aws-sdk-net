@@ -34,10 +34,16 @@ namespace Amazon.IoTFleetWise
     public partial class AmazonIoTFleetWiseConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("IoTFleetWise", "4.0.0.0");
 
         private static readonly AmazonIoTFleetWiseEndpointResolver EndpointResolver =
             new AmazonIoTFleetWiseEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("IoTFleetWise", "3.7.400.2");
+=======
+            InternalSDKUtils.BuildUserAgentString("IoTFleetWise", "3.7.400.11");
+>>>>>>> 5a152135e000587a58481d3320fe67732d653199
 
         private string _userAgent = UserAgentString;
         ///<summary>

@@ -37,7 +37,8 @@ namespace ServiceClientGenerator.Generators.Endpoints
             
             #line default
             #line hidden
-            this.Write("\r\nusing System;\r\nusing Amazon.");
+            this.Write("\r\nusing System;\r\nusing System.Linq;\r\nusing System.Collections.Generic;\r\nusing Ama" +
+                    "zon.");
             
             #line 12 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Config.ServiceNameRoot));

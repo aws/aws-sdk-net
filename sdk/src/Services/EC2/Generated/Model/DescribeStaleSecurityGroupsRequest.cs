@@ -32,9 +32,9 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the DescribeStaleSecurityGroups operation.
     /// Describes the stale security group rules for security groups in a specified VPC. Rules
-    /// are stale when they reference a deleted security group in the same VPC or peered VPC.
-    /// Rules can also be stale if they reference a security group in a peer VPC for which
-    /// the VPC peering connection has been deleted.
+    /// are stale when they reference a deleted security group in a peered VPC. Rules can
+    /// also be stale if they reference a security group in a peer VPC for which the VPC peering
+    /// connection has been deleted.
     /// </summary>
     public partial class DescribeStaleSecurityGroupsRequest : AmazonEC2Request
     {

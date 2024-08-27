@@ -187,6 +187,12 @@ namespace Amazon.DataZone.Model
         /// <para>
         /// The status of the subscriptions that you want to list.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This is not a required parameter, but if not provided, by default, Amazon DataZone
+        /// returns only <c>APPROVED</c> subscriptions. 
+        /// </para>
+        ///  </note>
         /// </summary>
         public SubscriptionStatus Status
         {

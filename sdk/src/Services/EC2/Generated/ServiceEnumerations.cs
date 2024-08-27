@@ -12537,6 +12537,60 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type IpamResourceCidrIpSource.
+    /// </summary>
+    public class IpamResourceCidrIpSource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Amazon for IpamResourceCidrIpSource
+        /// </summary>
+        public static readonly IpamResourceCidrIpSource Amazon = new IpamResourceCidrIpSource("amazon");
+        /// <summary>
+        /// Constant Byoip for IpamResourceCidrIpSource
+        /// </summary>
+        public static readonly IpamResourceCidrIpSource Byoip = new IpamResourceCidrIpSource("byoip");
+        /// <summary>
+        /// Constant None for IpamResourceCidrIpSource
+        /// </summary>
+        public static readonly IpamResourceCidrIpSource None = new IpamResourceCidrIpSource("none");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IpamResourceCidrIpSource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IpamResourceCidrIpSource FindValue(string value)
+        {
+            return FindValue<IpamResourceCidrIpSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IpamResourceCidrIpSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IpamResourceDiscoveryAssociationState.
     /// </summary>
     public class IpamResourceDiscoveryAssociationState : ConstantClass
@@ -13044,6 +13098,110 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator IpamTier(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IpSource.
+    /// </summary>
+    public class IpSource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Amazon for IpSource
+        /// </summary>
+        public static readonly IpSource Amazon = new IpSource("amazon");
+        /// <summary>
+        /// Constant Byoip for IpSource
+        /// </summary>
+        public static readonly IpSource Byoip = new IpSource("byoip");
+        /// <summary>
+        /// Constant None for IpSource
+        /// </summary>
+        public static readonly IpSource None = new IpSource("none");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IpSource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IpSource FindValue(string value)
+        {
+            return FindValue<IpSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IpSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Ipv6AddressAttribute.
+    /// </summary>
+    public class Ipv6AddressAttribute : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Private for Ipv6AddressAttribute
+        /// </summary>
+        public static readonly Ipv6AddressAttribute Private = new Ipv6AddressAttribute("private");
+        /// <summary>
+        /// Constant Public for Ipv6AddressAttribute
+        /// </summary>
+        public static readonly Ipv6AddressAttribute Public = new Ipv6AddressAttribute("public");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Ipv6AddressAttribute(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Ipv6AddressAttribute FindValue(string value)
+        {
+            return FindValue<Ipv6AddressAttribute>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Ipv6AddressAttribute(string value)
         {
             return FindValue(value);
         }

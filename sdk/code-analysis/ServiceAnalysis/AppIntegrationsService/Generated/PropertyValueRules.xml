@@ -105,6 +105,40 @@
     <pattern>^(\w+\:\/\/[\w.-]+[\w/!@#+=.-]+$)|(\w+\:\/\/[\w.-]+[\w/!@#+=.-]+[\w/!@#+=.-]+[\w/!@#+=.,-]+$)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppIntegrationsService.Model.CreateDataIntegrationAssociationRequest.ClientId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppIntegrationsService.Model.CreateDataIntegrationAssociationRequest.ClientToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppIntegrationsService.Model.CreateDataIntegrationAssociationRequest.DataIntegrationIdentifier</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppIntegrationsService.Model.CreateDataIntegrationAssociationRequest.DestinationURI</property>
+    <min>1</min>
+    <max>1000</max>
+    <pattern>^(\w+\:\/\/[\w.-]+[\w/!@#+=.-]+$)|(\w+\:\/\/[\w.-]+[\w/!@#+=.-]+[\w/!@#+=.-]+[\w/!@#+=.,-]+$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppIntegrationsService.Model.CreateDataIntegrationAssociationResponse.DataIntegrationArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppIntegrationsService.Model.CreateDataIntegrationAssociationResponse.DataIntegrationAssociationId</property>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.CreateEventIntegrationRequest.ClientToken</property>
     <min>1</min>
     <max>2048</max>
@@ -431,6 +465,18 @@
     <pattern>^[a-zA-Z0-9\/\._\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppIntegrationsService.Model.UpdateDataIntegrationAssociationRequest.DataIntegrationAssociationIdentifier</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppIntegrationsService.Model.UpdateDataIntegrationAssociationRequest.DataIntegrationIdentifier</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.UpdateEventIntegrationRequest.Description</property>
     <min>0</min>
     <max>1000</max>
@@ -499,6 +545,12 @@
     <min>1</min>
     <max>2048</max>
     <pattern>^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppIntegrationsService.Model.DataIntegrationAssociationSummary.DestinationURI</property>
+    <min>1</min>
+    <max>1000</max>
+    <pattern>^(\w+\:\/\/[\w.-]+[\w/!@#+=.-]+$)|(\w+\:\/\/[\w.-]+[\w/!@#+=.-]+[\w/!@#+=.-]+[\w/!@#+=.,-]+$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.DataIntegrationSummary.Arn</property>
@@ -581,6 +633,24 @@
     <min>1</min>
     <max>1000</max>
     <pattern>^\w+\:\/\/.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppIntegrationsService.Model.LastExecutionStatus.StatusMessage</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppIntegrationsService.Model.OnDemandConfiguration.EndTime</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppIntegrationsService.Model.OnDemandConfiguration.StartTime</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.Publication.Description</property>

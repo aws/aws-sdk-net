@@ -81,6 +81,17 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetIdentityProviderConfiguration())
+                {
+                    context.Writer.WritePropertyName("identityProviderConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = IdentityProviderConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.IdentityProviderConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetRoleArn())
                 {
                     context.Writer.WritePropertyName("roleArn");

@@ -102,8 +102,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>route.destination-prefix-list-id</c> - The ID (prefix) of the Amazon Web Service
-        /// specified in a route in the table.
+        ///  <c>route.destination-prefix-list-id</c> - The ID (prefix) of the Amazon Web Services
+        /// service specified in a route in the table.
         /// </para>
         ///  </li> <li> 
         /// <para>

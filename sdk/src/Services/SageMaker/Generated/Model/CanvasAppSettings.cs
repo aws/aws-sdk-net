@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class CanvasAppSettings
     {
         private DirectDeploySettings _directDeploySettings;
+        private EmrServerlessSettings _emrServerlessSettings;
         private GenerativeAiSettings _generativeAiSettings;
         private List<IdentityProviderOAuthSetting> _identityProviderOAuthSettings = AWSConfigs.InitializeCollections ? new List<IdentityProviderOAuthSetting>() : null;
         private KendraSettings _kendraSettings;
@@ -58,6 +59,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetDirectDeploySettings()
         {
             return this._directDeploySettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EmrServerlessSettings. 
+        /// <para>
+        /// The settings for running Amazon EMR Serverless data processing jobs in SageMaker Canvas.
+        /// </para>
+        /// </summary>
+        public EmrServerlessSettings EmrServerlessSettings
+        {
+            get { return this._emrServerlessSettings; }
+            set { this._emrServerlessSettings = value; }
+        }
+
+        // Check to see if EmrServerlessSettings property is set
+        internal bool IsSetEmrServerlessSettings()
+        {
+            return this._emrServerlessSettings != null;
         }
 
         /// <summary>

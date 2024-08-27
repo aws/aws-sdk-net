@@ -117,6 +117,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (putObjectRequest.IsSetChecksumSHA256())
                 request.Headers.Add("x-amz-checksum-sha256", S3Transforms.ToStringValue(putObjectRequest.ChecksumSHA256));
 
+            if (putObjectRequest.IsSetIfNoneMatch())
+                request.Headers["If-None-Match"] = putObjectRequest.IfNoneMatch;
+
             AmazonS3Util.SetMetadataHeaders(request, putObjectRequest.Metadata);
 
             if (string.IsNullOrEmpty(putObjectRequest.BucketName))

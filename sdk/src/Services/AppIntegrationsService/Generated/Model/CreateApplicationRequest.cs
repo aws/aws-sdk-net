@@ -31,12 +31,7 @@ namespace Amazon.AppIntegrationsService.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateApplication operation.
-    /// This API is in preview release and subject to change.
-    /// 
-    ///  
-    /// <para>
     /// Creates and persists an Application resource.
-    /// </para>
     /// </summary>
     public partial class CreateApplicationRequest : AmazonAppIntegrationsServiceRequest
     {

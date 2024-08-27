@@ -72,6 +72,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     unmarshalledObject.AssetListing = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("dataProductListing", targetDepth))
+                {
+                    var unmarshaller = DataProductListingUnmarshaller.Instance;
+                    unmarshalledObject.DataProductListing = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

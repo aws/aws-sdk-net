@@ -93,6 +93,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FleetServiceRole);
                 }
 
+                if(publicRequest.IsSetImageId())
+                {
+                    context.Writer.WritePropertyName("imageId");
+                    context.Writer.Write(publicRequest.ImageId);
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");

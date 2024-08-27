@@ -28,8 +28,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The container element for specifying the default Object Lock retention settings for
-    /// new objects placed in the specified bucket.
+    /// <para>The container element for optionally specifying the default Object Lock retention settings for 
+    /// new objects placed in the specified bucket.</para> 
+    /// <note> <ul> 
+    /// <li> <para>The <code>DefaultRetention</code> settings require both a mode and a period.</para> </li> 
+    /// <li> <para>The <code>DefaultRetention</code> period can be either <code>Days</code> or <code>Years</code> but you must 
+    /// select one. You cannot specify <code>Days</code> and <code>Years</code> at the same time.</para> </li> 
+    /// </ul> </note>
     /// </summary>
     public partial class DefaultRetention
     {

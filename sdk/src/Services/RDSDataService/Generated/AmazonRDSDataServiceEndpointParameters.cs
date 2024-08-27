@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the rds-data-2018-08-01.normal.json service model.
  */
 
+using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 

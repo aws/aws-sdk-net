@@ -273,7 +273,11 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 				ProcessList(level, variableName, member);
 			}
 			else if(member.IsMap)
-			{				
+			{
+#>
+<#=new string(' ', (level + 4) * 4)#>if (<#=variableName#>.IsSet<#=member.PropertyName#>())
+<#=new string(' ', (level + 4) * 4)#>{
+<#+
 				if(member.IsFlattened)
 				{
 					ProcessFlattenedMap(level,variableName,member);
@@ -282,6 +286,9 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 				{
 					ProcessMap(level, variableName, member);
 				}
+#>
+<#=new string(' ', (level + 4) * 4)#>}
+<#+
 			}
 			// we're processing members of a structure as a map's value
 			else if(insideMap)

@@ -46,11 +46,14 @@ namespace Amazon.QBusiness.Model
     public partial class CreateApplicationRequest : AmazonQBusinessRequest
     {
         private AttachmentsConfiguration _attachmentsConfiguration;
+        private List<string> _clientIdsForOIDC = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _clientToken;
         private string _description;
         private string _displayName;
         private EncryptionConfiguration _encryptionConfiguration;
+        private string _iamIdentityProviderArn;
         private string _identityCenterInstanceArn;
+        private IdentityType _identityType;
         private PersonalizationConfiguration _personalizationConfiguration;
         private QAppsConfiguration _qAppsConfiguration;
         private string _roleArn;
@@ -72,6 +75,24 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetAttachmentsConfiguration()
         {
             return this._attachmentsConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientIdsForOIDC. 
+        /// <para>
+        /// The OIDC client ID for a Amazon Q Business application.
+        /// </para>
+        /// </summary>
+        public List<string> ClientIdsForOIDC
+        {
+            get { return this._clientIdsForOIDC; }
+            set { this._clientIdsForOIDC = value; }
+        }
+
+        // Check to see if ClientIdsForOIDC property is set
+        internal bool IsSetClientIdsForOIDC()
+        {
+            return this._clientIdsForOIDC != null && (this._clientIdsForOIDC.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -152,6 +173,26 @@ namespace Amazon.QBusiness.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IamIdentityProviderArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of an identity provider being used by an Amazon Q Business
+        /// application.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string IamIdentityProviderArn
+        {
+            get { return this._iamIdentityProviderArn; }
+            set { this._iamIdentityProviderArn = value; }
+        }
+
+        // Check to see if IamIdentityProviderArn property is set
+        internal bool IsSetIamIdentityProviderArn()
+        {
+            return this._iamIdentityProviderArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property IdentityCenterInstanceArn. 
         /// <para>
         ///  The Amazon Resource Name (ARN) of the IAM Identity Center instance you are either
@@ -169,6 +210,24 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetIdentityCenterInstanceArn()
         {
             return this._identityCenterInstanceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdentityType. 
+        /// <para>
+        /// The authentication type being used by a Amazon Q Business application.
+        /// </para>
+        /// </summary>
+        public IdentityType IdentityType
+        {
+            get { return this._identityType; }
+            set { this._identityType = value; }
+        }
+
+        // Check to see if IdentityType property is set
+        internal bool IsSetIdentityType()
+        {
+            return this._identityType != null;
         }
 
         /// <summary>

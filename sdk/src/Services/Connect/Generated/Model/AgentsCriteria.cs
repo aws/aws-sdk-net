@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Can be used to define a list of preferred agents to target the contact within the
-    /// queue. Note that agents must have the queue in their routing profile in order to be
-    /// offered the contact.
+    /// Can be used to define a list of preferred agents to target the contact to within the
+    /// queue.&#x2028; Note that agents must have the queue in their routing profile in order
+    /// to be offered the&#x2028; contact.
     /// </summary>
     public partial class AgentsCriteria
     {
@@ -41,7 +41,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property AgentIds. 
         /// <para>
-        /// An object to specify a list of agents, by Agent ID.
+        /// An object to specify a list of agents, by user ID.
         /// </para>
         /// </summary>
         public List<string> AgentIds

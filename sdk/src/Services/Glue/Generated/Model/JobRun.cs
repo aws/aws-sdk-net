@@ -46,6 +46,7 @@ namespace Amazon.Glue.Model
         private string _id;
         private JobMode _jobMode;
         private string _jobName;
+        private bool? _jobRunQueuingEnabled;
         private JobRunState _jobRunState;
         private DateTime? _lastModifiedOn;
         private string _logGroupName;
@@ -58,6 +59,7 @@ namespace Amazon.Glue.Model
         private string _profileName;
         private string _securityConfiguration;
         private DateTime? _startedOn;
+        private string _stateDetail;
         private int? _timeout;
         private string _triggerName;
         private WorkerType _workerType;
@@ -376,6 +378,29 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property JobRunQueuingEnabled. 
+        /// <para>
+        /// Specifies whether job run queuing is enabled for the job run.
+        /// </para>
+        ///  
+        /// <para>
+        /// A value of true means job run queuing is enabled for the job run. If false or not
+        /// populated, the job run will not be considered for queueing.
+        /// </para>
+        /// </summary>
+        public bool JobRunQueuingEnabled
+        {
+            get { return this._jobRunQueuingEnabled.GetValueOrDefault(); }
+            set { this._jobRunQueuingEnabled = value; }
+        }
+
+        // Check to see if JobRunQueuingEnabled property is set
+        internal bool IsSetJobRunQueuingEnabled()
+        {
+            return this._jobRunQueuingEnabled.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property JobRunState. 
         /// <para>
         /// The current state of the job run. For more information about the statuses of jobs
@@ -640,6 +665,30 @@ namespace Amazon.Glue.Model
         internal bool IsSetStartedOn()
         {
             return this._startedOn.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateDetail. 
+        /// <para>
+        /// This field holds details that pertain to the state of a job run. The field is nullable.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, when a job run is in a WAITING state as a result of job run queuing,
+        /// the field has the reason why the job run is in that state.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=400000)]
+        public string StateDetail
+        {
+            get { return this._stateDetail; }
+            set { this._stateDetail = value; }
+        }
+
+        // Check to see if StateDetail property is set
+        internal bool IsSetStateDetail()
+        {
+            return this._stateDetail != null;
         }
 
         /// <summary>

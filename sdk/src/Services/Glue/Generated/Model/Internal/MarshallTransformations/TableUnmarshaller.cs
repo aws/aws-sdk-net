@@ -156,6 +156,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.Retention = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Status", targetDepth))
+                {
+                    var unmarshaller = TableStatusUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("StorageDescriptor", targetDepth))
                 {
                     var unmarshaller = StorageDescriptorUnmarshaller.Instance;

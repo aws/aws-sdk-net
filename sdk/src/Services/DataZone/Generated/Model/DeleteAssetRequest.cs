@@ -31,7 +31,7 @@ namespace Amazon.DataZone.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAsset operation.
-    /// Delets an asset in Amazon DataZone.
+    /// Deletes an asset in Amazon DataZone.
     /// </summary>
     public partial class DeleteAssetRequest : AmazonDataZoneRequest
     {

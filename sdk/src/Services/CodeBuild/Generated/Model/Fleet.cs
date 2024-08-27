@@ -41,6 +41,7 @@ namespace Amazon.CodeBuild.Model
         private EnvironmentType _environmentType;
         private string _fleetServiceRole;
         private string _id;
+        private string _imageId;
         private DateTime? _lastModified;
         private string _name;
         private FleetOverflowBehavior _overflowBehavior;
@@ -217,6 +218,17 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// The environment type <c>MAC_ARM</c> is available for Medium fleets only in regions
+        /// US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Sydney), and
+        /// EU (Frankfurt)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The environment type <c>MAC_ARM</c> is available for Large fleets only in regions
+        /// US East (N. Virginia), US East (Ohio), US West (Oregon), and Asia Pacific (Sydney).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// The environment type <c>WINDOWS_SERVER_2019_CONTAINER</c> is available only in regions
         /// US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Sydney), Asia
         /// Pacific (Tokyo), Asia Pacific (Mumbai) and EU (Ireland).
@@ -284,6 +296,25 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageId. 
+        /// <para>
+        /// The Amazon Machine Image (AMI) of the compute fleet.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string ImageId
+        {
+            get { return this._imageId; }
+            set { this._imageId = value; }
+        }
+
+        // Check to see if ImageId property is set
+        internal bool IsSetImageId()
+        {
+            return this._imageId != null;
         }
 
         /// <summary>

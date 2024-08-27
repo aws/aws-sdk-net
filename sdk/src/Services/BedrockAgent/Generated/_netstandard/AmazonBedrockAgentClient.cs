@@ -1501,8 +1501,8 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Deletes a prompt or a prompt version from the Prompt management tool. For more information,
-        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-manage.html#prompt-management-delete.html">Delete
+        /// Deletes a prompt or a version of it, depending on whether you include the <c>promptVersion</c>
+        /// field or not. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-manage.html#prompt-management-delete.html">Delete
         /// prompts from the Prompt management tool</a> and <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-deploy.html#prompt-management-versions-delete.html">Delete
         /// a version of a prompt from the Prompt management tool</a> in the Amazon Bedrock User
         /// Guide.
@@ -2165,8 +2165,9 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Retrieves information about a prompt or a version of it. For more information, see
-        /// <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-manage.html#prompt-management-view.html">View
+        /// Retrieves information about the working draft (<c>DRAFT</c> version) of a prompt or
+        /// a version of it, depending on whether you include the <c>promptVersion</c> field or
+        /// not. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-manage.html#prompt-management-view.html">View
         /// information about prompts using Prompt management</a> and <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-deploy.html#prompt-management-versions-view.html">View
         /// information about a version of your prompt</a> in the Amazon Bedrock User Guide.
         /// </summary>
@@ -2759,8 +2760,10 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Returns a list of prompts from the Prompt management tool and information about each
-        /// prompt. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-manage.html#prompt-management-view.html">View
+        /// Returns either information about the working draft (<c>DRAFT</c> version) of each
+        /// prompt in an account, or information about of all versions of a prompt, depending
+        /// on whether you include the <c>promptIdentifier</c> field or not. For more information,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-manage.html#prompt-management-view.html">View
         /// information about prompts using Prompt management</a> in the Amazon Bedrock User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPrompts service method.</param>

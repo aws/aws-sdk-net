@@ -101,7 +101,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Architecture. 
         /// <para>
-        /// The CPU architecture of the node. For example, x86_64.
+        /// The CPU architecture of the node. For example, <c>x86_64</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=120)]

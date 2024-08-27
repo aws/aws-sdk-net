@@ -34,10 +34,16 @@ namespace Amazon.CloudSearch
     public partial class AmazonCloudSearchConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("CloudSearch", "4.0.0.0");
 
         private static readonly AmazonCloudSearchEndpointResolver EndpointResolver =
             new AmazonCloudSearchEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("CloudSearch", "3.7.400.3");
+=======
+            InternalSDKUtils.BuildUserAgentString("CloudSearch", "3.7.400.12");
+>>>>>>> 5a152135e000587a58481d3320fe67732d653199
 
         private string _userAgent = UserAgentString;
         ///<summary>

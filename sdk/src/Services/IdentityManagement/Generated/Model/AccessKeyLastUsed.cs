@@ -65,8 +65,15 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Required=true)]
         public DateTime? LastUsedDate
+||||||| Commit version number update changes
+        [AWSProperty(Required=true)]
+        public DateTime LastUsedDate
+=======
+        public DateTime LastUsedDate
+>>>>>>> 5a152135e000587a58481d3320fe67732d653199
         {
             get { return this._lastUsedDate; }
             set { this._lastUsedDate = value; }

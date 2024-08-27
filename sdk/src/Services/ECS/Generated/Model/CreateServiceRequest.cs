@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model
     /// Runs and maintains your desired number of tasks from a specified task definition.
     /// If the number of tasks running in a service drops below the <c>desiredCount</c>, Amazon
     /// ECS runs another copy of the task in the specified cluster. To update an existing
-    /// service, see the <a>UpdateService</a> action.
+    /// service, use <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a>.
     /// 
     ///  <note> 
     /// <para>
@@ -91,10 +91,9 @@ namespace Amazon.ECS.Model
     /// <para>
     /// You can optionally specify a deployment configuration for your service. The deployment
     /// is initiated by changing properties. For example, the deployment might be initiated
-    /// by the task definition or by your desired count of a service. This is done with an
-    /// <a>UpdateService</a> operation. The default value for a replica service for <c>minimumHealthyPercent</c>
-    /// is 100%. The default value for a daemon service for <c>minimumHealthyPercent</c> is
-    /// 0%.
+    /// by the task definition or by your desired count of a service. You can use <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a>.
+    /// The default value for a replica service for <c>minimumHealthyPercent</c> is 100%.
+    /// The default value for a daemon service for <c>minimumHealthyPercent</c> is 0%.
     /// </para>
     ///  
     /// <para>
@@ -140,8 +139,8 @@ namespace Amazon.ECS.Model
     /// <para>
     /// When creating a service that uses the <c>EXTERNAL</c> deployment controller, you can
     /// specify only parameters that aren't controlled at the task set level. The only required
-    /// parameter is the service name. You control your services using the <a>CreateTaskSet</a>
-    /// operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+    /// parameter is the service name. You control your services using the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateTaskSet.html">CreateTaskSet</a>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
     /// ECS deployment types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
     ///  

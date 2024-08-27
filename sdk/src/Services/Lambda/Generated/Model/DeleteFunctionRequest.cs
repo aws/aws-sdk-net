@@ -38,8 +38,8 @@ namespace Amazon.Lambda.Model
     ///  
     /// <para>
     /// To delete Lambda event source mappings that invoke a function, use <a>DeleteEventSourceMapping</a>.
-    /// For Amazon Web Services and resources that invoke your function directly, delete the
-    /// trigger in the service where you originally configured it.
+    /// For Amazon Web Servicesservices and resources that invoke your function directly,
+    /// delete the trigger in the service where you originally configured it.
     /// </para>
     /// </summary>
     public partial class DeleteFunctionRequest : AmazonLambdaRequest

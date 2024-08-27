@@ -46,6 +46,7 @@ namespace Amazon.SsmSap.Model
         /// The ID of the application.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=60)]
         public string ApplicationId
         {
             get { return this._applicationId; }
@@ -82,6 +83,7 @@ namespace Amazon.SsmSap.Model
         /// The ID of the component.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string ComponentId
         {
             get { return this._componentId; }

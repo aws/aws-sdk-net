@@ -117,6 +117,12 @@
     <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QBusiness.Model.CreateApplicationRequest.IamIdentityProviderArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws:iam::\d{12}:(oidc-provider|saml-provider)/[a-zA-Z0-9_\.\/@\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QBusiness.Model.CreateApplicationRequest.IdentityCenterInstanceArn</property>
     <min>10</min>
     <max>1224</max>
@@ -520,6 +526,12 @@
     <min>1</min>
     <max>1000</max>
     <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.GetApplicationResponse.IamIdentityProviderArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws:iam::\d{12}:(oidc-provider|saml-provider)/[a-zA-Z0-9_\.\/@\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetApplicationResponse.IdentityCenterApplicationArn</property>
@@ -1898,6 +1910,18 @@
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QBusiness.Model.OpenIDConnectProviderConfiguration.SecretsArn</property>
+    <min>0</min>
+    <max>1284</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.OpenIDConnectProviderConfiguration.SecretsRole</property>
+    <min>0</min>
+    <max>1284</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QBusiness.Model.Plugin.DisplayName</property>
     <min>1</min>
     <max>100</max>
@@ -1993,6 +2017,12 @@
     <property>Amazon.QBusiness.Model.SamlConfiguration.UserIdAttribute</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.SamlProviderConfiguration.AuthenticationUrl</property>
+    <min>1</min>
+    <max>1284</max>
+    <pattern>https://.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.ServiceQuotaExceededException.ResourceId</property>

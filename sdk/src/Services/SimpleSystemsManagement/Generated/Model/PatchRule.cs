@@ -45,8 +45,16 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The number of days after the release date of each patch matched by the rule that the
         /// patch is marked as approved in the patch baseline. For example, a value of <c>7</c>
-        /// means that patches are approved seven days after they are released. Not supported
-        /// on Debian Server or Ubuntu Server.
+        /// means that patches are approved seven days after they are released.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is marked as not required, but your request must include a value for
+        /// either <c>ApproveAfterDays</c> or <c>ApproveUntilDate</c>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Not supported for Debian Server or Ubuntu Server.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=360)]
@@ -66,12 +74,20 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property ApproveUntilDate. 
         /// <para>
         /// The cutoff date for auto approval of released patches. Any patches released on or
-        /// before this date are installed automatically. Not supported on Debian Server or Ubuntu
-        /// Server.
+        /// before this date are installed automatically.
         /// </para>
         ///  
         /// <para>
         /// Enter dates in the format <c>YYYY-MM-DD</c>. For example, <c>2021-12-31</c>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is marked as not required, but your request must include a value for
+        /// either <c>ApproveUntilDate</c> or <c>ApproveAfterDays</c>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Not supported for Debian Server or Ubuntu Server.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

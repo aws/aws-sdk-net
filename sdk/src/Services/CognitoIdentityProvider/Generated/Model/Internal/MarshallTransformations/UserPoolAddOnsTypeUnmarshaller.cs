@@ -66,6 +66,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AdvancedSecurityAdditionalFlows", targetDepth))
+                {
+                    var unmarshaller = AdvancedSecurityAdditionalFlowsTypeUnmarshaller.Instance;
+                    unmarshalledObject.AdvancedSecurityAdditionalFlows = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AdvancedSecurityMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

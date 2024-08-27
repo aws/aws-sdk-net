@@ -54,6 +54,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MinimumLength.Value);
             }
 
+            if(requestObject.IsSetPasswordHistorySize())
+            {
+                context.Writer.WritePropertyName("PasswordHistorySize");
+                context.Writer.Write(requestObject.PasswordHistorySize);
+            }
+
             if(requestObject.IsSetRequireLowercase())
             {
                 context.Writer.WritePropertyName("RequireLowercase");

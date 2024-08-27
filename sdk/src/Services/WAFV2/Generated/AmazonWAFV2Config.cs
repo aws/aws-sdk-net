@@ -34,10 +34,16 @@ namespace Amazon.WAFV2
     public partial class AmazonWAFV2Config : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("WAFV2", "4.0.0.0");
 
         private static readonly AmazonWAFV2EndpointResolver EndpointResolver =
             new AmazonWAFV2EndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("WAFV2", "3.7.400.2");
+=======
+            InternalSDKUtils.BuildUserAgentString("WAFV2", "3.7.400.11");
+>>>>>>> 5a152135e000587a58481d3320fe67732d653199
 
         private string _userAgent = UserAgentString;
         ///<summary>

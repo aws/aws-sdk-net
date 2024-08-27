@@ -84,6 +84,24 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
                     unmarshalledObject.DataIntegrationAssociationArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DestinationURI", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DestinationURI = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ExecutionConfiguration", targetDepth))
+                {
+                    var unmarshaller = ExecutionConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ExecutionConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastExecutionStatus", targetDepth))
+                {
+                    var unmarshaller = LastExecutionStatusUnmarshaller.Instance;
+                    unmarshalledObject.LastExecutionStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

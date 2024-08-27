@@ -37,6 +37,9 @@ namespace Amazon.AppIntegrationsService.Model
         private string _clientId;
         private string _dataIntegrationArn;
         private string _dataIntegrationAssociationArn;
+        private string _destinationURI;
+        private ExecutionConfiguration _executionConfiguration;
+        private LastExecutionStatus _lastExecutionStatus;
 
         /// <summary>
         /// Gets and sets the property ClientId. 
@@ -93,6 +96,58 @@ namespace Amazon.AppIntegrationsService.Model
         internal bool IsSetDataIntegrationAssociationArn()
         {
             return this._dataIntegrationAssociationArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DestinationURI. 
+        /// <para>
+        /// The URI of the data destination.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
+        public string DestinationURI
+        {
+            get { return this._destinationURI; }
+            set { this._destinationURI = value; }
+        }
+
+        // Check to see if DestinationURI property is set
+        internal bool IsSetDestinationURI()
+        {
+            return this._destinationURI != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionConfiguration.
+        /// </summary>
+        public ExecutionConfiguration ExecutionConfiguration
+        {
+            get { return this._executionConfiguration; }
+            set { this._executionConfiguration = value; }
+        }
+
+        // Check to see if ExecutionConfiguration property is set
+        internal bool IsSetExecutionConfiguration()
+        {
+            return this._executionConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastExecutionStatus. 
+        /// <para>
+        /// The execution status of the last job.
+        /// </para>
+        /// </summary>
+        public LastExecutionStatus LastExecutionStatus
+        {
+            get { return this._lastExecutionStatus; }
+            set { this._lastExecutionStatus = value; }
+        }
+
+        // Check to see if LastExecutionStatus property is set
+        internal bool IsSetLastExecutionStatus()
+        {
+            return this._lastExecutionStatus != null;
         }
 
     }

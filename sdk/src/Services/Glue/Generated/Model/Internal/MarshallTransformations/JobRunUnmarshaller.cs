@@ -138,6 +138,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.JobName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("JobRunQueuingEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.JobRunQueuingEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("JobRunState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -208,6 +214,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartedOn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StateDetail", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StateDetail = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Timeout", targetDepth))

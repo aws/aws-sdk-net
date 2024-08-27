@@ -41,6 +41,7 @@ namespace Amazon.Glue.Model
         private string _jobName;
         private string _jobRunId;
         private List<DataQualityObservation> _observations = AWSConfigs.InitializeCollections ? new List<DataQualityObservation>() : null;
+        private string _profileId;
         private string _resultId;
         private List<DataQualityRuleResult> _ruleResults = AWSConfigs.InitializeCollections ? new List<DataQualityRuleResult>() : null;
         private string _rulesetEvaluationRunId;
@@ -180,6 +181,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetObservations()
         {
             return this._observations != null && (this._observations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProfileId. 
+        /// <para>
+        /// The Profile ID for the data quality result.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string ProfileId
+        {
+            get { return this._profileId; }
+            set { this._profileId = value; }
+        }
+
+        // Check to see if ProfileId property is set
+        internal bool IsSetProfileId()
+        {
+            return this._profileId != null;
         }
 
         /// <summary>

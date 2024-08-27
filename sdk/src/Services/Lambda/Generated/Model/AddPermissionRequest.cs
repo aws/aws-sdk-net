@@ -31,7 +31,7 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the AddPermission operation.
-    /// Grants an Amazon Web Service, Amazon Web Services account, or Amazon Web Services
+    /// Grants an Amazon Web Servicesservice, Amazon Web Services account, or Amazon Web Services
     /// organization permission to use a function. You can apply the policy at the function
     /// level, or specify a qualifier to restrict access to a single version or alias. If
     /// you use a qualifier, the invoker must use the full Amazon Resource Name (ARN) of that
@@ -42,12 +42,12 @@ namespace Amazon.Lambda.Model
     /// <para>
     /// To grant permission to another account, specify the account ID as the <c>Principal</c>.
     /// To grant permission to an organization defined in Organizations, specify the organization
-    /// ID as the <c>PrincipalOrgID</c>. For Amazon Web Services, the principal is a domain-style
-    /// identifier that the service defines, such as <c>s3.amazonaws.com</c> or <c>sns.amazonaws.com</c>.
-    /// For Amazon Web Services, you can also specify the ARN of the associated resource as
-    /// the <c>SourceArn</c>. If you grant permission to a service principal without specifying
-    /// the source, other accounts could potentially configure resources in their account
-    /// to invoke your Lambda function.
+    /// ID as the <c>PrincipalOrgID</c>. For Amazon Web Servicesservices, the principal is
+    /// a domain-style identifier that the service defines, such as <c>s3.amazonaws.com</c>
+    /// or <c>sns.amazonaws.com</c>. For Amazon Web Servicesservices, you can also specify
+    /// the ARN of the associated resource as the <c>SourceArn</c>. If you grant permission
+    /// to a service principal without specifying the source, other accounts could potentially
+    /// configure resources in their account to invoke your Lambda function.
     /// </para>
     ///  
     /// <para>
@@ -176,9 +176,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Principal. 
         /// <para>
-        /// The Amazon Web Service or Amazon Web Services account that invokes the function. If
-        /// you specify a service, use <c>SourceArn</c> or <c>SourceAccount</c> to limit who can
-        /// invoke the function through that service.
+        /// The Amazon Web Servicesservice or Amazon Web Services account that invokes the function.
+        /// If you specify a service, use <c>SourceArn</c> or <c>SourceAccount</c> to limit who
+        /// can invoke the function through that service.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -255,10 +255,10 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property SourceAccount. 
         /// <para>
-        /// For Amazon Web Service, the ID of the Amazon Web Services account that owns the resource.
-        /// Use this together with <c>SourceArn</c> to ensure that the specified account owns
-        /// the resource. It is possible for an Amazon S3 bucket to be deleted by its owner and
-        /// recreated by another account.
+        /// For Amazon Web Servicesservice, the ID of the Amazon Web Services account that owns
+        /// the resource. Use this together with <c>SourceArn</c> to ensure that the specified
+        /// account owns the resource. It is possible for an Amazon S3 bucket to be deleted by
+        /// its owner and recreated by another account.
         /// </para>
         /// </summary>
         [AWSProperty(Max=12)]
@@ -277,8 +277,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property SourceArn. 
         /// <para>
-        /// For Amazon Web Services, the ARN of the Amazon Web Services resource that invokes
-        /// the function. For example, an Amazon S3 bucket or Amazon SNS topic.
+        /// For Amazon Web Servicesservices, the ARN of the Amazon Web Services resource that
+        /// invokes the function. For example, an Amazon S3 bucket or Amazon SNS topic.
         /// </para>
         ///  
         /// <para>

@@ -66,6 +66,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("aribCaptionsPid", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.AribCaptionsPid = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("audioPids", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
@@ -82,6 +88,18 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DvbTeletextPid = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("dvbTeletextPids", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
+                    unmarshalledObject.DvbTeletextPids = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ecmPid", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.EcmPid = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("etvPlatformPid", targetDepth))
@@ -130,6 +148,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Scte35Pid = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("smpte2038Pid", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Smpte2038Pid = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("timedMetadataPid", targetDepth))

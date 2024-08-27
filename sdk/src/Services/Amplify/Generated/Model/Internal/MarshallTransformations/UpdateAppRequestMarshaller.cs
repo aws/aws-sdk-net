@@ -110,6 +110,17 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.BuildSpec);
                 }
 
+                if(publicRequest.IsSetCacheConfig())
+                {
+                    context.Writer.WritePropertyName("cacheConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CacheConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CacheConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetCustomHeaders())
                 {
                     context.Writer.WritePropertyName("customHeaders");

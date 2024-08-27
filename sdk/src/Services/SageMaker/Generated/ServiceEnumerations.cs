@@ -9335,6 +9335,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly MlTools FeatureStore = new MlTools("FeatureStore");
         /// <summary>
+        /// Constant InferenceOptimization for MlTools
+        /// </summary>
+        public static readonly MlTools InferenceOptimization = new MlTools("InferenceOptimization");
+        /// <summary>
         /// Constant InferenceRecommender for MlTools
         /// </summary>
         public static readonly MlTools InferenceRecommender = new MlTools("InferenceRecommender");

@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the eventbridge-2015-10-07.normal.json service model.
  */
 
+using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 

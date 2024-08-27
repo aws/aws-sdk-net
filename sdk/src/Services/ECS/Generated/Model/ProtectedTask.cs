@@ -31,8 +31,9 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// An object representing the protection status details for a task. You can set the protection
-    /// status with the <a>UpdateTaskProtection</a> API and get the status of tasks with the
-    /// <a>GetTaskProtection</a> API.
+    /// status with the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateTaskProtection.html">UpdateTaskProtection</a>
+    /// API and get the status of tasks with the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_GetTaskProtection.html">GetTaskProtection</a>
+    /// API.
     /// </summary>
     public partial class ProtectedTask
     {

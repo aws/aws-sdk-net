@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The CloudWatch logging destination of a user pool detailed activity logging configuration.
+    /// Configuration for the CloudWatch log group destination of user pool detailed activity
+    /// logging, or of user activity log export with advanced security features.
     /// </summary>
     public partial class CloudWatchLogsConfigurationType
     {

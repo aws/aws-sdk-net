@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the athena-2017-05-18.normal.json service model.
  */
 
+using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 

@@ -641,10 +641,13 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>LEGACY</c> - This represents the old behavior of Amazon Cognito where user existence
+        ///  <c>LEGACY</c> - This represents the early behavior of Amazon Cognito where user existence
         /// related errors aren't prevented.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// Defaults to <c>LEGACY</c> when you don't provide a value.
+        /// </para>
         /// </summary>
         public PreventUserExistenceErrorTypes PreventUserExistenceErrors
         {

@@ -42,6 +42,11 @@ namespace Amazon.Bedrock.Model
         IListGuardrailsPaginator ListGuardrails(ListGuardrailsRequest request);
 
         /// <summary>
+        /// Paginator for ListImportedModels operation
+        ///</summary>
+        IListImportedModelsPaginator ListImportedModels(ListImportedModelsRequest request);
+
+        /// <summary>
         /// Paginator for ListModelCopyJobs operation
         ///</summary>
         IListModelCopyJobsPaginator ListModelCopyJobs(ListModelCopyJobsRequest request);
@@ -50,6 +55,16 @@ namespace Amazon.Bedrock.Model
         /// Paginator for ListModelCustomizationJobs operation
         ///</summary>
         IListModelCustomizationJobsPaginator ListModelCustomizationJobs(ListModelCustomizationJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListModelImportJobs operation
+        ///</summary>
+        IListModelImportJobsPaginator ListModelImportJobs(ListModelImportJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListModelInvocationJobs operation
+        ///</summary>
+        IListModelInvocationJobsPaginator ListModelInvocationJobs(ListModelInvocationJobsRequest request);
 
         /// <summary>
         /// Paginator for ListProvisionedModelThroughputs operation

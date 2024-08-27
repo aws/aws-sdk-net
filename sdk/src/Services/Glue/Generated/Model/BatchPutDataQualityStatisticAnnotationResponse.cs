@@ -1,0 +1,58 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the glue-2017-03-31.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+namespace Amazon.Glue.Model
+{
+    /// <summary>
+    /// This is the response object from the BatchPutDataQualityStatisticAnnotation operation.
+    /// </summary>
+    public partial class BatchPutDataQualityStatisticAnnotationResponse : AmazonWebServiceResponse
+    {
+        private List<AnnotationError> _failedInclusionAnnotations = AWSConfigs.InitializeCollections ? new List<AnnotationError>() : null;
+
+        /// <summary>
+        /// Gets and sets the property FailedInclusionAnnotations. 
+        /// <para>
+        /// A list of <c>AnnotationError</c>'s.
+        /// </para>
+        /// </summary>
+        public List<AnnotationError> FailedInclusionAnnotations
+        {
+            get { return this._failedInclusionAnnotations; }
+            set { this._failedInclusionAnnotations = value; }
+        }
+
+        // Check to see if FailedInclusionAnnotations property is set
+        internal bool IsSetFailedInclusionAnnotations()
+        {
+            return this._failedInclusionAnnotations != null && (this._failedInclusionAnnotations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+    }
+}

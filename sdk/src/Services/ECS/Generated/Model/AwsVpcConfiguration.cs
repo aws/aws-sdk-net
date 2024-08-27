@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// An object representing the networking details for a task or service. For example <c>awsvpcConfiguration={subnets=["subnet-12344321"],securityGroups=["sg-12344321"]}</c>
+    /// An object representing the networking details for a task or service. For example <c>awsVpcConfiguration={subnets=["subnet-12344321"],securityGroups=["sg-12344321"]}</c>.
     /// </summary>
     public partial class AwsVpcConfiguration
     {
@@ -62,7 +62,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The IDs of the security groups associated with the task or service. If you don't specify
         /// a security group, the default security group for the VPC is used. There's a limit
-        /// of 5 security groups that can be specified per <c>AwsVpcConfiguration</c>.
+        /// of 5 security groups that can be specified per <c>awsvpcConfiguration</c>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -86,7 +86,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Subnets. 
         /// <para>
         /// The IDs of the subnets associated with the task or service. There's a limit of 16
-        /// subnets that can be specified per <c>AwsVpcConfiguration</c>.
+        /// subnets that can be specified per <c>awsvpcConfiguration</c>.
         /// </para>
         ///  <note> 
         /// <para>

@@ -42,8 +42,10 @@ namespace Amazon.Lambda.Model
         private DocumentDBEventSourceConfig _documentDBEventSourceConfig;
         private string _eventSourceArn;
         private FilterCriteria _filterCriteria;
+        private FilterCriteriaError _filterCriteriaError;
         private string _functionArn;
         private List<string> _functionResponseTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _kmsKeyArn;
         private DateTime? _lastModified;
         private string _lastProcessingResult;
         private int? _maximumBatchingWindowInSeconds;
@@ -196,6 +198,13 @@ namespace Amazon.Lambda.Model
         /// an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
         /// event filtering</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// If filter criteria is encrypted, this field shows up as <c>null</c> in the response
+        /// of ListEventSourceMapping API calls. You can view this field in plaintext in the response
+        /// of GetEventSourceMapping and DeleteEventSourceMapping calls if you have <c>kms:Decrypt</c>
+        /// permissions for the correct KMS key.
+        /// </para>
         /// </summary>
         public FilterCriteria FilterCriteria
         {
@@ -207,6 +216,24 @@ namespace Amazon.Lambda.Model
         internal bool IsSetFilterCriteria()
         {
             return this._filterCriteria != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FilterCriteriaError. 
+        /// <para>
+        /// An object that contains details about an error related to filter criteria encryption.
+        /// </para>
+        /// </summary>
+        public FilterCriteriaError FilterCriteriaError
+        {
+            get { return this._filterCriteriaError; }
+            set { this._filterCriteriaError = value; }
+        }
+
+        // Check to see if FilterCriteriaError property is set
+        internal bool IsSetFilterCriteriaError()
+        {
+            return this._filterCriteriaError != null;
         }
 
         /// <summary>
@@ -245,6 +272,26 @@ namespace Amazon.Lambda.Model
         internal bool IsSetFunctionResponseTypes()
         {
             return this._functionResponseTypes != null && (this._functionResponseTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KMSKeyArn. 
+        /// <para>
+        ///  The ARN of the Key Management Service (KMS) customer managed key that Lambda uses
+        /// to encrypt your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-basics">filter
+        /// criteria</a>.
+        /// </para>
+        /// </summary>
+        public string KMSKeyArn
+        {
+            get { return this._kmsKeyArn; }
+            set { this._kmsKeyArn = value; }
+        }
+
+        // Check to see if KMSKeyArn property is set
+        internal bool IsSetKMSKeyArn()
+        {
+            return this._kmsKeyArn != null;
         }
 
         /// <summary>

@@ -132,6 +132,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.JobMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("JobRunQueuingEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.JobRunQueuingEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastModifiedOn", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

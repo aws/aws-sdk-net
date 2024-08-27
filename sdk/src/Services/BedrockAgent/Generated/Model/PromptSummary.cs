@@ -56,7 +56,8 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the prompt.
+        /// The Amazon Resource Name (ARN) of the prompt or the prompt version (if you specified
+        /// a version in the request).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

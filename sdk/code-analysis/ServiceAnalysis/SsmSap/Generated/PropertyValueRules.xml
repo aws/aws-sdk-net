@@ -10,7 +10,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.DeregisterApplicationRequest.ApplicationId</property>
-    <pattern>[\w\d]{1,50}</pattern>
+    <min>1</min>
+    <max>60</max>
+    <pattern>[\w\d\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.GetApplicationRequest.ApplicationArn</property>
@@ -18,7 +20,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.GetApplicationRequest.ApplicationId</property>
-    <pattern>[\w\d]{1,50}</pattern>
+    <min>1</min>
+    <max>60</max>
+    <pattern>[\w\d\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.GetApplicationRequest.AppRegistryArn</property>
@@ -26,18 +30,26 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.GetComponentRequest.ApplicationId</property>
-    <pattern>[\w\d]{1,50}</pattern>
+    <min>1</min>
+    <max>60</max>
+    <pattern>[\w\d\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.GetComponentRequest.ComponentId</property>
+    <min>1</min>
+    <max>100</max>
     <pattern>[\w\d-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.GetDatabaseRequest.ApplicationId</property>
-    <pattern>[\w\d]{1,50}</pattern>
+    <min>1</min>
+    <max>60</max>
+    <pattern>[\w\d\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.GetDatabaseRequest.ComponentId</property>
+    <min>1</min>
+    <max>100</max>
     <pattern>[\w\d-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -46,6 +58,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.GetDatabaseRequest.DatabaseId</property>
+    <min>1</min>
+    <max>300</max>
     <pattern>.*[\w\d]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -71,7 +85,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.ListComponentsRequest.ApplicationId</property>
-    <pattern>[\w\d]{1,50}</pattern>
+    <min>1</min>
+    <max>60</max>
+    <pattern>[\w\d\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.ListComponentsRequest.MaxResults</property>
@@ -88,10 +104,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.ListDatabasesRequest.ApplicationId</property>
-    <pattern>[\w\d]{1,50}</pattern>
+    <min>1</min>
+    <max>60</max>
+    <pattern>[\w\d\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.ListDatabasesRequest.ComponentId</property>
+    <min>1</min>
+    <max>100</max>
     <pattern>[\w\d-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -126,7 +146,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.ListOperationsRequest.ApplicationId</property>
-    <pattern>[\w\d]{1,50}</pattern>
+    <min>1</min>
+    <max>60</max>
+    <pattern>[\w\d\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.ListOperationsRequest.MaxResults</property>
@@ -155,7 +177,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.RegisterApplicationRequest.ApplicationId</property>
-    <pattern>[\w\d]{1,50}</pattern>
+    <min>1</min>
+    <max>60</max>
+    <pattern>[\w\d\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.RegisterApplicationRequest.DatabaseArn</property>
@@ -175,7 +199,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.StartApplicationRequest.ApplicationId</property>
-    <pattern>[\w\d]{1,50}</pattern>
+    <min>1</min>
+    <max>60</max>
+    <pattern>[\w\d\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.StartApplicationResponse.OperationId</property>
@@ -183,7 +209,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.StartApplicationRefreshRequest.ApplicationId</property>
-    <pattern>[\w\d]{1,50}</pattern>
+    <min>1</min>
+    <max>60</max>
+    <pattern>[\w\d\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.StartApplicationRefreshResponse.OperationId</property>
@@ -191,7 +219,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.StopApplicationRequest.ApplicationId</property>
-    <pattern>[\w\d]{1,50}</pattern>
+    <min>1</min>
+    <max>60</max>
+    <pattern>[\w\d\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.StopApplicationResponse.OperationId</property>
@@ -207,7 +237,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.UpdateApplicationSettingsRequest.ApplicationId</property>
-    <pattern>[\w\d]{1,50}</pattern>
+    <min>1</min>
+    <max>60</max>
+    <pattern>[\w\d\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.UpdateApplicationSettingsRequest.DatabaseArn</property>
@@ -223,7 +255,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.Application.Id</property>
-    <pattern>[\w\d]{1,50}</pattern>
+    <min>1</min>
+    <max>60</max>
+    <pattern>[\w\d\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.ApplicationCredential.DatabaseName</property>
@@ -241,11 +275,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.ApplicationSummary.Id</property>
-    <pattern>[\w\d]{1,50}</pattern>
+    <min>1</min>
+    <max>60</max>
+    <pattern>[\w\d\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.Component.ApplicationId</property>
-    <pattern>[\w\d]{1,50}</pattern>
+    <min>1</min>
+    <max>60</max>
+    <pattern>[\w\d\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.Component.Arn</property>
@@ -253,10 +291,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.Component.ComponentId</property>
+    <min>1</min>
+    <max>100</max>
     <pattern>[\w\d-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.Component.ParentComponent</property>
+    <min>1</min>
+    <max>100</max>
     <pattern>[\w\d-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -269,7 +311,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.ComponentSummary.ApplicationId</property>
-    <pattern>[\w\d]{1,50}</pattern>
+    <min>1</min>
+    <max>60</max>
+    <pattern>[\w\d\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.ComponentSummary.Arn</property>
@@ -277,11 +321,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.ComponentSummary.ComponentId</property>
+    <min>1</min>
+    <max>100</max>
     <pattern>[\w\d-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.Database.ApplicationId</property>
-    <pattern>[\w\d]{1,50}</pattern>
+    <min>1</min>
+    <max>60</max>
+    <pattern>[\w\d\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.Database.Arn</property>
@@ -289,10 +337,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.Database.ComponentId</property>
+    <min>1</min>
+    <max>100</max>
     <pattern>[\w\d-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.Database.DatabaseId</property>
+    <min>1</min>
+    <max>300</max>
     <pattern>.*[\w\d]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -301,7 +353,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.DatabaseSummary.ApplicationId</property>
-    <pattern>[\w\d]{1,50}</pattern>
+    <min>1</min>
+    <max>60</max>
+    <pattern>[\w\d\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.DatabaseSummary.Arn</property>
@@ -309,10 +363,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.DatabaseSummary.ComponentId</property>
+    <min>1</min>
+    <max>100</max>
     <pattern>[\w\d-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.DatabaseSummary.DatabaseId</property>
+    <min>1</min>
+    <max>300</max>
     <pattern>.*[\w\d]+</pattern>
   </property-value-rule>
   <property-value-rule>

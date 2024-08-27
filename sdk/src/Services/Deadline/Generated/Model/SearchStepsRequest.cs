@@ -166,7 +166,7 @@ namespace Amazon.Deadline.Model
         /// The search terms for a resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1)]
+        [AWSProperty(Min=1, Max=5)]
         public List<SearchSortExpression> SortExpressions
         {
             get { return this._sortExpressions; }

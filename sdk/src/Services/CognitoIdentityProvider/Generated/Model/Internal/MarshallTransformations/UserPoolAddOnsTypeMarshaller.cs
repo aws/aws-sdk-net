@@ -48,6 +48,17 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAdvancedSecurityAdditionalFlows())
+            {
+                context.Writer.WritePropertyName("AdvancedSecurityAdditionalFlows");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AdvancedSecurityAdditionalFlowsTypeMarshaller.Instance;
+                marshaller.Marshall(requestObject.AdvancedSecurityAdditionalFlows, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAdvancedSecurityMode())
             {
                 context.Writer.WritePropertyName("AdvancedSecurityMode");

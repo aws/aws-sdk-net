@@ -78,6 +78,11 @@ namespace Amazon.S3
         public static readonly S3Region APSoutheast4 = new S3Region("ap-southeast-4");
 
         /// <summary>
+        /// Specifies that the S3 Bucket should use the ap-southeast-5 locality.
+        /// </summary>
+        public static readonly S3Region APSoutheast5 = new S3Region("ap-southeast-5");
+
+        /// <summary>
         /// Specifies that the S3 Bucket should use the ca-central-1 locality.
         /// </summary>
         public static readonly S3Region CACentral1 = new S3Region("ca-central-1");

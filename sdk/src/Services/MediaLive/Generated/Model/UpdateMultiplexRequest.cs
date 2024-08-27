@@ -38,6 +38,7 @@ namespace Amazon.MediaLive.Model
         private string _multiplexId;
         private MultiplexSettings _multiplexSettings;
         private string _name;
+        private Dictionary<string, MultiplexProgramPacketIdentifiersMap> _packetIdentifiersMapping = AWSConfigs.InitializeCollections ? new Dictionary<string, MultiplexProgramPacketIdentifiersMap>() : null;
 
         /// <summary>
         /// Gets and sets the property MultiplexId. ID of the multiplex to update.
@@ -83,6 +84,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PacketIdentifiersMapping.
+        /// </summary>
+        public Dictionary<string, MultiplexProgramPacketIdentifiersMap> PacketIdentifiersMapping
+        {
+            get { return this._packetIdentifiersMapping; }
+            set { this._packetIdentifiersMapping = value; }
+        }
+
+        // Check to see if PacketIdentifiersMapping property is set
+        internal bool IsSetPacketIdentifiersMapping()
+        {
+            return this._packetIdentifiersMapping != null && (this._packetIdentifiersMapping.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

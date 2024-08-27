@@ -108,6 +108,10 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 {
                     return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("CustomerManagedKeyUnavailableException"))
+                {
+                    return CustomerManagedKeyUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalFailureException"))
                 {
                     return InternalFailureExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

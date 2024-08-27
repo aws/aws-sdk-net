@@ -56,6 +56,7 @@ namespace Amazon.SimpleEmail.Model
     public partial class S3Action
     {
         private string _bucketName;
+        private string _iamRoleArn;
         private string _kmsKeyArn;
         private string _objectKeyPrefix;
         private string _topicArn;
@@ -80,25 +81,69 @@ namespace Amazon.SimpleEmail.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KmsKeyArn. 
+        /// Gets and sets the property IamRoleArn. 
         /// <para>
-        /// The customer master key that Amazon SES should use to encrypt your emails before saving
-        /// them to the Amazon S3 bucket. You can use the default master key or a custom master
-        /// key that you created in Amazon Web Services KMS as follows:
+        ///  The ARN of the IAM role to be used by Amazon Simple Email Service while writing to
+        /// the Amazon S3 bucket, optionally encrypting your mail via the provided customer managed
+        /// key, and publishing to the Amazon SNS topic. This role should have access to the following
+        /// APIs: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To use the default master key, provide an ARN in the form of <c>arn:aws:kms:REGION:ACCOUNT-ID-WITHOUT-HYPHENS:alias/aws/ses</c>.
+        ///  <c>s3:PutObject</c>, <c>kms:Encrypt</c> and <c>kms:GenerateDataKey</c> for the given
+        /// Amazon S3 bucket.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>kms:GenerateDataKey</c> for the given Amazon Web Services KMS customer managed
+        /// key. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>sns:Publish</c> for the given Amazon SNS topic.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// If an IAM role ARN is provided, the role (and only the role) is used to access all
+        /// the given resources (Amazon S3 bucket, Amazon Web Services KMS customer managed key
+        /// and Amazon SNS topic). Therefore, setting up individual resource access permissions
+        /// is not required.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string IamRoleArn
+        {
+            get { return this._iamRoleArn; }
+            set { this._iamRoleArn = value; }
+        }
+
+        // Check to see if IamRoleArn property is set
+        internal bool IsSetIamRoleArn()
+        {
+            return this._iamRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyArn. 
+        /// <para>
+        /// The customer managed key that Amazon SES should use to encrypt your emails before
+        /// saving them to the Amazon S3 bucket. You can use the default managed key or a custom
+        /// managed key that you created in Amazon Web Services KMS as follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To use the default managed key, provide an ARN in the form of <c>arn:aws:kms:REGION:ACCOUNT-ID-WITHOUT-HYPHENS:alias/aws/ses</c>.
         /// For example, if your Amazon Web Services account ID is 123456789012 and you want to
-        /// use the default master key in the US West (Oregon) Region, the ARN of the default
+        /// use the default managed key in the US West (Oregon) Region, the ARN of the default
         /// master key would be <c>arn:aws:kms:us-west-2:123456789012:alias/aws/ses</c>. If you
-        /// use the default master key, you don't need to perform any extra steps to give Amazon
+        /// use the default managed key, you don't need to perform any extra steps to give Amazon
         /// SES permission to use the key.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To use a custom master key that you created in Amazon Web Services KMS, provide the
-        /// ARN of the master key and ensure that you add a statement to your key's policy to
+        /// To use a custom managed key that you created in Amazon Web Services KMS, provide the
+        /// ARN of the managed key and ensure that you add a statement to your key's policy to
         /// give Amazon SES permission to use it. For more information about giving permissions,
         /// see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-permissions.html">Amazon
         /// SES Developer Guide</a>.
@@ -106,8 +151,8 @@ namespace Amazon.SimpleEmail.Model
         ///  </li> </ul> 
         /// <para>
         /// For more information about key policies, see the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Amazon
-        /// Web Services KMS Developer Guide</a>. If you do not specify a master key, Amazon SES
-        /// does not encrypt your emails.
+        /// Web Services KMS Developer Guide</a>. If you do not specify a managed key, Amazon
+        /// SES does not encrypt your emails.
         /// </para>
         ///  <important> 
         /// <para>
@@ -119,7 +164,7 @@ namespace Amazon.SimpleEmail.Model
         /// currently available with the <a href="http://aws.amazon.com/sdk-for-java/">Amazon
         /// Web Services SDK for Java</a> and <a href="http://aws.amazon.com/sdk-for-ruby/">Amazon
         /// Web Services SDK for Ruby</a> only. For more information about client-side encryption
-        /// using Amazon Web Services KMS master keys, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
+        /// using Amazon Web Services KMS managed keys, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
         /// S3 Developer Guide</a>.
         /// </para>
         ///  </important>

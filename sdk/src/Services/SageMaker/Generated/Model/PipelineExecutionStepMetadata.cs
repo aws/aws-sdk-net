@@ -39,6 +39,8 @@ namespace Amazon.SageMaker.Model
         private ClarifyCheckStepMetadata _clarifyCheck;
         private ConditionStepMetadata _condition;
         private EMRStepMetadata _emr;
+        private EndpointStepMetadata _endpoint;
+        private EndpointConfigStepMetadata _endpointConfig;
         private FailStepMetadata _fail;
         private LambdaStepMetadata _lambda;
         private ModelStepMetadata _model;
@@ -173,6 +175,42 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetEMR()
         {
             return this._emr != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Endpoint. 
+        /// <para>
+        /// The endpoint that was invoked during this step execution.
+        /// </para>
+        /// </summary>
+        public EndpointStepMetadata Endpoint
+        {
+            get { return this._endpoint; }
+            set { this._endpoint = value; }
+        }
+
+        // Check to see if Endpoint property is set
+        internal bool IsSetEndpoint()
+        {
+            return this._endpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndpointConfig. 
+        /// <para>
+        /// The endpoint configuration used to create an endpoint during this step execution.
+        /// </para>
+        /// </summary>
+        public EndpointConfigStepMetadata EndpointConfig
+        {
+            get { return this._endpointConfig; }
+            set { this._endpointConfig = value; }
+        }
+
+        // Check to see if EndpointConfig property is set
+        internal bool IsSetEndpointConfig()
+        {
+            return this._endpointConfig != null;
         }
 
         /// <summary>

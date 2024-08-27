@@ -47,6 +47,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     public partial class FunctionResult
     {
         private string _actionGroup;
+        private ConfirmationState _confirmationState;
         private string _function;
         private Dictionary<string, ContentBody> _responseBody = AWSConfigs.InitializeCollections ? new Dictionary<string, ContentBody>() : null;
         private ResponseState _responseState;
@@ -68,6 +69,24 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetActionGroup()
         {
             return this._actionGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConfirmationState. 
+        /// <para>
+        /// Contains the user confirmation information about the function that was called.
+        /// </para>
+        /// </summary>
+        public ConfirmationState ConfirmationState
+        {
+            get { return this._confirmationState; }
+            set { this._confirmationState = value; }
+        }
+
+        // Check to see if ConfirmationState property is set
+        internal bool IsSetConfirmationState()
+        {
+            return this._confirmationState != null;
         }
 
         /// <summary>

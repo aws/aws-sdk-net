@@ -31,11 +31,13 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyCapacityReservation operation.
-    /// Modifies a Capacity Reservation's capacity and the conditions under which it is to
-    /// be released. You cannot change a Capacity Reservation's instance type, EBS optimization,
-    /// instance store settings, platform, Availability Zone, or instance eligibility. If
-    /// you need to modify any of these attributes, we recommend that you cancel the Capacity
-    /// Reservation, and then create a new one with the required attributes.
+    /// Modifies a Capacity Reservation's capacity, instance eligibility, and the conditions
+    /// under which it is to be released. You can't modify a Capacity Reservation's instance
+    /// type, EBS optimization, platform, instance store settings, Availability Zone, or tenancy.
+    /// If you need to modify any of these attributes, we recommend that you cancel the Capacity
+    /// Reservation, and then create a new one with the required attributes. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-modify.html">Modify
+    /// an active Capacity Reservation</a>.
     /// </summary>
     public partial class ModifyCapacityReservationRequest : AmazonEC2Request
     {
@@ -45,6 +47,7 @@ namespace Amazon.EC2.Model
         private DateTime? _endDate;
         private EndDateType _endDateType;
         private int? _instanceCount;
+        private InstanceMatchCriteria _instanceMatchCriteria;
 
         /// <summary>
         /// Gets and sets the property Accept. 
@@ -180,6 +183,34 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstanceCount()
         {
             return this._instanceCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceMatchCriteria. 
+        /// <para>
+        ///  The matching criteria (instance eligibility) that you want to use in the modified
+        /// Capacity Reservation. If you change the instance eligibility of an existing Capacity
+        /// Reservation from <c>targeted</c> to <c>open</c>, any running instances that match
+        /// the attributes of the Capacity Reservation, have the <c>CapacityReservationPreference</c>
+        /// set to <c>open</c>, and are not yet running in the Capacity Reservation, will automatically
+        /// use the modified Capacity Reservation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To modify the instance eligibility, the Capacity Reservation must be completely idle
+        /// (zero usage).
+        /// </para>
+        /// </summary>
+        public InstanceMatchCriteria InstanceMatchCriteria
+        {
+            get { return this._instanceMatchCriteria; }
+            set { this._instanceMatchCriteria = value; }
+        }
+
+        // Check to see if InstanceMatchCriteria property is set
+        internal bool IsSetInstanceMatchCriteria()
+        {
+            return this._instanceMatchCriteria != null;
         }
 
     }

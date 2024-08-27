@@ -34,10 +34,16 @@ namespace Amazon.CodePipeline
     public partial class AmazonCodePipelineConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("CodePipeline", "4.0.0.0");
 
         private static readonly AmazonCodePipelineEndpointResolver EndpointResolver =
             new AmazonCodePipelineEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("CodePipeline", "3.7.401.0");
+=======
+            InternalSDKUtils.BuildUserAgentString("CodePipeline", "3.7.401.9");
+>>>>>>> 5a152135e000587a58481d3320fe67732d653199
 
         private string _userAgent = UserAgentString;
         ///<summary>

@@ -44,7 +44,9 @@ namespace Amazon.WorkSpaces.Model
         private List<string> _dnsIpAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _errorMessage;
         private string _iamRoleId;
+        private IDCConfig _idcConfig;
         private List<string> _ipGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private MicrosoftEntraConfig _microsoftEntraConfig;
         private string _registrationCode;
         private SamlProperties _samlProperties;
         private SelfservicePermissions _selfservicePermissions;
@@ -245,6 +247,24 @@ namespace Amazon.WorkSpaces.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IDCConfig. 
+        /// <para>
+        /// Specifies details about identity center configurations.
+        /// </para>
+        /// </summary>
+        public IDCConfig IDCConfig
+        {
+            get { return this._idcConfig; }
+            set { this._idcConfig = value; }
+        }
+
+        // Check to see if IDCConfig property is set
+        internal bool IsSetIDCConfig()
+        {
+            return this._idcConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property IpGroupIds. 
         /// <para>
         /// The identifiers of the IP access control groups associated with the directory.
@@ -260,6 +280,24 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetIpGroupIds()
         {
             return this._ipGroupIds != null && (this._ipGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MicrosoftEntraConfig. 
+        /// <para>
+        /// Specifies details about Microsoft Entra configurations.
+        /// </para>
+        /// </summary>
+        public MicrosoftEntraConfig MicrosoftEntraConfig
+        {
+            get { return this._microsoftEntraConfig; }
+            set { this._microsoftEntraConfig = value; }
+        }
+
+        // Check to see if MicrosoftEntraConfig property is set
+        internal bool IsSetMicrosoftEntraConfig()
+        {
+            return this._microsoftEntraConfig != null;
         }
 
         /// <summary>

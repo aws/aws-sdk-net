@@ -84,6 +84,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetContext())
+                {
+                    context.Writer.WritePropertyName("context");
+                    context.Writer.Write(publicRequest.Context);
+                }
+
                 if(publicRequest.IsSetServiceRole())
                 {
                     context.Writer.WritePropertyName("serviceRole");

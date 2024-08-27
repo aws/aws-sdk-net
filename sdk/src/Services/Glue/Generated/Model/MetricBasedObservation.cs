@@ -37,6 +37,7 @@ namespace Amazon.Glue.Model
         private string _metricName;
         private DataQualityMetricValues _metricValues;
         private List<string> _newRules = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _statisticId;
 
         /// <summary>
         /// Gets and sets the property MetricName. 
@@ -93,6 +94,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetNewRules()
         {
             return this._newRules != null && (this._newRules.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatisticId. 
+        /// <para>
+        /// The Statistic ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string StatisticId
+        {
+            get { return this._statisticId; }
+            set { this._statisticId = value; }
+        }
+
+        // Check to see if StatisticId property is set
+        internal bool IsSetStatisticId()
+        {
+            return this._statisticId != null;
         }
 
     }

@@ -52,7 +52,7 @@ namespace Amazon.ECS.Model
         /// version of the container with the latest version. The number of containers Amazon
         /// ECS adds or removes from the service during a rolling update is controlled by adjusting
         /// the minimum and maximum number of healthy tasks allowed during a service deployment,
-        /// as specified in the <a>DeploymentConfiguration</a>.
+        /// as specified in the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeploymentConfiguration.html">DeploymentConfiguration</a>.
         /// </para>
         ///  </dd> <dt>CODE_DEPLOY</dt> <dd> 
         /// <para>

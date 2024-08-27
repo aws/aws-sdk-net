@@ -34,10 +34,16 @@ namespace Amazon.WorkDocs
     public partial class AmazonWorkDocsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("WorkDocs", "4.0.0.0");
 
         private static readonly AmazonWorkDocsEndpointResolver EndpointResolver =
             new AmazonWorkDocsEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("WorkDocs", "3.7.400.2");
+=======
+            InternalSDKUtils.BuildUserAgentString("WorkDocs", "3.7.400.11");
+>>>>>>> 5a152135e000587a58481d3320fe67732d653199
 
         private string _userAgent = UserAgentString;
         ///<summary>

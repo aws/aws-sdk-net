@@ -1994,6 +1994,63 @@ namespace Amazon.DocDB
 
         #endregion
         
+        #region  FailoverGlobalCluster
+
+        internal virtual FailoverGlobalClusterResponse FailoverGlobalCluster(FailoverGlobalClusterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = FailoverGlobalClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = FailoverGlobalClusterResponseUnmarshaller.Instance;
+
+            return Invoke<FailoverGlobalClusterResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Promotes the specified secondary DB cluster to be the primary DB cluster in the global
+        /// cluster when failing over a global cluster occurs.
+        /// 
+        ///  
+        /// <para>
+        /// Use this operation to respond to an unplanned event, such as a regional disaster in
+        /// the primary region. Failing over can result in a loss of write transaction data that
+        /// wasn't replicated to the chosen secondary before the failover event occurred. However,
+        /// the recovery process that promotes a DB instance on the chosen seconday DB cluster
+        /// to be the primary writer DB instance guarantees that the data is in a transactionally
+        /// consistent state.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the FailoverGlobalCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the FailoverGlobalCluster service method, as returned by DocDB.</returns>
+        /// <exception cref="Amazon.DocDB.Model.DBClusterNotFoundException">
+        /// <c>DBClusterIdentifier</c> doesn't refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.GlobalClusterNotFoundException">
+        /// The <c>GlobalClusterIdentifier</c> doesn't refer to an existing global cluster.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.InvalidDBClusterStateException">
+        /// The cluster isn't in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.InvalidGlobalClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/FailoverGlobalCluster">REST API Reference for FailoverGlobalCluster Operation</seealso>
+        public virtual Task<FailoverGlobalClusterResponse> FailoverGlobalClusterAsync(FailoverGlobalClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = FailoverGlobalClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = FailoverGlobalClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<FailoverGlobalClusterResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)

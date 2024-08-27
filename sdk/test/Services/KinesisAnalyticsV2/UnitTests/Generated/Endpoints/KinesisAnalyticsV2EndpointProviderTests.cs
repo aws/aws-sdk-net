@@ -18,6 +18,7 @@
  */
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.KinesisAnalyticsV2.Endpoints;
 using Amazon.KinesisAnalyticsV2.Internal;

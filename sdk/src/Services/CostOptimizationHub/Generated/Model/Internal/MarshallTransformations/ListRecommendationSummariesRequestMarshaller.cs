@@ -92,6 +92,17 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
+                if(publicRequest.IsSetMetrics())
+                {
+                    context.Writer.WritePropertyName("metrics");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestMetricsListValue in publicRequest.Metrics)
+                    {
+                            context.Writer.Write(publicRequestMetricsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetNextToken())
                 {
                     context.Writer.WritePropertyName("nextToken");

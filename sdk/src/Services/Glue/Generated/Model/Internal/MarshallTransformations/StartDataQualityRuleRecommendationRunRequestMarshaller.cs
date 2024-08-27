@@ -81,6 +81,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CreatedRulesetName);
                 }
 
+                if(publicRequest.IsSetDataQualitySecurityConfiguration())
+                {
+                    context.Writer.WritePropertyName("DataQualitySecurityConfiguration");
+                    context.Writer.Write(publicRequest.DataQualitySecurityConfiguration);
+                }
+
                 if(publicRequest.IsSetDataSource())
                 {
                     context.Writer.WritePropertyName("DataSource");

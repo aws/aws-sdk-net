@@ -81,6 +81,17 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetAutoSubscriptionConfiguration())
+                {
+                    context.Writer.WritePropertyName("autoSubscriptionConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AutoSubscriptionConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AutoSubscriptionConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("description");

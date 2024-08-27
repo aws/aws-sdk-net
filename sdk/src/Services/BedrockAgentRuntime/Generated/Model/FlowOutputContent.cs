@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Contains information about the output node.
+    /// Contains information about the content in an output from prompt flow invocation.
     /// 
     ///  
     /// <para>
@@ -50,7 +50,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property Document. 
         /// <para>
-        /// A name for the output of the flow.
+        /// The content in the output.
         /// </para>
         /// </summary>
         public Amazon.Runtime.Documents.Document Document

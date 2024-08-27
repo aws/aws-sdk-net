@@ -34,10 +34,16 @@ namespace Amazon.IVS
     public partial class AmazonIVSConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("ivs", "4.0.0.0");
 
         private static readonly AmazonIVSEndpointResolver EndpointResolver =
             new AmazonIVSEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("ivs", "3.7.400.2");
+=======
+            InternalSDKUtils.BuildUserAgentString("ivs", "3.7.400.11");
+>>>>>>> 5a152135e000587a58481d3320fe67732d653199
 
         private string _userAgent = UserAgentString;
         ///<summary>

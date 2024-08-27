@@ -343,8 +343,8 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// The valid values are <c>EC2</c>, <c>ELB</c>, and <c>VPC_LATTICE</c>. <c>EC2</c> is
-        /// the default health check and cannot be disabled. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-health-checks.html">Health
+        /// The valid values are <c>EC2</c>, <c>EBS</c>, <c>ELB</c>, and <c>VPC_LATTICE</c>. <c>EC2</c>
+        /// is the default health check and cannot be disabled. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-health-checks.html">Health
         /// checks for instances in an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling
         /// User Guide</i>.
         /// </para>

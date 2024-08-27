@@ -114,7 +114,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.PutAccountDetailsRequest.UseCaseDescription</property>
-    <min>1</min>
     <max>5000</max>
   </property-value-rule>
   <property-value-rule>
@@ -178,7 +177,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.AccountDetails.UseCaseDescription</property>
-    <min>1</min>
     <max>5000</max>
   </property-value-rule>
   <property-value-rule>
