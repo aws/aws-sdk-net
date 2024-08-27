@@ -716,7 +716,8 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Creates a run group.
+        /// You can optionally create a run group to limit the compute resources for the runs
+        /// that you add to the group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRunGroup service method.</param>
         /// 
@@ -848,11 +849,11 @@ namespace Amazon.Omics
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Healthomics variant stores
+        /// HealthOmics variant stores
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Healthomics annotation stores
+        /// HealthOmics annotation stores
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -41,11 +41,11 @@ namespace Amazon.Omics.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Healthomics variant stores
+    /// HealthOmics variant stores
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Healthomics annotation stores
+    /// HealthOmics annotation stores
     /// </para>
     ///  </li> <li> 
     /// <para>

@@ -695,6 +695,12 @@
     <pattern>arn:.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.GetReadSetMetadataResponse.CreationJobId</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>[a-zA-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.GetReadSetMetadataResponse.Description</property>
     <min>1</min>
     <max>255</max>
@@ -818,6 +824,12 @@
     <min>1</min>
     <max>127</max>
     <pattern>arn:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetReferenceMetadataResponse.CreationJobId</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>[a-zA-Z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReferenceMetadataResponse.Description</property>
@@ -2280,6 +2292,12 @@
     <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.ImportReadSetSourceItem.ReadSetId</property>
+    <min>10</min>
+    <max>36</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.ImportReadSetSourceItem.ReferenceArn</property>
     <min>1</min>
     <max>127</max>
@@ -2332,6 +2350,12 @@
     <min>3</min>
     <max>255</max>
     <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ImportReferenceSourceItem.ReferenceId</property>
+    <min>10</min>
+    <max>36</max>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ImportReferenceSourceItem.SourceFile</property>

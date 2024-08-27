@@ -36,6 +36,7 @@ namespace Amazon.Omics.Model
     {
         private string _description;
         private string _name;
+        private string _referenceId;
         private string _sourceFile;
         private ReferenceImportJobItemStatus _status;
         private string _statusMessage;
@@ -77,6 +78,25 @@ namespace Amazon.Omics.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReferenceId. 
+        /// <para>
+        /// The source's reference ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=10, Max=36)]
+        public string ReferenceId
+        {
+            get { return this._referenceId; }
+            set { this._referenceId = value; }
+        }
+
+        // Check to see if ReferenceId property is set
+        internal bool IsSetReferenceId()
+        {
+            return this._referenceId != null;
         }
 
         /// <summary>

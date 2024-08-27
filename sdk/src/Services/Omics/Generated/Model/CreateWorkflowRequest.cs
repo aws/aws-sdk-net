@@ -220,7 +220,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property StorageCapacity. 
         /// <para>
-        /// The storage capacity for the workflow in gibibytes.
+        /// The default storage capacity for the workflow runs, in gibibytes.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100000)]
