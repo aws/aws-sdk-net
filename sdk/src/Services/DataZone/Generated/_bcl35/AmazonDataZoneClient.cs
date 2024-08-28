@@ -2542,7 +2542,7 @@ namespace Amazon.DataZone
         #region  DeleteDataProduct
 
         /// <summary>
-        /// Deletes an data product in Amazon DataZone.
+        /// Deletes a data product in Amazon DataZone.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataProduct service method.</param>
         /// 
