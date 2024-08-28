@@ -1,3 +1,15 @@
+### 4.0.0.0-preview.2 (2024-08-28 14:45 UTC)
+* DynamoDBv2 (4.0.0.0)
+	* Add the ability to mock DynamoDB operations which now implement interfaces.
+* S3 (4.0.0.0)
+	* Split GetACL into GetBucketAcl and GetObjectAcl
+	* Split PutACL into PutObjectACL and PutBucketACL.
+	* Obsolete PutACL and GetACL. These operations are being split into separate operations, because context parameters that could be used for endpoint resolution were not being copied over due to the two operations being merged into one. These context parameters were not being used currently so there is no effect as of now.
+* Core 4.0.0.0
+	* 4.0.0.0 Preview 2 Release
+	* Add new extension packages for CloudFront Signers and EC2 Decrypt Password to take a dependency on BouncyCastle.Cryptography
+	* All services packages updated to require new Core
+
 ### 4.0.0.0-preview (2024-08-15 14:46 UTC)
 
 * AWSSDK.Extensions.NETCore.Setup (4.0.0.0)
