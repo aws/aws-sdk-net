@@ -77,19 +77,6 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For Calabash tests:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// profile: A cucumber profile (for example, <c>my_profile_name</c>).
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// tags: You can limit execution to features or scenarios that have (or don't have) certain
-        /// tags (for example, @smoke or @smoke,~@wip).
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
         /// For Appium tests (all types):
         /// </para>
         ///  <ul> <li> 
@@ -129,20 +116,6 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         /// seed: A seed to use for randomizing the UI fuzz test. Using the same seed value between
         /// tests ensures identical event sequences.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For Explorer tests:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// username: A user name to use if the Explorer encounters a login form. If not supplied,
-        /// no user name is inserted.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// password: A password to use if the Explorer encounters a login form. If not supplied,
-        /// no password is inserted.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -187,26 +160,6 @@ namespace Amazon.DeviceFarm.Model
         ///  </li> <li> 
         /// <para>
         /// Running multiple tests: <c>LoginTests/testValid,LoginTests/testInvalid</c> 
-        /// </para>
-        ///  </li> </ul> </li> </ul> 
-        /// <para>
-        /// For UIAutomator:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// filter: A test filter string. Examples:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Running a single test case: <c>com.android.abc.Test1</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Running a single test: <c>com.android.abc.Test1#smoke</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Running multiple tests: <c>com.android.abc.Test1,com.android.abc.Test2</c> 
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
@@ -275,11 +228,6 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting
-        /// with it and capturing screenshots at the same time.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// APPIUM_JAVA_JUNIT
         /// </para>
         ///  </li> <li> 
@@ -320,19 +268,7 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CALABASH
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// INSTRUMENTATION
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// UIAUTOMATION
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// UIAUTOMATOR
         /// </para>
         ///  </li> <li> 
         /// <para>
