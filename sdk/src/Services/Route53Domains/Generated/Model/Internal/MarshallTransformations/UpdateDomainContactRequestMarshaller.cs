@@ -63,76 +63,79 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAdminContact())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AdminContact");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAdminContact())
+                    {
+                        context.Writer.WritePropertyName("AdminContact");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = ContactDetailMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AdminContact, context);
+                        var marshaller = ContactDetailMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AdminContact, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetBillingContact())
+                    {
+                        context.Writer.WritePropertyName("BillingContact");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ContactDetailMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.BillingContact, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetConsent())
+                    {
+                        context.Writer.WritePropertyName("Consent");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ConsentMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Consent, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDomainName())
+                    {
+                        context.Writer.WritePropertyName("DomainName");
+                        context.Writer.Write(publicRequest.DomainName);
+                    }
+
+                    if(publicRequest.IsSetRegistrantContact())
+                    {
+                        context.Writer.WritePropertyName("RegistrantContact");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ContactDetailMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RegistrantContact, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTechContact())
+                    {
+                        context.Writer.WritePropertyName("TechContact");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ContactDetailMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TechContact, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetBillingContact())
-                {
-                    context.Writer.WritePropertyName("BillingContact");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ContactDetailMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.BillingContact, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetConsent())
-                {
-                    context.Writer.WritePropertyName("Consent");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ConsentMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Consent, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDomainName())
-                {
-                    context.Writer.WritePropertyName("DomainName");
-                    context.Writer.Write(publicRequest.DomainName);
-                }
-
-                if(publicRequest.IsSetRegistrantContact())
-                {
-                    context.Writer.WritePropertyName("RegistrantContact");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ContactDetailMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RegistrantContact, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTechContact())
-                {
-                    context.Writer.WritePropertyName("TechContact");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ContactDetailMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TechContact, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

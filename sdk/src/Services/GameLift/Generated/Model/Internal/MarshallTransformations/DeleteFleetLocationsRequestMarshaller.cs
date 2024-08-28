@@ -63,32 +63,35 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFleetId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("FleetId");
-                    context.Writer.Write(publicRequest.FleetId);
-                }
-
-                if(publicRequest.IsSetLocations())
-                {
-                    context.Writer.WritePropertyName("Locations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLocationsListValue in publicRequest.Locations)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFleetId())
                     {
-                            context.Writer.Write(publicRequestLocationsListValue);
+                        context.Writer.WritePropertyName("FleetId");
+                        context.Writer.Write(publicRequest.FleetId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetLocations())
+                    {
+                        context.Writer.WritePropertyName("Locations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLocationsListValue in publicRequest.Locations)
+                        {
+                                context.Writer.Write(publicRequestLocationsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

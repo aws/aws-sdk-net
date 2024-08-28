@@ -61,38 +61,41 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/DescribeReplicationConfigurationTemplates";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMaxResults())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetReplicationConfigurationTemplateIDs())
-                {
-                    context.Writer.WritePropertyName("replicationConfigurationTemplateIDs");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestReplicationConfigurationTemplateIDsListValue in publicRequest.ReplicationConfigurationTemplateIDs)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMaxResults())
                     {
-                            context.Writer.Write(publicRequestReplicationConfigurationTemplateIDsListValue);
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetReplicationConfigurationTemplateIDs())
+                    {
+                        context.Writer.WritePropertyName("replicationConfigurationTemplateIDs");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestReplicationConfigurationTemplateIDsListValue in publicRequest.ReplicationConfigurationTemplateIDs)
+                        {
+                                context.Writer.Write(publicRequestReplicationConfigurationTemplateIDsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

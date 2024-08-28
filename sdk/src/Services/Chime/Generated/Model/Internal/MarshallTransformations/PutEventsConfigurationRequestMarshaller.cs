@@ -67,27 +67,30 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 throw new AmazonChimeException("Request object does not have required field BotId set");
             request.AddPathResource("{botId}", StringUtils.FromString(publicRequest.BotId));
             request.ResourcePath = "/accounts/{accountId}/bots/{botId}/events-configuration";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLambdaFunctionArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("LambdaFunctionArn");
-                    context.Writer.Write(publicRequest.LambdaFunctionArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetLambdaFunctionArn())
+                    {
+                        context.Writer.WritePropertyName("LambdaFunctionArn");
+                        context.Writer.Write(publicRequest.LambdaFunctionArn);
+                    }
+
+                    if(publicRequest.IsSetOutboundEventsHTTPSEndpoint())
+                    {
+                        context.Writer.WritePropertyName("OutboundEventsHTTPSEndpoint");
+                        context.Writer.Write(publicRequest.OutboundEventsHTTPSEndpoint);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetOutboundEventsHTTPSEndpoint())
-                {
-                    context.Writer.WritePropertyName("OutboundEventsHTTPSEndpoint");
-                    context.Writer.Write(publicRequest.OutboundEventsHTTPSEndpoint);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

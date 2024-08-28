@@ -64,33 +64,36 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
                 throw new AmazonNimbleStudioException("Request object does not have required field StudioId set");
             request.AddPathResource("{studioId}", StringUtils.FromString(publicRequest.StudioId));
             request.ResourcePath = "/2020-08-01/studios/{studioId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAdminRoleArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("adminRoleArn");
-                    context.Writer.Write(publicRequest.AdminRoleArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAdminRoleArn())
+                    {
+                        context.Writer.WritePropertyName("adminRoleArn");
+                        context.Writer.Write(publicRequest.AdminRoleArn);
+                    }
+
+                    if(publicRequest.IsSetDisplayName())
+                    {
+                        context.Writer.WritePropertyName("displayName");
+                        context.Writer.Write(publicRequest.DisplayName);
+                    }
+
+                    if(publicRequest.IsSetUserRoleArn())
+                    {
+                        context.Writer.WritePropertyName("userRoleArn");
+                        context.Writer.Write(publicRequest.UserRoleArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDisplayName())
-                {
-                    context.Writer.WritePropertyName("displayName");
-                    context.Writer.Write(publicRequest.DisplayName);
-                }
-
-                if(publicRequest.IsSetUserRoleArn())
-                {
-                    context.Writer.WritePropertyName("userRoleArn");
-                    context.Writer.Write(publicRequest.UserRoleArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

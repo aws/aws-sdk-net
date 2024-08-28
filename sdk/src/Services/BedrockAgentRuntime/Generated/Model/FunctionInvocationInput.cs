@@ -46,6 +46,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     public partial class FunctionInvocationInput
     {
         private string _actionGroup;
+        private ActionInvocationType _actionInvocationType;
         private string _function;
         private List<FunctionParameter> _parameters = AWSConfigs.InitializeCollections ? new List<FunctionParameter>() : null;
 
@@ -66,6 +67,24 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetActionGroup()
         {
             return this._actionGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ActionInvocationType. 
+        /// <para>
+        /// Contains information about the function to invoke,
+        /// </para>
+        /// </summary>
+        public ActionInvocationType ActionInvocationType
+        {
+            get { return this._actionInvocationType; }
+            set { this._actionInvocationType = value; }
+        }
+
+        // Check to see if ActionInvocationType property is set
+        internal bool IsSetActionInvocationType()
+        {
+            return this._actionInvocationType != null;
         }
 
         /// <summary>

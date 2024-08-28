@@ -63,81 +63,84 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAssociationType())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AssociationType");
-                    context.Writer.Write(publicRequest.AssociationType);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAssociationType())
+                    {
+                        context.Writer.WritePropertyName("AssociationType");
+                        context.Writer.Write(publicRequest.AssociationType);
+                    }
+
+                    if(publicRequest.IsSetCreatedAfter())
+                    {
+                        context.Writer.WritePropertyName("CreatedAfter");
+                        context.Writer.Write(publicRequest.CreatedAfter.Value);
+                    }
+
+                    if(publicRequest.IsSetCreatedBefore())
+                    {
+                        context.Writer.WritePropertyName("CreatedBefore");
+                        context.Writer.Write(publicRequest.CreatedBefore.Value);
+                    }
+
+                    if(publicRequest.IsSetDestinationArn())
+                    {
+                        context.Writer.WritePropertyName("DestinationArn");
+                        context.Writer.Write(publicRequest.DestinationArn);
+                    }
+
+                    if(publicRequest.IsSetDestinationType())
+                    {
+                        context.Writer.WritePropertyName("DestinationType");
+                        context.Writer.Write(publicRequest.DestinationType);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetSortBy())
+                    {
+                        context.Writer.WritePropertyName("SortBy");
+                        context.Writer.Write(publicRequest.SortBy);
+                    }
+
+                    if(publicRequest.IsSetSortOrder())
+                    {
+                        context.Writer.WritePropertyName("SortOrder");
+                        context.Writer.Write(publicRequest.SortOrder);
+                    }
+
+                    if(publicRequest.IsSetSourceArn())
+                    {
+                        context.Writer.WritePropertyName("SourceArn");
+                        context.Writer.Write(publicRequest.SourceArn);
+                    }
+
+                    if(publicRequest.IsSetSourceType())
+                    {
+                        context.Writer.WritePropertyName("SourceType");
+                        context.Writer.Write(publicRequest.SourceType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCreatedAfter())
-                {
-                    context.Writer.WritePropertyName("CreatedAfter");
-                    context.Writer.Write(publicRequest.CreatedAfter.Value);
-                }
-
-                if(publicRequest.IsSetCreatedBefore())
-                {
-                    context.Writer.WritePropertyName("CreatedBefore");
-                    context.Writer.Write(publicRequest.CreatedBefore.Value);
-                }
-
-                if(publicRequest.IsSetDestinationArn())
-                {
-                    context.Writer.WritePropertyName("DestinationArn");
-                    context.Writer.Write(publicRequest.DestinationArn);
-                }
-
-                if(publicRequest.IsSetDestinationType())
-                {
-                    context.Writer.WritePropertyName("DestinationType");
-                    context.Writer.Write(publicRequest.DestinationType);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetSortBy())
-                {
-                    context.Writer.WritePropertyName("SortBy");
-                    context.Writer.Write(publicRequest.SortBy);
-                }
-
-                if(publicRequest.IsSetSortOrder())
-                {
-                    context.Writer.WritePropertyName("SortOrder");
-                    context.Writer.Write(publicRequest.SortOrder);
-                }
-
-                if(publicRequest.IsSetSourceArn())
-                {
-                    context.Writer.WritePropertyName("SourceArn");
-                    context.Writer.Write(publicRequest.SourceArn);
-                }
-
-                if(publicRequest.IsSetSourceType())
-                {
-                    context.Writer.WritePropertyName("SourceType");
-                    context.Writer.Write(publicRequest.SourceType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

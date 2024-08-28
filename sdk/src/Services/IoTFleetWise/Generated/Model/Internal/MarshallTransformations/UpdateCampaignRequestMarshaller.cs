@@ -63,44 +63,47 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAction())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("action");
-                    context.Writer.Write(publicRequest.Action);
-                }
-
-                if(publicRequest.IsSetDataExtraDimensions())
-                {
-                    context.Writer.WritePropertyName("dataExtraDimensions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDataExtraDimensionsListValue in publicRequest.DataExtraDimensions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAction())
                     {
-                            context.Writer.Write(publicRequestDataExtraDimensionsListValue);
+                        context.Writer.WritePropertyName("action");
+                        context.Writer.Write(publicRequest.Action);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDataExtraDimensions())
+                    {
+                        context.Writer.WritePropertyName("dataExtraDimensions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDataExtraDimensionsListValue in publicRequest.DataExtraDimensions)
+                        {
+                                context.Writer.Write(publicRequestDataExtraDimensionsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

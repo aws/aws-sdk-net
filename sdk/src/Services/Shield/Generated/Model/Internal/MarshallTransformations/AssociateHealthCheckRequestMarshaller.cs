@@ -63,27 +63,30 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetHealthCheckArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("HealthCheckArn");
-                    context.Writer.Write(publicRequest.HealthCheckArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetHealthCheckArn())
+                    {
+                        context.Writer.WritePropertyName("HealthCheckArn");
+                        context.Writer.Write(publicRequest.HealthCheckArn);
+                    }
+
+                    if(publicRequest.IsSetProtectionId())
+                    {
+                        context.Writer.WritePropertyName("ProtectionId");
+                        context.Writer.Write(publicRequest.ProtectionId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetProtectionId())
-                {
-                    context.Writer.WritePropertyName("ProtectionId");
-                    context.Writer.Write(publicRequest.ProtectionId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

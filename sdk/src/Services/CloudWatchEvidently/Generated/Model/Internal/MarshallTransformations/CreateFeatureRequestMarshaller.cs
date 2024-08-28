@@ -64,83 +64,86 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
                 throw new AmazonCloudWatchEvidentlyException("Request object does not have required field Project set");
             request.AddPathResource("{project}", StringUtils.FromString(publicRequest.Project));
             request.ResourcePath = "/projects/{project}/features";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDefaultVariation())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("defaultVariation");
-                    context.Writer.Write(publicRequest.DefaultVariation);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetEntityOverrides())
-                {
-                    context.Writer.WritePropertyName("entityOverrides");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestEntityOverridesKvp in publicRequest.EntityOverrides)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDefaultVariation())
                     {
-                        context.Writer.WritePropertyName(publicRequestEntityOverridesKvp.Key);
-                        var publicRequestEntityOverridesValue = publicRequestEntityOverridesKvp.Value;
-
-                            context.Writer.Write(publicRequestEntityOverridesValue);
+                        context.Writer.WritePropertyName("defaultVariation");
+                        context.Writer.Write(publicRequest.DefaultVariation);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetEvaluationStrategy())
-                {
-                    context.Writer.WritePropertyName("evaluationStrategy");
-                    context.Writer.Write(publicRequest.EvaluationStrategy);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetDescription())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetVariations())
-                {
-                    context.Writer.WritePropertyName("variations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestVariationsListValue in publicRequest.Variations)
+                    if(publicRequest.IsSetEntityOverrides())
                     {
+                        context.Writer.WritePropertyName("entityOverrides");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestEntityOverridesKvp in publicRequest.EntityOverrides)
+                        {
+                            context.Writer.WritePropertyName(publicRequestEntityOverridesKvp.Key);
+                            var publicRequestEntityOverridesValue = publicRequestEntityOverridesKvp.Value;
 
-                        var marshaller = VariationConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequestVariationsListValue, context);
-
+                                context.Writer.Write(publicRequestEntityOverridesValue);
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetEvaluationStrategy())
+                    {
+                        context.Writer.WritePropertyName("evaluationStrategy");
+                        context.Writer.Write(publicRequest.EvaluationStrategy);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetVariations())
+                    {
+                        context.Writer.WritePropertyName("variations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestVariationsListValue in publicRequest.Variations)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = VariationConfigMarshaller.Instance;
+                            marshaller.Marshall(publicRequestVariationsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

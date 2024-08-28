@@ -63,63 +63,66 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEndTime())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("EndTime");
-                    context.Writer.Write(publicRequest.EndTime.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEndTime())
+                    {
+                        context.Writer.WritePropertyName("EndTime");
+                        context.Writer.Write(publicRequest.EndTime.Value);
+                    }
+
+                    if(publicRequest.IsSetForecastDataType())
+                    {
+                        context.Writer.WritePropertyName("ForecastDataType");
+                        context.Writer.Write(publicRequest.ForecastDataType);
+                    }
+
+                    if(publicRequest.IsSetResourceId())
+                    {
+                        context.Writer.WritePropertyName("ResourceId");
+                        context.Writer.Write(publicRequest.ResourceId);
+                    }
+
+                    if(publicRequest.IsSetScalableDimension())
+                    {
+                        context.Writer.WritePropertyName("ScalableDimension");
+                        context.Writer.Write(publicRequest.ScalableDimension);
+                    }
+
+                    if(publicRequest.IsSetScalingPlanName())
+                    {
+                        context.Writer.WritePropertyName("ScalingPlanName");
+                        context.Writer.Write(publicRequest.ScalingPlanName);
+                    }
+
+                    if(publicRequest.IsSetScalingPlanVersion())
+                    {
+                        context.Writer.WritePropertyName("ScalingPlanVersion");
+                        context.Writer.Write(publicRequest.ScalingPlanVersion.Value);
+                    }
+
+                    if(publicRequest.IsSetServiceNamespace())
+                    {
+                        context.Writer.WritePropertyName("ServiceNamespace");
+                        context.Writer.Write(publicRequest.ServiceNamespace);
+                    }
+
+                    if(publicRequest.IsSetStartTime())
+                    {
+                        context.Writer.WritePropertyName("StartTime");
+                        context.Writer.Write(publicRequest.StartTime.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetForecastDataType())
-                {
-                    context.Writer.WritePropertyName("ForecastDataType");
-                    context.Writer.Write(publicRequest.ForecastDataType);
-                }
-
-                if(publicRequest.IsSetResourceId())
-                {
-                    context.Writer.WritePropertyName("ResourceId");
-                    context.Writer.Write(publicRequest.ResourceId);
-                }
-
-                if(publicRequest.IsSetScalableDimension())
-                {
-                    context.Writer.WritePropertyName("ScalableDimension");
-                    context.Writer.Write(publicRequest.ScalableDimension);
-                }
-
-                if(publicRequest.IsSetScalingPlanName())
-                {
-                    context.Writer.WritePropertyName("ScalingPlanName");
-                    context.Writer.Write(publicRequest.ScalingPlanName);
-                }
-
-                if(publicRequest.IsSetScalingPlanVersion())
-                {
-                    context.Writer.WritePropertyName("ScalingPlanVersion");
-                    context.Writer.Write(publicRequest.ScalingPlanVersion.Value);
-                }
-
-                if(publicRequest.IsSetServiceNamespace())
-                {
-                    context.Writer.WritePropertyName("ServiceNamespace");
-                    context.Writer.Write(publicRequest.ServiceNamespace);
-                }
-
-                if(publicRequest.IsSetStartTime())
-                {
-                    context.Writer.WritePropertyName("StartTime");
-                    context.Writer.Write(publicRequest.StartTime.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

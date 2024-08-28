@@ -63,27 +63,30 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetTLSInspectionConfigurationArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("TLSInspectionConfigurationArn");
-                    context.Writer.Write(publicRequest.TLSInspectionConfigurationArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetTLSInspectionConfigurationArn())
+                    {
+                        context.Writer.WritePropertyName("TLSInspectionConfigurationArn");
+                        context.Writer.Write(publicRequest.TLSInspectionConfigurationArn);
+                    }
+
+                    if(publicRequest.IsSetTLSInspectionConfigurationName())
+                    {
+                        context.Writer.WritePropertyName("TLSInspectionConfigurationName");
+                        context.Writer.Write(publicRequest.TLSInspectionConfigurationName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTLSInspectionConfigurationName())
-                {
-                    context.Writer.WritePropertyName("TLSInspectionConfigurationName");
-                    context.Writer.Write(publicRequest.TLSInspectionConfigurationName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

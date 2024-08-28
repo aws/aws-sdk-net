@@ -63,33 +63,36 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccountId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AccountId");
-                    context.Writer.Write(publicRequest.AccountId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccountId())
+                    {
+                        context.Writer.WritePropertyName("AccountId");
+                        context.Writer.Write(publicRequest.AccountId);
+                    }
+
+                    if(publicRequest.IsSetActionId())
+                    {
+                        context.Writer.WritePropertyName("ActionId");
+                        context.Writer.Write(publicRequest.ActionId);
+                    }
+
+                    if(publicRequest.IsSetBudgetName())
+                    {
+                        context.Writer.WritePropertyName("BudgetName");
+                        context.Writer.Write(publicRequest.BudgetName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetActionId())
-                {
-                    context.Writer.WritePropertyName("ActionId");
-                    context.Writer.Write(publicRequest.ActionId);
-                }
-
-                if(publicRequest.IsSetBudgetName())
-                {
-                    context.Writer.WritePropertyName("BudgetName");
-                    context.Writer.Write(publicRequest.BudgetName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

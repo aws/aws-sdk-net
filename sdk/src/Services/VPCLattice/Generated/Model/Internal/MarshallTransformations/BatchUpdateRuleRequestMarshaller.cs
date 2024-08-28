@@ -67,31 +67,34 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                 throw new AmazonVPCLatticeException("Request object does not have required field ServiceIdentifier set");
             request.AddPathResource("{serviceIdentifier}", StringUtils.FromString(publicRequest.ServiceIdentifier));
             request.ResourcePath = "/services/{serviceIdentifier}/listeners/{listenerIdentifier}/rules";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetRules())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("rules");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRulesListValue in publicRequest.Rules)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetRules())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("rules");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRulesListValue in publicRequest.Rules)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = RuleUpdateMarshaller.Instance;
-                        marshaller.Marshall(publicRequestRulesListValue, context);
+                            var marshaller = RuleUpdateMarshaller.Instance;
+                            marshaller.Marshall(publicRequestRulesListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

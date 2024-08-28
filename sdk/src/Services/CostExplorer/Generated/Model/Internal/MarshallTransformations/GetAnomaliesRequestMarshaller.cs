@@ -63,61 +63,64 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDateInterval())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DateInterval");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDateInterval())
+                    {
+                        context.Writer.WritePropertyName("DateInterval");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = AnomalyDateIntervalMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DateInterval, context);
+                        var marshaller = AnomalyDateIntervalMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DateInterval, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetFeedback())
+                    {
+                        context.Writer.WritePropertyName("Feedback");
+                        context.Writer.Write(publicRequest.Feedback);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetMonitorArn())
+                    {
+                        context.Writer.WritePropertyName("MonitorArn");
+                        context.Writer.Write(publicRequest.MonitorArn);
+                    }
+
+                    if(publicRequest.IsSetNextPageToken())
+                    {
+                        context.Writer.WritePropertyName("NextPageToken");
+                        context.Writer.Write(publicRequest.NextPageToken);
+                    }
+
+                    if(publicRequest.IsSetTotalImpact())
+                    {
+                        context.Writer.WritePropertyName("TotalImpact");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TotalImpactFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TotalImpact, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetFeedback())
-                {
-                    context.Writer.WritePropertyName("Feedback");
-                    context.Writer.Write(publicRequest.Feedback);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetMonitorArn())
-                {
-                    context.Writer.WritePropertyName("MonitorArn");
-                    context.Writer.Write(publicRequest.MonitorArn);
-                }
-
-                if(publicRequest.IsSetNextPageToken())
-                {
-                    context.Writer.WritePropertyName("NextPageToken");
-                    context.Writer.Write(publicRequest.NextPageToken);
-                }
-
-                if(publicRequest.IsSetTotalImpact())
-                {
-                    context.Writer.WritePropertyName("TotalImpact");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TotalImpactFilterMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TotalImpact, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

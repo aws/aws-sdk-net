@@ -63,67 +63,70 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConsistentRead())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ConsistentRead");
-                    context.Writer.Write(publicRequest.ConsistentRead.Value);
-                }
-
-                if(publicRequest.IsSetLimit())
-                {
-                    context.Writer.WritePropertyName("Limit");
-                    context.Writer.Write(publicRequest.Limit.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetParameters())
-                {
-                    context.Writer.WritePropertyName("Parameters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestParametersListValue in publicRequest.Parameters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConsistentRead())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AttributeValueMarshaller.Instance;
-                        marshaller.Marshall(publicRequestParametersListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("ConsistentRead");
+                        context.Writer.Write(publicRequest.ConsistentRead.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetLimit())
+                    {
+                        context.Writer.WritePropertyName("Limit");
+                        context.Writer.Write(publicRequest.Limit.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetParameters())
+                    {
+                        context.Writer.WritePropertyName("Parameters");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestParametersListValue in publicRequest.Parameters)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = AttributeValueMarshaller.Instance;
+                            marshaller.Marshall(publicRequestParametersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetReturnConsumedCapacity())
+                    {
+                        context.Writer.WritePropertyName("ReturnConsumedCapacity");
+                        context.Writer.Write(publicRequest.ReturnConsumedCapacity);
+                    }
+
+                    if(publicRequest.IsSetReturnValuesOnConditionCheckFailure())
+                    {
+                        context.Writer.WritePropertyName("ReturnValuesOnConditionCheckFailure");
+                        context.Writer.Write(publicRequest.ReturnValuesOnConditionCheckFailure);
+                    }
+
+                    if(publicRequest.IsSetStatement())
+                    {
+                        context.Writer.WritePropertyName("Statement");
+                        context.Writer.Write(publicRequest.Statement);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetReturnConsumedCapacity())
-                {
-                    context.Writer.WritePropertyName("ReturnConsumedCapacity");
-                    context.Writer.Write(publicRequest.ReturnConsumedCapacity);
-                }
-
-                if(publicRequest.IsSetReturnValuesOnConditionCheckFailure())
-                {
-                    context.Writer.WritePropertyName("ReturnValuesOnConditionCheckFailure");
-                    context.Writer.Write(publicRequest.ReturnValuesOnConditionCheckFailure);
-                }
-
-                if(publicRequest.IsSetStatement())
-                {
-                    context.Writer.WritePropertyName("Statement");
-                    context.Writer.Write(publicRequest.Statement);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

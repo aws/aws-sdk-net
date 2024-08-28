@@ -63,32 +63,35 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientProperties())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientProperties");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientProperties())
+                    {
+                        context.Writer.WritePropertyName("ClientProperties");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = ClientPropertiesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ClientProperties, context);
+                        var marshaller = ClientPropertiesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ClientProperties, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetResourceId())
+                    {
+                        context.Writer.WritePropertyName("ResourceId");
+                        context.Writer.Write(publicRequest.ResourceId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetResourceId())
-                {
-                    context.Writer.WritePropertyName("ResourceId");
-                    context.Writer.Write(publicRequest.ResourceId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

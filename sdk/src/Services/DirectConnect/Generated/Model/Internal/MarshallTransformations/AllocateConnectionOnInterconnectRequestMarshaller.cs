@@ -63,45 +63,48 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBandwidth())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("bandwidth");
-                    context.Writer.Write(publicRequest.Bandwidth);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBandwidth())
+                    {
+                        context.Writer.WritePropertyName("bandwidth");
+                        context.Writer.Write(publicRequest.Bandwidth);
+                    }
+
+                    if(publicRequest.IsSetConnectionName())
+                    {
+                        context.Writer.WritePropertyName("connectionName");
+                        context.Writer.Write(publicRequest.ConnectionName);
+                    }
+
+                    if(publicRequest.IsSetInterconnectId())
+                    {
+                        context.Writer.WritePropertyName("interconnectId");
+                        context.Writer.Write(publicRequest.InterconnectId);
+                    }
+
+                    if(publicRequest.IsSetOwnerAccount())
+                    {
+                        context.Writer.WritePropertyName("ownerAccount");
+                        context.Writer.Write(publicRequest.OwnerAccount);
+                    }
+
+                    if(publicRequest.IsSetVlan())
+                    {
+                        context.Writer.WritePropertyName("vlan");
+                        context.Writer.Write(publicRequest.Vlan.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetConnectionName())
-                {
-                    context.Writer.WritePropertyName("connectionName");
-                    context.Writer.Write(publicRequest.ConnectionName);
-                }
-
-                if(publicRequest.IsSetInterconnectId())
-                {
-                    context.Writer.WritePropertyName("interconnectId");
-                    context.Writer.Write(publicRequest.InterconnectId);
-                }
-
-                if(publicRequest.IsSetOwnerAccount())
-                {
-                    context.Writer.WritePropertyName("ownerAccount");
-                    context.Writer.Write(publicRequest.OwnerAccount);
-                }
-
-                if(publicRequest.IsSetVlan())
-                {
-                    context.Writer.WritePropertyName("vlan");
-                    context.Writer.Write(publicRequest.Vlan.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

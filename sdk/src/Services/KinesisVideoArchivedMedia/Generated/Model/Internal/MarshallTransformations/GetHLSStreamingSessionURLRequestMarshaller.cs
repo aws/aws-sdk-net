@@ -61,74 +61,77 @@ namespace Amazon.KinesisVideoArchivedMedia.Model.Internal.MarshallTransformation
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/getHLSStreamingSessionURL";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetContainerFormat())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ContainerFormat");
-                    context.Writer.Write(publicRequest.ContainerFormat);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetContainerFormat())
+                    {
+                        context.Writer.WritePropertyName("ContainerFormat");
+                        context.Writer.Write(publicRequest.ContainerFormat);
+                    }
+
+                    if(publicRequest.IsSetDiscontinuityMode())
+                    {
+                        context.Writer.WritePropertyName("DiscontinuityMode");
+                        context.Writer.Write(publicRequest.DiscontinuityMode);
+                    }
+
+                    if(publicRequest.IsSetDisplayFragmentTimestamp())
+                    {
+                        context.Writer.WritePropertyName("DisplayFragmentTimestamp");
+                        context.Writer.Write(publicRequest.DisplayFragmentTimestamp);
+                    }
+
+                    if(publicRequest.IsSetExpires())
+                    {
+                        context.Writer.WritePropertyName("Expires");
+                        context.Writer.Write(publicRequest.Expires.Value);
+                    }
+
+                    if(publicRequest.IsSetHLSFragmentSelector())
+                    {
+                        context.Writer.WritePropertyName("HLSFragmentSelector");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = HLSFragmentSelectorMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.HLSFragmentSelector, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetMaxMediaPlaylistFragmentResults())
+                    {
+                        context.Writer.WritePropertyName("MaxMediaPlaylistFragmentResults");
+                        context.Writer.Write(publicRequest.MaxMediaPlaylistFragmentResults.Value);
+                    }
+
+                    if(publicRequest.IsSetPlaybackMode())
+                    {
+                        context.Writer.WritePropertyName("PlaybackMode");
+                        context.Writer.Write(publicRequest.PlaybackMode);
+                    }
+
+                    if(publicRequest.IsSetStreamARN())
+                    {
+                        context.Writer.WritePropertyName("StreamARN");
+                        context.Writer.Write(publicRequest.StreamARN);
+                    }
+
+                    if(publicRequest.IsSetStreamName())
+                    {
+                        context.Writer.WritePropertyName("StreamName");
+                        context.Writer.Write(publicRequest.StreamName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDiscontinuityMode())
-                {
-                    context.Writer.WritePropertyName("DiscontinuityMode");
-                    context.Writer.Write(publicRequest.DiscontinuityMode);
-                }
-
-                if(publicRequest.IsSetDisplayFragmentTimestamp())
-                {
-                    context.Writer.WritePropertyName("DisplayFragmentTimestamp");
-                    context.Writer.Write(publicRequest.DisplayFragmentTimestamp);
-                }
-
-                if(publicRequest.IsSetExpires())
-                {
-                    context.Writer.WritePropertyName("Expires");
-                    context.Writer.Write(publicRequest.Expires.Value);
-                }
-
-                if(publicRequest.IsSetHLSFragmentSelector())
-                {
-                    context.Writer.WritePropertyName("HLSFragmentSelector");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = HLSFragmentSelectorMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.HLSFragmentSelector, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMaxMediaPlaylistFragmentResults())
-                {
-                    context.Writer.WritePropertyName("MaxMediaPlaylistFragmentResults");
-                    context.Writer.Write(publicRequest.MaxMediaPlaylistFragmentResults.Value);
-                }
-
-                if(publicRequest.IsSetPlaybackMode())
-                {
-                    context.Writer.WritePropertyName("PlaybackMode");
-                    context.Writer.Write(publicRequest.PlaybackMode);
-                }
-
-                if(publicRequest.IsSetStreamARN())
-                {
-                    context.Writer.WritePropertyName("StreamARN");
-                    context.Writer.Write(publicRequest.StreamARN);
-                }
-
-                if(publicRequest.IsSetStreamName())
-                {
-                    context.Writer.WritePropertyName("StreamName");
-                    context.Writer.Write(publicRequest.StreamName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

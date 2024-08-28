@@ -67,116 +67,119 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 throw new AmazonAppSyncException("Request object does not have required field Name set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/v1/apis/{apiId}/datasources/{name}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetDynamodbConfig())
+                    {
+                        context.Writer.WritePropertyName("dynamodbConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DynamodbDataSourceConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DynamodbConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetElasticsearchConfig())
+                    {
+                        context.Writer.WritePropertyName("elasticsearchConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ElasticsearchDataSourceConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ElasticsearchConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetEventBridgeConfig())
+                    {
+                        context.Writer.WritePropertyName("eventBridgeConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EventBridgeDataSourceConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EventBridgeConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetHttpConfig())
+                    {
+                        context.Writer.WritePropertyName("httpConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = HttpDataSourceConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.HttpConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetLambdaConfig())
+                    {
+                        context.Writer.WritePropertyName("lambdaConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LambdaDataSourceConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.LambdaConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetMetricsConfig())
+                    {
+                        context.Writer.WritePropertyName("metricsConfig");
+                        context.Writer.Write(publicRequest.MetricsConfig);
+                    }
+
+                    if(publicRequest.IsSetOpenSearchServiceConfig())
+                    {
+                        context.Writer.WritePropertyName("openSearchServiceConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = OpenSearchServiceDataSourceConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OpenSearchServiceConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRelationalDatabaseConfig())
+                    {
+                        context.Writer.WritePropertyName("relationalDatabaseConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RelationalDatabaseDataSourceConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RelationalDatabaseConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetServiceRoleArn())
+                    {
+                        context.Writer.WritePropertyName("serviceRoleArn");
+                        context.Writer.Write(publicRequest.ServiceRoleArn);
+                    }
+
+                    if(publicRequest.IsSetType())
+                    {
+                        context.Writer.WritePropertyName("type");
+                        context.Writer.Write(publicRequest.Type);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDynamodbConfig())
-                {
-                    context.Writer.WritePropertyName("dynamodbConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DynamodbDataSourceConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DynamodbConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetElasticsearchConfig())
-                {
-                    context.Writer.WritePropertyName("elasticsearchConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ElasticsearchDataSourceConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ElasticsearchConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEventBridgeConfig())
-                {
-                    context.Writer.WritePropertyName("eventBridgeConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EventBridgeDataSourceConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EventBridgeConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetHttpConfig())
-                {
-                    context.Writer.WritePropertyName("httpConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = HttpDataSourceConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.HttpConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetLambdaConfig())
-                {
-                    context.Writer.WritePropertyName("lambdaConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LambdaDataSourceConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LambdaConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMetricsConfig())
-                {
-                    context.Writer.WritePropertyName("metricsConfig");
-                    context.Writer.Write(publicRequest.MetricsConfig);
-                }
-
-                if(publicRequest.IsSetOpenSearchServiceConfig())
-                {
-                    context.Writer.WritePropertyName("openSearchServiceConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OpenSearchServiceDataSourceConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OpenSearchServiceConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRelationalDatabaseConfig())
-                {
-                    context.Writer.WritePropertyName("relationalDatabaseConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RelationalDatabaseDataSourceConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RelationalDatabaseConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetServiceRoleArn())
-                {
-                    context.Writer.WritePropertyName("serviceRoleArn");
-                    context.Writer.Write(publicRequest.ServiceRoleArn);
-                }
-
-                if(publicRequest.IsSetType())
-                {
-                    context.Writer.WritePropertyName("type");
-                    context.Writer.Write(publicRequest.Type);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

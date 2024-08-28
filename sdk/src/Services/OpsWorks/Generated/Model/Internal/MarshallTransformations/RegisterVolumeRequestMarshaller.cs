@@ -63,27 +63,30 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEc2VolumeId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Ec2VolumeId");
-                    context.Writer.Write(publicRequest.Ec2VolumeId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEc2VolumeId())
+                    {
+                        context.Writer.WritePropertyName("Ec2VolumeId");
+                        context.Writer.Write(publicRequest.Ec2VolumeId);
+                    }
+
+                    if(publicRequest.IsSetStackId())
+                    {
+                        context.Writer.WritePropertyName("StackId");
+                        context.Writer.Write(publicRequest.StackId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetStackId())
-                {
-                    context.Writer.WritePropertyName("StackId");
-                    context.Writer.Write(publicRequest.StackId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

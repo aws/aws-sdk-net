@@ -67,32 +67,35 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 throw new AmazonEKSException("Request object does not have required field PrincipalArn set");
             request.AddPathResource("{principalArn}", StringUtils.FromString(publicRequest.PrincipalArn));
             request.ResourcePath = "/clusters/{name}/access-entries/{principalArn}/access-policies";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccessScope())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("accessScope");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccessScope())
+                    {
+                        context.Writer.WritePropertyName("accessScope");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = AccessScopeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AccessScope, context);
+                        var marshaller = AccessScopeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AccessScope, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetPolicyArn())
+                    {
+                        context.Writer.WritePropertyName("policyArn");
+                        context.Writer.Write(publicRequest.PolicyArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPolicyArn())
-                {
-                    context.Writer.WritePropertyName("policyArn");
-                    context.Writer.Write(publicRequest.PolicyArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

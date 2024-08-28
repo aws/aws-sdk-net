@@ -63,43 +63,46 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccessToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AccessToken");
-                    context.Writer.Write(publicRequest.AccessToken);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccessToken())
+                    {
+                        context.Writer.WritePropertyName("AccessToken");
+                        context.Writer.Write(publicRequest.AccessToken);
+                    }
+
+                    if(publicRequest.IsSetSMSMfaSettings())
+                    {
+                        context.Writer.WritePropertyName("SMSMfaSettings");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SMSMfaSettingsTypeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SMSMfaSettings, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSoftwareTokenMfaSettings())
+                    {
+                        context.Writer.WritePropertyName("SoftwareTokenMfaSettings");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SoftwareTokenMfaSettingsTypeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SoftwareTokenMfaSettings, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSMSMfaSettings())
-                {
-                    context.Writer.WritePropertyName("SMSMfaSettings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SMSMfaSettingsTypeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SMSMfaSettings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSoftwareTokenMfaSettings())
-                {
-                    context.Writer.WritePropertyName("SoftwareTokenMfaSettings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SoftwareTokenMfaSettingsTypeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SoftwareTokenMfaSettings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

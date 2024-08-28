@@ -67,40 +67,43 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 throw new AmazonLocationServiceException("Request object does not have required field GeofenceId set");
             request.AddPathResource("{GeofenceId}", StringUtils.FromString(publicRequest.GeofenceId));
             request.ResourcePath = "/geofencing/v0/collections/{CollectionName}/geofences/{GeofenceId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetGeofenceProperties())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("GeofenceProperties");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestGeofencePropertiesKvp in publicRequest.GeofenceProperties)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetGeofenceProperties())
                     {
-                        context.Writer.WritePropertyName(publicRequestGeofencePropertiesKvp.Key);
-                        var publicRequestGeofencePropertiesValue = publicRequestGeofencePropertiesKvp.Value;
+                        context.Writer.WritePropertyName("GeofenceProperties");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestGeofencePropertiesKvp in publicRequest.GeofenceProperties)
+                        {
+                            context.Writer.WritePropertyName(publicRequestGeofencePropertiesKvp.Key);
+                            var publicRequestGeofencePropertiesValue = publicRequestGeofencePropertiesKvp.Value;
 
-                            context.Writer.Write(publicRequestGeofencePropertiesValue);
+                                context.Writer.Write(publicRequestGeofencePropertiesValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetGeometry())
+                    {
+                        context.Writer.WritePropertyName("Geometry");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = GeofenceGeometryMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Geometry, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetGeometry())
-                {
-                    context.Writer.WritePropertyName("Geometry");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = GeofenceGeometryMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Geometry, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

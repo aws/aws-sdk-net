@@ -61,48 +61,51 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/amazonclouddirectory/2017-01-11/typedlink/facet";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAttributeUpdates())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AttributeUpdates");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAttributeUpdatesListValue in publicRequest.AttributeUpdates)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAttributeUpdates())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("AttributeUpdates");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAttributeUpdatesListValue in publicRequest.AttributeUpdates)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = TypedLinkFacetAttributeUpdateMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAttributeUpdatesListValue, context);
+                            var marshaller = TypedLinkFacetAttributeUpdateMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAttributeUpdatesListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetIdentityAttributeOrder())
-                {
-                    context.Writer.WritePropertyName("IdentityAttributeOrder");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestIdentityAttributeOrderListValue in publicRequest.IdentityAttributeOrder)
+                    if(publicRequest.IsSetIdentityAttributeOrder())
                     {
-                            context.Writer.Write(publicRequestIdentityAttributeOrderListValue);
+                        context.Writer.WritePropertyName("IdentityAttributeOrder");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestIdentityAttributeOrderListValue in publicRequest.IdentityAttributeOrder)
+                        {
+                                context.Writer.Write(publicRequestIdentityAttributeOrderListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

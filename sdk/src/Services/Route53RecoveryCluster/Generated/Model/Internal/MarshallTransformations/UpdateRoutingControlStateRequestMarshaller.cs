@@ -63,38 +63,41 @@ namespace Amazon.Route53RecoveryCluster.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetRoutingControlArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("RoutingControlArn");
-                    context.Writer.Write(publicRequest.RoutingControlArn);
-                }
-
-                if(publicRequest.IsSetRoutingControlState())
-                {
-                    context.Writer.WritePropertyName("RoutingControlState");
-                    context.Writer.Write(publicRequest.RoutingControlState);
-                }
-
-                if(publicRequest.IsSetSafetyRulesToOverride())
-                {
-                    context.Writer.WritePropertyName("SafetyRulesToOverride");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSafetyRulesToOverrideListValue in publicRequest.SafetyRulesToOverride)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetRoutingControlArn())
                     {
-                            context.Writer.Write(publicRequestSafetyRulesToOverrideListValue);
+                        context.Writer.WritePropertyName("RoutingControlArn");
+                        context.Writer.Write(publicRequest.RoutingControlArn);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetRoutingControlState())
+                    {
+                        context.Writer.WritePropertyName("RoutingControlState");
+                        context.Writer.Write(publicRequest.RoutingControlState);
+                    }
+
+                    if(publicRequest.IsSetSafetyRulesToOverride())
+                    {
+                        context.Writer.WritePropertyName("SafetyRulesToOverride");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSafetyRulesToOverrideListValue in publicRequest.SafetyRulesToOverride)
+                        {
+                                context.Writer.Write(publicRequestSafetyRulesToOverrideListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

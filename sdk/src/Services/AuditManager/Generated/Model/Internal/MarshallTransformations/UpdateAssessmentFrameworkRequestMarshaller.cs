@@ -64,49 +64,52 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
                 throw new AmazonAuditManagerException("Request object does not have required field FrameworkId set");
             request.AddPathResource("{frameworkId}", StringUtils.FromString(publicRequest.FrameworkId));
             request.ResourcePath = "/assessmentFrameworks/{frameworkId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetComplianceType())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("complianceType");
-                    context.Writer.Write(publicRequest.ComplianceType);
-                }
-
-                if(publicRequest.IsSetControlSets())
-                {
-                    context.Writer.WritePropertyName("controlSets");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestControlSetsListValue in publicRequest.ControlSets)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetComplianceType())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = UpdateAssessmentFrameworkControlSetMarshaller.Instance;
-                        marshaller.Marshall(publicRequestControlSetsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("complianceType");
+                        context.Writer.Write(publicRequest.ComplianceType);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetControlSets())
+                    {
+                        context.Writer.WritePropertyName("controlSets");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestControlSetsListValue in publicRequest.ControlSets)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = UpdateAssessmentFrameworkControlSetMarshaller.Instance;
+                            marshaller.Marshall(publicRequestControlSetsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

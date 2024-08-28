@@ -64,54 +64,57 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                 throw new AmazonGlueDataBrewException("Request object does not have required field Name set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/datasets/{name}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFormat())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Format");
-                    context.Writer.Write(publicRequest.Format);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFormat())
+                    {
+                        context.Writer.WritePropertyName("Format");
+                        context.Writer.Write(publicRequest.Format);
+                    }
+
+                    if(publicRequest.IsSetFormatOptions())
+                    {
+                        context.Writer.WritePropertyName("FormatOptions");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = FormatOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.FormatOptions, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetInput())
+                    {
+                        context.Writer.WritePropertyName("Input");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = InputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Input, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetPathOptions())
+                    {
+                        context.Writer.WritePropertyName("PathOptions");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PathOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.PathOptions, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetFormatOptions())
-                {
-                    context.Writer.WritePropertyName("FormatOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = FormatOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.FormatOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetInput())
-                {
-                    context.Writer.WritePropertyName("Input");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = InputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Input, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPathOptions())
-                {
-                    context.Writer.WritePropertyName("PathOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PathOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PathOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

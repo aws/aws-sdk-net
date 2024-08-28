@@ -64,57 +64,60 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
                 throw new AmazonTnbException("Request object does not have required field NsInstanceId set");
             request.AddPathResource("{nsInstanceId}", StringUtils.FromString(publicRequest.NsInstanceId));
             request.ResourcePath = "/sol/nslcm/v1/ns_instances/{nsInstanceId}/update";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetModifyVnfInfoData())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("modifyVnfInfoData");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UpdateSolNetworkModifyMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ModifyVnfInfoData, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetModifyVnfInfoData())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
+                        context.Writer.WritePropertyName("modifyVnfInfoData");
+                        context.Writer.WriteObjectStart();
 
-                            context.Writer.Write(publicRequestTagsValue);
+                        var marshaller = UpdateSolNetworkModifyMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ModifyVnfInfoData, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetUpdateNs())
+                    {
+                        context.Writer.WritePropertyName("updateNs");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = UpdateSolNetworkServiceDataMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.UpdateNs, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetUpdateType())
+                    {
+                        context.Writer.WritePropertyName("updateType");
+                        context.Writer.Write(publicRequest.UpdateType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetUpdateNs())
-                {
-                    context.Writer.WritePropertyName("updateNs");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UpdateSolNetworkServiceDataMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.UpdateNs, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetUpdateType())
-                {
-                    context.Writer.WritePropertyName("updateType");
-                    context.Writer.Write(publicRequest.UpdateType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

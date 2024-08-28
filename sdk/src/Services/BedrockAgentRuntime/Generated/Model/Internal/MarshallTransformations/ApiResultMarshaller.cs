@@ -60,6 +60,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ApiPath);
             }
 
+            if(requestObject.IsSetConfirmationState())
+            {
+                context.Writer.WritePropertyName("confirmationState");
+                context.Writer.Write(requestObject.ConfirmationState);
+            }
+
             if(requestObject.IsSetHttpMethod())
             {
                 context.Writer.WritePropertyName("httpMethod");

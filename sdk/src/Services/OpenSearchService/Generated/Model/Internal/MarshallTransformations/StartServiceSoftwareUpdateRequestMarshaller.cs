@@ -61,33 +61,36 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/2021-01-01/opensearch/serviceSoftwareUpdate/start";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDesiredStartTime())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DesiredStartTime");
-                    context.Writer.Write(publicRequest.DesiredStartTime.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDesiredStartTime())
+                    {
+                        context.Writer.WritePropertyName("DesiredStartTime");
+                        context.Writer.Write(publicRequest.DesiredStartTime.Value);
+                    }
+
+                    if(publicRequest.IsSetDomainName())
+                    {
+                        context.Writer.WritePropertyName("DomainName");
+                        context.Writer.Write(publicRequest.DomainName);
+                    }
+
+                    if(publicRequest.IsSetScheduleAt())
+                    {
+                        context.Writer.WritePropertyName("ScheduleAt");
+                        context.Writer.Write(publicRequest.ScheduleAt);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDomainName())
-                {
-                    context.Writer.WritePropertyName("DomainName");
-                    context.Writer.Write(publicRequest.DomainName);
-                }
-
-                if(publicRequest.IsSetScheduleAt())
-                {
-                    context.Writer.WritePropertyName("ScheduleAt");
-                    context.Writer.Write(publicRequest.ScheduleAt);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

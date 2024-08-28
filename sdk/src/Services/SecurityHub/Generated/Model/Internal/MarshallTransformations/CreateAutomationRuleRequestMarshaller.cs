@@ -61,86 +61,89 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/automationrules/create";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetActions())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Actions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestActionsListValue in publicRequest.Actions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetActions())
                     {
+                        context.Writer.WritePropertyName("Actions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestActionsListValue in publicRequest.Actions)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = AutomationRulesActionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestActionsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetCriteria())
+                    {
+                        context.Writer.WritePropertyName("Criteria");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = AutomationRulesActionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestActionsListValue, context);
+                        var marshaller = AutomationRulesFindingFiltersMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Criteria, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetCriteria())
-                {
-                    context.Writer.WritePropertyName("Criteria");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AutomationRulesFindingFiltersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Criteria, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetIsTerminal())
-                {
-                    context.Writer.WritePropertyName("IsTerminal");
-                    context.Writer.Write(publicRequest.IsTerminal.Value);
-                }
-
-                if(publicRequest.IsSetRuleName())
-                {
-                    context.Writer.WritePropertyName("RuleName");
-                    context.Writer.Write(publicRequest.RuleName);
-                }
-
-                if(publicRequest.IsSetRuleOrder())
-                {
-                    context.Writer.WritePropertyName("RuleOrder");
-                    context.Writer.Write(publicRequest.RuleOrder.Value);
-                }
-
-                if(publicRequest.IsSetRuleStatus())
-                {
-                    context.Writer.WritePropertyName("RuleStatus");
-                    context.Writer.Write(publicRequest.RuleStatus);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetDescription())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetIsTerminal())
+                    {
+                        context.Writer.WritePropertyName("IsTerminal");
+                        context.Writer.Write(publicRequest.IsTerminal.Value);
+                    }
+
+                    if(publicRequest.IsSetRuleName())
+                    {
+                        context.Writer.WritePropertyName("RuleName");
+                        context.Writer.Write(publicRequest.RuleName);
+                    }
+
+                    if(publicRequest.IsSetRuleOrder())
+                    {
+                        context.Writer.WritePropertyName("RuleOrder");
+                        context.Writer.Write(publicRequest.RuleOrder.Value);
+                    }
+
+                    if(publicRequest.IsSetRuleStatus())
+                    {
+                        context.Writer.WritePropertyName("RuleStatus");
+                        context.Writer.Write(publicRequest.RuleStatus);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

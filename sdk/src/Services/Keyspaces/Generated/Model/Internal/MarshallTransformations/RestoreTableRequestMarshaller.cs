@@ -63,121 +63,124 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAutoScalingSpecification())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("autoScalingSpecification");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AutoScalingSpecificationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AutoScalingSpecification, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetCapacitySpecificationOverride())
-                {
-                    context.Writer.WritePropertyName("capacitySpecificationOverride");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CapacitySpecificationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CapacitySpecificationOverride, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEncryptionSpecificationOverride())
-                {
-                    context.Writer.WritePropertyName("encryptionSpecificationOverride");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EncryptionSpecificationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EncryptionSpecificationOverride, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPointInTimeRecoveryOverride())
-                {
-                    context.Writer.WritePropertyName("pointInTimeRecoveryOverride");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PointInTimeRecoveryMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PointInTimeRecoveryOverride, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetReplicaSpecifications())
-                {
-                    context.Writer.WritePropertyName("replicaSpecifications");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestReplicaSpecificationsListValue in publicRequest.ReplicaSpecifications)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAutoScalingSpecification())
                     {
+                        context.Writer.WritePropertyName("autoScalingSpecification");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = ReplicaSpecificationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestReplicaSpecificationsListValue, context);
+                        var marshaller = AutoScalingSpecificationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AutoScalingSpecification, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetRestoreTimestamp())
-                {
-                    context.Writer.WritePropertyName("restoreTimestamp");
-                    context.Writer.Write(publicRequest.RestoreTimestamp.Value);
-                }
-
-                if(publicRequest.IsSetSourceKeyspaceName())
-                {
-                    context.Writer.WritePropertyName("sourceKeyspaceName");
-                    context.Writer.Write(publicRequest.SourceKeyspaceName);
-                }
-
-                if(publicRequest.IsSetSourceTableName())
-                {
-                    context.Writer.WritePropertyName("sourceTableName");
-                    context.Writer.Write(publicRequest.SourceTableName);
-                }
-
-                if(publicRequest.IsSetTagsOverride())
-                {
-                    context.Writer.WritePropertyName("tagsOverride");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsOverrideListValue in publicRequest.TagsOverride)
+                    if(publicRequest.IsSetCapacitySpecificationOverride())
                     {
+                        context.Writer.WritePropertyName("capacitySpecificationOverride");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsOverrideListValue, context);
+                        var marshaller = CapacitySpecificationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CapacitySpecificationOverride, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetEncryptionSpecificationOverride())
+                    {
+                        context.Writer.WritePropertyName("encryptionSpecificationOverride");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EncryptionSpecificationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EncryptionSpecificationOverride, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetPointInTimeRecoveryOverride())
+                    {
+                        context.Writer.WritePropertyName("pointInTimeRecoveryOverride");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PointInTimeRecoveryMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.PointInTimeRecoveryOverride, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetReplicaSpecifications())
+                    {
+                        context.Writer.WritePropertyName("replicaSpecifications");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestReplicaSpecificationsListValue in publicRequest.ReplicaSpecifications)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ReplicaSpecificationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestReplicaSpecificationsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetRestoreTimestamp())
+                    {
+                        context.Writer.WritePropertyName("restoreTimestamp");
+                        context.Writer.Write(publicRequest.RestoreTimestamp.Value);
+                    }
+
+                    if(publicRequest.IsSetSourceKeyspaceName())
+                    {
+                        context.Writer.WritePropertyName("sourceKeyspaceName");
+                        context.Writer.Write(publicRequest.SourceKeyspaceName);
+                    }
+
+                    if(publicRequest.IsSetSourceTableName())
+                    {
+                        context.Writer.WritePropertyName("sourceTableName");
+                        context.Writer.Write(publicRequest.SourceTableName);
+                    }
+
+                    if(publicRequest.IsSetTagsOverride())
+                    {
+                        context.Writer.WritePropertyName("tagsOverride");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsOverrideListValue in publicRequest.TagsOverride)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsOverrideListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTargetKeyspaceName())
+                    {
+                        context.Writer.WritePropertyName("targetKeyspaceName");
+                        context.Writer.Write(publicRequest.TargetKeyspaceName);
+                    }
+
+                    if(publicRequest.IsSetTargetTableName())
+                    {
+                        context.Writer.WritePropertyName("targetTableName");
+                        context.Writer.Write(publicRequest.TargetTableName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTargetKeyspaceName())
-                {
-                    context.Writer.WritePropertyName("targetKeyspaceName");
-                    context.Writer.Write(publicRequest.TargetKeyspaceName);
-                }
-
-                if(publicRequest.IsSetTargetTableName())
-                {
-                    context.Writer.WritePropertyName("targetTableName");
-                    context.Writer.Write(publicRequest.TargetTableName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

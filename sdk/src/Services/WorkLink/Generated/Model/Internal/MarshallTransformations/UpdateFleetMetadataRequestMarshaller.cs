@@ -61,33 +61,36 @@ namespace Amazon.WorkLink.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/UpdateFleetMetadata";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDisplayName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DisplayName");
-                    context.Writer.Write(publicRequest.DisplayName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDisplayName())
+                    {
+                        context.Writer.WritePropertyName("DisplayName");
+                        context.Writer.Write(publicRequest.DisplayName);
+                    }
+
+                    if(publicRequest.IsSetFleetArn())
+                    {
+                        context.Writer.WritePropertyName("FleetArn");
+                        context.Writer.Write(publicRequest.FleetArn);
+                    }
+
+                    if(publicRequest.IsSetOptimizeForEndUserLocation())
+                    {
+                        context.Writer.WritePropertyName("OptimizeForEndUserLocation");
+                        context.Writer.Write(publicRequest.OptimizeForEndUserLocation.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetFleetArn())
-                {
-                    context.Writer.WritePropertyName("FleetArn");
-                    context.Writer.Write(publicRequest.FleetArn);
-                }
-
-                if(publicRequest.IsSetOptimizeForEndUserLocation())
-                {
-                    context.Writer.WritePropertyName("OptimizeForEndUserLocation");
-                    context.Writer.Write(publicRequest.OptimizeForEndUserLocation.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

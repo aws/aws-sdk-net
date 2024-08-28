@@ -63,72 +63,75 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetComplianceType())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ComplianceType");
-                    context.Writer.Write(publicRequest.ComplianceType);
-                }
-
-                if(publicRequest.IsSetExecutionSummary())
-                {
-                    context.Writer.WritePropertyName("ExecutionSummary");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ComplianceExecutionSummaryMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ExecutionSummary, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetItemContentHash())
-                {
-                    context.Writer.WritePropertyName("ItemContentHash");
-                    context.Writer.Write(publicRequest.ItemContentHash);
-                }
-
-                if(publicRequest.IsSetItems())
-                {
-                    context.Writer.WritePropertyName("Items");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestItemsListValue in publicRequest.Items)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetComplianceType())
                     {
+                        context.Writer.WritePropertyName("ComplianceType");
+                        context.Writer.Write(publicRequest.ComplianceType);
+                    }
+
+                    if(publicRequest.IsSetExecutionSummary())
+                    {
+                        context.Writer.WritePropertyName("ExecutionSummary");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = ComplianceItemEntryMarshaller.Instance;
-                        marshaller.Marshall(publicRequestItemsListValue, context);
+                        var marshaller = ComplianceExecutionSummaryMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ExecutionSummary, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetItemContentHash())
+                    {
+                        context.Writer.WritePropertyName("ItemContentHash");
+                        context.Writer.Write(publicRequest.ItemContentHash);
+                    }
+
+                    if(publicRequest.IsSetItems())
+                    {
+                        context.Writer.WritePropertyName("Items");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestItemsListValue in publicRequest.Items)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ComplianceItemEntryMarshaller.Instance;
+                            marshaller.Marshall(publicRequestItemsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetResourceId())
+                    {
+                        context.Writer.WritePropertyName("ResourceId");
+                        context.Writer.Write(publicRequest.ResourceId);
+                    }
+
+                    if(publicRequest.IsSetResourceType())
+                    {
+                        context.Writer.WritePropertyName("ResourceType");
+                        context.Writer.Write(publicRequest.ResourceType);
+                    }
+
+                    if(publicRequest.IsSetUploadType())
+                    {
+                        context.Writer.WritePropertyName("UploadType");
+                        context.Writer.Write(publicRequest.UploadType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetResourceId())
-                {
-                    context.Writer.WritePropertyName("ResourceId");
-                    context.Writer.Write(publicRequest.ResourceId);
-                }
-
-                if(publicRequest.IsSetResourceType())
-                {
-                    context.Writer.WritePropertyName("ResourceType");
-                    context.Writer.Write(publicRequest.ResourceType);
-                }
-
-                if(publicRequest.IsSetUploadType())
-                {
-                    context.Writer.WritePropertyName("UploadType");
-                    context.Writer.Write(publicRequest.UploadType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

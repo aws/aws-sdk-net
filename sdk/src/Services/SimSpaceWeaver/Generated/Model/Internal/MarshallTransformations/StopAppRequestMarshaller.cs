@@ -61,33 +61,36 @@ namespace Amazon.SimSpaceWeaver.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/stopapp";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApp())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("App");
-                    context.Writer.Write(publicRequest.App);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApp())
+                    {
+                        context.Writer.WritePropertyName("App");
+                        context.Writer.Write(publicRequest.App);
+                    }
+
+                    if(publicRequest.IsSetDomain())
+                    {
+                        context.Writer.WritePropertyName("Domain");
+                        context.Writer.Write(publicRequest.Domain);
+                    }
+
+                    if(publicRequest.IsSetSimulation())
+                    {
+                        context.Writer.WritePropertyName("Simulation");
+                        context.Writer.Write(publicRequest.Simulation);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDomain())
-                {
-                    context.Writer.WritePropertyName("Domain");
-                    context.Writer.Write(publicRequest.Domain);
-                }
-
-                if(publicRequest.IsSetSimulation())
-                {
-                    context.Writer.WritePropertyName("Simulation");
-                    context.Writer.Write(publicRequest.Simulation);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -70,31 +70,34 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
                 throw new AmazonAuditManagerException("Request object does not have required field ControlSetId set");
             request.AddPathResource("{controlSetId}", StringUtils.FromString(publicRequest.ControlSetId));
             request.ResourcePath = "/assessments/{assessmentId}/controlSets/{controlSetId}/controls/{controlId}/evidence";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetManualEvidence())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("manualEvidence");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestManualEvidenceListValue in publicRequest.ManualEvidence)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetManualEvidence())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("manualEvidence");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestManualEvidenceListValue in publicRequest.ManualEvidence)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = ManualEvidenceMarshaller.Instance;
-                        marshaller.Marshall(publicRequestManualEvidenceListValue, context);
+                            var marshaller = ManualEvidenceMarshaller.Instance;
+                            marshaller.Marshall(publicRequestManualEvidenceListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

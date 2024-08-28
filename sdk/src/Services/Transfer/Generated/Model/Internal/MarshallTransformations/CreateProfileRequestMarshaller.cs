@@ -63,54 +63,57 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAs2Id())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("As2Id");
-                    context.Writer.Write(publicRequest.As2Id);
-                }
-
-                if(publicRequest.IsSetCertificateIds())
-                {
-                    context.Writer.WritePropertyName("CertificateIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCertificateIdsListValue in publicRequest.CertificateIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAs2Id())
                     {
-                            context.Writer.Write(publicRequestCertificateIdsListValue);
+                        context.Writer.WritePropertyName("As2Id");
+                        context.Writer.Write(publicRequest.As2Id);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetProfileType())
-                {
-                    context.Writer.WritePropertyName("ProfileType");
-                    context.Writer.Write(publicRequest.ProfileType);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetCertificateIds())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("CertificateIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCertificateIdsListValue in publicRequest.CertificateIds)
+                        {
+                                context.Writer.Write(publicRequestCertificateIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetProfileType())
+                    {
+                        context.Writer.WritePropertyName("ProfileType");
+                        context.Writer.Write(publicRequest.ProfileType);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

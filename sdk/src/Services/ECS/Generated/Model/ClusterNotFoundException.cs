@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+    /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
     /// Amazon ECS clusters are Region specific.
     /// </summary>
     #if !NETSTANDARD

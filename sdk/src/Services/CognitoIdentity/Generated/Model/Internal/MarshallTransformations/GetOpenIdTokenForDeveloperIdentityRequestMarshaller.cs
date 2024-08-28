@@ -63,61 +63,64 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetIdentityId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("IdentityId");
-                    context.Writer.Write(publicRequest.IdentityId);
-                }
-
-                if(publicRequest.IsSetIdentityPoolId())
-                {
-                    context.Writer.WritePropertyName("IdentityPoolId");
-                    context.Writer.Write(publicRequest.IdentityPoolId);
-                }
-
-                if(publicRequest.IsSetLogins())
-                {
-                    context.Writer.WritePropertyName("Logins");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestLoginsKvp in publicRequest.Logins)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetIdentityId())
                     {
-                        context.Writer.WritePropertyName(publicRequestLoginsKvp.Key);
-                        var publicRequestLoginsValue = publicRequestLoginsKvp.Value;
-
-                            context.Writer.Write(publicRequestLoginsValue);
+                        context.Writer.WritePropertyName("IdentityId");
+                        context.Writer.Write(publicRequest.IdentityId);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetPrincipalTags())
-                {
-                    context.Writer.WritePropertyName("PrincipalTags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestPrincipalTagsKvp in publicRequest.PrincipalTags)
+                    if(publicRequest.IsSetIdentityPoolId())
                     {
-                        context.Writer.WritePropertyName(publicRequestPrincipalTagsKvp.Key);
-                        var publicRequestPrincipalTagsValue = publicRequestPrincipalTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestPrincipalTagsValue);
+                        context.Writer.WritePropertyName("IdentityPoolId");
+                        context.Writer.Write(publicRequest.IdentityPoolId);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetLogins())
+                    {
+                        context.Writer.WritePropertyName("Logins");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestLoginsKvp in publicRequest.Logins)
+                        {
+                            context.Writer.WritePropertyName(publicRequestLoginsKvp.Key);
+                            var publicRequestLoginsValue = publicRequestLoginsKvp.Value;
+
+                                context.Writer.Write(publicRequestLoginsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetPrincipalTags())
+                    {
+                        context.Writer.WritePropertyName("PrincipalTags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestPrincipalTagsKvp in publicRequest.PrincipalTags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestPrincipalTagsKvp.Key);
+                            var publicRequestPrincipalTagsValue = publicRequestPrincipalTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestPrincipalTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTokenDuration())
+                    {
+                        context.Writer.WritePropertyName("TokenDuration");
+                        context.Writer.Write(publicRequest.TokenDuration.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTokenDuration())
-                {
-                    context.Writer.WritePropertyName("TokenDuration");
-                    context.Writer.Write(publicRequest.TokenDuration.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -64,27 +64,30 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field ViolationId set");
             request.AddPathResource("{violationId}", StringUtils.FromString(publicRequest.ViolationId));
             request.ResourcePath = "/violations/verification-state/{violationId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetVerificationState())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("verificationState");
-                    context.Writer.Write(publicRequest.VerificationState);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetVerificationState())
+                    {
+                        context.Writer.WritePropertyName("verificationState");
+                        context.Writer.Write(publicRequest.VerificationState);
+                    }
+
+                    if(publicRequest.IsSetVerificationStateDescription())
+                    {
+                        context.Writer.WritePropertyName("verificationStateDescription");
+                        context.Writer.Write(publicRequest.VerificationStateDescription);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetVerificationStateDescription())
-                {
-                    context.Writer.WritePropertyName("verificationStateDescription");
-                    context.Writer.Write(publicRequest.VerificationStateDescription);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

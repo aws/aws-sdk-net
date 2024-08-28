@@ -61,39 +61,42 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/replacepermissionassociations";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    if(publicRequest.IsSetFromPermissionArn())
+                    {
+                        context.Writer.WritePropertyName("fromPermissionArn");
+                        context.Writer.Write(publicRequest.FromPermissionArn);
+                    }
+
+                    if(publicRequest.IsSetFromPermissionVersion())
+                    {
+                        context.Writer.WritePropertyName("fromPermissionVersion");
+                        context.Writer.Write(publicRequest.FromPermissionVersion.Value);
+                    }
+
+                    if(publicRequest.IsSetToPermissionArn())
+                    {
+                        context.Writer.WritePropertyName("toPermissionArn");
+                        context.Writer.Write(publicRequest.ToPermissionArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetFromPermissionArn())
-                {
-                    context.Writer.WritePropertyName("fromPermissionArn");
-                    context.Writer.Write(publicRequest.FromPermissionArn);
-                }
-
-                if(publicRequest.IsSetFromPermissionVersion())
-                {
-                    context.Writer.WritePropertyName("fromPermissionVersion");
-                    context.Writer.Write(publicRequest.FromPermissionVersion.Value);
-                }
-
-                if(publicRequest.IsSetToPermissionArn())
-                {
-                    context.Writer.WritePropertyName("toPermissionArn");
-                    context.Writer.Write(publicRequest.ToPermissionArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

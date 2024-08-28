@@ -61,33 +61,36 @@ namespace Amazon.Ivschat.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/DisconnectUser";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetReason())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("reason");
-                    context.Writer.Write(publicRequest.Reason);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetReason())
+                    {
+                        context.Writer.WritePropertyName("reason");
+                        context.Writer.Write(publicRequest.Reason);
+                    }
+
+                    if(publicRequest.IsSetRoomIdentifier())
+                    {
+                        context.Writer.WritePropertyName("roomIdentifier");
+                        context.Writer.Write(publicRequest.RoomIdentifier);
+                    }
+
+                    if(publicRequest.IsSetUserId())
+                    {
+                        context.Writer.WritePropertyName("userId");
+                        context.Writer.Write(publicRequest.UserId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRoomIdentifier())
-                {
-                    context.Writer.WritePropertyName("roomIdentifier");
-                    context.Writer.Write(publicRequest.RoomIdentifier);
-                }
-
-                if(publicRequest.IsSetUserId())
-                {
-                    context.Writer.WritePropertyName("userId");
-                    context.Writer.Write(publicRequest.UserId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

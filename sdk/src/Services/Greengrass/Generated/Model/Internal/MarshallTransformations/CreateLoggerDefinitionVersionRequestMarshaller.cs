@@ -64,31 +64,34 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                 throw new AmazonGreengrassException("Request object does not have required field LoggerDefinitionId set");
             request.AddPathResource("{LoggerDefinitionId}", StringUtils.FromString(publicRequest.LoggerDefinitionId));
             request.ResourcePath = "/greengrass/definition/loggers/{LoggerDefinitionId}/versions";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLoggers())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Loggers");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLoggersListValue in publicRequest.Loggers)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetLoggers())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("Loggers");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLoggersListValue in publicRequest.Loggers)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = LoggerMarshaller.Instance;
-                        marshaller.Marshall(publicRequestLoggersListValue, context);
+                            var marshaller = LoggerMarshaller.Instance;
+                            marshaller.Marshall(publicRequestLoggersListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

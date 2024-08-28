@@ -83,6 +83,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("InstanceCount", StringUtils.FromInt(publicRequest.InstanceCount));
                 }
+                if(publicRequest.IsSetInstanceMatchCriteria())
+                {
+                    request.Parameters.Add("InstanceMatchCriteria", StringUtils.FromString(publicRequest.InstanceMatchCriteria));
+                }
             }
             return request;
         }

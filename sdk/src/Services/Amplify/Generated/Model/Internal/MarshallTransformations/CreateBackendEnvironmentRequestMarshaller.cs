@@ -64,33 +64,36 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 throw new AmazonAmplifyException("Request object does not have required field AppId set");
             request.AddPathResource("{appId}", StringUtils.FromString(publicRequest.AppId));
             request.ResourcePath = "/apps/{appId}/backendenvironments";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeploymentArtifacts())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("deploymentArtifacts");
-                    context.Writer.Write(publicRequest.DeploymentArtifacts);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDeploymentArtifacts())
+                    {
+                        context.Writer.WritePropertyName("deploymentArtifacts");
+                        context.Writer.Write(publicRequest.DeploymentArtifacts);
+                    }
+
+                    if(publicRequest.IsSetEnvironmentName())
+                    {
+                        context.Writer.WritePropertyName("environmentName");
+                        context.Writer.Write(publicRequest.EnvironmentName);
+                    }
+
+                    if(publicRequest.IsSetStackName())
+                    {
+                        context.Writer.WritePropertyName("stackName");
+                        context.Writer.Write(publicRequest.StackName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEnvironmentName())
-                {
-                    context.Writer.WritePropertyName("environmentName");
-                    context.Writer.Write(publicRequest.EnvironmentName);
-                }
-
-                if(publicRequest.IsSetStackName())
-                {
-                    context.Writer.WritePropertyName("stackName");
-                    context.Writer.Write(publicRequest.StackName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -68,31 +68,34 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 throw new AmazonChimeException("Request object does not have required field RoomId set");
             request.AddPathResource("{roomId}", StringUtils.FromString(publicRequest.RoomId));
             request.ResourcePath = "/accounts/{accountId}/rooms/{roomId}/memberships";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMembershipItemList())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("MembershipItemList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMembershipItemListListValue in publicRequest.MembershipItemList)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMembershipItemList())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("MembershipItemList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMembershipItemListListValue in publicRequest.MembershipItemList)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = MembershipItemMarshaller.Instance;
-                        marshaller.Marshall(publicRequestMembershipItemListListValue, context);
+                            var marshaller = MembershipItemMarshaller.Instance;
+                            marshaller.Marshall(publicRequestMembershipItemListListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

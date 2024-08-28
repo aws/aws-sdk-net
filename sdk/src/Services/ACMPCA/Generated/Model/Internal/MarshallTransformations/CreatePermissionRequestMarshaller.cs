@@ -63,44 +63,47 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetActions())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Actions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestActionsListValue in publicRequest.Actions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetActions())
                     {
-                            context.Writer.Write(publicRequestActionsListValue);
+                        context.Writer.WritePropertyName("Actions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestActionsListValue in publicRequest.Actions)
+                        {
+                                context.Writer.Write(publicRequestActionsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetCertificateAuthorityArn())
+                    {
+                        context.Writer.WritePropertyName("CertificateAuthorityArn");
+                        context.Writer.Write(publicRequest.CertificateAuthorityArn);
+                    }
+
+                    if(publicRequest.IsSetPrincipal())
+                    {
+                        context.Writer.WritePropertyName("Principal");
+                        context.Writer.Write(publicRequest.Principal);
+                    }
+
+                    if(publicRequest.IsSetSourceAccount())
+                    {
+                        context.Writer.WritePropertyName("SourceAccount");
+                        context.Writer.Write(publicRequest.SourceAccount);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCertificateAuthorityArn())
-                {
-                    context.Writer.WritePropertyName("CertificateAuthorityArn");
-                    context.Writer.Write(publicRequest.CertificateAuthorityArn);
-                }
-
-                if(publicRequest.IsSetPrincipal())
-                {
-                    context.Writer.WritePropertyName("Principal");
-                    context.Writer.Write(publicRequest.Principal);
-                }
-
-                if(publicRequest.IsSetSourceAccount())
-                {
-                    context.Writer.WritePropertyName("SourceAccount");
-                    context.Writer.Write(publicRequest.SourceAccount);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

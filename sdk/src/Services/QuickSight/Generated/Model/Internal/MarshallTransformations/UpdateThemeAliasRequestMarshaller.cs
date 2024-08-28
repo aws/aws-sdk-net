@@ -70,21 +70,24 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field ThemeId set");
             request.AddPathResource("{ThemeId}", StringUtils.FromString(publicRequest.ThemeId));
             request.ResourcePath = "/accounts/{AwsAccountId}/themes/{ThemeId}/aliases/{AliasName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetThemeVersionNumber())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ThemeVersionNumber");
-                    context.Writer.Write(publicRequest.ThemeVersionNumber.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetThemeVersionNumber())
+                    {
+                        context.Writer.WritePropertyName("ThemeVersionNumber");
+                        context.Writer.Write(publicRequest.ThemeVersionNumber.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

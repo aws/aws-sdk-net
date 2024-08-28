@@ -61,27 +61,30 @@ namespace Amazon.SagemakerEdgeManager.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/GetDeployments";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeviceFleetName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DeviceFleetName");
-                    context.Writer.Write(publicRequest.DeviceFleetName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDeviceFleetName())
+                    {
+                        context.Writer.WritePropertyName("DeviceFleetName");
+                        context.Writer.Write(publicRequest.DeviceFleetName);
+                    }
+
+                    if(publicRequest.IsSetDeviceName())
+                    {
+                        context.Writer.WritePropertyName("DeviceName");
+                        context.Writer.Write(publicRequest.DeviceName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDeviceName())
-                {
-                    context.Writer.WritePropertyName("DeviceName");
-                    context.Writer.Write(publicRequest.DeviceName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -61,47 +61,50 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/sol/nslcm/v1/ns_instances";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetNsDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("nsDescription");
-                    context.Writer.Write(publicRequest.NsDescription);
-                }
-
-                if(publicRequest.IsSetNsdInfoId())
-                {
-                    context.Writer.WritePropertyName("nsdInfoId");
-                    context.Writer.Write(publicRequest.NsdInfoId);
-                }
-
-                if(publicRequest.IsSetNsName())
-                {
-                    context.Writer.WritePropertyName("nsName");
-                    context.Writer.Write(publicRequest.NsName);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetNsDescription())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("nsDescription");
+                        context.Writer.Write(publicRequest.NsDescription);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetNsdInfoId())
+                    {
+                        context.Writer.WritePropertyName("nsdInfoId");
+                        context.Writer.Write(publicRequest.NsdInfoId);
+                    }
+
+                    if(publicRequest.IsSetNsName())
+                    {
+                        context.Writer.WritePropertyName("nsName");
+                        context.Writer.Write(publicRequest.NsName);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

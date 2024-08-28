@@ -61,74 +61,77 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/UpdateLaunchConfigurationTemplate";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCopyPrivateIp())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("copyPrivateIp");
-                    context.Writer.Write(publicRequest.CopyPrivateIp.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCopyPrivateIp())
+                    {
+                        context.Writer.WritePropertyName("copyPrivateIp");
+                        context.Writer.Write(publicRequest.CopyPrivateIp.Value);
+                    }
+
+                    if(publicRequest.IsSetCopyTags())
+                    {
+                        context.Writer.WritePropertyName("copyTags");
+                        context.Writer.Write(publicRequest.CopyTags.Value);
+                    }
+
+                    if(publicRequest.IsSetExportBucketArn())
+                    {
+                        context.Writer.WritePropertyName("exportBucketArn");
+                        context.Writer.Write(publicRequest.ExportBucketArn);
+                    }
+
+                    if(publicRequest.IsSetLaunchConfigurationTemplateID())
+                    {
+                        context.Writer.WritePropertyName("launchConfigurationTemplateID");
+                        context.Writer.Write(publicRequest.LaunchConfigurationTemplateID);
+                    }
+
+                    if(publicRequest.IsSetLaunchDisposition())
+                    {
+                        context.Writer.WritePropertyName("launchDisposition");
+                        context.Writer.Write(publicRequest.LaunchDisposition);
+                    }
+
+                    if(publicRequest.IsSetLaunchIntoSourceInstance())
+                    {
+                        context.Writer.WritePropertyName("launchIntoSourceInstance");
+                        context.Writer.Write(publicRequest.LaunchIntoSourceInstance.Value);
+                    }
+
+                    if(publicRequest.IsSetLicensing())
+                    {
+                        context.Writer.WritePropertyName("licensing");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LicensingMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Licensing, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetPostLaunchEnabled())
+                    {
+                        context.Writer.WritePropertyName("postLaunchEnabled");
+                        context.Writer.Write(publicRequest.PostLaunchEnabled.Value);
+                    }
+
+                    if(publicRequest.IsSetTargetInstanceTypeRightSizingMethod())
+                    {
+                        context.Writer.WritePropertyName("targetInstanceTypeRightSizingMethod");
+                        context.Writer.Write(publicRequest.TargetInstanceTypeRightSizingMethod);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCopyTags())
-                {
-                    context.Writer.WritePropertyName("copyTags");
-                    context.Writer.Write(publicRequest.CopyTags.Value);
-                }
-
-                if(publicRequest.IsSetExportBucketArn())
-                {
-                    context.Writer.WritePropertyName("exportBucketArn");
-                    context.Writer.Write(publicRequest.ExportBucketArn);
-                }
-
-                if(publicRequest.IsSetLaunchConfigurationTemplateID())
-                {
-                    context.Writer.WritePropertyName("launchConfigurationTemplateID");
-                    context.Writer.Write(publicRequest.LaunchConfigurationTemplateID);
-                }
-
-                if(publicRequest.IsSetLaunchDisposition())
-                {
-                    context.Writer.WritePropertyName("launchDisposition");
-                    context.Writer.Write(publicRequest.LaunchDisposition);
-                }
-
-                if(publicRequest.IsSetLaunchIntoSourceInstance())
-                {
-                    context.Writer.WritePropertyName("launchIntoSourceInstance");
-                    context.Writer.Write(publicRequest.LaunchIntoSourceInstance.Value);
-                }
-
-                if(publicRequest.IsSetLicensing())
-                {
-                    context.Writer.WritePropertyName("licensing");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LicensingMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Licensing, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPostLaunchEnabled())
-                {
-                    context.Writer.WritePropertyName("postLaunchEnabled");
-                    context.Writer.Write(publicRequest.PostLaunchEnabled.Value);
-                }
-
-                if(publicRequest.IsSetTargetInstanceTypeRightSizingMethod())
-                {
-                    context.Writer.WritePropertyName("targetInstanceTypeRightSizingMethod");
-                    context.Writer.Write(publicRequest.TargetInstanceTypeRightSizingMethod);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

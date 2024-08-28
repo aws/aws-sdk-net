@@ -63,59 +63,62 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFiltersWithOperator())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("FiltersWithOperator");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFiltersWithOperatorListValue in publicRequest.FiltersWithOperator)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFiltersWithOperator())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("FiltersWithOperator");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFiltersWithOperatorListValue in publicRequest.FiltersWithOperator)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = InstancePropertyStringFilterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFiltersWithOperatorListValue, context);
+                            var marshaller = InstancePropertyStringFilterMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFiltersWithOperatorListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetInstancePropertyFilterList())
-                {
-                    context.Writer.WritePropertyName("InstancePropertyFilterList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestInstancePropertyFilterListListValue in publicRequest.InstancePropertyFilterList)
+                    if(publicRequest.IsSetInstancePropertyFilterList())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("InstancePropertyFilterList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestInstancePropertyFilterListListValue in publicRequest.InstancePropertyFilterList)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = InstancePropertyFilterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestInstancePropertyFilterListListValue, context);
+                            var marshaller = InstancePropertyFilterMarshaller.Instance;
+                            marshaller.Marshall(publicRequestInstancePropertyFilterListListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,71 +63,74 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCheckoutMetadata())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CheckoutMetadata");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCheckoutMetadataListValue in publicRequest.CheckoutMetadata)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCheckoutMetadata())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("CheckoutMetadata");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCheckoutMetadataListValue in publicRequest.CheckoutMetadata)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = MetadataMarshaller.Instance;
-                        marshaller.Marshall(publicRequestCheckoutMetadataListValue, context);
+                            var marshaller = MetadataMarshaller.Instance;
+                            marshaller.Marshall(publicRequestCheckoutMetadataListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                if(publicRequest.IsSetDigitalSignatureMethod())
-                {
-                    context.Writer.WritePropertyName("DigitalSignatureMethod");
-                    context.Writer.Write(publicRequest.DigitalSignatureMethod);
-                }
-
-                if(publicRequest.IsSetEntitlements())
-                {
-                    context.Writer.WritePropertyName("Entitlements");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEntitlementsListValue in publicRequest.Entitlements)
+                    if(publicRequest.IsSetClientToken())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EntitlementDataMarshaller.Instance;
-                        marshaller.Marshall(publicRequestEntitlementsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDigitalSignatureMethod())
+                    {
+                        context.Writer.WritePropertyName("DigitalSignatureMethod");
+                        context.Writer.Write(publicRequest.DigitalSignatureMethod);
+                    }
+
+                    if(publicRequest.IsSetEntitlements())
+                    {
+                        context.Writer.WritePropertyName("Entitlements");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestEntitlementsListValue in publicRequest.Entitlements)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = EntitlementDataMarshaller.Instance;
+                            marshaller.Marshall(publicRequestEntitlementsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetLicenseArn())
+                    {
+                        context.Writer.WritePropertyName("LicenseArn");
+                        context.Writer.Write(publicRequest.LicenseArn);
+                    }
+
+                    if(publicRequest.IsSetNodeId())
+                    {
+                        context.Writer.WritePropertyName("NodeId");
+                        context.Writer.Write(publicRequest.NodeId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetLicenseArn())
-                {
-                    context.Writer.WritePropertyName("LicenseArn");
-                    context.Writer.Write(publicRequest.LicenseArn);
-                }
-
-                if(publicRequest.IsSetNodeId())
-                {
-                    context.Writer.WritePropertyName("NodeId");
-                    context.Writer.Write(publicRequest.NodeId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

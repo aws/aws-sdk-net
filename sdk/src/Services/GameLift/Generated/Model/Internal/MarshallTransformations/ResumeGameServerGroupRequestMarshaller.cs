@@ -63,32 +63,35 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetGameServerGroupName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("GameServerGroupName");
-                    context.Writer.Write(publicRequest.GameServerGroupName);
-                }
-
-                if(publicRequest.IsSetResumeActions())
-                {
-                    context.Writer.WritePropertyName("ResumeActions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestResumeActionsListValue in publicRequest.ResumeActions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetGameServerGroupName())
                     {
-                            context.Writer.Write(publicRequestResumeActionsListValue);
+                        context.Writer.WritePropertyName("GameServerGroupName");
+                        context.Writer.Write(publicRequest.GameServerGroupName);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetResumeActions())
+                    {
+                        context.Writer.WritePropertyName("ResumeActions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestResumeActionsListValue in publicRequest.ResumeActions)
+                        {
+                                context.Writer.Write(publicRequestResumeActionsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

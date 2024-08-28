@@ -61,51 +61,54 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/StartRecovery";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetIsDrill())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("isDrill");
-                    context.Writer.Write(publicRequest.IsDrill.Value);
-                }
-
-                if(publicRequest.IsSetSourceServers())
-                {
-                    context.Writer.WritePropertyName("sourceServers");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSourceServersListValue in publicRequest.SourceServers)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetIsDrill())
                     {
+                        context.Writer.WritePropertyName("isDrill");
+                        context.Writer.Write(publicRequest.IsDrill.Value);
+                    }
+
+                    if(publicRequest.IsSetSourceServers())
+                    {
+                        context.Writer.WritePropertyName("sourceServers");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSourceServersListValue in publicRequest.SourceServers)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = StartRecoveryRequestSourceServerMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSourceServersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
 
-                        var marshaller = StartRecoveryRequestSourceServerMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSourceServersListValue, context);
-
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

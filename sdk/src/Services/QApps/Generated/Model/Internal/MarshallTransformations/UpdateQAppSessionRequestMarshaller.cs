@@ -61,37 +61,40 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/runtime.updateQAppSession";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetSessionId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("sessionId");
-                    context.Writer.Write(publicRequest.SessionId);
-                }
-
-                if(publicRequest.IsSetValues())
-                {
-                    context.Writer.WritePropertyName("values");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestValuesListValue in publicRequest.Values)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetSessionId())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = CardValueMarshaller.Instance;
-                        marshaller.Marshall(publicRequestValuesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("sessionId");
+                        context.Writer.Write(publicRequest.SessionId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetValues())
+                    {
+                        context.Writer.WritePropertyName("values");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestValuesListValue in publicRequest.Values)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = CardValueMarshaller.Instance;
+                            marshaller.Marshall(publicRequestValuesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

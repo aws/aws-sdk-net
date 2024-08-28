@@ -65,31 +65,34 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 throw new AmazonChimeException("Request object does not have required field VoiceConnectorId set");
             request.AddPathResource("{voiceConnectorId}", StringUtils.FromString(publicRequest.VoiceConnectorId));
             request.ResourcePath = "/voice-connectors/{voiceConnectorId}/termination/credentials";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCredentials())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Credentials");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCredentialsListValue in publicRequest.Credentials)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCredentials())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("Credentials");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCredentialsListValue in publicRequest.Credentials)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = CredentialMarshaller.Instance;
-                        marshaller.Marshall(publicRequestCredentialsListValue, context);
+                            var marshaller = CredentialMarshaller.Instance;
+                            marshaller.Marshall(publicRequestCredentialsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

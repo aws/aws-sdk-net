@@ -63,38 +63,41 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFileShareARN())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("FileShareARN");
-                    context.Writer.Write(publicRequest.FileShareARN);
-                }
-
-                if(publicRequest.IsSetFolderList())
-                {
-                    context.Writer.WritePropertyName("FolderList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFolderListListValue in publicRequest.FolderList)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFileShareARN())
                     {
-                            context.Writer.Write(publicRequestFolderListListValue);
+                        context.Writer.WritePropertyName("FileShareARN");
+                        context.Writer.Write(publicRequest.FileShareARN);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetFolderList())
+                    {
+                        context.Writer.WritePropertyName("FolderList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFolderListListValue in publicRequest.FolderList)
+                        {
+                                context.Writer.Write(publicRequestFolderListListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetRecursive())
+                    {
+                        context.Writer.WritePropertyName("Recursive");
+                        context.Writer.Write(publicRequest.Recursive.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRecursive())
-                {
-                    context.Writer.WritePropertyName("Recursive");
-                    context.Writer.Write(publicRequest.Recursive.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

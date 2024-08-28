@@ -61,32 +61,35 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/findingAggregator/create";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetRegionLinkingMode())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("RegionLinkingMode");
-                    context.Writer.Write(publicRequest.RegionLinkingMode);
-                }
-
-                if(publicRequest.IsSetRegions())
-                {
-                    context.Writer.WritePropertyName("Regions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRegionsListValue in publicRequest.Regions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetRegionLinkingMode())
                     {
-                            context.Writer.Write(publicRequestRegionsListValue);
+                        context.Writer.WritePropertyName("RegionLinkingMode");
+                        context.Writer.Write(publicRequest.RegionLinkingMode);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetRegions())
+                    {
+                        context.Writer.WritePropertyName("Regions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRegionsListValue in publicRequest.Regions)
+                        {
+                                context.Writer.Write(publicRequestRegionsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

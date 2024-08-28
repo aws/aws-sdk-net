@@ -64,32 +64,35 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
                 throw new AmazonAuditManagerException("Request object does not have required field AssessmentId set");
             request.AddPathResource("{assessmentId}", StringUtils.FromString(publicRequest.AssessmentId));
             request.ResourcePath = "/assessments/{assessmentId}/batchAssociateToAssessmentReport";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEvidenceFolderId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("evidenceFolderId");
-                    context.Writer.Write(publicRequest.EvidenceFolderId);
-                }
-
-                if(publicRequest.IsSetEvidenceIds())
-                {
-                    context.Writer.WritePropertyName("evidenceIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEvidenceIdsListValue in publicRequest.EvidenceIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEvidenceFolderId())
                     {
-                            context.Writer.Write(publicRequestEvidenceIdsListValue);
+                        context.Writer.WritePropertyName("evidenceFolderId");
+                        context.Writer.Write(publicRequest.EvidenceFolderId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetEvidenceIds())
+                    {
+                        context.Writer.WritePropertyName("evidenceIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestEvidenceIdsListValue in publicRequest.EvidenceIds)
+                        {
+                                context.Writer.Write(publicRequestEvidenceIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

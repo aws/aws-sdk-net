@@ -63,31 +63,34 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetStopWorkspaceRequests())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("StopWorkspaceRequests");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestStopWorkspaceRequestsListValue in publicRequest.StopWorkspaceRequests)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetStopWorkspaceRequests())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("StopWorkspaceRequests");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestStopWorkspaceRequestsListValue in publicRequest.StopWorkspaceRequests)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = StopRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequestStopWorkspaceRequestsListValue, context);
+                            var marshaller = StopRequestMarshaller.Instance;
+                            marshaller.Marshall(publicRequestStopWorkspaceRequestsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

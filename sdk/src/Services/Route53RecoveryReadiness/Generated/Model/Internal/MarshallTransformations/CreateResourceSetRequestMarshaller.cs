@@ -61,57 +61,60 @@ namespace Amazon.Route53RecoveryReadiness.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/resourcesets";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetResources())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("resources");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestResourcesListValue in publicRequest.Resources)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetResources())
                     {
+                        context.Writer.WritePropertyName("resources");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestResourcesListValue in publicRequest.Resources)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ResourceMarshaller.Instance;
+                            marshaller.Marshall(publicRequestResourcesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetResourceSetName())
+                    {
+                        context.Writer.WritePropertyName("resourceSetName");
+                        context.Writer.Write(publicRequest.ResourceSetName);
+                    }
+
+                    if(publicRequest.IsSetResourceSetType())
+                    {
+                        context.Writer.WritePropertyName("resourceSetType");
+                        context.Writer.Write(publicRequest.ResourceSetType);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
 
-                        var marshaller = ResourceMarshaller.Instance;
-                        marshaller.Marshall(publicRequestResourcesListValue, context);
-
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetResourceSetName())
-                {
-                    context.Writer.WritePropertyName("resourceSetName");
-                    context.Writer.Write(publicRequest.ResourceSetName);
-                }
-
-                if(publicRequest.IsSetResourceSetType())
-                {
-                    context.Writer.WritePropertyName("resourceSetType");
-                    context.Writer.Write(publicRequest.ResourceSetType);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

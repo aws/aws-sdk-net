@@ -63,84 +63,87 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCertificateAlternativeNames())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("certificateAlternativeNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCertificateAlternativeNamesListValue in publicRequest.CertificateAlternativeNames)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCertificateAlternativeNames())
                     {
-                            context.Writer.Write(publicRequestCertificateAlternativeNamesListValue);
+                        context.Writer.WritePropertyName("certificateAlternativeNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCertificateAlternativeNamesListValue in publicRequest.CertificateAlternativeNames)
+                        {
+                                context.Writer.Write(publicRequestCertificateAlternativeNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetCertificateDomainName())
-                {
-                    context.Writer.WritePropertyName("certificateDomainName");
-                    context.Writer.Write(publicRequest.CertificateDomainName);
-                }
-
-                if(publicRequest.IsSetCertificateName())
-                {
-                    context.Writer.WritePropertyName("certificateName");
-                    context.Writer.Write(publicRequest.CertificateName);
-                }
-
-                if(publicRequest.IsSetHealthCheckPath())
-                {
-                    context.Writer.WritePropertyName("healthCheckPath");
-                    context.Writer.Write(publicRequest.HealthCheckPath);
-                }
-
-                if(publicRequest.IsSetInstancePort())
-                {
-                    context.Writer.WritePropertyName("instancePort");
-                    context.Writer.Write(publicRequest.InstancePort.Value);
-                }
-
-                if(publicRequest.IsSetIpAddressType())
-                {
-                    context.Writer.WritePropertyName("ipAddressType");
-                    context.Writer.Write(publicRequest.IpAddressType);
-                }
-
-                if(publicRequest.IsSetLoadBalancerName())
-                {
-                    context.Writer.WritePropertyName("loadBalancerName");
-                    context.Writer.Write(publicRequest.LoadBalancerName);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetCertificateDomainName())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("certificateDomainName");
+                        context.Writer.Write(publicRequest.CertificateDomainName);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetCertificateName())
+                    {
+                        context.Writer.WritePropertyName("certificateName");
+                        context.Writer.Write(publicRequest.CertificateName);
+                    }
+
+                    if(publicRequest.IsSetHealthCheckPath())
+                    {
+                        context.Writer.WritePropertyName("healthCheckPath");
+                        context.Writer.Write(publicRequest.HealthCheckPath);
+                    }
+
+                    if(publicRequest.IsSetInstancePort())
+                    {
+                        context.Writer.WritePropertyName("instancePort");
+                        context.Writer.Write(publicRequest.InstancePort.Value);
+                    }
+
+                    if(publicRequest.IsSetIpAddressType())
+                    {
+                        context.Writer.WritePropertyName("ipAddressType");
+                        context.Writer.Write(publicRequest.IpAddressType);
+                    }
+
+                    if(publicRequest.IsSetLoadBalancerName())
+                    {
+                        context.Writer.WritePropertyName("loadBalancerName");
+                        context.Writer.Write(publicRequest.LoadBalancerName);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTlsPolicyName())
+                    {
+                        context.Writer.WritePropertyName("tlsPolicyName");
+                        context.Writer.Write(publicRequest.TlsPolicyName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTlsPolicyName())
-                {
-                    context.Writer.WritePropertyName("tlsPolicyName");
-                    context.Writer.Write(publicRequest.TlsPolicyName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

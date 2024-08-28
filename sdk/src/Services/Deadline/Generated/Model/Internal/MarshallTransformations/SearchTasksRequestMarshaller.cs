@@ -64,71 +64,74 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 throw new AmazonDeadlineException("Request object does not have required field FarmId set");
             request.AddPathResource("{farmId}", StringUtils.FromString(publicRequest.FarmId));
             request.ResourcePath = "/2023-10-12/farms/{farmId}/search/tasks";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFilterExpressions())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("filterExpressions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SearchGroupedFilterExpressionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.FilterExpressions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetItemOffset())
-                {
-                    context.Writer.WritePropertyName("itemOffset");
-                    context.Writer.Write(publicRequest.ItemOffset.Value);
-                }
-
-                if(publicRequest.IsSetJobId())
-                {
-                    context.Writer.WritePropertyName("jobId");
-                    context.Writer.Write(publicRequest.JobId);
-                }
-
-                if(publicRequest.IsSetPageSize())
-                {
-                    context.Writer.WritePropertyName("pageSize");
-                    context.Writer.Write(publicRequest.PageSize.Value);
-                }
-
-                if(publicRequest.IsSetQueueIds())
-                {
-                    context.Writer.WritePropertyName("queueIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestQueueIdsListValue in publicRequest.QueueIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFilterExpressions())
                     {
-                            context.Writer.Write(publicRequestQueueIdsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetSortExpressions())
-                {
-                    context.Writer.WritePropertyName("sortExpressions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSortExpressionsListValue in publicRequest.SortExpressions)
-                    {
+                        context.Writer.WritePropertyName("filterExpressions");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = SearchSortExpressionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSortExpressionsListValue, context);
+                        var marshaller = SearchGroupedFilterExpressionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.FilterExpressions, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetItemOffset())
+                    {
+                        context.Writer.WritePropertyName("itemOffset");
+                        context.Writer.Write(publicRequest.ItemOffset.Value);
+                    }
+
+                    if(publicRequest.IsSetJobId())
+                    {
+                        context.Writer.WritePropertyName("jobId");
+                        context.Writer.Write(publicRequest.JobId);
+                    }
+
+                    if(publicRequest.IsSetPageSize())
+                    {
+                        context.Writer.WritePropertyName("pageSize");
+                        context.Writer.Write(publicRequest.PageSize.Value);
+                    }
+
+                    if(publicRequest.IsSetQueueIds())
+                    {
+                        context.Writer.WritePropertyName("queueIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestQueueIdsListValue in publicRequest.QueueIds)
+                        {
+                                context.Writer.Write(publicRequestQueueIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSortExpressions())
+                    {
+                        context.Writer.WritePropertyName("sortExpressions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSortExpressionsListValue in publicRequest.SortExpressions)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = SearchSortExpressionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSortExpressionsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

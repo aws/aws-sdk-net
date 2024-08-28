@@ -64,119 +64,122 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                 throw new AmazonIoTTwinMakerException("Request object does not have required field WorkspaceId set");
             request.AddPathResource("{workspaceId}", StringUtils.FromString(publicRequest.WorkspaceId));
             request.ResourcePath = "/workspaces/{workspaceId}/entity-properties/history";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetComponentName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("componentName");
-                    context.Writer.Write(publicRequest.ComponentName);
-                }
-
-                if(publicRequest.IsSetComponentPath())
-                {
-                    context.Writer.WritePropertyName("componentPath");
-                    context.Writer.Write(publicRequest.ComponentPath);
-                }
-
-                if(publicRequest.IsSetComponentTypeId())
-                {
-                    context.Writer.WritePropertyName("componentTypeId");
-                    context.Writer.Write(publicRequest.ComponentTypeId);
-                }
-
-                if(publicRequest.IsSetEndDateTime())
-                {
-                    context.Writer.WritePropertyName("endDateTime");
-                    context.Writer.Write(publicRequest.EndDateTime.Value);
-                }
-
-                if(publicRequest.IsSetEndTime())
-                {
-                    context.Writer.WritePropertyName("endTime");
-                    context.Writer.Write(publicRequest.EndTime);
-                }
-
-                if(publicRequest.IsSetEntityId())
-                {
-                    context.Writer.WritePropertyName("entityId");
-                    context.Writer.Write(publicRequest.EntityId);
-                }
-
-                if(publicRequest.IsSetInterpolation())
-                {
-                    context.Writer.WritePropertyName("interpolation");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = InterpolationParametersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Interpolation, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetOrderByTime())
-                {
-                    context.Writer.WritePropertyName("orderByTime");
-                    context.Writer.Write(publicRequest.OrderByTime);
-                }
-
-                if(publicRequest.IsSetPropertyFilters())
-                {
-                    context.Writer.WritePropertyName("propertyFilters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPropertyFiltersListValue in publicRequest.PropertyFilters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetComponentName())
                     {
+                        context.Writer.WritePropertyName("componentName");
+                        context.Writer.Write(publicRequest.ComponentName);
+                    }
+
+                    if(publicRequest.IsSetComponentPath())
+                    {
+                        context.Writer.WritePropertyName("componentPath");
+                        context.Writer.Write(publicRequest.ComponentPath);
+                    }
+
+                    if(publicRequest.IsSetComponentTypeId())
+                    {
+                        context.Writer.WritePropertyName("componentTypeId");
+                        context.Writer.Write(publicRequest.ComponentTypeId);
+                    }
+
+                    if(publicRequest.IsSetEndDateTime())
+                    {
+                        context.Writer.WritePropertyName("endDateTime");
+                        context.Writer.Write(publicRequest.EndDateTime.Value);
+                    }
+
+                    if(publicRequest.IsSetEndTime())
+                    {
+                        context.Writer.WritePropertyName("endTime");
+                        context.Writer.Write(publicRequest.EndTime);
+                    }
+
+                    if(publicRequest.IsSetEntityId())
+                    {
+                        context.Writer.WritePropertyName("entityId");
+                        context.Writer.Write(publicRequest.EntityId);
+                    }
+
+                    if(publicRequest.IsSetInterpolation())
+                    {
+                        context.Writer.WritePropertyName("interpolation");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = PropertyFilterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestPropertyFiltersListValue, context);
+                        var marshaller = InterpolationParametersMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Interpolation, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetSelectedProperties())
-                {
-                    context.Writer.WritePropertyName("selectedProperties");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSelectedPropertiesListValue in publicRequest.SelectedProperties)
+                    if(publicRequest.IsSetMaxResults())
                     {
-                            context.Writer.Write(publicRequestSelectedPropertiesListValue);
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetOrderByTime())
+                    {
+                        context.Writer.WritePropertyName("orderByTime");
+                        context.Writer.Write(publicRequest.OrderByTime);
+                    }
+
+                    if(publicRequest.IsSetPropertyFilters())
+                    {
+                        context.Writer.WritePropertyName("propertyFilters");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPropertyFiltersListValue in publicRequest.PropertyFilters)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = PropertyFilterMarshaller.Instance;
+                            marshaller.Marshall(publicRequestPropertyFiltersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSelectedProperties())
+                    {
+                        context.Writer.WritePropertyName("selectedProperties");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSelectedPropertiesListValue in publicRequest.SelectedProperties)
+                        {
+                                context.Writer.Write(publicRequestSelectedPropertiesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetStartDateTime())
+                    {
+                        context.Writer.WritePropertyName("startDateTime");
+                        context.Writer.Write(publicRequest.StartDateTime.Value);
+                    }
+
+                    if(publicRequest.IsSetStartTime())
+                    {
+                        context.Writer.WritePropertyName("startTime");
+                        context.Writer.Write(publicRequest.StartTime);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetStartDateTime())
-                {
-                    context.Writer.WritePropertyName("startDateTime");
-                    context.Writer.Write(publicRequest.StartDateTime.Value);
-                }
-
-                if(publicRequest.IsSetStartTime())
-                {
-                    context.Writer.WritePropertyName("startTime");
-                    context.Writer.Write(publicRequest.StartTime);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

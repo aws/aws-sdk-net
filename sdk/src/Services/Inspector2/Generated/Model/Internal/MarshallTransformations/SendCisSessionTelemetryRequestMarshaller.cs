@@ -61,43 +61,46 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/cissession/telemetry/send";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMessages())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("messages");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMessagesListValue in publicRequest.Messages)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMessages())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("messages");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMessagesListValue in publicRequest.Messages)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = CisSessionMessageMarshaller.Instance;
-                        marshaller.Marshall(publicRequestMessagesListValue, context);
+                            var marshaller = CisSessionMessageMarshaller.Instance;
+                            marshaller.Marshall(publicRequestMessagesListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetScanJobId())
+                    {
+                        context.Writer.WritePropertyName("scanJobId");
+                        context.Writer.Write(publicRequest.ScanJobId);
+                    }
+
+                    if(publicRequest.IsSetSessionToken())
+                    {
+                        context.Writer.WritePropertyName("sessionToken");
+                        context.Writer.Write(publicRequest.SessionToken);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetScanJobId())
-                {
-                    context.Writer.WritePropertyName("scanJobId");
-                    context.Writer.Write(publicRequest.ScanJobId);
-                }
-
-                if(publicRequest.IsSetSessionToken())
-                {
-                    context.Writer.WritePropertyName("sessionToken");
-                    context.Writer.Write(publicRequest.SessionToken);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

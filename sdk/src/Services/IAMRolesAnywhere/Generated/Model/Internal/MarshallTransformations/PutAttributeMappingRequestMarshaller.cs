@@ -64,37 +64,40 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
                 throw new AmazonIAMRolesAnywhereException("Request object does not have required field ProfileId set");
             request.AddPathResource("{profileId}", StringUtils.FromString(publicRequest.ProfileId));
             request.ResourcePath = "/profiles/{profileId}/mappings";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCertificateField())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("certificateField");
-                    context.Writer.Write(publicRequest.CertificateField);
-                }
-
-                if(publicRequest.IsSetMappingRules())
-                {
-                    context.Writer.WritePropertyName("mappingRules");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMappingRulesListValue in publicRequest.MappingRules)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCertificateField())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = MappingRuleMarshaller.Instance;
-                        marshaller.Marshall(publicRequestMappingRulesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("certificateField");
+                        context.Writer.Write(publicRequest.CertificateField);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetMappingRules())
+                    {
+                        context.Writer.WritePropertyName("mappingRules");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMappingRulesListValue in publicRequest.MappingRules)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = MappingRuleMarshaller.Instance;
+                            marshaller.Marshall(publicRequestMappingRulesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

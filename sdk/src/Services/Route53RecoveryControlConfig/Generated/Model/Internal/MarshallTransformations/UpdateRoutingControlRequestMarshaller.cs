@@ -61,27 +61,30 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/routingcontrol";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetRoutingControlArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("RoutingControlArn");
-                    context.Writer.Write(publicRequest.RoutingControlArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetRoutingControlArn())
+                    {
+                        context.Writer.WritePropertyName("RoutingControlArn");
+                        context.Writer.Write(publicRequest.RoutingControlArn);
+                    }
+
+                    if(publicRequest.IsSetRoutingControlName())
+                    {
+                        context.Writer.WritePropertyName("RoutingControlName");
+                        context.Writer.Write(publicRequest.RoutingControlName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRoutingControlName())
-                {
-                    context.Writer.WritePropertyName("RoutingControlName");
-                    context.Writer.Write(publicRequest.RoutingControlName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

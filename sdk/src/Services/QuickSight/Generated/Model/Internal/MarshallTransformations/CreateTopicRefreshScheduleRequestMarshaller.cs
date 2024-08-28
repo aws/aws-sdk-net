@@ -67,38 +67,41 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field TopicId set");
             request.AddPathResource("{TopicId}", StringUtils.FromString(publicRequest.TopicId));
             request.ResourcePath = "/accounts/{AwsAccountId}/topics/{TopicId}/schedules";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDatasetArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DatasetArn");
-                    context.Writer.Write(publicRequest.DatasetArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDatasetArn())
+                    {
+                        context.Writer.WritePropertyName("DatasetArn");
+                        context.Writer.Write(publicRequest.DatasetArn);
+                    }
+
+                    if(publicRequest.IsSetDatasetName())
+                    {
+                        context.Writer.WritePropertyName("DatasetName");
+                        context.Writer.Write(publicRequest.DatasetName);
+                    }
+
+                    if(publicRequest.IsSetRefreshSchedule())
+                    {
+                        context.Writer.WritePropertyName("RefreshSchedule");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TopicRefreshScheduleMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RefreshSchedule, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDatasetName())
-                {
-                    context.Writer.WritePropertyName("DatasetName");
-                    context.Writer.Write(publicRequest.DatasetName);
-                }
-
-                if(publicRequest.IsSetRefreshSchedule())
-                {
-                    context.Writer.WritePropertyName("RefreshSchedule");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TopicRefreshScheduleMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RefreshSchedule, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

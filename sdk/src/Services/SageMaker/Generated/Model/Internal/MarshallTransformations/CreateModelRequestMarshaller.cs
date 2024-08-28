@@ -63,98 +63,101 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetContainers())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Containers");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestContainersListValue in publicRequest.Containers)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetContainers())
                     {
+                        context.Writer.WritePropertyName("Containers");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestContainersListValue in publicRequest.Containers)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ContainerDefinitionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestContainersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetEnableNetworkIsolation())
+                    {
+                        context.Writer.WritePropertyName("EnableNetworkIsolation");
+                        context.Writer.Write(publicRequest.EnableNetworkIsolation.Value);
+                    }
+
+                    if(publicRequest.IsSetExecutionRoleArn())
+                    {
+                        context.Writer.WritePropertyName("ExecutionRoleArn");
+                        context.Writer.Write(publicRequest.ExecutionRoleArn);
+                    }
+
+                    if(publicRequest.IsSetInferenceExecutionConfig())
+                    {
+                        context.Writer.WritePropertyName("InferenceExecutionConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = InferenceExecutionConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.InferenceExecutionConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetModelName())
+                    {
+                        context.Writer.WritePropertyName("ModelName");
+                        context.Writer.Write(publicRequest.ModelName);
+                    }
+
+                    if(publicRequest.IsSetPrimaryContainer())
+                    {
+                        context.Writer.WritePropertyName("PrimaryContainer");
                         context.Writer.WriteObjectStart();
 
                         var marshaller = ContainerDefinitionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestContainersListValue, context);
+                        marshaller.Marshall(publicRequest.PrimaryContainer, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetEnableNetworkIsolation())
-                {
-                    context.Writer.WritePropertyName("EnableNetworkIsolation");
-                    context.Writer.Write(publicRequest.EnableNetworkIsolation.Value);
-                }
-
-                if(publicRequest.IsSetExecutionRoleArn())
-                {
-                    context.Writer.WritePropertyName("ExecutionRoleArn");
-                    context.Writer.Write(publicRequest.ExecutionRoleArn);
-                }
-
-                if(publicRequest.IsSetInferenceExecutionConfig())
-                {
-                    context.Writer.WritePropertyName("InferenceExecutionConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = InferenceExecutionConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.InferenceExecutionConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetModelName())
-                {
-                    context.Writer.WritePropertyName("ModelName");
-                    context.Writer.Write(publicRequest.ModelName);
-                }
-
-                if(publicRequest.IsSetPrimaryContainer())
-                {
-                    context.Writer.WritePropertyName("PrimaryContainer");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ContainerDefinitionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PrimaryContainer, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetTags())
                     {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetVpcConfig())
+                    {
+                        context.Writer.WritePropertyName("VpcConfig");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = VpcConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.VpcConfig, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetVpcConfig())
-                {
-                    context.Writer.WritePropertyName("VpcConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = VpcConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.VpcConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -64,106 +64,109 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                 throw new AmazonGlueDataBrewException("Request object does not have required field Name set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/profileJobs/{name}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Configuration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ProfileConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Configuration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEncryptionKeyArn())
-                {
-                    context.Writer.WritePropertyName("EncryptionKeyArn");
-                    context.Writer.Write(publicRequest.EncryptionKeyArn);
-                }
-
-                if(publicRequest.IsSetEncryptionMode())
-                {
-                    context.Writer.WritePropertyName("EncryptionMode");
-                    context.Writer.Write(publicRequest.EncryptionMode);
-                }
-
-                if(publicRequest.IsSetJobSample())
-                {
-                    context.Writer.WritePropertyName("JobSample");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = JobSampleMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.JobSample, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetLogSubscription())
-                {
-                    context.Writer.WritePropertyName("LogSubscription");
-                    context.Writer.Write(publicRequest.LogSubscription);
-                }
-
-                if(publicRequest.IsSetMaxCapacity())
-                {
-                    context.Writer.WritePropertyName("MaxCapacity");
-                    context.Writer.Write(publicRequest.MaxCapacity.Value);
-                }
-
-                if(publicRequest.IsSetMaxRetries())
-                {
-                    context.Writer.WritePropertyName("MaxRetries");
-                    context.Writer.Write(publicRequest.MaxRetries.Value);
-                }
-
-                if(publicRequest.IsSetOutputLocation())
-                {
-                    context.Writer.WritePropertyName("OutputLocation");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = S3LocationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OutputLocation, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("RoleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetTimeout())
-                {
-                    context.Writer.WritePropertyName("Timeout");
-                    context.Writer.Write(publicRequest.Timeout.Value);
-                }
-
-                if(publicRequest.IsSetValidationConfigurations())
-                {
-                    context.Writer.WritePropertyName("ValidationConfigurations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestValidationConfigurationsListValue in publicRequest.ValidationConfigurations)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConfiguration())
                     {
+                        context.Writer.WritePropertyName("Configuration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = ValidationConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestValidationConfigurationsListValue, context);
+                        var marshaller = ProfileConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Configuration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetEncryptionKeyArn())
+                    {
+                        context.Writer.WritePropertyName("EncryptionKeyArn");
+                        context.Writer.Write(publicRequest.EncryptionKeyArn);
+                    }
+
+                    if(publicRequest.IsSetEncryptionMode())
+                    {
+                        context.Writer.WritePropertyName("EncryptionMode");
+                        context.Writer.Write(publicRequest.EncryptionMode);
+                    }
+
+                    if(publicRequest.IsSetJobSample())
+                    {
+                        context.Writer.WritePropertyName("JobSample");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = JobSampleMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.JobSample, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetLogSubscription())
+                    {
+                        context.Writer.WritePropertyName("LogSubscription");
+                        context.Writer.Write(publicRequest.LogSubscription);
+                    }
+
+                    if(publicRequest.IsSetMaxCapacity())
+                    {
+                        context.Writer.WritePropertyName("MaxCapacity");
+                        context.Writer.Write(publicRequest.MaxCapacity.Value);
+                    }
+
+                    if(publicRequest.IsSetMaxRetries())
+                    {
+                        context.Writer.WritePropertyName("MaxRetries");
+                        context.Writer.Write(publicRequest.MaxRetries.Value);
+                    }
+
+                    if(publicRequest.IsSetOutputLocation())
+                    {
+                        context.Writer.WritePropertyName("OutputLocation");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = S3LocationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OutputLocation, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("RoleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    if(publicRequest.IsSetTimeout())
+                    {
+                        context.Writer.WritePropertyName("Timeout");
+                        context.Writer.Write(publicRequest.Timeout.Value);
+                    }
+
+                    if(publicRequest.IsSetValidationConfigurations())
+                    {
+                        context.Writer.WritePropertyName("ValidationConfigurations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestValidationConfigurationsListValue in publicRequest.ValidationConfigurations)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ValidationConfigurationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestValidationConfigurationsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

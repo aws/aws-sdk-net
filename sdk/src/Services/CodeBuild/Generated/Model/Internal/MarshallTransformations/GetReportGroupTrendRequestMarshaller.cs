@@ -63,33 +63,36 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetNumOfReports())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("numOfReports");
-                    context.Writer.Write(publicRequest.NumOfReports.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetNumOfReports())
+                    {
+                        context.Writer.WritePropertyName("numOfReports");
+                        context.Writer.Write(publicRequest.NumOfReports.Value);
+                    }
+
+                    if(publicRequest.IsSetReportGroupArn())
+                    {
+                        context.Writer.WritePropertyName("reportGroupArn");
+                        context.Writer.Write(publicRequest.ReportGroupArn);
+                    }
+
+                    if(publicRequest.IsSetTrendField())
+                    {
+                        context.Writer.WritePropertyName("trendField");
+                        context.Writer.Write(publicRequest.TrendField);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetReportGroupArn())
-                {
-                    context.Writer.WritePropertyName("reportGroupArn");
-                    context.Writer.Write(publicRequest.ReportGroupArn);
-                }
-
-                if(publicRequest.IsSetTrendField())
-                {
-                    context.Writer.WritePropertyName("trendField");
-                    context.Writer.Write(publicRequest.TrendField);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

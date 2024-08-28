@@ -63,46 +63,49 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCountryRuleSetUpdates())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CountryRuleSetUpdates");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestCountryRuleSetUpdatesKvp in publicRequest.CountryRuleSetUpdates)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCountryRuleSetUpdates())
                     {
-                        context.Writer.WritePropertyName(publicRequestCountryRuleSetUpdatesKvp.Key);
-                        var publicRequestCountryRuleSetUpdatesValue = publicRequestCountryRuleSetUpdatesKvp.Value;
-
+                        context.Writer.WritePropertyName("CountryRuleSetUpdates");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestCountryRuleSetUpdatesKvp in publicRequest.CountryRuleSetUpdates)
+                        {
+                            context.Writer.WritePropertyName(publicRequestCountryRuleSetUpdatesKvp.Key);
+                            var publicRequestCountryRuleSetUpdatesValue = publicRequestCountryRuleSetUpdatesKvp.Value;
 
-                        var marshaller = ProtectConfigurationCountryRuleSetInformationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestCountryRuleSetUpdatesValue, context);
+                            context.Writer.WriteObjectStart();
 
+                            var marshaller = ProtectConfigurationCountryRuleSetInformationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestCountryRuleSetUpdatesValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetNumberCapability())
+                    {
+                        context.Writer.WritePropertyName("NumberCapability");
+                        context.Writer.Write(publicRequest.NumberCapability);
+                    }
+
+                    if(publicRequest.IsSetProtectConfigurationId())
+                    {
+                        context.Writer.WritePropertyName("ProtectConfigurationId");
+                        context.Writer.Write(publicRequest.ProtectConfigurationId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetNumberCapability())
-                {
-                    context.Writer.WritePropertyName("NumberCapability");
-                    context.Writer.Write(publicRequest.NumberCapability);
-                }
-
-                if(publicRequest.IsSetProtectConfigurationId())
-                {
-                    context.Writer.WritePropertyName("ProtectConfigurationId");
-                    context.Writer.Write(publicRequest.ProtectConfigurationId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

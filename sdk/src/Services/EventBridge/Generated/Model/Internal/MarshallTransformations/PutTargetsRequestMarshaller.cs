@@ -63,43 +63,46 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEventBusName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("EventBusName");
-                    context.Writer.Write(publicRequest.EventBusName);
-                }
-
-                if(publicRequest.IsSetRule())
-                {
-                    context.Writer.WritePropertyName("Rule");
-                    context.Writer.Write(publicRequest.Rule);
-                }
-
-                if(publicRequest.IsSetTargets())
-                {
-                    context.Writer.WritePropertyName("Targets");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTargetsListValue in publicRequest.Targets)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEventBusName())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TargetMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTargetsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("EventBusName");
+                        context.Writer.Write(publicRequest.EventBusName);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetRule())
+                    {
+                        context.Writer.WritePropertyName("Rule");
+                        context.Writer.Write(publicRequest.Rule);
+                    }
+
+                    if(publicRequest.IsSetTargets())
+                    {
+                        context.Writer.WritePropertyName("Targets");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTargetsListValue in publicRequest.Targets)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TargetMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTargetsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

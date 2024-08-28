@@ -63,54 +63,57 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFirstSchemaVersionNumber())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("FirstSchemaVersionNumber");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFirstSchemaVersionNumber())
+                    {
+                        context.Writer.WritePropertyName("FirstSchemaVersionNumber");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = SchemaVersionNumberMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.FirstSchemaVersionNumber, context);
+                        var marshaller = SchemaVersionNumberMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.FirstSchemaVersionNumber, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSchemaDiffType())
+                    {
+                        context.Writer.WritePropertyName("SchemaDiffType");
+                        context.Writer.Write(publicRequest.SchemaDiffType);
+                    }
+
+                    if(publicRequest.IsSetSchemaId())
+                    {
+                        context.Writer.WritePropertyName("SchemaId");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SchemaIdMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SchemaId, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSecondSchemaVersionNumber())
+                    {
+                        context.Writer.WritePropertyName("SecondSchemaVersionNumber");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SchemaVersionNumberMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SecondSchemaVersionNumber, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSchemaDiffType())
-                {
-                    context.Writer.WritePropertyName("SchemaDiffType");
-                    context.Writer.Write(publicRequest.SchemaDiffType);
-                }
-
-                if(publicRequest.IsSetSchemaId())
-                {
-                    context.Writer.WritePropertyName("SchemaId");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SchemaIdMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SchemaId, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSecondSchemaVersionNumber())
-                {
-                    context.Writer.WritePropertyName("SecondSchemaVersionNumber");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SchemaVersionNumberMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SecondSchemaVersionNumber, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

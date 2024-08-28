@@ -67,44 +67,47 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                 throw new AmazonQBusinessException("Request object does not have required field IndexId set");
             request.AddPathResource("{indexId}", StringUtils.FromString(publicRequest.IndexId));
             request.ResourcePath = "/applications/{applicationId}/indices/{indexId}/groups";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDataSourceId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("dataSourceId");
-                    context.Writer.Write(publicRequest.DataSourceId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDataSourceId())
+                    {
+                        context.Writer.WritePropertyName("dataSourceId");
+                        context.Writer.Write(publicRequest.DataSourceId);
+                    }
+
+                    if(publicRequest.IsSetGroupMembers())
+                    {
+                        context.Writer.WritePropertyName("groupMembers");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = GroupMembersMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.GroupMembers, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetGroupName())
+                    {
+                        context.Writer.WritePropertyName("groupName");
+                        context.Writer.Write(publicRequest.GroupName);
+                    }
+
+                    if(publicRequest.IsSetType())
+                    {
+                        context.Writer.WritePropertyName("type");
+                        context.Writer.Write(publicRequest.Type);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetGroupMembers())
-                {
-                    context.Writer.WritePropertyName("groupMembers");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = GroupMembersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.GroupMembers, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetGroupName())
-                {
-                    context.Writer.WritePropertyName("groupName");
-                    context.Writer.Write(publicRequest.GroupName);
-                }
-
-                if(publicRequest.IsSetType())
-                {
-                    context.Writer.WritePropertyName("type");
-                    context.Writer.Write(publicRequest.Type);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

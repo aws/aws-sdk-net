@@ -63,94 +63,97 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDataSource())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DataSource");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DataSourceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DataSource, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEnableVisualization())
-                {
-                    context.Writer.WritePropertyName("EnableVisualization");
-                    context.Writer.Write(publicRequest.EnableVisualization.Value);
-                }
-
-                if(publicRequest.IsSetEndDateTime())
-                {
-                    context.Writer.WritePropertyName("EndDateTime");
-                    context.Writer.Write(publicRequest.EndDateTime);
-                }
-
-                if(publicRequest.IsSetExplainabilityConfig())
-                {
-                    context.Writer.WritePropertyName("ExplainabilityConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ExplainabilityConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ExplainabilityConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetExplainabilityName())
-                {
-                    context.Writer.WritePropertyName("ExplainabilityName");
-                    context.Writer.Write(publicRequest.ExplainabilityName);
-                }
-
-                if(publicRequest.IsSetResourceArn())
-                {
-                    context.Writer.WritePropertyName("ResourceArn");
-                    context.Writer.Write(publicRequest.ResourceArn);
-                }
-
-                if(publicRequest.IsSetSchema())
-                {
-                    context.Writer.WritePropertyName("Schema");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SchemaMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Schema, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetStartDateTime())
-                {
-                    context.Writer.WritePropertyName("StartDateTime");
-                    context.Writer.Write(publicRequest.StartDateTime);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDataSource())
                     {
+                        context.Writer.WritePropertyName("DataSource");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = DataSourceMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DataSource, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetEnableVisualization())
+                    {
+                        context.Writer.WritePropertyName("EnableVisualization");
+                        context.Writer.Write(publicRequest.EnableVisualization.Value);
+                    }
+
+                    if(publicRequest.IsSetEndDateTime())
+                    {
+                        context.Writer.WritePropertyName("EndDateTime");
+                        context.Writer.Write(publicRequest.EndDateTime);
+                    }
+
+                    if(publicRequest.IsSetExplainabilityConfig())
+                    {
+                        context.Writer.WritePropertyName("ExplainabilityConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ExplainabilityConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ExplainabilityConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetExplainabilityName())
+                    {
+                        context.Writer.WritePropertyName("ExplainabilityName");
+                        context.Writer.Write(publicRequest.ExplainabilityName);
+                    }
+
+                    if(publicRequest.IsSetResourceArn())
+                    {
+                        context.Writer.WritePropertyName("ResourceArn");
+                        context.Writer.Write(publicRequest.ResourceArn);
+                    }
+
+                    if(publicRequest.IsSetSchema())
+                    {
+                        context.Writer.WritePropertyName("Schema");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SchemaMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Schema, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetStartDateTime())
+                    {
+                        context.Writer.WritePropertyName("StartDateTime");
+                        context.Writer.Write(publicRequest.StartDateTime);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

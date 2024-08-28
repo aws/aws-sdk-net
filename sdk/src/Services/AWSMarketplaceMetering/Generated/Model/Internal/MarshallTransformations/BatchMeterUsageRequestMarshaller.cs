@@ -63,37 +63,40 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetProductCode())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ProductCode");
-                    context.Writer.Write(publicRequest.ProductCode);
-                }
-
-                if(publicRequest.IsSetUsageRecords())
-                {
-                    context.Writer.WritePropertyName("UsageRecords");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestUsageRecordsListValue in publicRequest.UsageRecords)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetProductCode())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = UsageRecordMarshaller.Instance;
-                        marshaller.Marshall(publicRequestUsageRecordsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("ProductCode");
+                        context.Writer.Write(publicRequest.ProductCode);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetUsageRecords())
+                    {
+                        context.Writer.WritePropertyName("UsageRecords");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestUsageRecordsListValue in publicRequest.UsageRecords)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = UsageRecordMarshaller.Instance;
+                            marshaller.Marshall(publicRequestUsageRecordsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

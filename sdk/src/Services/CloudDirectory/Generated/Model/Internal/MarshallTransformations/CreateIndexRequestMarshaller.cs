@@ -61,54 +61,57 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/amazonclouddirectory/2017-01-11/index";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetIsUnique())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("IsUnique");
-                    context.Writer.Write(publicRequest.IsUnique.Value);
-                }
-
-                if(publicRequest.IsSetLinkName())
-                {
-                    context.Writer.WritePropertyName("LinkName");
-                    context.Writer.Write(publicRequest.LinkName);
-                }
-
-                if(publicRequest.IsSetOrderedIndexedAttributeList())
-                {
-                    context.Writer.WritePropertyName("OrderedIndexedAttributeList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestOrderedIndexedAttributeListListValue in publicRequest.OrderedIndexedAttributeList)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetIsUnique())
                     {
+                        context.Writer.WritePropertyName("IsUnique");
+                        context.Writer.Write(publicRequest.IsUnique.Value);
+                    }
+
+                    if(publicRequest.IsSetLinkName())
+                    {
+                        context.Writer.WritePropertyName("LinkName");
+                        context.Writer.Write(publicRequest.LinkName);
+                    }
+
+                    if(publicRequest.IsSetOrderedIndexedAttributeList())
+                    {
+                        context.Writer.WritePropertyName("OrderedIndexedAttributeList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestOrderedIndexedAttributeListListValue in publicRequest.OrderedIndexedAttributeList)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = AttributeKeyMarshaller.Instance;
+                            marshaller.Marshall(publicRequestOrderedIndexedAttributeListListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetParentReference())
+                    {
+                        context.Writer.WritePropertyName("ParentReference");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = AttributeKeyMarshaller.Instance;
-                        marshaller.Marshall(publicRequestOrderedIndexedAttributeListListValue, context);
+                        var marshaller = ObjectReferenceMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ParentReference, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetParentReference())
-                {
-                    context.Writer.WritePropertyName("ParentReference");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ObjectReferenceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ParentReference, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

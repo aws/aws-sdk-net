@@ -63,33 +63,36 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetPatternName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("PatternName");
-                    context.Writer.Write(publicRequest.PatternName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetPatternName())
+                    {
+                        context.Writer.WritePropertyName("PatternName");
+                        context.Writer.Write(publicRequest.PatternName);
+                    }
+
+                    if(publicRequest.IsSetPatternSetName())
+                    {
+                        context.Writer.WritePropertyName("PatternSetName");
+                        context.Writer.Write(publicRequest.PatternSetName);
+                    }
+
+                    if(publicRequest.IsSetResourceGroupName())
+                    {
+                        context.Writer.WritePropertyName("ResourceGroupName");
+                        context.Writer.Write(publicRequest.ResourceGroupName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPatternSetName())
-                {
-                    context.Writer.WritePropertyName("PatternSetName");
-                    context.Writer.Write(publicRequest.PatternSetName);
-                }
-
-                if(publicRequest.IsSetResourceGroupName())
-                {
-                    context.Writer.WritePropertyName("ResourceGroupName");
-                    context.Writer.Write(publicRequest.ResourceGroupName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

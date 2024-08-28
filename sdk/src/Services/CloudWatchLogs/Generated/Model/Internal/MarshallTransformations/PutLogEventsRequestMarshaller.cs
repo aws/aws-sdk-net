@@ -63,49 +63,52 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLogEvents())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("logEvents");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLogEventsListValue in publicRequest.LogEvents)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetLogEvents())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("logEvents");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLogEventsListValue in publicRequest.LogEvents)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = InputLogEventMarshaller.Instance;
-                        marshaller.Marshall(publicRequestLogEventsListValue, context);
+                            var marshaller = InputLogEventMarshaller.Instance;
+                            marshaller.Marshall(publicRequestLogEventsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetLogGroupName())
+                    {
+                        context.Writer.WritePropertyName("logGroupName");
+                        context.Writer.Write(publicRequest.LogGroupName);
+                    }
+
+                    if(publicRequest.IsSetLogStreamName())
+                    {
+                        context.Writer.WritePropertyName("logStreamName");
+                        context.Writer.Write(publicRequest.LogStreamName);
+                    }
+
+                    if(publicRequest.IsSetSequenceToken())
+                    {
+                        context.Writer.WritePropertyName("sequenceToken");
+                        context.Writer.Write(publicRequest.SequenceToken);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetLogGroupName())
-                {
-                    context.Writer.WritePropertyName("logGroupName");
-                    context.Writer.Write(publicRequest.LogGroupName);
-                }
-
-                if(publicRequest.IsSetLogStreamName())
-                {
-                    context.Writer.WritePropertyName("logStreamName");
-                    context.Writer.Write(publicRequest.LogStreamName);
-                }
-
-                if(publicRequest.IsSetSequenceToken())
-                {
-                    context.Writer.WritePropertyName("sequenceToken");
-                    context.Writer.Write(publicRequest.SequenceToken);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -61,39 +61,42 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/connections";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAssetId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AssetId");
-                    context.Writer.Write(publicRequest.AssetId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAssetId())
+                    {
+                        context.Writer.WritePropertyName("AssetId");
+                        context.Writer.Write(publicRequest.AssetId);
+                    }
+
+                    if(publicRequest.IsSetClientPublicKey())
+                    {
+                        context.Writer.WritePropertyName("ClientPublicKey");
+                        context.Writer.Write(publicRequest.ClientPublicKey);
+                    }
+
+                    if(publicRequest.IsSetDeviceSerialNumber())
+                    {
+                        context.Writer.WritePropertyName("DeviceSerialNumber");
+                        context.Writer.Write(publicRequest.DeviceSerialNumber);
+                    }
+
+                    if(publicRequest.IsSetNetworkInterfaceDeviceIndex())
+                    {
+                        context.Writer.WritePropertyName("NetworkInterfaceDeviceIndex");
+                        context.Writer.Write(publicRequest.NetworkInterfaceDeviceIndex.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetClientPublicKey())
-                {
-                    context.Writer.WritePropertyName("ClientPublicKey");
-                    context.Writer.Write(publicRequest.ClientPublicKey);
-                }
-
-                if(publicRequest.IsSetDeviceSerialNumber())
-                {
-                    context.Writer.WritePropertyName("DeviceSerialNumber");
-                    context.Writer.Write(publicRequest.DeviceSerialNumber);
-                }
-
-                if(publicRequest.IsSetNetworkInterfaceDeviceIndex())
-                {
-                    context.Writer.WritePropertyName("NetworkInterfaceDeviceIndex");
-                    context.Writer.Write(publicRequest.NetworkInterfaceDeviceIndex.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

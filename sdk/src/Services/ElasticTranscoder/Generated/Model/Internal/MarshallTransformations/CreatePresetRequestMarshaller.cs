@@ -61,66 +61,69 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/2012-09-25/presets";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAudio())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Audio");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAudio())
+                    {
+                        context.Writer.WritePropertyName("Audio");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = AudioParametersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Audio, context);
+                        var marshaller = AudioParametersMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Audio, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetContainer())
+                    {
+                        context.Writer.WritePropertyName("Container");
+                        context.Writer.Write(publicRequest.Container);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetThumbnails())
+                    {
+                        context.Writer.WritePropertyName("Thumbnails");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ThumbnailsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Thumbnails, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetVideo())
+                    {
+                        context.Writer.WritePropertyName("Video");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = VideoParametersMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Video, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetContainer())
-                {
-                    context.Writer.WritePropertyName("Container");
-                    context.Writer.Write(publicRequest.Container);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetThumbnails())
-                {
-                    context.Writer.WritePropertyName("Thumbnails");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ThumbnailsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Thumbnails, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetVideo())
-                {
-                    context.Writer.WritePropertyName("Video");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = VideoParametersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Video, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

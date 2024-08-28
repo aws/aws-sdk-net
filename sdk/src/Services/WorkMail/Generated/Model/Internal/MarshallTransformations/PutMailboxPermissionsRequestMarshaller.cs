@@ -63,44 +63,47 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEntityId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("EntityId");
-                    context.Writer.Write(publicRequest.EntityId);
-                }
-
-                if(publicRequest.IsSetGranteeId())
-                {
-                    context.Writer.WritePropertyName("GranteeId");
-                    context.Writer.Write(publicRequest.GranteeId);
-                }
-
-                if(publicRequest.IsSetOrganizationId())
-                {
-                    context.Writer.WritePropertyName("OrganizationId");
-                    context.Writer.Write(publicRequest.OrganizationId);
-                }
-
-                if(publicRequest.IsSetPermissionValues())
-                {
-                    context.Writer.WritePropertyName("PermissionValues");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPermissionValuesListValue in publicRequest.PermissionValues)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEntityId())
                     {
-                            context.Writer.Write(publicRequestPermissionValuesListValue);
+                        context.Writer.WritePropertyName("EntityId");
+                        context.Writer.Write(publicRequest.EntityId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetGranteeId())
+                    {
+                        context.Writer.WritePropertyName("GranteeId");
+                        context.Writer.Write(publicRequest.GranteeId);
+                    }
+
+                    if(publicRequest.IsSetOrganizationId())
+                    {
+                        context.Writer.WritePropertyName("OrganizationId");
+                        context.Writer.Write(publicRequest.OrganizationId);
+                    }
+
+                    if(publicRequest.IsSetPermissionValues())
+                    {
+                        context.Writer.WritePropertyName("PermissionValues");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPermissionValuesListValue in publicRequest.PermissionValues)
+                        {
+                                context.Writer.Write(publicRequestPermissionValuesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

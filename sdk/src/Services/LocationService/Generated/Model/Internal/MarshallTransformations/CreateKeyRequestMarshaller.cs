@@ -61,64 +61,67 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/metadata/v0/keys";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetExpireTime())
-                {
-                    context.Writer.WritePropertyName("ExpireTime");
-                    context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ExpireTime));
-                }
-
-                if(publicRequest.IsSetKeyName())
-                {
-                    context.Writer.WritePropertyName("KeyName");
-                    context.Writer.Write(publicRequest.KeyName);
-                }
-
-                if(publicRequest.IsSetNoExpiry())
-                {
-                    context.Writer.WritePropertyName("NoExpiry");
-                    context.Writer.Write(publicRequest.NoExpiry.Value);
-                }
-
-                if(publicRequest.IsSetRestrictions())
-                {
-                    context.Writer.WritePropertyName("Restrictions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ApiKeyRestrictionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Restrictions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetExpireTime())
+                    {
+                        context.Writer.WritePropertyName("ExpireTime");
+                        context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ExpireTime));
+                    }
+
+                    if(publicRequest.IsSetKeyName())
+                    {
+                        context.Writer.WritePropertyName("KeyName");
+                        context.Writer.Write(publicRequest.KeyName);
+                    }
+
+                    if(publicRequest.IsSetNoExpiry())
+                    {
+                        context.Writer.WritePropertyName("NoExpiry");
+                        context.Writer.Write(publicRequest.NoExpiry.Value);
+                    }
+
+                    if(publicRequest.IsSetRestrictions())
+                    {
+                        context.Writer.WritePropertyName("Restrictions");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ApiKeyRestrictionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Restrictions, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

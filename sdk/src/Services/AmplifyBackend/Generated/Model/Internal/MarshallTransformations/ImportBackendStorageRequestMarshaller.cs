@@ -67,27 +67,30 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
                 throw new AmazonAmplifyBackendException("Request object does not have required field BackendEnvironmentName set");
             request.AddPathResource("{backendEnvironmentName}", StringUtils.FromString(publicRequest.BackendEnvironmentName));
             request.ResourcePath = "/backend/{appId}/storage/{backendEnvironmentName}/import";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBucketName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("bucketName");
-                    context.Writer.Write(publicRequest.BucketName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBucketName())
+                    {
+                        context.Writer.WritePropertyName("bucketName");
+                        context.Writer.Write(publicRequest.BucketName);
+                    }
+
+                    if(publicRequest.IsSetServiceName())
+                    {
+                        context.Writer.WritePropertyName("serviceName");
+                        context.Writer.Write(publicRequest.ServiceName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetServiceName())
-                {
-                    context.Writer.WritePropertyName("serviceName");
-                    context.Writer.Write(publicRequest.ServiceName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

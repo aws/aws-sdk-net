@@ -64,79 +64,82 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 throw new AmazonEKSException("Request object does not have required field ClusterName set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.ClusterName));
             request.ResourcePath = "/clusters/{name}/fargate-profiles";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientRequestToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetFargateProfileName())
-                {
-                    context.Writer.WritePropertyName("fargateProfileName");
-                    context.Writer.Write(publicRequest.FargateProfileName);
-                }
-
-                if(publicRequest.IsSetPodExecutionRoleArn())
-                {
-                    context.Writer.WritePropertyName("podExecutionRoleArn");
-                    context.Writer.Write(publicRequest.PodExecutionRoleArn);
-                }
-
-                if(publicRequest.IsSetSelectors())
-                {
-                    context.Writer.WritePropertyName("selectors");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSelectorsListValue in publicRequest.Selectors)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientRequestToken())
                     {
+                        context.Writer.WritePropertyName("clientRequestToken");
+                        context.Writer.Write(publicRequest.ClientRequestToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientRequestToken()))
+                    {
+                        context.Writer.WritePropertyName("clientRequestToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetFargateProfileName())
+                    {
+                        context.Writer.WritePropertyName("fargateProfileName");
+                        context.Writer.Write(publicRequest.FargateProfileName);
+                    }
+
+                    if(publicRequest.IsSetPodExecutionRoleArn())
+                    {
+                        context.Writer.WritePropertyName("podExecutionRoleArn");
+                        context.Writer.Write(publicRequest.PodExecutionRoleArn);
+                    }
+
+                    if(publicRequest.IsSetSelectors())
+                    {
+                        context.Writer.WritePropertyName("selectors");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSelectorsListValue in publicRequest.Selectors)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = FargateProfileSelectorMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSelectorsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSubnets())
+                    {
+                        context.Writer.WritePropertyName("subnets");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSubnetsListValue in publicRequest.Subnets)
+                        {
+                                context.Writer.Write(publicRequestSubnetsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
 
-                        var marshaller = FargateProfileSelectorMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSelectorsListValue, context);
-
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSubnets())
-                {
-                    context.Writer.WritePropertyName("subnets");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSubnetsListValue in publicRequest.Subnets)
-                    {
-                            context.Writer.Write(publicRequestSubnetsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

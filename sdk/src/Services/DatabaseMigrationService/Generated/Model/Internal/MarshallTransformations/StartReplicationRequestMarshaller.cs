@@ -63,45 +63,48 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCdcStartPosition())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CdcStartPosition");
-                    context.Writer.Write(publicRequest.CdcStartPosition);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCdcStartPosition())
+                    {
+                        context.Writer.WritePropertyName("CdcStartPosition");
+                        context.Writer.Write(publicRequest.CdcStartPosition);
+                    }
+
+                    if(publicRequest.IsSetCdcStartTime())
+                    {
+                        context.Writer.WritePropertyName("CdcStartTime");
+                        context.Writer.Write(publicRequest.CdcStartTime.Value);
+                    }
+
+                    if(publicRequest.IsSetCdcStopPosition())
+                    {
+                        context.Writer.WritePropertyName("CdcStopPosition");
+                        context.Writer.Write(publicRequest.CdcStopPosition);
+                    }
+
+                    if(publicRequest.IsSetReplicationConfigArn())
+                    {
+                        context.Writer.WritePropertyName("ReplicationConfigArn");
+                        context.Writer.Write(publicRequest.ReplicationConfigArn);
+                    }
+
+                    if(publicRequest.IsSetStartReplicationType())
+                    {
+                        context.Writer.WritePropertyName("StartReplicationType");
+                        context.Writer.Write(publicRequest.StartReplicationType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCdcStartTime())
-                {
-                    context.Writer.WritePropertyName("CdcStartTime");
-                    context.Writer.Write(publicRequest.CdcStartTime.Value);
-                }
-
-                if(publicRequest.IsSetCdcStopPosition())
-                {
-                    context.Writer.WritePropertyName("CdcStopPosition");
-                    context.Writer.Write(publicRequest.CdcStopPosition);
-                }
-
-                if(publicRequest.IsSetReplicationConfigArn())
-                {
-                    context.Writer.WritePropertyName("ReplicationConfigArn");
-                    context.Writer.Write(publicRequest.ReplicationConfigArn);
-                }
-
-                if(publicRequest.IsSetStartReplicationType())
-                {
-                    context.Writer.WritePropertyName("StartReplicationType");
-                    context.Writer.Write(publicRequest.StartReplicationType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

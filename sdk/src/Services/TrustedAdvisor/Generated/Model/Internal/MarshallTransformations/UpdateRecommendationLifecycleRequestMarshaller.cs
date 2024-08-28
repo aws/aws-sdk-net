@@ -64,33 +64,36 @@ namespace Amazon.TrustedAdvisor.Model.Internal.MarshallTransformations
                 throw new AmazonTrustedAdvisorException("Request object does not have required field RecommendationIdentifier set");
             request.AddPathResource("{recommendationIdentifier}", StringUtils.FromString(publicRequest.RecommendationIdentifier));
             request.ResourcePath = "/v1/recommendations/{recommendationIdentifier}/lifecycle";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLifecycleStage())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("lifecycleStage");
-                    context.Writer.Write(publicRequest.LifecycleStage);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetLifecycleStage())
+                    {
+                        context.Writer.WritePropertyName("lifecycleStage");
+                        context.Writer.Write(publicRequest.LifecycleStage);
+                    }
+
+                    if(publicRequest.IsSetUpdateReason())
+                    {
+                        context.Writer.WritePropertyName("updateReason");
+                        context.Writer.Write(publicRequest.UpdateReason);
+                    }
+
+                    if(publicRequest.IsSetUpdateReasonCode())
+                    {
+                        context.Writer.WritePropertyName("updateReasonCode");
+                        context.Writer.Write(publicRequest.UpdateReasonCode);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetUpdateReason())
-                {
-                    context.Writer.WritePropertyName("updateReason");
-                    context.Writer.Write(publicRequest.UpdateReason);
-                }
-
-                if(publicRequest.IsSetUpdateReasonCode())
-                {
-                    context.Writer.WritePropertyName("updateReasonCode");
-                    context.Writer.Write(publicRequest.UpdateReasonCode);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

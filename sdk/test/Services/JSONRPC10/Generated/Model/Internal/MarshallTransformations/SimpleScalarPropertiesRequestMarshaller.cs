@@ -63,41 +63,44 @@ namespace Amazon.JSONRPC10.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDoubleValue())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("doubleValue");
-                    if(StringUtils.IsSpecialDoubleValue(publicRequest.DoubleValue.Value))
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDoubleValue())
                     {
-                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.DoubleValue.Value));
+                        context.Writer.WritePropertyName("doubleValue");
+                        if(StringUtils.IsSpecialDoubleValue(publicRequest.DoubleValue.Value))
+                        {
+                            context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.DoubleValue.Value));
+                        }
+                        else
+                        {
+                            context.Writer.Write(publicRequest.DoubleValue.Value);
+                        }
                     }
-                    else
+
+                    if(publicRequest.IsSetFloatValue())
                     {
-                        context.Writer.Write(publicRequest.DoubleValue.Value);
+                        context.Writer.WritePropertyName("floatValue");
+                        if(StringUtils.IsSpecialFloatValue(publicRequest.FloatValue.Value))
+                        {
+                            context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.FloatValue.Value));
+                        }
+                        else
+                        {
+                            context.Writer.Write(publicRequest.FloatValue.Value);
+                        }
                     }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetFloatValue())
-                {
-                    context.Writer.WritePropertyName("floatValue");
-                    if(StringUtils.IsSpecialFloatValue(publicRequest.FloatValue.Value))
-                    {
-                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.FloatValue.Value));
-                    }
-                    else
-                    {
-                        context.Writer.Write(publicRequest.FloatValue.Value);
-                    }
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

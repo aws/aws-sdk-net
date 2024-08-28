@@ -64,107 +64,110 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 throw new AmazonApiGatewayV2Exception("Request object does not have required field ApiId set");
             request.AddPathResource("{apiId}", StringUtils.FromString(publicRequest.ApiId));
             request.ResourcePath = "/v2/apis/{apiId}/routes";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApiKeyRequired())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("apiKeyRequired");
-                    context.Writer.Write(publicRequest.ApiKeyRequired.Value);
-                }
-
-                if(publicRequest.IsSetAuthorizationScopes())
-                {
-                    context.Writer.WritePropertyName("authorizationScopes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAuthorizationScopesListValue in publicRequest.AuthorizationScopes)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApiKeyRequired())
                     {
-                            context.Writer.Write(publicRequestAuthorizationScopesListValue);
+                        context.Writer.WritePropertyName("apiKeyRequired");
+                        context.Writer.Write(publicRequest.ApiKeyRequired.Value);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetAuthorizationType())
-                {
-                    context.Writer.WritePropertyName("authorizationType");
-                    context.Writer.Write(publicRequest.AuthorizationType);
-                }
-
-                if(publicRequest.IsSetAuthorizerId())
-                {
-                    context.Writer.WritePropertyName("authorizerId");
-                    context.Writer.Write(publicRequest.AuthorizerId);
-                }
-
-                if(publicRequest.IsSetModelSelectionExpression())
-                {
-                    context.Writer.WritePropertyName("modelSelectionExpression");
-                    context.Writer.Write(publicRequest.ModelSelectionExpression);
-                }
-
-                if(publicRequest.IsSetOperationName())
-                {
-                    context.Writer.WritePropertyName("operationName");
-                    context.Writer.Write(publicRequest.OperationName);
-                }
-
-                if(publicRequest.IsSetRequestModels())
-                {
-                    context.Writer.WritePropertyName("requestModels");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestRequestModelsKvp in publicRequest.RequestModels)
+                    if(publicRequest.IsSetAuthorizationScopes())
                     {
-                        context.Writer.WritePropertyName(publicRequestRequestModelsKvp.Key);
-                        var publicRequestRequestModelsValue = publicRequestRequestModelsKvp.Value;
-
-                            context.Writer.Write(publicRequestRequestModelsValue);
+                        context.Writer.WritePropertyName("authorizationScopes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAuthorizationScopesListValue in publicRequest.AuthorizationScopes)
+                        {
+                                context.Writer.Write(publicRequestAuthorizationScopesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetRequestParameters())
-                {
-                    context.Writer.WritePropertyName("requestParameters");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestRequestParametersKvp in publicRequest.RequestParameters)
+                    if(publicRequest.IsSetAuthorizationType())
                     {
-                        context.Writer.WritePropertyName(publicRequestRequestParametersKvp.Key);
-                        var publicRequestRequestParametersValue = publicRequestRequestParametersKvp.Value;
+                        context.Writer.WritePropertyName("authorizationType");
+                        context.Writer.Write(publicRequest.AuthorizationType);
+                    }
 
+                    if(publicRequest.IsSetAuthorizerId())
+                    {
+                        context.Writer.WritePropertyName("authorizerId");
+                        context.Writer.Write(publicRequest.AuthorizerId);
+                    }
+
+                    if(publicRequest.IsSetModelSelectionExpression())
+                    {
+                        context.Writer.WritePropertyName("modelSelectionExpression");
+                        context.Writer.Write(publicRequest.ModelSelectionExpression);
+                    }
+
+                    if(publicRequest.IsSetOperationName())
+                    {
+                        context.Writer.WritePropertyName("operationName");
+                        context.Writer.Write(publicRequest.OperationName);
+                    }
+
+                    if(publicRequest.IsSetRequestModels())
+                    {
+                        context.Writer.WritePropertyName("requestModels");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestRequestModelsKvp in publicRequest.RequestModels)
+                        {
+                            context.Writer.WritePropertyName(publicRequestRequestModelsKvp.Key);
+                            var publicRequestRequestModelsValue = publicRequestRequestModelsKvp.Value;
 
-                        var marshaller = ParameterConstraintsMarshaller.Instance;
-                        marshaller.Marshall(publicRequestRequestParametersValue, context);
-
+                                context.Writer.Write(publicRequestRequestModelsValue);
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetRequestParameters())
+                    {
+                        context.Writer.WritePropertyName("requestParameters");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestRequestParametersKvp in publicRequest.RequestParameters)
+                        {
+                            context.Writer.WritePropertyName(publicRequestRequestParametersKvp.Key);
+                            var publicRequestRequestParametersValue = publicRequestRequestParametersKvp.Value;
+
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ParameterConstraintsMarshaller.Instance;
+                            marshaller.Marshall(publicRequestRequestParametersValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRouteKey())
+                    {
+                        context.Writer.WritePropertyName("routeKey");
+                        context.Writer.Write(publicRequest.RouteKey);
+                    }
+
+                    if(publicRequest.IsSetRouteResponseSelectionExpression())
+                    {
+                        context.Writer.WritePropertyName("routeResponseSelectionExpression");
+                        context.Writer.Write(publicRequest.RouteResponseSelectionExpression);
+                    }
+
+                    if(publicRequest.IsSetTarget())
+                    {
+                        context.Writer.WritePropertyName("target");
+                        context.Writer.Write(publicRequest.Target);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRouteKey())
-                {
-                    context.Writer.WritePropertyName("routeKey");
-                    context.Writer.Write(publicRequest.RouteKey);
-                }
-
-                if(publicRequest.IsSetRouteResponseSelectionExpression())
-                {
-                    context.Writer.WritePropertyName("routeResponseSelectionExpression");
-                    context.Writer.Write(publicRequest.RouteResponseSelectionExpression);
-                }
-
-                if(publicRequest.IsSetTarget())
-                {
-                    context.Writer.WritePropertyName("target");
-                    context.Writer.Write(publicRequest.Target);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

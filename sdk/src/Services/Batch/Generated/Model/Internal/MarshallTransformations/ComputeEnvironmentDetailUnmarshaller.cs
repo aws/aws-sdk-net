@@ -90,6 +90,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.ContainerOrchestrationType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("context", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Context = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ecsClusterArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

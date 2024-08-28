@@ -63,77 +63,86 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCatalogId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CatalogId");
-                    context.Writer.Write(publicRequest.CatalogId);
-                }
-
-                if(publicRequest.IsSetFilters())
-                {
-                    context.Writer.WritePropertyName("Filters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFiltersListValue in publicRequest.Filters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCatalogId())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = PropertyPredicateMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFiltersListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("CatalogId");
+                        context.Writer.Write(publicRequest.CatalogId);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetResourceShareType())
-                {
-                    context.Writer.WritePropertyName("ResourceShareType");
-                    context.Writer.Write(publicRequest.ResourceShareType);
-                }
-
-                if(publicRequest.IsSetSearchText())
-                {
-                    context.Writer.WritePropertyName("SearchText");
-                    context.Writer.Write(publicRequest.SearchText);
-                }
-
-                if(publicRequest.IsSetSortCriteria())
-                {
-                    context.Writer.WritePropertyName("SortCriteria");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSortCriteriaListValue in publicRequest.SortCriteria)
+                    if(publicRequest.IsSetFilters())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("Filters");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFiltersListValue in publicRequest.Filters)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = SortCriterionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSortCriteriaListValue, context);
+                            var marshaller = PropertyPredicateMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFiltersListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetIncludeStatusDetails())
+                    {
+                        context.Writer.WritePropertyName("IncludeStatusDetails");
+                        context.Writer.Write(publicRequest.IncludeStatusDetails.Value);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetResourceShareType())
+                    {
+                        context.Writer.WritePropertyName("ResourceShareType");
+                        context.Writer.Write(publicRequest.ResourceShareType);
+                    }
+
+                    if(publicRequest.IsSetSearchText())
+                    {
+                        context.Writer.WritePropertyName("SearchText");
+                        context.Writer.Write(publicRequest.SearchText);
+                    }
+
+                    if(publicRequest.IsSetSortCriteria())
+                    {
+                        context.Writer.WritePropertyName("SortCriteria");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSortCriteriaListValue in publicRequest.SortCriteria)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = SortCriterionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSortCriteriaListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

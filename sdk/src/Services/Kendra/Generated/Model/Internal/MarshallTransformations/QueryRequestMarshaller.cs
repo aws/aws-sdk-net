@@ -63,165 +63,168 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAttributeFilter())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AttributeFilter");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AttributeFilterMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AttributeFilter, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetCollapseConfiguration())
-                {
-                    context.Writer.WritePropertyName("CollapseConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CollapseConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CollapseConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDocumentRelevanceOverrideConfigurations())
-                {
-                    context.Writer.WritePropertyName("DocumentRelevanceOverrideConfigurations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDocumentRelevanceOverrideConfigurationsListValue in publicRequest.DocumentRelevanceOverrideConfigurations)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAttributeFilter())
                     {
+                        context.Writer.WritePropertyName("AttributeFilter");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = DocumentRelevanceConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestDocumentRelevanceOverrideConfigurationsListValue, context);
+                        var marshaller = AttributeFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AttributeFilter, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetFacets())
-                {
-                    context.Writer.WritePropertyName("Facets");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFacetsListValue in publicRequest.Facets)
+                    if(publicRequest.IsSetCollapseConfiguration())
                     {
+                        context.Writer.WritePropertyName("CollapseConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = FacetMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFacetsListValue, context);
+                        var marshaller = CollapseConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CollapseConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetIndexId())
-                {
-                    context.Writer.WritePropertyName("IndexId");
-                    context.Writer.Write(publicRequest.IndexId);
-                }
-
-                if(publicRequest.IsSetPageNumber())
-                {
-                    context.Writer.WritePropertyName("PageNumber");
-                    context.Writer.Write(publicRequest.PageNumber.Value);
-                }
-
-                if(publicRequest.IsSetPageSize())
-                {
-                    context.Writer.WritePropertyName("PageSize");
-                    context.Writer.Write(publicRequest.PageSize.Value);
-                }
-
-                if(publicRequest.IsSetQueryResultTypeFilter())
-                {
-                    context.Writer.WritePropertyName("QueryResultTypeFilter");
-                    context.Writer.Write(publicRequest.QueryResultTypeFilter);
-                }
-
-                if(publicRequest.IsSetQueryText())
-                {
-                    context.Writer.WritePropertyName("QueryText");
-                    context.Writer.Write(publicRequest.QueryText);
-                }
-
-                if(publicRequest.IsSetRequestedDocumentAttributes())
-                {
-                    context.Writer.WritePropertyName("RequestedDocumentAttributes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRequestedDocumentAttributesListValue in publicRequest.RequestedDocumentAttributes)
+                    if(publicRequest.IsSetDocumentRelevanceOverrideConfigurations())
                     {
-                            context.Writer.Write(publicRequestRequestedDocumentAttributesListValue);
+                        context.Writer.WritePropertyName("DocumentRelevanceOverrideConfigurations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDocumentRelevanceOverrideConfigurationsListValue in publicRequest.DocumentRelevanceOverrideConfigurations)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = DocumentRelevanceConfigurationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestDocumentRelevanceOverrideConfigurationsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetSortingConfiguration())
-                {
-                    context.Writer.WritePropertyName("SortingConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SortingConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SortingConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSortingConfigurations())
-                {
-                    context.Writer.WritePropertyName("SortingConfigurations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSortingConfigurationsListValue in publicRequest.SortingConfigurations)
+                    if(publicRequest.IsSetFacets())
                     {
+                        context.Writer.WritePropertyName("Facets");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFacetsListValue in publicRequest.Facets)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = FacetMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFacetsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetIndexId())
+                    {
+                        context.Writer.WritePropertyName("IndexId");
+                        context.Writer.Write(publicRequest.IndexId);
+                    }
+
+                    if(publicRequest.IsSetPageNumber())
+                    {
+                        context.Writer.WritePropertyName("PageNumber");
+                        context.Writer.Write(publicRequest.PageNumber.Value);
+                    }
+
+                    if(publicRequest.IsSetPageSize())
+                    {
+                        context.Writer.WritePropertyName("PageSize");
+                        context.Writer.Write(publicRequest.PageSize.Value);
+                    }
+
+                    if(publicRequest.IsSetQueryResultTypeFilter())
+                    {
+                        context.Writer.WritePropertyName("QueryResultTypeFilter");
+                        context.Writer.Write(publicRequest.QueryResultTypeFilter);
+                    }
+
+                    if(publicRequest.IsSetQueryText())
+                    {
+                        context.Writer.WritePropertyName("QueryText");
+                        context.Writer.Write(publicRequest.QueryText);
+                    }
+
+                    if(publicRequest.IsSetRequestedDocumentAttributes())
+                    {
+                        context.Writer.WritePropertyName("RequestedDocumentAttributes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRequestedDocumentAttributesListValue in publicRequest.RequestedDocumentAttributes)
+                        {
+                                context.Writer.Write(publicRequestRequestedDocumentAttributesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSortingConfiguration())
+                    {
+                        context.Writer.WritePropertyName("SortingConfiguration");
                         context.Writer.WriteObjectStart();
 
                         var marshaller = SortingConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSortingConfigurationsListValue, context);
+                        marshaller.Marshall(publicRequest.SortingConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetSortingConfigurations())
+                    {
+                        context.Writer.WritePropertyName("SortingConfigurations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSortingConfigurationsListValue in publicRequest.SortingConfigurations)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = SortingConfigurationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSortingConfigurationsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSpellCorrectionConfiguration())
+                    {
+                        context.Writer.WritePropertyName("SpellCorrectionConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SpellCorrectionConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SpellCorrectionConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetUserContext())
+                    {
+                        context.Writer.WritePropertyName("UserContext");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = UserContextMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.UserContext, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetVisitorId())
+                    {
+                        context.Writer.WritePropertyName("VisitorId");
+                        context.Writer.Write(publicRequest.VisitorId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSpellCorrectionConfiguration())
-                {
-                    context.Writer.WritePropertyName("SpellCorrectionConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SpellCorrectionConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SpellCorrectionConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetUserContext())
-                {
-                    context.Writer.WritePropertyName("UserContext");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UserContextMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.UserContext, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetVisitorId())
-                {
-                    context.Writer.WritePropertyName("VisitorId");
-                    context.Writer.Write(publicRequest.VisitorId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -64,38 +64,41 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 throw new AmazonSimpleEmailServiceV2Exception("Request object does not have required field ContactListName set");
             request.AddPathResource("{ContactListName}", StringUtils.FromString(publicRequest.ContactListName));
             request.ResourcePath = "/v2/email/contact-lists/{ContactListName}/contacts/list";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFilter())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Filter");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFilter())
+                    {
+                        context.Writer.WritePropertyName("Filter");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = ListContactsFilterMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Filter, context);
+                        var marshaller = ListContactsFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Filter, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetPageSize())
+                    {
+                        context.Writer.WritePropertyName("PageSize");
+                        context.Writer.Write(publicRequest.PageSize.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetPageSize())
-                {
-                    context.Writer.WritePropertyName("PageSize");
-                    context.Writer.Write(publicRequest.PageSize.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

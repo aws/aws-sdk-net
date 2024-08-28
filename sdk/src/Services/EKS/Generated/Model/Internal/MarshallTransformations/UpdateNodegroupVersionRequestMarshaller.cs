@@ -67,55 +67,58 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 throw new AmazonEKSException("Request object does not have required field NodegroupName set");
             request.AddPathResource("{nodegroupName}", StringUtils.FromString(publicRequest.NodegroupName));
             request.ResourcePath = "/clusters/{name}/node-groups/{nodegroupName}/update-version";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientRequestToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientRequestToken())
+                    {
+                        context.Writer.WritePropertyName("clientRequestToken");
+                        context.Writer.Write(publicRequest.ClientRequestToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientRequestToken()))
+                    {
+                        context.Writer.WritePropertyName("clientRequestToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetForce())
+                    {
+                        context.Writer.WritePropertyName("force");
+                        context.Writer.Write(publicRequest.Force.Value);
+                    }
+
+                    if(publicRequest.IsSetLaunchTemplate())
+                    {
+                        context.Writer.WritePropertyName("launchTemplate");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LaunchTemplateSpecificationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.LaunchTemplate, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetReleaseVersion())
+                    {
+                        context.Writer.WritePropertyName("releaseVersion");
+                        context.Writer.Write(publicRequest.ReleaseVersion);
+                    }
+
+                    if(publicRequest.IsSetVersion())
+                    {
+                        context.Writer.WritePropertyName("version");
+                        context.Writer.Write(publicRequest.Version);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetForce())
-                {
-                    context.Writer.WritePropertyName("force");
-                    context.Writer.Write(publicRequest.Force.Value);
-                }
-
-                if(publicRequest.IsSetLaunchTemplate())
-                {
-                    context.Writer.WritePropertyName("launchTemplate");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LaunchTemplateSpecificationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LaunchTemplate, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetReleaseVersion())
-                {
-                    context.Writer.WritePropertyName("releaseVersion");
-                    context.Writer.Write(publicRequest.ReleaseVersion);
-                }
-
-                if(publicRequest.IsSetVersion())
-                {
-                    context.Writer.WritePropertyName("version");
-                    context.Writer.Write(publicRequest.Version);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

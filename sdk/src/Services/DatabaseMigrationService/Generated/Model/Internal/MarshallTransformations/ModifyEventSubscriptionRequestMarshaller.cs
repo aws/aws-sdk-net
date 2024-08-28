@@ -63,50 +63,53 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEnabled())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Enabled");
-                    context.Writer.Write(publicRequest.Enabled.Value);
-                }
-
-                if(publicRequest.IsSetEventCategories())
-                {
-                    context.Writer.WritePropertyName("EventCategories");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEventCategoriesListValue in publicRequest.EventCategories)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEnabled())
                     {
-                            context.Writer.Write(publicRequestEventCategoriesListValue);
+                        context.Writer.WritePropertyName("Enabled");
+                        context.Writer.Write(publicRequest.Enabled.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetEventCategories())
+                    {
+                        context.Writer.WritePropertyName("EventCategories");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestEventCategoriesListValue in publicRequest.EventCategories)
+                        {
+                                context.Writer.Write(publicRequestEventCategoriesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSnsTopicArn())
+                    {
+                        context.Writer.WritePropertyName("SnsTopicArn");
+                        context.Writer.Write(publicRequest.SnsTopicArn);
+                    }
+
+                    if(publicRequest.IsSetSourceType())
+                    {
+                        context.Writer.WritePropertyName("SourceType");
+                        context.Writer.Write(publicRequest.SourceType);
+                    }
+
+                    if(publicRequest.IsSetSubscriptionName())
+                    {
+                        context.Writer.WritePropertyName("SubscriptionName");
+                        context.Writer.Write(publicRequest.SubscriptionName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSnsTopicArn())
-                {
-                    context.Writer.WritePropertyName("SnsTopicArn");
-                    context.Writer.Write(publicRequest.SnsTopicArn);
-                }
-
-                if(publicRequest.IsSetSourceType())
-                {
-                    context.Writer.WritePropertyName("SourceType");
-                    context.Writer.Write(publicRequest.SourceType);
-                }
-
-                if(publicRequest.IsSetSubscriptionName())
-                {
-                    context.Writer.WritePropertyName("SubscriptionName");
-                    context.Writer.Write(publicRequest.SubscriptionName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

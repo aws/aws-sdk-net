@@ -63,44 +63,47 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLayerDigests())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("layerDigests");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLayerDigestsListValue in publicRequest.LayerDigests)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetLayerDigests())
                     {
-                            context.Writer.Write(publicRequestLayerDigestsListValue);
+                        context.Writer.WritePropertyName("layerDigests");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLayerDigestsListValue in publicRequest.LayerDigests)
+                        {
+                                context.Writer.Write(publicRequestLayerDigestsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetRegistryId())
+                    {
+                        context.Writer.WritePropertyName("registryId");
+                        context.Writer.Write(publicRequest.RegistryId);
+                    }
+
+                    if(publicRequest.IsSetRepositoryName())
+                    {
+                        context.Writer.WritePropertyName("repositoryName");
+                        context.Writer.Write(publicRequest.RepositoryName);
+                    }
+
+                    if(publicRequest.IsSetUploadId())
+                    {
+                        context.Writer.WritePropertyName("uploadId");
+                        context.Writer.Write(publicRequest.UploadId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRegistryId())
-                {
-                    context.Writer.WritePropertyName("registryId");
-                    context.Writer.Write(publicRequest.RegistryId);
-                }
-
-                if(publicRequest.IsSetRepositoryName())
-                {
-                    context.Writer.WritePropertyName("repositoryName");
-                    context.Writer.Write(publicRequest.RepositoryName);
-                }
-
-                if(publicRequest.IsSetUploadId())
-                {
-                    context.Writer.WritePropertyName("uploadId");
-                    context.Writer.Write(publicRequest.UploadId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -64,27 +64,30 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
                 throw new AmazonPinpointEmailException("Request object does not have required field ConfigurationSetName set");
             request.AddPathResource("{ConfigurationSetName}", StringUtils.FromString(publicRequest.ConfigurationSetName));
             request.ResourcePath = "/v1/email/configuration-sets/{ConfigurationSetName}/delivery-options";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetSendingPoolName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("SendingPoolName");
-                    context.Writer.Write(publicRequest.SendingPoolName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetSendingPoolName())
+                    {
+                        context.Writer.WritePropertyName("SendingPoolName");
+                        context.Writer.Write(publicRequest.SendingPoolName);
+                    }
+
+                    if(publicRequest.IsSetTlsPolicy())
+                    {
+                        context.Writer.WritePropertyName("TlsPolicy");
+                        context.Writer.Write(publicRequest.TlsPolicy);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTlsPolicy())
-                {
-                    context.Writer.WritePropertyName("TlsPolicy");
-                    context.Writer.Write(publicRequest.TlsPolicy);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

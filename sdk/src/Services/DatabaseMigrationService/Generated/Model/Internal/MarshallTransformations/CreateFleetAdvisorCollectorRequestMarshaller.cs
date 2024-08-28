@@ -63,39 +63,42 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCollectorName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CollectorName");
-                    context.Writer.Write(publicRequest.CollectorName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCollectorName())
+                    {
+                        context.Writer.WritePropertyName("CollectorName");
+                        context.Writer.Write(publicRequest.CollectorName);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetS3BucketName())
+                    {
+                        context.Writer.WritePropertyName("S3BucketName");
+                        context.Writer.Write(publicRequest.S3BucketName);
+                    }
+
+                    if(publicRequest.IsSetServiceAccessRoleArn())
+                    {
+                        context.Writer.WritePropertyName("ServiceAccessRoleArn");
+                        context.Writer.Write(publicRequest.ServiceAccessRoleArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetS3BucketName())
-                {
-                    context.Writer.WritePropertyName("S3BucketName");
-                    context.Writer.Write(publicRequest.S3BucketName);
-                }
-
-                if(publicRequest.IsSetServiceAccessRoleArn())
-                {
-                    context.Writer.WritePropertyName("ServiceAccessRoleArn");
-                    context.Writer.Write(publicRequest.ServiceAccessRoleArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

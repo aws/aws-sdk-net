@@ -61,32 +61,35 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/configurationPolicyAssociation/disassociate";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConfigurationPolicyIdentifier())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ConfigurationPolicyIdentifier");
-                    context.Writer.Write(publicRequest.ConfigurationPolicyIdentifier);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConfigurationPolicyIdentifier())
+                    {
+                        context.Writer.WritePropertyName("ConfigurationPolicyIdentifier");
+                        context.Writer.Write(publicRequest.ConfigurationPolicyIdentifier);
+                    }
+
+                    if(publicRequest.IsSetTarget())
+                    {
+                        context.Writer.WritePropertyName("Target");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TargetMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Target, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTarget())
-                {
-                    context.Writer.WritePropertyName("Target");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TargetMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Target, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

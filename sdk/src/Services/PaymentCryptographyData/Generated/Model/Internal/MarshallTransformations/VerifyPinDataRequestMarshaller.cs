@@ -61,73 +61,76 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/pindata/verify";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDukptAttributes())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DukptAttributes");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDukptAttributes())
+                    {
+                        context.Writer.WritePropertyName("DukptAttributes");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = DukptAttributesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DukptAttributes, context);
+                        var marshaller = DukptAttributesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DukptAttributes, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetEncryptedPinBlock())
+                    {
+                        context.Writer.WritePropertyName("EncryptedPinBlock");
+                        context.Writer.Write(publicRequest.EncryptedPinBlock);
+                    }
+
+                    if(publicRequest.IsSetEncryptionKeyIdentifier())
+                    {
+                        context.Writer.WritePropertyName("EncryptionKeyIdentifier");
+                        context.Writer.Write(publicRequest.EncryptionKeyIdentifier);
+                    }
+
+                    if(publicRequest.IsSetPinBlockFormat())
+                    {
+                        context.Writer.WritePropertyName("PinBlockFormat");
+                        context.Writer.Write(publicRequest.PinBlockFormat);
+                    }
+
+                    if(publicRequest.IsSetPinDataLength())
+                    {
+                        context.Writer.WritePropertyName("PinDataLength");
+                        context.Writer.Write(publicRequest.PinDataLength.Value);
+                    }
+
+                    if(publicRequest.IsSetPrimaryAccountNumber())
+                    {
+                        context.Writer.WritePropertyName("PrimaryAccountNumber");
+                        context.Writer.Write(publicRequest.PrimaryAccountNumber);
+                    }
+
+                    if(publicRequest.IsSetVerificationAttributes())
+                    {
+                        context.Writer.WritePropertyName("VerificationAttributes");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PinVerificationAttributesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.VerificationAttributes, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetVerificationKeyIdentifier())
+                    {
+                        context.Writer.WritePropertyName("VerificationKeyIdentifier");
+                        context.Writer.Write(publicRequest.VerificationKeyIdentifier);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEncryptedPinBlock())
-                {
-                    context.Writer.WritePropertyName("EncryptedPinBlock");
-                    context.Writer.Write(publicRequest.EncryptedPinBlock);
-                }
-
-                if(publicRequest.IsSetEncryptionKeyIdentifier())
-                {
-                    context.Writer.WritePropertyName("EncryptionKeyIdentifier");
-                    context.Writer.Write(publicRequest.EncryptionKeyIdentifier);
-                }
-
-                if(publicRequest.IsSetPinBlockFormat())
-                {
-                    context.Writer.WritePropertyName("PinBlockFormat");
-                    context.Writer.Write(publicRequest.PinBlockFormat);
-                }
-
-                if(publicRequest.IsSetPinDataLength())
-                {
-                    context.Writer.WritePropertyName("PinDataLength");
-                    context.Writer.Write(publicRequest.PinDataLength.Value);
-                }
-
-                if(publicRequest.IsSetPrimaryAccountNumber())
-                {
-                    context.Writer.WritePropertyName("PrimaryAccountNumber");
-                    context.Writer.Write(publicRequest.PrimaryAccountNumber);
-                }
-
-                if(publicRequest.IsSetVerificationAttributes())
-                {
-                    context.Writer.WritePropertyName("VerificationAttributes");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PinVerificationAttributesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.VerificationAttributes, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetVerificationKeyIdentifier())
-                {
-                    context.Writer.WritePropertyName("VerificationKeyIdentifier");
-                    context.Writer.Write(publicRequest.VerificationKeyIdentifier);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

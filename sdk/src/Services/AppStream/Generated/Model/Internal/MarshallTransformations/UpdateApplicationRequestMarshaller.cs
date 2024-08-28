@@ -63,79 +63,82 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAppBlockArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AppBlockArn");
-                    context.Writer.Write(publicRequest.AppBlockArn);
-                }
-
-                if(publicRequest.IsSetAttributesToDelete())
-                {
-                    context.Writer.WritePropertyName("AttributesToDelete");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAttributesToDeleteListValue in publicRequest.AttributesToDelete)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAppBlockArn())
                     {
-                            context.Writer.Write(publicRequestAttributesToDeleteListValue);
+                        context.Writer.WritePropertyName("AppBlockArn");
+                        context.Writer.Write(publicRequest.AppBlockArn);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetAttributesToDelete())
+                    {
+                        context.Writer.WritePropertyName("AttributesToDelete");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAttributesToDeleteListValue in publicRequest.AttributesToDelete)
+                        {
+                                context.Writer.Write(publicRequestAttributesToDeleteListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetDisplayName())
+                    {
+                        context.Writer.WritePropertyName("DisplayName");
+                        context.Writer.Write(publicRequest.DisplayName);
+                    }
+
+                    if(publicRequest.IsSetIconS3Location())
+                    {
+                        context.Writer.WritePropertyName("IconS3Location");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = S3LocationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.IconS3Location, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetLaunchParameters())
+                    {
+                        context.Writer.WritePropertyName("LaunchParameters");
+                        context.Writer.Write(publicRequest.LaunchParameters);
+                    }
+
+                    if(publicRequest.IsSetLaunchPath())
+                    {
+                        context.Writer.WritePropertyName("LaunchPath");
+                        context.Writer.Write(publicRequest.LaunchPath);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetWorkingDirectory())
+                    {
+                        context.Writer.WritePropertyName("WorkingDirectory");
+                        context.Writer.Write(publicRequest.WorkingDirectory);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetDisplayName())
-                {
-                    context.Writer.WritePropertyName("DisplayName");
-                    context.Writer.Write(publicRequest.DisplayName);
-                }
-
-                if(publicRequest.IsSetIconS3Location())
-                {
-                    context.Writer.WritePropertyName("IconS3Location");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = S3LocationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.IconS3Location, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetLaunchParameters())
-                {
-                    context.Writer.WritePropertyName("LaunchParameters");
-                    context.Writer.Write(publicRequest.LaunchParameters);
-                }
-
-                if(publicRequest.IsSetLaunchPath())
-                {
-                    context.Writer.WritePropertyName("LaunchPath");
-                    context.Writer.Write(publicRequest.LaunchPath);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetWorkingDirectory())
-                {
-                    context.Writer.WritePropertyName("WorkingDirectory");
-                    context.Writer.Write(publicRequest.WorkingDirectory);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

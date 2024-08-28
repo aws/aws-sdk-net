@@ -63,49 +63,52 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDomainName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DomainName");
-                    context.Writer.Write(publicRequest.DomainName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDomainName())
+                    {
+                        context.Writer.WritePropertyName("DomainName");
+                        context.Writer.Write(publicRequest.DomainName);
+                    }
+
+                    if(publicRequest.IsSetEwsProvider())
+                    {
+                        context.Writer.WritePropertyName("EwsProvider");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EwsAvailabilityProviderMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EwsProvider, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetLambdaProvider())
+                    {
+                        context.Writer.WritePropertyName("LambdaProvider");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LambdaAvailabilityProviderMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.LambdaProvider, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetOrganizationId())
+                    {
+                        context.Writer.WritePropertyName("OrganizationId");
+                        context.Writer.Write(publicRequest.OrganizationId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEwsProvider())
-                {
-                    context.Writer.WritePropertyName("EwsProvider");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EwsAvailabilityProviderMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EwsProvider, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetLambdaProvider())
-                {
-                    context.Writer.WritePropertyName("LambdaProvider");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LambdaAvailabilityProviderMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LambdaProvider, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOrganizationId())
-                {
-                    context.Writer.WritePropertyName("OrganizationId");
-                    context.Writer.Write(publicRequest.OrganizationId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

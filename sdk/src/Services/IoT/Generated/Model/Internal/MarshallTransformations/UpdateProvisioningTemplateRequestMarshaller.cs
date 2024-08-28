@@ -64,56 +64,59 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field TemplateName set");
             request.AddPathResource("{templateName}", StringUtils.FromString(publicRequest.TemplateName));
             request.ResourcePath = "/provisioning-templates/{templateName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDefaultVersionId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("defaultVersionId");
-                    context.Writer.Write(publicRequest.DefaultVersionId.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDefaultVersionId())
+                    {
+                        context.Writer.WritePropertyName("defaultVersionId");
+                        context.Writer.Write(publicRequest.DefaultVersionId.Value);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetEnabled())
+                    {
+                        context.Writer.WritePropertyName("enabled");
+                        context.Writer.Write(publicRequest.Enabled.Value);
+                    }
+
+                    if(publicRequest.IsSetPreProvisioningHook())
+                    {
+                        context.Writer.WritePropertyName("preProvisioningHook");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ProvisioningHookMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.PreProvisioningHook, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetProvisioningRoleArn())
+                    {
+                        context.Writer.WritePropertyName("provisioningRoleArn");
+                        context.Writer.Write(publicRequest.ProvisioningRoleArn);
+                    }
+
+                    if(publicRequest.IsSetRemovePreProvisioningHook())
+                    {
+                        context.Writer.WritePropertyName("removePreProvisioningHook");
+                        context.Writer.Write(publicRequest.RemovePreProvisioningHook.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetEnabled())
-                {
-                    context.Writer.WritePropertyName("enabled");
-                    context.Writer.Write(publicRequest.Enabled.Value);
-                }
-
-                if(publicRequest.IsSetPreProvisioningHook())
-                {
-                    context.Writer.WritePropertyName("preProvisioningHook");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ProvisioningHookMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PreProvisioningHook, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetProvisioningRoleArn())
-                {
-                    context.Writer.WritePropertyName("provisioningRoleArn");
-                    context.Writer.Write(publicRequest.ProvisioningRoleArn);
-                }
-
-                if(publicRequest.IsSetRemovePreProvisioningHook())
-                {
-                    context.Writer.WritePropertyName("removePreProvisioningHook");
-                    context.Writer.Write(publicRequest.RemovePreProvisioningHook.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -64,31 +64,34 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
                 throw new AmazonServerlessApplicationRepositoryException("Request object does not have required field ApplicationId set");
             request.AddPathResource("{applicationId}", StringUtils.FromString(publicRequest.ApplicationId));
             request.ResourcePath = "/applications/{applicationId}/policy";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetStatements())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("statements");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestStatementsListValue in publicRequest.Statements)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetStatements())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("statements");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestStatementsListValue in publicRequest.Statements)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = ApplicationPolicyStatementMarshaller.Instance;
-                        marshaller.Marshall(publicRequestStatementsListValue, context);
+                            var marshaller = ApplicationPolicyStatementMarshaller.Instance;
+                            marshaller.Marshall(publicRequestStatementsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

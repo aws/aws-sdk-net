@@ -63,54 +63,57 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeploymentConfig())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DeploymentConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DeploymentConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DeploymentConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEndpointConfigName())
-                {
-                    context.Writer.WritePropertyName("EndpointConfigName");
-                    context.Writer.Write(publicRequest.EndpointConfigName);
-                }
-
-                if(publicRequest.IsSetEndpointName())
-                {
-                    context.Writer.WritePropertyName("EndpointName");
-                    context.Writer.Write(publicRequest.EndpointName);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDeploymentConfig())
                     {
+                        context.Writer.WritePropertyName("DeploymentConfig");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = DeploymentConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DeploymentConfig, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetEndpointConfigName())
+                    {
+                        context.Writer.WritePropertyName("EndpointConfigName");
+                        context.Writer.Write(publicRequest.EndpointConfigName);
+                    }
+
+                    if(publicRequest.IsSetEndpointName())
+                    {
+                        context.Writer.WritePropertyName("EndpointName");
+                        context.Writer.Write(publicRequest.EndpointName);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

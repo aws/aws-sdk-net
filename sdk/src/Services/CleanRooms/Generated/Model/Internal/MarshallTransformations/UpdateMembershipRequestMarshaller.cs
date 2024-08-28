@@ -64,32 +64,35 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 throw new AmazonCleanRoomsException("Request object does not have required field MembershipIdentifier set");
             request.AddPathResource("{membershipIdentifier}", StringUtils.FromString(publicRequest.MembershipIdentifier));
             request.ResourcePath = "/memberships/{membershipIdentifier}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDefaultResultConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("defaultResultConfiguration");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDefaultResultConfiguration())
+                    {
+                        context.Writer.WritePropertyName("defaultResultConfiguration");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = MembershipProtectedQueryResultConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DefaultResultConfiguration, context);
+                        var marshaller = MembershipProtectedQueryResultConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DefaultResultConfiguration, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetQueryLogStatus())
+                    {
+                        context.Writer.WritePropertyName("queryLogStatus");
+                        context.Writer.Write(publicRequest.QueryLogStatus);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetQueryLogStatus())
-                {
-                    context.Writer.WritePropertyName("queryLogStatus");
-                    context.Writer.Write(publicRequest.QueryLogStatus);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

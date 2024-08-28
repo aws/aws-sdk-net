@@ -63,44 +63,47 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDirectoryId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DirectoryId");
-                    context.Writer.Write(publicRequest.DirectoryId);
-                }
-
-                if(publicRequest.IsSetLimit())
-                {
-                    context.Writer.WritePropertyName("Limit");
-                    context.Writer.Write(publicRequest.Limit.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetSnapshotIds())
-                {
-                    context.Writer.WritePropertyName("SnapshotIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSnapshotIdsListValue in publicRequest.SnapshotIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDirectoryId())
                     {
-                            context.Writer.Write(publicRequestSnapshotIdsListValue);
+                        context.Writer.WritePropertyName("DirectoryId");
+                        context.Writer.Write(publicRequest.DirectoryId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetLimit())
+                    {
+                        context.Writer.WritePropertyName("Limit");
+                        context.Writer.Write(publicRequest.Limit.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetSnapshotIds())
+                    {
+                        context.Writer.WritePropertyName("SnapshotIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSnapshotIdsListValue in publicRequest.SnapshotIds)
+                        {
+                                context.Writer.Write(publicRequestSnapshotIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

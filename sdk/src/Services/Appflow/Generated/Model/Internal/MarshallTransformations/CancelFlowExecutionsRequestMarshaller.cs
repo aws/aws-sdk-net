@@ -61,32 +61,35 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/cancel-flow-executions";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetExecutionIds())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("executionIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestExecutionIdsListValue in publicRequest.ExecutionIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetExecutionIds())
                     {
-                            context.Writer.Write(publicRequestExecutionIdsListValue);
+                        context.Writer.WritePropertyName("executionIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestExecutionIdsListValue in publicRequest.ExecutionIds)
+                        {
+                                context.Writer.Write(publicRequestExecutionIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetFlowName())
+                    {
+                        context.Writer.WritePropertyName("flowName");
+                        context.Writer.Write(publicRequest.FlowName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetFlowName())
-                {
-                    context.Writer.WritePropertyName("flowName");
-                    context.Writer.Write(publicRequest.FlowName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

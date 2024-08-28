@@ -42,12 +42,34 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class UserPoolAddOnsType
     {
+        private AdvancedSecurityAdditionalFlowsType _advancedSecurityAdditionalFlows;
         private AdvancedSecurityModeType _advancedSecurityMode;
+
+        /// <summary>
+        /// Gets and sets the property AdvancedSecurityAdditionalFlows. 
+        /// <para>
+        /// Advanced security configuration options for additional authentication types in your
+        /// user pool, including custom authentication. 
+        /// </para>
+        /// </summary>
+        public AdvancedSecurityAdditionalFlowsType AdvancedSecurityAdditionalFlows
+        {
+            get { return this._advancedSecurityAdditionalFlows; }
+            set { this._advancedSecurityAdditionalFlows = value; }
+        }
+
+        // Check to see if AdvancedSecurityAdditionalFlows property is set
+        internal bool IsSetAdvancedSecurityAdditionalFlows()
+        {
+            return this._advancedSecurityAdditionalFlows != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AdvancedSecurityMode. 
         /// <para>
-        /// The operating mode of advanced security features in your user pool.
+        /// The operating mode of advanced security features for standard authentication types
+        /// in your user pool, including username-password and secure remote password (SRP) authentication.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

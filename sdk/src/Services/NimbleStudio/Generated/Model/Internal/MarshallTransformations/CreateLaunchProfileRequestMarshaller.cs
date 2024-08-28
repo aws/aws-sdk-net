@@ -64,85 +64,88 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
                 throw new AmazonNimbleStudioException("Request object does not have required field StudioId set");
             request.AddPathResource("{studioId}", StringUtils.FromString(publicRequest.StudioId));
             request.ResourcePath = "/2020-08-01/studios/{studioId}/launch-profiles";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetEc2SubnetIds())
-                {
-                    context.Writer.WritePropertyName("ec2SubnetIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEc2SubnetIdsListValue in publicRequest.Ec2SubnetIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
-                            context.Writer.Write(publicRequestEc2SubnetIdsListValue);
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetLaunchProfileProtocolVersions())
-                {
-                    context.Writer.WritePropertyName("launchProfileProtocolVersions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLaunchProfileProtocolVersionsListValue in publicRequest.LaunchProfileProtocolVersions)
+                    if(publicRequest.IsSetEc2SubnetIds())
                     {
-                            context.Writer.Write(publicRequestLaunchProfileProtocolVersionsListValue);
+                        context.Writer.WritePropertyName("ec2SubnetIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestEc2SubnetIdsListValue in publicRequest.Ec2SubnetIds)
+                        {
+                                context.Writer.Write(publicRequestEc2SubnetIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetStreamConfiguration())
-                {
-                    context.Writer.WritePropertyName("streamConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = StreamConfigurationCreateMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.StreamConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetStudioComponentIds())
-                {
-                    context.Writer.WritePropertyName("studioComponentIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestStudioComponentIdsListValue in publicRequest.StudioComponentIds)
+                    if(publicRequest.IsSetLaunchProfileProtocolVersions())
                     {
-                            context.Writer.Write(publicRequestStudioComponentIdsListValue);
+                        context.Writer.WritePropertyName("launchProfileProtocolVersions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLaunchProfileProtocolVersionsListValue in publicRequest.LaunchProfileProtocolVersions)
+                        {
+                                context.Writer.Write(publicRequestLaunchProfileProtocolVersionsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetName())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetStreamConfiguration())
+                    {
+                        context.Writer.WritePropertyName("streamConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = StreamConfigurationCreateMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.StreamConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetStudioComponentIds())
+                    {
+                        context.Writer.WritePropertyName("studioComponentIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestStudioComponentIdsListValue in publicRequest.StudioComponentIds)
+                        {
+                                context.Writer.Write(publicRequestStudioComponentIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

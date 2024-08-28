@@ -63,118 +63,121 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAcceptLanguage())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AcceptLanguage");
-                    context.Writer.Write(publicRequest.AcceptLanguage);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetDistributor())
-                {
-                    context.Writer.WritePropertyName("Distributor");
-                    context.Writer.Write(publicRequest.Distributor);
-                }
-
-                if(publicRequest.IsSetIdempotencyToken())
-                {
-                    context.Writer.WritePropertyName("IdempotencyToken");
-                    context.Writer.Write(publicRequest.IdempotencyToken);
-                }
-
-                else if(!(publicRequest.IsSetIdempotencyToken()))
-                {
-                    context.Writer.WritePropertyName("IdempotencyToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetOwner())
-                {
-                    context.Writer.WritePropertyName("Owner");
-                    context.Writer.Write(publicRequest.Owner);
-                }
-
-                if(publicRequest.IsSetProductType())
-                {
-                    context.Writer.WritePropertyName("ProductType");
-                    context.Writer.Write(publicRequest.ProductType);
-                }
-
-                if(publicRequest.IsSetProvisioningArtifactParameters())
-                {
-                    context.Writer.WritePropertyName("ProvisioningArtifactParameters");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ProvisioningArtifactPropertiesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ProvisioningArtifactParameters, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSourceConnection())
-                {
-                    context.Writer.WritePropertyName("SourceConnection");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SourceConnectionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SourceConnection, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSupportDescription())
-                {
-                    context.Writer.WritePropertyName("SupportDescription");
-                    context.Writer.Write(publicRequest.SupportDescription);
-                }
-
-                if(publicRequest.IsSetSupportEmail())
-                {
-                    context.Writer.WritePropertyName("SupportEmail");
-                    context.Writer.Write(publicRequest.SupportEmail);
-                }
-
-                if(publicRequest.IsSetSupportUrl())
-                {
-                    context.Writer.WritePropertyName("SupportUrl");
-                    context.Writer.Write(publicRequest.SupportUrl);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAcceptLanguage())
                     {
+                        context.Writer.WritePropertyName("AcceptLanguage");
+                        context.Writer.Write(publicRequest.AcceptLanguage);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetDistributor())
+                    {
+                        context.Writer.WritePropertyName("Distributor");
+                        context.Writer.Write(publicRequest.Distributor);
+                    }
+
+                    if(publicRequest.IsSetIdempotencyToken())
+                    {
+                        context.Writer.WritePropertyName("IdempotencyToken");
+                        context.Writer.Write(publicRequest.IdempotencyToken);
+                    }
+
+                    else if(!(publicRequest.IsSetIdempotencyToken()))
+                    {
+                        context.Writer.WritePropertyName("IdempotencyToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetOwner())
+                    {
+                        context.Writer.WritePropertyName("Owner");
+                        context.Writer.Write(publicRequest.Owner);
+                    }
+
+                    if(publicRequest.IsSetProductType())
+                    {
+                        context.Writer.WritePropertyName("ProductType");
+                        context.Writer.Write(publicRequest.ProductType);
+                    }
+
+                    if(publicRequest.IsSetProvisioningArtifactParameters())
+                    {
+                        context.Writer.WritePropertyName("ProvisioningArtifactParameters");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = ProvisioningArtifactPropertiesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ProvisioningArtifactParameters, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetSourceConnection())
+                    {
+                        context.Writer.WritePropertyName("SourceConnection");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SourceConnectionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SourceConnection, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSupportDescription())
+                    {
+                        context.Writer.WritePropertyName("SupportDescription");
+                        context.Writer.Write(publicRequest.SupportDescription);
+                    }
+
+                    if(publicRequest.IsSetSupportEmail())
+                    {
+                        context.Writer.WritePropertyName("SupportEmail");
+                        context.Writer.Write(publicRequest.SupportEmail);
+                    }
+
+                    if(publicRequest.IsSetSupportUrl())
+                    {
+                        context.Writer.WritePropertyName("SupportUrl");
+                        context.Writer.Write(publicRequest.SupportUrl);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

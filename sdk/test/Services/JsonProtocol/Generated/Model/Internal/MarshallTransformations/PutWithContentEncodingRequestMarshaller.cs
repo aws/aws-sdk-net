@@ -64,27 +64,30 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetData())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("data");
-                    context.Writer.Write(publicRequest.Data);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetData())
+                    {
+                        context.Writer.WritePropertyName("data");
+                        context.Writer.Write(publicRequest.Data);
+                    }
+
+                    if(publicRequest.IsSetEncoding())
+                    {
+                        context.Writer.WritePropertyName("encoding");
+                        context.Writer.Write(publicRequest.Encoding);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEncoding())
-                {
-                    context.Writer.WritePropertyName("encoding");
-                    context.Writer.Write(publicRequest.Encoding);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

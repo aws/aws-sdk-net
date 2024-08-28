@@ -62,7 +62,8 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The setting to use by default for a cluster. This parameter is used to turn on CloudWatch
         /// Container Insights for a cluster. If this value is specified, it overrides the <c>containerInsights</c>
-        /// value set with <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
+        /// value set with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSetting.html">PutAccountSetting</a>
+        /// or <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSettingDefault.html">PutAccountSettingDefault</a>.
         /// </para>
         ///  <important> 
         /// <para>

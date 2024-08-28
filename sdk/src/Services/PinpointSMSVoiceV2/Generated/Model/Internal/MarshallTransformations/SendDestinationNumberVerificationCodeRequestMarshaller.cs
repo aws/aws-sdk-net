@@ -63,73 +63,76 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConfigurationSetName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ConfigurationSetName");
-                    context.Writer.Write(publicRequest.ConfigurationSetName);
-                }
-
-                if(publicRequest.IsSetContext())
-                {
-                    context.Writer.WritePropertyName("Context");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestContextKvp in publicRequest.Context)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConfigurationSetName())
                     {
-                        context.Writer.WritePropertyName(publicRequestContextKvp.Key);
-                        var publicRequestContextValue = publicRequestContextKvp.Value;
-
-                            context.Writer.Write(publicRequestContextValue);
+                        context.Writer.WritePropertyName("ConfigurationSetName");
+                        context.Writer.Write(publicRequest.ConfigurationSetName);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetDestinationCountryParameters())
-                {
-                    context.Writer.WritePropertyName("DestinationCountryParameters");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestDestinationCountryParametersKvp in publicRequest.DestinationCountryParameters)
+                    if(publicRequest.IsSetContext())
                     {
-                        context.Writer.WritePropertyName(publicRequestDestinationCountryParametersKvp.Key);
-                        var publicRequestDestinationCountryParametersValue = publicRequestDestinationCountryParametersKvp.Value;
+                        context.Writer.WritePropertyName("Context");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestContextKvp in publicRequest.Context)
+                        {
+                            context.Writer.WritePropertyName(publicRequestContextKvp.Key);
+                            var publicRequestContextValue = publicRequestContextKvp.Value;
 
-                            context.Writer.Write(publicRequestDestinationCountryParametersValue);
+                                context.Writer.Write(publicRequestContextValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetDestinationCountryParameters())
+                    {
+                        context.Writer.WritePropertyName("DestinationCountryParameters");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestDestinationCountryParametersKvp in publicRequest.DestinationCountryParameters)
+                        {
+                            context.Writer.WritePropertyName(publicRequestDestinationCountryParametersKvp.Key);
+                            var publicRequestDestinationCountryParametersValue = publicRequestDestinationCountryParametersKvp.Value;
+
+                                context.Writer.Write(publicRequestDestinationCountryParametersValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetLanguageCode())
+                    {
+                        context.Writer.WritePropertyName("LanguageCode");
+                        context.Writer.Write(publicRequest.LanguageCode);
+                    }
+
+                    if(publicRequest.IsSetOriginationIdentity())
+                    {
+                        context.Writer.WritePropertyName("OriginationIdentity");
+                        context.Writer.Write(publicRequest.OriginationIdentity);
+                    }
+
+                    if(publicRequest.IsSetVerificationChannel())
+                    {
+                        context.Writer.WritePropertyName("VerificationChannel");
+                        context.Writer.Write(publicRequest.VerificationChannel);
+                    }
+
+                    if(publicRequest.IsSetVerifiedDestinationNumberId())
+                    {
+                        context.Writer.WritePropertyName("VerifiedDestinationNumberId");
+                        context.Writer.Write(publicRequest.VerifiedDestinationNumberId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetLanguageCode())
-                {
-                    context.Writer.WritePropertyName("LanguageCode");
-                    context.Writer.Write(publicRequest.LanguageCode);
-                }
-
-                if(publicRequest.IsSetOriginationIdentity())
-                {
-                    context.Writer.WritePropertyName("OriginationIdentity");
-                    context.Writer.Write(publicRequest.OriginationIdentity);
-                }
-
-                if(publicRequest.IsSetVerificationChannel())
-                {
-                    context.Writer.WritePropertyName("VerificationChannel");
-                    context.Writer.Write(publicRequest.VerificationChannel);
-                }
-
-                if(publicRequest.IsSetVerifiedDestinationNumberId())
-                {
-                    context.Writer.WritePropertyName("VerifiedDestinationNumberId");
-                    context.Writer.Write(publicRequest.VerifiedDestinationNumberId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

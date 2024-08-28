@@ -63,45 +63,48 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAuthType())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("authType");
-                    context.Writer.Write(publicRequest.AuthType);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAuthType())
+                    {
+                        context.Writer.WritePropertyName("authType");
+                        context.Writer.Write(publicRequest.AuthType);
+                    }
+
+                    if(publicRequest.IsSetServerType())
+                    {
+                        context.Writer.WritePropertyName("serverType");
+                        context.Writer.Write(publicRequest.ServerType);
+                    }
+
+                    if(publicRequest.IsSetShouldOverwrite())
+                    {
+                        context.Writer.WritePropertyName("shouldOverwrite");
+                        context.Writer.Write(publicRequest.ShouldOverwrite.Value);
+                    }
+
+                    if(publicRequest.IsSetToken())
+                    {
+                        context.Writer.WritePropertyName("token");
+                        context.Writer.Write(publicRequest.Token);
+                    }
+
+                    if(publicRequest.IsSetUsername())
+                    {
+                        context.Writer.WritePropertyName("username");
+                        context.Writer.Write(publicRequest.Username);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetServerType())
-                {
-                    context.Writer.WritePropertyName("serverType");
-                    context.Writer.Write(publicRequest.ServerType);
-                }
-
-                if(publicRequest.IsSetShouldOverwrite())
-                {
-                    context.Writer.WritePropertyName("shouldOverwrite");
-                    context.Writer.Write(publicRequest.ShouldOverwrite.Value);
-                }
-
-                if(publicRequest.IsSetToken())
-                {
-                    context.Writer.WritePropertyName("token");
-                    context.Writer.Write(publicRequest.Token);
-                }
-
-                if(publicRequest.IsSetUsername())
-                {
-                    context.Writer.WritePropertyName("username");
-                    context.Writer.Write(publicRequest.Username);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

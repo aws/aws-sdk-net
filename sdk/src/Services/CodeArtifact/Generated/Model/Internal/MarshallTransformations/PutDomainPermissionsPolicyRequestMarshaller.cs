@@ -61,39 +61,42 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/v1/domain/permissions/policy";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDomain())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("domain");
-                    context.Writer.Write(publicRequest.Domain);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDomain())
+                    {
+                        context.Writer.WritePropertyName("domain");
+                        context.Writer.Write(publicRequest.Domain);
+                    }
+
+                    if(publicRequest.IsSetDomainOwner())
+                    {
+                        context.Writer.WritePropertyName("domainOwner");
+                        context.Writer.Write(publicRequest.DomainOwner);
+                    }
+
+                    if(publicRequest.IsSetPolicyDocument())
+                    {
+                        context.Writer.WritePropertyName("policyDocument");
+                        context.Writer.Write(publicRequest.PolicyDocument);
+                    }
+
+                    if(publicRequest.IsSetPolicyRevision())
+                    {
+                        context.Writer.WritePropertyName("policyRevision");
+                        context.Writer.Write(publicRequest.PolicyRevision);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDomainOwner())
-                {
-                    context.Writer.WritePropertyName("domainOwner");
-                    context.Writer.Write(publicRequest.DomainOwner);
-                }
-
-                if(publicRequest.IsSetPolicyDocument())
-                {
-                    context.Writer.WritePropertyName("policyDocument");
-                    context.Writer.Write(publicRequest.PolicyDocument);
-                }
-
-                if(publicRequest.IsSetPolicyRevision())
-                {
-                    context.Writer.WritePropertyName("policyRevision");
-                    context.Writer.Write(publicRequest.PolicyRevision);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

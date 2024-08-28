@@ -61,63 +61,66 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/CreatePlaybackRestrictionPolicy";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAllowedCountries())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("allowedCountries");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAllowedCountriesListValue in publicRequest.AllowedCountries)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAllowedCountries())
                     {
-                            context.Writer.Write(publicRequestAllowedCountriesListValue);
+                        context.Writer.WritePropertyName("allowedCountries");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAllowedCountriesListValue in publicRequest.AllowedCountries)
+                        {
+                                context.Writer.Write(publicRequestAllowedCountriesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetAllowedOrigins())
-                {
-                    context.Writer.WritePropertyName("allowedOrigins");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAllowedOriginsListValue in publicRequest.AllowedOrigins)
+                    if(publicRequest.IsSetAllowedOrigins())
                     {
-                            context.Writer.Write(publicRequestAllowedOriginsListValue);
+                        context.Writer.WritePropertyName("allowedOrigins");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAllowedOriginsListValue in publicRequest.AllowedOrigins)
+                        {
+                                context.Writer.Write(publicRequestAllowedOriginsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetEnableStrictOriginEnforcement())
-                {
-                    context.Writer.WritePropertyName("enableStrictOriginEnforcement");
-                    context.Writer.Write(publicRequest.EnableStrictOriginEnforcement.Value);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetEnableStrictOriginEnforcement())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("enableStrictOriginEnforcement");
+                        context.Writer.Write(publicRequest.EnableStrictOriginEnforcement.Value);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

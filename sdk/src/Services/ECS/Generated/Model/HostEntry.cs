@@ -31,7 +31,7 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// Hostnames and IP address entries that are added to the <c>/etc/hosts</c> file of a
-    /// container via the <c>extraHosts</c> parameter of its <a>ContainerDefinition</a>.
+    /// container via the <c>extraHosts</c> parameter of its <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html">ContainerDefinition</a>.
     /// </summary>
     public partial class HostEntry
     {

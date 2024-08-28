@@ -63,37 +63,40 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetReturnConsumedCapacity())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ReturnConsumedCapacity");
-                    context.Writer.Write(publicRequest.ReturnConsumedCapacity);
-                }
-
-                if(publicRequest.IsSetTransactItems())
-                {
-                    context.Writer.WritePropertyName("TransactItems");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTransactItemsListValue in publicRequest.TransactItems)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetReturnConsumedCapacity())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TransactGetItemMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTransactItemsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("ReturnConsumedCapacity");
+                        context.Writer.Write(publicRequest.ReturnConsumedCapacity);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTransactItems())
+                    {
+                        context.Writer.WritePropertyName("TransactItems");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTransactItemsListValue in publicRequest.TransactItems)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TransactGetItemMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTransactItemsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

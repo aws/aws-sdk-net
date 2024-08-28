@@ -63,38 +63,41 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetContactChannelId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ContactChannelId");
-                    context.Writer.Write(publicRequest.ContactChannelId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetContactChannelId())
+                    {
+                        context.Writer.WritePropertyName("ContactChannelId");
+                        context.Writer.Write(publicRequest.ContactChannelId);
+                    }
+
+                    if(publicRequest.IsSetDeliveryAddress())
+                    {
+                        context.Writer.WritePropertyName("DeliveryAddress");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ContactChannelAddressMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DeliveryAddress, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDeliveryAddress())
-                {
-                    context.Writer.WritePropertyName("DeliveryAddress");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ContactChannelAddressMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DeliveryAddress, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

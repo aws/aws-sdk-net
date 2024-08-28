@@ -63,37 +63,40 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCapacityAssignments())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CapacityAssignments");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCapacityAssignmentsListValue in publicRequest.CapacityAssignments)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCapacityAssignments())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("CapacityAssignments");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCapacityAssignmentsListValue in publicRequest.CapacityAssignments)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = CapacityAssignmentMarshaller.Instance;
-                        marshaller.Marshall(publicRequestCapacityAssignmentsListValue, context);
+                            var marshaller = CapacityAssignmentMarshaller.Instance;
+                            marshaller.Marshall(publicRequestCapacityAssignmentsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetCapacityReservationName())
+                    {
+                        context.Writer.WritePropertyName("CapacityReservationName");
+                        context.Writer.Write(publicRequest.CapacityReservationName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCapacityReservationName())
-                {
-                    context.Writer.WritePropertyName("CapacityReservationName");
-                    context.Writer.Write(publicRequest.CapacityReservationName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

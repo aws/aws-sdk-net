@@ -61,27 +61,30 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/GetReplicationConfiguration";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccountID())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("accountID");
-                    context.Writer.Write(publicRequest.AccountID);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccountID())
+                    {
+                        context.Writer.WritePropertyName("accountID");
+                        context.Writer.Write(publicRequest.AccountID);
+                    }
+
+                    if(publicRequest.IsSetSourceServerID())
+                    {
+                        context.Writer.WritePropertyName("sourceServerID");
+                        context.Writer.Write(publicRequest.SourceServerID);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSourceServerID())
-                {
-                    context.Writer.WritePropertyName("sourceServerID");
-                    context.Writer.Write(publicRequest.SourceServerID);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,72 +63,75 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAcceptLanguage())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AcceptLanguage");
-                    context.Writer.Write(publicRequest.AcceptLanguage);
-                }
-
-                if(publicRequest.IsSetAddTags())
-                {
-                    context.Writer.WritePropertyName("AddTags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAddTagsListValue in publicRequest.AddTags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAcceptLanguage())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAddTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("AcceptLanguage");
+                        context.Writer.Write(publicRequest.AcceptLanguage);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetDisplayName())
-                {
-                    context.Writer.WritePropertyName("DisplayName");
-                    context.Writer.Write(publicRequest.DisplayName);
-                }
-
-                if(publicRequest.IsSetId())
-                {
-                    context.Writer.WritePropertyName("Id");
-                    context.Writer.Write(publicRequest.Id);
-                }
-
-                if(publicRequest.IsSetProviderName())
-                {
-                    context.Writer.WritePropertyName("ProviderName");
-                    context.Writer.Write(publicRequest.ProviderName);
-                }
-
-                if(publicRequest.IsSetRemoveTags())
-                {
-                    context.Writer.WritePropertyName("RemoveTags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRemoveTagsListValue in publicRequest.RemoveTags)
+                    if(publicRequest.IsSetAddTags())
                     {
-                            context.Writer.Write(publicRequestRemoveTagsListValue);
+                        context.Writer.WritePropertyName("AddTags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAddTagsListValue in publicRequest.AddTags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAddTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetDisplayName())
+                    {
+                        context.Writer.WritePropertyName("DisplayName");
+                        context.Writer.Write(publicRequest.DisplayName);
+                    }
+
+                    if(publicRequest.IsSetId())
+                    {
+                        context.Writer.WritePropertyName("Id");
+                        context.Writer.Write(publicRequest.Id);
+                    }
+
+                    if(publicRequest.IsSetProviderName())
+                    {
+                        context.Writer.WritePropertyName("ProviderName");
+                        context.Writer.Write(publicRequest.ProviderName);
+                    }
+
+                    if(publicRequest.IsSetRemoveTags())
+                    {
+                        context.Writer.WritePropertyName("RemoveTags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRemoveTagsListValue in publicRequest.RemoveTags)
+                        {
+                                context.Writer.Write(publicRequestRemoveTagsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

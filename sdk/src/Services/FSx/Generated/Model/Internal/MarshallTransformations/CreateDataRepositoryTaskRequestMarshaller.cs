@@ -63,93 +63,96 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCapacityToRelease())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CapacityToRelease");
-                    context.Writer.Write(publicRequest.CapacityToRelease.Value);
-                }
-
-                if(publicRequest.IsSetClientRequestToken())
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetFileSystemId())
-                {
-                    context.Writer.WritePropertyName("FileSystemId");
-                    context.Writer.Write(publicRequest.FileSystemId);
-                }
-
-                if(publicRequest.IsSetPaths())
-                {
-                    context.Writer.WritePropertyName("Paths");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPathsListValue in publicRequest.Paths)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCapacityToRelease())
                     {
-                            context.Writer.Write(publicRequestPathsListValue);
+                        context.Writer.WritePropertyName("CapacityToRelease");
+                        context.Writer.Write(publicRequest.CapacityToRelease.Value);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetReleaseConfiguration())
-                {
-                    context.Writer.WritePropertyName("ReleaseConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ReleaseConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ReleaseConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetReport())
-                {
-                    context.Writer.WritePropertyName("Report");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CompletionReportMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Report, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetClientRequestToken())
                     {
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(publicRequest.ClientRequestToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientRequestToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetFileSystemId())
+                    {
+                        context.Writer.WritePropertyName("FileSystemId");
+                        context.Writer.Write(publicRequest.FileSystemId);
+                    }
+
+                    if(publicRequest.IsSetPaths())
+                    {
+                        context.Writer.WritePropertyName("Paths");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPathsListValue in publicRequest.Paths)
+                        {
+                                context.Writer.Write(publicRequestPathsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetReleaseConfiguration())
+                    {
+                        context.Writer.WritePropertyName("ReleaseConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = ReleaseConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ReleaseConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetReport())
+                    {
+                        context.Writer.WritePropertyName("Report");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CompletionReportMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Report, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetType())
+                    {
+                        context.Writer.WritePropertyName("Type");
+                        context.Writer.Write(publicRequest.Type);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetType())
-                {
-                    context.Writer.WritePropertyName("Type");
-                    context.Writer.Write(publicRequest.Type);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

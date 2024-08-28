@@ -67,39 +67,42 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
                 throw new AmazonServerlessApplicationRepositoryException("Request object does not have required field SemanticVersion set");
             request.AddPathResource("{semanticVersion}", StringUtils.FromString(publicRequest.SemanticVersion));
             request.ResourcePath = "/applications/{applicationId}/versions/{semanticVersion}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetSourceCodeArchiveUrl())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("sourceCodeArchiveUrl");
-                    context.Writer.Write(publicRequest.SourceCodeArchiveUrl);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetSourceCodeArchiveUrl())
+                    {
+                        context.Writer.WritePropertyName("sourceCodeArchiveUrl");
+                        context.Writer.Write(publicRequest.SourceCodeArchiveUrl);
+                    }
+
+                    if(publicRequest.IsSetSourceCodeUrl())
+                    {
+                        context.Writer.WritePropertyName("sourceCodeUrl");
+                        context.Writer.Write(publicRequest.SourceCodeUrl);
+                    }
+
+                    if(publicRequest.IsSetTemplateBody())
+                    {
+                        context.Writer.WritePropertyName("templateBody");
+                        context.Writer.Write(publicRequest.TemplateBody);
+                    }
+
+                    if(publicRequest.IsSetTemplateUrl())
+                    {
+                        context.Writer.WritePropertyName("templateUrl");
+                        context.Writer.Write(publicRequest.TemplateUrl);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSourceCodeUrl())
-                {
-                    context.Writer.WritePropertyName("sourceCodeUrl");
-                    context.Writer.Write(publicRequest.SourceCodeUrl);
-                }
-
-                if(publicRequest.IsSetTemplateBody())
-                {
-                    context.Writer.WritePropertyName("templateBody");
-                    context.Writer.Write(publicRequest.TemplateBody);
-                }
-
-                if(publicRequest.IsSetTemplateUrl())
-                {
-                    context.Writer.WritePropertyName("templateUrl");
-                    context.Writer.Write(publicRequest.TemplateUrl);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

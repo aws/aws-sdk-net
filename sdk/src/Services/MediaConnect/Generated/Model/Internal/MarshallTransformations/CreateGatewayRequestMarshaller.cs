@@ -61,48 +61,51 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v1/gateways";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEgressCidrBlocks())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("egressCidrBlocks");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEgressCidrBlocksListValue in publicRequest.EgressCidrBlocks)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEgressCidrBlocks())
                     {
-                            context.Writer.Write(publicRequestEgressCidrBlocksListValue);
+                        context.Writer.WritePropertyName("egressCidrBlocks");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestEgressCidrBlocksListValue in publicRequest.EgressCidrBlocks)
+                        {
+                                context.Writer.Write(publicRequestEgressCidrBlocksListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetNetworks())
-                {
-                    context.Writer.WritePropertyName("networks");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestNetworksListValue in publicRequest.Networks)
+                    if(publicRequest.IsSetName())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = GatewayNetworkMarshaller.Instance;
-                        marshaller.Marshall(publicRequestNetworksListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetNetworks())
+                    {
+                        context.Writer.WritePropertyName("networks");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestNetworksListValue in publicRequest.Networks)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = GatewayNetworkMarshaller.Instance;
+                            marshaller.Marshall(publicRequestNetworksListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

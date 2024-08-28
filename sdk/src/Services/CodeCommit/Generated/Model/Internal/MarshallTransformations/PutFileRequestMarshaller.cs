@@ -63,69 +63,72 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBranchName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("branchName");
-                    context.Writer.Write(publicRequest.BranchName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBranchName())
+                    {
+                        context.Writer.WritePropertyName("branchName");
+                        context.Writer.Write(publicRequest.BranchName);
+                    }
+
+                    if(publicRequest.IsSetCommitMessage())
+                    {
+                        context.Writer.WritePropertyName("commitMessage");
+                        context.Writer.Write(publicRequest.CommitMessage);
+                    }
+
+                    if(publicRequest.IsSetEmail())
+                    {
+                        context.Writer.WritePropertyName("email");
+                        context.Writer.Write(publicRequest.Email);
+                    }
+
+                    if(publicRequest.IsSetFileContent())
+                    {
+                        context.Writer.WritePropertyName("fileContent");
+                        context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.FileContent));
+                    }
+
+                    if(publicRequest.IsSetFileMode())
+                    {
+                        context.Writer.WritePropertyName("fileMode");
+                        context.Writer.Write(publicRequest.FileMode);
+                    }
+
+                    if(publicRequest.IsSetFilePath())
+                    {
+                        context.Writer.WritePropertyName("filePath");
+                        context.Writer.Write(publicRequest.FilePath);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetParentCommitId())
+                    {
+                        context.Writer.WritePropertyName("parentCommitId");
+                        context.Writer.Write(publicRequest.ParentCommitId);
+                    }
+
+                    if(publicRequest.IsSetRepositoryName())
+                    {
+                        context.Writer.WritePropertyName("repositoryName");
+                        context.Writer.Write(publicRequest.RepositoryName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCommitMessage())
-                {
-                    context.Writer.WritePropertyName("commitMessage");
-                    context.Writer.Write(publicRequest.CommitMessage);
-                }
-
-                if(publicRequest.IsSetEmail())
-                {
-                    context.Writer.WritePropertyName("email");
-                    context.Writer.Write(publicRequest.Email);
-                }
-
-                if(publicRequest.IsSetFileContent())
-                {
-                    context.Writer.WritePropertyName("fileContent");
-                    context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.FileContent));
-                }
-
-                if(publicRequest.IsSetFileMode())
-                {
-                    context.Writer.WritePropertyName("fileMode");
-                    context.Writer.Write(publicRequest.FileMode);
-                }
-
-                if(publicRequest.IsSetFilePath())
-                {
-                    context.Writer.WritePropertyName("filePath");
-                    context.Writer.Write(publicRequest.FilePath);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetParentCommitId())
-                {
-                    context.Writer.WritePropertyName("parentCommitId");
-                    context.Writer.Write(publicRequest.ParentCommitId);
-                }
-
-                if(publicRequest.IsSetRepositoryName())
-                {
-                    context.Writer.WritePropertyName("repositoryName");
-                    context.Writer.Write(publicRequest.RepositoryName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

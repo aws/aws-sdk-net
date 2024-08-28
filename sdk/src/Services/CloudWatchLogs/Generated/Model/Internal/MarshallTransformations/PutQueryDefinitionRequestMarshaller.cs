@@ -63,55 +63,58 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetLogGroupNames())
-                {
-                    context.Writer.WritePropertyName("logGroupNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLogGroupNamesListValue in publicRequest.LogGroupNames)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
-                            context.Writer.Write(publicRequestLogGroupNamesListValue);
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetLogGroupNames())
+                    {
+                        context.Writer.WritePropertyName("logGroupNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLogGroupNamesListValue in publicRequest.LogGroupNames)
+                        {
+                                context.Writer.Write(publicRequestLogGroupNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetQueryDefinitionId())
+                    {
+                        context.Writer.WritePropertyName("queryDefinitionId");
+                        context.Writer.Write(publicRequest.QueryDefinitionId);
+                    }
+
+                    if(publicRequest.IsSetQueryString())
+                    {
+                        context.Writer.WritePropertyName("queryString");
+                        context.Writer.Write(publicRequest.QueryString);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetQueryDefinitionId())
-                {
-                    context.Writer.WritePropertyName("queryDefinitionId");
-                    context.Writer.Write(publicRequest.QueryDefinitionId);
-                }
-
-                if(publicRequest.IsSetQueryString())
-                {
-                    context.Writer.WritePropertyName("queryString");
-                    context.Writer.Write(publicRequest.QueryString);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

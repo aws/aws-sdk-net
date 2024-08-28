@@ -49,6 +49,7 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
             _partitionsByRegionName.Add("ap-southeast-2", aws);
             _partitionsByRegionName.Add("ap-southeast-3", aws);
             _partitionsByRegionName.Add("ap-southeast-4", aws);
+            _partitionsByRegionName.Add("ap-southeast-5", aws);
             _partitionsByRegionName.Add("aws-global", aws);
             _partitionsByRegionName.Add("ca-central-1", aws);
             _partitionsByRegionName.Add("ca-west-1", aws);

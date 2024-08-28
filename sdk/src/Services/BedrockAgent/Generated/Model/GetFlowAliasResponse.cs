@@ -141,7 +141,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the flow alias.
+        /// The name of the alias.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -179,7 +179,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The time at which the flow alias was last updated.
+        /// The time at which the alias was last updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

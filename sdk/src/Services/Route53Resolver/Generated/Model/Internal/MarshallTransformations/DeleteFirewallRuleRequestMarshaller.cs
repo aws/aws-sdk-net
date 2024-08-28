@@ -63,33 +63,36 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFirewallDomainListId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("FirewallDomainListId");
-                    context.Writer.Write(publicRequest.FirewallDomainListId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFirewallDomainListId())
+                    {
+                        context.Writer.WritePropertyName("FirewallDomainListId");
+                        context.Writer.Write(publicRequest.FirewallDomainListId);
+                    }
+
+                    if(publicRequest.IsSetFirewallRuleGroupId())
+                    {
+                        context.Writer.WritePropertyName("FirewallRuleGroupId");
+                        context.Writer.Write(publicRequest.FirewallRuleGroupId);
+                    }
+
+                    if(publicRequest.IsSetQtype())
+                    {
+                        context.Writer.WritePropertyName("Qtype");
+                        context.Writer.Write(publicRequest.Qtype);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetFirewallRuleGroupId())
-                {
-                    context.Writer.WritePropertyName("FirewallRuleGroupId");
-                    context.Writer.Write(publicRequest.FirewallRuleGroupId);
-                }
-
-                if(publicRequest.IsSetQtype())
-                {
-                    context.Writer.WritePropertyName("Qtype");
-                    context.Writer.Write(publicRequest.Qtype);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

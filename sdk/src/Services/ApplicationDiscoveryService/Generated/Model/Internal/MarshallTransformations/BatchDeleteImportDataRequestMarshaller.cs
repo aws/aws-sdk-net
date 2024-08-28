@@ -63,32 +63,35 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeleteHistory())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("deleteHistory");
-                    context.Writer.Write(publicRequest.DeleteHistory.Value);
-                }
-
-                if(publicRequest.IsSetImportTaskIds())
-                {
-                    context.Writer.WritePropertyName("importTaskIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestImportTaskIdsListValue in publicRequest.ImportTaskIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDeleteHistory())
                     {
-                            context.Writer.Write(publicRequestImportTaskIdsListValue);
+                        context.Writer.WritePropertyName("deleteHistory");
+                        context.Writer.Write(publicRequest.DeleteHistory.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetImportTaskIds())
+                    {
+                        context.Writer.WritePropertyName("importTaskIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestImportTaskIdsListValue in publicRequest.ImportTaskIds)
+                        {
+                                context.Writer.Write(publicRequestImportTaskIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

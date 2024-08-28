@@ -73,56 +73,59 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
                 throw new AmazonLexRuntimeV2Exception("Request object does not have required field SessionId set");
             request.AddPathResource("{sessionId}", StringUtils.FromString(publicRequest.SessionId));
             request.ResourcePath = "/bots/{botId}/botAliases/{botAliasId}/botLocales/{localeId}/sessions/{sessionId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMessages())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("messages");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMessagesListValue in publicRequest.Messages)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMessages())
                     {
+                        context.Writer.WritePropertyName("messages");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMessagesListValue in publicRequest.Messages)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = MessageMarshaller.Instance;
+                            marshaller.Marshall(publicRequestMessagesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetRequestAttributes())
+                    {
+                        context.Writer.WritePropertyName("requestAttributes");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestRequestAttributesKvp in publicRequest.RequestAttributes)
+                        {
+                            context.Writer.WritePropertyName(publicRequestRequestAttributesKvp.Key);
+                            var publicRequestRequestAttributesValue = publicRequestRequestAttributesKvp.Value;
+
+                                context.Writer.Write(publicRequestRequestAttributesValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSessionStateValue())
+                    {
+                        context.Writer.WritePropertyName("sessionState");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = MessageMarshaller.Instance;
-                        marshaller.Marshall(publicRequestMessagesListValue, context);
+                        var marshaller = SessionStateMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SessionStateValue, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRequestAttributes())
-                {
-                    context.Writer.WritePropertyName("requestAttributes");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestRequestAttributesKvp in publicRequest.RequestAttributes)
-                    {
-                        context.Writer.WritePropertyName(publicRequestRequestAttributesKvp.Key);
-                        var publicRequestRequestAttributesValue = publicRequestRequestAttributesKvp.Value;
-
-                            context.Writer.Write(publicRequestRequestAttributesValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSessionStateValue())
-                {
-                    context.Writer.WritePropertyName("sessionState");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SessionStateMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SessionStateValue, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

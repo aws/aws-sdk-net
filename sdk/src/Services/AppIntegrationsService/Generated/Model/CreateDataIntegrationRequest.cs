@@ -115,7 +115,7 @@ namespace Amazon.AppIntegrationsService.Model
         /// <summary>
         /// Gets and sets the property KmsKey. 
         /// <para>
-        /// The KMS key for the DataIntegration.
+        /// The KMS key ARN for the DataIntegration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -192,7 +192,7 @@ namespace Amazon.AppIntegrationsService.Model
         /// The URI of the data source.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1000)]
+        [AWSProperty(Min=1, Max=1000)]
         public string SourceURI
         {
             get { return this._sourceURI; }

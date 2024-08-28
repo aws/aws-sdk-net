@@ -63,45 +63,48 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetRuleGroupRuleName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("RuleGroupRuleName");
-                    context.Writer.Write(publicRequest.RuleGroupRuleName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetRuleGroupRuleName())
+                    {
+                        context.Writer.WritePropertyName("RuleGroupRuleName");
+                        context.Writer.Write(publicRequest.RuleGroupRuleName);
+                    }
+
+                    if(publicRequest.IsSetRuleName())
+                    {
+                        context.Writer.WritePropertyName("RuleName");
+                        context.Writer.Write(publicRequest.RuleName);
+                    }
+
+                    if(publicRequest.IsSetScope())
+                    {
+                        context.Writer.WritePropertyName("Scope");
+                        context.Writer.Write(publicRequest.Scope);
+                    }
+
+                    if(publicRequest.IsSetWebACLId())
+                    {
+                        context.Writer.WritePropertyName("WebACLId");
+                        context.Writer.Write(publicRequest.WebACLId);
+                    }
+
+                    if(publicRequest.IsSetWebACLName())
+                    {
+                        context.Writer.WritePropertyName("WebACLName");
+                        context.Writer.Write(publicRequest.WebACLName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRuleName())
-                {
-                    context.Writer.WritePropertyName("RuleName");
-                    context.Writer.Write(publicRequest.RuleName);
-                }
-
-                if(publicRequest.IsSetScope())
-                {
-                    context.Writer.WritePropertyName("Scope");
-                    context.Writer.Write(publicRequest.Scope);
-                }
-
-                if(publicRequest.IsSetWebACLId())
-                {
-                    context.Writer.WritePropertyName("WebACLId");
-                    context.Writer.Write(publicRequest.WebACLId);
-                }
-
-                if(publicRequest.IsSetWebACLName())
-                {
-                    context.Writer.WritePropertyName("WebACLName");
-                    context.Writer.Write(publicRequest.WebACLName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

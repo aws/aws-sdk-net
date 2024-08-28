@@ -63,49 +63,52 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDownScaling())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DownScaling");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDownScaling())
+                    {
+                        context.Writer.WritePropertyName("DownScaling");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = AutoScalingThresholdsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DownScaling, context);
+                        var marshaller = AutoScalingThresholdsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DownScaling, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetEnable())
+                    {
+                        context.Writer.WritePropertyName("Enable");
+                        context.Writer.Write(publicRequest.Enable.Value);
+                    }
+
+                    if(publicRequest.IsSetLayerId())
+                    {
+                        context.Writer.WritePropertyName("LayerId");
+                        context.Writer.Write(publicRequest.LayerId);
+                    }
+
+                    if(publicRequest.IsSetUpScaling())
+                    {
+                        context.Writer.WritePropertyName("UpScaling");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AutoScalingThresholdsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.UpScaling, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEnable())
-                {
-                    context.Writer.WritePropertyName("Enable");
-                    context.Writer.Write(publicRequest.Enable.Value);
-                }
-
-                if(publicRequest.IsSetLayerId())
-                {
-                    context.Writer.WritePropertyName("LayerId");
-                    context.Writer.Write(publicRequest.LayerId);
-                }
-
-                if(publicRequest.IsSetUpScaling())
-                {
-                    context.Writer.WritePropertyName("UpScaling");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AutoScalingThresholdsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.UpScaling, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

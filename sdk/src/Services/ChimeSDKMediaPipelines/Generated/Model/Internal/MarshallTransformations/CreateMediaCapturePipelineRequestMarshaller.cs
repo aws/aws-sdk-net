@@ -61,77 +61,80 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/sdk-media-capture-pipelines";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetChimeSdkMeetingConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ChimeSdkMeetingConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ChimeSdkMeetingConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ChimeSdkMeetingConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetClientRequestToken())
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetSinkArn())
-                {
-                    context.Writer.WritePropertyName("SinkArn");
-                    context.Writer.Write(publicRequest.SinkArn);
-                }
-
-                if(publicRequest.IsSetSinkType())
-                {
-                    context.Writer.WritePropertyName("SinkType");
-                    context.Writer.Write(publicRequest.SinkType);
-                }
-
-                if(publicRequest.IsSetSourceArn())
-                {
-                    context.Writer.WritePropertyName("SourceArn");
-                    context.Writer.Write(publicRequest.SourceArn);
-                }
-
-                if(publicRequest.IsSetSourceType())
-                {
-                    context.Writer.WritePropertyName("SourceType");
-                    context.Writer.Write(publicRequest.SourceType);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetChimeSdkMeetingConfiguration())
                     {
+                        context.Writer.WritePropertyName("ChimeSdkMeetingConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = ChimeSdkMeetingConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ChimeSdkMeetingConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetClientRequestToken())
+                    {
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(publicRequest.ClientRequestToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientRequestToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetSinkArn())
+                    {
+                        context.Writer.WritePropertyName("SinkArn");
+                        context.Writer.Write(publicRequest.SinkArn);
+                    }
+
+                    if(publicRequest.IsSetSinkType())
+                    {
+                        context.Writer.WritePropertyName("SinkType");
+                        context.Writer.Write(publicRequest.SinkType);
+                    }
+
+                    if(publicRequest.IsSetSourceArn())
+                    {
+                        context.Writer.WritePropertyName("SourceArn");
+                        context.Writer.Write(publicRequest.SourceArn);
+                    }
+
+                    if(publicRequest.IsSetSourceType())
+                    {
+                        context.Writer.WritePropertyName("SourceType");
+                        context.Writer.Write(publicRequest.SourceType);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

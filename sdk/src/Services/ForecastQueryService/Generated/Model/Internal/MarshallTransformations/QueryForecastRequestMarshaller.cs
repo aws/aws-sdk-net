@@ -63,53 +63,56 @@ namespace Amazon.ForecastQueryService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEndDate())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("EndDate");
-                    context.Writer.Write(publicRequest.EndDate);
-                }
-
-                if(publicRequest.IsSetFilters())
-                {
-                    context.Writer.WritePropertyName("Filters");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestFiltersKvp in publicRequest.Filters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEndDate())
                     {
-                        context.Writer.WritePropertyName(publicRequestFiltersKvp.Key);
-                        var publicRequestFiltersValue = publicRequestFiltersKvp.Value;
-
-                            context.Writer.Write(publicRequestFiltersValue);
+                        context.Writer.WritePropertyName("EndDate");
+                        context.Writer.Write(publicRequest.EndDate);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetFilters())
+                    {
+                        context.Writer.WritePropertyName("Filters");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestFiltersKvp in publicRequest.Filters)
+                        {
+                            context.Writer.WritePropertyName(publicRequestFiltersKvp.Key);
+                            var publicRequestFiltersValue = publicRequestFiltersKvp.Value;
+
+                                context.Writer.Write(publicRequestFiltersValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetForecastArn())
+                    {
+                        context.Writer.WritePropertyName("ForecastArn");
+                        context.Writer.Write(publicRequest.ForecastArn);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetStartDate())
+                    {
+                        context.Writer.WritePropertyName("StartDate");
+                        context.Writer.Write(publicRequest.StartDate);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetForecastArn())
-                {
-                    context.Writer.WritePropertyName("ForecastArn");
-                    context.Writer.Write(publicRequest.ForecastArn);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetStartDate())
-                {
-                    context.Writer.WritePropertyName("StartDate");
-                    context.Writer.Write(publicRequest.StartDate);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -64,48 +64,51 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                 throw new AmazonWorkSpacesWebException("Request object does not have required field TrustStoreArn set");
             request.AddPathResource("{trustStoreArn+}", StringUtils.FromString(publicRequest.TrustStoreArn.TrimStart('/')));
             request.ResourcePath = "/trustStores/{trustStoreArn+}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCertificatesToAdd())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("certificatesToAdd");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCertificatesToAddListValue in publicRequest.CertificatesToAdd)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCertificatesToAdd())
                     {
-                        context.Writer.Write(StringUtils.FromMemoryStream(publicRequestCertificatesToAddListValue));
+                        context.Writer.WritePropertyName("certificatesToAdd");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCertificatesToAddListValue in publicRequest.CertificatesToAdd)
+                        {
+                            context.Writer.Write(StringUtils.FromMemoryStream(publicRequestCertificatesToAddListValue));
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetCertificatesToDelete())
-                {
-                    context.Writer.WritePropertyName("certificatesToDelete");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCertificatesToDeleteListValue in publicRequest.CertificatesToDelete)
+                    if(publicRequest.IsSetCertificatesToDelete())
                     {
-                            context.Writer.Write(publicRequestCertificatesToDeleteListValue);
+                        context.Writer.WritePropertyName("certificatesToDelete");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCertificatesToDeleteListValue in publicRequest.CertificatesToDelete)
+                        {
+                                context.Writer.Write(publicRequestCertificatesToDeleteListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

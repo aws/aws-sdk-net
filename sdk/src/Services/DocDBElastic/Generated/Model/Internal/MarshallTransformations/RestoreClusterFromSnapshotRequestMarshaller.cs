@@ -64,75 +64,78 @@ namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
                 throw new AmazonDocDBElasticException("Request object does not have required field SnapshotArn set");
             request.AddPathResource("{snapshotArn}", StringUtils.FromString(publicRequest.SnapshotArn));
             request.ResourcePath = "/cluster-snapshot/{snapshotArn}/restore";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClusterName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clusterName");
-                    context.Writer.Write(publicRequest.ClusterName);
-                }
-
-                if(publicRequest.IsSetKmsKeyId())
-                {
-                    context.Writer.WritePropertyName("kmsKeyId");
-                    context.Writer.Write(publicRequest.KmsKeyId);
-                }
-
-                if(publicRequest.IsSetShardCapacity())
-                {
-                    context.Writer.WritePropertyName("shardCapacity");
-                    context.Writer.Write(publicRequest.ShardCapacity.Value);
-                }
-
-                if(publicRequest.IsSetShardInstanceCount())
-                {
-                    context.Writer.WritePropertyName("shardInstanceCount");
-                    context.Writer.Write(publicRequest.ShardInstanceCount.Value);
-                }
-
-                if(publicRequest.IsSetSubnetIds())
-                {
-                    context.Writer.WritePropertyName("subnetIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSubnetIdsListValue in publicRequest.SubnetIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClusterName())
                     {
-                            context.Writer.Write(publicRequestSubnetIdsListValue);
+                        context.Writer.WritePropertyName("clusterName");
+                        context.Writer.Write(publicRequest.ClusterName);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetKmsKeyId())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("kmsKeyId");
+                        context.Writer.Write(publicRequest.KmsKeyId);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetVpcSecurityGroupIds())
-                {
-                    context.Writer.WritePropertyName("vpcSecurityGroupIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestVpcSecurityGroupIdsListValue in publicRequest.VpcSecurityGroupIds)
+                    if(publicRequest.IsSetShardCapacity())
                     {
-                            context.Writer.Write(publicRequestVpcSecurityGroupIdsListValue);
+                        context.Writer.WritePropertyName("shardCapacity");
+                        context.Writer.Write(publicRequest.ShardCapacity.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetShardInstanceCount())
+                    {
+                        context.Writer.WritePropertyName("shardInstanceCount");
+                        context.Writer.Write(publicRequest.ShardInstanceCount.Value);
+                    }
+
+                    if(publicRequest.IsSetSubnetIds())
+                    {
+                        context.Writer.WritePropertyName("subnetIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSubnetIdsListValue in publicRequest.SubnetIds)
+                        {
+                                context.Writer.Write(publicRequestSubnetIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetVpcSecurityGroupIds())
+                    {
+                        context.Writer.WritePropertyName("vpcSecurityGroupIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestVpcSecurityGroupIdsListValue in publicRequest.VpcSecurityGroupIds)
+                        {
+                                context.Writer.Write(publicRequestVpcSecurityGroupIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

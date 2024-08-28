@@ -64,27 +64,30 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                 throw new AmazonVPCLatticeException("Request object does not have required field ServiceIdentifier set");
             request.AddPathResource("{serviceIdentifier}", StringUtils.FromString(publicRequest.ServiceIdentifier));
             request.ResourcePath = "/services/{serviceIdentifier}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAuthType())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("authType");
-                    context.Writer.Write(publicRequest.AuthType);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAuthType())
+                    {
+                        context.Writer.WritePropertyName("authType");
+                        context.Writer.Write(publicRequest.AuthType);
+                    }
+
+                    if(publicRequest.IsSetCertificateArn())
+                    {
+                        context.Writer.WritePropertyName("certificateArn");
+                        context.Writer.Write(publicRequest.CertificateArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCertificateArn())
-                {
-                    context.Writer.WritePropertyName("certificateArn");
-                    context.Writer.Write(publicRequest.CertificateArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

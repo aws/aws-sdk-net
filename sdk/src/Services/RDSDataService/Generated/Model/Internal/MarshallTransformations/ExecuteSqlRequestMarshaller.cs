@@ -61,45 +61,48 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/ExecuteSql";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAwsSecretStoreArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("awsSecretStoreArn");
-                    context.Writer.Write(publicRequest.AwsSecretStoreArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAwsSecretStoreArn())
+                    {
+                        context.Writer.WritePropertyName("awsSecretStoreArn");
+                        context.Writer.Write(publicRequest.AwsSecretStoreArn);
+                    }
+
+                    if(publicRequest.IsSetDatabase())
+                    {
+                        context.Writer.WritePropertyName("database");
+                        context.Writer.Write(publicRequest.Database);
+                    }
+
+                    if(publicRequest.IsSetDbClusterOrInstanceArn())
+                    {
+                        context.Writer.WritePropertyName("dbClusterOrInstanceArn");
+                        context.Writer.Write(publicRequest.DbClusterOrInstanceArn);
+                    }
+
+                    if(publicRequest.IsSetSchema())
+                    {
+                        context.Writer.WritePropertyName("schema");
+                        context.Writer.Write(publicRequest.Schema);
+                    }
+
+                    if(publicRequest.IsSetSqlStatements())
+                    {
+                        context.Writer.WritePropertyName("sqlStatements");
+                        context.Writer.Write(publicRequest.SqlStatements);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDatabase())
-                {
-                    context.Writer.WritePropertyName("database");
-                    context.Writer.Write(publicRequest.Database);
-                }
-
-                if(publicRequest.IsSetDbClusterOrInstanceArn())
-                {
-                    context.Writer.WritePropertyName("dbClusterOrInstanceArn");
-                    context.Writer.Write(publicRequest.DbClusterOrInstanceArn);
-                }
-
-                if(publicRequest.IsSetSchema())
-                {
-                    context.Writer.WritePropertyName("schema");
-                    context.Writer.Write(publicRequest.Schema);
-                }
-
-                if(publicRequest.IsSetSqlStatements())
-                {
-                    context.Writer.WritePropertyName("sqlStatements");
-                    context.Writer.Write(publicRequest.SqlStatements);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

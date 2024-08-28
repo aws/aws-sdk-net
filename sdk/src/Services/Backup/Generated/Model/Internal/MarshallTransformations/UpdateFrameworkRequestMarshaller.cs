@@ -64,48 +64,51 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 throw new AmazonBackupException("Request object does not have required field FrameworkName set");
             request.AddPathResource("{frameworkName}", StringUtils.FromString(publicRequest.FrameworkName));
             request.ResourcePath = "/audit/frameworks/{frameworkName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFrameworkControls())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("FrameworkControls");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFrameworkControlsListValue in publicRequest.FrameworkControls)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFrameworkControls())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("FrameworkControls");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFrameworkControlsListValue in publicRequest.FrameworkControls)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = FrameworkControlMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFrameworkControlsListValue, context);
+                            var marshaller = FrameworkControlMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFrameworkControlsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetFrameworkDescription())
+                    {
+                        context.Writer.WritePropertyName("FrameworkDescription");
+                        context.Writer.Write(publicRequest.FrameworkDescription);
+                    }
+
+                    if(publicRequest.IsSetIdempotencyToken())
+                    {
+                        context.Writer.WritePropertyName("IdempotencyToken");
+                        context.Writer.Write(publicRequest.IdempotencyToken);
+                    }
+
+                    else if(!(publicRequest.IsSetIdempotencyToken()))
+                    {
+                        context.Writer.WritePropertyName("IdempotencyToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetFrameworkDescription())
-                {
-                    context.Writer.WritePropertyName("FrameworkDescription");
-                    context.Writer.Write(publicRequest.FrameworkDescription);
-                }
-
-                if(publicRequest.IsSetIdempotencyToken())
-                {
-                    context.Writer.WritePropertyName("IdempotencyToken");
-                    context.Writer.Write(publicRequest.IdempotencyToken);
-                }
-
-                else if(!(publicRequest.IsSetIdempotencyToken()))
-                {
-                    context.Writer.WritePropertyName("IdempotencyToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

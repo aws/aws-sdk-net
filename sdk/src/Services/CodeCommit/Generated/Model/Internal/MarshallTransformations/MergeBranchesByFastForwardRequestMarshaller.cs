@@ -63,39 +63,42 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDestinationCommitSpecifier())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("destinationCommitSpecifier");
-                    context.Writer.Write(publicRequest.DestinationCommitSpecifier);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDestinationCommitSpecifier())
+                    {
+                        context.Writer.WritePropertyName("destinationCommitSpecifier");
+                        context.Writer.Write(publicRequest.DestinationCommitSpecifier);
+                    }
+
+                    if(publicRequest.IsSetRepositoryName())
+                    {
+                        context.Writer.WritePropertyName("repositoryName");
+                        context.Writer.Write(publicRequest.RepositoryName);
+                    }
+
+                    if(publicRequest.IsSetSourceCommitSpecifier())
+                    {
+                        context.Writer.WritePropertyName("sourceCommitSpecifier");
+                        context.Writer.Write(publicRequest.SourceCommitSpecifier);
+                    }
+
+                    if(publicRequest.IsSetTargetBranch())
+                    {
+                        context.Writer.WritePropertyName("targetBranch");
+                        context.Writer.Write(publicRequest.TargetBranch);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRepositoryName())
-                {
-                    context.Writer.WritePropertyName("repositoryName");
-                    context.Writer.Write(publicRequest.RepositoryName);
-                }
-
-                if(publicRequest.IsSetSourceCommitSpecifier())
-                {
-                    context.Writer.WritePropertyName("sourceCommitSpecifier");
-                    context.Writer.Write(publicRequest.SourceCommitSpecifier);
-                }
-
-                if(publicRequest.IsSetTargetBranch())
-                {
-                    context.Writer.WritePropertyName("targetBranch");
-                    context.Writer.Write(publicRequest.TargetBranch);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

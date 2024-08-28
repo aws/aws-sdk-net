@@ -61,69 +61,72 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/JsonEnums";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFooEnum1())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("fooEnum1");
-                    context.Writer.Write(publicRequest.FooEnum1);
-                }
-
-                if(publicRequest.IsSetFooEnum2())
-                {
-                    context.Writer.WritePropertyName("fooEnum2");
-                    context.Writer.Write(publicRequest.FooEnum2);
-                }
-
-                if(publicRequest.IsSetFooEnum3())
-                {
-                    context.Writer.WritePropertyName("fooEnum3");
-                    context.Writer.Write(publicRequest.FooEnum3);
-                }
-
-                if(publicRequest.IsSetFooEnumList())
-                {
-                    context.Writer.WritePropertyName("fooEnumList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFooEnumListListValue in publicRequest.FooEnumList)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFooEnum1())
                     {
-                            context.Writer.Write(publicRequestFooEnumListListValue);
+                        context.Writer.WritePropertyName("fooEnum1");
+                        context.Writer.Write(publicRequest.FooEnum1);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetFooEnumMap())
-                {
-                    context.Writer.WritePropertyName("fooEnumMap");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestFooEnumMapKvp in publicRequest.FooEnumMap)
+                    if(publicRequest.IsSetFooEnum2())
                     {
-                        context.Writer.WritePropertyName(publicRequestFooEnumMapKvp.Key);
-                        var publicRequestFooEnumMapValue = publicRequestFooEnumMapKvp.Value;
-
-                            context.Writer.Write(publicRequestFooEnumMapValue);
+                        context.Writer.WritePropertyName("fooEnum2");
+                        context.Writer.Write(publicRequest.FooEnum2);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetFooEnumSet())
-                {
-                    context.Writer.WritePropertyName("fooEnumSet");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFooEnumSetListValue in publicRequest.FooEnumSet)
+                    if(publicRequest.IsSetFooEnum3())
                     {
-                            context.Writer.Write(publicRequestFooEnumSetListValue);
+                        context.Writer.WritePropertyName("fooEnum3");
+                        context.Writer.Write(publicRequest.FooEnum3);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetFooEnumList())
+                    {
+                        context.Writer.WritePropertyName("fooEnumList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFooEnumListListValue in publicRequest.FooEnumList)
+                        {
+                                context.Writer.Write(publicRequestFooEnumListListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetFooEnumMap())
+                    {
+                        context.Writer.WritePropertyName("fooEnumMap");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestFooEnumMapKvp in publicRequest.FooEnumMap)
+                        {
+                            context.Writer.WritePropertyName(publicRequestFooEnumMapKvp.Key);
+                            var publicRequestFooEnumMapValue = publicRequestFooEnumMapKvp.Value;
+
+                                context.Writer.Write(publicRequestFooEnumMapValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetFooEnumSet())
+                    {
+                        context.Writer.WritePropertyName("fooEnumSet");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFooEnumSetListValue in publicRequest.FooEnumSet)
+                        {
+                                context.Writer.Write(publicRequestFooEnumSetListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

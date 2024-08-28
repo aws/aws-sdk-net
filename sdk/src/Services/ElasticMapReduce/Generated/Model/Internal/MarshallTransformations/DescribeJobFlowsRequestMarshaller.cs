@@ -63,49 +63,52 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCreatedAfter())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CreatedAfter");
-                    context.Writer.Write(publicRequest.CreatedAfter.Value);
-                }
-
-                if(publicRequest.IsSetCreatedBefore())
-                {
-                    context.Writer.WritePropertyName("CreatedBefore");
-                    context.Writer.Write(publicRequest.CreatedBefore.Value);
-                }
-
-                if(publicRequest.IsSetJobFlowIds())
-                {
-                    context.Writer.WritePropertyName("JobFlowIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestJobFlowIdsListValue in publicRequest.JobFlowIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCreatedAfter())
                     {
-                            context.Writer.Write(publicRequestJobFlowIdsListValue);
+                        context.Writer.WritePropertyName("CreatedAfter");
+                        context.Writer.Write(publicRequest.CreatedAfter.Value);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetJobFlowStates())
-                {
-                    context.Writer.WritePropertyName("JobFlowStates");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestJobFlowStatesListValue in publicRequest.JobFlowStates)
+                    if(publicRequest.IsSetCreatedBefore())
                     {
-                            context.Writer.Write(publicRequestJobFlowStatesListValue);
+                        context.Writer.WritePropertyName("CreatedBefore");
+                        context.Writer.Write(publicRequest.CreatedBefore.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetJobFlowIds())
+                    {
+                        context.Writer.WritePropertyName("JobFlowIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestJobFlowIdsListValue in publicRequest.JobFlowIds)
+                        {
+                                context.Writer.Write(publicRequestJobFlowIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetJobFlowStates())
+                    {
+                        context.Writer.WritePropertyName("JobFlowStates");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestJobFlowStatesListValue in publicRequest.JobFlowStates)
+                        {
+                                context.Writer.Write(publicRequestJobFlowStatesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

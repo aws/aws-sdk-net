@@ -61,106 +61,109 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v2/apis";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApiKeySelectionExpression())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("apiKeySelectionExpression");
-                    context.Writer.Write(publicRequest.ApiKeySelectionExpression);
-                }
-
-                if(publicRequest.IsSetCorsConfiguration())
-                {
-                    context.Writer.WritePropertyName("corsConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CorsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CorsConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetCredentialsArn())
-                {
-                    context.Writer.WritePropertyName("credentialsArn");
-                    context.Writer.Write(publicRequest.CredentialsArn);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetDisableExecuteApiEndpoint())
-                {
-                    context.Writer.WritePropertyName("disableExecuteApiEndpoint");
-                    context.Writer.Write(publicRequest.DisableExecuteApiEndpoint.Value);
-                }
-
-                if(publicRequest.IsSetDisableSchemaValidation())
-                {
-                    context.Writer.WritePropertyName("disableSchemaValidation");
-                    context.Writer.Write(publicRequest.DisableSchemaValidation.Value);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetProtocolType())
-                {
-                    context.Writer.WritePropertyName("protocolType");
-                    context.Writer.Write(publicRequest.ProtocolType);
-                }
-
-                if(publicRequest.IsSetRouteKey())
-                {
-                    context.Writer.WritePropertyName("routeKey");
-                    context.Writer.Write(publicRequest.RouteKey);
-                }
-
-                if(publicRequest.IsSetRouteSelectionExpression())
-                {
-                    context.Writer.WritePropertyName("routeSelectionExpression");
-                    context.Writer.Write(publicRequest.RouteSelectionExpression);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApiKeySelectionExpression())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("apiKeySelectionExpression");
+                        context.Writer.Write(publicRequest.ApiKeySelectionExpression);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetCorsConfiguration())
+                    {
+                        context.Writer.WritePropertyName("corsConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CorsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CorsConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetCredentialsArn())
+                    {
+                        context.Writer.WritePropertyName("credentialsArn");
+                        context.Writer.Write(publicRequest.CredentialsArn);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetDisableExecuteApiEndpoint())
+                    {
+                        context.Writer.WritePropertyName("disableExecuteApiEndpoint");
+                        context.Writer.Write(publicRequest.DisableExecuteApiEndpoint.Value);
+                    }
+
+                    if(publicRequest.IsSetDisableSchemaValidation())
+                    {
+                        context.Writer.WritePropertyName("disableSchemaValidation");
+                        context.Writer.Write(publicRequest.DisableSchemaValidation.Value);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetProtocolType())
+                    {
+                        context.Writer.WritePropertyName("protocolType");
+                        context.Writer.Write(publicRequest.ProtocolType);
+                    }
+
+                    if(publicRequest.IsSetRouteKey())
+                    {
+                        context.Writer.WritePropertyName("routeKey");
+                        context.Writer.Write(publicRequest.RouteKey);
+                    }
+
+                    if(publicRequest.IsSetRouteSelectionExpression())
+                    {
+                        context.Writer.WritePropertyName("routeSelectionExpression");
+                        context.Writer.Write(publicRequest.RouteSelectionExpression);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTarget())
+                    {
+                        context.Writer.WritePropertyName("target");
+                        context.Writer.Write(publicRequest.Target);
+                    }
+
+                    if(publicRequest.IsSetVersion())
+                    {
+                        context.Writer.WritePropertyName("version");
+                        context.Writer.Write(publicRequest.Version);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTarget())
-                {
-                    context.Writer.WritePropertyName("target");
-                    context.Writer.Write(publicRequest.Target);
-                }
-
-                if(publicRequest.IsSetVersion())
-                {
-                    context.Writer.WritePropertyName("version");
-                    context.Writer.Write(publicRequest.Version);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

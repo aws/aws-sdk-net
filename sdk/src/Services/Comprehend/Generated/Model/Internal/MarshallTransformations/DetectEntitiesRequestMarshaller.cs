@@ -63,50 +63,53 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBytes())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Bytes");
-                    context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.Bytes));
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBytes())
+                    {
+                        context.Writer.WritePropertyName("Bytes");
+                        context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.Bytes));
+                    }
+
+                    if(publicRequest.IsSetDocumentReaderConfig())
+                    {
+                        context.Writer.WritePropertyName("DocumentReaderConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DocumentReaderConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DocumentReaderConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetEndpointArn())
+                    {
+                        context.Writer.WritePropertyName("EndpointArn");
+                        context.Writer.Write(publicRequest.EndpointArn);
+                    }
+
+                    if(publicRequest.IsSetLanguageCode())
+                    {
+                        context.Writer.WritePropertyName("LanguageCode");
+                        context.Writer.Write(publicRequest.LanguageCode);
+                    }
+
+                    if(publicRequest.IsSetText())
+                    {
+                        context.Writer.WritePropertyName("Text");
+                        context.Writer.Write(publicRequest.Text);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDocumentReaderConfig())
-                {
-                    context.Writer.WritePropertyName("DocumentReaderConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DocumentReaderConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DocumentReaderConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEndpointArn())
-                {
-                    context.Writer.WritePropertyName("EndpointArn");
-                    context.Writer.Write(publicRequest.EndpointArn);
-                }
-
-                if(publicRequest.IsSetLanguageCode())
-                {
-                    context.Writer.WritePropertyName("LanguageCode");
-                    context.Writer.Write(publicRequest.LanguageCode);
-                }
-
-                if(publicRequest.IsSetText())
-                {
-                    context.Writer.WritePropertyName("Text");
-                    context.Writer.Write(publicRequest.Text);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

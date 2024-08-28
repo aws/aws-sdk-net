@@ -64,75 +64,78 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field AuthorizerName set");
             request.AddPathResource("{authorizerName}", StringUtils.FromString(publicRequest.AuthorizerName));
             request.ResourcePath = "/authorizer/{authorizerName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAuthorizerFunctionArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("authorizerFunctionArn");
-                    context.Writer.Write(publicRequest.AuthorizerFunctionArn);
-                }
-
-                if(publicRequest.IsSetEnableCachingForHttp())
-                {
-                    context.Writer.WritePropertyName("enableCachingForHttp");
-                    context.Writer.Write(publicRequest.EnableCachingForHttp.Value);
-                }
-
-                if(publicRequest.IsSetSigningDisabled())
-                {
-                    context.Writer.WritePropertyName("signingDisabled");
-                    context.Writer.Write(publicRequest.SigningDisabled.Value);
-                }
-
-                if(publicRequest.IsSetStatus())
-                {
-                    context.Writer.WritePropertyName("status");
-                    context.Writer.Write(publicRequest.Status);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAuthorizerFunctionArn())
                     {
+                        context.Writer.WritePropertyName("authorizerFunctionArn");
+                        context.Writer.Write(publicRequest.AuthorizerFunctionArn);
+                    }
+
+                    if(publicRequest.IsSetEnableCachingForHttp())
+                    {
+                        context.Writer.WritePropertyName("enableCachingForHttp");
+                        context.Writer.Write(publicRequest.EnableCachingForHttp.Value);
+                    }
+
+                    if(publicRequest.IsSetSigningDisabled())
+                    {
+                        context.Writer.WritePropertyName("signingDisabled");
+                        context.Writer.Write(publicRequest.SigningDisabled.Value);
+                    }
+
+                    if(publicRequest.IsSetStatus())
+                    {
+                        context.Writer.WritePropertyName("status");
+                        context.Writer.Write(publicRequest.Status);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTokenKeyName())
+                    {
+                        context.Writer.WritePropertyName("tokenKeyName");
+                        context.Writer.Write(publicRequest.TokenKeyName);
+                    }
+
+                    if(publicRequest.IsSetTokenSigningPublicKeys())
+                    {
+                        context.Writer.WritePropertyName("tokenSigningPublicKeys");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTokenSigningPublicKeysKvp in publicRequest.TokenSigningPublicKeys)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTokenSigningPublicKeysKvp.Key);
+                            var publicRequestTokenSigningPublicKeysValue = publicRequestTokenSigningPublicKeysKvp.Value;
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
+                                context.Writer.Write(publicRequestTokenSigningPublicKeysValue);
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTokenKeyName())
-                {
-                    context.Writer.WritePropertyName("tokenKeyName");
-                    context.Writer.Write(publicRequest.TokenKeyName);
-                }
-
-                if(publicRequest.IsSetTokenSigningPublicKeys())
-                {
-                    context.Writer.WritePropertyName("tokenSigningPublicKeys");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTokenSigningPublicKeysKvp in publicRequest.TokenSigningPublicKeys)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTokenSigningPublicKeysKvp.Key);
-                        var publicRequestTokenSigningPublicKeysValue = publicRequestTokenSigningPublicKeysKvp.Value;
-
-                            context.Writer.Write(publicRequestTokenSigningPublicKeysValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

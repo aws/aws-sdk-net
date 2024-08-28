@@ -64,27 +64,30 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 throw new AmazonQConnectException("Request object does not have required field KnowledgeBaseId set");
             request.AddPathResource("{knowledgeBaseId}", StringUtils.FromString(publicRequest.KnowledgeBaseId));
             request.ResourcePath = "/knowledgeBases/{knowledgeBaseId}/upload";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetContentType())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("contentType");
-                    context.Writer.Write(publicRequest.ContentType);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetContentType())
+                    {
+                        context.Writer.WritePropertyName("contentType");
+                        context.Writer.Write(publicRequest.ContentType);
+                    }
+
+                    if(publicRequest.IsSetPresignedUrlTimeToLive())
+                    {
+                        context.Writer.WritePropertyName("presignedUrlTimeToLive");
+                        context.Writer.Write(publicRequest.PresignedUrlTimeToLive.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPresignedUrlTimeToLive())
-                {
-                    context.Writer.WritePropertyName("presignedUrlTimeToLive");
-                    context.Writer.Write(publicRequest.PresignedUrlTimeToLive.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

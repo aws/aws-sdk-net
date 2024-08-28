@@ -63,91 +63,94 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAddArguments())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AddArguments");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestAddArgumentsKvp in publicRequest.AddArguments)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAddArguments())
                     {
-                        context.Writer.WritePropertyName(publicRequestAddArgumentsKvp.Key);
-                        var publicRequestAddArgumentsValue = publicRequestAddArgumentsKvp.Value;
+                        context.Writer.WritePropertyName("AddArguments");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestAddArgumentsKvp in publicRequest.AddArguments)
+                        {
+                            context.Writer.WritePropertyName(publicRequestAddArgumentsKvp.Key);
+                            var publicRequestAddArgumentsValue = publicRequestAddArgumentsKvp.Value;
 
-                            context.Writer.Write(publicRequestAddArgumentsValue);
+                                context.Writer.Write(publicRequestAddArgumentsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetAddPublicKeys())
-                {
-                    context.Writer.WritePropertyName("AddPublicKeys");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAddPublicKeysListValue in publicRequest.AddPublicKeys)
+                    if(publicRequest.IsSetAddPublicKeys())
                     {
-                            context.Writer.Write(publicRequestAddPublicKeysListValue);
+                        context.Writer.WritePropertyName("AddPublicKeys");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAddPublicKeysListValue in publicRequest.AddPublicKeys)
+                        {
+                                context.Writer.Write(publicRequestAddPublicKeysListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetCustomLibraries())
-                {
-                    context.Writer.WritePropertyName("CustomLibraries");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DevEndpointCustomLibrariesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CustomLibraries, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDeleteArguments())
-                {
-                    context.Writer.WritePropertyName("DeleteArguments");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDeleteArgumentsListValue in publicRequest.DeleteArguments)
+                    if(publicRequest.IsSetCustomLibraries())
                     {
-                            context.Writer.Write(publicRequestDeleteArgumentsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
+                        context.Writer.WritePropertyName("CustomLibraries");
+                        context.Writer.WriteObjectStart();
 
-                if(publicRequest.IsSetDeletePublicKeys())
-                {
-                    context.Writer.WritePropertyName("DeletePublicKeys");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDeletePublicKeysListValue in publicRequest.DeletePublicKeys)
+                        var marshaller = DevEndpointCustomLibrariesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CustomLibraries, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDeleteArguments())
                     {
-                            context.Writer.Write(publicRequestDeletePublicKeysListValue);
+                        context.Writer.WritePropertyName("DeleteArguments");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDeleteArgumentsListValue in publicRequest.DeleteArguments)
+                        {
+                                context.Writer.Write(publicRequestDeleteArgumentsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDeletePublicKeys())
+                    {
+                        context.Writer.WritePropertyName("DeletePublicKeys");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDeletePublicKeysListValue in publicRequest.DeletePublicKeys)
+                        {
+                                context.Writer.Write(publicRequestDeletePublicKeysListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetEndpointName())
+                    {
+                        context.Writer.WritePropertyName("EndpointName");
+                        context.Writer.Write(publicRequest.EndpointName);
+                    }
+
+                    if(publicRequest.IsSetPublicKey())
+                    {
+                        context.Writer.WritePropertyName("PublicKey");
+                        context.Writer.Write(publicRequest.PublicKey);
+                    }
+
+                    if(publicRequest.IsSetUpdateEtlLibraries())
+                    {
+                        context.Writer.WritePropertyName("UpdateEtlLibraries");
+                        context.Writer.Write(publicRequest.UpdateEtlLibraries.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEndpointName())
-                {
-                    context.Writer.WritePropertyName("EndpointName");
-                    context.Writer.Write(publicRequest.EndpointName);
-                }
-
-                if(publicRequest.IsSetPublicKey())
-                {
-                    context.Writer.WritePropertyName("PublicKey");
-                    context.Writer.Write(publicRequest.PublicKey);
-                }
-
-                if(publicRequest.IsSetUpdateEtlLibraries())
-                {
-                    context.Writer.WritePropertyName("UpdateEtlLibraries");
-                    context.Writer.Write(publicRequest.UpdateEtlLibraries.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

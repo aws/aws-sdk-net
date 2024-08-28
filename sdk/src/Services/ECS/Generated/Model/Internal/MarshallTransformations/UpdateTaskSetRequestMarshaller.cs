@@ -63,44 +63,47 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCluster())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("cluster");
-                    context.Writer.Write(publicRequest.Cluster);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCluster())
+                    {
+                        context.Writer.WritePropertyName("cluster");
+                        context.Writer.Write(publicRequest.Cluster);
+                    }
+
+                    if(publicRequest.IsSetScale())
+                    {
+                        context.Writer.WritePropertyName("scale");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ScaleMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Scale, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetService())
+                    {
+                        context.Writer.WritePropertyName("service");
+                        context.Writer.Write(publicRequest.Service);
+                    }
+
+                    if(publicRequest.IsSetTaskSet())
+                    {
+                        context.Writer.WritePropertyName("taskSet");
+                        context.Writer.Write(publicRequest.TaskSet);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetScale())
-                {
-                    context.Writer.WritePropertyName("scale");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ScaleMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Scale, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetService())
-                {
-                    context.Writer.WritePropertyName("service");
-                    context.Writer.Write(publicRequest.Service);
-                }
-
-                if(publicRequest.IsSetTaskSet())
-                {
-                    context.Writer.WritePropertyName("taskSet");
-                    context.Writer.Write(publicRequest.TaskSet);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -64,82 +64,85 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field AwsAccountId set");
             request.AddPathResource("{AwsAccountId}", StringUtils.FromString(publicRequest.AwsAccountId));
             request.ResourcePath = "/accounts/{AwsAccountId}/asset-bundle-import-jobs/import";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAssetBundleImportJobId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AssetBundleImportJobId");
-                    context.Writer.Write(publicRequest.AssetBundleImportJobId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAssetBundleImportJobId())
+                    {
+                        context.Writer.WritePropertyName("AssetBundleImportJobId");
+                        context.Writer.Write(publicRequest.AssetBundleImportJobId);
+                    }
+
+                    if(publicRequest.IsSetAssetBundleImportSource())
+                    {
+                        context.Writer.WritePropertyName("AssetBundleImportSource");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AssetBundleImportSourceMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AssetBundleImportSource, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetFailureAction())
+                    {
+                        context.Writer.WritePropertyName("FailureAction");
+                        context.Writer.Write(publicRequest.FailureAction);
+                    }
+
+                    if(publicRequest.IsSetOverrideParameters())
+                    {
+                        context.Writer.WritePropertyName("OverrideParameters");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AssetBundleImportJobOverrideParametersMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OverrideParameters, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetOverridePermissions())
+                    {
+                        context.Writer.WritePropertyName("OverridePermissions");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AssetBundleImportJobOverridePermissionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OverridePermissions, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetOverrideTags())
+                    {
+                        context.Writer.WritePropertyName("OverrideTags");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AssetBundleImportJobOverrideTagsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OverrideTags, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetOverrideValidationStrategy())
+                    {
+                        context.Writer.WritePropertyName("OverrideValidationStrategy");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AssetBundleImportJobOverrideValidationStrategyMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OverrideValidationStrategy, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetAssetBundleImportSource())
-                {
-                    context.Writer.WritePropertyName("AssetBundleImportSource");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AssetBundleImportSourceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AssetBundleImportSource, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetFailureAction())
-                {
-                    context.Writer.WritePropertyName("FailureAction");
-                    context.Writer.Write(publicRequest.FailureAction);
-                }
-
-                if(publicRequest.IsSetOverrideParameters())
-                {
-                    context.Writer.WritePropertyName("OverrideParameters");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AssetBundleImportJobOverrideParametersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OverrideParameters, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOverridePermissions())
-                {
-                    context.Writer.WritePropertyName("OverridePermissions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AssetBundleImportJobOverridePermissionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OverridePermissions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOverrideTags())
-                {
-                    context.Writer.WritePropertyName("OverrideTags");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AssetBundleImportJobOverrideTagsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OverrideTags, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOverrideValidationStrategy())
-                {
-                    context.Writer.WritePropertyName("OverrideValidationStrategy");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AssetBundleImportJobOverrideValidationStrategyMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OverrideValidationStrategy, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

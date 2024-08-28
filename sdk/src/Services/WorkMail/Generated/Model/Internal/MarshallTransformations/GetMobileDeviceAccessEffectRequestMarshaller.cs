@@ -63,45 +63,48 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeviceModel())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DeviceModel");
-                    context.Writer.Write(publicRequest.DeviceModel);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDeviceModel())
+                    {
+                        context.Writer.WritePropertyName("DeviceModel");
+                        context.Writer.Write(publicRequest.DeviceModel);
+                    }
+
+                    if(publicRequest.IsSetDeviceOperatingSystem())
+                    {
+                        context.Writer.WritePropertyName("DeviceOperatingSystem");
+                        context.Writer.Write(publicRequest.DeviceOperatingSystem);
+                    }
+
+                    if(publicRequest.IsSetDeviceType())
+                    {
+                        context.Writer.WritePropertyName("DeviceType");
+                        context.Writer.Write(publicRequest.DeviceType);
+                    }
+
+                    if(publicRequest.IsSetDeviceUserAgent())
+                    {
+                        context.Writer.WritePropertyName("DeviceUserAgent");
+                        context.Writer.Write(publicRequest.DeviceUserAgent);
+                    }
+
+                    if(publicRequest.IsSetOrganizationId())
+                    {
+                        context.Writer.WritePropertyName("OrganizationId");
+                        context.Writer.Write(publicRequest.OrganizationId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDeviceOperatingSystem())
-                {
-                    context.Writer.WritePropertyName("DeviceOperatingSystem");
-                    context.Writer.Write(publicRequest.DeviceOperatingSystem);
-                }
-
-                if(publicRequest.IsSetDeviceType())
-                {
-                    context.Writer.WritePropertyName("DeviceType");
-                    context.Writer.Write(publicRequest.DeviceType);
-                }
-
-                if(publicRequest.IsSetDeviceUserAgent())
-                {
-                    context.Writer.WritePropertyName("DeviceUserAgent");
-                    context.Writer.Write(publicRequest.DeviceUserAgent);
-                }
-
-                if(publicRequest.IsSetOrganizationId())
-                {
-                    context.Writer.WritePropertyName("OrganizationId");
-                    context.Writer.Write(publicRequest.OrganizationId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -67,26 +67,29 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 request.Parameters.Add("clientToken", System.Guid.NewGuid().ToString());
                 
             request.ResourcePath = "/package-configuration";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetVersionUpdateByJobsConfig())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("versionUpdateByJobsConfig");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetVersionUpdateByJobsConfig())
+                    {
+                        context.Writer.WritePropertyName("versionUpdateByJobsConfig");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = VersionUpdateByJobsConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.VersionUpdateByJobsConfig, context);
+                        var marshaller = VersionUpdateByJobsConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.VersionUpdateByJobsConfig, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             request.UseQueryString = true;

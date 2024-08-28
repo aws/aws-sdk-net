@@ -61,105 +61,108 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/contact/webrtc";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAllowedCapabilities())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AllowedCapabilities");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AllowedCapabilitiesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AllowedCapabilities, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetAttributes())
-                {
-                    context.Writer.WritePropertyName("Attributes");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestAttributesKvp in publicRequest.Attributes)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAllowedCapabilities())
                     {
-                        context.Writer.WritePropertyName(publicRequestAttributesKvp.Key);
-                        var publicRequestAttributesValue = publicRequestAttributesKvp.Value;
-
-                            context.Writer.Write(publicRequestAttributesValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetContactFlowId())
-                {
-                    context.Writer.WritePropertyName("ContactFlowId");
-                    context.Writer.Write(publicRequest.ContactFlowId);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetInstanceId())
-                {
-                    context.Writer.WritePropertyName("InstanceId");
-                    context.Writer.Write(publicRequest.InstanceId);
-                }
-
-                if(publicRequest.IsSetParticipantDetails())
-                {
-                    context.Writer.WritePropertyName("ParticipantDetails");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ParticipantDetailsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ParticipantDetails, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetReferences())
-                {
-                    context.Writer.WritePropertyName("References");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestReferencesKvp in publicRequest.References)
-                    {
-                        context.Writer.WritePropertyName(publicRequestReferencesKvp.Key);
-                        var publicRequestReferencesValue = publicRequestReferencesKvp.Value;
-
+                        context.Writer.WritePropertyName("AllowedCapabilities");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = ReferenceMarshaller.Instance;
-                        marshaller.Marshall(publicRequestReferencesValue, context);
+                        var marshaller = AllowedCapabilitiesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AllowedCapabilities, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetAttributes())
+                    {
+                        context.Writer.WritePropertyName("Attributes");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestAttributesKvp in publicRequest.Attributes)
+                        {
+                            context.Writer.WritePropertyName(publicRequestAttributesKvp.Key);
+                            var publicRequestAttributesValue = publicRequestAttributesKvp.Value;
+
+                                context.Writer.Write(publicRequestAttributesValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetContactFlowId())
+                    {
+                        context.Writer.WritePropertyName("ContactFlowId");
+                        context.Writer.Write(publicRequest.ContactFlowId);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetInstanceId())
+                    {
+                        context.Writer.WritePropertyName("InstanceId");
+                        context.Writer.Write(publicRequest.InstanceId);
+                    }
+
+                    if(publicRequest.IsSetParticipantDetails())
+                    {
+                        context.Writer.WritePropertyName("ParticipantDetails");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ParticipantDetailsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ParticipantDetails, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetReferences())
+                    {
+                        context.Writer.WritePropertyName("References");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestReferencesKvp in publicRequest.References)
+                        {
+                            context.Writer.WritePropertyName(publicRequestReferencesKvp.Key);
+                            var publicRequestReferencesValue = publicRequestReferencesKvp.Value;
+
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ReferenceMarshaller.Instance;
+                            marshaller.Marshall(publicRequestReferencesValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRelatedContactId())
+                    {
+                        context.Writer.WritePropertyName("RelatedContactId");
+                        context.Writer.Write(publicRequest.RelatedContactId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRelatedContactId())
-                {
-                    context.Writer.WritePropertyName("RelatedContactId");
-                    context.Writer.Write(publicRequest.RelatedContactId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

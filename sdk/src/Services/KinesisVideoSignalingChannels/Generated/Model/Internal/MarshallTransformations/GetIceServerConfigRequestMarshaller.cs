@@ -61,39 +61,42 @@ namespace Amazon.KinesisVideoSignalingChannels.Model.Internal.MarshallTransforma
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v1/get-ice-server-config";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetChannelARN())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ChannelARN");
-                    context.Writer.Write(publicRequest.ChannelARN);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetChannelARN())
+                    {
+                        context.Writer.WritePropertyName("ChannelARN");
+                        context.Writer.Write(publicRequest.ChannelARN);
+                    }
+
+                    if(publicRequest.IsSetClientId())
+                    {
+                        context.Writer.WritePropertyName("ClientId");
+                        context.Writer.Write(publicRequest.ClientId);
+                    }
+
+                    if(publicRequest.IsSetService())
+                    {
+                        context.Writer.WritePropertyName("Service");
+                        context.Writer.Write(publicRequest.Service);
+                    }
+
+                    if(publicRequest.IsSetUsername())
+                    {
+                        context.Writer.WritePropertyName("Username");
+                        context.Writer.Write(publicRequest.Username);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetClientId())
-                {
-                    context.Writer.WritePropertyName("ClientId");
-                    context.Writer.Write(publicRequest.ClientId);
-                }
-
-                if(publicRequest.IsSetService())
-                {
-                    context.Writer.WritePropertyName("Service");
-                    context.Writer.Write(publicRequest.Service);
-                }
-
-                if(publicRequest.IsSetUsername())
-                {
-                    context.Writer.WritePropertyName("Username");
-                    context.Writer.Write(publicRequest.Username);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

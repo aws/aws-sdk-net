@@ -63,37 +63,40 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEndpointConfigurations())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("EndpointConfigurations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEndpointConfigurationsListValue in publicRequest.EndpointConfigurations)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEndpointConfigurations())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("EndpointConfigurations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestEndpointConfigurationsListValue in publicRequest.EndpointConfigurations)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = EndpointConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestEndpointConfigurationsListValue, context);
+                            var marshaller = EndpointConfigurationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestEndpointConfigurationsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetEndpointGroupArn())
+                    {
+                        context.Writer.WritePropertyName("EndpointGroupArn");
+                        context.Writer.Write(publicRequest.EndpointGroupArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEndpointGroupArn())
-                {
-                    context.Writer.WritePropertyName("EndpointGroupArn");
-                    context.Writer.Write(publicRequest.EndpointGroupArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

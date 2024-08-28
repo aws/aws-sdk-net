@@ -63,129 +63,132 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClassifiers())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Classifiers");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestClassifiersListValue in publicRequest.Classifiers)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClassifiers())
                     {
-                            context.Writer.Write(publicRequestClassifiersListValue);
+                        context.Writer.WritePropertyName("Classifiers");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestClassifiersListValue in publicRequest.Classifiers)
+                        {
+                                context.Writer.Write(publicRequestClassifiersListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetConfiguration())
+                    {
+                        context.Writer.WritePropertyName("Configuration");
+                        context.Writer.Write(publicRequest.Configuration);
+                    }
+
+                    if(publicRequest.IsSetCrawlerSecurityConfiguration())
+                    {
+                        context.Writer.WritePropertyName("CrawlerSecurityConfiguration");
+                        context.Writer.Write(publicRequest.CrawlerSecurityConfiguration);
+                    }
+
+                    if(publicRequest.IsSetDatabaseName())
+                    {
+                        context.Writer.WritePropertyName("DatabaseName");
+                        context.Writer.Write(publicRequest.DatabaseName);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetLakeFormationConfiguration())
+                    {
+                        context.Writer.WritePropertyName("LakeFormationConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LakeFormationConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.LakeFormationConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetLineageConfiguration())
+                    {
+                        context.Writer.WritePropertyName("LineageConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LineageConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.LineageConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetRecrawlPolicy())
+                    {
+                        context.Writer.WritePropertyName("RecrawlPolicy");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RecrawlPolicyMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RecrawlPolicy, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRole())
+                    {
+                        context.Writer.WritePropertyName("Role");
+                        context.Writer.Write(publicRequest.Role);
+                    }
+
+                    if(publicRequest.IsSetSchedule())
+                    {
+                        context.Writer.WritePropertyName("Schedule");
+                        context.Writer.Write(publicRequest.Schedule);
+                    }
+
+                    if(publicRequest.IsSetSchemaChangePolicy())
+                    {
+                        context.Writer.WritePropertyName("SchemaChangePolicy");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SchemaChangePolicyMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SchemaChangePolicy, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTablePrefix())
+                    {
+                        context.Writer.WritePropertyName("TablePrefix");
+                        context.Writer.Write(publicRequest.TablePrefix);
+                    }
+
+                    if(publicRequest.IsSetTargets())
+                    {
+                        context.Writer.WritePropertyName("Targets");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CrawlerTargetsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Targets, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetConfiguration())
-                {
-                    context.Writer.WritePropertyName("Configuration");
-                    context.Writer.Write(publicRequest.Configuration);
-                }
-
-                if(publicRequest.IsSetCrawlerSecurityConfiguration())
-                {
-                    context.Writer.WritePropertyName("CrawlerSecurityConfiguration");
-                    context.Writer.Write(publicRequest.CrawlerSecurityConfiguration);
-                }
-
-                if(publicRequest.IsSetDatabaseName())
-                {
-                    context.Writer.WritePropertyName("DatabaseName");
-                    context.Writer.Write(publicRequest.DatabaseName);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetLakeFormationConfiguration())
-                {
-                    context.Writer.WritePropertyName("LakeFormationConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LakeFormationConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LakeFormationConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetLineageConfiguration())
-                {
-                    context.Writer.WritePropertyName("LineageConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LineageConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LineageConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetRecrawlPolicy())
-                {
-                    context.Writer.WritePropertyName("RecrawlPolicy");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RecrawlPolicyMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RecrawlPolicy, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRole())
-                {
-                    context.Writer.WritePropertyName("Role");
-                    context.Writer.Write(publicRequest.Role);
-                }
-
-                if(publicRequest.IsSetSchedule())
-                {
-                    context.Writer.WritePropertyName("Schedule");
-                    context.Writer.Write(publicRequest.Schedule);
-                }
-
-                if(publicRequest.IsSetSchemaChangePolicy())
-                {
-                    context.Writer.WritePropertyName("SchemaChangePolicy");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SchemaChangePolicyMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SchemaChangePolicy, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTablePrefix())
-                {
-                    context.Writer.WritePropertyName("TablePrefix");
-                    context.Writer.Write(publicRequest.TablePrefix);
-                }
-
-                if(publicRequest.IsSetTargets())
-                {
-                    context.Writer.WritePropertyName("Targets");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CrawlerTargetsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Targets, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

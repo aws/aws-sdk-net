@@ -61,32 +61,35 @@ namespace Amazon.SimSpaceWeaver.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/createsnapshot";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDestination())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Destination");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDestination())
+                    {
+                        context.Writer.WritePropertyName("Destination");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = S3DestinationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Destination, context);
+                        var marshaller = S3DestinationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Destination, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSimulation())
+                    {
+                        context.Writer.WritePropertyName("Simulation");
+                        context.Writer.Write(publicRequest.Simulation);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSimulation())
-                {
-                    context.Writer.WritePropertyName("Simulation");
-                    context.Writer.Write(publicRequest.Simulation);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

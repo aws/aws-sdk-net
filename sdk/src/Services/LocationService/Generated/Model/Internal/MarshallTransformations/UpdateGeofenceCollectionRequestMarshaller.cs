@@ -64,33 +64,36 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 throw new AmazonLocationServiceException("Request object does not have required field CollectionName set");
             request.AddPathResource("{CollectionName}", StringUtils.FromString(publicRequest.CollectionName));
             request.ResourcePath = "/geofencing/v0/collections/{CollectionName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetPricingPlan())
+                    {
+                        context.Writer.WritePropertyName("PricingPlan");
+                        context.Writer.Write(publicRequest.PricingPlan);
+                    }
+
+                    if(publicRequest.IsSetPricingPlanDataSource())
+                    {
+                        context.Writer.WritePropertyName("PricingPlanDataSource");
+                        context.Writer.Write(publicRequest.PricingPlanDataSource);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPricingPlan())
-                {
-                    context.Writer.WritePropertyName("PricingPlan");
-                    context.Writer.Write(publicRequest.PricingPlan);
-                }
-
-                if(publicRequest.IsSetPricingPlanDataSource())
-                {
-                    context.Writer.WritePropertyName("PricingPlanDataSource");
-                    context.Writer.Write(publicRequest.PricingPlanDataSource);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

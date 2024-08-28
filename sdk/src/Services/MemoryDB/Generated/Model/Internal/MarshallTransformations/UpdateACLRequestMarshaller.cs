@@ -63,43 +63,46 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetACLName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ACLName");
-                    context.Writer.Write(publicRequest.ACLName);
-                }
-
-                if(publicRequest.IsSetUserNamesToAdd())
-                {
-                    context.Writer.WritePropertyName("UserNamesToAdd");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestUserNamesToAddListValue in publicRequest.UserNamesToAdd)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetACLName())
                     {
-                            context.Writer.Write(publicRequestUserNamesToAddListValue);
+                        context.Writer.WritePropertyName("ACLName");
+                        context.Writer.Write(publicRequest.ACLName);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetUserNamesToRemove())
-                {
-                    context.Writer.WritePropertyName("UserNamesToRemove");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestUserNamesToRemoveListValue in publicRequest.UserNamesToRemove)
+                    if(publicRequest.IsSetUserNamesToAdd())
                     {
-                            context.Writer.Write(publicRequestUserNamesToRemoveListValue);
+                        context.Writer.WritePropertyName("UserNamesToAdd");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestUserNamesToAddListValue in publicRequest.UserNamesToAdd)
+                        {
+                                context.Writer.Write(publicRequestUserNamesToAddListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetUserNamesToRemove())
+                    {
+                        context.Writer.WritePropertyName("UserNamesToRemove");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestUserNamesToRemoveListValue in publicRequest.UserNamesToRemove)
+                        {
+                                context.Writer.Write(publicRequestUserNamesToRemoveListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

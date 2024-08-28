@@ -61,37 +61,40 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/findings/describe";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFindingIds())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("findingIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFindingIdsListValue in publicRequest.FindingIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFindingIds())
                     {
-                            context.Writer.Write(publicRequestFindingIdsListValue);
+                        context.Writer.WritePropertyName("findingIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFindingIdsListValue in publicRequest.FindingIds)
+                        {
+                                context.Writer.Write(publicRequestFindingIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetSortCriteria())
+                    {
+                        context.Writer.WritePropertyName("sortCriteria");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SortCriteriaMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SortCriteria, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSortCriteria())
-                {
-                    context.Writer.WritePropertyName("sortCriteria");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SortCriteriaMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SortCriteria, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

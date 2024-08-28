@@ -63,90 +63,93 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Configuration");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConfiguration())
+                    {
+                        context.Writer.WritePropertyName("Configuration");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = DataSourceConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Configuration, context);
+                        var marshaller = DataSourceConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Configuration, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetCustomDocumentEnrichmentConfiguration())
+                    {
+                        context.Writer.WritePropertyName("CustomDocumentEnrichmentConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CustomDocumentEnrichmentConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CustomDocumentEnrichmentConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetId())
+                    {
+                        context.Writer.WritePropertyName("Id");
+                        context.Writer.Write(publicRequest.Id);
+                    }
+
+                    if(publicRequest.IsSetIndexId())
+                    {
+                        context.Writer.WritePropertyName("IndexId");
+                        context.Writer.Write(publicRequest.IndexId);
+                    }
+
+                    if(publicRequest.IsSetLanguageCode())
+                    {
+                        context.Writer.WritePropertyName("LanguageCode");
+                        context.Writer.Write(publicRequest.LanguageCode);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("RoleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    if(publicRequest.IsSetSchedule())
+                    {
+                        context.Writer.WritePropertyName("Schedule");
+                        context.Writer.Write(publicRequest.Schedule);
+                    }
+
+                    if(publicRequest.IsSetVpcConfiguration())
+                    {
+                        context.Writer.WritePropertyName("VpcConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DataSourceVpcConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.VpcConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCustomDocumentEnrichmentConfiguration())
-                {
-                    context.Writer.WritePropertyName("CustomDocumentEnrichmentConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CustomDocumentEnrichmentConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CustomDocumentEnrichmentConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetId())
-                {
-                    context.Writer.WritePropertyName("Id");
-                    context.Writer.Write(publicRequest.Id);
-                }
-
-                if(publicRequest.IsSetIndexId())
-                {
-                    context.Writer.WritePropertyName("IndexId");
-                    context.Writer.Write(publicRequest.IndexId);
-                }
-
-                if(publicRequest.IsSetLanguageCode())
-                {
-                    context.Writer.WritePropertyName("LanguageCode");
-                    context.Writer.Write(publicRequest.LanguageCode);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("RoleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetSchedule())
-                {
-                    context.Writer.WritePropertyName("Schedule");
-                    context.Writer.Write(publicRequest.Schedule);
-                }
-
-                if(publicRequest.IsSetVpcConfiguration())
-                {
-                    context.Writer.WritePropertyName("VpcConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DataSourceVpcConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.VpcConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

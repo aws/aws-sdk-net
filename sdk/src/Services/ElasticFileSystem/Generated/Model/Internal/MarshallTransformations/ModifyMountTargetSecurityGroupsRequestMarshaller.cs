@@ -64,26 +64,29 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                 throw new AmazonElasticFileSystemException("Request object does not have required field MountTargetId set");
             request.AddPathResource("{MountTargetId}", StringUtils.FromString(publicRequest.MountTargetId));
             request.ResourcePath = "/2015-02-01/mount-targets/{MountTargetId}/security-groups";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetSecurityGroups())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("SecurityGroups");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSecurityGroupsListValue in publicRequest.SecurityGroups)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetSecurityGroups())
                     {
-                            context.Writer.Write(publicRequestSecurityGroupsListValue);
+                        context.Writer.WritePropertyName("SecurityGroups");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSecurityGroupsListValue in publicRequest.SecurityGroups)
+                        {
+                                context.Writer.Write(publicRequestSecurityGroupsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

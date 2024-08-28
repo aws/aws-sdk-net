@@ -52,7 +52,7 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  
     /// <para>
-    /// Alternatively, you can use <a>RunTask</a> to place tasks for you. For more information,
+    /// Alternatively, you can use<c>RunTask</c> to place tasks for you. For more information,
     /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
     /// Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
@@ -268,9 +268,9 @@ namespace Amazon.ECS.Model
         /// An optional tag specified when a task is started. For example, if you automatically
         /// trigger a task to run a batch process job, you could apply a unique identifier for
         /// that job to your task with the <c>startedBy</c> parameter. You can then identify which
-        /// tasks belong to that job by filtering the results of a <a>ListTasks</a> call with
-        /// the <c>startedBy</c> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens
-        /// (-), and underscores (_) are allowed.
+        /// tasks belong to that job by filtering the results of a <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListTasks.html">ListTasks</a>
+        /// call with the <c>startedBy</c> value. Up to 36 letters (uppercase and lowercase),
+        /// numbers, hyphens (-), forward slash (/), and underscores (_) are allowed.
         /// </para>
         ///  
         /// <para>

@@ -67,63 +67,66 @@ namespace Amazon.MarketplaceDeployment.Model.Internal.MarshallTransformations
                 throw new AmazonMarketplaceDeploymentException("Request object does not have required field ProductId set");
             request.AddPathResource("{productId}", StringUtils.FromString(publicRequest.ProductId));
             request.ResourcePath = "/catalogs/{catalog}/products/{productId}/deployment-parameters";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAgreementId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("agreementId");
-                    context.Writer.Write(publicRequest.AgreementId);
-                }
-
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDeploymentParameter())
-                {
-                    context.Writer.WritePropertyName("deploymentParameter");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DeploymentParameterInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DeploymentParameter, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetExpirationDate())
-                {
-                    context.Writer.WritePropertyName("expirationDate");
-                    context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ExpirationDate));
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAgreementId())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("agreementId");
+                        context.Writer.Write(publicRequest.AgreementId);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetDeploymentParameter())
+                    {
+                        context.Writer.WritePropertyName("deploymentParameter");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DeploymentParameterInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DeploymentParameter, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetExpirationDate())
+                    {
+                        context.Writer.WritePropertyName("expirationDate");
+                        context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ExpirationDate));
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

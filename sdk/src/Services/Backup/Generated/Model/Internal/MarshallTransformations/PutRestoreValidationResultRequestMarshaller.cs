@@ -64,27 +64,30 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 throw new AmazonBackupException("Request object does not have required field RestoreJobId set");
             request.AddPathResource("{restoreJobId}", StringUtils.FromString(publicRequest.RestoreJobId));
             request.ResourcePath = "/restore-jobs/{restoreJobId}/validations";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetValidationStatus())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ValidationStatus");
-                    context.Writer.Write(publicRequest.ValidationStatus);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetValidationStatus())
+                    {
+                        context.Writer.WritePropertyName("ValidationStatus");
+                        context.Writer.Write(publicRequest.ValidationStatus);
+                    }
+
+                    if(publicRequest.IsSetValidationStatusMessage())
+                    {
+                        context.Writer.WritePropertyName("ValidationStatusMessage");
+                        context.Writer.Write(publicRequest.ValidationStatusMessage);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetValidationStatusMessage())
-                {
-                    context.Writer.WritePropertyName("ValidationStatusMessage");
-                    context.Writer.Write(publicRequest.ValidationStatusMessage);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

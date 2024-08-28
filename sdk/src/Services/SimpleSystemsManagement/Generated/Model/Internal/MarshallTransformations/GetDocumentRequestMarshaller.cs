@@ -63,39 +63,42 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDocumentFormat())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DocumentFormat");
-                    context.Writer.Write(publicRequest.DocumentFormat);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDocumentFormat())
+                    {
+                        context.Writer.WritePropertyName("DocumentFormat");
+                        context.Writer.Write(publicRequest.DocumentFormat);
+                    }
+
+                    if(publicRequest.IsSetDocumentVersion())
+                    {
+                        context.Writer.WritePropertyName("DocumentVersion");
+                        context.Writer.Write(publicRequest.DocumentVersion);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetVersionName())
+                    {
+                        context.Writer.WritePropertyName("VersionName");
+                        context.Writer.Write(publicRequest.VersionName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDocumentVersion())
-                {
-                    context.Writer.WritePropertyName("DocumentVersion");
-                    context.Writer.Write(publicRequest.DocumentVersion);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetVersionName())
-                {
-                    context.Writer.WritePropertyName("VersionName");
-                    context.Writer.Write(publicRequest.VersionName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

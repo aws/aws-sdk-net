@@ -61,50 +61,53 @@ namespace Amazon.KinesisVideoArchivedMedia.Model.Internal.MarshallTransformation
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/listFragments";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFragmentSelector())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("FragmentSelector");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFragmentSelector())
+                    {
+                        context.Writer.WritePropertyName("FragmentSelector");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = FragmentSelectorMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.FragmentSelector, context);
+                        var marshaller = FragmentSelectorMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.FragmentSelector, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetStreamARN())
+                    {
+                        context.Writer.WritePropertyName("StreamARN");
+                        context.Writer.Write(publicRequest.StreamARN);
+                    }
+
+                    if(publicRequest.IsSetStreamName())
+                    {
+                        context.Writer.WritePropertyName("StreamName");
+                        context.Writer.Write(publicRequest.StreamName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetStreamARN())
-                {
-                    context.Writer.WritePropertyName("StreamARN");
-                    context.Writer.Write(publicRequest.StreamARN);
-                }
-
-                if(publicRequest.IsSetStreamName())
-                {
-                    context.Writer.WritePropertyName("StreamName");
-                    context.Writer.Write(publicRequest.StreamName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

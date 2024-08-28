@@ -64,32 +64,35 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 throw new AmazonBackupException("Request object does not have required field BackupPlanId set");
             request.AddPathResource("{backupPlanId}", StringUtils.FromString(publicRequest.BackupPlanId));
             request.ResourcePath = "/backup/plans/{backupPlanId}/selections/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBackupSelection())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("BackupSelection");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBackupSelection())
+                    {
+                        context.Writer.WritePropertyName("BackupSelection");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = BackupSelectionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.BackupSelection, context);
+                        var marshaller = BackupSelectionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.BackupSelection, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetCreatorRequestId())
+                    {
+                        context.Writer.WritePropertyName("CreatorRequestId");
+                        context.Writer.Write(publicRequest.CreatorRequestId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCreatorRequestId())
-                {
-                    context.Writer.WritePropertyName("CreatorRequestId");
-                    context.Writer.Write(publicRequest.CreatorRequestId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

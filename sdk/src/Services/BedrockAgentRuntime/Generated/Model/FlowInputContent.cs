@@ -50,7 +50,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property Document. 
         /// <para>
-        /// The input for the flow input node.
+        /// The input to send to the prompt flow input node.
         /// </para>
         /// </summary>
         public Amazon.Runtime.Documents.Document Document

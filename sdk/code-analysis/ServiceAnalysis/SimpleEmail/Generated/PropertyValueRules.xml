@@ -35,4 +35,10 @@
     <property>Amazon.SimpleEmail.Model.BulkEmailDestination.ReplacementTemplateData</property>
     <max>262144</max>
   </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmail.Model.S3Action.IamRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:[\w-]+:iam::[0-9]+:role/[\w-]+</pattern>
+  </property-value-rule>
 </property-value-rules>

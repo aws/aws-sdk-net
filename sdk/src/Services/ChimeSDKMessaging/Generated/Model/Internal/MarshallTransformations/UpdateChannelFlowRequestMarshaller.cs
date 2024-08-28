@@ -64,37 +64,40 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                 throw new AmazonChimeSDKMessagingException("Request object does not have required field ChannelFlowArn set");
             request.AddPathResource("{channelFlowArn}", StringUtils.FromString(publicRequest.ChannelFlowArn));
             request.ResourcePath = "/channel-flows/{channelFlowArn}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetProcessors())
-                {
-                    context.Writer.WritePropertyName("Processors");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestProcessorsListValue in publicRequest.Processors)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetName())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ProcessorMarshaller.Instance;
-                        marshaller.Marshall(publicRequestProcessorsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetProcessors())
+                    {
+                        context.Writer.WritePropertyName("Processors");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestProcessorsListValue in publicRequest.Processors)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ProcessorMarshaller.Instance;
+                            marshaller.Marshall(publicRequestProcessorsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

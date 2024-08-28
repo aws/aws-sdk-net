@@ -67,77 +67,80 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field InstanceId set");
             request.AddPathResource("{InstanceId}", StringUtils.FromString(publicRequest.InstanceId));
             request.ResourcePath = "/evaluation-forms/{InstanceId}/{EvaluationFormId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetCreateNewVersion())
-                {
-                    context.Writer.WritePropertyName("CreateNewVersion");
-                    context.Writer.Write(publicRequest.CreateNewVersion.Value);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetEvaluationFormVersion())
-                {
-                    context.Writer.WritePropertyName("EvaluationFormVersion");
-                    context.Writer.Write(publicRequest.EvaluationFormVersion.Value);
-                }
-
-                if(publicRequest.IsSetItems())
-                {
-                    context.Writer.WritePropertyName("Items");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestItemsListValue in publicRequest.Items)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetCreateNewVersion())
+                    {
+                        context.Writer.WritePropertyName("CreateNewVersion");
+                        context.Writer.Write(publicRequest.CreateNewVersion.Value);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetEvaluationFormVersion())
+                    {
+                        context.Writer.WritePropertyName("EvaluationFormVersion");
+                        context.Writer.Write(publicRequest.EvaluationFormVersion.Value);
+                    }
+
+                    if(publicRequest.IsSetItems())
+                    {
+                        context.Writer.WritePropertyName("Items");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestItemsListValue in publicRequest.Items)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = EvaluationFormItemMarshaller.Instance;
+                            marshaller.Marshall(publicRequestItemsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetScoringStrategy())
+                    {
+                        context.Writer.WritePropertyName("ScoringStrategy");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = EvaluationFormItemMarshaller.Instance;
-                        marshaller.Marshall(publicRequestItemsListValue, context);
+                        var marshaller = EvaluationFormScoringStrategyMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ScoringStrategy, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTitle())
+                    {
+                        context.Writer.WritePropertyName("Title");
+                        context.Writer.Write(publicRequest.Title);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetScoringStrategy())
-                {
-                    context.Writer.WritePropertyName("ScoringStrategy");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EvaluationFormScoringStrategyMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ScoringStrategy, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTitle())
-                {
-                    context.Writer.WritePropertyName("Title");
-                    context.Writer.Write(publicRequest.Title);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

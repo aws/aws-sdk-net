@@ -61,38 +61,41 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/phone-number-orders";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetE164PhoneNumbers())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("E164PhoneNumbers");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestE164PhoneNumbersListValue in publicRequest.E164PhoneNumbers)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetE164PhoneNumbers())
                     {
-                            context.Writer.Write(publicRequestE164PhoneNumbersListValue);
+                        context.Writer.WritePropertyName("E164PhoneNumbers");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestE164PhoneNumbersListValue in publicRequest.E164PhoneNumbers)
+                        {
+                                context.Writer.Write(publicRequestE164PhoneNumbersListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetProductType())
+                    {
+                        context.Writer.WritePropertyName("ProductType");
+                        context.Writer.Write(publicRequest.ProductType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetProductType())
-                {
-                    context.Writer.WritePropertyName("ProductType");
-                    context.Writer.Write(publicRequest.ProductType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

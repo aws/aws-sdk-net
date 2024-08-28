@@ -61,43 +61,46 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/batch-disassociate-resources-from-custom-line-item";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBillingPeriodRange())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("BillingPeriodRange");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CustomLineItemBillingPeriodRangeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.BillingPeriodRange, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetResourceArns())
-                {
-                    context.Writer.WritePropertyName("ResourceArns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestResourceArnsListValue in publicRequest.ResourceArns)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBillingPeriodRange())
                     {
-                            context.Writer.Write(publicRequestResourceArnsListValue);
+                        context.Writer.WritePropertyName("BillingPeriodRange");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CustomLineItemBillingPeriodRangeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.BillingPeriodRange, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetResourceArns())
+                    {
+                        context.Writer.WritePropertyName("ResourceArns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestResourceArnsListValue in publicRequest.ResourceArns)
+                        {
+                                context.Writer.Write(publicRequestResourceArnsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTargetArn())
+                    {
+                        context.Writer.WritePropertyName("TargetArn");
+                        context.Writer.Write(publicRequest.TargetArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTargetArn())
-                {
-                    context.Writer.WritePropertyName("TargetArn");
-                    context.Writer.Write(publicRequest.TargetArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

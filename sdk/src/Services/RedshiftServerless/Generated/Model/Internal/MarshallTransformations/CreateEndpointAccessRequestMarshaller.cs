@@ -63,55 +63,58 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEndpointName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("endpointName");
-                    context.Writer.Write(publicRequest.EndpointName);
-                }
-
-                if(publicRequest.IsSetOwnerAccount())
-                {
-                    context.Writer.WritePropertyName("ownerAccount");
-                    context.Writer.Write(publicRequest.OwnerAccount);
-                }
-
-                if(publicRequest.IsSetSubnetIds())
-                {
-                    context.Writer.WritePropertyName("subnetIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSubnetIdsListValue in publicRequest.SubnetIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEndpointName())
                     {
-                            context.Writer.Write(publicRequestSubnetIdsListValue);
+                        context.Writer.WritePropertyName("endpointName");
+                        context.Writer.Write(publicRequest.EndpointName);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetVpcSecurityGroupIds())
-                {
-                    context.Writer.WritePropertyName("vpcSecurityGroupIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestVpcSecurityGroupIdsListValue in publicRequest.VpcSecurityGroupIds)
+                    if(publicRequest.IsSetOwnerAccount())
                     {
-                            context.Writer.Write(publicRequestVpcSecurityGroupIdsListValue);
+                        context.Writer.WritePropertyName("ownerAccount");
+                        context.Writer.Write(publicRequest.OwnerAccount);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetSubnetIds())
+                    {
+                        context.Writer.WritePropertyName("subnetIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSubnetIdsListValue in publicRequest.SubnetIds)
+                        {
+                                context.Writer.Write(publicRequestSubnetIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetVpcSecurityGroupIds())
+                    {
+                        context.Writer.WritePropertyName("vpcSecurityGroupIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestVpcSecurityGroupIdsListValue in publicRequest.VpcSecurityGroupIds)
+                        {
+                                context.Writer.Write(publicRequestVpcSecurityGroupIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetWorkgroupName())
+                    {
+                        context.Writer.WritePropertyName("workgroupName");
+                        context.Writer.Write(publicRequest.WorkgroupName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetWorkgroupName())
-                {
-                    context.Writer.WritePropertyName("workgroupName");
-                    context.Writer.Write(publicRequest.WorkgroupName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

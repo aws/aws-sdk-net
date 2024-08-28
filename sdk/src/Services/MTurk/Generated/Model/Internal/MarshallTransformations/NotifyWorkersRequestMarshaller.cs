@@ -63,38 +63,41 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMessageText())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("MessageText");
-                    context.Writer.Write(publicRequest.MessageText);
-                }
-
-                if(publicRequest.IsSetSubject())
-                {
-                    context.Writer.WritePropertyName("Subject");
-                    context.Writer.Write(publicRequest.Subject);
-                }
-
-                if(publicRequest.IsSetWorkerIds())
-                {
-                    context.Writer.WritePropertyName("WorkerIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestWorkerIdsListValue in publicRequest.WorkerIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMessageText())
                     {
-                            context.Writer.Write(publicRequestWorkerIdsListValue);
+                        context.Writer.WritePropertyName("MessageText");
+                        context.Writer.Write(publicRequest.MessageText);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetSubject())
+                    {
+                        context.Writer.WritePropertyName("Subject");
+                        context.Writer.Write(publicRequest.Subject);
+                    }
+
+                    if(publicRequest.IsSetWorkerIds())
+                    {
+                        context.Writer.WritePropertyName("WorkerIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestWorkerIdsListValue in publicRequest.WorkerIds)
+                        {
+                                context.Writer.Write(publicRequestWorkerIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

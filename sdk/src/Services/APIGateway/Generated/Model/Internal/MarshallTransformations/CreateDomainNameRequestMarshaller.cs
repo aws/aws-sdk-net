@@ -61,111 +61,114 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/domainnames";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCertificateArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("certificateArn");
-                    context.Writer.Write(publicRequest.CertificateArn);
-                }
-
-                if(publicRequest.IsSetCertificateBody())
-                {
-                    context.Writer.WritePropertyName("certificateBody");
-                    context.Writer.Write(publicRequest.CertificateBody);
-                }
-
-                if(publicRequest.IsSetCertificateChain())
-                {
-                    context.Writer.WritePropertyName("certificateChain");
-                    context.Writer.Write(publicRequest.CertificateChain);
-                }
-
-                if(publicRequest.IsSetCertificateName())
-                {
-                    context.Writer.WritePropertyName("certificateName");
-                    context.Writer.Write(publicRequest.CertificateName);
-                }
-
-                if(publicRequest.IsSetCertificatePrivateKey())
-                {
-                    context.Writer.WritePropertyName("certificatePrivateKey");
-                    context.Writer.Write(publicRequest.CertificatePrivateKey);
-                }
-
-                if(publicRequest.IsSetDomainName())
-                {
-                    context.Writer.WritePropertyName("domainName");
-                    context.Writer.Write(publicRequest.DomainName);
-                }
-
-                if(publicRequest.IsSetEndpointConfiguration())
-                {
-                    context.Writer.WritePropertyName("endpointConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EndpointConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EndpointConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMutualTlsAuthentication())
-                {
-                    context.Writer.WritePropertyName("mutualTlsAuthentication");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MutualTlsAuthenticationInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.MutualTlsAuthentication, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOwnershipVerificationCertificateArn())
-                {
-                    context.Writer.WritePropertyName("ownershipVerificationCertificateArn");
-                    context.Writer.Write(publicRequest.OwnershipVerificationCertificateArn);
-                }
-
-                if(publicRequest.IsSetRegionalCertificateArn())
-                {
-                    context.Writer.WritePropertyName("regionalCertificateArn");
-                    context.Writer.Write(publicRequest.RegionalCertificateArn);
-                }
-
-                if(publicRequest.IsSetRegionalCertificateName())
-                {
-                    context.Writer.WritePropertyName("regionalCertificateName");
-                    context.Writer.Write(publicRequest.RegionalCertificateName);
-                }
-
-                if(publicRequest.IsSetSecurityPolicy())
-                {
-                    context.Writer.WritePropertyName("securityPolicy");
-                    context.Writer.Write(publicRequest.SecurityPolicy);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCertificateArn())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("certificateArn");
+                        context.Writer.Write(publicRequest.CertificateArn);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetCertificateBody())
+                    {
+                        context.Writer.WritePropertyName("certificateBody");
+                        context.Writer.Write(publicRequest.CertificateBody);
+                    }
+
+                    if(publicRequest.IsSetCertificateChain())
+                    {
+                        context.Writer.WritePropertyName("certificateChain");
+                        context.Writer.Write(publicRequest.CertificateChain);
+                    }
+
+                    if(publicRequest.IsSetCertificateName())
+                    {
+                        context.Writer.WritePropertyName("certificateName");
+                        context.Writer.Write(publicRequest.CertificateName);
+                    }
+
+                    if(publicRequest.IsSetCertificatePrivateKey())
+                    {
+                        context.Writer.WritePropertyName("certificatePrivateKey");
+                        context.Writer.Write(publicRequest.CertificatePrivateKey);
+                    }
+
+                    if(publicRequest.IsSetDomainName())
+                    {
+                        context.Writer.WritePropertyName("domainName");
+                        context.Writer.Write(publicRequest.DomainName);
+                    }
+
+                    if(publicRequest.IsSetEndpointConfiguration())
+                    {
+                        context.Writer.WritePropertyName("endpointConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EndpointConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EndpointConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetMutualTlsAuthentication())
+                    {
+                        context.Writer.WritePropertyName("mutualTlsAuthentication");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MutualTlsAuthenticationInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.MutualTlsAuthentication, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetOwnershipVerificationCertificateArn())
+                    {
+                        context.Writer.WritePropertyName("ownershipVerificationCertificateArn");
+                        context.Writer.Write(publicRequest.OwnershipVerificationCertificateArn);
+                    }
+
+                    if(publicRequest.IsSetRegionalCertificateArn())
+                    {
+                        context.Writer.WritePropertyName("regionalCertificateArn");
+                        context.Writer.Write(publicRequest.RegionalCertificateArn);
+                    }
+
+                    if(publicRequest.IsSetRegionalCertificateName())
+                    {
+                        context.Writer.WritePropertyName("regionalCertificateName");
+                        context.Writer.Write(publicRequest.RegionalCertificateName);
+                    }
+
+                    if(publicRequest.IsSetSecurityPolicy())
+                    {
+                        context.Writer.WritePropertyName("securityPolicy");
+                        context.Writer.Write(publicRequest.SecurityPolicy);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

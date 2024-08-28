@@ -63,37 +63,40 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAttributeKeys())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("attributeKeys");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAttributeKeysListValue in publicRequest.AttributeKeys)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAttributeKeys())
                     {
-                            context.Writer.Write(publicRequestAttributeKeysListValue);
+                        context.Writer.WritePropertyName("attributeKeys");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAttributeKeysListValue in publicRequest.AttributeKeys)
+                        {
+                                context.Writer.Write(publicRequestAttributeKeysListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetFindingArns())
+                    {
+                        context.Writer.WritePropertyName("findingArns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFindingArnsListValue in publicRequest.FindingArns)
+                        {
+                                context.Writer.Write(publicRequestFindingArnsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetFindingArns())
-                {
-                    context.Writer.WritePropertyName("findingArns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFindingArnsListValue in publicRequest.FindingArns)
-                    {
-                            context.Writer.Write(publicRequestFindingArnsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

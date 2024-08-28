@@ -64,26 +64,29 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
                 throw new AmazonSecurityLakeException("Request object does not have required field SubscriberId set");
             request.AddPathResource("{subscriberId}", StringUtils.FromString(publicRequest.SubscriberId));
             request.ResourcePath = "/v1/subscribers/{subscriberId}/notification";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("configuration");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConfiguration())
+                    {
+                        context.Writer.WritePropertyName("configuration");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = NotificationConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Configuration, context);
+                        var marshaller = NotificationConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Configuration, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -64,32 +64,54 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 throw new AmazonMediaLiveException("Request object does not have required field MultiplexId set");
             request.AddPathResource("{multiplexId}", StringUtils.FromString(publicRequest.MultiplexId));
             request.ResourcePath = "/prod/multiplexes/{multiplexId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMultiplexSettings())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("multiplexSettings");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMultiplexSettings())
+                    {
+                        context.Writer.WritePropertyName("multiplexSettings");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = MultiplexSettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.MultiplexSettings, context);
+                        var marshaller = MultiplexSettingsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.MultiplexSettings, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetPacketIdentifiersMapping())
+                    {
+                        context.Writer.WritePropertyName("packetIdentifiersMapping");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestPacketIdentifiersMappingKvp in publicRequest.PacketIdentifiersMapping)
+                        {
+                            context.Writer.WritePropertyName(publicRequestPacketIdentifiersMappingKvp.Key);
+                            var publicRequestPacketIdentifiersMappingValue = publicRequestPacketIdentifiersMappingKvp.Value;
+
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = MultiplexProgramPacketIdentifiersMapMarshaller.Instance;
+                            marshaller.Marshall(publicRequestPacketIdentifiersMappingValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

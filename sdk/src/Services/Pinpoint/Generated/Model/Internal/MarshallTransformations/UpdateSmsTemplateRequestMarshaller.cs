@@ -70,19 +70,22 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetVersion())
                 request.Parameters.Add("version", StringUtils.FromString(publicRequest.Version));
             request.ResourcePath = "/v1/templates/{template-name}/sms";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                var context = new JsonMarshallerContext(request, writer);
-                context.Writer.WriteObjectStart();
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                {
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    var context = new JsonMarshallerContext(request, writer);
+                    context.Writer.WriteObjectStart();
 
-                var marshaller = SMSTemplateRequestMarshaller.Instance;
-                marshaller.Marshall(publicRequest.SMSTemplateRequest, context);
+                    var marshaller = SMSTemplateRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SMSTemplateRequest, context);
 
-                context.Writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                    context.Writer.WriteObjectEnd();
+                }
+
+                request.Content = memoryStream.ToArray();
             }
 
             request.UseQueryString = true;

@@ -61,131 +61,134 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/jobs";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAllowListIds())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("allowListIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAllowListIdsListValue in publicRequest.AllowListIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAllowListIds())
                     {
-                            context.Writer.Write(publicRequestAllowListIdsListValue);
+                        context.Writer.WritePropertyName("allowListIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAllowListIdsListValue in publicRequest.AllowListIds)
+                        {
+                                context.Writer.Write(publicRequestAllowListIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetCustomDataIdentifierIds())
-                {
-                    context.Writer.WritePropertyName("customDataIdentifierIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCustomDataIdentifierIdsListValue in publicRequest.CustomDataIdentifierIds)
+                    if(publicRequest.IsSetClientToken())
                     {
-                            context.Writer.Write(publicRequestCustomDataIdentifierIdsListValue);
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetInitialRun())
-                {
-                    context.Writer.WritePropertyName("initialRun");
-                    context.Writer.Write(publicRequest.InitialRun.Value);
-                }
-
-                if(publicRequest.IsSetJobType())
-                {
-                    context.Writer.WritePropertyName("jobType");
-                    context.Writer.Write(publicRequest.JobType);
-                }
-
-                if(publicRequest.IsSetManagedDataIdentifierIds())
-                {
-                    context.Writer.WritePropertyName("managedDataIdentifierIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestManagedDataIdentifierIdsListValue in publicRequest.ManagedDataIdentifierIds)
+                    else if(!(publicRequest.IsSetClientToken()))
                     {
-                            context.Writer.Write(publicRequestManagedDataIdentifierIdsListValue);
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
                     }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetManagedDataIdentifierSelector())
-                {
-                    context.Writer.WritePropertyName("managedDataIdentifierSelector");
-                    context.Writer.Write(publicRequest.ManagedDataIdentifierSelector);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetS3JobDefinition())
-                {
-                    context.Writer.WritePropertyName("s3JobDefinition");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = S3JobDefinitionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.S3JobDefinition, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSamplingPercentage())
-                {
-                    context.Writer.WritePropertyName("samplingPercentage");
-                    context.Writer.Write(publicRequest.SamplingPercentage.Value);
-                }
-
-                if(publicRequest.IsSetScheduleFrequency())
-                {
-                    context.Writer.WritePropertyName("scheduleFrequency");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = JobScheduleFrequencyMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ScheduleFrequency, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetCustomDataIdentifierIds())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("customDataIdentifierIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCustomDataIdentifierIdsListValue in publicRequest.CustomDataIdentifierIds)
+                        {
+                                context.Writer.Write(publicRequestCustomDataIdentifierIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetInitialRun())
+                    {
+                        context.Writer.WritePropertyName("initialRun");
+                        context.Writer.Write(publicRequest.InitialRun.Value);
+                    }
+
+                    if(publicRequest.IsSetJobType())
+                    {
+                        context.Writer.WritePropertyName("jobType");
+                        context.Writer.Write(publicRequest.JobType);
+                    }
+
+                    if(publicRequest.IsSetManagedDataIdentifierIds())
+                    {
+                        context.Writer.WritePropertyName("managedDataIdentifierIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestManagedDataIdentifierIdsListValue in publicRequest.ManagedDataIdentifierIds)
+                        {
+                                context.Writer.Write(publicRequestManagedDataIdentifierIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetManagedDataIdentifierSelector())
+                    {
+                        context.Writer.WritePropertyName("managedDataIdentifierSelector");
+                        context.Writer.Write(publicRequest.ManagedDataIdentifierSelector);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetS3JobDefinition())
+                    {
+                        context.Writer.WritePropertyName("s3JobDefinition");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = S3JobDefinitionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.S3JobDefinition, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSamplingPercentage())
+                    {
+                        context.Writer.WritePropertyName("samplingPercentage");
+                        context.Writer.Write(publicRequest.SamplingPercentage.Value);
+                    }
+
+                    if(publicRequest.IsSetScheduleFrequency())
+                    {
+                        context.Writer.WritePropertyName("scheduleFrequency");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = JobScheduleFrequencyMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ScheduleFrequency, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

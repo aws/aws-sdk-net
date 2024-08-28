@@ -63,43 +63,46 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetExecutionRoleArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ExecutionRoleArn");
-                    context.Writer.Write(publicRequest.ExecutionRoleArn);
-                }
-
-                if(publicRequest.IsSetJobFlowId())
-                {
-                    context.Writer.WritePropertyName("JobFlowId");
-                    context.Writer.Write(publicRequest.JobFlowId);
-                }
-
-                if(publicRequest.IsSetSteps())
-                {
-                    context.Writer.WritePropertyName("Steps");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestStepsListValue in publicRequest.Steps)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetExecutionRoleArn())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = StepConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequestStepsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("ExecutionRoleArn");
+                        context.Writer.Write(publicRequest.ExecutionRoleArn);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetJobFlowId())
+                    {
+                        context.Writer.WritePropertyName("JobFlowId");
+                        context.Writer.Write(publicRequest.JobFlowId);
+                    }
+
+                    if(publicRequest.IsSetSteps())
+                    {
+                        context.Writer.WritePropertyName("Steps");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestStepsListValue in publicRequest.Steps)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = StepConfigMarshaller.Instance;
+                            marshaller.Marshall(publicRequestStepsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

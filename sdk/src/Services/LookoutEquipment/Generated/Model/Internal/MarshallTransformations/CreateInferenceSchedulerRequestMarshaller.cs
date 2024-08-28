@@ -63,100 +63,103 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDataDelayOffsetInMinutes())
-                {
-                    context.Writer.WritePropertyName("DataDelayOffsetInMinutes");
-                    context.Writer.Write(publicRequest.DataDelayOffsetInMinutes.Value);
-                }
-
-                if(publicRequest.IsSetDataInputConfiguration())
-                {
-                    context.Writer.WritePropertyName("DataInputConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = InferenceInputConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DataInputConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDataOutputConfiguration())
-                {
-                    context.Writer.WritePropertyName("DataOutputConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = InferenceOutputConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DataOutputConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDataUploadFrequency())
-                {
-                    context.Writer.WritePropertyName("DataUploadFrequency");
-                    context.Writer.Write(publicRequest.DataUploadFrequency);
-                }
-
-                if(publicRequest.IsSetInferenceSchedulerName())
-                {
-                    context.Writer.WritePropertyName("InferenceSchedulerName");
-                    context.Writer.Write(publicRequest.InferenceSchedulerName);
-                }
-
-                if(publicRequest.IsSetModelName())
-                {
-                    context.Writer.WritePropertyName("ModelName");
-                    context.Writer.Write(publicRequest.ModelName);
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("RoleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetServerSideKmsKeyId())
-                {
-                    context.Writer.WritePropertyName("ServerSideKmsKeyId");
-                    context.Writer.Write(publicRequest.ServerSideKmsKeyId);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetDataDelayOffsetInMinutes())
+                    {
+                        context.Writer.WritePropertyName("DataDelayOffsetInMinutes");
+                        context.Writer.Write(publicRequest.DataDelayOffsetInMinutes.Value);
+                    }
+
+                    if(publicRequest.IsSetDataInputConfiguration())
+                    {
+                        context.Writer.WritePropertyName("DataInputConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = InferenceInputConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DataInputConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDataOutputConfiguration())
+                    {
+                        context.Writer.WritePropertyName("DataOutputConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = InferenceOutputConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DataOutputConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDataUploadFrequency())
+                    {
+                        context.Writer.WritePropertyName("DataUploadFrequency");
+                        context.Writer.Write(publicRequest.DataUploadFrequency);
+                    }
+
+                    if(publicRequest.IsSetInferenceSchedulerName())
+                    {
+                        context.Writer.WritePropertyName("InferenceSchedulerName");
+                        context.Writer.Write(publicRequest.InferenceSchedulerName);
+                    }
+
+                    if(publicRequest.IsSetModelName())
+                    {
+                        context.Writer.WritePropertyName("ModelName");
+                        context.Writer.Write(publicRequest.ModelName);
+                    }
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("RoleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    if(publicRequest.IsSetServerSideKmsKeyId())
+                    {
+                        context.Writer.WritePropertyName("ServerSideKmsKeyId");
+                        context.Writer.Write(publicRequest.ServerSideKmsKeyId);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

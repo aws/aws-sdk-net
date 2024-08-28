@@ -63,69 +63,72 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEndTime())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("endTime");
-                    context.Writer.Write(Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds(publicRequest.EndTime.Value));
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEndTime())
+                    {
+                        context.Writer.WritePropertyName("endTime");
+                        context.Writer.Write(Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds(publicRequest.EndTime.Value));
+                    }
+
+                    if(publicRequest.IsSetLimit())
+                    {
+                        context.Writer.WritePropertyName("limit");
+                        context.Writer.Write(publicRequest.Limit.Value);
+                    }
+
+                    if(publicRequest.IsSetLogGroupIdentifier())
+                    {
+                        context.Writer.WritePropertyName("logGroupIdentifier");
+                        context.Writer.Write(publicRequest.LogGroupIdentifier);
+                    }
+
+                    if(publicRequest.IsSetLogGroupName())
+                    {
+                        context.Writer.WritePropertyName("logGroupName");
+                        context.Writer.Write(publicRequest.LogGroupName);
+                    }
+
+                    if(publicRequest.IsSetLogStreamName())
+                    {
+                        context.Writer.WritePropertyName("logStreamName");
+                        context.Writer.Write(publicRequest.LogStreamName);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetStartFromHead())
+                    {
+                        context.Writer.WritePropertyName("startFromHead");
+                        context.Writer.Write(publicRequest.StartFromHead.Value);
+                    }
+
+                    if(publicRequest.IsSetStartTime())
+                    {
+                        context.Writer.WritePropertyName("startTime");
+                        context.Writer.Write(Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds(publicRequest.StartTime.Value));
+                    }
+
+                    if(publicRequest.IsSetUnmask())
+                    {
+                        context.Writer.WritePropertyName("unmask");
+                        context.Writer.Write(publicRequest.Unmask.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetLimit())
-                {
-                    context.Writer.WritePropertyName("limit");
-                    context.Writer.Write(publicRequest.Limit.Value);
-                }
-
-                if(publicRequest.IsSetLogGroupIdentifier())
-                {
-                    context.Writer.WritePropertyName("logGroupIdentifier");
-                    context.Writer.Write(publicRequest.LogGroupIdentifier);
-                }
-
-                if(publicRequest.IsSetLogGroupName())
-                {
-                    context.Writer.WritePropertyName("logGroupName");
-                    context.Writer.Write(publicRequest.LogGroupName);
-                }
-
-                if(publicRequest.IsSetLogStreamName())
-                {
-                    context.Writer.WritePropertyName("logStreamName");
-                    context.Writer.Write(publicRequest.LogStreamName);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetStartFromHead())
-                {
-                    context.Writer.WritePropertyName("startFromHead");
-                    context.Writer.Write(publicRequest.StartFromHead.Value);
-                }
-
-                if(publicRequest.IsSetStartTime())
-                {
-                    context.Writer.WritePropertyName("startTime");
-                    context.Writer.Write(Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds(publicRequest.StartTime.Value));
-                }
-
-                if(publicRequest.IsSetUnmask())
-                {
-                    context.Writer.WritePropertyName("unmask");
-                    context.Writer.Write(publicRequest.Unmask.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

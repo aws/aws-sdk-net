@@ -37,6 +37,7 @@ namespace Amazon.Glue.Model
     {
         private string _catalogId;
         private string _databaseName;
+        private bool? _includeStatusDetails;
         private string _name;
         private DateTime? _queryAsOfTime;
         private string _transactionId;
@@ -79,6 +80,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetDatabaseName()
         {
             return this._databaseName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeStatusDetails. 
+        /// <para>
+        /// Specifies whether to include status details related to a request to create or update
+        /// an Glue Data Catalog view.
+        /// </para>
+        /// </summary>
+        public bool? IncludeStatusDetails
+        {
+            get { return this._includeStatusDetails; }
+            set { this._includeStatusDetails = value; }
+        }
+
+        // Check to see if IncludeStatusDetails property is set
+        internal bool IsSetIncludeStatusDetails()
+        {
+            return this._includeStatusDetails.HasValue; 
         }
 
         /// <summary>

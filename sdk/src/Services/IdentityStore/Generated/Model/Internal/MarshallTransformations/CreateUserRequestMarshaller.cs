@@ -63,134 +63,137 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAddresses())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Addresses");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAddressesListValue in publicRequest.Addresses)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAddresses())
                     {
+                        context.Writer.WritePropertyName("Addresses");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAddressesListValue in publicRequest.Addresses)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = AddressMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAddressesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetDisplayName())
+                    {
+                        context.Writer.WritePropertyName("DisplayName");
+                        context.Writer.Write(publicRequest.DisplayName);
+                    }
+
+                    if(publicRequest.IsSetEmails())
+                    {
+                        context.Writer.WritePropertyName("Emails");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestEmailsListValue in publicRequest.Emails)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = EmailMarshaller.Instance;
+                            marshaller.Marshall(publicRequestEmailsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetIdentityStoreId())
+                    {
+                        context.Writer.WritePropertyName("IdentityStoreId");
+                        context.Writer.Write(publicRequest.IdentityStoreId);
+                    }
+
+                    if(publicRequest.IsSetLocale())
+                    {
+                        context.Writer.WritePropertyName("Locale");
+                        context.Writer.Write(publicRequest.Locale);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = AddressMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAddressesListValue, context);
+                        var marshaller = NameMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Name, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDisplayName())
-                {
-                    context.Writer.WritePropertyName("DisplayName");
-                    context.Writer.Write(publicRequest.DisplayName);
-                }
-
-                if(publicRequest.IsSetEmails())
-                {
-                    context.Writer.WritePropertyName("Emails");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEmailsListValue in publicRequest.Emails)
+                    if(publicRequest.IsSetNickName())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EmailMarshaller.Instance;
-                        marshaller.Marshall(publicRequestEmailsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("NickName");
+                        context.Writer.Write(publicRequest.NickName);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetIdentityStoreId())
-                {
-                    context.Writer.WritePropertyName("IdentityStoreId");
-                    context.Writer.Write(publicRequest.IdentityStoreId);
-                }
-
-                if(publicRequest.IsSetLocale())
-                {
-                    context.Writer.WritePropertyName("Locale");
-                    context.Writer.Write(publicRequest.Locale);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = NameMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Name, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetNickName())
-                {
-                    context.Writer.WritePropertyName("NickName");
-                    context.Writer.Write(publicRequest.NickName);
-                }
-
-                if(publicRequest.IsSetPhoneNumbers())
-                {
-                    context.Writer.WritePropertyName("PhoneNumbers");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPhoneNumbersListValue in publicRequest.PhoneNumbers)
+                    if(publicRequest.IsSetPhoneNumbers())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("PhoneNumbers");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPhoneNumbersListValue in publicRequest.PhoneNumbers)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = PhoneNumberMarshaller.Instance;
-                        marshaller.Marshall(publicRequestPhoneNumbersListValue, context);
+                            var marshaller = PhoneNumberMarshaller.Instance;
+                            marshaller.Marshall(publicRequestPhoneNumbersListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetPreferredLanguage())
+                    {
+                        context.Writer.WritePropertyName("PreferredLanguage");
+                        context.Writer.Write(publicRequest.PreferredLanguage);
+                    }
+
+                    if(publicRequest.IsSetProfileUrl())
+                    {
+                        context.Writer.WritePropertyName("ProfileUrl");
+                        context.Writer.Write(publicRequest.ProfileUrl);
+                    }
+
+                    if(publicRequest.IsSetTimezone())
+                    {
+                        context.Writer.WritePropertyName("Timezone");
+                        context.Writer.Write(publicRequest.Timezone);
+                    }
+
+                    if(publicRequest.IsSetTitle())
+                    {
+                        context.Writer.WritePropertyName("Title");
+                        context.Writer.Write(publicRequest.Title);
+                    }
+
+                    if(publicRequest.IsSetUserName())
+                    {
+                        context.Writer.WritePropertyName("UserName");
+                        context.Writer.Write(publicRequest.UserName);
+                    }
+
+                    if(publicRequest.IsSetUserType())
+                    {
+                        context.Writer.WritePropertyName("UserType");
+                        context.Writer.Write(publicRequest.UserType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPreferredLanguage())
-                {
-                    context.Writer.WritePropertyName("PreferredLanguage");
-                    context.Writer.Write(publicRequest.PreferredLanguage);
-                }
-
-                if(publicRequest.IsSetProfileUrl())
-                {
-                    context.Writer.WritePropertyName("ProfileUrl");
-                    context.Writer.Write(publicRequest.ProfileUrl);
-                }
-
-                if(publicRequest.IsSetTimezone())
-                {
-                    context.Writer.WritePropertyName("Timezone");
-                    context.Writer.Write(publicRequest.Timezone);
-                }
-
-                if(publicRequest.IsSetTitle())
-                {
-                    context.Writer.WritePropertyName("Title");
-                    context.Writer.Write(publicRequest.Title);
-                }
-
-                if(publicRequest.IsSetUserName())
-                {
-                    context.Writer.WritePropertyName("UserName");
-                    context.Writer.Write(publicRequest.UserName);
-                }
-
-                if(publicRequest.IsSetUserType())
-                {
-                    context.Writer.WritePropertyName("UserType");
-                    context.Writer.Write(publicRequest.UserType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

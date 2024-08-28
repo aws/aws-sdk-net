@@ -63,33 +63,36 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetForceDeleteWithoutRecovery())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ForceDeleteWithoutRecovery");
-                    context.Writer.Write(publicRequest.ForceDeleteWithoutRecovery.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetForceDeleteWithoutRecovery())
+                    {
+                        context.Writer.WritePropertyName("ForceDeleteWithoutRecovery");
+                        context.Writer.Write(publicRequest.ForceDeleteWithoutRecovery.Value);
+                    }
+
+                    if(publicRequest.IsSetRecoveryWindowInDays())
+                    {
+                        context.Writer.WritePropertyName("RecoveryWindowInDays");
+                        context.Writer.Write(publicRequest.RecoveryWindowInDays.Value);
+                    }
+
+                    if(publicRequest.IsSetSecretId())
+                    {
+                        context.Writer.WritePropertyName("SecretId");
+                        context.Writer.Write(publicRequest.SecretId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRecoveryWindowInDays())
-                {
-                    context.Writer.WritePropertyName("RecoveryWindowInDays");
-                    context.Writer.Write(publicRequest.RecoveryWindowInDays.Value);
-                }
-
-                if(publicRequest.IsSetSecretId())
-                {
-                    context.Writer.WritePropertyName("SecretId");
-                    context.Writer.Write(publicRequest.SecretId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

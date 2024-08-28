@@ -63,60 +63,63 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDecisions())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("decisions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDecisionsListValue in publicRequest.Decisions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDecisions())
                     {
+                        context.Writer.WritePropertyName("decisions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDecisionsListValue in publicRequest.Decisions)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = DecisionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestDecisionsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetExecutionContext())
+                    {
+                        context.Writer.WritePropertyName("executionContext");
+                        context.Writer.Write(publicRequest.ExecutionContext);
+                    }
+
+                    if(publicRequest.IsSetTaskList())
+                    {
+                        context.Writer.WritePropertyName("taskList");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = DecisionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestDecisionsListValue, context);
+                        var marshaller = TaskListMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TaskList, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTaskListScheduleToStartTimeout())
+                    {
+                        context.Writer.WritePropertyName("taskListScheduleToStartTimeout");
+                        context.Writer.Write(publicRequest.TaskListScheduleToStartTimeout);
+                    }
+
+                    if(publicRequest.IsSetTaskToken())
+                    {
+                        context.Writer.WritePropertyName("taskToken");
+                        context.Writer.Write(publicRequest.TaskToken);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetExecutionContext())
-                {
-                    context.Writer.WritePropertyName("executionContext");
-                    context.Writer.Write(publicRequest.ExecutionContext);
-                }
-
-                if(publicRequest.IsSetTaskList())
-                {
-                    context.Writer.WritePropertyName("taskList");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TaskListMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TaskList, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTaskListScheduleToStartTimeout())
-                {
-                    context.Writer.WritePropertyName("taskListScheduleToStartTimeout");
-                    context.Writer.Write(publicRequest.TaskListScheduleToStartTimeout);
-                }
-
-                if(publicRequest.IsSetTaskToken())
-                {
-                    context.Writer.WritePropertyName("taskToken");
-                    context.Writer.Write(publicRequest.TaskToken);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

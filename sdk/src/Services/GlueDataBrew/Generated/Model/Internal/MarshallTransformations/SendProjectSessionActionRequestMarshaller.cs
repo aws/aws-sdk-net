@@ -64,55 +64,58 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                 throw new AmazonGlueDataBrewException("Request object does not have required field Name set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/projects/{name}/sendProjectSessionAction";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientSessionId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientSessionId");
-                    context.Writer.Write(publicRequest.ClientSessionId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientSessionId())
+                    {
+                        context.Writer.WritePropertyName("ClientSessionId");
+                        context.Writer.Write(publicRequest.ClientSessionId);
+                    }
+
+                    if(publicRequest.IsSetPreview())
+                    {
+                        context.Writer.WritePropertyName("Preview");
+                        context.Writer.Write(publicRequest.Preview.Value);
+                    }
+
+                    if(publicRequest.IsSetRecipeStep())
+                    {
+                        context.Writer.WritePropertyName("RecipeStep");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RecipeStepMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RecipeStep, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetStepIndex())
+                    {
+                        context.Writer.WritePropertyName("StepIndex");
+                        context.Writer.Write(publicRequest.StepIndex.Value);
+                    }
+
+                    if(publicRequest.IsSetViewFrame())
+                    {
+                        context.Writer.WritePropertyName("ViewFrame");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ViewFrameMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ViewFrame, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPreview())
-                {
-                    context.Writer.WritePropertyName("Preview");
-                    context.Writer.Write(publicRequest.Preview.Value);
-                }
-
-                if(publicRequest.IsSetRecipeStep())
-                {
-                    context.Writer.WritePropertyName("RecipeStep");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RecipeStepMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RecipeStep, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetStepIndex())
-                {
-                    context.Writer.WritePropertyName("StepIndex");
-                    context.Writer.Write(publicRequest.StepIndex.Value);
-                }
-
-                if(publicRequest.IsSetViewFrame())
-                {
-                    context.Writer.WritePropertyName("ViewFrame");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ViewFrameMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ViewFrame, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

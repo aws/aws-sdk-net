@@ -64,48 +64,51 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field Id set");
             request.AddPathResource("{Id}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = "/traffic-distribution/{Id}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAgentConfig())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AgentConfig");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAgentConfig())
+                    {
+                        context.Writer.WritePropertyName("AgentConfig");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = AgentConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AgentConfig, context);
+                        var marshaller = AgentConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AgentConfig, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSignInConfig())
+                    {
+                        context.Writer.WritePropertyName("SignInConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SignInConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SignInConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTelephonyConfig())
+                    {
+                        context.Writer.WritePropertyName("TelephonyConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TelephonyConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TelephonyConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSignInConfig())
-                {
-                    context.Writer.WritePropertyName("SignInConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SignInConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SignInConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTelephonyConfig())
-                {
-                    context.Writer.WritePropertyName("TelephonyConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TelephonyConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TelephonyConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

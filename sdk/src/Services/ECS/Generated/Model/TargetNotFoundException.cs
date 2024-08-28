@@ -31,8 +31,8 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// The specified target wasn't found. You can view your available container instances
-    /// with <a>ListContainerInstances</a>. Amazon ECS container instances are cluster-specific
-    /// and Region-specific.
+    /// with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListContainerInstances.html">ListContainerInstances</a>.
+    /// Amazon ECS container instances are cluster-specific and Region-specific.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

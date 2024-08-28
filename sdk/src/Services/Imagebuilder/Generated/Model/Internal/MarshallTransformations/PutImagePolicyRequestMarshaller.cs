@@ -61,27 +61,30 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/PutImagePolicy";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetImageArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("imageArn");
-                    context.Writer.Write(publicRequest.ImageArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetImageArn())
+                    {
+                        context.Writer.WritePropertyName("imageArn");
+                        context.Writer.Write(publicRequest.ImageArn);
+                    }
+
+                    if(publicRequest.IsSetPolicy())
+                    {
+                        context.Writer.WritePropertyName("policy");
+                        context.Writer.Write(publicRequest.Policy);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPolicy())
-                {
-                    context.Writer.WritePropertyName("policy");
-                    context.Writer.Write(publicRequest.Policy);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

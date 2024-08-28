@@ -63,51 +63,54 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetContainers())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("containers");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestContainersKvp in publicRequest.Containers)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetContainers())
                     {
-                        context.Writer.WritePropertyName(publicRequestContainersKvp.Key);
-                        var publicRequestContainersValue = publicRequestContainersKvp.Value;
+                        context.Writer.WritePropertyName("containers");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestContainersKvp in publicRequest.Containers)
+                        {
+                            context.Writer.WritePropertyName(publicRequestContainersKvp.Key);
+                            var publicRequestContainersValue = publicRequestContainersKvp.Value;
 
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ContainerMarshaller.Instance;
+                            marshaller.Marshall(publicRequestContainersValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetPublicEndpoint())
+                    {
+                        context.Writer.WritePropertyName("publicEndpoint");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = ContainerMarshaller.Instance;
-                        marshaller.Marshall(publicRequestContainersValue, context);
+                        var marshaller = EndpointRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.PublicEndpoint, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetServiceName())
+                    {
+                        context.Writer.WritePropertyName("serviceName");
+                        context.Writer.Write(publicRequest.ServiceName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPublicEndpoint())
-                {
-                    context.Writer.WritePropertyName("publicEndpoint");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EndpointRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PublicEndpoint, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetServiceName())
-                {
-                    context.Writer.WritePropertyName("serviceName");
-                    context.Writer.Write(publicRequest.ServiceName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

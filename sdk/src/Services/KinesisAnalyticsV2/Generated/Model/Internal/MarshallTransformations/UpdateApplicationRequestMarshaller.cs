@@ -63,83 +63,86 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApplicationConfigurationUpdate())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ApplicationConfigurationUpdate");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ApplicationConfigurationUpdateMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ApplicationConfigurationUpdate, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetApplicationName())
-                {
-                    context.Writer.WritePropertyName("ApplicationName");
-                    context.Writer.Write(publicRequest.ApplicationName);
-                }
-
-                if(publicRequest.IsSetCloudWatchLoggingOptionUpdates())
-                {
-                    context.Writer.WritePropertyName("CloudWatchLoggingOptionUpdates");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCloudWatchLoggingOptionUpdatesListValue in publicRequest.CloudWatchLoggingOptionUpdates)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApplicationConfigurationUpdate())
                     {
+                        context.Writer.WritePropertyName("ApplicationConfigurationUpdate");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = CloudWatchLoggingOptionUpdateMarshaller.Instance;
-                        marshaller.Marshall(publicRequestCloudWatchLoggingOptionUpdatesListValue, context);
+                        var marshaller = ApplicationConfigurationUpdateMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ApplicationConfigurationUpdate, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetApplicationName())
+                    {
+                        context.Writer.WritePropertyName("ApplicationName");
+                        context.Writer.Write(publicRequest.ApplicationName);
+                    }
+
+                    if(publicRequest.IsSetCloudWatchLoggingOptionUpdates())
+                    {
+                        context.Writer.WritePropertyName("CloudWatchLoggingOptionUpdates");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCloudWatchLoggingOptionUpdatesListValue in publicRequest.CloudWatchLoggingOptionUpdates)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = CloudWatchLoggingOptionUpdateMarshaller.Instance;
+                            marshaller.Marshall(publicRequestCloudWatchLoggingOptionUpdatesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetConditionalToken())
+                    {
+                        context.Writer.WritePropertyName("ConditionalToken");
+                        context.Writer.Write(publicRequest.ConditionalToken);
+                    }
+
+                    if(publicRequest.IsSetCurrentApplicationVersionId())
+                    {
+                        context.Writer.WritePropertyName("CurrentApplicationVersionId");
+                        context.Writer.Write(publicRequest.CurrentApplicationVersionId.Value);
+                    }
+
+                    if(publicRequest.IsSetRunConfigurationUpdate())
+                    {
+                        context.Writer.WritePropertyName("RunConfigurationUpdate");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RunConfigurationUpdateMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RunConfigurationUpdate, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRuntimeEnvironmentUpdate())
+                    {
+                        context.Writer.WritePropertyName("RuntimeEnvironmentUpdate");
+                        context.Writer.Write(publicRequest.RuntimeEnvironmentUpdate);
+                    }
+
+                    if(publicRequest.IsSetServiceExecutionRoleUpdate())
+                    {
+                        context.Writer.WritePropertyName("ServiceExecutionRoleUpdate");
+                        context.Writer.Write(publicRequest.ServiceExecutionRoleUpdate);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetConditionalToken())
-                {
-                    context.Writer.WritePropertyName("ConditionalToken");
-                    context.Writer.Write(publicRequest.ConditionalToken);
-                }
-
-                if(publicRequest.IsSetCurrentApplicationVersionId())
-                {
-                    context.Writer.WritePropertyName("CurrentApplicationVersionId");
-                    context.Writer.Write(publicRequest.CurrentApplicationVersionId.Value);
-                }
-
-                if(publicRequest.IsSetRunConfigurationUpdate())
-                {
-                    context.Writer.WritePropertyName("RunConfigurationUpdate");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RunConfigurationUpdateMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RunConfigurationUpdate, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRuntimeEnvironmentUpdate())
-                {
-                    context.Writer.WritePropertyName("RuntimeEnvironmentUpdate");
-                    context.Writer.Write(publicRequest.RuntimeEnvironmentUpdate);
-                }
-
-                if(publicRequest.IsSetServiceExecutionRoleUpdate())
-                {
-                    context.Writer.WritePropertyName("ServiceExecutionRoleUpdate");
-                    context.Writer.Write(publicRequest.ServiceExecutionRoleUpdate);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

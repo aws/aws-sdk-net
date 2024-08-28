@@ -64,31 +64,34 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
                 throw new AmazonManagedGrafanaException("Request object does not have required field WorkspaceId set");
             request.AddPathResource("{workspaceId}", StringUtils.FromString(publicRequest.WorkspaceId));
             request.ResourcePath = "/workspaces/{workspaceId}/permissions";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetUpdateInstructionBatch())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("updateInstructionBatch");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestUpdateInstructionBatchListValue in publicRequest.UpdateInstructionBatch)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetUpdateInstructionBatch())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("updateInstructionBatch");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestUpdateInstructionBatchListValue in publicRequest.UpdateInstructionBatch)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = UpdateInstructionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestUpdateInstructionBatchListValue, context);
+                            var marshaller = UpdateInstructionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestUpdateInstructionBatchListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

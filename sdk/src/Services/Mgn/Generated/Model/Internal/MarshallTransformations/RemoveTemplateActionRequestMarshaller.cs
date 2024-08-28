@@ -61,27 +61,30 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/RemoveTemplateAction";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetActionID())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("actionID");
-                    context.Writer.Write(publicRequest.ActionID);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetActionID())
+                    {
+                        context.Writer.WritePropertyName("actionID");
+                        context.Writer.Write(publicRequest.ActionID);
+                    }
+
+                    if(publicRequest.IsSetLaunchConfigurationTemplateID())
+                    {
+                        context.Writer.WritePropertyName("launchConfigurationTemplateID");
+                        context.Writer.Write(publicRequest.LaunchConfigurationTemplateID);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetLaunchConfigurationTemplateID())
-                {
-                    context.Writer.WritePropertyName("launchConfigurationTemplateID");
-                    context.Writer.Write(publicRequest.LaunchConfigurationTemplateID);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

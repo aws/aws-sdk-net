@@ -63,62 +63,65 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetContainsLabels())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ContainsLabels");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestContainsLabelsListValue in publicRequest.ContainsLabels)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetContainsLabels())
                     {
-                            context.Writer.Write(publicRequestContainsLabelsListValue);
+                        context.Writer.WritePropertyName("ContainsLabels");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestContainsLabelsListValue in publicRequest.ContainsLabels)
+                        {
+                                context.Writer.Write(publicRequestContainsLabelsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDatasetArn())
+                    {
+                        context.Writer.WritePropertyName("DatasetArn");
+                        context.Writer.Write(publicRequest.DatasetArn);
+                    }
+
+                    if(publicRequest.IsSetHasErrors())
+                    {
+                        context.Writer.WritePropertyName("HasErrors");
+                        context.Writer.Write(publicRequest.HasErrors.Value);
+                    }
+
+                    if(publicRequest.IsSetLabeled())
+                    {
+                        context.Writer.WritePropertyName("Labeled");
+                        context.Writer.Write(publicRequest.Labeled.Value);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetSourceRefContains())
+                    {
+                        context.Writer.WritePropertyName("SourceRefContains");
+                        context.Writer.Write(publicRequest.SourceRefContains);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDatasetArn())
-                {
-                    context.Writer.WritePropertyName("DatasetArn");
-                    context.Writer.Write(publicRequest.DatasetArn);
-                }
-
-                if(publicRequest.IsSetHasErrors())
-                {
-                    context.Writer.WritePropertyName("HasErrors");
-                    context.Writer.Write(publicRequest.HasErrors.Value);
-                }
-
-                if(publicRequest.IsSetLabeled())
-                {
-                    context.Writer.WritePropertyName("Labeled");
-                    context.Writer.Write(publicRequest.Labeled.Value);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetSourceRefContains())
-                {
-                    context.Writer.WritePropertyName("SourceRefContains");
-                    context.Writer.Write(publicRequest.SourceRefContains);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

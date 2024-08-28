@@ -67,49 +67,52 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 throw new AmazonMediaConnectException("Request object does not have required field FlowArn set");
             request.AddPathResource("{flowArn}", StringUtils.FromString(publicRequest.FlowArn));
             request.ResourcePath = "/v1/flows/{flowArn}/entitlements/{entitlementArn}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetEncryption())
-                {
-                    context.Writer.WritePropertyName("encryption");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UpdateEncryptionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Encryption, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEntitlementStatus())
-                {
-                    context.Writer.WritePropertyName("entitlementStatus");
-                    context.Writer.Write(publicRequest.EntitlementStatus);
-                }
-
-                if(publicRequest.IsSetSubscribers())
-                {
-                    context.Writer.WritePropertyName("subscribers");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSubscribersListValue in publicRequest.Subscribers)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
-                            context.Writer.Write(publicRequestSubscribersListValue);
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetEncryption())
+                    {
+                        context.Writer.WritePropertyName("encryption");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = UpdateEncryptionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Encryption, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetEntitlementStatus())
+                    {
+                        context.Writer.WritePropertyName("entitlementStatus");
+                        context.Writer.Write(publicRequest.EntitlementStatus);
+                    }
+
+                    if(publicRequest.IsSetSubscribers())
+                    {
+                        context.Writer.WritePropertyName("subscribers");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSubscribersListValue in publicRequest.Subscribers)
+                        {
+                                context.Writer.Write(publicRequestSubscribersListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -67,49 +67,52 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field RuleId set");
             request.AddPathResource("{RuleId}", StringUtils.FromString(publicRequest.RuleId));
             request.ResourcePath = "/rules/{InstanceId}/{RuleId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetActions())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Actions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestActionsListValue in publicRequest.Actions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetActions())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("Actions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestActionsListValue in publicRequest.Actions)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = RuleActionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestActionsListValue, context);
+                            var marshaller = RuleActionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestActionsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetFunction())
+                    {
+                        context.Writer.WritePropertyName("Function");
+                        context.Writer.Write(publicRequest.Function);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetPublishStatus())
+                    {
+                        context.Writer.WritePropertyName("PublishStatus");
+                        context.Writer.Write(publicRequest.PublishStatus);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetFunction())
-                {
-                    context.Writer.WritePropertyName("Function");
-                    context.Writer.Write(publicRequest.Function);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetPublishStatus())
-                {
-                    context.Writer.WritePropertyName("PublishStatus");
-                    context.Writer.Write(publicRequest.PublishStatus);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

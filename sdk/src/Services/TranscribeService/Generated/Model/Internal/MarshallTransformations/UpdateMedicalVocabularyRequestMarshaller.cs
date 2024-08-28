@@ -63,33 +63,36 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLanguageCode())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("LanguageCode");
-                    context.Writer.Write(publicRequest.LanguageCode);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetLanguageCode())
+                    {
+                        context.Writer.WritePropertyName("LanguageCode");
+                        context.Writer.Write(publicRequest.LanguageCode);
+                    }
+
+                    if(publicRequest.IsSetVocabularyFileUri())
+                    {
+                        context.Writer.WritePropertyName("VocabularyFileUri");
+                        context.Writer.Write(publicRequest.VocabularyFileUri);
+                    }
+
+                    if(publicRequest.IsSetVocabularyName())
+                    {
+                        context.Writer.WritePropertyName("VocabularyName");
+                        context.Writer.Write(publicRequest.VocabularyName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetVocabularyFileUri())
-                {
-                    context.Writer.WritePropertyName("VocabularyFileUri");
-                    context.Writer.Write(publicRequest.VocabularyFileUri);
-                }
-
-                if(publicRequest.IsSetVocabularyName())
-                {
-                    context.Writer.WritePropertyName("VocabularyName");
-                    context.Writer.Write(publicRequest.VocabularyName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

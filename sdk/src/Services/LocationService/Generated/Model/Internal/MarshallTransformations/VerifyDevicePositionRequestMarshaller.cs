@@ -64,32 +64,35 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 throw new AmazonLocationServiceException("Request object does not have required field TrackerName set");
             request.AddPathResource("{TrackerName}", StringUtils.FromString(publicRequest.TrackerName));
             request.ResourcePath = "/tracking/v0/trackers/{TrackerName}/positions/verify";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeviceState())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DeviceState");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDeviceState())
+                    {
+                        context.Writer.WritePropertyName("DeviceState");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = DeviceStateMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DeviceState, context);
+                        var marshaller = DeviceStateMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DeviceState, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDistanceUnit())
+                    {
+                        context.Writer.WritePropertyName("DistanceUnit");
+                        context.Writer.Write(publicRequest.DistanceUnit);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDistanceUnit())
-                {
-                    context.Writer.WritePropertyName("DistanceUnit");
-                    context.Writer.Write(publicRequest.DistanceUnit);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

@@ -73,82 +73,85 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 throw new AmazonLexModelsV2Exception("Request object does not have required field SlotTypeId set");
             request.AddPathResource("{slotTypeId}", StringUtils.FromString(publicRequest.SlotTypeId));
             request.ResourcePath = "/bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/slottypes/{slotTypeId}/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCompositeSlotTypeSetting())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("compositeSlotTypeSetting");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CompositeSlotTypeSettingMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CompositeSlotTypeSetting, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetExternalSourceSetting())
-                {
-                    context.Writer.WritePropertyName("externalSourceSetting");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ExternalSourceSettingMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ExternalSourceSetting, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetParentSlotTypeSignature())
-                {
-                    context.Writer.WritePropertyName("parentSlotTypeSignature");
-                    context.Writer.Write(publicRequest.ParentSlotTypeSignature);
-                }
-
-                if(publicRequest.IsSetSlotTypeName())
-                {
-                    context.Writer.WritePropertyName("slotTypeName");
-                    context.Writer.Write(publicRequest.SlotTypeName);
-                }
-
-                if(publicRequest.IsSetSlotTypeValues())
-                {
-                    context.Writer.WritePropertyName("slotTypeValues");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSlotTypeValuesListValue in publicRequest.SlotTypeValues)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCompositeSlotTypeSetting())
                     {
+                        context.Writer.WritePropertyName("compositeSlotTypeSetting");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = SlotTypeValueMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSlotTypeValuesListValue, context);
+                        var marshaller = CompositeSlotTypeSettingMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CompositeSlotTypeSetting, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetExternalSourceSetting())
+                    {
+                        context.Writer.WritePropertyName("externalSourceSetting");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ExternalSourceSettingMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ExternalSourceSetting, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetParentSlotTypeSignature())
+                    {
+                        context.Writer.WritePropertyName("parentSlotTypeSignature");
+                        context.Writer.Write(publicRequest.ParentSlotTypeSignature);
+                    }
+
+                    if(publicRequest.IsSetSlotTypeName())
+                    {
+                        context.Writer.WritePropertyName("slotTypeName");
+                        context.Writer.Write(publicRequest.SlotTypeName);
+                    }
+
+                    if(publicRequest.IsSetSlotTypeValues())
+                    {
+                        context.Writer.WritePropertyName("slotTypeValues");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSlotTypeValuesListValue in publicRequest.SlotTypeValues)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = SlotTypeValueMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSlotTypeValuesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetValueSelectionSetting())
+                    {
+                        context.Writer.WritePropertyName("valueSelectionSetting");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SlotValueSelectionSettingMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ValueSelectionSetting, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetValueSelectionSetting())
-                {
-                    context.Writer.WritePropertyName("valueSelectionSetting");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SlotValueSelectionSettingMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ValueSelectionSetting, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

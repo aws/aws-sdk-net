@@ -63,133 +63,136 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetDeviceModels())
-                {
-                    context.Writer.WritePropertyName("DeviceModels");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDeviceModelsListValue in publicRequest.DeviceModels)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
-                            context.Writer.Write(publicRequestDeviceModelsListValue);
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDeviceOperatingSystems())
-                {
-                    context.Writer.WritePropertyName("DeviceOperatingSystems");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDeviceOperatingSystemsListValue in publicRequest.DeviceOperatingSystems)
+                    if(publicRequest.IsSetDeviceModels())
                     {
-                            context.Writer.Write(publicRequestDeviceOperatingSystemsListValue);
+                        context.Writer.WritePropertyName("DeviceModels");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDeviceModelsListValue in publicRequest.DeviceModels)
+                        {
+                                context.Writer.Write(publicRequestDeviceModelsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDeviceTypes())
-                {
-                    context.Writer.WritePropertyName("DeviceTypes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDeviceTypesListValue in publicRequest.DeviceTypes)
+                    if(publicRequest.IsSetDeviceOperatingSystems())
                     {
-                            context.Writer.Write(publicRequestDeviceTypesListValue);
+                        context.Writer.WritePropertyName("DeviceOperatingSystems");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDeviceOperatingSystemsListValue in publicRequest.DeviceOperatingSystems)
+                        {
+                                context.Writer.Write(publicRequestDeviceOperatingSystemsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDeviceUserAgents())
-                {
-                    context.Writer.WritePropertyName("DeviceUserAgents");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDeviceUserAgentsListValue in publicRequest.DeviceUserAgents)
+                    if(publicRequest.IsSetDeviceTypes())
                     {
-                            context.Writer.Write(publicRequestDeviceUserAgentsListValue);
+                        context.Writer.WritePropertyName("DeviceTypes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDeviceTypesListValue in publicRequest.DeviceTypes)
+                        {
+                                context.Writer.Write(publicRequestDeviceTypesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetEffect())
-                {
-                    context.Writer.WritePropertyName("Effect");
-                    context.Writer.Write(publicRequest.Effect);
-                }
-
-                if(publicRequest.IsSetMobileDeviceAccessRuleId())
-                {
-                    context.Writer.WritePropertyName("MobileDeviceAccessRuleId");
-                    context.Writer.Write(publicRequest.MobileDeviceAccessRuleId);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetNotDeviceModels())
-                {
-                    context.Writer.WritePropertyName("NotDeviceModels");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestNotDeviceModelsListValue in publicRequest.NotDeviceModels)
+                    if(publicRequest.IsSetDeviceUserAgents())
                     {
-                            context.Writer.Write(publicRequestNotDeviceModelsListValue);
+                        context.Writer.WritePropertyName("DeviceUserAgents");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDeviceUserAgentsListValue in publicRequest.DeviceUserAgents)
+                        {
+                                context.Writer.Write(publicRequestDeviceUserAgentsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetNotDeviceOperatingSystems())
-                {
-                    context.Writer.WritePropertyName("NotDeviceOperatingSystems");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestNotDeviceOperatingSystemsListValue in publicRequest.NotDeviceOperatingSystems)
+                    if(publicRequest.IsSetEffect())
                     {
-                            context.Writer.Write(publicRequestNotDeviceOperatingSystemsListValue);
+                        context.Writer.WritePropertyName("Effect");
+                        context.Writer.Write(publicRequest.Effect);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetNotDeviceTypes())
-                {
-                    context.Writer.WritePropertyName("NotDeviceTypes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestNotDeviceTypesListValue in publicRequest.NotDeviceTypes)
+                    if(publicRequest.IsSetMobileDeviceAccessRuleId())
                     {
-                            context.Writer.Write(publicRequestNotDeviceTypesListValue);
+                        context.Writer.WritePropertyName("MobileDeviceAccessRuleId");
+                        context.Writer.Write(publicRequest.MobileDeviceAccessRuleId);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetNotDeviceUserAgents())
-                {
-                    context.Writer.WritePropertyName("NotDeviceUserAgents");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestNotDeviceUserAgentsListValue in publicRequest.NotDeviceUserAgents)
+                    if(publicRequest.IsSetName())
                     {
-                            context.Writer.Write(publicRequestNotDeviceUserAgentsListValue);
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetNotDeviceModels())
+                    {
+                        context.Writer.WritePropertyName("NotDeviceModels");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestNotDeviceModelsListValue in publicRequest.NotDeviceModels)
+                        {
+                                context.Writer.Write(publicRequestNotDeviceModelsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetNotDeviceOperatingSystems())
+                    {
+                        context.Writer.WritePropertyName("NotDeviceOperatingSystems");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestNotDeviceOperatingSystemsListValue in publicRequest.NotDeviceOperatingSystems)
+                        {
+                                context.Writer.Write(publicRequestNotDeviceOperatingSystemsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetNotDeviceTypes())
+                    {
+                        context.Writer.WritePropertyName("NotDeviceTypes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestNotDeviceTypesListValue in publicRequest.NotDeviceTypes)
+                        {
+                                context.Writer.Write(publicRequestNotDeviceTypesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetNotDeviceUserAgents())
+                    {
+                        context.Writer.WritePropertyName("NotDeviceUserAgents");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestNotDeviceUserAgentsListValue in publicRequest.NotDeviceUserAgents)
+                        {
+                                context.Writer.Write(publicRequestNotDeviceUserAgentsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetOrganizationId())
+                    {
+                        context.Writer.WritePropertyName("OrganizationId");
+                        context.Writer.Write(publicRequest.OrganizationId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetOrganizationId())
-                {
-                    context.Writer.WritePropertyName("OrganizationId");
-                    context.Writer.Write(publicRequest.OrganizationId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

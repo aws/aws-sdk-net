@@ -45,6 +45,7 @@ namespace Amazon.Glue.Model
     {
         private string _clientToken;
         private string _createdRulesetName;
+        private string _dataQualitySecurityConfiguration;
         private DataSource _dataSource;
         private int? _numberOfWorkers;
         private string _role;
@@ -87,6 +88,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetCreatedRulesetName()
         {
             return this._createdRulesetName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataQualitySecurityConfiguration. 
+        /// <para>
+        /// The name of the security configuration created with the data quality encryption option.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string DataQualitySecurityConfiguration
+        {
+            get { return this._dataQualitySecurityConfiguration; }
+            set { this._dataQualitySecurityConfiguration = value; }
+        }
+
+        // Check to see if DataQualitySecurityConfiguration property is set
+        internal bool IsSetDataQualitySecurityConfiguration()
+        {
+            return this._dataQualitySecurityConfiguration != null;
         }
 
         /// <summary>

@@ -64,74 +64,77 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 throw new AmazonLambdaException("Request object does not have required field FunctionName set");
             request.AddPathResource("{FunctionName}", StringUtils.FromString(publicRequest.FunctionName));
             request.ResourcePath = "/2015-03-31/functions/{FunctionName}/code";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetArchitectures())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Architectures");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestArchitecturesListValue in publicRequest.Architectures)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetArchitectures())
                     {
-                            context.Writer.Write(publicRequestArchitecturesListValue);
+                        context.Writer.WritePropertyName("Architectures");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestArchitecturesListValue in publicRequest.Architectures)
+                        {
+                                context.Writer.Write(publicRequestArchitecturesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDryRun())
+                    {
+                        context.Writer.WritePropertyName("DryRun");
+                        context.Writer.Write(publicRequest.DryRun.Value);
+                    }
+
+                    if(publicRequest.IsSetImageUri())
+                    {
+                        context.Writer.WritePropertyName("ImageUri");
+                        context.Writer.Write(publicRequest.ImageUri);
+                    }
+
+                    if(publicRequest.IsSetPublish())
+                    {
+                        context.Writer.WritePropertyName("Publish");
+                        context.Writer.Write(publicRequest.Publish.Value);
+                    }
+
+                    if(publicRequest.IsSetRevisionId())
+                    {
+                        context.Writer.WritePropertyName("RevisionId");
+                        context.Writer.Write(publicRequest.RevisionId);
+                    }
+
+                    if(publicRequest.IsSetS3Bucket())
+                    {
+                        context.Writer.WritePropertyName("S3Bucket");
+                        context.Writer.Write(publicRequest.S3Bucket);
+                    }
+
+                    if(publicRequest.IsSetS3Key())
+                    {
+                        context.Writer.WritePropertyName("S3Key");
+                        context.Writer.Write(publicRequest.S3Key);
+                    }
+
+                    if(publicRequest.IsSetS3ObjectVersion())
+                    {
+                        context.Writer.WritePropertyName("S3ObjectVersion");
+                        context.Writer.Write(publicRequest.S3ObjectVersion);
+                    }
+
+                    if(publicRequest.IsSetZipFile())
+                    {
+                        context.Writer.WritePropertyName("ZipFile");
+                        context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.ZipFile));
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDryRun())
-                {
-                    context.Writer.WritePropertyName("DryRun");
-                    context.Writer.Write(publicRequest.DryRun.Value);
-                }
-
-                if(publicRequest.IsSetImageUri())
-                {
-                    context.Writer.WritePropertyName("ImageUri");
-                    context.Writer.Write(publicRequest.ImageUri);
-                }
-
-                if(publicRequest.IsSetPublish())
-                {
-                    context.Writer.WritePropertyName("Publish");
-                    context.Writer.Write(publicRequest.Publish.Value);
-                }
-
-                if(publicRequest.IsSetRevisionId())
-                {
-                    context.Writer.WritePropertyName("RevisionId");
-                    context.Writer.Write(publicRequest.RevisionId);
-                }
-
-                if(publicRequest.IsSetS3Bucket())
-                {
-                    context.Writer.WritePropertyName("S3Bucket");
-                    context.Writer.Write(publicRequest.S3Bucket);
-                }
-
-                if(publicRequest.IsSetS3Key())
-                {
-                    context.Writer.WritePropertyName("S3Key");
-                    context.Writer.Write(publicRequest.S3Key);
-                }
-
-                if(publicRequest.IsSetS3ObjectVersion())
-                {
-                    context.Writer.WritePropertyName("S3ObjectVersion");
-                    context.Writer.Write(publicRequest.S3ObjectVersion);
-                }
-
-                if(publicRequest.IsSetZipFile())
-                {
-                    context.Writer.WritePropertyName("ZipFile");
-                    context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.ZipFile));
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,128 +63,131 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAllocatedStorage())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("allocatedStorage");
-                    context.Writer.Write(publicRequest.AllocatedStorage.Value);
-                }
-
-                if(publicRequest.IsSetBucket())
-                {
-                    context.Writer.WritePropertyName("bucket");
-                    context.Writer.Write(publicRequest.Bucket);
-                }
-
-                if(publicRequest.IsSetDbInstanceType())
-                {
-                    context.Writer.WritePropertyName("dbInstanceType");
-                    context.Writer.Write(publicRequest.DbInstanceType);
-                }
-
-                if(publicRequest.IsSetDbParameterGroupIdentifier())
-                {
-                    context.Writer.WritePropertyName("dbParameterGroupIdentifier");
-                    context.Writer.Write(publicRequest.DbParameterGroupIdentifier);
-                }
-
-                if(publicRequest.IsSetDbStorageType())
-                {
-                    context.Writer.WritePropertyName("dbStorageType");
-                    context.Writer.Write(publicRequest.DbStorageType);
-                }
-
-                if(publicRequest.IsSetDeploymentType())
-                {
-                    context.Writer.WritePropertyName("deploymentType");
-                    context.Writer.Write(publicRequest.DeploymentType);
-                }
-
-                if(publicRequest.IsSetLogDeliveryConfiguration())
-                {
-                    context.Writer.WritePropertyName("logDeliveryConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LogDeliveryConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LogDeliveryConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetOrganization())
-                {
-                    context.Writer.WritePropertyName("organization");
-                    context.Writer.Write(publicRequest.Organization);
-                }
-
-                if(publicRequest.IsSetPassword())
-                {
-                    context.Writer.WritePropertyName("password");
-                    context.Writer.Write(publicRequest.Password);
-                }
-
-                if(publicRequest.IsSetPubliclyAccessible())
-                {
-                    context.Writer.WritePropertyName("publiclyAccessible");
-                    context.Writer.Write(publicRequest.PubliclyAccessible.Value);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAllocatedStorage())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("allocatedStorage");
+                        context.Writer.Write(publicRequest.AllocatedStorage.Value);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetUsername())
-                {
-                    context.Writer.WritePropertyName("username");
-                    context.Writer.Write(publicRequest.Username);
-                }
-
-                if(publicRequest.IsSetVpcSecurityGroupIds())
-                {
-                    context.Writer.WritePropertyName("vpcSecurityGroupIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestVpcSecurityGroupIdsListValue in publicRequest.VpcSecurityGroupIds)
+                    if(publicRequest.IsSetBucket())
                     {
-                            context.Writer.Write(publicRequestVpcSecurityGroupIdsListValue);
+                        context.Writer.WritePropertyName("bucket");
+                        context.Writer.Write(publicRequest.Bucket);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetVpcSubnetIds())
-                {
-                    context.Writer.WritePropertyName("vpcSubnetIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestVpcSubnetIdsListValue in publicRequest.VpcSubnetIds)
+                    if(publicRequest.IsSetDbInstanceType())
                     {
-                            context.Writer.Write(publicRequestVpcSubnetIdsListValue);
+                        context.Writer.WritePropertyName("dbInstanceType");
+                        context.Writer.Write(publicRequest.DbInstanceType);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDbParameterGroupIdentifier())
+                    {
+                        context.Writer.WritePropertyName("dbParameterGroupIdentifier");
+                        context.Writer.Write(publicRequest.DbParameterGroupIdentifier);
+                    }
+
+                    if(publicRequest.IsSetDbStorageType())
+                    {
+                        context.Writer.WritePropertyName("dbStorageType");
+                        context.Writer.Write(publicRequest.DbStorageType);
+                    }
+
+                    if(publicRequest.IsSetDeploymentType())
+                    {
+                        context.Writer.WritePropertyName("deploymentType");
+                        context.Writer.Write(publicRequest.DeploymentType);
+                    }
+
+                    if(publicRequest.IsSetLogDeliveryConfiguration())
+                    {
+                        context.Writer.WritePropertyName("logDeliveryConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LogDeliveryConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.LogDeliveryConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetOrganization())
+                    {
+                        context.Writer.WritePropertyName("organization");
+                        context.Writer.Write(publicRequest.Organization);
+                    }
+
+                    if(publicRequest.IsSetPassword())
+                    {
+                        context.Writer.WritePropertyName("password");
+                        context.Writer.Write(publicRequest.Password);
+                    }
+
+                    if(publicRequest.IsSetPubliclyAccessible())
+                    {
+                        context.Writer.WritePropertyName("publiclyAccessible");
+                        context.Writer.Write(publicRequest.PubliclyAccessible.Value);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetUsername())
+                    {
+                        context.Writer.WritePropertyName("username");
+                        context.Writer.Write(publicRequest.Username);
+                    }
+
+                    if(publicRequest.IsSetVpcSecurityGroupIds())
+                    {
+                        context.Writer.WritePropertyName("vpcSecurityGroupIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestVpcSecurityGroupIdsListValue in publicRequest.VpcSecurityGroupIds)
+                        {
+                                context.Writer.Write(publicRequestVpcSecurityGroupIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetVpcSubnetIds())
+                    {
+                        context.Writer.WritePropertyName("vpcSubnetIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestVpcSubnetIdsListValue in publicRequest.VpcSubnetIds)
+                        {
+                                context.Writer.Write(publicRequestVpcSubnetIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

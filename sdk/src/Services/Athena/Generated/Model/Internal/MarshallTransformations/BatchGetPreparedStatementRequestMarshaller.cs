@@ -63,32 +63,35 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetPreparedStatementNames())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("PreparedStatementNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPreparedStatementNamesListValue in publicRequest.PreparedStatementNames)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetPreparedStatementNames())
                     {
-                            context.Writer.Write(publicRequestPreparedStatementNamesListValue);
+                        context.Writer.WritePropertyName("PreparedStatementNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPreparedStatementNamesListValue in publicRequest.PreparedStatementNames)
+                        {
+                                context.Writer.Write(publicRequestPreparedStatementNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetWorkGroup())
+                    {
+                        context.Writer.WritePropertyName("WorkGroup");
+                        context.Writer.Write(publicRequest.WorkGroup);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetWorkGroup())
-                {
-                    context.Writer.WritePropertyName("WorkGroup");
-                    context.Writer.Write(publicRequest.WorkGroup);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

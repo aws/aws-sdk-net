@@ -61,37 +61,40 @@ namespace Amazon.SageMakerMetrics.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/BatchPutMetrics";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMetricData())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("MetricData");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMetricDataListValue in publicRequest.MetricData)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMetricData())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("MetricData");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMetricDataListValue in publicRequest.MetricData)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = RawMetricDataMarshaller.Instance;
-                        marshaller.Marshall(publicRequestMetricDataListValue, context);
+                            var marshaller = RawMetricDataMarshaller.Instance;
+                            marshaller.Marshall(publicRequestMetricDataListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTrialComponentName())
+                    {
+                        context.Writer.WritePropertyName("TrialComponentName");
+                        context.Writer.Write(publicRequest.TrialComponentName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTrialComponentName())
-                {
-                    context.Writer.WritePropertyName("TrialComponentName");
-                    context.Writer.Write(publicRequest.TrialComponentName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

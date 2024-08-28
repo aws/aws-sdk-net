@@ -61,44 +61,47 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/imports/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFilePassword())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("filePassword");
-                    context.Writer.Write(publicRequest.FilePassword);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFilePassword())
+                    {
+                        context.Writer.WritePropertyName("filePassword");
+                        context.Writer.Write(publicRequest.FilePassword);
+                    }
+
+                    if(publicRequest.IsSetImportId())
+                    {
+                        context.Writer.WritePropertyName("importId");
+                        context.Writer.Write(publicRequest.ImportId);
+                    }
+
+                    if(publicRequest.IsSetMergeStrategy())
+                    {
+                        context.Writer.WritePropertyName("mergeStrategy");
+                        context.Writer.Write(publicRequest.MergeStrategy);
+                    }
+
+                    if(publicRequest.IsSetResourceSpecification())
+                    {
+                        context.Writer.WritePropertyName("resourceSpecification");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ImportResourceSpecificationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ResourceSpecification, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetImportId())
-                {
-                    context.Writer.WritePropertyName("importId");
-                    context.Writer.Write(publicRequest.ImportId);
-                }
-
-                if(publicRequest.IsSetMergeStrategy())
-                {
-                    context.Writer.WritePropertyName("mergeStrategy");
-                    context.Writer.Write(publicRequest.MergeStrategy);
-                }
-
-                if(publicRequest.IsSetResourceSpecification())
-                {
-                    context.Writer.WritePropertyName("resourceSpecification");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ImportResourceSpecificationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ResourceSpecification, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

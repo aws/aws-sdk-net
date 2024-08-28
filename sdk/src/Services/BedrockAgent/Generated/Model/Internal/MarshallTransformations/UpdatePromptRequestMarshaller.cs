@@ -64,55 +64,58 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 throw new AmazonBedrockAgentException("Request object does not have required field PromptIdentifier set");
             request.AddPathResource("{promptIdentifier}", StringUtils.FromString(publicRequest.PromptIdentifier));
             request.ResourcePath = "/prompts/{promptIdentifier}/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCustomerEncryptionKeyArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("customerEncryptionKeyArn");
-                    context.Writer.Write(publicRequest.CustomerEncryptionKeyArn);
-                }
-
-                if(publicRequest.IsSetDefaultVariant())
-                {
-                    context.Writer.WritePropertyName("defaultVariant");
-                    context.Writer.Write(publicRequest.DefaultVariant);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetVariants())
-                {
-                    context.Writer.WritePropertyName("variants");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestVariantsListValue in publicRequest.Variants)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCustomerEncryptionKeyArn())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = PromptVariantMarshaller.Instance;
-                        marshaller.Marshall(publicRequestVariantsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("customerEncryptionKeyArn");
+                        context.Writer.Write(publicRequest.CustomerEncryptionKeyArn);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDefaultVariant())
+                    {
+                        context.Writer.WritePropertyName("defaultVariant");
+                        context.Writer.Write(publicRequest.DefaultVariant);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetVariants())
+                    {
+                        context.Writer.WritePropertyName("variants");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestVariantsListValue in publicRequest.Variants)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = PromptVariantMarshaller.Instance;
+                            marshaller.Marshall(publicRequestVariantsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

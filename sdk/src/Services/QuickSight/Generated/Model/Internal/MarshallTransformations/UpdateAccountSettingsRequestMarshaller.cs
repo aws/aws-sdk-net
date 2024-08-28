@@ -64,33 +64,36 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field AwsAccountId set");
             request.AddPathResource("{AwsAccountId}", StringUtils.FromString(publicRequest.AwsAccountId));
             request.ResourcePath = "/accounts/{AwsAccountId}/settings";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDefaultNamespace())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DefaultNamespace");
-                    context.Writer.Write(publicRequest.DefaultNamespace);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDefaultNamespace())
+                    {
+                        context.Writer.WritePropertyName("DefaultNamespace");
+                        context.Writer.Write(publicRequest.DefaultNamespace);
+                    }
+
+                    if(publicRequest.IsSetNotificationEmail())
+                    {
+                        context.Writer.WritePropertyName("NotificationEmail");
+                        context.Writer.Write(publicRequest.NotificationEmail);
+                    }
+
+                    if(publicRequest.IsSetTerminationProtectionEnabled())
+                    {
+                        context.Writer.WritePropertyName("TerminationProtectionEnabled");
+                        context.Writer.Write(publicRequest.TerminationProtectionEnabled.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetNotificationEmail())
-                {
-                    context.Writer.WritePropertyName("NotificationEmail");
-                    context.Writer.Write(publicRequest.NotificationEmail);
-                }
-
-                if(publicRequest.IsSetTerminationProtectionEnabled())
-                {
-                    context.Writer.WritePropertyName("TerminationProtectionEnabled");
-                    context.Writer.Write(publicRequest.TerminationProtectionEnabled.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

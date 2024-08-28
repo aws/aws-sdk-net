@@ -61,27 +61,30 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/DeleteSamplingRule";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetRuleARN())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("RuleARN");
-                    context.Writer.Write(publicRequest.RuleARN);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetRuleARN())
+                    {
+                        context.Writer.WritePropertyName("RuleARN");
+                        context.Writer.Write(publicRequest.RuleARN);
+                    }
+
+                    if(publicRequest.IsSetRuleName())
+                    {
+                        context.Writer.WritePropertyName("RuleName");
+                        context.Writer.Write(publicRequest.RuleName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRuleName())
-                {
-                    context.Writer.WritePropertyName("RuleName");
-                    context.Writer.Write(publicRequest.RuleName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

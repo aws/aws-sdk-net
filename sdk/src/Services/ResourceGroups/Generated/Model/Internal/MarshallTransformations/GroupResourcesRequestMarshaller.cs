@@ -61,32 +61,35 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/group-resources";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetGroup())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Group");
-                    context.Writer.Write(publicRequest.Group);
-                }
-
-                if(publicRequest.IsSetResourceArns())
-                {
-                    context.Writer.WritePropertyName("ResourceArns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestResourceArnsListValue in publicRequest.ResourceArns)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetGroup())
                     {
-                            context.Writer.Write(publicRequestResourceArnsListValue);
+                        context.Writer.WritePropertyName("Group");
+                        context.Writer.Write(publicRequest.Group);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetResourceArns())
+                    {
+                        context.Writer.WritePropertyName("ResourceArns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestResourceArnsListValue in publicRequest.ResourceArns)
+                        {
+                                context.Writer.Write(publicRequestResourceArnsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

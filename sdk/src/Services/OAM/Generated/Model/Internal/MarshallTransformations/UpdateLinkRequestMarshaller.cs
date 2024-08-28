@@ -61,43 +61,46 @@ namespace Amazon.OAM.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/UpdateLink";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetIdentifier())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Identifier");
-                    context.Writer.Write(publicRequest.Identifier);
-                }
-
-                if(publicRequest.IsSetLinkConfiguration())
-                {
-                    context.Writer.WritePropertyName("LinkConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LinkConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LinkConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetResourceTypes())
-                {
-                    context.Writer.WritePropertyName("ResourceTypes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestResourceTypesListValue in publicRequest.ResourceTypes)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetIdentifier())
                     {
-                            context.Writer.Write(publicRequestResourceTypesListValue);
+                        context.Writer.WritePropertyName("Identifier");
+                        context.Writer.Write(publicRequest.Identifier);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetLinkConfiguration())
+                    {
+                        context.Writer.WritePropertyName("LinkConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LinkConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.LinkConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetResourceTypes())
+                    {
+                        context.Writer.WritePropertyName("ResourceTypes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestResourceTypesListValue in publicRequest.ResourceTypes)
+                        {
+                                context.Writer.Write(publicRequestResourceTypesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -64,55 +64,58 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
                 throw new AmazonInternetMonitorException("Request object does not have required field MonitorName set");
             request.AddPathResource("{MonitorName}", StringUtils.FromString(publicRequest.MonitorName));
             request.ResourcePath = "/v20210603/Monitors/{MonitorName}/Queries";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEndTime())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("EndTime");
-                    context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTime));
-                }
-
-                if(publicRequest.IsSetFilterParameters())
-                {
-                    context.Writer.WritePropertyName("FilterParameters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFilterParametersListValue in publicRequest.FilterParameters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEndTime())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = FilterParameterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFilterParametersListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("EndTime");
+                        context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTime));
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetFilterParameters())
+                    {
+                        context.Writer.WritePropertyName("FilterParameters");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFilterParametersListValue in publicRequest.FilterParameters)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = FilterParameterMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFilterParametersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetLinkedAccountId())
+                    {
+                        context.Writer.WritePropertyName("LinkedAccountId");
+                        context.Writer.Write(publicRequest.LinkedAccountId);
+                    }
+
+                    if(publicRequest.IsSetQueryType())
+                    {
+                        context.Writer.WritePropertyName("QueryType");
+                        context.Writer.Write(publicRequest.QueryType);
+                    }
+
+                    if(publicRequest.IsSetStartTime())
+                    {
+                        context.Writer.WritePropertyName("StartTime");
+                        context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTime));
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetLinkedAccountId())
-                {
-                    context.Writer.WritePropertyName("LinkedAccountId");
-                    context.Writer.Write(publicRequest.LinkedAccountId);
-                }
-
-                if(publicRequest.IsSetQueryType())
-                {
-                    context.Writer.WritePropertyName("QueryType");
-                    context.Writer.Write(publicRequest.QueryType);
-                }
-
-                if(publicRequest.IsSetStartTime())
-                {
-                    context.Writer.WritePropertyName("StartTime");
-                    context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTime));
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

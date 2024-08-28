@@ -63,68 +63,71 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetEndTime())
+                    {
+                        context.Writer.WritePropertyName("EndTime");
+                        context.Writer.Write(publicRequest.EndTime.Value);
+                    }
+
+                    if(publicRequest.IsSetEquipment())
+                    {
+                        context.Writer.WritePropertyName("Equipment");
+                        context.Writer.Write(publicRequest.Equipment);
+                    }
+
+                    if(publicRequest.IsSetFaultCode())
+                    {
+                        context.Writer.WritePropertyName("FaultCode");
+                        context.Writer.Write(publicRequest.FaultCode);
+                    }
+
+                    if(publicRequest.IsSetLabelGroupName())
+                    {
+                        context.Writer.WritePropertyName("LabelGroupName");
+                        context.Writer.Write(publicRequest.LabelGroupName);
+                    }
+
+                    if(publicRequest.IsSetNotes())
+                    {
+                        context.Writer.WritePropertyName("Notes");
+                        context.Writer.Write(publicRequest.Notes);
+                    }
+
+                    if(publicRequest.IsSetRating())
+                    {
+                        context.Writer.WritePropertyName("Rating");
+                        context.Writer.Write(publicRequest.Rating);
+                    }
+
+                    if(publicRequest.IsSetStartTime())
+                    {
+                        context.Writer.WritePropertyName("StartTime");
+                        context.Writer.Write(publicRequest.StartTime.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetEndTime())
-                {
-                    context.Writer.WritePropertyName("EndTime");
-                    context.Writer.Write(publicRequest.EndTime.Value);
-                }
-
-                if(publicRequest.IsSetEquipment())
-                {
-                    context.Writer.WritePropertyName("Equipment");
-                    context.Writer.Write(publicRequest.Equipment);
-                }
-
-                if(publicRequest.IsSetFaultCode())
-                {
-                    context.Writer.WritePropertyName("FaultCode");
-                    context.Writer.Write(publicRequest.FaultCode);
-                }
-
-                if(publicRequest.IsSetLabelGroupName())
-                {
-                    context.Writer.WritePropertyName("LabelGroupName");
-                    context.Writer.Write(publicRequest.LabelGroupName);
-                }
-
-                if(publicRequest.IsSetNotes())
-                {
-                    context.Writer.WritePropertyName("Notes");
-                    context.Writer.Write(publicRequest.Notes);
-                }
-
-                if(publicRequest.IsSetRating())
-                {
-                    context.Writer.WritePropertyName("Rating");
-                    context.Writer.Write(publicRequest.Rating);
-                }
-
-                if(publicRequest.IsSetStartTime())
-                {
-                    context.Writer.WritePropertyName("StartTime");
-                    context.Writer.Write(publicRequest.StartTime.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,83 +63,86 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccessTier())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AccessTier");
-                    context.Writer.Write(publicRequest.AccessTier);
-                }
-
-                if(publicRequest.IsSetAgentArns())
-                {
-                    context.Writer.WritePropertyName("AgentArns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAgentArnsListValue in publicRequest.AgentArns)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccessTier())
                     {
-                            context.Writer.Write(publicRequestAgentArnsListValue);
+                        context.Writer.WritePropertyName("AccessTier");
+                        context.Writer.Write(publicRequest.AccessTier);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetAuthenticationType())
-                {
-                    context.Writer.WritePropertyName("AuthenticationType");
-                    context.Writer.Write(publicRequest.AuthenticationType);
-                }
-
-                if(publicRequest.IsSetBlobType())
-                {
-                    context.Writer.WritePropertyName("BlobType");
-                    context.Writer.Write(publicRequest.BlobType);
-                }
-
-                if(publicRequest.IsSetContainerUrl())
-                {
-                    context.Writer.WritePropertyName("ContainerUrl");
-                    context.Writer.Write(publicRequest.ContainerUrl);
-                }
-
-                if(publicRequest.IsSetSasConfiguration())
-                {
-                    context.Writer.WritePropertyName("SasConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AzureBlobSasConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SasConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSubdirectory())
-                {
-                    context.Writer.WritePropertyName("Subdirectory");
-                    context.Writer.Write(publicRequest.Subdirectory);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetAgentArns())
                     {
+                        context.Writer.WritePropertyName("AgentArns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAgentArnsListValue in publicRequest.AgentArns)
+                        {
+                                context.Writer.Write(publicRequestAgentArnsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetAuthenticationType())
+                    {
+                        context.Writer.WritePropertyName("AuthenticationType");
+                        context.Writer.Write(publicRequest.AuthenticationType);
+                    }
+
+                    if(publicRequest.IsSetBlobType())
+                    {
+                        context.Writer.WritePropertyName("BlobType");
+                        context.Writer.Write(publicRequest.BlobType);
+                    }
+
+                    if(publicRequest.IsSetContainerUrl())
+                    {
+                        context.Writer.WritePropertyName("ContainerUrl");
+                        context.Writer.Write(publicRequest.ContainerUrl);
+                    }
+
+                    if(publicRequest.IsSetSasConfiguration())
+                    {
+                        context.Writer.WritePropertyName("SasConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagListEntryMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = AzureBlobSasConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SasConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetSubdirectory())
+                    {
+                        context.Writer.WritePropertyName("Subdirectory");
+                        context.Writer.Write(publicRequest.Subdirectory);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagListEntryMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

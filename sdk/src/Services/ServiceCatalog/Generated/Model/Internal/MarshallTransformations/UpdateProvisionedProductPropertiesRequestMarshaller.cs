@@ -63,52 +63,55 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAcceptLanguage())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AcceptLanguage");
-                    context.Writer.Write(publicRequest.AcceptLanguage);
-                }
-
-                if(publicRequest.IsSetIdempotencyToken())
-                {
-                    context.Writer.WritePropertyName("IdempotencyToken");
-                    context.Writer.Write(publicRequest.IdempotencyToken);
-                }
-
-                else if(!(publicRequest.IsSetIdempotencyToken()))
-                {
-                    context.Writer.WritePropertyName("IdempotencyToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetProvisionedProductId())
-                {
-                    context.Writer.WritePropertyName("ProvisionedProductId");
-                    context.Writer.Write(publicRequest.ProvisionedProductId);
-                }
-
-                if(publicRequest.IsSetProvisionedProductProperties())
-                {
-                    context.Writer.WritePropertyName("ProvisionedProductProperties");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestProvisionedProductPropertiesKvp in publicRequest.ProvisionedProductProperties)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAcceptLanguage())
                     {
-                        context.Writer.WritePropertyName(publicRequestProvisionedProductPropertiesKvp.Key);
-                        var publicRequestProvisionedProductPropertiesValue = publicRequestProvisionedProductPropertiesKvp.Value;
-
-                            context.Writer.Write(publicRequestProvisionedProductPropertiesValue);
+                        context.Writer.WritePropertyName("AcceptLanguage");
+                        context.Writer.Write(publicRequest.AcceptLanguage);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetIdempotencyToken())
+                    {
+                        context.Writer.WritePropertyName("IdempotencyToken");
+                        context.Writer.Write(publicRequest.IdempotencyToken);
+                    }
+
+                    else if(!(publicRequest.IsSetIdempotencyToken()))
+                    {
+                        context.Writer.WritePropertyName("IdempotencyToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetProvisionedProductId())
+                    {
+                        context.Writer.WritePropertyName("ProvisionedProductId");
+                        context.Writer.Write(publicRequest.ProvisionedProductId);
+                    }
+
+                    if(publicRequest.IsSetProvisionedProductProperties())
+                    {
+                        context.Writer.WritePropertyName("ProvisionedProductProperties");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestProvisionedProductPropertiesKvp in publicRequest.ProvisionedProductProperties)
+                        {
+                            context.Writer.WritePropertyName(publicRequestProvisionedProductPropertiesKvp.Key);
+                            var publicRequestProvisionedProductPropertiesValue = publicRequestProvisionedProductPropertiesKvp.Value;
+
+                                context.Writer.Write(publicRequestProvisionedProductPropertiesValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

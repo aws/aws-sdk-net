@@ -64,86 +64,89 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
                 throw new AmazonFinspaceException("Request object does not have required field EnvironmentId set");
             request.AddPathResource("{environmentId}", StringUtils.FromString(publicRequest.EnvironmentId));
             request.ResourcePath = "/kx/environments/{environmentId}/kxvolumes";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAvailabilityZoneIds())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("availabilityZoneIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAvailabilityZoneIdsListValue in publicRequest.AvailabilityZoneIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAvailabilityZoneIds())
                     {
-                            context.Writer.Write(publicRequestAvailabilityZoneIdsListValue);
+                        context.Writer.WritePropertyName("availabilityZoneIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAvailabilityZoneIdsListValue in publicRequest.AvailabilityZoneIds)
+                        {
+                                context.Writer.Write(publicRequestAvailabilityZoneIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetAzMode())
-                {
-                    context.Writer.WritePropertyName("azMode");
-                    context.Writer.Write(publicRequest.AzMode);
-                }
-
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetNas1Configuration())
-                {
-                    context.Writer.WritePropertyName("nas1Configuration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = KxNAS1ConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Nas1Configuration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetAzMode())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("azMode");
+                        context.Writer.Write(publicRequest.AzMode);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetNas1Configuration())
+                    {
+                        context.Writer.WritePropertyName("nas1Configuration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = KxNAS1ConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Nas1Configuration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetVolumeName())
+                    {
+                        context.Writer.WritePropertyName("volumeName");
+                        context.Writer.Write(publicRequest.VolumeName);
+                    }
+
+                    if(publicRequest.IsSetVolumeType())
+                    {
+                        context.Writer.WritePropertyName("volumeType");
+                        context.Writer.Write(publicRequest.VolumeType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetVolumeName())
-                {
-                    context.Writer.WritePropertyName("volumeName");
-                    context.Writer.Write(publicRequest.VolumeName);
-                }
-
-                if(publicRequest.IsSetVolumeType())
-                {
-                    context.Writer.WritePropertyName("volumeType");
-                    context.Writer.Write(publicRequest.VolumeType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

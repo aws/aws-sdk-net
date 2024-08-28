@@ -63,45 +63,48 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBatchPredictionDataSourceId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("BatchPredictionDataSourceId");
-                    context.Writer.Write(publicRequest.BatchPredictionDataSourceId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBatchPredictionDataSourceId())
+                    {
+                        context.Writer.WritePropertyName("BatchPredictionDataSourceId");
+                        context.Writer.Write(publicRequest.BatchPredictionDataSourceId);
+                    }
+
+                    if(publicRequest.IsSetBatchPredictionId())
+                    {
+                        context.Writer.WritePropertyName("BatchPredictionId");
+                        context.Writer.Write(publicRequest.BatchPredictionId);
+                    }
+
+                    if(publicRequest.IsSetBatchPredictionName())
+                    {
+                        context.Writer.WritePropertyName("BatchPredictionName");
+                        context.Writer.Write(publicRequest.BatchPredictionName);
+                    }
+
+                    if(publicRequest.IsSetMLModelId())
+                    {
+                        context.Writer.WritePropertyName("MLModelId");
+                        context.Writer.Write(publicRequest.MLModelId);
+                    }
+
+                    if(publicRequest.IsSetOutputUri())
+                    {
+                        context.Writer.WritePropertyName("OutputUri");
+                        context.Writer.Write(publicRequest.OutputUri);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetBatchPredictionId())
-                {
-                    context.Writer.WritePropertyName("BatchPredictionId");
-                    context.Writer.Write(publicRequest.BatchPredictionId);
-                }
-
-                if(publicRequest.IsSetBatchPredictionName())
-                {
-                    context.Writer.WritePropertyName("BatchPredictionName");
-                    context.Writer.Write(publicRequest.BatchPredictionName);
-                }
-
-                if(publicRequest.IsSetMLModelId())
-                {
-                    context.Writer.WritePropertyName("MLModelId");
-                    context.Writer.Write(publicRequest.MLModelId);
-                }
-
-                if(publicRequest.IsSetOutputUri())
-                {
-                    context.Writer.WritePropertyName("OutputUri");
-                    context.Writer.Write(publicRequest.OutputUri);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

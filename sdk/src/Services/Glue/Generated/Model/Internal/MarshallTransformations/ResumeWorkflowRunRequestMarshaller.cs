@@ -63,38 +63,41 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetNodeIds())
-                {
-                    context.Writer.WritePropertyName("NodeIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestNodeIdsListValue in publicRequest.NodeIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetName())
                     {
-                            context.Writer.Write(publicRequestNodeIdsListValue);
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetNodeIds())
+                    {
+                        context.Writer.WritePropertyName("NodeIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestNodeIdsListValue in publicRequest.NodeIds)
+                        {
+                                context.Writer.Write(publicRequestNodeIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetRunId())
+                    {
+                        context.Writer.WritePropertyName("RunId");
+                        context.Writer.Write(publicRequest.RunId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRunId())
-                {
-                    context.Writer.WritePropertyName("RunId");
-                    context.Writer.Write(publicRequest.RunId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

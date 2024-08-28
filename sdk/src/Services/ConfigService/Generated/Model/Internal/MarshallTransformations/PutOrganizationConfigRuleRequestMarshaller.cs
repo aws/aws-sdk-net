@@ -63,65 +63,68 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetExcludedAccounts())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ExcludedAccounts");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestExcludedAccountsListValue in publicRequest.ExcludedAccounts)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetExcludedAccounts())
                     {
-                            context.Writer.Write(publicRequestExcludedAccountsListValue);
+                        context.Writer.WritePropertyName("ExcludedAccounts");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestExcludedAccountsListValue in publicRequest.ExcludedAccounts)
+                        {
+                                context.Writer.Write(publicRequestExcludedAccountsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetOrganizationConfigRuleName())
+                    {
+                        context.Writer.WritePropertyName("OrganizationConfigRuleName");
+                        context.Writer.Write(publicRequest.OrganizationConfigRuleName);
+                    }
+
+                    if(publicRequest.IsSetOrganizationCustomPolicyRuleMetadata())
+                    {
+                        context.Writer.WritePropertyName("OrganizationCustomPolicyRuleMetadata");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = OrganizationCustomPolicyRuleMetadataMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OrganizationCustomPolicyRuleMetadata, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetOrganizationCustomRuleMetadata())
+                    {
+                        context.Writer.WritePropertyName("OrganizationCustomRuleMetadata");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = OrganizationCustomRuleMetadataMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OrganizationCustomRuleMetadata, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetOrganizationManagedRuleMetadata())
+                    {
+                        context.Writer.WritePropertyName("OrganizationManagedRuleMetadata");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = OrganizationManagedRuleMetadataMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OrganizationManagedRuleMetadata, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetOrganizationConfigRuleName())
-                {
-                    context.Writer.WritePropertyName("OrganizationConfigRuleName");
-                    context.Writer.Write(publicRequest.OrganizationConfigRuleName);
-                }
-
-                if(publicRequest.IsSetOrganizationCustomPolicyRuleMetadata())
-                {
-                    context.Writer.WritePropertyName("OrganizationCustomPolicyRuleMetadata");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OrganizationCustomPolicyRuleMetadataMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OrganizationCustomPolicyRuleMetadata, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOrganizationCustomRuleMetadata())
-                {
-                    context.Writer.WritePropertyName("OrganizationCustomRuleMetadata");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OrganizationCustomRuleMetadataMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OrganizationCustomRuleMetadata, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOrganizationManagedRuleMetadata())
-                {
-                    context.Writer.WritePropertyName("OrganizationManagedRuleMetadata");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OrganizationManagedRuleMetadataMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OrganizationManagedRuleMetadata, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

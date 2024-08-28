@@ -64,32 +64,35 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
                 throw new AmazonLookoutforVisionException("Request object does not have required field ProjectName set");
             request.AddPathResource("{projectName}", StringUtils.FromString(publicRequest.ProjectName));
             request.ResourcePath = "/2020-11-20/projects/{projectName}/datasets";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDatasetSource())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DatasetSource");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDatasetSource())
+                    {
+                        context.Writer.WritePropertyName("DatasetSource");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = DatasetSourceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DatasetSource, context);
+                        var marshaller = DatasetSourceMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DatasetSource, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDatasetType())
+                    {
+                        context.Writer.WritePropertyName("DatasetType");
+                        context.Writer.Write(publicRequest.DatasetType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDatasetType())
-                {
-                    context.Writer.WritePropertyName("DatasetType");
-                    context.Writer.Write(publicRequest.DatasetType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

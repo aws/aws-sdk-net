@@ -38,6 +38,7 @@ namespace Amazon.CostOptimizationHub.Model
         private double? _estimatedTotalDedupedSavings;
         private string _groupBy;
         private List<RecommendationSummary> _items = AWSConfigs.InitializeCollections ? new List<RecommendationSummary>() : null;
+        private SummaryMetricsResult _metrics;
         private string _nextToken;
 
         /// <summary>
@@ -97,7 +98,7 @@ namespace Amazon.CostOptimizationHub.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// List of all savings recommendations.
+        /// A list of all savings recommendations.
         /// </para>
         /// </summary>
         public List<RecommendationSummary> Items
@@ -110,6 +111,25 @@ namespace Amazon.CostOptimizationHub.Model
         internal bool IsSetItems()
         {
             return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Metrics. 
+        /// <para>
+        /// The results or descriptions for the additional metrics, based on whether the metrics
+        /// were or were not requested.
+        /// </para>
+        /// </summary>
+        public SummaryMetricsResult Metrics
+        {
+            get { return this._metrics; }
+            set { this._metrics = value; }
+        }
+
+        // Check to see if Metrics property is set
+        internal bool IsSetMetrics()
+        {
+            return this._metrics != null;
         }
 
         /// <summary>

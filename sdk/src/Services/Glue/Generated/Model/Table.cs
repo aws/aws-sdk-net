@@ -49,6 +49,7 @@ namespace Amazon.Glue.Model
         private Dictionary<string, string> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private List<Column> _partitionKeys = AWSConfigs.InitializeCollections ? new List<Column>() : null;
         private int? _retention;
+        private TableStatus _status;
         private StorageDescriptor _storageDescriptor;
         private string _tableType;
         private TableIdentifier _targetTable;
@@ -347,6 +348,21 @@ namespace Amazon.Glue.Model
         internal bool IsSetRetention()
         {
             return this._retention.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status.
+        /// </summary>
+        public TableStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
         /// <summary>

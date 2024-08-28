@@ -67,6 +67,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.IpamResourceDiscoveryId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ipSource", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.IpSource = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ipUsage", targetDepth))
                     {
                         var unmarshaller = NullableDoubleUnmarshaller.Instance;

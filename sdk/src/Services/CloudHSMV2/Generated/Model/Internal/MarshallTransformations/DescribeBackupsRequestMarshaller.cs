@@ -63,58 +63,61 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFilters())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Filters");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestFiltersKvp in publicRequest.Filters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFilters())
                     {
-                        context.Writer.WritePropertyName(publicRequestFiltersKvp.Key);
-                        var publicRequestFiltersValue = publicRequestFiltersKvp.Value;
-
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestFiltersValueListValue in publicRequestFiltersValue)
+                        context.Writer.WritePropertyName("Filters");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestFiltersKvp in publicRequest.Filters)
                         {
-                                context.Writer.Write(publicRequestFiltersValueListValue);
+                            context.Writer.WritePropertyName(publicRequestFiltersKvp.Key);
+                            var publicRequestFiltersValue = publicRequestFiltersKvp.Value;
+
+                            context.Writer.WriteArrayStart();
+                            foreach(var publicRequestFiltersValueListValue in publicRequestFiltersValue)
+                            {
+                                    context.Writer.Write(publicRequestFiltersValueListValue);
+                            }
+                            context.Writer.WriteArrayEnd();
                         }
-                        context.Writer.WriteArrayEnd();
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetShared())
+                    {
+                        context.Writer.WritePropertyName("Shared");
+                        context.Writer.Write(publicRequest.Shared.Value);
+                    }
+
+                    if(publicRequest.IsSetSortAscending())
+                    {
+                        context.Writer.WritePropertyName("SortAscending");
+                        context.Writer.Write(publicRequest.SortAscending.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetShared())
-                {
-                    context.Writer.WritePropertyName("Shared");
-                    context.Writer.Write(publicRequest.Shared.Value);
-                }
-
-                if(publicRequest.IsSetSortAscending())
-                {
-                    context.Writer.WritePropertyName("SortAscending");
-                    context.Writer.Write(publicRequest.SortAscending.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -55,6 +55,7 @@ namespace Amazon.Connect.Model
         private string _instanceId;
         private long? _queuePriority;
         private int? _queueTimeAdjustmentSeconds;
+        private RoutingCriteriaInput _routingCriteria;
 
         /// <summary>
         /// Gets and sets the property ContactId. 
@@ -134,6 +135,25 @@ namespace Amazon.Connect.Model
         internal bool IsSetQueueTimeAdjustmentSeconds()
         {
             return this._queueTimeAdjustmentSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoutingCriteria. 
+        /// <para>
+        /// Updates the routing criteria on the contact. These properties can be used to change
+        /// how a&#x2028; contact is routed within the queue.
+        /// </para>
+        /// </summary>
+        public RoutingCriteriaInput RoutingCriteria
+        {
+            get { return this._routingCriteria; }
+            set { this._routingCriteria = value; }
+        }
+
+        // Check to see if RoutingCriteria property is set
+        internal bool IsSetRoutingCriteria()
+        {
+            return this._routingCriteria != null;
         }
 
     }

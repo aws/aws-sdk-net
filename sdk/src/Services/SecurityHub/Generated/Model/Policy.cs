@@ -45,7 +45,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property SecurityHub. 
         /// <para>
-        ///  The Amazon Web Service that the configuration policy applies to. 
+        ///  The Amazon Web Servicesservice that the configuration policy applies to. 
         /// </para>
         /// </summary>
         public SecurityHubPolicy SecurityHub

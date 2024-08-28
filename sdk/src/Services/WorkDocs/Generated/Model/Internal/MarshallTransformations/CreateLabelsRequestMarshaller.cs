@@ -64,26 +64,29 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
                 throw new AmazonWorkDocsException("Request object does not have required field ResourceId set");
             request.AddPathResource("{ResourceId}", StringUtils.FromString(publicRequest.ResourceId));
             request.ResourcePath = "/api/v1/resources/{ResourceId}/labels";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLabels())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Labels");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLabelsListValue in publicRequest.Labels)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetLabels())
                     {
-                            context.Writer.Write(publicRequestLabelsListValue);
+                        context.Writer.WritePropertyName("Labels");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLabelsListValue in publicRequest.Labels)
+                        {
+                                context.Writer.Write(publicRequestLabelsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

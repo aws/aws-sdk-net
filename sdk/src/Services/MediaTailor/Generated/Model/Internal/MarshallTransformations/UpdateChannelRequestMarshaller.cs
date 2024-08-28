@@ -64,64 +64,67 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 throw new AmazonMediaTailorException("Request object does not have required field ChannelName set");
             request.AddPathResource("{ChannelName}", StringUtils.FromString(publicRequest.ChannelName));
             request.ResourcePath = "/channel/{ChannelName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAudiences())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Audiences");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAudiencesListValue in publicRequest.Audiences)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAudiences())
                     {
-                            context.Writer.Write(publicRequestAudiencesListValue);
+                        context.Writer.WritePropertyName("Audiences");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAudiencesListValue in publicRequest.Audiences)
+                        {
+                                context.Writer.Write(publicRequestAudiencesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetFillerSlate())
-                {
-                    context.Writer.WritePropertyName("FillerSlate");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SlateSourceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.FillerSlate, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOutputs())
-                {
-                    context.Writer.WritePropertyName("Outputs");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestOutputsListValue in publicRequest.Outputs)
+                    if(publicRequest.IsSetFillerSlate())
                     {
+                        context.Writer.WritePropertyName("FillerSlate");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = RequestOutputItemMarshaller.Instance;
-                        marshaller.Marshall(publicRequestOutputsListValue, context);
+                        var marshaller = SlateSourceMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.FillerSlate, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetOutputs())
+                    {
+                        context.Writer.WritePropertyName("Outputs");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestOutputsListValue in publicRequest.Outputs)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = RequestOutputItemMarshaller.Instance;
+                            marshaller.Marshall(publicRequestOutputsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTimeShiftConfiguration())
+                    {
+                        context.Writer.WritePropertyName("TimeShiftConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TimeShiftConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TimeShiftConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTimeShiftConfiguration())
-                {
-                    context.Writer.WritePropertyName("TimeShiftConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TimeShiftConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TimeShiftConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

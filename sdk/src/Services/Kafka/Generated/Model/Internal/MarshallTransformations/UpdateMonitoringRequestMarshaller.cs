@@ -64,49 +64,52 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 throw new AmazonKafkaException("Request object does not have required field ClusterArn set");
             request.AddPathResource("{clusterArn}", StringUtils.FromString(publicRequest.ClusterArn));
             request.ResourcePath = "/v1/clusters/{clusterArn}/monitoring";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCurrentVersion())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("currentVersion");
-                    context.Writer.Write(publicRequest.CurrentVersion);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCurrentVersion())
+                    {
+                        context.Writer.WritePropertyName("currentVersion");
+                        context.Writer.Write(publicRequest.CurrentVersion);
+                    }
+
+                    if(publicRequest.IsSetEnhancedMonitoring())
+                    {
+                        context.Writer.WritePropertyName("enhancedMonitoring");
+                        context.Writer.Write(publicRequest.EnhancedMonitoring);
+                    }
+
+                    if(publicRequest.IsSetLoggingInfo())
+                    {
+                        context.Writer.WritePropertyName("loggingInfo");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LoggingInfoMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.LoggingInfo, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetOpenMonitoring())
+                    {
+                        context.Writer.WritePropertyName("openMonitoring");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = OpenMonitoringInfoMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OpenMonitoring, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEnhancedMonitoring())
-                {
-                    context.Writer.WritePropertyName("enhancedMonitoring");
-                    context.Writer.Write(publicRequest.EnhancedMonitoring);
-                }
-
-                if(publicRequest.IsSetLoggingInfo())
-                {
-                    context.Writer.WritePropertyName("loggingInfo");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LoggingInfoMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LoggingInfo, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOpenMonitoring())
-                {
-                    context.Writer.WritePropertyName("openMonitoring");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OpenMonitoringInfoMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OpenMonitoring, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

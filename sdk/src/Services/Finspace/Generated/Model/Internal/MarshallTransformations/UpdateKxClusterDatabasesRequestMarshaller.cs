@@ -67,53 +67,56 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
                 throw new AmazonFinspaceException("Request object does not have required field EnvironmentId set");
             request.AddPathResource("{environmentId}", StringUtils.FromString(publicRequest.EnvironmentId));
             request.ResourcePath = "/kx/environments/{environmentId}/clusters/{clusterName}/configuration/databases";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDatabases())
-                {
-                    context.Writer.WritePropertyName("databases");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDatabasesListValue in publicRequest.Databases)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetDatabases())
+                    {
+                        context.Writer.WritePropertyName("databases");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDatabasesListValue in publicRequest.Databases)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = KxDatabaseConfigurationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestDatabasesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetDeploymentConfiguration())
+                    {
+                        context.Writer.WritePropertyName("deploymentConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = KxDatabaseConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestDatabasesListValue, context);
+                        var marshaller = KxDeploymentConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DeploymentConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDeploymentConfiguration())
-                {
-                    context.Writer.WritePropertyName("deploymentConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = KxDeploymentConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DeploymentConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

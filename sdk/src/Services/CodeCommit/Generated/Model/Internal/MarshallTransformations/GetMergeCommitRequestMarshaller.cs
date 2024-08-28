@@ -63,45 +63,48 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConflictDetailLevel())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("conflictDetailLevel");
-                    context.Writer.Write(publicRequest.ConflictDetailLevel);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConflictDetailLevel())
+                    {
+                        context.Writer.WritePropertyName("conflictDetailLevel");
+                        context.Writer.Write(publicRequest.ConflictDetailLevel);
+                    }
+
+                    if(publicRequest.IsSetConflictResolutionStrategy())
+                    {
+                        context.Writer.WritePropertyName("conflictResolutionStrategy");
+                        context.Writer.Write(publicRequest.ConflictResolutionStrategy);
+                    }
+
+                    if(publicRequest.IsSetDestinationCommitSpecifier())
+                    {
+                        context.Writer.WritePropertyName("destinationCommitSpecifier");
+                        context.Writer.Write(publicRequest.DestinationCommitSpecifier);
+                    }
+
+                    if(publicRequest.IsSetRepositoryName())
+                    {
+                        context.Writer.WritePropertyName("repositoryName");
+                        context.Writer.Write(publicRequest.RepositoryName);
+                    }
+
+                    if(publicRequest.IsSetSourceCommitSpecifier())
+                    {
+                        context.Writer.WritePropertyName("sourceCommitSpecifier");
+                        context.Writer.Write(publicRequest.SourceCommitSpecifier);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetConflictResolutionStrategy())
-                {
-                    context.Writer.WritePropertyName("conflictResolutionStrategy");
-                    context.Writer.Write(publicRequest.ConflictResolutionStrategy);
-                }
-
-                if(publicRequest.IsSetDestinationCommitSpecifier())
-                {
-                    context.Writer.WritePropertyName("destinationCommitSpecifier");
-                    context.Writer.Write(publicRequest.DestinationCommitSpecifier);
-                }
-
-                if(publicRequest.IsSetRepositoryName())
-                {
-                    context.Writer.WritePropertyName("repositoryName");
-                    context.Writer.Write(publicRequest.RepositoryName);
-                }
-
-                if(publicRequest.IsSetSourceCommitSpecifier())
-                {
-                    context.Writer.WritePropertyName("sourceCommitSpecifier");
-                    context.Writer.Write(publicRequest.SourceCommitSpecifier);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

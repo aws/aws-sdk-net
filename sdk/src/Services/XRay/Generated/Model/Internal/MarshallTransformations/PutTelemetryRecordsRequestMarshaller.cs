@@ -61,49 +61,52 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/TelemetryRecords";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEC2InstanceId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("EC2InstanceId");
-                    context.Writer.Write(publicRequest.EC2InstanceId);
-                }
-
-                if(publicRequest.IsSetHostname())
-                {
-                    context.Writer.WritePropertyName("Hostname");
-                    context.Writer.Write(publicRequest.Hostname);
-                }
-
-                if(publicRequest.IsSetResourceARN())
-                {
-                    context.Writer.WritePropertyName("ResourceARN");
-                    context.Writer.Write(publicRequest.ResourceARN);
-                }
-
-                if(publicRequest.IsSetTelemetryRecords())
-                {
-                    context.Writer.WritePropertyName("TelemetryRecords");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTelemetryRecordsListValue in publicRequest.TelemetryRecords)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEC2InstanceId())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TelemetryRecordMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTelemetryRecordsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("EC2InstanceId");
+                        context.Writer.Write(publicRequest.EC2InstanceId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetHostname())
+                    {
+                        context.Writer.WritePropertyName("Hostname");
+                        context.Writer.Write(publicRequest.Hostname);
+                    }
+
+                    if(publicRequest.IsSetResourceARN())
+                    {
+                        context.Writer.WritePropertyName("ResourceARN");
+                        context.Writer.Write(publicRequest.ResourceARN);
+                    }
+
+                    if(publicRequest.IsSetTelemetryRecords())
+                    {
+                        context.Writer.WritePropertyName("TelemetryRecords");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTelemetryRecordsListValue in publicRequest.TelemetryRecords)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TelemetryRecordMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTelemetryRecordsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

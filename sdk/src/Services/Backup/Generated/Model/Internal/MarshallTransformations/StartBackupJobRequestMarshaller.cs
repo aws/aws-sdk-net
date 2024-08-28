@@ -61,90 +61,93 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/backup-jobs";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBackupOptions())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("BackupOptions");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestBackupOptionsKvp in publicRequest.BackupOptions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBackupOptions())
                     {
-                        context.Writer.WritePropertyName(publicRequestBackupOptionsKvp.Key);
-                        var publicRequestBackupOptionsValue = publicRequestBackupOptionsKvp.Value;
+                        context.Writer.WritePropertyName("BackupOptions");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestBackupOptionsKvp in publicRequest.BackupOptions)
+                        {
+                            context.Writer.WritePropertyName(publicRequestBackupOptionsKvp.Key);
+                            var publicRequestBackupOptionsValue = publicRequestBackupOptionsKvp.Value;
 
-                            context.Writer.Write(publicRequestBackupOptionsValue);
+                                context.Writer.Write(publicRequestBackupOptionsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetBackupVaultName())
-                {
-                    context.Writer.WritePropertyName("BackupVaultName");
-                    context.Writer.Write(publicRequest.BackupVaultName);
-                }
-
-                if(publicRequest.IsSetCompleteWindowMinutes())
-                {
-                    context.Writer.WritePropertyName("CompleteWindowMinutes");
-                    context.Writer.Write(publicRequest.CompleteWindowMinutes.Value);
-                }
-
-                if(publicRequest.IsSetIamRoleArn())
-                {
-                    context.Writer.WritePropertyName("IamRoleArn");
-                    context.Writer.Write(publicRequest.IamRoleArn);
-                }
-
-                if(publicRequest.IsSetIdempotencyToken())
-                {
-                    context.Writer.WritePropertyName("IdempotencyToken");
-                    context.Writer.Write(publicRequest.IdempotencyToken);
-                }
-
-                if(publicRequest.IsSetLifecycle())
-                {
-                    context.Writer.WritePropertyName("Lifecycle");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LifecycleMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Lifecycle, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRecoveryPointTags())
-                {
-                    context.Writer.WritePropertyName("RecoveryPointTags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestRecoveryPointTagsKvp in publicRequest.RecoveryPointTags)
+                    if(publicRequest.IsSetBackupVaultName())
                     {
-                        context.Writer.WritePropertyName(publicRequestRecoveryPointTagsKvp.Key);
-                        var publicRequestRecoveryPointTagsValue = publicRequestRecoveryPointTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestRecoveryPointTagsValue);
+                        context.Writer.WritePropertyName("BackupVaultName");
+                        context.Writer.Write(publicRequest.BackupVaultName);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetCompleteWindowMinutes())
+                    {
+                        context.Writer.WritePropertyName("CompleteWindowMinutes");
+                        context.Writer.Write(publicRequest.CompleteWindowMinutes.Value);
+                    }
+
+                    if(publicRequest.IsSetIamRoleArn())
+                    {
+                        context.Writer.WritePropertyName("IamRoleArn");
+                        context.Writer.Write(publicRequest.IamRoleArn);
+                    }
+
+                    if(publicRequest.IsSetIdempotencyToken())
+                    {
+                        context.Writer.WritePropertyName("IdempotencyToken");
+                        context.Writer.Write(publicRequest.IdempotencyToken);
+                    }
+
+                    if(publicRequest.IsSetLifecycle())
+                    {
+                        context.Writer.WritePropertyName("Lifecycle");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LifecycleMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Lifecycle, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRecoveryPointTags())
+                    {
+                        context.Writer.WritePropertyName("RecoveryPointTags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestRecoveryPointTagsKvp in publicRequest.RecoveryPointTags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestRecoveryPointTagsKvp.Key);
+                            var publicRequestRecoveryPointTagsValue = publicRequestRecoveryPointTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestRecoveryPointTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetResourceArn())
+                    {
+                        context.Writer.WritePropertyName("ResourceArn");
+                        context.Writer.Write(publicRequest.ResourceArn);
+                    }
+
+                    if(publicRequest.IsSetStartWindowMinutes())
+                    {
+                        context.Writer.WritePropertyName("StartWindowMinutes");
+                        context.Writer.Write(publicRequest.StartWindowMinutes.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetResourceArn())
-                {
-                    context.Writer.WritePropertyName("ResourceArn");
-                    context.Writer.Write(publicRequest.ResourceArn);
-                }
-
-                if(publicRequest.IsSetStartWindowMinutes())
-                {
-                    context.Writer.WritePropertyName("StartWindowMinutes");
-                    context.Writer.Write(publicRequest.StartWindowMinutes.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

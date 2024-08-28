@@ -63,56 +63,59 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEndTime())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("endTime");
-                    context.Writer.Write(publicRequest.EndTime.Value);
-                }
-
-                if(publicRequest.IsSetMetricName())
-                {
-                    context.Writer.WritePropertyName("metricName");
-                    context.Writer.Write(publicRequest.MetricName);
-                }
-
-                if(publicRequest.IsSetPeriod())
-                {
-                    context.Writer.WritePropertyName("period");
-                    context.Writer.Write(publicRequest.Period.Value);
-                }
-
-                if(publicRequest.IsSetServiceName())
-                {
-                    context.Writer.WritePropertyName("serviceName");
-                    context.Writer.Write(publicRequest.ServiceName);
-                }
-
-                if(publicRequest.IsSetStartTime())
-                {
-                    context.Writer.WritePropertyName("startTime");
-                    context.Writer.Write(publicRequest.StartTime.Value);
-                }
-
-                if(publicRequest.IsSetStatistics())
-                {
-                    context.Writer.WritePropertyName("statistics");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestStatisticsListValue in publicRequest.Statistics)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEndTime())
                     {
-                            context.Writer.Write(publicRequestStatisticsListValue);
+                        context.Writer.WritePropertyName("endTime");
+                        context.Writer.Write(publicRequest.EndTime.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetMetricName())
+                    {
+                        context.Writer.WritePropertyName("metricName");
+                        context.Writer.Write(publicRequest.MetricName);
+                    }
+
+                    if(publicRequest.IsSetPeriod())
+                    {
+                        context.Writer.WritePropertyName("period");
+                        context.Writer.Write(publicRequest.Period.Value);
+                    }
+
+                    if(publicRequest.IsSetServiceName())
+                    {
+                        context.Writer.WritePropertyName("serviceName");
+                        context.Writer.Write(publicRequest.ServiceName);
+                    }
+
+                    if(publicRequest.IsSetStartTime())
+                    {
+                        context.Writer.WritePropertyName("startTime");
+                        context.Writer.Write(publicRequest.StartTime.Value);
+                    }
+
+                    if(publicRequest.IsSetStatistics())
+                    {
+                        context.Writer.WritePropertyName("statistics");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestStatisticsListValue in publicRequest.Statistics)
+                        {
+                                context.Writer.Write(publicRequestStatisticsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

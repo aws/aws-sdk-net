@@ -63,91 +63,94 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBypassPolicyLockoutSafetyCheck())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("BypassPolicyLockoutSafetyCheck");
-                    context.Writer.Write(publicRequest.BypassPolicyLockoutSafetyCheck.Value);
-                }
-
-                if(publicRequest.IsSetCustomerMasterKeySpec())
-                {
-                    context.Writer.WritePropertyName("CustomerMasterKeySpec");
-                    context.Writer.Write(publicRequest.CustomerMasterKeySpec);
-                }
-
-                if(publicRequest.IsSetCustomKeyStoreId())
-                {
-                    context.Writer.WritePropertyName("CustomKeyStoreId");
-                    context.Writer.Write(publicRequest.CustomKeyStoreId);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetKeySpec())
-                {
-                    context.Writer.WritePropertyName("KeySpec");
-                    context.Writer.Write(publicRequest.KeySpec);
-                }
-
-                if(publicRequest.IsSetKeyUsage())
-                {
-                    context.Writer.WritePropertyName("KeyUsage");
-                    context.Writer.Write(publicRequest.KeyUsage);
-                }
-
-                if(publicRequest.IsSetMultiRegion())
-                {
-                    context.Writer.WritePropertyName("MultiRegion");
-                    context.Writer.Write(publicRequest.MultiRegion.Value);
-                }
-
-                if(publicRequest.IsSetOrigin())
-                {
-                    context.Writer.WritePropertyName("Origin");
-                    context.Writer.Write(publicRequest.Origin);
-                }
-
-                if(publicRequest.IsSetPolicy())
-                {
-                    context.Writer.WritePropertyName("Policy");
-                    context.Writer.Write(publicRequest.Policy);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBypassPolicyLockoutSafetyCheck())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("BypassPolicyLockoutSafetyCheck");
+                        context.Writer.Write(publicRequest.BypassPolicyLockoutSafetyCheck.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetCustomerMasterKeySpec())
+                    {
+                        context.Writer.WritePropertyName("CustomerMasterKeySpec");
+                        context.Writer.Write(publicRequest.CustomerMasterKeySpec);
+                    }
+
+                    if(publicRequest.IsSetCustomKeyStoreId())
+                    {
+                        context.Writer.WritePropertyName("CustomKeyStoreId");
+                        context.Writer.Write(publicRequest.CustomKeyStoreId);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetKeySpec())
+                    {
+                        context.Writer.WritePropertyName("KeySpec");
+                        context.Writer.Write(publicRequest.KeySpec);
+                    }
+
+                    if(publicRequest.IsSetKeyUsage())
+                    {
+                        context.Writer.WritePropertyName("KeyUsage");
+                        context.Writer.Write(publicRequest.KeyUsage);
+                    }
+
+                    if(publicRequest.IsSetMultiRegion())
+                    {
+                        context.Writer.WritePropertyName("MultiRegion");
+                        context.Writer.Write(publicRequest.MultiRegion.Value);
+                    }
+
+                    if(publicRequest.IsSetOrigin())
+                    {
+                        context.Writer.WritePropertyName("Origin");
+                        context.Writer.Write(publicRequest.Origin);
+                    }
+
+                    if(publicRequest.IsSetPolicy())
+                    {
+                        context.Writer.WritePropertyName("Policy");
+                        context.Writer.Write(publicRequest.Policy);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetXksKeyId())
+                    {
+                        context.Writer.WritePropertyName("XksKeyId");
+                        context.Writer.Write(publicRequest.XksKeyId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetXksKeyId())
-                {
-                    context.Writer.WritePropertyName("XksKeyId");
-                    context.Writer.Write(publicRequest.XksKeyId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

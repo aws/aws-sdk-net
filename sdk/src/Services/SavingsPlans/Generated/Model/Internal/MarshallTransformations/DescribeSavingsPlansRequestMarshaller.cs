@@ -61,76 +61,79 @@ namespace Amazon.SavingsPlans.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/DescribeSavingsPlans";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFilters())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("filters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFiltersListValue in publicRequest.Filters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFilters())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("filters");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFiltersListValue in publicRequest.Filters)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = SavingsPlanFilterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFiltersListValue, context);
+                            var marshaller = SavingsPlanFilterMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFiltersListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetSavingsPlanArns())
-                {
-                    context.Writer.WritePropertyName("savingsPlanArns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSavingsPlanArnsListValue in publicRequest.SavingsPlanArns)
+                    if(publicRequest.IsSetMaxResults())
                     {
-                            context.Writer.Write(publicRequestSavingsPlanArnsListValue);
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetSavingsPlanIds())
-                {
-                    context.Writer.WritePropertyName("savingsPlanIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSavingsPlanIdsListValue in publicRequest.SavingsPlanIds)
+                    if(publicRequest.IsSetNextToken())
                     {
-                            context.Writer.Write(publicRequestSavingsPlanIdsListValue);
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetStates())
-                {
-                    context.Writer.WritePropertyName("states");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestStatesListValue in publicRequest.States)
+                    if(publicRequest.IsSetSavingsPlanArns())
                     {
-                            context.Writer.Write(publicRequestStatesListValue);
+                        context.Writer.WritePropertyName("savingsPlanArns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSavingsPlanArnsListValue in publicRequest.SavingsPlanArns)
+                        {
+                                context.Writer.Write(publicRequestSavingsPlanArnsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetSavingsPlanIds())
+                    {
+                        context.Writer.WritePropertyName("savingsPlanIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSavingsPlanIdsListValue in publicRequest.SavingsPlanIds)
+                        {
+                                context.Writer.Write(publicRequestSavingsPlanIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetStates())
+                    {
+                        context.Writer.WritePropertyName("states");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestStatesListValue in publicRequest.States)
+                        {
+                                context.Writer.Write(publicRequestStatesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

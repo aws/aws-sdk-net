@@ -63,76 +63,79 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAction())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("action");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAction())
+                    {
+                        context.Writer.WritePropertyName("action");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = ActionIdentifierMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Action, context);
+                        var marshaller = ActionIdentifierMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Action, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetContext())
+                    {
+                        context.Writer.WritePropertyName("context");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ContextDefinitionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Context, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetEntities())
+                    {
+                        context.Writer.WritePropertyName("entities");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EntitiesDefinitionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Entities, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetPolicyStoreId())
+                    {
+                        context.Writer.WritePropertyName("policyStoreId");
+                        context.Writer.Write(publicRequest.PolicyStoreId);
+                    }
+
+                    if(publicRequest.IsSetPrincipal())
+                    {
+                        context.Writer.WritePropertyName("principal");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EntityIdentifierMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Principal, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetResource())
+                    {
+                        context.Writer.WritePropertyName("resource");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EntityIdentifierMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Resource, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetContext())
-                {
-                    context.Writer.WritePropertyName("context");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ContextDefinitionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Context, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEntities())
-                {
-                    context.Writer.WritePropertyName("entities");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EntitiesDefinitionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Entities, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPolicyStoreId())
-                {
-                    context.Writer.WritePropertyName("policyStoreId");
-                    context.Writer.Write(publicRequest.PolicyStoreId);
-                }
-
-                if(publicRequest.IsSetPrincipal())
-                {
-                    context.Writer.WritePropertyName("principal");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EntityIdentifierMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Principal, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetResource())
-                {
-                    context.Writer.WritePropertyName("resource");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EntityIdentifierMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Resource, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

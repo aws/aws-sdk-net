@@ -63,47 +63,50 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetIdentityPoolId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("IdentityPoolId");
-                    context.Writer.Write(publicRequest.IdentityPoolId);
-                }
-
-                if(publicRequest.IsSetIdentityProviderName())
-                {
-                    context.Writer.WritePropertyName("IdentityProviderName");
-                    context.Writer.Write(publicRequest.IdentityProviderName);
-                }
-
-                if(publicRequest.IsSetPrincipalTags())
-                {
-                    context.Writer.WritePropertyName("PrincipalTags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestPrincipalTagsKvp in publicRequest.PrincipalTags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetIdentityPoolId())
                     {
-                        context.Writer.WritePropertyName(publicRequestPrincipalTagsKvp.Key);
-                        var publicRequestPrincipalTagsValue = publicRequestPrincipalTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestPrincipalTagsValue);
+                        context.Writer.WritePropertyName("IdentityPoolId");
+                        context.Writer.Write(publicRequest.IdentityPoolId);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetIdentityProviderName())
+                    {
+                        context.Writer.WritePropertyName("IdentityProviderName");
+                        context.Writer.Write(publicRequest.IdentityProviderName);
+                    }
+
+                    if(publicRequest.IsSetPrincipalTags())
+                    {
+                        context.Writer.WritePropertyName("PrincipalTags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestPrincipalTagsKvp in publicRequest.PrincipalTags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestPrincipalTagsKvp.Key);
+                            var publicRequestPrincipalTagsValue = publicRequestPrincipalTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestPrincipalTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetUseDefaults())
+                    {
+                        context.Writer.WritePropertyName("UseDefaults");
+                        context.Writer.Write(publicRequest.UseDefaults.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetUseDefaults())
-                {
-                    context.Writer.WritePropertyName("UseDefaults");
-                    context.Writer.Write(publicRequest.UseDefaults.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

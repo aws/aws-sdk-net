@@ -64,43 +64,46 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
                 throw new AmazonManagedBlockchainException("Request object does not have required field NetworkId set");
             request.AddPathResource("{networkId}", StringUtils.FromString(publicRequest.NetworkId));
             request.ResourcePath = "/networks/{networkId}/members";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientRequestToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientRequestToken())
+                    {
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(publicRequest.ClientRequestToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientRequestToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetInvitationId())
+                    {
+                        context.Writer.WritePropertyName("InvitationId");
+                        context.Writer.Write(publicRequest.InvitationId);
+                    }
+
+                    if(publicRequest.IsSetMemberConfiguration())
+                    {
+                        context.Writer.WritePropertyName("MemberConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MemberConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.MemberConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetInvitationId())
-                {
-                    context.Writer.WritePropertyName("InvitationId");
-                    context.Writer.Write(publicRequest.InvitationId);
-                }
-
-                if(publicRequest.IsSetMemberConfiguration())
-                {
-                    context.Writer.WritePropertyName("MemberConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MemberConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.MemberConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

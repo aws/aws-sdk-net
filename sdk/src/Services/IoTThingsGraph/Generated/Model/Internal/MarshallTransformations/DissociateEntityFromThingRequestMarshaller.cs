@@ -63,27 +63,30 @@ namespace Amazon.IoTThingsGraph.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEntityType())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("entityType");
-                    context.Writer.Write(publicRequest.EntityType);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEntityType())
+                    {
+                        context.Writer.WritePropertyName("entityType");
+                        context.Writer.Write(publicRequest.EntityType);
+                    }
+
+                    if(publicRequest.IsSetThingName())
+                    {
+                        context.Writer.WritePropertyName("thingName");
+                        context.Writer.Write(publicRequest.ThingName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetThingName())
-                {
-                    context.Writer.WritePropertyName("thingName");
-                    context.Writer.Write(publicRequest.ThingName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

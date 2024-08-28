@@ -63,27 +63,30 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetElasticLoadBalancerName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ElasticLoadBalancerName");
-                    context.Writer.Write(publicRequest.ElasticLoadBalancerName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetElasticLoadBalancerName())
+                    {
+                        context.Writer.WritePropertyName("ElasticLoadBalancerName");
+                        context.Writer.Write(publicRequest.ElasticLoadBalancerName);
+                    }
+
+                    if(publicRequest.IsSetLayerId())
+                    {
+                        context.Writer.WritePropertyName("LayerId");
+                        context.Writer.Write(publicRequest.LayerId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetLayerId())
-                {
-                    context.Writer.WritePropertyName("LayerId");
-                    context.Writer.Write(publicRequest.LayerId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

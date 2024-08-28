@@ -70,43 +70,46 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
                 throw new AmazonCognitoSyncException("Request object does not have required field IdentityPoolId set");
             request.AddPathResource("{IdentityPoolId}", StringUtils.FromString(publicRequest.IdentityPoolId));
             request.ResourcePath = "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeviceId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DeviceId");
-                    context.Writer.Write(publicRequest.DeviceId);
-                }
-
-                if(publicRequest.IsSetRecordPatches())
-                {
-                    context.Writer.WritePropertyName("RecordPatches");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRecordPatchesListValue in publicRequest.RecordPatches)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDeviceId())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RecordPatchMarshaller.Instance;
-                        marshaller.Marshall(publicRequestRecordPatchesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("DeviceId");
+                        context.Writer.Write(publicRequest.DeviceId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetRecordPatches())
+                    {
+                        context.Writer.WritePropertyName("RecordPatches");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRecordPatchesListValue in publicRequest.RecordPatches)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = RecordPatchMarshaller.Instance;
+                            marshaller.Marshall(publicRequestRecordPatchesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSyncSessionToken())
+                    {
+                        context.Writer.WritePropertyName("SyncSessionToken");
+                        context.Writer.Write(publicRequest.SyncSessionToken);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSyncSessionToken())
-                {
-                    context.Writer.WritePropertyName("SyncSessionToken");
-                    context.Writer.Write(publicRequest.SyncSessionToken);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

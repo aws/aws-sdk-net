@@ -63,62 +63,65 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDomainControllers())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DomainControllers");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDomainControllersListValue in publicRequest.DomainControllers)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDomainControllers())
                     {
-                            context.Writer.Write(publicRequestDomainControllersListValue);
+                        context.Writer.WritePropertyName("DomainControllers");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDomainControllersListValue in publicRequest.DomainControllers)
+                        {
+                                context.Writer.Write(publicRequestDomainControllersListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDomainName())
+                    {
+                        context.Writer.WritePropertyName("DomainName");
+                        context.Writer.Write(publicRequest.DomainName);
+                    }
+
+                    if(publicRequest.IsSetGatewayARN())
+                    {
+                        context.Writer.WritePropertyName("GatewayARN");
+                        context.Writer.Write(publicRequest.GatewayARN);
+                    }
+
+                    if(publicRequest.IsSetOrganizationalUnit())
+                    {
+                        context.Writer.WritePropertyName("OrganizationalUnit");
+                        context.Writer.Write(publicRequest.OrganizationalUnit);
+                    }
+
+                    if(publicRequest.IsSetPassword())
+                    {
+                        context.Writer.WritePropertyName("Password");
+                        context.Writer.Write(publicRequest.Password);
+                    }
+
+                    if(publicRequest.IsSetTimeoutInSeconds())
+                    {
+                        context.Writer.WritePropertyName("TimeoutInSeconds");
+                        context.Writer.Write(publicRequest.TimeoutInSeconds.Value);
+                    }
+
+                    if(publicRequest.IsSetUserName())
+                    {
+                        context.Writer.WritePropertyName("UserName");
+                        context.Writer.Write(publicRequest.UserName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDomainName())
-                {
-                    context.Writer.WritePropertyName("DomainName");
-                    context.Writer.Write(publicRequest.DomainName);
-                }
-
-                if(publicRequest.IsSetGatewayARN())
-                {
-                    context.Writer.WritePropertyName("GatewayARN");
-                    context.Writer.Write(publicRequest.GatewayARN);
-                }
-
-                if(publicRequest.IsSetOrganizationalUnit())
-                {
-                    context.Writer.WritePropertyName("OrganizationalUnit");
-                    context.Writer.Write(publicRequest.OrganizationalUnit);
-                }
-
-                if(publicRequest.IsSetPassword())
-                {
-                    context.Writer.WritePropertyName("Password");
-                    context.Writer.Write(publicRequest.Password);
-                }
-
-                if(publicRequest.IsSetTimeoutInSeconds())
-                {
-                    context.Writer.WritePropertyName("TimeoutInSeconds");
-                    context.Writer.Write(publicRequest.TimeoutInSeconds.Value);
-                }
-
-                if(publicRequest.IsSetUserName())
-                {
-                    context.Writer.WritePropertyName("UserName");
-                    context.Writer.Write(publicRequest.UserName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

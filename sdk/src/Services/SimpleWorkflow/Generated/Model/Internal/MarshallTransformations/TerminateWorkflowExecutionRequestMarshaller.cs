@@ -63,51 +63,54 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetChildPolicy())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("childPolicy");
-                    context.Writer.Write(publicRequest.ChildPolicy);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetChildPolicy())
+                    {
+                        context.Writer.WritePropertyName("childPolicy");
+                        context.Writer.Write(publicRequest.ChildPolicy);
+                    }
+
+                    if(publicRequest.IsSetDetails())
+                    {
+                        context.Writer.WritePropertyName("details");
+                        context.Writer.Write(publicRequest.Details);
+                    }
+
+                    if(publicRequest.IsSetDomain())
+                    {
+                        context.Writer.WritePropertyName("domain");
+                        context.Writer.Write(publicRequest.Domain);
+                    }
+
+                    if(publicRequest.IsSetReason())
+                    {
+                        context.Writer.WritePropertyName("reason");
+                        context.Writer.Write(publicRequest.Reason);
+                    }
+
+                    if(publicRequest.IsSetRunId())
+                    {
+                        context.Writer.WritePropertyName("runId");
+                        context.Writer.Write(publicRequest.RunId);
+                    }
+
+                    if(publicRequest.IsSetWorkflowId())
+                    {
+                        context.Writer.WritePropertyName("workflowId");
+                        context.Writer.Write(publicRequest.WorkflowId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDetails())
-                {
-                    context.Writer.WritePropertyName("details");
-                    context.Writer.Write(publicRequest.Details);
-                }
-
-                if(publicRequest.IsSetDomain())
-                {
-                    context.Writer.WritePropertyName("domain");
-                    context.Writer.Write(publicRequest.Domain);
-                }
-
-                if(publicRequest.IsSetReason())
-                {
-                    context.Writer.WritePropertyName("reason");
-                    context.Writer.Write(publicRequest.Reason);
-                }
-
-                if(publicRequest.IsSetRunId())
-                {
-                    context.Writer.WritePropertyName("runId");
-                    context.Writer.Write(publicRequest.RunId);
-                }
-
-                if(publicRequest.IsSetWorkflowId())
-                {
-                    context.Writer.WritePropertyName("workflowId");
-                    context.Writer.Write(publicRequest.WorkflowId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

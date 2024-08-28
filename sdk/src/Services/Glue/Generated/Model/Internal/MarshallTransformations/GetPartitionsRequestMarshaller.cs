@@ -63,80 +63,83 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCatalogId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CatalogId");
-                    context.Writer.Write(publicRequest.CatalogId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCatalogId())
+                    {
+                        context.Writer.WritePropertyName("CatalogId");
+                        context.Writer.Write(publicRequest.CatalogId);
+                    }
+
+                    if(publicRequest.IsSetDatabaseName())
+                    {
+                        context.Writer.WritePropertyName("DatabaseName");
+                        context.Writer.Write(publicRequest.DatabaseName);
+                    }
+
+                    if(publicRequest.IsSetExcludeColumnSchema())
+                    {
+                        context.Writer.WritePropertyName("ExcludeColumnSchema");
+                        context.Writer.Write(publicRequest.ExcludeColumnSchema.Value);
+                    }
+
+                    if(publicRequest.IsSetExpression())
+                    {
+                        context.Writer.WritePropertyName("Expression");
+                        context.Writer.Write(publicRequest.Expression);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetQueryAsOfTime())
+                    {
+                        context.Writer.WritePropertyName("QueryAsOfTime");
+                        context.Writer.Write(publicRequest.QueryAsOfTime.Value);
+                    }
+
+                    if(publicRequest.IsSetSegment())
+                    {
+                        context.Writer.WritePropertyName("Segment");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SegmentMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Segment, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTableName())
+                    {
+                        context.Writer.WritePropertyName("TableName");
+                        context.Writer.Write(publicRequest.TableName);
+                    }
+
+                    if(publicRequest.IsSetTransactionId())
+                    {
+                        context.Writer.WritePropertyName("TransactionId");
+                        context.Writer.Write(publicRequest.TransactionId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDatabaseName())
-                {
-                    context.Writer.WritePropertyName("DatabaseName");
-                    context.Writer.Write(publicRequest.DatabaseName);
-                }
-
-                if(publicRequest.IsSetExcludeColumnSchema())
-                {
-                    context.Writer.WritePropertyName("ExcludeColumnSchema");
-                    context.Writer.Write(publicRequest.ExcludeColumnSchema.Value);
-                }
-
-                if(publicRequest.IsSetExpression())
-                {
-                    context.Writer.WritePropertyName("Expression");
-                    context.Writer.Write(publicRequest.Expression);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetQueryAsOfTime())
-                {
-                    context.Writer.WritePropertyName("QueryAsOfTime");
-                    context.Writer.Write(publicRequest.QueryAsOfTime.Value);
-                }
-
-                if(publicRequest.IsSetSegment())
-                {
-                    context.Writer.WritePropertyName("Segment");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SegmentMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Segment, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTableName())
-                {
-                    context.Writer.WritePropertyName("TableName");
-                    context.Writer.Write(publicRequest.TableName);
-                }
-
-                if(publicRequest.IsSetTransactionId())
-                {
-                    context.Writer.WritePropertyName("TransactionId");
-                    context.Writer.Write(publicRequest.TransactionId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

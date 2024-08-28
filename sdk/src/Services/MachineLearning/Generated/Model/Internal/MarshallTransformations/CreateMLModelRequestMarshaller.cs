@@ -63,65 +63,68 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMLModelId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("MLModelId");
-                    context.Writer.Write(publicRequest.MLModelId);
-                }
-
-                if(publicRequest.IsSetMLModelName())
-                {
-                    context.Writer.WritePropertyName("MLModelName");
-                    context.Writer.Write(publicRequest.MLModelName);
-                }
-
-                if(publicRequest.IsSetMLModelType())
-                {
-                    context.Writer.WritePropertyName("MLModelType");
-                    context.Writer.Write(publicRequest.MLModelType);
-                }
-
-                if(publicRequest.IsSetParameters())
-                {
-                    context.Writer.WritePropertyName("Parameters");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestParametersKvp in publicRequest.Parameters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMLModelId())
                     {
-                        context.Writer.WritePropertyName(publicRequestParametersKvp.Key);
-                        var publicRequestParametersValue = publicRequestParametersKvp.Value;
-
-                            context.Writer.Write(publicRequestParametersValue);
+                        context.Writer.WritePropertyName("MLModelId");
+                        context.Writer.Write(publicRequest.MLModelId);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetMLModelName())
+                    {
+                        context.Writer.WritePropertyName("MLModelName");
+                        context.Writer.Write(publicRequest.MLModelName);
+                    }
+
+                    if(publicRequest.IsSetMLModelType())
+                    {
+                        context.Writer.WritePropertyName("MLModelType");
+                        context.Writer.Write(publicRequest.MLModelType);
+                    }
+
+                    if(publicRequest.IsSetParameters())
+                    {
+                        context.Writer.WritePropertyName("Parameters");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestParametersKvp in publicRequest.Parameters)
+                        {
+                            context.Writer.WritePropertyName(publicRequestParametersKvp.Key);
+                            var publicRequestParametersValue = publicRequestParametersKvp.Value;
+
+                                context.Writer.Write(publicRequestParametersValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRecipe())
+                    {
+                        context.Writer.WritePropertyName("Recipe");
+                        context.Writer.Write(publicRequest.Recipe);
+                    }
+
+                    if(publicRequest.IsSetRecipeUri())
+                    {
+                        context.Writer.WritePropertyName("RecipeUri");
+                        context.Writer.Write(publicRequest.RecipeUri);
+                    }
+
+                    if(publicRequest.IsSetTrainingDataSourceId())
+                    {
+                        context.Writer.WritePropertyName("TrainingDataSourceId");
+                        context.Writer.Write(publicRequest.TrainingDataSourceId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRecipe())
-                {
-                    context.Writer.WritePropertyName("Recipe");
-                    context.Writer.Write(publicRequest.Recipe);
-                }
-
-                if(publicRequest.IsSetRecipeUri())
-                {
-                    context.Writer.WritePropertyName("RecipeUri");
-                    context.Writer.Write(publicRequest.RecipeUri);
-                }
-
-                if(publicRequest.IsSetTrainingDataSourceId())
-                {
-                    context.Writer.WritePropertyName("TrainingDataSourceId");
-                    context.Writer.Write(publicRequest.TrainingDataSourceId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

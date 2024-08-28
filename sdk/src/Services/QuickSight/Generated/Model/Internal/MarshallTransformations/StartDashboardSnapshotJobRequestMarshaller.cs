@@ -67,43 +67,46 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field DashboardId set");
             request.AddPathResource("{DashboardId}", StringUtils.FromString(publicRequest.DashboardId));
             request.ResourcePath = "/accounts/{AwsAccountId}/dashboards/{DashboardId}/snapshot-jobs";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetSnapshotConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("SnapshotConfiguration");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetSnapshotConfiguration())
+                    {
+                        context.Writer.WritePropertyName("SnapshotConfiguration");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = SnapshotConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SnapshotConfiguration, context);
+                        var marshaller = SnapshotConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SnapshotConfiguration, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSnapshotJobId())
+                    {
+                        context.Writer.WritePropertyName("SnapshotJobId");
+                        context.Writer.Write(publicRequest.SnapshotJobId);
+                    }
+
+                    if(publicRequest.IsSetUserConfiguration())
+                    {
+                        context.Writer.WritePropertyName("UserConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SnapshotUserConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.UserConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSnapshotJobId())
-                {
-                    context.Writer.WritePropertyName("SnapshotJobId");
-                    context.Writer.Write(publicRequest.SnapshotJobId);
-                }
-
-                if(publicRequest.IsSetUserConfiguration())
-                {
-                    context.Writer.WritePropertyName("UserConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SnapshotUserConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.UserConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

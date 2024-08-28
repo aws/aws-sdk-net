@@ -63,32 +63,35 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDesiredRuntimeConfig())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DesiredRuntimeConfig");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDesiredRuntimeConfig())
+                    {
+                        context.Writer.WritePropertyName("DesiredRuntimeConfig");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = InferenceComponentRuntimeConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DesiredRuntimeConfig, context);
+                        var marshaller = InferenceComponentRuntimeConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DesiredRuntimeConfig, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetInferenceComponentName())
+                    {
+                        context.Writer.WritePropertyName("InferenceComponentName");
+                        context.Writer.Write(publicRequest.InferenceComponentName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetInferenceComponentName())
-                {
-                    context.Writer.WritePropertyName("InferenceComponentName");
-                    context.Writer.Write(publicRequest.InferenceComponentName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -64,26 +64,29 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
                 throw new AmazonCodeGuruProfilerException("Request object does not have required field ProfilingGroupName set");
             request.AddPathResource("{profilingGroupName}", StringUtils.FromString(publicRequest.ProfilingGroupName));
             request.ResourcePath = "/profilingGroups/{profilingGroupName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAgentOrchestrationConfig())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("agentOrchestrationConfig");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAgentOrchestrationConfig())
+                    {
+                        context.Writer.WritePropertyName("agentOrchestrationConfig");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = AgentOrchestrationConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AgentOrchestrationConfig, context);
+                        var marshaller = AgentOrchestrationConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AgentOrchestrationConfig, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

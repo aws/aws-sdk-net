@@ -302,7 +302,15 @@ namespace Amazon.S3
         /// storage, you should call the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
         /// API operation and ensure that the parts list is empty.
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
+        /// <para>
+        ///  <b>Directory buckets</b> - If multipart uploads in a directory bucket are in progress,
+        /// you can't delete the bucket until all the in-progress multipart uploads are aborted
+        /// or completed. To delete these in-progress multipart uploads, use the <c>ListMultipartUploads</c>
+        /// operation to list the in-progress multipart uploads in the bucket and use the <c>AbortMultupartUpload</c>
+        /// operation to abort all the in-progress multipart uploads. 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
@@ -310,7 +318,7 @@ namespace Amazon.S3
         /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
         /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
         ///  <b>General purpose bucket permissions</b> - For information about permissions required
         /// to use the multipart upload, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
@@ -396,7 +404,15 @@ namespace Amazon.S3
         /// storage, you should call the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
         /// API operation and ensure that the parts list is empty.
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
+        /// <para>
+        ///  <b>Directory buckets</b> - If multipart uploads in a directory bucket are in progress,
+        /// you can't delete the bucket until all the in-progress multipart uploads are aborted
+        /// or completed. To delete these in-progress multipart uploads, use the <c>ListMultipartUploads</c>
+        /// operation to list the in-progress multipart uploads in the bucket and use the <c>AbortMultupartUpload</c>
+        /// operation to abort all the in-progress multipart uploads. 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
@@ -404,7 +420,7 @@ namespace Amazon.S3
         /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
         /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
         ///  <b>General purpose bucket permissions</b> - For information about permissions required
         /// to use the multipart upload, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
@@ -488,7 +504,15 @@ namespace Amazon.S3
         /// storage, you should call the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
         /// API operation and ensure that the parts list is empty.
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
+        /// <para>
+        ///  <b>Directory buckets</b> - If multipart uploads in a directory bucket are in progress,
+        /// you can't delete the bucket until all the in-progress multipart uploads are aborted
+        /// or completed. To delete these in-progress multipart uploads, use the <c>ListMultipartUploads</c>
+        /// operation to list the in-progress multipart uploads in the bucket and use the <c>AbortMultupartUpload</c>
+        /// operation to abort all the in-progress multipart uploads. 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
@@ -496,7 +520,7 @@ namespace Amazon.S3
         /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
         /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
         ///  <b>General purpose bucket permissions</b> - For information about permissions required
         /// to use the multipart upload, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
@@ -585,7 +609,15 @@ namespace Amazon.S3
         /// storage, you should call the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
         /// API operation and ensure that the parts list is empty.
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
+        /// <para>
+        ///  <b>Directory buckets</b> - If multipart uploads in a directory bucket are in progress,
+        /// you can't delete the bucket until all the in-progress multipart uploads are aborted
+        /// or completed. To delete these in-progress multipart uploads, use the <c>ListMultipartUploads</c>
+        /// operation to list the in-progress multipart uploads in the bucket and use the <c>AbortMultupartUpload</c>
+        /// operation to abort all the in-progress multipart uploads. 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
@@ -593,7 +625,7 @@ namespace Amazon.S3
         /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
         /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
         ///  <b>General purpose bucket permissions</b> - For information about permissions required
         /// to use the multipart upload, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
@@ -748,6 +780,13 @@ namespace Amazon.S3
         /// automatically to avoid service interruptions when a session expires. For more information
         /// about authorization, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
         /// <c>CreateSession</c> </a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  If you provide an <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_Checksum.html">additional
+        /// checksum value</a> in your <c>MultipartUpload</c> requests and the object is encrypted
+        /// with Key Management Service, you must have permission to use the <c>kms:Decrypt</c>
+        /// action for the <c>CompleteMultipartUpload</c> request to succeed.
         /// </para>
         ///  </li> </ul> </dd> <dt>Special errors</dt> <dd> <ul> <li> 
         /// <para>
@@ -930,6 +969,13 @@ namespace Amazon.S3
         /// about authorization, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
         /// <c>CreateSession</c> </a>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  If you provide an <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_Checksum.html">additional
+        /// checksum value</a> in your <c>MultipartUpload</c> requests and the object is encrypted
+        /// with Key Management Service, you must have permission to use the <c>kms:Decrypt</c>
+        /// action for the <c>CompleteMultipartUpload</c> request to succeed.
+        /// </para>
         ///  </li> </ul> </dd> <dt>Special errors</dt> <dd> <ul> <li> 
         /// <para>
         /// Error Code: <c>EntityTooSmall</c> 
@@ -1055,7 +1101,12 @@ namespace Amazon.S3
         /// You can copy individual objects between general purpose buckets, between directory
         /// buckets, and between general purpose buckets and directory buckets.
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// Amazon S3 supports copy operations using Multi-Region Access Points only as a destination
+        /// when using the Multi-Region Access Point ARN. 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
@@ -1063,7 +1114,13 @@ namespace Amazon.S3
         /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
         /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note> 
+        ///  </li> <li> 
+        /// <para>
+        /// VPC endpoints don't support cross-Region requests (including copies). If you're using
+        /// VPC endpoints, your source and destination buckets should be in the same Amazon Web
+        /// Services Region as your VPC endpoint.
+        /// </para>
+        ///  </li> </ul> </note> 
         /// <para>
         /// Both the Region that you want to copy the object from and the Region that you want
         /// to copy the object to must be enabled for your account. For more information about
@@ -1249,7 +1306,12 @@ namespace Amazon.S3
         /// You can copy individual objects between general purpose buckets, between directory
         /// buckets, and between general purpose buckets and directory buckets.
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// Amazon S3 supports copy operations using Multi-Region Access Points only as a destination
+        /// when using the Multi-Region Access Point ARN. 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
@@ -1257,7 +1319,13 @@ namespace Amazon.S3
         /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
         /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note> 
+        ///  </li> <li> 
+        /// <para>
+        /// VPC endpoints don't support cross-Region requests (including copies). If you're using
+        /// VPC endpoints, your source and destination buckets should be in the same Amazon Web
+        /// Services Region as your VPC endpoint.
+        /// </para>
+        ///  </li> </ul> </note> 
         /// <para>
         /// Both the Region that you want to copy the object from and the Region that you want
         /// to copy the object to must be enabled for your account. For more information about
@@ -1445,7 +1513,12 @@ namespace Amazon.S3
         /// You can copy individual objects between general purpose buckets, between directory
         /// buckets, and between general purpose buckets and directory buckets.
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// Amazon S3 supports copy operations using Multi-Region Access Points only as a destination
+        /// when using the Multi-Region Access Point ARN. 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
@@ -1453,7 +1526,13 @@ namespace Amazon.S3
         /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
         /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note> 
+        ///  </li> <li> 
+        /// <para>
+        /// VPC endpoints don't support cross-Region requests (including copies). If you're using
+        /// VPC endpoints, your source and destination buckets should be in the same Amazon Web
+        /// Services Region as your VPC endpoint.
+        /// </para>
+        ///  </li> </ul> </note> 
         /// <para>
         /// Both the Region that you want to copy the object from and the Region that you want
         /// to copy the object to must be enabled for your account. For more information about
@@ -1635,7 +1714,12 @@ namespace Amazon.S3
         /// You can copy individual objects between general purpose buckets, between directory
         /// buckets, and between general purpose buckets and directory buckets.
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// Amazon S3 supports copy operations using Multi-Region Access Points only as a destination
+        /// when using the Multi-Region Access Point ARN. 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
@@ -1643,7 +1727,13 @@ namespace Amazon.S3
         /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
         /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note> 
+        ///  </li> <li> 
+        /// <para>
+        /// VPC endpoints don't support cross-Region requests (including copies). If you're using
+        /// VPC endpoints, your source and destination buckets should be in the same Amazon Web
+        /// Services Region as your VPC endpoint.
+        /// </para>
+        ///  </li> </ul> </note> 
         /// <para>
         /// Both the Region that you want to copy the object from and the Region that you want
         /// to copy the object to must be enabled for your account. For more information about
@@ -1832,7 +1922,12 @@ namespace Amazon.S3
         /// You can copy individual objects between general purpose buckets, between directory
         /// buckets, and between general purpose buckets and directory buckets.
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// Amazon S3 supports copy operations using Multi-Region Access Points only as a destination
+        /// when using the Multi-Region Access Point ARN. 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
@@ -1840,7 +1935,13 @@ namespace Amazon.S3
         /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
         /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note> 
+        ///  </li> <li> 
+        /// <para>
+        /// VPC endpoints don't support cross-Region requests (including copies). If you're using
+        /// VPC endpoints, your source and destination buckets should be in the same Amazon Web
+        /// Services Region as your VPC endpoint.
+        /// </para>
+        ///  </li> </ul> </note> 
         /// <para>
         /// Both the Region that you want to copy the object from and the Region that you want
         /// to copy the object to must be enabled for your account. For more information about
@@ -2031,7 +2132,12 @@ namespace Amazon.S3
         /// You can copy individual objects between general purpose buckets, between directory
         /// buckets, and between general purpose buckets and directory buckets.
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// Amazon S3 supports copy operations using Multi-Region Access Points only as a destination
+        /// when using the Multi-Region Access Point ARN. 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
@@ -2039,7 +2145,13 @@ namespace Amazon.S3
         /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
         /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note> 
+        ///  </li> <li> 
+        /// <para>
+        /// VPC endpoints don't support cross-Region requests (including copies). If you're using
+        /// VPC endpoints, your source and destination buckets should be in the same Amazon Web
+        /// Services Region as your VPC endpoint.
+        /// </para>
+        ///  </li> </ul> </note> 
         /// <para>
         /// Both the Region that you want to copy the object from and the Region that you want
         /// to copy the object to must be enabled for your account. For more information about
@@ -2291,13 +2403,23 @@ namespace Amazon.S3
         /// If the destination bucket is a general purpose bucket, you must have the <b> <c>s3:PutObject</c>
         /// </b> permission to write the object copy to the destination bucket. 
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> <li> 
         /// <para>
-        /// For information about permissions required to use the multipart upload API, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
+        /// To perform a multipart upload with encryption using an Key Management Service key,
+        /// the requester must have permission to the <c>kms:Decrypt</c> and <c>kms:GenerateDataKey</c>
+        /// actions on the key. The requester must also have permissions for the <c>kms:GenerateDataKey</c>
+        /// action for the <c>CreateMultipartUpload</c> API. Then, the requester needs permissions
+        /// for the <c>kms:Decrypt</c> action on the <c>UploadPart</c> and <c>UploadPartCopy</c>
+        /// APIs. These permissions are required because Amazon S3 must decrypt and read data
+        /// from the encrypted file parts before it completes the multipart upload. For more information
+        /// about KMS permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">Protecting
+        /// data using server-side encryption with KMS</a> in the <i>Amazon S3 User Guide</i>.
+        /// For information about the permissions required to use the multipart upload API, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
+        /// upload and permissions</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
         /// upload API and permissions</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </li> <li> 
+        ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <b>Directory bucket permissions</b> - You must have permissions in a bucket policy
         /// or an IAM identity-based policy based on the source and destination bucket types in
@@ -2504,13 +2626,23 @@ namespace Amazon.S3
         /// If the destination bucket is a general purpose bucket, you must have the <b> <c>s3:PutObject</c>
         /// </b> permission to write the object copy to the destination bucket. 
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> <li> 
         /// <para>
-        /// For information about permissions required to use the multipart upload API, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
+        /// To perform a multipart upload with encryption using an Key Management Service key,
+        /// the requester must have permission to the <c>kms:Decrypt</c> and <c>kms:GenerateDataKey</c>
+        /// actions on the key. The requester must also have permissions for the <c>kms:GenerateDataKey</c>
+        /// action for the <c>CreateMultipartUpload</c> API. Then, the requester needs permissions
+        /// for the <c>kms:Decrypt</c> action on the <c>UploadPart</c> and <c>UploadPartCopy</c>
+        /// APIs. These permissions are required because Amazon S3 must decrypt and read data
+        /// from the encrypted file parts before it completes the multipart upload. For more information
+        /// about KMS permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">Protecting
+        /// data using server-side encryption with KMS</a> in the <i>Amazon S3 User Guide</i>.
+        /// For information about the permissions required to use the multipart upload API, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
+        /// upload and permissions</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
         /// upload API and permissions</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </li> <li> 
+        ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <b>Directory bucket permissions</b> - You must have permissions in a bucket policy
         /// or an IAM identity-based policy based on the source and destination bucket types in
@@ -2719,13 +2851,23 @@ namespace Amazon.S3
         /// If the destination bucket is a general purpose bucket, you must have the <b> <c>s3:PutObject</c>
         /// </b> permission to write the object copy to the destination bucket. 
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> <li> 
         /// <para>
-        /// For information about permissions required to use the multipart upload API, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
+        /// To perform a multipart upload with encryption using an Key Management Service key,
+        /// the requester must have permission to the <c>kms:Decrypt</c> and <c>kms:GenerateDataKey</c>
+        /// actions on the key. The requester must also have permissions for the <c>kms:GenerateDataKey</c>
+        /// action for the <c>CreateMultipartUpload</c> API. Then, the requester needs permissions
+        /// for the <c>kms:Decrypt</c> action on the <c>UploadPart</c> and <c>UploadPartCopy</c>
+        /// APIs. These permissions are required because Amazon S3 must decrypt and read data
+        /// from the encrypted file parts before it completes the multipart upload. For more information
+        /// about KMS permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">Protecting
+        /// data using server-side encryption with KMS</a> in the <i>Amazon S3 User Guide</i>.
+        /// For information about the permissions required to use the multipart upload API, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
+        /// upload and permissions</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
         /// upload API and permissions</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </li> <li> 
+        ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <b>Directory bucket permissions</b> - You must have permissions in a bucket policy
         /// or an IAM identity-based policy based on the source and destination bucket types in
@@ -2924,13 +3066,23 @@ namespace Amazon.S3
         /// If the destination bucket is a general purpose bucket, you must have the <b> <c>s3:PutObject</c>
         /// </b> permission to write the object copy to the destination bucket. 
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> <li> 
         /// <para>
-        /// For information about permissions required to use the multipart upload API, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
+        /// To perform a multipart upload with encryption using an Key Management Service key,
+        /// the requester must have permission to the <c>kms:Decrypt</c> and <c>kms:GenerateDataKey</c>
+        /// actions on the key. The requester must also have permissions for the <c>kms:GenerateDataKey</c>
+        /// action for the <c>CreateMultipartUpload</c> API. Then, the requester needs permissions
+        /// for the <c>kms:Decrypt</c> action on the <c>UploadPart</c> and <c>UploadPartCopy</c>
+        /// APIs. These permissions are required because Amazon S3 must decrypt and read data
+        /// from the encrypted file parts before it completes the multipart upload. For more information
+        /// about KMS permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">Protecting
+        /// data using server-side encryption with KMS</a> in the <i>Amazon S3 User Guide</i>.
+        /// For information about the permissions required to use the multipart upload API, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
+        /// upload and permissions</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
         /// upload API and permissions</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </li> <li> 
+        ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <b>Directory bucket permissions</b> - You must have permissions in a bucket policy
         /// or an IAM identity-based policy based on the source and destination bucket types in
@@ -3140,13 +3292,23 @@ namespace Amazon.S3
         /// If the destination bucket is a general purpose bucket, you must have the <b> <c>s3:PutObject</c>
         /// </b> permission to write the object copy to the destination bucket. 
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> <li> 
         /// <para>
-        /// For information about permissions required to use the multipart upload API, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
+        /// To perform a multipart upload with encryption using an Key Management Service key,
+        /// the requester must have permission to the <c>kms:Decrypt</c> and <c>kms:GenerateDataKey</c>
+        /// actions on the key. The requester must also have permissions for the <c>kms:GenerateDataKey</c>
+        /// action for the <c>CreateMultipartUpload</c> API. Then, the requester needs permissions
+        /// for the <c>kms:Decrypt</c> action on the <c>UploadPart</c> and <c>UploadPartCopy</c>
+        /// APIs. These permissions are required because Amazon S3 must decrypt and read data
+        /// from the encrypted file parts before it completes the multipart upload. For more information
+        /// about KMS permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">Protecting
+        /// data using server-side encryption with KMS</a> in the <i>Amazon S3 User Guide</i>.
+        /// For information about the permissions required to use the multipart upload API, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
+        /// upload and permissions</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
         /// upload API and permissions</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </li> <li> 
+        ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <b>Directory bucket permissions</b> - You must have permissions in a bucket policy
         /// or an IAM identity-based policy based on the source and destination bucket types in
@@ -3358,13 +3520,23 @@ namespace Amazon.S3
         /// If the destination bucket is a general purpose bucket, you must have the <b> <c>s3:PutObject</c>
         /// </b> permission to write the object copy to the destination bucket. 
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> <li> 
         /// <para>
-        /// For information about permissions required to use the multipart upload API, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
+        /// To perform a multipart upload with encryption using an Key Management Service key,
+        /// the requester must have permission to the <c>kms:Decrypt</c> and <c>kms:GenerateDataKey</c>
+        /// actions on the key. The requester must also have permissions for the <c>kms:GenerateDataKey</c>
+        /// action for the <c>CreateMultipartUpload</c> API. Then, the requester needs permissions
+        /// for the <c>kms:Decrypt</c> action on the <c>UploadPart</c> and <c>UploadPartCopy</c>
+        /// APIs. These permissions are required because Amazon S3 must decrypt and read data
+        /// from the encrypted file parts before it completes the multipart upload. For more information
+        /// about KMS permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">Protecting
+        /// data using server-side encryption with KMS</a> in the <i>Amazon S3 User Guide</i>.
+        /// For information about the permissions required to use the multipart upload API, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
+        /// upload and permissions</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
         /// upload API and permissions</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </li> <li> 
+        ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <b>Directory bucket permissions</b> - You must have permissions in a bucket policy
         /// or an IAM identity-based policy based on the source and destination bucket types in
@@ -12920,7 +13092,7 @@ namespace Amazon.S3
         /// The <c>HEAD</c> operation retrieves metadata from an object without returning the
         /// object itself. This operation is useful if you're interested only in an object's metadata.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
         /// A <c>HEAD</c> request has the same options as a <c>GET</c> operation on an object.
         /// The response is identical to the <c>GET</c> response except that there is no response
@@ -12929,20 +13101,12 @@ namespace Amazon.S3
         /// <c>405 Method Not Allowed</c>, <c>412 Precondition Failed</c>, or <c>304 Not Modified</c>.
         /// It's not possible to retrieve the exact exception of these error codes.
         /// </para>
-        ///  
+        ///  </note> 
         /// <para>
         /// Request headers are limited to 8 KB in size. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTCommonRequestHeaders.html">Common
         /// Request Headers</a>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
-        /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
-        /// </para>
-        ///  </note> <dl> <dt>Permissions</dt> <dd>  <ul> <li> 
+        ///  <dl> <dt>Permissions</dt> <dd>  <ul> <li> 
         /// <para>
         ///  <b>General purpose bucket permissions</b> - To use <c>HEAD</c>, you must have the
         /// <c>s3:GetObject</c> permission. You need the relevant read object (or version) permission
@@ -13046,7 +13210,14 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
         /// </para>
-        ///  </dd> </dl> 
+        ///  <note> 
+        /// <para>
+        /// For directory buckets, you must make requests for this API operation to the Zonal
+        /// endpoint. These endpoints support virtual-hosted-style requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </note> </dd> </dl> 
         /// <para>
         /// The following actions are related to <c>HeadObject</c>:
         /// </para>
@@ -13080,7 +13251,7 @@ namespace Amazon.S3
         /// The <c>HEAD</c> operation retrieves metadata from an object without returning the
         /// object itself. This operation is useful if you're interested only in an object's metadata.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
         /// A <c>HEAD</c> request has the same options as a <c>GET</c> operation on an object.
         /// The response is identical to the <c>GET</c> response except that there is no response
@@ -13089,20 +13260,12 @@ namespace Amazon.S3
         /// <c>405 Method Not Allowed</c>, <c>412 Precondition Failed</c>, or <c>304 Not Modified</c>.
         /// It's not possible to retrieve the exact exception of these error codes.
         /// </para>
-        ///  
+        ///  </note> 
         /// <para>
         /// Request headers are limited to 8 KB in size. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTCommonRequestHeaders.html">Common
         /// Request Headers</a>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
-        /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
-        /// </para>
-        ///  </note> <dl> <dt>Permissions</dt> <dd>  <ul> <li> 
+        ///  <dl> <dt>Permissions</dt> <dd>  <ul> <li> 
         /// <para>
         ///  <b>General purpose bucket permissions</b> - To use <c>HEAD</c>, you must have the
         /// <c>s3:GetObject</c> permission. You need the relevant read object (or version) permission
@@ -13206,7 +13369,14 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
         /// </para>
-        ///  </dd> </dl> 
+        ///  <note> 
+        /// <para>
+        /// For directory buckets, you must make requests for this API operation to the Zonal
+        /// endpoint. These endpoints support virtual-hosted-style requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </note> </dd> </dl> 
         /// <para>
         /// The following actions are related to <c>HeadObject</c>:
         /// </para>
@@ -13242,7 +13412,7 @@ namespace Amazon.S3
         /// The <c>HEAD</c> operation retrieves metadata from an object without returning the
         /// object itself. This operation is useful if you're interested only in an object's metadata.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
         /// A <c>HEAD</c> request has the same options as a <c>GET</c> operation on an object.
         /// The response is identical to the <c>GET</c> response except that there is no response
@@ -13251,20 +13421,12 @@ namespace Amazon.S3
         /// <c>405 Method Not Allowed</c>, <c>412 Precondition Failed</c>, or <c>304 Not Modified</c>.
         /// It's not possible to retrieve the exact exception of these error codes.
         /// </para>
-        ///  
+        ///  </note> 
         /// <para>
         /// Request headers are limited to 8 KB in size. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTCommonRequestHeaders.html">Common
         /// Request Headers</a>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
-        /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
-        /// </para>
-        ///  </note> <dl> <dt>Permissions</dt> <dd>  <ul> <li> 
+        ///  <dl> <dt>Permissions</dt> <dd>  <ul> <li> 
         /// <para>
         ///  <b>General purpose bucket permissions</b> - To use <c>HEAD</c>, you must have the
         /// <c>s3:GetObject</c> permission. You need the relevant read object (or version) permission
@@ -13368,7 +13530,14 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
         /// </para>
-        ///  </dd> </dl> 
+        ///  <note> 
+        /// <para>
+        /// For directory buckets, you must make requests for this API operation to the Zonal
+        /// endpoint. These endpoints support virtual-hosted-style requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </note> </dd> </dl> 
         /// <para>
         /// The following actions are related to <c>HeadObject</c>:
         /// </para>
@@ -13402,7 +13571,7 @@ namespace Amazon.S3
         /// The <c>HEAD</c> operation retrieves metadata from an object without returning the
         /// object itself. This operation is useful if you're interested only in an object's metadata.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
         /// A <c>HEAD</c> request has the same options as a <c>GET</c> operation on an object.
         /// The response is identical to the <c>GET</c> response except that there is no response
@@ -13411,20 +13580,12 @@ namespace Amazon.S3
         /// <c>405 Method Not Allowed</c>, <c>412 Precondition Failed</c>, or <c>304 Not Modified</c>.
         /// It's not possible to retrieve the exact exception of these error codes.
         /// </para>
-        ///  
+        ///  </note> 
         /// <para>
         /// Request headers are limited to 8 KB in size. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTCommonRequestHeaders.html">Common
         /// Request Headers</a>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
-        /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
-        /// </para>
-        ///  </note> <dl> <dt>Permissions</dt> <dd>  <ul> <li> 
+        ///  <dl> <dt>Permissions</dt> <dd>  <ul> <li> 
         /// <para>
         ///  <b>General purpose bucket permissions</b> - To use <c>HEAD</c>, you must have the
         /// <c>s3:GetObject</c> permission. You need the relevant read object (or version) permission
@@ -13528,7 +13689,14 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
         /// </para>
-        ///  </dd> </dl> 
+        ///  <note> 
+        /// <para>
+        /// For directory buckets, you must make requests for this API operation to the Zonal
+        /// endpoint. These endpoints support virtual-hosted-style requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </note> </dd> </dl> 
         /// <para>
         /// The following actions are related to <c>HeadObject</c>:
         /// </para>
@@ -13565,7 +13733,7 @@ namespace Amazon.S3
         /// The <c>HEAD</c> operation retrieves metadata from an object without returning the
         /// object itself. This operation is useful if you're interested only in an object's metadata.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
         /// A <c>HEAD</c> request has the same options as a <c>GET</c> operation on an object.
         /// The response is identical to the <c>GET</c> response except that there is no response
@@ -13574,20 +13742,12 @@ namespace Amazon.S3
         /// <c>405 Method Not Allowed</c>, <c>412 Precondition Failed</c>, or <c>304 Not Modified</c>.
         /// It's not possible to retrieve the exact exception of these error codes.
         /// </para>
-        ///  
+        ///  </note> 
         /// <para>
         /// Request headers are limited to 8 KB in size. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTCommonRequestHeaders.html">Common
         /// Request Headers</a>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
-        /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
-        /// </para>
-        ///  </note> <dl> <dt>Permissions</dt> <dd>  <ul> <li> 
+        ///  <dl> <dt>Permissions</dt> <dd>  <ul> <li> 
         /// <para>
         ///  <b>General purpose bucket permissions</b> - To use <c>HEAD</c>, you must have the
         /// <c>s3:GetObject</c> permission. You need the relevant read object (or version) permission
@@ -13691,7 +13851,14 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
         /// </para>
-        ///  </dd> </dl> 
+        ///  <note> 
+        /// <para>
+        /// For directory buckets, you must make requests for this API operation to the Zonal
+        /// endpoint. These endpoints support virtual-hosted-style requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </note> </dd> </dl> 
         /// <para>
         /// The following actions are related to <c>HeadObject</c>:
         /// </para>
@@ -13730,7 +13897,7 @@ namespace Amazon.S3
         /// The <c>HEAD</c> operation retrieves metadata from an object without returning the
         /// object itself. This operation is useful if you're interested only in an object's metadata.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
         /// A <c>HEAD</c> request has the same options as a <c>GET</c> operation on an object.
         /// The response is identical to the <c>GET</c> response except that there is no response
@@ -13739,20 +13906,12 @@ namespace Amazon.S3
         /// <c>405 Method Not Allowed</c>, <c>412 Precondition Failed</c>, or <c>304 Not Modified</c>.
         /// It's not possible to retrieve the exact exception of these error codes.
         /// </para>
-        ///  
+        ///  </note> 
         /// <para>
         /// Request headers are limited to 8 KB in size. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTCommonRequestHeaders.html">Common
         /// Request Headers</a>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
-        /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
-        /// </para>
-        ///  </note> <dl> <dt>Permissions</dt> <dd>  <ul> <li> 
+        ///  <dl> <dt>Permissions</dt> <dd>  <ul> <li> 
         /// <para>
         ///  <b>General purpose bucket permissions</b> - To use <c>HEAD</c>, you must have the
         /// <c>s3:GetObject</c> permission. You need the relevant read object (or version) permission
@@ -13856,7 +14015,14 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
         /// </para>
-        ///  </dd> </dl> 
+        ///  <note> 
+        /// <para>
+        /// For directory buckets, you must make requests for this API operation to the Zonal
+        /// endpoint. These endpoints support virtual-hosted-style requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </note> </dd> </dl> 
         /// <para>
         /// The following actions are related to <c>HeadObject</c>:
         /// </para>
@@ -14457,32 +14623,25 @@ namespace Amazon.S3
         /// to access it. The action returns a <c>200 OK</c> if the bucket exists and you have
         /// permission to access it.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
         /// If the bucket does not exist or you do not have permission to access it, the <c>HEAD</c>
         /// request returns a generic <c>400 Bad Request</c>, <c>403 Forbidden</c> or <c>404 Not
         /// Found</c> code. A message body is not included, so you cannot determine the exception
         /// beyond these HTTP response codes.
         /// </para>
-        ///  <note> 
-        /// <para>
-        ///  <b>Directory buckets </b> - You must make requests for this API operation to the
-        /// Zonal endpoint. These endpoints support virtual-hosted-style requests in the format
-        /// <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
-        /// Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
-        /// </para>
         ///  </note> <dl> <dt>Authentication and authorization</dt> <dd> 
         /// <para>
-        /// All <c>HeadBucket</c> requests must be authenticated and signed by using IAM credentials
-        /// (access key ID and secret access key for the IAM identities). All headers with the
-        /// <c>x-amz-</c> prefix, including <c>x-amz-copy-source</c>, must be signed. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST
+        ///  <b>General purpose buckets</b> - Request to public buckets that grant the s3:ListBucket
+        /// permission publicly do not need to be signed. All other <c>HeadBucket</c> requests
+        /// must be authenticated and signed by using IAM credentials (access key ID and secret
+        /// access key for the IAM identities). All headers with the <c>x-amz-</c> prefix, including
+        /// <c>x-amz-copy-source</c>, must be signed. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST
         /// Authentication</a>.
         /// </para>
         ///  
         /// <para>
-        ///  <b>Directory bucket</b> - You must use IAM credentials to authenticate and authorize
+        ///  <b>Directory buckets</b> - You must use IAM credentials to authenticate and authorize
         /// your access to the <c>HeadBucket</c> API operation, instead of using the temporary
         /// security credentials through the <c>CreateSession</c> API operation.
         /// </para>
@@ -14516,7 +14675,14 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
         /// </para>
-        ///  </dd> </dl>
+        ///  <note> 
+        /// <para>
+        /// You must make requests for this API operation to the Zonal endpoint. These endpoints
+        /// support virtual-hosted-style requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        /// Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </note> </dd> </dl>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the HeadBucket service method.</param>
         /// 
@@ -14537,32 +14703,25 @@ namespace Amazon.S3
         /// to access it. The action returns a <c>200 OK</c> if the bucket exists and you have
         /// permission to access it.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
         /// If the bucket does not exist or you do not have permission to access it, the <c>HEAD</c>
         /// request returns a generic <c>400 Bad Request</c>, <c>403 Forbidden</c> or <c>404 Not
         /// Found</c> code. A message body is not included, so you cannot determine the exception
         /// beyond these HTTP response codes.
         /// </para>
-        ///  <note> 
-        /// <para>
-        ///  <b>Directory buckets </b> - You must make requests for this API operation to the
-        /// Zonal endpoint. These endpoints support virtual-hosted-style requests in the format
-        /// <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
-        /// Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
-        /// </para>
         ///  </note> <dl> <dt>Authentication and authorization</dt> <dd> 
         /// <para>
-        /// All <c>HeadBucket</c> requests must be authenticated and signed by using IAM credentials
-        /// (access key ID and secret access key for the IAM identities). All headers with the
-        /// <c>x-amz-</c> prefix, including <c>x-amz-copy-source</c>, must be signed. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST
+        ///  <b>General purpose buckets</b> - Request to public buckets that grant the s3:ListBucket
+        /// permission publicly do not need to be signed. All other <c>HeadBucket</c> requests
+        /// must be authenticated and signed by using IAM credentials (access key ID and secret
+        /// access key for the IAM identities). All headers with the <c>x-amz-</c> prefix, including
+        /// <c>x-amz-copy-source</c>, must be signed. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST
         /// Authentication</a>.
         /// </para>
         ///  
         /// <para>
-        ///  <b>Directory bucket</b> - You must use IAM credentials to authenticate and authorize
+        ///  <b>Directory buckets</b> - You must use IAM credentials to authenticate and authorize
         /// your access to the <c>HeadBucket</c> API operation, instead of using the temporary
         /// security credentials through the <c>CreateSession</c> API operation.
         /// </para>
@@ -14596,7 +14755,14 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
         /// </para>
-        ///  </dd> </dl>
+        ///  <note> 
+        /// <para>
+        /// You must make requests for this API operation to the Zonal endpoint. These endpoints
+        /// support virtual-hosted-style requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        /// Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </note> </dd> </dl>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the HeadBucket service method.</param>
         /// <param name="cancellationToken">
@@ -14666,17 +14832,14 @@ namespace Amazon.S3
         /// </para>
         ///  </dd> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
-        ///  <b>General purpose bucket permissions</b> - For information about the permissions
-        /// required to use the multipart upload API, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
-        /// upload and permissions</a> in the <i>Amazon S3 User Guide</i>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// To perform a multipart upload with encryption by using an Amazon Web Services KMS
-        /// key, the requester must have permission to the <c>kms:Decrypt</c> and <c>kms:GenerateDataKey*</c>
-        /// actions on the key. These permissions are required because Amazon S3 must decrypt
-        /// and read data from the encrypted file parts before it completes the multipart upload.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
+        ///  <b>General purpose bucket permissions</b> - To perform a multipart upload with encryption
+        /// using an Key Management Service (KMS) KMS key, the requester must have permission
+        /// to the <c>kms:Decrypt</c> and <c>kms:GenerateDataKey</c> actions on the key. The requester
+        /// must also have permissions for the <c>kms:GenerateDataKey</c> action for the <c>CreateMultipartUpload</c>
+        /// API. Then, the requester needs permissions for the <c>kms:Decrypt</c> action on the
+        /// <c>UploadPart</c> and <c>UploadPartCopy</c> APIs. These permissions are required because
+        /// Amazon S3 must decrypt and read data from the encrypted file parts before it completes
+        /// the multipart upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
         /// upload API and permissions</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">Protecting
         /// data using server-side encryption with Amazon Web Services KMS</a> in the <i>Amazon
         /// S3 User Guide</i>.
@@ -14901,17 +15064,14 @@ namespace Amazon.S3
         /// </para>
         ///  </dd> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
-        ///  <b>General purpose bucket permissions</b> - For information about the permissions
-        /// required to use the multipart upload API, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
-        /// upload and permissions</a> in the <i>Amazon S3 User Guide</i>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// To perform a multipart upload with encryption by using an Amazon Web Services KMS
-        /// key, the requester must have permission to the <c>kms:Decrypt</c> and <c>kms:GenerateDataKey*</c>
-        /// actions on the key. These permissions are required because Amazon S3 must decrypt
-        /// and read data from the encrypted file parts before it completes the multipart upload.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
+        ///  <b>General purpose bucket permissions</b> - To perform a multipart upload with encryption
+        /// using an Key Management Service (KMS) KMS key, the requester must have permission
+        /// to the <c>kms:Decrypt</c> and <c>kms:GenerateDataKey</c> actions on the key. The requester
+        /// must also have permissions for the <c>kms:GenerateDataKey</c> action for the <c>CreateMultipartUpload</c>
+        /// API. Then, the requester needs permissions for the <c>kms:Decrypt</c> action on the
+        /// <c>UploadPart</c> and <c>UploadPartCopy</c> APIs. These permissions are required because
+        /// Amazon S3 must decrypt and read data from the encrypted file parts before it completes
+        /// the multipart upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
         /// upload API and permissions</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">Protecting
         /// data using server-side encryption with Amazon Web Services KMS</a> in the <i>Amazon
         /// S3 User Guide</i>.
@@ -15136,17 +15296,14 @@ namespace Amazon.S3
         /// </para>
         ///  </dd> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
-        ///  <b>General purpose bucket permissions</b> - For information about the permissions
-        /// required to use the multipart upload API, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
-        /// upload and permissions</a> in the <i>Amazon S3 User Guide</i>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// To perform a multipart upload with encryption by using an Amazon Web Services KMS
-        /// key, the requester must have permission to the <c>kms:Decrypt</c> and <c>kms:GenerateDataKey*</c>
-        /// actions on the key. These permissions are required because Amazon S3 must decrypt
-        /// and read data from the encrypted file parts before it completes the multipart upload.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
+        ///  <b>General purpose bucket permissions</b> - To perform a multipart upload with encryption
+        /// using an Key Management Service (KMS) KMS key, the requester must have permission
+        /// to the <c>kms:Decrypt</c> and <c>kms:GenerateDataKey</c> actions on the key. The requester
+        /// must also have permissions for the <c>kms:GenerateDataKey</c> action for the <c>CreateMultipartUpload</c>
+        /// API. Then, the requester needs permissions for the <c>kms:Decrypt</c> action on the
+        /// <c>UploadPart</c> and <c>UploadPartCopy</c> APIs. These permissions are required because
+        /// Amazon S3 must decrypt and read data from the encrypted file parts before it completes
+        /// the multipart upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
         /// upload API and permissions</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">Protecting
         /// data using server-side encryption with Amazon Web Services KMS</a> in the <i>Amazon
         /// S3 User Guide</i>.
@@ -15374,17 +15531,14 @@ namespace Amazon.S3
         /// </para>
         ///  </dd> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
-        ///  <b>General purpose bucket permissions</b> - For information about the permissions
-        /// required to use the multipart upload API, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
-        /// upload and permissions</a> in the <i>Amazon S3 User Guide</i>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// To perform a multipart upload with encryption by using an Amazon Web Services KMS
-        /// key, the requester must have permission to the <c>kms:Decrypt</c> and <c>kms:GenerateDataKey*</c>
-        /// actions on the key. These permissions are required because Amazon S3 must decrypt
-        /// and read data from the encrypted file parts before it completes the multipart upload.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
+        ///  <b>General purpose bucket permissions</b> - To perform a multipart upload with encryption
+        /// using an Key Management Service (KMS) KMS key, the requester must have permission
+        /// to the <c>kms:Decrypt</c> and <c>kms:GenerateDataKey</c> actions on the key. The requester
+        /// must also have permissions for the <c>kms:GenerateDataKey</c> action for the <c>CreateMultipartUpload</c>
+        /// API. Then, the requester needs permissions for the <c>kms:Decrypt</c> action on the
+        /// <c>UploadPart</c> and <c>UploadPartCopy</c> APIs. These permissions are required because
+        /// Amazon S3 must decrypt and read data from the encrypted file parts before it completes
+        /// the multipart upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
         /// upload API and permissions</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">Protecting
         /// data using server-side encryption with Amazon Web Services KMS</a> in the <i>Amazon
         /// S3 User Guide</i>.
@@ -16364,7 +16518,9 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - If multipart uploads in a directory bucket are in progress,
         /// you can't delete the bucket until all the in-progress multipart uploads are aborted
-        /// or completed. 
+        /// or completed. To delete these in-progress multipart uploads, use the <c>ListMultipartUploads</c>
+        /// operation to list the in-progress multipart uploads in the bucket and use the <c>AbortMultupartUpload</c>
+        /// operation to abort all the in-progress multipart uploads. 
         /// </para>
         ///  </note> 
         /// <para>
@@ -16500,7 +16656,9 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - If multipart uploads in a directory bucket are in progress,
         /// you can't delete the bucket until all the in-progress multipart uploads are aborted
-        /// or completed. 
+        /// or completed. To delete these in-progress multipart uploads, use the <c>ListMultipartUploads</c>
+        /// operation to list the in-progress multipart uploads in the bucket and use the <c>AbortMultupartUpload</c>
+        /// operation to abort all the in-progress multipart uploads. 
         /// </para>
         ///  </note> 
         /// <para>
@@ -16638,7 +16796,9 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - If multipart uploads in a directory bucket are in progress,
         /// you can't delete the bucket until all the in-progress multipart uploads are aborted
-        /// or completed. 
+        /// or completed. To delete these in-progress multipart uploads, use the <c>ListMultipartUploads</c>
+        /// operation to list the in-progress multipart uploads in the bucket and use the <c>AbortMultupartUpload</c>
+        /// operation to abort all the in-progress multipart uploads. 
         /// </para>
         ///  </note> 
         /// <para>
@@ -16776,7 +16936,9 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - If multipart uploads in a directory bucket are in progress,
         /// you can't delete the bucket until all the in-progress multipart uploads are aborted
-        /// or completed. 
+        /// or completed. To delete these in-progress multipart uploads, use the <c>ListMultipartUploads</c>
+        /// operation to list the in-progress multipart uploads in the bucket and use the <c>AbortMultupartUpload</c>
+        /// operation to abort all the in-progress multipart uploads. 
         /// </para>
         ///  </note> 
         /// <para>
@@ -16915,7 +17077,9 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - If multipart uploads in a directory bucket are in progress,
         /// you can't delete the bucket until all the in-progress multipart uploads are aborted
-        /// or completed. 
+        /// or completed. To delete these in-progress multipart uploads, use the <c>ListMultipartUploads</c>
+        /// operation to list the in-progress multipart uploads in the bucket and use the <c>AbortMultupartUpload</c>
+        /// operation to abort all the in-progress multipart uploads. 
         /// </para>
         ///  </note> 
         /// <para>
@@ -17056,7 +17220,9 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - If multipart uploads in a directory bucket are in progress,
         /// you can't delete the bucket until all the in-progress multipart uploads are aborted
-        /// or completed. 
+        /// or completed. To delete these in-progress multipart uploads, use the <c>ListMultipartUploads</c>
+        /// operation to list the in-progress multipart uploads in the bucket and use the <c>AbortMultupartUpload</c>
+        /// operation to abort all the in-progress multipart uploads. 
         /// </para>
         ///  </note> 
         /// <para>
@@ -17588,7 +17754,17 @@ namespace Amazon.S3
         /// object keys programmatically</a> in the <i>Amazon S3 User Guide</i>. To get a list
         /// of your buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html">ListBuckets</a>.
         /// 
-        ///  <note> 
+        ///  <note> <ul> <li> 
+        /// <para>
+        ///  <b>General purpose bucket</b> - For general purpose buckets, <c>ListObjectsV2</c>
+        /// doesn't return prefixes that are related only to in-progress multipart uploads.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Directory buckets</b> - For directory buckets, <c>ListObjectsV2</c> response includes
+        /// the prefixes that are related only to in-progress multipart uploads. 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
@@ -17596,7 +17772,7 @@ namespace Amazon.S3
         /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
         /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
         ///  <b>General purpose bucket permissions</b> - To use this operation, you must have
         /// READ access to the bucket. You must have permission to perform the <c>s3:ListBucket</c>
@@ -17684,7 +17860,17 @@ namespace Amazon.S3
         /// object keys programmatically</a> in the <i>Amazon S3 User Guide</i>. To get a list
         /// of your buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html">ListBuckets</a>.
         /// 
-        ///  <note> 
+        ///  <note> <ul> <li> 
+        /// <para>
+        ///  <b>General purpose bucket</b> - For general purpose buckets, <c>ListObjectsV2</c>
+        /// doesn't return prefixes that are related only to in-progress multipart uploads.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Directory buckets</b> - For directory buckets, <c>ListObjectsV2</c> response includes
+        /// the prefixes that are related only to in-progress multipart uploads. 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
@@ -17692,7 +17878,7 @@ namespace Amazon.S3
         /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
         /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
         ///  <b>General purpose bucket permissions</b> - To use this operation, you must have
         /// READ access to the bucket. You must have permission to perform the <c>s3:ListBucket</c>
@@ -20228,7 +20414,14 @@ namespace Amazon.S3
         /// </para>
         ///  <important> 
         /// <para>
-        /// This action requires Amazon Web Services Signature Version 4. For more information,
+        /// If you're specifying a customer managed KMS key, we recommend using a fully qualified
+        /// KMS key ARN. If you use a KMS key alias instead, then KMS resolves the key within
+        /// the requester’s account. This behavior can result in data that's encrypted with a
+        /// KMS key that belongs to the requester, and not the bucket owner.
+        /// </para>
+        ///  
+        /// <para>
+        /// Also, this action requires Amazon Web Services Signature Version 4. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">
         /// Authenticating Requests (Amazon Web Services Signature Version 4)</a>. 
         /// </para>
@@ -20295,7 +20488,14 @@ namespace Amazon.S3
         /// </para>
         ///  <important> 
         /// <para>
-        /// This action requires Amazon Web Services Signature Version 4. For more information,
+        /// If you're specifying a customer managed KMS key, we recommend using a fully qualified
+        /// KMS key ARN. If you use a KMS key alias instead, then KMS resolves the key within
+        /// the requester’s account. This behavior can result in data that's encrypted with a
+        /// KMS key that belongs to the requester, and not the bucket owner.
+        /// </para>
+        ///  
+        /// <para>
+        /// Also, this action requires Amazon Web Services Signature Version 4. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">
         /// Authenticating Requests (Amazon Web Services Signature Version 4)</a>. 
         /// </para>
@@ -22916,6 +23116,13 @@ namespace Amazon.S3
         /// <para>
         /// This operation is not supported by directory buckets.
         /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// When you enable versioning on a bucket for the first time, it might take a short amount
+        /// of time for the change to be fully propagated. We recommend that you wait for 15 minutes
+        /// after enabling versioning before issuing write operations (<c>PUT</c> or <c>DELETE</c>)
+        /// on objects in the bucket. 
+        /// </para>
         ///  </note> 
         /// <para>
         /// Sets the versioning state of an existing bucket.
@@ -22996,6 +23203,13 @@ namespace Amazon.S3
         /// <note> 
         /// <para>
         /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// When you enable versioning on a bucket for the first time, it might take a short amount
+        /// of time for the change to be fully propagated. We recommend that you wait for 15 minutes
+        /// after enabling versioning before issuing write operations (<c>PUT</c> or <c>DELETE</c>)
+        /// on objects in the bucket. 
         /// </para>
         ///  </note> 
         /// <para>
@@ -25856,7 +26070,14 @@ namespace Amazon.S3
         /// <para>
         /// This operation is not supported by directory buckets.
         /// </para>
-        ///  </note> 
+        ///  </note> <important> 
+        /// <para>
+        /// The <c>SELECT</c> job type for the RestoreObject operation is no longer available
+        /// to new customers. Existing customers of Amazon S3 Select can continue to use the feature
+        /// as usual. <a href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn
+        /// more</a> 
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Restores an archived copy of an object back into Amazon S3
         /// </para>
@@ -26082,7 +26303,14 @@ namespace Amazon.S3
         /// <para>
         /// This operation is not supported by directory buckets.
         /// </para>
-        ///  </note> 
+        ///  </note> <important> 
+        /// <para>
+        /// The <c>SELECT</c> job type for the RestoreObject operation is no longer available
+        /// to new customers. Existing customers of Amazon S3 Select can continue to use the feature
+        /// as usual. <a href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn
+        /// more</a> 
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Restores an archived copy of an object back into Amazon S3
         /// </para>
@@ -26310,7 +26538,14 @@ namespace Amazon.S3
         /// <para>
         /// This operation is not supported by directory buckets.
         /// </para>
-        ///  </note> 
+        ///  </note> <important> 
+        /// <para>
+        /// The <c>SELECT</c> job type for the RestoreObject operation is no longer available
+        /// to new customers. Existing customers of Amazon S3 Select can continue to use the feature
+        /// as usual. <a href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn
+        /// more</a> 
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Restores an archived copy of an object back into Amazon S3
         /// </para>
@@ -26538,7 +26773,14 @@ namespace Amazon.S3
         /// <para>
         /// This operation is not supported by directory buckets.
         /// </para>
-        ///  </note> 
+        ///  </note> <important> 
+        /// <para>
+        /// The <c>SELECT</c> job type for the RestoreObject operation is no longer available
+        /// to new customers. Existing customers of Amazon S3 Select can continue to use the feature
+        /// as usual. <a href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn
+        /// more</a> 
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Restores an archived copy of an object back into Amazon S3
         /// </para>
@@ -26768,7 +27010,14 @@ namespace Amazon.S3
         /// <para>
         /// This operation is not supported by directory buckets.
         /// </para>
-        ///  </note> 
+        ///  </note> <important> 
+        /// <para>
+        /// The <c>SELECT</c> job type for the RestoreObject operation is no longer available
+        /// to new customers. Existing customers of Amazon S3 Select can continue to use the feature
+        /// as usual. <a href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn
+        /// more</a> 
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Restores an archived copy of an object back into Amazon S3
         /// </para>
@@ -26994,7 +27243,14 @@ namespace Amazon.S3
         /// <para>
         /// This operation is not supported by directory buckets.
         /// </para>
-        ///  </note> 
+        ///  </note> <important> 
+        /// <para>
+        /// The <c>SELECT</c> job type for the RestoreObject operation is no longer available
+        /// to new customers. Existing customers of Amazon S3 Select can continue to use the feature
+        /// as usual. <a href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn
+        /// more</a> 
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Restores an archived copy of an object back into Amazon S3
         /// </para>
@@ -27223,7 +27479,14 @@ namespace Amazon.S3
         /// <para>
         /// This operation is not supported by directory buckets.
         /// </para>
-        ///  </note> 
+        ///  </note> <important> 
+        /// <para>
+        /// The <c>SELECT</c> job type for the RestoreObject operation is no longer available
+        /// to new customers. Existing customers of Amazon S3 Select can continue to use the feature
+        /// as usual. <a href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn
+        /// more</a> 
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Restores an archived copy of an object back into Amazon S3
         /// </para>
@@ -27454,7 +27717,14 @@ namespace Amazon.S3
         /// <para>
         /// This operation is not supported by directory buckets.
         /// </para>
-        ///  </note> 
+        ///  </note> <important> 
+        /// <para>
+        /// The <c>SELECT</c> job type for the RestoreObject operation is no longer available
+        /// to new customers. Existing customers of Amazon S3 Select can continue to use the feature
+        /// as usual. <a href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn
+        /// more</a> 
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Restores an archived copy of an object back into Amazon S3
         /// </para>
@@ -27685,7 +27955,14 @@ namespace Amazon.S3
         /// <para>
         /// This operation is not supported by directory buckets.
         /// </para>
-        ///  </note> 
+        ///  </note> <important> 
+        /// <para>
+        /// The <c>SELECT</c> job type for the RestoreObject operation is no longer available
+        /// to new customers. Existing customers of Amazon S3 Select can continue to use the feature
+        /// as usual. <a href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn
+        /// more</a> 
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Restores an archived copy of an object back into Amazon S3
         /// </para>
@@ -27918,7 +28195,14 @@ namespace Amazon.S3
         /// <para>
         /// This operation is not supported by directory buckets.
         /// </para>
-        ///  </note> 
+        ///  </note> <important> 
+        /// <para>
+        /// The <c>SELECT</c> job type for the RestoreObject operation is no longer available
+        /// to new customers. Existing customers of Amazon S3 Select can continue to use the feature
+        /// as usual. <a href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn
+        /// more</a> 
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Restores an archived copy of an object back into Amazon S3
         /// </para>
@@ -28151,7 +28435,13 @@ namespace Amazon.S3
         /// <para>
         /// This operation is not supported by directory buckets.
         /// </para>
-        ///  </note> 
+        ///  </note> <important> 
+        /// <para>
+        /// The SelectObjectContent operation is no longer available to new customers. Existing
+        /// customers of Amazon S3 Select can continue to use the operation as usual. <a href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn
+        /// more</a> 
+        /// </para>
+        ///  </important> 
         /// <para>
         /// This action filters the contents of an Amazon S3 object based on a simple structured
         /// query language (SQL) statement. In the request, along with the SQL expression, you
@@ -28292,7 +28582,13 @@ namespace Amazon.S3
         /// <para>
         /// This operation is not supported by directory buckets.
         /// </para>
-        ///  </note> 
+        ///  </note> <important> 
+        /// <para>
+        /// The SelectObjectContent operation is no longer available to new customers. Existing
+        /// customers of Amazon S3 Select can continue to use the operation as usual. <a href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn
+        /// more</a> 
+        /// </para>
+        ///  </important> 
         /// <para>
         /// This action filters the contents of an Amazon S3 object based on a simple structured
         /// query language (SQL) statement. In the request, along with the SQL expression, you
@@ -28487,9 +28783,23 @@ namespace Amazon.S3
         /// </para>
         ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
-        ///  <b>General purpose bucket permissions</b> - For information on the permissions required
-        /// to use the multipart upload API, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
-        /// Upload and Permissions</a> in the <i>Amazon S3 User Guide</i>.
+        ///  <b>General purpose bucket permissions</b> - To perform a multipart upload with encryption
+        /// using an Key Management Service key, the requester must have permission to the <c>kms:Decrypt</c>
+        /// and <c>kms:GenerateDataKey</c> actions on the key. The requester must also have permissions
+        /// for the <c>kms:GenerateDataKey</c> action for the <c>CreateMultipartUpload</c> API.
+        /// Then, the requester needs permissions for the <c>kms:Decrypt</c> action on the <c>UploadPart</c>
+        /// and <c>UploadPartCopy</c> APIs.
+        /// </para>
+        ///  
+        /// <para>
+        /// These permissions are required because Amazon S3 must decrypt and read data from the
+        /// encrypted file parts before it completes the multipart upload. For more information
+        /// about KMS permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">Protecting
+        /// data using server-side encryption with KMS</a> in the <i>Amazon S3 User Guide</i>.
+        /// For information about the permissions required to use the multipart upload API, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
+        /// upload and permissions</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
+        /// upload API and permissions</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -28689,9 +28999,23 @@ namespace Amazon.S3
         /// </para>
         ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
-        ///  <b>General purpose bucket permissions</b> - For information on the permissions required
-        /// to use the multipart upload API, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
-        /// Upload and Permissions</a> in the <i>Amazon S3 User Guide</i>.
+        ///  <b>General purpose bucket permissions</b> - To perform a multipart upload with encryption
+        /// using an Key Management Service key, the requester must have permission to the <c>kms:Decrypt</c>
+        /// and <c>kms:GenerateDataKey</c> actions on the key. The requester must also have permissions
+        /// for the <c>kms:GenerateDataKey</c> action for the <c>CreateMultipartUpload</c> API.
+        /// Then, the requester needs permissions for the <c>kms:Decrypt</c> action on the <c>UploadPart</c>
+        /// and <c>UploadPartCopy</c> APIs.
+        /// </para>
+        ///  
+        /// <para>
+        /// These permissions are required because Amazon S3 must decrypt and read data from the
+        /// encrypted file parts before it completes the multipart upload. For more information
+        /// about KMS permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">Protecting
+        /// data using server-side encryption with KMS</a> in the <i>Amazon S3 User Guide</i>.
+        /// For information about the permissions required to use the multipart upload API, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
+        /// upload and permissions</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
+        /// upload API and permissions</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>

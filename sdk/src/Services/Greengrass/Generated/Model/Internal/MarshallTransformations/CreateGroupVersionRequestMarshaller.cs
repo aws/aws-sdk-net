@@ -64,57 +64,60 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                 throw new AmazonGreengrassException("Request object does not have required field GroupId set");
             request.AddPathResource("{GroupId}", StringUtils.FromString(publicRequest.GroupId));
             request.ResourcePath = "/greengrass/groups/{GroupId}/versions";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConnectorDefinitionVersionArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ConnectorDefinitionVersionArn");
-                    context.Writer.Write(publicRequest.ConnectorDefinitionVersionArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConnectorDefinitionVersionArn())
+                    {
+                        context.Writer.WritePropertyName("ConnectorDefinitionVersionArn");
+                        context.Writer.Write(publicRequest.ConnectorDefinitionVersionArn);
+                    }
+
+                    if(publicRequest.IsSetCoreDefinitionVersionArn())
+                    {
+                        context.Writer.WritePropertyName("CoreDefinitionVersionArn");
+                        context.Writer.Write(publicRequest.CoreDefinitionVersionArn);
+                    }
+
+                    if(publicRequest.IsSetDeviceDefinitionVersionArn())
+                    {
+                        context.Writer.WritePropertyName("DeviceDefinitionVersionArn");
+                        context.Writer.Write(publicRequest.DeviceDefinitionVersionArn);
+                    }
+
+                    if(publicRequest.IsSetFunctionDefinitionVersionArn())
+                    {
+                        context.Writer.WritePropertyName("FunctionDefinitionVersionArn");
+                        context.Writer.Write(publicRequest.FunctionDefinitionVersionArn);
+                    }
+
+                    if(publicRequest.IsSetLoggerDefinitionVersionArn())
+                    {
+                        context.Writer.WritePropertyName("LoggerDefinitionVersionArn");
+                        context.Writer.Write(publicRequest.LoggerDefinitionVersionArn);
+                    }
+
+                    if(publicRequest.IsSetResourceDefinitionVersionArn())
+                    {
+                        context.Writer.WritePropertyName("ResourceDefinitionVersionArn");
+                        context.Writer.Write(publicRequest.ResourceDefinitionVersionArn);
+                    }
+
+                    if(publicRequest.IsSetSubscriptionDefinitionVersionArn())
+                    {
+                        context.Writer.WritePropertyName("SubscriptionDefinitionVersionArn");
+                        context.Writer.Write(publicRequest.SubscriptionDefinitionVersionArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCoreDefinitionVersionArn())
-                {
-                    context.Writer.WritePropertyName("CoreDefinitionVersionArn");
-                    context.Writer.Write(publicRequest.CoreDefinitionVersionArn);
-                }
-
-                if(publicRequest.IsSetDeviceDefinitionVersionArn())
-                {
-                    context.Writer.WritePropertyName("DeviceDefinitionVersionArn");
-                    context.Writer.Write(publicRequest.DeviceDefinitionVersionArn);
-                }
-
-                if(publicRequest.IsSetFunctionDefinitionVersionArn())
-                {
-                    context.Writer.WritePropertyName("FunctionDefinitionVersionArn");
-                    context.Writer.Write(publicRequest.FunctionDefinitionVersionArn);
-                }
-
-                if(publicRequest.IsSetLoggerDefinitionVersionArn())
-                {
-                    context.Writer.WritePropertyName("LoggerDefinitionVersionArn");
-                    context.Writer.Write(publicRequest.LoggerDefinitionVersionArn);
-                }
-
-                if(publicRequest.IsSetResourceDefinitionVersionArn())
-                {
-                    context.Writer.WritePropertyName("ResourceDefinitionVersionArn");
-                    context.Writer.Write(publicRequest.ResourceDefinitionVersionArn);
-                }
-
-                if(publicRequest.IsSetSubscriptionDefinitionVersionArn())
-                {
-                    context.Writer.WritePropertyName("SubscriptionDefinitionVersionArn");
-                    context.Writer.Write(publicRequest.SubscriptionDefinitionVersionArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

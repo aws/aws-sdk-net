@@ -63,32 +63,35 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetIpAddress())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("IpAddress");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetIpAddress())
+                    {
+                        context.Writer.WritePropertyName("IpAddress");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = IpAddressUpdateMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.IpAddress, context);
+                        var marshaller = IpAddressUpdateMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.IpAddress, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetResolverEndpointId())
+                    {
+                        context.Writer.WritePropertyName("ResolverEndpointId");
+                        context.Writer.Write(publicRequest.ResolverEndpointId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetResolverEndpointId())
-                {
-                    context.Writer.WritePropertyName("ResolverEndpointId");
-                    context.Writer.Write(publicRequest.ResolverEndpointId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

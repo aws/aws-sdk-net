@@ -63,66 +63,69 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeploymentConfig())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DeploymentConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DeploymentConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DeploymentConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEndpointConfigName())
-                {
-                    context.Writer.WritePropertyName("EndpointConfigName");
-                    context.Writer.Write(publicRequest.EndpointConfigName);
-                }
-
-                if(publicRequest.IsSetEndpointName())
-                {
-                    context.Writer.WritePropertyName("EndpointName");
-                    context.Writer.Write(publicRequest.EndpointName);
-                }
-
-                if(publicRequest.IsSetExcludeRetainedVariantProperties())
-                {
-                    context.Writer.WritePropertyName("ExcludeRetainedVariantProperties");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestExcludeRetainedVariantPropertiesListValue in publicRequest.ExcludeRetainedVariantProperties)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDeploymentConfig())
                     {
+                        context.Writer.WritePropertyName("DeploymentConfig");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = VariantPropertyMarshaller.Instance;
-                        marshaller.Marshall(publicRequestExcludeRetainedVariantPropertiesListValue, context);
+                        var marshaller = DeploymentConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DeploymentConfig, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetEndpointConfigName())
+                    {
+                        context.Writer.WritePropertyName("EndpointConfigName");
+                        context.Writer.Write(publicRequest.EndpointConfigName);
+                    }
+
+                    if(publicRequest.IsSetEndpointName())
+                    {
+                        context.Writer.WritePropertyName("EndpointName");
+                        context.Writer.Write(publicRequest.EndpointName);
+                    }
+
+                    if(publicRequest.IsSetExcludeRetainedVariantProperties())
+                    {
+                        context.Writer.WritePropertyName("ExcludeRetainedVariantProperties");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestExcludeRetainedVariantPropertiesListValue in publicRequest.ExcludeRetainedVariantProperties)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = VariantPropertyMarshaller.Instance;
+                            marshaller.Marshall(publicRequestExcludeRetainedVariantPropertiesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetRetainAllVariantProperties())
+                    {
+                        context.Writer.WritePropertyName("RetainAllVariantProperties");
+                        context.Writer.Write(publicRequest.RetainAllVariantProperties.Value);
+                    }
+
+                    if(publicRequest.IsSetRetainDeploymentConfig())
+                    {
+                        context.Writer.WritePropertyName("RetainDeploymentConfig");
+                        context.Writer.Write(publicRequest.RetainDeploymentConfig.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRetainAllVariantProperties())
-                {
-                    context.Writer.WritePropertyName("RetainAllVariantProperties");
-                    context.Writer.Write(publicRequest.RetainAllVariantProperties.Value);
-                }
-
-                if(publicRequest.IsSetRetainDeploymentConfig())
-                {
-                    context.Writer.WritePropertyName("RetainDeploymentConfig");
-                    context.Writer.Write(publicRequest.RetainDeploymentConfig.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -61,146 +61,149 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/updateResponsePlan";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetActions())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("actions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestActionsListValue in publicRequest.Actions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetActions())
                     {
+                        context.Writer.WritePropertyName("actions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestActionsListValue in publicRequest.Actions)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ActionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestActionsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetArn())
+                    {
+                        context.Writer.WritePropertyName("arn");
+                        context.Writer.Write(publicRequest.Arn);
+                    }
+
+                    if(publicRequest.IsSetChatChannel())
+                    {
+                        context.Writer.WritePropertyName("chatChannel");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = ActionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestActionsListValue, context);
+                        var marshaller = ChatChannelMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ChatChannel, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetArn())
-                {
-                    context.Writer.WritePropertyName("arn");
-                    context.Writer.Write(publicRequest.Arn);
-                }
-
-                if(publicRequest.IsSetChatChannel())
-                {
-                    context.Writer.WritePropertyName("chatChannel");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ChatChannelMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ChatChannel, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDisplayName())
-                {
-                    context.Writer.WritePropertyName("displayName");
-                    context.Writer.Write(publicRequest.DisplayName);
-                }
-
-                if(publicRequest.IsSetEngagements())
-                {
-                    context.Writer.WritePropertyName("engagements");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEngagementsListValue in publicRequest.Engagements)
+                    if(publicRequest.IsSetClientToken())
                     {
-                            context.Writer.Write(publicRequestEngagementsListValue);
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetIncidentTemplateDedupeString())
-                {
-                    context.Writer.WritePropertyName("incidentTemplateDedupeString");
-                    context.Writer.Write(publicRequest.IncidentTemplateDedupeString);
-                }
-
-                if(publicRequest.IsSetIncidentTemplateImpact())
-                {
-                    context.Writer.WritePropertyName("incidentTemplateImpact");
-                    context.Writer.Write(publicRequest.IncidentTemplateImpact.Value);
-                }
-
-                if(publicRequest.IsSetIncidentTemplateNotificationTargets())
-                {
-                    context.Writer.WritePropertyName("incidentTemplateNotificationTargets");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestIncidentTemplateNotificationTargetsListValue in publicRequest.IncidentTemplateNotificationTargets)
+                    else if(!(publicRequest.IsSetClientToken()))
                     {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetDisplayName())
+                    {
+                        context.Writer.WritePropertyName("displayName");
+                        context.Writer.Write(publicRequest.DisplayName);
+                    }
+
+                    if(publicRequest.IsSetEngagements())
+                    {
+                        context.Writer.WritePropertyName("engagements");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestEngagementsListValue in publicRequest.Engagements)
+                        {
+                                context.Writer.Write(publicRequestEngagementsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetIncidentTemplateDedupeString())
+                    {
+                        context.Writer.WritePropertyName("incidentTemplateDedupeString");
+                        context.Writer.Write(publicRequest.IncidentTemplateDedupeString);
+                    }
+
+                    if(publicRequest.IsSetIncidentTemplateImpact())
+                    {
+                        context.Writer.WritePropertyName("incidentTemplateImpact");
+                        context.Writer.Write(publicRequest.IncidentTemplateImpact.Value);
+                    }
+
+                    if(publicRequest.IsSetIncidentTemplateNotificationTargets())
+                    {
+                        context.Writer.WritePropertyName("incidentTemplateNotificationTargets");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestIncidentTemplateNotificationTargetsListValue in publicRequest.IncidentTemplateNotificationTargets)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = NotificationTargetItemMarshaller.Instance;
+                            marshaller.Marshall(publicRequestIncidentTemplateNotificationTargetsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetIncidentTemplateSummary())
+                    {
+                        context.Writer.WritePropertyName("incidentTemplateSummary");
+                        context.Writer.Write(publicRequest.IncidentTemplateSummary);
+                    }
+
+                    if(publicRequest.IsSetIncidentTemplateTags())
+                    {
+                        context.Writer.WritePropertyName("incidentTemplateTags");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestIncidentTemplateTagsKvp in publicRequest.IncidentTemplateTags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestIncidentTemplateTagsKvp.Key);
+                            var publicRequestIncidentTemplateTagsValue = publicRequestIncidentTemplateTagsKvp.Value;
 
-                        var marshaller = NotificationTargetItemMarshaller.Instance;
-                        marshaller.Marshall(publicRequestIncidentTemplateNotificationTargetsListValue, context);
-
+                                context.Writer.Write(publicRequestIncidentTemplateTagsValue);
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetIncidentTemplateSummary())
-                {
-                    context.Writer.WritePropertyName("incidentTemplateSummary");
-                    context.Writer.Write(publicRequest.IncidentTemplateSummary);
-                }
-
-                if(publicRequest.IsSetIncidentTemplateTags())
-                {
-                    context.Writer.WritePropertyName("incidentTemplateTags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestIncidentTemplateTagsKvp in publicRequest.IncidentTemplateTags)
+                    if(publicRequest.IsSetIncidentTemplateTitle())
                     {
-                        context.Writer.WritePropertyName(publicRequestIncidentTemplateTagsKvp.Key);
-                        var publicRequestIncidentTemplateTagsValue = publicRequestIncidentTemplateTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestIncidentTemplateTagsValue);
+                        context.Writer.WritePropertyName("incidentTemplateTitle");
+                        context.Writer.Write(publicRequest.IncidentTemplateTitle);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetIncidentTemplateTitle())
-                {
-                    context.Writer.WritePropertyName("incidentTemplateTitle");
-                    context.Writer.Write(publicRequest.IncidentTemplateTitle);
-                }
-
-                if(publicRequest.IsSetIntegrations())
-                {
-                    context.Writer.WritePropertyName("integrations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestIntegrationsListValue in publicRequest.Integrations)
+                    if(publicRequest.IsSetIntegrations())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("integrations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestIntegrationsListValue in publicRequest.Integrations)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = IntegrationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestIntegrationsListValue, context);
+                            var marshaller = IntegrationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestIntegrationsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

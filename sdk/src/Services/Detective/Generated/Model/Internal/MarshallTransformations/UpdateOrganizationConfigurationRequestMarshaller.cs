@@ -61,27 +61,30 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/orgs/updateOrganizationConfiguration";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAutoEnable())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AutoEnable");
-                    context.Writer.Write(publicRequest.AutoEnable.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAutoEnable())
+                    {
+                        context.Writer.WritePropertyName("AutoEnable");
+                        context.Writer.Write(publicRequest.AutoEnable.Value);
+                    }
+
+                    if(publicRequest.IsSetGraphArn())
+                    {
+                        context.Writer.WritePropertyName("GraphArn");
+                        context.Writer.Write(publicRequest.GraphArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetGraphArn())
-                {
-                    context.Writer.WritePropertyName("GraphArn");
-                    context.Writer.Write(publicRequest.GraphArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

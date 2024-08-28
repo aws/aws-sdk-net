@@ -63,43 +63,46 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetHypervisorArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("HypervisorArn");
-                    context.Writer.Write(publicRequest.HypervisorArn);
-                }
-
-                if(publicRequest.IsSetIamRoleArn())
-                {
-                    context.Writer.WritePropertyName("IamRoleArn");
-                    context.Writer.Write(publicRequest.IamRoleArn);
-                }
-
-                if(publicRequest.IsSetVmwareToAwsTagMappings())
-                {
-                    context.Writer.WritePropertyName("VmwareToAwsTagMappings");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestVmwareToAwsTagMappingsListValue in publicRequest.VmwareToAwsTagMappings)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetHypervisorArn())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = VmwareToAwsTagMappingMarshaller.Instance;
-                        marshaller.Marshall(publicRequestVmwareToAwsTagMappingsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("HypervisorArn");
+                        context.Writer.Write(publicRequest.HypervisorArn);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetIamRoleArn())
+                    {
+                        context.Writer.WritePropertyName("IamRoleArn");
+                        context.Writer.Write(publicRequest.IamRoleArn);
+                    }
+
+                    if(publicRequest.IsSetVmwareToAwsTagMappings())
+                    {
+                        context.Writer.WritePropertyName("VmwareToAwsTagMappings");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestVmwareToAwsTagMappingsListValue in publicRequest.VmwareToAwsTagMappings)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = VmwareToAwsTagMappingMarshaller.Instance;
+                            marshaller.Marshall(publicRequestVmwareToAwsTagMappingsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

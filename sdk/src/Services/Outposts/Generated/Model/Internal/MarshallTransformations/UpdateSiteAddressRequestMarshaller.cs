@@ -64,32 +64,35 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
                 throw new AmazonOutpostsException("Request object does not have required field SiteId set");
             request.AddPathResource("{SiteId}", StringUtils.FromString(publicRequest.SiteId));
             request.ResourcePath = "/sites/{SiteId}/address";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAddress())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Address");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAddress())
+                    {
+                        context.Writer.WritePropertyName("Address");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = AddressMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Address, context);
+                        var marshaller = AddressMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Address, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetAddressType())
+                    {
+                        context.Writer.WritePropertyName("AddressType");
+                        context.Writer.Write(publicRequest.AddressType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetAddressType())
-                {
-                    context.Writer.WritePropertyName("AddressType");
-                    context.Writer.Write(publicRequest.AddressType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

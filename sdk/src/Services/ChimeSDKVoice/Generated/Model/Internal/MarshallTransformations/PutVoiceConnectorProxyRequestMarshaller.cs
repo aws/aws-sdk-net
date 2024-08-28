@@ -64,44 +64,47 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
                 throw new AmazonChimeSDKVoiceException("Request object does not have required field VoiceConnectorId set");
             request.AddPathResource("{voiceConnectorId}", StringUtils.FromString(publicRequest.VoiceConnectorId));
             request.ResourcePath = "/voice-connectors/{voiceConnectorId}/programmable-numbers/proxy";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDefaultSessionExpiryMinutes())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DefaultSessionExpiryMinutes");
-                    context.Writer.Write(publicRequest.DefaultSessionExpiryMinutes.Value);
-                }
-
-                if(publicRequest.IsSetDisabled())
-                {
-                    context.Writer.WritePropertyName("Disabled");
-                    context.Writer.Write(publicRequest.Disabled.Value);
-                }
-
-                if(publicRequest.IsSetFallBackPhoneNumber())
-                {
-                    context.Writer.WritePropertyName("FallBackPhoneNumber");
-                    context.Writer.Write(publicRequest.FallBackPhoneNumber);
-                }
-
-                if(publicRequest.IsSetPhoneNumberPoolCountries())
-                {
-                    context.Writer.WritePropertyName("PhoneNumberPoolCountries");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPhoneNumberPoolCountriesListValue in publicRequest.PhoneNumberPoolCountries)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDefaultSessionExpiryMinutes())
                     {
-                            context.Writer.Write(publicRequestPhoneNumberPoolCountriesListValue);
+                        context.Writer.WritePropertyName("DefaultSessionExpiryMinutes");
+                        context.Writer.Write(publicRequest.DefaultSessionExpiryMinutes.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDisabled())
+                    {
+                        context.Writer.WritePropertyName("Disabled");
+                        context.Writer.Write(publicRequest.Disabled.Value);
+                    }
+
+                    if(publicRequest.IsSetFallBackPhoneNumber())
+                    {
+                        context.Writer.WritePropertyName("FallBackPhoneNumber");
+                        context.Writer.Write(publicRequest.FallBackPhoneNumber);
+                    }
+
+                    if(publicRequest.IsSetPhoneNumberPoolCountries())
+                    {
+                        context.Writer.WritePropertyName("PhoneNumberPoolCountries");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPhoneNumberPoolCountriesListValue in publicRequest.PhoneNumberPoolCountries)
+                        {
+                                context.Writer.Write(publicRequestPhoneNumberPoolCountriesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

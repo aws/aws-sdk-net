@@ -63,27 +63,30 @@ namespace Amazon.OpsWorksCM.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetNodeAssociationStatusToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("NodeAssociationStatusToken");
-                    context.Writer.Write(publicRequest.NodeAssociationStatusToken);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetNodeAssociationStatusToken())
+                    {
+                        context.Writer.WritePropertyName("NodeAssociationStatusToken");
+                        context.Writer.Write(publicRequest.NodeAssociationStatusToken);
+                    }
+
+                    if(publicRequest.IsSetServerName())
+                    {
+                        context.Writer.WritePropertyName("ServerName");
+                        context.Writer.Write(publicRequest.ServerName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetServerName())
-                {
-                    context.Writer.WritePropertyName("ServerName");
-                    context.Writer.Write(publicRequest.ServerName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

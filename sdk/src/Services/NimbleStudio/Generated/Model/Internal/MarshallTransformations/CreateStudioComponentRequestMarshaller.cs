@@ -64,119 +64,122 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
                 throw new AmazonNimbleStudioException("Request object does not have required field StudioId set");
             request.AddPathResource("{studioId}", StringUtils.FromString(publicRequest.StudioId));
             request.ResourcePath = "/2020-08-01/studios/{studioId}/studio-components";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("configuration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = StudioComponentConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Configuration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetEc2SecurityGroupIds())
-                {
-                    context.Writer.WritePropertyName("ec2SecurityGroupIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEc2SecurityGroupIdsListValue in publicRequest.Ec2SecurityGroupIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConfiguration())
                     {
-                            context.Writer.Write(publicRequestEc2SecurityGroupIdsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetInitializationScripts())
-                {
-                    context.Writer.WritePropertyName("initializationScripts");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestInitializationScriptsListValue in publicRequest.InitializationScripts)
-                    {
+                        context.Writer.WritePropertyName("configuration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = StudioComponentInitializationScriptMarshaller.Instance;
-                        marshaller.Marshall(publicRequestInitializationScriptsListValue, context);
+                        var marshaller = StudioComponentConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Configuration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetRuntimeRoleArn())
-                {
-                    context.Writer.WritePropertyName("runtimeRoleArn");
-                    context.Writer.Write(publicRequest.RuntimeRoleArn);
-                }
-
-                if(publicRequest.IsSetScriptParameters())
-                {
-                    context.Writer.WritePropertyName("scriptParameters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestScriptParametersListValue in publicRequest.ScriptParameters)
+                    if(publicRequest.IsSetDescription())
                     {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetEc2SecurityGroupIds())
+                    {
+                        context.Writer.WritePropertyName("ec2SecurityGroupIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestEc2SecurityGroupIdsListValue in publicRequest.Ec2SecurityGroupIds)
+                        {
+                                context.Writer.Write(publicRequestEc2SecurityGroupIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetInitializationScripts())
+                    {
+                        context.Writer.WritePropertyName("initializationScripts");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestInitializationScriptsListValue in publicRequest.InitializationScripts)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = StudioComponentInitializationScriptMarshaller.Instance;
+                            marshaller.Marshall(publicRequestInitializationScriptsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetRuntimeRoleArn())
+                    {
+                        context.Writer.WritePropertyName("runtimeRoleArn");
+                        context.Writer.Write(publicRequest.RuntimeRoleArn);
+                    }
+
+                    if(publicRequest.IsSetScriptParameters())
+                    {
+                        context.Writer.WritePropertyName("scriptParameters");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestScriptParametersListValue in publicRequest.ScriptParameters)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ScriptParameterKeyValueMarshaller.Instance;
+                            marshaller.Marshall(publicRequestScriptParametersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSecureInitializationRoleArn())
+                    {
+                        context.Writer.WritePropertyName("secureInitializationRoleArn");
+                        context.Writer.Write(publicRequest.SecureInitializationRoleArn);
+                    }
+
+                    if(publicRequest.IsSetSubtype())
+                    {
+                        context.Writer.WritePropertyName("subtype");
+                        context.Writer.Write(publicRequest.Subtype);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
 
-                        var marshaller = ScriptParameterKeyValueMarshaller.Instance;
-                        marshaller.Marshall(publicRequestScriptParametersListValue, context);
-
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetSecureInitializationRoleArn())
-                {
-                    context.Writer.WritePropertyName("secureInitializationRoleArn");
-                    context.Writer.Write(publicRequest.SecureInitializationRoleArn);
-                }
-
-                if(publicRequest.IsSetSubtype())
-                {
-                    context.Writer.WritePropertyName("subtype");
-                    context.Writer.Write(publicRequest.Subtype);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetType())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("type");
+                        context.Writer.Write(publicRequest.Type);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetType())
-                {
-                    context.Writer.WritePropertyName("type");
-                    context.Writer.Write(publicRequest.Type);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

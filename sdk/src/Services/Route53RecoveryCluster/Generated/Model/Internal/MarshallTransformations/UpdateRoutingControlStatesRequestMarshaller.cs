@@ -63,42 +63,45 @@ namespace Amazon.Route53RecoveryCluster.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetSafetyRulesToOverride())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("SafetyRulesToOverride");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSafetyRulesToOverrideListValue in publicRequest.SafetyRulesToOverride)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetSafetyRulesToOverride())
                     {
-                            context.Writer.Write(publicRequestSafetyRulesToOverrideListValue);
+                        context.Writer.WritePropertyName("SafetyRulesToOverride");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSafetyRulesToOverrideListValue in publicRequest.SafetyRulesToOverride)
+                        {
+                                context.Writer.Write(publicRequestSafetyRulesToOverrideListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetUpdateRoutingControlStateEntries())
+                    {
+                        context.Writer.WritePropertyName("UpdateRoutingControlStateEntries");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestUpdateRoutingControlStateEntriesListValue in publicRequest.UpdateRoutingControlStateEntries)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = UpdateRoutingControlStateEntryMarshaller.Instance;
+                            marshaller.Marshall(publicRequestUpdateRoutingControlStateEntriesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetUpdateRoutingControlStateEntries())
-                {
-                    context.Writer.WritePropertyName("UpdateRoutingControlStateEntries");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestUpdateRoutingControlStateEntriesListValue in publicRequest.UpdateRoutingControlStateEntries)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = UpdateRoutingControlStateEntryMarshaller.Instance;
-                        marshaller.Marshall(publicRequestUpdateRoutingControlStateEntriesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

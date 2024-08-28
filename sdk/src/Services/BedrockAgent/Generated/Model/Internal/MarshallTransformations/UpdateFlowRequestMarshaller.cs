@@ -64,50 +64,53 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 throw new AmazonBedrockAgentException("Request object does not have required field FlowIdentifier set");
             request.AddPathResource("{flowIdentifier}", StringUtils.FromString(publicRequest.FlowIdentifier));
             request.ResourcePath = "/flows/{flowIdentifier}/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCustomerEncryptionKeyArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("customerEncryptionKeyArn");
-                    context.Writer.Write(publicRequest.CustomerEncryptionKeyArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCustomerEncryptionKeyArn())
+                    {
+                        context.Writer.WritePropertyName("customerEncryptionKeyArn");
+                        context.Writer.Write(publicRequest.CustomerEncryptionKeyArn);
+                    }
+
+                    if(publicRequest.IsSetDefinition())
+                    {
+                        context.Writer.WritePropertyName("definition");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = FlowDefinitionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Definition, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetExecutionRoleArn())
+                    {
+                        context.Writer.WritePropertyName("executionRoleArn");
+                        context.Writer.Write(publicRequest.ExecutionRoleArn);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDefinition())
-                {
-                    context.Writer.WritePropertyName("definition");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = FlowDefinitionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Definition, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetExecutionRoleArn())
-                {
-                    context.Writer.WritePropertyName("executionRoleArn");
-                    context.Writer.Write(publicRequest.ExecutionRoleArn);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

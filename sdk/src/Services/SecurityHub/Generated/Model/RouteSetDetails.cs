@@ -126,7 +126,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property DestinationPrefixListId. 
         /// <para>
-        ///  The prefix of the destination Amazon Web Service. 
+        ///  The prefix of the destination Amazon Web Servicesservice. 
         /// </para>
         /// </summary>
         public string DestinationPrefixListId

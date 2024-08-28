@@ -61,74 +61,77 @@ namespace Amazon.SSOOIDC.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/token";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientId");
-                    context.Writer.Write(publicRequest.ClientId);
-                }
-
-                if(publicRequest.IsSetClientSecret())
-                {
-                    context.Writer.WritePropertyName("clientSecret");
-                    context.Writer.Write(publicRequest.ClientSecret);
-                }
-
-                if(publicRequest.IsSetCode())
-                {
-                    context.Writer.WritePropertyName("code");
-                    context.Writer.Write(publicRequest.Code);
-                }
-
-                if(publicRequest.IsSetCodeVerifier())
-                {
-                    context.Writer.WritePropertyName("codeVerifier");
-                    context.Writer.Write(publicRequest.CodeVerifier);
-                }
-
-                if(publicRequest.IsSetDeviceCode())
-                {
-                    context.Writer.WritePropertyName("deviceCode");
-                    context.Writer.Write(publicRequest.DeviceCode);
-                }
-
-                if(publicRequest.IsSetGrantType())
-                {
-                    context.Writer.WritePropertyName("grantType");
-                    context.Writer.Write(publicRequest.GrantType);
-                }
-
-                if(publicRequest.IsSetRedirectUri())
-                {
-                    context.Writer.WritePropertyName("redirectUri");
-                    context.Writer.Write(publicRequest.RedirectUri);
-                }
-
-                if(publicRequest.IsSetRefreshToken())
-                {
-                    context.Writer.WritePropertyName("refreshToken");
-                    context.Writer.Write(publicRequest.RefreshToken);
-                }
-
-                if(publicRequest.IsSetScope())
-                {
-                    context.Writer.WritePropertyName("scope");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestScopeListValue in publicRequest.Scope)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientId())
                     {
-                            context.Writer.Write(publicRequestScopeListValue);
+                        context.Writer.WritePropertyName("clientId");
+                        context.Writer.Write(publicRequest.ClientId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetClientSecret())
+                    {
+                        context.Writer.WritePropertyName("clientSecret");
+                        context.Writer.Write(publicRequest.ClientSecret);
+                    }
+
+                    if(publicRequest.IsSetCode())
+                    {
+                        context.Writer.WritePropertyName("code");
+                        context.Writer.Write(publicRequest.Code);
+                    }
+
+                    if(publicRequest.IsSetCodeVerifier())
+                    {
+                        context.Writer.WritePropertyName("codeVerifier");
+                        context.Writer.Write(publicRequest.CodeVerifier);
+                    }
+
+                    if(publicRequest.IsSetDeviceCode())
+                    {
+                        context.Writer.WritePropertyName("deviceCode");
+                        context.Writer.Write(publicRequest.DeviceCode);
+                    }
+
+                    if(publicRequest.IsSetGrantType())
+                    {
+                        context.Writer.WritePropertyName("grantType");
+                        context.Writer.Write(publicRequest.GrantType);
+                    }
+
+                    if(publicRequest.IsSetRedirectUri())
+                    {
+                        context.Writer.WritePropertyName("redirectUri");
+                        context.Writer.Write(publicRequest.RedirectUri);
+                    }
+
+                    if(publicRequest.IsSetRefreshToken())
+                    {
+                        context.Writer.WritePropertyName("refreshToken");
+                        context.Writer.Write(publicRequest.RefreshToken);
+                    }
+
+                    if(publicRequest.IsSetScope())
+                    {
+                        context.Writer.WritePropertyName("scope");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestScopeListValue in publicRequest.Scope)
+                        {
+                                context.Writer.Write(publicRequestScopeListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

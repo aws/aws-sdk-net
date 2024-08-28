@@ -63,51 +63,54 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetShardId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ShardId");
-                    context.Writer.Write(publicRequest.ShardId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetShardId())
+                    {
+                        context.Writer.WritePropertyName("ShardId");
+                        context.Writer.Write(publicRequest.ShardId);
+                    }
+
+                    if(publicRequest.IsSetShardIteratorType())
+                    {
+                        context.Writer.WritePropertyName("ShardIteratorType");
+                        context.Writer.Write(publicRequest.ShardIteratorType);
+                    }
+
+                    if(publicRequest.IsSetStartingSequenceNumber())
+                    {
+                        context.Writer.WritePropertyName("StartingSequenceNumber");
+                        context.Writer.Write(publicRequest.StartingSequenceNumber);
+                    }
+
+                    if(publicRequest.IsSetStreamARN())
+                    {
+                        context.Writer.WritePropertyName("StreamARN");
+                        context.Writer.Write(publicRequest.StreamARN);
+                    }
+
+                    if(publicRequest.IsSetStreamName())
+                    {
+                        context.Writer.WritePropertyName("StreamName");
+                        context.Writer.Write(publicRequest.StreamName);
+                    }
+
+                    if(publicRequest.IsSetTimestamp())
+                    {
+                        context.Writer.WritePropertyName("Timestamp");
+                        context.Writer.Write(publicRequest.Timestamp.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetShardIteratorType())
-                {
-                    context.Writer.WritePropertyName("ShardIteratorType");
-                    context.Writer.Write(publicRequest.ShardIteratorType);
-                }
-
-                if(publicRequest.IsSetStartingSequenceNumber())
-                {
-                    context.Writer.WritePropertyName("StartingSequenceNumber");
-                    context.Writer.Write(publicRequest.StartingSequenceNumber);
-                }
-
-                if(publicRequest.IsSetStreamARN())
-                {
-                    context.Writer.WritePropertyName("StreamARN");
-                    context.Writer.Write(publicRequest.StreamARN);
-                }
-
-                if(publicRequest.IsSetStreamName())
-                {
-                    context.Writer.WritePropertyName("StreamName");
-                    context.Writer.Write(publicRequest.StreamName);
-                }
-
-                if(publicRequest.IsSetTimestamp())
-                {
-                    context.Writer.WritePropertyName("Timestamp");
-                    context.Writer.Write(publicRequest.Timestamp.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

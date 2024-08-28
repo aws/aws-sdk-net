@@ -70,34 +70,37 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 throw new AmazonDeadlineException("Request object does not have required field WorkerId set");
             request.AddPathResource("{workerId}", StringUtils.FromString(publicRequest.WorkerId));
             request.ResourcePath = "/2023-10-12/farms/{farmId}/fleets/{fleetId}/workers/{workerId}/schedule";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetUpdatedSessionActions())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("updatedSessionActions");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestUpdatedSessionActionsKvp in publicRequest.UpdatedSessionActions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetUpdatedSessionActions())
                     {
-                        context.Writer.WritePropertyName(publicRequestUpdatedSessionActionsKvp.Key);
-                        var publicRequestUpdatedSessionActionsValue = publicRequestUpdatedSessionActionsKvp.Value;
-
+                        context.Writer.WritePropertyName("updatedSessionActions");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestUpdatedSessionActionsKvp in publicRequest.UpdatedSessionActions)
+                        {
+                            context.Writer.WritePropertyName(publicRequestUpdatedSessionActionsKvp.Key);
+                            var publicRequestUpdatedSessionActionsValue = publicRequestUpdatedSessionActionsKvp.Value;
 
-                        var marshaller = UpdatedSessionActionInfoMarshaller.Instance;
-                        marshaller.Marshall(publicRequestUpdatedSessionActionsValue, context);
+                            context.Writer.WriteObjectStart();
 
+                            var marshaller = UpdatedSessionActionInfoMarshaller.Instance;
+                            marshaller.Marshall(publicRequestUpdatedSessionActionsValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

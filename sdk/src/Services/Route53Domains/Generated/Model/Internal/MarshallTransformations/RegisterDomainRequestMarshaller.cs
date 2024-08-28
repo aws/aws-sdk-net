@@ -63,107 +63,110 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAdminContact())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AdminContact");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAdminContact())
+                    {
+                        context.Writer.WritePropertyName("AdminContact");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = ContactDetailMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AdminContact, context);
+                        var marshaller = ContactDetailMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AdminContact, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetAutoRenew())
+                    {
+                        context.Writer.WritePropertyName("AutoRenew");
+                        context.Writer.Write(publicRequest.AutoRenew.Value);
+                    }
+
+                    if(publicRequest.IsSetBillingContact())
+                    {
+                        context.Writer.WritePropertyName("BillingContact");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ContactDetailMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.BillingContact, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDomainName())
+                    {
+                        context.Writer.WritePropertyName("DomainName");
+                        context.Writer.Write(publicRequest.DomainName);
+                    }
+
+                    if(publicRequest.IsSetDurationInYears())
+                    {
+                        context.Writer.WritePropertyName("DurationInYears");
+                        context.Writer.Write(publicRequest.DurationInYears.Value);
+                    }
+
+                    if(publicRequest.IsSetIdnLangCode())
+                    {
+                        context.Writer.WritePropertyName("IdnLangCode");
+                        context.Writer.Write(publicRequest.IdnLangCode);
+                    }
+
+                    if(publicRequest.IsSetPrivacyProtectAdminContact())
+                    {
+                        context.Writer.WritePropertyName("PrivacyProtectAdminContact");
+                        context.Writer.Write(publicRequest.PrivacyProtectAdminContact.Value);
+                    }
+
+                    if(publicRequest.IsSetPrivacyProtectBillingContact())
+                    {
+                        context.Writer.WritePropertyName("PrivacyProtectBillingContact");
+                        context.Writer.Write(publicRequest.PrivacyProtectBillingContact.Value);
+                    }
+
+                    if(publicRequest.IsSetPrivacyProtectRegistrantContact())
+                    {
+                        context.Writer.WritePropertyName("PrivacyProtectRegistrantContact");
+                        context.Writer.Write(publicRequest.PrivacyProtectRegistrantContact.Value);
+                    }
+
+                    if(publicRequest.IsSetPrivacyProtectTechContact())
+                    {
+                        context.Writer.WritePropertyName("PrivacyProtectTechContact");
+                        context.Writer.Write(publicRequest.PrivacyProtectTechContact.Value);
+                    }
+
+                    if(publicRequest.IsSetRegistrantContact())
+                    {
+                        context.Writer.WritePropertyName("RegistrantContact");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ContactDetailMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RegistrantContact, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTechContact())
+                    {
+                        context.Writer.WritePropertyName("TechContact");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ContactDetailMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TechContact, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetAutoRenew())
-                {
-                    context.Writer.WritePropertyName("AutoRenew");
-                    context.Writer.Write(publicRequest.AutoRenew.Value);
-                }
-
-                if(publicRequest.IsSetBillingContact())
-                {
-                    context.Writer.WritePropertyName("BillingContact");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ContactDetailMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.BillingContact, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDomainName())
-                {
-                    context.Writer.WritePropertyName("DomainName");
-                    context.Writer.Write(publicRequest.DomainName);
-                }
-
-                if(publicRequest.IsSetDurationInYears())
-                {
-                    context.Writer.WritePropertyName("DurationInYears");
-                    context.Writer.Write(publicRequest.DurationInYears.Value);
-                }
-
-                if(publicRequest.IsSetIdnLangCode())
-                {
-                    context.Writer.WritePropertyName("IdnLangCode");
-                    context.Writer.Write(publicRequest.IdnLangCode);
-                }
-
-                if(publicRequest.IsSetPrivacyProtectAdminContact())
-                {
-                    context.Writer.WritePropertyName("PrivacyProtectAdminContact");
-                    context.Writer.Write(publicRequest.PrivacyProtectAdminContact.Value);
-                }
-
-                if(publicRequest.IsSetPrivacyProtectBillingContact())
-                {
-                    context.Writer.WritePropertyName("PrivacyProtectBillingContact");
-                    context.Writer.Write(publicRequest.PrivacyProtectBillingContact.Value);
-                }
-
-                if(publicRequest.IsSetPrivacyProtectRegistrantContact())
-                {
-                    context.Writer.WritePropertyName("PrivacyProtectRegistrantContact");
-                    context.Writer.Write(publicRequest.PrivacyProtectRegistrantContact.Value);
-                }
-
-                if(publicRequest.IsSetPrivacyProtectTechContact())
-                {
-                    context.Writer.WritePropertyName("PrivacyProtectTechContact");
-                    context.Writer.Write(publicRequest.PrivacyProtectTechContact.Value);
-                }
-
-                if(publicRequest.IsSetRegistrantContact())
-                {
-                    context.Writer.WritePropertyName("RegistrantContact");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ContactDetailMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RegistrantContact, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTechContact())
-                {
-                    context.Writer.WritePropertyName("TechContact");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ContactDetailMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TechContact, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

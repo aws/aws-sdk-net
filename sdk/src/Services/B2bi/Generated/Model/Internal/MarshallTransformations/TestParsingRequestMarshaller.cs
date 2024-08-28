@@ -63,43 +63,46 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEdiType())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ediType");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEdiType())
+                    {
+                        context.Writer.WritePropertyName("ediType");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = EdiTypeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EdiType, context);
+                        var marshaller = EdiTypeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EdiType, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetFileFormat())
+                    {
+                        context.Writer.WritePropertyName("fileFormat");
+                        context.Writer.Write(publicRequest.FileFormat);
+                    }
+
+                    if(publicRequest.IsSetInputFile())
+                    {
+                        context.Writer.WritePropertyName("inputFile");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = S3LocationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.InputFile, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetFileFormat())
-                {
-                    context.Writer.WritePropertyName("fileFormat");
-                    context.Writer.Write(publicRequest.FileFormat);
-                }
-
-                if(publicRequest.IsSetInputFile())
-                {
-                    context.Writer.WritePropertyName("inputFile");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = S3LocationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.InputFile, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

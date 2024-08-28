@@ -61,70 +61,73 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/update-application-settings";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApplicationId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ApplicationId");
-                    context.Writer.Write(publicRequest.ApplicationId);
-                }
-
-                if(publicRequest.IsSetBackint())
-                {
-                    context.Writer.WritePropertyName("Backint");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = BackintConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Backint, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetCredentialsToAddOrUpdate())
-                {
-                    context.Writer.WritePropertyName("CredentialsToAddOrUpdate");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCredentialsToAddOrUpdateListValue in publicRequest.CredentialsToAddOrUpdate)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApplicationId())
                     {
+                        context.Writer.WritePropertyName("ApplicationId");
+                        context.Writer.Write(publicRequest.ApplicationId);
+                    }
+
+                    if(publicRequest.IsSetBackint())
+                    {
+                        context.Writer.WritePropertyName("Backint");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = ApplicationCredentialMarshaller.Instance;
-                        marshaller.Marshall(publicRequestCredentialsToAddOrUpdateListValue, context);
+                        var marshaller = BackintConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Backint, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetCredentialsToRemove())
-                {
-                    context.Writer.WritePropertyName("CredentialsToRemove");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCredentialsToRemoveListValue in publicRequest.CredentialsToRemove)
+                    if(publicRequest.IsSetCredentialsToAddOrUpdate())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("CredentialsToAddOrUpdate");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCredentialsToAddOrUpdateListValue in publicRequest.CredentialsToAddOrUpdate)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = ApplicationCredentialMarshaller.Instance;
-                        marshaller.Marshall(publicRequestCredentialsToRemoveListValue, context);
+                            var marshaller = ApplicationCredentialMarshaller.Instance;
+                            marshaller.Marshall(publicRequestCredentialsToAddOrUpdateListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetCredentialsToRemove())
+                    {
+                        context.Writer.WritePropertyName("CredentialsToRemove");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCredentialsToRemoveListValue in publicRequest.CredentialsToRemove)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ApplicationCredentialMarshaller.Instance;
+                            marshaller.Marshall(publicRequestCredentialsToRemoveListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetDatabaseArn())
+                    {
+                        context.Writer.WritePropertyName("DatabaseArn");
+                        context.Writer.Write(publicRequest.DatabaseArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDatabaseArn())
-                {
-                    context.Writer.WritePropertyName("DatabaseArn");
-                    context.Writer.Write(publicRequest.DatabaseArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

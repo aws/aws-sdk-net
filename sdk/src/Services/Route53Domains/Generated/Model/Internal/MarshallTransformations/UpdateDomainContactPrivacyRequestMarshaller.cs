@@ -63,45 +63,48 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAdminPrivacy())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AdminPrivacy");
-                    context.Writer.Write(publicRequest.AdminPrivacy.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAdminPrivacy())
+                    {
+                        context.Writer.WritePropertyName("AdminPrivacy");
+                        context.Writer.Write(publicRequest.AdminPrivacy.Value);
+                    }
+
+                    if(publicRequest.IsSetBillingPrivacy())
+                    {
+                        context.Writer.WritePropertyName("BillingPrivacy");
+                        context.Writer.Write(publicRequest.BillingPrivacy.Value);
+                    }
+
+                    if(publicRequest.IsSetDomainName())
+                    {
+                        context.Writer.WritePropertyName("DomainName");
+                        context.Writer.Write(publicRequest.DomainName);
+                    }
+
+                    if(publicRequest.IsSetRegistrantPrivacy())
+                    {
+                        context.Writer.WritePropertyName("RegistrantPrivacy");
+                        context.Writer.Write(publicRequest.RegistrantPrivacy.Value);
+                    }
+
+                    if(publicRequest.IsSetTechPrivacy())
+                    {
+                        context.Writer.WritePropertyName("TechPrivacy");
+                        context.Writer.Write(publicRequest.TechPrivacy.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetBillingPrivacy())
-                {
-                    context.Writer.WritePropertyName("BillingPrivacy");
-                    context.Writer.Write(publicRequest.BillingPrivacy.Value);
-                }
-
-                if(publicRequest.IsSetDomainName())
-                {
-                    context.Writer.WritePropertyName("DomainName");
-                    context.Writer.Write(publicRequest.DomainName);
-                }
-
-                if(publicRequest.IsSetRegistrantPrivacy())
-                {
-                    context.Writer.WritePropertyName("RegistrantPrivacy");
-                    context.Writer.Write(publicRequest.RegistrantPrivacy.Value);
-                }
-
-                if(publicRequest.IsSetTechPrivacy())
-                {
-                    context.Writer.WritePropertyName("TechPrivacy");
-                    context.Writer.Write(publicRequest.TechPrivacy.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -64,59 +64,62 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field InstanceId set");
             request.AddPathResource("{InstanceId}", StringUtils.FromString(publicRequest.InstanceId));
             request.ResourcePath = "/instance/{InstanceId}/integration-associations";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetIntegrationArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("IntegrationArn");
-                    context.Writer.Write(publicRequest.IntegrationArn);
-                }
-
-                if(publicRequest.IsSetIntegrationType())
-                {
-                    context.Writer.WritePropertyName("IntegrationType");
-                    context.Writer.Write(publicRequest.IntegrationType);
-                }
-
-                if(publicRequest.IsSetSourceApplicationName())
-                {
-                    context.Writer.WritePropertyName("SourceApplicationName");
-                    context.Writer.Write(publicRequest.SourceApplicationName);
-                }
-
-                if(publicRequest.IsSetSourceApplicationUrl())
-                {
-                    context.Writer.WritePropertyName("SourceApplicationUrl");
-                    context.Writer.Write(publicRequest.SourceApplicationUrl);
-                }
-
-                if(publicRequest.IsSetSourceType())
-                {
-                    context.Writer.WritePropertyName("SourceType");
-                    context.Writer.Write(publicRequest.SourceType);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetIntegrationArn())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("IntegrationArn");
+                        context.Writer.Write(publicRequest.IntegrationArn);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetIntegrationType())
+                    {
+                        context.Writer.WritePropertyName("IntegrationType");
+                        context.Writer.Write(publicRequest.IntegrationType);
+                    }
+
+                    if(publicRequest.IsSetSourceApplicationName())
+                    {
+                        context.Writer.WritePropertyName("SourceApplicationName");
+                        context.Writer.Write(publicRequest.SourceApplicationName);
+                    }
+
+                    if(publicRequest.IsSetSourceApplicationUrl())
+                    {
+                        context.Writer.WritePropertyName("SourceApplicationUrl");
+                        context.Writer.Write(publicRequest.SourceApplicationUrl);
+                    }
+
+                    if(publicRequest.IsSetSourceType())
+                    {
+                        context.Writer.WritePropertyName("SourceType");
+                        context.Writer.Write(publicRequest.SourceType);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

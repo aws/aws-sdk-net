@@ -63,32 +63,35 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConnectionId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("connectionId");
-                    context.Writer.Write(publicRequest.ConnectionId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConnectionId())
+                    {
+                        context.Writer.WritePropertyName("connectionId");
+                        context.Writer.Write(publicRequest.ConnectionId);
+                    }
+
+                    if(publicRequest.IsSetNewPrivateVirtualInterface())
+                    {
+                        context.Writer.WritePropertyName("newPrivateVirtualInterface");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = NewPrivateVirtualInterfaceMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.NewPrivateVirtualInterface, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetNewPrivateVirtualInterface())
-                {
-                    context.Writer.WritePropertyName("newPrivateVirtualInterface");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = NewPrivateVirtualInterfaceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.NewPrivateVirtualInterface, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

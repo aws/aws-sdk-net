@@ -64,53 +64,56 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model.Internal.MarshallTransformat
                 throw new AmazonSageMakerFeatureStoreRuntimeException("Request object does not have required field FeatureGroupName set");
             request.AddPathResource("{FeatureGroupName}", StringUtils.FromString(publicRequest.FeatureGroupName));
             request.ResourcePath = "/FeatureGroup/{FeatureGroupName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetRecord())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Record");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRecordListValue in publicRequest.Record)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetRecord())
                     {
+                        context.Writer.WritePropertyName("Record");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRecordListValue in publicRequest.Record)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = FeatureValueMarshaller.Instance;
+                            marshaller.Marshall(publicRequestRecordListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTargetStores())
+                    {
+                        context.Writer.WritePropertyName("TargetStores");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTargetStoresListValue in publicRequest.TargetStores)
+                        {
+                                context.Writer.Write(publicRequestTargetStoresListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTtlDuration())
+                    {
+                        context.Writer.WritePropertyName("TtlDuration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = FeatureValueMarshaller.Instance;
-                        marshaller.Marshall(publicRequestRecordListValue, context);
+                        var marshaller = TtlDurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TtlDuration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTargetStores())
-                {
-                    context.Writer.WritePropertyName("TargetStores");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTargetStoresListValue in publicRequest.TargetStores)
-                    {
-                            context.Writer.Write(publicRequestTargetStoresListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetTtlDuration())
-                {
-                    context.Writer.WritePropertyName("TtlDuration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TtlDurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TtlDuration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

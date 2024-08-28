@@ -288,7 +288,7 @@ namespace Amazon.ECS.Model
         /// transitions to a <c>COMPLETED</c> state. If the service fails to reach a steady state
         /// and circuit breaker is turned on, the deployment transitions to a <c>FAILED</c> state.
         /// A deployment in <c>FAILED</c> state doesn't launch any new tasks. For more information,
-        /// see <a>DeploymentCircuitBreaker</a>.
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeploymentCircuitBreaker.html">DeploymentCircuitBreaker</a>.
         /// </para>
         /// </summary>
         public DeploymentRolloutState RolloutState

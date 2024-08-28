@@ -63,39 +63,42 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEncryptionMode())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("encryptionMode");
-                    context.Writer.Write(publicRequest.EncryptionMode);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEncryptionMode())
+                    {
+                        context.Writer.WritePropertyName("encryptionMode");
+                        context.Writer.Write(publicRequest.EncryptionMode);
+                    }
+
+                    if(publicRequest.IsSetLagId())
+                    {
+                        context.Writer.WritePropertyName("lagId");
+                        context.Writer.Write(publicRequest.LagId);
+                    }
+
+                    if(publicRequest.IsSetLagName())
+                    {
+                        context.Writer.WritePropertyName("lagName");
+                        context.Writer.Write(publicRequest.LagName);
+                    }
+
+                    if(publicRequest.IsSetMinimumLinks())
+                    {
+                        context.Writer.WritePropertyName("minimumLinks");
+                        context.Writer.Write(publicRequest.MinimumLinks.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetLagId())
-                {
-                    context.Writer.WritePropertyName("lagId");
-                    context.Writer.Write(publicRequest.LagId);
-                }
-
-                if(publicRequest.IsSetLagName())
-                {
-                    context.Writer.WritePropertyName("lagName");
-                    context.Writer.Write(publicRequest.LagName);
-                }
-
-                if(publicRequest.IsSetMinimumLinks())
-                {
-                    context.Writer.WritePropertyName("minimumLinks");
-                    context.Writer.Write(publicRequest.MinimumLinks.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

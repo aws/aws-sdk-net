@@ -61,87 +61,90 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/updateSimulationApplication";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApplication())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("application");
-                    context.Writer.Write(publicRequest.Application);
-                }
-
-                if(publicRequest.IsSetCurrentRevisionId())
-                {
-                    context.Writer.WritePropertyName("currentRevisionId");
-                    context.Writer.Write(publicRequest.CurrentRevisionId);
-                }
-
-                if(publicRequest.IsSetEnvironment())
-                {
-                    context.Writer.WritePropertyName("environment");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EnvironmentMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Environment, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRenderingEngine())
-                {
-                    context.Writer.WritePropertyName("renderingEngine");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RenderingEngineMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RenderingEngine, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRobotSoftwareSuite())
-                {
-                    context.Writer.WritePropertyName("robotSoftwareSuite");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RobotSoftwareSuiteMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RobotSoftwareSuite, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSimulationSoftwareSuite())
-                {
-                    context.Writer.WritePropertyName("simulationSoftwareSuite");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SimulationSoftwareSuiteMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SimulationSoftwareSuite, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSources())
-                {
-                    context.Writer.WritePropertyName("sources");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSourcesListValue in publicRequest.Sources)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApplication())
                     {
+                        context.Writer.WritePropertyName("application");
+                        context.Writer.Write(publicRequest.Application);
+                    }
+
+                    if(publicRequest.IsSetCurrentRevisionId())
+                    {
+                        context.Writer.WritePropertyName("currentRevisionId");
+                        context.Writer.Write(publicRequest.CurrentRevisionId);
+                    }
+
+                    if(publicRequest.IsSetEnvironment())
+                    {
+                        context.Writer.WritePropertyName("environment");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = SourceConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSourcesListValue, context);
+                        var marshaller = EnvironmentMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Environment, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetRenderingEngine())
+                    {
+                        context.Writer.WritePropertyName("renderingEngine");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RenderingEngineMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RenderingEngine, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRobotSoftwareSuite())
+                    {
+                        context.Writer.WritePropertyName("robotSoftwareSuite");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RobotSoftwareSuiteMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RobotSoftwareSuite, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSimulationSoftwareSuite())
+                    {
+                        context.Writer.WritePropertyName("simulationSoftwareSuite");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SimulationSoftwareSuiteMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SimulationSoftwareSuite, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSources())
+                    {
+                        context.Writer.WritePropertyName("sources");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSourcesListValue in publicRequest.Sources)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = SourceConfigMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSourcesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

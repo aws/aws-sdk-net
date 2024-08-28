@@ -63,39 +63,42 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeleteProtection())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DeleteProtection");
-                    context.Writer.Write(publicRequest.DeleteProtection.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDeleteProtection())
+                    {
+                        context.Writer.WritePropertyName("DeleteProtection");
+                        context.Writer.Write(publicRequest.DeleteProtection.Value);
+                    }
+
+                    if(publicRequest.IsSetFirewallArn())
+                    {
+                        context.Writer.WritePropertyName("FirewallArn");
+                        context.Writer.Write(publicRequest.FirewallArn);
+                    }
+
+                    if(publicRequest.IsSetFirewallName())
+                    {
+                        context.Writer.WritePropertyName("FirewallName");
+                        context.Writer.Write(publicRequest.FirewallName);
+                    }
+
+                    if(publicRequest.IsSetUpdateToken())
+                    {
+                        context.Writer.WritePropertyName("UpdateToken");
+                        context.Writer.Write(publicRequest.UpdateToken);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetFirewallArn())
-                {
-                    context.Writer.WritePropertyName("FirewallArn");
-                    context.Writer.Write(publicRequest.FirewallArn);
-                }
-
-                if(publicRequest.IsSetFirewallName())
-                {
-                    context.Writer.WritePropertyName("FirewallName");
-                    context.Writer.Write(publicRequest.FirewallName);
-                }
-
-                if(publicRequest.IsSetUpdateToken())
-                {
-                    context.Writer.WritePropertyName("UpdateToken");
-                    context.Writer.Write(publicRequest.UpdateToken);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

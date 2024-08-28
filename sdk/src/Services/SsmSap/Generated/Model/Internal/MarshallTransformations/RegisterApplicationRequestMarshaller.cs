@@ -61,86 +61,89 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/register-application";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApplicationId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ApplicationId");
-                    context.Writer.Write(publicRequest.ApplicationId);
-                }
-
-                if(publicRequest.IsSetApplicationType())
-                {
-                    context.Writer.WritePropertyName("ApplicationType");
-                    context.Writer.Write(publicRequest.ApplicationType);
-                }
-
-                if(publicRequest.IsSetCredentials())
-                {
-                    context.Writer.WritePropertyName("Credentials");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCredentialsListValue in publicRequest.Credentials)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApplicationId())
                     {
+                        context.Writer.WritePropertyName("ApplicationId");
+                        context.Writer.Write(publicRequest.ApplicationId);
+                    }
+
+                    if(publicRequest.IsSetApplicationType())
+                    {
+                        context.Writer.WritePropertyName("ApplicationType");
+                        context.Writer.Write(publicRequest.ApplicationType);
+                    }
+
+                    if(publicRequest.IsSetCredentials())
+                    {
+                        context.Writer.WritePropertyName("Credentials");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCredentialsListValue in publicRequest.Credentials)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ApplicationCredentialMarshaller.Instance;
+                            marshaller.Marshall(publicRequestCredentialsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetDatabaseArn())
+                    {
+                        context.Writer.WritePropertyName("DatabaseArn");
+                        context.Writer.Write(publicRequest.DatabaseArn);
+                    }
+
+                    if(publicRequest.IsSetInstances())
+                    {
+                        context.Writer.WritePropertyName("Instances");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestInstancesListValue in publicRequest.Instances)
+                        {
+                                context.Writer.Write(publicRequestInstancesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSapInstanceNumber())
+                    {
+                        context.Writer.WritePropertyName("SapInstanceNumber");
+                        context.Writer.Write(publicRequest.SapInstanceNumber);
+                    }
+
+                    if(publicRequest.IsSetSid())
+                    {
+                        context.Writer.WritePropertyName("Sid");
+                        context.Writer.Write(publicRequest.Sid);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
 
-                        var marshaller = ApplicationCredentialMarshaller.Instance;
-                        marshaller.Marshall(publicRequestCredentialsListValue, context);
-
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDatabaseArn())
-                {
-                    context.Writer.WritePropertyName("DatabaseArn");
-                    context.Writer.Write(publicRequest.DatabaseArn);
-                }
-
-                if(publicRequest.IsSetInstances())
-                {
-                    context.Writer.WritePropertyName("Instances");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestInstancesListValue in publicRequest.Instances)
-                    {
-                            context.Writer.Write(publicRequestInstancesListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetSapInstanceNumber())
-                {
-                    context.Writer.WritePropertyName("SapInstanceNumber");
-                    context.Writer.Write(publicRequest.SapInstanceNumber);
-                }
-
-                if(publicRequest.IsSetSid())
-                {
-                    context.Writer.WritePropertyName("Sid");
-                    context.Writer.Write(publicRequest.Sid);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

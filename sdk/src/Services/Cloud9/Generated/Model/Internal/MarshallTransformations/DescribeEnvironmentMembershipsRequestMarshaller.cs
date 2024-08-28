@@ -63,50 +63,53 @@ namespace Amazon.Cloud9.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEnvironmentId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("environmentId");
-                    context.Writer.Write(publicRequest.EnvironmentId);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetPermissions())
-                {
-                    context.Writer.WritePropertyName("permissions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPermissionsListValue in publicRequest.Permissions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEnvironmentId())
                     {
-                            context.Writer.Write(publicRequestPermissionsListValue);
+                        context.Writer.WritePropertyName("environmentId");
+                        context.Writer.Write(publicRequest.EnvironmentId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetPermissions())
+                    {
+                        context.Writer.WritePropertyName("permissions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPermissionsListValue in publicRequest.Permissions)
+                        {
+                                context.Writer.Write(publicRequestPermissionsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetUserArn())
+                    {
+                        context.Writer.WritePropertyName("userArn");
+                        context.Writer.Write(publicRequest.UserArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetUserArn())
-                {
-                    context.Writer.WritePropertyName("userArn");
-                    context.Writer.Write(publicRequest.UserArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

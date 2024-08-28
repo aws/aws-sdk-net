@@ -63,27 +63,30 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBandwidthType())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("BandwidthType");
-                    context.Writer.Write(publicRequest.BandwidthType);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBandwidthType())
+                    {
+                        context.Writer.WritePropertyName("BandwidthType");
+                        context.Writer.Write(publicRequest.BandwidthType);
+                    }
+
+                    if(publicRequest.IsSetGatewayARN())
+                    {
+                        context.Writer.WritePropertyName("GatewayARN");
+                        context.Writer.Write(publicRequest.GatewayARN);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetGatewayARN())
-                {
-                    context.Writer.WritePropertyName("GatewayARN");
-                    context.Writer.Write(publicRequest.GatewayARN);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

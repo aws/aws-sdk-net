@@ -64,33 +64,36 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                 throw new AmazonChimeSDKMessagingException("Request object does not have required field ChannelArn set");
             request.AddPathResource("{channelArn}", StringUtils.FromString(publicRequest.ChannelArn));
             request.ResourcePath = "/channels/{channelArn}/memberships";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMemberArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("MemberArn");
-                    context.Writer.Write(publicRequest.MemberArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMemberArn())
+                    {
+                        context.Writer.WritePropertyName("MemberArn");
+                        context.Writer.Write(publicRequest.MemberArn);
+                    }
+
+                    if(publicRequest.IsSetSubChannelId())
+                    {
+                        context.Writer.WritePropertyName("SubChannelId");
+                        context.Writer.Write(publicRequest.SubChannelId);
+                    }
+
+                    if(publicRequest.IsSetType())
+                    {
+                        context.Writer.WritePropertyName("Type");
+                        context.Writer.Write(publicRequest.Type);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSubChannelId())
-                {
-                    context.Writer.WritePropertyName("SubChannelId");
-                    context.Writer.Write(publicRequest.SubChannelId);
-                }
-
-                if(publicRequest.IsSetType())
-                {
-                    context.Writer.WritePropertyName("Type");
-                    context.Writer.Write(publicRequest.Type);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

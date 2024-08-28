@@ -64,51 +64,54 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                 throw new AmazonWellArchitectedException("Request object does not have required field WorkloadId set");
             request.AddPathResource("{WorkloadId}", StringUtils.FromString(publicRequest.WorkloadId));
             request.ResourcePath = "/workloads/{WorkloadId}/checks";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetChoiceId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ChoiceId");
-                    context.Writer.Write(publicRequest.ChoiceId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetChoiceId())
+                    {
+                        context.Writer.WritePropertyName("ChoiceId");
+                        context.Writer.Write(publicRequest.ChoiceId);
+                    }
+
+                    if(publicRequest.IsSetLensArn())
+                    {
+                        context.Writer.WritePropertyName("LensArn");
+                        context.Writer.Write(publicRequest.LensArn);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetPillarId())
+                    {
+                        context.Writer.WritePropertyName("PillarId");
+                        context.Writer.Write(publicRequest.PillarId);
+                    }
+
+                    if(publicRequest.IsSetQuestionId())
+                    {
+                        context.Writer.WritePropertyName("QuestionId");
+                        context.Writer.Write(publicRequest.QuestionId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetLensArn())
-                {
-                    context.Writer.WritePropertyName("LensArn");
-                    context.Writer.Write(publicRequest.LensArn);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetPillarId())
-                {
-                    context.Writer.WritePropertyName("PillarId");
-                    context.Writer.Write(publicRequest.PillarId);
-                }
-
-                if(publicRequest.IsSetQuestionId())
-                {
-                    context.Writer.WritePropertyName("QuestionId");
-                    context.Writer.Write(publicRequest.QuestionId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

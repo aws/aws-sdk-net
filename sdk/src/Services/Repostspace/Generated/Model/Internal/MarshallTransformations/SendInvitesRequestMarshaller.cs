@@ -64,38 +64,41 @@ namespace Amazon.Repostspace.Model.Internal.MarshallTransformations
                 throw new AmazonRepostspaceException("Request object does not have required field SpaceId set");
             request.AddPathResource("{spaceId}", StringUtils.FromString(publicRequest.SpaceId));
             request.ResourcePath = "/spaces/{spaceId}/invite";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccessorIds())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("accessorIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAccessorIdsListValue in publicRequest.AccessorIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccessorIds())
                     {
-                            context.Writer.Write(publicRequestAccessorIdsListValue);
+                        context.Writer.WritePropertyName("accessorIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAccessorIdsListValue in publicRequest.AccessorIds)
+                        {
+                                context.Writer.Write(publicRequestAccessorIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetBody())
+                    {
+                        context.Writer.WritePropertyName("body");
+                        context.Writer.Write(publicRequest.Body);
+                    }
+
+                    if(publicRequest.IsSetTitle())
+                    {
+                        context.Writer.WritePropertyName("title");
+                        context.Writer.Write(publicRequest.Title);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetBody())
-                {
-                    context.Writer.WritePropertyName("body");
-                    context.Writer.Write(publicRequest.Body);
-                }
-
-                if(publicRequest.IsSetTitle())
-                {
-                    context.Writer.WritePropertyName("title");
-                    context.Writer.Write(publicRequest.Title);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

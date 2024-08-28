@@ -63,37 +63,40 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFields())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("fields");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFieldsListValue in publicRequest.Fields)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFields())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("fields");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFieldsListValue in publicRequest.Fields)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = FieldMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFieldsListValue, context);
+                            var marshaller = FieldMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFieldsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTaskId())
+                    {
+                        context.Writer.WritePropertyName("taskId");
+                        context.Writer.Write(publicRequest.TaskId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTaskId())
-                {
-                    context.Writer.WritePropertyName("taskId");
-                    context.Writer.Write(publicRequest.TaskId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

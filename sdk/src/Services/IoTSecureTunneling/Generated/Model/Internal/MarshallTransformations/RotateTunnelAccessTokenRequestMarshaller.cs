@@ -63,38 +63,41 @@ namespace Amazon.IoTSecureTunneling.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientMode())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientMode");
-                    context.Writer.Write(publicRequest.ClientMode);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientMode())
+                    {
+                        context.Writer.WritePropertyName("clientMode");
+                        context.Writer.Write(publicRequest.ClientMode);
+                    }
+
+                    if(publicRequest.IsSetDestinationConfig())
+                    {
+                        context.Writer.WritePropertyName("destinationConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DestinationConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DestinationConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTunnelId())
+                    {
+                        context.Writer.WritePropertyName("tunnelId");
+                        context.Writer.Write(publicRequest.TunnelId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDestinationConfig())
-                {
-                    context.Writer.WritePropertyName("destinationConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DestinationConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DestinationConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTunnelId())
-                {
-                    context.Writer.WritePropertyName("tunnelId");
-                    context.Writer.Write(publicRequest.TunnelId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

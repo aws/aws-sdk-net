@@ -67,74 +67,77 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
                 throw new AmazonCloudWatchEvidentlyException("Request object does not have required field Project set");
             request.AddPathResource("{project}", StringUtils.FromString(publicRequest.Project));
             request.ResourcePath = "/projects/{project}/features/{feature}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAddOrUpdateVariations())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("addOrUpdateVariations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAddOrUpdateVariationsListValue in publicRequest.AddOrUpdateVariations)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAddOrUpdateVariations())
                     {
+                        context.Writer.WritePropertyName("addOrUpdateVariations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAddOrUpdateVariationsListValue in publicRequest.AddOrUpdateVariations)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = VariationConfigMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAddOrUpdateVariationsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetDefaultVariation())
+                    {
+                        context.Writer.WritePropertyName("defaultVariation");
+                        context.Writer.Write(publicRequest.DefaultVariation);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetEntityOverrides())
+                    {
+                        context.Writer.WritePropertyName("entityOverrides");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestEntityOverridesKvp in publicRequest.EntityOverrides)
+                        {
+                            context.Writer.WritePropertyName(publicRequestEntityOverridesKvp.Key);
+                            var publicRequestEntityOverridesValue = publicRequestEntityOverridesKvp.Value;
 
-                        var marshaller = VariationConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAddOrUpdateVariationsListValue, context);
-
+                                context.Writer.Write(publicRequestEntityOverridesValue);
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDefaultVariation())
-                {
-                    context.Writer.WritePropertyName("defaultVariation");
-                    context.Writer.Write(publicRequest.DefaultVariation);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetEntityOverrides())
-                {
-                    context.Writer.WritePropertyName("entityOverrides");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestEntityOverridesKvp in publicRequest.EntityOverrides)
+                    if(publicRequest.IsSetEvaluationStrategy())
                     {
-                        context.Writer.WritePropertyName(publicRequestEntityOverridesKvp.Key);
-                        var publicRequestEntityOverridesValue = publicRequestEntityOverridesKvp.Value;
-
-                            context.Writer.Write(publicRequestEntityOverridesValue);
+                        context.Writer.WritePropertyName("evaluationStrategy");
+                        context.Writer.Write(publicRequest.EvaluationStrategy);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetEvaluationStrategy())
-                {
-                    context.Writer.WritePropertyName("evaluationStrategy");
-                    context.Writer.Write(publicRequest.EvaluationStrategy);
-                }
-
-                if(publicRequest.IsSetRemoveVariations())
-                {
-                    context.Writer.WritePropertyName("removeVariations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRemoveVariationsListValue in publicRequest.RemoveVariations)
+                    if(publicRequest.IsSetRemoveVariations())
                     {
-                            context.Writer.Write(publicRequestRemoveVariationsListValue);
+                        context.Writer.WritePropertyName("removeVariations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRemoveVariationsListValue in publicRequest.RemoveVariations)
+                        {
+                                context.Writer.Write(publicRequestRemoveVariationsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

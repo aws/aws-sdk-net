@@ -61,27 +61,30 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/getWorldTemplateBody";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetGenerationJob())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("generationJob");
-                    context.Writer.Write(publicRequest.GenerationJob);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetGenerationJob())
+                    {
+                        context.Writer.WritePropertyName("generationJob");
+                        context.Writer.Write(publicRequest.GenerationJob);
+                    }
+
+                    if(publicRequest.IsSetTemplate())
+                    {
+                        context.Writer.WritePropertyName("template");
+                        context.Writer.Write(publicRequest.Template);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTemplate())
-                {
-                    context.Writer.WritePropertyName("template");
-                    context.Writer.Write(publicRequest.Template);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -80,5 +80,15 @@ namespace Amazon.S3.Model
         {
             return new ListVersionsPaginator(this._client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListBuckets operation
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        public IListBucketsPaginator ListBuckets(ListBucketsRequest request)
+        {
+            return new ListBucketsPaginator(this._client, request);
+        }
     }
 }

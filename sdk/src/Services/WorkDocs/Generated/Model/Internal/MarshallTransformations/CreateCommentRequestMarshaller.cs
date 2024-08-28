@@ -67,45 +67,48 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
                 throw new AmazonWorkDocsException("Request object does not have required field VersionId set");
             request.AddPathResource("{VersionId}", StringUtils.FromString(publicRequest.VersionId));
             request.ResourcePath = "/api/v1/documents/{DocumentId}/versions/{VersionId}/comment";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetNotifyCollaborators())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("NotifyCollaborators");
-                    context.Writer.Write(publicRequest.NotifyCollaborators.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetNotifyCollaborators())
+                    {
+                        context.Writer.WritePropertyName("NotifyCollaborators");
+                        context.Writer.Write(publicRequest.NotifyCollaborators.Value);
+                    }
+
+                    if(publicRequest.IsSetParentId())
+                    {
+                        context.Writer.WritePropertyName("ParentId");
+                        context.Writer.Write(publicRequest.ParentId);
+                    }
+
+                    if(publicRequest.IsSetText())
+                    {
+                        context.Writer.WritePropertyName("Text");
+                        context.Writer.Write(publicRequest.Text);
+                    }
+
+                    if(publicRequest.IsSetThreadId())
+                    {
+                        context.Writer.WritePropertyName("ThreadId");
+                        context.Writer.Write(publicRequest.ThreadId);
+                    }
+
+                    if(publicRequest.IsSetVisibility())
+                    {
+                        context.Writer.WritePropertyName("Visibility");
+                        context.Writer.Write(publicRequest.Visibility);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetParentId())
-                {
-                    context.Writer.WritePropertyName("ParentId");
-                    context.Writer.Write(publicRequest.ParentId);
-                }
-
-                if(publicRequest.IsSetText())
-                {
-                    context.Writer.WritePropertyName("Text");
-                    context.Writer.Write(publicRequest.Text);
-                }
-
-                if(publicRequest.IsSetThreadId())
-                {
-                    context.Writer.WritePropertyName("ThreadId");
-                    context.Writer.Write(publicRequest.ThreadId);
-                }
-
-                if(publicRequest.IsSetVisibility())
-                {
-                    context.Writer.WritePropertyName("Visibility");
-                    context.Writer.Write(publicRequest.Visibility);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

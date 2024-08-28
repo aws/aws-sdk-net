@@ -64,62 +64,65 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
                 throw new AmazonWorkDocsException("Request object does not have required field UserId set");
             request.AddPathResource("{UserId}", StringUtils.FromString(publicRequest.UserId));
             request.ResourcePath = "/api/v1/users/{UserId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetGivenName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("GivenName");
-                    context.Writer.Write(publicRequest.GivenName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetGivenName())
+                    {
+                        context.Writer.WritePropertyName("GivenName");
+                        context.Writer.Write(publicRequest.GivenName);
+                    }
+
+                    if(publicRequest.IsSetGrantPoweruserPrivileges())
+                    {
+                        context.Writer.WritePropertyName("GrantPoweruserPrivileges");
+                        context.Writer.Write(publicRequest.GrantPoweruserPrivileges);
+                    }
+
+                    if(publicRequest.IsSetLocale())
+                    {
+                        context.Writer.WritePropertyName("Locale");
+                        context.Writer.Write(publicRequest.Locale);
+                    }
+
+                    if(publicRequest.IsSetStorageRule())
+                    {
+                        context.Writer.WritePropertyName("StorageRule");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = StorageRuleTypeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.StorageRule, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSurname())
+                    {
+                        context.Writer.WritePropertyName("Surname");
+                        context.Writer.Write(publicRequest.Surname);
+                    }
+
+                    if(publicRequest.IsSetTimeZoneId())
+                    {
+                        context.Writer.WritePropertyName("TimeZoneId");
+                        context.Writer.Write(publicRequest.TimeZoneId);
+                    }
+
+                    if(publicRequest.IsSetType())
+                    {
+                        context.Writer.WritePropertyName("Type");
+                        context.Writer.Write(publicRequest.Type);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetGrantPoweruserPrivileges())
-                {
-                    context.Writer.WritePropertyName("GrantPoweruserPrivileges");
-                    context.Writer.Write(publicRequest.GrantPoweruserPrivileges);
-                }
-
-                if(publicRequest.IsSetLocale())
-                {
-                    context.Writer.WritePropertyName("Locale");
-                    context.Writer.Write(publicRequest.Locale);
-                }
-
-                if(publicRequest.IsSetStorageRule())
-                {
-                    context.Writer.WritePropertyName("StorageRule");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = StorageRuleTypeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.StorageRule, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSurname())
-                {
-                    context.Writer.WritePropertyName("Surname");
-                    context.Writer.Write(publicRequest.Surname);
-                }
-
-                if(publicRequest.IsSetTimeZoneId())
-                {
-                    context.Writer.WritePropertyName("TimeZoneId");
-                    context.Writer.Write(publicRequest.TimeZoneId);
-                }
-
-                if(publicRequest.IsSetType())
-                {
-                    context.Writer.WritePropertyName("Type");
-                    context.Writer.Write(publicRequest.Type);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

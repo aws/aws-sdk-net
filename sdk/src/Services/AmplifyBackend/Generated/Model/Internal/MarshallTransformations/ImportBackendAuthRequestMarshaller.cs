@@ -67,39 +67,42 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
                 throw new AmazonAmplifyBackendException("Request object does not have required field BackendEnvironmentName set");
             request.AddPathResource("{backendEnvironmentName}", StringUtils.FromString(publicRequest.BackendEnvironmentName));
             request.ResourcePath = "/backend/{appId}/auth/{backendEnvironmentName}/import";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetIdentityPoolId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("identityPoolId");
-                    context.Writer.Write(publicRequest.IdentityPoolId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetIdentityPoolId())
+                    {
+                        context.Writer.WritePropertyName("identityPoolId");
+                        context.Writer.Write(publicRequest.IdentityPoolId);
+                    }
+
+                    if(publicRequest.IsSetNativeClientId())
+                    {
+                        context.Writer.WritePropertyName("nativeClientId");
+                        context.Writer.Write(publicRequest.NativeClientId);
+                    }
+
+                    if(publicRequest.IsSetUserPoolId())
+                    {
+                        context.Writer.WritePropertyName("userPoolId");
+                        context.Writer.Write(publicRequest.UserPoolId);
+                    }
+
+                    if(publicRequest.IsSetWebClientId())
+                    {
+                        context.Writer.WritePropertyName("webClientId");
+                        context.Writer.Write(publicRequest.WebClientId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetNativeClientId())
-                {
-                    context.Writer.WritePropertyName("nativeClientId");
-                    context.Writer.Write(publicRequest.NativeClientId);
-                }
-
-                if(publicRequest.IsSetUserPoolId())
-                {
-                    context.Writer.WritePropertyName("userPoolId");
-                    context.Writer.Write(publicRequest.UserPoolId);
-                }
-
-                if(publicRequest.IsSetWebClientId())
-                {
-                    context.Writer.WritePropertyName("webClientId");
-                    context.Writer.Write(publicRequest.WebClientId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,7 +63,7 @@ namespace Amazon.CodeBuild.Model
         /// Gets and sets the property AuthType. 
         /// <para>
         ///  The type of authentication used by the credentials. Valid options are OAUTH, BASIC_AUTH,
-        /// PERSONAL_ACCESS_TOKEN, or CODECONNECTIONS. 
+        /// PERSONAL_ACCESS_TOKEN, CODECONNECTIONS, or SECRETS_MANAGER. 
         /// </para>
         /// </summary>
         public AuthType AuthType
@@ -81,8 +81,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Resource. 
         /// <para>
-        /// The connection ARN if your serverType type is GITLAB or GITLAB_SELF_MANAGED and your
-        /// authType is CODECONNECTIONS.
+        /// The connection ARN if your authType is CODECONNECTIONS or SECRETS_MANAGER.
         /// </para>
         /// </summary>
         public string Resource

@@ -61,38 +61,41 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             request.HttpMethod = "PATCH";
 
             request.ResourcePath = "/global-settings";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDiscoveryIntegrationStatus())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DiscoveryIntegrationStatus");
-                    context.Writer.Write(publicRequest.DiscoveryIntegrationStatus);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDiscoveryIntegrationStatus())
+                    {
+                        context.Writer.WritePropertyName("DiscoveryIntegrationStatus");
+                        context.Writer.Write(publicRequest.DiscoveryIntegrationStatus);
+                    }
+
+                    if(publicRequest.IsSetJiraConfiguration())
+                    {
+                        context.Writer.WritePropertyName("JiraConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AccountJiraConfigurationInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.JiraConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetOrganizationSharingStatus())
+                    {
+                        context.Writer.WritePropertyName("OrganizationSharingStatus");
+                        context.Writer.Write(publicRequest.OrganizationSharingStatus);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetJiraConfiguration())
-                {
-                    context.Writer.WritePropertyName("JiraConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AccountJiraConfigurationInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.JiraConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOrganizationSharingStatus())
-                {
-                    context.Writer.WritePropertyName("OrganizationSharingStatus");
-                    context.Writer.Write(publicRequest.OrganizationSharingStatus);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

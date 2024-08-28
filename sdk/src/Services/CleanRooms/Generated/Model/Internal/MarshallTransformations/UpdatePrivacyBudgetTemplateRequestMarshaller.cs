@@ -67,32 +67,35 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 throw new AmazonCleanRoomsException("Request object does not have required field PrivacyBudgetTemplateIdentifier set");
             request.AddPathResource("{privacyBudgetTemplateIdentifier}", StringUtils.FromString(publicRequest.PrivacyBudgetTemplateIdentifier));
             request.ResourcePath = "/memberships/{membershipIdentifier}/privacybudgettemplates/{privacyBudgetTemplateIdentifier}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetParameters())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("parameters");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetParameters())
+                    {
+                        context.Writer.WritePropertyName("parameters");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = PrivacyBudgetTemplateUpdateParametersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Parameters, context);
+                        var marshaller = PrivacyBudgetTemplateUpdateParametersMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Parameters, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetPrivacyBudgetType())
+                    {
+                        context.Writer.WritePropertyName("privacyBudgetType");
+                        context.Writer.Write(publicRequest.PrivacyBudgetType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPrivacyBudgetType())
-                {
-                    context.Writer.WritePropertyName("privacyBudgetType");
-                    context.Writer.Write(publicRequest.PrivacyBudgetType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

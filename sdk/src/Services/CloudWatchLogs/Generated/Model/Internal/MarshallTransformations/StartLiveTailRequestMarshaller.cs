@@ -63,54 +63,57 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLogEventFilterPattern())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("logEventFilterPattern");
-                    context.Writer.Write(publicRequest.LogEventFilterPattern);
-                }
-
-                if(publicRequest.IsSetLogGroupIdentifiers())
-                {
-                    context.Writer.WritePropertyName("logGroupIdentifiers");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLogGroupIdentifiersListValue in publicRequest.LogGroupIdentifiers)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetLogEventFilterPattern())
                     {
-                            context.Writer.Write(publicRequestLogGroupIdentifiersListValue);
+                        context.Writer.WritePropertyName("logEventFilterPattern");
+                        context.Writer.Write(publicRequest.LogEventFilterPattern);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetLogStreamNamePrefixes())
-                {
-                    context.Writer.WritePropertyName("logStreamNamePrefixes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLogStreamNamePrefixesListValue in publicRequest.LogStreamNamePrefixes)
+                    if(publicRequest.IsSetLogGroupIdentifiers())
                     {
-                            context.Writer.Write(publicRequestLogStreamNamePrefixesListValue);
+                        context.Writer.WritePropertyName("logGroupIdentifiers");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLogGroupIdentifiersListValue in publicRequest.LogGroupIdentifiers)
+                        {
+                                context.Writer.Write(publicRequestLogGroupIdentifiersListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetLogStreamNames())
-                {
-                    context.Writer.WritePropertyName("logStreamNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLogStreamNamesListValue in publicRequest.LogStreamNames)
+                    if(publicRequest.IsSetLogStreamNamePrefixes())
                     {
-                            context.Writer.Write(publicRequestLogStreamNamesListValue);
+                        context.Writer.WritePropertyName("logStreamNamePrefixes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLogStreamNamePrefixesListValue in publicRequest.LogStreamNamePrefixes)
+                        {
+                                context.Writer.Write(publicRequestLogStreamNamePrefixesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetLogStreamNames())
+                    {
+                        context.Writer.WritePropertyName("logStreamNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLogStreamNamesListValue in publicRequest.LogStreamNames)
+                        {
+                                context.Writer.Write(publicRequestLogStreamNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

@@ -61,31 +61,34 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/standards/register";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetStandardsSubscriptionRequests())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("StandardsSubscriptionRequests");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestStandardsSubscriptionRequestsListValue in publicRequest.StandardsSubscriptionRequests)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetStandardsSubscriptionRequests())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("StandardsSubscriptionRequests");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestStandardsSubscriptionRequestsListValue in publicRequest.StandardsSubscriptionRequests)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = StandardsSubscriptionRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequestStandardsSubscriptionRequestsListValue, context);
+                            var marshaller = StandardsSubscriptionRequestMarshaller.Instance;
+                            marshaller.Marshall(publicRequestStandardsSubscriptionRequestsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

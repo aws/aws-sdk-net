@@ -63,73 +63,76 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetActiveDate())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ActiveDate");
-                    context.Writer.Write(publicRequest.ActiveDate.Value);
-                }
-
-                if(publicRequest.IsSetCertificate())
-                {
-                    context.Writer.WritePropertyName("Certificate");
-                    context.Writer.Write(publicRequest.Certificate);
-                }
-
-                if(publicRequest.IsSetCertificateChain())
-                {
-                    context.Writer.WritePropertyName("CertificateChain");
-                    context.Writer.Write(publicRequest.CertificateChain);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetInactiveDate())
-                {
-                    context.Writer.WritePropertyName("InactiveDate");
-                    context.Writer.Write(publicRequest.InactiveDate.Value);
-                }
-
-                if(publicRequest.IsSetPrivateKey())
-                {
-                    context.Writer.WritePropertyName("PrivateKey");
-                    context.Writer.Write(publicRequest.PrivateKey);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetActiveDate())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("ActiveDate");
+                        context.Writer.Write(publicRequest.ActiveDate.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetCertificate())
+                    {
+                        context.Writer.WritePropertyName("Certificate");
+                        context.Writer.Write(publicRequest.Certificate);
+                    }
+
+                    if(publicRequest.IsSetCertificateChain())
+                    {
+                        context.Writer.WritePropertyName("CertificateChain");
+                        context.Writer.Write(publicRequest.CertificateChain);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetInactiveDate())
+                    {
+                        context.Writer.WritePropertyName("InactiveDate");
+                        context.Writer.Write(publicRequest.InactiveDate.Value);
+                    }
+
+                    if(publicRequest.IsSetPrivateKey())
+                    {
+                        context.Writer.WritePropertyName("PrivateKey");
+                        context.Writer.Write(publicRequest.PrivateKey);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetUsage())
+                    {
+                        context.Writer.WritePropertyName("Usage");
+                        context.Writer.Write(publicRequest.Usage);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetUsage())
-                {
-                    context.Writer.WritePropertyName("Usage");
-                    context.Writer.Write(publicRequest.Usage);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

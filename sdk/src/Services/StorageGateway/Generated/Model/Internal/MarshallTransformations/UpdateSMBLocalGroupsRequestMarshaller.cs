@@ -63,32 +63,35 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetGatewayARN())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("GatewayARN");
-                    context.Writer.Write(publicRequest.GatewayARN);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetGatewayARN())
+                    {
+                        context.Writer.WritePropertyName("GatewayARN");
+                        context.Writer.Write(publicRequest.GatewayARN);
+                    }
+
+                    if(publicRequest.IsSetSMBLocalGroups())
+                    {
+                        context.Writer.WritePropertyName("SMBLocalGroups");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SMBLocalGroupsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SMBLocalGroups, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSMBLocalGroups())
-                {
-                    context.Writer.WritePropertyName("SMBLocalGroups");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SMBLocalGroupsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SMBLocalGroups, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

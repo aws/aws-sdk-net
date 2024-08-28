@@ -61,33 +61,36 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/2015-01-01/es/purchaseReservedInstanceOffering";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetInstanceCount())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("InstanceCount");
-                    context.Writer.Write(publicRequest.InstanceCount.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetInstanceCount())
+                    {
+                        context.Writer.WritePropertyName("InstanceCount");
+                        context.Writer.Write(publicRequest.InstanceCount.Value);
+                    }
+
+                    if(publicRequest.IsSetReservationName())
+                    {
+                        context.Writer.WritePropertyName("ReservationName");
+                        context.Writer.Write(publicRequest.ReservationName);
+                    }
+
+                    if(publicRequest.IsSetReservedElasticsearchInstanceOfferingId())
+                    {
+                        context.Writer.WritePropertyName("ReservedElasticsearchInstanceOfferingId");
+                        context.Writer.Write(publicRequest.ReservedElasticsearchInstanceOfferingId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetReservationName())
-                {
-                    context.Writer.WritePropertyName("ReservationName");
-                    context.Writer.Write(publicRequest.ReservationName);
-                }
-
-                if(publicRequest.IsSetReservedElasticsearchInstanceOfferingId())
-                {
-                    context.Writer.WritePropertyName("ReservedElasticsearchInstanceOfferingId");
-                    context.Writer.Write(publicRequest.ReservedElasticsearchInstanceOfferingId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

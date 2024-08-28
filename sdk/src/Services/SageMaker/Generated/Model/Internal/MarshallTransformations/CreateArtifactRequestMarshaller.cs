@@ -63,79 +63,82 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetArtifactName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ArtifactName");
-                    context.Writer.Write(publicRequest.ArtifactName);
-                }
-
-                if(publicRequest.IsSetArtifactType())
-                {
-                    context.Writer.WritePropertyName("ArtifactType");
-                    context.Writer.Write(publicRequest.ArtifactType);
-                }
-
-                if(publicRequest.IsSetMetadataProperties())
-                {
-                    context.Writer.WritePropertyName("MetadataProperties");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MetadataPropertiesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.MetadataProperties, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetProperties())
-                {
-                    context.Writer.WritePropertyName("Properties");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestPropertiesKvp in publicRequest.Properties)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetArtifactName())
                     {
-                        context.Writer.WritePropertyName(publicRequestPropertiesKvp.Key);
-                        var publicRequestPropertiesValue = publicRequestPropertiesKvp.Value;
-
-                            context.Writer.Write(publicRequestPropertiesValue);
+                        context.Writer.WritePropertyName("ArtifactName");
+                        context.Writer.Write(publicRequest.ArtifactName);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetSource())
-                {
-                    context.Writer.WritePropertyName("Source");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ArtifactSourceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Source, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetArtifactType())
                     {
+                        context.Writer.WritePropertyName("ArtifactType");
+                        context.Writer.Write(publicRequest.ArtifactType);
+                    }
+
+                    if(publicRequest.IsSetMetadataProperties())
+                    {
+                        context.Writer.WritePropertyName("MetadataProperties");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = MetadataPropertiesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.MetadataProperties, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetProperties())
+                    {
+                        context.Writer.WritePropertyName("Properties");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestPropertiesKvp in publicRequest.Properties)
+                        {
+                            context.Writer.WritePropertyName(publicRequestPropertiesKvp.Key);
+                            var publicRequestPropertiesValue = publicRequestPropertiesKvp.Value;
+
+                                context.Writer.Write(publicRequestPropertiesValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSource())
+                    {
+                        context.Writer.WritePropertyName("Source");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ArtifactSourceMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Source, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

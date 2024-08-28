@@ -63,38 +63,41 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDomains())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Domains");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDomainsListValue in publicRequest.Domains)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDomains())
                     {
-                            context.Writer.Write(publicRequestDomainsListValue);
+                        context.Writer.WritePropertyName("Domains");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDomainsListValue in publicRequest.Domains)
+                        {
+                                context.Writer.Write(publicRequestDomainsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetFirewallDomainListId())
+                    {
+                        context.Writer.WritePropertyName("FirewallDomainListId");
+                        context.Writer.Write(publicRequest.FirewallDomainListId);
+                    }
+
+                    if(publicRequest.IsSetOperation())
+                    {
+                        context.Writer.WritePropertyName("Operation");
+                        context.Writer.Write(publicRequest.Operation);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetFirewallDomainListId())
-                {
-                    context.Writer.WritePropertyName("FirewallDomainListId");
-                    context.Writer.Write(publicRequest.FirewallDomainListId);
-                }
-
-                if(publicRequest.IsSetOperation())
-                {
-                    context.Writer.WritePropertyName("Operation");
-                    context.Writer.Write(publicRequest.Operation);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

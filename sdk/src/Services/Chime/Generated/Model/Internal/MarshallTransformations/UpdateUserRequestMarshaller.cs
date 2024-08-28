@@ -67,38 +67,41 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 throw new AmazonChimeException("Request object does not have required field UserId set");
             request.AddPathResource("{userId}", StringUtils.FromString(publicRequest.UserId));
             request.ResourcePath = "/accounts/{accountId}/users/{userId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAlexaForBusinessMetadata())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AlexaForBusinessMetadata");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAlexaForBusinessMetadata())
+                    {
+                        context.Writer.WritePropertyName("AlexaForBusinessMetadata");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = AlexaForBusinessMetadataMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AlexaForBusinessMetadata, context);
+                        var marshaller = AlexaForBusinessMetadataMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AlexaForBusinessMetadata, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetLicenseType())
+                    {
+                        context.Writer.WritePropertyName("LicenseType");
+                        context.Writer.Write(publicRequest.LicenseType);
+                    }
+
+                    if(publicRequest.IsSetUserType())
+                    {
+                        context.Writer.WritePropertyName("UserType");
+                        context.Writer.Write(publicRequest.UserType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetLicenseType())
-                {
-                    context.Writer.WritePropertyName("LicenseType");
-                    context.Writer.Write(publicRequest.LicenseType);
-                }
-
-                if(publicRequest.IsSetUserType())
-                {
-                    context.Writer.WritePropertyName("UserType");
-                    context.Writer.Write(publicRequest.UserType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

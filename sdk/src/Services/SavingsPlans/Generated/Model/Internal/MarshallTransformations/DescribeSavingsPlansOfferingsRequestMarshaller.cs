@@ -61,148 +61,151 @@ namespace Amazon.SavingsPlans.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/DescribeSavingsPlansOfferings";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCurrencies())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("currencies");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCurrenciesListValue in publicRequest.Currencies)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCurrencies())
                     {
-                            context.Writer.Write(publicRequestCurrenciesListValue);
+                        context.Writer.WritePropertyName("currencies");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCurrenciesListValue in publicRequest.Currencies)
+                        {
+                                context.Writer.Write(publicRequestCurrenciesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDescriptions())
-                {
-                    context.Writer.WritePropertyName("descriptions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDescriptionsListValue in publicRequest.Descriptions)
+                    if(publicRequest.IsSetDescriptions())
                     {
-                            context.Writer.Write(publicRequestDescriptionsListValue);
+                        context.Writer.WritePropertyName("descriptions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDescriptionsListValue in publicRequest.Descriptions)
+                        {
+                                context.Writer.Write(publicRequestDescriptionsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDurations())
-                {
-                    context.Writer.WritePropertyName("durations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDurationsListValue in publicRequest.Durations)
+                    if(publicRequest.IsSetDurations())
                     {
-                            context.Writer.Write(publicRequestDurationsListValue);
+                        context.Writer.WritePropertyName("durations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDurationsListValue in publicRequest.Durations)
+                        {
+                                context.Writer.Write(publicRequestDurationsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetFilters())
-                {
-                    context.Writer.WritePropertyName("filters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFiltersListValue in publicRequest.Filters)
+                    if(publicRequest.IsSetFilters())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("filters");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFiltersListValue in publicRequest.Filters)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = SavingsPlanOfferingFilterElementMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFiltersListValue, context);
+                            var marshaller = SavingsPlanOfferingFilterElementMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFiltersListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetOfferingIds())
-                {
-                    context.Writer.WritePropertyName("offeringIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestOfferingIdsListValue in publicRequest.OfferingIds)
+                    if(publicRequest.IsSetMaxResults())
                     {
-                            context.Writer.Write(publicRequestOfferingIdsListValue);
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetOperations())
-                {
-                    context.Writer.WritePropertyName("operations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestOperationsListValue in publicRequest.Operations)
+                    if(publicRequest.IsSetNextToken())
                     {
-                            context.Writer.Write(publicRequestOperationsListValue);
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetPaymentOptions())
-                {
-                    context.Writer.WritePropertyName("paymentOptions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPaymentOptionsListValue in publicRequest.PaymentOptions)
+                    if(publicRequest.IsSetOfferingIds())
                     {
-                            context.Writer.Write(publicRequestPaymentOptionsListValue);
+                        context.Writer.WritePropertyName("offeringIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestOfferingIdsListValue in publicRequest.OfferingIds)
+                        {
+                                context.Writer.Write(publicRequestOfferingIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetPlanTypes())
-                {
-                    context.Writer.WritePropertyName("planTypes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPlanTypesListValue in publicRequest.PlanTypes)
+                    if(publicRequest.IsSetOperations())
                     {
-                            context.Writer.Write(publicRequestPlanTypesListValue);
+                        context.Writer.WritePropertyName("operations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestOperationsListValue in publicRequest.Operations)
+                        {
+                                context.Writer.Write(publicRequestOperationsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetProductType())
-                {
-                    context.Writer.WritePropertyName("productType");
-                    context.Writer.Write(publicRequest.ProductType);
-                }
-
-                if(publicRequest.IsSetServiceCodes())
-                {
-                    context.Writer.WritePropertyName("serviceCodes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestServiceCodesListValue in publicRequest.ServiceCodes)
+                    if(publicRequest.IsSetPaymentOptions())
                     {
-                            context.Writer.Write(publicRequestServiceCodesListValue);
+                        context.Writer.WritePropertyName("paymentOptions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPaymentOptionsListValue in publicRequest.PaymentOptions)
+                        {
+                                context.Writer.Write(publicRequestPaymentOptionsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetUsageTypes())
-                {
-                    context.Writer.WritePropertyName("usageTypes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestUsageTypesListValue in publicRequest.UsageTypes)
+                    if(publicRequest.IsSetPlanTypes())
                     {
-                            context.Writer.Write(publicRequestUsageTypesListValue);
+                        context.Writer.WritePropertyName("planTypes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPlanTypesListValue in publicRequest.PlanTypes)
+                        {
+                                context.Writer.Write(publicRequestPlanTypesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetProductType())
+                    {
+                        context.Writer.WritePropertyName("productType");
+                        context.Writer.Write(publicRequest.ProductType);
+                    }
+
+                    if(publicRequest.IsSetServiceCodes())
+                    {
+                        context.Writer.WritePropertyName("serviceCodes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestServiceCodesListValue in publicRequest.ServiceCodes)
+                        {
+                                context.Writer.Write(publicRequestServiceCodesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetUsageTypes())
+                    {
+                        context.Writer.WritePropertyName("usageTypes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestUsageTypesListValue in publicRequest.UsageTypes)
+                        {
+                                context.Writer.Write(publicRequestUsageTypesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

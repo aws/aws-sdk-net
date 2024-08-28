@@ -64,111 +64,114 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
                 throw new AmazonEMRContainersException("Request object does not have required field VirtualClusterId set");
             request.AddPathResource("{virtualClusterId}", StringUtils.FromString(publicRequest.VirtualClusterId));
             request.ResourcePath = "/virtualclusters/{virtualClusterId}/jobruns";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetConfigurationOverrides())
-                {
-                    context.Writer.WritePropertyName("configurationOverrides");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ConfigurationOverridesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ConfigurationOverrides, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetExecutionRoleArn())
-                {
-                    context.Writer.WritePropertyName("executionRoleArn");
-                    context.Writer.Write(publicRequest.ExecutionRoleArn);
-                }
-
-                if(publicRequest.IsSetJobDriver())
-                {
-                    context.Writer.WritePropertyName("jobDriver");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = JobDriverMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.JobDriver, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetJobTemplateId())
-                {
-                    context.Writer.WritePropertyName("jobTemplateId");
-                    context.Writer.Write(publicRequest.JobTemplateId);
-                }
-
-                if(publicRequest.IsSetJobTemplateParameters())
-                {
-                    context.Writer.WritePropertyName("jobTemplateParameters");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestJobTemplateParametersKvp in publicRequest.JobTemplateParameters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
-                        context.Writer.WritePropertyName(publicRequestJobTemplateParametersKvp.Key);
-                        var publicRequestJobTemplateParametersValue = publicRequestJobTemplateParametersKvp.Value;
-
-                            context.Writer.Write(publicRequestJobTemplateParametersValue);
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetReleaseLabel())
-                {
-                    context.Writer.WritePropertyName("releaseLabel");
-                    context.Writer.Write(publicRequest.ReleaseLabel);
-                }
-
-                if(publicRequest.IsSetRetryPolicyConfiguration())
-                {
-                    context.Writer.WritePropertyName("retryPolicyConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RetryPolicyConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RetryPolicyConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    else if(!(publicRequest.IsSetClientToken()))
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
                     }
-                    context.Writer.WriteObjectEnd();
+                    if(publicRequest.IsSetConfigurationOverrides())
+                    {
+                        context.Writer.WritePropertyName("configurationOverrides");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ConfigurationOverridesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ConfigurationOverrides, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetExecutionRoleArn())
+                    {
+                        context.Writer.WritePropertyName("executionRoleArn");
+                        context.Writer.Write(publicRequest.ExecutionRoleArn);
+                    }
+
+                    if(publicRequest.IsSetJobDriver())
+                    {
+                        context.Writer.WritePropertyName("jobDriver");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = JobDriverMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.JobDriver, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetJobTemplateId())
+                    {
+                        context.Writer.WritePropertyName("jobTemplateId");
+                        context.Writer.Write(publicRequest.JobTemplateId);
+                    }
+
+                    if(publicRequest.IsSetJobTemplateParameters())
+                    {
+                        context.Writer.WritePropertyName("jobTemplateParameters");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestJobTemplateParametersKvp in publicRequest.JobTemplateParameters)
+                        {
+                            context.Writer.WritePropertyName(publicRequestJobTemplateParametersKvp.Key);
+                            var publicRequestJobTemplateParametersValue = publicRequestJobTemplateParametersKvp.Value;
+
+                                context.Writer.Write(publicRequestJobTemplateParametersValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetReleaseLabel())
+                    {
+                        context.Writer.WritePropertyName("releaseLabel");
+                        context.Writer.Write(publicRequest.ReleaseLabel);
+                    }
+
+                    if(publicRequest.IsSetRetryPolicyConfiguration())
+                    {
+                        context.Writer.WritePropertyName("retryPolicyConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RetryPolicyConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RetryPolicyConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

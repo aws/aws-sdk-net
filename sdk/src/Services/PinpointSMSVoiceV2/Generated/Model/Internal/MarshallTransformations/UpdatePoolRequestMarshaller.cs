@@ -63,63 +63,66 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeletionProtectionEnabled())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DeletionProtectionEnabled");
-                    context.Writer.Write(publicRequest.DeletionProtectionEnabled.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDeletionProtectionEnabled())
+                    {
+                        context.Writer.WritePropertyName("DeletionProtectionEnabled");
+                        context.Writer.Write(publicRequest.DeletionProtectionEnabled.Value);
+                    }
+
+                    if(publicRequest.IsSetOptOutListName())
+                    {
+                        context.Writer.WritePropertyName("OptOutListName");
+                        context.Writer.Write(publicRequest.OptOutListName);
+                    }
+
+                    if(publicRequest.IsSetPoolId())
+                    {
+                        context.Writer.WritePropertyName("PoolId");
+                        context.Writer.Write(publicRequest.PoolId);
+                    }
+
+                    if(publicRequest.IsSetSelfManagedOptOutsEnabled())
+                    {
+                        context.Writer.WritePropertyName("SelfManagedOptOutsEnabled");
+                        context.Writer.Write(publicRequest.SelfManagedOptOutsEnabled.Value);
+                    }
+
+                    if(publicRequest.IsSetSharedRoutesEnabled())
+                    {
+                        context.Writer.WritePropertyName("SharedRoutesEnabled");
+                        context.Writer.Write(publicRequest.SharedRoutesEnabled.Value);
+                    }
+
+                    if(publicRequest.IsSetTwoWayChannelArn())
+                    {
+                        context.Writer.WritePropertyName("TwoWayChannelArn");
+                        context.Writer.Write(publicRequest.TwoWayChannelArn);
+                    }
+
+                    if(publicRequest.IsSetTwoWayChannelRole())
+                    {
+                        context.Writer.WritePropertyName("TwoWayChannelRole");
+                        context.Writer.Write(publicRequest.TwoWayChannelRole);
+                    }
+
+                    if(publicRequest.IsSetTwoWayEnabled())
+                    {
+                        context.Writer.WritePropertyName("TwoWayEnabled");
+                        context.Writer.Write(publicRequest.TwoWayEnabled.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetOptOutListName())
-                {
-                    context.Writer.WritePropertyName("OptOutListName");
-                    context.Writer.Write(publicRequest.OptOutListName);
-                }
-
-                if(publicRequest.IsSetPoolId())
-                {
-                    context.Writer.WritePropertyName("PoolId");
-                    context.Writer.Write(publicRequest.PoolId);
-                }
-
-                if(publicRequest.IsSetSelfManagedOptOutsEnabled())
-                {
-                    context.Writer.WritePropertyName("SelfManagedOptOutsEnabled");
-                    context.Writer.Write(publicRequest.SelfManagedOptOutsEnabled.Value);
-                }
-
-                if(publicRequest.IsSetSharedRoutesEnabled())
-                {
-                    context.Writer.WritePropertyName("SharedRoutesEnabled");
-                    context.Writer.Write(publicRequest.SharedRoutesEnabled.Value);
-                }
-
-                if(publicRequest.IsSetTwoWayChannelArn())
-                {
-                    context.Writer.WritePropertyName("TwoWayChannelArn");
-                    context.Writer.Write(publicRequest.TwoWayChannelArn);
-                }
-
-                if(publicRequest.IsSetTwoWayChannelRole())
-                {
-                    context.Writer.WritePropertyName("TwoWayChannelRole");
-                    context.Writer.Write(publicRequest.TwoWayChannelRole);
-                }
-
-                if(publicRequest.IsSetTwoWayEnabled())
-                {
-                    context.Writer.WritePropertyName("TwoWayEnabled");
-                    context.Writer.Write(publicRequest.TwoWayEnabled.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

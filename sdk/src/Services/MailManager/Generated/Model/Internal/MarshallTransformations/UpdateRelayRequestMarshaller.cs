@@ -63,50 +63,53 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAuthentication())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Authentication");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAuthentication())
+                    {
+                        context.Writer.WritePropertyName("Authentication");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = RelayAuthenticationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Authentication, context);
+                        var marshaller = RelayAuthenticationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Authentication, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRelayId())
+                    {
+                        context.Writer.WritePropertyName("RelayId");
+                        context.Writer.Write(publicRequest.RelayId);
+                    }
+
+                    if(publicRequest.IsSetRelayName())
+                    {
+                        context.Writer.WritePropertyName("RelayName");
+                        context.Writer.Write(publicRequest.RelayName);
+                    }
+
+                    if(publicRequest.IsSetServerName())
+                    {
+                        context.Writer.WritePropertyName("ServerName");
+                        context.Writer.Write(publicRequest.ServerName);
+                    }
+
+                    if(publicRequest.IsSetServerPort())
+                    {
+                        context.Writer.WritePropertyName("ServerPort");
+                        context.Writer.Write(publicRequest.ServerPort.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRelayId())
-                {
-                    context.Writer.WritePropertyName("RelayId");
-                    context.Writer.Write(publicRequest.RelayId);
-                }
-
-                if(publicRequest.IsSetRelayName())
-                {
-                    context.Writer.WritePropertyName("RelayName");
-                    context.Writer.Write(publicRequest.RelayName);
-                }
-
-                if(publicRequest.IsSetServerName())
-                {
-                    context.Writer.WritePropertyName("ServerName");
-                    context.Writer.Write(publicRequest.ServerName);
-                }
-
-                if(publicRequest.IsSetServerPort())
-                {
-                    context.Writer.WritePropertyName("ServerPort");
-                    context.Writer.Write(publicRequest.ServerPort.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

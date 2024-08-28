@@ -63,56 +63,59 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBgpPeers())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("bgpPeers");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestBgpPeersListValue in publicRequest.BgpPeers)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBgpPeers())
                     {
-                            context.Writer.Write(publicRequestBgpPeersListValue);
+                        context.Writer.WritePropertyName("bgpPeers");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestBgpPeersListValue in publicRequest.BgpPeers)
+                        {
+                                context.Writer.Write(publicRequestBgpPeersListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetStatus())
+                    {
+                        context.Writer.WritePropertyName("status");
+                        context.Writer.Write(publicRequest.Status);
+                    }
+
+                    if(publicRequest.IsSetTestId())
+                    {
+                        context.Writer.WritePropertyName("testId");
+                        context.Writer.Write(publicRequest.TestId);
+                    }
+
+                    if(publicRequest.IsSetVirtualInterfaceId())
+                    {
+                        context.Writer.WritePropertyName("virtualInterfaceId");
+                        context.Writer.Write(publicRequest.VirtualInterfaceId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetStatus())
-                {
-                    context.Writer.WritePropertyName("status");
-                    context.Writer.Write(publicRequest.Status);
-                }
-
-                if(publicRequest.IsSetTestId())
-                {
-                    context.Writer.WritePropertyName("testId");
-                    context.Writer.Write(publicRequest.TestId);
-                }
-
-                if(publicRequest.IsSetVirtualInterfaceId())
-                {
-                    context.Writer.WritePropertyName("virtualInterfaceId");
-                    context.Writer.Write(publicRequest.VirtualInterfaceId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

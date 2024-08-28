@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// An object to define <c>AgentsCriteria</c>.
+    /// An object to define AgentsCriteria.
     /// </summary>
     public partial class MatchCriteria
     {
@@ -39,7 +39,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property AgentsCriteria. 
         /// <para>
-        /// An object to define <c>AgentIds</c>.
+        /// An object to define agentIds.
         /// </para>
         /// </summary>
         public AgentsCriteria AgentsCriteria

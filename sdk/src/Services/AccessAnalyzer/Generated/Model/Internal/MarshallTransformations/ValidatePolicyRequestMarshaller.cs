@@ -67,39 +67,42 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/policy/validation";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLocale())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("locale");
-                    context.Writer.Write(publicRequest.Locale);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetLocale())
+                    {
+                        context.Writer.WritePropertyName("locale");
+                        context.Writer.Write(publicRequest.Locale);
+                    }
+
+                    if(publicRequest.IsSetPolicyDocument())
+                    {
+                        context.Writer.WritePropertyName("policyDocument");
+                        context.Writer.Write(publicRequest.PolicyDocument);
+                    }
+
+                    if(publicRequest.IsSetPolicyType())
+                    {
+                        context.Writer.WritePropertyName("policyType");
+                        context.Writer.Write(publicRequest.PolicyType);
+                    }
+
+                    if(publicRequest.IsSetValidatePolicyResourceType())
+                    {
+                        context.Writer.WritePropertyName("validatePolicyResourceType");
+                        context.Writer.Write(publicRequest.ValidatePolicyResourceType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPolicyDocument())
-                {
-                    context.Writer.WritePropertyName("policyDocument");
-                    context.Writer.Write(publicRequest.PolicyDocument);
-                }
-
-                if(publicRequest.IsSetPolicyType())
-                {
-                    context.Writer.WritePropertyName("policyType");
-                    context.Writer.Write(publicRequest.PolicyType);
-                }
-
-                if(publicRequest.IsSetValidatePolicyResourceType())
-                {
-                    context.Writer.WritePropertyName("validatePolicyResourceType");
-                    context.Writer.Write(publicRequest.ValidatePolicyResourceType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             request.UseQueryString = true;

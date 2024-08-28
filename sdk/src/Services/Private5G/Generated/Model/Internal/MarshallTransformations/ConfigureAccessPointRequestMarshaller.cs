@@ -61,56 +61,59 @@ namespace Amazon.Private5G.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v1/network-resources/configure";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccessPointArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("accessPointArn");
-                    context.Writer.Write(publicRequest.AccessPointArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccessPointArn())
+                    {
+                        context.Writer.WritePropertyName("accessPointArn");
+                        context.Writer.Write(publicRequest.AccessPointArn);
+                    }
+
+                    if(publicRequest.IsSetCpiSecretKey())
+                    {
+                        context.Writer.WritePropertyName("cpiSecretKey");
+                        context.Writer.Write(publicRequest.CpiSecretKey);
+                    }
+
+                    if(publicRequest.IsSetCpiUserId())
+                    {
+                        context.Writer.WritePropertyName("cpiUserId");
+                        context.Writer.Write(publicRequest.CpiUserId);
+                    }
+
+                    if(publicRequest.IsSetCpiUsername())
+                    {
+                        context.Writer.WritePropertyName("cpiUsername");
+                        context.Writer.Write(publicRequest.CpiUsername);
+                    }
+
+                    if(publicRequest.IsSetCpiUserPassword())
+                    {
+                        context.Writer.WritePropertyName("cpiUserPassword");
+                        context.Writer.Write(publicRequest.CpiUserPassword);
+                    }
+
+                    if(publicRequest.IsSetPosition())
+                    {
+                        context.Writer.WritePropertyName("position");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PositionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Position, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCpiSecretKey())
-                {
-                    context.Writer.WritePropertyName("cpiSecretKey");
-                    context.Writer.Write(publicRequest.CpiSecretKey);
-                }
-
-                if(publicRequest.IsSetCpiUserId())
-                {
-                    context.Writer.WritePropertyName("cpiUserId");
-                    context.Writer.Write(publicRequest.CpiUserId);
-                }
-
-                if(publicRequest.IsSetCpiUsername())
-                {
-                    context.Writer.WritePropertyName("cpiUsername");
-                    context.Writer.Write(publicRequest.CpiUsername);
-                }
-
-                if(publicRequest.IsSetCpiUserPassword())
-                {
-                    context.Writer.WritePropertyName("cpiUserPassword");
-                    context.Writer.Write(publicRequest.CpiUserPassword);
-                }
-
-                if(publicRequest.IsSetPosition())
-                {
-                    context.Writer.WritePropertyName("position");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PositionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Position, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

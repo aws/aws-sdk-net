@@ -61,84 +61,87 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/getresourceshares";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMaxResults())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetPermissionArn())
-                {
-                    context.Writer.WritePropertyName("permissionArn");
-                    context.Writer.Write(publicRequest.PermissionArn);
-                }
-
-                if(publicRequest.IsSetPermissionVersion())
-                {
-                    context.Writer.WritePropertyName("permissionVersion");
-                    context.Writer.Write(publicRequest.PermissionVersion.Value);
-                }
-
-                if(publicRequest.IsSetResourceOwner())
-                {
-                    context.Writer.WritePropertyName("resourceOwner");
-                    context.Writer.Write(publicRequest.ResourceOwner);
-                }
-
-                if(publicRequest.IsSetResourceShareArns())
-                {
-                    context.Writer.WritePropertyName("resourceShareArns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestResourceShareArnsListValue in publicRequest.ResourceShareArns)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMaxResults())
                     {
-                            context.Writer.Write(publicRequestResourceShareArnsListValue);
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetResourceShareStatus())
-                {
-                    context.Writer.WritePropertyName("resourceShareStatus");
-                    context.Writer.Write(publicRequest.ResourceShareStatus);
-                }
-
-                if(publicRequest.IsSetTagFilters())
-                {
-                    context.Writer.WritePropertyName("tagFilters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagFiltersListValue in publicRequest.TagFilters)
+                    if(publicRequest.IsSetName())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagFilterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagFiltersListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetPermissionArn())
+                    {
+                        context.Writer.WritePropertyName("permissionArn");
+                        context.Writer.Write(publicRequest.PermissionArn);
+                    }
+
+                    if(publicRequest.IsSetPermissionVersion())
+                    {
+                        context.Writer.WritePropertyName("permissionVersion");
+                        context.Writer.Write(publicRequest.PermissionVersion.Value);
+                    }
+
+                    if(publicRequest.IsSetResourceOwner())
+                    {
+                        context.Writer.WritePropertyName("resourceOwner");
+                        context.Writer.Write(publicRequest.ResourceOwner);
+                    }
+
+                    if(publicRequest.IsSetResourceShareArns())
+                    {
+                        context.Writer.WritePropertyName("resourceShareArns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestResourceShareArnsListValue in publicRequest.ResourceShareArns)
+                        {
+                                context.Writer.Write(publicRequestResourceShareArnsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetResourceShareStatus())
+                    {
+                        context.Writer.WritePropertyName("resourceShareStatus");
+                        context.Writer.Write(publicRequest.ResourceShareStatus);
+                    }
+
+                    if(publicRequest.IsSetTagFilters())
+                    {
+                        context.Writer.WritePropertyName("tagFilters");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagFiltersListValue in publicRequest.TagFilters)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagFilterMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagFiltersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

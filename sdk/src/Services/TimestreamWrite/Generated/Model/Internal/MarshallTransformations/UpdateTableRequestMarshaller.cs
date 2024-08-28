@@ -63,60 +63,63 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDatabaseName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DatabaseName");
-                    context.Writer.Write(publicRequest.DatabaseName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDatabaseName())
+                    {
+                        context.Writer.WritePropertyName("DatabaseName");
+                        context.Writer.Write(publicRequest.DatabaseName);
+                    }
+
+                    if(publicRequest.IsSetMagneticStoreWriteProperties())
+                    {
+                        context.Writer.WritePropertyName("MagneticStoreWriteProperties");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MagneticStoreWritePropertiesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.MagneticStoreWriteProperties, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRetentionProperties())
+                    {
+                        context.Writer.WritePropertyName("RetentionProperties");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RetentionPropertiesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RetentionProperties, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSchema())
+                    {
+                        context.Writer.WritePropertyName("Schema");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SchemaMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Schema, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTableName())
+                    {
+                        context.Writer.WritePropertyName("TableName");
+                        context.Writer.Write(publicRequest.TableName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMagneticStoreWriteProperties())
-                {
-                    context.Writer.WritePropertyName("MagneticStoreWriteProperties");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MagneticStoreWritePropertiesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.MagneticStoreWriteProperties, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRetentionProperties())
-                {
-                    context.Writer.WritePropertyName("RetentionProperties");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RetentionPropertiesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RetentionProperties, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSchema())
-                {
-                    context.Writer.WritePropertyName("Schema");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SchemaMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Schema, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTableName())
-                {
-                    context.Writer.WritePropertyName("TableName");
-                    context.Writer.Write(publicRequest.TableName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

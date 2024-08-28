@@ -63,57 +63,60 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDestination())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("destination");
-                    context.Writer.Write(publicRequest.Destination);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDestination())
+                    {
+                        context.Writer.WritePropertyName("destination");
+                        context.Writer.Write(publicRequest.Destination);
+                    }
+
+                    if(publicRequest.IsSetDestinationPrefix())
+                    {
+                        context.Writer.WritePropertyName("destinationPrefix");
+                        context.Writer.Write(publicRequest.DestinationPrefix);
+                    }
+
+                    if(publicRequest.IsSetFrom())
+                    {
+                        context.Writer.WritePropertyName("from");
+                        context.Writer.Write(publicRequest.From.Value);
+                    }
+
+                    if(publicRequest.IsSetLogGroupName())
+                    {
+                        context.Writer.WritePropertyName("logGroupName");
+                        context.Writer.Write(publicRequest.LogGroupName);
+                    }
+
+                    if(publicRequest.IsSetLogStreamNamePrefix())
+                    {
+                        context.Writer.WritePropertyName("logStreamNamePrefix");
+                        context.Writer.Write(publicRequest.LogStreamNamePrefix);
+                    }
+
+                    if(publicRequest.IsSetTaskName())
+                    {
+                        context.Writer.WritePropertyName("taskName");
+                        context.Writer.Write(publicRequest.TaskName);
+                    }
+
+                    if(publicRequest.IsSetTo())
+                    {
+                        context.Writer.WritePropertyName("to");
+                        context.Writer.Write(publicRequest.To.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDestinationPrefix())
-                {
-                    context.Writer.WritePropertyName("destinationPrefix");
-                    context.Writer.Write(publicRequest.DestinationPrefix);
-                }
-
-                if(publicRequest.IsSetFrom())
-                {
-                    context.Writer.WritePropertyName("from");
-                    context.Writer.Write(publicRequest.From.Value);
-                }
-
-                if(publicRequest.IsSetLogGroupName())
-                {
-                    context.Writer.WritePropertyName("logGroupName");
-                    context.Writer.Write(publicRequest.LogGroupName);
-                }
-
-                if(publicRequest.IsSetLogStreamNamePrefix())
-                {
-                    context.Writer.WritePropertyName("logStreamNamePrefix");
-                    context.Writer.Write(publicRequest.LogStreamNamePrefix);
-                }
-
-                if(publicRequest.IsSetTaskName())
-                {
-                    context.Writer.WritePropertyName("taskName");
-                    context.Writer.Write(publicRequest.TaskName);
-                }
-
-                if(publicRequest.IsSetTo())
-                {
-                    context.Writer.WritePropertyName("to");
-                    context.Writer.Write(publicRequest.To.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

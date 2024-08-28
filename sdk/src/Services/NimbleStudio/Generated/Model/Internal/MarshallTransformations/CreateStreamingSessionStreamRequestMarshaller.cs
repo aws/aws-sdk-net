@@ -67,21 +67,24 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
                 throw new AmazonNimbleStudioException("Request object does not have required field StudioId set");
             request.AddPathResource("{studioId}", StringUtils.FromString(publicRequest.StudioId));
             request.ResourcePath = "/2020-08-01/studios/{studioId}/streaming-sessions/{sessionId}/streams";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetExpirationInSeconds())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("expirationInSeconds");
-                    context.Writer.Write(publicRequest.ExpirationInSeconds.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetExpirationInSeconds())
+                    {
+                        context.Writer.WritePropertyName("expirationInSeconds");
+                        context.Writer.Write(publicRequest.ExpirationInSeconds.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

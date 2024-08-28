@@ -63,71 +63,74 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCatalogId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CatalogId");
-                    context.Writer.Write(publicRequest.CatalogId);
-                }
-
-                if(publicRequest.IsSetDatabaseName())
-                {
-                    context.Writer.WritePropertyName("DatabaseName");
-                    context.Writer.Write(publicRequest.DatabaseName);
-                }
-
-                if(publicRequest.IsSetOpenTableFormatInput())
-                {
-                    context.Writer.WritePropertyName("OpenTableFormatInput");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OpenTableFormatInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OpenTableFormatInput, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPartitionIndexes())
-                {
-                    context.Writer.WritePropertyName("PartitionIndexes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPartitionIndexesListValue in publicRequest.PartitionIndexes)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCatalogId())
                     {
+                        context.Writer.WritePropertyName("CatalogId");
+                        context.Writer.Write(publicRequest.CatalogId);
+                    }
+
+                    if(publicRequest.IsSetDatabaseName())
+                    {
+                        context.Writer.WritePropertyName("DatabaseName");
+                        context.Writer.Write(publicRequest.DatabaseName);
+                    }
+
+                    if(publicRequest.IsSetOpenTableFormatInput())
+                    {
+                        context.Writer.WritePropertyName("OpenTableFormatInput");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = PartitionIndexMarshaller.Instance;
-                        marshaller.Marshall(publicRequestPartitionIndexesListValue, context);
+                        var marshaller = OpenTableFormatInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OpenTableFormatInput, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetPartitionIndexes())
+                    {
+                        context.Writer.WritePropertyName("PartitionIndexes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPartitionIndexesListValue in publicRequest.PartitionIndexes)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = PartitionIndexMarshaller.Instance;
+                            marshaller.Marshall(publicRequestPartitionIndexesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTableInput())
+                    {
+                        context.Writer.WritePropertyName("TableInput");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TableInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TableInput, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTransactionId())
+                    {
+                        context.Writer.WritePropertyName("TransactionId");
+                        context.Writer.Write(publicRequest.TransactionId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTableInput())
-                {
-                    context.Writer.WritePropertyName("TableInput");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TableInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TableInput, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTransactionId())
-                {
-                    context.Writer.WritePropertyName("TransactionId");
-                    context.Writer.Write(publicRequest.TransactionId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

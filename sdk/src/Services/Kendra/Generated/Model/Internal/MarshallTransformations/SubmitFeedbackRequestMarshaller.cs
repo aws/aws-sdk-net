@@ -63,59 +63,62 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClickFeedbackItems())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClickFeedbackItems");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestClickFeedbackItemsListValue in publicRequest.ClickFeedbackItems)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClickFeedbackItems())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("ClickFeedbackItems");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestClickFeedbackItemsListValue in publicRequest.ClickFeedbackItems)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = ClickFeedbackMarshaller.Instance;
-                        marshaller.Marshall(publicRequestClickFeedbackItemsListValue, context);
+                            var marshaller = ClickFeedbackMarshaller.Instance;
+                            marshaller.Marshall(publicRequestClickFeedbackItemsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetIndexId())
-                {
-                    context.Writer.WritePropertyName("IndexId");
-                    context.Writer.Write(publicRequest.IndexId);
-                }
-
-                if(publicRequest.IsSetQueryId())
-                {
-                    context.Writer.WritePropertyName("QueryId");
-                    context.Writer.Write(publicRequest.QueryId);
-                }
-
-                if(publicRequest.IsSetRelevanceFeedbackItems())
-                {
-                    context.Writer.WritePropertyName("RelevanceFeedbackItems");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRelevanceFeedbackItemsListValue in publicRequest.RelevanceFeedbackItems)
+                    if(publicRequest.IsSetIndexId())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RelevanceFeedbackMarshaller.Instance;
-                        marshaller.Marshall(publicRequestRelevanceFeedbackItemsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("IndexId");
+                        context.Writer.Write(publicRequest.IndexId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetQueryId())
+                    {
+                        context.Writer.WritePropertyName("QueryId");
+                        context.Writer.Write(publicRequest.QueryId);
+                    }
+
+                    if(publicRequest.IsSetRelevanceFeedbackItems())
+                    {
+                        context.Writer.WritePropertyName("RelevanceFeedbackItems");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRelevanceFeedbackItemsListValue in publicRequest.RelevanceFeedbackItems)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = RelevanceFeedbackMarshaller.Instance;
+                            marshaller.Marshall(publicRequestRelevanceFeedbackItemsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

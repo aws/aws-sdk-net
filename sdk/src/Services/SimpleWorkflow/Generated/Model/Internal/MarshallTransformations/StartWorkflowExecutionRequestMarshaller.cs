@@ -63,96 +63,99 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetChildPolicy())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("childPolicy");
-                    context.Writer.Write(publicRequest.ChildPolicy);
-                }
-
-                if(publicRequest.IsSetDomain())
-                {
-                    context.Writer.WritePropertyName("domain");
-                    context.Writer.Write(publicRequest.Domain);
-                }
-
-                if(publicRequest.IsSetExecutionStartToCloseTimeout())
-                {
-                    context.Writer.WritePropertyName("executionStartToCloseTimeout");
-                    context.Writer.Write(publicRequest.ExecutionStartToCloseTimeout);
-                }
-
-                if(publicRequest.IsSetInput())
-                {
-                    context.Writer.WritePropertyName("input");
-                    context.Writer.Write(publicRequest.Input);
-                }
-
-                if(publicRequest.IsSetLambdaRole())
-                {
-                    context.Writer.WritePropertyName("lambdaRole");
-                    context.Writer.Write(publicRequest.LambdaRole);
-                }
-
-                if(publicRequest.IsSetTagList())
-                {
-                    context.Writer.WritePropertyName("tagList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagListListValue in publicRequest.TagList)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetChildPolicy())
                     {
-                            context.Writer.Write(publicRequestTagListListValue);
+                        context.Writer.WritePropertyName("childPolicy");
+                        context.Writer.Write(publicRequest.ChildPolicy);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDomain())
+                    {
+                        context.Writer.WritePropertyName("domain");
+                        context.Writer.Write(publicRequest.Domain);
+                    }
+
+                    if(publicRequest.IsSetExecutionStartToCloseTimeout())
+                    {
+                        context.Writer.WritePropertyName("executionStartToCloseTimeout");
+                        context.Writer.Write(publicRequest.ExecutionStartToCloseTimeout);
+                    }
+
+                    if(publicRequest.IsSetInput())
+                    {
+                        context.Writer.WritePropertyName("input");
+                        context.Writer.Write(publicRequest.Input);
+                    }
+
+                    if(publicRequest.IsSetLambdaRole())
+                    {
+                        context.Writer.WritePropertyName("lambdaRole");
+                        context.Writer.Write(publicRequest.LambdaRole);
+                    }
+
+                    if(publicRequest.IsSetTagList())
+                    {
+                        context.Writer.WritePropertyName("tagList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagListListValue in publicRequest.TagList)
+                        {
+                                context.Writer.Write(publicRequestTagListListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTaskList())
+                    {
+                        context.Writer.WritePropertyName("taskList");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TaskListMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TaskList, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTaskPriority())
+                    {
+                        context.Writer.WritePropertyName("taskPriority");
+                        context.Writer.Write(publicRequest.TaskPriority);
+                    }
+
+                    if(publicRequest.IsSetTaskStartToCloseTimeout())
+                    {
+                        context.Writer.WritePropertyName("taskStartToCloseTimeout");
+                        context.Writer.Write(publicRequest.TaskStartToCloseTimeout);
+                    }
+
+                    if(publicRequest.IsSetWorkflowId())
+                    {
+                        context.Writer.WritePropertyName("workflowId");
+                        context.Writer.Write(publicRequest.WorkflowId);
+                    }
+
+                    if(publicRequest.IsSetWorkflowType())
+                    {
+                        context.Writer.WritePropertyName("workflowType");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = WorkflowTypeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.WorkflowType, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTaskList())
-                {
-                    context.Writer.WritePropertyName("taskList");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TaskListMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TaskList, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTaskPriority())
-                {
-                    context.Writer.WritePropertyName("taskPriority");
-                    context.Writer.Write(publicRequest.TaskPriority);
-                }
-
-                if(publicRequest.IsSetTaskStartToCloseTimeout())
-                {
-                    context.Writer.WritePropertyName("taskStartToCloseTimeout");
-                    context.Writer.Write(publicRequest.TaskStartToCloseTimeout);
-                }
-
-                if(publicRequest.IsSetWorkflowId())
-                {
-                    context.Writer.WritePropertyName("workflowId");
-                    context.Writer.Write(publicRequest.WorkflowId);
-                }
-
-                if(publicRequest.IsSetWorkflowType())
-                {
-                    context.Writer.WritePropertyName("workflowType");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = WorkflowTypeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.WorkflowType, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,61 +63,64 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetEncryptionConfiguration())
+                    {
+                        context.Writer.WritePropertyName("EncryptionConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EncryptionConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTLSInspectionConfiguration())
+                    {
+                        context.Writer.WritePropertyName("TLSInspectionConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TLSInspectionConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TLSInspectionConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTLSInspectionConfigurationArn())
+                    {
+                        context.Writer.WritePropertyName("TLSInspectionConfigurationArn");
+                        context.Writer.Write(publicRequest.TLSInspectionConfigurationArn);
+                    }
+
+                    if(publicRequest.IsSetTLSInspectionConfigurationName())
+                    {
+                        context.Writer.WritePropertyName("TLSInspectionConfigurationName");
+                        context.Writer.Write(publicRequest.TLSInspectionConfigurationName);
+                    }
+
+                    if(publicRequest.IsSetUpdateToken())
+                    {
+                        context.Writer.WritePropertyName("UpdateToken");
+                        context.Writer.Write(publicRequest.UpdateToken);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEncryptionConfiguration())
-                {
-                    context.Writer.WritePropertyName("EncryptionConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EncryptionConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTLSInspectionConfiguration())
-                {
-                    context.Writer.WritePropertyName("TLSInspectionConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TLSInspectionConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TLSInspectionConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTLSInspectionConfigurationArn())
-                {
-                    context.Writer.WritePropertyName("TLSInspectionConfigurationArn");
-                    context.Writer.Write(publicRequest.TLSInspectionConfigurationArn);
-                }
-
-                if(publicRequest.IsSetTLSInspectionConfigurationName())
-                {
-                    context.Writer.WritePropertyName("TLSInspectionConfigurationName");
-                    context.Writer.Write(publicRequest.TLSInspectionConfigurationName);
-                }
-
-                if(publicRequest.IsSetUpdateToken())
-                {
-                    context.Writer.WritePropertyName("UpdateToken");
-                    context.Writer.Write(publicRequest.UpdateToken);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

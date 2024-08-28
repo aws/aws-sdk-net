@@ -61,68 +61,71 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/api/v1/users";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEmailAddress())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("EmailAddress");
-                    context.Writer.Write(publicRequest.EmailAddress);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEmailAddress())
+                    {
+                        context.Writer.WritePropertyName("EmailAddress");
+                        context.Writer.Write(publicRequest.EmailAddress);
+                    }
+
+                    if(publicRequest.IsSetGivenName())
+                    {
+                        context.Writer.WritePropertyName("GivenName");
+                        context.Writer.Write(publicRequest.GivenName);
+                    }
+
+                    if(publicRequest.IsSetOrganizationId())
+                    {
+                        context.Writer.WritePropertyName("OrganizationId");
+                        context.Writer.Write(publicRequest.OrganizationId);
+                    }
+
+                    if(publicRequest.IsSetPassword())
+                    {
+                        context.Writer.WritePropertyName("Password");
+                        context.Writer.Write(publicRequest.Password);
+                    }
+
+                    if(publicRequest.IsSetStorageRule())
+                    {
+                        context.Writer.WritePropertyName("StorageRule");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = StorageRuleTypeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.StorageRule, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSurname())
+                    {
+                        context.Writer.WritePropertyName("Surname");
+                        context.Writer.Write(publicRequest.Surname);
+                    }
+
+                    if(publicRequest.IsSetTimeZoneId())
+                    {
+                        context.Writer.WritePropertyName("TimeZoneId");
+                        context.Writer.Write(publicRequest.TimeZoneId);
+                    }
+
+                    if(publicRequest.IsSetUsername())
+                    {
+                        context.Writer.WritePropertyName("Username");
+                        context.Writer.Write(publicRequest.Username);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetGivenName())
-                {
-                    context.Writer.WritePropertyName("GivenName");
-                    context.Writer.Write(publicRequest.GivenName);
-                }
-
-                if(publicRequest.IsSetOrganizationId())
-                {
-                    context.Writer.WritePropertyName("OrganizationId");
-                    context.Writer.Write(publicRequest.OrganizationId);
-                }
-
-                if(publicRequest.IsSetPassword())
-                {
-                    context.Writer.WritePropertyName("Password");
-                    context.Writer.Write(publicRequest.Password);
-                }
-
-                if(publicRequest.IsSetStorageRule())
-                {
-                    context.Writer.WritePropertyName("StorageRule");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = StorageRuleTypeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.StorageRule, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSurname())
-                {
-                    context.Writer.WritePropertyName("Surname");
-                    context.Writer.Write(publicRequest.Surname);
-                }
-
-                if(publicRequest.IsSetTimeZoneId())
-                {
-                    context.Writer.WritePropertyName("TimeZoneId");
-                    context.Writer.Write(publicRequest.TimeZoneId);
-                }
-
-                if(publicRequest.IsSetUsername())
-                {
-                    context.Writer.WritePropertyName("Username");
-                    context.Writer.Write(publicRequest.Username);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

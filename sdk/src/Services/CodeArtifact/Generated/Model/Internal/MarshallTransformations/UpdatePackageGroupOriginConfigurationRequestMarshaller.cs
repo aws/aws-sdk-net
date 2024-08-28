@@ -70,61 +70,64 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetPackageGroup())
                 request.Parameters.Add("package-group", StringUtils.FromString(publicRequest.PackageGroup));
             request.ResourcePath = "/v1/package-group-origin-configuration";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAddAllowedRepositories())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("addAllowedRepositories");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAddAllowedRepositoriesListValue in publicRequest.AddAllowedRepositories)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAddAllowedRepositories())
                     {
+                        context.Writer.WritePropertyName("addAllowedRepositories");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAddAllowedRepositoriesListValue in publicRequest.AddAllowedRepositories)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = PackageGroupAllowedRepositoryMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAddAllowedRepositoriesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetRemoveAllowedRepositories())
+                    {
+                        context.Writer.WritePropertyName("removeAllowedRepositories");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRemoveAllowedRepositoriesListValue in publicRequest.RemoveAllowedRepositories)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = PackageGroupAllowedRepositoryMarshaller.Instance;
+                            marshaller.Marshall(publicRequestRemoveAllowedRepositoriesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetRestrictions())
+                    {
+                        context.Writer.WritePropertyName("restrictions");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestRestrictionsKvp in publicRequest.Restrictions)
+                        {
+                            context.Writer.WritePropertyName(publicRequestRestrictionsKvp.Key);
+                            var publicRequestRestrictionsValue = publicRequestRestrictionsKvp.Value;
 
-                        var marshaller = PackageGroupAllowedRepositoryMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAddAllowedRepositoriesListValue, context);
-
+                                context.Writer.Write(publicRequestRestrictionsValue);
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRemoveAllowedRepositories())
-                {
-                    context.Writer.WritePropertyName("removeAllowedRepositories");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRemoveAllowedRepositoriesListValue in publicRequest.RemoveAllowedRepositories)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = PackageGroupAllowedRepositoryMarshaller.Instance;
-                        marshaller.Marshall(publicRequestRemoveAllowedRepositoriesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetRestrictions())
-                {
-                    context.Writer.WritePropertyName("restrictions");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestRestrictionsKvp in publicRequest.Restrictions)
-                    {
-                        context.Writer.WritePropertyName(publicRequestRestrictionsKvp.Key);
-                        var publicRequestRestrictionsValue = publicRequestRestrictionsKvp.Value;
-
-                            context.Writer.Write(publicRequestRestrictionsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             request.UseQueryString = true;

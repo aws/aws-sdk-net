@@ -63,120 +63,123 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEditorId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("EditorId");
-                    context.Writer.Write(publicRequest.EditorId);
-                }
-
-                if(publicRequest.IsSetEnvironmentVariables())
-                {
-                    context.Writer.WritePropertyName("EnvironmentVariables");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestEnvironmentVariablesKvp in publicRequest.EnvironmentVariables)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEditorId())
                     {
-                        context.Writer.WritePropertyName(publicRequestEnvironmentVariablesKvp.Key);
-                        var publicRequestEnvironmentVariablesValue = publicRequestEnvironmentVariablesKvp.Value;
-
-                            context.Writer.Write(publicRequestEnvironmentVariablesValue);
+                        context.Writer.WritePropertyName("EditorId");
+                        context.Writer.Write(publicRequest.EditorId);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetExecutionEngine())
-                {
-                    context.Writer.WritePropertyName("ExecutionEngine");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ExecutionEngineConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ExecutionEngine, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetNotebookExecutionName())
-                {
-                    context.Writer.WritePropertyName("NotebookExecutionName");
-                    context.Writer.Write(publicRequest.NotebookExecutionName);
-                }
-
-                if(publicRequest.IsSetNotebookInstanceSecurityGroupId())
-                {
-                    context.Writer.WritePropertyName("NotebookInstanceSecurityGroupId");
-                    context.Writer.Write(publicRequest.NotebookInstanceSecurityGroupId);
-                }
-
-                if(publicRequest.IsSetNotebookParams())
-                {
-                    context.Writer.WritePropertyName("NotebookParams");
-                    context.Writer.Write(publicRequest.NotebookParams);
-                }
-
-                if(publicRequest.IsSetNotebookS3Location())
-                {
-                    context.Writer.WritePropertyName("NotebookS3Location");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = NotebookS3LocationFromInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.NotebookS3Location, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOutputNotebookFormat())
-                {
-                    context.Writer.WritePropertyName("OutputNotebookFormat");
-                    context.Writer.Write(publicRequest.OutputNotebookFormat);
-                }
-
-                if(publicRequest.IsSetOutputNotebookS3Location())
-                {
-                    context.Writer.WritePropertyName("OutputNotebookS3Location");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OutputNotebookS3LocationFromInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OutputNotebookS3Location, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRelativePath())
-                {
-                    context.Writer.WritePropertyName("RelativePath");
-                    context.Writer.Write(publicRequest.RelativePath);
-                }
-
-                if(publicRequest.IsSetServiceRole())
-                {
-                    context.Writer.WritePropertyName("ServiceRole");
-                    context.Writer.Write(publicRequest.ServiceRole);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetEnvironmentVariables())
                     {
+                        context.Writer.WritePropertyName("EnvironmentVariables");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestEnvironmentVariablesKvp in publicRequest.EnvironmentVariables)
+                        {
+                            context.Writer.WritePropertyName(publicRequestEnvironmentVariablesKvp.Key);
+                            var publicRequestEnvironmentVariablesValue = publicRequestEnvironmentVariablesKvp.Value;
+
+                                context.Writer.Write(publicRequestEnvironmentVariablesValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetExecutionEngine())
+                    {
+                        context.Writer.WritePropertyName("ExecutionEngine");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = ExecutionEngineConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ExecutionEngine, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetNotebookExecutionName())
+                    {
+                        context.Writer.WritePropertyName("NotebookExecutionName");
+                        context.Writer.Write(publicRequest.NotebookExecutionName);
+                    }
+
+                    if(publicRequest.IsSetNotebookInstanceSecurityGroupId())
+                    {
+                        context.Writer.WritePropertyName("NotebookInstanceSecurityGroupId");
+                        context.Writer.Write(publicRequest.NotebookInstanceSecurityGroupId);
+                    }
+
+                    if(publicRequest.IsSetNotebookParams())
+                    {
+                        context.Writer.WritePropertyName("NotebookParams");
+                        context.Writer.Write(publicRequest.NotebookParams);
+                    }
+
+                    if(publicRequest.IsSetNotebookS3Location())
+                    {
+                        context.Writer.WritePropertyName("NotebookS3Location");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = NotebookS3LocationFromInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.NotebookS3Location, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetOutputNotebookFormat())
+                    {
+                        context.Writer.WritePropertyName("OutputNotebookFormat");
+                        context.Writer.Write(publicRequest.OutputNotebookFormat);
+                    }
+
+                    if(publicRequest.IsSetOutputNotebookS3Location())
+                    {
+                        context.Writer.WritePropertyName("OutputNotebookS3Location");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = OutputNotebookS3LocationFromInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OutputNotebookS3Location, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRelativePath())
+                    {
+                        context.Writer.WritePropertyName("RelativePath");
+                        context.Writer.Write(publicRequest.RelativePath);
+                    }
+
+                    if(publicRequest.IsSetServiceRole())
+                    {
+                        context.Writer.WritePropertyName("ServiceRole");
+                        context.Writer.Write(publicRequest.ServiceRole);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -61,38 +61,41 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/catalog.updateItem";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCategories())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("categories");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCategoriesListValue in publicRequest.Categories)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCategories())
                     {
-                            context.Writer.Write(publicRequestCategoriesListValue);
+                        context.Writer.WritePropertyName("categories");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCategoriesListValue in publicRequest.Categories)
+                        {
+                                context.Writer.Write(publicRequestCategoriesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetLibraryItemId())
+                    {
+                        context.Writer.WritePropertyName("libraryItemId");
+                        context.Writer.Write(publicRequest.LibraryItemId);
+                    }
+
+                    if(publicRequest.IsSetStatus())
+                    {
+                        context.Writer.WritePropertyName("status");
+                        context.Writer.Write(publicRequest.Status);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetLibraryItemId())
-                {
-                    context.Writer.WritePropertyName("libraryItemId");
-                    context.Writer.Write(publicRequest.LibraryItemId);
-                }
-
-                if(publicRequest.IsSetStatus())
-                {
-                    context.Writer.WritePropertyName("status");
-                    context.Writer.Write(publicRequest.Status);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

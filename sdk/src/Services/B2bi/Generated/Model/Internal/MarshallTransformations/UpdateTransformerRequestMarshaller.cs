@@ -63,62 +63,65 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEdiType())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ediType");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEdiType())
+                    {
+                        context.Writer.WritePropertyName("ediType");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = EdiTypeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EdiType, context);
+                        var marshaller = EdiTypeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EdiType, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetFileFormat())
+                    {
+                        context.Writer.WritePropertyName("fileFormat");
+                        context.Writer.Write(publicRequest.FileFormat);
+                    }
+
+                    if(publicRequest.IsSetMappingTemplate())
+                    {
+                        context.Writer.WritePropertyName("mappingTemplate");
+                        context.Writer.Write(publicRequest.MappingTemplate);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetSampleDocument())
+                    {
+                        context.Writer.WritePropertyName("sampleDocument");
+                        context.Writer.Write(publicRequest.SampleDocument);
+                    }
+
+                    if(publicRequest.IsSetStatus())
+                    {
+                        context.Writer.WritePropertyName("status");
+                        context.Writer.Write(publicRequest.Status);
+                    }
+
+                    if(publicRequest.IsSetTransformerId())
+                    {
+                        context.Writer.WritePropertyName("transformerId");
+                        context.Writer.Write(publicRequest.TransformerId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetFileFormat())
-                {
-                    context.Writer.WritePropertyName("fileFormat");
-                    context.Writer.Write(publicRequest.FileFormat);
-                }
-
-                if(publicRequest.IsSetMappingTemplate())
-                {
-                    context.Writer.WritePropertyName("mappingTemplate");
-                    context.Writer.Write(publicRequest.MappingTemplate);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetSampleDocument())
-                {
-                    context.Writer.WritePropertyName("sampleDocument");
-                    context.Writer.Write(publicRequest.SampleDocument);
-                }
-
-                if(publicRequest.IsSetStatus())
-                {
-                    context.Writer.WritePropertyName("status");
-                    context.Writer.Write(publicRequest.Status);
-                }
-
-                if(publicRequest.IsSetTransformerId())
-                {
-                    context.Writer.WritePropertyName("transformerId");
-                    context.Writer.Write(publicRequest.TransformerId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

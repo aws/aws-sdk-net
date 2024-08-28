@@ -61,56 +61,59 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/cis/scan/list";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDetailLevel())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("detailLevel");
-                    context.Writer.Write(publicRequest.DetailLevel);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDetailLevel())
+                    {
+                        context.Writer.WritePropertyName("detailLevel");
+                        context.Writer.Write(publicRequest.DetailLevel);
+                    }
+
+                    if(publicRequest.IsSetFilterCriteria())
+                    {
+                        context.Writer.WritePropertyName("filterCriteria");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ListCisScansFilterCriteriaMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.FilterCriteria, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetSortBy())
+                    {
+                        context.Writer.WritePropertyName("sortBy");
+                        context.Writer.Write(publicRequest.SortBy);
+                    }
+
+                    if(publicRequest.IsSetSortOrder())
+                    {
+                        context.Writer.WritePropertyName("sortOrder");
+                        context.Writer.Write(publicRequest.SortOrder);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetFilterCriteria())
-                {
-                    context.Writer.WritePropertyName("filterCriteria");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ListCisScansFilterCriteriaMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.FilterCriteria, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetSortBy())
-                {
-                    context.Writer.WritePropertyName("sortBy");
-                    context.Writer.Write(publicRequest.SortBy);
-                }
-
-                if(publicRequest.IsSetSortOrder())
-                {
-                    context.Writer.WritePropertyName("sortOrder");
-                    context.Writer.Write(publicRequest.SortOrder);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,51 +63,54 @@ namespace Amazon.Pricing.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCurrencyCode())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CurrencyCode");
-                    context.Writer.Write(publicRequest.CurrencyCode);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCurrencyCode())
+                    {
+                        context.Writer.WritePropertyName("CurrencyCode");
+                        context.Writer.Write(publicRequest.CurrencyCode);
+                    }
+
+                    if(publicRequest.IsSetEffectiveDate())
+                    {
+                        context.Writer.WritePropertyName("EffectiveDate");
+                        context.Writer.Write(publicRequest.EffectiveDate.Value);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetRegionCode())
+                    {
+                        context.Writer.WritePropertyName("RegionCode");
+                        context.Writer.Write(publicRequest.RegionCode);
+                    }
+
+                    if(publicRequest.IsSetServiceCode())
+                    {
+                        context.Writer.WritePropertyName("ServiceCode");
+                        context.Writer.Write(publicRequest.ServiceCode);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEffectiveDate())
-                {
-                    context.Writer.WritePropertyName("EffectiveDate");
-                    context.Writer.Write(publicRequest.EffectiveDate.Value);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetRegionCode())
-                {
-                    context.Writer.WritePropertyName("RegionCode");
-                    context.Writer.Write(publicRequest.RegionCode);
-                }
-
-                if(publicRequest.IsSetServiceCode())
-                {
-                    context.Writer.WritePropertyName("ServiceCode");
-                    context.Writer.Write(publicRequest.ServiceCode);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

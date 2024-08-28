@@ -42,6 +42,7 @@ namespace Amazon.Glue.Model
     public partial class CreateDataQualityRulesetRequest : AmazonGlueRequest
     {
         private string _clientToken;
+        private string _dataQualitySecurityConfiguration;
         private string _description;
         private string _name;
         private string _ruleset;
@@ -66,6 +67,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataQualitySecurityConfiguration. 
+        /// <para>
+        /// The name of the security configuration created with the data quality encryption option.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string DataQualitySecurityConfiguration
+        {
+            get { return this._dataQualitySecurityConfiguration; }
+            set { this._dataQualitySecurityConfiguration = value; }
+        }
+
+        // Check to see if DataQualitySecurityConfiguration property is set
+        internal bool IsSetDataQualitySecurityConfiguration()
+        {
+            return this._dataQualitySecurityConfiguration != null;
         }
 
         /// <summary>

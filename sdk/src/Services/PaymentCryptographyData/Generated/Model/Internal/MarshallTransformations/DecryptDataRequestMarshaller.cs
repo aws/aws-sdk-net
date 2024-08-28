@@ -64,43 +64,46 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
                 throw new AmazonPaymentCryptographyDataException("Request object does not have required field KeyIdentifier set");
             request.AddPathResource("{KeyIdentifier}", StringUtils.FromString(publicRequest.KeyIdentifier));
             request.ResourcePath = "/keys/{KeyIdentifier}/decrypt";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCipherText())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CipherText");
-                    context.Writer.Write(publicRequest.CipherText);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCipherText())
+                    {
+                        context.Writer.WritePropertyName("CipherText");
+                        context.Writer.Write(publicRequest.CipherText);
+                    }
+
+                    if(publicRequest.IsSetDecryptionAttributes())
+                    {
+                        context.Writer.WritePropertyName("DecryptionAttributes");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EncryptionDecryptionAttributesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DecryptionAttributes, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetWrappedKey())
+                    {
+                        context.Writer.WritePropertyName("WrappedKey");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = WrappedKeyMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.WrappedKey, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDecryptionAttributes())
-                {
-                    context.Writer.WritePropertyName("DecryptionAttributes");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EncryptionDecryptionAttributesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DecryptionAttributes, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetWrappedKey())
-                {
-                    context.Writer.WritePropertyName("WrappedKey");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = WrappedKeyMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.WrappedKey, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

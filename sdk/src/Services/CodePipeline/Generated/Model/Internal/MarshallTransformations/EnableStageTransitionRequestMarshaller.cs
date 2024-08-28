@@ -63,33 +63,36 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetPipelineName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("pipelineName");
-                    context.Writer.Write(publicRequest.PipelineName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetPipelineName())
+                    {
+                        context.Writer.WritePropertyName("pipelineName");
+                        context.Writer.Write(publicRequest.PipelineName);
+                    }
+
+                    if(publicRequest.IsSetStageName())
+                    {
+                        context.Writer.WritePropertyName("stageName");
+                        context.Writer.Write(publicRequest.StageName);
+                    }
+
+                    if(publicRequest.IsSetTransitionType())
+                    {
+                        context.Writer.WritePropertyName("transitionType");
+                        context.Writer.Write(publicRequest.TransitionType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetStageName())
-                {
-                    context.Writer.WritePropertyName("stageName");
-                    context.Writer.Write(publicRequest.StageName);
-                }
-
-                if(publicRequest.IsSetTransitionType())
-                {
-                    context.Writer.WritePropertyName("transitionType");
-                    context.Writer.Write(publicRequest.TransitionType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

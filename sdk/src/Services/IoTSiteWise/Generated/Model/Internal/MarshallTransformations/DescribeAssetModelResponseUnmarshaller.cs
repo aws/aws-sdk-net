@@ -130,7 +130,15 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     response.AssetModelType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("assetModelVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AssetModelVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
+            if (context.ResponseData.IsHeaderPresent("ETag"))
+                response.ETag = context.ResponseData.GetHeaderValue("ETag");
 
             return response;
         }

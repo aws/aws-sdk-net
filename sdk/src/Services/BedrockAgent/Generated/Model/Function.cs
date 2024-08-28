@@ -69,6 +69,7 @@ namespace Amazon.BedrockAgent.Model
         private string _description;
         private string _name;
         private Dictionary<string, ParameterDetail> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, ParameterDetail>() : null;
+        private RequireConfirmation _requireConfirmation;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -124,6 +125,24 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetParameters()
         {
             return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequireConfirmation. 
+        /// <para>
+        /// Contains information if user confirmation is required to invoke the function.
+        /// </para>
+        /// </summary>
+        public RequireConfirmation RequireConfirmation
+        {
+            get { return this._requireConfirmation; }
+            set { this._requireConfirmation = value; }
+        }
+
+        // Check to see if RequireConfirmation property is set
+        internal bool IsSetRequireConfirmation()
+        {
+            return this._requireConfirmation != null;
         }
 
     }

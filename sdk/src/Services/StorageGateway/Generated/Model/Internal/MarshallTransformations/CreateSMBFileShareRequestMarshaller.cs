@@ -63,201 +63,204 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccessBasedEnumeration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AccessBasedEnumeration");
-                    context.Writer.Write(publicRequest.AccessBasedEnumeration.Value);
-                }
-
-                if(publicRequest.IsSetAdminUserList())
-                {
-                    context.Writer.WritePropertyName("AdminUserList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAdminUserListListValue in publicRequest.AdminUserList)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccessBasedEnumeration())
                     {
-                            context.Writer.Write(publicRequestAdminUserListListValue);
+                        context.Writer.WritePropertyName("AccessBasedEnumeration");
+                        context.Writer.Write(publicRequest.AccessBasedEnumeration.Value);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetAuditDestinationARN())
-                {
-                    context.Writer.WritePropertyName("AuditDestinationARN");
-                    context.Writer.Write(publicRequest.AuditDestinationARN);
-                }
-
-                if(publicRequest.IsSetAuthentication())
-                {
-                    context.Writer.WritePropertyName("Authentication");
-                    context.Writer.Write(publicRequest.Authentication);
-                }
-
-                if(publicRequest.IsSetBucketRegion())
-                {
-                    context.Writer.WritePropertyName("BucketRegion");
-                    context.Writer.Write(publicRequest.BucketRegion);
-                }
-
-                if(publicRequest.IsSetCacheAttributes())
-                {
-                    context.Writer.WritePropertyName("CacheAttributes");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CacheAttributesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CacheAttributes, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetCaseSensitivity())
-                {
-                    context.Writer.WritePropertyName("CaseSensitivity");
-                    context.Writer.Write(publicRequest.CaseSensitivity);
-                }
-
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                if(publicRequest.IsSetDefaultStorageClass())
-                {
-                    context.Writer.WritePropertyName("DefaultStorageClass");
-                    context.Writer.Write(publicRequest.DefaultStorageClass);
-                }
-
-                if(publicRequest.IsSetFileShareName())
-                {
-                    context.Writer.WritePropertyName("FileShareName");
-                    context.Writer.Write(publicRequest.FileShareName);
-                }
-
-                if(publicRequest.IsSetGatewayARN())
-                {
-                    context.Writer.WritePropertyName("GatewayARN");
-                    context.Writer.Write(publicRequest.GatewayARN);
-                }
-
-                if(publicRequest.IsSetGuessMIMETypeEnabled())
-                {
-                    context.Writer.WritePropertyName("GuessMIMETypeEnabled");
-                    context.Writer.Write(publicRequest.GuessMIMETypeEnabled.Value);
-                }
-
-                if(publicRequest.IsSetInvalidUserList())
-                {
-                    context.Writer.WritePropertyName("InvalidUserList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestInvalidUserListListValue in publicRequest.InvalidUserList)
+                    if(publicRequest.IsSetAdminUserList())
                     {
-                            context.Writer.Write(publicRequestInvalidUserListListValue);
+                        context.Writer.WritePropertyName("AdminUserList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAdminUserListListValue in publicRequest.AdminUserList)
+                        {
+                                context.Writer.Write(publicRequestAdminUserListListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetKMSEncrypted())
-                {
-                    context.Writer.WritePropertyName("KMSEncrypted");
-                    context.Writer.Write(publicRequest.KMSEncrypted.Value);
-                }
-
-                if(publicRequest.IsSetKMSKey())
-                {
-                    context.Writer.WritePropertyName("KMSKey");
-                    context.Writer.Write(publicRequest.KMSKey);
-                }
-
-                if(publicRequest.IsSetLocationARN())
-                {
-                    context.Writer.WritePropertyName("LocationARN");
-                    context.Writer.Write(publicRequest.LocationARN);
-                }
-
-                if(publicRequest.IsSetNotificationPolicy())
-                {
-                    context.Writer.WritePropertyName("NotificationPolicy");
-                    context.Writer.Write(publicRequest.NotificationPolicy);
-                }
-
-                if(publicRequest.IsSetObjectACL())
-                {
-                    context.Writer.WritePropertyName("ObjectACL");
-                    context.Writer.Write(publicRequest.ObjectACL);
-                }
-
-                if(publicRequest.IsSetOplocksEnabled())
-                {
-                    context.Writer.WritePropertyName("OplocksEnabled");
-                    context.Writer.Write(publicRequest.OplocksEnabled.Value);
-                }
-
-                if(publicRequest.IsSetReadOnly())
-                {
-                    context.Writer.WritePropertyName("ReadOnly");
-                    context.Writer.Write(publicRequest.ReadOnly.Value);
-                }
-
-                if(publicRequest.IsSetRequesterPays())
-                {
-                    context.Writer.WritePropertyName("RequesterPays");
-                    context.Writer.Write(publicRequest.RequesterPays.Value);
-                }
-
-                if(publicRequest.IsSetRole())
-                {
-                    context.Writer.WritePropertyName("Role");
-                    context.Writer.Write(publicRequest.Role);
-                }
-
-                if(publicRequest.IsSetSMBACLEnabled())
-                {
-                    context.Writer.WritePropertyName("SMBACLEnabled");
-                    context.Writer.Write(publicRequest.SMBACLEnabled.Value);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetAuditDestinationARN())
                     {
+                        context.Writer.WritePropertyName("AuditDestinationARN");
+                        context.Writer.Write(publicRequest.AuditDestinationARN);
+                    }
+
+                    if(publicRequest.IsSetAuthentication())
+                    {
+                        context.Writer.WritePropertyName("Authentication");
+                        context.Writer.Write(publicRequest.Authentication);
+                    }
+
+                    if(publicRequest.IsSetBucketRegion())
+                    {
+                        context.Writer.WritePropertyName("BucketRegion");
+                        context.Writer.Write(publicRequest.BucketRegion);
+                    }
+
+                    if(publicRequest.IsSetCacheAttributes())
+                    {
+                        context.Writer.WritePropertyName("CacheAttributes");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = CacheAttributesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CacheAttributes, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetValidUserList())
-                {
-                    context.Writer.WritePropertyName("ValidUserList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestValidUserListListValue in publicRequest.ValidUserList)
+                    if(publicRequest.IsSetCaseSensitivity())
                     {
-                            context.Writer.Write(publicRequestValidUserListListValue);
+                        context.Writer.WritePropertyName("CaseSensitivity");
+                        context.Writer.Write(publicRequest.CaseSensitivity);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    if(publicRequest.IsSetDefaultStorageClass())
+                    {
+                        context.Writer.WritePropertyName("DefaultStorageClass");
+                        context.Writer.Write(publicRequest.DefaultStorageClass);
+                    }
+
+                    if(publicRequest.IsSetFileShareName())
+                    {
+                        context.Writer.WritePropertyName("FileShareName");
+                        context.Writer.Write(publicRequest.FileShareName);
+                    }
+
+                    if(publicRequest.IsSetGatewayARN())
+                    {
+                        context.Writer.WritePropertyName("GatewayARN");
+                        context.Writer.Write(publicRequest.GatewayARN);
+                    }
+
+                    if(publicRequest.IsSetGuessMIMETypeEnabled())
+                    {
+                        context.Writer.WritePropertyName("GuessMIMETypeEnabled");
+                        context.Writer.Write(publicRequest.GuessMIMETypeEnabled.Value);
+                    }
+
+                    if(publicRequest.IsSetInvalidUserList())
+                    {
+                        context.Writer.WritePropertyName("InvalidUserList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestInvalidUserListListValue in publicRequest.InvalidUserList)
+                        {
+                                context.Writer.Write(publicRequestInvalidUserListListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetKMSEncrypted())
+                    {
+                        context.Writer.WritePropertyName("KMSEncrypted");
+                        context.Writer.Write(publicRequest.KMSEncrypted.Value);
+                    }
+
+                    if(publicRequest.IsSetKMSKey())
+                    {
+                        context.Writer.WritePropertyName("KMSKey");
+                        context.Writer.Write(publicRequest.KMSKey);
+                    }
+
+                    if(publicRequest.IsSetLocationARN())
+                    {
+                        context.Writer.WritePropertyName("LocationARN");
+                        context.Writer.Write(publicRequest.LocationARN);
+                    }
+
+                    if(publicRequest.IsSetNotificationPolicy())
+                    {
+                        context.Writer.WritePropertyName("NotificationPolicy");
+                        context.Writer.Write(publicRequest.NotificationPolicy);
+                    }
+
+                    if(publicRequest.IsSetObjectACL())
+                    {
+                        context.Writer.WritePropertyName("ObjectACL");
+                        context.Writer.Write(publicRequest.ObjectACL);
+                    }
+
+                    if(publicRequest.IsSetOplocksEnabled())
+                    {
+                        context.Writer.WritePropertyName("OplocksEnabled");
+                        context.Writer.Write(publicRequest.OplocksEnabled.Value);
+                    }
+
+                    if(publicRequest.IsSetReadOnly())
+                    {
+                        context.Writer.WritePropertyName("ReadOnly");
+                        context.Writer.Write(publicRequest.ReadOnly.Value);
+                    }
+
+                    if(publicRequest.IsSetRequesterPays())
+                    {
+                        context.Writer.WritePropertyName("RequesterPays");
+                        context.Writer.Write(publicRequest.RequesterPays.Value);
+                    }
+
+                    if(publicRequest.IsSetRole())
+                    {
+                        context.Writer.WritePropertyName("Role");
+                        context.Writer.Write(publicRequest.Role);
+                    }
+
+                    if(publicRequest.IsSetSMBACLEnabled())
+                    {
+                        context.Writer.WritePropertyName("SMBACLEnabled");
+                        context.Writer.Write(publicRequest.SMBACLEnabled.Value);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetValidUserList())
+                    {
+                        context.Writer.WritePropertyName("ValidUserList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestValidUserListListValue in publicRequest.ValidUserList)
+                        {
+                                context.Writer.Write(publicRequestValidUserListListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetVPCEndpointDNSName())
+                    {
+                        context.Writer.WritePropertyName("VPCEndpointDNSName");
+                        context.Writer.Write(publicRequest.VPCEndpointDNSName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetVPCEndpointDNSName())
-                {
-                    context.Writer.WritePropertyName("VPCEndpointDNSName");
-                    context.Writer.Write(publicRequest.VPCEndpointDNSName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

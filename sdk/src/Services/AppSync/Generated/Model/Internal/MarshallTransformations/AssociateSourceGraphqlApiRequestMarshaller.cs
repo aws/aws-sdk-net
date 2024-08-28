@@ -64,38 +64,41 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 throw new AmazonAppSyncException("Request object does not have required field MergedApiIdentifier set");
             request.AddPathResource("{mergedApiIdentifier}", StringUtils.FromString(publicRequest.MergedApiIdentifier));
             request.ResourcePath = "/v1/mergedApis/{mergedApiIdentifier}/sourceApiAssociations";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetSourceApiAssociationConfig())
+                    {
+                        context.Writer.WritePropertyName("sourceApiAssociationConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SourceApiAssociationConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SourceApiAssociationConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSourceApiIdentifier())
+                    {
+                        context.Writer.WritePropertyName("sourceApiIdentifier");
+                        context.Writer.Write(publicRequest.SourceApiIdentifier);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSourceApiAssociationConfig())
-                {
-                    context.Writer.WritePropertyName("sourceApiAssociationConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SourceApiAssociationConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SourceApiAssociationConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSourceApiIdentifier())
-                {
-                    context.Writer.WritePropertyName("sourceApiIdentifier");
-                    context.Writer.Write(publicRequest.SourceApiIdentifier);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

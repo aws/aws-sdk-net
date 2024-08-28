@@ -63,75 +63,78 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClusterIdentifier())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClusterIdentifier");
-                    context.Writer.Write(publicRequest.ClusterIdentifier);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClusterIdentifier())
+                    {
+                        context.Writer.WritePropertyName("ClusterIdentifier");
+                        context.Writer.Write(publicRequest.ClusterIdentifier);
+                    }
+
+                    if(publicRequest.IsSetConnectedDatabase())
+                    {
+                        context.Writer.WritePropertyName("ConnectedDatabase");
+                        context.Writer.Write(publicRequest.ConnectedDatabase);
+                    }
+
+                    if(publicRequest.IsSetDatabase())
+                    {
+                        context.Writer.WritePropertyName("Database");
+                        context.Writer.Write(publicRequest.Database);
+                    }
+
+                    if(publicRequest.IsSetDbUser())
+                    {
+                        context.Writer.WritePropertyName("DbUser");
+                        context.Writer.Write(publicRequest.DbUser);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetSchema())
+                    {
+                        context.Writer.WritePropertyName("Schema");
+                        context.Writer.Write(publicRequest.Schema);
+                    }
+
+                    if(publicRequest.IsSetSecretArn())
+                    {
+                        context.Writer.WritePropertyName("SecretArn");
+                        context.Writer.Write(publicRequest.SecretArn);
+                    }
+
+                    if(publicRequest.IsSetTable())
+                    {
+                        context.Writer.WritePropertyName("Table");
+                        context.Writer.Write(publicRequest.Table);
+                    }
+
+                    if(publicRequest.IsSetWorkgroupName())
+                    {
+                        context.Writer.WritePropertyName("WorkgroupName");
+                        context.Writer.Write(publicRequest.WorkgroupName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetConnectedDatabase())
-                {
-                    context.Writer.WritePropertyName("ConnectedDatabase");
-                    context.Writer.Write(publicRequest.ConnectedDatabase);
-                }
-
-                if(publicRequest.IsSetDatabase())
-                {
-                    context.Writer.WritePropertyName("Database");
-                    context.Writer.Write(publicRequest.Database);
-                }
-
-                if(publicRequest.IsSetDbUser())
-                {
-                    context.Writer.WritePropertyName("DbUser");
-                    context.Writer.Write(publicRequest.DbUser);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetSchema())
-                {
-                    context.Writer.WritePropertyName("Schema");
-                    context.Writer.Write(publicRequest.Schema);
-                }
-
-                if(publicRequest.IsSetSecretArn())
-                {
-                    context.Writer.WritePropertyName("SecretArn");
-                    context.Writer.Write(publicRequest.SecretArn);
-                }
-
-                if(publicRequest.IsSetTable())
-                {
-                    context.Writer.WritePropertyName("Table");
-                    context.Writer.Write(publicRequest.Table);
-                }
-
-                if(publicRequest.IsSetWorkgroupName())
-                {
-                    context.Writer.WritePropertyName("WorkgroupName");
-                    context.Writer.Write(publicRequest.WorkgroupName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

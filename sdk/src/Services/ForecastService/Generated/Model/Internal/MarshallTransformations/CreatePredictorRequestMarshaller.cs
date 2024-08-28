@@ -63,153 +63,156 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAlgorithmArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AlgorithmArn");
-                    context.Writer.Write(publicRequest.AlgorithmArn);
-                }
-
-                if(publicRequest.IsSetAutoMLOverrideStrategy())
-                {
-                    context.Writer.WritePropertyName("AutoMLOverrideStrategy");
-                    context.Writer.Write(publicRequest.AutoMLOverrideStrategy);
-                }
-
-                if(publicRequest.IsSetEncryptionConfig())
-                {
-                    context.Writer.WritePropertyName("EncryptionConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EncryptionConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EncryptionConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEvaluationParameters())
-                {
-                    context.Writer.WritePropertyName("EvaluationParameters");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EvaluationParametersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EvaluationParameters, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetFeaturizationConfig())
-                {
-                    context.Writer.WritePropertyName("FeaturizationConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = FeaturizationConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.FeaturizationConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetForecastHorizon())
-                {
-                    context.Writer.WritePropertyName("ForecastHorizon");
-                    context.Writer.Write(publicRequest.ForecastHorizon.Value);
-                }
-
-                if(publicRequest.IsSetForecastTypes())
-                {
-                    context.Writer.WritePropertyName("ForecastTypes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestForecastTypesListValue in publicRequest.ForecastTypes)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAlgorithmArn())
                     {
-                            context.Writer.Write(publicRequestForecastTypesListValue);
+                        context.Writer.WritePropertyName("AlgorithmArn");
+                        context.Writer.Write(publicRequest.AlgorithmArn);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetHPOConfig())
-                {
-                    context.Writer.WritePropertyName("HPOConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = HyperParameterTuningJobConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.HPOConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetInputDataConfig())
-                {
-                    context.Writer.WritePropertyName("InputDataConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = InputDataConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.InputDataConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOptimizationMetric())
-                {
-                    context.Writer.WritePropertyName("OptimizationMetric");
-                    context.Writer.Write(publicRequest.OptimizationMetric);
-                }
-
-                if(publicRequest.IsSetPerformAutoML())
-                {
-                    context.Writer.WritePropertyName("PerformAutoML");
-                    context.Writer.Write(publicRequest.PerformAutoML.Value);
-                }
-
-                if(publicRequest.IsSetPerformHPO())
-                {
-                    context.Writer.WritePropertyName("PerformHPO");
-                    context.Writer.Write(publicRequest.PerformHPO.Value);
-                }
-
-                if(publicRequest.IsSetPredictorName())
-                {
-                    context.Writer.WritePropertyName("PredictorName");
-                    context.Writer.Write(publicRequest.PredictorName);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetAutoMLOverrideStrategy())
                     {
+                        context.Writer.WritePropertyName("AutoMLOverrideStrategy");
+                        context.Writer.Write(publicRequest.AutoMLOverrideStrategy);
+                    }
+
+                    if(publicRequest.IsSetEncryptionConfig())
+                    {
+                        context.Writer.WritePropertyName("EncryptionConfig");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = EncryptionConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EncryptionConfig, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTrainingParameters())
-                {
-                    context.Writer.WritePropertyName("TrainingParameters");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTrainingParametersKvp in publicRequest.TrainingParameters)
+                    if(publicRequest.IsSetEvaluationParameters())
                     {
-                        context.Writer.WritePropertyName(publicRequestTrainingParametersKvp.Key);
-                        var publicRequestTrainingParametersValue = publicRequestTrainingParametersKvp.Value;
+                        context.Writer.WritePropertyName("EvaluationParameters");
+                        context.Writer.WriteObjectStart();
 
-                            context.Writer.Write(publicRequestTrainingParametersValue);
+                        var marshaller = EvaluationParametersMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EvaluationParameters, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetFeaturizationConfig())
+                    {
+                        context.Writer.WritePropertyName("FeaturizationConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = FeaturizationConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.FeaturizationConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetForecastHorizon())
+                    {
+                        context.Writer.WritePropertyName("ForecastHorizon");
+                        context.Writer.Write(publicRequest.ForecastHorizon.Value);
+                    }
+
+                    if(publicRequest.IsSetForecastTypes())
+                    {
+                        context.Writer.WritePropertyName("ForecastTypes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestForecastTypesListValue in publicRequest.ForecastTypes)
+                        {
+                                context.Writer.Write(publicRequestForecastTypesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetHPOConfig())
+                    {
+                        context.Writer.WritePropertyName("HPOConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = HyperParameterTuningJobConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.HPOConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetInputDataConfig())
+                    {
+                        context.Writer.WritePropertyName("InputDataConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = InputDataConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.InputDataConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetOptimizationMetric())
+                    {
+                        context.Writer.WritePropertyName("OptimizationMetric");
+                        context.Writer.Write(publicRequest.OptimizationMetric);
+                    }
+
+                    if(publicRequest.IsSetPerformAutoML())
+                    {
+                        context.Writer.WritePropertyName("PerformAutoML");
+                        context.Writer.Write(publicRequest.PerformAutoML.Value);
+                    }
+
+                    if(publicRequest.IsSetPerformHPO())
+                    {
+                        context.Writer.WritePropertyName("PerformHPO");
+                        context.Writer.Write(publicRequest.PerformHPO.Value);
+                    }
+
+                    if(publicRequest.IsSetPredictorName())
+                    {
+                        context.Writer.WritePropertyName("PredictorName");
+                        context.Writer.Write(publicRequest.PredictorName);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTrainingParameters())
+                    {
+                        context.Writer.WritePropertyName("TrainingParameters");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTrainingParametersKvp in publicRequest.TrainingParameters)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTrainingParametersKvp.Key);
+                            var publicRequestTrainingParametersValue = publicRequestTrainingParametersKvp.Value;
+
+                                context.Writer.Write(publicRequestTrainingParametersValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -61,37 +61,40 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v2/email/import-jobs";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetImportDataSource())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ImportDataSource");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetImportDataSource())
+                    {
+                        context.Writer.WritePropertyName("ImportDataSource");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = ImportDataSourceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ImportDataSource, context);
+                        var marshaller = ImportDataSourceMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ImportDataSource, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetImportDestination())
+                    {
+                        context.Writer.WritePropertyName("ImportDestination");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ImportDestinationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ImportDestination, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetImportDestination())
-                {
-                    context.Writer.WritePropertyName("ImportDestination");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ImportDestinationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ImportDestination, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

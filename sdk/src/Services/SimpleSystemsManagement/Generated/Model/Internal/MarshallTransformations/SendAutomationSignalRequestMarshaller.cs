@@ -63,46 +63,49 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAutomationExecutionId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AutomationExecutionId");
-                    context.Writer.Write(publicRequest.AutomationExecutionId);
-                }
-
-                if(publicRequest.IsSetPayload())
-                {
-                    context.Writer.WritePropertyName("Payload");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestPayloadKvp in publicRequest.Payload)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAutomationExecutionId())
                     {
-                        context.Writer.WritePropertyName(publicRequestPayloadKvp.Key);
-                        var publicRequestPayloadValue = publicRequestPayloadKvp.Value;
-
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestPayloadValueListValue in publicRequestPayloadValue)
-                        {
-                                context.Writer.Write(publicRequestPayloadValueListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
+                        context.Writer.WritePropertyName("AutomationExecutionId");
+                        context.Writer.Write(publicRequest.AutomationExecutionId);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetPayload())
+                    {
+                        context.Writer.WritePropertyName("Payload");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestPayloadKvp in publicRequest.Payload)
+                        {
+                            context.Writer.WritePropertyName(publicRequestPayloadKvp.Key);
+                            var publicRequestPayloadValue = publicRequestPayloadKvp.Value;
+
+                            context.Writer.WriteArrayStart();
+                            foreach(var publicRequestPayloadValueListValue in publicRequestPayloadValue)
+                            {
+                                    context.Writer.Write(publicRequestPayloadValueListValue);
+                            }
+                            context.Writer.WriteArrayEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSignalType())
+                    {
+                        context.Writer.WritePropertyName("SignalType");
+                        context.Writer.Write(publicRequest.SignalType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSignalType())
-                {
-                    context.Writer.WritePropertyName("SignalType");
-                    context.Writer.Write(publicRequest.SignalType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

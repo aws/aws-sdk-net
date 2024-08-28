@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the marketplacecommerceanalytics-2015-07-01.normal.json service model.
  */
 
+using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 

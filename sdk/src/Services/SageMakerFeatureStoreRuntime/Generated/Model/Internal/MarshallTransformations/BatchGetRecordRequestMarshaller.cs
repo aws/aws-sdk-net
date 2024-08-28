@@ -61,37 +61,40 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model.Internal.MarshallTransformat
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/BatchGetRecord";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetExpirationTimeResponse())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ExpirationTimeResponse");
-                    context.Writer.Write(publicRequest.ExpirationTimeResponse);
-                }
-
-                if(publicRequest.IsSetIdentifiers())
-                {
-                    context.Writer.WritePropertyName("Identifiers");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestIdentifiersListValue in publicRequest.Identifiers)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetExpirationTimeResponse())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = BatchGetRecordIdentifierMarshaller.Instance;
-                        marshaller.Marshall(publicRequestIdentifiersListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("ExpirationTimeResponse");
+                        context.Writer.Write(publicRequest.ExpirationTimeResponse);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetIdentifiers())
+                    {
+                        context.Writer.WritePropertyName("Identifiers");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestIdentifiersListValue in publicRequest.Identifiers)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = BatchGetRecordIdentifierMarshaller.Instance;
+                            marshaller.Marshall(publicRequestIdentifiersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

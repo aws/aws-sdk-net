@@ -63,56 +63,59 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetIncludeDeletedResources())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("includeDeletedResources");
-                    context.Writer.Write(publicRequest.IncludeDeletedResources.Value);
-                }
-
-                if(publicRequest.IsSetLimit())
-                {
-                    context.Writer.WritePropertyName("limit");
-                    context.Writer.Write(publicRequest.Limit.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetResourceIds())
-                {
-                    context.Writer.WritePropertyName("resourceIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestResourceIdsListValue in publicRequest.ResourceIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetIncludeDeletedResources())
                     {
-                            context.Writer.Write(publicRequestResourceIdsListValue);
+                        context.Writer.WritePropertyName("includeDeletedResources");
+                        context.Writer.Write(publicRequest.IncludeDeletedResources.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetLimit())
+                    {
+                        context.Writer.WritePropertyName("limit");
+                        context.Writer.Write(publicRequest.Limit.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetResourceIds())
+                    {
+                        context.Writer.WritePropertyName("resourceIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestResourceIdsListValue in publicRequest.ResourceIds)
+                        {
+                                context.Writer.Write(publicRequestResourceIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetResourceName())
+                    {
+                        context.Writer.WritePropertyName("resourceName");
+                        context.Writer.Write(publicRequest.ResourceName);
+                    }
+
+                    if(publicRequest.IsSetResourceType())
+                    {
+                        context.Writer.WritePropertyName("resourceType");
+                        context.Writer.Write(publicRequest.ResourceType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetResourceName())
-                {
-                    context.Writer.WritePropertyName("resourceName");
-                    context.Writer.Write(publicRequest.ResourceName);
-                }
-
-                if(publicRequest.IsSetResourceType())
-                {
-                    context.Writer.WritePropertyName("resourceType");
-                    context.Writer.Write(publicRequest.ResourceType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

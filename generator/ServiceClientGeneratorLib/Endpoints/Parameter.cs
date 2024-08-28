@@ -1,4 +1,5 @@
 ﻿using Json.LitJson;
+using System.Linq;
 
 namespace ServiceClientGenerator.Endpoints
 {
@@ -42,6 +43,11 @@ namespace ServiceClientGenerator.Endpoints
                 if (@default == null) return null;
                 if (@default.IsBoolean) return ((bool)@default).ToString().ToLower(); // true | false
                 if (@default.IsString) return $@"""{@default}""";
+                if (@default.IsArray || (@default.PropertyNames.Count() == 0 && @default.IsObject)) //Empty arrays returns an object with no properties
+                {
+                    var jsonList = @default.ToJson();
+                    return $"new List<string> {jsonList.Replace("[", "{").Replace("]", "}")}";
+                }
                 return null;
             }
         }

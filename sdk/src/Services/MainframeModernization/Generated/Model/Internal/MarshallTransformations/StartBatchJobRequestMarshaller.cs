@@ -64,40 +64,43 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
                 throw new AmazonMainframeModernizationException("Request object does not have required field ApplicationId set");
             request.AddPathResource("{applicationId}", StringUtils.FromString(publicRequest.ApplicationId));
             request.ResourcePath = "/applications/{applicationId}/batch-job";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBatchJobIdentifier())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("batchJobIdentifier");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = BatchJobIdentifierMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.BatchJobIdentifier, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetJobParams())
-                {
-                    context.Writer.WritePropertyName("jobParams");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestJobParamsKvp in publicRequest.JobParams)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBatchJobIdentifier())
                     {
-                        context.Writer.WritePropertyName(publicRequestJobParamsKvp.Key);
-                        var publicRequestJobParamsValue = publicRequestJobParamsKvp.Value;
+                        context.Writer.WritePropertyName("batchJobIdentifier");
+                        context.Writer.WriteObjectStart();
 
-                            context.Writer.Write(publicRequestJobParamsValue);
+                        var marshaller = BatchJobIdentifierMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.BatchJobIdentifier, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetJobParams())
+                    {
+                        context.Writer.WritePropertyName("jobParams");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestJobParamsKvp in publicRequest.JobParams)
+                        {
+                            context.Writer.WritePropertyName(publicRequestJobParamsKvp.Key);
+                            var publicRequestJobParamsValue = publicRequestJobParamsKvp.Value;
+
+                                context.Writer.Write(publicRequestJobParamsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

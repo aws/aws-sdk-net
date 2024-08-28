@@ -63,76 +63,79 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDefaultAction())
-                {
-                    context.Writer.WritePropertyName("DefaultAction");
-                    context.Writer.Write(publicRequest.DefaultAction);
-                }
-
-                if(publicRequest.IsSetMaxMessageSizeBytes())
-                {
-                    context.Writer.WritePropertyName("MaxMessageSizeBytes");
-                    context.Writer.Write(publicRequest.MaxMessageSizeBytes.Value);
-                }
-
-                if(publicRequest.IsSetPolicyStatements())
-                {
-                    context.Writer.WritePropertyName("PolicyStatements");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPolicyStatementsListValue in publicRequest.PolicyStatements)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = PolicyStatementMarshaller.Instance;
-                        marshaller.Marshall(publicRequestPolicyStatementsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    else if(!(publicRequest.IsSetClientToken()))
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
                     }
-                    context.Writer.WriteArrayEnd();
+                    if(publicRequest.IsSetDefaultAction())
+                    {
+                        context.Writer.WritePropertyName("DefaultAction");
+                        context.Writer.Write(publicRequest.DefaultAction);
+                    }
+
+                    if(publicRequest.IsSetMaxMessageSizeBytes())
+                    {
+                        context.Writer.WritePropertyName("MaxMessageSizeBytes");
+                        context.Writer.Write(publicRequest.MaxMessageSizeBytes.Value);
+                    }
+
+                    if(publicRequest.IsSetPolicyStatements())
+                    {
+                        context.Writer.WritePropertyName("PolicyStatements");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPolicyStatementsListValue in publicRequest.PolicyStatements)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = PolicyStatementMarshaller.Instance;
+                            marshaller.Marshall(publicRequestPolicyStatementsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTrafficPolicyName())
+                    {
+                        context.Writer.WritePropertyName("TrafficPolicyName");
+                        context.Writer.Write(publicRequest.TrafficPolicyName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTrafficPolicyName())
-                {
-                    context.Writer.WritePropertyName("TrafficPolicyName");
-                    context.Writer.Write(publicRequest.TrafficPolicyName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

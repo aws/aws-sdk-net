@@ -63,56 +63,59 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDataSourceId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DataSourceId");
-                    context.Writer.Write(publicRequest.DataSourceId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDataSourceId())
+                    {
+                        context.Writer.WritePropertyName("DataSourceId");
+                        context.Writer.Write(publicRequest.DataSourceId);
+                    }
+
+                    if(publicRequest.IsSetGroupId())
+                    {
+                        context.Writer.WritePropertyName("GroupId");
+                        context.Writer.Write(publicRequest.GroupId);
+                    }
+
+                    if(publicRequest.IsSetGroupMembers())
+                    {
+                        context.Writer.WritePropertyName("GroupMembers");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = GroupMembersMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.GroupMembers, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetIndexId())
+                    {
+                        context.Writer.WritePropertyName("IndexId");
+                        context.Writer.Write(publicRequest.IndexId);
+                    }
+
+                    if(publicRequest.IsSetOrderingId())
+                    {
+                        context.Writer.WritePropertyName("OrderingId");
+                        context.Writer.Write(publicRequest.OrderingId.Value);
+                    }
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("RoleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetGroupId())
-                {
-                    context.Writer.WritePropertyName("GroupId");
-                    context.Writer.Write(publicRequest.GroupId);
-                }
-
-                if(publicRequest.IsSetGroupMembers())
-                {
-                    context.Writer.WritePropertyName("GroupMembers");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = GroupMembersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.GroupMembers, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetIndexId())
-                {
-                    context.Writer.WritePropertyName("IndexId");
-                    context.Writer.Write(publicRequest.IndexId);
-                }
-
-                if(publicRequest.IsSetOrderingId())
-                {
-                    context.Writer.WritePropertyName("OrderingId");
-                    context.Writer.Write(publicRequest.OrderingId.Value);
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("RoleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

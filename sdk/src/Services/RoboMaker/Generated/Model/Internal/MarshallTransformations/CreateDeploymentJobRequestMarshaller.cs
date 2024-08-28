@@ -61,73 +61,76 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/createDeploymentJob";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientRequestToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDeploymentApplicationConfigs())
-                {
-                    context.Writer.WritePropertyName("deploymentApplicationConfigs");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDeploymentApplicationConfigsListValue in publicRequest.DeploymentApplicationConfigs)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientRequestToken())
                     {
+                        context.Writer.WritePropertyName("clientRequestToken");
+                        context.Writer.Write(publicRequest.ClientRequestToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientRequestToken()))
+                    {
+                        context.Writer.WritePropertyName("clientRequestToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetDeploymentApplicationConfigs())
+                    {
+                        context.Writer.WritePropertyName("deploymentApplicationConfigs");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDeploymentApplicationConfigsListValue in publicRequest.DeploymentApplicationConfigs)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = DeploymentApplicationConfigMarshaller.Instance;
+                            marshaller.Marshall(publicRequestDeploymentApplicationConfigsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetDeploymentConfig())
+                    {
+                        context.Writer.WritePropertyName("deploymentConfig");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = DeploymentApplicationConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequestDeploymentApplicationConfigsListValue, context);
+                        var marshaller = DeploymentConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DeploymentConfig, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDeploymentConfig())
-                {
-                    context.Writer.WritePropertyName("deploymentConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DeploymentConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DeploymentConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetFleet())
-                {
-                    context.Writer.WritePropertyName("fleet");
-                    context.Writer.Write(publicRequest.Fleet);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetFleet())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("fleet");
+                        context.Writer.Write(publicRequest.Fleet);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

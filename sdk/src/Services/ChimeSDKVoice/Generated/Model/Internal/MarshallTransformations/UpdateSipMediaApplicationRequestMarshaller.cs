@@ -64,37 +64,40 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
                 throw new AmazonChimeSDKVoiceException("Request object does not have required field SipMediaApplicationId set");
             request.AddPathResource("{sipMediaApplicationId}", StringUtils.FromString(publicRequest.SipMediaApplicationId));
             request.ResourcePath = "/sip-media-applications/{sipMediaApplicationId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEndpoints())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Endpoints");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEndpointsListValue in publicRequest.Endpoints)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEndpoints())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("Endpoints");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestEndpointsListValue in publicRequest.Endpoints)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = SipMediaApplicationEndpointMarshaller.Instance;
-                        marshaller.Marshall(publicRequestEndpointsListValue, context);
+                            var marshaller = SipMediaApplicationEndpointMarshaller.Instance;
+                            marshaller.Marshall(publicRequestEndpointsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

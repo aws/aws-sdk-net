@@ -63,53 +63,56 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetNotebookInstanceLifecycleConfigName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("NotebookInstanceLifecycleConfigName");
-                    context.Writer.Write(publicRequest.NotebookInstanceLifecycleConfigName);
-                }
-
-                if(publicRequest.IsSetOnCreate())
-                {
-                    context.Writer.WritePropertyName("OnCreate");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestOnCreateListValue in publicRequest.OnCreate)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetNotebookInstanceLifecycleConfigName())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = NotebookInstanceLifecycleHookMarshaller.Instance;
-                        marshaller.Marshall(publicRequestOnCreateListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("NotebookInstanceLifecycleConfigName");
+                        context.Writer.Write(publicRequest.NotebookInstanceLifecycleConfigName);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetOnStart())
-                {
-                    context.Writer.WritePropertyName("OnStart");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestOnStartListValue in publicRequest.OnStart)
+                    if(publicRequest.IsSetOnCreate())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("OnCreate");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestOnCreateListValue in publicRequest.OnCreate)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = NotebookInstanceLifecycleHookMarshaller.Instance;
-                        marshaller.Marshall(publicRequestOnStartListValue, context);
+                            var marshaller = NotebookInstanceLifecycleHookMarshaller.Instance;
+                            marshaller.Marshall(publicRequestOnCreateListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetOnStart())
+                    {
+                        context.Writer.WritePropertyName("OnStart");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestOnStartListValue in publicRequest.OnStart)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = NotebookInstanceLifecycleHookMarshaller.Instance;
+                            marshaller.Marshall(publicRequestOnStartListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

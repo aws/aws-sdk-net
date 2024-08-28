@@ -61,27 +61,30 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/getpermission";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetPermissionArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("permissionArn");
-                    context.Writer.Write(publicRequest.PermissionArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetPermissionArn())
+                    {
+                        context.Writer.WritePropertyName("permissionArn");
+                        context.Writer.Write(publicRequest.PermissionArn);
+                    }
+
+                    if(publicRequest.IsSetPermissionVersion())
+                    {
+                        context.Writer.WritePropertyName("permissionVersion");
+                        context.Writer.Write(publicRequest.PermissionVersion.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPermissionVersion())
-                {
-                    context.Writer.WritePropertyName("permissionVersion");
-                    context.Writer.Write(publicRequest.PermissionVersion.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

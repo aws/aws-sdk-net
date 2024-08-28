@@ -64,27 +64,30 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 throw new AmazonCustomerProfilesException("Request object does not have required field DomainName set");
             request.AddPathResource("{DomainName}", StringUtils.FromString(publicRequest.DomainName));
             request.ResourcePath = "/domains/{DomainName}/profiles/objects";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetObject())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Object");
-                    context.Writer.Write(publicRequest.Object);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetObject())
+                    {
+                        context.Writer.WritePropertyName("Object");
+                        context.Writer.Write(publicRequest.Object);
+                    }
+
+                    if(publicRequest.IsSetObjectTypeName())
+                    {
+                        context.Writer.WritePropertyName("ObjectTypeName");
+                        context.Writer.Write(publicRequest.ObjectTypeName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetObjectTypeName())
-                {
-                    context.Writer.WritePropertyName("ObjectTypeName");
-                    context.Writer.Write(publicRequest.ObjectTypeName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,74 +63,77 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEndTime())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("EndTime");
-                    context.Writer.Write(publicRequest.EndTime.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEndTime())
+                    {
+                        context.Writer.WritePropertyName("EndTime");
+                        context.Writer.Write(publicRequest.EndTime.Value);
+                    }
+
+                    if(publicRequest.IsSetResourceId())
+                    {
+                        context.Writer.WritePropertyName("ResourceId");
+                        context.Writer.Write(publicRequest.ResourceId);
+                    }
+
+                    if(publicRequest.IsSetScalableDimension())
+                    {
+                        context.Writer.WritePropertyName("ScalableDimension");
+                        context.Writer.Write(publicRequest.ScalableDimension);
+                    }
+
+                    if(publicRequest.IsSetScalableTargetAction())
+                    {
+                        context.Writer.WritePropertyName("ScalableTargetAction");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ScalableTargetActionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ScalableTargetAction, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSchedule())
+                    {
+                        context.Writer.WritePropertyName("Schedule");
+                        context.Writer.Write(publicRequest.Schedule);
+                    }
+
+                    if(publicRequest.IsSetScheduledActionName())
+                    {
+                        context.Writer.WritePropertyName("ScheduledActionName");
+                        context.Writer.Write(publicRequest.ScheduledActionName);
+                    }
+
+                    if(publicRequest.IsSetServiceNamespace())
+                    {
+                        context.Writer.WritePropertyName("ServiceNamespace");
+                        context.Writer.Write(publicRequest.ServiceNamespace);
+                    }
+
+                    if(publicRequest.IsSetStartTime())
+                    {
+                        context.Writer.WritePropertyName("StartTime");
+                        context.Writer.Write(publicRequest.StartTime.Value);
+                    }
+
+                    if(publicRequest.IsSetTimezone())
+                    {
+                        context.Writer.WritePropertyName("Timezone");
+                        context.Writer.Write(publicRequest.Timezone);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetResourceId())
-                {
-                    context.Writer.WritePropertyName("ResourceId");
-                    context.Writer.Write(publicRequest.ResourceId);
-                }
-
-                if(publicRequest.IsSetScalableDimension())
-                {
-                    context.Writer.WritePropertyName("ScalableDimension");
-                    context.Writer.Write(publicRequest.ScalableDimension);
-                }
-
-                if(publicRequest.IsSetScalableTargetAction())
-                {
-                    context.Writer.WritePropertyName("ScalableTargetAction");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ScalableTargetActionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ScalableTargetAction, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSchedule())
-                {
-                    context.Writer.WritePropertyName("Schedule");
-                    context.Writer.Write(publicRequest.Schedule);
-                }
-
-                if(publicRequest.IsSetScheduledActionName())
-                {
-                    context.Writer.WritePropertyName("ScheduledActionName");
-                    context.Writer.Write(publicRequest.ScheduledActionName);
-                }
-
-                if(publicRequest.IsSetServiceNamespace())
-                {
-                    context.Writer.WritePropertyName("ServiceNamespace");
-                    context.Writer.Write(publicRequest.ServiceNamespace);
-                }
-
-                if(publicRequest.IsSetStartTime())
-                {
-                    context.Writer.WritePropertyName("StartTime");
-                    context.Writer.Write(publicRequest.StartTime.Value);
-                }
-
-                if(publicRequest.IsSetTimezone())
-                {
-                    context.Writer.WritePropertyName("Timezone");
-                    context.Writer.Write(publicRequest.Timezone);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

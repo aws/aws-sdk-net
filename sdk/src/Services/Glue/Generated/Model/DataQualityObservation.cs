@@ -43,7 +43,7 @@ namespace Amazon.Glue.Model
         /// A description of the data quality observation.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=0, Max=2048)]
         public string Description
         {
             get { return this._description; }

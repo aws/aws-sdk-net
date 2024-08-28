@@ -51,11 +51,6 @@ namespace Amazon.CodeBuild.Model
         /// Information about the authorization settings for CodeBuild to access the source code
         /// to be built.
         /// </para>
-        ///  
-        /// <para>
-        /// This information is for the CodeBuild console's use only. Your code should not get
-        /// or set this information directly.
-        /// </para>
         /// </summary>
         public SourceAuth Auth
         {

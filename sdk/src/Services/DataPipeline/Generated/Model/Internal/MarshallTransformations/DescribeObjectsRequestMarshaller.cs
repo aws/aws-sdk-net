@@ -63,44 +63,47 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEvaluateExpressions())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("evaluateExpressions");
-                    context.Writer.Write(publicRequest.EvaluateExpressions.Value);
-                }
-
-                if(publicRequest.IsSetMarker())
-                {
-                    context.Writer.WritePropertyName("marker");
-                    context.Writer.Write(publicRequest.Marker);
-                }
-
-                if(publicRequest.IsSetObjectIds())
-                {
-                    context.Writer.WritePropertyName("objectIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestObjectIdsListValue in publicRequest.ObjectIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEvaluateExpressions())
                     {
-                            context.Writer.Write(publicRequestObjectIdsListValue);
+                        context.Writer.WritePropertyName("evaluateExpressions");
+                        context.Writer.Write(publicRequest.EvaluateExpressions.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetMarker())
+                    {
+                        context.Writer.WritePropertyName("marker");
+                        context.Writer.Write(publicRequest.Marker);
+                    }
+
+                    if(publicRequest.IsSetObjectIds())
+                    {
+                        context.Writer.WritePropertyName("objectIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestObjectIdsListValue in publicRequest.ObjectIds)
+                        {
+                                context.Writer.Write(publicRequestObjectIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetPipelineId())
+                    {
+                        context.Writer.WritePropertyName("pipelineId");
+                        context.Writer.Write(publicRequest.PipelineId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPipelineId())
-                {
-                    context.Writer.WritePropertyName("pipelineId");
-                    context.Writer.Write(publicRequest.PipelineId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

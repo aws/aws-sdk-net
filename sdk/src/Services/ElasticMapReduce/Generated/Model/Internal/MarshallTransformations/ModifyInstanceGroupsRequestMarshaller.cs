@@ -63,37 +63,40 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClusterId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClusterId");
-                    context.Writer.Write(publicRequest.ClusterId);
-                }
-
-                if(publicRequest.IsSetInstanceGroups())
-                {
-                    context.Writer.WritePropertyName("InstanceGroups");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestInstanceGroupsListValue in publicRequest.InstanceGroups)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClusterId())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = InstanceGroupModifyConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequestInstanceGroupsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("ClusterId");
+                        context.Writer.Write(publicRequest.ClusterId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetInstanceGroups())
+                    {
+                        context.Writer.WritePropertyName("InstanceGroups");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestInstanceGroupsListValue in publicRequest.InstanceGroups)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = InstanceGroupModifyConfigMarshaller.Instance;
+                            marshaller.Marshall(publicRequestInstanceGroupsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

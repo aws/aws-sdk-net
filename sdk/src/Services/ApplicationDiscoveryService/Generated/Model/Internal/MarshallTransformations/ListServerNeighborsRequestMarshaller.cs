@@ -63,50 +63,53 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConfigurationId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("configurationId");
-                    context.Writer.Write(publicRequest.ConfigurationId);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNeighborConfigurationIds())
-                {
-                    context.Writer.WritePropertyName("neighborConfigurationIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestNeighborConfigurationIdsListValue in publicRequest.NeighborConfigurationIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConfigurationId())
                     {
-                            context.Writer.Write(publicRequestNeighborConfigurationIdsListValue);
+                        context.Writer.WritePropertyName("configurationId");
+                        context.Writer.Write(publicRequest.ConfigurationId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNeighborConfigurationIds())
+                    {
+                        context.Writer.WritePropertyName("neighborConfigurationIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestNeighborConfigurationIdsListValue in publicRequest.NeighborConfigurationIds)
+                        {
+                                context.Writer.Write(publicRequestNeighborConfigurationIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetPortInformationNeeded())
+                    {
+                        context.Writer.WritePropertyName("portInformationNeeded");
+                        context.Writer.Write(publicRequest.PortInformationNeeded.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetPortInformationNeeded())
-                {
-                    context.Writer.WritePropertyName("portInformationNeeded");
-                    context.Writer.Write(publicRequest.PortInformationNeeded.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

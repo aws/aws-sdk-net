@@ -63,37 +63,40 @@ namespace Amazon.MediaStore.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetContainerName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ContainerName");
-                    context.Writer.Write(publicRequest.ContainerName);
-                }
-
-                if(publicRequest.IsSetCorsPolicy())
-                {
-                    context.Writer.WritePropertyName("CorsPolicy");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCorsPolicyListValue in publicRequest.CorsPolicy)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetContainerName())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = CorsRuleMarshaller.Instance;
-                        marshaller.Marshall(publicRequestCorsPolicyListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("ContainerName");
+                        context.Writer.Write(publicRequest.ContainerName);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetCorsPolicy())
+                    {
+                        context.Writer.WritePropertyName("CorsPolicy");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCorsPolicyListValue in publicRequest.CorsPolicy)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = CorsRuleMarshaller.Instance;
+                            marshaller.Marshall(publicRequestCorsPolicyListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

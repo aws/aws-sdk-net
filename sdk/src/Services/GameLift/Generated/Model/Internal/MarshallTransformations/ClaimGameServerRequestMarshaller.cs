@@ -63,44 +63,47 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFilterOption())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("FilterOption");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFilterOption())
+                    {
+                        context.Writer.WritePropertyName("FilterOption");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = ClaimFilterOptionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.FilterOption, context);
+                        var marshaller = ClaimFilterOptionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.FilterOption, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetGameServerData())
+                    {
+                        context.Writer.WritePropertyName("GameServerData");
+                        context.Writer.Write(publicRequest.GameServerData);
+                    }
+
+                    if(publicRequest.IsSetGameServerGroupName())
+                    {
+                        context.Writer.WritePropertyName("GameServerGroupName");
+                        context.Writer.Write(publicRequest.GameServerGroupName);
+                    }
+
+                    if(publicRequest.IsSetGameServerId())
+                    {
+                        context.Writer.WritePropertyName("GameServerId");
+                        context.Writer.Write(publicRequest.GameServerId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetGameServerData())
-                {
-                    context.Writer.WritePropertyName("GameServerData");
-                    context.Writer.Write(publicRequest.GameServerData);
-                }
-
-                if(publicRequest.IsSetGameServerGroupName())
-                {
-                    context.Writer.WritePropertyName("GameServerGroupName");
-                    context.Writer.Write(publicRequest.GameServerGroupName);
-                }
-
-                if(publicRequest.IsSetGameServerId())
-                {
-                    context.Writer.WritePropertyName("GameServerId");
-                    context.Writer.Write(publicRequest.GameServerId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

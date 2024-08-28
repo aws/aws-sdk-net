@@ -61,58 +61,61 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/CreateParticipantToken";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAttributes())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("attributes");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestAttributesKvp in publicRequest.Attributes)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAttributes())
                     {
-                        context.Writer.WritePropertyName(publicRequestAttributesKvp.Key);
-                        var publicRequestAttributesValue = publicRequestAttributesKvp.Value;
+                        context.Writer.WritePropertyName("attributes");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestAttributesKvp in publicRequest.Attributes)
+                        {
+                            context.Writer.WritePropertyName(publicRequestAttributesKvp.Key);
+                            var publicRequestAttributesValue = publicRequestAttributesKvp.Value;
 
-                            context.Writer.Write(publicRequestAttributesValue);
+                                context.Writer.Write(publicRequestAttributesValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetCapabilities())
-                {
-                    context.Writer.WritePropertyName("capabilities");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCapabilitiesListValue in publicRequest.Capabilities)
+                    if(publicRequest.IsSetCapabilities())
                     {
-                            context.Writer.Write(publicRequestCapabilitiesListValue);
+                        context.Writer.WritePropertyName("capabilities");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCapabilitiesListValue in publicRequest.Capabilities)
+                        {
+                                context.Writer.Write(publicRequestCapabilitiesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDuration())
+                    {
+                        context.Writer.WritePropertyName("duration");
+                        context.Writer.Write(publicRequest.Duration.Value);
+                    }
+
+                    if(publicRequest.IsSetStageArn())
+                    {
+                        context.Writer.WritePropertyName("stageArn");
+                        context.Writer.Write(publicRequest.StageArn);
+                    }
+
+                    if(publicRequest.IsSetUserId())
+                    {
+                        context.Writer.WritePropertyName("userId");
+                        context.Writer.Write(publicRequest.UserId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDuration())
-                {
-                    context.Writer.WritePropertyName("duration");
-                    context.Writer.Write(publicRequest.Duration.Value);
-                }
-
-                if(publicRequest.IsSetStageArn())
-                {
-                    context.Writer.WritePropertyName("stageArn");
-                    context.Writer.Write(publicRequest.StageArn);
-                }
-
-                if(publicRequest.IsSetUserId())
-                {
-                    context.Writer.WritePropertyName("userId");
-                    context.Writer.Write(publicRequest.UserId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

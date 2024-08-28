@@ -63,85 +63,88 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBranchName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("branchName");
-                    context.Writer.Write(publicRequest.BranchName);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetRepositoryConnectionArn())
-                {
-                    context.Writer.WritePropertyName("repositoryConnectionArn");
-                    context.Writer.Write(publicRequest.RepositoryConnectionArn);
-                }
-
-                if(publicRequest.IsSetRepositoryId())
-                {
-                    context.Writer.WritePropertyName("repositoryId");
-                    context.Writer.Write(publicRequest.RepositoryId);
-                }
-
-                if(publicRequest.IsSetSpec())
-                {
-                    context.Writer.WritePropertyName("spec");
-                    context.Writer.Write(publicRequest.Spec);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBranchName())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("branchName");
+                        context.Writer.Write(publicRequest.BranchName);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetRepositoryConnectionArn())
+                    {
+                        context.Writer.WritePropertyName("repositoryConnectionArn");
+                        context.Writer.Write(publicRequest.RepositoryConnectionArn);
+                    }
+
+                    if(publicRequest.IsSetRepositoryId())
+                    {
+                        context.Writer.WritePropertyName("repositoryId");
+                        context.Writer.Write(publicRequest.RepositoryId);
+                    }
+
+                    if(publicRequest.IsSetSpec())
+                    {
+                        context.Writer.WritePropertyName("spec");
+                        context.Writer.Write(publicRequest.Spec);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTemplateMajorVersion())
+                    {
+                        context.Writer.WritePropertyName("templateMajorVersion");
+                        context.Writer.Write(publicRequest.TemplateMajorVersion);
+                    }
+
+                    if(publicRequest.IsSetTemplateMinorVersion())
+                    {
+                        context.Writer.WritePropertyName("templateMinorVersion");
+                        context.Writer.Write(publicRequest.TemplateMinorVersion);
+                    }
+
+                    if(publicRequest.IsSetTemplateName())
+                    {
+                        context.Writer.WritePropertyName("templateName");
+                        context.Writer.Write(publicRequest.TemplateName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTemplateMajorVersion())
-                {
-                    context.Writer.WritePropertyName("templateMajorVersion");
-                    context.Writer.Write(publicRequest.TemplateMajorVersion);
-                }
-
-                if(publicRequest.IsSetTemplateMinorVersion())
-                {
-                    context.Writer.WritePropertyName("templateMinorVersion");
-                    context.Writer.Write(publicRequest.TemplateMinorVersion);
-                }
-
-                if(publicRequest.IsSetTemplateName())
-                {
-                    context.Writer.WritePropertyName("templateName");
-                    context.Writer.Write(publicRequest.TemplateName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

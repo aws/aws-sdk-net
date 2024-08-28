@@ -63,27 +63,30 @@ namespace Amazon.ServiceQuotas.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetQuotaCode())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("QuotaCode");
-                    context.Writer.Write(publicRequest.QuotaCode);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetQuotaCode())
+                    {
+                        context.Writer.WritePropertyName("QuotaCode");
+                        context.Writer.Write(publicRequest.QuotaCode);
+                    }
+
+                    if(publicRequest.IsSetServiceCode())
+                    {
+                        context.Writer.WritePropertyName("ServiceCode");
+                        context.Writer.Write(publicRequest.ServiceCode);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetServiceCode())
-                {
-                    context.Writer.WritePropertyName("ServiceCode");
-                    context.Writer.Write(publicRequest.ServiceCode);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

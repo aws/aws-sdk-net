@@ -64,27 +64,30 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
                 throw new AmazonIAMRolesAnywhereException("Request object does not have required field CrlId set");
             request.AddPathResource("{crlId}", StringUtils.FromString(publicRequest.CrlId));
             request.ResourcePath = "/crl/{crlId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCrlData())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("crlData");
-                    context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.CrlData));
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCrlData())
+                    {
+                        context.Writer.WritePropertyName("crlData");
+                        context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.CrlData));
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

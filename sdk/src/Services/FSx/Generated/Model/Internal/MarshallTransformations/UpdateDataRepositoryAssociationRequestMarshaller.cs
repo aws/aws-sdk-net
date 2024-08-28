@@ -63,49 +63,52 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAssociationId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AssociationId");
-                    context.Writer.Write(publicRequest.AssociationId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAssociationId())
+                    {
+                        context.Writer.WritePropertyName("AssociationId");
+                        context.Writer.Write(publicRequest.AssociationId);
+                    }
+
+                    if(publicRequest.IsSetClientRequestToken())
+                    {
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(publicRequest.ClientRequestToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientRequestToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetImportedFileChunkSize())
+                    {
+                        context.Writer.WritePropertyName("ImportedFileChunkSize");
+                        context.Writer.Write(publicRequest.ImportedFileChunkSize.Value);
+                    }
+
+                    if(publicRequest.IsSetS3())
+                    {
+                        context.Writer.WritePropertyName("S3");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = S3DataRepositoryConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.S3, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetClientRequestToken())
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetImportedFileChunkSize())
-                {
-                    context.Writer.WritePropertyName("ImportedFileChunkSize");
-                    context.Writer.Write(publicRequest.ImportedFileChunkSize.Value);
-                }
-
-                if(publicRequest.IsSetS3())
-                {
-                    context.Writer.WritePropertyName("S3");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = S3DataRepositoryConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.S3, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

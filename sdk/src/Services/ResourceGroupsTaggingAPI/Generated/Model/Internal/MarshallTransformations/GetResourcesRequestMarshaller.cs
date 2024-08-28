@@ -63,83 +63,86 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetExcludeCompliantResources())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ExcludeCompliantResources");
-                    context.Writer.Write(publicRequest.ExcludeCompliantResources.Value);
-                }
-
-                if(publicRequest.IsSetIncludeComplianceDetails())
-                {
-                    context.Writer.WritePropertyName("IncludeComplianceDetails");
-                    context.Writer.Write(publicRequest.IncludeComplianceDetails.Value);
-                }
-
-                if(publicRequest.IsSetPaginationToken())
-                {
-                    context.Writer.WritePropertyName("PaginationToken");
-                    context.Writer.Write(publicRequest.PaginationToken);
-                }
-
-                if(publicRequest.IsSetResourceARNList())
-                {
-                    context.Writer.WritePropertyName("ResourceARNList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestResourceARNListListValue in publicRequest.ResourceARNList)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetExcludeCompliantResources())
                     {
-                            context.Writer.Write(publicRequestResourceARNListListValue);
+                        context.Writer.WritePropertyName("ExcludeCompliantResources");
+                        context.Writer.Write(publicRequest.ExcludeCompliantResources.Value);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetResourcesPerPage())
-                {
-                    context.Writer.WritePropertyName("ResourcesPerPage");
-                    context.Writer.Write(publicRequest.ResourcesPerPage.Value);
-                }
-
-                if(publicRequest.IsSetResourceTypeFilters())
-                {
-                    context.Writer.WritePropertyName("ResourceTypeFilters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestResourceTypeFiltersListValue in publicRequest.ResourceTypeFilters)
+                    if(publicRequest.IsSetIncludeComplianceDetails())
                     {
-                            context.Writer.Write(publicRequestResourceTypeFiltersListValue);
+                        context.Writer.WritePropertyName("IncludeComplianceDetails");
+                        context.Writer.Write(publicRequest.IncludeComplianceDetails.Value);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTagFilters())
-                {
-                    context.Writer.WritePropertyName("TagFilters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagFiltersListValue in publicRequest.TagFilters)
+                    if(publicRequest.IsSetPaginationToken())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagFilterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagFiltersListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("PaginationToken");
+                        context.Writer.Write(publicRequest.PaginationToken);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetResourceARNList())
+                    {
+                        context.Writer.WritePropertyName("ResourceARNList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestResourceARNListListValue in publicRequest.ResourceARNList)
+                        {
+                                context.Writer.Write(publicRequestResourceARNListListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetResourcesPerPage())
+                    {
+                        context.Writer.WritePropertyName("ResourcesPerPage");
+                        context.Writer.Write(publicRequest.ResourcesPerPage.Value);
+                    }
+
+                    if(publicRequest.IsSetResourceTypeFilters())
+                    {
+                        context.Writer.WritePropertyName("ResourceTypeFilters");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestResourceTypeFiltersListValue in publicRequest.ResourceTypeFilters)
+                        {
+                                context.Writer.Write(publicRequestResourceTypeFiltersListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTagFilters())
+                    {
+                        context.Writer.WritePropertyName("TagFilters");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagFiltersListValue in publicRequest.TagFilters)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagFilterMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagFiltersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTagsPerPage())
+                    {
+                        context.Writer.WritePropertyName("TagsPerPage");
+                        context.Writer.Write(publicRequest.TagsPerPage.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTagsPerPage())
-                {
-                    context.Writer.WritePropertyName("TagsPerPage");
-                    context.Writer.Write(publicRequest.TagsPerPage.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

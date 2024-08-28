@@ -64,60 +64,63 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
                 throw new AmazonDataExchangeException("Request object does not have required field DataSetId set");
             request.AddPathResource("{DataSetId}", StringUtils.FromString(publicRequest.DataSetId));
             request.ResourcePath = "/v1/data-sets/{DataSetId}/notification";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetComment())
+                    {
+                        context.Writer.WritePropertyName("Comment");
+                        context.Writer.Write(publicRequest.Comment);
+                    }
+
+                    if(publicRequest.IsSetDetails())
+                    {
+                        context.Writer.WritePropertyName("Details");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = NotificationDetailsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Details, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetScope())
+                    {
+                        context.Writer.WritePropertyName("Scope");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ScopeDetailsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Scope, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetType())
+                    {
+                        context.Writer.WritePropertyName("Type");
+                        context.Writer.Write(publicRequest.Type);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetComment())
-                {
-                    context.Writer.WritePropertyName("Comment");
-                    context.Writer.Write(publicRequest.Comment);
-                }
-
-                if(publicRequest.IsSetDetails())
-                {
-                    context.Writer.WritePropertyName("Details");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = NotificationDetailsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Details, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetScope())
-                {
-                    context.Writer.WritePropertyName("Scope");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ScopeDetailsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Scope, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetType())
-                {
-                    context.Writer.WritePropertyName("Type");
-                    context.Writer.Write(publicRequest.Type);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

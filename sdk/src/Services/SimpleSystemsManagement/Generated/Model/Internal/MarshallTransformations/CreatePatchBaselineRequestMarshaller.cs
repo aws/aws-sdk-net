@@ -63,138 +63,141 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApprovalRules())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ApprovalRules");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PatchRuleGroupMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ApprovalRules, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetApprovedPatches())
-                {
-                    context.Writer.WritePropertyName("ApprovedPatches");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestApprovedPatchesListValue in publicRequest.ApprovedPatches)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApprovalRules())
                     {
-                            context.Writer.Write(publicRequestApprovedPatchesListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetApprovedPatchesComplianceLevel())
-                {
-                    context.Writer.WritePropertyName("ApprovedPatchesComplianceLevel");
-                    context.Writer.Write(publicRequest.ApprovedPatchesComplianceLevel);
-                }
-
-                if(publicRequest.IsSetApprovedPatchesEnableNonSecurity())
-                {
-                    context.Writer.WritePropertyName("ApprovedPatchesEnableNonSecurity");
-                    context.Writer.Write(publicRequest.ApprovedPatchesEnableNonSecurity.Value);
-                }
-
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetGlobalFilters())
-                {
-                    context.Writer.WritePropertyName("GlobalFilters");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PatchFilterGroupMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.GlobalFilters, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetOperatingSystem())
-                {
-                    context.Writer.WritePropertyName("OperatingSystem");
-                    context.Writer.Write(publicRequest.OperatingSystem);
-                }
-
-                if(publicRequest.IsSetRejectedPatches())
-                {
-                    context.Writer.WritePropertyName("RejectedPatches");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRejectedPatchesListValue in publicRequest.RejectedPatches)
-                    {
-                            context.Writer.Write(publicRequestRejectedPatchesListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetRejectedPatchesAction())
-                {
-                    context.Writer.WritePropertyName("RejectedPatchesAction");
-                    context.Writer.Write(publicRequest.RejectedPatchesAction);
-                }
-
-                if(publicRequest.IsSetSources())
-                {
-                    context.Writer.WritePropertyName("Sources");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSourcesListValue in publicRequest.Sources)
-                    {
+                        context.Writer.WritePropertyName("ApprovalRules");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = PatchSourceMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSourcesListValue, context);
+                        var marshaller = PatchRuleGroupMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ApprovalRules, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetApprovedPatches())
                     {
+                        context.Writer.WritePropertyName("ApprovedPatches");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestApprovedPatchesListValue in publicRequest.ApprovedPatches)
+                        {
+                                context.Writer.Write(publicRequestApprovedPatchesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetApprovedPatchesComplianceLevel())
+                    {
+                        context.Writer.WritePropertyName("ApprovedPatchesComplianceLevel");
+                        context.Writer.Write(publicRequest.ApprovedPatchesComplianceLevel);
+                    }
+
+                    if(publicRequest.IsSetApprovedPatchesEnableNonSecurity())
+                    {
+                        context.Writer.WritePropertyName("ApprovedPatchesEnableNonSecurity");
+                        context.Writer.Write(publicRequest.ApprovedPatchesEnableNonSecurity.Value);
+                    }
+
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetGlobalFilters())
+                    {
+                        context.Writer.WritePropertyName("GlobalFilters");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = PatchFilterGroupMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.GlobalFilters, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetOperatingSystem())
+                    {
+                        context.Writer.WritePropertyName("OperatingSystem");
+                        context.Writer.Write(publicRequest.OperatingSystem);
+                    }
+
+                    if(publicRequest.IsSetRejectedPatches())
+                    {
+                        context.Writer.WritePropertyName("RejectedPatches");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRejectedPatchesListValue in publicRequest.RejectedPatches)
+                        {
+                                context.Writer.Write(publicRequestRejectedPatchesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetRejectedPatchesAction())
+                    {
+                        context.Writer.WritePropertyName("RejectedPatchesAction");
+                        context.Writer.Write(publicRequest.RejectedPatchesAction);
+                    }
+
+                    if(publicRequest.IsSetSources())
+                    {
+                        context.Writer.WritePropertyName("Sources");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSourcesListValue in publicRequest.Sources)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = PatchSourceMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSourcesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

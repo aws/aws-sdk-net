@@ -67,53 +67,56 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field InstanceId set");
             request.AddPathResource("{InstanceId}", StringUtils.FromString(publicRequest.InstanceId));
             request.ResourcePath = "/contact-evaluations/{InstanceId}/{EvaluationId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAnswers())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Answers");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestAnswersKvp in publicRequest.Answers)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAnswers())
                     {
-                        context.Writer.WritePropertyName(publicRequestAnswersKvp.Key);
-                        var publicRequestAnswersValue = publicRequestAnswersKvp.Value;
-
+                        context.Writer.WritePropertyName("Answers");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestAnswersKvp in publicRequest.Answers)
+                        {
+                            context.Writer.WritePropertyName(publicRequestAnswersKvp.Key);
+                            var publicRequestAnswersValue = publicRequestAnswersKvp.Value;
 
-                        var marshaller = EvaluationAnswerInputMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAnswersValue, context);
+                            context.Writer.WriteObjectStart();
 
+                            var marshaller = EvaluationAnswerInputMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAnswersValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetNotes())
-                {
-                    context.Writer.WritePropertyName("Notes");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestNotesKvp in publicRequest.Notes)
+                    if(publicRequest.IsSetNotes())
                     {
-                        context.Writer.WritePropertyName(publicRequestNotesKvp.Key);
-                        var publicRequestNotesValue = publicRequestNotesKvp.Value;
-
+                        context.Writer.WritePropertyName("Notes");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestNotesKvp in publicRequest.Notes)
+                        {
+                            context.Writer.WritePropertyName(publicRequestNotesKvp.Key);
+                            var publicRequestNotesValue = publicRequestNotesKvp.Value;
 
-                        var marshaller = EvaluationNoteMarshaller.Instance;
-                        marshaller.Marshall(publicRequestNotesValue, context);
+                            context.Writer.WriteObjectStart();
 
+                            var marshaller = EvaluationNoteMarshaller.Instance;
+                            marshaller.Marshall(publicRequestNotesValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,62 +63,65 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBundleId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("BundleId");
-                    context.Writer.Write(publicRequest.BundleId);
-                }
-
-                if(publicRequest.IsSetDirectoryId())
-                {
-                    context.Writer.WritePropertyName("DirectoryId");
-                    context.Writer.Write(publicRequest.DirectoryId);
-                }
-
-                if(publicRequest.IsSetLimit())
-                {
-                    context.Writer.WritePropertyName("Limit");
-                    context.Writer.Write(publicRequest.Limit.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetUserName())
-                {
-                    context.Writer.WritePropertyName("UserName");
-                    context.Writer.Write(publicRequest.UserName);
-                }
-
-                if(publicRequest.IsSetWorkspaceIds())
-                {
-                    context.Writer.WritePropertyName("WorkspaceIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestWorkspaceIdsListValue in publicRequest.WorkspaceIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBundleId())
                     {
-                            context.Writer.Write(publicRequestWorkspaceIdsListValue);
+                        context.Writer.WritePropertyName("BundleId");
+                        context.Writer.Write(publicRequest.BundleId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDirectoryId())
+                    {
+                        context.Writer.WritePropertyName("DirectoryId");
+                        context.Writer.Write(publicRequest.DirectoryId);
+                    }
+
+                    if(publicRequest.IsSetLimit())
+                    {
+                        context.Writer.WritePropertyName("Limit");
+                        context.Writer.Write(publicRequest.Limit.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetUserName())
+                    {
+                        context.Writer.WritePropertyName("UserName");
+                        context.Writer.Write(publicRequest.UserName);
+                    }
+
+                    if(publicRequest.IsSetWorkspaceIds())
+                    {
+                        context.Writer.WritePropertyName("WorkspaceIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestWorkspaceIdsListValue in publicRequest.WorkspaceIds)
+                        {
+                                context.Writer.Write(publicRequestWorkspaceIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetWorkspaceName())
+                    {
+                        context.Writer.WritePropertyName("WorkspaceName");
+                        context.Writer.Write(publicRequest.WorkspaceName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetWorkspaceName())
-                {
-                    context.Writer.WritePropertyName("WorkspaceName");
-                    context.Writer.Write(publicRequest.WorkspaceName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

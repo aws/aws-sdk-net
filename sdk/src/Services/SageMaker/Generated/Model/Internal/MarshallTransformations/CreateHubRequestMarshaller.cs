@@ -63,71 +63,74 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetHubDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("HubDescription");
-                    context.Writer.Write(publicRequest.HubDescription);
-                }
-
-                if(publicRequest.IsSetHubDisplayName())
-                {
-                    context.Writer.WritePropertyName("HubDisplayName");
-                    context.Writer.Write(publicRequest.HubDisplayName);
-                }
-
-                if(publicRequest.IsSetHubName())
-                {
-                    context.Writer.WritePropertyName("HubName");
-                    context.Writer.Write(publicRequest.HubName);
-                }
-
-                if(publicRequest.IsSetHubSearchKeywords())
-                {
-                    context.Writer.WritePropertyName("HubSearchKeywords");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestHubSearchKeywordsListValue in publicRequest.HubSearchKeywords)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetHubDescription())
                     {
-                            context.Writer.Write(publicRequestHubSearchKeywordsListValue);
+                        context.Writer.WritePropertyName("HubDescription");
+                        context.Writer.Write(publicRequest.HubDescription);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetS3StorageConfig())
-                {
-                    context.Writer.WritePropertyName("S3StorageConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = HubS3StorageConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.S3StorageConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetHubDisplayName())
                     {
+                        context.Writer.WritePropertyName("HubDisplayName");
+                        context.Writer.Write(publicRequest.HubDisplayName);
+                    }
+
+                    if(publicRequest.IsSetHubName())
+                    {
+                        context.Writer.WritePropertyName("HubName");
+                        context.Writer.Write(publicRequest.HubName);
+                    }
+
+                    if(publicRequest.IsSetHubSearchKeywords())
+                    {
+                        context.Writer.WritePropertyName("HubSearchKeywords");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestHubSearchKeywordsListValue in publicRequest.HubSearchKeywords)
+                        {
+                                context.Writer.Write(publicRequestHubSearchKeywordsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetS3StorageConfig())
+                    {
+                        context.Writer.WritePropertyName("S3StorageConfig");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = HubS3StorageConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.S3StorageConfig, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

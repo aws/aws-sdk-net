@@ -67,27 +67,30 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetQualifier())
                 request.Parameters.Add("Qualifier", StringUtils.FromString(publicRequest.Qualifier));
             request.ResourcePath = "/2021-07-20/functions/{FunctionName}/runtime-management-config";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetRuntimeVersionArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("RuntimeVersionArn");
-                    context.Writer.Write(publicRequest.RuntimeVersionArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetRuntimeVersionArn())
+                    {
+                        context.Writer.WritePropertyName("RuntimeVersionArn");
+                        context.Writer.Write(publicRequest.RuntimeVersionArn);
+                    }
+
+                    if(publicRequest.IsSetUpdateRuntimeOn())
+                    {
+                        context.Writer.WritePropertyName("UpdateRuntimeOn");
+                        context.Writer.Write(publicRequest.UpdateRuntimeOn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetUpdateRuntimeOn())
-                {
-                    context.Writer.WritePropertyName("UpdateRuntimeOn");
-                    context.Writer.Write(publicRequest.UpdateRuntimeOn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             request.UseQueryString = true;

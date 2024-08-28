@@ -61,86 +61,89 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/annotationStore";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetReference())
-                {
-                    context.Writer.WritePropertyName("reference");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ReferenceItemMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Reference, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSseConfig())
-                {
-                    context.Writer.WritePropertyName("sseConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SseConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SseConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetStoreFormat())
-                {
-                    context.Writer.WritePropertyName("storeFormat");
-                    context.Writer.Write(publicRequest.StoreFormat);
-                }
-
-                if(publicRequest.IsSetStoreOptions())
-                {
-                    context.Writer.WritePropertyName("storeOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = StoreOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.StoreOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetReference())
+                    {
+                        context.Writer.WritePropertyName("reference");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ReferenceItemMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Reference, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSseConfig())
+                    {
+                        context.Writer.WritePropertyName("sseConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SseConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SseConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetStoreFormat())
+                    {
+                        context.Writer.WritePropertyName("storeFormat");
+                        context.Writer.Write(publicRequest.StoreFormat);
+                    }
+
+                    if(publicRequest.IsSetStoreOptions())
+                    {
+                        context.Writer.WritePropertyName("storeOptions");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = StoreOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.StoreOptions, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetVersionName())
+                    {
+                        context.Writer.WritePropertyName("versionName");
+                        context.Writer.Write(publicRequest.VersionName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetVersionName())
-                {
-                    context.Writer.WritePropertyName("versionName");
-                    context.Writer.Write(publicRequest.VersionName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

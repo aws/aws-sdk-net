@@ -63,50 +63,53 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMaxItems())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("MaxItems");
-                    context.Writer.Write(publicRequest.MaxItems.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMaxItems())
+                    {
+                        context.Writer.WritePropertyName("MaxItems");
+                        context.Writer.Write(publicRequest.MaxItems.Value);
+                    }
+
+                    if(publicRequest.IsSetRuleMetricName())
+                    {
+                        context.Writer.WritePropertyName("RuleMetricName");
+                        context.Writer.Write(publicRequest.RuleMetricName);
+                    }
+
+                    if(publicRequest.IsSetScope())
+                    {
+                        context.Writer.WritePropertyName("Scope");
+                        context.Writer.Write(publicRequest.Scope);
+                    }
+
+                    if(publicRequest.IsSetTimeWindow())
+                    {
+                        context.Writer.WritePropertyName("TimeWindow");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TimeWindowMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TimeWindow, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetWebAclArn())
+                    {
+                        context.Writer.WritePropertyName("WebAclArn");
+                        context.Writer.Write(publicRequest.WebAclArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRuleMetricName())
-                {
-                    context.Writer.WritePropertyName("RuleMetricName");
-                    context.Writer.Write(publicRequest.RuleMetricName);
-                }
-
-                if(publicRequest.IsSetScope())
-                {
-                    context.Writer.WritePropertyName("Scope");
-                    context.Writer.Write(publicRequest.Scope);
-                }
-
-                if(publicRequest.IsSetTimeWindow())
-                {
-                    context.Writer.WritePropertyName("TimeWindow");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TimeWindowMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TimeWindow, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetWebAclArn())
-                {
-                    context.Writer.WritePropertyName("WebAclArn");
-                    context.Writer.Write(publicRequest.WebAclArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

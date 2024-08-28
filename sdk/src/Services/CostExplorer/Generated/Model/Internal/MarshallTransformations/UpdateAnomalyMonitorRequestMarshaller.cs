@@ -63,27 +63,30 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMonitorArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("MonitorArn");
-                    context.Writer.Write(publicRequest.MonitorArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMonitorArn())
+                    {
+                        context.Writer.WritePropertyName("MonitorArn");
+                        context.Writer.Write(publicRequest.MonitorArn);
+                    }
+
+                    if(publicRequest.IsSetMonitorName())
+                    {
+                        context.Writer.WritePropertyName("MonitorName");
+                        context.Writer.Write(publicRequest.MonitorName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMonitorName())
-                {
-                    context.Writer.WritePropertyName("MonitorName");
-                    context.Writer.Write(publicRequest.MonitorName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

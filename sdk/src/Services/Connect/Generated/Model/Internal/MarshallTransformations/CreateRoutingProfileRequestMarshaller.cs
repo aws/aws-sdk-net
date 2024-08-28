@@ -64,85 +64,88 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field InstanceId set");
             request.AddPathResource("{InstanceId}", StringUtils.FromString(publicRequest.InstanceId));
             request.ResourcePath = "/routing-profiles/{InstanceId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAgentAvailabilityTimer())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AgentAvailabilityTimer");
-                    context.Writer.Write(publicRequest.AgentAvailabilityTimer);
-                }
-
-                if(publicRequest.IsSetDefaultOutboundQueueId())
-                {
-                    context.Writer.WritePropertyName("DefaultOutboundQueueId");
-                    context.Writer.Write(publicRequest.DefaultOutboundQueueId);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetMediaConcurrencies())
-                {
-                    context.Writer.WritePropertyName("MediaConcurrencies");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMediaConcurrenciesListValue in publicRequest.MediaConcurrencies)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAgentAvailabilityTimer())
                     {
+                        context.Writer.WritePropertyName("AgentAvailabilityTimer");
+                        context.Writer.Write(publicRequest.AgentAvailabilityTimer);
+                    }
+
+                    if(publicRequest.IsSetDefaultOutboundQueueId())
+                    {
+                        context.Writer.WritePropertyName("DefaultOutboundQueueId");
+                        context.Writer.Write(publicRequest.DefaultOutboundQueueId);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetMediaConcurrencies())
+                    {
+                        context.Writer.WritePropertyName("MediaConcurrencies");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMediaConcurrenciesListValue in publicRequest.MediaConcurrencies)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = MediaConcurrencyMarshaller.Instance;
+                            marshaller.Marshall(publicRequestMediaConcurrenciesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetQueueConfigs())
+                    {
+                        context.Writer.WritePropertyName("QueueConfigs");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestQueueConfigsListValue in publicRequest.QueueConfigs)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = RoutingProfileQueueConfigMarshaller.Instance;
+                            marshaller.Marshall(publicRequestQueueConfigsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
 
-                        var marshaller = MediaConcurrencyMarshaller.Instance;
-                        marshaller.Marshall(publicRequestMediaConcurrenciesListValue, context);
-
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetQueueConfigs())
-                {
-                    context.Writer.WritePropertyName("QueueConfigs");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestQueueConfigsListValue in publicRequest.QueueConfigs)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RoutingProfileQueueConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequestQueueConfigsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -61,74 +61,77 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/datasets";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFormat())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Format");
-                    context.Writer.Write(publicRequest.Format);
-                }
-
-                if(publicRequest.IsSetFormatOptions())
-                {
-                    context.Writer.WritePropertyName("FormatOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = FormatOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.FormatOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetInput())
-                {
-                    context.Writer.WritePropertyName("Input");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = InputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Input, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetPathOptions())
-                {
-                    context.Writer.WritePropertyName("PathOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PathOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PathOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFormat())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("Format");
+                        context.Writer.Write(publicRequest.Format);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetFormatOptions())
+                    {
+                        context.Writer.WritePropertyName("FormatOptions");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = FormatOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.FormatOptions, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetInput())
+                    {
+                        context.Writer.WritePropertyName("Input");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = InputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Input, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetPathOptions())
+                    {
+                        context.Writer.WritePropertyName("PathOptions");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PathOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.PathOptions, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

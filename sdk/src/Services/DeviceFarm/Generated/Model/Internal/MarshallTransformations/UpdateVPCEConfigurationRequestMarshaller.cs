@@ -63,45 +63,48 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("arn");
-                    context.Writer.Write(publicRequest.Arn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetArn())
+                    {
+                        context.Writer.WritePropertyName("arn");
+                        context.Writer.Write(publicRequest.Arn);
+                    }
+
+                    if(publicRequest.IsSetServiceDnsName())
+                    {
+                        context.Writer.WritePropertyName("serviceDnsName");
+                        context.Writer.Write(publicRequest.ServiceDnsName);
+                    }
+
+                    if(publicRequest.IsSetVpceConfigurationDescription())
+                    {
+                        context.Writer.WritePropertyName("vpceConfigurationDescription");
+                        context.Writer.Write(publicRequest.VpceConfigurationDescription);
+                    }
+
+                    if(publicRequest.IsSetVpceConfigurationName())
+                    {
+                        context.Writer.WritePropertyName("vpceConfigurationName");
+                        context.Writer.Write(publicRequest.VpceConfigurationName);
+                    }
+
+                    if(publicRequest.IsSetVpceServiceName())
+                    {
+                        context.Writer.WritePropertyName("vpceServiceName");
+                        context.Writer.Write(publicRequest.VpceServiceName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetServiceDnsName())
-                {
-                    context.Writer.WritePropertyName("serviceDnsName");
-                    context.Writer.Write(publicRequest.ServiceDnsName);
-                }
-
-                if(publicRequest.IsSetVpceConfigurationDescription())
-                {
-                    context.Writer.WritePropertyName("vpceConfigurationDescription");
-                    context.Writer.Write(publicRequest.VpceConfigurationDescription);
-                }
-
-                if(publicRequest.IsSetVpceConfigurationName())
-                {
-                    context.Writer.WritePropertyName("vpceConfigurationName");
-                    context.Writer.Write(publicRequest.VpceConfigurationName);
-                }
-
-                if(publicRequest.IsSetVpceServiceName())
-                {
-                    context.Writer.WritePropertyName("vpceServiceName");
-                    context.Writer.Write(publicRequest.VpceServiceName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

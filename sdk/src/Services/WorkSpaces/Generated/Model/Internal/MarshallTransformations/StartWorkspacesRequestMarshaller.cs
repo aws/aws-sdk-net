@@ -63,31 +63,34 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetStartWorkspaceRequests())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("StartWorkspaceRequests");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestStartWorkspaceRequestsListValue in publicRequest.StartWorkspaceRequests)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetStartWorkspaceRequests())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("StartWorkspaceRequests");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestStartWorkspaceRequestsListValue in publicRequest.StartWorkspaceRequests)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = StartRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequestStartWorkspaceRequestsListValue, context);
+                            var marshaller = StartRequestMarshaller.Instance;
+                            marshaller.Marshall(publicRequestStartWorkspaceRequestsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

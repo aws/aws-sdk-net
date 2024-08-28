@@ -64,111 +64,114 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                 throw new AmazonMediaPackageException("Request object does not have required field Id set");
             request.AddPathResource("{id}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = "/origin_endpoints/{id}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAuthorization())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("authorization");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AuthorizationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Authorization, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetCmafPackage())
-                {
-                    context.Writer.WritePropertyName("cmafPackage");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CmafPackageCreateOrUpdateParametersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CmafPackage, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDashPackage())
-                {
-                    context.Writer.WritePropertyName("dashPackage");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DashPackageMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DashPackage, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetHlsPackage())
-                {
-                    context.Writer.WritePropertyName("hlsPackage");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = HlsPackageMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.HlsPackage, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetManifestName())
-                {
-                    context.Writer.WritePropertyName("manifestName");
-                    context.Writer.Write(publicRequest.ManifestName);
-                }
-
-                if(publicRequest.IsSetMssPackage())
-                {
-                    context.Writer.WritePropertyName("mssPackage");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MssPackageMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.MssPackage, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOrigination())
-                {
-                    context.Writer.WritePropertyName("origination");
-                    context.Writer.Write(publicRequest.Origination);
-                }
-
-                if(publicRequest.IsSetStartoverWindowSeconds())
-                {
-                    context.Writer.WritePropertyName("startoverWindowSeconds");
-                    context.Writer.Write(publicRequest.StartoverWindowSeconds.Value);
-                }
-
-                if(publicRequest.IsSetTimeDelaySeconds())
-                {
-                    context.Writer.WritePropertyName("timeDelaySeconds");
-                    context.Writer.Write(publicRequest.TimeDelaySeconds.Value);
-                }
-
-                if(publicRequest.IsSetWhitelist())
-                {
-                    context.Writer.WritePropertyName("whitelist");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestWhitelistListValue in publicRequest.Whitelist)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAuthorization())
                     {
-                            context.Writer.Write(publicRequestWhitelistListValue);
+                        context.Writer.WritePropertyName("authorization");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AuthorizationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Authorization, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetCmafPackage())
+                    {
+                        context.Writer.WritePropertyName("cmafPackage");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CmafPackageCreateOrUpdateParametersMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CmafPackage, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDashPackage())
+                    {
+                        context.Writer.WritePropertyName("dashPackage");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DashPackageMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DashPackage, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetHlsPackage())
+                    {
+                        context.Writer.WritePropertyName("hlsPackage");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = HlsPackageMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.HlsPackage, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetManifestName())
+                    {
+                        context.Writer.WritePropertyName("manifestName");
+                        context.Writer.Write(publicRequest.ManifestName);
+                    }
+
+                    if(publicRequest.IsSetMssPackage())
+                    {
+                        context.Writer.WritePropertyName("mssPackage");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MssPackageMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.MssPackage, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetOrigination())
+                    {
+                        context.Writer.WritePropertyName("origination");
+                        context.Writer.Write(publicRequest.Origination);
+                    }
+
+                    if(publicRequest.IsSetStartoverWindowSeconds())
+                    {
+                        context.Writer.WritePropertyName("startoverWindowSeconds");
+                        context.Writer.Write(publicRequest.StartoverWindowSeconds.Value);
+                    }
+
+                    if(publicRequest.IsSetTimeDelaySeconds())
+                    {
+                        context.Writer.WritePropertyName("timeDelaySeconds");
+                        context.Writer.Write(publicRequest.TimeDelaySeconds.Value);
+                    }
+
+                    if(publicRequest.IsSetWhitelist())
+                    {
+                        context.Writer.WritePropertyName("whitelist");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestWhitelistListValue in publicRequest.Whitelist)
+                        {
+                                context.Writer.Write(publicRequestWhitelistListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

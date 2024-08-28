@@ -63,70 +63,73 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAppImageConfigName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AppImageConfigName");
-                    context.Writer.Write(publicRequest.AppImageConfigName);
-                }
-
-                if(publicRequest.IsSetCodeEditorAppImageConfig())
-                {
-                    context.Writer.WritePropertyName("CodeEditorAppImageConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CodeEditorAppImageConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CodeEditorAppImageConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetJupyterLabAppImageConfig())
-                {
-                    context.Writer.WritePropertyName("JupyterLabAppImageConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = JupyterLabAppImageConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.JupyterLabAppImageConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetKernelGatewayImageConfig())
-                {
-                    context.Writer.WritePropertyName("KernelGatewayImageConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = KernelGatewayImageConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.KernelGatewayImageConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAppImageConfigName())
                     {
+                        context.Writer.WritePropertyName("AppImageConfigName");
+                        context.Writer.Write(publicRequest.AppImageConfigName);
+                    }
+
+                    if(publicRequest.IsSetCodeEditorAppImageConfig())
+                    {
+                        context.Writer.WritePropertyName("CodeEditorAppImageConfig");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = CodeEditorAppImageConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CodeEditorAppImageConfig, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetJupyterLabAppImageConfig())
+                    {
+                        context.Writer.WritePropertyName("JupyterLabAppImageConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = JupyterLabAppImageConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.JupyterLabAppImageConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetKernelGatewayImageConfig())
+                    {
+                        context.Writer.WritePropertyName("KernelGatewayImageConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = KernelGatewayImageConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.KernelGatewayImageConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

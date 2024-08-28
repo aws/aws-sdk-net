@@ -61,61 +61,64 @@ namespace Amazon.Ivschat.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/UpdateRoom";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetIdentifier())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("identifier");
-                    context.Writer.Write(publicRequest.Identifier);
-                }
-
-                if(publicRequest.IsSetLoggingConfigurationIdentifiers())
-                {
-                    context.Writer.WritePropertyName("loggingConfigurationIdentifiers");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLoggingConfigurationIdentifiersListValue in publicRequest.LoggingConfigurationIdentifiers)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetIdentifier())
                     {
-                            context.Writer.Write(publicRequestLoggingConfigurationIdentifiersListValue);
+                        context.Writer.WritePropertyName("identifier");
+                        context.Writer.Write(publicRequest.Identifier);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetLoggingConfigurationIdentifiers())
+                    {
+                        context.Writer.WritePropertyName("loggingConfigurationIdentifiers");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLoggingConfigurationIdentifiersListValue in publicRequest.LoggingConfigurationIdentifiers)
+                        {
+                                context.Writer.Write(publicRequestLoggingConfigurationIdentifiersListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetMaximumMessageLength())
+                    {
+                        context.Writer.WritePropertyName("maximumMessageLength");
+                        context.Writer.Write(publicRequest.MaximumMessageLength.Value);
+                    }
+
+                    if(publicRequest.IsSetMaximumMessageRatePerSecond())
+                    {
+                        context.Writer.WritePropertyName("maximumMessageRatePerSecond");
+                        context.Writer.Write(publicRequest.MaximumMessageRatePerSecond.Value);
+                    }
+
+                    if(publicRequest.IsSetMessageReviewHandler())
+                    {
+                        context.Writer.WritePropertyName("messageReviewHandler");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MessageReviewHandlerMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.MessageReviewHandler, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMaximumMessageLength())
-                {
-                    context.Writer.WritePropertyName("maximumMessageLength");
-                    context.Writer.Write(publicRequest.MaximumMessageLength.Value);
-                }
-
-                if(publicRequest.IsSetMaximumMessageRatePerSecond())
-                {
-                    context.Writer.WritePropertyName("maximumMessageRatePerSecond");
-                    context.Writer.Write(publicRequest.MaximumMessageRatePerSecond.Value);
-                }
-
-                if(publicRequest.IsSetMessageReviewHandler())
-                {
-                    context.Writer.WritePropertyName("messageReviewHandler");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MessageReviewHandlerMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.MessageReviewHandler, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

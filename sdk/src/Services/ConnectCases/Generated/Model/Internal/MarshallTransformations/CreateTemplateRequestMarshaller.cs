@@ -64,60 +64,63 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
                 throw new AmazonConnectCasesException("Request object does not have required field DomainId set");
             request.AddPathResource("{domainId}", StringUtils.FromString(publicRequest.DomainId));
             request.ResourcePath = "/domains/{domainId}/templates";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetLayoutConfiguration())
-                {
-                    context.Writer.WritePropertyName("layoutConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LayoutConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LayoutConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetRequiredFields())
-                {
-                    context.Writer.WritePropertyName("requiredFields");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRequiredFieldsListValue in publicRequest.RequiredFields)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetLayoutConfiguration())
+                    {
+                        context.Writer.WritePropertyName("layoutConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = RequiredFieldMarshaller.Instance;
-                        marshaller.Marshall(publicRequestRequiredFieldsListValue, context);
+                        var marshaller = LayoutConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.LayoutConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetRequiredFields())
+                    {
+                        context.Writer.WritePropertyName("requiredFields");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRequiredFieldsListValue in publicRequest.RequiredFields)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = RequiredFieldMarshaller.Instance;
+                            marshaller.Marshall(publicRequestRequiredFieldsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetStatus())
+                    {
+                        context.Writer.WritePropertyName("status");
+                        context.Writer.Write(publicRequest.Status);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetStatus())
-                {
-                    context.Writer.WritePropertyName("status");
-                    context.Writer.Write(publicRequest.Status);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

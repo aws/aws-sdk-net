@@ -63,32 +63,35 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMonitoringScheduleConfig())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("MonitoringScheduleConfig");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMonitoringScheduleConfig())
+                    {
+                        context.Writer.WritePropertyName("MonitoringScheduleConfig");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = MonitoringScheduleConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.MonitoringScheduleConfig, context);
+                        var marshaller = MonitoringScheduleConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.MonitoringScheduleConfig, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetMonitoringScheduleName())
+                    {
+                        context.Writer.WritePropertyName("MonitoringScheduleName");
+                        context.Writer.Write(publicRequest.MonitoringScheduleName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMonitoringScheduleName())
-                {
-                    context.Writer.WritePropertyName("MonitoringScheduleName");
-                    context.Writer.Write(publicRequest.MonitoringScheduleName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

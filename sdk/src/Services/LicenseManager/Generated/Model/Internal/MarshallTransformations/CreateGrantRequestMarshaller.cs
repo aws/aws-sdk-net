@@ -63,61 +63,64 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAllowedOperations())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AllowedOperations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAllowedOperationsListValue in publicRequest.AllowedOperations)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAllowedOperations())
                     {
-                            context.Writer.Write(publicRequestAllowedOperationsListValue);
+                        context.Writer.WritePropertyName("AllowedOperations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAllowedOperationsListValue in publicRequest.AllowedOperations)
+                        {
+                                context.Writer.Write(publicRequestAllowedOperationsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                if(publicRequest.IsSetGrantName())
-                {
-                    context.Writer.WritePropertyName("GrantName");
-                    context.Writer.Write(publicRequest.GrantName);
-                }
-
-                if(publicRequest.IsSetHomeRegion())
-                {
-                    context.Writer.WritePropertyName("HomeRegion");
-                    context.Writer.Write(publicRequest.HomeRegion);
-                }
-
-                if(publicRequest.IsSetLicenseArn())
-                {
-                    context.Writer.WritePropertyName("LicenseArn");
-                    context.Writer.Write(publicRequest.LicenseArn);
-                }
-
-                if(publicRequest.IsSetPrincipals())
-                {
-                    context.Writer.WritePropertyName("Principals");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPrincipalsListValue in publicRequest.Principals)
+                    if(publicRequest.IsSetClientToken())
                     {
-                            context.Writer.Write(publicRequestPrincipalsListValue);
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetGrantName())
+                    {
+                        context.Writer.WritePropertyName("GrantName");
+                        context.Writer.Write(publicRequest.GrantName);
+                    }
+
+                    if(publicRequest.IsSetHomeRegion())
+                    {
+                        context.Writer.WritePropertyName("HomeRegion");
+                        context.Writer.Write(publicRequest.HomeRegion);
+                    }
+
+                    if(publicRequest.IsSetLicenseArn())
+                    {
+                        context.Writer.WritePropertyName("LicenseArn");
+                        context.Writer.Write(publicRequest.LicenseArn);
+                    }
+
+                    if(publicRequest.IsSetPrincipals())
+                    {
+                        context.Writer.WritePropertyName("Principals");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPrincipalsListValue in publicRequest.Principals)
+                        {
+                                context.Writer.Write(publicRequestPrincipalsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

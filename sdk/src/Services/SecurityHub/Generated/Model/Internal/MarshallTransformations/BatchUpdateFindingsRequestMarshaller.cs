@@ -61,123 +61,126 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             request.HttpMethod = "PATCH";
 
             request.ResourcePath = "/findings/batchupdate";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConfidence())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Confidence");
-                    context.Writer.Write(publicRequest.Confidence.Value);
-                }
-
-                if(publicRequest.IsSetCriticality())
-                {
-                    context.Writer.WritePropertyName("Criticality");
-                    context.Writer.Write(publicRequest.Criticality.Value);
-                }
-
-                if(publicRequest.IsSetFindingIdentifiers())
-                {
-                    context.Writer.WritePropertyName("FindingIdentifiers");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFindingIdentifiersListValue in publicRequest.FindingIdentifiers)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConfidence())
                     {
+                        context.Writer.WritePropertyName("Confidence");
+                        context.Writer.Write(publicRequest.Confidence.Value);
+                    }
+
+                    if(publicRequest.IsSetCriticality())
+                    {
+                        context.Writer.WritePropertyName("Criticality");
+                        context.Writer.Write(publicRequest.Criticality.Value);
+                    }
+
+                    if(publicRequest.IsSetFindingIdentifiers())
+                    {
+                        context.Writer.WritePropertyName("FindingIdentifiers");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFindingIdentifiersListValue in publicRequest.FindingIdentifiers)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = AwsSecurityFindingIdentifierMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFindingIdentifiersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetNote())
+                    {
+                        context.Writer.WritePropertyName("Note");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = AwsSecurityFindingIdentifierMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFindingIdentifiersListValue, context);
+                        var marshaller = NoteUpdateMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Note, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetNote())
-                {
-                    context.Writer.WritePropertyName("Note");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = NoteUpdateMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Note, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRelatedFindings())
-                {
-                    context.Writer.WritePropertyName("RelatedFindings");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRelatedFindingsListValue in publicRequest.RelatedFindings)
+                    if(publicRequest.IsSetRelatedFindings())
                     {
+                        context.Writer.WritePropertyName("RelatedFindings");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRelatedFindingsListValue in publicRequest.RelatedFindings)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = RelatedFindingMarshaller.Instance;
+                            marshaller.Marshall(publicRequestRelatedFindingsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSeverity())
+                    {
+                        context.Writer.WritePropertyName("Severity");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = RelatedFindingMarshaller.Instance;
-                        marshaller.Marshall(publicRequestRelatedFindingsListValue, context);
+                        var marshaller = SeverityUpdateMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Severity, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetSeverity())
-                {
-                    context.Writer.WritePropertyName("Severity");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SeverityUpdateMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Severity, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTypes())
-                {
-                    context.Writer.WritePropertyName("Types");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTypesListValue in publicRequest.Types)
+                    if(publicRequest.IsSetTypes())
                     {
-                            context.Writer.Write(publicRequestTypesListValue);
+                        context.Writer.WritePropertyName("Types");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTypesListValue in publicRequest.Types)
+                        {
+                                context.Writer.Write(publicRequestTypesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetUserDefinedFields())
-                {
-                    context.Writer.WritePropertyName("UserDefinedFields");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestUserDefinedFieldsKvp in publicRequest.UserDefinedFields)
+                    if(publicRequest.IsSetUserDefinedFields())
                     {
-                        context.Writer.WritePropertyName(publicRequestUserDefinedFieldsKvp.Key);
-                        var publicRequestUserDefinedFieldsValue = publicRequestUserDefinedFieldsKvp.Value;
+                        context.Writer.WritePropertyName("UserDefinedFields");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestUserDefinedFieldsKvp in publicRequest.UserDefinedFields)
+                        {
+                            context.Writer.WritePropertyName(publicRequestUserDefinedFieldsKvp.Key);
+                            var publicRequestUserDefinedFieldsValue = publicRequestUserDefinedFieldsKvp.Value;
 
-                            context.Writer.Write(publicRequestUserDefinedFieldsValue);
+                                context.Writer.Write(publicRequestUserDefinedFieldsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetVerificationState())
+                    {
+                        context.Writer.WritePropertyName("VerificationState");
+                        context.Writer.Write(publicRequest.VerificationState);
+                    }
+
+                    if(publicRequest.IsSetWorkflow())
+                    {
+                        context.Writer.WritePropertyName("Workflow");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = WorkflowUpdateMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Workflow, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetVerificationState())
-                {
-                    context.Writer.WritePropertyName("VerificationState");
-                    context.Writer.Write(publicRequest.VerificationState);
-                }
-
-                if(publicRequest.IsSetWorkflow())
-                {
-                    context.Writer.WritePropertyName("Workflow");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = WorkflowUpdateMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Workflow, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

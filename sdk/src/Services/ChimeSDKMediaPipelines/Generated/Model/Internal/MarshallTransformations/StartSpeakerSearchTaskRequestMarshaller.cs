@@ -65,43 +65,46 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
                 throw new AmazonChimeSDKMediaPipelinesException("Request object does not have required field Identifier set");
             request.AddPathResource("{identifier}", StringUtils.FromString(publicRequest.Identifier));
             request.ResourcePath = "/media-insights-pipelines/{identifier}/speaker-search-tasks";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientRequestToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientRequestToken())
+                    {
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(publicRequest.ClientRequestToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientRequestToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetKinesisVideoStreamSourceTaskConfiguration())
+                    {
+                        context.Writer.WritePropertyName("KinesisVideoStreamSourceTaskConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = KinesisVideoStreamSourceTaskConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.KinesisVideoStreamSourceTaskConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetVoiceProfileDomainArn())
+                    {
+                        context.Writer.WritePropertyName("VoiceProfileDomainArn");
+                        context.Writer.Write(publicRequest.VoiceProfileDomainArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetKinesisVideoStreamSourceTaskConfiguration())
-                {
-                    context.Writer.WritePropertyName("KinesisVideoStreamSourceTaskConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = KinesisVideoStreamSourceTaskConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.KinesisVideoStreamSourceTaskConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetVoiceProfileDomainArn())
-                {
-                    context.Writer.WritePropertyName("VoiceProfileDomainArn");
-                    context.Writer.Write(publicRequest.VoiceProfileDomainArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

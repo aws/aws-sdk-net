@@ -82,6 +82,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     response.Error = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("identityProviderConfiguration", targetDepth))
+                {
+                    var unmarshaller = IdentityProviderConfigurationUnmarshaller.Instance;
+                    response.IdentityProviderConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("roleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

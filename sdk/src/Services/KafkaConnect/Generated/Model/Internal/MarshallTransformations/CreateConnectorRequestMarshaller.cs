@@ -61,149 +61,152 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v1/connectors";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCapacity())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("capacity");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CapacityMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Capacity, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetConnectorConfiguration())
-                {
-                    context.Writer.WritePropertyName("connectorConfiguration");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestConnectorConfigurationKvp in publicRequest.ConnectorConfiguration)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCapacity())
                     {
-                        context.Writer.WritePropertyName(publicRequestConnectorConfigurationKvp.Key);
-                        var publicRequestConnectorConfigurationValue = publicRequestConnectorConfigurationKvp.Value;
-
-                            context.Writer.Write(publicRequestConnectorConfigurationValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetConnectorDescription())
-                {
-                    context.Writer.WritePropertyName("connectorDescription");
-                    context.Writer.Write(publicRequest.ConnectorDescription);
-                }
-
-                if(publicRequest.IsSetConnectorName())
-                {
-                    context.Writer.WritePropertyName("connectorName");
-                    context.Writer.Write(publicRequest.ConnectorName);
-                }
-
-                if(publicRequest.IsSetKafkaCluster())
-                {
-                    context.Writer.WritePropertyName("kafkaCluster");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = KafkaClusterMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.KafkaCluster, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetKafkaClusterClientAuthentication())
-                {
-                    context.Writer.WritePropertyName("kafkaClusterClientAuthentication");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = KafkaClusterClientAuthenticationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.KafkaClusterClientAuthentication, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetKafkaClusterEncryptionInTransit())
-                {
-                    context.Writer.WritePropertyName("kafkaClusterEncryptionInTransit");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = KafkaClusterEncryptionInTransitMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.KafkaClusterEncryptionInTransit, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetKafkaConnectVersion())
-                {
-                    context.Writer.WritePropertyName("kafkaConnectVersion");
-                    context.Writer.Write(publicRequest.KafkaConnectVersion);
-                }
-
-                if(publicRequest.IsSetLogDelivery())
-                {
-                    context.Writer.WritePropertyName("logDelivery");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LogDeliveryMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LogDelivery, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPlugins())
-                {
-                    context.Writer.WritePropertyName("plugins");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPluginsListValue in publicRequest.Plugins)
-                    {
+                        context.Writer.WritePropertyName("capacity");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = PluginMarshaller.Instance;
-                        marshaller.Marshall(publicRequestPluginsListValue, context);
+                        var marshaller = CapacityMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Capacity, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetServiceExecutionRoleArn())
-                {
-                    context.Writer.WritePropertyName("serviceExecutionRoleArn");
-                    context.Writer.Write(publicRequest.ServiceExecutionRoleArn);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetConnectorConfiguration())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
+                        context.Writer.WritePropertyName("connectorConfiguration");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestConnectorConfigurationKvp in publicRequest.ConnectorConfiguration)
+                        {
+                            context.Writer.WritePropertyName(publicRequestConnectorConfigurationKvp.Key);
+                            var publicRequestConnectorConfigurationValue = publicRequestConnectorConfigurationKvp.Value;
 
-                            context.Writer.Write(publicRequestTagsValue);
+                                context.Writer.Write(publicRequestConnectorConfigurationValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetConnectorDescription())
+                    {
+                        context.Writer.WritePropertyName("connectorDescription");
+                        context.Writer.Write(publicRequest.ConnectorDescription);
+                    }
+
+                    if(publicRequest.IsSetConnectorName())
+                    {
+                        context.Writer.WritePropertyName("connectorName");
+                        context.Writer.Write(publicRequest.ConnectorName);
+                    }
+
+                    if(publicRequest.IsSetKafkaCluster())
+                    {
+                        context.Writer.WritePropertyName("kafkaCluster");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = KafkaClusterMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.KafkaCluster, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetKafkaClusterClientAuthentication())
+                    {
+                        context.Writer.WritePropertyName("kafkaClusterClientAuthentication");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = KafkaClusterClientAuthenticationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.KafkaClusterClientAuthentication, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetKafkaClusterEncryptionInTransit())
+                    {
+                        context.Writer.WritePropertyName("kafkaClusterEncryptionInTransit");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = KafkaClusterEncryptionInTransitMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.KafkaClusterEncryptionInTransit, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetKafkaConnectVersion())
+                    {
+                        context.Writer.WritePropertyName("kafkaConnectVersion");
+                        context.Writer.Write(publicRequest.KafkaConnectVersion);
+                    }
+
+                    if(publicRequest.IsSetLogDelivery())
+                    {
+                        context.Writer.WritePropertyName("logDelivery");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LogDeliveryMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.LogDelivery, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetPlugins())
+                    {
+                        context.Writer.WritePropertyName("plugins");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPluginsListValue in publicRequest.Plugins)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = PluginMarshaller.Instance;
+                            marshaller.Marshall(publicRequestPluginsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetServiceExecutionRoleArn())
+                    {
+                        context.Writer.WritePropertyName("serviceExecutionRoleArn");
+                        context.Writer.Write(publicRequest.ServiceExecutionRoleArn);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetWorkerConfiguration())
+                    {
+                        context.Writer.WritePropertyName("workerConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = WorkerConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.WorkerConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetWorkerConfiguration())
-                {
-                    context.Writer.WritePropertyName("workerConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = WorkerConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.WorkerConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

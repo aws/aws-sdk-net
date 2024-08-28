@@ -70,80 +70,83 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 throw new AmazonAPIGatewayException("Request object does not have required field RestApiId set");
             request.AddPathResource("{restapi_id}", StringUtils.FromString(publicRequest.RestApiId));
             request.ResourcePath = "/restapis/{restapi_id}/resources/{resource_id}/methods/{http_method}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBody())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("body");
-                    context.Writer.Write(publicRequest.Body);
-                }
-
-                if(publicRequest.IsSetClientCertificateId())
-                {
-                    context.Writer.WritePropertyName("clientCertificateId");
-                    context.Writer.Write(publicRequest.ClientCertificateId);
-                }
-
-                if(publicRequest.IsSetHeaders())
-                {
-                    context.Writer.WritePropertyName("headers");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestHeadersKvp in publicRequest.Headers)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBody())
                     {
-                        context.Writer.WritePropertyName(publicRequestHeadersKvp.Key);
-                        var publicRequestHeadersValue = publicRequestHeadersKvp.Value;
-
-                            context.Writer.Write(publicRequestHeadersValue);
+                        context.Writer.WritePropertyName("body");
+                        context.Writer.Write(publicRequest.Body);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetMultiValueHeaders())
-                {
-                    context.Writer.WritePropertyName("multiValueHeaders");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestMultiValueHeadersKvp in publicRequest.MultiValueHeaders)
+                    if(publicRequest.IsSetClientCertificateId())
                     {
-                        context.Writer.WritePropertyName(publicRequestMultiValueHeadersKvp.Key);
-                        var publicRequestMultiValueHeadersValue = publicRequestMultiValueHeadersKvp.Value;
+                        context.Writer.WritePropertyName("clientCertificateId");
+                        context.Writer.Write(publicRequest.ClientCertificateId);
+                    }
 
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestMultiValueHeadersValueListValue in publicRequestMultiValueHeadersValue)
+                    if(publicRequest.IsSetHeaders())
+                    {
+                        context.Writer.WritePropertyName("headers");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestHeadersKvp in publicRequest.Headers)
                         {
-                                context.Writer.Write(publicRequestMultiValueHeadersValueListValue);
+                            context.Writer.WritePropertyName(publicRequestHeadersKvp.Key);
+                            var publicRequestHeadersValue = publicRequestHeadersKvp.Value;
+
+                                context.Writer.Write(publicRequestHeadersValue);
                         }
-                        context.Writer.WriteArrayEnd();
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetPathWithQueryString())
-                {
-                    context.Writer.WritePropertyName("pathWithQueryString");
-                    context.Writer.Write(publicRequest.PathWithQueryString);
-                }
-
-                if(publicRequest.IsSetStageVariables())
-                {
-                    context.Writer.WritePropertyName("stageVariables");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestStageVariablesKvp in publicRequest.StageVariables)
+                    if(publicRequest.IsSetMultiValueHeaders())
                     {
-                        context.Writer.WritePropertyName(publicRequestStageVariablesKvp.Key);
-                        var publicRequestStageVariablesValue = publicRequestStageVariablesKvp.Value;
+                        context.Writer.WritePropertyName("multiValueHeaders");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestMultiValueHeadersKvp in publicRequest.MultiValueHeaders)
+                        {
+                            context.Writer.WritePropertyName(publicRequestMultiValueHeadersKvp.Key);
+                            var publicRequestMultiValueHeadersValue = publicRequestMultiValueHeadersKvp.Value;
 
-                            context.Writer.Write(publicRequestStageVariablesValue);
+                            context.Writer.WriteArrayStart();
+                            foreach(var publicRequestMultiValueHeadersValueListValue in publicRequestMultiValueHeadersValue)
+                            {
+                                    context.Writer.Write(publicRequestMultiValueHeadersValueListValue);
+                            }
+                            context.Writer.WriteArrayEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetPathWithQueryString())
+                    {
+                        context.Writer.WritePropertyName("pathWithQueryString");
+                        context.Writer.Write(publicRequest.PathWithQueryString);
+                    }
+
+                    if(publicRequest.IsSetStageVariables())
+                    {
+                        context.Writer.WritePropertyName("stageVariables");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestStageVariablesKvp in publicRequest.StageVariables)
+                        {
+                            context.Writer.WritePropertyName(publicRequestStageVariablesKvp.Key);
+                            var publicRequestStageVariablesValue = publicRequestStageVariablesKvp.Value;
+
+                                context.Writer.Write(publicRequestStageVariablesValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -102,6 +102,12 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                     unmarshalledObject.BuildSpec = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("cacheConfig", targetDepth))
+                {
+                    var unmarshaller = CacheConfigUnmarshaller.Instance;
+                    unmarshalledObject.CacheConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("createTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

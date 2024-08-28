@@ -67,26 +67,29 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field Service set");
             request.AddPathResource("{Service}", StringUtils.FromString(publicRequest.Service));
             request.ResourcePath = "/accounts/{AwsAccountId}/identity-propagation-config/{Service}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAuthorizedTargets())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AuthorizedTargets");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAuthorizedTargetsListValue in publicRequest.AuthorizedTargets)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAuthorizedTargets())
                     {
-                            context.Writer.Write(publicRequestAuthorizedTargetsListValue);
+                        context.Writer.WritePropertyName("AuthorizedTargets");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAuthorizedTargetsListValue in publicRequest.AuthorizedTargets)
+                        {
+                                context.Writer.Write(publicRequestAuthorizedTargetsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,31 +63,34 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEmergencyContactList())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("EmergencyContactList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEmergencyContactListListValue in publicRequest.EmergencyContactList)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEmergencyContactList())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("EmergencyContactList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestEmergencyContactListListValue in publicRequest.EmergencyContactList)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = EmergencyContactMarshaller.Instance;
-                        marshaller.Marshall(publicRequestEmergencyContactListListValue, context);
+                            var marshaller = EmergencyContactMarshaller.Instance;
+                            marshaller.Marshall(publicRequestEmergencyContactListListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

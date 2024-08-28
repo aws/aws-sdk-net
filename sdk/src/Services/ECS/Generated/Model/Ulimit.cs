@@ -38,7 +38,7 @@ namespace Amazon.ECS.Model
     /// operating system with the exception of the <c>nofile</c> resource limit parameter
     /// which Fargate overrides. The <c>nofile</c> resource limit sets a restriction on the
     /// number of open files that a container can use. The default <c>nofile</c> soft limit
-    /// is <c>1024</c> and the default hard limit is <c>65535</c>.
+    /// is <c> 65535</c> and the default hard limit is <c>65535</c>.
     /// </para>
     ///  
     /// <para>

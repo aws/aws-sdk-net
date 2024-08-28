@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
     {
         private List<AddIpamOperatingRegion> _addOperatingRegions = AWSConfigs.InitializeCollections ? new List<AddIpamOperatingRegion>() : null;
         private string _description;
+        private bool? _enablePrivateGua;
         private string _ipamId;
         private List<RemoveIpamOperatingRegion> _removeOperatingRegions = AWSConfigs.InitializeCollections ? new List<RemoveIpamOperatingRegion>() : null;
         private IpamTier _tier;
@@ -84,6 +85,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnablePrivateGua. 
+        /// <para>
+        /// Enable this option to use your own GUA ranges as private IPv6 addresses. This option
+        /// is disabled by default.
+        /// </para>
+        /// </summary>
+        public bool? EnablePrivateGua
+        {
+            get { return this._enablePrivateGua; }
+            set { this._enablePrivateGua = value; }
+        }
+
+        // Check to see if EnablePrivateGua property is set
+        internal bool IsSetEnablePrivateGua()
+        {
+            return this._enablePrivateGua.HasValue; 
         }
 
         /// <summary>

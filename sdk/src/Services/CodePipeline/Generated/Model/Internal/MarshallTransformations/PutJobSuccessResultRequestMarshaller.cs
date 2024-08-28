@@ -63,63 +63,66 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetContinuationToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("continuationToken");
-                    context.Writer.Write(publicRequest.ContinuationToken);
-                }
-
-                if(publicRequest.IsSetCurrentRevision())
-                {
-                    context.Writer.WritePropertyName("currentRevision");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CurrentRevisionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CurrentRevision, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetExecutionDetails())
-                {
-                    context.Writer.WritePropertyName("executionDetails");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ExecutionDetailsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ExecutionDetails, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetJobId())
-                {
-                    context.Writer.WritePropertyName("jobId");
-                    context.Writer.Write(publicRequest.JobId);
-                }
-
-                if(publicRequest.IsSetOutputVariables())
-                {
-                    context.Writer.WritePropertyName("outputVariables");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestOutputVariablesKvp in publicRequest.OutputVariables)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetContinuationToken())
                     {
-                        context.Writer.WritePropertyName(publicRequestOutputVariablesKvp.Key);
-                        var publicRequestOutputVariablesValue = publicRequestOutputVariablesKvp.Value;
-
-                            context.Writer.Write(publicRequestOutputVariablesValue);
+                        context.Writer.WritePropertyName("continuationToken");
+                        context.Writer.Write(publicRequest.ContinuationToken);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetCurrentRevision())
+                    {
+                        context.Writer.WritePropertyName("currentRevision");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CurrentRevisionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CurrentRevision, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetExecutionDetails())
+                    {
+                        context.Writer.WritePropertyName("executionDetails");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ExecutionDetailsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ExecutionDetails, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetJobId())
+                    {
+                        context.Writer.WritePropertyName("jobId");
+                        context.Writer.Write(publicRequest.JobId);
+                    }
+
+                    if(publicRequest.IsSetOutputVariables())
+                    {
+                        context.Writer.WritePropertyName("outputVariables");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestOutputVariablesKvp in publicRequest.OutputVariables)
+                        {
+                            context.Writer.WritePropertyName(publicRequestOutputVariablesKvp.Key);
+                            var publicRequestOutputVariablesValue = publicRequestOutputVariablesKvp.Value;
+
+                                context.Writer.Write(publicRequestOutputVariablesValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

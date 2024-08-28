@@ -67,88 +67,91 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field DashboardId set");
             request.AddPathResource("{DashboardId}", StringUtils.FromString(publicRequest.DashboardId));
             request.ResourcePath = "/accounts/{AwsAccountId}/dashboards/{DashboardId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDashboardPublishOptions())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DashboardPublishOptions");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDashboardPublishOptions())
+                    {
+                        context.Writer.WritePropertyName("DashboardPublishOptions");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = DashboardPublishOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DashboardPublishOptions, context);
+                        var marshaller = DashboardPublishOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DashboardPublishOptions, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDefinition())
+                    {
+                        context.Writer.WritePropertyName("Definition");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DashboardVersionDefinitionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Definition, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetParameters())
+                    {
+                        context.Writer.WritePropertyName("Parameters");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ParametersMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Parameters, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSourceEntity())
+                    {
+                        context.Writer.WritePropertyName("SourceEntity");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DashboardSourceEntityMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SourceEntity, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetThemeArn())
+                    {
+                        context.Writer.WritePropertyName("ThemeArn");
+                        context.Writer.Write(publicRequest.ThemeArn);
+                    }
+
+                    if(publicRequest.IsSetValidationStrategy())
+                    {
+                        context.Writer.WritePropertyName("ValidationStrategy");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ValidationStrategyMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ValidationStrategy, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetVersionDescription())
+                    {
+                        context.Writer.WritePropertyName("VersionDescription");
+                        context.Writer.Write(publicRequest.VersionDescription);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDefinition())
-                {
-                    context.Writer.WritePropertyName("Definition");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DashboardVersionDefinitionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Definition, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetParameters())
-                {
-                    context.Writer.WritePropertyName("Parameters");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ParametersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Parameters, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSourceEntity())
-                {
-                    context.Writer.WritePropertyName("SourceEntity");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DashboardSourceEntityMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SourceEntity, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetThemeArn())
-                {
-                    context.Writer.WritePropertyName("ThemeArn");
-                    context.Writer.Write(publicRequest.ThemeArn);
-                }
-
-                if(publicRequest.IsSetValidationStrategy())
-                {
-                    context.Writer.WritePropertyName("ValidationStrategy");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ValidationStrategyMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ValidationStrategy, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetVersionDescription())
-                {
-                    context.Writer.WritePropertyName("VersionDescription");
-                    context.Writer.Write(publicRequest.VersionDescription);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

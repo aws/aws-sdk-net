@@ -63,46 +63,49 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetGameSessionId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("GameSessionId");
-                    context.Writer.Write(publicRequest.GameSessionId);
-                }
-
-                if(publicRequest.IsSetPlayerDataMap())
-                {
-                    context.Writer.WritePropertyName("PlayerDataMap");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestPlayerDataMapKvp in publicRequest.PlayerDataMap)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetGameSessionId())
                     {
-                        context.Writer.WritePropertyName(publicRequestPlayerDataMapKvp.Key);
-                        var publicRequestPlayerDataMapValue = publicRequestPlayerDataMapKvp.Value;
-
-                            context.Writer.Write(publicRequestPlayerDataMapValue);
+                        context.Writer.WritePropertyName("GameSessionId");
+                        context.Writer.Write(publicRequest.GameSessionId);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetPlayerIds())
-                {
-                    context.Writer.WritePropertyName("PlayerIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPlayerIdsListValue in publicRequest.PlayerIds)
+                    if(publicRequest.IsSetPlayerDataMap())
                     {
-                            context.Writer.Write(publicRequestPlayerIdsListValue);
+                        context.Writer.WritePropertyName("PlayerDataMap");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestPlayerDataMapKvp in publicRequest.PlayerDataMap)
+                        {
+                            context.Writer.WritePropertyName(publicRequestPlayerDataMapKvp.Key);
+                            var publicRequestPlayerDataMapValue = publicRequestPlayerDataMapKvp.Value;
+
+                                context.Writer.Write(publicRequestPlayerDataMapValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetPlayerIds())
+                    {
+                        context.Writer.WritePropertyName("PlayerIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPlayerIdsListValue in publicRequest.PlayerIds)
+                        {
+                                context.Writer.Write(publicRequestPlayerIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

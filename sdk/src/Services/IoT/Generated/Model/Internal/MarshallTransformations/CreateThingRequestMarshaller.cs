@@ -64,38 +64,41 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field ThingName set");
             request.AddPathResource("{thingName}", StringUtils.FromString(publicRequest.ThingName));
             request.ResourcePath = "/things/{thingName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAttributePayload())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("attributePayload");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAttributePayload())
+                    {
+                        context.Writer.WritePropertyName("attributePayload");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = AttributePayloadMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AttributePayload, context);
+                        var marshaller = AttributePayloadMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AttributePayload, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetBillingGroupName())
+                    {
+                        context.Writer.WritePropertyName("billingGroupName");
+                        context.Writer.Write(publicRequest.BillingGroupName);
+                    }
+
+                    if(publicRequest.IsSetThingTypeName())
+                    {
+                        context.Writer.WritePropertyName("thingTypeName");
+                        context.Writer.Write(publicRequest.ThingTypeName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetBillingGroupName())
-                {
-                    context.Writer.WritePropertyName("billingGroupName");
-                    context.Writer.Write(publicRequest.BillingGroupName);
-                }
-
-                if(publicRequest.IsSetThingTypeName())
-                {
-                    context.Writer.WritePropertyName("thingTypeName");
-                    context.Writer.Write(publicRequest.ThingTypeName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -64,40 +64,43 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 throw new AmazonLexModelsV2Exception("Request object does not have required field BotId set");
             request.AddPathResource("{botId}", StringUtils.FromString(publicRequest.BotId));
             request.ResourcePath = "/bots/{botId}/botversions/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBotVersionLocaleSpecification())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("botVersionLocaleSpecification");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestBotVersionLocaleSpecificationKvp in publicRequest.BotVersionLocaleSpecification)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBotVersionLocaleSpecification())
                     {
-                        context.Writer.WritePropertyName(publicRequestBotVersionLocaleSpecificationKvp.Key);
-                        var publicRequestBotVersionLocaleSpecificationValue = publicRequestBotVersionLocaleSpecificationKvp.Value;
-
+                        context.Writer.WritePropertyName("botVersionLocaleSpecification");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestBotVersionLocaleSpecificationKvp in publicRequest.BotVersionLocaleSpecification)
+                        {
+                            context.Writer.WritePropertyName(publicRequestBotVersionLocaleSpecificationKvp.Key);
+                            var publicRequestBotVersionLocaleSpecificationValue = publicRequestBotVersionLocaleSpecificationKvp.Value;
 
-                        var marshaller = BotVersionLocaleDetailsMarshaller.Instance;
-                        marshaller.Marshall(publicRequestBotVersionLocaleSpecificationValue, context);
+                            context.Writer.WriteObjectStart();
 
+                            var marshaller = BotVersionLocaleDetailsMarshaller.Instance;
+                            marshaller.Marshall(publicRequestBotVersionLocaleSpecificationValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

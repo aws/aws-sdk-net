@@ -61,44 +61,47 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v1/dataplane-evaluatecode";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCode())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("code");
-                    context.Writer.Write(publicRequest.Code);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCode())
+                    {
+                        context.Writer.WritePropertyName("code");
+                        context.Writer.Write(publicRequest.Code);
+                    }
+
+                    if(publicRequest.IsSetContext())
+                    {
+                        context.Writer.WritePropertyName("context");
+                        context.Writer.Write(publicRequest.Context);
+                    }
+
+                    if(publicRequest.IsSetFunction())
+                    {
+                        context.Writer.WritePropertyName("function");
+                        context.Writer.Write(publicRequest.Function);
+                    }
+
+                    if(publicRequest.IsSetRuntime())
+                    {
+                        context.Writer.WritePropertyName("runtime");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AppSyncRuntimeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Runtime, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetContext())
-                {
-                    context.Writer.WritePropertyName("context");
-                    context.Writer.Write(publicRequest.Context);
-                }
-
-                if(publicRequest.IsSetFunction())
-                {
-                    context.Writer.WritePropertyName("function");
-                    context.Writer.Write(publicRequest.Function);
-                }
-
-                if(publicRequest.IsSetRuntime())
-                {
-                    context.Writer.WritePropertyName("runtime");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AppSyncRuntimeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Runtime, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

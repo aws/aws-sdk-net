@@ -67,51 +67,54 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 throw new AmazonAmplifyException("Request object does not have required field BranchName set");
             request.AddPathResource("{branchName}", StringUtils.FromString(publicRequest.BranchName));
             request.ResourcePath = "/apps/{appId}/branches/{branchName}/jobs";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCommitId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("commitId");
-                    context.Writer.Write(publicRequest.CommitId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCommitId())
+                    {
+                        context.Writer.WritePropertyName("commitId");
+                        context.Writer.Write(publicRequest.CommitId);
+                    }
+
+                    if(publicRequest.IsSetCommitMessage())
+                    {
+                        context.Writer.WritePropertyName("commitMessage");
+                        context.Writer.Write(publicRequest.CommitMessage);
+                    }
+
+                    if(publicRequest.IsSetCommitTime())
+                    {
+                        context.Writer.WritePropertyName("commitTime");
+                        context.Writer.Write(publicRequest.CommitTime.Value);
+                    }
+
+                    if(publicRequest.IsSetJobId())
+                    {
+                        context.Writer.WritePropertyName("jobId");
+                        context.Writer.Write(publicRequest.JobId);
+                    }
+
+                    if(publicRequest.IsSetJobReason())
+                    {
+                        context.Writer.WritePropertyName("jobReason");
+                        context.Writer.Write(publicRequest.JobReason);
+                    }
+
+                    if(publicRequest.IsSetJobType())
+                    {
+                        context.Writer.WritePropertyName("jobType");
+                        context.Writer.Write(publicRequest.JobType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCommitMessage())
-                {
-                    context.Writer.WritePropertyName("commitMessage");
-                    context.Writer.Write(publicRequest.CommitMessage);
-                }
-
-                if(publicRequest.IsSetCommitTime())
-                {
-                    context.Writer.WritePropertyName("commitTime");
-                    context.Writer.Write(publicRequest.CommitTime.Value);
-                }
-
-                if(publicRequest.IsSetJobId())
-                {
-                    context.Writer.WritePropertyName("jobId");
-                    context.Writer.Write(publicRequest.JobId);
-                }
-
-                if(publicRequest.IsSetJobReason())
-                {
-                    context.Writer.WritePropertyName("jobReason");
-                    context.Writer.Write(publicRequest.JobReason);
-                }
-
-                if(publicRequest.IsSetJobType())
-                {
-                    context.Writer.WritePropertyName("jobType");
-                    context.Writer.Write(publicRequest.JobType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

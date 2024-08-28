@@ -63,37 +63,40 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetResourceARNList())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ResourceARNList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestResourceARNListListValue in publicRequest.ResourceARNList)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetResourceARNList())
                     {
-                            context.Writer.Write(publicRequestResourceARNListListValue);
+                        context.Writer.WritePropertyName("ResourceARNList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestResourceARNListListValue in publicRequest.ResourceARNList)
+                        {
+                                context.Writer.Write(publicRequestResourceARNListListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTagKeys())
+                    {
+                        context.Writer.WritePropertyName("TagKeys");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagKeysListValue in publicRequest.TagKeys)
+                        {
+                                context.Writer.Write(publicRequestTagKeysListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTagKeys())
-                {
-                    context.Writer.WritePropertyName("TagKeys");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagKeysListValue in publicRequest.TagKeys)
-                    {
-                            context.Writer.Write(publicRequestTagKeysListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

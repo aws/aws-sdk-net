@@ -63,85 +63,88 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAliasId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AliasId");
-                    context.Writer.Write(publicRequest.AliasId);
-                }
-
-                if(publicRequest.IsSetCreatorId())
-                {
-                    context.Writer.WritePropertyName("CreatorId");
-                    context.Writer.Write(publicRequest.CreatorId);
-                }
-
-                if(publicRequest.IsSetFleetId())
-                {
-                    context.Writer.WritePropertyName("FleetId");
-                    context.Writer.Write(publicRequest.FleetId);
-                }
-
-                if(publicRequest.IsSetGameProperties())
-                {
-                    context.Writer.WritePropertyName("GameProperties");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestGamePropertiesListValue in publicRequest.GameProperties)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAliasId())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = GamePropertyMarshaller.Instance;
-                        marshaller.Marshall(publicRequestGamePropertiesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("AliasId");
+                        context.Writer.Write(publicRequest.AliasId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetCreatorId())
+                    {
+                        context.Writer.WritePropertyName("CreatorId");
+                        context.Writer.Write(publicRequest.CreatorId);
+                    }
+
+                    if(publicRequest.IsSetFleetId())
+                    {
+                        context.Writer.WritePropertyName("FleetId");
+                        context.Writer.Write(publicRequest.FleetId);
+                    }
+
+                    if(publicRequest.IsSetGameProperties())
+                    {
+                        context.Writer.WritePropertyName("GameProperties");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestGamePropertiesListValue in publicRequest.GameProperties)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = GamePropertyMarshaller.Instance;
+                            marshaller.Marshall(publicRequestGamePropertiesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetGameSessionData())
+                    {
+                        context.Writer.WritePropertyName("GameSessionData");
+                        context.Writer.Write(publicRequest.GameSessionData);
+                    }
+
+                    if(publicRequest.IsSetGameSessionId())
+                    {
+                        context.Writer.WritePropertyName("GameSessionId");
+                        context.Writer.Write(publicRequest.GameSessionId);
+                    }
+
+                    if(publicRequest.IsSetIdempotencyToken())
+                    {
+                        context.Writer.WritePropertyName("IdempotencyToken");
+                        context.Writer.Write(publicRequest.IdempotencyToken);
+                    }
+
+                    if(publicRequest.IsSetLocation())
+                    {
+                        context.Writer.WritePropertyName("Location");
+                        context.Writer.Write(publicRequest.Location);
+                    }
+
+                    if(publicRequest.IsSetMaximumPlayerSessionCount())
+                    {
+                        context.Writer.WritePropertyName("MaximumPlayerSessionCount");
+                        context.Writer.Write(publicRequest.MaximumPlayerSessionCount.Value);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetGameSessionData())
-                {
-                    context.Writer.WritePropertyName("GameSessionData");
-                    context.Writer.Write(publicRequest.GameSessionData);
-                }
-
-                if(publicRequest.IsSetGameSessionId())
-                {
-                    context.Writer.WritePropertyName("GameSessionId");
-                    context.Writer.Write(publicRequest.GameSessionId);
-                }
-
-                if(publicRequest.IsSetIdempotencyToken())
-                {
-                    context.Writer.WritePropertyName("IdempotencyToken");
-                    context.Writer.Write(publicRequest.IdempotencyToken);
-                }
-
-                if(publicRequest.IsSetLocation())
-                {
-                    context.Writer.WritePropertyName("Location");
-                    context.Writer.Write(publicRequest.Location);
-                }
-
-                if(publicRequest.IsSetMaximumPlayerSessionCount())
-                {
-                    context.Writer.WritePropertyName("MaximumPlayerSessionCount");
-                    context.Writer.Write(publicRequest.MaximumPlayerSessionCount.Value);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Contains information about an input into the flow and what to do with it.
+    /// Contains information about an input into the prompt flow and where to send it.
     /// 
     ///  
     /// <para>
@@ -52,7 +52,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// Contains information about an input into the flow.
+        /// Contains information about an input into the prompt flow.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
@@ -71,7 +71,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property NodeName. 
         /// <para>
-        /// A name for the input of the flow input node.
+        /// The name of the flow input node that begins the prompt flow.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -90,7 +90,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property NodeOutputName. 
         /// <para>
-        /// A name for the output of the flow input node.
+        /// The name of the output from the flow input node that begins the prompt flow.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

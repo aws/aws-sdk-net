@@ -38,6 +38,7 @@ namespace Amazon.IoTSiteWise.Model
     public partial class ListAssetModelPropertiesRequest : AmazonIoTSiteWiseRequest
     {
         private string _assetModelId;
+        private string _assetModelVersion;
         private ListAssetModelPropertiesFilter _filter;
         private int? _maxResults;
         private string _nextToken;
@@ -62,6 +63,27 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetAssetModelId()
         {
             return this._assetModelId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssetModelVersion. 
+        /// <para>
+        /// The version alias that specifies the latest or active version of the asset model.
+        /// The details are returned in the response. The default value is <c>LATEST</c>. See
+        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/model-active-version.html">
+        /// Asset model versions</a> in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string AssetModelVersion
+        {
+            get { return this._assetModelVersion; }
+            set { this._assetModelVersion = value; }
+        }
+
+        // Check to see if AssetModelVersion property is set
+        internal bool IsSetAssetModelVersion()
+        {
+            return this._assetModelVersion != null;
         }
 
         /// <summary>

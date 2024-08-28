@@ -64,66 +64,69 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
                 throw new AmazonOSISException("Request object does not have required field PipelineName set");
             request.AddPathResource("{PipelineName}", StringUtils.FromString(publicRequest.PipelineName));
             request.ResourcePath = "/2022-01-01/osis/updatePipeline/{PipelineName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBufferOptions())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("BufferOptions");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBufferOptions())
+                    {
+                        context.Writer.WritePropertyName("BufferOptions");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = BufferOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.BufferOptions, context);
+                        var marshaller = BufferOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.BufferOptions, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetEncryptionAtRestOptions())
+                    {
+                        context.Writer.WritePropertyName("EncryptionAtRestOptions");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EncryptionAtRestOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EncryptionAtRestOptions, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetLogPublishingOptions())
+                    {
+                        context.Writer.WritePropertyName("LogPublishingOptions");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LogPublishingOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.LogPublishingOptions, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetMaxUnits())
+                    {
+                        context.Writer.WritePropertyName("MaxUnits");
+                        context.Writer.Write(publicRequest.MaxUnits.Value);
+                    }
+
+                    if(publicRequest.IsSetMinUnits())
+                    {
+                        context.Writer.WritePropertyName("MinUnits");
+                        context.Writer.Write(publicRequest.MinUnits.Value);
+                    }
+
+                    if(publicRequest.IsSetPipelineConfigurationBody())
+                    {
+                        context.Writer.WritePropertyName("PipelineConfigurationBody");
+                        context.Writer.Write(publicRequest.PipelineConfigurationBody);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEncryptionAtRestOptions())
-                {
-                    context.Writer.WritePropertyName("EncryptionAtRestOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EncryptionAtRestOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EncryptionAtRestOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetLogPublishingOptions())
-                {
-                    context.Writer.WritePropertyName("LogPublishingOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LogPublishingOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LogPublishingOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMaxUnits())
-                {
-                    context.Writer.WritePropertyName("MaxUnits");
-                    context.Writer.Write(publicRequest.MaxUnits.Value);
-                }
-
-                if(publicRequest.IsSetMinUnits())
-                {
-                    context.Writer.WritePropertyName("MinUnits");
-                    context.Writer.Write(publicRequest.MinUnits.Value);
-                }
-
-                if(publicRequest.IsSetPipelineConfigurationBody())
-                {
-                    context.Writer.WritePropertyName("PipelineConfigurationBody");
-                    context.Writer.Write(publicRequest.PipelineConfigurationBody);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

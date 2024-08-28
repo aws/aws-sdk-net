@@ -67,45 +67,48 @@ namespace Amazon.NetworkMonitor.Model.Internal.MarshallTransformations
                 throw new AmazonNetworkMonitorException("Request object does not have required field ProbeId set");
             request.AddPathResource("{probeId}", StringUtils.FromString(publicRequest.ProbeId));
             request.ResourcePath = "/monitors/{monitorName}/probes/{probeId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDestination())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("destination");
-                    context.Writer.Write(publicRequest.Destination);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDestination())
+                    {
+                        context.Writer.WritePropertyName("destination");
+                        context.Writer.Write(publicRequest.Destination);
+                    }
+
+                    if(publicRequest.IsSetDestinationPort())
+                    {
+                        context.Writer.WritePropertyName("destinationPort");
+                        context.Writer.Write(publicRequest.DestinationPort.Value);
+                    }
+
+                    if(publicRequest.IsSetPacketSize())
+                    {
+                        context.Writer.WritePropertyName("packetSize");
+                        context.Writer.Write(publicRequest.PacketSize.Value);
+                    }
+
+                    if(publicRequest.IsSetProtocol())
+                    {
+                        context.Writer.WritePropertyName("protocol");
+                        context.Writer.Write(publicRequest.Protocol);
+                    }
+
+                    if(publicRequest.IsSetState())
+                    {
+                        context.Writer.WritePropertyName("state");
+                        context.Writer.Write(publicRequest.State);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDestinationPort())
-                {
-                    context.Writer.WritePropertyName("destinationPort");
-                    context.Writer.Write(publicRequest.DestinationPort.Value);
-                }
-
-                if(publicRequest.IsSetPacketSize())
-                {
-                    context.Writer.WritePropertyName("packetSize");
-                    context.Writer.Write(publicRequest.PacketSize.Value);
-                }
-
-                if(publicRequest.IsSetProtocol())
-                {
-                    context.Writer.WritePropertyName("protocol");
-                    context.Writer.Write(publicRequest.Protocol);
-                }
-
-                if(publicRequest.IsSetState())
-                {
-                    context.Writer.WritePropertyName("state");
-                    context.Writer.Write(publicRequest.State);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

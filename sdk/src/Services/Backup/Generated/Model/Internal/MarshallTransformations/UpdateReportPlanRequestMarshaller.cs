@@ -64,54 +64,57 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 throw new AmazonBackupException("Request object does not have required field ReportPlanName set");
             request.AddPathResource("{reportPlanName}", StringUtils.FromString(publicRequest.ReportPlanName));
             request.ResourcePath = "/audit/report-plans/{reportPlanName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetIdempotencyToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("IdempotencyToken");
-                    context.Writer.Write(publicRequest.IdempotencyToken);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetIdempotencyToken())
+                    {
+                        context.Writer.WritePropertyName("IdempotencyToken");
+                        context.Writer.Write(publicRequest.IdempotencyToken);
+                    }
+
+                    else if(!(publicRequest.IsSetIdempotencyToken()))
+                    {
+                        context.Writer.WritePropertyName("IdempotencyToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetReportDeliveryChannel())
+                    {
+                        context.Writer.WritePropertyName("ReportDeliveryChannel");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ReportDeliveryChannelMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ReportDeliveryChannel, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetReportPlanDescription())
+                    {
+                        context.Writer.WritePropertyName("ReportPlanDescription");
+                        context.Writer.Write(publicRequest.ReportPlanDescription);
+                    }
+
+                    if(publicRequest.IsSetReportSetting())
+                    {
+                        context.Writer.WritePropertyName("ReportSetting");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ReportSettingMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ReportSetting, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                else if(!(publicRequest.IsSetIdempotencyToken()))
-                {
-                    context.Writer.WritePropertyName("IdempotencyToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetReportDeliveryChannel())
-                {
-                    context.Writer.WritePropertyName("ReportDeliveryChannel");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ReportDeliveryChannelMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ReportDeliveryChannel, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetReportPlanDescription())
-                {
-                    context.Writer.WritePropertyName("ReportPlanDescription");
-                    context.Writer.Write(publicRequest.ReportPlanDescription);
-                }
-
-                if(publicRequest.IsSetReportSetting())
-                {
-                    context.Writer.WritePropertyName("ReportSetting");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ReportSettingMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ReportSetting, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

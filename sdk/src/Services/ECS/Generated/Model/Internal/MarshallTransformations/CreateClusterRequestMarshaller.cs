@@ -63,102 +63,105 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCapacityProviders())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("capacityProviders");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCapacityProvidersListValue in publicRequest.CapacityProviders)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCapacityProviders())
                     {
-                            context.Writer.Write(publicRequestCapacityProvidersListValue);
+                        context.Writer.WritePropertyName("capacityProviders");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCapacityProvidersListValue in publicRequest.CapacityProviders)
+                        {
+                                context.Writer.Write(publicRequestCapacityProvidersListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetClusterName())
-                {
-                    context.Writer.WritePropertyName("clusterName");
-                    context.Writer.Write(publicRequest.ClusterName);
-                }
-
-                if(publicRequest.IsSetConfiguration())
-                {
-                    context.Writer.WritePropertyName("configuration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ClusterConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Configuration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDefaultCapacityProviderStrategy())
-                {
-                    context.Writer.WritePropertyName("defaultCapacityProviderStrategy");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDefaultCapacityProviderStrategyListValue in publicRequest.DefaultCapacityProviderStrategy)
+                    if(publicRequest.IsSetClusterName())
                     {
+                        context.Writer.WritePropertyName("clusterName");
+                        context.Writer.Write(publicRequest.ClusterName);
+                    }
+
+                    if(publicRequest.IsSetConfiguration())
+                    {
+                        context.Writer.WritePropertyName("configuration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = CapacityProviderStrategyItemMarshaller.Instance;
-                        marshaller.Marshall(publicRequestDefaultCapacityProviderStrategyListValue, context);
+                        var marshaller = ClusterConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Configuration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetServiceConnectDefaults())
-                {
-                    context.Writer.WritePropertyName("serviceConnectDefaults");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ClusterServiceConnectDefaultsRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ServiceConnectDefaults, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSettings())
-                {
-                    context.Writer.WritePropertyName("settings");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSettingsListValue in publicRequest.Settings)
+                    if(publicRequest.IsSetDefaultCapacityProviderStrategy())
                     {
+                        context.Writer.WritePropertyName("defaultCapacityProviderStrategy");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDefaultCapacityProviderStrategyListValue in publicRequest.DefaultCapacityProviderStrategy)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = CapacityProviderStrategyItemMarshaller.Instance;
+                            marshaller.Marshall(publicRequestDefaultCapacityProviderStrategyListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetServiceConnectDefaults())
+                    {
+                        context.Writer.WritePropertyName("serviceConnectDefaults");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = ClusterSettingMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSettingsListValue, context);
+                        var marshaller = ClusterServiceConnectDefaultsRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ServiceConnectDefaults, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetSettings())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("settings");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSettingsListValue in publicRequest.Settings)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                            var marshaller = ClusterSettingMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSettingsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

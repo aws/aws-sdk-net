@@ -63,71 +63,74 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDataType())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DataType");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDataTypeListValue in publicRequest.DataType)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDataType())
                     {
-                            context.Writer.Write(publicRequestDataTypeListValue);
+                        context.Writer.WritePropertyName("DataType");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDataTypeListValue in publicRequest.DataType)
+                        {
+                                context.Writer.Write(publicRequestDataTypeListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetFilter())
+                    {
+                        context.Writer.WritePropertyName("Filter");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ExpressionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Filter, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetSortBy())
+                    {
+                        context.Writer.WritePropertyName("SortBy");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SortDefinitionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SortBy, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTimePeriod())
+                    {
+                        context.Writer.WritePropertyName("TimePeriod");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DateIntervalMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TimePeriod, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetFilter())
-                {
-                    context.Writer.WritePropertyName("Filter");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ExpressionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Filter, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetSortBy())
-                {
-                    context.Writer.WritePropertyName("SortBy");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SortDefinitionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SortBy, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTimePeriod())
-                {
-                    context.Writer.WritePropertyName("TimePeriod");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DateIntervalMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TimePeriod, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

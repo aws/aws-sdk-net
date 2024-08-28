@@ -70,31 +70,34 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 throw new AmazonLexModelsV2Exception("Request object does not have required field LocaleId set");
             request.AddPathResource("{localeId}", StringUtils.FromString(publicRequest.LocaleId));
             request.ResourcePath = "/bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/customvocabulary/DEFAULT/batchupdate";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCustomVocabularyItemList())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("customVocabularyItemList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCustomVocabularyItemListListValue in publicRequest.CustomVocabularyItemList)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCustomVocabularyItemList())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("customVocabularyItemList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCustomVocabularyItemListListValue in publicRequest.CustomVocabularyItemList)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = CustomVocabularyItemMarshaller.Instance;
-                        marshaller.Marshall(publicRequestCustomVocabularyItemListListValue, context);
+                            var marshaller = CustomVocabularyItemMarshaller.Instance;
+                            marshaller.Marshall(publicRequestCustomVocabularyItemListListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

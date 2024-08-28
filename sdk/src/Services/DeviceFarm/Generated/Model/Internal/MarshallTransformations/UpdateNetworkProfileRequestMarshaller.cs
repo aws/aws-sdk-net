@@ -63,87 +63,90 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("arn");
-                    context.Writer.Write(publicRequest.Arn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetArn())
+                    {
+                        context.Writer.WritePropertyName("arn");
+                        context.Writer.Write(publicRequest.Arn);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetDownlinkBandwidthBits())
+                    {
+                        context.Writer.WritePropertyName("downlinkBandwidthBits");
+                        context.Writer.Write(publicRequest.DownlinkBandwidthBits.Value);
+                    }
+
+                    if(publicRequest.IsSetDownlinkDelayMs())
+                    {
+                        context.Writer.WritePropertyName("downlinkDelayMs");
+                        context.Writer.Write(publicRequest.DownlinkDelayMs.Value);
+                    }
+
+                    if(publicRequest.IsSetDownlinkJitterMs())
+                    {
+                        context.Writer.WritePropertyName("downlinkJitterMs");
+                        context.Writer.Write(publicRequest.DownlinkJitterMs.Value);
+                    }
+
+                    if(publicRequest.IsSetDownlinkLossPercent())
+                    {
+                        context.Writer.WritePropertyName("downlinkLossPercent");
+                        context.Writer.Write(publicRequest.DownlinkLossPercent.Value);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetType())
+                    {
+                        context.Writer.WritePropertyName("type");
+                        context.Writer.Write(publicRequest.Type);
+                    }
+
+                    if(publicRequest.IsSetUplinkBandwidthBits())
+                    {
+                        context.Writer.WritePropertyName("uplinkBandwidthBits");
+                        context.Writer.Write(publicRequest.UplinkBandwidthBits.Value);
+                    }
+
+                    if(publicRequest.IsSetUplinkDelayMs())
+                    {
+                        context.Writer.WritePropertyName("uplinkDelayMs");
+                        context.Writer.Write(publicRequest.UplinkDelayMs.Value);
+                    }
+
+                    if(publicRequest.IsSetUplinkJitterMs())
+                    {
+                        context.Writer.WritePropertyName("uplinkJitterMs");
+                        context.Writer.Write(publicRequest.UplinkJitterMs.Value);
+                    }
+
+                    if(publicRequest.IsSetUplinkLossPercent())
+                    {
+                        context.Writer.WritePropertyName("uplinkLossPercent");
+                        context.Writer.Write(publicRequest.UplinkLossPercent.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetDownlinkBandwidthBits())
-                {
-                    context.Writer.WritePropertyName("downlinkBandwidthBits");
-                    context.Writer.Write(publicRequest.DownlinkBandwidthBits.Value);
-                }
-
-                if(publicRequest.IsSetDownlinkDelayMs())
-                {
-                    context.Writer.WritePropertyName("downlinkDelayMs");
-                    context.Writer.Write(publicRequest.DownlinkDelayMs.Value);
-                }
-
-                if(publicRequest.IsSetDownlinkJitterMs())
-                {
-                    context.Writer.WritePropertyName("downlinkJitterMs");
-                    context.Writer.Write(publicRequest.DownlinkJitterMs.Value);
-                }
-
-                if(publicRequest.IsSetDownlinkLossPercent())
-                {
-                    context.Writer.WritePropertyName("downlinkLossPercent");
-                    context.Writer.Write(publicRequest.DownlinkLossPercent.Value);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetType())
-                {
-                    context.Writer.WritePropertyName("type");
-                    context.Writer.Write(publicRequest.Type);
-                }
-
-                if(publicRequest.IsSetUplinkBandwidthBits())
-                {
-                    context.Writer.WritePropertyName("uplinkBandwidthBits");
-                    context.Writer.Write(publicRequest.UplinkBandwidthBits.Value);
-                }
-
-                if(publicRequest.IsSetUplinkDelayMs())
-                {
-                    context.Writer.WritePropertyName("uplinkDelayMs");
-                    context.Writer.Write(publicRequest.UplinkDelayMs.Value);
-                }
-
-                if(publicRequest.IsSetUplinkJitterMs())
-                {
-                    context.Writer.WritePropertyName("uplinkJitterMs");
-                    context.Writer.Write(publicRequest.UplinkJitterMs.Value);
-                }
-
-                if(publicRequest.IsSetUplinkLossPercent())
-                {
-                    context.Writer.WritePropertyName("uplinkLossPercent");
-                    context.Writer.Write(publicRequest.UplinkLossPercent.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

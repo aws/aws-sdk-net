@@ -61,78 +61,81 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/provisioning-templates";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetEnabled())
-                {
-                    context.Writer.WritePropertyName("enabled");
-                    context.Writer.Write(publicRequest.Enabled.Value);
-                }
-
-                if(publicRequest.IsSetPreProvisioningHook())
-                {
-                    context.Writer.WritePropertyName("preProvisioningHook");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ProvisioningHookMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PreProvisioningHook, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetProvisioningRoleArn())
-                {
-                    context.Writer.WritePropertyName("provisioningRoleArn");
-                    context.Writer.Write(publicRequest.ProvisioningRoleArn);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetEnabled())
+                    {
+                        context.Writer.WritePropertyName("enabled");
+                        context.Writer.Write(publicRequest.Enabled.Value);
+                    }
+
+                    if(publicRequest.IsSetPreProvisioningHook())
+                    {
+                        context.Writer.WritePropertyName("preProvisioningHook");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = ProvisioningHookMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.PreProvisioningHook, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetProvisioningRoleArn())
+                    {
+                        context.Writer.WritePropertyName("provisioningRoleArn");
+                        context.Writer.Write(publicRequest.ProvisioningRoleArn);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTemplateBody())
+                    {
+                        context.Writer.WritePropertyName("templateBody");
+                        context.Writer.Write(publicRequest.TemplateBody);
+                    }
+
+                    if(publicRequest.IsSetTemplateName())
+                    {
+                        context.Writer.WritePropertyName("templateName");
+                        context.Writer.Write(publicRequest.TemplateName);
+                    }
+
+                    if(publicRequest.IsSetType())
+                    {
+                        context.Writer.WritePropertyName("type");
+                        context.Writer.Write(publicRequest.Type);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTemplateBody())
-                {
-                    context.Writer.WritePropertyName("templateBody");
-                    context.Writer.Write(publicRequest.TemplateBody);
-                }
-
-                if(publicRequest.IsSetTemplateName())
-                {
-                    context.Writer.WritePropertyName("templateName");
-                    context.Writer.Write(publicRequest.TemplateName);
-                }
-
-                if(publicRequest.IsSetType())
-                {
-                    context.Writer.WritePropertyName("type");
-                    context.Writer.Write(publicRequest.Type);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

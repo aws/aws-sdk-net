@@ -63,44 +63,47 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDataAccessRoleArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DataAccessRoleArn");
-                    context.Writer.Write(publicRequest.DataAccessRoleArn);
-                }
-
-                if(publicRequest.IsSetVocabularyFilterFileUri())
-                {
-                    context.Writer.WritePropertyName("VocabularyFilterFileUri");
-                    context.Writer.Write(publicRequest.VocabularyFilterFileUri);
-                }
-
-                if(publicRequest.IsSetVocabularyFilterName())
-                {
-                    context.Writer.WritePropertyName("VocabularyFilterName");
-                    context.Writer.Write(publicRequest.VocabularyFilterName);
-                }
-
-                if(publicRequest.IsSetWords())
-                {
-                    context.Writer.WritePropertyName("Words");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestWordsListValue in publicRequest.Words)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDataAccessRoleArn())
                     {
-                            context.Writer.Write(publicRequestWordsListValue);
+                        context.Writer.WritePropertyName("DataAccessRoleArn");
+                        context.Writer.Write(publicRequest.DataAccessRoleArn);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetVocabularyFilterFileUri())
+                    {
+                        context.Writer.WritePropertyName("VocabularyFilterFileUri");
+                        context.Writer.Write(publicRequest.VocabularyFilterFileUri);
+                    }
+
+                    if(publicRequest.IsSetVocabularyFilterName())
+                    {
+                        context.Writer.WritePropertyName("VocabularyFilterName");
+                        context.Writer.Write(publicRequest.VocabularyFilterName);
+                    }
+
+                    if(publicRequest.IsSetWords())
+                    {
+                        context.Writer.WritePropertyName("Words");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestWordsListValue in publicRequest.Words)
+                        {
+                                context.Writer.Write(publicRequestWordsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -61,124 +61,127 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/run";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLogLevel())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("logLevel");
-                    context.Writer.Write(publicRequest.LogLevel);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetOutputUri())
-                {
-                    context.Writer.WritePropertyName("outputUri");
-                    context.Writer.Write(publicRequest.OutputUri);
-                }
-
-                if(publicRequest.IsSetParameters())
-                {
-                    context.Writer.WritePropertyName("parameters");
-                    Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, publicRequest.Parameters);
-                }
-
-                if(publicRequest.IsSetPriority())
-                {
-                    context.Writer.WritePropertyName("priority");
-                    context.Writer.Write(publicRequest.Priority.Value);
-                }
-
-                if(publicRequest.IsSetRequestId())
-                {
-                    context.Writer.WritePropertyName("requestId");
-                    context.Writer.Write(publicRequest.RequestId);
-                }
-
-                else if(!(publicRequest.IsSetRequestId()))
-                {
-                    context.Writer.WritePropertyName("requestId");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetRetentionMode())
-                {
-                    context.Writer.WritePropertyName("retentionMode");
-                    context.Writer.Write(publicRequest.RetentionMode);
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("roleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetRunGroupId())
-                {
-                    context.Writer.WritePropertyName("runGroupId");
-                    context.Writer.Write(publicRequest.RunGroupId);
-                }
-
-                if(publicRequest.IsSetRunId())
-                {
-                    context.Writer.WritePropertyName("runId");
-                    context.Writer.Write(publicRequest.RunId);
-                }
-
-                if(publicRequest.IsSetStorageCapacity())
-                {
-                    context.Writer.WritePropertyName("storageCapacity");
-                    context.Writer.Write(publicRequest.StorageCapacity.Value);
-                }
-
-                if(publicRequest.IsSetStorageType())
-                {
-                    context.Writer.WritePropertyName("storageType");
-                    context.Writer.Write(publicRequest.StorageType);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetLogLevel())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("logLevel");
+                        context.Writer.Write(publicRequest.LogLevel);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetOutputUri())
+                    {
+                        context.Writer.WritePropertyName("outputUri");
+                        context.Writer.Write(publicRequest.OutputUri);
+                    }
+
+                    if(publicRequest.IsSetParameters())
+                    {
+                        context.Writer.WritePropertyName("parameters");
+                        Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, publicRequest.Parameters);
+                    }
+
+                    if(publicRequest.IsSetPriority())
+                    {
+                        context.Writer.WritePropertyName("priority");
+                        context.Writer.Write(publicRequest.Priority.Value);
+                    }
+
+                    if(publicRequest.IsSetRequestId())
+                    {
+                        context.Writer.WritePropertyName("requestId");
+                        context.Writer.Write(publicRequest.RequestId);
+                    }
+
+                    else if(!(publicRequest.IsSetRequestId()))
+                    {
+                        context.Writer.WritePropertyName("requestId");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetRetentionMode())
+                    {
+                        context.Writer.WritePropertyName("retentionMode");
+                        context.Writer.Write(publicRequest.RetentionMode);
+                    }
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("roleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    if(publicRequest.IsSetRunGroupId())
+                    {
+                        context.Writer.WritePropertyName("runGroupId");
+                        context.Writer.Write(publicRequest.RunGroupId);
+                    }
+
+                    if(publicRequest.IsSetRunId())
+                    {
+                        context.Writer.WritePropertyName("runId");
+                        context.Writer.Write(publicRequest.RunId);
+                    }
+
+                    if(publicRequest.IsSetStorageCapacity())
+                    {
+                        context.Writer.WritePropertyName("storageCapacity");
+                        context.Writer.Write(publicRequest.StorageCapacity.Value);
+                    }
+
+                    if(publicRequest.IsSetStorageType())
+                    {
+                        context.Writer.WritePropertyName("storageType");
+                        context.Writer.Write(publicRequest.StorageType);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetWorkflowId())
+                    {
+                        context.Writer.WritePropertyName("workflowId");
+                        context.Writer.Write(publicRequest.WorkflowId);
+                    }
+
+                    if(publicRequest.IsSetWorkflowOwnerId())
+                    {
+                        context.Writer.WritePropertyName("workflowOwnerId");
+                        context.Writer.Write(publicRequest.WorkflowOwnerId);
+                    }
+
+                    if(publicRequest.IsSetWorkflowType())
+                    {
+                        context.Writer.WritePropertyName("workflowType");
+                        context.Writer.Write(publicRequest.WorkflowType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetWorkflowId())
-                {
-                    context.Writer.WritePropertyName("workflowId");
-                    context.Writer.Write(publicRequest.WorkflowId);
-                }
-
-                if(publicRequest.IsSetWorkflowOwnerId())
-                {
-                    context.Writer.WritePropertyName("workflowOwnerId");
-                    context.Writer.Write(publicRequest.WorkflowOwnerId);
-                }
-
-                if(publicRequest.IsSetWorkflowType())
-                {
-                    context.Writer.WritePropertyName("workflowType");
-                    context.Writer.Write(publicRequest.WorkflowType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

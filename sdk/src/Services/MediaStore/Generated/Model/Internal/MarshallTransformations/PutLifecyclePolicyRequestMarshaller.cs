@@ -63,27 +63,30 @@ namespace Amazon.MediaStore.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetContainerName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ContainerName");
-                    context.Writer.Write(publicRequest.ContainerName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetContainerName())
+                    {
+                        context.Writer.WritePropertyName("ContainerName");
+                        context.Writer.Write(publicRequest.ContainerName);
+                    }
+
+                    if(publicRequest.IsSetLifecyclePolicy())
+                    {
+                        context.Writer.WritePropertyName("LifecyclePolicy");
+                        context.Writer.Write(publicRequest.LifecyclePolicy);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetLifecyclePolicy())
-                {
-                    context.Writer.WritePropertyName("LifecyclePolicy");
-                    context.Writer.Write(publicRequest.LifecyclePolicy);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

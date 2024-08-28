@@ -63,33 +63,36 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetQueueUrl())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("QueueUrl");
-                    context.Writer.Write(publicRequest.QueueUrl);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetQueueUrl())
+                    {
+                        context.Writer.WritePropertyName("QueueUrl");
+                        context.Writer.Write(publicRequest.QueueUrl);
+                    }
+
+                    if(publicRequest.IsSetReceiptHandle())
+                    {
+                        context.Writer.WritePropertyName("ReceiptHandle");
+                        context.Writer.Write(publicRequest.ReceiptHandle);
+                    }
+
+                    if(publicRequest.IsSetVisibilityTimeout())
+                    {
+                        context.Writer.WritePropertyName("VisibilityTimeout");
+                        context.Writer.Write(publicRequest.VisibilityTimeout.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetReceiptHandle())
-                {
-                    context.Writer.WritePropertyName("ReceiptHandle");
-                    context.Writer.Write(publicRequest.ReceiptHandle);
-                }
-
-                if(publicRequest.IsSetVisibilityTimeout())
-                {
-                    context.Writer.WritePropertyName("VisibilityTimeout");
-                    context.Writer.Write(publicRequest.VisibilityTimeout.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

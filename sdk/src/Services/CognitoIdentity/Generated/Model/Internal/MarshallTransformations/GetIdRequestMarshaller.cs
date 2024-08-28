@@ -63,41 +63,44 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccountId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AccountId");
-                    context.Writer.Write(publicRequest.AccountId);
-                }
-
-                if(publicRequest.IsSetIdentityPoolId())
-                {
-                    context.Writer.WritePropertyName("IdentityPoolId");
-                    context.Writer.Write(publicRequest.IdentityPoolId);
-                }
-
-                if(publicRequest.IsSetLogins())
-                {
-                    context.Writer.WritePropertyName("Logins");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestLoginsKvp in publicRequest.Logins)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccountId())
                     {
-                        context.Writer.WritePropertyName(publicRequestLoginsKvp.Key);
-                        var publicRequestLoginsValue = publicRequestLoginsKvp.Value;
-
-                            context.Writer.Write(publicRequestLoginsValue);
+                        context.Writer.WritePropertyName("AccountId");
+                        context.Writer.Write(publicRequest.AccountId);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetIdentityPoolId())
+                    {
+                        context.Writer.WritePropertyName("IdentityPoolId");
+                        context.Writer.Write(publicRequest.IdentityPoolId);
+                    }
+
+                    if(publicRequest.IsSetLogins())
+                    {
+                        context.Writer.WritePropertyName("Logins");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestLoginsKvp in publicRequest.Logins)
+                        {
+                            context.Writer.WritePropertyName(publicRequestLoginsKvp.Key);
+                            var publicRequestLoginsValue = publicRequestLoginsKvp.Value;
+
+                                context.Writer.Write(publicRequestLoginsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

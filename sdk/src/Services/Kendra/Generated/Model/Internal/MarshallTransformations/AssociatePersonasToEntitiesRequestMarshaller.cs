@@ -63,43 +63,46 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Id");
-                    context.Writer.Write(publicRequest.Id);
-                }
-
-                if(publicRequest.IsSetIndexId())
-                {
-                    context.Writer.WritePropertyName("IndexId");
-                    context.Writer.Write(publicRequest.IndexId);
-                }
-
-                if(publicRequest.IsSetPersonas())
-                {
-                    context.Writer.WritePropertyName("Personas");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPersonasListValue in publicRequest.Personas)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetId())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EntityPersonaConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestPersonasListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("Id");
+                        context.Writer.Write(publicRequest.Id);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetIndexId())
+                    {
+                        context.Writer.WritePropertyName("IndexId");
+                        context.Writer.Write(publicRequest.IndexId);
+                    }
+
+                    if(publicRequest.IsSetPersonas())
+                    {
+                        context.Writer.WritePropertyName("Personas");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPersonasListValue in publicRequest.Personas)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = EntityPersonaConfigurationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestPersonasListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -61,27 +61,30 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             request.HttpMethod = "PATCH";
 
             request.ResourcePath = "/accounts";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAutoEnableControls())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AutoEnableControls");
-                    context.Writer.Write(publicRequest.AutoEnableControls.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAutoEnableControls())
+                    {
+                        context.Writer.WritePropertyName("AutoEnableControls");
+                        context.Writer.Write(publicRequest.AutoEnableControls.Value);
+                    }
+
+                    if(publicRequest.IsSetControlFindingGenerator())
+                    {
+                        context.Writer.WritePropertyName("ControlFindingGenerator");
+                        context.Writer.Write(publicRequest.ControlFindingGenerator);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetControlFindingGenerator())
-                {
-                    context.Writer.WritePropertyName("ControlFindingGenerator");
-                    context.Writer.Write(publicRequest.ControlFindingGenerator);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

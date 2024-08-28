@@ -63,55 +63,58 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAppVisibility())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AppVisibility");
-                    context.Writer.Write(publicRequest.AppVisibility);
-                }
-
-                if(publicRequest.IsSetAttributes())
-                {
-                    context.Writer.WritePropertyName("Attributes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAttributesListValue in publicRequest.Attributes)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAppVisibility())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EntitlementAttributeMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAttributesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("AppVisibility");
+                        context.Writer.Write(publicRequest.AppVisibility);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetAttributes())
+                    {
+                        context.Writer.WritePropertyName("Attributes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAttributesListValue in publicRequest.Attributes)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = EntitlementAttributeMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAttributesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetStackName())
+                    {
+                        context.Writer.WritePropertyName("StackName");
+                        context.Writer.Write(publicRequest.StackName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetStackName())
-                {
-                    context.Writer.WritePropertyName("StackName");
-                    context.Writer.Write(publicRequest.StackName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

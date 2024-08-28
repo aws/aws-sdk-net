@@ -63,63 +63,66 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetExcludeCharacters())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ExcludeCharacters");
-                    context.Writer.Write(publicRequest.ExcludeCharacters);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetExcludeCharacters())
+                    {
+                        context.Writer.WritePropertyName("ExcludeCharacters");
+                        context.Writer.Write(publicRequest.ExcludeCharacters);
+                    }
+
+                    if(publicRequest.IsSetExcludeLowercase())
+                    {
+                        context.Writer.WritePropertyName("ExcludeLowercase");
+                        context.Writer.Write(publicRequest.ExcludeLowercase.Value);
+                    }
+
+                    if(publicRequest.IsSetExcludeNumbers())
+                    {
+                        context.Writer.WritePropertyName("ExcludeNumbers");
+                        context.Writer.Write(publicRequest.ExcludeNumbers.Value);
+                    }
+
+                    if(publicRequest.IsSetExcludePunctuation())
+                    {
+                        context.Writer.WritePropertyName("ExcludePunctuation");
+                        context.Writer.Write(publicRequest.ExcludePunctuation.Value);
+                    }
+
+                    if(publicRequest.IsSetExcludeUppercase())
+                    {
+                        context.Writer.WritePropertyName("ExcludeUppercase");
+                        context.Writer.Write(publicRequest.ExcludeUppercase.Value);
+                    }
+
+                    if(publicRequest.IsSetIncludeSpace())
+                    {
+                        context.Writer.WritePropertyName("IncludeSpace");
+                        context.Writer.Write(publicRequest.IncludeSpace.Value);
+                    }
+
+                    if(publicRequest.IsSetPasswordLength())
+                    {
+                        context.Writer.WritePropertyName("PasswordLength");
+                        context.Writer.Write(publicRequest.PasswordLength.Value);
+                    }
+
+                    if(publicRequest.IsSetRequireEachIncludedType())
+                    {
+                        context.Writer.WritePropertyName("RequireEachIncludedType");
+                        context.Writer.Write(publicRequest.RequireEachIncludedType.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetExcludeLowercase())
-                {
-                    context.Writer.WritePropertyName("ExcludeLowercase");
-                    context.Writer.Write(publicRequest.ExcludeLowercase.Value);
-                }
-
-                if(publicRequest.IsSetExcludeNumbers())
-                {
-                    context.Writer.WritePropertyName("ExcludeNumbers");
-                    context.Writer.Write(publicRequest.ExcludeNumbers.Value);
-                }
-
-                if(publicRequest.IsSetExcludePunctuation())
-                {
-                    context.Writer.WritePropertyName("ExcludePunctuation");
-                    context.Writer.Write(publicRequest.ExcludePunctuation.Value);
-                }
-
-                if(publicRequest.IsSetExcludeUppercase())
-                {
-                    context.Writer.WritePropertyName("ExcludeUppercase");
-                    context.Writer.Write(publicRequest.ExcludeUppercase.Value);
-                }
-
-                if(publicRequest.IsSetIncludeSpace())
-                {
-                    context.Writer.WritePropertyName("IncludeSpace");
-                    context.Writer.Write(publicRequest.IncludeSpace.Value);
-                }
-
-                if(publicRequest.IsSetPasswordLength())
-                {
-                    context.Writer.WritePropertyName("PasswordLength");
-                    context.Writer.Write(publicRequest.PasswordLength.Value);
-                }
-
-                if(publicRequest.IsSetRequireEachIncludedType())
-                {
-                    context.Writer.WritePropertyName("RequireEachIncludedType");
-                    context.Writer.Write(publicRequest.RequireEachIncludedType.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

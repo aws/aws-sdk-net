@@ -64,51 +64,54 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
                 throw new AmazonMainframeModernizationException("Request object does not have required field EnvironmentId set");
             request.AddPathResource("{environmentId}", StringUtils.FromString(publicRequest.EnvironmentId));
             request.ResourcePath = "/environments/{environmentId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApplyDuringMaintenanceWindow())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("applyDuringMaintenanceWindow");
-                    context.Writer.Write(publicRequest.ApplyDuringMaintenanceWindow.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApplyDuringMaintenanceWindow())
+                    {
+                        context.Writer.WritePropertyName("applyDuringMaintenanceWindow");
+                        context.Writer.Write(publicRequest.ApplyDuringMaintenanceWindow.Value);
+                    }
+
+                    if(publicRequest.IsSetDesiredCapacity())
+                    {
+                        context.Writer.WritePropertyName("desiredCapacity");
+                        context.Writer.Write(publicRequest.DesiredCapacity.Value);
+                    }
+
+                    if(publicRequest.IsSetEngineVersion())
+                    {
+                        context.Writer.WritePropertyName("engineVersion");
+                        context.Writer.Write(publicRequest.EngineVersion);
+                    }
+
+                    if(publicRequest.IsSetForceUpdate())
+                    {
+                        context.Writer.WritePropertyName("forceUpdate");
+                        context.Writer.Write(publicRequest.ForceUpdate.Value);
+                    }
+
+                    if(publicRequest.IsSetInstanceType())
+                    {
+                        context.Writer.WritePropertyName("instanceType");
+                        context.Writer.Write(publicRequest.InstanceType);
+                    }
+
+                    if(publicRequest.IsSetPreferredMaintenanceWindow())
+                    {
+                        context.Writer.WritePropertyName("preferredMaintenanceWindow");
+                        context.Writer.Write(publicRequest.PreferredMaintenanceWindow);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDesiredCapacity())
-                {
-                    context.Writer.WritePropertyName("desiredCapacity");
-                    context.Writer.Write(publicRequest.DesiredCapacity.Value);
-                }
-
-                if(publicRequest.IsSetEngineVersion())
-                {
-                    context.Writer.WritePropertyName("engineVersion");
-                    context.Writer.Write(publicRequest.EngineVersion);
-                }
-
-                if(publicRequest.IsSetForceUpdate())
-                {
-                    context.Writer.WritePropertyName("forceUpdate");
-                    context.Writer.Write(publicRequest.ForceUpdate.Value);
-                }
-
-                if(publicRequest.IsSetInstanceType())
-                {
-                    context.Writer.WritePropertyName("instanceType");
-                    context.Writer.Write(publicRequest.InstanceType);
-                }
-
-                if(publicRequest.IsSetPreferredMaintenanceWindow())
-                {
-                    context.Writer.WritePropertyName("preferredMaintenanceWindow");
-                    context.Writer.Write(publicRequest.PreferredMaintenanceWindow);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

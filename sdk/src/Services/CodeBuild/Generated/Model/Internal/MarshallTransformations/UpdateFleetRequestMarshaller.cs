@@ -63,89 +63,98 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("arn");
-                    context.Writer.Write(publicRequest.Arn);
-                }
-
-                if(publicRequest.IsSetBaseCapacity())
-                {
-                    context.Writer.WritePropertyName("baseCapacity");
-                    context.Writer.Write(publicRequest.BaseCapacity.Value);
-                }
-
-                if(publicRequest.IsSetComputeType())
-                {
-                    context.Writer.WritePropertyName("computeType");
-                    context.Writer.Write(publicRequest.ComputeType);
-                }
-
-                if(publicRequest.IsSetEnvironmentType())
-                {
-                    context.Writer.WritePropertyName("environmentType");
-                    context.Writer.Write(publicRequest.EnvironmentType);
-                }
-
-                if(publicRequest.IsSetFleetServiceRole())
-                {
-                    context.Writer.WritePropertyName("fleetServiceRole");
-                    context.Writer.Write(publicRequest.FleetServiceRole);
-                }
-
-                if(publicRequest.IsSetOverflowBehavior())
-                {
-                    context.Writer.WritePropertyName("overflowBehavior");
-                    context.Writer.Write(publicRequest.OverflowBehavior);
-                }
-
-                if(publicRequest.IsSetScalingConfiguration())
-                {
-                    context.Writer.WritePropertyName("scalingConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ScalingConfigurationInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ScalingConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetArn())
                     {
+                        context.Writer.WritePropertyName("arn");
+                        context.Writer.Write(publicRequest.Arn);
+                    }
+
+                    if(publicRequest.IsSetBaseCapacity())
+                    {
+                        context.Writer.WritePropertyName("baseCapacity");
+                        context.Writer.Write(publicRequest.BaseCapacity.Value);
+                    }
+
+                    if(publicRequest.IsSetComputeType())
+                    {
+                        context.Writer.WritePropertyName("computeType");
+                        context.Writer.Write(publicRequest.ComputeType);
+                    }
+
+                    if(publicRequest.IsSetEnvironmentType())
+                    {
+                        context.Writer.WritePropertyName("environmentType");
+                        context.Writer.Write(publicRequest.EnvironmentType);
+                    }
+
+                    if(publicRequest.IsSetFleetServiceRole())
+                    {
+                        context.Writer.WritePropertyName("fleetServiceRole");
+                        context.Writer.Write(publicRequest.FleetServiceRole);
+                    }
+
+                    if(publicRequest.IsSetImageId())
+                    {
+                        context.Writer.WritePropertyName("imageId");
+                        context.Writer.Write(publicRequest.ImageId);
+                    }
+
+                    if(publicRequest.IsSetOverflowBehavior())
+                    {
+                        context.Writer.WritePropertyName("overflowBehavior");
+                        context.Writer.Write(publicRequest.OverflowBehavior);
+                    }
+
+                    if(publicRequest.IsSetScalingConfiguration())
+                    {
+                        context.Writer.WritePropertyName("scalingConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = ScalingConfigurationInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ScalingConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetVpcConfig())
+                    {
+                        context.Writer.WritePropertyName("vpcConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = VpcConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.VpcConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetVpcConfig())
-                {
-                    context.Writer.WritePropertyName("vpcConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = VpcConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.VpcConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

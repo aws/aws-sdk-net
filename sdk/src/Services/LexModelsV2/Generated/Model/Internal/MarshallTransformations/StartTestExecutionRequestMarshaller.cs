@@ -64,38 +64,41 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 throw new AmazonLexModelsV2Exception("Request object does not have required field TestSetId set");
             request.AddPathResource("{testSetId}", StringUtils.FromString(publicRequest.TestSetId));
             request.ResourcePath = "/testsets/{testSetId}/testexecutions";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApiMode())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("apiMode");
-                    context.Writer.Write(publicRequest.ApiMode);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApiMode())
+                    {
+                        context.Writer.WritePropertyName("apiMode");
+                        context.Writer.Write(publicRequest.ApiMode);
+                    }
+
+                    if(publicRequest.IsSetTarget())
+                    {
+                        context.Writer.WritePropertyName("target");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TestExecutionTargetMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Target, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTestExecutionModality())
+                    {
+                        context.Writer.WritePropertyName("testExecutionModality");
+                        context.Writer.Write(publicRequest.TestExecutionModality);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTarget())
-                {
-                    context.Writer.WritePropertyName("target");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TestExecutionTargetMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Target, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTestExecutionModality())
-                {
-                    context.Writer.WritePropertyName("testExecutionModality");
-                    context.Writer.Write(publicRequest.TestExecutionModality);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

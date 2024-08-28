@@ -67,46 +67,49 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                 throw new AmazonWellArchitectedException("Request object does not have required field WorkloadId set");
             request.AddPathResource("{WorkloadId}", StringUtils.FromString(publicRequest.WorkloadId));
             request.ResourcePath = "/workloads/{WorkloadId}/lensReviews/{LensAlias}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetJiraConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("JiraConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = JiraSelectedQuestionConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.JiraConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetLensNotes())
-                {
-                    context.Writer.WritePropertyName("LensNotes");
-                    context.Writer.Write(publicRequest.LensNotes);
-                }
-
-                if(publicRequest.IsSetPillarNotes())
-                {
-                    context.Writer.WritePropertyName("PillarNotes");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestPillarNotesKvp in publicRequest.PillarNotes)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetJiraConfiguration())
                     {
-                        context.Writer.WritePropertyName(publicRequestPillarNotesKvp.Key);
-                        var publicRequestPillarNotesValue = publicRequestPillarNotesKvp.Value;
+                        context.Writer.WritePropertyName("JiraConfiguration");
+                        context.Writer.WriteObjectStart();
 
-                            context.Writer.Write(publicRequestPillarNotesValue);
+                        var marshaller = JiraSelectedQuestionConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.JiraConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetLensNotes())
+                    {
+                        context.Writer.WritePropertyName("LensNotes");
+                        context.Writer.Write(publicRequest.LensNotes);
+                    }
+
+                    if(publicRequest.IsSetPillarNotes())
+                    {
+                        context.Writer.WritePropertyName("PillarNotes");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestPillarNotesKvp in publicRequest.PillarNotes)
+                        {
+                            context.Writer.WritePropertyName(publicRequestPillarNotesKvp.Key);
+                            var publicRequestPillarNotesValue = publicRequestPillarNotesKvp.Value;
+
+                                context.Writer.Write(publicRequestPillarNotesValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

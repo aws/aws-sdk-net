@@ -63,33 +63,36 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccess())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("access");
-                    context.Writer.Write(publicRequest.Access);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccess())
+                    {
+                        context.Writer.WritePropertyName("access");
+                        context.Writer.Write(publicRequest.Access);
+                    }
+
+                    if(publicRequest.IsSetBucketName())
+                    {
+                        context.Writer.WritePropertyName("bucketName");
+                        context.Writer.Write(publicRequest.BucketName);
+                    }
+
+                    if(publicRequest.IsSetResourceName())
+                    {
+                        context.Writer.WritePropertyName("resourceName");
+                        context.Writer.Write(publicRequest.ResourceName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetBucketName())
-                {
-                    context.Writer.WritePropertyName("bucketName");
-                    context.Writer.Write(publicRequest.BucketName);
-                }
-
-                if(publicRequest.IsSetResourceName())
-                {
-                    context.Writer.WritePropertyName("resourceName");
-                    context.Writer.Write(publicRequest.ResourceName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

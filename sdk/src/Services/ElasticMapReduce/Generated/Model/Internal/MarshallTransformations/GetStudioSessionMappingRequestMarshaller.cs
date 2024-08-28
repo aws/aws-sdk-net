@@ -63,39 +63,42 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetIdentityId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("IdentityId");
-                    context.Writer.Write(publicRequest.IdentityId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetIdentityId())
+                    {
+                        context.Writer.WritePropertyName("IdentityId");
+                        context.Writer.Write(publicRequest.IdentityId);
+                    }
+
+                    if(publicRequest.IsSetIdentityName())
+                    {
+                        context.Writer.WritePropertyName("IdentityName");
+                        context.Writer.Write(publicRequest.IdentityName);
+                    }
+
+                    if(publicRequest.IsSetIdentityType())
+                    {
+                        context.Writer.WritePropertyName("IdentityType");
+                        context.Writer.Write(publicRequest.IdentityType);
+                    }
+
+                    if(publicRequest.IsSetStudioId())
+                    {
+                        context.Writer.WritePropertyName("StudioId");
+                        context.Writer.Write(publicRequest.StudioId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetIdentityName())
-                {
-                    context.Writer.WritePropertyName("IdentityName");
-                    context.Writer.Write(publicRequest.IdentityName);
-                }
-
-                if(publicRequest.IsSetIdentityType())
-                {
-                    context.Writer.WritePropertyName("IdentityType");
-                    context.Writer.Write(publicRequest.IdentityType);
-                }
-
-                if(publicRequest.IsSetStudioId())
-                {
-                    context.Writer.WritePropertyName("StudioId");
-                    context.Writer.Write(publicRequest.StudioId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

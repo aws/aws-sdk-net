@@ -61,57 +61,60 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/dataflowEndpointGroup";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetContactPostPassDurationSeconds())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("contactPostPassDurationSeconds");
-                    context.Writer.Write(publicRequest.ContactPostPassDurationSeconds.Value);
-                }
-
-                if(publicRequest.IsSetContactPrePassDurationSeconds())
-                {
-                    context.Writer.WritePropertyName("contactPrePassDurationSeconds");
-                    context.Writer.Write(publicRequest.ContactPrePassDurationSeconds.Value);
-                }
-
-                if(publicRequest.IsSetEndpointDetails())
-                {
-                    context.Writer.WritePropertyName("endpointDetails");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEndpointDetailsListValue in publicRequest.EndpointDetails)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetContactPostPassDurationSeconds())
                     {
+                        context.Writer.WritePropertyName("contactPostPassDurationSeconds");
+                        context.Writer.Write(publicRequest.ContactPostPassDurationSeconds.Value);
+                    }
+
+                    if(publicRequest.IsSetContactPrePassDurationSeconds())
+                    {
+                        context.Writer.WritePropertyName("contactPrePassDurationSeconds");
+                        context.Writer.Write(publicRequest.ContactPrePassDurationSeconds.Value);
+                    }
+
+                    if(publicRequest.IsSetEndpointDetails())
+                    {
+                        context.Writer.WritePropertyName("endpointDetails");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestEndpointDetailsListValue in publicRequest.EndpointDetails)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = EndpointDetailsMarshaller.Instance;
+                            marshaller.Marshall(publicRequestEndpointDetailsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
 
-                        var marshaller = EndpointDetailsMarshaller.Instance;
-                        marshaller.Marshall(publicRequestEndpointDetailsListValue, context);
-
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

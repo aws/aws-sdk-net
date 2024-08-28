@@ -47,7 +47,7 @@ namespace Amazon.SageMaker.Model
         /// entrypoint is invoked.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Max=256)]
         public string LocalPath
         {
             get { return this._localPath; }

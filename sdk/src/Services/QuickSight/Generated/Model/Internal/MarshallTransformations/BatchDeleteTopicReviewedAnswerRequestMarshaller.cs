@@ -67,26 +67,29 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field TopicId set");
             request.AddPathResource("{TopicId}", StringUtils.FromString(publicRequest.TopicId));
             request.ResourcePath = "/accounts/{AwsAccountId}/topics/{TopicId}/batch-delete-reviewed-answers";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAnswerIds())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AnswerIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAnswerIdsListValue in publicRequest.AnswerIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAnswerIds())
                     {
-                            context.Writer.Write(publicRequestAnswerIdsListValue);
+                        context.Writer.WritePropertyName("AnswerIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAnswerIdsListValue in publicRequest.AnswerIds)
+                        {
+                                context.Writer.Write(publicRequestAnswerIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

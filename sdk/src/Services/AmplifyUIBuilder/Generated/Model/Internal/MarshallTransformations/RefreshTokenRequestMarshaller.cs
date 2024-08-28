@@ -64,19 +64,22 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
                 throw new AmazonAmplifyUIBuilderException("Request object does not have required field Provider set");
             request.AddPathResource("{provider}", StringUtils.FromString(publicRequest.Provider));
             request.ResourcePath = "/tokens/{provider}/refresh";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                var context = new JsonMarshallerContext(request, writer);
-                context.Writer.WriteObjectStart();
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                {
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    var context = new JsonMarshallerContext(request, writer);
+                    context.Writer.WriteObjectStart();
 
-                var marshaller = RefreshTokenRequestBodyMarshaller.Instance;
-                marshaller.Marshall(publicRequest.RefreshTokenBody, context);
+                    var marshaller = RefreshTokenRequestBodyMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RefreshTokenBody, context);
 
-                context.Writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                    context.Writer.WriteObjectEnd();
+                }
+
+                request.Content = memoryStream.ToArray();
             }
 
 

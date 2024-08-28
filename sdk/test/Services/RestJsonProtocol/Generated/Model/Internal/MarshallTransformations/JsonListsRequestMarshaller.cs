@@ -61,124 +61,127 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/JsonLists";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBooleanList())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("booleanList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestBooleanListListValue in publicRequest.BooleanList)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBooleanList())
                     {
-                            context.Writer.Write(publicRequestBooleanListListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetEnumList())
-                {
-                    context.Writer.WritePropertyName("enumList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEnumListListValue in publicRequest.EnumList)
-                    {
-                            context.Writer.Write(publicRequestEnumListListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetIntegerList())
-                {
-                    context.Writer.WritePropertyName("integerList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestIntegerListListValue in publicRequest.IntegerList)
-                    {
-                            context.Writer.Write(publicRequestIntegerListListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetIntEnumList())
-                {
-                    context.Writer.WritePropertyName("intEnumList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestIntEnumListListValue in publicRequest.IntEnumList)
-                    {
-                            context.Writer.Write(publicRequestIntEnumListListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetNestedStringList())
-                {
-                    context.Writer.WritePropertyName("nestedStringList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestNestedStringListListValue in publicRequest.NestedStringList)
-                    {
+                        context.Writer.WritePropertyName("booleanList");
                         context.Writer.WriteArrayStart();
-                        foreach(var publicRequestNestedStringListListValueListValue in publicRequestNestedStringListListValue)
+                        foreach(var publicRequestBooleanListListValue in publicRequest.BooleanList)
                         {
-                                context.Writer.Write(publicRequestNestedStringListListValueListValue);
+                                context.Writer.Write(publicRequestBooleanListListValue);
                         }
                         context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetStringList())
-                {
-                    context.Writer.WritePropertyName("stringList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestStringListListValue in publicRequest.StringList)
+                    if(publicRequest.IsSetEnumList())
                     {
-                            context.Writer.Write(publicRequestStringListListValue);
+                        context.Writer.WritePropertyName("enumList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestEnumListListValue in publicRequest.EnumList)
+                        {
+                                context.Writer.Write(publicRequestEnumListListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetStringSet())
-                {
-                    context.Writer.WritePropertyName("stringSet");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestStringSetListValue in publicRequest.StringSet)
+                    if(publicRequest.IsSetIntegerList())
                     {
-                            context.Writer.Write(publicRequestStringSetListValue);
+                        context.Writer.WritePropertyName("integerList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestIntegerListListValue in publicRequest.IntegerList)
+                        {
+                                context.Writer.Write(publicRequestIntegerListListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetStructureList())
-                {
-                    context.Writer.WritePropertyName("myStructureList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestStructureListListValue in publicRequest.StructureList)
+                    if(publicRequest.IsSetIntEnumList())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = StructureListMemberMarshaller.Instance;
-                        marshaller.Marshall(publicRequestStructureListListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("intEnumList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestIntEnumListListValue in publicRequest.IntEnumList)
+                        {
+                                context.Writer.Write(publicRequestIntEnumListListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTimestampList())
-                {
-                    context.Writer.WritePropertyName("timestampList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTimestampListListValue in publicRequest.TimestampList)
+                    if(publicRequest.IsSetNestedStringList())
                     {
-                            context.Writer.Write(publicRequestTimestampListListValue);
+                        context.Writer.WritePropertyName("nestedStringList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestNestedStringListListValue in publicRequest.NestedStringList)
+                        {
+                            context.Writer.WriteArrayStart();
+                            foreach(var publicRequestNestedStringListListValueListValue in publicRequestNestedStringListListValue)
+                            {
+                                    context.Writer.Write(publicRequestNestedStringListListValueListValue);
+                            }
+                            context.Writer.WriteArrayEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetStringList())
+                    {
+                        context.Writer.WritePropertyName("stringList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestStringListListValue in publicRequest.StringList)
+                        {
+                                context.Writer.Write(publicRequestStringListListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetStringSet())
+                    {
+                        context.Writer.WritePropertyName("stringSet");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestStringSetListValue in publicRequest.StringSet)
+                        {
+                                context.Writer.Write(publicRequestStringSetListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetStructureList())
+                    {
+                        context.Writer.WritePropertyName("myStructureList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestStructureListListValue in publicRequest.StructureList)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = StructureListMemberMarshaller.Instance;
+                            marshaller.Marshall(publicRequestStructureListListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTimestampList())
+                    {
+                        context.Writer.WritePropertyName("timestampList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTimestampListListValue in publicRequest.TimestampList)
+                        {
+                                context.Writer.Write(publicRequestTimestampListListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

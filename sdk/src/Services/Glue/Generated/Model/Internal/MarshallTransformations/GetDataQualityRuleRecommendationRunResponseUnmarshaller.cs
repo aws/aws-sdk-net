@@ -64,6 +64,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     response.CreatedRulesetName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DataQualitySecurityConfiguration", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.DataQualitySecurityConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DataSource", targetDepth))
                 {
                     var unmarshaller = DataSourceUnmarshaller.Instance;

@@ -61,60 +61,63 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/2021-01-01/opensearch/cc/outboundConnection";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConnectionAlias())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ConnectionAlias");
-                    context.Writer.Write(publicRequest.ConnectionAlias);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConnectionAlias())
+                    {
+                        context.Writer.WritePropertyName("ConnectionAlias");
+                        context.Writer.Write(publicRequest.ConnectionAlias);
+                    }
+
+                    if(publicRequest.IsSetConnectionMode())
+                    {
+                        context.Writer.WritePropertyName("ConnectionMode");
+                        context.Writer.Write(publicRequest.ConnectionMode);
+                    }
+
+                    if(publicRequest.IsSetConnectionProperties())
+                    {
+                        context.Writer.WritePropertyName("ConnectionProperties");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ConnectionPropertiesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ConnectionProperties, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetLocalDomainInfo())
+                    {
+                        context.Writer.WritePropertyName("LocalDomainInfo");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DomainInformationContainerMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.LocalDomainInfo, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRemoteDomainInfo())
+                    {
+                        context.Writer.WritePropertyName("RemoteDomainInfo");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DomainInformationContainerMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RemoteDomainInfo, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetConnectionMode())
-                {
-                    context.Writer.WritePropertyName("ConnectionMode");
-                    context.Writer.Write(publicRequest.ConnectionMode);
-                }
-
-                if(publicRequest.IsSetConnectionProperties())
-                {
-                    context.Writer.WritePropertyName("ConnectionProperties");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ConnectionPropertiesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ConnectionProperties, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetLocalDomainInfo())
-                {
-                    context.Writer.WritePropertyName("LocalDomainInfo");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DomainInformationContainerMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LocalDomainInfo, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRemoteDomainInfo())
-                {
-                    context.Writer.WritePropertyName("RemoteDomainInfo");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DomainInformationContainerMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RemoteDomainInfo, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

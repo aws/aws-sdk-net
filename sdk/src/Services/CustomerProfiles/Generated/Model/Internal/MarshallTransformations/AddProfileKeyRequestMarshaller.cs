@@ -64,38 +64,41 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 throw new AmazonCustomerProfilesException("Request object does not have required field DomainName set");
             request.AddPathResource("{DomainName}", StringUtils.FromString(publicRequest.DomainName));
             request.ResourcePath = "/domains/{DomainName}/profiles/keys";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetKeyName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("KeyName");
-                    context.Writer.Write(publicRequest.KeyName);
-                }
-
-                if(publicRequest.IsSetProfileId())
-                {
-                    context.Writer.WritePropertyName("ProfileId");
-                    context.Writer.Write(publicRequest.ProfileId);
-                }
-
-                if(publicRequest.IsSetValues())
-                {
-                    context.Writer.WritePropertyName("Values");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestValuesListValue in publicRequest.Values)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetKeyName())
                     {
-                            context.Writer.Write(publicRequestValuesListValue);
+                        context.Writer.WritePropertyName("KeyName");
+                        context.Writer.Write(publicRequest.KeyName);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetProfileId())
+                    {
+                        context.Writer.WritePropertyName("ProfileId");
+                        context.Writer.Write(publicRequest.ProfileId);
+                    }
+
+                    if(publicRequest.IsSetValues())
+                    {
+                        context.Writer.WritePropertyName("Values");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestValuesListValue in publicRequest.Values)
+                        {
+                                context.Writer.Write(publicRequestValuesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

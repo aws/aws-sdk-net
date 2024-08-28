@@ -61,55 +61,58 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/custom-data-identifiers/test";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetIgnoreWords())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ignoreWords");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestIgnoreWordsListValue in publicRequest.IgnoreWords)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetIgnoreWords())
                     {
-                            context.Writer.Write(publicRequestIgnoreWordsListValue);
+                        context.Writer.WritePropertyName("ignoreWords");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestIgnoreWordsListValue in publicRequest.IgnoreWords)
+                        {
+                                context.Writer.Write(publicRequestIgnoreWordsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetKeywords())
-                {
-                    context.Writer.WritePropertyName("keywords");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestKeywordsListValue in publicRequest.Keywords)
+                    if(publicRequest.IsSetKeywords())
                     {
-                            context.Writer.Write(publicRequestKeywordsListValue);
+                        context.Writer.WritePropertyName("keywords");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestKeywordsListValue in publicRequest.Keywords)
+                        {
+                                context.Writer.Write(publicRequestKeywordsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetMaximumMatchDistance())
+                    {
+                        context.Writer.WritePropertyName("maximumMatchDistance");
+                        context.Writer.Write(publicRequest.MaximumMatchDistance.Value);
+                    }
+
+                    if(publicRequest.IsSetRegex())
+                    {
+                        context.Writer.WritePropertyName("regex");
+                        context.Writer.Write(publicRequest.Regex);
+                    }
+
+                    if(publicRequest.IsSetSampleText())
+                    {
+                        context.Writer.WritePropertyName("sampleText");
+                        context.Writer.Write(publicRequest.SampleText);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMaximumMatchDistance())
-                {
-                    context.Writer.WritePropertyName("maximumMatchDistance");
-                    context.Writer.Write(publicRequest.MaximumMatchDistance.Value);
-                }
-
-                if(publicRequest.IsSetRegex())
-                {
-                    context.Writer.WritePropertyName("regex");
-                    context.Writer.Write(publicRequest.Regex);
-                }
-
-                if(publicRequest.IsSetSampleText())
-                {
-                    context.Writer.WritePropertyName("sampleText");
-                    context.Writer.Write(publicRequest.SampleText);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

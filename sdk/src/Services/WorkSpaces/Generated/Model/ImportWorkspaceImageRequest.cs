@@ -60,7 +60,9 @@ namespace Amazon.WorkSpaces.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Windows 11 only supports <c>Microsoft_Office_2019</c>.
+        /// During the image import process, non-GPU WSP WorkSpaces with Windows 11 support only
+        /// <c>Microsoft_Office_2019</c>. GPU WSP WorkSpaces with Windows 11 do not support Office
+        /// installation.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>

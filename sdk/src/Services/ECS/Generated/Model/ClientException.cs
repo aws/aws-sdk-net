@@ -33,6 +33,19 @@ namespace Amazon.ECS.Model
     /// These errors are usually caused by a client action. This client action might be using
     /// an action or resource on behalf of a user that doesn't have permissions to use the
     /// action or resource. Or, it might be specifying an identifier that isn't valid.
+    /// 
+    ///  
+    /// <para>
+    /// The following list includes additional causes for the error:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+    /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+    /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+    /// ECS service quotas</a>.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

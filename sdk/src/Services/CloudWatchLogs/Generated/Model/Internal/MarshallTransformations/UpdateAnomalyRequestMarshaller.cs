@@ -63,50 +63,53 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAnomalyDetectorArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("anomalyDetectorArn");
-                    context.Writer.Write(publicRequest.AnomalyDetectorArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAnomalyDetectorArn())
+                    {
+                        context.Writer.WritePropertyName("anomalyDetectorArn");
+                        context.Writer.Write(publicRequest.AnomalyDetectorArn);
+                    }
+
+                    if(publicRequest.IsSetAnomalyId())
+                    {
+                        context.Writer.WritePropertyName("anomalyId");
+                        context.Writer.Write(publicRequest.AnomalyId);
+                    }
+
+                    if(publicRequest.IsSetPatternId())
+                    {
+                        context.Writer.WritePropertyName("patternId");
+                        context.Writer.Write(publicRequest.PatternId);
+                    }
+
+                    if(publicRequest.IsSetSuppressionPeriod())
+                    {
+                        context.Writer.WritePropertyName("suppressionPeriod");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SuppressionPeriodMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SuppressionPeriod, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSuppressionType())
+                    {
+                        context.Writer.WritePropertyName("suppressionType");
+                        context.Writer.Write(publicRequest.SuppressionType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetAnomalyId())
-                {
-                    context.Writer.WritePropertyName("anomalyId");
-                    context.Writer.Write(publicRequest.AnomalyId);
-                }
-
-                if(publicRequest.IsSetPatternId())
-                {
-                    context.Writer.WritePropertyName("patternId");
-                    context.Writer.Write(publicRequest.PatternId);
-                }
-
-                if(publicRequest.IsSetSuppressionPeriod())
-                {
-                    context.Writer.WritePropertyName("suppressionPeriod");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SuppressionPeriodMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SuppressionPeriod, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSuppressionType())
-                {
-                    context.Writer.WritePropertyName("suppressionType");
-                    context.Writer.Write(publicRequest.SuppressionType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

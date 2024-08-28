@@ -61,54 +61,57 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/put-portfolio-preferences";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApplicationMode())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("applicationMode");
-                    context.Writer.Write(publicRequest.ApplicationMode);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApplicationMode())
+                    {
+                        context.Writer.WritePropertyName("applicationMode");
+                        context.Writer.Write(publicRequest.ApplicationMode);
+                    }
+
+                    if(publicRequest.IsSetApplicationPreferences())
+                    {
+                        context.Writer.WritePropertyName("applicationPreferences");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ApplicationPreferencesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ApplicationPreferences, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDatabasePreferences())
+                    {
+                        context.Writer.WritePropertyName("databasePreferences");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DatabasePreferencesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DatabasePreferences, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetPrioritizeBusinessGoals())
+                    {
+                        context.Writer.WritePropertyName("prioritizeBusinessGoals");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PrioritizeBusinessGoalsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.PrioritizeBusinessGoals, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetApplicationPreferences())
-                {
-                    context.Writer.WritePropertyName("applicationPreferences");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ApplicationPreferencesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ApplicationPreferences, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDatabasePreferences())
-                {
-                    context.Writer.WritePropertyName("databasePreferences");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DatabasePreferencesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DatabasePreferences, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPrioritizeBusinessGoals())
-                {
-                    context.Writer.WritePropertyName("prioritizeBusinessGoals");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PrioritizeBusinessGoalsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PrioritizeBusinessGoals, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

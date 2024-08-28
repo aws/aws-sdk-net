@@ -67,94 +67,97 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 throw new AmazonApiGatewayV2Exception("Request object does not have required field StageName set");
             request.AddPathResource("{stageName}", StringUtils.FromString(publicRequest.StageName));
             request.ResourcePath = "/v2/apis/{apiId}/stages/{stageName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccessLogSettings())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("accessLogSettings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AccessLogSettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AccessLogSettings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetAutoDeploy())
-                {
-                    context.Writer.WritePropertyName("autoDeploy");
-                    context.Writer.Write(publicRequest.AutoDeploy.Value);
-                }
-
-                if(publicRequest.IsSetClientCertificateId())
-                {
-                    context.Writer.WritePropertyName("clientCertificateId");
-                    context.Writer.Write(publicRequest.ClientCertificateId);
-                }
-
-                if(publicRequest.IsSetDefaultRouteSettings())
-                {
-                    context.Writer.WritePropertyName("defaultRouteSettings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RouteSettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DefaultRouteSettings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDeploymentId())
-                {
-                    context.Writer.WritePropertyName("deploymentId");
-                    context.Writer.Write(publicRequest.DeploymentId);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetRouteSettings())
-                {
-                    context.Writer.WritePropertyName("routeSettings");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestRouteSettingsKvp in publicRequest.RouteSettings)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccessLogSettings())
                     {
-                        context.Writer.WritePropertyName(publicRequestRouteSettingsKvp.Key);
-                        var publicRequestRouteSettingsValue = publicRequestRouteSettingsKvp.Value;
-
+                        context.Writer.WritePropertyName("accessLogSettings");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = RouteSettingsMarshaller.Instance;
-                        marshaller.Marshall(publicRequestRouteSettingsValue, context);
+                        var marshaller = AccessLogSettingsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AccessLogSettings, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetStageVariables())
-                {
-                    context.Writer.WritePropertyName("stageVariables");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestStageVariablesKvp in publicRequest.StageVariables)
+                    if(publicRequest.IsSetAutoDeploy())
                     {
-                        context.Writer.WritePropertyName(publicRequestStageVariablesKvp.Key);
-                        var publicRequestStageVariablesValue = publicRequestStageVariablesKvp.Value;
-
-                            context.Writer.Write(publicRequestStageVariablesValue);
+                        context.Writer.WritePropertyName("autoDeploy");
+                        context.Writer.Write(publicRequest.AutoDeploy.Value);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetClientCertificateId())
+                    {
+                        context.Writer.WritePropertyName("clientCertificateId");
+                        context.Writer.Write(publicRequest.ClientCertificateId);
+                    }
+
+                    if(publicRequest.IsSetDefaultRouteSettings())
+                    {
+                        context.Writer.WritePropertyName("defaultRouteSettings");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RouteSettingsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DefaultRouteSettings, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDeploymentId())
+                    {
+                        context.Writer.WritePropertyName("deploymentId");
+                        context.Writer.Write(publicRequest.DeploymentId);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetRouteSettings())
+                    {
+                        context.Writer.WritePropertyName("routeSettings");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestRouteSettingsKvp in publicRequest.RouteSettings)
+                        {
+                            context.Writer.WritePropertyName(publicRequestRouteSettingsKvp.Key);
+                            var publicRequestRouteSettingsValue = publicRequestRouteSettingsKvp.Value;
+
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = RouteSettingsMarshaller.Instance;
+                            marshaller.Marshall(publicRequestRouteSettingsValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetStageVariables())
+                    {
+                        context.Writer.WritePropertyName("stageVariables");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestStageVariablesKvp in publicRequest.StageVariables)
+                        {
+                            context.Writer.WritePropertyName(publicRequestStageVariablesKvp.Key);
+                            var publicRequestStageVariablesValue = publicRequestStageVariablesKvp.Value;
+
+                                context.Writer.Write(publicRequestStageVariablesValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

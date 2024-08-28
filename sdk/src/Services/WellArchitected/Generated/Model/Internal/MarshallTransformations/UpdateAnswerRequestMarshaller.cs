@@ -70,63 +70,66 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                 throw new AmazonWellArchitectedException("Request object does not have required field WorkloadId set");
             request.AddPathResource("{WorkloadId}", StringUtils.FromString(publicRequest.WorkloadId));
             request.ResourcePath = "/workloads/{WorkloadId}/lensReviews/{LensAlias}/answers/{QuestionId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetChoiceUpdates())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ChoiceUpdates");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestChoiceUpdatesKvp in publicRequest.ChoiceUpdates)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetChoiceUpdates())
                     {
-                        context.Writer.WritePropertyName(publicRequestChoiceUpdatesKvp.Key);
-                        var publicRequestChoiceUpdatesValue = publicRequestChoiceUpdatesKvp.Value;
-
+                        context.Writer.WritePropertyName("ChoiceUpdates");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestChoiceUpdatesKvp in publicRequest.ChoiceUpdates)
+                        {
+                            context.Writer.WritePropertyName(publicRequestChoiceUpdatesKvp.Key);
+                            var publicRequestChoiceUpdatesValue = publicRequestChoiceUpdatesKvp.Value;
 
-                        var marshaller = ChoiceUpdateMarshaller.Instance;
-                        marshaller.Marshall(publicRequestChoiceUpdatesValue, context);
+                            context.Writer.WriteObjectStart();
 
+                            var marshaller = ChoiceUpdateMarshaller.Instance;
+                            marshaller.Marshall(publicRequestChoiceUpdatesValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetIsApplicable())
-                {
-                    context.Writer.WritePropertyName("IsApplicable");
-                    context.Writer.Write(publicRequest.IsApplicable.Value);
-                }
-
-                if(publicRequest.IsSetNotes())
-                {
-                    context.Writer.WritePropertyName("Notes");
-                    context.Writer.Write(publicRequest.Notes);
-                }
-
-                if(publicRequest.IsSetReason())
-                {
-                    context.Writer.WritePropertyName("Reason");
-                    context.Writer.Write(publicRequest.Reason);
-                }
-
-                if(publicRequest.IsSetSelectedChoices())
-                {
-                    context.Writer.WritePropertyName("SelectedChoices");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSelectedChoicesListValue in publicRequest.SelectedChoices)
+                    if(publicRequest.IsSetIsApplicable())
                     {
-                            context.Writer.Write(publicRequestSelectedChoicesListValue);
+                        context.Writer.WritePropertyName("IsApplicable");
+                        context.Writer.Write(publicRequest.IsApplicable.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetNotes())
+                    {
+                        context.Writer.WritePropertyName("Notes");
+                        context.Writer.Write(publicRequest.Notes);
+                    }
+
+                    if(publicRequest.IsSetReason())
+                    {
+                        context.Writer.WritePropertyName("Reason");
+                        context.Writer.Write(publicRequest.Reason);
+                    }
+
+                    if(publicRequest.IsSetSelectedChoices())
+                    {
+                        context.Writer.WritePropertyName("SelectedChoices");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSelectedChoicesListValue in publicRequest.SelectedChoices)
+                        {
+                                context.Writer.Write(publicRequestSelectedChoicesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

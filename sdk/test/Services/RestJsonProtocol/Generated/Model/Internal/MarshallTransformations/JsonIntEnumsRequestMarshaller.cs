@@ -61,69 +61,72 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/JsonIntEnums";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetIntegerEnum1())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("integerEnum1");
-                    context.Writer.Write(publicRequest.IntegerEnum1.Value);
-                }
-
-                if(publicRequest.IsSetIntegerEnum2())
-                {
-                    context.Writer.WritePropertyName("integerEnum2");
-                    context.Writer.Write(publicRequest.IntegerEnum2.Value);
-                }
-
-                if(publicRequest.IsSetIntegerEnum3())
-                {
-                    context.Writer.WritePropertyName("integerEnum3");
-                    context.Writer.Write(publicRequest.IntegerEnum3.Value);
-                }
-
-                if(publicRequest.IsSetIntegerEnumList())
-                {
-                    context.Writer.WritePropertyName("integerEnumList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestIntegerEnumListListValue in publicRequest.IntegerEnumList)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetIntegerEnum1())
                     {
-                            context.Writer.Write(publicRequestIntegerEnumListListValue);
+                        context.Writer.WritePropertyName("integerEnum1");
+                        context.Writer.Write(publicRequest.IntegerEnum1.Value);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetIntegerEnumMap())
-                {
-                    context.Writer.WritePropertyName("integerEnumMap");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestIntegerEnumMapKvp in publicRequest.IntegerEnumMap)
+                    if(publicRequest.IsSetIntegerEnum2())
                     {
-                        context.Writer.WritePropertyName(publicRequestIntegerEnumMapKvp.Key);
-                        var publicRequestIntegerEnumMapValue = publicRequestIntegerEnumMapKvp.Value;
-
-                            context.Writer.Write(publicRequestIntegerEnumMapValue);
+                        context.Writer.WritePropertyName("integerEnum2");
+                        context.Writer.Write(publicRequest.IntegerEnum2.Value);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetIntegerEnumSet())
-                {
-                    context.Writer.WritePropertyName("integerEnumSet");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestIntegerEnumSetListValue in publicRequest.IntegerEnumSet)
+                    if(publicRequest.IsSetIntegerEnum3())
                     {
-                            context.Writer.Write(publicRequestIntegerEnumSetListValue);
+                        context.Writer.WritePropertyName("integerEnum3");
+                        context.Writer.Write(publicRequest.IntegerEnum3.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetIntegerEnumList())
+                    {
+                        context.Writer.WritePropertyName("integerEnumList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestIntegerEnumListListValue in publicRequest.IntegerEnumList)
+                        {
+                                context.Writer.Write(publicRequestIntegerEnumListListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetIntegerEnumMap())
+                    {
+                        context.Writer.WritePropertyName("integerEnumMap");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestIntegerEnumMapKvp in publicRequest.IntegerEnumMap)
+                        {
+                            context.Writer.WritePropertyName(publicRequestIntegerEnumMapKvp.Key);
+                            var publicRequestIntegerEnumMapValue = publicRequestIntegerEnumMapKvp.Value;
+
+                                context.Writer.Write(publicRequestIntegerEnumMapValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetIntegerEnumSet())
+                    {
+                        context.Writer.WritePropertyName("integerEnumSet");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestIntegerEnumSetListValue in publicRequest.IntegerEnumSet)
+                        {
+                                context.Writer.Write(publicRequestIntegerEnumSetListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

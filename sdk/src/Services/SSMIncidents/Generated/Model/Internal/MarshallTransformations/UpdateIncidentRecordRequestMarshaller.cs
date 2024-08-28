@@ -61,83 +61,86 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/updateIncidentRecord";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("arn");
-                    context.Writer.Write(publicRequest.Arn);
-                }
-
-                if(publicRequest.IsSetChatChannel())
-                {
-                    context.Writer.WritePropertyName("chatChannel");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ChatChannelMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ChatChannel, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetImpact())
-                {
-                    context.Writer.WritePropertyName("impact");
-                    context.Writer.Write(publicRequest.Impact.Value);
-                }
-
-                if(publicRequest.IsSetNotificationTargets())
-                {
-                    context.Writer.WritePropertyName("notificationTargets");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestNotificationTargetsListValue in publicRequest.NotificationTargets)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetArn())
                     {
+                        context.Writer.WritePropertyName("arn");
+                        context.Writer.Write(publicRequest.Arn);
+                    }
+
+                    if(publicRequest.IsSetChatChannel())
+                    {
+                        context.Writer.WritePropertyName("chatChannel");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = NotificationTargetItemMarshaller.Instance;
-                        marshaller.Marshall(publicRequestNotificationTargetsListValue, context);
+                        var marshaller = ChatChannelMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ChatChannel, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetImpact())
+                    {
+                        context.Writer.WritePropertyName("impact");
+                        context.Writer.Write(publicRequest.Impact.Value);
+                    }
+
+                    if(publicRequest.IsSetNotificationTargets())
+                    {
+                        context.Writer.WritePropertyName("notificationTargets");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestNotificationTargetsListValue in publicRequest.NotificationTargets)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = NotificationTargetItemMarshaller.Instance;
+                            marshaller.Marshall(publicRequestNotificationTargetsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetStatus())
+                    {
+                        context.Writer.WritePropertyName("status");
+                        context.Writer.Write(publicRequest.Status);
+                    }
+
+                    if(publicRequest.IsSetSummary())
+                    {
+                        context.Writer.WritePropertyName("summary");
+                        context.Writer.Write(publicRequest.Summary);
+                    }
+
+                    if(publicRequest.IsSetTitle())
+                    {
+                        context.Writer.WritePropertyName("title");
+                        context.Writer.Write(publicRequest.Title);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetStatus())
-                {
-                    context.Writer.WritePropertyName("status");
-                    context.Writer.Write(publicRequest.Status);
-                }
-
-                if(publicRequest.IsSetSummary())
-                {
-                    context.Writer.WritePropertyName("summary");
-                    context.Writer.Write(publicRequest.Summary);
-                }
-
-                if(publicRequest.IsSetTitle())
-                {
-                    context.Writer.WritePropertyName("title");
-                    context.Writer.Write(publicRequest.Title);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

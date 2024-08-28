@@ -67,76 +67,79 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                 throw new AmazonIoTTwinMakerException("Request object does not have required field WorkspaceId set");
             request.AddPathResource("{workspaceId}", StringUtils.FromString(publicRequest.WorkspaceId));
             request.ResourcePath = "/workspaces/{workspaceId}/entities/{entityId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetComponentUpdates())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("componentUpdates");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestComponentUpdatesKvp in publicRequest.ComponentUpdates)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetComponentUpdates())
                     {
-                        context.Writer.WritePropertyName(publicRequestComponentUpdatesKvp.Key);
-                        var publicRequestComponentUpdatesValue = publicRequestComponentUpdatesKvp.Value;
+                        context.Writer.WritePropertyName("componentUpdates");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestComponentUpdatesKvp in publicRequest.ComponentUpdates)
+                        {
+                            context.Writer.WritePropertyName(publicRequestComponentUpdatesKvp.Key);
+                            var publicRequestComponentUpdatesValue = publicRequestComponentUpdatesKvp.Value;
 
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ComponentUpdateRequestMarshaller.Instance;
+                            marshaller.Marshall(publicRequestComponentUpdatesValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetCompositeComponentUpdates())
+                    {
+                        context.Writer.WritePropertyName("compositeComponentUpdates");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestCompositeComponentUpdatesKvp in publicRequest.CompositeComponentUpdates)
+                        {
+                            context.Writer.WritePropertyName(publicRequestCompositeComponentUpdatesKvp.Key);
+                            var publicRequestCompositeComponentUpdatesValue = publicRequestCompositeComponentUpdatesKvp.Value;
+
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = CompositeComponentUpdateRequestMarshaller.Instance;
+                            marshaller.Marshall(publicRequestCompositeComponentUpdatesValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetEntityName())
+                    {
+                        context.Writer.WritePropertyName("entityName");
+                        context.Writer.Write(publicRequest.EntityName);
+                    }
+
+                    if(publicRequest.IsSetParentEntityUpdate())
+                    {
+                        context.Writer.WritePropertyName("parentEntityUpdate");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = ComponentUpdateRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequestComponentUpdatesValue, context);
+                        var marshaller = ParentEntityUpdateRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ParentEntityUpdate, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCompositeComponentUpdates())
-                {
-                    context.Writer.WritePropertyName("compositeComponentUpdates");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestCompositeComponentUpdatesKvp in publicRequest.CompositeComponentUpdates)
-                    {
-                        context.Writer.WritePropertyName(publicRequestCompositeComponentUpdatesKvp.Key);
-                        var publicRequestCompositeComponentUpdatesValue = publicRequestCompositeComponentUpdatesKvp.Value;
-
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = CompositeComponentUpdateRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequestCompositeComponentUpdatesValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetEntityName())
-                {
-                    context.Writer.WritePropertyName("entityName");
-                    context.Writer.Write(publicRequest.EntityName);
-                }
-
-                if(publicRequest.IsSetParentEntityUpdate())
-                {
-                    context.Writer.WritePropertyName("parentEntityUpdate");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ParentEntityUpdateRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ParentEntityUpdate, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

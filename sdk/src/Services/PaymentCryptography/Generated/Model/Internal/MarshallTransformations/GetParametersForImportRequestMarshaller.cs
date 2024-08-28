@@ -63,27 +63,30 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetKeyMaterialType())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("KeyMaterialType");
-                    context.Writer.Write(publicRequest.KeyMaterialType);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetKeyMaterialType())
+                    {
+                        context.Writer.WritePropertyName("KeyMaterialType");
+                        context.Writer.Write(publicRequest.KeyMaterialType);
+                    }
+
+                    if(publicRequest.IsSetWrappingKeyAlgorithm())
+                    {
+                        context.Writer.WritePropertyName("WrappingKeyAlgorithm");
+                        context.Writer.Write(publicRequest.WrappingKeyAlgorithm);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetWrappingKeyAlgorithm())
-                {
-                    context.Writer.WritePropertyName("WrappingKeyAlgorithm");
-                    context.Writer.Write(publicRequest.WrappingKeyAlgorithm);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

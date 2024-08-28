@@ -64,84 +64,87 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field MetricName set");
             request.AddPathResource("{metricName}", StringUtils.FromString(publicRequest.MetricName));
             request.ResourcePath = "/fleet-metric/{metricName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAggregationField())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("aggregationField");
-                    context.Writer.Write(publicRequest.AggregationField);
-                }
-
-                if(publicRequest.IsSetAggregationType())
-                {
-                    context.Writer.WritePropertyName("aggregationType");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AggregationTypeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AggregationType, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetIndexName())
-                {
-                    context.Writer.WritePropertyName("indexName");
-                    context.Writer.Write(publicRequest.IndexName);
-                }
-
-                if(publicRequest.IsSetPeriod())
-                {
-                    context.Writer.WritePropertyName("period");
-                    context.Writer.Write(publicRequest.Period.Value);
-                }
-
-                if(publicRequest.IsSetQueryString())
-                {
-                    context.Writer.WritePropertyName("queryString");
-                    context.Writer.Write(publicRequest.QueryString);
-                }
-
-                if(publicRequest.IsSetQueryVersion())
-                {
-                    context.Writer.WritePropertyName("queryVersion");
-                    context.Writer.Write(publicRequest.QueryVersion);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAggregationField())
                     {
+                        context.Writer.WritePropertyName("aggregationField");
+                        context.Writer.Write(publicRequest.AggregationField);
+                    }
+
+                    if(publicRequest.IsSetAggregationType())
+                    {
+                        context.Writer.WritePropertyName("aggregationType");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = AggregationTypeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AggregationType, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetIndexName())
+                    {
+                        context.Writer.WritePropertyName("indexName");
+                        context.Writer.Write(publicRequest.IndexName);
+                    }
+
+                    if(publicRequest.IsSetPeriod())
+                    {
+                        context.Writer.WritePropertyName("period");
+                        context.Writer.Write(publicRequest.Period.Value);
+                    }
+
+                    if(publicRequest.IsSetQueryString())
+                    {
+                        context.Writer.WritePropertyName("queryString");
+                        context.Writer.Write(publicRequest.QueryString);
+                    }
+
+                    if(publicRequest.IsSetQueryVersion())
+                    {
+                        context.Writer.WritePropertyName("queryVersion");
+                        context.Writer.Write(publicRequest.QueryVersion);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetUnit())
+                    {
+                        context.Writer.WritePropertyName("unit");
+                        context.Writer.Write(publicRequest.Unit);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetUnit())
-                {
-                    context.Writer.WritePropertyName("unit");
-                    context.Writer.Write(publicRequest.Unit);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

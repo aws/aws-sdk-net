@@ -61,56 +61,59 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/greengrass/updates";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetS3UrlSignerRole())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("S3UrlSignerRole");
-                    context.Writer.Write(publicRequest.S3UrlSignerRole);
-                }
-
-                if(publicRequest.IsSetSoftwareToUpdate())
-                {
-                    context.Writer.WritePropertyName("SoftwareToUpdate");
-                    context.Writer.Write(publicRequest.SoftwareToUpdate);
-                }
-
-                if(publicRequest.IsSetUpdateAgentLogLevel())
-                {
-                    context.Writer.WritePropertyName("UpdateAgentLogLevel");
-                    context.Writer.Write(publicRequest.UpdateAgentLogLevel);
-                }
-
-                if(publicRequest.IsSetUpdateTargets())
-                {
-                    context.Writer.WritePropertyName("UpdateTargets");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestUpdateTargetsListValue in publicRequest.UpdateTargets)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetS3UrlSignerRole())
                     {
-                            context.Writer.Write(publicRequestUpdateTargetsListValue);
+                        context.Writer.WritePropertyName("S3UrlSignerRole");
+                        context.Writer.Write(publicRequest.S3UrlSignerRole);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetSoftwareToUpdate())
+                    {
+                        context.Writer.WritePropertyName("SoftwareToUpdate");
+                        context.Writer.Write(publicRequest.SoftwareToUpdate);
+                    }
+
+                    if(publicRequest.IsSetUpdateAgentLogLevel())
+                    {
+                        context.Writer.WritePropertyName("UpdateAgentLogLevel");
+                        context.Writer.Write(publicRequest.UpdateAgentLogLevel);
+                    }
+
+                    if(publicRequest.IsSetUpdateTargets())
+                    {
+                        context.Writer.WritePropertyName("UpdateTargets");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestUpdateTargetsListValue in publicRequest.UpdateTargets)
+                        {
+                                context.Writer.Write(publicRequestUpdateTargetsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetUpdateTargetsArchitecture())
+                    {
+                        context.Writer.WritePropertyName("UpdateTargetsArchitecture");
+                        context.Writer.Write(publicRequest.UpdateTargetsArchitecture);
+                    }
+
+                    if(publicRequest.IsSetUpdateTargetsOperatingSystem())
+                    {
+                        context.Writer.WritePropertyName("UpdateTargetsOperatingSystem");
+                        context.Writer.Write(publicRequest.UpdateTargetsOperatingSystem);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetUpdateTargetsArchitecture())
-                {
-                    context.Writer.WritePropertyName("UpdateTargetsArchitecture");
-                    context.Writer.Write(publicRequest.UpdateTargetsArchitecture);
-                }
-
-                if(publicRequest.IsSetUpdateTargetsOperatingSystem())
-                {
-                    context.Writer.WritePropertyName("UpdateTargetsOperatingSystem");
-                    context.Writer.Write(publicRequest.UpdateTargetsOperatingSystem);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

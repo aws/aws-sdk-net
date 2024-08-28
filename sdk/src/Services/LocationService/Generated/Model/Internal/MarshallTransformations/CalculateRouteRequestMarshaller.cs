@@ -67,117 +67,120 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetKey())
                 request.Parameters.Add("key", StringUtils.FromString(publicRequest.Key));
             request.ResourcePath = "/routes/v0/calculators/{CalculatorName}/calculate/route";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetArrivalTime())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ArrivalTime");
-                    context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ArrivalTime));
-                }
-
-                if(publicRequest.IsSetCarModeOptions())
-                {
-                    context.Writer.WritePropertyName("CarModeOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CalculateRouteCarModeOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CarModeOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDepartNow())
-                {
-                    context.Writer.WritePropertyName("DepartNow");
-                    context.Writer.Write(publicRequest.DepartNow.Value);
-                }
-
-                if(publicRequest.IsSetDeparturePosition())
-                {
-                    context.Writer.WritePropertyName("DeparturePosition");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDeparturePositionListValue in publicRequest.DeparturePosition)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetArrivalTime())
                     {
-                            context.Writer.Write(publicRequestDeparturePositionListValue);
+                        context.Writer.WritePropertyName("ArrivalTime");
+                        context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ArrivalTime));
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDepartureTime())
-                {
-                    context.Writer.WritePropertyName("DepartureTime");
-                    context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.DepartureTime));
-                }
-
-                if(publicRequest.IsSetDestinationPosition())
-                {
-                    context.Writer.WritePropertyName("DestinationPosition");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDestinationPositionListValue in publicRequest.DestinationPosition)
+                    if(publicRequest.IsSetCarModeOptions())
                     {
-                            context.Writer.Write(publicRequestDestinationPositionListValue);
+                        context.Writer.WritePropertyName("CarModeOptions");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CalculateRouteCarModeOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CarModeOptions, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDistanceUnit())
-                {
-                    context.Writer.WritePropertyName("DistanceUnit");
-                    context.Writer.Write(publicRequest.DistanceUnit);
-                }
-
-                if(publicRequest.IsSetIncludeLegGeometry())
-                {
-                    context.Writer.WritePropertyName("IncludeLegGeometry");
-                    context.Writer.Write(publicRequest.IncludeLegGeometry.Value);
-                }
-
-                if(publicRequest.IsSetOptimizeFor())
-                {
-                    context.Writer.WritePropertyName("OptimizeFor");
-                    context.Writer.Write(publicRequest.OptimizeFor);
-                }
-
-                if(publicRequest.IsSetTravelMode())
-                {
-                    context.Writer.WritePropertyName("TravelMode");
-                    context.Writer.Write(publicRequest.TravelMode);
-                }
-
-                if(publicRequest.IsSetTruckModeOptions())
-                {
-                    context.Writer.WritePropertyName("TruckModeOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CalculateRouteTruckModeOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TruckModeOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetWaypointPositions())
-                {
-                    context.Writer.WritePropertyName("WaypointPositions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestWaypointPositionsListValue in publicRequest.WaypointPositions)
+                    if(publicRequest.IsSetDepartNow())
                     {
+                        context.Writer.WritePropertyName("DepartNow");
+                        context.Writer.Write(publicRequest.DepartNow.Value);
+                    }
+
+                    if(publicRequest.IsSetDeparturePosition())
+                    {
+                        context.Writer.WritePropertyName("DeparturePosition");
                         context.Writer.WriteArrayStart();
-                        foreach(var publicRequestWaypointPositionsListValueListValue in publicRequestWaypointPositionsListValue)
+                        foreach(var publicRequestDeparturePositionListValue in publicRequest.DeparturePosition)
                         {
-                                context.Writer.Write(publicRequestWaypointPositionsListValueListValue);
+                                context.Writer.Write(publicRequestDeparturePositionListValue);
                         }
                         context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDepartureTime())
+                    {
+                        context.Writer.WritePropertyName("DepartureTime");
+                        context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.DepartureTime));
+                    }
+
+                    if(publicRequest.IsSetDestinationPosition())
+                    {
+                        context.Writer.WritePropertyName("DestinationPosition");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDestinationPositionListValue in publicRequest.DestinationPosition)
+                        {
+                                context.Writer.Write(publicRequestDestinationPositionListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetDistanceUnit())
+                    {
+                        context.Writer.WritePropertyName("DistanceUnit");
+                        context.Writer.Write(publicRequest.DistanceUnit);
+                    }
+
+                    if(publicRequest.IsSetIncludeLegGeometry())
+                    {
+                        context.Writer.WritePropertyName("IncludeLegGeometry");
+                        context.Writer.Write(publicRequest.IncludeLegGeometry.Value);
+                    }
+
+                    if(publicRequest.IsSetOptimizeFor())
+                    {
+                        context.Writer.WritePropertyName("OptimizeFor");
+                        context.Writer.Write(publicRequest.OptimizeFor);
+                    }
+
+                    if(publicRequest.IsSetTravelMode())
+                    {
+                        context.Writer.WritePropertyName("TravelMode");
+                        context.Writer.Write(publicRequest.TravelMode);
+                    }
+
+                    if(publicRequest.IsSetTruckModeOptions())
+                    {
+                        context.Writer.WritePropertyName("TruckModeOptions");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CalculateRouteTruckModeOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TruckModeOptions, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetWaypointPositions())
+                    {
+                        context.Writer.WritePropertyName("WaypointPositions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestWaypointPositionsListValue in publicRequest.WaypointPositions)
+                        {
+                            context.Writer.WriteArrayStart();
+                            foreach(var publicRequestWaypointPositionsListValueListValue in publicRequestWaypointPositionsListValue)
+                            {
+                                    context.Writer.Write(publicRequestWaypointPositionsListValueListValue);
+                            }
+                            context.Writer.WriteArrayEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             request.UseQueryString = true;

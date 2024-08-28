@@ -70,55 +70,58 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
                 throw new AmazonCodeCatalystException("Request object does not have required field SpaceName set");
             request.AddPathResource("{spaceName}", StringUtils.FromString(publicRequest.SpaceName));
             request.ResourcePath = "/v1/spaces/{spaceName}/projects/{projectName}/devEnvironments/{id}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAlias())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("alias");
-                    context.Writer.Write(publicRequest.Alias);
-                }
-
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                if(publicRequest.IsSetIdes())
-                {
-                    context.Writer.WritePropertyName("ides");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestIdesListValue in publicRequest.Ides)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAlias())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = IdeConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestIdesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("alias");
+                        context.Writer.Write(publicRequest.Alias);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    if(publicRequest.IsSetIdes())
+                    {
+                        context.Writer.WritePropertyName("ides");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestIdesListValue in publicRequest.Ides)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = IdeConfigurationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestIdesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetInactivityTimeoutMinutes())
+                    {
+                        context.Writer.WritePropertyName("inactivityTimeoutMinutes");
+                        context.Writer.Write(publicRequest.InactivityTimeoutMinutes.Value);
+                    }
+
+                    if(publicRequest.IsSetInstanceType())
+                    {
+                        context.Writer.WritePropertyName("instanceType");
+                        context.Writer.Write(publicRequest.InstanceType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetInactivityTimeoutMinutes())
-                {
-                    context.Writer.WritePropertyName("inactivityTimeoutMinutes");
-                    context.Writer.Write(publicRequest.InactivityTimeoutMinutes.Value);
-                }
-
-                if(publicRequest.IsSetInstanceType())
-                {
-                    context.Writer.WritePropertyName("instanceType");
-                    context.Writer.Write(publicRequest.InstanceType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

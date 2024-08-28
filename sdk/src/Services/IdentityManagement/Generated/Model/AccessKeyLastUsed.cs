@@ -65,7 +65,6 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true)]
         public DateTime? LastUsedDate
         {
             get { return this._lastUsedDate; }

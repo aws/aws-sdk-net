@@ -61,27 +61,30 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/deleteTimelineEvent";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEventId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("eventId");
-                    context.Writer.Write(publicRequest.EventId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEventId())
+                    {
+                        context.Writer.WritePropertyName("eventId");
+                        context.Writer.Write(publicRequest.EventId);
+                    }
+
+                    if(publicRequest.IsSetIncidentRecordArn())
+                    {
+                        context.Writer.WritePropertyName("incidentRecordArn");
+                        context.Writer.Write(publicRequest.IncidentRecordArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetIncidentRecordArn())
-                {
-                    context.Writer.WritePropertyName("incidentRecordArn");
-                    context.Writer.Write(publicRequest.IncidentRecordArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

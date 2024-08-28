@@ -61,55 +61,58 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/search-resource-tags";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetInstanceId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("InstanceId");
-                    context.Writer.Write(publicRequest.InstanceId);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetResourceTypes())
-                {
-                    context.Writer.WritePropertyName("ResourceTypes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestResourceTypesListValue in publicRequest.ResourceTypes)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetInstanceId())
                     {
-                            context.Writer.Write(publicRequestResourceTypesListValue);
+                        context.Writer.WritePropertyName("InstanceId");
+                        context.Writer.Write(publicRequest.InstanceId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetResourceTypes())
+                    {
+                        context.Writer.WritePropertyName("ResourceTypes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestResourceTypesListValue in publicRequest.ResourceTypes)
+                        {
+                                context.Writer.Write(publicRequestResourceTypesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSearchCriteria())
+                    {
+                        context.Writer.WritePropertyName("SearchCriteria");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ResourceTagsSearchCriteriaMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SearchCriteria, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSearchCriteria())
-                {
-                    context.Writer.WritePropertyName("SearchCriteria");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ResourceTagsSearchCriteriaMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SearchCriteria, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

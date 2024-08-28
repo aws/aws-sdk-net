@@ -61,75 +61,78 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/create-custom-line-item";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccountId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AccountId");
-                    context.Writer.Write(publicRequest.AccountId);
-                }
-
-                if(publicRequest.IsSetBillingGroupArn())
-                {
-                    context.Writer.WritePropertyName("BillingGroupArn");
-                    context.Writer.Write(publicRequest.BillingGroupArn);
-                }
-
-                if(publicRequest.IsSetBillingPeriodRange())
-                {
-                    context.Writer.WritePropertyName("BillingPeriodRange");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CustomLineItemBillingPeriodRangeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.BillingPeriodRange, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetChargeDetails())
-                {
-                    context.Writer.WritePropertyName("ChargeDetails");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CustomLineItemChargeDetailsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ChargeDetails, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccountId())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("AccountId");
+                        context.Writer.Write(publicRequest.AccountId);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetBillingGroupArn())
+                    {
+                        context.Writer.WritePropertyName("BillingGroupArn");
+                        context.Writer.Write(publicRequest.BillingGroupArn);
+                    }
+
+                    if(publicRequest.IsSetBillingPeriodRange())
+                    {
+                        context.Writer.WritePropertyName("BillingPeriodRange");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CustomLineItemBillingPeriodRangeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.BillingPeriodRange, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetChargeDetails())
+                    {
+                        context.Writer.WritePropertyName("ChargeDetails");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CustomLineItemChargeDetailsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ChargeDetails, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

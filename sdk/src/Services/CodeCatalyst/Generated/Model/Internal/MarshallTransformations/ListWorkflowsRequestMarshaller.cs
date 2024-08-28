@@ -73,31 +73,34 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/v1/spaces/{spaceName}/projects/{projectName}/workflows";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetSortBy())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("sortBy");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSortByListValue in publicRequest.SortBy)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetSortBy())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("sortBy");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSortByListValue in publicRequest.SortBy)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = WorkflowSortCriteriaMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSortByListValue, context);
+                            var marshaller = WorkflowSortCriteriaMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSortByListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             request.UseQueryString = true;

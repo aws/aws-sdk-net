@@ -67,29 +67,32 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 throw new AmazonAmplifyException("Request object does not have required field BranchName set");
             request.AddPathResource("{branchName}", StringUtils.FromString(publicRequest.BranchName));
             request.ResourcePath = "/apps/{appId}/branches/{branchName}/deployments";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFileMap())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("fileMap");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestFileMapKvp in publicRequest.FileMap)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFileMap())
                     {
-                        context.Writer.WritePropertyName(publicRequestFileMapKvp.Key);
-                        var publicRequestFileMapValue = publicRequestFileMapKvp.Value;
+                        context.Writer.WritePropertyName("fileMap");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestFileMapKvp in publicRequest.FileMap)
+                        {
+                            context.Writer.WritePropertyName(publicRequestFileMapKvp.Key);
+                            var publicRequestFileMapValue = publicRequestFileMapKvp.Value;
 
-                            context.Writer.Write(publicRequestFileMapValue);
+                                context.Writer.Write(publicRequestFileMapValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -61,55 +61,58 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/cis/scan-configuration/update";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetScanConfigurationArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("scanConfigurationArn");
-                    context.Writer.Write(publicRequest.ScanConfigurationArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetScanConfigurationArn())
+                    {
+                        context.Writer.WritePropertyName("scanConfigurationArn");
+                        context.Writer.Write(publicRequest.ScanConfigurationArn);
+                    }
+
+                    if(publicRequest.IsSetScanName())
+                    {
+                        context.Writer.WritePropertyName("scanName");
+                        context.Writer.Write(publicRequest.ScanName);
+                    }
+
+                    if(publicRequest.IsSetSchedule())
+                    {
+                        context.Writer.WritePropertyName("schedule");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ScheduleMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Schedule, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSecurityLevel())
+                    {
+                        context.Writer.WritePropertyName("securityLevel");
+                        context.Writer.Write(publicRequest.SecurityLevel);
+                    }
+
+                    if(publicRequest.IsSetTargets())
+                    {
+                        context.Writer.WritePropertyName("targets");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = UpdateCisTargetsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Targets, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetScanName())
-                {
-                    context.Writer.WritePropertyName("scanName");
-                    context.Writer.Write(publicRequest.ScanName);
-                }
-
-                if(publicRequest.IsSetSchedule())
-                {
-                    context.Writer.WritePropertyName("schedule");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ScheduleMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Schedule, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSecurityLevel())
-                {
-                    context.Writer.WritePropertyName("securityLevel");
-                    context.Writer.Write(publicRequest.SecurityLevel);
-                }
-
-                if(publicRequest.IsSetTargets())
-                {
-                    context.Writer.WritePropertyName("targets");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UpdateCisTargetsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Targets, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,69 +63,72 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetParameterObjects())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("parameterObjects");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestParameterObjectsListValue in publicRequest.ParameterObjects)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetParameterObjects())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("parameterObjects");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestParameterObjectsListValue in publicRequest.ParameterObjects)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = ParameterObjectMarshaller.Instance;
-                        marshaller.Marshall(publicRequestParameterObjectsListValue, context);
+                            var marshaller = ParameterObjectMarshaller.Instance;
+                            marshaller.Marshall(publicRequestParameterObjectsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetParameterValues())
-                {
-                    context.Writer.WritePropertyName("parameterValues");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestParameterValuesListValue in publicRequest.ParameterValues)
+                    if(publicRequest.IsSetParameterValues())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("parameterValues");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestParameterValuesListValue in publicRequest.ParameterValues)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = ParameterValueMarshaller.Instance;
-                        marshaller.Marshall(publicRequestParameterValuesListValue, context);
+                            var marshaller = ParameterValueMarshaller.Instance;
+                            marshaller.Marshall(publicRequestParameterValuesListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetPipelineId())
-                {
-                    context.Writer.WritePropertyName("pipelineId");
-                    context.Writer.Write(publicRequest.PipelineId);
-                }
-
-                if(publicRequest.IsSetPipelineObjects())
-                {
-                    context.Writer.WritePropertyName("pipelineObjects");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPipelineObjectsListValue in publicRequest.PipelineObjects)
+                    if(publicRequest.IsSetPipelineId())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = PipelineObjectMarshaller.Instance;
-                        marshaller.Marshall(publicRequestPipelineObjectsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("pipelineId");
+                        context.Writer.Write(publicRequest.PipelineId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetPipelineObjects())
+                    {
+                        context.Writer.WritePropertyName("pipelineObjects");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPipelineObjectsListValue in publicRequest.PipelineObjects)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = PipelineObjectMarshaller.Instance;
+                            marshaller.Marshall(publicRequestPipelineObjectsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

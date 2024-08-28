@@ -64,53 +64,56 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
                 throw new AmazonFinspaceException("Request object does not have required field EnvironmentId set");
             request.AddPathResource("{environmentId}", StringUtils.FromString(publicRequest.EnvironmentId));
             request.ResourcePath = "/kx/environments/{environmentId}/network";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetCustomDNSConfiguration())
-                {
-                    context.Writer.WritePropertyName("customDNSConfiguration");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCustomDNSConfigurationListValue in publicRequest.CustomDNSConfiguration)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetCustomDNSConfiguration())
+                    {
+                        context.Writer.WritePropertyName("customDNSConfiguration");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCustomDNSConfigurationListValue in publicRequest.CustomDNSConfiguration)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = CustomDNSServerMarshaller.Instance;
+                            marshaller.Marshall(publicRequestCustomDNSConfigurationListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTransitGatewayConfiguration())
+                    {
+                        context.Writer.WritePropertyName("transitGatewayConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = CustomDNSServerMarshaller.Instance;
-                        marshaller.Marshall(publicRequestCustomDNSConfigurationListValue, context);
+                        var marshaller = TransitGatewayConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TransitGatewayConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTransitGatewayConfiguration())
-                {
-                    context.Writer.WritePropertyName("transitGatewayConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TransitGatewayConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TransitGatewayConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

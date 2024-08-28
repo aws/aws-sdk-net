@@ -67,85 +67,88 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 throw new AmazonApiGatewayV2Exception("Request object does not have required field AuthorizerId set");
             request.AddPathResource("{authorizerId}", StringUtils.FromString(publicRequest.AuthorizerId));
             request.ResourcePath = "/v2/apis/{apiId}/authorizers/{authorizerId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAuthorizerCredentialsArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("authorizerCredentialsArn");
-                    context.Writer.Write(publicRequest.AuthorizerCredentialsArn);
-                }
-
-                if(publicRequest.IsSetAuthorizerPayloadFormatVersion())
-                {
-                    context.Writer.WritePropertyName("authorizerPayloadFormatVersion");
-                    context.Writer.Write(publicRequest.AuthorizerPayloadFormatVersion);
-                }
-
-                if(publicRequest.IsSetAuthorizerResultTtlInSeconds())
-                {
-                    context.Writer.WritePropertyName("authorizerResultTtlInSeconds");
-                    context.Writer.Write(publicRequest.AuthorizerResultTtlInSeconds.Value);
-                }
-
-                if(publicRequest.IsSetAuthorizerType())
-                {
-                    context.Writer.WritePropertyName("authorizerType");
-                    context.Writer.Write(publicRequest.AuthorizerType);
-                }
-
-                if(publicRequest.IsSetAuthorizerUri())
-                {
-                    context.Writer.WritePropertyName("authorizerUri");
-                    context.Writer.Write(publicRequest.AuthorizerUri);
-                }
-
-                if(publicRequest.IsSetEnableSimpleResponses())
-                {
-                    context.Writer.WritePropertyName("enableSimpleResponses");
-                    context.Writer.Write(publicRequest.EnableSimpleResponses.Value);
-                }
-
-                if(publicRequest.IsSetIdentitySource())
-                {
-                    context.Writer.WritePropertyName("identitySource");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestIdentitySourceListValue in publicRequest.IdentitySource)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAuthorizerCredentialsArn())
                     {
-                            context.Writer.Write(publicRequestIdentitySourceListValue);
+                        context.Writer.WritePropertyName("authorizerCredentialsArn");
+                        context.Writer.Write(publicRequest.AuthorizerCredentialsArn);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetAuthorizerPayloadFormatVersion())
+                    {
+                        context.Writer.WritePropertyName("authorizerPayloadFormatVersion");
+                        context.Writer.Write(publicRequest.AuthorizerPayloadFormatVersion);
+                    }
+
+                    if(publicRequest.IsSetAuthorizerResultTtlInSeconds())
+                    {
+                        context.Writer.WritePropertyName("authorizerResultTtlInSeconds");
+                        context.Writer.Write(publicRequest.AuthorizerResultTtlInSeconds.Value);
+                    }
+
+                    if(publicRequest.IsSetAuthorizerType())
+                    {
+                        context.Writer.WritePropertyName("authorizerType");
+                        context.Writer.Write(publicRequest.AuthorizerType);
+                    }
+
+                    if(publicRequest.IsSetAuthorizerUri())
+                    {
+                        context.Writer.WritePropertyName("authorizerUri");
+                        context.Writer.Write(publicRequest.AuthorizerUri);
+                    }
+
+                    if(publicRequest.IsSetEnableSimpleResponses())
+                    {
+                        context.Writer.WritePropertyName("enableSimpleResponses");
+                        context.Writer.Write(publicRequest.EnableSimpleResponses.Value);
+                    }
+
+                    if(publicRequest.IsSetIdentitySource())
+                    {
+                        context.Writer.WritePropertyName("identitySource");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestIdentitySourceListValue in publicRequest.IdentitySource)
+                        {
+                                context.Writer.Write(publicRequestIdentitySourceListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetIdentityValidationExpression())
+                    {
+                        context.Writer.WritePropertyName("identityValidationExpression");
+                        context.Writer.Write(publicRequest.IdentityValidationExpression);
+                    }
+
+                    if(publicRequest.IsSetJwtConfiguration())
+                    {
+                        context.Writer.WritePropertyName("jwtConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = JWTConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.JwtConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetIdentityValidationExpression())
-                {
-                    context.Writer.WritePropertyName("identityValidationExpression");
-                    context.Writer.Write(publicRequest.IdentityValidationExpression);
-                }
-
-                if(publicRequest.IsSetJwtConfiguration())
-                {
-                    context.Writer.WritePropertyName("jwtConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = JWTConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.JwtConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

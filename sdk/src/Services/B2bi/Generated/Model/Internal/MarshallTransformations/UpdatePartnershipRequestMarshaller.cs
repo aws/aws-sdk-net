@@ -63,38 +63,41 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCapabilities())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("capabilities");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCapabilitiesListValue in publicRequest.Capabilities)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCapabilities())
                     {
-                            context.Writer.Write(publicRequestCapabilitiesListValue);
+                        context.Writer.WritePropertyName("capabilities");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCapabilitiesListValue in publicRequest.Capabilities)
+                        {
+                                context.Writer.Write(publicRequestCapabilitiesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetPartnershipId())
+                    {
+                        context.Writer.WritePropertyName("partnershipId");
+                        context.Writer.Write(publicRequest.PartnershipId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetPartnershipId())
-                {
-                    context.Writer.WritePropertyName("partnershipId");
-                    context.Writer.Write(publicRequest.PartnershipId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

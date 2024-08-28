@@ -63,27 +63,30 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEvent())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Event");
-                    context.Writer.Write(publicRequest.Event);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEvent())
+                    {
+                        context.Writer.WritePropertyName("Event");
+                        context.Writer.Write(publicRequest.Event);
+                    }
+
+                    if(publicRequest.IsSetEventPattern())
+                    {
+                        context.Writer.WritePropertyName("EventPattern");
+                        context.Writer.Write(publicRequest.EventPattern);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEventPattern())
-                {
-                    context.Writer.WritePropertyName("EventPattern");
-                    context.Writer.Write(publicRequest.EventPattern);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

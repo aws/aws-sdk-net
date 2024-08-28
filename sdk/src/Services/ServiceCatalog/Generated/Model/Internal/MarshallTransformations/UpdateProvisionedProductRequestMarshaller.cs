@@ -63,123 +63,126 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAcceptLanguage())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AcceptLanguage");
-                    context.Writer.Write(publicRequest.AcceptLanguage);
-                }
-
-                if(publicRequest.IsSetPathId())
-                {
-                    context.Writer.WritePropertyName("PathId");
-                    context.Writer.Write(publicRequest.PathId);
-                }
-
-                if(publicRequest.IsSetPathName())
-                {
-                    context.Writer.WritePropertyName("PathName");
-                    context.Writer.Write(publicRequest.PathName);
-                }
-
-                if(publicRequest.IsSetProductId())
-                {
-                    context.Writer.WritePropertyName("ProductId");
-                    context.Writer.Write(publicRequest.ProductId);
-                }
-
-                if(publicRequest.IsSetProductName())
-                {
-                    context.Writer.WritePropertyName("ProductName");
-                    context.Writer.Write(publicRequest.ProductName);
-                }
-
-                if(publicRequest.IsSetProvisionedProductId())
-                {
-                    context.Writer.WritePropertyName("ProvisionedProductId");
-                    context.Writer.Write(publicRequest.ProvisionedProductId);
-                }
-
-                if(publicRequest.IsSetProvisionedProductName())
-                {
-                    context.Writer.WritePropertyName("ProvisionedProductName");
-                    context.Writer.Write(publicRequest.ProvisionedProductName);
-                }
-
-                if(publicRequest.IsSetProvisioningArtifactId())
-                {
-                    context.Writer.WritePropertyName("ProvisioningArtifactId");
-                    context.Writer.Write(publicRequest.ProvisioningArtifactId);
-                }
-
-                if(publicRequest.IsSetProvisioningArtifactName())
-                {
-                    context.Writer.WritePropertyName("ProvisioningArtifactName");
-                    context.Writer.Write(publicRequest.ProvisioningArtifactName);
-                }
-
-                if(publicRequest.IsSetProvisioningParameters())
-                {
-                    context.Writer.WritePropertyName("ProvisioningParameters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestProvisioningParametersListValue in publicRequest.ProvisioningParameters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAcceptLanguage())
                     {
+                        context.Writer.WritePropertyName("AcceptLanguage");
+                        context.Writer.Write(publicRequest.AcceptLanguage);
+                    }
+
+                    if(publicRequest.IsSetPathId())
+                    {
+                        context.Writer.WritePropertyName("PathId");
+                        context.Writer.Write(publicRequest.PathId);
+                    }
+
+                    if(publicRequest.IsSetPathName())
+                    {
+                        context.Writer.WritePropertyName("PathName");
+                        context.Writer.Write(publicRequest.PathName);
+                    }
+
+                    if(publicRequest.IsSetProductId())
+                    {
+                        context.Writer.WritePropertyName("ProductId");
+                        context.Writer.Write(publicRequest.ProductId);
+                    }
+
+                    if(publicRequest.IsSetProductName())
+                    {
+                        context.Writer.WritePropertyName("ProductName");
+                        context.Writer.Write(publicRequest.ProductName);
+                    }
+
+                    if(publicRequest.IsSetProvisionedProductId())
+                    {
+                        context.Writer.WritePropertyName("ProvisionedProductId");
+                        context.Writer.Write(publicRequest.ProvisionedProductId);
+                    }
+
+                    if(publicRequest.IsSetProvisionedProductName())
+                    {
+                        context.Writer.WritePropertyName("ProvisionedProductName");
+                        context.Writer.Write(publicRequest.ProvisionedProductName);
+                    }
+
+                    if(publicRequest.IsSetProvisioningArtifactId())
+                    {
+                        context.Writer.WritePropertyName("ProvisioningArtifactId");
+                        context.Writer.Write(publicRequest.ProvisioningArtifactId);
+                    }
+
+                    if(publicRequest.IsSetProvisioningArtifactName())
+                    {
+                        context.Writer.WritePropertyName("ProvisioningArtifactName");
+                        context.Writer.Write(publicRequest.ProvisioningArtifactName);
+                    }
+
+                    if(publicRequest.IsSetProvisioningParameters())
+                    {
+                        context.Writer.WritePropertyName("ProvisioningParameters");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestProvisioningParametersListValue in publicRequest.ProvisioningParameters)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = UpdateProvisioningParameterMarshaller.Instance;
+                            marshaller.Marshall(publicRequestProvisioningParametersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetProvisioningPreferences())
+                    {
+                        context.Writer.WritePropertyName("ProvisioningPreferences");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = UpdateProvisioningParameterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestProvisioningParametersListValue, context);
+                        var marshaller = UpdateProvisioningPreferencesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ProvisioningPreferences, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetProvisioningPreferences())
-                {
-                    context.Writer.WritePropertyName("ProvisioningPreferences");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UpdateProvisioningPreferencesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ProvisioningPreferences, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetTags())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetUpdateToken())
+                    {
+                        context.Writer.WritePropertyName("UpdateToken");
+                        context.Writer.Write(publicRequest.UpdateToken);
+                    }
+
+                    else if(!(publicRequest.IsSetUpdateToken()))
+                    {
+                        context.Writer.WritePropertyName("UpdateToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetUpdateToken())
-                {
-                    context.Writer.WritePropertyName("UpdateToken");
-                    context.Writer.Write(publicRequest.UpdateToken);
-                }
-
-                else if(!(publicRequest.IsSetUpdateToken()))
-                {
-                    context.Writer.WritePropertyName("UpdateToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

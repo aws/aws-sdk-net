@@ -61,53 +61,56 @@ namespace Amazon.PersonalizeRuntime.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/action-recommendations";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCampaignArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("campaignArn");
-                    context.Writer.Write(publicRequest.CampaignArn);
-                }
-
-                if(publicRequest.IsSetFilterArn())
-                {
-                    context.Writer.WritePropertyName("filterArn");
-                    context.Writer.Write(publicRequest.FilterArn);
-                }
-
-                if(publicRequest.IsSetFilterValues())
-                {
-                    context.Writer.WritePropertyName("filterValues");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestFilterValuesKvp in publicRequest.FilterValues)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCampaignArn())
                     {
-                        context.Writer.WritePropertyName(publicRequestFilterValuesKvp.Key);
-                        var publicRequestFilterValuesValue = publicRequestFilterValuesKvp.Value;
-
-                            context.Writer.Write(publicRequestFilterValuesValue);
+                        context.Writer.WritePropertyName("campaignArn");
+                        context.Writer.Write(publicRequest.CampaignArn);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetFilterArn())
+                    {
+                        context.Writer.WritePropertyName("filterArn");
+                        context.Writer.Write(publicRequest.FilterArn);
+                    }
+
+                    if(publicRequest.IsSetFilterValues())
+                    {
+                        context.Writer.WritePropertyName("filterValues");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestFilterValuesKvp in publicRequest.FilterValues)
+                        {
+                            context.Writer.WritePropertyName(publicRequestFilterValuesKvp.Key);
+                            var publicRequestFilterValuesValue = publicRequestFilterValuesKvp.Value;
+
+                                context.Writer.Write(publicRequestFilterValuesValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetNumResults())
+                    {
+                        context.Writer.WritePropertyName("numResults");
+                        context.Writer.Write(publicRequest.NumResults.Value);
+                    }
+
+                    if(publicRequest.IsSetUserId())
+                    {
+                        context.Writer.WritePropertyName("userId");
+                        context.Writer.Write(publicRequest.UserId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetNumResults())
-                {
-                    context.Writer.WritePropertyName("numResults");
-                    context.Writer.Write(publicRequest.NumResults.Value);
-                }
-
-                if(publicRequest.IsSetUserId())
-                {
-                    context.Writer.WritePropertyName("userId");
-                    context.Writer.Write(publicRequest.UserId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

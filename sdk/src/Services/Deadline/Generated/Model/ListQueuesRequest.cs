@@ -101,8 +101,7 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property PrincipalId. 
         /// <para>
-        /// The principal ID. This filter is only valid when using Nimble Studio credentials and
-        /// should match the user ID in the credentials of the caller.
+        /// The principal IDs to include in the list of queues.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=47)]

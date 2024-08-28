@@ -63,109 +63,112 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAutoScalingConfigurationArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AutoScalingConfigurationArn");
-                    context.Writer.Write(publicRequest.AutoScalingConfigurationArn);
-                }
-
-                if(publicRequest.IsSetEncryptionConfiguration())
-                {
-                    context.Writer.WritePropertyName("EncryptionConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EncryptionConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetHealthCheckConfiguration())
-                {
-                    context.Writer.WritePropertyName("HealthCheckConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = HealthCheckConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.HealthCheckConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetInstanceConfiguration())
-                {
-                    context.Writer.WritePropertyName("InstanceConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = InstanceConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.InstanceConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetNetworkConfiguration())
-                {
-                    context.Writer.WritePropertyName("NetworkConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = NetworkConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.NetworkConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetObservabilityConfiguration())
-                {
-                    context.Writer.WritePropertyName("ObservabilityConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ServiceObservabilityConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ObservabilityConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetServiceName())
-                {
-                    context.Writer.WritePropertyName("ServiceName");
-                    context.Writer.Write(publicRequest.ServiceName);
-                }
-
-                if(publicRequest.IsSetSourceConfiguration())
-                {
-                    context.Writer.WritePropertyName("SourceConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SourceConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SourceConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAutoScalingConfigurationArn())
                     {
+                        context.Writer.WritePropertyName("AutoScalingConfigurationArn");
+                        context.Writer.Write(publicRequest.AutoScalingConfigurationArn);
+                    }
+
+                    if(publicRequest.IsSetEncryptionConfiguration())
+                    {
+                        context.Writer.WritePropertyName("EncryptionConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = EncryptionConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetHealthCheckConfiguration())
+                    {
+                        context.Writer.WritePropertyName("HealthCheckConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = HealthCheckConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.HealthCheckConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetInstanceConfiguration())
+                    {
+                        context.Writer.WritePropertyName("InstanceConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = InstanceConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.InstanceConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetNetworkConfiguration())
+                    {
+                        context.Writer.WritePropertyName("NetworkConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = NetworkConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.NetworkConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetObservabilityConfiguration())
+                    {
+                        context.Writer.WritePropertyName("ObservabilityConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ServiceObservabilityConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ObservabilityConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetServiceName())
+                    {
+                        context.Writer.WritePropertyName("ServiceName");
+                        context.Writer.Write(publicRequest.ServiceName);
+                    }
+
+                    if(publicRequest.IsSetSourceConfiguration())
+                    {
+                        context.Writer.WritePropertyName("SourceConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SourceConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SourceConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

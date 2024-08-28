@@ -65,42 +65,45 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
                 throw new AmazonChimeSDKMeetingsException("Request object does not have required field MeetingId set");
             request.AddPathResource("{MeetingId}", StringUtils.FromString(publicRequest.MeetingId));
             request.ResourcePath = "/meetings/{MeetingId}/attendees/capabilities";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCapabilities())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Capabilities");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AttendeeCapabilitiesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Capabilities, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetExcludedAttendeeIds())
-                {
-                    context.Writer.WritePropertyName("ExcludedAttendeeIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestExcludedAttendeeIdsListValue in publicRequest.ExcludedAttendeeIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCapabilities())
                     {
+                        context.Writer.WritePropertyName("Capabilities");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = AttendeeIdItemMarshaller.Instance;
-                        marshaller.Marshall(publicRequestExcludedAttendeeIdsListValue, context);
+                        var marshaller = AttendeeCapabilitiesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Capabilities, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetExcludedAttendeeIds())
+                    {
+                        context.Writer.WritePropertyName("ExcludedAttendeeIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestExcludedAttendeeIdsListValue in publicRequest.ExcludedAttendeeIds)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = AttendeeIdItemMarshaller.Instance;
+                            marshaller.Marshall(publicRequestExcludedAttendeeIdsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

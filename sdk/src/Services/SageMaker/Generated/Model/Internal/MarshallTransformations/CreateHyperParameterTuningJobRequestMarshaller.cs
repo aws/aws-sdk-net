@@ -63,97 +63,100 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAutotune())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Autotune");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AutotuneMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Autotune, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetHyperParameterTuningJobConfig())
-                {
-                    context.Writer.WritePropertyName("HyperParameterTuningJobConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = HyperParameterTuningJobConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.HyperParameterTuningJobConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetHyperParameterTuningJobName())
-                {
-                    context.Writer.WritePropertyName("HyperParameterTuningJobName");
-                    context.Writer.Write(publicRequest.HyperParameterTuningJobName);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAutotune())
                     {
+                        context.Writer.WritePropertyName("Autotune");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = AutotuneMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Autotune, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTrainingJobDefinition())
-                {
-                    context.Writer.WritePropertyName("TrainingJobDefinition");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = HyperParameterTrainingJobDefinitionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TrainingJobDefinition, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTrainingJobDefinitions())
-                {
-                    context.Writer.WritePropertyName("TrainingJobDefinitions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTrainingJobDefinitionsListValue in publicRequest.TrainingJobDefinitions)
+                    if(publicRequest.IsSetHyperParameterTuningJobConfig())
                     {
+                        context.Writer.WritePropertyName("HyperParameterTuningJobConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = HyperParameterTuningJobConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.HyperParameterTuningJobConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetHyperParameterTuningJobName())
+                    {
+                        context.Writer.WritePropertyName("HyperParameterTuningJobName");
+                        context.Writer.Write(publicRequest.HyperParameterTuningJobName);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTrainingJobDefinition())
+                    {
+                        context.Writer.WritePropertyName("TrainingJobDefinition");
                         context.Writer.WriteObjectStart();
 
                         var marshaller = HyperParameterTrainingJobDefinitionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTrainingJobDefinitionsListValue, context);
+                        marshaller.Marshall(publicRequest.TrainingJobDefinition, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTrainingJobDefinitions())
+                    {
+                        context.Writer.WritePropertyName("TrainingJobDefinitions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTrainingJobDefinitionsListValue in publicRequest.TrainingJobDefinitions)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = HyperParameterTrainingJobDefinitionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTrainingJobDefinitionsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetWarmStartConfig())
+                    {
+                        context.Writer.WritePropertyName("WarmStartConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = HyperParameterTuningJobWarmStartConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.WarmStartConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetWarmStartConfig())
-                {
-                    context.Writer.WritePropertyName("WarmStartConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = HyperParameterTuningJobWarmStartConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.WarmStartConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

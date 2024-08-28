@@ -94,6 +94,10 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 {
                     return NotAuthorizedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("PasswordHistoryPolicyViolationException"))
+                {
+                    return PasswordHistoryPolicyViolationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("PasswordResetRequiredException"))
                 {
                     return PasswordResetRequiredExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

@@ -63,63 +63,66 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCreationTimeAfter())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("creationTimeAfter");
-                    context.Writer.Write(publicRequest.CreationTimeAfter.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCreationTimeAfter())
+                    {
+                        context.Writer.WritePropertyName("creationTimeAfter");
+                        context.Writer.Write(publicRequest.CreationTimeAfter.Value);
+                    }
+
+                    if(publicRequest.IsSetCreationTimeBefore())
+                    {
+                        context.Writer.WritePropertyName("creationTimeBefore");
+                        context.Writer.Write(publicRequest.CreationTimeBefore.Value);
+                    }
+
+                    if(publicRequest.IsSetEndTimeAfter())
+                    {
+                        context.Writer.WritePropertyName("endTimeAfter");
+                        context.Writer.Write(publicRequest.EndTimeAfter.Value);
+                    }
+
+                    if(publicRequest.IsSetEndTimeBefore())
+                    {
+                        context.Writer.WritePropertyName("endTimeBefore");
+                        context.Writer.Write(publicRequest.EndTimeBefore.Value);
+                    }
+
+                    if(publicRequest.IsSetMaxResult())
+                    {
+                        context.Writer.WritePropertyName("maxResult");
+                        context.Writer.Write(publicRequest.MaxResult.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetProjectArn())
+                    {
+                        context.Writer.WritePropertyName("projectArn");
+                        context.Writer.Write(publicRequest.ProjectArn);
+                    }
+
+                    if(publicRequest.IsSetStatus())
+                    {
+                        context.Writer.WritePropertyName("status");
+                        context.Writer.Write(publicRequest.Status);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCreationTimeBefore())
-                {
-                    context.Writer.WritePropertyName("creationTimeBefore");
-                    context.Writer.Write(publicRequest.CreationTimeBefore.Value);
-                }
-
-                if(publicRequest.IsSetEndTimeAfter())
-                {
-                    context.Writer.WritePropertyName("endTimeAfter");
-                    context.Writer.Write(publicRequest.EndTimeAfter.Value);
-                }
-
-                if(publicRequest.IsSetEndTimeBefore())
-                {
-                    context.Writer.WritePropertyName("endTimeBefore");
-                    context.Writer.Write(publicRequest.EndTimeBefore.Value);
-                }
-
-                if(publicRequest.IsSetMaxResult())
-                {
-                    context.Writer.WritePropertyName("maxResult");
-                    context.Writer.Write(publicRequest.MaxResult.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetProjectArn())
-                {
-                    context.Writer.WritePropertyName("projectArn");
-                    context.Writer.Write(publicRequest.ProjectArn);
-                }
-
-                if(publicRequest.IsSetStatus())
-                {
-                    context.Writer.WritePropertyName("status");
-                    context.Writer.Write(publicRequest.Status);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

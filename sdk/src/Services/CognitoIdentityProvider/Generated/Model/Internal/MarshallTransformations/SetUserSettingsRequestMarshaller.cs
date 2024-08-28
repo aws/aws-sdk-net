@@ -63,37 +63,40 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccessToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AccessToken");
-                    context.Writer.Write(publicRequest.AccessToken);
-                }
-
-                if(publicRequest.IsSetMFAOptions())
-                {
-                    context.Writer.WritePropertyName("MFAOptions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMFAOptionsListValue in publicRequest.MFAOptions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccessToken())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = MFAOptionTypeMarshaller.Instance;
-                        marshaller.Marshall(publicRequestMFAOptionsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("AccessToken");
+                        context.Writer.Write(publicRequest.AccessToken);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetMFAOptions())
+                    {
+                        context.Writer.WritePropertyName("MFAOptions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMFAOptionsListValue in publicRequest.MFAOptions)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = MFAOptionTypeMarshaller.Instance;
+                            marshaller.Marshall(publicRequestMFAOptionsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,33 +63,36 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMaxInferenceUnits())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("MaxInferenceUnits");
-                    context.Writer.Write(publicRequest.MaxInferenceUnits.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMaxInferenceUnits())
+                    {
+                        context.Writer.WritePropertyName("MaxInferenceUnits");
+                        context.Writer.Write(publicRequest.MaxInferenceUnits.Value);
+                    }
+
+                    if(publicRequest.IsSetMinInferenceUnits())
+                    {
+                        context.Writer.WritePropertyName("MinInferenceUnits");
+                        context.Writer.Write(publicRequest.MinInferenceUnits.Value);
+                    }
+
+                    if(publicRequest.IsSetProjectVersionArn())
+                    {
+                        context.Writer.WritePropertyName("ProjectVersionArn");
+                        context.Writer.Write(publicRequest.ProjectVersionArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMinInferenceUnits())
-                {
-                    context.Writer.WritePropertyName("MinInferenceUnits");
-                    context.Writer.Write(publicRequest.MinInferenceUnits.Value);
-                }
-
-                if(publicRequest.IsSetProjectVersionArn())
-                {
-                    context.Writer.WritePropertyName("ProjectVersionArn");
-                    context.Writer.Write(publicRequest.ProjectVersionArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

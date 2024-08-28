@@ -34,8 +34,27 @@ namespace Amazon.FIS.Model
     /// </summary>
     public partial class ExperimentState
     {
+        private ExperimentError _error;
         private string _reason;
         private ExperimentStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property Error. 
+        /// <para>
+        /// The error information of the experiment when the action has <c>failed</c>.
+        /// </para>
+        /// </summary>
+        public ExperimentError Error
+        {
+            get { return this._error; }
+            set { this._error = value; }
+        }
+
+        // Check to see if Error property is set
+        internal bool IsSetError()
+        {
+            return this._error != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Reason. 

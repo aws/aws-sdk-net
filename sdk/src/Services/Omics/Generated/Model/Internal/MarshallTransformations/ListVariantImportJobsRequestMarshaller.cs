@@ -67,37 +67,40 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/import/variants";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFilter())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("filter");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ListVariantImportJobsFilterMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Filter, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetIds())
-                {
-                    context.Writer.WritePropertyName("ids");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestIdsListValue in publicRequest.Ids)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFilter())
                     {
-                            context.Writer.Write(publicRequestIdsListValue);
+                        context.Writer.WritePropertyName("filter");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ListVariantImportJobsFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Filter, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetIds())
+                    {
+                        context.Writer.WritePropertyName("ids");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestIdsListValue in publicRequest.Ids)
+                        {
+                                context.Writer.Write(publicRequestIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             request.UseQueryString = true;

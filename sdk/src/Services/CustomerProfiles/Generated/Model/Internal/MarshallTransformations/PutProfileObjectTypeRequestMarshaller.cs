@@ -67,114 +67,117 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 throw new AmazonCustomerProfilesException("Request object does not have required field ObjectTypeName set");
             request.AddPathResource("{ObjectTypeName}", StringUtils.FromString(publicRequest.ObjectTypeName));
             request.ResourcePath = "/domains/{DomainName}/object-types/{ObjectTypeName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAllowProfileCreation())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AllowProfileCreation");
-                    context.Writer.Write(publicRequest.AllowProfileCreation.Value);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetEncryptionKey())
-                {
-                    context.Writer.WritePropertyName("EncryptionKey");
-                    context.Writer.Write(publicRequest.EncryptionKey);
-                }
-
-                if(publicRequest.IsSetExpirationDays())
-                {
-                    context.Writer.WritePropertyName("ExpirationDays");
-                    context.Writer.Write(publicRequest.ExpirationDays.Value);
-                }
-
-                if(publicRequest.IsSetFields())
-                {
-                    context.Writer.WritePropertyName("Fields");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestFieldsKvp in publicRequest.Fields)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAllowProfileCreation())
                     {
-                        context.Writer.WritePropertyName(publicRequestFieldsKvp.Key);
-                        var publicRequestFieldsValue = publicRequestFieldsKvp.Value;
-
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ObjectTypeFieldMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFieldsValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("AllowProfileCreation");
+                        context.Writer.Write(publicRequest.AllowProfileCreation.Value);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetKeys())
-                {
-                    context.Writer.WritePropertyName("Keys");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestKeysKvp in publicRequest.Keys)
+                    if(publicRequest.IsSetDescription())
                     {
-                        context.Writer.WritePropertyName(publicRequestKeysKvp.Key);
-                        var publicRequestKeysValue = publicRequestKeysKvp.Value;
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
 
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestKeysValueListValue in publicRequestKeysValue)
+                    if(publicRequest.IsSetEncryptionKey())
+                    {
+                        context.Writer.WritePropertyName("EncryptionKey");
+                        context.Writer.Write(publicRequest.EncryptionKey);
+                    }
+
+                    if(publicRequest.IsSetExpirationDays())
+                    {
+                        context.Writer.WritePropertyName("ExpirationDays");
+                        context.Writer.Write(publicRequest.ExpirationDays.Value);
+                    }
+
+                    if(publicRequest.IsSetFields())
+                    {
+                        context.Writer.WritePropertyName("Fields");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestFieldsKvp in publicRequest.Fields)
                         {
+                            context.Writer.WritePropertyName(publicRequestFieldsKvp.Key);
+                            var publicRequestFieldsValue = publicRequestFieldsKvp.Value;
+
                             context.Writer.WriteObjectStart();
 
-                            var marshaller = ObjectTypeKeyMarshaller.Instance;
-                            marshaller.Marshall(publicRequestKeysValueListValue, context);
+                            var marshaller = ObjectTypeFieldMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFieldsValue, context);
 
                             context.Writer.WriteObjectEnd();
                         }
-                        context.Writer.WriteArrayEnd();
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetMaxProfileObjectCount())
-                {
-                    context.Writer.WritePropertyName("MaxProfileObjectCount");
-                    context.Writer.Write(publicRequest.MaxProfileObjectCount.Value);
-                }
-
-                if(publicRequest.IsSetSourceLastUpdatedTimestampFormat())
-                {
-                    context.Writer.WritePropertyName("SourceLastUpdatedTimestampFormat");
-                    context.Writer.Write(publicRequest.SourceLastUpdatedTimestampFormat);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetKeys())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
+                        context.Writer.WritePropertyName("Keys");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestKeysKvp in publicRequest.Keys)
+                        {
+                            context.Writer.WritePropertyName(publicRequestKeysKvp.Key);
+                            var publicRequestKeysValue = publicRequestKeysKvp.Value;
 
-                            context.Writer.Write(publicRequestTagsValue);
+                            context.Writer.WriteArrayStart();
+                            foreach(var publicRequestKeysValueListValue in publicRequestKeysValue)
+                            {
+                                context.Writer.WriteObjectStart();
+
+                                var marshaller = ObjectTypeKeyMarshaller.Instance;
+                                marshaller.Marshall(publicRequestKeysValueListValue, context);
+
+                                context.Writer.WriteObjectEnd();
+                            }
+                            context.Writer.WriteArrayEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetMaxProfileObjectCount())
+                    {
+                        context.Writer.WritePropertyName("MaxProfileObjectCount");
+                        context.Writer.Write(publicRequest.MaxProfileObjectCount.Value);
+                    }
+
+                    if(publicRequest.IsSetSourceLastUpdatedTimestampFormat())
+                    {
+                        context.Writer.WritePropertyName("SourceLastUpdatedTimestampFormat");
+                        context.Writer.Write(publicRequest.SourceLastUpdatedTimestampFormat);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTemplateId())
+                    {
+                        context.Writer.WritePropertyName("TemplateId");
+                        context.Writer.Write(publicRequest.TemplateId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTemplateId())
-                {
-                    context.Writer.WritePropertyName("TemplateId");
-                    context.Writer.Write(publicRequest.TemplateId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

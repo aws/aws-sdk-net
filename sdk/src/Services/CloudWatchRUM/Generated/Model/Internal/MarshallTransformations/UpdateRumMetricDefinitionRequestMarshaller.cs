@@ -64,44 +64,47 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
                 throw new AmazonCloudWatchRUMException("Request object does not have required field AppMonitorName set");
             request.AddPathResource("{AppMonitorName}", StringUtils.FromString(publicRequest.AppMonitorName));
             request.ResourcePath = "/rummetrics/{AppMonitorName}/metrics";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDestination())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Destination");
-                    context.Writer.Write(publicRequest.Destination);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDestination())
+                    {
+                        context.Writer.WritePropertyName("Destination");
+                        context.Writer.Write(publicRequest.Destination);
+                    }
+
+                    if(publicRequest.IsSetDestinationArn())
+                    {
+                        context.Writer.WritePropertyName("DestinationArn");
+                        context.Writer.Write(publicRequest.DestinationArn);
+                    }
+
+                    if(publicRequest.IsSetMetricDefinition())
+                    {
+                        context.Writer.WritePropertyName("MetricDefinition");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MetricDefinitionRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.MetricDefinition, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetMetricDefinitionId())
+                    {
+                        context.Writer.WritePropertyName("MetricDefinitionId");
+                        context.Writer.Write(publicRequest.MetricDefinitionId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDestinationArn())
-                {
-                    context.Writer.WritePropertyName("DestinationArn");
-                    context.Writer.Write(publicRequest.DestinationArn);
-                }
-
-                if(publicRequest.IsSetMetricDefinition())
-                {
-                    context.Writer.WritePropertyName("MetricDefinition");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MetricDefinitionRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.MetricDefinition, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMetricDefinitionId())
-                {
-                    context.Writer.WritePropertyName("MetricDefinitionId");
-                    context.Writer.Write(publicRequest.MetricDefinitionId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

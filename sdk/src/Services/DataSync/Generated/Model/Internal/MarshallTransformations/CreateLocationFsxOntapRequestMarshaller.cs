@@ -63,65 +63,68 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetProtocol())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Protocol");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = FsxProtocolMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Protocol, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSecurityGroupArns())
-                {
-                    context.Writer.WritePropertyName("SecurityGroupArns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSecurityGroupArnsListValue in publicRequest.SecurityGroupArns)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetProtocol())
                     {
-                            context.Writer.Write(publicRequestSecurityGroupArnsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetStorageVirtualMachineArn())
-                {
-                    context.Writer.WritePropertyName("StorageVirtualMachineArn");
-                    context.Writer.Write(publicRequest.StorageVirtualMachineArn);
-                }
-
-                if(publicRequest.IsSetSubdirectory())
-                {
-                    context.Writer.WritePropertyName("Subdirectory");
-                    context.Writer.Write(publicRequest.Subdirectory);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                    {
+                        context.Writer.WritePropertyName("Protocol");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagListEntryMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = FsxProtocolMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Protocol, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetSecurityGroupArns())
+                    {
+                        context.Writer.WritePropertyName("SecurityGroupArns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSecurityGroupArnsListValue in publicRequest.SecurityGroupArns)
+                        {
+                                context.Writer.Write(publicRequestSecurityGroupArnsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetStorageVirtualMachineArn())
+                    {
+                        context.Writer.WritePropertyName("StorageVirtualMachineArn");
+                        context.Writer.Write(publicRequest.StorageVirtualMachineArn);
+                    }
+
+                    if(publicRequest.IsSetSubdirectory())
+                    {
+                        context.Writer.WritePropertyName("Subdirectory");
+                        context.Writer.Write(publicRequest.Subdirectory);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagListEntryMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

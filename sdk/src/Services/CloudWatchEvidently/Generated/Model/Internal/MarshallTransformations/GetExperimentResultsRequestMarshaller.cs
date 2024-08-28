@@ -67,83 +67,86 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
                 throw new AmazonCloudWatchEvidentlyException("Request object does not have required field Project set");
             request.AddPathResource("{project}", StringUtils.FromString(publicRequest.Project));
             request.ResourcePath = "/projects/{project}/experiments/{experiment}/results";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBaseStat())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("baseStat");
-                    context.Writer.Write(publicRequest.BaseStat);
-                }
-
-                if(publicRequest.IsSetEndTime())
-                {
-                    context.Writer.WritePropertyName("endTime");
-                    context.Writer.Write(publicRequest.EndTime.Value);
-                }
-
-                if(publicRequest.IsSetMetricNames())
-                {
-                    context.Writer.WritePropertyName("metricNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMetricNamesListValue in publicRequest.MetricNames)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBaseStat())
                     {
-                            context.Writer.Write(publicRequestMetricNamesListValue);
+                        context.Writer.WritePropertyName("baseStat");
+                        context.Writer.Write(publicRequest.BaseStat);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetPeriod())
-                {
-                    context.Writer.WritePropertyName("period");
-                    context.Writer.Write(publicRequest.Period.Value);
-                }
-
-                if(publicRequest.IsSetReportNames())
-                {
-                    context.Writer.WritePropertyName("reportNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestReportNamesListValue in publicRequest.ReportNames)
+                    if(publicRequest.IsSetEndTime())
                     {
-                            context.Writer.Write(publicRequestReportNamesListValue);
+                        context.Writer.WritePropertyName("endTime");
+                        context.Writer.Write(publicRequest.EndTime.Value);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetResultStats())
-                {
-                    context.Writer.WritePropertyName("resultStats");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestResultStatsListValue in publicRequest.ResultStats)
+                    if(publicRequest.IsSetMetricNames())
                     {
-                            context.Writer.Write(publicRequestResultStatsListValue);
+                        context.Writer.WritePropertyName("metricNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMetricNamesListValue in publicRequest.MetricNames)
+                        {
+                                context.Writer.Write(publicRequestMetricNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetStartTime())
-                {
-                    context.Writer.WritePropertyName("startTime");
-                    context.Writer.Write(publicRequest.StartTime.Value);
-                }
-
-                if(publicRequest.IsSetTreatmentNames())
-                {
-                    context.Writer.WritePropertyName("treatmentNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTreatmentNamesListValue in publicRequest.TreatmentNames)
+                    if(publicRequest.IsSetPeriod())
                     {
-                            context.Writer.Write(publicRequestTreatmentNamesListValue);
+                        context.Writer.WritePropertyName("period");
+                        context.Writer.Write(publicRequest.Period.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetReportNames())
+                    {
+                        context.Writer.WritePropertyName("reportNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestReportNamesListValue in publicRequest.ReportNames)
+                        {
+                                context.Writer.Write(publicRequestReportNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetResultStats())
+                    {
+                        context.Writer.WritePropertyName("resultStats");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestResultStatsListValue in publicRequest.ResultStats)
+                        {
+                                context.Writer.Write(publicRequestResultStatsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetStartTime())
+                    {
+                        context.Writer.WritePropertyName("startTime");
+                        context.Writer.Write(publicRequest.StartTime.Value);
+                    }
+
+                    if(publicRequest.IsSetTreatmentNames())
+                    {
+                        context.Writer.WritePropertyName("treatmentNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTreatmentNamesListValue in publicRequest.TreatmentNames)
+                        {
+                                context.Writer.Write(publicRequestTreatmentNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

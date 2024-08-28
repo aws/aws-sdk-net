@@ -61,27 +61,30 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/administrator";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAdministratorId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AdministratorId");
-                    context.Writer.Write(publicRequest.AdministratorId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAdministratorId())
+                    {
+                        context.Writer.WritePropertyName("AdministratorId");
+                        context.Writer.Write(publicRequest.AdministratorId);
+                    }
+
+                    if(publicRequest.IsSetInvitationId())
+                    {
+                        context.Writer.WritePropertyName("InvitationId");
+                        context.Writer.Write(publicRequest.InvitationId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetInvitationId())
-                {
-                    context.Writer.WritePropertyName("InvitationId");
-                    context.Writer.Write(publicRequest.InvitationId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

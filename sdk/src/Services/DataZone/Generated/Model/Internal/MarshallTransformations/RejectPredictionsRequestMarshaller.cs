@@ -70,53 +70,56 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetRevision())
                 request.Parameters.Add("revision", StringUtils.FromString(publicRequest.Revision));
             request.ResourcePath = "/v2/domains/{domainIdentifier}/assets/{identifier}/reject-predictions";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetRejectChoices())
-                {
-                    context.Writer.WritePropertyName("rejectChoices");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRejectChoicesListValue in publicRequest.RejectChoices)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetRejectChoices())
+                    {
+                        context.Writer.WritePropertyName("rejectChoices");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRejectChoicesListValue in publicRequest.RejectChoices)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = RejectChoiceMarshaller.Instance;
+                            marshaller.Marshall(publicRequestRejectChoicesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetRejectRule())
+                    {
+                        context.Writer.WritePropertyName("rejectRule");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = RejectChoiceMarshaller.Instance;
-                        marshaller.Marshall(publicRequestRejectChoicesListValue, context);
+                        var marshaller = RejectRuleMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RejectRule, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRejectRule())
-                {
-                    context.Writer.WritePropertyName("rejectRule");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RejectRuleMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RejectRule, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             request.UseQueryString = true;

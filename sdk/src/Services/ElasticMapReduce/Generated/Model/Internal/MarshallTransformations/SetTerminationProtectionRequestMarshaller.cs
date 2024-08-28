@@ -63,32 +63,35 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetJobFlowIds())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("JobFlowIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestJobFlowIdsListValue in publicRequest.JobFlowIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetJobFlowIds())
                     {
-                            context.Writer.Write(publicRequestJobFlowIdsListValue);
+                        context.Writer.WritePropertyName("JobFlowIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestJobFlowIdsListValue in publicRequest.JobFlowIds)
+                        {
+                                context.Writer.Write(publicRequestJobFlowIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTerminationProtected())
+                    {
+                        context.Writer.WritePropertyName("TerminationProtected");
+                        context.Writer.Write(publicRequest.TerminationProtected.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTerminationProtected())
-                {
-                    context.Writer.WritePropertyName("TerminationProtected");
-                    context.Writer.Write(publicRequest.TerminationProtected.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

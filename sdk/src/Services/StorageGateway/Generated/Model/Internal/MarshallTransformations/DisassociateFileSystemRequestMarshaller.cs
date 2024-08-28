@@ -63,27 +63,30 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFileSystemAssociationARN())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("FileSystemAssociationARN");
-                    context.Writer.Write(publicRequest.FileSystemAssociationARN);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFileSystemAssociationARN())
+                    {
+                        context.Writer.WritePropertyName("FileSystemAssociationARN");
+                        context.Writer.Write(publicRequest.FileSystemAssociationARN);
+                    }
+
+                    if(publicRequest.IsSetForceDelete())
+                    {
+                        context.Writer.WritePropertyName("ForceDelete");
+                        context.Writer.Write(publicRequest.ForceDelete.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetForceDelete())
-                {
-                    context.Writer.WritePropertyName("ForceDelete");
-                    context.Writer.Write(publicRequest.ForceDelete.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

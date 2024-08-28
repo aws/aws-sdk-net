@@ -61,48 +61,51 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/get-token-balance";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAtBlockchainInstant())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("atBlockchainInstant");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAtBlockchainInstant())
+                    {
+                        context.Writer.WritePropertyName("atBlockchainInstant");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = BlockchainInstantMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AtBlockchainInstant, context);
+                        var marshaller = BlockchainInstantMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AtBlockchainInstant, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetOwnerIdentifier())
+                    {
+                        context.Writer.WritePropertyName("ownerIdentifier");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = OwnerIdentifierMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OwnerIdentifier, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTokenIdentifier())
+                    {
+                        context.Writer.WritePropertyName("tokenIdentifier");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TokenIdentifierMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TokenIdentifier, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetOwnerIdentifier())
-                {
-                    context.Writer.WritePropertyName("ownerIdentifier");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OwnerIdentifierMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OwnerIdentifier, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTokenIdentifier())
-                {
-                    context.Writer.WritePropertyName("tokenIdentifier");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TokenIdentifierMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TokenIdentifier, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

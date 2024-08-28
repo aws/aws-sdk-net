@@ -63,27 +63,30 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetGameLiftAwsAccountId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("GameLiftAwsAccountId");
-                    context.Writer.Write(publicRequest.GameLiftAwsAccountId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetGameLiftAwsAccountId())
+                    {
+                        context.Writer.WritePropertyName("GameLiftAwsAccountId");
+                        context.Writer.Write(publicRequest.GameLiftAwsAccountId);
+                    }
+
+                    if(publicRequest.IsSetPeerVpcId())
+                    {
+                        context.Writer.WritePropertyName("PeerVpcId");
+                        context.Writer.Write(publicRequest.PeerVpcId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPeerVpcId())
-                {
-                    context.Writer.WritePropertyName("PeerVpcId");
-                    context.Writer.Write(publicRequest.PeerVpcId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

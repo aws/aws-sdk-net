@@ -67,27 +67,41 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field InstanceId set");
             request.AddPathResource("{InstanceId}", StringUtils.FromString(publicRequest.InstanceId));
             request.ResourcePath = "/contacts/{InstanceId}/{ContactId}/routing-data";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetQueuePriority())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("QueuePriority");
-                    context.Writer.Write(publicRequest.QueuePriority.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetQueuePriority())
+                    {
+                        context.Writer.WritePropertyName("QueuePriority");
+                        context.Writer.Write(publicRequest.QueuePriority.Value);
+                    }
+
+                    if(publicRequest.IsSetQueueTimeAdjustmentSeconds())
+                    {
+                        context.Writer.WritePropertyName("QueueTimeAdjustmentSeconds");
+                        context.Writer.Write(publicRequest.QueueTimeAdjustmentSeconds.Value);
+                    }
+
+                    if(publicRequest.IsSetRoutingCriteria())
+                    {
+                        context.Writer.WritePropertyName("RoutingCriteria");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RoutingCriteriaInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RoutingCriteria, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetQueueTimeAdjustmentSeconds())
-                {
-                    context.Writer.WritePropertyName("QueueTimeAdjustmentSeconds");
-                    context.Writer.Write(publicRequest.QueueTimeAdjustmentSeconds.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

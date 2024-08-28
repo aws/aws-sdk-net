@@ -61,47 +61,50 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/2021-01-01/opensearch/upgradeDomain";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAdvancedOptions())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AdvancedOptions");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestAdvancedOptionsKvp in publicRequest.AdvancedOptions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAdvancedOptions())
                     {
-                        context.Writer.WritePropertyName(publicRequestAdvancedOptionsKvp.Key);
-                        var publicRequestAdvancedOptionsValue = publicRequestAdvancedOptionsKvp.Value;
+                        context.Writer.WritePropertyName("AdvancedOptions");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestAdvancedOptionsKvp in publicRequest.AdvancedOptions)
+                        {
+                            context.Writer.WritePropertyName(publicRequestAdvancedOptionsKvp.Key);
+                            var publicRequestAdvancedOptionsValue = publicRequestAdvancedOptionsKvp.Value;
 
-                            context.Writer.Write(publicRequestAdvancedOptionsValue);
+                                context.Writer.Write(publicRequestAdvancedOptionsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetDomainName())
+                    {
+                        context.Writer.WritePropertyName("DomainName");
+                        context.Writer.Write(publicRequest.DomainName);
+                    }
+
+                    if(publicRequest.IsSetPerformCheckOnly())
+                    {
+                        context.Writer.WritePropertyName("PerformCheckOnly");
+                        context.Writer.Write(publicRequest.PerformCheckOnly.Value);
+                    }
+
+                    if(publicRequest.IsSetTargetVersion())
+                    {
+                        context.Writer.WritePropertyName("TargetVersion");
+                        context.Writer.Write(publicRequest.TargetVersion);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDomainName())
-                {
-                    context.Writer.WritePropertyName("DomainName");
-                    context.Writer.Write(publicRequest.DomainName);
-                }
-
-                if(publicRequest.IsSetPerformCheckOnly())
-                {
-                    context.Writer.WritePropertyName("PerformCheckOnly");
-                    context.Writer.Write(publicRequest.PerformCheckOnly.Value);
-                }
-
-                if(publicRequest.IsSetTargetVersion())
-                {
-                    context.Writer.WritePropertyName("TargetVersion");
-                    context.Writer.Write(publicRequest.TargetVersion);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

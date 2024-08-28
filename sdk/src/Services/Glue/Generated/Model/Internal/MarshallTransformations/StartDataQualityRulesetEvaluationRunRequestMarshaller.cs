@@ -63,91 +63,94 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAdditionalDataSources())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AdditionalDataSources");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestAdditionalDataSourcesKvp in publicRequest.AdditionalDataSources)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAdditionalDataSources())
                     {
-                        context.Writer.WritePropertyName(publicRequestAdditionalDataSourcesKvp.Key);
-                        var publicRequestAdditionalDataSourcesValue = publicRequestAdditionalDataSourcesKvp.Value;
+                        context.Writer.WritePropertyName("AdditionalDataSources");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestAdditionalDataSourcesKvp in publicRequest.AdditionalDataSources)
+                        {
+                            context.Writer.WritePropertyName(publicRequestAdditionalDataSourcesKvp.Key);
+                            var publicRequestAdditionalDataSourcesValue = publicRequestAdditionalDataSourcesKvp.Value;
 
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = DataSourceMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAdditionalDataSourcesValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetAdditionalRunOptions())
+                    {
+                        context.Writer.WritePropertyName("AdditionalRunOptions");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = DataSourceMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAdditionalDataSourcesValue, context);
+                        var marshaller = DataQualityEvaluationRunAdditionalRunOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AdditionalRunOptions, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetAdditionalRunOptions())
-                {
-                    context.Writer.WritePropertyName("AdditionalRunOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DataQualityEvaluationRunAdditionalRunOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AdditionalRunOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                if(publicRequest.IsSetDataSource())
-                {
-                    context.Writer.WritePropertyName("DataSource");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DataSourceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DataSource, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetNumberOfWorkers())
-                {
-                    context.Writer.WritePropertyName("NumberOfWorkers");
-                    context.Writer.Write(publicRequest.NumberOfWorkers.Value);
-                }
-
-                if(publicRequest.IsSetRole())
-                {
-                    context.Writer.WritePropertyName("Role");
-                    context.Writer.Write(publicRequest.Role);
-                }
-
-                if(publicRequest.IsSetRulesetNames())
-                {
-                    context.Writer.WritePropertyName("RulesetNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRulesetNamesListValue in publicRequest.RulesetNames)
+                    if(publicRequest.IsSetClientToken())
                     {
-                            context.Writer.Write(publicRequestRulesetNamesListValue);
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDataSource())
+                    {
+                        context.Writer.WritePropertyName("DataSource");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DataSourceMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DataSource, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetNumberOfWorkers())
+                    {
+                        context.Writer.WritePropertyName("NumberOfWorkers");
+                        context.Writer.Write(publicRequest.NumberOfWorkers.Value);
+                    }
+
+                    if(publicRequest.IsSetRole())
+                    {
+                        context.Writer.WritePropertyName("Role");
+                        context.Writer.Write(publicRequest.Role);
+                    }
+
+                    if(publicRequest.IsSetRulesetNames())
+                    {
+                        context.Writer.WritePropertyName("RulesetNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRulesetNamesListValue in publicRequest.RulesetNames)
+                        {
+                                context.Writer.Write(publicRequestRulesetNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTimeout())
+                    {
+                        context.Writer.WritePropertyName("Timeout");
+                        context.Writer.Write(publicRequest.Timeout.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTimeout())
-                {
-                    context.Writer.WritePropertyName("Timeout");
-                    context.Writer.Write(publicRequest.Timeout.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

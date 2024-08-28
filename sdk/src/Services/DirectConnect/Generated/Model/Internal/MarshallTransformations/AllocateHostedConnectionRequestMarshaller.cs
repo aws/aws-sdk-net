@@ -63,61 +63,64 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBandwidth())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("bandwidth");
-                    context.Writer.Write(publicRequest.Bandwidth);
-                }
-
-                if(publicRequest.IsSetConnectionId())
-                {
-                    context.Writer.WritePropertyName("connectionId");
-                    context.Writer.Write(publicRequest.ConnectionId);
-                }
-
-                if(publicRequest.IsSetConnectionName())
-                {
-                    context.Writer.WritePropertyName("connectionName");
-                    context.Writer.Write(publicRequest.ConnectionName);
-                }
-
-                if(publicRequest.IsSetOwnerAccount())
-                {
-                    context.Writer.WritePropertyName("ownerAccount");
-                    context.Writer.Write(publicRequest.OwnerAccount);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBandwidth())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("bandwidth");
+                        context.Writer.Write(publicRequest.Bandwidth);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetConnectionId())
+                    {
+                        context.Writer.WritePropertyName("connectionId");
+                        context.Writer.Write(publicRequest.ConnectionId);
+                    }
+
+                    if(publicRequest.IsSetConnectionName())
+                    {
+                        context.Writer.WritePropertyName("connectionName");
+                        context.Writer.Write(publicRequest.ConnectionName);
+                    }
+
+                    if(publicRequest.IsSetOwnerAccount())
+                    {
+                        context.Writer.WritePropertyName("ownerAccount");
+                        context.Writer.Write(publicRequest.OwnerAccount);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetVlan())
+                    {
+                        context.Writer.WritePropertyName("vlan");
+                        context.Writer.Write(publicRequest.Vlan.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetVlan())
-                {
-                    context.Writer.WritePropertyName("vlan");
-                    context.Writer.Write(publicRequest.Vlan.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

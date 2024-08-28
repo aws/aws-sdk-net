@@ -151,10 +151,15 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property IamRole. 
         /// <para>
-        /// The Identity and Access Management (IAM) role assigned to the on-premises Systems
-        /// Manager managed node. This call doesn't return the IAM role for Amazon Elastic Compute
-        /// Cloud (Amazon EC2) instances. To retrieve the IAM role for an EC2 instance, use the
-        /// Amazon EC2 <c>DescribeInstances</c> operation. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
+        /// The role assigned to an Amazon EC2 instance configured with a Systems Manager Quick
+        /// Setup host management configuration or the role assigned to an on-premises managed
+        /// node.
+        /// </para>
+        ///  
+        /// <para>
+        ///  This call doesn't return the IAM role for <i>unmanaged</i> Amazon EC2 instances (instances
+        /// not configured for Systems Manager). To retrieve the role for an unmanaged instance,
+        /// use the Amazon EC2 <c>DescribeInstances</c> operation. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
         /// in the <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a>
         /// in the <i>Amazon Web Services CLI Command Reference</i>.
         /// </para>

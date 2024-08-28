@@ -63,69 +63,72 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCreatedAtEndTime())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CreatedAtEndTime");
-                    context.Writer.Write(publicRequest.CreatedAtEndTime.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCreatedAtEndTime())
+                    {
+                        context.Writer.WritePropertyName("CreatedAtEndTime");
+                        context.Writer.Write(publicRequest.CreatedAtEndTime.Value);
+                    }
+
+                    if(publicRequest.IsSetCreatedAtStartTime())
+                    {
+                        context.Writer.WritePropertyName("CreatedAtStartTime");
+                        context.Writer.Write(publicRequest.CreatedAtStartTime.Value);
+                    }
+
+                    if(publicRequest.IsSetMaxModelVersion())
+                    {
+                        context.Writer.WritePropertyName("MaxModelVersion");
+                        context.Writer.Write(publicRequest.MaxModelVersion.Value);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetMinModelVersion())
+                    {
+                        context.Writer.WritePropertyName("MinModelVersion");
+                        context.Writer.Write(publicRequest.MinModelVersion.Value);
+                    }
+
+                    if(publicRequest.IsSetModelName())
+                    {
+                        context.Writer.WritePropertyName("ModelName");
+                        context.Writer.Write(publicRequest.ModelName);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetSourceType())
+                    {
+                        context.Writer.WritePropertyName("SourceType");
+                        context.Writer.Write(publicRequest.SourceType);
+                    }
+
+                    if(publicRequest.IsSetStatus())
+                    {
+                        context.Writer.WritePropertyName("Status");
+                        context.Writer.Write(publicRequest.Status);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCreatedAtStartTime())
-                {
-                    context.Writer.WritePropertyName("CreatedAtStartTime");
-                    context.Writer.Write(publicRequest.CreatedAtStartTime.Value);
-                }
-
-                if(publicRequest.IsSetMaxModelVersion())
-                {
-                    context.Writer.WritePropertyName("MaxModelVersion");
-                    context.Writer.Write(publicRequest.MaxModelVersion.Value);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetMinModelVersion())
-                {
-                    context.Writer.WritePropertyName("MinModelVersion");
-                    context.Writer.Write(publicRequest.MinModelVersion.Value);
-                }
-
-                if(publicRequest.IsSetModelName())
-                {
-                    context.Writer.WritePropertyName("ModelName");
-                    context.Writer.Write(publicRequest.ModelName);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetSourceType())
-                {
-                    context.Writer.WritePropertyName("SourceType");
-                    context.Writer.Write(publicRequest.SourceType);
-                }
-
-                if(publicRequest.IsSetStatus())
-                {
-                    context.Writer.WritePropertyName("Status");
-                    context.Writer.Write(publicRequest.Status);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

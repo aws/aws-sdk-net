@@ -63,63 +63,66 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDesiredModelVariants())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DesiredModelVariants");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDesiredModelVariantsListValue in publicRequest.DesiredModelVariants)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDesiredModelVariants())
                     {
+                        context.Writer.WritePropertyName("DesiredModelVariants");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDesiredModelVariantsListValue in publicRequest.DesiredModelVariants)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ModelVariantConfigMarshaller.Instance;
+                            marshaller.Marshall(publicRequestDesiredModelVariantsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetDesiredState())
+                    {
+                        context.Writer.WritePropertyName("DesiredState");
+                        context.Writer.Write(publicRequest.DesiredState);
+                    }
+
+                    if(publicRequest.IsSetModelVariantActions())
+                    {
+                        context.Writer.WritePropertyName("ModelVariantActions");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestModelVariantActionsKvp in publicRequest.ModelVariantActions)
+                        {
+                            context.Writer.WritePropertyName(publicRequestModelVariantActionsKvp.Key);
+                            var publicRequestModelVariantActionsValue = publicRequestModelVariantActionsKvp.Value;
 
-                        var marshaller = ModelVariantConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequestDesiredModelVariantsListValue, context);
-
+                                context.Writer.Write(publicRequestModelVariantActionsValue);
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDesiredState())
-                {
-                    context.Writer.WritePropertyName("DesiredState");
-                    context.Writer.Write(publicRequest.DesiredState);
-                }
-
-                if(publicRequest.IsSetModelVariantActions())
-                {
-                    context.Writer.WritePropertyName("ModelVariantActions");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestModelVariantActionsKvp in publicRequest.ModelVariantActions)
+                    if(publicRequest.IsSetName())
                     {
-                        context.Writer.WritePropertyName(publicRequestModelVariantActionsKvp.Key);
-                        var publicRequestModelVariantActionsValue = publicRequestModelVariantActionsKvp.Value;
-
-                            context.Writer.Write(publicRequestModelVariantActionsValue);
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetReason())
+                    {
+                        context.Writer.WritePropertyName("Reason");
+                        context.Writer.Write(publicRequest.Reason);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetReason())
-                {
-                    context.Writer.WritePropertyName("Reason");
-                    context.Writer.Write(publicRequest.Reason);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

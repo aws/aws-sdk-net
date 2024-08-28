@@ -64,31 +64,34 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                 throw new AmazonGreengrassException("Request object does not have required field DeviceDefinitionId set");
             request.AddPathResource("{DeviceDefinitionId}", StringUtils.FromString(publicRequest.DeviceDefinitionId));
             request.ResourcePath = "/greengrass/definition/devices/{DeviceDefinitionId}/versions";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDevices())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Devices");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDevicesListValue in publicRequest.Devices)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDevices())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("Devices");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDevicesListValue in publicRequest.Devices)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = DeviceMarshaller.Instance;
-                        marshaller.Marshall(publicRequestDevicesListValue, context);
+                            var marshaller = DeviceMarshaller.Instance;
+                            marshaller.Marshall(publicRequestDevicesListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

@@ -63,44 +63,47 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeliveryS3Uri())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DeliveryS3Uri");
-                    context.Writer.Write(publicRequest.DeliveryS3Uri);
-                }
-
-                if(publicRequest.IsSetQueryAlias())
-                {
-                    context.Writer.WritePropertyName("QueryAlias");
-                    context.Writer.Write(publicRequest.QueryAlias);
-                }
-
-                if(publicRequest.IsSetQueryParameters())
-                {
-                    context.Writer.WritePropertyName("QueryParameters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestQueryParametersListValue in publicRequest.QueryParameters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDeliveryS3Uri())
                     {
-                            context.Writer.Write(publicRequestQueryParametersListValue);
+                        context.Writer.WritePropertyName("DeliveryS3Uri");
+                        context.Writer.Write(publicRequest.DeliveryS3Uri);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetQueryAlias())
+                    {
+                        context.Writer.WritePropertyName("QueryAlias");
+                        context.Writer.Write(publicRequest.QueryAlias);
+                    }
+
+                    if(publicRequest.IsSetQueryParameters())
+                    {
+                        context.Writer.WritePropertyName("QueryParameters");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestQueryParametersListValue in publicRequest.QueryParameters)
+                        {
+                                context.Writer.Write(publicRequestQueryParametersListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetQueryStatement())
+                    {
+                        context.Writer.WritePropertyName("QueryStatement");
+                        context.Writer.Write(publicRequest.QueryStatement);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetQueryStatement())
-                {
-                    context.Writer.WritePropertyName("QueryStatement");
-                    context.Writer.Write(publicRequest.QueryStatement);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

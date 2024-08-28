@@ -31,10 +31,8 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// A list of namespaced kernel parameters to set in the container. This parameter maps
-    /// to <c>Sysctls</c> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
-    /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
-    /// Remote API</a> and the <c>--sysctl</c> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-    /// run</a>. For example, you can configure <c>net.ipv4.tcp_keepalive_time</c> setting
+    /// to <c>Sysctls</c> in tthe docker conainer create command and the <c>--sysctl</c> option
+    /// to docker run. For example, you can configure <c>net.ipv4.tcp_keepalive_time</c> setting
     /// to maintain longer lived connections.
     /// 
     ///  

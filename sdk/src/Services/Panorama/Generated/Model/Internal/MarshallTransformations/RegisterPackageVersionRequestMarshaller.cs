@@ -70,27 +70,30 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
                 throw new AmazonPanoramaException("Request object does not have required field PatchVersion set");
             request.AddPathResource("{PatchVersion}", StringUtils.FromString(publicRequest.PatchVersion));
             request.ResourcePath = "/packages/{PackageId}/versions/{PackageVersion}/patch/{PatchVersion}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMarkLatest())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("MarkLatest");
-                    context.Writer.Write(publicRequest.MarkLatest.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMarkLatest())
+                    {
+                        context.Writer.WritePropertyName("MarkLatest");
+                        context.Writer.Write(publicRequest.MarkLatest.Value);
+                    }
+
+                    if(publicRequest.IsSetOwnerAccount())
+                    {
+                        context.Writer.WritePropertyName("OwnerAccount");
+                        context.Writer.Write(publicRequest.OwnerAccount);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetOwnerAccount())
-                {
-                    context.Writer.WritePropertyName("OwnerAccount");
-                    context.Writer.Write(publicRequest.OwnerAccount);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

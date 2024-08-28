@@ -63,32 +63,35 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetJobName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("JobName");
-                    context.Writer.Write(publicRequest.JobName);
-                }
-
-                if(publicRequest.IsSetJobRunIds())
-                {
-                    context.Writer.WritePropertyName("JobRunIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestJobRunIdsListValue in publicRequest.JobRunIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetJobName())
                     {
-                            context.Writer.Write(publicRequestJobRunIdsListValue);
+                        context.Writer.WritePropertyName("JobName");
+                        context.Writer.Write(publicRequest.JobName);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetJobRunIds())
+                    {
+                        context.Writer.WritePropertyName("JobRunIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestJobRunIdsListValue in publicRequest.JobRunIds)
+                        {
+                                context.Writer.Write(publicRequestJobRunIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

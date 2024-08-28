@@ -67,31 +67,34 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 throw new AmazonBedrockAgentRuntimeException("Request object does not have required field FlowIdentifier set");
             request.AddPathResource("{flowIdentifier}", StringUtils.FromString(publicRequest.FlowIdentifier));
             request.ResourcePath = "/flows/{flowIdentifier}/aliases/{flowAliasIdentifier}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetInputs())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("inputs");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestInputsListValue in publicRequest.Inputs)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetInputs())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("inputs");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestInputsListValue in publicRequest.Inputs)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = FlowInputMarshaller.Instance;
-                        marshaller.Marshall(publicRequestInputsListValue, context);
+                            var marshaller = FlowInputMarshaller.Instance;
+                            marshaller.Marshall(publicRequestInputsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

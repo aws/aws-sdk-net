@@ -64,33 +64,36 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
                 throw new AmazonWorkDocsException("Request object does not have required field OrganizationId set");
             request.AddPathResource("{OrganizationId}", StringUtils.FromString(publicRequest.OrganizationId));
             request.ResourcePath = "/api/v1/organizations/{OrganizationId}/subscriptions";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEndpoint())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Endpoint");
-                    context.Writer.Write(publicRequest.Endpoint);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEndpoint())
+                    {
+                        context.Writer.WritePropertyName("Endpoint");
+                        context.Writer.Write(publicRequest.Endpoint);
+                    }
+
+                    if(publicRequest.IsSetProtocol())
+                    {
+                        context.Writer.WritePropertyName("Protocol");
+                        context.Writer.Write(publicRequest.Protocol);
+                    }
+
+                    if(publicRequest.IsSetSubscriptionType())
+                    {
+                        context.Writer.WritePropertyName("SubscriptionType");
+                        context.Writer.Write(publicRequest.SubscriptionType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetProtocol())
-                {
-                    context.Writer.WritePropertyName("Protocol");
-                    context.Writer.Write(publicRequest.Protocol);
-                }
-
-                if(publicRequest.IsSetSubscriptionType())
-                {
-                    context.Writer.WritePropertyName("SubscriptionType");
-                    context.Writer.Write(publicRequest.SubscriptionType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

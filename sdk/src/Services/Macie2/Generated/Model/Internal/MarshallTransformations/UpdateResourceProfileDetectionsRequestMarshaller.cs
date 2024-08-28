@@ -64,31 +64,34 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetResourceArn())
                 request.Parameters.Add("resourceArn", StringUtils.FromString(publicRequest.ResourceArn));
             request.ResourcePath = "/resource-profiles/detections";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetSuppressDataIdentifiers())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("suppressDataIdentifiers");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSuppressDataIdentifiersListValue in publicRequest.SuppressDataIdentifiers)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetSuppressDataIdentifiers())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("suppressDataIdentifiers");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSuppressDataIdentifiersListValue in publicRequest.SuppressDataIdentifiers)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = SuppressDataIdentifierMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSuppressDataIdentifiersListValue, context);
+                            var marshaller = SuppressDataIdentifierMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSuppressDataIdentifiersListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             request.UseQueryString = true;

@@ -68,6 +68,9 @@ namespace Amazon.IoTSiteWise.Model
         private string _assetModelName;
         private List<AssetModelProperty> _assetModelProperties = AWSConfigs.InitializeCollections ? new List<AssetModelProperty>() : null;
         private string _clientToken;
+        private string _ifMatch;
+        private string _ifNoneMatch;
+        private AssetModelVersionType _matchForVersionType;
 
         /// <summary>
         /// Gets and sets the property AssetModelCompositeModels. 
@@ -251,6 +254,66 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IfMatch. 
+        /// <para>
+        /// The expected current entity tag (ETag) for the asset model’s latest or active version
+        /// (specified using <c>matchForVersionType</c>). The update request is rejected if the
+        /// tag does not match the latest or active version's current entity tag. See <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/opt-locking-for-model.html">Optimistic
+        /// locking for asset model writes</a> in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string IfMatch
+        {
+            get { return this._ifMatch; }
+            set { this._ifMatch = value; }
+        }
+
+        // Check to see if IfMatch property is set
+        internal bool IsSetIfMatch()
+        {
+            return !string.IsNullOrEmpty(this._ifMatch);
+        }
+
+        /// <summary>
+        /// Gets and sets the property IfNoneMatch. 
+        /// <para>
+        /// Accepts <b>*</b> to reject the update request if an active version (specified using
+        /// <c>matchForVersionType</c> as <c>ACTIVE</c>) already exists for the asset model.
+        /// </para>
+        /// </summary>
+        public string IfNoneMatch
+        {
+            get { return this._ifNoneMatch; }
+            set { this._ifNoneMatch = value; }
+        }
+
+        // Check to see if IfNoneMatch property is set
+        internal bool IsSetIfNoneMatch()
+        {
+            return !string.IsNullOrEmpty(this._ifNoneMatch);
+        }
+
+        /// <summary>
+        /// Gets and sets the property MatchForVersionType. 
+        /// <para>
+        /// Specifies the asset model version type (<c>LATEST</c> or <c>ACTIVE</c>) used in conjunction
+        /// with <c>If-Match</c> or <c>If-None-Match</c> headers to determine the target ETag
+        /// for the update operation.
+        /// </para>
+        /// </summary>
+        public AssetModelVersionType MatchForVersionType
+        {
+            get { return this._matchForVersionType; }
+            set { this._matchForVersionType = value; }
+        }
+
+        // Check to see if MatchForVersionType property is set
+        internal bool IsSetMatchForVersionType()
+        {
+            return !string.IsNullOrEmpty(this._matchForVersionType);
         }
 
     }

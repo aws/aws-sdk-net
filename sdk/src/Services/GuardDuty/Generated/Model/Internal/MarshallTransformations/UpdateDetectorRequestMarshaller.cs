@@ -64,54 +64,57 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 throw new AmazonGuardDutyException("Request object does not have required field DetectorId set");
             request.AddPathResource("{detectorId}", StringUtils.FromString(publicRequest.DetectorId));
             request.ResourcePath = "/detector/{detectorId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDataSources())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("dataSources");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DataSourceConfigurationsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DataSources, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEnable())
-                {
-                    context.Writer.WritePropertyName("enable");
-                    context.Writer.Write(publicRequest.Enable.Value);
-                }
-
-                if(publicRequest.IsSetFeatures())
-                {
-                    context.Writer.WritePropertyName("features");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFeaturesListValue in publicRequest.Features)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDataSources())
                     {
+                        context.Writer.WritePropertyName("dataSources");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = DetectorFeatureConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFeaturesListValue, context);
+                        var marshaller = DataSourceConfigurationsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DataSources, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetEnable())
+                    {
+                        context.Writer.WritePropertyName("enable");
+                        context.Writer.Write(publicRequest.Enable.Value);
+                    }
+
+                    if(publicRequest.IsSetFeatures())
+                    {
+                        context.Writer.WritePropertyName("features");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFeaturesListValue in publicRequest.Features)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = DetectorFeatureConfigurationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFeaturesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetFindingPublishingFrequency())
+                    {
+                        context.Writer.WritePropertyName("findingPublishingFrequency");
+                        context.Writer.Write(publicRequest.FindingPublishingFrequency);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetFindingPublishingFrequency())
-                {
-                    context.Writer.WritePropertyName("findingPublishingFrequency");
-                    context.Writer.Write(publicRequest.FindingPublishingFrequency);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

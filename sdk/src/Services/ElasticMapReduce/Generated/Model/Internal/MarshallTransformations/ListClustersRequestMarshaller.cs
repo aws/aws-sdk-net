@@ -63,44 +63,47 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClusterStates())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClusterStates");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestClusterStatesListValue in publicRequest.ClusterStates)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClusterStates())
                     {
-                            context.Writer.Write(publicRequestClusterStatesListValue);
+                        context.Writer.WritePropertyName("ClusterStates");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestClusterStatesListValue in publicRequest.ClusterStates)
+                        {
+                                context.Writer.Write(publicRequestClusterStatesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetCreatedAfter())
+                    {
+                        context.Writer.WritePropertyName("CreatedAfter");
+                        context.Writer.Write(publicRequest.CreatedAfter.Value);
+                    }
+
+                    if(publicRequest.IsSetCreatedBefore())
+                    {
+                        context.Writer.WritePropertyName("CreatedBefore");
+                        context.Writer.Write(publicRequest.CreatedBefore.Value);
+                    }
+
+                    if(publicRequest.IsSetMarker())
+                    {
+                        context.Writer.WritePropertyName("Marker");
+                        context.Writer.Write(publicRequest.Marker);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCreatedAfter())
-                {
-                    context.Writer.WritePropertyName("CreatedAfter");
-                    context.Writer.Write(publicRequest.CreatedAfter.Value);
-                }
-
-                if(publicRequest.IsSetCreatedBefore())
-                {
-                    context.Writer.WritePropertyName("CreatedBefore");
-                    context.Writer.Write(publicRequest.CreatedBefore.Value);
-                }
-
-                if(publicRequest.IsSetMarker())
-                {
-                    context.Writer.WritePropertyName("Marker");
-                    context.Writer.Write(publicRequest.Marker);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

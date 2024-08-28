@@ -61,63 +61,66 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/listpermissionassociations";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAssociationStatus())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("associationStatus");
-                    context.Writer.Write(publicRequest.AssociationStatus);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAssociationStatus())
+                    {
+                        context.Writer.WritePropertyName("associationStatus");
+                        context.Writer.Write(publicRequest.AssociationStatus);
+                    }
+
+                    if(publicRequest.IsSetDefaultVersion())
+                    {
+                        context.Writer.WritePropertyName("defaultVersion");
+                        context.Writer.Write(publicRequest.DefaultVersion.Value);
+                    }
+
+                    if(publicRequest.IsSetFeatureSet())
+                    {
+                        context.Writer.WritePropertyName("featureSet");
+                        context.Writer.Write(publicRequest.FeatureSet);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetPermissionArn())
+                    {
+                        context.Writer.WritePropertyName("permissionArn");
+                        context.Writer.Write(publicRequest.PermissionArn);
+                    }
+
+                    if(publicRequest.IsSetPermissionVersion())
+                    {
+                        context.Writer.WritePropertyName("permissionVersion");
+                        context.Writer.Write(publicRequest.PermissionVersion.Value);
+                    }
+
+                    if(publicRequest.IsSetResourceType())
+                    {
+                        context.Writer.WritePropertyName("resourceType");
+                        context.Writer.Write(publicRequest.ResourceType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDefaultVersion())
-                {
-                    context.Writer.WritePropertyName("defaultVersion");
-                    context.Writer.Write(publicRequest.DefaultVersion.Value);
-                }
-
-                if(publicRequest.IsSetFeatureSet())
-                {
-                    context.Writer.WritePropertyName("featureSet");
-                    context.Writer.Write(publicRequest.FeatureSet);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetPermissionArn())
-                {
-                    context.Writer.WritePropertyName("permissionArn");
-                    context.Writer.Write(publicRequest.PermissionArn);
-                }
-
-                if(publicRequest.IsSetPermissionVersion())
-                {
-                    context.Writer.WritePropertyName("permissionVersion");
-                    context.Writer.Write(publicRequest.PermissionVersion.Value);
-                }
-
-                if(publicRequest.IsSetResourceType())
-                {
-                    context.Writer.WritePropertyName("resourceType");
-                    context.Writer.Write(publicRequest.ResourceType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

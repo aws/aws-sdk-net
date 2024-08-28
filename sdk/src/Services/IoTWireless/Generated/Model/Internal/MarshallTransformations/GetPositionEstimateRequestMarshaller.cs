@@ -61,70 +61,73 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/position-estimate";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCellTowers())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CellTowers");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CellTowersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CellTowers, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetGnss())
-                {
-                    context.Writer.WritePropertyName("Gnss");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = GnssMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Gnss, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetIp())
-                {
-                    context.Writer.WritePropertyName("Ip");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = IpMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Ip, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTimestamp())
-                {
-                    context.Writer.WritePropertyName("Timestamp");
-                    context.Writer.Write(publicRequest.Timestamp.Value);
-                }
-
-                if(publicRequest.IsSetWiFiAccessPoints())
-                {
-                    context.Writer.WritePropertyName("WiFiAccessPoints");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestWiFiAccessPointsListValue in publicRequest.WiFiAccessPoints)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCellTowers())
                     {
+                        context.Writer.WritePropertyName("CellTowers");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = WiFiAccessPointMarshaller.Instance;
-                        marshaller.Marshall(publicRequestWiFiAccessPointsListValue, context);
+                        var marshaller = CellTowersMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CellTowers, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetGnss())
+                    {
+                        context.Writer.WritePropertyName("Gnss");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = GnssMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Gnss, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetIp())
+                    {
+                        context.Writer.WritePropertyName("Ip");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = IpMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Ip, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTimestamp())
+                    {
+                        context.Writer.WritePropertyName("Timestamp");
+                        context.Writer.Write(publicRequest.Timestamp.Value);
+                    }
+
+                    if(publicRequest.IsSetWiFiAccessPoints())
+                    {
+                        context.Writer.WritePropertyName("WiFiAccessPoints");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestWiFiAccessPointsListValue in publicRequest.WiFiAccessPoints)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = WiFiAccessPointMarshaller.Instance;
+                            marshaller.Marshall(publicRequestWiFiAccessPointsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

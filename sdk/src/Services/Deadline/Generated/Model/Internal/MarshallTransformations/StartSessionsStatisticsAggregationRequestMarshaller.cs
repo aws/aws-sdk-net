@@ -64,72 +64,75 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 throw new AmazonDeadlineException("Request object does not have required field FarmId set");
             request.AddPathResource("{farmId}", StringUtils.FromString(publicRequest.FarmId));
             request.ResourcePath = "/2023-10-12/farms/{farmId}/sessions-statistics-aggregation";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEndTime())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("endTime");
-                    context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTime));
-                }
-
-                if(publicRequest.IsSetGroupBy())
-                {
-                    context.Writer.WritePropertyName("groupBy");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestGroupByListValue in publicRequest.GroupBy)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEndTime())
                     {
-                            context.Writer.Write(publicRequestGroupByListValue);
+                        context.Writer.WritePropertyName("endTime");
+                        context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTime));
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetPeriod())
-                {
-                    context.Writer.WritePropertyName("period");
-                    context.Writer.Write(publicRequest.Period);
-                }
-
-                if(publicRequest.IsSetResourceIds())
-                {
-                    context.Writer.WritePropertyName("resourceIds");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SessionsStatisticsResourcesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ResourceIds, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetStartTime())
-                {
-                    context.Writer.WritePropertyName("startTime");
-                    context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTime));
-                }
-
-                if(publicRequest.IsSetStatistics())
-                {
-                    context.Writer.WritePropertyName("statistics");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestStatisticsListValue in publicRequest.Statistics)
+                    if(publicRequest.IsSetGroupBy())
                     {
-                            context.Writer.Write(publicRequestStatisticsListValue);
+                        context.Writer.WritePropertyName("groupBy");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestGroupByListValue in publicRequest.GroupBy)
+                        {
+                                context.Writer.Write(publicRequestGroupByListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetPeriod())
+                    {
+                        context.Writer.WritePropertyName("period");
+                        context.Writer.Write(publicRequest.Period);
+                    }
+
+                    if(publicRequest.IsSetResourceIds())
+                    {
+                        context.Writer.WritePropertyName("resourceIds");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SessionsStatisticsResourcesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ResourceIds, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetStartTime())
+                    {
+                        context.Writer.WritePropertyName("startTime");
+                        context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTime));
+                    }
+
+                    if(publicRequest.IsSetStatistics())
+                    {
+                        context.Writer.WritePropertyName("statistics");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestStatisticsListValue in publicRequest.Statistics)
+                        {
+                                context.Writer.Write(publicRequestStatisticsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTimezone())
+                    {
+                        context.Writer.WritePropertyName("timezone");
+                        context.Writer.Write(publicRequest.Timezone);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTimezone())
-                {
-                    context.Writer.WritePropertyName("timezone");
-                    context.Writer.Write(publicRequest.Timezone);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

@@ -40,7 +40,7 @@ namespace Amazon.S3.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This functionality is not supported for directory buckets.
+        /// For directory buckets, the value of this field is <code>false</code>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -112,11 +112,6 @@ namespace Amazon.S3.Model
         /// <para>
         /// The Region that the bucket is located.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// This functionality is not supported for directory buckets.
-        /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Min = 0, Max = 20)]
         public string BucketRegion

@@ -63,32 +63,35 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApplicationName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("applicationName");
-                    context.Writer.Write(publicRequest.ApplicationName);
-                }
-
-                if(publicRequest.IsSetDeploymentGroupNames())
-                {
-                    context.Writer.WritePropertyName("deploymentGroupNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDeploymentGroupNamesListValue in publicRequest.DeploymentGroupNames)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApplicationName())
                     {
-                            context.Writer.Write(publicRequestDeploymentGroupNamesListValue);
+                        context.Writer.WritePropertyName("applicationName");
+                        context.Writer.Write(publicRequest.ApplicationName);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDeploymentGroupNames())
+                    {
+                        context.Writer.WritePropertyName("deploymentGroupNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDeploymentGroupNamesListValue in publicRequest.DeploymentGroupNames)
+                        {
+                                context.Writer.Write(publicRequestDeploymentGroupNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

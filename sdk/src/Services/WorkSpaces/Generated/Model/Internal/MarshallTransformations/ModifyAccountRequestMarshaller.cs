@@ -63,27 +63,30 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDedicatedTenancyManagementCidrRange())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DedicatedTenancyManagementCidrRange");
-                    context.Writer.Write(publicRequest.DedicatedTenancyManagementCidrRange);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDedicatedTenancyManagementCidrRange())
+                    {
+                        context.Writer.WritePropertyName("DedicatedTenancyManagementCidrRange");
+                        context.Writer.Write(publicRequest.DedicatedTenancyManagementCidrRange);
+                    }
+
+                    if(publicRequest.IsSetDedicatedTenancySupport())
+                    {
+                        context.Writer.WritePropertyName("DedicatedTenancySupport");
+                        context.Writer.Write(publicRequest.DedicatedTenancySupport);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDedicatedTenancySupport())
-                {
-                    context.Writer.WritePropertyName("DedicatedTenancySupport");
-                    context.Writer.Write(publicRequest.DedicatedTenancySupport);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

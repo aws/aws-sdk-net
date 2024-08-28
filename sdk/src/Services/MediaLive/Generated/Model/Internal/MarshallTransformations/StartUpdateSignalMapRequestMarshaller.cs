@@ -64,61 +64,64 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 throw new AmazonMediaLiveException("Request object does not have required field Identifier set");
             request.AddPathResource("{identifier}", StringUtils.FromString(publicRequest.Identifier));
             request.ResourcePath = "/prod/signal-maps/{identifier}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCloudWatchAlarmTemplateGroupIdentifiers())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("cloudWatchAlarmTemplateGroupIdentifiers");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCloudWatchAlarmTemplateGroupIdentifiersListValue in publicRequest.CloudWatchAlarmTemplateGroupIdentifiers)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCloudWatchAlarmTemplateGroupIdentifiers())
                     {
-                            context.Writer.Write(publicRequestCloudWatchAlarmTemplateGroupIdentifiersListValue);
+                        context.Writer.WritePropertyName("cloudWatchAlarmTemplateGroupIdentifiers");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCloudWatchAlarmTemplateGroupIdentifiersListValue in publicRequest.CloudWatchAlarmTemplateGroupIdentifiers)
+                        {
+                                context.Writer.Write(publicRequestCloudWatchAlarmTemplateGroupIdentifiersListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetDiscoveryEntryPointArn())
-                {
-                    context.Writer.WritePropertyName("discoveryEntryPointArn");
-                    context.Writer.Write(publicRequest.DiscoveryEntryPointArn);
-                }
-
-                if(publicRequest.IsSetEventBridgeRuleTemplateGroupIdentifiers())
-                {
-                    context.Writer.WritePropertyName("eventBridgeRuleTemplateGroupIdentifiers");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEventBridgeRuleTemplateGroupIdentifiersListValue in publicRequest.EventBridgeRuleTemplateGroupIdentifiers)
+                    if(publicRequest.IsSetDescription())
                     {
-                            context.Writer.Write(publicRequestEventBridgeRuleTemplateGroupIdentifiersListValue);
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDiscoveryEntryPointArn())
+                    {
+                        context.Writer.WritePropertyName("discoveryEntryPointArn");
+                        context.Writer.Write(publicRequest.DiscoveryEntryPointArn);
+                    }
+
+                    if(publicRequest.IsSetEventBridgeRuleTemplateGroupIdentifiers())
+                    {
+                        context.Writer.WritePropertyName("eventBridgeRuleTemplateGroupIdentifiers");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestEventBridgeRuleTemplateGroupIdentifiersListValue in publicRequest.EventBridgeRuleTemplateGroupIdentifiers)
+                        {
+                                context.Writer.Write(publicRequestEventBridgeRuleTemplateGroupIdentifiersListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetForceRediscovery())
+                    {
+                        context.Writer.WritePropertyName("forceRediscovery");
+                        context.Writer.Write(publicRequest.ForceRediscovery.Value);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetForceRediscovery())
-                {
-                    context.Writer.WritePropertyName("forceRediscovery");
-                    context.Writer.Write(publicRequest.ForceRediscovery.Value);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

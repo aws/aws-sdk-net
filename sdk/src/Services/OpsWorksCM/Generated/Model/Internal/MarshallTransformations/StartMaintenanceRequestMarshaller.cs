@@ -63,37 +63,40 @@ namespace Amazon.OpsWorksCM.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEngineAttributes())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("EngineAttributes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEngineAttributesListValue in publicRequest.EngineAttributes)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEngineAttributes())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("EngineAttributes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestEngineAttributesListValue in publicRequest.EngineAttributes)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = EngineAttributeMarshaller.Instance;
-                        marshaller.Marshall(publicRequestEngineAttributesListValue, context);
+                            var marshaller = EngineAttributeMarshaller.Instance;
+                            marshaller.Marshall(publicRequestEngineAttributesListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetServerName())
+                    {
+                        context.Writer.WritePropertyName("ServerName");
+                        context.Writer.Write(publicRequest.ServerName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetServerName())
-                {
-                    context.Writer.WritePropertyName("ServerName");
-                    context.Writer.Write(publicRequest.ServerName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

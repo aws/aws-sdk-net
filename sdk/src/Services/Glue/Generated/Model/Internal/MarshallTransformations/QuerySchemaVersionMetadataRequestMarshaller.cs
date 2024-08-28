@@ -63,71 +63,74 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMaxResults())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetMetadataList())
-                {
-                    context.Writer.WritePropertyName("MetadataList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMetadataListListValue in publicRequest.MetadataList)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMaxResults())
                     {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetMetadataList())
+                    {
+                        context.Writer.WritePropertyName("MetadataList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMetadataListListValue in publicRequest.MetadataList)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = MetadataKeyValuePairMarshaller.Instance;
+                            marshaller.Marshall(publicRequestMetadataListListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetSchemaId())
+                    {
+                        context.Writer.WritePropertyName("SchemaId");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = MetadataKeyValuePairMarshaller.Instance;
-                        marshaller.Marshall(publicRequestMetadataListListValue, context);
+                        var marshaller = SchemaIdMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SchemaId, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetSchemaVersionId())
+                    {
+                        context.Writer.WritePropertyName("SchemaVersionId");
+                        context.Writer.Write(publicRequest.SchemaVersionId);
+                    }
+
+                    if(publicRequest.IsSetSchemaVersionNumber())
+                    {
+                        context.Writer.WritePropertyName("SchemaVersionNumber");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SchemaVersionNumberMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SchemaVersionNumber, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetSchemaId())
-                {
-                    context.Writer.WritePropertyName("SchemaId");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SchemaIdMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SchemaId, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSchemaVersionId())
-                {
-                    context.Writer.WritePropertyName("SchemaVersionId");
-                    context.Writer.Write(publicRequest.SchemaVersionId);
-                }
-
-                if(publicRequest.IsSetSchemaVersionNumber())
-                {
-                    context.Writer.WritePropertyName("SchemaVersionNumber");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SchemaVersionNumberMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SchemaVersionNumber, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

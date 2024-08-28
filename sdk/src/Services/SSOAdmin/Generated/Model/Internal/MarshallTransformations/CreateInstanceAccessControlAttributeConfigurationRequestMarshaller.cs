@@ -63,32 +63,35 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetInstanceAccessControlAttributeConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("InstanceAccessControlAttributeConfiguration");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetInstanceAccessControlAttributeConfiguration())
+                    {
+                        context.Writer.WritePropertyName("InstanceAccessControlAttributeConfiguration");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = InstanceAccessControlAttributeConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.InstanceAccessControlAttributeConfiguration, context);
+                        var marshaller = InstanceAccessControlAttributeConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.InstanceAccessControlAttributeConfiguration, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetInstanceArn())
+                    {
+                        context.Writer.WritePropertyName("InstanceArn");
+                        context.Writer.Write(publicRequest.InstanceArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetInstanceArn())
-                {
-                    context.Writer.WritePropertyName("InstanceArn");
-                    context.Writer.Write(publicRequest.InstanceArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

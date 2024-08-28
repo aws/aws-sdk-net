@@ -63,114 +63,117 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAutoApprove())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AutoApprove");
-                    context.Writer.Write(publicRequest.AutoApprove.Value);
-                }
-
-                if(publicRequest.IsSetChangeDetails())
-                {
-                    context.Writer.WritePropertyName("ChangeDetails");
-                    context.Writer.Write(publicRequest.ChangeDetails);
-                }
-
-                if(publicRequest.IsSetChangeRequestName())
-                {
-                    context.Writer.WritePropertyName("ChangeRequestName");
-                    context.Writer.Write(publicRequest.ChangeRequestName);
-                }
-
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                if(publicRequest.IsSetDocumentName())
-                {
-                    context.Writer.WritePropertyName("DocumentName");
-                    context.Writer.Write(publicRequest.DocumentName);
-                }
-
-                if(publicRequest.IsSetDocumentVersion())
-                {
-                    context.Writer.WritePropertyName("DocumentVersion");
-                    context.Writer.Write(publicRequest.DocumentVersion);
-                }
-
-                if(publicRequest.IsSetParameters())
-                {
-                    context.Writer.WritePropertyName("Parameters");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestParametersKvp in publicRequest.Parameters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAutoApprove())
                     {
-                        context.Writer.WritePropertyName(publicRequestParametersKvp.Key);
-                        var publicRequestParametersValue = publicRequestParametersKvp.Value;
+                        context.Writer.WritePropertyName("AutoApprove");
+                        context.Writer.Write(publicRequest.AutoApprove.Value);
+                    }
 
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestParametersValueListValue in publicRequestParametersValue)
+                    if(publicRequest.IsSetChangeDetails())
+                    {
+                        context.Writer.WritePropertyName("ChangeDetails");
+                        context.Writer.Write(publicRequest.ChangeDetails);
+                    }
+
+                    if(publicRequest.IsSetChangeRequestName())
+                    {
+                        context.Writer.WritePropertyName("ChangeRequestName");
+                        context.Writer.Write(publicRequest.ChangeRequestName);
+                    }
+
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    if(publicRequest.IsSetDocumentName())
+                    {
+                        context.Writer.WritePropertyName("DocumentName");
+                        context.Writer.Write(publicRequest.DocumentName);
+                    }
+
+                    if(publicRequest.IsSetDocumentVersion())
+                    {
+                        context.Writer.WritePropertyName("DocumentVersion");
+                        context.Writer.Write(publicRequest.DocumentVersion);
+                    }
+
+                    if(publicRequest.IsSetParameters())
+                    {
+                        context.Writer.WritePropertyName("Parameters");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestParametersKvp in publicRequest.Parameters)
                         {
-                                context.Writer.Write(publicRequestParametersValueListValue);
+                            context.Writer.WritePropertyName(publicRequestParametersKvp.Key);
+                            var publicRequestParametersValue = publicRequestParametersKvp.Value;
+
+                            context.Writer.WriteArrayStart();
+                            foreach(var publicRequestParametersValueListValue in publicRequestParametersValue)
+                            {
+                                    context.Writer.Write(publicRequestParametersValueListValue);
+                            }
+                            context.Writer.WriteArrayEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRunbooks())
+                    {
+                        context.Writer.WritePropertyName("Runbooks");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRunbooksListValue in publicRequest.Runbooks)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = RunbookMarshaller.Instance;
+                            marshaller.Marshall(publicRequestRunbooksListValue, context);
+
+                            context.Writer.WriteObjectEnd();
                         }
                         context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetRunbooks())
-                {
-                    context.Writer.WritePropertyName("Runbooks");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRunbooksListValue in publicRequest.Runbooks)
+                    if(publicRequest.IsSetScheduledEndTime())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RunbookMarshaller.Instance;
-                        marshaller.Marshall(publicRequestRunbooksListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("ScheduledEndTime");
+                        context.Writer.Write(publicRequest.ScheduledEndTime.Value);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetScheduledEndTime())
-                {
-                    context.Writer.WritePropertyName("ScheduledEndTime");
-                    context.Writer.Write(publicRequest.ScheduledEndTime.Value);
-                }
-
-                if(publicRequest.IsSetScheduledTime())
-                {
-                    context.Writer.WritePropertyName("ScheduledTime");
-                    context.Writer.Write(publicRequest.ScheduledTime.Value);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetScheduledTime())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("ScheduledTime");
+                        context.Writer.Write(publicRequest.ScheduledTime.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

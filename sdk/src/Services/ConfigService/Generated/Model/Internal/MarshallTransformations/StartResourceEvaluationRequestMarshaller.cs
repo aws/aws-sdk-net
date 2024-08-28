@@ -63,55 +63,58 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    if(publicRequest.IsSetEvaluationContext())
+                    {
+                        context.Writer.WritePropertyName("EvaluationContext");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EvaluationContextMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EvaluationContext, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetEvaluationMode())
+                    {
+                        context.Writer.WritePropertyName("EvaluationMode");
+                        context.Writer.Write(publicRequest.EvaluationMode);
+                    }
+
+                    if(publicRequest.IsSetEvaluationTimeout())
+                    {
+                        context.Writer.WritePropertyName("EvaluationTimeout");
+                        context.Writer.Write(publicRequest.EvaluationTimeout.Value);
+                    }
+
+                    if(publicRequest.IsSetResourceDetails())
+                    {
+                        context.Writer.WritePropertyName("ResourceDetails");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ResourceDetailsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ResourceDetails, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEvaluationContext())
-                {
-                    context.Writer.WritePropertyName("EvaluationContext");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EvaluationContextMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EvaluationContext, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEvaluationMode())
-                {
-                    context.Writer.WritePropertyName("EvaluationMode");
-                    context.Writer.Write(publicRequest.EvaluationMode);
-                }
-
-                if(publicRequest.IsSetEvaluationTimeout())
-                {
-                    context.Writer.WritePropertyName("EvaluationTimeout");
-                    context.Writer.Write(publicRequest.EvaluationTimeout.Value);
-                }
-
-                if(publicRequest.IsSetResourceDetails())
-                {
-                    context.Writer.WritePropertyName("ResourceDetails");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ResourceDetailsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ResourceDetails, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

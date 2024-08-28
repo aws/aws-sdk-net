@@ -63,49 +63,52 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetActions())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Actions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestActionsListValue in publicRequest.Actions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetActions())
                     {
-                            context.Writer.Write(publicRequestActionsListValue);
+                        context.Writer.WritePropertyName("Actions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestActionsListValue in publicRequest.Actions)
+                        {
+                                context.Writer.Write(publicRequestActionsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetAWSAccountIds())
-                {
-                    context.Writer.WritePropertyName("AWSAccountIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAWSAccountIdsListValue in publicRequest.AWSAccountIds)
+                    if(publicRequest.IsSetAWSAccountIds())
                     {
-                            context.Writer.Write(publicRequestAWSAccountIdsListValue);
+                        context.Writer.WritePropertyName("AWSAccountIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAWSAccountIdsListValue in publicRequest.AWSAccountIds)
+                        {
+                                context.Writer.Write(publicRequestAWSAccountIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetLabel())
+                    {
+                        context.Writer.WritePropertyName("Label");
+                        context.Writer.Write(publicRequest.Label);
+                    }
+
+                    if(publicRequest.IsSetQueueUrl())
+                    {
+                        context.Writer.WritePropertyName("QueueUrl");
+                        context.Writer.Write(publicRequest.QueueUrl);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetLabel())
-                {
-                    context.Writer.WritePropertyName("Label");
-                    context.Writer.Write(publicRequest.Label);
-                }
-
-                if(publicRequest.IsSetQueueUrl())
-                {
-                    context.Writer.WritePropertyName("QueueUrl");
-                    context.Writer.Write(publicRequest.QueueUrl);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -64,31 +64,34 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 throw new AmazonLocationServiceException("Request object does not have required field CollectionName set");
             request.AddPathResource("{CollectionName}", StringUtils.FromString(publicRequest.CollectionName));
             request.ResourcePath = "/geofencing/v0/collections/{CollectionName}/positions";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDevicePositionUpdates())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DevicePositionUpdates");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDevicePositionUpdatesListValue in publicRequest.DevicePositionUpdates)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDevicePositionUpdates())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("DevicePositionUpdates");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDevicePositionUpdatesListValue in publicRequest.DevicePositionUpdates)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = DevicePositionUpdateMarshaller.Instance;
-                        marshaller.Marshall(publicRequestDevicePositionUpdatesListValue, context);
+                            var marshaller = DevicePositionUpdateMarshaller.Instance;
+                            marshaller.Marshall(publicRequestDevicePositionUpdatesListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

@@ -63,62 +63,65 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConditionalForwarderIpAddrs())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ConditionalForwarderIpAddrs");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestConditionalForwarderIpAddrsListValue in publicRequest.ConditionalForwarderIpAddrs)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConditionalForwarderIpAddrs())
                     {
-                            context.Writer.Write(publicRequestConditionalForwarderIpAddrsListValue);
+                        context.Writer.WritePropertyName("ConditionalForwarderIpAddrs");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestConditionalForwarderIpAddrsListValue in publicRequest.ConditionalForwarderIpAddrs)
+                        {
+                                context.Writer.Write(publicRequestConditionalForwarderIpAddrsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDirectoryId())
+                    {
+                        context.Writer.WritePropertyName("DirectoryId");
+                        context.Writer.Write(publicRequest.DirectoryId);
+                    }
+
+                    if(publicRequest.IsSetRemoteDomainName())
+                    {
+                        context.Writer.WritePropertyName("RemoteDomainName");
+                        context.Writer.Write(publicRequest.RemoteDomainName);
+                    }
+
+                    if(publicRequest.IsSetSelectiveAuth())
+                    {
+                        context.Writer.WritePropertyName("SelectiveAuth");
+                        context.Writer.Write(publicRequest.SelectiveAuth);
+                    }
+
+                    if(publicRequest.IsSetTrustDirection())
+                    {
+                        context.Writer.WritePropertyName("TrustDirection");
+                        context.Writer.Write(publicRequest.TrustDirection);
+                    }
+
+                    if(publicRequest.IsSetTrustPassword())
+                    {
+                        context.Writer.WritePropertyName("TrustPassword");
+                        context.Writer.Write(publicRequest.TrustPassword);
+                    }
+
+                    if(publicRequest.IsSetTrustType())
+                    {
+                        context.Writer.WritePropertyName("TrustType");
+                        context.Writer.Write(publicRequest.TrustType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDirectoryId())
-                {
-                    context.Writer.WritePropertyName("DirectoryId");
-                    context.Writer.Write(publicRequest.DirectoryId);
-                }
-
-                if(publicRequest.IsSetRemoteDomainName())
-                {
-                    context.Writer.WritePropertyName("RemoteDomainName");
-                    context.Writer.Write(publicRequest.RemoteDomainName);
-                }
-
-                if(publicRequest.IsSetSelectiveAuth())
-                {
-                    context.Writer.WritePropertyName("SelectiveAuth");
-                    context.Writer.Write(publicRequest.SelectiveAuth);
-                }
-
-                if(publicRequest.IsSetTrustDirection())
-                {
-                    context.Writer.WritePropertyName("TrustDirection");
-                    context.Writer.Write(publicRequest.TrustDirection);
-                }
-
-                if(publicRequest.IsSetTrustPassword())
-                {
-                    context.Writer.WritePropertyName("TrustPassword");
-                    context.Writer.Write(publicRequest.TrustPassword);
-                }
-
-                if(publicRequest.IsSetTrustType())
-                {
-                    context.Writer.WritePropertyName("TrustType");
-                    context.Writer.Write(publicRequest.TrustType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

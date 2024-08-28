@@ -63,33 +63,36 @@ namespace Amazon.Cloud9.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEnvironmentId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("environmentId");
-                    context.Writer.Write(publicRequest.EnvironmentId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEnvironmentId())
+                    {
+                        context.Writer.WritePropertyName("environmentId");
+                        context.Writer.Write(publicRequest.EnvironmentId);
+                    }
+
+                    if(publicRequest.IsSetPermissions())
+                    {
+                        context.Writer.WritePropertyName("permissions");
+                        context.Writer.Write(publicRequest.Permissions);
+                    }
+
+                    if(publicRequest.IsSetUserArn())
+                    {
+                        context.Writer.WritePropertyName("userArn");
+                        context.Writer.Write(publicRequest.UserArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPermissions())
-                {
-                    context.Writer.WritePropertyName("permissions");
-                    context.Writer.Write(publicRequest.Permissions);
-                }
-
-                if(publicRequest.IsSetUserArn())
-                {
-                    context.Writer.WritePropertyName("userArn");
-                    context.Writer.Write(publicRequest.UserArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

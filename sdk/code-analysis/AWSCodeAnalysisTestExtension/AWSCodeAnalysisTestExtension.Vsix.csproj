@@ -340,10 +340,6 @@
       <Project>{ECDB9DA6-F184-479F-B658-1DAD5D9A5BE8}</Project>
       <Name>AWSSDK.CodePipeline.CodeAnalysis</Name>
     </ProjectReference>
-    <ProjectReference Include="../ServiceAnalysis/CodeStar/AWSSDK.CodeStar.CodeAnalysis.csproj">
-      <Project>{03B6D436-B184-4EA0-8210-6A5DC38B9BAB}</Project>
-      <Name>AWSSDK.CodeStar.CodeAnalysis</Name>
-    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/CodeStarconnections/AWSSDK.CodeStarconnections.CodeAnalysis.csproj">
       <Project>{9F19D6D8-7B75-43AC-8819-74B822450464}</Project>
       <Name>AWSSDK.CodeStarconnections.CodeAnalysis</Name>

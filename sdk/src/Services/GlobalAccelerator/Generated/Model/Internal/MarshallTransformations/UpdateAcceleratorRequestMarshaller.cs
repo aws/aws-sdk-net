@@ -63,50 +63,53 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAcceleratorArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AcceleratorArn");
-                    context.Writer.Write(publicRequest.AcceleratorArn);
-                }
-
-                if(publicRequest.IsSetEnabled())
-                {
-                    context.Writer.WritePropertyName("Enabled");
-                    context.Writer.Write(publicRequest.Enabled.Value);
-                }
-
-                if(publicRequest.IsSetIpAddresses())
-                {
-                    context.Writer.WritePropertyName("IpAddresses");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestIpAddressesListValue in publicRequest.IpAddresses)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAcceleratorArn())
                     {
-                            context.Writer.Write(publicRequestIpAddressesListValue);
+                        context.Writer.WritePropertyName("AcceleratorArn");
+                        context.Writer.Write(publicRequest.AcceleratorArn);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetEnabled())
+                    {
+                        context.Writer.WritePropertyName("Enabled");
+                        context.Writer.Write(publicRequest.Enabled.Value);
+                    }
+
+                    if(publicRequest.IsSetIpAddresses())
+                    {
+                        context.Writer.WritePropertyName("IpAddresses");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestIpAddressesListValue in publicRequest.IpAddresses)
+                        {
+                                context.Writer.Write(publicRequestIpAddressesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetIpAddressType())
+                    {
+                        context.Writer.WritePropertyName("IpAddressType");
+                        context.Writer.Write(publicRequest.IpAddressType);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetIpAddressType())
-                {
-                    context.Writer.WritePropertyName("IpAddressType");
-                    context.Writer.Write(publicRequest.IpAddressType);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

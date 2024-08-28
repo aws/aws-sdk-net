@@ -63,50 +63,53 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetActionName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("actionName");
-                    context.Writer.Write(publicRequest.ActionName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetActionName())
+                    {
+                        context.Writer.WritePropertyName("actionName");
+                        context.Writer.Write(publicRequest.ActionName);
+                    }
+
+                    if(publicRequest.IsSetPipelineName())
+                    {
+                        context.Writer.WritePropertyName("pipelineName");
+                        context.Writer.Write(publicRequest.PipelineName);
+                    }
+
+                    if(publicRequest.IsSetResult())
+                    {
+                        context.Writer.WritePropertyName("result");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ApprovalResultMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Result, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetStageName())
+                    {
+                        context.Writer.WritePropertyName("stageName");
+                        context.Writer.Write(publicRequest.StageName);
+                    }
+
+                    if(publicRequest.IsSetToken())
+                    {
+                        context.Writer.WritePropertyName("token");
+                        context.Writer.Write(publicRequest.Token);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPipelineName())
-                {
-                    context.Writer.WritePropertyName("pipelineName");
-                    context.Writer.Write(publicRequest.PipelineName);
-                }
-
-                if(publicRequest.IsSetResult())
-                {
-                    context.Writer.WritePropertyName("result");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ApprovalResultMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Result, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetStageName())
-                {
-                    context.Writer.WritePropertyName("stageName");
-                    context.Writer.Write(publicRequest.StageName);
-                }
-
-                if(publicRequest.IsSetToken())
-                {
-                    context.Writer.WritePropertyName("token");
-                    context.Writer.Write(publicRequest.Token);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

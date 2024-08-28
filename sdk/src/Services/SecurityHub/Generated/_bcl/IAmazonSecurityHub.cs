@@ -39,8 +39,8 @@ namespace Amazon.SecurityHub
     ///  
     /// <para>
     /// Security Hub collects security data across Amazon Web Services accounts, Amazon Web
-    /// Services, and supported third-party products and helps you analyze your security trends
-    /// and identify the highest priority security issues.
+    /// Servicesservices, and supported third-party products and helps you analyze your security
+    /// trends and identify the highest priority security issues.
     /// </para>
     ///  
     /// <para>
@@ -56,10 +56,10 @@ namespace Amazon.SecurityHub
     ///  
     /// <para>
     /// In addition to generating control findings, Security Hub also receives findings from
-    /// other Amazon Web Services, such as Amazon GuardDuty and Amazon Inspector, and supported
-    /// third-party products. This gives you a single pane of glass into a variety of security-related
-    /// issues. You can also send Security Hub findings to other Amazon Web Services and supported
-    /// third-party products.
+    /// other Amazon Web Servicesservices, such as Amazon GuardDuty and Amazon Inspector,
+    /// and supported third-party products. This gives you a single pane of glass into a variety
+    /// of security-related issues. You can also send Security Hub findings to other Amazon
+    /// Web Servicesservices and supported third-party products.
     /// </para>
     ///  
     /// <para>
@@ -76,7 +76,7 @@ namespace Amazon.SecurityHub
     /// <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html">
     /// <i>Security Hub User Guide</i> </a>. The user guide explains key concepts and provides
     /// procedures that demonstrate how to use Security Hub features. It also provides information
-    /// about topics such as integrating Security Hub with other Amazon Web Services.
+    /// about topics such as integrating Security Hub with other Amazon Web Servicesservices.
     /// </para>
     ///  
     /// <para>
@@ -85,9 +85,9 @@ namespace Amazon.SecurityHub
     /// Amazon Web Services provides tools and SDKs that consist of libraries and sample code
     /// for various languages and platforms, such as PowerShell, Java, Go, Python, C++, and
     /// .NET. These tools and SDKs provide convenient, programmatic access to Security Hub
-    /// and other Amazon Web Services . They also handle tasks such as signing requests, managing
-    /// errors, and retrying requests automatically. For information about installing and
-    /// using the Amazon Web Services tools and SDKs, see <a href="http://aws.amazon.com/developer/tools/">Tools
+    /// and other Amazon Web Servicesservices . They also handle tasks such as signing requests,
+    /// managing errors, and retrying requests automatically. For information about installing
+    /// and using the Amazon Web Services tools and SDKs, see <a href="http://aws.amazon.com/developer/tools/">Tools
     /// to Build on Amazon Web Services</a>.
     /// </para>
     ///  
@@ -5811,15 +5811,16 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        /// Updates the <c>Note</c> and <c>RecordState</c> of the Security Hub-aggregated findings
-        /// that the filter attributes specify. Any member account that can view the finding also
-        /// sees the update to the finding.
+        /// The <c>UpdateFindings</c> operation updates the <c>Note</c> and <c>RecordState</c>
+        /// of the Security Hub aggregated findings that the filter attributes specify. Any member
+        /// account that can view the finding can also see the update to the finding.
         /// </para>
         ///  
         /// <para>
-        /// Finding updates made with <c>UpdateFindings</c> might not be persisted if the same
-        /// finding is later updated by the finding provider through the <c>BatchImportFindings</c>
-        /// operation.
+        /// Finding updates made with <c>UpdateFindings</c> aren't persisted if the same finding
+        /// is later updated by the finding provider through the <c>BatchImportFindings</c> operation.
+        /// In addition, Security Hub doesn't record updates made with <c>UpdateFindings</c> in
+        /// the finding history.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFindings service method.</param>
@@ -5854,15 +5855,16 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        /// Updates the <c>Note</c> and <c>RecordState</c> of the Security Hub-aggregated findings
-        /// that the filter attributes specify. Any member account that can view the finding also
-        /// sees the update to the finding.
+        /// The <c>UpdateFindings</c> operation updates the <c>Note</c> and <c>RecordState</c>
+        /// of the Security Hub aggregated findings that the filter attributes specify. Any member
+        /// account that can view the finding can also see the update to the finding.
         /// </para>
         ///  
         /// <para>
-        /// Finding updates made with <c>UpdateFindings</c> might not be persisted if the same
-        /// finding is later updated by the finding provider through the <c>BatchImportFindings</c>
-        /// operation.
+        /// Finding updates made with <c>UpdateFindings</c> aren't persisted if the same finding
+        /// is later updated by the finding provider through the <c>BatchImportFindings</c> operation.
+        /// In addition, Security Hub doesn't record updates made with <c>UpdateFindings</c> in
+        /// the finding history.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFindings service method.</param>

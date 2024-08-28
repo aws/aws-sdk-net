@@ -64,38 +64,41 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 throw new AmazonLocationServiceException("Request object does not have required field IndexName set");
             request.AddPathResource("{IndexName}", StringUtils.FromString(publicRequest.IndexName));
             request.ResourcePath = "/places/v0/indexes/{IndexName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDataSourceConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DataSourceConfiguration");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDataSourceConfiguration())
+                    {
+                        context.Writer.WritePropertyName("DataSourceConfiguration");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = DataSourceConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DataSourceConfiguration, context);
+                        var marshaller = DataSourceConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DataSourceConfiguration, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetPricingPlan())
+                    {
+                        context.Writer.WritePropertyName("PricingPlan");
+                        context.Writer.Write(publicRequest.PricingPlan);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetPricingPlan())
-                {
-                    context.Writer.WritePropertyName("PricingPlan");
-                    context.Writer.Write(publicRequest.PricingPlan);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

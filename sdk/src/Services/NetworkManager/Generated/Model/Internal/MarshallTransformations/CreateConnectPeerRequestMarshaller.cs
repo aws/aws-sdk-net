@@ -61,88 +61,91 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/connect-peers";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBgpOptions())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("BgpOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = BgpOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.BgpOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetConnectAttachmentId())
-                {
-                    context.Writer.WritePropertyName("ConnectAttachmentId");
-                    context.Writer.Write(publicRequest.ConnectAttachmentId);
-                }
-
-                if(publicRequest.IsSetCoreNetworkAddress())
-                {
-                    context.Writer.WritePropertyName("CoreNetworkAddress");
-                    context.Writer.Write(publicRequest.CoreNetworkAddress);
-                }
-
-                if(publicRequest.IsSetInsideCidrBlocks())
-                {
-                    context.Writer.WritePropertyName("InsideCidrBlocks");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestInsideCidrBlocksListValue in publicRequest.InsideCidrBlocks)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBgpOptions())
                     {
-                            context.Writer.Write(publicRequestInsideCidrBlocksListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetPeerAddress())
-                {
-                    context.Writer.WritePropertyName("PeerAddress");
-                    context.Writer.Write(publicRequest.PeerAddress);
-                }
-
-                if(publicRequest.IsSetSubnetArn())
-                {
-                    context.Writer.WritePropertyName("SubnetArn");
-                    context.Writer.Write(publicRequest.SubnetArn);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                    {
+                        context.Writer.WritePropertyName("BgpOptions");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = BgpOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.BgpOptions, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetConnectAttachmentId())
+                    {
+                        context.Writer.WritePropertyName("ConnectAttachmentId");
+                        context.Writer.Write(publicRequest.ConnectAttachmentId);
+                    }
+
+                    if(publicRequest.IsSetCoreNetworkAddress())
+                    {
+                        context.Writer.WritePropertyName("CoreNetworkAddress");
+                        context.Writer.Write(publicRequest.CoreNetworkAddress);
+                    }
+
+                    if(publicRequest.IsSetInsideCidrBlocks())
+                    {
+                        context.Writer.WritePropertyName("InsideCidrBlocks");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestInsideCidrBlocksListValue in publicRequest.InsideCidrBlocks)
+                        {
+                                context.Writer.Write(publicRequestInsideCidrBlocksListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetPeerAddress())
+                    {
+                        context.Writer.WritePropertyName("PeerAddress");
+                        context.Writer.Write(publicRequest.PeerAddress);
+                    }
+
+                    if(publicRequest.IsSetSubnetArn())
+                    {
+                        context.Writer.WritePropertyName("SubnetArn");
+                        context.Writer.Write(publicRequest.SubnetArn);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

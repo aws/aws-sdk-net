@@ -64,76 +64,79 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field AwsAccountId set");
             request.AddPathResource("{AwsAccountId}", StringUtils.FromString(publicRequest.AwsAccountId));
             request.ResourcePath = "/accounts/{AwsAccountId}/embed-url/anonymous-user";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAllowedDomains())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AllowedDomains");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAllowedDomainsListValue in publicRequest.AllowedDomains)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAllowedDomains())
                     {
-                            context.Writer.Write(publicRequestAllowedDomainsListValue);
+                        context.Writer.WritePropertyName("AllowedDomains");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAllowedDomainsListValue in publicRequest.AllowedDomains)
+                        {
+                                context.Writer.Write(publicRequestAllowedDomainsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetAuthorizedResourceArns())
-                {
-                    context.Writer.WritePropertyName("AuthorizedResourceArns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAuthorizedResourceArnsListValue in publicRequest.AuthorizedResourceArns)
+                    if(publicRequest.IsSetAuthorizedResourceArns())
                     {
-                            context.Writer.Write(publicRequestAuthorizedResourceArnsListValue);
+                        context.Writer.WritePropertyName("AuthorizedResourceArns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAuthorizedResourceArnsListValue in publicRequest.AuthorizedResourceArns)
+                        {
+                                context.Writer.Write(publicRequestAuthorizedResourceArnsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetExperienceConfiguration())
-                {
-                    context.Writer.WritePropertyName("ExperienceConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AnonymousUserEmbeddingExperienceConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ExperienceConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetNamespace())
-                {
-                    context.Writer.WritePropertyName("Namespace");
-                    context.Writer.Write(publicRequest.Namespace);
-                }
-
-                if(publicRequest.IsSetSessionLifetimeInMinutes())
-                {
-                    context.Writer.WritePropertyName("SessionLifetimeInMinutes");
-                    context.Writer.Write(publicRequest.SessionLifetimeInMinutes.Value);
-                }
-
-                if(publicRequest.IsSetSessionTags())
-                {
-                    context.Writer.WritePropertyName("SessionTags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSessionTagsListValue in publicRequest.SessionTags)
+                    if(publicRequest.IsSetExperienceConfiguration())
                     {
+                        context.Writer.WritePropertyName("ExperienceConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = SessionTagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSessionTagsListValue, context);
+                        var marshaller = AnonymousUserEmbeddingExperienceConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ExperienceConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetNamespace())
+                    {
+                        context.Writer.WritePropertyName("Namespace");
+                        context.Writer.Write(publicRequest.Namespace);
+                    }
+
+                    if(publicRequest.IsSetSessionLifetimeInMinutes())
+                    {
+                        context.Writer.WritePropertyName("SessionLifetimeInMinutes");
+                        context.Writer.Write(publicRequest.SessionLifetimeInMinutes.Value);
+                    }
+
+                    if(publicRequest.IsSetSessionTags())
+                    {
+                        context.Writer.WritePropertyName("SessionTags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSessionTagsListValue in publicRequest.SessionTags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = SessionTagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSessionTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

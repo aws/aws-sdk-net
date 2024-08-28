@@ -63,107 +63,110 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAcceptLanguage())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AcceptLanguage");
-                    context.Writer.Write(publicRequest.AcceptLanguage);
-                }
-
-                if(publicRequest.IsSetAddTags())
-                {
-                    context.Writer.WritePropertyName("AddTags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAddTagsListValue in publicRequest.AddTags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAcceptLanguage())
                     {
+                        context.Writer.WritePropertyName("AcceptLanguage");
+                        context.Writer.Write(publicRequest.AcceptLanguage);
+                    }
+
+                    if(publicRequest.IsSetAddTags())
+                    {
+                        context.Writer.WritePropertyName("AddTags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAddTagsListValue in publicRequest.AddTags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAddTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetDistributor())
+                    {
+                        context.Writer.WritePropertyName("Distributor");
+                        context.Writer.Write(publicRequest.Distributor);
+                    }
+
+                    if(publicRequest.IsSetId())
+                    {
+                        context.Writer.WritePropertyName("Id");
+                        context.Writer.Write(publicRequest.Id);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetOwner())
+                    {
+                        context.Writer.WritePropertyName("Owner");
+                        context.Writer.Write(publicRequest.Owner);
+                    }
+
+                    if(publicRequest.IsSetRemoveTags())
+                    {
+                        context.Writer.WritePropertyName("RemoveTags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRemoveTagsListValue in publicRequest.RemoveTags)
+                        {
+                                context.Writer.Write(publicRequestRemoveTagsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSourceConnection())
+                    {
+                        context.Writer.WritePropertyName("SourceConnection");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAddTagsListValue, context);
+                        var marshaller = SourceConnectionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SourceConnection, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetDistributor())
-                {
-                    context.Writer.WritePropertyName("Distributor");
-                    context.Writer.Write(publicRequest.Distributor);
-                }
-
-                if(publicRequest.IsSetId())
-                {
-                    context.Writer.WritePropertyName("Id");
-                    context.Writer.Write(publicRequest.Id);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetOwner())
-                {
-                    context.Writer.WritePropertyName("Owner");
-                    context.Writer.Write(publicRequest.Owner);
-                }
-
-                if(publicRequest.IsSetRemoveTags())
-                {
-                    context.Writer.WritePropertyName("RemoveTags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRemoveTagsListValue in publicRequest.RemoveTags)
+                    if(publicRequest.IsSetSupportDescription())
                     {
-                            context.Writer.Write(publicRequestRemoveTagsListValue);
+                        context.Writer.WritePropertyName("SupportDescription");
+                        context.Writer.Write(publicRequest.SupportDescription);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetSupportEmail())
+                    {
+                        context.Writer.WritePropertyName("SupportEmail");
+                        context.Writer.Write(publicRequest.SupportEmail);
+                    }
+
+                    if(publicRequest.IsSetSupportUrl())
+                    {
+                        context.Writer.WritePropertyName("SupportUrl");
+                        context.Writer.Write(publicRequest.SupportUrl);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSourceConnection())
-                {
-                    context.Writer.WritePropertyName("SourceConnection");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SourceConnectionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SourceConnection, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSupportDescription())
-                {
-                    context.Writer.WritePropertyName("SupportDescription");
-                    context.Writer.Write(publicRequest.SupportDescription);
-                }
-
-                if(publicRequest.IsSetSupportEmail())
-                {
-                    context.Writer.WritePropertyName("SupportEmail");
-                    context.Writer.Write(publicRequest.SupportEmail);
-                }
-
-                if(publicRequest.IsSetSupportUrl())
-                {
-                    context.Writer.WritePropertyName("SupportUrl");
-                    context.Writer.Write(publicRequest.SupportUrl);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

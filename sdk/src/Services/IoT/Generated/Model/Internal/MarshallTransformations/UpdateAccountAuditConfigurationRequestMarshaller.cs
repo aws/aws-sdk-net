@@ -61,59 +61,62 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.HttpMethod = "PATCH";
 
             request.ResourcePath = "/audit/configuration";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAuditCheckConfigurations())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("auditCheckConfigurations");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestAuditCheckConfigurationsKvp in publicRequest.AuditCheckConfigurations)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAuditCheckConfigurations())
                     {
-                        context.Writer.WritePropertyName(publicRequestAuditCheckConfigurationsKvp.Key);
-                        var publicRequestAuditCheckConfigurationsValue = publicRequestAuditCheckConfigurationsKvp.Value;
-
+                        context.Writer.WritePropertyName("auditCheckConfigurations");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestAuditCheckConfigurationsKvp in publicRequest.AuditCheckConfigurations)
+                        {
+                            context.Writer.WritePropertyName(publicRequestAuditCheckConfigurationsKvp.Key);
+                            var publicRequestAuditCheckConfigurationsValue = publicRequestAuditCheckConfigurationsKvp.Value;
 
-                        var marshaller = AuditCheckConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAuditCheckConfigurationsValue, context);
+                            context.Writer.WriteObjectStart();
 
+                            var marshaller = AuditCheckConfigurationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAuditCheckConfigurationsValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetAuditNotificationTargetConfigurations())
-                {
-                    context.Writer.WritePropertyName("auditNotificationTargetConfigurations");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestAuditNotificationTargetConfigurationsKvp in publicRequest.AuditNotificationTargetConfigurations)
+                    if(publicRequest.IsSetAuditNotificationTargetConfigurations())
                     {
-                        context.Writer.WritePropertyName(publicRequestAuditNotificationTargetConfigurationsKvp.Key);
-                        var publicRequestAuditNotificationTargetConfigurationsValue = publicRequestAuditNotificationTargetConfigurationsKvp.Value;
-
+                        context.Writer.WritePropertyName("auditNotificationTargetConfigurations");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestAuditNotificationTargetConfigurationsKvp in publicRequest.AuditNotificationTargetConfigurations)
+                        {
+                            context.Writer.WritePropertyName(publicRequestAuditNotificationTargetConfigurationsKvp.Key);
+                            var publicRequestAuditNotificationTargetConfigurationsValue = publicRequestAuditNotificationTargetConfigurationsKvp.Value;
 
-                        var marshaller = AuditNotificationTargetMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAuditNotificationTargetConfigurationsValue, context);
+                            context.Writer.WriteObjectStart();
 
+                            var marshaller = AuditNotificationTargetMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAuditNotificationTargetConfigurationsValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("roleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("roleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

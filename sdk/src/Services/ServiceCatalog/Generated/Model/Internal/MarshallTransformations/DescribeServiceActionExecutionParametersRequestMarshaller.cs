@@ -63,33 +63,36 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAcceptLanguage())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AcceptLanguage");
-                    context.Writer.Write(publicRequest.AcceptLanguage);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAcceptLanguage())
+                    {
+                        context.Writer.WritePropertyName("AcceptLanguage");
+                        context.Writer.Write(publicRequest.AcceptLanguage);
+                    }
+
+                    if(publicRequest.IsSetProvisionedProductId())
+                    {
+                        context.Writer.WritePropertyName("ProvisionedProductId");
+                        context.Writer.Write(publicRequest.ProvisionedProductId);
+                    }
+
+                    if(publicRequest.IsSetServiceActionId())
+                    {
+                        context.Writer.WritePropertyName("ServiceActionId");
+                        context.Writer.Write(publicRequest.ServiceActionId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetProvisionedProductId())
-                {
-                    context.Writer.WritePropertyName("ProvisionedProductId");
-                    context.Writer.Write(publicRequest.ProvisionedProductId);
-                }
-
-                if(publicRequest.IsSetServiceActionId())
-                {
-                    context.Writer.WritePropertyName("ServiceActionId");
-                    context.Writer.Write(publicRequest.ServiceActionId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

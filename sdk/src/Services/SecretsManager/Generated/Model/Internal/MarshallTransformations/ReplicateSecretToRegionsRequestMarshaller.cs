@@ -63,43 +63,46 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAddReplicaRegions())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AddReplicaRegions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAddReplicaRegionsListValue in publicRequest.AddReplicaRegions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAddReplicaRegions())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("AddReplicaRegions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAddReplicaRegionsListValue in publicRequest.AddReplicaRegions)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = ReplicaRegionTypeMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAddReplicaRegionsListValue, context);
+                            var marshaller = ReplicaRegionTypeMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAddReplicaRegionsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetForceOverwriteReplicaSecret())
+                    {
+                        context.Writer.WritePropertyName("ForceOverwriteReplicaSecret");
+                        context.Writer.Write(publicRequest.ForceOverwriteReplicaSecret.Value);
+                    }
+
+                    if(publicRequest.IsSetSecretId())
+                    {
+                        context.Writer.WritePropertyName("SecretId");
+                        context.Writer.Write(publicRequest.SecretId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetForceOverwriteReplicaSecret())
-                {
-                    context.Writer.WritePropertyName("ForceOverwriteReplicaSecret");
-                    context.Writer.Write(publicRequest.ForceOverwriteReplicaSecret.Value);
-                }
-
-                if(publicRequest.IsSetSecretId())
-                {
-                    context.Writer.WritePropertyName("SecretId");
-                    context.Writer.Write(publicRequest.SecretId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -64,37 +64,40 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                 throw new AmazonWellArchitectedException("Request object does not have required field ProfileArn set");
             request.AddPathResource("{ProfileArn}", StringUtils.FromString(publicRequest.ProfileArn));
             request.ResourcePath = "/profiles/{ProfileArn}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetProfileDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ProfileDescription");
-                    context.Writer.Write(publicRequest.ProfileDescription);
-                }
-
-                if(publicRequest.IsSetProfileQuestions())
-                {
-                    context.Writer.WritePropertyName("ProfileQuestions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestProfileQuestionsListValue in publicRequest.ProfileQuestions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetProfileDescription())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ProfileQuestionUpdateMarshaller.Instance;
-                        marshaller.Marshall(publicRequestProfileQuestionsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("ProfileDescription");
+                        context.Writer.Write(publicRequest.ProfileDescription);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetProfileQuestions())
+                    {
+                        context.Writer.WritePropertyName("ProfileQuestions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestProfileQuestionsListValue in publicRequest.ProfileQuestions)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ProfileQuestionUpdateMarshaller.Instance;
+                            marshaller.Marshall(publicRequestProfileQuestionsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

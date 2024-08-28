@@ -37,6 +37,7 @@ namespace Amazon.QBusiness.Model
     {
         private string _applicationId;
         private AttachmentsConfiguration _attachmentsConfiguration;
+        private AutoSubscriptionConfiguration _autoSubscriptionConfiguration;
         private string _description;
         private string _displayName;
         private string _identityCenterInstanceArn;
@@ -79,6 +80,25 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetAttachmentsConfiguration()
         {
             return this._attachmentsConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoSubscriptionConfiguration. 
+        /// <para>
+        /// An option to enable updating the default subscription type assigned to an Amazon Q
+        /// Business application using IAM identity federation for user management.
+        /// </para>
+        /// </summary>
+        public AutoSubscriptionConfiguration AutoSubscriptionConfiguration
+        {
+            get { return this._autoSubscriptionConfiguration; }
+            set { this._autoSubscriptionConfiguration = value; }
+        }
+
+        // Check to see if AutoSubscriptionConfiguration property is set
+        internal bool IsSetAutoSubscriptionConfiguration()
+        {
+            return this._autoSubscriptionConfiguration != null;
         }
 
         /// <summary>

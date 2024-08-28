@@ -64,37 +64,40 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field InstanceId set");
             request.AddPathResource("{InstanceId}", StringUtils.FromString(publicRequest.InstanceId));
             request.ResourcePath = "/instance/{InstanceId}/bot";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLexBot())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("LexBot");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetLexBot())
+                    {
+                        context.Writer.WritePropertyName("LexBot");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = LexBotMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LexBot, context);
+                        var marshaller = LexBotMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.LexBot, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetLexV2Bot())
+                    {
+                        context.Writer.WritePropertyName("LexV2Bot");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LexV2BotMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.LexV2Bot, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetLexV2Bot())
-                {
-                    context.Writer.WritePropertyName("LexV2Bot");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LexV2BotMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LexV2Bot, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

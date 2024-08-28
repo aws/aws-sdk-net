@@ -63,79 +63,82 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDiskId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DiskId");
-                    context.Writer.Write(publicRequest.DiskId);
-                }
-
-                if(publicRequest.IsSetGatewayARN())
-                {
-                    context.Writer.WritePropertyName("GatewayARN");
-                    context.Writer.Write(publicRequest.GatewayARN);
-                }
-
-                if(publicRequest.IsSetKMSEncrypted())
-                {
-                    context.Writer.WritePropertyName("KMSEncrypted");
-                    context.Writer.Write(publicRequest.KMSEncrypted.Value);
-                }
-
-                if(publicRequest.IsSetKMSKey())
-                {
-                    context.Writer.WritePropertyName("KMSKey");
-                    context.Writer.Write(publicRequest.KMSKey);
-                }
-
-                if(publicRequest.IsSetNetworkInterfaceId())
-                {
-                    context.Writer.WritePropertyName("NetworkInterfaceId");
-                    context.Writer.Write(publicRequest.NetworkInterfaceId);
-                }
-
-                if(publicRequest.IsSetPreserveExistingData())
-                {
-                    context.Writer.WritePropertyName("PreserveExistingData");
-                    context.Writer.Write(publicRequest.PreserveExistingData.Value);
-                }
-
-                if(publicRequest.IsSetSnapshotId())
-                {
-                    context.Writer.WritePropertyName("SnapshotId");
-                    context.Writer.Write(publicRequest.SnapshotId);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDiskId())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("DiskId");
+                        context.Writer.Write(publicRequest.DiskId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetGatewayARN())
+                    {
+                        context.Writer.WritePropertyName("GatewayARN");
+                        context.Writer.Write(publicRequest.GatewayARN);
+                    }
+
+                    if(publicRequest.IsSetKMSEncrypted())
+                    {
+                        context.Writer.WritePropertyName("KMSEncrypted");
+                        context.Writer.Write(publicRequest.KMSEncrypted.Value);
+                    }
+
+                    if(publicRequest.IsSetKMSKey())
+                    {
+                        context.Writer.WritePropertyName("KMSKey");
+                        context.Writer.Write(publicRequest.KMSKey);
+                    }
+
+                    if(publicRequest.IsSetNetworkInterfaceId())
+                    {
+                        context.Writer.WritePropertyName("NetworkInterfaceId");
+                        context.Writer.Write(publicRequest.NetworkInterfaceId);
+                    }
+
+                    if(publicRequest.IsSetPreserveExistingData())
+                    {
+                        context.Writer.WritePropertyName("PreserveExistingData");
+                        context.Writer.Write(publicRequest.PreserveExistingData.Value);
+                    }
+
+                    if(publicRequest.IsSetSnapshotId())
+                    {
+                        context.Writer.WritePropertyName("SnapshotId");
+                        context.Writer.Write(publicRequest.SnapshotId);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTargetName())
+                    {
+                        context.Writer.WritePropertyName("TargetName");
+                        context.Writer.Write(publicRequest.TargetName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTargetName())
-                {
-                    context.Writer.WritePropertyName("TargetName");
-                    context.Writer.Write(publicRequest.TargetName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

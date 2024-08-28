@@ -64,27 +64,30 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 throw new AmazonAPIGatewayException("Request object does not have required field UsagePlanId set");
             request.AddPathResource("{usageplanId}", StringUtils.FromString(publicRequest.UsagePlanId));
             request.ResourcePath = "/usageplans/{usageplanId}/keys";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetKeyId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("keyId");
-                    context.Writer.Write(publicRequest.KeyId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetKeyId())
+                    {
+                        context.Writer.WritePropertyName("keyId");
+                        context.Writer.Write(publicRequest.KeyId);
+                    }
+
+                    if(publicRequest.IsSetKeyType())
+                    {
+                        context.Writer.WritePropertyName("keyType");
+                        context.Writer.Write(publicRequest.KeyType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetKeyType())
-                {
-                    context.Writer.WritePropertyName("keyType");
-                    context.Writer.Write(publicRequest.KeyType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

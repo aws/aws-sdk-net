@@ -63,51 +63,54 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDuration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Duration");
-                    context.Writer.Write(publicRequest.Duration);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDuration())
+                    {
+                        context.Writer.WritePropertyName("Duration");
+                        context.Writer.Write(publicRequest.Duration);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetNodeType())
+                    {
+                        context.Writer.WritePropertyName("NodeType");
+                        context.Writer.Write(publicRequest.NodeType);
+                    }
+
+                    if(publicRequest.IsSetOfferingType())
+                    {
+                        context.Writer.WritePropertyName("OfferingType");
+                        context.Writer.Write(publicRequest.OfferingType);
+                    }
+
+                    if(publicRequest.IsSetReservedNodesOfferingId())
+                    {
+                        context.Writer.WritePropertyName("ReservedNodesOfferingId");
+                        context.Writer.Write(publicRequest.ReservedNodesOfferingId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetNodeType())
-                {
-                    context.Writer.WritePropertyName("NodeType");
-                    context.Writer.Write(publicRequest.NodeType);
-                }
-
-                if(publicRequest.IsSetOfferingType())
-                {
-                    context.Writer.WritePropertyName("OfferingType");
-                    context.Writer.Write(publicRequest.OfferingType);
-                }
-
-                if(publicRequest.IsSetReservedNodesOfferingId())
-                {
-                    context.Writer.WritePropertyName("ReservedNodesOfferingId");
-                    context.Writer.Write(publicRequest.ReservedNodesOfferingId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -61,61 +61,64 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/start-import-file-task";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDataSourceType())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("dataSourceType");
-                    context.Writer.Write(publicRequest.DataSourceType);
-                }
-
-                if(publicRequest.IsSetGroupId())
-                {
-                    context.Writer.WritePropertyName("groupId");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestGroupIdListValue in publicRequest.GroupId)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDataSourceType())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = GroupMarshaller.Instance;
-                        marshaller.Marshall(publicRequestGroupIdListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("dataSourceType");
+                        context.Writer.Write(publicRequest.DataSourceType);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetGroupId())
+                    {
+                        context.Writer.WritePropertyName("groupId");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestGroupIdListValue in publicRequest.GroupId)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = GroupMarshaller.Instance;
+                            marshaller.Marshall(publicRequestGroupIdListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetS3Bucket())
+                    {
+                        context.Writer.WritePropertyName("S3Bucket");
+                        context.Writer.Write(publicRequest.S3Bucket);
+                    }
+
+                    if(publicRequest.IsSetS3bucketForReportData())
+                    {
+                        context.Writer.WritePropertyName("s3bucketForReportData");
+                        context.Writer.Write(publicRequest.S3bucketForReportData);
+                    }
+
+                    if(publicRequest.IsSetS3key())
+                    {
+                        context.Writer.WritePropertyName("s3key");
+                        context.Writer.Write(publicRequest.S3key);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetS3Bucket())
-                {
-                    context.Writer.WritePropertyName("S3Bucket");
-                    context.Writer.Write(publicRequest.S3Bucket);
-                }
-
-                if(publicRequest.IsSetS3bucketForReportData())
-                {
-                    context.Writer.WritePropertyName("s3bucketForReportData");
-                    context.Writer.Write(publicRequest.S3bucketForReportData);
-                }
-
-                if(publicRequest.IsSetS3key())
-                {
-                    context.Writer.WritePropertyName("s3key");
-                    context.Writer.Write(publicRequest.S3key);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

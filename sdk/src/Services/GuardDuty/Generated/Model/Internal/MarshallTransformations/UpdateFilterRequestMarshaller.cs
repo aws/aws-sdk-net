@@ -67,44 +67,47 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 throw new AmazonGuardDutyException("Request object does not have required field FilterName set");
             request.AddPathResource("{filterName}", StringUtils.FromString(publicRequest.FilterName));
             request.ResourcePath = "/detector/{detectorId}/filter/{filterName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAction())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("action");
-                    context.Writer.Write(publicRequest.Action);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAction())
+                    {
+                        context.Writer.WritePropertyName("action");
+                        context.Writer.Write(publicRequest.Action);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetFindingCriteria())
+                    {
+                        context.Writer.WritePropertyName("findingCriteria");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = FindingCriteriaMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.FindingCriteria, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRank())
+                    {
+                        context.Writer.WritePropertyName("rank");
+                        context.Writer.Write(publicRequest.Rank.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetFindingCriteria())
-                {
-                    context.Writer.WritePropertyName("findingCriteria");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = FindingCriteriaMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.FindingCriteria, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRank())
-                {
-                    context.Writer.WritePropertyName("rank");
-                    context.Writer.Write(publicRequest.Rank.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

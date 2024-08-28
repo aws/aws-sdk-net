@@ -63,110 +63,113 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBundleId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("bundleId");
-                    context.Writer.Write(publicRequest.BundleId);
-                }
-
-                if(publicRequest.IsSetCacheBehaviors())
-                {
-                    context.Writer.WritePropertyName("cacheBehaviors");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCacheBehaviorsListValue in publicRequest.CacheBehaviors)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBundleId())
                     {
+                        context.Writer.WritePropertyName("bundleId");
+                        context.Writer.Write(publicRequest.BundleId);
+                    }
+
+                    if(publicRequest.IsSetCacheBehaviors())
+                    {
+                        context.Writer.WritePropertyName("cacheBehaviors");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCacheBehaviorsListValue in publicRequest.CacheBehaviors)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = CacheBehaviorPerPathMarshaller.Instance;
+                            marshaller.Marshall(publicRequestCacheBehaviorsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetCacheBehaviorSettings())
+                    {
+                        context.Writer.WritePropertyName("cacheBehaviorSettings");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = CacheBehaviorPerPathMarshaller.Instance;
-                        marshaller.Marshall(publicRequestCacheBehaviorsListValue, context);
+                        var marshaller = CacheSettingsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CacheBehaviorSettings, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetCacheBehaviorSettings())
-                {
-                    context.Writer.WritePropertyName("cacheBehaviorSettings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CacheSettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CacheBehaviorSettings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetCertificateName())
-                {
-                    context.Writer.WritePropertyName("certificateName");
-                    context.Writer.Write(publicRequest.CertificateName);
-                }
-
-                if(publicRequest.IsSetDefaultCacheBehavior())
-                {
-                    context.Writer.WritePropertyName("defaultCacheBehavior");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CacheBehaviorMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DefaultCacheBehavior, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDistributionName())
-                {
-                    context.Writer.WritePropertyName("distributionName");
-                    context.Writer.Write(publicRequest.DistributionName);
-                }
-
-                if(publicRequest.IsSetIpAddressType())
-                {
-                    context.Writer.WritePropertyName("ipAddressType");
-                    context.Writer.Write(publicRequest.IpAddressType);
-                }
-
-                if(publicRequest.IsSetOrigin())
-                {
-                    context.Writer.WritePropertyName("origin");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = InputOriginMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Origin, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetCertificateName())
                     {
+                        context.Writer.WritePropertyName("certificateName");
+                        context.Writer.Write(publicRequest.CertificateName);
+                    }
+
+                    if(publicRequest.IsSetDefaultCacheBehavior())
+                    {
+                        context.Writer.WritePropertyName("defaultCacheBehavior");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = CacheBehaviorMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DefaultCacheBehavior, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDistributionName())
+                    {
+                        context.Writer.WritePropertyName("distributionName");
+                        context.Writer.Write(publicRequest.DistributionName);
+                    }
+
+                    if(publicRequest.IsSetIpAddressType())
+                    {
+                        context.Writer.WritePropertyName("ipAddressType");
+                        context.Writer.Write(publicRequest.IpAddressType);
+                    }
+
+                    if(publicRequest.IsSetOrigin())
+                    {
+                        context.Writer.WritePropertyName("origin");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = InputOriginMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Origin, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetViewerMinimumTlsProtocolVersion())
+                    {
+                        context.Writer.WritePropertyName("viewerMinimumTlsProtocolVersion");
+                        context.Writer.Write(publicRequest.ViewerMinimumTlsProtocolVersion);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetViewerMinimumTlsProtocolVersion())
-                {
-                    context.Writer.WritePropertyName("viewerMinimumTlsProtocolVersion");
-                    context.Writer.Write(publicRequest.ViewerMinimumTlsProtocolVersion);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

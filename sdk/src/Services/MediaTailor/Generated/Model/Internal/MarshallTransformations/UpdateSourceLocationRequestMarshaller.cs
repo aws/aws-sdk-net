@@ -64,64 +64,67 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 throw new AmazonMediaTailorException("Request object does not have required field SourceLocationName set");
             request.AddPathResource("{SourceLocationName}", StringUtils.FromString(publicRequest.SourceLocationName));
             request.ResourcePath = "/sourceLocation/{SourceLocationName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccessConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AccessConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AccessConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AccessConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDefaultSegmentDeliveryConfiguration())
-                {
-                    context.Writer.WritePropertyName("DefaultSegmentDeliveryConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DefaultSegmentDeliveryConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DefaultSegmentDeliveryConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetHttpConfiguration())
-                {
-                    context.Writer.WritePropertyName("HttpConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = HttpConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.HttpConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSegmentDeliveryConfigurations())
-                {
-                    context.Writer.WritePropertyName("SegmentDeliveryConfigurations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSegmentDeliveryConfigurationsListValue in publicRequest.SegmentDeliveryConfigurations)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccessConfiguration())
                     {
+                        context.Writer.WritePropertyName("AccessConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = SegmentDeliveryConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSegmentDeliveryConfigurationsListValue, context);
+                        var marshaller = AccessConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AccessConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDefaultSegmentDeliveryConfiguration())
+                    {
+                        context.Writer.WritePropertyName("DefaultSegmentDeliveryConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DefaultSegmentDeliveryConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DefaultSegmentDeliveryConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetHttpConfiguration())
+                    {
+                        context.Writer.WritePropertyName("HttpConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = HttpConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.HttpConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSegmentDeliveryConfigurations())
+                    {
+                        context.Writer.WritePropertyName("SegmentDeliveryConfigurations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSegmentDeliveryConfigurationsListValue in publicRequest.SegmentDeliveryConfigurations)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = SegmentDeliveryConfigurationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSegmentDeliveryConfigurationsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

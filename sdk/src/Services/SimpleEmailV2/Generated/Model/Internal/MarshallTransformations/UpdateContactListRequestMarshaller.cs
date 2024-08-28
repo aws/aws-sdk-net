@@ -64,37 +64,40 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 throw new AmazonSimpleEmailServiceV2Exception("Request object does not have required field ContactListName set");
             request.AddPathResource("{ContactListName}", StringUtils.FromString(publicRequest.ContactListName));
             request.ResourcePath = "/v2/email/contact-lists/{ContactListName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetTopics())
-                {
-                    context.Writer.WritePropertyName("Topics");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTopicsListValue in publicRequest.Topics)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TopicMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTopicsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTopics())
+                    {
+                        context.Writer.WritePropertyName("Topics");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTopicsListValue in publicRequest.Topics)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TopicMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTopicsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

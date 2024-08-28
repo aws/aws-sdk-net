@@ -63,89 +63,92 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAppliedFor())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("appliedFor");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAppliedForListValue in publicRequest.AppliedFor)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAppliedFor())
                     {
-                            context.Writer.Write(publicRequestAppliedForListValue);
+                        context.Writer.WritePropertyName("appliedFor");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAppliedForListValue in publicRequest.AppliedFor)
+                        {
+                                context.Writer.Write(publicRequestAppliedForListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetCustomRoleArn())
-                {
-                    context.Writer.WritePropertyName("customRoleArn");
-                    context.Writer.Write(publicRequest.CustomRoleArn);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetEncryptionConfiguration())
-                {
-                    context.Writer.WritePropertyName("encryptionConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EncryptionConfigurationForRepositoryCreationTemplateMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetImageTagMutability())
-                {
-                    context.Writer.WritePropertyName("imageTagMutability");
-                    context.Writer.Write(publicRequest.ImageTagMutability);
-                }
-
-                if(publicRequest.IsSetLifecyclePolicy())
-                {
-                    context.Writer.WritePropertyName("lifecyclePolicy");
-                    context.Writer.Write(publicRequest.LifecyclePolicy);
-                }
-
-                if(publicRequest.IsSetPrefix())
-                {
-                    context.Writer.WritePropertyName("prefix");
-                    context.Writer.Write(publicRequest.Prefix);
-                }
-
-                if(publicRequest.IsSetRepositoryPolicy())
-                {
-                    context.Writer.WritePropertyName("repositoryPolicy");
-                    context.Writer.Write(publicRequest.RepositoryPolicy);
-                }
-
-                if(publicRequest.IsSetResourceTags())
-                {
-                    context.Writer.WritePropertyName("resourceTags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestResourceTagsListValue in publicRequest.ResourceTags)
+                    if(publicRequest.IsSetCustomRoleArn())
                     {
+                        context.Writer.WritePropertyName("customRoleArn");
+                        context.Writer.Write(publicRequest.CustomRoleArn);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetEncryptionConfiguration())
+                    {
+                        context.Writer.WritePropertyName("encryptionConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestResourceTagsListValue, context);
+                        var marshaller = EncryptionConfigurationForRepositoryCreationTemplateMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetImageTagMutability())
+                    {
+                        context.Writer.WritePropertyName("imageTagMutability");
+                        context.Writer.Write(publicRequest.ImageTagMutability);
+                    }
+
+                    if(publicRequest.IsSetLifecyclePolicy())
+                    {
+                        context.Writer.WritePropertyName("lifecyclePolicy");
+                        context.Writer.Write(publicRequest.LifecyclePolicy);
+                    }
+
+                    if(publicRequest.IsSetPrefix())
+                    {
+                        context.Writer.WritePropertyName("prefix");
+                        context.Writer.Write(publicRequest.Prefix);
+                    }
+
+                    if(publicRequest.IsSetRepositoryPolicy())
+                    {
+                        context.Writer.WritePropertyName("repositoryPolicy");
+                        context.Writer.Write(publicRequest.RepositoryPolicy);
+                    }
+
+                    if(publicRequest.IsSetResourceTags())
+                    {
+                        context.Writer.WritePropertyName("resourceTags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestResourceTagsListValue in publicRequest.ResourceTags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestResourceTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

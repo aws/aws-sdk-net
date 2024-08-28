@@ -63,33 +63,36 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEventBusName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("EventBusName");
-                    context.Writer.Write(publicRequest.EventBusName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEventBusName())
+                    {
+                        context.Writer.WritePropertyName("EventBusName");
+                        context.Writer.Write(publicRequest.EventBusName);
+                    }
+
+                    if(publicRequest.IsSetRemoveAllPermissions())
+                    {
+                        context.Writer.WritePropertyName("RemoveAllPermissions");
+                        context.Writer.Write(publicRequest.RemoveAllPermissions.Value);
+                    }
+
+                    if(publicRequest.IsSetStatementId())
+                    {
+                        context.Writer.WritePropertyName("StatementId");
+                        context.Writer.Write(publicRequest.StatementId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRemoveAllPermissions())
-                {
-                    context.Writer.WritePropertyName("RemoveAllPermissions");
-                    context.Writer.Write(publicRequest.RemoveAllPermissions.Value);
-                }
-
-                if(publicRequest.IsSetStatementId())
-                {
-                    context.Writer.WritePropertyName("StatementId");
-                    context.Writer.Write(publicRequest.StatementId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

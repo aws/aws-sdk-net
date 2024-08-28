@@ -61,60 +61,63 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/findings/aggregation/list";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccountIds())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("accountIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAccountIdsListValue in publicRequest.AccountIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccountIds())
                     {
+                        context.Writer.WritePropertyName("accountIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAccountIdsListValue in publicRequest.AccountIds)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = StringFilterMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAccountIdsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetAggregationRequest())
+                    {
+                        context.Writer.WritePropertyName("aggregationRequest");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = StringFilterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAccountIdsListValue, context);
+                        var marshaller = AggregationRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AggregationRequest, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetAggregationType())
+                    {
+                        context.Writer.WritePropertyName("aggregationType");
+                        context.Writer.Write(publicRequest.AggregationType);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetAggregationRequest())
-                {
-                    context.Writer.WritePropertyName("aggregationRequest");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AggregationRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AggregationRequest, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetAggregationType())
-                {
-                    context.Writer.WritePropertyName("aggregationType");
-                    context.Writer.Write(publicRequest.AggregationType);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

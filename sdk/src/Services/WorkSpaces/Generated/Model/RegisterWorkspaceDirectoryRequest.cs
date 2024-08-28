@@ -43,6 +43,8 @@ namespace Amazon.WorkSpaces.Model
         private string _directoryId;
         private bool? _enableSelfService;
         private bool? _enableWorkDocs;
+        private string _idcInstanceArn;
+        private MicrosoftEntraConfig _microsoftEntraConfig;
         private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private Tenancy _tenancy;
@@ -129,6 +131,42 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetEnableWorkDocs()
         {
             return this._enableWorkDocs.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdcInstanceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the identity center instance.
+        /// </para>
+        /// </summary>
+        public string IdcInstanceArn
+        {
+            get { return this._idcInstanceArn; }
+            set { this._idcInstanceArn = value; }
+        }
+
+        // Check to see if IdcInstanceArn property is set
+        internal bool IsSetIdcInstanceArn()
+        {
+            return this._idcInstanceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MicrosoftEntraConfig. 
+        /// <para>
+        /// The details about Microsoft Entra config.
+        /// </para>
+        /// </summary>
+        public MicrosoftEntraConfig MicrosoftEntraConfig
+        {
+            get { return this._microsoftEntraConfig; }
+            set { this._microsoftEntraConfig = value; }
+        }
+
+        // Check to see if MicrosoftEntraConfig property is set
+        internal bool IsSetMicrosoftEntraConfig()
+        {
+            return this._microsoftEntraConfig != null;
         }
 
         /// <summary>

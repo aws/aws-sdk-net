@@ -63,33 +63,36 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBlockPublicPolicy())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("BlockPublicPolicy");
-                    context.Writer.Write(publicRequest.BlockPublicPolicy.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBlockPublicPolicy())
+                    {
+                        context.Writer.WritePropertyName("BlockPublicPolicy");
+                        context.Writer.Write(publicRequest.BlockPublicPolicy.Value);
+                    }
+
+                    if(publicRequest.IsSetResourcePolicy())
+                    {
+                        context.Writer.WritePropertyName("ResourcePolicy");
+                        context.Writer.Write(publicRequest.ResourcePolicy);
+                    }
+
+                    if(publicRequest.IsSetSecretId())
+                    {
+                        context.Writer.WritePropertyName("SecretId");
+                        context.Writer.Write(publicRequest.SecretId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetResourcePolicy())
-                {
-                    context.Writer.WritePropertyName("ResourcePolicy");
-                    context.Writer.Write(publicRequest.ResourcePolicy);
-                }
-
-                if(publicRequest.IsSetSecretId())
-                {
-                    context.Writer.WritePropertyName("SecretId");
-                    context.Writer.Write(publicRequest.SecretId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

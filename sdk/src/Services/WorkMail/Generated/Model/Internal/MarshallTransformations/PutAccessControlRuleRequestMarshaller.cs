@@ -63,127 +63,130 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetActions())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Actions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestActionsListValue in publicRequest.Actions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetActions())
                     {
-                            context.Writer.Write(publicRequestActionsListValue);
+                        context.Writer.WritePropertyName("Actions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestActionsListValue in publicRequest.Actions)
+                        {
+                                context.Writer.Write(publicRequestActionsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetEffect())
-                {
-                    context.Writer.WritePropertyName("Effect");
-                    context.Writer.Write(publicRequest.Effect);
-                }
-
-                if(publicRequest.IsSetImpersonationRoleIds())
-                {
-                    context.Writer.WritePropertyName("ImpersonationRoleIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestImpersonationRoleIdsListValue in publicRequest.ImpersonationRoleIds)
+                    if(publicRequest.IsSetDescription())
                     {
-                            context.Writer.Write(publicRequestImpersonationRoleIdsListValue);
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetIpRanges())
-                {
-                    context.Writer.WritePropertyName("IpRanges");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestIpRangesListValue in publicRequest.IpRanges)
+                    if(publicRequest.IsSetEffect())
                     {
-                            context.Writer.Write(publicRequestIpRangesListValue);
+                        context.Writer.WritePropertyName("Effect");
+                        context.Writer.Write(publicRequest.Effect);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetNotActions())
-                {
-                    context.Writer.WritePropertyName("NotActions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestNotActionsListValue in publicRequest.NotActions)
+                    if(publicRequest.IsSetImpersonationRoleIds())
                     {
-                            context.Writer.Write(publicRequestNotActionsListValue);
+                        context.Writer.WritePropertyName("ImpersonationRoleIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestImpersonationRoleIdsListValue in publicRequest.ImpersonationRoleIds)
+                        {
+                                context.Writer.Write(publicRequestImpersonationRoleIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetNotImpersonationRoleIds())
-                {
-                    context.Writer.WritePropertyName("NotImpersonationRoleIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestNotImpersonationRoleIdsListValue in publicRequest.NotImpersonationRoleIds)
+                    if(publicRequest.IsSetIpRanges())
                     {
-                            context.Writer.Write(publicRequestNotImpersonationRoleIdsListValue);
+                        context.Writer.WritePropertyName("IpRanges");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestIpRangesListValue in publicRequest.IpRanges)
+                        {
+                                context.Writer.Write(publicRequestIpRangesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetNotIpRanges())
-                {
-                    context.Writer.WritePropertyName("NotIpRanges");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestNotIpRangesListValue in publicRequest.NotIpRanges)
+                    if(publicRequest.IsSetName())
                     {
-                            context.Writer.Write(publicRequestNotIpRangesListValue);
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetNotUserIds())
-                {
-                    context.Writer.WritePropertyName("NotUserIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestNotUserIdsListValue in publicRequest.NotUserIds)
+                    if(publicRequest.IsSetNotActions())
                     {
-                            context.Writer.Write(publicRequestNotUserIdsListValue);
+                        context.Writer.WritePropertyName("NotActions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestNotActionsListValue in publicRequest.NotActions)
+                        {
+                                context.Writer.Write(publicRequestNotActionsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetOrganizationId())
-                {
-                    context.Writer.WritePropertyName("OrganizationId");
-                    context.Writer.Write(publicRequest.OrganizationId);
-                }
-
-                if(publicRequest.IsSetUserIds())
-                {
-                    context.Writer.WritePropertyName("UserIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestUserIdsListValue in publicRequest.UserIds)
+                    if(publicRequest.IsSetNotImpersonationRoleIds())
                     {
-                            context.Writer.Write(publicRequestUserIdsListValue);
+                        context.Writer.WritePropertyName("NotImpersonationRoleIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestNotImpersonationRoleIdsListValue in publicRequest.NotImpersonationRoleIds)
+                        {
+                                context.Writer.Write(publicRequestNotImpersonationRoleIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetNotIpRanges())
+                    {
+                        context.Writer.WritePropertyName("NotIpRanges");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestNotIpRangesListValue in publicRequest.NotIpRanges)
+                        {
+                                context.Writer.Write(publicRequestNotIpRangesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetNotUserIds())
+                    {
+                        context.Writer.WritePropertyName("NotUserIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestNotUserIdsListValue in publicRequest.NotUserIds)
+                        {
+                                context.Writer.Write(publicRequestNotUserIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetOrganizationId())
+                    {
+                        context.Writer.WritePropertyName("OrganizationId");
+                        context.Writer.Write(publicRequest.OrganizationId);
+                    }
+
+                    if(publicRequest.IsSetUserIds())
+                    {
+                        context.Writer.WritePropertyName("UserIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestUserIdsListValue in publicRequest.UserIds)
+                        {
+                                context.Writer.Write(publicRequestUserIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

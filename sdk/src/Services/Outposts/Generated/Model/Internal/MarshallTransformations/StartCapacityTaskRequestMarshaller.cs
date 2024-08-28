@@ -64,43 +64,46 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
                 throw new AmazonOutpostsException("Request object does not have required field OutpostIdentifier set");
             request.AddPathResource("{OutpostId}", StringUtils.FromString(publicRequest.OutpostIdentifier));
             request.ResourcePath = "/outposts/{OutpostId}/capacity";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDryRun())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DryRun");
-                    context.Writer.Write(publicRequest.DryRun.Value);
-                }
-
-                if(publicRequest.IsSetInstancePools())
-                {
-                    context.Writer.WritePropertyName("InstancePools");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestInstancePoolsListValue in publicRequest.InstancePools)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDryRun())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = InstanceTypeCapacityMarshaller.Instance;
-                        marshaller.Marshall(publicRequestInstancePoolsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("DryRun");
+                        context.Writer.Write(publicRequest.DryRun.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetInstancePools())
+                    {
+                        context.Writer.WritePropertyName("InstancePools");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestInstancePoolsListValue in publicRequest.InstancePools)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = InstanceTypeCapacityMarshaller.Instance;
+                            marshaller.Marshall(publicRequestInstancePoolsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetOrderId())
+                    {
+                        context.Writer.WritePropertyName("OrderId");
+                        context.Writer.Write(publicRequest.OrderId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetOrderId())
-                {
-                    context.Writer.WritePropertyName("OrderId");
-                    context.Writer.Write(publicRequest.OrderId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

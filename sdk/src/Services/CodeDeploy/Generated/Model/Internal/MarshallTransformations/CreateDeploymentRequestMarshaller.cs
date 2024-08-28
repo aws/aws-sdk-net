@@ -63,101 +63,104 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApplicationName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("applicationName");
-                    context.Writer.Write(publicRequest.ApplicationName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApplicationName())
+                    {
+                        context.Writer.WritePropertyName("applicationName");
+                        context.Writer.Write(publicRequest.ApplicationName);
+                    }
+
+                    if(publicRequest.IsSetAutoRollbackConfiguration())
+                    {
+                        context.Writer.WritePropertyName("autoRollbackConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AutoRollbackConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AutoRollbackConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDeploymentConfigName())
+                    {
+                        context.Writer.WritePropertyName("deploymentConfigName");
+                        context.Writer.Write(publicRequest.DeploymentConfigName);
+                    }
+
+                    if(publicRequest.IsSetDeploymentGroupName())
+                    {
+                        context.Writer.WritePropertyName("deploymentGroupName");
+                        context.Writer.Write(publicRequest.DeploymentGroupName);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetFileExistsBehavior())
+                    {
+                        context.Writer.WritePropertyName("fileExistsBehavior");
+                        context.Writer.Write(publicRequest.FileExistsBehavior);
+                    }
+
+                    if(publicRequest.IsSetIgnoreApplicationStopFailures())
+                    {
+                        context.Writer.WritePropertyName("ignoreApplicationStopFailures");
+                        context.Writer.Write(publicRequest.IgnoreApplicationStopFailures.Value);
+                    }
+
+                    if(publicRequest.IsSetOverrideAlarmConfiguration())
+                    {
+                        context.Writer.WritePropertyName("overrideAlarmConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AlarmConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OverrideAlarmConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRevision())
+                    {
+                        context.Writer.WritePropertyName("revision");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RevisionLocationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Revision, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTargetInstances())
+                    {
+                        context.Writer.WritePropertyName("targetInstances");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TargetInstancesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TargetInstances, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetUpdateOutdatedInstancesOnly())
+                    {
+                        context.Writer.WritePropertyName("updateOutdatedInstancesOnly");
+                        context.Writer.Write(publicRequest.UpdateOutdatedInstancesOnly.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetAutoRollbackConfiguration())
-                {
-                    context.Writer.WritePropertyName("autoRollbackConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AutoRollbackConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AutoRollbackConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDeploymentConfigName())
-                {
-                    context.Writer.WritePropertyName("deploymentConfigName");
-                    context.Writer.Write(publicRequest.DeploymentConfigName);
-                }
-
-                if(publicRequest.IsSetDeploymentGroupName())
-                {
-                    context.Writer.WritePropertyName("deploymentGroupName");
-                    context.Writer.Write(publicRequest.DeploymentGroupName);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetFileExistsBehavior())
-                {
-                    context.Writer.WritePropertyName("fileExistsBehavior");
-                    context.Writer.Write(publicRequest.FileExistsBehavior);
-                }
-
-                if(publicRequest.IsSetIgnoreApplicationStopFailures())
-                {
-                    context.Writer.WritePropertyName("ignoreApplicationStopFailures");
-                    context.Writer.Write(publicRequest.IgnoreApplicationStopFailures.Value);
-                }
-
-                if(publicRequest.IsSetOverrideAlarmConfiguration())
-                {
-                    context.Writer.WritePropertyName("overrideAlarmConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AlarmConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OverrideAlarmConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRevision())
-                {
-                    context.Writer.WritePropertyName("revision");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RevisionLocationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Revision, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTargetInstances())
-                {
-                    context.Writer.WritePropertyName("targetInstances");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TargetInstancesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TargetInstances, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetUpdateOutdatedInstancesOnly())
-                {
-                    context.Writer.WritePropertyName("updateOutdatedInstancesOnly");
-                    context.Writer.Write(publicRequest.UpdateOutdatedInstancesOnly.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

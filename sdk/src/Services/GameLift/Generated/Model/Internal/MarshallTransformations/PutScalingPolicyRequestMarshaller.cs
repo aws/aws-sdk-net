@@ -63,87 +63,90 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetComparisonOperator())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ComparisonOperator");
-                    context.Writer.Write(publicRequest.ComparisonOperator);
-                }
-
-                if(publicRequest.IsSetEvaluationPeriods())
-                {
-                    context.Writer.WritePropertyName("EvaluationPeriods");
-                    context.Writer.Write(publicRequest.EvaluationPeriods.Value);
-                }
-
-                if(publicRequest.IsSetFleetId())
-                {
-                    context.Writer.WritePropertyName("FleetId");
-                    context.Writer.Write(publicRequest.FleetId);
-                }
-
-                if(publicRequest.IsSetMetricName())
-                {
-                    context.Writer.WritePropertyName("MetricName");
-                    context.Writer.Write(publicRequest.MetricName);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetPolicyType())
-                {
-                    context.Writer.WritePropertyName("PolicyType");
-                    context.Writer.Write(publicRequest.PolicyType);
-                }
-
-                if(publicRequest.IsSetScalingAdjustment())
-                {
-                    context.Writer.WritePropertyName("ScalingAdjustment");
-                    context.Writer.Write(publicRequest.ScalingAdjustment.Value);
-                }
-
-                if(publicRequest.IsSetScalingAdjustmentType())
-                {
-                    context.Writer.WritePropertyName("ScalingAdjustmentType");
-                    context.Writer.Write(publicRequest.ScalingAdjustmentType);
-                }
-
-                if(publicRequest.IsSetTargetConfiguration())
-                {
-                    context.Writer.WritePropertyName("TargetConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TargetConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TargetConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetThreshold())
-                {
-                    context.Writer.WritePropertyName("Threshold");
-                    if(StringUtils.IsSpecialDoubleValue(publicRequest.Threshold.Value))
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetComparisonOperator())
                     {
-                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.Threshold.Value));
+                        context.Writer.WritePropertyName("ComparisonOperator");
+                        context.Writer.Write(publicRequest.ComparisonOperator);
                     }
-                    else
+
+                    if(publicRequest.IsSetEvaluationPeriods())
                     {
-                        context.Writer.Write(publicRequest.Threshold.Value);
+                        context.Writer.WritePropertyName("EvaluationPeriods");
+                        context.Writer.Write(publicRequest.EvaluationPeriods.Value);
                     }
+
+                    if(publicRequest.IsSetFleetId())
+                    {
+                        context.Writer.WritePropertyName("FleetId");
+                        context.Writer.Write(publicRequest.FleetId);
+                    }
+
+                    if(publicRequest.IsSetMetricName())
+                    {
+                        context.Writer.WritePropertyName("MetricName");
+                        context.Writer.Write(publicRequest.MetricName);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetPolicyType())
+                    {
+                        context.Writer.WritePropertyName("PolicyType");
+                        context.Writer.Write(publicRequest.PolicyType);
+                    }
+
+                    if(publicRequest.IsSetScalingAdjustment())
+                    {
+                        context.Writer.WritePropertyName("ScalingAdjustment");
+                        context.Writer.Write(publicRequest.ScalingAdjustment.Value);
+                    }
+
+                    if(publicRequest.IsSetScalingAdjustmentType())
+                    {
+                        context.Writer.WritePropertyName("ScalingAdjustmentType");
+                        context.Writer.Write(publicRequest.ScalingAdjustmentType);
+                    }
+
+                    if(publicRequest.IsSetTargetConfiguration())
+                    {
+                        context.Writer.WritePropertyName("TargetConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TargetConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TargetConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetThreshold())
+                    {
+                        context.Writer.WritePropertyName("Threshold");
+                        if(StringUtils.IsSpecialDoubleValue(publicRequest.Threshold.Value))
+                        {
+                            context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.Threshold.Value));
+                        }
+                        else
+                        {
+                            context.Writer.Write(publicRequest.Threshold.Value);
+                        }
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -61,95 +61,98 @@ namespace Amazon.KinesisVideoArchivedMedia.Model.Internal.MarshallTransformation
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/getImages";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEndTimestamp())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("EndTimestamp");
-                    context.Writer.Write(publicRequest.EndTimestamp.Value);
-                }
-
-                if(publicRequest.IsSetFormat())
-                {
-                    context.Writer.WritePropertyName("Format");
-                    context.Writer.Write(publicRequest.Format);
-                }
-
-                if(publicRequest.IsSetFormatConfig())
-                {
-                    context.Writer.WritePropertyName("FormatConfig");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestFormatConfigKvp in publicRequest.FormatConfig)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEndTimestamp())
                     {
-                        context.Writer.WritePropertyName(publicRequestFormatConfigKvp.Key);
-                        var publicRequestFormatConfigValue = publicRequestFormatConfigKvp.Value;
-
-                            context.Writer.Write(publicRequestFormatConfigValue);
+                        context.Writer.WritePropertyName("EndTimestamp");
+                        context.Writer.Write(publicRequest.EndTimestamp.Value);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetFormat())
+                    {
+                        context.Writer.WritePropertyName("Format");
+                        context.Writer.Write(publicRequest.Format);
+                    }
+
+                    if(publicRequest.IsSetFormatConfig())
+                    {
+                        context.Writer.WritePropertyName("FormatConfig");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestFormatConfigKvp in publicRequest.FormatConfig)
+                        {
+                            context.Writer.WritePropertyName(publicRequestFormatConfigKvp.Key);
+                            var publicRequestFormatConfigValue = publicRequestFormatConfigKvp.Value;
+
+                                context.Writer.Write(publicRequestFormatConfigValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetHeightPixels())
+                    {
+                        context.Writer.WritePropertyName("HeightPixels");
+                        context.Writer.Write(publicRequest.HeightPixels.Value);
+                    }
+
+                    if(publicRequest.IsSetImageSelectorType())
+                    {
+                        context.Writer.WritePropertyName("ImageSelectorType");
+                        context.Writer.Write(publicRequest.ImageSelectorType);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetSamplingInterval())
+                    {
+                        context.Writer.WritePropertyName("SamplingInterval");
+                        context.Writer.Write(publicRequest.SamplingInterval.Value);
+                    }
+
+                    if(publicRequest.IsSetStartTimestamp())
+                    {
+                        context.Writer.WritePropertyName("StartTimestamp");
+                        context.Writer.Write(publicRequest.StartTimestamp.Value);
+                    }
+
+                    if(publicRequest.IsSetStreamARN())
+                    {
+                        context.Writer.WritePropertyName("StreamARN");
+                        context.Writer.Write(publicRequest.StreamARN);
+                    }
+
+                    if(publicRequest.IsSetStreamName())
+                    {
+                        context.Writer.WritePropertyName("StreamName");
+                        context.Writer.Write(publicRequest.StreamName);
+                    }
+
+                    if(publicRequest.IsSetWidthPixels())
+                    {
+                        context.Writer.WritePropertyName("WidthPixels");
+                        context.Writer.Write(publicRequest.WidthPixels.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetHeightPixels())
-                {
-                    context.Writer.WritePropertyName("HeightPixels");
-                    context.Writer.Write(publicRequest.HeightPixels.Value);
-                }
-
-                if(publicRequest.IsSetImageSelectorType())
-                {
-                    context.Writer.WritePropertyName("ImageSelectorType");
-                    context.Writer.Write(publicRequest.ImageSelectorType);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetSamplingInterval())
-                {
-                    context.Writer.WritePropertyName("SamplingInterval");
-                    context.Writer.Write(publicRequest.SamplingInterval.Value);
-                }
-
-                if(publicRequest.IsSetStartTimestamp())
-                {
-                    context.Writer.WritePropertyName("StartTimestamp");
-                    context.Writer.Write(publicRequest.StartTimestamp.Value);
-                }
-
-                if(publicRequest.IsSetStreamARN())
-                {
-                    context.Writer.WritePropertyName("StreamARN");
-                    context.Writer.Write(publicRequest.StreamARN);
-                }
-
-                if(publicRequest.IsSetStreamName())
-                {
-                    context.Writer.WritePropertyName("StreamName");
-                    context.Writer.Write(publicRequest.StreamName);
-                }
-
-                if(publicRequest.IsSetWidthPixels())
-                {
-                    context.Writer.WritePropertyName("WidthPixels");
-                    context.Writer.Write(publicRequest.WidthPixels.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

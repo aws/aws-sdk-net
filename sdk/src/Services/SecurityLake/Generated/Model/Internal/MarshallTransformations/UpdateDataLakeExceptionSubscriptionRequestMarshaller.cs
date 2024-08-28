@@ -61,33 +61,36 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/v1/datalake/exceptions/subscription";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetExceptionTimeToLive())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("exceptionTimeToLive");
-                    context.Writer.Write(publicRequest.ExceptionTimeToLive.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetExceptionTimeToLive())
+                    {
+                        context.Writer.WritePropertyName("exceptionTimeToLive");
+                        context.Writer.Write(publicRequest.ExceptionTimeToLive.Value);
+                    }
+
+                    if(publicRequest.IsSetNotificationEndpoint())
+                    {
+                        context.Writer.WritePropertyName("notificationEndpoint");
+                        context.Writer.Write(publicRequest.NotificationEndpoint);
+                    }
+
+                    if(publicRequest.IsSetSubscriptionProtocol())
+                    {
+                        context.Writer.WritePropertyName("subscriptionProtocol");
+                        context.Writer.Write(publicRequest.SubscriptionProtocol);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetNotificationEndpoint())
-                {
-                    context.Writer.WritePropertyName("notificationEndpoint");
-                    context.Writer.Write(publicRequest.NotificationEndpoint);
-                }
-
-                if(publicRequest.IsSetSubscriptionProtocol())
-                {
-                    context.Writer.WritePropertyName("subscriptionProtocol");
-                    context.Writer.Write(publicRequest.SubscriptionProtocol);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

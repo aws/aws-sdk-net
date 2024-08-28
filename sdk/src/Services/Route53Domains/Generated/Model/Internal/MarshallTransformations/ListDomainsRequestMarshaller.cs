@@ -63,54 +63,57 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFilterConditions())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("FilterConditions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFilterConditionsListValue in publicRequest.FilterConditions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFilterConditions())
                     {
+                        context.Writer.WritePropertyName("FilterConditions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFilterConditionsListValue in publicRequest.FilterConditions)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = FilterConditionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFilterConditionsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetMarker())
+                    {
+                        context.Writer.WritePropertyName("Marker");
+                        context.Writer.Write(publicRequest.Marker);
+                    }
+
+                    if(publicRequest.IsSetMaxItems())
+                    {
+                        context.Writer.WritePropertyName("MaxItems");
+                        context.Writer.Write(publicRequest.MaxItems.Value);
+                    }
+
+                    if(publicRequest.IsSetSortCondition())
+                    {
+                        context.Writer.WritePropertyName("SortCondition");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = FilterConditionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFilterConditionsListValue, context);
+                        var marshaller = SortConditionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SortCondition, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMarker())
-                {
-                    context.Writer.WritePropertyName("Marker");
-                    context.Writer.Write(publicRequest.Marker);
-                }
-
-                if(publicRequest.IsSetMaxItems())
-                {
-                    context.Writer.WritePropertyName("MaxItems");
-                    context.Writer.Write(publicRequest.MaxItems.Value);
-                }
-
-                if(publicRequest.IsSetSortCondition())
-                {
-                    context.Writer.WritePropertyName("SortCondition");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SortConditionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SortCondition, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

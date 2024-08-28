@@ -61,37 +61,40 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/pipelineactivities/run";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetPayloads())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("payloads");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPayloadsListValue in publicRequest.Payloads)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetPayloads())
                     {
-                        context.Writer.Write(StringUtils.FromMemoryStream(publicRequestPayloadsListValue));
+                        context.Writer.WritePropertyName("payloads");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPayloadsListValue in publicRequest.Payloads)
+                        {
+                            context.Writer.Write(StringUtils.FromMemoryStream(publicRequestPayloadsListValue));
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetPipelineActivity())
+                    {
+                        context.Writer.WritePropertyName("pipelineActivity");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PipelineActivityMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.PipelineActivity, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPipelineActivity())
-                {
-                    context.Writer.WritePropertyName("pipelineActivity");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PipelineActivityMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PipelineActivity, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

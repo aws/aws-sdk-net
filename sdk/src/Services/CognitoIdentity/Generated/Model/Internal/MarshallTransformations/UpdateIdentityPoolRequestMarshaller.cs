@@ -63,111 +63,114 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAllowClassicFlow())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AllowClassicFlow");
-                    context.Writer.Write(publicRequest.AllowClassicFlow.Value);
-                }
-
-                if(publicRequest.IsSetAllowUnauthenticatedIdentities())
-                {
-                    context.Writer.WritePropertyName("AllowUnauthenticatedIdentities");
-                    context.Writer.Write(publicRequest.AllowUnauthenticatedIdentities.Value);
-                }
-
-                if(publicRequest.IsSetCognitoIdentityProviders())
-                {
-                    context.Writer.WritePropertyName("CognitoIdentityProviders");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCognitoIdentityProvidersListValue in publicRequest.CognitoIdentityProviders)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAllowClassicFlow())
                     {
+                        context.Writer.WritePropertyName("AllowClassicFlow");
+                        context.Writer.Write(publicRequest.AllowClassicFlow.Value);
+                    }
+
+                    if(publicRequest.IsSetAllowUnauthenticatedIdentities())
+                    {
+                        context.Writer.WritePropertyName("AllowUnauthenticatedIdentities");
+                        context.Writer.Write(publicRequest.AllowUnauthenticatedIdentities.Value);
+                    }
+
+                    if(publicRequest.IsSetCognitoIdentityProviders())
+                    {
+                        context.Writer.WritePropertyName("CognitoIdentityProviders");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCognitoIdentityProvidersListValue in publicRequest.CognitoIdentityProviders)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = CognitoIdentityProviderInfoMarshaller.Instance;
+                            marshaller.Marshall(publicRequestCognitoIdentityProvidersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetDeveloperProviderName())
+                    {
+                        context.Writer.WritePropertyName("DeveloperProviderName");
+                        context.Writer.Write(publicRequest.DeveloperProviderName);
+                    }
+
+                    if(publicRequest.IsSetIdentityPoolId())
+                    {
+                        context.Writer.WritePropertyName("IdentityPoolId");
+                        context.Writer.Write(publicRequest.IdentityPoolId);
+                    }
+
+                    if(publicRequest.IsSetIdentityPoolName())
+                    {
+                        context.Writer.WritePropertyName("IdentityPoolName");
+                        context.Writer.Write(publicRequest.IdentityPoolName);
+                    }
+
+                    if(publicRequest.IsSetIdentityPoolTags())
+                    {
+                        context.Writer.WritePropertyName("IdentityPoolTags");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestIdentityPoolTagsKvp in publicRequest.IdentityPoolTags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestIdentityPoolTagsKvp.Key);
+                            var publicRequestIdentityPoolTagsValue = publicRequestIdentityPoolTagsKvp.Value;
 
-                        var marshaller = CognitoIdentityProviderInfoMarshaller.Instance;
-                        marshaller.Marshall(publicRequestCognitoIdentityProvidersListValue, context);
-
+                                context.Writer.Write(publicRequestIdentityPoolTagsValue);
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDeveloperProviderName())
-                {
-                    context.Writer.WritePropertyName("DeveloperProviderName");
-                    context.Writer.Write(publicRequest.DeveloperProviderName);
-                }
-
-                if(publicRequest.IsSetIdentityPoolId())
-                {
-                    context.Writer.WritePropertyName("IdentityPoolId");
-                    context.Writer.Write(publicRequest.IdentityPoolId);
-                }
-
-                if(publicRequest.IsSetIdentityPoolName())
-                {
-                    context.Writer.WritePropertyName("IdentityPoolName");
-                    context.Writer.Write(publicRequest.IdentityPoolName);
-                }
-
-                if(publicRequest.IsSetIdentityPoolTags())
-                {
-                    context.Writer.WritePropertyName("IdentityPoolTags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestIdentityPoolTagsKvp in publicRequest.IdentityPoolTags)
+                    if(publicRequest.IsSetOpenIdConnectProviderARNs())
                     {
-                        context.Writer.WritePropertyName(publicRequestIdentityPoolTagsKvp.Key);
-                        var publicRequestIdentityPoolTagsValue = publicRequestIdentityPoolTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestIdentityPoolTagsValue);
+                        context.Writer.WritePropertyName("OpenIdConnectProviderARNs");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestOpenIdConnectProviderARNsListValue in publicRequest.OpenIdConnectProviderARNs)
+                        {
+                                context.Writer.Write(publicRequestOpenIdConnectProviderARNsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetOpenIdConnectProviderARNs())
-                {
-                    context.Writer.WritePropertyName("OpenIdConnectProviderARNs");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestOpenIdConnectProviderARNsListValue in publicRequest.OpenIdConnectProviderARNs)
+                    if(publicRequest.IsSetSamlProviderARNs())
                     {
-                            context.Writer.Write(publicRequestOpenIdConnectProviderARNsListValue);
+                        context.Writer.WritePropertyName("SamlProviderARNs");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSamlProviderARNsListValue in publicRequest.SamlProviderARNs)
+                        {
+                                context.Writer.Write(publicRequestSamlProviderARNsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetSamlProviderARNs())
-                {
-                    context.Writer.WritePropertyName("SamlProviderARNs");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSamlProviderARNsListValue in publicRequest.SamlProviderARNs)
+                    if(publicRequest.IsSetSupportedLoginProviders())
                     {
-                            context.Writer.Write(publicRequestSamlProviderARNsListValue);
+                        context.Writer.WritePropertyName("SupportedLoginProviders");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestSupportedLoginProvidersKvp in publicRequest.SupportedLoginProviders)
+                        {
+                            context.Writer.WritePropertyName(publicRequestSupportedLoginProvidersKvp.Key);
+                            var publicRequestSupportedLoginProvidersValue = publicRequestSupportedLoginProvidersKvp.Value;
+
+                                context.Writer.Write(publicRequestSupportedLoginProvidersValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSupportedLoginProviders())
-                {
-                    context.Writer.WritePropertyName("SupportedLoginProviders");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestSupportedLoginProvidersKvp in publicRequest.SupportedLoginProviders)
-                    {
-                        context.Writer.WritePropertyName(publicRequestSupportedLoginProvidersKvp.Key);
-                        var publicRequestSupportedLoginProvidersValue = publicRequestSupportedLoginProvidersKvp.Value;
-
-                            context.Writer.Write(publicRequestSupportedLoginProvidersValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

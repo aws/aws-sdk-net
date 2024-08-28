@@ -70,125 +70,128 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 throw new AmazonAPIGatewayException("Request object does not have required field RestApiId set");
             request.AddPathResource("{restapi_id}", StringUtils.FromString(publicRequest.RestApiId));
             request.ResourcePath = "/restapis/{restapi_id}/resources/{resource_id}/methods/{http_method}/integration";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCacheKeyParameters())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("cacheKeyParameters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCacheKeyParametersListValue in publicRequest.CacheKeyParameters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCacheKeyParameters())
                     {
-                            context.Writer.Write(publicRequestCacheKeyParametersListValue);
+                        context.Writer.WritePropertyName("cacheKeyParameters");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCacheKeyParametersListValue in publicRequest.CacheKeyParameters)
+                        {
+                                context.Writer.Write(publicRequestCacheKeyParametersListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetCacheNamespace())
-                {
-                    context.Writer.WritePropertyName("cacheNamespace");
-                    context.Writer.Write(publicRequest.CacheNamespace);
-                }
-
-                if(publicRequest.IsSetConnectionId())
-                {
-                    context.Writer.WritePropertyName("connectionId");
-                    context.Writer.Write(publicRequest.ConnectionId);
-                }
-
-                if(publicRequest.IsSetConnectionType())
-                {
-                    context.Writer.WritePropertyName("connectionType");
-                    context.Writer.Write(publicRequest.ConnectionType);
-                }
-
-                if(publicRequest.IsSetContentHandling())
-                {
-                    context.Writer.WritePropertyName("contentHandling");
-                    context.Writer.Write(publicRequest.ContentHandling);
-                }
-
-                if(publicRequest.IsSetCredentials())
-                {
-                    context.Writer.WritePropertyName("credentials");
-                    context.Writer.Write(publicRequest.Credentials);
-                }
-
-                if(publicRequest.IsSetIntegrationHttpMethod())
-                {
-                    context.Writer.WritePropertyName("httpMethod");
-                    context.Writer.Write(publicRequest.IntegrationHttpMethod);
-                }
-
-                if(publicRequest.IsSetPassthroughBehavior())
-                {
-                    context.Writer.WritePropertyName("passthroughBehavior");
-                    context.Writer.Write(publicRequest.PassthroughBehavior);
-                }
-
-                if(publicRequest.IsSetRequestParameters())
-                {
-                    context.Writer.WritePropertyName("requestParameters");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestRequestParametersKvp in publicRequest.RequestParameters)
+                    if(publicRequest.IsSetCacheNamespace())
                     {
-                        context.Writer.WritePropertyName(publicRequestRequestParametersKvp.Key);
-                        var publicRequestRequestParametersValue = publicRequestRequestParametersKvp.Value;
-
-                            context.Writer.Write(publicRequestRequestParametersValue);
+                        context.Writer.WritePropertyName("cacheNamespace");
+                        context.Writer.Write(publicRequest.CacheNamespace);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetRequestTemplates())
-                {
-                    context.Writer.WritePropertyName("requestTemplates");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestRequestTemplatesKvp in publicRequest.RequestTemplates)
+                    if(publicRequest.IsSetConnectionId())
                     {
-                        context.Writer.WritePropertyName(publicRequestRequestTemplatesKvp.Key);
-                        var publicRequestRequestTemplatesValue = publicRequestRequestTemplatesKvp.Value;
-
-                            context.Writer.Write(publicRequestRequestTemplatesValue);
+                        context.Writer.WritePropertyName("connectionId");
+                        context.Writer.Write(publicRequest.ConnectionId);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetConnectionType())
+                    {
+                        context.Writer.WritePropertyName("connectionType");
+                        context.Writer.Write(publicRequest.ConnectionType);
+                    }
+
+                    if(publicRequest.IsSetContentHandling())
+                    {
+                        context.Writer.WritePropertyName("contentHandling");
+                        context.Writer.Write(publicRequest.ContentHandling);
+                    }
+
+                    if(publicRequest.IsSetCredentials())
+                    {
+                        context.Writer.WritePropertyName("credentials");
+                        context.Writer.Write(publicRequest.Credentials);
+                    }
+
+                    if(publicRequest.IsSetIntegrationHttpMethod())
+                    {
+                        context.Writer.WritePropertyName("httpMethod");
+                        context.Writer.Write(publicRequest.IntegrationHttpMethod);
+                    }
+
+                    if(publicRequest.IsSetPassthroughBehavior())
+                    {
+                        context.Writer.WritePropertyName("passthroughBehavior");
+                        context.Writer.Write(publicRequest.PassthroughBehavior);
+                    }
+
+                    if(publicRequest.IsSetRequestParameters())
+                    {
+                        context.Writer.WritePropertyName("requestParameters");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestRequestParametersKvp in publicRequest.RequestParameters)
+                        {
+                            context.Writer.WritePropertyName(publicRequestRequestParametersKvp.Key);
+                            var publicRequestRequestParametersValue = publicRequestRequestParametersKvp.Value;
+
+                                context.Writer.Write(publicRequestRequestParametersValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRequestTemplates())
+                    {
+                        context.Writer.WritePropertyName("requestTemplates");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestRequestTemplatesKvp in publicRequest.RequestTemplates)
+                        {
+                            context.Writer.WritePropertyName(publicRequestRequestTemplatesKvp.Key);
+                            var publicRequestRequestTemplatesValue = publicRequestRequestTemplatesKvp.Value;
+
+                                context.Writer.Write(publicRequestRequestTemplatesValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTimeoutInMillis())
+                    {
+                        context.Writer.WritePropertyName("timeoutInMillis");
+                        context.Writer.Write(publicRequest.TimeoutInMillis.Value);
+                    }
+
+                    if(publicRequest.IsSetTlsConfig())
+                    {
+                        context.Writer.WritePropertyName("tlsConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TlsConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TlsConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetType())
+                    {
+                        context.Writer.WritePropertyName("type");
+                        context.Writer.Write(publicRequest.Type);
+                    }
+
+                    if(publicRequest.IsSetUri())
+                    {
+                        context.Writer.WritePropertyName("uri");
+                        context.Writer.Write(publicRequest.Uri);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTimeoutInMillis())
-                {
-                    context.Writer.WritePropertyName("timeoutInMillis");
-                    context.Writer.Write(publicRequest.TimeoutInMillis.Value);
-                }
-
-                if(publicRequest.IsSetTlsConfig())
-                {
-                    context.Writer.WritePropertyName("tlsConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TlsConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TlsConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetType())
-                {
-                    context.Writer.WritePropertyName("type");
-                    context.Writer.Write(publicRequest.Type);
-                }
-
-                if(publicRequest.IsSetUri())
-                {
-                    context.Writer.WritePropertyName("uri");
-                    context.Writer.Write(publicRequest.Uri);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

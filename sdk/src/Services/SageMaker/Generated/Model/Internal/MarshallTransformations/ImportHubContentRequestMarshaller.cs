@@ -63,96 +63,99 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDocumentSchemaVersion())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DocumentSchemaVersion");
-                    context.Writer.Write(publicRequest.DocumentSchemaVersion);
-                }
-
-                if(publicRequest.IsSetHubContentDescription())
-                {
-                    context.Writer.WritePropertyName("HubContentDescription");
-                    context.Writer.Write(publicRequest.HubContentDescription);
-                }
-
-                if(publicRequest.IsSetHubContentDisplayName())
-                {
-                    context.Writer.WritePropertyName("HubContentDisplayName");
-                    context.Writer.Write(publicRequest.HubContentDisplayName);
-                }
-
-                if(publicRequest.IsSetHubContentDocument())
-                {
-                    context.Writer.WritePropertyName("HubContentDocument");
-                    context.Writer.Write(publicRequest.HubContentDocument);
-                }
-
-                if(publicRequest.IsSetHubContentMarkdown())
-                {
-                    context.Writer.WritePropertyName("HubContentMarkdown");
-                    context.Writer.Write(publicRequest.HubContentMarkdown);
-                }
-
-                if(publicRequest.IsSetHubContentName())
-                {
-                    context.Writer.WritePropertyName("HubContentName");
-                    context.Writer.Write(publicRequest.HubContentName);
-                }
-
-                if(publicRequest.IsSetHubContentSearchKeywords())
-                {
-                    context.Writer.WritePropertyName("HubContentSearchKeywords");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestHubContentSearchKeywordsListValue in publicRequest.HubContentSearchKeywords)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDocumentSchemaVersion())
                     {
-                            context.Writer.Write(publicRequestHubContentSearchKeywordsListValue);
+                        context.Writer.WritePropertyName("DocumentSchemaVersion");
+                        context.Writer.Write(publicRequest.DocumentSchemaVersion);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetHubContentType())
-                {
-                    context.Writer.WritePropertyName("HubContentType");
-                    context.Writer.Write(publicRequest.HubContentType);
-                }
-
-                if(publicRequest.IsSetHubContentVersion())
-                {
-                    context.Writer.WritePropertyName("HubContentVersion");
-                    context.Writer.Write(publicRequest.HubContentVersion);
-                }
-
-                if(publicRequest.IsSetHubName())
-                {
-                    context.Writer.WritePropertyName("HubName");
-                    context.Writer.Write(publicRequest.HubName);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetHubContentDescription())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("HubContentDescription");
+                        context.Writer.Write(publicRequest.HubContentDescription);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetHubContentDisplayName())
+                    {
+                        context.Writer.WritePropertyName("HubContentDisplayName");
+                        context.Writer.Write(publicRequest.HubContentDisplayName);
+                    }
+
+                    if(publicRequest.IsSetHubContentDocument())
+                    {
+                        context.Writer.WritePropertyName("HubContentDocument");
+                        context.Writer.Write(publicRequest.HubContentDocument);
+                    }
+
+                    if(publicRequest.IsSetHubContentMarkdown())
+                    {
+                        context.Writer.WritePropertyName("HubContentMarkdown");
+                        context.Writer.Write(publicRequest.HubContentMarkdown);
+                    }
+
+                    if(publicRequest.IsSetHubContentName())
+                    {
+                        context.Writer.WritePropertyName("HubContentName");
+                        context.Writer.Write(publicRequest.HubContentName);
+                    }
+
+                    if(publicRequest.IsSetHubContentSearchKeywords())
+                    {
+                        context.Writer.WritePropertyName("HubContentSearchKeywords");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestHubContentSearchKeywordsListValue in publicRequest.HubContentSearchKeywords)
+                        {
+                                context.Writer.Write(publicRequestHubContentSearchKeywordsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetHubContentType())
+                    {
+                        context.Writer.WritePropertyName("HubContentType");
+                        context.Writer.Write(publicRequest.HubContentType);
+                    }
+
+                    if(publicRequest.IsSetHubContentVersion())
+                    {
+                        context.Writer.WritePropertyName("HubContentVersion");
+                        context.Writer.Write(publicRequest.HubContentVersion);
+                    }
+
+                    if(publicRequest.IsSetHubName())
+                    {
+                        context.Writer.WritePropertyName("HubName");
+                        context.Writer.Write(publicRequest.HubName);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

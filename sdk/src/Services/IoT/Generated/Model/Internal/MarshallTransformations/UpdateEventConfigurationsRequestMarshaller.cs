@@ -61,34 +61,37 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.HttpMethod = "PATCH";
 
             request.ResourcePath = "/event-configurations";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEventConfigurations())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("eventConfigurations");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestEventConfigurationsKvp in publicRequest.EventConfigurations)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEventConfigurations())
                     {
-                        context.Writer.WritePropertyName(publicRequestEventConfigurationsKvp.Key);
-                        var publicRequestEventConfigurationsValue = publicRequestEventConfigurationsKvp.Value;
-
+                        context.Writer.WritePropertyName("eventConfigurations");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestEventConfigurationsKvp in publicRequest.EventConfigurations)
+                        {
+                            context.Writer.WritePropertyName(publicRequestEventConfigurationsKvp.Key);
+                            var publicRequestEventConfigurationsValue = publicRequestEventConfigurationsKvp.Value;
 
-                        var marshaller = ConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestEventConfigurationsValue, context);
+                            context.Writer.WriteObjectStart();
 
+                            var marshaller = ConfigurationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestEventConfigurationsValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

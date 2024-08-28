@@ -63,67 +63,70 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetDryRun())
+                    {
+                        context.Writer.WritePropertyName("DryRun");
+                        context.Writer.Write(publicRequest.DryRun.Value);
+                    }
+
+                    if(publicRequest.IsSetEncryptionConfiguration())
+                    {
+                        context.Writer.WritePropertyName("EncryptionConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EncryptionConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetFirewallPolicy())
+                    {
+                        context.Writer.WritePropertyName("FirewallPolicy");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = FirewallPolicyMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.FirewallPolicy, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetFirewallPolicyArn())
+                    {
+                        context.Writer.WritePropertyName("FirewallPolicyArn");
+                        context.Writer.Write(publicRequest.FirewallPolicyArn);
+                    }
+
+                    if(publicRequest.IsSetFirewallPolicyName())
+                    {
+                        context.Writer.WritePropertyName("FirewallPolicyName");
+                        context.Writer.Write(publicRequest.FirewallPolicyName);
+                    }
+
+                    if(publicRequest.IsSetUpdateToken())
+                    {
+                        context.Writer.WritePropertyName("UpdateToken");
+                        context.Writer.Write(publicRequest.UpdateToken);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDryRun())
-                {
-                    context.Writer.WritePropertyName("DryRun");
-                    context.Writer.Write(publicRequest.DryRun.Value);
-                }
-
-                if(publicRequest.IsSetEncryptionConfiguration())
-                {
-                    context.Writer.WritePropertyName("EncryptionConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EncryptionConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetFirewallPolicy())
-                {
-                    context.Writer.WritePropertyName("FirewallPolicy");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = FirewallPolicyMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.FirewallPolicy, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetFirewallPolicyArn())
-                {
-                    context.Writer.WritePropertyName("FirewallPolicyArn");
-                    context.Writer.Write(publicRequest.FirewallPolicyArn);
-                }
-
-                if(publicRequest.IsSetFirewallPolicyName())
-                {
-                    context.Writer.WritePropertyName("FirewallPolicyName");
-                    context.Writer.Write(publicRequest.FirewallPolicyName);
-                }
-
-                if(publicRequest.IsSetUpdateToken())
-                {
-                    context.Writer.WritePropertyName("UpdateToken");
-                    context.Writer.Write(publicRequest.UpdateToken);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,88 +63,91 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConfigurationSetName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ConfigurationSetName");
-                    context.Writer.Write(publicRequest.ConfigurationSetName);
-                }
-
-                if(publicRequest.IsSetContext())
-                {
-                    context.Writer.WritePropertyName("Context");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestContextKvp in publicRequest.Context)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConfigurationSetName())
                     {
-                        context.Writer.WritePropertyName(publicRequestContextKvp.Key);
-                        var publicRequestContextValue = publicRequestContextKvp.Value;
-
-                            context.Writer.Write(publicRequestContextValue);
+                        context.Writer.WritePropertyName("ConfigurationSetName");
+                        context.Writer.Write(publicRequest.ConfigurationSetName);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetDestinationPhoneNumber())
-                {
-                    context.Writer.WritePropertyName("DestinationPhoneNumber");
-                    context.Writer.Write(publicRequest.DestinationPhoneNumber);
-                }
-
-                if(publicRequest.IsSetDryRun())
-                {
-                    context.Writer.WritePropertyName("DryRun");
-                    context.Writer.Write(publicRequest.DryRun.Value);
-                }
-
-                if(publicRequest.IsSetMaxPrice())
-                {
-                    context.Writer.WritePropertyName("MaxPrice");
-                    context.Writer.Write(publicRequest.MaxPrice);
-                }
-
-                if(publicRequest.IsSetMediaUrls())
-                {
-                    context.Writer.WritePropertyName("MediaUrls");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMediaUrlsListValue in publicRequest.MediaUrls)
+                    if(publicRequest.IsSetContext())
                     {
-                            context.Writer.Write(publicRequestMediaUrlsListValue);
+                        context.Writer.WritePropertyName("Context");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestContextKvp in publicRequest.Context)
+                        {
+                            context.Writer.WritePropertyName(publicRequestContextKvp.Key);
+                            var publicRequestContextValue = publicRequestContextKvp.Value;
+
+                                context.Writer.Write(publicRequestContextValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDestinationPhoneNumber())
+                    {
+                        context.Writer.WritePropertyName("DestinationPhoneNumber");
+                        context.Writer.Write(publicRequest.DestinationPhoneNumber);
+                    }
+
+                    if(publicRequest.IsSetDryRun())
+                    {
+                        context.Writer.WritePropertyName("DryRun");
+                        context.Writer.Write(publicRequest.DryRun.Value);
+                    }
+
+                    if(publicRequest.IsSetMaxPrice())
+                    {
+                        context.Writer.WritePropertyName("MaxPrice");
+                        context.Writer.Write(publicRequest.MaxPrice);
+                    }
+
+                    if(publicRequest.IsSetMediaUrls())
+                    {
+                        context.Writer.WritePropertyName("MediaUrls");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMediaUrlsListValue in publicRequest.MediaUrls)
+                        {
+                                context.Writer.Write(publicRequestMediaUrlsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetMessageBody())
+                    {
+                        context.Writer.WritePropertyName("MessageBody");
+                        context.Writer.Write(publicRequest.MessageBody);
+                    }
+
+                    if(publicRequest.IsSetOriginationIdentity())
+                    {
+                        context.Writer.WritePropertyName("OriginationIdentity");
+                        context.Writer.Write(publicRequest.OriginationIdentity);
+                    }
+
+                    if(publicRequest.IsSetProtectConfigurationId())
+                    {
+                        context.Writer.WritePropertyName("ProtectConfigurationId");
+                        context.Writer.Write(publicRequest.ProtectConfigurationId);
+                    }
+
+                    if(publicRequest.IsSetTimeToLive())
+                    {
+                        context.Writer.WritePropertyName("TimeToLive");
+                        context.Writer.Write(publicRequest.TimeToLive.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMessageBody())
-                {
-                    context.Writer.WritePropertyName("MessageBody");
-                    context.Writer.Write(publicRequest.MessageBody);
-                }
-
-                if(publicRequest.IsSetOriginationIdentity())
-                {
-                    context.Writer.WritePropertyName("OriginationIdentity");
-                    context.Writer.Write(publicRequest.OriginationIdentity);
-                }
-
-                if(publicRequest.IsSetProtectConfigurationId())
-                {
-                    context.Writer.WritePropertyName("ProtectConfigurationId");
-                    context.Writer.Write(publicRequest.ProtectConfigurationId);
-                }
-
-                if(publicRequest.IsSetTimeToLive())
-                {
-                    context.Writer.WritePropertyName("TimeToLive");
-                    context.Writer.Write(publicRequest.TimeToLive.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

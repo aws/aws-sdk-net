@@ -61,75 +61,78 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/controls";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetActionPlanInstructions())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("actionPlanInstructions");
-                    context.Writer.Write(publicRequest.ActionPlanInstructions);
-                }
-
-                if(publicRequest.IsSetActionPlanTitle())
-                {
-                    context.Writer.WritePropertyName("actionPlanTitle");
-                    context.Writer.Write(publicRequest.ActionPlanTitle);
-                }
-
-                if(publicRequest.IsSetControlMappingSources())
-                {
-                    context.Writer.WritePropertyName("controlMappingSources");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestControlMappingSourcesListValue in publicRequest.ControlMappingSources)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetActionPlanInstructions())
                     {
+                        context.Writer.WritePropertyName("actionPlanInstructions");
+                        context.Writer.Write(publicRequest.ActionPlanInstructions);
+                    }
+
+                    if(publicRequest.IsSetActionPlanTitle())
+                    {
+                        context.Writer.WritePropertyName("actionPlanTitle");
+                        context.Writer.Write(publicRequest.ActionPlanTitle);
+                    }
+
+                    if(publicRequest.IsSetControlMappingSources())
+                    {
+                        context.Writer.WritePropertyName("controlMappingSources");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestControlMappingSourcesListValue in publicRequest.ControlMappingSources)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = CreateControlMappingSourceMarshaller.Instance;
+                            marshaller.Marshall(publicRequestControlMappingSourcesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
 
-                        var marshaller = CreateControlMappingSourceMarshaller.Instance;
-                        marshaller.Marshall(publicRequestControlMappingSourcesListValue, context);
-
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetTestingInformation())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("testingInformation");
+                        context.Writer.Write(publicRequest.TestingInformation);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTestingInformation())
-                {
-                    context.Writer.WritePropertyName("testingInformation");
-                    context.Writer.Write(publicRequest.TestingInformation);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

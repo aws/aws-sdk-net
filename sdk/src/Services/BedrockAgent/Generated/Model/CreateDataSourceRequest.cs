@@ -84,15 +84,16 @@ namespace Amazon.BedrockAgent.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// DELETE: Deletes all underlying data belonging to the data source from the vector store
-        /// upon deletion of a knowledge base or data source resource. Note that the vector store
-        /// itself is not deleted, only the underlying data. This flag is ignored if an Amazon
+        /// DELETE: Deletes all data from your data source that’s converted into vector embeddings
+        /// upon deletion of a knowledge base or data source resource. Note that the <b>vector
+        /// store itself is not deleted</b>, only the data. This flag is ignored if an Amazon
         /// Web Services account is deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RETAIN: Retains all underlying data in your vector store upon deletion of a knowledge
-        /// base or data source resource.
+        /// RETAIN: Retains all data from your data source that’s converted into vector embeddings
+        /// upon deletion of a knowledge base or data source resource. Note that the <b>vector
+        /// store itself is not deleted</b> if you delete a knowledge base or data source resource.
         /// </para>
         ///  </li> </ul>
         /// </summary>

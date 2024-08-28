@@ -63,128 +63,131 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetGlueVersion())
-                {
-                    context.Writer.WritePropertyName("GlueVersion");
-                    context.Writer.Write(publicRequest.GlueVersion);
-                }
-
-                if(publicRequest.IsSetInputRecordTables())
-                {
-                    context.Writer.WritePropertyName("InputRecordTables");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestInputRecordTablesListValue in publicRequest.InputRecordTables)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetGlueVersion())
+                    {
+                        context.Writer.WritePropertyName("GlueVersion");
+                        context.Writer.Write(publicRequest.GlueVersion);
+                    }
+
+                    if(publicRequest.IsSetInputRecordTables())
+                    {
+                        context.Writer.WritePropertyName("InputRecordTables");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestInputRecordTablesListValue in publicRequest.InputRecordTables)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = GlueTableMarshaller.Instance;
+                            marshaller.Marshall(publicRequestInputRecordTablesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetMaxCapacity())
+                    {
+                        context.Writer.WritePropertyName("MaxCapacity");
+                        if(StringUtils.IsSpecialDoubleValue(publicRequest.MaxCapacity.Value))
+                        {
+                            context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.MaxCapacity.Value));
+                        }
+                        else
+                        {
+                            context.Writer.Write(publicRequest.MaxCapacity.Value);
+                        }
+                    }
+
+                    if(publicRequest.IsSetMaxRetries())
+                    {
+                        context.Writer.WritePropertyName("MaxRetries");
+                        context.Writer.Write(publicRequest.MaxRetries.Value);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetNumberOfWorkers())
+                    {
+                        context.Writer.WritePropertyName("NumberOfWorkers");
+                        context.Writer.Write(publicRequest.NumberOfWorkers.Value);
+                    }
+
+                    if(publicRequest.IsSetParameters())
+                    {
+                        context.Writer.WritePropertyName("Parameters");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = GlueTableMarshaller.Instance;
-                        marshaller.Marshall(publicRequestInputRecordTablesListValue, context);
+                        var marshaller = TransformParametersMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Parameters, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetMaxCapacity())
-                {
-                    context.Writer.WritePropertyName("MaxCapacity");
-                    if(StringUtils.IsSpecialDoubleValue(publicRequest.MaxCapacity.Value))
+                    if(publicRequest.IsSetRole())
                     {
-                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.MaxCapacity.Value));
+                        context.Writer.WritePropertyName("Role");
+                        context.Writer.Write(publicRequest.Role);
                     }
-                    else
+
+                    if(publicRequest.IsSetTags())
                     {
-                        context.Writer.Write(publicRequest.MaxCapacity.Value);
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                }
 
-                if(publicRequest.IsSetMaxRetries())
-                {
-                    context.Writer.WritePropertyName("MaxRetries");
-                    context.Writer.Write(publicRequest.MaxRetries.Value);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetNumberOfWorkers())
-                {
-                    context.Writer.WritePropertyName("NumberOfWorkers");
-                    context.Writer.Write(publicRequest.NumberOfWorkers.Value);
-                }
-
-                if(publicRequest.IsSetParameters())
-                {
-                    context.Writer.WritePropertyName("Parameters");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TransformParametersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Parameters, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRole())
-                {
-                    context.Writer.WritePropertyName("Role");
-                    context.Writer.Write(publicRequest.Role);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetTimeout())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("Timeout");
+                        context.Writer.Write(publicRequest.Timeout.Value);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetTransformEncryption())
+                    {
+                        context.Writer.WritePropertyName("TransformEncryption");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TransformEncryptionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TransformEncryption, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetWorkerType())
+                    {
+                        context.Writer.WritePropertyName("WorkerType");
+                        context.Writer.Write(publicRequest.WorkerType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTimeout())
-                {
-                    context.Writer.WritePropertyName("Timeout");
-                    context.Writer.Write(publicRequest.Timeout.Value);
-                }
-
-                if(publicRequest.IsSetTransformEncryption())
-                {
-                    context.Writer.WritePropertyName("TransformEncryption");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TransformEncryptionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TransformEncryption, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetWorkerType())
-                {
-                    context.Writer.WritePropertyName("WorkerType");
-                    context.Writer.Write(publicRequest.WorkerType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

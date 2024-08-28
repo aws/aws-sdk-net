@@ -67,26 +67,29 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                 throw new AmazonChimeSDKMessagingException("Request object does not have required field MemberArn set");
             request.AddPathResource("{memberArn}", StringUtils.FromString(publicRequest.MemberArn));
             request.ResourcePath = "/channels/{channelArn}/memberships/{memberArn}/preferences";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetPreferences())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Preferences");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetPreferences())
+                    {
+                        context.Writer.WritePropertyName("Preferences");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = ChannelMembershipPreferencesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Preferences, context);
+                        var marshaller = ChannelMembershipPreferencesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Preferences, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

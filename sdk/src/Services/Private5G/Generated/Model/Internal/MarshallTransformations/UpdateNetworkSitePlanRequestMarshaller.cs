@@ -61,38 +61,41 @@ namespace Amazon.Private5G.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/v1/network-sites/plan";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    if(publicRequest.IsSetNetworkSiteArn())
+                    {
+                        context.Writer.WritePropertyName("networkSiteArn");
+                        context.Writer.Write(publicRequest.NetworkSiteArn);
+                    }
+
+                    if(publicRequest.IsSetPendingPlan())
+                    {
+                        context.Writer.WritePropertyName("pendingPlan");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SitePlanMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.PendingPlan, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetNetworkSiteArn())
-                {
-                    context.Writer.WritePropertyName("networkSiteArn");
-                    context.Writer.Write(publicRequest.NetworkSiteArn);
-                }
-
-                if(publicRequest.IsSetPendingPlan())
-                {
-                    context.Writer.WritePropertyName("pendingPlan");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SitePlanMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PendingPlan, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

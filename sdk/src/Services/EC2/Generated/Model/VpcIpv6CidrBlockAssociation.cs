@@ -35,6 +35,8 @@ namespace Amazon.EC2.Model
     public partial class VpcIpv6CidrBlockAssociation
     {
         private string _associationId;
+        private IpSource _ipSource;
+        private Ipv6AddressAttribute _ipv6AddressAttribute;
         private string _ipv6CidrBlock;
         private VpcCidrBlockState _ipv6CidrBlockState;
         private string _ipv6Pool;
@@ -56,6 +58,46 @@ namespace Amazon.EC2.Model
         internal bool IsSetAssociationId()
         {
             return this._associationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpSource. 
+        /// <para>
+        /// The source that allocated the IP address space. <c>byoip</c> or <c>amazon</c> indicates
+        /// public IP address space allocated by Amazon or space that you have allocated with
+        /// Bring your own IP (BYOIP). <c>none</c> indicates private space.
+        /// </para>
+        /// </summary>
+        public IpSource IpSource
+        {
+            get { return this._ipSource; }
+            set { this._ipSource = value; }
+        }
+
+        // Check to see if IpSource property is set
+        internal bool IsSetIpSource()
+        {
+            return this._ipSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6AddressAttribute. 
+        /// <para>
+        /// Public IPv6 addresses are those advertised on the internet from Amazon Web Services.
+        /// Private IP addresses are not and cannot be advertised on the internet from Amazon
+        /// Web Services.
+        /// </para>
+        /// </summary>
+        public Ipv6AddressAttribute Ipv6AddressAttribute
+        {
+            get { return this._ipv6AddressAttribute; }
+            set { this._ipv6AddressAttribute = value; }
+        }
+
+        // Check to see if Ipv6AddressAttribute property is set
+        internal bool IsSetIpv6AddressAttribute()
+        {
+            return this._ipv6AddressAttribute != null;
         }
 
         /// <summary>

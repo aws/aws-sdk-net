@@ -63,60 +63,63 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBranchFilter())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("branchFilter");
-                    context.Writer.Write(publicRequest.BranchFilter);
-                }
-
-                if(publicRequest.IsSetBuildType())
-                {
-                    context.Writer.WritePropertyName("buildType");
-                    context.Writer.Write(publicRequest.BuildType);
-                }
-
-                if(publicRequest.IsSetFilterGroups())
-                {
-                    context.Writer.WritePropertyName("filterGroups");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFilterGroupsListValue in publicRequest.FilterGroups)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBranchFilter())
                     {
+                        context.Writer.WritePropertyName("branchFilter");
+                        context.Writer.Write(publicRequest.BranchFilter);
+                    }
+
+                    if(publicRequest.IsSetBuildType())
+                    {
+                        context.Writer.WritePropertyName("buildType");
+                        context.Writer.Write(publicRequest.BuildType);
+                    }
+
+                    if(publicRequest.IsSetFilterGroups())
+                    {
+                        context.Writer.WritePropertyName("filterGroups");
                         context.Writer.WriteArrayStart();
-                        foreach(var publicRequestFilterGroupsListValueListValue in publicRequestFilterGroupsListValue)
+                        foreach(var publicRequestFilterGroupsListValue in publicRequest.FilterGroups)
                         {
-                            context.Writer.WriteObjectStart();
+                            context.Writer.WriteArrayStart();
+                            foreach(var publicRequestFilterGroupsListValueListValue in publicRequestFilterGroupsListValue)
+                            {
+                                context.Writer.WriteObjectStart();
 
-                            var marshaller = WebhookFilterMarshaller.Instance;
-                            marshaller.Marshall(publicRequestFilterGroupsListValueListValue, context);
+                                var marshaller = WebhookFilterMarshaller.Instance;
+                                marshaller.Marshall(publicRequestFilterGroupsListValueListValue, context);
 
-                            context.Writer.WriteObjectEnd();
+                                context.Writer.WriteObjectEnd();
+                            }
+                            context.Writer.WriteArrayEnd();
                         }
                         context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetProjectName())
+                    {
+                        context.Writer.WritePropertyName("projectName");
+                        context.Writer.Write(publicRequest.ProjectName);
+                    }
+
+                    if(publicRequest.IsSetRotateSecret())
+                    {
+                        context.Writer.WritePropertyName("rotateSecret");
+                        context.Writer.Write(publicRequest.RotateSecret.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetProjectName())
-                {
-                    context.Writer.WritePropertyName("projectName");
-                    context.Writer.Write(publicRequest.ProjectName);
-                }
-
-                if(publicRequest.IsSetRotateSecret())
-                {
-                    context.Writer.WritePropertyName("rotateSecret");
-                    context.Writer.Write(publicRequest.RotateSecret.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

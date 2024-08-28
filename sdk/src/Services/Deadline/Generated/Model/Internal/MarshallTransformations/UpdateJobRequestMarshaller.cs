@@ -70,45 +70,48 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 throw new AmazonDeadlineException("Request object does not have required field QueueId set");
             request.AddPathResource("{queueId}", StringUtils.FromString(publicRequest.QueueId));
             request.ResourcePath = "/2023-10-12/farms/{farmId}/queues/{queueId}/jobs/{jobId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLifecycleStatus())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("lifecycleStatus");
-                    context.Writer.Write(publicRequest.LifecycleStatus);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetLifecycleStatus())
+                    {
+                        context.Writer.WritePropertyName("lifecycleStatus");
+                        context.Writer.Write(publicRequest.LifecycleStatus);
+                    }
+
+                    if(publicRequest.IsSetMaxFailedTasksCount())
+                    {
+                        context.Writer.WritePropertyName("maxFailedTasksCount");
+                        context.Writer.Write(publicRequest.MaxFailedTasksCount.Value);
+                    }
+
+                    if(publicRequest.IsSetMaxRetriesPerTask())
+                    {
+                        context.Writer.WritePropertyName("maxRetriesPerTask");
+                        context.Writer.Write(publicRequest.MaxRetriesPerTask.Value);
+                    }
+
+                    if(publicRequest.IsSetPriority())
+                    {
+                        context.Writer.WritePropertyName("priority");
+                        context.Writer.Write(publicRequest.Priority.Value);
+                    }
+
+                    if(publicRequest.IsSetTargetTaskRunStatus())
+                    {
+                        context.Writer.WritePropertyName("targetTaskRunStatus");
+                        context.Writer.Write(publicRequest.TargetTaskRunStatus);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMaxFailedTasksCount())
-                {
-                    context.Writer.WritePropertyName("maxFailedTasksCount");
-                    context.Writer.Write(publicRequest.MaxFailedTasksCount.Value);
-                }
-
-                if(publicRequest.IsSetMaxRetriesPerTask())
-                {
-                    context.Writer.WritePropertyName("maxRetriesPerTask");
-                    context.Writer.Write(publicRequest.MaxRetriesPerTask.Value);
-                }
-
-                if(publicRequest.IsSetPriority())
-                {
-                    context.Writer.WritePropertyName("priority");
-                    context.Writer.Write(publicRequest.Priority.Value);
-                }
-
-                if(publicRequest.IsSetTargetTaskRunStatus())
-                {
-                    context.Writer.WritePropertyName("targetTaskRunStatus");
-                    context.Writer.Write(publicRequest.TargetTaskRunStatus);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

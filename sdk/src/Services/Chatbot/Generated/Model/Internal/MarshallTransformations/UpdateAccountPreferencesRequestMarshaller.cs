@@ -61,27 +61,30 @@ namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/update-account-preferences";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetTrainingDataCollectionEnabled())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("TrainingDataCollectionEnabled");
-                    context.Writer.Write(publicRequest.TrainingDataCollectionEnabled.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetTrainingDataCollectionEnabled())
+                    {
+                        context.Writer.WritePropertyName("TrainingDataCollectionEnabled");
+                        context.Writer.Write(publicRequest.TrainingDataCollectionEnabled.Value);
+                    }
+
+                    if(publicRequest.IsSetUserAuthorizationRequired())
+                    {
+                        context.Writer.WritePropertyName("UserAuthorizationRequired");
+                        context.Writer.Write(publicRequest.UserAuthorizationRequired.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetUserAuthorizationRequired())
-                {
-                    context.Writer.WritePropertyName("UserAuthorizationRequired");
-                    context.Writer.Write(publicRequest.UserAuthorizationRequired.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

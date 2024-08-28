@@ -61,71 +61,74 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/createWorldGenerationJob";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientRequestToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientRequestToken())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("clientRequestToken");
+                        context.Writer.Write(publicRequest.ClientRequestToken);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetTemplate())
-                {
-                    context.Writer.WritePropertyName("template");
-                    context.Writer.Write(publicRequest.Template);
-                }
-
-                if(publicRequest.IsSetWorldCount())
-                {
-                    context.Writer.WritePropertyName("worldCount");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = WorldCountMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.WorldCount, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetWorldTags())
-                {
-                    context.Writer.WritePropertyName("worldTags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestWorldTagsKvp in publicRequest.WorldTags)
+                    else if(!(publicRequest.IsSetClientRequestToken()))
                     {
-                        context.Writer.WritePropertyName(publicRequestWorldTagsKvp.Key);
-                        var publicRequestWorldTagsValue = publicRequestWorldTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestWorldTagsValue);
+                        context.Writer.WritePropertyName("clientRequestToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
                     }
-                    context.Writer.WriteObjectEnd();
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTemplate())
+                    {
+                        context.Writer.WritePropertyName("template");
+                        context.Writer.Write(publicRequest.Template);
+                    }
+
+                    if(publicRequest.IsSetWorldCount())
+                    {
+                        context.Writer.WritePropertyName("worldCount");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = WorldCountMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.WorldCount, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetWorldTags())
+                    {
+                        context.Writer.WritePropertyName("worldTags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestWorldTagsKvp in publicRequest.WorldTags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestWorldTagsKvp.Key);
+                            var publicRequestWorldTagsValue = publicRequestWorldTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestWorldTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

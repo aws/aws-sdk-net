@@ -63,82 +63,85 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDetectorId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("detectorId");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDetectorId())
+                    {
+                        context.Writer.WritePropertyName("detectorId");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = FilterConditionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DetectorId, context);
+                        var marshaller = FilterConditionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DetectorId, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDetectorVersionId())
+                    {
+                        context.Writer.WritePropertyName("detectorVersionId");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = FilterConditionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DetectorVersionId, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetEventId())
+                    {
+                        context.Writer.WritePropertyName("eventId");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = FilterConditionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EventId, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetEventType())
+                    {
+                        context.Writer.WritePropertyName("eventType");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = FilterConditionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EventType, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetPredictionTimeRange())
+                    {
+                        context.Writer.WritePropertyName("predictionTimeRange");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PredictionTimeRangeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.PredictionTimeRange, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDetectorVersionId())
-                {
-                    context.Writer.WritePropertyName("detectorVersionId");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = FilterConditionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DetectorVersionId, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEventId())
-                {
-                    context.Writer.WritePropertyName("eventId");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = FilterConditionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EventId, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEventType())
-                {
-                    context.Writer.WritePropertyName("eventType");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = FilterConditionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EventType, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetPredictionTimeRange())
-                {
-                    context.Writer.WritePropertyName("predictionTimeRange");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PredictionTimeRangeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PredictionTimeRange, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

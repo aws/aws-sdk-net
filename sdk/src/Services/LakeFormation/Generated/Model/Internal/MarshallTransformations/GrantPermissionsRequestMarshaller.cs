@@ -61,65 +61,68 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/GrantPermissions";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCatalogId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CatalogId");
-                    context.Writer.Write(publicRequest.CatalogId);
-                }
-
-                if(publicRequest.IsSetPermissions())
-                {
-                    context.Writer.WritePropertyName("Permissions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPermissionsListValue in publicRequest.Permissions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCatalogId())
                     {
-                            context.Writer.Write(publicRequestPermissionsListValue);
+                        context.Writer.WritePropertyName("CatalogId");
+                        context.Writer.Write(publicRequest.CatalogId);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetPermissionsWithGrantOption())
-                {
-                    context.Writer.WritePropertyName("PermissionsWithGrantOption");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPermissionsWithGrantOptionListValue in publicRequest.PermissionsWithGrantOption)
+                    if(publicRequest.IsSetPermissions())
                     {
-                            context.Writer.Write(publicRequestPermissionsWithGrantOptionListValue);
+                        context.Writer.WritePropertyName("Permissions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPermissionsListValue in publicRequest.Permissions)
+                        {
+                                context.Writer.Write(publicRequestPermissionsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetPermissionsWithGrantOption())
+                    {
+                        context.Writer.WritePropertyName("PermissionsWithGrantOption");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPermissionsWithGrantOptionListValue in publicRequest.PermissionsWithGrantOption)
+                        {
+                                context.Writer.Write(publicRequestPermissionsWithGrantOptionListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetPrincipal())
+                    {
+                        context.Writer.WritePropertyName("Principal");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DataLakePrincipalMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Principal, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetResource())
+                    {
+                        context.Writer.WritePropertyName("Resource");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ResourceMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Resource, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPrincipal())
-                {
-                    context.Writer.WritePropertyName("Principal");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DataLakePrincipalMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Principal, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetResource())
-                {
-                    context.Writer.WritePropertyName("Resource");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ResourceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Resource, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

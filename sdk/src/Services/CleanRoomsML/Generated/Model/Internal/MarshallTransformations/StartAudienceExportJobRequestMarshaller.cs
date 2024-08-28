@@ -61,44 +61,47 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/audience-export-job";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAudienceGenerationJobArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("audienceGenerationJobArn");
-                    context.Writer.Write(publicRequest.AudienceGenerationJobArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAudienceGenerationJobArn())
+                    {
+                        context.Writer.WritePropertyName("audienceGenerationJobArn");
+                        context.Writer.Write(publicRequest.AudienceGenerationJobArn);
+                    }
+
+                    if(publicRequest.IsSetAudienceSize())
+                    {
+                        context.Writer.WritePropertyName("audienceSize");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AudienceSizeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AudienceSize, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetAudienceSize())
-                {
-                    context.Writer.WritePropertyName("audienceSize");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AudienceSizeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AudienceSize, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

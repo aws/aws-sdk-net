@@ -64,21 +64,24 @@ namespace Amazon.Route53RecoveryReadiness.Model.Internal.MarshallTransformations
                 throw new AmazonRoute53RecoveryReadinessException("Request object does not have required field ReadinessCheckName set");
             request.AddPathResource("{readinessCheckName}", StringUtils.FromString(publicRequest.ReadinessCheckName));
             request.ResourcePath = "/readinesschecks/{readinessCheckName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetResourceSetName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("resourceSetName");
-                    context.Writer.Write(publicRequest.ResourceSetName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetResourceSetName())
+                    {
+                        context.Writer.WritePropertyName("resourceSetName");
+                        context.Writer.Write(publicRequest.ResourceSetName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

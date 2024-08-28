@@ -64,67 +64,70 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 throw new AmazonDataZoneException("Request object does not have required field DomainIdentifier set");
             request.AddPathResource("{domainIdentifier}", StringUtils.FromString(publicRequest.DomainIdentifier));
             request.ResourcePath = "/v2/domains/{domainIdentifier}/glossary-terms";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetGlossaryIdentifier())
+                    {
+                        context.Writer.WritePropertyName("glossaryIdentifier");
+                        context.Writer.Write(publicRequest.GlossaryIdentifier);
+                    }
+
+                    if(publicRequest.IsSetLongDescription())
+                    {
+                        context.Writer.WritePropertyName("longDescription");
+                        context.Writer.Write(publicRequest.LongDescription);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetShortDescription())
+                    {
+                        context.Writer.WritePropertyName("shortDescription");
+                        context.Writer.Write(publicRequest.ShortDescription);
+                    }
+
+                    if(publicRequest.IsSetStatus())
+                    {
+                        context.Writer.WritePropertyName("status");
+                        context.Writer.Write(publicRequest.Status);
+                    }
+
+                    if(publicRequest.IsSetTermRelations())
+                    {
+                        context.Writer.WritePropertyName("termRelations");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TermRelationsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TermRelations, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetGlossaryIdentifier())
-                {
-                    context.Writer.WritePropertyName("glossaryIdentifier");
-                    context.Writer.Write(publicRequest.GlossaryIdentifier);
-                }
-
-                if(publicRequest.IsSetLongDescription())
-                {
-                    context.Writer.WritePropertyName("longDescription");
-                    context.Writer.Write(publicRequest.LongDescription);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetShortDescription())
-                {
-                    context.Writer.WritePropertyName("shortDescription");
-                    context.Writer.Write(publicRequest.ShortDescription);
-                }
-
-                if(publicRequest.IsSetStatus())
-                {
-                    context.Writer.WritePropertyName("status");
-                    context.Writer.Write(publicRequest.Status);
-                }
-
-                if(publicRequest.IsSetTermRelations())
-                {
-                    context.Writer.WritePropertyName("termRelations");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TermRelationsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TermRelations, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

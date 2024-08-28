@@ -63,51 +63,54 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetData())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Data");
-                    context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.Data));
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetData())
+                    {
+                        context.Writer.WritePropertyName("Data");
+                        context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.Data));
+                    }
+
+                    if(publicRequest.IsSetExplicitHashKey())
+                    {
+                        context.Writer.WritePropertyName("ExplicitHashKey");
+                        context.Writer.Write(publicRequest.ExplicitHashKey);
+                    }
+
+                    if(publicRequest.IsSetPartitionKey())
+                    {
+                        context.Writer.WritePropertyName("PartitionKey");
+                        context.Writer.Write(publicRequest.PartitionKey);
+                    }
+
+                    if(publicRequest.IsSetSequenceNumberForOrdering())
+                    {
+                        context.Writer.WritePropertyName("SequenceNumberForOrdering");
+                        context.Writer.Write(publicRequest.SequenceNumberForOrdering);
+                    }
+
+                    if(publicRequest.IsSetStreamARN())
+                    {
+                        context.Writer.WritePropertyName("StreamARN");
+                        context.Writer.Write(publicRequest.StreamARN);
+                    }
+
+                    if(publicRequest.IsSetStreamName())
+                    {
+                        context.Writer.WritePropertyName("StreamName");
+                        context.Writer.Write(publicRequest.StreamName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetExplicitHashKey())
-                {
-                    context.Writer.WritePropertyName("ExplicitHashKey");
-                    context.Writer.Write(publicRequest.ExplicitHashKey);
-                }
-
-                if(publicRequest.IsSetPartitionKey())
-                {
-                    context.Writer.WritePropertyName("PartitionKey");
-                    context.Writer.Write(publicRequest.PartitionKey);
-                }
-
-                if(publicRequest.IsSetSequenceNumberForOrdering())
-                {
-                    context.Writer.WritePropertyName("SequenceNumberForOrdering");
-                    context.Writer.Write(publicRequest.SequenceNumberForOrdering);
-                }
-
-                if(publicRequest.IsSetStreamARN())
-                {
-                    context.Writer.WritePropertyName("StreamARN");
-                    context.Writer.Write(publicRequest.StreamARN);
-                }
-
-                if(publicRequest.IsSetStreamName())
-                {
-                    context.Writer.WritePropertyName("StreamName");
-                    context.Writer.Write(publicRequest.StreamName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

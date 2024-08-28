@@ -64,71 +64,74 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 throw new AmazonAmplifyException("Request object does not have required field AppId set");
             request.AddPathResource("{appId}", StringUtils.FromString(publicRequest.AppId));
             request.ResourcePath = "/apps/{appId}/domains";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAutoSubDomainCreationPatterns())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("autoSubDomainCreationPatterns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAutoSubDomainCreationPatternsListValue in publicRequest.AutoSubDomainCreationPatterns)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAutoSubDomainCreationPatterns())
                     {
-                            context.Writer.Write(publicRequestAutoSubDomainCreationPatternsListValue);
+                        context.Writer.WritePropertyName("autoSubDomainCreationPatterns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAutoSubDomainCreationPatternsListValue in publicRequest.AutoSubDomainCreationPatterns)
+                        {
+                                context.Writer.Write(publicRequestAutoSubDomainCreationPatternsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetAutoSubDomainIAMRole())
-                {
-                    context.Writer.WritePropertyName("autoSubDomainIAMRole");
-                    context.Writer.Write(publicRequest.AutoSubDomainIAMRole);
-                }
-
-                if(publicRequest.IsSetCertificateSettings())
-                {
-                    context.Writer.WritePropertyName("certificateSettings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CertificateSettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CertificateSettings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDomainName())
-                {
-                    context.Writer.WritePropertyName("domainName");
-                    context.Writer.Write(publicRequest.DomainName);
-                }
-
-                if(publicRequest.IsSetEnableAutoSubDomain())
-                {
-                    context.Writer.WritePropertyName("enableAutoSubDomain");
-                    context.Writer.Write(publicRequest.EnableAutoSubDomain.Value);
-                }
-
-                if(publicRequest.IsSetSubDomainSettings())
-                {
-                    context.Writer.WritePropertyName("subDomainSettings");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSubDomainSettingsListValue in publicRequest.SubDomainSettings)
+                    if(publicRequest.IsSetAutoSubDomainIAMRole())
                     {
+                        context.Writer.WritePropertyName("autoSubDomainIAMRole");
+                        context.Writer.Write(publicRequest.AutoSubDomainIAMRole);
+                    }
+
+                    if(publicRequest.IsSetCertificateSettings())
+                    {
+                        context.Writer.WritePropertyName("certificateSettings");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = SubDomainSettingMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSubDomainSettingsListValue, context);
+                        var marshaller = CertificateSettingsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CertificateSettings, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDomainName())
+                    {
+                        context.Writer.WritePropertyName("domainName");
+                        context.Writer.Write(publicRequest.DomainName);
+                    }
+
+                    if(publicRequest.IsSetEnableAutoSubDomain())
+                    {
+                        context.Writer.WritePropertyName("enableAutoSubDomain");
+                        context.Writer.Write(publicRequest.EnableAutoSubDomain.Value);
+                    }
+
+                    if(publicRequest.IsSetSubDomainSettings())
+                    {
+                        context.Writer.WritePropertyName("subDomainSettings");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSubDomainSettingsListValue in publicRequest.SubDomainSettings)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = SubDomainSettingMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSubDomainSettingsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -64,67 +64,70 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 throw new AmazonIoTWirelessException("Request object does not have required field Id set");
             request.AddPathResource("{Id}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = "/wireless-gateways/{Id}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetJoinEuiFilters())
-                {
-                    context.Writer.WritePropertyName("JoinEuiFilters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestJoinEuiFiltersListValue in publicRequest.JoinEuiFilters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetJoinEuiFilters())
+                    {
+                        context.Writer.WritePropertyName("JoinEuiFilters");
                         context.Writer.WriteArrayStart();
-                        foreach(var publicRequestJoinEuiFiltersListValueListValue in publicRequestJoinEuiFiltersListValue)
+                        foreach(var publicRequestJoinEuiFiltersListValue in publicRequest.JoinEuiFilters)
                         {
-                                context.Writer.Write(publicRequestJoinEuiFiltersListValueListValue);
+                            context.Writer.WriteArrayStart();
+                            foreach(var publicRequestJoinEuiFiltersListValueListValue in publicRequestJoinEuiFiltersListValue)
+                            {
+                                    context.Writer.Write(publicRequestJoinEuiFiltersListValueListValue);
+                            }
+                            context.Writer.WriteArrayEnd();
                         }
                         context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetMaxEirp())
-                {
-                    context.Writer.WritePropertyName("MaxEirp");
-                    if(StringUtils.IsSpecialFloatValue(publicRequest.MaxEirp.Value))
+                    if(publicRequest.IsSetMaxEirp())
                     {
-                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.MaxEirp.Value));
+                        context.Writer.WritePropertyName("MaxEirp");
+                        if(StringUtils.IsSpecialFloatValue(publicRequest.MaxEirp.Value))
+                        {
+                            context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.MaxEirp.Value));
+                        }
+                        else
+                        {
+                            context.Writer.Write(publicRequest.MaxEirp.Value);
+                        }
                     }
-                    else
+
+                    if(publicRequest.IsSetName())
                     {
-                        context.Writer.Write(publicRequest.MaxEirp.Value);
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
                     }
-                }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetNetIdFilters())
-                {
-                    context.Writer.WritePropertyName("NetIdFilters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestNetIdFiltersListValue in publicRequest.NetIdFilters)
+                    if(publicRequest.IsSetNetIdFilters())
                     {
-                            context.Writer.Write(publicRequestNetIdFiltersListValue);
+                        context.Writer.WritePropertyName("NetIdFilters");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestNetIdFiltersListValue in publicRequest.NetIdFilters)
+                        {
+                                context.Writer.Write(publicRequestNetIdFiltersListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

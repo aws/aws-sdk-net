@@ -61,64 +61,67 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/amazonclouddirectory/2017-01-11/typedlink/attach";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAttributes())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Attributes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAttributesListValue in publicRequest.Attributes)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAttributes())
                     {
+                        context.Writer.WritePropertyName("Attributes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAttributesListValue in publicRequest.Attributes)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = AttributeNameAndValueMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAttributesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSourceObjectReference())
+                    {
+                        context.Writer.WritePropertyName("SourceObjectReference");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = AttributeNameAndValueMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAttributesListValue, context);
+                        var marshaller = ObjectReferenceMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SourceObjectReference, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTargetObjectReference())
+                    {
+                        context.Writer.WritePropertyName("TargetObjectReference");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ObjectReferenceMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TargetObjectReference, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTypedLinkFacet())
+                    {
+                        context.Writer.WritePropertyName("TypedLinkFacet");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TypedLinkSchemaAndFacetNameMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TypedLinkFacet, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSourceObjectReference())
-                {
-                    context.Writer.WritePropertyName("SourceObjectReference");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ObjectReferenceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SourceObjectReference, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTargetObjectReference())
-                {
-                    context.Writer.WritePropertyName("TargetObjectReference");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ObjectReferenceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TargetObjectReference, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTypedLinkFacet())
-                {
-                    context.Writer.WritePropertyName("TypedLinkFacet");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TypedLinkSchemaAndFacetNameMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TypedLinkFacet, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

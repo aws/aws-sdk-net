@@ -61,37 +61,40 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/batch-update-recommendation-status";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAppArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("appArn");
-                    context.Writer.Write(publicRequest.AppArn);
-                }
-
-                if(publicRequest.IsSetRequestEntries())
-                {
-                    context.Writer.WritePropertyName("requestEntries");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRequestEntriesListValue in publicRequest.RequestEntries)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAppArn())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = UpdateRecommendationStatusRequestEntryMarshaller.Instance;
-                        marshaller.Marshall(publicRequestRequestEntriesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("appArn");
+                        context.Writer.Write(publicRequest.AppArn);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetRequestEntries())
+                    {
+                        context.Writer.WritePropertyName("requestEntries");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRequestEntriesListValue in publicRequest.RequestEntries)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = UpdateRecommendationStatusRequestEntryMarshaller.Instance;
+                            marshaller.Marshall(publicRequestRequestEntriesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

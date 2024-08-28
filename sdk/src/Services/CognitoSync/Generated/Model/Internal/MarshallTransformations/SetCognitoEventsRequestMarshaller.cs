@@ -64,29 +64,32 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
                 throw new AmazonCognitoSyncException("Request object does not have required field IdentityPoolId set");
             request.AddPathResource("{IdentityPoolId}", StringUtils.FromString(publicRequest.IdentityPoolId));
             request.ResourcePath = "/identitypools/{IdentityPoolId}/events";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEvents())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Events");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestEventsKvp in publicRequest.Events)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEvents())
                     {
-                        context.Writer.WritePropertyName(publicRequestEventsKvp.Key);
-                        var publicRequestEventsValue = publicRequestEventsKvp.Value;
+                        context.Writer.WritePropertyName("Events");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestEventsKvp in publicRequest.Events)
+                        {
+                            context.Writer.WritePropertyName(publicRequestEventsKvp.Key);
+                            var publicRequestEventsValue = publicRequestEventsKvp.Value;
 
-                            context.Writer.Write(publicRequestEventsValue);
+                                context.Writer.Write(publicRequestEventsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

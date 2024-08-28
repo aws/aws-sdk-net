@@ -63,56 +63,59 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFieldPaths())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("FieldPaths");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFieldPathsListValue in publicRequest.FieldPaths)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFieldPaths())
                     {
-                            context.Writer.Write(publicRequestFieldPathsListValue);
+                        context.Writer.WritePropertyName("FieldPaths");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFieldPathsListValue in publicRequest.FieldPaths)
+                        {
+                                context.Writer.Write(publicRequestFieldPathsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetRegistrationId())
+                    {
+                        context.Writer.WritePropertyName("RegistrationId");
+                        context.Writer.Write(publicRequest.RegistrationId);
+                    }
+
+                    if(publicRequest.IsSetSectionPath())
+                    {
+                        context.Writer.WritePropertyName("SectionPath");
+                        context.Writer.Write(publicRequest.SectionPath);
+                    }
+
+                    if(publicRequest.IsSetVersionNumber())
+                    {
+                        context.Writer.WritePropertyName("VersionNumber");
+                        context.Writer.Write(publicRequest.VersionNumber.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetRegistrationId())
-                {
-                    context.Writer.WritePropertyName("RegistrationId");
-                    context.Writer.Write(publicRequest.RegistrationId);
-                }
-
-                if(publicRequest.IsSetSectionPath())
-                {
-                    context.Writer.WritePropertyName("SectionPath");
-                    context.Writer.Write(publicRequest.SectionPath);
-                }
-
-                if(publicRequest.IsSetVersionNumber())
-                {
-                    context.Writer.WritePropertyName("VersionNumber");
-                    context.Writer.Write(publicRequest.VersionNumber.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -83,23 +83,27 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>ALL_REGIONS</c> - Indicates to aggregate findings from all of the Regions where
-        /// Security Hub is enabled. When you choose this option, Security Hub also automatically
-        /// aggregates findings from new Regions as Security Hub supports them and you opt into
-        /// them. 
+        ///  <c>ALL_REGIONS</c> - Aggregates findings from all of the Regions where Security Hub
+        /// is enabled. When you choose this option, Security Hub also automatically aggregates
+        /// findings from new Regions as Security Hub supports them and you opt into them. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ALL_REGIONS_EXCEPT_SPECIFIED</c> - Indicates to aggregate findings from all of
-        /// the Regions where Security Hub is enabled, except for the Regions listed in the <c>Regions</c>
+        ///  <c>ALL_REGIONS_EXCEPT_SPECIFIED</c> - Aggregates findings from all of the Regions
+        /// where Security Hub is enabled, except for the Regions listed in the <c>Regions</c>
         /// parameter. When you choose this option, Security Hub also automatically aggregates
         /// findings from new Regions as Security Hub supports them and you opt into them. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>SPECIFIED_REGIONS</c> - Indicates to aggregate findings only from the Regions
-        /// listed in the <c>Regions</c> parameter. Security Hub does not automatically aggregate
-        /// findings from new Regions. 
+        ///  <c>SPECIFIED_REGIONS</c> - Aggregates findings only from the Regions listed in the
+        /// <c>Regions</c> parameter. Security Hub does not automatically aggregate findings from
+        /// new Regions. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NO_REGIONS</c> - Aggregates no data because no Regions are selected as linked
+        /// Regions. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -127,6 +131,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// If <c>RegionLinkingMode</c> is <c>SPECIFIED_REGIONS</c>, then this is a space-separated
         /// list of Regions that do aggregate findings to the aggregation Region.
+        /// </para>
+        ///  
+        /// <para>
+        /// An <c>InvalidInputException</c> error results if you populate this field while <c>RegionLinkingMode</c>
+        /// is <c>NO_REGIONS</c>.
         /// </para>
         /// </summary>
         public List<string> Regions

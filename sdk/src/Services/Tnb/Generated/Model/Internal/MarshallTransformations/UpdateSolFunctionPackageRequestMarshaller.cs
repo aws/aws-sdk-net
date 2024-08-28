@@ -64,21 +64,24 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
                 throw new AmazonTnbException("Request object does not have required field VnfPkgId set");
             request.AddPathResource("{vnfPkgId}", StringUtils.FromString(publicRequest.VnfPkgId));
             request.ResourcePath = "/sol/vnfpkgm/v1/vnf_packages/{vnfPkgId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetOperationalState())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("operationalState");
-                    context.Writer.Write(publicRequest.OperationalState);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetOperationalState())
+                    {
+                        context.Writer.WritePropertyName("operationalState");
+                        context.Writer.Write(publicRequest.OperationalState);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -64,63 +64,66 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
                 throw new AmazonConnectWisdomServiceException("Request object does not have required field KnowledgeBaseId set");
             request.AddPathResource("{knowledgeBaseId}", StringUtils.FromString(publicRequest.KnowledgeBaseId));
             request.ResourcePath = "/knowledgeBases/{knowledgeBaseId}/importJobs";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetExternalSourceConfiguration())
-                {
-                    context.Writer.WritePropertyName("externalSourceConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ExternalSourceConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ExternalSourceConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetImportJobType())
-                {
-                    context.Writer.WritePropertyName("importJobType");
-                    context.Writer.Write(publicRequest.ImportJobType);
-                }
-
-                if(publicRequest.IsSetMetadata())
-                {
-                    context.Writer.WritePropertyName("metadata");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestMetadataKvp in publicRequest.Metadata)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
-                        context.Writer.WritePropertyName(publicRequestMetadataKvp.Key);
-                        var publicRequestMetadataValue = publicRequestMetadataKvp.Value;
-
-                            context.Writer.Write(publicRequestMetadataValue);
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetExternalSourceConfiguration())
+                    {
+                        context.Writer.WritePropertyName("externalSourceConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ExternalSourceConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ExternalSourceConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetImportJobType())
+                    {
+                        context.Writer.WritePropertyName("importJobType");
+                        context.Writer.Write(publicRequest.ImportJobType);
+                    }
+
+                    if(publicRequest.IsSetMetadata())
+                    {
+                        context.Writer.WritePropertyName("metadata");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestMetadataKvp in publicRequest.Metadata)
+                        {
+                            context.Writer.WritePropertyName(publicRequestMetadataKvp.Key);
+                            var publicRequestMetadataValue = publicRequestMetadataKvp.Value;
+
+                                context.Writer.Write(publicRequestMetadataValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetUploadId())
+                    {
+                        context.Writer.WritePropertyName("uploadId");
+                        context.Writer.Write(publicRequest.UploadId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetUploadId())
-                {
-                    context.Writer.WritePropertyName("uploadId");
-                    context.Writer.Write(publicRequest.UploadId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 
