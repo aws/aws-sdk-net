@@ -36,6 +36,7 @@ namespace Amazon.Runtime
         /// By default it is set to false.
         /// </summary>
         bool IgnoreConfiguredEndpointUrls { get; }
+
         /// <summary>
         /// The serviceId for the service, which is specified in the metadata in the ServiceModel.
         /// The transformed value of the service ID (replace any spaces in the service ID 
@@ -46,12 +47,14 @@ namespace Amazon.Runtime
         ///     endpoint_url = http://localhost:8000
         /// </summary>
         string ServiceId { get; }
+
         /// <summary>
         /// Specifies the profile to be used. When this is set on the ClientConfig and that config is passed to 
         /// the service client constructor the sdk will try to find the credentials associated with the Profile.Name property
         /// If set, this will override AWS_PROFILE and AWSConfigs.ProfileName.
         /// </summary>
         Profile Profile { get; }
+
         /// <summary>
         /// For Services using Bearer authentication, this controls how <see cref="BearerTokenSigner"/>
         /// resolves a <see cref="AWSToken"/>.
@@ -101,7 +104,6 @@ namespace Amazon.Runtime
         /// </summary>
         bool UseHttp { get; }
 
-
         /// <summary>
         /// Gets Service Version
         /// </summary>
@@ -135,12 +137,10 @@ namespace Amazon.Runtime
         /// </summary>
         string AuthenticationServiceName { get; }
 
-
         /// <summary>
         /// Gets the UserAgent property.
         /// </summary>
         string UserAgent { get; }
-
 
         /// <summary>
         /// Gets the DisableLogging. If true logging for this client will be disabled.
@@ -168,9 +168,6 @@ namespace Amazon.Runtime
         /// is read in its entirety and logged.
         /// </summary>
         bool LogResponse { get; }
-
-
-
 
         /// <summary>
         /// This flag controls if .NET HTTP infrastructure should follow redirection
@@ -200,7 +197,6 @@ namespace Amazon.Runtime
         /// </summary>
         int MaxErrorRetry { get; }
 
-
         /// <summary>
         /// Determines if MaxErrorRetry has been manually set.
         /// </summary>
@@ -217,7 +213,6 @@ namespace Amazon.Runtime
         /// Flag on whether to resign requests on retry or not.
         /// </summary>
         bool ResignRetries { get; }
-
 
         /// <summary>
         /// Credentials to use with a proxy.
@@ -294,18 +289,13 @@ namespace Amazon.Runtime
         /// <returns>The resolved endpoint for the given request.</returns>
         Endpoint DetermineServiceOperationEndpoint(ServiceOperationEndpointParameters parameters);
 
-
         /// <summary>
         /// Performs validation on this config object.
         /// Throws exception if any of the required values are missing/invalid.
         /// </summary>
         /// <exception cref="Amazon.Runtime.AmazonClientException">The timeout specified is null.</exception>
         void Validate();
-
-
-
-
-
+        
         /// <summary>
         /// Gets the DisableHostPrefixInjection flag. If true, host prefix injection will be disabled for this client, the default value of this flag is false. 
         /// Host prefix injection prefixes the service endpoint with request members from APIs which use this feature. 
@@ -341,7 +331,6 @@ namespace Amazon.Runtime
         /// if a send token is not available.
         /// </summary>
         bool FastFailRequests { get;  }
-
 
         /// <summary>
         /// When set to true, the service client will use the  x-amz-user-agent

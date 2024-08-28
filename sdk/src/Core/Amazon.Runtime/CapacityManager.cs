@@ -111,8 +111,6 @@ namespace Amazon.Runtime.Internal
             }
         }
 
-
-
         /// <summary>
         /// This method calls a method to release capacity back 
         /// based on whether it was a successful response or a successful retry response. This is invoked by a retry request response.

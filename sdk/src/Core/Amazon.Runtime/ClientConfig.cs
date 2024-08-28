@@ -386,8 +386,6 @@ namespace Amazon.Runtime
             set { this.useHttp = value; }
         }
 
-
-
         internal static string GetUrl(IClientConfig config, RegionEndpoint regionEndpoint)
         {
 #pragma warning disable CS0612,CS0618
@@ -422,6 +420,7 @@ namespace Amazon.Runtime
             get { return this.authServiceName; }
             set { this.authServiceName = value; }
         }
+        
         /// <summary>
         /// The serviceId for the service, which is specified in the metadata in the ServiceModel.
         /// The transformed value of the service ID (replace any spaces in the service ID 
@@ -489,8 +488,6 @@ namespace Amazon.Runtime
             get { return this.logResponse; }
             set { this.logResponse = value; }
         }
-
-
 
         /// <summary>
         /// Gets and Sets the BufferSize property.
@@ -779,6 +776,7 @@ namespace Amazon.Runtime
             }
             set { useFIPSEndpoint = value; }
         }
+
         /// <summary>
         /// If set to true the SDK will ignore the configured endpointUrls in the config file or in the environment variables.
         /// By default it is set to false.
@@ -794,6 +792,7 @@ namespace Amazon.Runtime
             }
             set { ignoreConfiguredEndpointUrls = value; }
         }
+
         /// <summary>
         /// Controls whether request payloads are automatically compressed for supported operations.
         /// This setting only applies to operations that support compression.
@@ -927,10 +926,6 @@ namespace Amazon.Runtime
             }
 #endif
         }
-
-
-
-
 
         /// <summary>
         /// Gets and sets the DisableHostPrefixInjection flag. If true, host prefix injection will be disabled for this client, the default value of this flag is false. 
