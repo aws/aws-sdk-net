@@ -30,31 +30,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppConfig.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteApplication operation.
-    /// Deletes an application.
+    /// Container for the parameters to the GetAccountSettings operation.
+    /// Returns information about the status of the <c>DeletionProtection</c> parameter.
     /// </summary>
-    public partial class DeleteApplicationRequest : AmazonAppConfigRequest
+    public partial class GetAccountSettingsRequest : AmazonAppConfigRequest
     {
-        private string _applicationId;
-
-        /// <summary>
-        /// Gets and sets the property ApplicationId. 
-        /// <para>
-        /// The ID of the application to delete.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string ApplicationId
-        {
-            get { return this._applicationId; }
-            set { this._applicationId = value; }
-        }
-
-        // Check to see if ApplicationId property is set
-        internal bool IsSetApplicationId()
-        {
-            return this._applicationId != null;
-        }
 
     }
 }

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DeleteEnvironment Request Marshaller
+    /// GetAccountSettings Request Marshaller
     /// </summary>       
-    public class DeleteEnvironmentRequestMarshaller : IMarshaller<IRequest, DeleteEnvironmentRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetAccountSettingsRequestMarshaller : IMarshaller<IRequest, GetAccountSettingsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DeleteEnvironmentRequest)input);
+            return this.Marshall((GetAccountSettingsRequest)input);
         }
 
         /// <summary>
@@ -53,30 +53,19 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DeleteEnvironmentRequest publicRequest)
+        public IRequest Marshall(GetAccountSettingsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppConfig");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-10-09";
-            request.HttpMethod = "DELETE";
+            request.HttpMethod = "GET";
 
-            if (!publicRequest.IsSetApplicationId())
-                throw new AmazonAppConfigException("Request object does not have required field ApplicationId set");
-            request.AddPathResource("{ApplicationId}", StringUtils.FromString(publicRequest.ApplicationId));
-            if (!publicRequest.IsSetEnvironmentId())
-                throw new AmazonAppConfigException("Request object does not have required field EnvironmentId set");
-            request.AddPathResource("{EnvironmentId}", StringUtils.FromString(publicRequest.EnvironmentId));
-            request.ResourcePath = "/applications/{ApplicationId}/environments/{EnvironmentId}";
-        
-            if (publicRequest.IsSetDeletionProtectionCheck()) 
-            {
-                request.Headers["x-amzn-deletion-protection-check"] = publicRequest.DeletionProtectionCheck;
-            }
+            request.ResourcePath = "/settings";
 
             return request;
         }
-        private static DeleteEnvironmentRequestMarshaller _instance = new DeleteEnvironmentRequestMarshaller();        
+        private static GetAccountSettingsRequestMarshaller _instance = new GetAccountSettingsRequestMarshaller();        
 
-        internal static DeleteEnvironmentRequestMarshaller GetInstance()
+        internal static GetAccountSettingsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -84,7 +73,7 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteEnvironmentRequestMarshaller Instance
+        public static GetAccountSettingsRequestMarshaller Instance
         {
             get
             {

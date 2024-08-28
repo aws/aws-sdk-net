@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DeleteEnvironment Request Marshaller
+    /// UpdateAccountSettings Request Marshaller
     /// </summary>       
-    public class DeleteEnvironmentRequestMarshaller : IMarshaller<IRequest, DeleteEnvironmentRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateAccountSettingsRequestMarshaller : IMarshaller<IRequest, UpdateAccountSettingsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DeleteEnvironmentRequest)input);
+            return this.Marshall((UpdateAccountSettingsRequest)input);
         }
 
         /// <summary>
@@ -53,30 +53,42 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DeleteEnvironmentRequest publicRequest)
+        public IRequest Marshall(UpdateAccountSettingsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppConfig");
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-10-09";
-            request.HttpMethod = "DELETE";
+            request.HttpMethod = "PATCH";
 
-            if (!publicRequest.IsSetApplicationId())
-                throw new AmazonAppConfigException("Request object does not have required field ApplicationId set");
-            request.AddPathResource("{ApplicationId}", StringUtils.FromString(publicRequest.ApplicationId));
-            if (!publicRequest.IsSetEnvironmentId())
-                throw new AmazonAppConfigException("Request object does not have required field EnvironmentId set");
-            request.AddPathResource("{EnvironmentId}", StringUtils.FromString(publicRequest.EnvironmentId));
-            request.ResourcePath = "/applications/{ApplicationId}/environments/{EnvironmentId}";
-        
-            if (publicRequest.IsSetDeletionProtectionCheck()) 
+            request.ResourcePath = "/settings";
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
-                request.Headers["x-amzn-deletion-protection-check"] = publicRequest.DeletionProtectionCheck;
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDeletionProtection())
+                {
+                    context.Writer.WritePropertyName("DeletionProtection");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DeletionProtectionSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DeletionProtection, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
+
 
             return request;
         }
-        private static DeleteEnvironmentRequestMarshaller _instance = new DeleteEnvironmentRequestMarshaller();        
+        private static UpdateAccountSettingsRequestMarshaller _instance = new UpdateAccountSettingsRequestMarshaller();        
 
-        internal static DeleteEnvironmentRequestMarshaller GetInstance()
+        internal static UpdateAccountSettingsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -84,7 +96,7 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteEnvironmentRequestMarshaller Instance
+        public static UpdateAccountSettingsRequestMarshaller Instance
         {
             get
             {
