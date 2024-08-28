@@ -1,9 +1,0 @@
-{
-  "core": {
-    "changeLogMessages": [
-      "Add new extension packages for CloudFront Signers and EC2 Decrypt Password to take a dependency on BouncyCastle.Cryptography"
-    ],
-    "updateMinimum": true
-  },
-  "overrideVersion": "4.0.1.0"
-}
