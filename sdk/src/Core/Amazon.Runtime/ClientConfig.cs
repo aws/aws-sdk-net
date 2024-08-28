@@ -928,6 +928,18 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
+        /// Wrapper around <seealso cref="AWSConfigs.ManualClockCorrection"/>
+        /// </summary>
+        [Obsolete("Please use CorrectClockSkew.GetClockCorrectionForEndpoint(string endpoint) instead.", false)]
+        public TimeSpan ClockOffset
+        {
+            get
+            {
+                return AWSConfigs.ManualClockCorrection.GetValueOrDefault();
+            }
+        }
+
+        /// <summary>
         /// Gets and sets the DisableHostPrefixInjection flag. If true, host prefix injection will be disabled for this client, the default value of this flag is false. 
         /// Host prefix injection prefixes the service endpoint with request members from APIs which use this feature. 
         /// Example: for a hostPrefix of "foo-name." and a endpoint of "service.region.amazonaws.com" the default behavior is to
