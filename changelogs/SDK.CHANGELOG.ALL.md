@@ -1,3 +1,22 @@
+### 3.7.875.0 (2024-08-28 18:25 UTC)
+* AppConfig (3.7.401.0)
+	* This release adds support for deletion protection, which is a safety guardrail to prevent the unintentional deletion of a recently used AWS AppConfig Configuration Profile or Environment. This also includes a change to increase the maximum length of the Name parameter in UpdateConfigurationProfile.
+* DataZone (3.7.403.0)
+	* Update regex to include dot character to be consistent with IAM role creation in the authorized principal field for create and update subscription target.
+* DeviceFarm (3.7.401.0)
+	* This release removed support for Calabash, UI Automation, Built-in Explorer, remote access record, remote access replay, and web performance profile framework in ScheduleRun API.
+* EC2 (3.7.405.0)
+	* Amazon VPC IP Address Manager (IPAM) now allows customers to provision IPv4 CIDR blocks and allocate Elastic IP Addresses directly from IPAM pools with public IPv4 space
+* InternetMonitor (3.7.401.0)
+	* Adds new querying types to show overall traffic suggestion information for monitors
+* PCS (3.7.400.0)
+	* Introducing AWS Parallel Computing Service (AWS PCS), a new service makes it easy to setup and manage high performance computing (HPC) clusters, and build scientific and engineering models at virtually any scale on AWS.
+* WorkSpaces (3.7.402.1)
+	* Documentation-only update that clarifies the StartWorkspaces and StopWorkspaces actions, and a few other minor edits.
+* Core 3.7.400.12
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.874.0 (2024-08-27 18:19 UTC)
 * Bedrock (3.7.404.0)
 	* Amazon Bedrock SDK updates for Inference Profile.
