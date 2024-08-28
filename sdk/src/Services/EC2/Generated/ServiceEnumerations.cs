@@ -11943,6 +11943,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly IpamPoolAllocationResourceType Ec2PublicIpv4Pool = new IpamPoolAllocationResourceType("ec2-public-ipv4-pool");
         /// <summary>
+        /// Constant Eip for IpamPoolAllocationResourceType
+        /// </summary>
+        public static readonly IpamPoolAllocationResourceType Eip = new IpamPoolAllocationResourceType("eip");
+        /// <summary>
         /// Constant IpamPool for IpamPoolAllocationResourceType
         /// </summary>
         public static readonly IpamPoolAllocationResourceType IpamPool = new IpamPoolAllocationResourceType("ipam-pool");
@@ -12480,6 +12484,10 @@ namespace Amazon.EC2
     public class IpamPublicAddressType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AmazonOwnedContig for IpamPublicAddressType
+        /// </summary>
+        public static readonly IpamPublicAddressType AmazonOwnedContig = new IpamPublicAddressType("amazon-owned-contig");
         /// <summary>
         /// Constant AmazonOwnedEip for IpamPublicAddressType
         /// </summary>
