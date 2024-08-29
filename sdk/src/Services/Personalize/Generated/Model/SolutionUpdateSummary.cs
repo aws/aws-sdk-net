@@ -30,22 +30,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Personalize.Model
 {
     /// <summary>
-    /// Provides a summary of the properties of a recommender update. For a complete listing,
-    /// call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeRecommender.html">DescribeRecommender</a>
+    /// Provides a summary of the properties of a solution update. For a complete listing,
+    /// call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolution.html">DescribeSolution</a>
     /// API.
     /// </summary>
-    public partial class RecommenderUpdateSummary
+    public partial class SolutionUpdateSummary
     {
         private DateTime? _creationDateTime;
         private string _failureReason;
         private DateTime? _lastUpdatedDateTime;
-        private RecommenderConfig _recommenderConfig;
+        private bool? _performAutoTraining;
+        private SolutionUpdateConfig _solutionUpdateConfig;
         private string _status;
 
         /// <summary>
         /// Gets and sets the property CreationDateTime. 
         /// <para>
-        /// The date and time (in Unix format) that the recommender update was created.
+        /// The date and time (in Unix format) that the solution update was created.
         /// </para>
         /// </summary>
         public DateTime CreationDateTime
@@ -63,7 +64,7 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// If a recommender update fails, the reason behind the failure.
+        /// If a solution update fails, the reason behind the failure.
         /// </para>
         /// </summary>
         public string FailureReason
@@ -81,7 +82,7 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedDateTime. 
         /// <para>
-        /// The date and time (in Unix time) that the recommender update was last updated.
+        /// The date and time (in Unix time) that the solution update was last updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedDateTime
@@ -97,27 +98,45 @@ namespace Amazon.Personalize.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RecommenderConfig. 
+        /// Gets and sets the property PerformAutoTraining. 
         /// <para>
-        /// The configuration details of the recommender update.
+        /// Whether the solution automatically creates solution versions.
         /// </para>
         /// </summary>
-        public RecommenderConfig RecommenderConfig
+        public bool PerformAutoTraining
         {
-            get { return this._recommenderConfig; }
-            set { this._recommenderConfig = value; }
+            get { return this._performAutoTraining.GetValueOrDefault(); }
+            set { this._performAutoTraining = value; }
         }
 
-        // Check to see if RecommenderConfig property is set
-        internal bool IsSetRecommenderConfig()
+        // Check to see if PerformAutoTraining property is set
+        internal bool IsSetPerformAutoTraining()
         {
-            return this._recommenderConfig != null;
+            return this._performAutoTraining.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SolutionUpdateConfig. 
+        /// <para>
+        /// The configuration details of the solution.
+        /// </para>
+        /// </summary>
+        public SolutionUpdateConfig SolutionUpdateConfig
+        {
+            get { return this._solutionUpdateConfig; }
+            set { this._solutionUpdateConfig = value; }
+        }
+
+        // Check to see if SolutionUpdateConfig property is set
+        internal bool IsSetSolutionUpdateConfig()
+        {
+            return this._solutionUpdateConfig != null;
         }
 
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the recommender update. A recommender update can be in one of the following
+        /// The status of the solution update. A solution update can be in one of the following
         /// states:
         /// </para>
         ///  

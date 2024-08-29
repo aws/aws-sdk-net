@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Solution Object
+    /// Response Unmarshaller for SolutionUpdateSummary Object
     /// </summary>  
-    public class SolutionUnmarshaller : IUnmarshaller<Solution, XmlUnmarshallerContext>, IUnmarshaller<Solution, JsonUnmarshallerContext>
+    public class SolutionUpdateSummaryUnmarshaller : IUnmarshaller<SolutionUpdateSummary, XmlUnmarshallerContext>, IUnmarshaller<SolutionUpdateSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Solution IUnmarshaller<Solution, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SolutionUpdateSummary IUnmarshaller<SolutionUpdateSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public Solution Unmarshall(JsonUnmarshallerContext context)
+        public SolutionUpdateSummary Unmarshall(JsonUnmarshallerContext context)
         {
-            Solution unmarshalledObject = new Solution();
+            SolutionUpdateSummary unmarshalledObject = new SolutionUpdateSummary();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,16 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("autoMLResult", targetDepth))
-                {
-                    var unmarshaller = AutoMLResultUnmarshaller.Instance;
-                    unmarshalledObject.AutoMLResult = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("creationDateTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("datasetGroupArn", targetDepth))
+                if (context.TestExpression("failureReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DatasetGroupArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("eventType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EventType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lastUpdatedDateTime", targetDepth))
@@ -96,58 +84,16 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastUpdatedDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("latestSolutionUpdate", targetDepth))
-                {
-                    var unmarshaller = SolutionUpdateSummaryUnmarshaller.Instance;
-                    unmarshalledObject.LatestSolutionUpdate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("latestSolutionVersion", targetDepth))
-                {
-                    var unmarshaller = SolutionVersionSummaryUnmarshaller.Instance;
-                    unmarshalledObject.LatestSolutionVersion = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("performAutoML", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.PerformAutoML = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("performAutoTraining", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.PerformAutoTraining = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("performHPO", targetDepth))
+                if (context.TestExpression("solutionUpdateConfig", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.PerformHPO = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("recipeArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RecipeArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("solutionArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SolutionArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("solutionConfig", targetDepth))
-                {
-                    var unmarshaller = SolutionConfigUnmarshaller.Instance;
-                    unmarshalledObject.SolutionConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = SolutionUpdateConfigUnmarshaller.Instance;
+                    unmarshalledObject.SolutionUpdateConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))
@@ -161,12 +107,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         }
 
 
-        private static SolutionUnmarshaller _instance = new SolutionUnmarshaller();        
+        private static SolutionUpdateSummaryUnmarshaller _instance = new SolutionUpdateSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SolutionUnmarshaller Instance
+        public static SolutionUpdateSummaryUnmarshaller Instance
         {
             get
             {
