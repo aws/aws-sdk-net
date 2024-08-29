@@ -7095,12 +7095,12 @@ namespace Amazon.WAFV2
 
 
         /// <summary>
-        /// Attaches an IAM policy to the specified resource. Use this to share a rule group across
-        /// accounts.
+        /// Use this to share a rule group with other accounts.
         /// 
         ///  
         /// <para>
-        /// You must be the owner of the rule group to perform this operation.
+        /// This action attaches an IAM policy to the specified resource. You must be the owner
+        /// of the rule group to perform this operation.
         /// </para>
         ///  
         /// <para>
@@ -7119,7 +7119,13 @@ namespace Amazon.WAFV2
         /// <para>
         /// The user making the request must be the owner of the rule group.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// If a rule group has been shared with your account, you can access it through the call
+        /// <c>GetRuleGroup</c>, and you can reference it in <c>CreateWebACL</c> and <c>UpdateWebACL</c>.
+        /// Rule groups that are shared with you don't appear in your WAF console rule groups
+        /// listing. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutPermissionPolicy service method.</param>
         /// 
@@ -7206,12 +7212,12 @@ namespace Amazon.WAFV2
 
 
         /// <summary>
-        /// Attaches an IAM policy to the specified resource. Use this to share a rule group across
-        /// accounts.
+        /// Use this to share a rule group with other accounts.
         /// 
         ///  
         /// <para>
-        /// You must be the owner of the rule group to perform this operation.
+        /// This action attaches an IAM policy to the specified resource. You must be the owner
+        /// of the rule group to perform this operation.
         /// </para>
         ///  
         /// <para>
@@ -7230,7 +7236,13 @@ namespace Amazon.WAFV2
         /// <para>
         /// The user making the request must be the owner of the rule group.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// If a rule group has been shared with your account, you can access it through the call
+        /// <c>GetRuleGroup</c>, and you can reference it in <c>CreateWebACL</c> and <c>UpdateWebACL</c>.
+        /// Rule groups that are shared with you don't appear in your WAF console rule groups
+        /// listing. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutPermissionPolicy service method.</param>
         /// <param name="cancellationToken">
