@@ -35,7 +35,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {   
             GetBucketNotificationResponse response = new GetBucketNotificationResponse();
-            context.AllowEmptyElementLookup.Add("EventBridgeConfiguration");
             response.TopicConfigurations = new List<TopicConfiguration>();
 
             while (context.Read())

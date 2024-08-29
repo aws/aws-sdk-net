@@ -38,13 +38,6 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
                 return response;
 <#
         }
-
-		foreach (var marshallName in this.Structure.FindMarshallNamesWithoutMembers())
-		{
-#>
-			context.AllowEmptyElementLookup.Add("<#=marshallName#>");
-<#
-		}
 #>
             UnmarshallResult(context,response);
 <#    

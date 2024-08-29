@@ -391,37 +391,6 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
-        /// Finds all structure MarshallNames under the current shape that contain no members
-        /// </summary>
-        public IList<string> FindMarshallNamesWithoutMembers()
-        {
-            List<string> emptyMembers = new List<string>();
-            HashSet<string> processedMembers = new HashSet<string>();
-            Queue<Shape> shapeQueue = new Queue<Shape>();
-            shapeQueue.Enqueue(this);
-            processedMembers.Add(this.MarshallName);
-
-            while (shapeQueue.Count > 0)
-            {
-                var currentShape = shapeQueue.Dequeue();
-                foreach (var child in currentShape.Members)
-                {
-                    if (child.IsStructure && !processedMembers.Contains(child.MarshallName))
-                    {
-                        processedMembers.Add(child.MarshallName);
-                        if (child.Shape.Members.Count != 0)
-                            shapeQueue.Enqueue(child.Shape);
-                        else
-                            emptyMembers.Add(child.MarshallName);
-                    }
-                }
-            }
-            return emptyMembers;
-        }
-
-
-
-        /// <summary>
         /// Find the member that is marked as payload
         /// </summary>
         public Member PayloadMember
