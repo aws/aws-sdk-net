@@ -1084,6 +1084,10 @@ namespace Amazon.StepFunctions
         /// Constant ERROR for ValidateStateMachineDefinitionSeverity
         /// </summary>
         public static readonly ValidateStateMachineDefinitionSeverity ERROR = new ValidateStateMachineDefinitionSeverity("ERROR");
+        /// <summary>
+        /// Constant WARNING for ValidateStateMachineDefinitionSeverity
+        /// </summary>
+        public static readonly ValidateStateMachineDefinitionSeverity WARNING = new ValidateStateMachineDefinitionSeverity("WARNING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
