@@ -1,3 +1,17 @@
+### 3.7.876.0 (2024-08-29 19:23 UTC)
+* BedrockAgentRuntime (3.7.403.0)
+	* Lifting the maximum length on Bedrock KnowledgeBase RetrievalFilter array
+* BedrockRuntime (3.7.403.0)
+	* Add support for imported-model in invokeModel and InvokeModelWithResponseStream.
+* Personalize (3.7.401.0)
+	* This releases ability to update automatic training scheduler for customer solutions
+* QuickSight (3.7.403.0)
+	* Increased Character Limit for Dataset Calculation Field expressions
+* StepFunctions (3.7.402.0)
+	* This release adds support for static analysis to ValidateStateMachineDefinition API, which can now return optional WARNING diagnostics for semantic errors on the definition of an Amazon States Language (ASL) state machine.
+* WAFV2 (3.7.401.0)
+	* The minimum request rate for a rate-based rule is now 10. Before this, it was 100.
+
 ### 3.7.875.0 (2024-08-28 18:25 UTC)
 * AppConfig (3.7.401.0)
 	* This release adds support for deletion protection, which is a safety guardrail to prevent the unintentional deletion of a recently used AWS AppConfig Configuration Profile or Environment. This also includes a change to increase the maximum length of the Name parameter in UpdateConfigurationProfile.
