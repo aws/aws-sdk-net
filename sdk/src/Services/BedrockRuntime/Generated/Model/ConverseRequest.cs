@@ -190,13 +190,20 @@ namespace Amazon.BedrockRuntime.Model
         /// </para>
         ///  
         /// <para>
-        /// The <c>modelId</c> to provide depends on the type of model that you use:
+        /// The <c>modelId</c> to provide depends on the type of model or throughput that you
+        /// use:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// If you use a base model, specify the model ID or its ARN. For a list of model IDs
         /// for base models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html#model-ids-arns">Amazon
         /// Bedrock base model IDs (on-demand throughput)</a> in the Amazon Bedrock User Guide.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you use an inference profile, specify the inference profile ID or its ARN. For
+        /// a list of inference profile IDs, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference-support.html">Supported
+        /// Regions and models for cross-region inference</a> in the Amazon Bedrock User Guide.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -210,7 +217,11 @@ namespace Amazon.BedrockRuntime.Model
         /// the ARN of the resulting provisioned model. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html">Use
         /// a custom model in Amazon Bedrock</a> in the Amazon Bedrock User Guide.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// The Converse API doesn't support <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html">imported
+        /// models</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ModelId
