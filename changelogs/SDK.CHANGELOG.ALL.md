@@ -1,3 +1,16 @@
+### 3.7.877.0 (2024-08-30 18:26 UTC)
+* Backup (3.7.401.0)
+	* The latest update introduces two new attributes, VaultType and VaultState, to the DescribeBackupVault and ListBackupVaults APIs. The VaultState attribute reflects the current status of the vault, while the VaultType attribute indicates the specific category of the vault.
+* CloudWatchLogs (3.7.402.0)
+	* This release introduces a new optional parameter: Entity, in PutLogEvents request
+* DataZone (3.7.404.0)
+	* Amazon DataZone now adds new governance capabilities of Domain Units for organization within your Data Domains, and Authorization Policies for tighter controls.
+* RedshiftDataAPIService (3.7.401.0)
+	* The release include the new Redshift DataAPI feature for session use, customer execute query with --session-keep-alive-seconds parameter and can submit follow-up queries to same sessions with returned`session-id`
+* Core 3.7.400.13
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.876.0 (2024-08-29 19:23 UTC)
 * BedrockAgentRuntime (3.7.403.0)
 	* Lifting the maximum length on Bedrock KnowledgeBase RetrievalFilter array
