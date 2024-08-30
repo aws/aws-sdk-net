@@ -1,0 +1,12 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "Fixes #3463 where repeated retries were happening on error codes that weren't necessarily clockskew related."
+      ],
+      "type": "patch",
+      "updateMinimum": true,
+      "backwardIncompatibilitiesToIgnore": [ 
+        "Amazon.Runtime.Internal.IRequest/MethodAbstractMethodAdded"
+      ]
+    }
+  }

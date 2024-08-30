@@ -40,6 +40,7 @@ namespace Amazon.Runtime.Internal.Auth
             }
 
             string dateTime = AWSSDKUtils.GetFormattedTimestampRFC822(0);
+            request.SignedAt = AWSSDKUtils.CorrectedUtcNow;
             request.Headers.Add(HeaderKeys.XAmzDateHeader, dateTime);
 
             string signature = ComputeHash(dateTime, awsSecretAccessKey, SigningAlgorithm.HmacSHA1);
