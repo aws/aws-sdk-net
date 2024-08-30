@@ -22027,7 +22027,22 @@
             "ca-central-1": {
               "protocols": [
                 "https"
+              ],
+              "variants": [
+                {
+                  "hostname": "serverlessrepo-fips.ca-central-1.amazonaws.com",
+                  "tags": [
+                    "fips"
+                  ]
+                }
               ]
+            },
+            "ca-central-1-fips": {
+              "credentialScope": {
+                "region": "ca-central-1"
+              },
+              "deprecated": true,
+              "hostname": "serverlessrepo-fips.ca-central-1.amazonaws.com"
             },
             "eu-central-1": {
               "protocols": [
