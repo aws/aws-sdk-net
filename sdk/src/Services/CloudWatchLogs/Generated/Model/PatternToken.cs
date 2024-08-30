@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// A tructures that contains information about one pattern token related to an anomaly.
+    /// A structure that contains information about one pattern token related to an anomaly.
     /// 
     ///  
     /// <para>

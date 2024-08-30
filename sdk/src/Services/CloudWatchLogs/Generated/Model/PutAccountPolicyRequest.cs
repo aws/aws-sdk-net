@@ -130,10 +130,10 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Each account can have one account-level subscription filter policy. If you are updating
-    /// an existing filter, you must specify the correct name in <c>PolicyName</c>. To perform
-    /// a <c>PutAccountPolicy</c> subscription filter operation for any destination except
-    /// a Lambda function, you must also have the <c>iam:PassRole</c> permission.
+    /// Each account can have one account-level subscription filter policy per Region. If
+    /// you are updating an existing filter, you must specify the correct name in <c>PolicyName</c>.
+    /// To perform a <c>PutAccountPolicy</c> subscription filter operation for any destination
+    /// except a Lambda function, you must also have the <c>iam:PassRole</c> permission.
     /// </para>
     /// </summary>
     public partial class PutAccountPolicyRequest : AmazonCloudWatchLogsRequest
@@ -251,7 +251,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Distribution</b>The method used to distribute log data to the destination. By
+        ///  <b>Distribution</b> The method used to distribute log data to the destination. By
         /// default, log data is grouped by log stream, but the grouping can be set to <c>Random</c>
         /// for a more even distribution. This property is only applicable when the destination
         /// is an Kinesis Data Streams data stream.

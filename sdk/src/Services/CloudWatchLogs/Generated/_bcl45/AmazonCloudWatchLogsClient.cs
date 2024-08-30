@@ -4927,10 +4927,10 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Each account can have one account-level subscription filter policy. If you are updating
-        /// an existing filter, you must specify the correct name in <c>PolicyName</c>. To perform
-        /// a <c>PutAccountPolicy</c> subscription filter operation for any destination except
-        /// a Lambda function, you must also have the <c>iam:PassRole</c> permission.
+        /// Each account can have one account-level subscription filter policy per Region. If
+        /// you are updating an existing filter, you must specify the correct name in <c>PolicyName</c>.
+        /// To perform a <c>PutAccountPolicy</c> subscription filter operation for any destination
+        /// except a Lambda function, you must also have the <c>iam:PassRole</c> permission.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAccountPolicy service method.</param>
@@ -5059,10 +5059,10 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Each account can have one account-level subscription filter policy. If you are updating
-        /// an existing filter, you must specify the correct name in <c>PolicyName</c>. To perform
-        /// a <c>PutAccountPolicy</c> subscription filter operation for any destination except
-        /// a Lambda function, you must also have the <c>iam:PassRole</c> permission.
+        /// Each account can have one account-level subscription filter policy per Region. If
+        /// you are updating an existing filter, you must specify the correct name in <c>PolicyName</c>.
+        /// To perform a <c>PutAccountPolicy</c> subscription filter operation for any destination
+        /// except a Lambda function, you must also have the <c>iam:PassRole</c> permission.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAccountPolicy service method.</param>
@@ -6134,6 +6134,15 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
+        /// Using regular expressions to create metric filters is supported. For these filters,
+        /// there is a quotas of quota of two regular expression patterns within a single filter
+        /// pattern. There is also a quota of five regular expression patterns per log group.
+        /// For more information about using regular expressions in metric filters, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">
+        /// Filter pattern syntax for metric filters, subscription filters, filter log events,
+        /// and Live Tail</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// When you create a metric filter, you can also optionally assign a unit and dimensions
         /// to the metric that is created.
         /// </para>
@@ -6195,6 +6204,15 @@ namespace Amazon.CloudWatchLogs
         ///  
         /// <para>
         /// The maximum number of metric filters that can be associated with a log group is 100.
+        /// </para>
+        ///  
+        /// <para>
+        /// Using regular expressions to create metric filters is supported. For these filters,
+        /// there is a quotas of quota of two regular expression patterns within a single filter
+        /// pattern. There is also a quota of five regular expression patterns per log group.
+        /// For more information about using regular expressions in metric filters, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">
+        /// Filter pattern syntax for metric filters, subscription filters, filter log events,
+        /// and Live Tail</a>.
         /// </para>
         ///  
         /// <para>
@@ -6579,6 +6597,16 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
+        /// Using regular expressions to create subscription filters is supported. For these filters,
+        /// there is a quotas of quota of two regular expression patterns within a single filter
+        /// pattern. There is also a quota of five regular expression patterns per log group.
+        /// For more information about using regular expressions in subscription filters, see
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">
+        /// Filter pattern syntax for metric filters, subscription filters, filter log events,
+        /// and Live Tail</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// To perform a <c>PutSubscriptionFilter</c> operation for any destination except a Lambda
         /// function, you must also have the <c>iam:PassRole</c> permission.
         /// </para>
@@ -6649,6 +6677,16 @@ namespace Amazon.CloudWatchLogs
         /// Each log group can have up to two subscription filters associated with it. If you
         /// are updating an existing filter, you must specify the correct name in <c>filterName</c>.
         /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Using regular expressions to create subscription filters is supported. For these filters,
+        /// there is a quotas of quota of two regular expression patterns within a single filter
+        /// pattern. There is also a quota of five regular expression patterns per log group.
+        /// For more information about using regular expressions in subscription filters, see
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">
+        /// Filter pattern syntax for metric filters, subscription filters, filter log events,
+        /// and Live Tail</a>.
         /// </para>
         ///  
         /// <para>
@@ -6737,12 +6775,12 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_SessionStreamingException.html">SessionStreamingException</a>
+        /// A <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartLiveTailResponseStream.html#CWL-Type-StartLiveTailResponseStream-SessionStreamingException">SessionStreamingException</a>
         /// object is returned if an unknown error occurs on the server side.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_SessionTimeoutException.html">SessionTimeoutException</a>
+        /// A <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartLiveTailResponseStream.html#CWL-Type-StartLiveTailResponseStream-SessionTimeoutException">SessionTimeoutException</a>
         /// object is returned when the session times out, after it has been kept open for three
         /// hours.
         /// </para>
@@ -6832,12 +6870,12 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_SessionStreamingException.html">SessionStreamingException</a>
+        /// A <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartLiveTailResponseStream.html#CWL-Type-StartLiveTailResponseStream-SessionStreamingException">SessionStreamingException</a>
         /// object is returned if an unknown error occurs on the server side.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_SessionTimeoutException.html">SessionTimeoutException</a>
+        /// A <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartLiveTailResponseStream.html#CWL-Type-StartLiveTailResponseStream-SessionTimeoutException">SessionTimeoutException</a>
         /// object is returned when the session times out, after it has been kept open for three
         /// hours.
         /// </para>

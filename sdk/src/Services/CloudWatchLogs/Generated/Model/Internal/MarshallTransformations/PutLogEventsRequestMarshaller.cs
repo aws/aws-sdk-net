@@ -69,6 +69,17 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetEntity())
+                {
+                    context.Writer.WritePropertyName("entity");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EntityMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Entity, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetLogEvents())
                 {
                     context.Writer.WritePropertyName("logEvents");
