@@ -41,7 +41,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property BackupPlanId. 
         /// <para>
-        /// Uniquely identifies a backup plan.
+        /// The ID of the backup plan.
         /// </para>
         /// </summary>
         public string BackupPlanId

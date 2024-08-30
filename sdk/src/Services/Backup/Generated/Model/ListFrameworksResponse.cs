@@ -40,8 +40,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property Frameworks. 
         /// <para>
-        /// A list of frameworks with details for each framework, including the framework name,
-        /// Amazon Resource Name (ARN), description, number of controls, creation time, and deployment
+        /// The frameworks with details for each framework, including the framework name, Amazon
+        /// Resource Name (ARN), description, number of controls, creation time, and deployment
         /// status.
         /// </para>
         /// </summary>

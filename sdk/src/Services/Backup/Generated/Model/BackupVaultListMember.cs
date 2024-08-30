@@ -44,12 +44,14 @@ namespace Amazon.Backup.Model
         private long? _maxRetentionDays;
         private long? _minRetentionDays;
         private long? _numberOfRecoveryPoints;
+        private VaultState _vaultState;
+        private VaultType _vaultType;
 
         /// <summary>
         /// Gets and sets the property BackupVaultArn. 
         /// <para>
         /// An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example,
-        /// <c>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</c>.
+        /// <c>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</c>.
         /// </para>
         /// </summary>
         public string BackupVaultArn
@@ -69,7 +71,7 @@ namespace Amazon.Backup.Model
         /// <para>
         /// The name of a logical container where backups are stored. Backup vaults are identified
         /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and hyphens.
+        /// Region where they are created.
         /// </para>
         /// </summary>
         public string BackupVaultName
@@ -279,6 +281,42 @@ namespace Amazon.Backup.Model
         internal bool IsSetNumberOfRecoveryPoints()
         {
             return this._numberOfRecoveryPoints.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VaultState. 
+        /// <para>
+        /// The current state of the vault.
+        /// </para>
+        /// </summary>
+        public VaultState VaultState
+        {
+            get { return this._vaultState; }
+            set { this._vaultState = value; }
+        }
+
+        // Check to see if VaultState property is set
+        internal bool IsSetVaultState()
+        {
+            return this._vaultState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VaultType. 
+        /// <para>
+        /// The type of vault in which the described recovery point is stored.
+        /// </para>
+        /// </summary>
+        public VaultType VaultType
+        {
+            get { return this._vaultType; }
+            set { this._vaultType = value; }
+        }
+
+        // Check to see if VaultType property is set
+        internal bool IsSetVaultType()
+        {
+            return this._vaultType != null;
         }
 
     }

@@ -42,7 +42,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// This is the time the resource testing selection was created successfully.
+        /// The time that the resource testing selection was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,8 +61,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property RestoreTestingPlanArn. 
         /// <para>
-        /// This is the ARN of the restore testing plan with which the restore testing selection
-        /// is associated.
+        /// The ARN of the restore testing plan with which the restore testing selection is associated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -81,7 +80,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property RestoreTestingPlanName. 
         /// <para>
-        /// Unique string that is the name of the restore testing plan.
+        /// The name of the restore testing plan.
         /// </para>
         ///  
         /// <para>
@@ -105,8 +104,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property RestoreTestingSelectionName. 
         /// <para>
-        /// This is the unique name of the restore testing selection that belongs to the related
-        /// restore testing plan.
+        /// The name of the restore testing selection for the related restore testing plan.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

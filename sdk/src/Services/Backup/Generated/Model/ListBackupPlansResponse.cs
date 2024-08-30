@@ -40,7 +40,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property BackupPlansList. 
         /// <para>
-        /// An array of backup plan list items containing metadata about your saved backup plans.
+        /// Information about the backup plans.
         /// </para>
         /// </summary>
         public List<BackupPlansListMember> BackupPlansList

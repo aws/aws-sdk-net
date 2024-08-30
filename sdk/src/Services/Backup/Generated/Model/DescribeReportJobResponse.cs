@@ -39,9 +39,9 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ReportJob. 
         /// <para>
-        /// A list of information about a report job, including its completion and creation times,
-        /// report destination, unique report job ID, Amazon Resource Name (ARN), report template,
-        /// status, and status message.
+        /// The information about a report job, including its completion and creation times, report
+        /// destination, unique report job ID, Amazon Resource Name (ARN), report template, status,
+        /// and status message.
         /// </para>
         /// </summary>
         public ReportJob ReportJob

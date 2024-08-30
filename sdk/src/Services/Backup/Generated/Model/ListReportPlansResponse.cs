@@ -59,10 +59,10 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ReportPlans. 
         /// <para>
-        /// A list of your report plans with detailed information for each plan. This information
-        /// includes the Amazon Resource Name (ARN), report plan name, description, settings,
-        /// delivery channel, deployment status, creation time, and last times the report plan
-        /// attempted to and successfully ran.
+        /// The report plans with detailed information for each plan. This information includes
+        /// the Amazon Resource Name (ARN), report plan name, description, settings, delivery
+        /// channel, deployment status, creation time, and last times the report plan attempted
+        /// to and successfully ran.
         /// </para>
         /// </summary>
         public List<ReportPlan> ReportPlans

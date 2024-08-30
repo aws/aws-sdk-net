@@ -42,7 +42,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property BackupVaultArn. 
         /// <para>
-        /// An ARN that uniquely identifies a backup vault; for example, <c>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</c>.
+        /// An ARN that uniquely identifies a backup vault; for example, <c>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</c>.
         /// </para>
         /// </summary>
         public string BackupVaultArn
@@ -78,7 +78,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// This is the resource type associated with the recovery point.
+        /// The resource type of the recovery point.
         /// </para>
         /// </summary>
         public string ResourceType

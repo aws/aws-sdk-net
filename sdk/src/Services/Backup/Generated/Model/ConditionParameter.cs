@@ -32,6 +32,12 @@ namespace Amazon.Backup.Model
     /// <summary>
     /// Includes information about tags you define to assign tagged resources to a backup
     /// plan.
+    /// 
+    ///  
+    /// <para>
+    /// Include the prefix <c>aws:ResourceTag</c> in your tags. For example, <c>"aws:ResourceTag/TagKey1":
+    /// "Value1"</c>.
+    /// </para>
     /// </summary>
     public partial class ConditionParameter
     {

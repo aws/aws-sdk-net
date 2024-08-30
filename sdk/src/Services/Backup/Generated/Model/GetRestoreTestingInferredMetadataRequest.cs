@@ -44,7 +44,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property BackupVaultAccountId. 
         /// <para>
-        /// This is the account ID of the specified backup vault.
+        /// The account ID of the specified backup vault.
         /// </para>
         /// </summary>
         public string BackupVaultAccountId

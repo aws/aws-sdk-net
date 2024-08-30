@@ -42,7 +42,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ControlInputParameters. 
         /// <para>
-        /// A list of <c>ParameterName</c> and <c>ParameterValue</c> pairs.
+        /// The name/value pairs.
         /// </para>
         /// </summary>
         public List<ControlInputParameter> ControlInputParameters

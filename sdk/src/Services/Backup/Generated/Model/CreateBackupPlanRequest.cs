@@ -50,8 +50,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property BackupPlan. 
         /// <para>
-        /// Specifies the body of a backup plan. Includes a <c>BackupPlanName</c> and one or more
-        /// sets of <c>Rules</c>.
+        /// The body of a backup plan. Includes a <c>BackupPlanName</c> and one or more sets of
+        /// <c>Rules</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -70,9 +70,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property BackupPlanTags. 
         /// <para>
-        /// To help organize your resources, you can assign your own metadata to the resources
-        /// that you create. Each tag is a key-value pair. The specified tags are assigned to
-        /// all backups created with this plan.
+        /// The tags to assign to the backup plan.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

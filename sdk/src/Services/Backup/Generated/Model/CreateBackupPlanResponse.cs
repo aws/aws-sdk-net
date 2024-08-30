@@ -43,8 +43,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property AdvancedBackupSettings. 
         /// <para>
-        /// A list of <c>BackupOptions</c> settings for a resource type. This option is only available
-        /// for Windows Volume Shadow Copy Service (VSS) backup jobs.
+        /// The settings for a resource type. This option is only available for Windows Volume
+        /// Shadow Copy Service (VSS) backup jobs.
         /// </para>
         /// </summary>
         public List<AdvancedBackupSetting> AdvancedBackupSettings
@@ -81,7 +81,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property BackupPlanId. 
         /// <para>
-        /// Uniquely identifies a backup plan.
+        /// The ID of the backup plan.
         /// </para>
         /// </summary>
         public string BackupPlanId

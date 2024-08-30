@@ -72,8 +72,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property BackupVaultTags. 
         /// <para>
-        /// Metadata that you can assign to help organize the resources that you create. Each
-        /// tag is a key-value pair.
+        /// The tags to assign to the backup vault.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

@@ -146,7 +146,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property ByDestinationVaultArn. 
         /// <para>
         /// An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy
-        /// from; for example, <c>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</c>.
+        /// from; for example, <c>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</c>.
         /// 
         /// </para>
         /// </summary>
@@ -280,15 +280,20 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>Redshift</c> for Amazon Redshift
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <c>RDS</c> for Amazon Relational Database Service
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>SAP HANA on Amazon EC2</c> for SAP HANA databases
+        ///  <c>Redshift</c> for Amazon Redshift
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>S3</c> for Amazon Simple Storage Service (Amazon S3)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SAP HANA on Amazon EC2</c> for SAP HANA databases on Amazon Elastic Compute Cloud
+        /// instances
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -296,15 +301,11 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>S3</c> for Amazon S3
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <c>Timestream</c> for Amazon Timestream
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>VirtualMachine</c> for virtual machines
+        ///  <c>VirtualMachine</c> for VMware virtual machines
         /// </para>
         ///  </li> </ul>
         /// </summary>

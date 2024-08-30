@@ -272,8 +272,8 @@ namespace Amazon.Backup
         #region  CancelLegalHold
 
         /// <summary>
-        /// This action removes the specified legal hold on a recovery point. This action can
-        /// only be performed by a user with sufficient permissions.
+        /// Removes the specified legal hold on a recovery point. This action can only be performed
+        /// by a user with sufficient permissions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelLegalHold service method.</param>
         /// 
@@ -649,10 +649,10 @@ namespace Amazon.Backup
         #region  CreateLegalHold
 
         /// <summary>
-        /// This action creates a legal hold on a recovery point (backup). A legal hold is a restraint
-        /// on altering or deleting a backup until an authorized user cancels the legal hold.
-        /// Any actions to delete or disassociate a recovery point will fail with an error if
-        /// one or more active legal holds are on the recovery point.
+        /// Creates a legal hold on a recovery point (backup). A legal hold is a restraint on
+        /// altering or deleting a backup until an authorized user cancels the legal hold. Any
+        /// actions to delete or disassociate a recovery point will fail with an error if one
+        /// or more active legal holds are on the recovery point.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLegalHold service method.</param>
         /// 
@@ -720,7 +720,7 @@ namespace Amazon.Backup
         #region  CreateLogicallyAirGappedBackupVault
 
         /// <summary>
-        /// This request creates a logical container to where backups may be copied.
+        /// Creates a logical container to where backups may be copied.
         /// 
         ///  
         /// <para>
@@ -885,13 +885,12 @@ namespace Amazon.Backup
         #region  CreateRestoreTestingPlan
 
         /// <summary>
-        /// This is the first of two steps to create a restore testing plan; once this request
-        /// is successful, finish the procedure with request CreateRestoreTestingSelection.
+        /// Creates a restore testing plan.
         /// 
         ///  
         /// <para>
-        /// You must include the parameter RestoreTestingPlan. You may optionally include CreatorRequestId
-        /// and Tags.
+        /// The first of two steps to create a restore testing plan. After this request is successful,
+        /// finish the procedure using CreateRestoreTestingSelection.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRestoreTestingPlan service method.</param>
@@ -3820,9 +3819,7 @@ namespace Amazon.Backup
         #region  ListBackupPlans
 
         /// <summary>
-        /// Returns a list of all active backup plans for an authenticated account. The list contains
-        /// information such as Amazon Resource Names (ARNs), plan IDs, creation and deletion
-        /// dates, version IDs, plan names, and creator request IDs.
+        /// Lists the active backup plans for the account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBackupPlans service method.</param>
         /// 
@@ -3889,8 +3886,7 @@ namespace Amazon.Backup
         #region  ListBackupPlanTemplates
 
         /// <summary>
-        /// Returns metadata of your saved backup plan templates, including the template ID, name,
-        /// and the creation and deletion dates.
+        /// Lists the backup plan templates.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBackupPlanTemplates service method.</param>
         /// 
@@ -4672,8 +4668,8 @@ namespace Amazon.Backup
         #region  ListRecoveryPointsByResource
 
         /// <summary>
-        /// Returns detailed information about all the recovery points of the type specified by
-        /// a resource Amazon Resource Name (ARN).
+        /// The information about the recovery points of the type specified by a resource Amazon
+        /// Resource Name (ARN).
         /// 
         ///  <note> 
         /// <para>
@@ -5209,16 +5205,8 @@ namespace Amazon.Backup
         #region  ListTags
 
         /// <summary>
-        /// Returns a list of key-value pairs assigned to a target recovery point, backup plan,
-        /// or backup vault.
-        /// 
-        ///  
-        /// <para>
-        ///  <c>ListTags</c> only works for resource types that support full Backup management
-        /// of their backups. Those resource types are listed in the "Full Backup management"
-        /// section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
-        /// Feature availability by resource</a> table.
-        /// </para>
+        /// Returns the tags assigned to the resource, such as a target recovery point, backup
+        /// plan, or backup vault.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTags service method.</param>
         /// 
@@ -5363,10 +5351,14 @@ namespace Amazon.Backup
         /// <para>
         /// Backup Vault Lock has been assessed by Cohasset Associates for use in environments
         /// that are subject to SEC 17a-4, CFTC, and FINRA regulations. For more information about
-        /// how Backup Vault Lock relates to these regulations, see the <a href="samples/cohassetreport.zip">Cohasset
+        /// how Backup Vault Lock relates to these regulations, see the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/samples/cohassetreport.zip">Cohasset
         /// Associates Compliance Assessment.</a> 
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/vault-lock.html">Backup
+        /// Vault Lock</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBackupVaultLockConfiguration service method.</param>
         /// 
@@ -5875,7 +5867,7 @@ namespace Amazon.Backup
         ///  
         /// <para>
         /// This action is not supported for the following services: Amazon FSx for Windows File
-        /// Server, Amazon FSx for Lustre, Amazon FSx for NetApp ONTAP , Amazon FSx for OpenZFS,
+        /// Server, Amazon FSx for Lustre, Amazon FSx for NetApp ONTAP, Amazon FSx for OpenZFS,
         /// Amazon DocumentDB (with MongoDB compatibility), Amazon RDS, Amazon Aurora, and Amazon
         /// Neptune.
         /// </para>
@@ -5951,6 +5943,12 @@ namespace Amazon.Backup
         /// <summary>
         /// Assigns a set of key-value pairs to a recovery point, backup plan, or backup vault
         /// identified by an Amazon Resource Name (ARN).
+        /// 
+        ///  
+        /// <para>
+        /// This API is supported for recovery points for resource types including Aurora, Amazon
+        /// DocumentDB. Amazon EBS, Amazon FSx, Neptune, and Amazon RDS.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -6023,6 +6021,12 @@ namespace Amazon.Backup
         /// <summary>
         /// Removes a set of key-value pairs from a recovery point, backup plan, or backup vault
         /// identified by an Amazon Resource Name (ARN)
+        /// 
+        ///  
+        /// <para>
+        /// This API is not supported for recovery points for resource types including Aurora,
+        /// Amazon DocumentDB. Amazon EBS, Amazon FSx, Neptune, and Amazon RDS.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -6089,8 +6093,7 @@ namespace Amazon.Backup
         #region  UpdateBackupPlan
 
         /// <summary>
-        /// Updates an existing backup plan identified by its <c>backupPlanId</c> with the input
-        /// document in JSON format. The new version is uniquely identified by a <c>VersionId</c>.
+        /// Updates the specified backup plan. The new version is uniquely identified by its ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateBackupPlan service method.</param>
         /// 
@@ -6157,8 +6160,7 @@ namespace Amazon.Backup
         #region  UpdateFramework
 
         /// <summary>
-        /// Updates an existing framework identified by its <c>FrameworkName</c> with the input
-        /// document in JSON format.
+        /// Updates the specified framework.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFramework service method.</param>
         /// 
@@ -6316,19 +6318,24 @@ namespace Amazon.Backup
         /// </para>
         ///  
         /// <para>
+        /// Resource types that can transition to cold storage are listed in the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-feature-availability.html#features-by-resource">Feature
+        /// availability by resource</a> table. Backup ignores this expression for other resource
+        /// types.
+        /// </para>
+        ///  
+        /// <para>
         /// Backups transitioned to cold storage must be stored in cold storage for a minimum
         /// of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition
         /// to cold after days” setting. The “transition to cold after days” setting cannot be
         /// changed after a backup has been transitioned to cold.
         /// </para>
-        ///  
+        ///  <important> 
         /// <para>
-        /// Resource types that are able to be transitioned to cold storage are listed in the
-        /// "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
-        /// Feature availability by resource</a> table. Backup ignores this expression for other
-        /// resource types.
+        /// If your lifecycle currently uses the parameters <c>DeleteAfterDays</c> and <c>MoveToColdStorageAfterDays</c>,
+        /// include these parameters and their values when you call this operation. Not including
+        /// them may result in your plan updating with null values.
         /// </para>
-        ///  
+        ///  </important> 
         /// <para>
         /// This operation does not support continuous backups.
         /// </para>
@@ -6472,8 +6479,7 @@ namespace Amazon.Backup
         #region  UpdateReportPlan
 
         /// <summary>
-        /// Updates an existing report plan identified by its <c>ReportPlanName</c> with the input
-        /// document in JSON format.
+        /// Updates the specified report plan.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateReportPlan service method.</param>
         /// 
@@ -6642,14 +6648,16 @@ namespace Amazon.Backup
         #region  UpdateRestoreTestingSelection
 
         /// <summary>
-        /// Most elements except the <c>RestoreTestingSelectionName</c> can be updated with this
-        /// request.
+        /// Updates the specified restore testing selection.
         /// 
         ///  
         /// <para>
-        ///  <c>RestoreTestingSelection</c> can use either protected resource ARNs or conditions,
-        /// but not both. That is, if your selection has <c>ProtectedResourceArns</c>, requesting
-        /// an update with the parameter <c>ProtectedResourceConditions</c> will be unsuccessful.
+        /// Most elements except the <c>RestoreTestingSelectionName</c> can be updated with this
+        /// request.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use either protected resource ARNs or conditions, but not both.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRestoreTestingSelection service method.</param>

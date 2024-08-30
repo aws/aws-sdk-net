@@ -48,10 +48,9 @@ namespace Amazon.Backup.Model
     /// </para>
     ///  
     /// <para>
-    /// Resource types that are able to be transitioned to cold storage are listed in the
-    /// "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
-    /// Feature availability by resource</a> table. Backup ignores this expression for other
-    /// resource types.
+    /// Resource types that can transition to cold storage are listed in the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-feature-availability.html#features-by-resource">Feature
+    /// availability by resource</a> table. Backup ignores this expression for other resource
+    /// types.
     /// </para>
     /// </summary>
     public partial class CalculatedLifecycle

@@ -60,8 +60,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// To help organize your resources, you can assign your own metadata to the resources
-        /// you create. Each tag is a key-value pair.
+        /// Information about the tags.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

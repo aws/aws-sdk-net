@@ -43,7 +43,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// This is the time the resource testing selection was updated successfully.
+        /// The time the resource testing selection was updated successfully.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -81,8 +81,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property RestoreTestingPlanName. 
         /// <para>
-        /// This is the restore testing plan with which the updated restore testing selection
-        /// is associated.
+        /// The restore testing plan with which the updated restore testing selection is associated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -101,7 +100,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property RestoreTestingSelectionName. 
         /// <para>
-        /// This is the returned restore testing selection name.
+        /// The returned restore testing selection name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -120,7 +119,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property UpdateTime. 
         /// <para>
-        /// This is the time the update completed for the restore testing selection.
+        /// The time the update completed for the restore testing selection.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

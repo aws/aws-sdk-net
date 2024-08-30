@@ -44,14 +44,14 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        /// For the benefits of full Backup management, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#full-management">
-        /// Full Backup management</a>.
+        /// For the benefits of full Backup management, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#full-management">Full
+        /// Backup management</a>.
         /// </para>
         ///  
         /// <para>
         /// For a list of resource types and whether each supports full Backup management, see
-        /// the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
-        /// Feature availability by resource</a> table.
+        /// the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-feature-availability.html#features-by-resource">Feature
+        /// availability by resource</a> table.
         /// </para>
         ///  
         /// <para>
@@ -75,7 +75,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ResourceTypeOptInPreference. 
         /// <para>
-        /// Returns a list of all services along with the opt-in preferences in the Region.
+        /// The services along with the opt-in preferences in the Region.
         /// </para>
         /// </summary>
         public Dictionary<string, bool> ResourceTypeOptInPreference

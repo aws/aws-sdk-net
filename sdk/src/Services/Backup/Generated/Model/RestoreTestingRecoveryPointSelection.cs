@@ -30,9 +30,43 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Backup.Model
 {
     /// <summary>
-    /// Required: Algorithm; Required: Recovery point types; IncludeVaults(one or more). Optional:
-    /// SelectionWindowDays ('30' if not specified);ExcludeVaults (list of selectors), defaults
-    /// to empty list if not listed.
+    /// <c>RecoveryPointSelection</c> has five parameters (three required and two optional).
+    /// The values you specify determine which recovery point is included in the restore test.
+    /// You must indicate with <c>Algorithm</c> if you want the latest recovery point within
+    /// your <c>SelectionWindowDays</c> or if you want a random recovery point, and you must
+    /// indicate through <c>IncludeVaults</c> from which vaults the recovery points can be
+    /// chosen.
+    /// 
+    ///  
+    /// <para>
+    ///  <c>Algorithm</c> (<i>required</i>) Valid values: "<c>LATEST_WITHIN_WINDOW</c>" or
+    /// "<c>RANDOM_WITHIN_WINDOW</c>".
+    /// </para>
+    ///  
+    /// <para>
+    ///  <c>Recovery point types</c> (<i>required</i>) Valid values: "<c>SNAPSHOT</c>" and/or
+    /// "<c>CONTINUOUS</c>". Include <c>SNAPSHOT</c> to restore only snapshot recovery points;
+    /// include <c>CONTINUOUS</c> to restore continuous recovery points (point in time restore
+    /// / PITR); use both to restore either a snapshot or a continuous recovery point. The
+    /// recovery point will be determined by the value for <c>Algorithm</c>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <c>IncludeVaults</c> (<i>required</i>). You must include one or more backup vaults.
+    /// Use the wildcard ["*"] or specific ARNs.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <c>SelectionWindowDays</c> (<i>optional</i>) Value must be an integer (in days) from
+    /// 1 to 365. If not included, the value defaults to <c>30</c>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <c>ExcludeVaults</c> (<i>optional</i>). You can choose to input one or more specific
+    /// backup vault ARNs to exclude those vaults' contents from restore eligibility. Or,
+    /// you can include a list of selectors. If this parameter and its value are not included,
+    /// it defaults to empty list.
+    /// </para>
     /// </summary>
     public partial class RestoreTestingRecoveryPointSelection
     {
@@ -103,6 +137,13 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property RecoveryPointTypes. 
         /// <para>
         /// These are the types of recovery points.
+        /// </para>
+        ///  
+        /// <para>
+        /// Include <c>SNAPSHOT</c> to restore only snapshot recovery points; include <c>CONTINUOUS</c>
+        /// to restore continuous recovery points (point in time restore / PITR); use both to
+        /// restore either a snapshot or a continuous recovery point. The recovery point will
+        /// be determined by the value for <c>Algorithm</c>.
         /// </para>
         /// </summary>
         public List<string> RecoveryPointTypes
