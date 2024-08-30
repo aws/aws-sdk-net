@@ -41,6 +41,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         private string _queryString;
         private List<string> _queryStrings = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _secretArn;
+        private string _sessionId;
         private string _statementName;
         private StatusString _status;
         private DateTime? _updatedAt;
@@ -174,6 +175,24 @@ namespace Amazon.RedshiftDataAPIService.Model
         internal bool IsSetSecretArn()
         {
             return this._secretArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionId. 
+        /// <para>
+        /// The session identifier of the query.
+        /// </para>
+        /// </summary>
+        public string SessionId
+        {
+            get { return this._sessionId; }
+            set { this._sessionId = value; }
+        }
+
+        // Check to see if SessionId property is set
+        internal bool IsSetSessionId()
+        {
+            return this._sessionId != null;
         }
 
         /// <summary>

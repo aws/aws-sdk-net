@@ -70,6 +70,12 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
                     response.Database = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DbGroups", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.DbGroups = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DbUser", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -86,6 +92,12 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SecretArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SessionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SessionId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("WorkgroupName", targetDepth))
@@ -117,6 +129,10 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ActiveSessionsExceededException"))
+                {
+                    return ActiveSessionsExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ActiveStatementsExceededException"))
                 {
                     return ActiveStatementsExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -124,6 +140,10 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ExecuteStatementException"))
                 {
                     return ExecuteStatementExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
+                {
+                    return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
                 {

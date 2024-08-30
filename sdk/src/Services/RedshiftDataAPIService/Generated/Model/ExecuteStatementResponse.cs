@@ -37,9 +37,11 @@ namespace Amazon.RedshiftDataAPIService.Model
         private string _clusterIdentifier;
         private DateTime? _createdAt;
         private string _database;
+        private List<string> _dbGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _dbUser;
         private string _id;
         private string _secretArn;
+        private string _sessionId;
         private string _workgroupName;
 
         /// <summary>
@@ -49,6 +51,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// workgroup. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=63)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }
@@ -95,6 +98,24 @@ namespace Amazon.RedshiftDataAPIService.Model
         internal bool IsSetDatabase()
         {
             return this._database != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DbGroups. 
+        /// <para>
+        /// A list of colon (:) separated names of database groups.
+        /// </para>
+        /// </summary>
+        public List<string> DbGroups
+        {
+            get { return this._dbGroups; }
+            set { this._dbGroups = value; }
+        }
+
+        // Check to see if DbGroups property is set
+        internal bool IsSetDbGroups()
+        {
+            return this._dbGroups != null && (this._dbGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -150,6 +171,24 @@ namespace Amazon.RedshiftDataAPIService.Model
         internal bool IsSetSecretArn()
         {
             return this._secretArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionId. 
+        /// <para>
+        /// The session identifier of the query.
+        /// </para>
+        /// </summary>
+        public string SessionId
+        {
+            get { return this._sessionId; }
+            set { this._sessionId = value; }
+        }
+
+        // Check to see if SessionId property is set
+        internal bool IsSetSessionId()
+        {
+            return this._sessionId != null;
         }
 
         /// <summary>
