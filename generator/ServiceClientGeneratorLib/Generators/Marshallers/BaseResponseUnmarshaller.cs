@@ -1669,7 +1669,7 @@ this.Write(" = (int)context.ResponseData.StatusCode;\r\n");
         2. Use the value of the locationName on the member's target if present
         3. Use the name of the member's target
     */
-    protected string DetermineXmlMarshallName(Member member)
+    protected string DetermineXmlMarshallName(Member member, bool withPrefix = true)
     {
         var locationName = member.data[ServiceModel.LocationNameKey];
         if (locationName == null)
@@ -1680,6 +1680,11 @@ this.Write(" = (int)context.ResponseData.StatusCode;\r\n");
                 return member.Shape.Name;
             return member.MarshallName;
         }
+		if (!withPrefix)
+		{
+			var locationNameString = locationName.ToString();
+			return locationNameString.StartsWith("xsi:") ? locationNameString.Substring(4) : locationNameString;
+		}
         // the locationName and modeled name must only be different for those members which are marshalled on the body.
         if (!string.Equals(locationName.ToString(), member.ModeledName, StringComparison.Ordinal) || member.MarshallLocation != MarshallLocation.Body)
         {

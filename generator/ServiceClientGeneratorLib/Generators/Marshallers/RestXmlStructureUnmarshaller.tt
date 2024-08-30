@@ -97,7 +97,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
             else
             {
 #>
-                    if (context.TestExpression("@<#=member.MarshallName#>", targetDepth - 1))
+                    if (context.TestExpression("@<#=DetermineXmlMarshallName(member, false)#>", targetDepth - 1))
 <#
             }
 #>

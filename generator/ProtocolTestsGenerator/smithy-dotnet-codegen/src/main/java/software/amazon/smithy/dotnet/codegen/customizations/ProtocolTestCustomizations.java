@@ -92,18 +92,6 @@ public final class ProtocolTestCustomizations {
 
     );
     public static final List<String> VNextTests = Arrays.asList(
-            // The tests below change the response and are breaking changes. We'll have to fix in V4.
-            "XmlNamespaceSimpleScalarProperties",
-            "HttpPayloadTraitsWithNoBlobBody",
-            "RestJsonHttpPayloadTraitsWithNoBlobBody",
-            "SimpleScalarPropertiesPureWhiteSpace",
-            //The tests below require a change in how empty collections are handled. These will be handled in vNext
-            "XmlEmptyLists",
-            "XmlEmptyMaps",
-            "Ec2EmptyQueryLists",
-            "EmptyQueryLists",
-            "serializes_empty_list_shapes",
-            "serializes_empty_map_shapes",
             // These tests are not actually breaking change but have their own backlog item to be addressed.
             // To avoid creating yet another list to check we'll add these here so they have an ignore flag.
             "XmlMapsXmlName",
@@ -112,6 +100,8 @@ public final class ProtocolTestCustomizations {
             "QueryQueryXmlMapsXmlName",
             "QueryQueryFlattenedXmlMapWithXmlName",
             "QueryQueryFlattenedXmlMapWithXmlNamespace",
+            // the .NET SDK will not support these tests as the service should be sending back valid xml in the response even if
+            // the response is empty. Net's built-in xml serializer throws an exception if no root element is present.
             "QueryEmptyInputAndEmptyOutput",
             "QueryNoInputAndNoOutput",
             "QueryNoInputAndOutput",

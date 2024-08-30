@@ -138,10 +138,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                         xmlWriter.WriteStartElement("flattenedStructureList");
                         if(publicRequestFlattenedStructureListValue.IsSetA())
                             xmlWriter.WriteElementString("value", StringUtils.FromString(publicRequestFlattenedStructureListValue.A));
-
                         if(publicRequestFlattenedStructureListValue.IsSetB())
                             xmlWriter.WriteElementString("other", StringUtils.FromString(publicRequestFlattenedStructureListValue.B));
-
                         xmlWriter.WriteEndElement();
                     }
                     }            
@@ -234,10 +232,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                         xmlWriter.WriteStartElement("item");
                         if(publicRequestStructureListValue.IsSetA())
                             xmlWriter.WriteElementString("value", StringUtils.FromString(publicRequestStructureListValue.A));
-
                         if(publicRequestStructureListValue.IsSetB())
                             xmlWriter.WriteElementString("other", StringUtils.FromString(publicRequestStructureListValue.B));
-
                         xmlWriter.WriteEndElement();
                     }
                     }            

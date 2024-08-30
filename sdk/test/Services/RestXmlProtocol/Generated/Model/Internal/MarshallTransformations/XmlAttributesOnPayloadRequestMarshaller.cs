@@ -66,7 +66,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("XmlAttributesPayloadRequest", "");
                     if(publicRequest.Payload.IsSetAttr())
-                        xmlWriter.WriteAttributeString("test","",StringUtils.FromString(publicRequest.Payload.Attr));
+                        xmlWriter.WriteAttributeString("","test","",StringUtils.FromString(publicRequest.Payload.Attr));
                     if(publicRequest.Payload.IsSetFoo())
                         xmlWriter.WriteElementString("foo", StringUtils.FromString(publicRequest.Payload.Foo));
 

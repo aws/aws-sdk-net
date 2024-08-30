@@ -1,0 +1,9 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "fix: address protocol tests that are breaking changes."
+      ],
+      "type": "patch",
+      "updateMinimum": true
+    }
+  }

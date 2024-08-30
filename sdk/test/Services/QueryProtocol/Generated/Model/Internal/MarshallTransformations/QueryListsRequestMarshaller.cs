@@ -61,61 +61,91 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetComplexListArg())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ComplexListArg)
+                    if (publicRequest.ComplexListArg.Count == 0)
+                        request.Parameters.Add("ComplexListArg", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetHi())
-                        {
-                            request.Parameters.Add("ComplexListArg" + "." + "member" + "." + publicRequestlistValueIndex + "." + "hi", StringUtils.FromString(publicRequestlistValue.Hi));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ComplexListArg)
+                         {
+                            if(publicRequestlistValue.IsSetHi())
+                            {
+                                request.Parameters.Add("ComplexListArg" + "." + "member" + "." + publicRequestlistValueIndex + "." + "hi", StringUtils.FromString(publicRequestlistValue.Hi));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetFlattenedListArg())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.FlattenedListArg)
+                    if (publicRequest.FlattenedListArg.Count == 0)
+                        request.Parameters.Add("FlattenedListArg", "");
+                    else
                     {
-                        request.Parameters.Add("FlattenedListArg" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.FlattenedListArg)
+                         {
+                             request.Parameters.Add("FlattenedListArg" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetFlattenedListArgWithXmlName())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.FlattenedListArgWithXmlName)
+                    if (publicRequest.FlattenedListArgWithXmlName.Count == 0)
+                        request.Parameters.Add("Hi", "");
+                    else
                     {
-                        request.Parameters.Add("Hi" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.FlattenedListArgWithXmlName)
+                         {
+                             request.Parameters.Add("Hi" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetListArg())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ListArg)
+                    if (publicRequest.ListArg.Count == 0)
+                        request.Parameters.Add("ListArg", "");
+                    else
                     {
-                        request.Parameters.Add("ListArg" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ListArg)
+                         {
+                             request.Parameters.Add("ListArg" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetListArgWithXmlNameMember())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ListArgWithXmlNameMember)
+                    if (publicRequest.ListArgWithXmlNameMember.Count == 0)
+                        request.Parameters.Add("ListArgWithXmlNameMember", "");
+                    else
                     {
-                        request.Parameters.Add("ListArgWithXmlNameMember" + "." + "item" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ListArgWithXmlNameMember)
+                         {
+                             request.Parameters.Add("ListArgWithXmlNameMember" + "." + "item" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetNestedWithList())
                 {
                     if(publicRequest.NestedWithList.IsSetListArg())
                     {
-                        int publicRequestNestedWithListlistValueIndex = 1;
-                        foreach(var publicRequestNestedWithListlistValue in publicRequest.NestedWithList.ListArg)
+                        if (publicRequest.NestedWithList.ListArg.Count == 0)
+                            request.Parameters.Add("NestedWithList" + "." + "ListArg", "");
+                        else
                         {
-                            request.Parameters.Add("NestedWithList" + "." + "ListArg" + "." + "member" + "." + publicRequestNestedWithListlistValueIndex, StringUtils.FromString(publicRequestNestedWithListlistValue));
-                            publicRequestNestedWithListlistValueIndex++;
+                             int publicRequestNestedWithListlistValueIndex = 1;
+                             foreach(var publicRequestNestedWithListlistValue in publicRequest.NestedWithList.ListArg)
+                             {
+                                 request.Parameters.Add("NestedWithList" + "." + "ListArg" + "." + "member" + "." + publicRequestNestedWithListlistValueIndex, StringUtils.FromString(publicRequestNestedWithListlistValue));
+                                 publicRequestNestedWithListlistValueIndex++;
+                             }
                         }
                     }
                 }
