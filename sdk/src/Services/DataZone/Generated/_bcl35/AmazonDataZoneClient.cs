@@ -419,6 +419,160 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  AddEntityOwner
+
+        /// <summary>
+        /// Adds the owner of an entity (a domain unit).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddEntityOwner service method.</param>
+        /// 
+        /// <returns>The response from the AddEntityOwner service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/AddEntityOwner">REST API Reference for AddEntityOwner Operation</seealso>
+        public virtual AddEntityOwnerResponse AddEntityOwner(AddEntityOwnerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddEntityOwnerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddEntityOwnerResponseUnmarshaller.Instance;
+
+            return Invoke<AddEntityOwnerResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddEntityOwner operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddEntityOwner operation on AmazonDataZoneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddEntityOwner
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/AddEntityOwner">REST API Reference for AddEntityOwner Operation</seealso>
+        public virtual IAsyncResult BeginAddEntityOwner(AddEntityOwnerRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddEntityOwnerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddEntityOwnerResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AddEntityOwner operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddEntityOwner.</param>
+        /// 
+        /// <returns>Returns a  AddEntityOwnerResult from DataZone.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/AddEntityOwner">REST API Reference for AddEntityOwner Operation</seealso>
+        public virtual AddEntityOwnerResponse EndAddEntityOwner(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AddEntityOwnerResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  AddPolicyGrant
+
+        /// <summary>
+        /// Adds a policy grant (an authorization policy) to a specified entity, including domain
+        /// units, environment blueprint configurations, or environment profiles.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddPolicyGrant service method.</param>
+        /// 
+        /// <returns>The response from the AddPolicyGrant service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/AddPolicyGrant">REST API Reference for AddPolicyGrant Operation</seealso>
+        public virtual AddPolicyGrantResponse AddPolicyGrant(AddPolicyGrantRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddPolicyGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddPolicyGrantResponseUnmarshaller.Instance;
+
+            return Invoke<AddPolicyGrantResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddPolicyGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddPolicyGrant operation on AmazonDataZoneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddPolicyGrant
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/AddPolicyGrant">REST API Reference for AddPolicyGrant Operation</seealso>
+        public virtual IAsyncResult BeginAddPolicyGrant(AddPolicyGrantRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddPolicyGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddPolicyGrantResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AddPolicyGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddPolicyGrant.</param>
+        /// 
+        /// <returns>Returns a  AddPolicyGrantResult from DataZone.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/AddPolicyGrant">REST API Reference for AddPolicyGrant Operation</seealso>
+        public virtual AddPolicyGrantResponse EndAddPolicyGrant(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AddPolicyGrantResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  AssociateEnvironmentRole
 
         /// <summary>
@@ -1255,6 +1409,81 @@ namespace Amazon.DataZone
         public virtual CreateDomainResponse EndCreateDomain(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateDomainResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateDomainUnit
+
+        /// <summary>
+        /// Creates a domain unit in Amazon DataZone.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDomainUnit service method.</param>
+        /// 
+        /// <returns>The response from the CreateDomainUnit service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateDomainUnit">REST API Reference for CreateDomainUnit Operation</seealso>
+        public virtual CreateDomainUnitResponse CreateDomainUnit(CreateDomainUnitRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDomainUnitRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDomainUnitResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDomainUnitResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDomainUnit operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDomainUnit operation on AmazonDataZoneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDomainUnit
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateDomainUnit">REST API Reference for CreateDomainUnit Operation</seealso>
+        public virtual IAsyncResult BeginCreateDomainUnit(CreateDomainUnitRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDomainUnitRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDomainUnitResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateDomainUnit operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDomainUnit.</param>
+        /// 
+        /// <returns>Returns a  CreateDomainUnitResult from DataZone.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateDomainUnit">REST API Reference for CreateDomainUnit Operation</seealso>
+        public virtual CreateDomainUnitResponse EndCreateDomainUnit(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateDomainUnitResponse>(asyncResult);
         }
 
         #endregion
@@ -2763,6 +2992,81 @@ namespace Amazon.DataZone
         public virtual DeleteDomainResponse EndDeleteDomain(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDomainResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteDomainUnit
+
+        /// <summary>
+        /// Deletes a domain unit.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDomainUnit service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDomainUnit service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteDomainUnit">REST API Reference for DeleteDomainUnit Operation</seealso>
+        public virtual DeleteDomainUnitResponse DeleteDomainUnit(DeleteDomainUnitRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDomainUnitRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDomainUnitResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDomainUnitResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDomainUnit operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDomainUnit operation on AmazonDataZoneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDomainUnit
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteDomainUnit">REST API Reference for DeleteDomainUnit Operation</seealso>
+        public virtual IAsyncResult BeginDeleteDomainUnit(DeleteDomainUnitRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDomainUnitRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDomainUnitResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteDomainUnit operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDomainUnit.</param>
+        /// 
+        /// <returns>Returns a  DeleteDomainUnitResult from DataZone.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteDomainUnit">REST API Reference for DeleteDomainUnit Operation</seealso>
+        public virtual DeleteDomainUnitResponse EndDeleteDomainUnit(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteDomainUnitResponse>(asyncResult);
         }
 
         #endregion
@@ -4390,6 +4694,78 @@ namespace Amazon.DataZone
         public virtual GetDomainResponse EndGetDomain(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDomainResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetDomainUnit
+
+        /// <summary>
+        /// Gets the details of the specified domain unit.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDomainUnit service method.</param>
+        /// 
+        /// <returns>The response from the GetDomainUnit service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetDomainUnit">REST API Reference for GetDomainUnit Operation</seealso>
+        public virtual GetDomainUnitResponse GetDomainUnit(GetDomainUnitRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDomainUnitRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDomainUnitResponseUnmarshaller.Instance;
+
+            return Invoke<GetDomainUnitResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDomainUnit operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDomainUnit operation on AmazonDataZoneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDomainUnit
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetDomainUnit">REST API Reference for GetDomainUnit Operation</seealso>
+        public virtual IAsyncResult BeginGetDomainUnit(GetDomainUnitRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDomainUnitRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDomainUnitResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDomainUnit operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDomainUnit.</param>
+        /// 
+        /// <returns>Returns a  GetDomainUnitResult from DataZone.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetDomainUnit">REST API Reference for GetDomainUnit Operation</seealso>
+        public virtual GetDomainUnitResponse EndGetDomainUnit(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDomainUnitResponse>(asyncResult);
         }
 
         #endregion
@@ -6438,6 +6814,144 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  ListDomainUnitsForParent
+
+        /// <summary>
+        /// Lists child domain units for the specified parent domain unit.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDomainUnitsForParent service method.</param>
+        /// 
+        /// <returns>The response from the ListDomainUnitsForParent service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListDomainUnitsForParent">REST API Reference for ListDomainUnitsForParent Operation</seealso>
+        public virtual ListDomainUnitsForParentResponse ListDomainUnitsForParent(ListDomainUnitsForParentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDomainUnitsForParentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDomainUnitsForParentResponseUnmarshaller.Instance;
+
+            return Invoke<ListDomainUnitsForParentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDomainUnitsForParent operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDomainUnitsForParent operation on AmazonDataZoneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDomainUnitsForParent
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListDomainUnitsForParent">REST API Reference for ListDomainUnitsForParent Operation</seealso>
+        public virtual IAsyncResult BeginListDomainUnitsForParent(ListDomainUnitsForParentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDomainUnitsForParentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDomainUnitsForParentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDomainUnitsForParent operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDomainUnitsForParent.</param>
+        /// 
+        /// <returns>Returns a  ListDomainUnitsForParentResult from DataZone.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListDomainUnitsForParent">REST API Reference for ListDomainUnitsForParent Operation</seealso>
+        public virtual ListDomainUnitsForParentResponse EndListDomainUnitsForParent(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDomainUnitsForParentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListEntityOwners
+
+        /// <summary>
+        /// Lists the entity (domain units) owners.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEntityOwners service method.</param>
+        /// 
+        /// <returns>The response from the ListEntityOwners service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListEntityOwners">REST API Reference for ListEntityOwners Operation</seealso>
+        public virtual ListEntityOwnersResponse ListEntityOwners(ListEntityOwnersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEntityOwnersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEntityOwnersResponseUnmarshaller.Instance;
+
+            return Invoke<ListEntityOwnersResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListEntityOwners operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListEntityOwners operation on AmazonDataZoneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEntityOwners
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListEntityOwners">REST API Reference for ListEntityOwners Operation</seealso>
+        public virtual IAsyncResult BeginListEntityOwners(ListEntityOwnersRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEntityOwnersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEntityOwnersResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListEntityOwners operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListEntityOwners.</param>
+        /// 
+        /// <returns>Returns a  ListEntityOwnersResult from DataZone.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListEntityOwners">REST API Reference for ListEntityOwners Operation</seealso>
+        public virtual ListEntityOwnersResponse EndListEntityOwners(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListEntityOwnersResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListEnvironmentActions
 
         /// <summary>
@@ -7001,6 +7515,75 @@ namespace Amazon.DataZone
         public virtual ListNotificationsResponse EndListNotifications(IAsyncResult asyncResult)
         {
             return EndInvoke<ListNotificationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListPolicyGrants
+
+        /// <summary>
+        /// Lists policy grants.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPolicyGrants service method.</param>
+        /// 
+        /// <returns>The response from the ListPolicyGrants service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListPolicyGrants">REST API Reference for ListPolicyGrants Operation</seealso>
+        public virtual ListPolicyGrantsResponse ListPolicyGrants(ListPolicyGrantsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPolicyGrantsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPolicyGrantsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPolicyGrantsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPolicyGrants operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPolicyGrants operation on AmazonDataZoneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPolicyGrants
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListPolicyGrants">REST API Reference for ListPolicyGrants Operation</seealso>
+        public virtual IAsyncResult BeginListPolicyGrants(ListPolicyGrantsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPolicyGrantsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPolicyGrantsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPolicyGrants operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPolicyGrants.</param>
+        /// 
+        /// <returns>Returns a  ListPolicyGrantsResult from DataZone.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListPolicyGrants">REST API Reference for ListPolicyGrants Operation</seealso>
+        public virtual ListPolicyGrantsResponse EndListPolicyGrants(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListPolicyGrantsResponse>(asyncResult);
         }
 
         #endregion
@@ -7960,6 +8543,147 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  RemoveEntityOwner
+
+        /// <summary>
+        /// Removes an owner from an entity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveEntityOwner service method.</param>
+        /// 
+        /// <returns>The response from the RemoveEntityOwner service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/RemoveEntityOwner">REST API Reference for RemoveEntityOwner Operation</seealso>
+        public virtual RemoveEntityOwnerResponse RemoveEntityOwner(RemoveEntityOwnerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveEntityOwnerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveEntityOwnerResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveEntityOwnerResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveEntityOwner operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveEntityOwner operation on AmazonDataZoneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveEntityOwner
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/RemoveEntityOwner">REST API Reference for RemoveEntityOwner Operation</seealso>
+        public virtual IAsyncResult BeginRemoveEntityOwner(RemoveEntityOwnerRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveEntityOwnerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveEntityOwnerResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RemoveEntityOwner operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveEntityOwner.</param>
+        /// 
+        /// <returns>Returns a  RemoveEntityOwnerResult from DataZone.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/RemoveEntityOwner">REST API Reference for RemoveEntityOwner Operation</seealso>
+        public virtual RemoveEntityOwnerResponse EndRemoveEntityOwner(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RemoveEntityOwnerResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  RemovePolicyGrant
+
+        /// <summary>
+        /// Removes a policy grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemovePolicyGrant service method.</param>
+        /// 
+        /// <returns>The response from the RemovePolicyGrant service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/RemovePolicyGrant">REST API Reference for RemovePolicyGrant Operation</seealso>
+        public virtual RemovePolicyGrantResponse RemovePolicyGrant(RemovePolicyGrantRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemovePolicyGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemovePolicyGrantResponseUnmarshaller.Instance;
+
+            return Invoke<RemovePolicyGrantResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemovePolicyGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemovePolicyGrant operation on AmazonDataZoneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemovePolicyGrant
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/RemovePolicyGrant">REST API Reference for RemovePolicyGrant Operation</seealso>
+        public virtual IAsyncResult BeginRemovePolicyGrant(RemovePolicyGrantRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemovePolicyGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemovePolicyGrantResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RemovePolicyGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemovePolicyGrant.</param>
+        /// 
+        /// <returns>Returns a  RemovePolicyGrantResult from DataZone.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/RemovePolicyGrant">REST API Reference for RemovePolicyGrant Operation</seealso>
+        public virtual RemovePolicyGrantResponse EndRemovePolicyGrant(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RemovePolicyGrantResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  RevokeSubscription
 
         /// <summary>
@@ -8910,6 +9634,81 @@ namespace Amazon.DataZone
         public virtual UpdateDomainResponse EndUpdateDomain(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDomainResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateDomainUnit
+
+        /// <summary>
+        /// Updates the domain unit.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDomainUnit service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDomainUnit service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateDomainUnit">REST API Reference for UpdateDomainUnit Operation</seealso>
+        public virtual UpdateDomainUnitResponse UpdateDomainUnit(UpdateDomainUnitRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDomainUnitRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDomainUnitResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDomainUnitResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDomainUnit operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDomainUnit operation on AmazonDataZoneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDomainUnit
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateDomainUnit">REST API Reference for UpdateDomainUnit Operation</seealso>
+        public virtual IAsyncResult BeginUpdateDomainUnit(UpdateDomainUnitRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDomainUnitRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDomainUnitResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateDomainUnit operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDomainUnit.</param>
+        /// 
+        /// <returns>Returns a  UpdateDomainUnitResult from DataZone.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateDomainUnit">REST API Reference for UpdateDomainUnit Operation</seealso>
+        public virtual UpdateDomainUnitResponse EndUpdateDomainUnit(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateDomainUnitResponse>(asyncResult);
         }
 
         #endregion

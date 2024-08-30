@@ -383,6 +383,120 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  AddEntityOwner
+
+        internal virtual AddEntityOwnerResponse AddEntityOwner(AddEntityOwnerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddEntityOwnerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddEntityOwnerResponseUnmarshaller.Instance;
+
+            return Invoke<AddEntityOwnerResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Adds the owner of an entity (a domain unit).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddEntityOwner service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AddEntityOwner service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/AddEntityOwner">REST API Reference for AddEntityOwner Operation</seealso>
+        public virtual Task<AddEntityOwnerResponse> AddEntityOwnerAsync(AddEntityOwnerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddEntityOwnerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddEntityOwnerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AddEntityOwnerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AddPolicyGrant
+
+        internal virtual AddPolicyGrantResponse AddPolicyGrant(AddPolicyGrantRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddPolicyGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddPolicyGrantResponseUnmarshaller.Instance;
+
+            return Invoke<AddPolicyGrantResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Adds a policy grant (an authorization policy) to a specified entity, including domain
+        /// units, environment blueprint configurations, or environment profiles.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddPolicyGrant service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AddPolicyGrant service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/AddPolicyGrant">REST API Reference for AddPolicyGrant Operation</seealso>
+        public virtual Task<AddPolicyGrantResponse> AddPolicyGrantAsync(AddPolicyGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddPolicyGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddPolicyGrantResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AddPolicyGrantResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AssociateEnvironmentRole
 
         internal virtual AssociateEnvironmentRoleResponse AssociateEnvironmentRole(AssociateEnvironmentRoleRequest request)
@@ -999,6 +1113,61 @@ namespace Amazon.DataZone
             options.ResponseUnmarshaller = CreateDomainResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateDomainResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateDomainUnit
+
+        internal virtual CreateDomainUnitResponse CreateDomainUnit(CreateDomainUnitRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDomainUnitRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDomainUnitResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDomainUnitResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a domain unit in Amazon DataZone.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDomainUnit service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDomainUnit service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateDomainUnit">REST API Reference for CreateDomainUnit Operation</seealso>
+        public virtual Task<CreateDomainUnitResponse> CreateDomainUnitAsync(CreateDomainUnitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDomainUnitRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDomainUnitResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDomainUnitResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2107,6 +2276,61 @@ namespace Amazon.DataZone
             options.ResponseUnmarshaller = DeleteDomainResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteDomainResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteDomainUnit
+
+        internal virtual DeleteDomainUnitResponse DeleteDomainUnit(DeleteDomainUnitRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDomainUnitRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDomainUnitResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDomainUnitResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a domain unit.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDomainUnit service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDomainUnit service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteDomainUnit">REST API Reference for DeleteDomainUnit Operation</seealso>
+        public virtual Task<DeleteDomainUnitResponse> DeleteDomainUnitAsync(DeleteDomainUnitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDomainUnitRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDomainUnitResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDomainUnitResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3294,6 +3518,58 @@ namespace Amazon.DataZone
             options.ResponseUnmarshaller = GetDomainResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetDomainResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDomainUnit
+
+        internal virtual GetDomainUnitResponse GetDomainUnit(GetDomainUnitRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDomainUnitRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDomainUnitResponseUnmarshaller.Instance;
+
+            return Invoke<GetDomainUnitResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets the details of the specified domain unit.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDomainUnit service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDomainUnit service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetDomainUnit">REST API Reference for GetDomainUnit Operation</seealso>
+        public virtual Task<GetDomainUnitResponse> GetDomainUnitAsync(GetDomainUnitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDomainUnitRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDomainUnitResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDomainUnitResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4782,6 +5058,104 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  ListDomainUnitsForParent
+
+        internal virtual ListDomainUnitsForParentResponse ListDomainUnitsForParent(ListDomainUnitsForParentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDomainUnitsForParentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDomainUnitsForParentResponseUnmarshaller.Instance;
+
+            return Invoke<ListDomainUnitsForParentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists child domain units for the specified parent domain unit.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDomainUnitsForParent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDomainUnitsForParent service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListDomainUnitsForParent">REST API Reference for ListDomainUnitsForParent Operation</seealso>
+        public virtual Task<ListDomainUnitsForParentResponse> ListDomainUnitsForParentAsync(ListDomainUnitsForParentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDomainUnitsForParentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDomainUnitsForParentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDomainUnitsForParentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListEntityOwners
+
+        internal virtual ListEntityOwnersResponse ListEntityOwners(ListEntityOwnersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEntityOwnersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEntityOwnersResponseUnmarshaller.Instance;
+
+            return Invoke<ListEntityOwnersResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the entity (domain units) owners.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEntityOwners service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListEntityOwners service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListEntityOwners">REST API Reference for ListEntityOwners Operation</seealso>
+        public virtual Task<ListEntityOwnersResponse> ListEntityOwnersAsync(ListEntityOwnersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEntityOwnersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEntityOwnersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListEntityOwnersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListEnvironmentActions
 
         internal virtual ListEnvironmentActionsResponse ListEnvironmentActions(ListEnvironmentActionsRequest request)
@@ -5185,6 +5559,55 @@ namespace Amazon.DataZone
             options.ResponseUnmarshaller = ListNotificationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListNotificationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListPolicyGrants
+
+        internal virtual ListPolicyGrantsResponse ListPolicyGrants(ListPolicyGrantsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPolicyGrantsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPolicyGrantsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPolicyGrantsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists policy grants.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPolicyGrants service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPolicyGrants service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListPolicyGrants">REST API Reference for ListPolicyGrants Operation</seealso>
+        public virtual Task<ListPolicyGrantsResponse> ListPolicyGrantsAsync(ListPolicyGrantsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPolicyGrantsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPolicyGrantsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPolicyGrantsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5884,6 +6307,107 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  RemoveEntityOwner
+
+        internal virtual RemoveEntityOwnerResponse RemoveEntityOwner(RemoveEntityOwnerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveEntityOwnerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveEntityOwnerResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveEntityOwnerResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes an owner from an entity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveEntityOwner service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RemoveEntityOwner service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/RemoveEntityOwner">REST API Reference for RemoveEntityOwner Operation</seealso>
+        public virtual Task<RemoveEntityOwnerResponse> RemoveEntityOwnerAsync(RemoveEntityOwnerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveEntityOwnerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveEntityOwnerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RemoveEntityOwnerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RemovePolicyGrant
+
+        internal virtual RemovePolicyGrantResponse RemovePolicyGrant(RemovePolicyGrantRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemovePolicyGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemovePolicyGrantResponseUnmarshaller.Instance;
+
+            return Invoke<RemovePolicyGrantResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes a policy grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemovePolicyGrant service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RemovePolicyGrant service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/RemovePolicyGrant">REST API Reference for RemovePolicyGrant Operation</seealso>
+        public virtual Task<RemovePolicyGrantResponse> RemovePolicyGrantAsync(RemovePolicyGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemovePolicyGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemovePolicyGrantResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RemovePolicyGrantResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RevokeSubscription
 
         internal virtual RevokeSubscriptionResponse RevokeSubscription(RevokeSubscriptionRequest request)
@@ -6574,6 +7098,61 @@ namespace Amazon.DataZone
             options.ResponseUnmarshaller = UpdateDomainResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateDomainResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateDomainUnit
+
+        internal virtual UpdateDomainUnitResponse UpdateDomainUnit(UpdateDomainUnitRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDomainUnitRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDomainUnitResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDomainUnitResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the domain unit.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDomainUnit service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDomainUnit service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateDomainUnit">REST API Reference for UpdateDomainUnit Operation</seealso>
+        public virtual Task<UpdateDomainUnitResponse> UpdateDomainUnitAsync(UpdateDomainUnitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDomainUnitRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDomainUnitResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateDomainUnitResponse>(request, options, cancellationToken);
         }
 
         #endregion
