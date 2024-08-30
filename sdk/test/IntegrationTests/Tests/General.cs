@@ -770,23 +770,21 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             try
             {
                 AWSConfigs.CorrectForClockSkew = true;
-                ReflectionHelpers.Invoke(typeof(CorrectClockSkew), "SetClockCorrectionForEndpoint",
-new object[] { context.Config.RegionEndpoint.ToString(), TimeSpan.Zero });
+                SetClockSkewCorrection(TimeSpan.Zero);
                 context.TestAction();
 
-                Assert.IsTrue(CorrectClockSkew.GetClockCorrectionForEndpoint(context.Config.RegionEndpoint.ToString()) == TimeSpan.Zero);
+#pragma warning disable CS0618 // Type or member is obsolete
+                Assert.IsTrue(AWSConfigs.ClockOffset == TimeSpan.Zero);
 
-                ReflectionHelpers.Invoke(typeof(CorrectClockSkew), "SetClockCorrectionForEndpoint",
-new object[] { context.Config.RegionEndpoint.ToString(), IncorrectPositiveClockSkewOffset});
+                SetClockSkewCorrection(IncorrectPositiveClockSkewOffset);
                 context.TestAction();
+#pragma warning disable CS0618 // Type or member is obsolete
+                Assert.AreEqual(IncorrectPositiveClockSkewOffset, AWSConfigs.ClockOffset);
 
-                Assert.AreEqual(IncorrectPositiveClockSkewOffset, CorrectClockSkew.GetClockCorrectionForEndpoint(context.Config.RegionEndpoint.ToString()));
-
-                ReflectionHelpers.Invoke(typeof(CorrectClockSkew), "SetClockCorrectionForEndpoint",
-new object[] { context.Config.RegionEndpoint.ToString(), IncorrectNegativeClockSkewOffset });
+                SetClockSkewCorrection(IncorrectNegativeClockSkewOffset);
                 context.TestAction();
-
-                Assert.AreEqual(IncorrectNegativeClockSkewOffset, CorrectClockSkew.GetClockCorrectionForEndpoint(context.Config.RegionEndpoint.ToString()));
+#pragma warning disable CS0618 // Type or member is obsolete
+                Assert.AreEqual(IncorrectNegativeClockSkewOffset, AWSConfigs.ClockOffset);
 
                 Console.WriteLine("Simulating positive clock skew");
                 SetUtcNowSource(() => DateTime.UtcNow + IncorrectPositiveClockSkewOffset);
@@ -794,16 +792,13 @@ new object[] { context.Config.RegionEndpoint.ToString(), IncorrectNegativeClockS
                 AssertExtensions.ExpectException(context.TestAction);
                     
                 AWSConfigs.CorrectForClockSkew = true;
-
-                ReflectionHelpers.Invoke(typeof(CorrectClockSkew), "SetClockCorrectionForEndpoint",
-new object[] { context.Config.RegionEndpoint.ToString(), TimeSpan.Zero });
+                SetClockSkewCorrection(TimeSpan.Zero);
                 context.TestAction();
 
                 Console.WriteLine("Simulating negative clock skew");
                 SetUtcNowSource(() => DateTime.UtcNow + IncorrectNegativeClockSkewOffset);
                 AWSConfigs.CorrectForClockSkew = true;
-                ReflectionHelpers.Invoke(typeof(CorrectClockSkew), "SetClockCorrectionForEndpoint",
-new object[] { context.Config.RegionEndpoint.ToString(), TimeSpan.Zero });
+                SetClockSkewCorrection(TimeSpan.Zero);
                 context.TestAction();
 
                 AWSConfigs.CorrectForClockSkew = false;
@@ -815,6 +810,7 @@ new object[] { context.Config.RegionEndpoint.ToString(), TimeSpan.Zero });
                 SetUtcNowSource(oldUtcNowSource);
             }
         }
+
 
         // ClientTest helpers
         private void TestClient(Type clientType, string methodName, object request, Action<ClockSkewTestContext> serviceCall)

@@ -17,7 +17,7 @@
       "The obsolete `ProfileManager` class in Amazon.Util is removed. Please use the SharedCredentialsFile or the NetSDKCredentialsFile instead.",
       "The following obsolete properties on `AWSConfigs` are removed: `Logging`, `ResponseLogging`, and `LogMetrics`. Use `LoggingConfig` instead.",
       "`public static Condition NewCondition(DateComparisonType type, DateTime date)` in `Amazon.Auth/AccessControlPolicy/ConditionFactory` is removed. Please use `NewConditionUtc` instead.",
-      "In the `ClientConfig` class, the obsolete `DetermineDnsSuffix` has been removed. Use the service specific `client.DetermineServiceOperationEndpoint` method instead. The `ReadEntireResponse` property has been removed, use the `AWSConfigs.LoggingConfig.LogResponses` or `ClientConfig.LogResponse` instead. The `ClockOffset` property has been removed, please use `CorrectClockSkew.GetClockCorrectionForEndpoint(string endpoint)` instead."
+      "In the `ClientConfig` class, the obsolete `DetermineDnsSuffix` has been removed. Use the service specific `client.DetermineServiceOperationEndpoint` method instead. The `ReadEntireResponse` property has been removed, use the `AWSConfigs.LoggingConfig.LogResponses` or `ClientConfig.LogResponse` instead."
     ],
     "type": "minor",
     "updateMinimum": true
