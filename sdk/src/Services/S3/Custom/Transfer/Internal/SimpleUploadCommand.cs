@@ -74,7 +74,8 @@ namespace Amazon.S3.Transfer.Internal
 #endif
                 DisableDefaultChecksumValidation = this._fileTransporterRequest.DisableDefaultChecksumValidation,
                 DisablePayloadSigning = this._fileTransporterRequest.DisablePayloadSigning,
-                ChecksumAlgorithm = this._fileTransporterRequest.ChecksumAlgorithm
+                ChecksumAlgorithm = this._fileTransporterRequest.ChecksumAlgorithm,
+                RequestPayer = this._fileTransporterRequest.RequestPayer
             };
 
             // Avoid setting ContentType to null, as that may clear

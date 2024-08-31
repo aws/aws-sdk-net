@@ -198,7 +198,8 @@ namespace Amazon.S3.Transfer.Internal
                 {
                     BucketName = request.BucketName,
                     Key = request.Key,
-                    UploadId = initiateResponse.UploadId
+                    UploadId = initiateResponse.UploadId,
+                    RequestPayer = request.RequestPayer
                 });
                 Logger.Error(ex, ex.Message);
                 throw;

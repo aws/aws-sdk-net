@@ -1,0 +1,9 @@
+{
+    "services": [
+      {
+        "serviceName": "S3",
+        "type": "patch",
+        "changeLogMessages": [ "Added support for RequestPayer property in TransferUtility Upload request/commands." ]
+      }
+    ]
+  }

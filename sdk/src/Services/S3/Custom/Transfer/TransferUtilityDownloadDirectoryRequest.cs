@@ -52,6 +52,8 @@ namespace Amazon.S3.Transfer
         private string serverSideEncryptionCustomerProvidedKey;
         private string serverSideEncryptionCustomerProvidedKeyMD5;
 
+        private RequestPayer requestPayer;
+
         /// <summary>
         /// 	Gets or sets the name of the bucket.
         /// </summary>
@@ -299,6 +301,16 @@ namespace Amazon.S3.Transfer
         {
             get { return this.serverSideEncryptionCustomerProvidedKeyMD5; }
             set { this.serverSideEncryptionCustomerProvidedKeyMD5 = value; }
+        }
+
+        /// <summary>
+        /// Confirms that the requester knows that they will be charged for the request. 
+        /// Bucket owners need not specify this parameter in their requests.
+        /// </summary>
+        public RequestPayer RequestPayer
+        {
+            get { return this.requestPayer; }
+            set { this.requestPayer = value; }
         }
 
         /// <summary>
