@@ -29,6 +29,8 @@ namespace Amazon.S3.Transfer
     /// </summary>
     public abstract class BaseUploadRequest
     {
+        private RequestPayer requestPayer;
+
 #if (BCL && !BCL45)
         private TimeSpan? timeout = null;
 
@@ -59,5 +61,15 @@ namespace Amazon.S3.Transfer
             }
         }
 #endif
+
+        /// <summary>
+        /// Confirms that the requester knows that they will be charged for the request. 
+        /// Bucket owners need not specify this parameter in their requests.
+        /// </summary>
+        public RequestPayer RequestPayer
+        {
+            get { return this.requestPayer; }
+            set { this.requestPayer = value; }
+        }
     }
 }

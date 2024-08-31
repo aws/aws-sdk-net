@@ -173,7 +173,8 @@ namespace Amazon.S3.Transfer.Internal
                 BucketName = this._fileTransporterRequest.BucketName,
                 Key = this._fileTransporterRequest.Key,
                 UploadId = initResponse.UploadId,
-                IfNoneMatch = this._fileTransporterRequest.IfNoneMatch                
+                IfNoneMatch = this._fileTransporterRequest.IfNoneMatch,
+                RequestPayer = this._fileTransporterRequest.RequestPayer
             };
 
             if(this._fileTransporterRequest.ServerSideEncryptionCustomerMethod != null 
@@ -243,7 +244,8 @@ namespace Amazon.S3.Transfer.Internal
                 DisableDefaultChecksumValidation = this._fileTransporterRequest.DisableDefaultChecksumValidation,
                 DisablePayloadSigning = this._fileTransporterRequest.DisablePayloadSigning,
                 ChecksumAlgorithm = this._fileTransporterRequest.ChecksumAlgorithm,
-                CalculateContentMD5Header = this._fileTransporterRequest.CalculateContentMD5Header
+                CalculateContentMD5Header = this._fileTransporterRequest.CalculateContentMD5Header,
+                RequestPayer = this._fileTransporterRequest.RequestPayer
             };
 
             // If the InitiateMultipartUploadResponse indicates that this upload is using KMS, force SigV4 for each UploadPart request
@@ -296,7 +298,8 @@ namespace Amazon.S3.Transfer.Internal
                 TagSet = this._fileTransporterRequest.TagSet,
                 ChecksumAlgorithm = this._fileTransporterRequest.ChecksumAlgorithm,
                 ObjectLockLegalHoldStatus = this._fileTransporterRequest.ObjectLockLegalHoldStatus,
-                ObjectLockMode = this._fileTransporterRequest.ObjectLockMode
+                ObjectLockMode = this._fileTransporterRequest.ObjectLockMode,
+                RequestPayer = this._fileTransporterRequest.RequestPayer
             };
 
             if (this._fileTransporterRequest.IsSetObjectLockRetainUntilDate())

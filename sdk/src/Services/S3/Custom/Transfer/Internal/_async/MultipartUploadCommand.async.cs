@@ -183,6 +183,7 @@ namespace Amazon.S3.Transfer.Internal
                 {
                     BucketName = this._fileTransporterRequest.BucketName,
                     Key = this._fileTransporterRequest.Key,
+                    RequestPayer = this._fileTransporterRequest.RequestPayer,
                     UploadId = uploadId
                 }).Wait();
             }
@@ -293,6 +294,7 @@ namespace Amazon.S3.Transfer.Internal
                 {
                     BucketName = request.BucketName,
                     Key = request.Key,
+                    RequestPayer = request.RequestPayer,
                     UploadId = initiateResponse.UploadId
                 }).ConfigureAwait(false);
                 Logger.Error(ex, ex.Message);
