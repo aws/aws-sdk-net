@@ -69,10 +69,22 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDbInstanceType())
+                {
+                    context.Writer.WritePropertyName("dbInstanceType");
+                    context.Writer.Write(publicRequest.DbInstanceType);
+                }
+
                 if(publicRequest.IsSetDbParameterGroupIdentifier())
                 {
                     context.Writer.WritePropertyName("dbParameterGroupIdentifier");
                     context.Writer.Write(publicRequest.DbParameterGroupIdentifier);
+                }
+
+                if(publicRequest.IsSetDeploymentType())
+                {
+                    context.Writer.WritePropertyName("deploymentType");
+                    context.Writer.Write(publicRequest.DeploymentType);
                 }
 
                 if(publicRequest.IsSetIdentifier())

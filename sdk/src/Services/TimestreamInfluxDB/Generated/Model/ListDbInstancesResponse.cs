@@ -63,6 +63,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// returns results from where the previous response left off.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextToken
         {
             get { return this._nextToken; }
