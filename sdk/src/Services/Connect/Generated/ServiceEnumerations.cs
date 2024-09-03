@@ -2373,6 +2373,72 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type InstanceReplicationStatus.
+    /// </summary>
+    public class InstanceReplicationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INSTANCE_REPLICA_DELETING for InstanceReplicationStatus
+        /// </summary>
+        public static readonly InstanceReplicationStatus INSTANCE_REPLICA_DELETING = new InstanceReplicationStatus("INSTANCE_REPLICA_DELETING");
+        /// <summary>
+        /// Constant INSTANCE_REPLICATION_COMPLETE for InstanceReplicationStatus
+        /// </summary>
+        public static readonly InstanceReplicationStatus INSTANCE_REPLICATION_COMPLETE = new InstanceReplicationStatus("INSTANCE_REPLICATION_COMPLETE");
+        /// <summary>
+        /// Constant INSTANCE_REPLICATION_DELETION_FAILED for InstanceReplicationStatus
+        /// </summary>
+        public static readonly InstanceReplicationStatus INSTANCE_REPLICATION_DELETION_FAILED = new InstanceReplicationStatus("INSTANCE_REPLICATION_DELETION_FAILED");
+        /// <summary>
+        /// Constant INSTANCE_REPLICATION_FAILED for InstanceReplicationStatus
+        /// </summary>
+        public static readonly InstanceReplicationStatus INSTANCE_REPLICATION_FAILED = new InstanceReplicationStatus("INSTANCE_REPLICATION_FAILED");
+        /// <summary>
+        /// Constant INSTANCE_REPLICATION_IN_PROGRESS for InstanceReplicationStatus
+        /// </summary>
+        public static readonly InstanceReplicationStatus INSTANCE_REPLICATION_IN_PROGRESS = new InstanceReplicationStatus("INSTANCE_REPLICATION_IN_PROGRESS");
+        /// <summary>
+        /// Constant RESOURCE_REPLICATION_NOT_STARTED for InstanceReplicationStatus
+        /// </summary>
+        public static readonly InstanceReplicationStatus RESOURCE_REPLICATION_NOT_STARTED = new InstanceReplicationStatus("RESOURCE_REPLICATION_NOT_STARTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceReplicationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceReplicationStatus FindValue(string value)
+        {
+            return FindValue<InstanceReplicationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceReplicationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InstanceStatus.
     /// </summary>
     public class InstanceStatus : ConstantClass
