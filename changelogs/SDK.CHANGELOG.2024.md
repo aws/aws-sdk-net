@@ -1,3 +1,19 @@
+### 3.7.878.0 (2024-09-03 18:19 UTC)
+* Connect (3.7.403.0)
+	* Release ReplicaConfiguration as part of DescribeInstance
+* DataZone (3.7.405.0)
+	* Add support to let data publisher specify a subset of the data asset that a subscriber will have access to based on the asset filters provided, when accepting a subscription request.
+* ElasticLoadBalancingV2 (3.7.402.0)
+	* This release adds support for configuring TCP idle timeout on NLB and GWLB listeners.
+* MediaConnect (3.7.401.0)
+	* AWS Elemental MediaConnect introduces thumbnails for Flow source monitoring. Thumbnails provide still image previews of the live content feeding your MediaConnect Flow allowing you to easily verify that your source is operating as expected.
+* MediaLive (3.7.402.0)
+	* Added MinQP as a Rate Control option for H264 and H265 encodes.
+* SageMaker (3.7.404.0)
+	* Amazon SageMaker now supports automatic mounting of a user's home folder in the Amazon Elastic File System (EFS) associated with the SageMaker Studio domain to their Studio Spaces to enable users to share data between their own private spaces.
+* TimestreamInfluxDB (3.7.401.0)
+	* Timestream for InfluxDB now supports compute scaling and deployment type conversion. This release adds the DbInstanceType and DeploymentType parameters to the UpdateDbInstance API.
+
 ### 3.7.877.0 (2024-08-30 18:26 UTC)
 * Backup (3.7.401.0)
 	* The latest update introduces two new attributes, VaultType and VaultState, to the DescribeBackupVault and ListBackupVaults APIs. The VaultState attribute reflects the current status of the vault, while the VaultType attribute indicates the specific category of the vault.
