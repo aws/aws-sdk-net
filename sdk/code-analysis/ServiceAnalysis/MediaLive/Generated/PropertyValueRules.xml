@@ -1547,6 +1547,11 @@
     <max>30</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.H264Settings.MinQp</property>
+    <min>1</min>
+    <max>51</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.H264Settings.NumRefFrames</property>
     <min>1</min>
     <max>6</max>
@@ -1606,6 +1611,11 @@
     <property>Amazon.MediaLive.Model.H265Settings.MinIInterval</property>
     <min>0</min>
     <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.H265Settings.MinQp</property>
+    <min>1</min>
+    <max>51</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.H265Settings.ParDenominator</property>

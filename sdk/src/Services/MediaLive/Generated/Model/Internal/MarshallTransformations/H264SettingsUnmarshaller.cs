@@ -210,6 +210,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.MinIInterval = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("minQp", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MinQp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("numRefFrames", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
