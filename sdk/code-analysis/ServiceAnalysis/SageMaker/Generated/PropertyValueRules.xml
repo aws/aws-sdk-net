@@ -82,7 +82,7 @@
     <property>Amazon.SageMaker.Model.CreateAlgorithmResponse.AlgorithmArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(-cn|-us-gov)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:algorithm/[\S]{1,2048}$</pattern>
+    <pattern>^arn:aws(-cn|-us-gov|-iso-f)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:algorithm/[\S]{1,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateAppRequest.AppName</property>
@@ -191,7 +191,7 @@
     <property>Amazon.SageMaker.Model.CreateCodeRepositoryResponse.CodeRepositoryArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(-cn|-us-gov)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:code-repository/[\S]{1,2048}$</pattern>
+    <pattern>^arn:aws(-cn|-us-gov|-iso-f)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:code-repository/[\S]{1,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateCompilationJobRequest.CompilationJobName</property>
@@ -203,7 +203,7 @@
     <property>Amazon.SageMaker.Model.CreateCompilationJobRequest.ModelPackageVersionArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(-cn|-us-gov)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:model-package/[\S]{1,2048}$</pattern>
+    <pattern>^arn:aws(-cn|-us-gov|-iso-f)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:model-package/[\S]{1,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateCompilationJobRequest.RoleArn</property>
@@ -567,7 +567,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateImageResponse.ImageArn</property>
     <max>256</max>
-    <pattern>^arn:aws(-[\w]+)*:sagemaker:.+:[0-9]{12}:image/[a-z0-9]([-.]?[a-z0-9])*$</pattern>
+    <pattern>^arn:aws(-[\w]+)*:sagemaker:.+:[0-9]{12}:image/[a-zA-Z0-9]([-.]?[a-zA-Z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateImageVersionRequest.BaseImage</property>
@@ -866,7 +866,7 @@
     <property>Amazon.SageMaker.Model.CreateModelPackageResponse.ModelPackageArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(-cn|-us-gov)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:model-package/[\S]{1,2048}$</pattern>
+    <pattern>^arn:aws(-cn|-us-gov|-iso-f)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:model-package/[\S]{1,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateModelPackageGroupRequest.ModelPackageGroupDescription</property>
@@ -883,7 +883,7 @@
     <property>Amazon.SageMaker.Model.CreateModelPackageGroupResponse.ModelPackageGroupArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(-cn|-us-gov)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:model-package-group/[\S]{1,2048}$</pattern>
+    <pattern>^arn:aws(-cn|-us-gov|-iso-f)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:model-package-group/[\S]{1,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateModelQualityJobDefinitionRequest.JobDefinitionName</property>
@@ -1116,7 +1116,7 @@
     <property>Amazon.SageMaker.Model.CreateProjectResponse.ProjectArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(-cn|-us-gov)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:project/[\S]{1,2048}$</pattern>
+    <pattern>^arn:aws(-cn|-us-gov|-iso-f)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:project/[\S]{1,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateProjectResponse.ProjectId</property>
@@ -1158,7 +1158,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateStudioLifecycleConfigResponse.StudioLifecycleConfigArn</property>
     <max>256</max>
-    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:studio-lifecycle-config/.*</pattern>
+    <pattern>^(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:studio-lifecycle-config/.*|None)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateTrainingJobRequest.RoleArn</property>
@@ -1762,7 +1762,7 @@
     <property>Amazon.SageMaker.Model.DescribeAlgorithmResponse.AlgorithmArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(-cn|-us-gov)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:algorithm/[\S]{1,2048}$</pattern>
+    <pattern>^arn:aws(-cn|-us-gov|-iso-f)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:algorithm/[\S]{1,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeAlgorithmResponse.AlgorithmDescription</property>
@@ -1962,7 +1962,7 @@
     <property>Amazon.SageMaker.Model.DescribeCodeRepositoryResponse.CodeRepositoryArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(-cn|-us-gov)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:code-repository/[\S]{1,2048}$</pattern>
+    <pattern>^arn:aws(-cn|-us-gov|-iso-f)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:code-repository/[\S]{1,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeCodeRepositoryResponse.CodeRepositoryName</property>
@@ -1999,7 +1999,7 @@
     <property>Amazon.SageMaker.Model.DescribeCompilationJobResponse.ModelPackageVersionArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(-cn|-us-gov)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:model-package/[\S]{1,2048}$</pattern>
+    <pattern>^arn:aws(-cn|-us-gov|-iso-f)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:model-package/[\S]{1,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeCompilationJobResponse.RoleArn</property>
@@ -2665,7 +2665,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeImageResponse.ImageArn</property>
     <max>256</max>
-    <pattern>^arn:aws(-[\w]+)*:sagemaker:.+:[0-9]{12}:image/[a-z0-9]([-.]?[a-z0-9])*$</pattern>
+    <pattern>^arn:aws(-[\w]+)*:sagemaker:.+:[0-9]{12}:image/[a-zA-Z0-9]([-.]?[a-zA-Z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeImageResponse.ImageName</property>
@@ -2713,7 +2713,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeImageVersionResponse.ImageArn</property>
     <max>256</max>
-    <pattern>^arn:aws(-[\w]+)*:sagemaker:.+:[0-9]{12}:image/[a-z0-9]([-.]?[a-z0-9])*$</pattern>
+    <pattern>^arn:aws(-[\w]+)*:sagemaker:.+:[0-9]{12}:image/[a-zA-Z0-9]([-.]?[a-zA-Z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeImageVersionResponse.ImageVersionArn</property>
@@ -3091,7 +3091,7 @@
     <property>Amazon.SageMaker.Model.DescribeModelPackageResponse.ModelPackageArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(-cn|-us-gov)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:model-package/[\S]{1,2048}$</pattern>
+    <pattern>^arn:aws(-cn|-us-gov|-iso-f)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:model-package/[\S]{1,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeModelPackageResponse.ModelPackageDescription</property>
@@ -3130,7 +3130,7 @@
     <property>Amazon.SageMaker.Model.DescribeModelPackageGroupResponse.ModelPackageGroupArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(-cn|-us-gov)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:model-package-group/[\S]{1,2048}$</pattern>
+    <pattern>^arn:aws(-cn|-us-gov|-iso-f)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:model-package-group/[\S]{1,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeModelPackageGroupResponse.ModelPackageGroupDescription</property>
@@ -3430,7 +3430,7 @@
     <property>Amazon.SageMaker.Model.DescribeProjectResponse.ProjectArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(-cn|-us-gov)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:project/[\S]{1,2048}$</pattern>
+    <pattern>^arn:aws(-cn|-us-gov|-iso-f)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:project/[\S]{1,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeProjectResponse.ProjectDescription</property>
@@ -3500,7 +3500,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeStudioLifecycleConfigResponse.StudioLifecycleConfigArn</property>
     <max>256</max>
-    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:studio-lifecycle-config/.*</pattern>
+    <pattern>^(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:studio-lifecycle-config/.*|None)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeStudioLifecycleConfigResponse.StudioLifecycleConfigContent</property>
@@ -4669,7 +4669,7 @@
     <property>Amazon.SageMaker.Model.ListInferenceRecommendationsJobsRequest.ModelPackageVersionArnEquals</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(-cn|-us-gov)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:model-package/[\S]{1,2048}$</pattern>
+    <pattern>^arn:aws(-cn|-us-gov|-iso-f)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:model-package/[\S]{1,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListInferenceRecommendationsJobsRequest.NameContains</property>
@@ -5656,7 +5656,7 @@
     <property>Amazon.SageMaker.Model.PutModelPackageGroupPolicyResponse.ModelPackageGroupArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(-cn|-us-gov)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:model-package-group/[\S]{1,2048}$</pattern>
+    <pattern>^arn:aws(-cn|-us-gov|-iso-f)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:model-package-group/[\S]{1,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.QueryLineageRequest.MaxDepth</property>
@@ -6033,7 +6033,7 @@
     <property>Amazon.SageMaker.Model.UpdateCodeRepositoryResponse.CodeRepositoryArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(-cn|-us-gov)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:code-repository/[\S]{1,2048}$</pattern>
+    <pattern>^arn:aws(-cn|-us-gov|-iso-f)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:code-repository/[\S]{1,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateContextRequest.ContextName</property>
@@ -6209,7 +6209,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateImageResponse.ImageArn</property>
     <max>256</max>
-    <pattern>^arn:aws(-[\w]+)*:sagemaker:.+:[0-9]{12}:image/[a-z0-9]([-.]?[a-z0-9])*$</pattern>
+    <pattern>^arn:aws(-[\w]+)*:sagemaker:.+:[0-9]{12}:image/[a-zA-Z0-9]([-.]?[a-zA-Z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateImageVersionRequest.Alias</property>
@@ -6333,7 +6333,7 @@
     <property>Amazon.SageMaker.Model.UpdateModelPackageRequest.ModelPackageArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(-cn|-us-gov)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:model-package/[\S]{1,2048}$</pattern>
+    <pattern>^arn:aws(-cn|-us-gov|-iso-f)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:model-package/[\S]{1,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateModelPackageRequest.SourceUri</property>
@@ -6345,7 +6345,7 @@
     <property>Amazon.SageMaker.Model.UpdateModelPackageResponse.ModelPackageArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(-cn|-us-gov)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:model-package/[\S]{1,2048}$</pattern>
+    <pattern>^arn:aws(-cn|-us-gov|-iso-f)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:model-package/[\S]{1,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateMonitoringAlertRequest.DatapointsToAlert</property>
@@ -6495,7 +6495,7 @@
     <property>Amazon.SageMaker.Model.UpdateProjectResponse.ProjectArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(-cn|-us-gov)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:project/[\S]{1,2048}$</pattern>
+    <pattern>^arn:aws(-cn|-us-gov|-iso-f)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:project/[\S]{1,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateSpaceRequest.DomainId</property>
@@ -6678,7 +6678,7 @@
     <property>Amazon.SageMaker.Model.AlgorithmSummary.AlgorithmArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(-cn|-us-gov)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:algorithm/[\S]{1,2048}$</pattern>
+    <pattern>^arn:aws(-cn|-us-gov|-iso-f)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:algorithm/[\S]{1,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.AlgorithmSummary.AlgorithmDescription</property>
@@ -7016,7 +7016,7 @@
     <property>Amazon.SageMaker.Model.BatchDescribeModelPackageSummary.ModelPackageArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(-cn|-us-gov)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:model-package/[\S]{1,2048}$</pattern>
+    <pattern>^arn:aws(-cn|-us-gov|-iso-f)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:model-package/[\S]{1,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.BatchDescribeModelPackageSummary.ModelPackageDescription</property>
@@ -7351,7 +7351,7 @@
     <property>Amazon.SageMaker.Model.CodeRepositorySummary.CodeRepositoryArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(-cn|-us-gov)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:code-repository/[\S]{1,2048}$</pattern>
+    <pattern>^arn:aws(-cn|-us-gov|-iso-f)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:code-repository/[\S]{1,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CodeRepositorySummary.CodeRepositoryName</property>
@@ -8718,7 +8718,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.Image.ImageArn</property>
     <max>256</max>
-    <pattern>^arn:aws(-[\w]+)*:sagemaker:.+:[0-9]{12}:image/[a-z0-9]([-.]?[a-z0-9])*$</pattern>
+    <pattern>^arn:aws(-[\w]+)*:sagemaker:.+:[0-9]{12}:image/[a-zA-Z0-9]([-.]?[a-zA-Z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.Image.ImageName</property>
@@ -8733,7 +8733,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ImageVersion.ImageArn</property>
     <max>256</max>
-    <pattern>^arn:aws(-[\w]+)*:sagemaker:.+:[0-9]{12}:image/[a-z0-9]([-.]?[a-z0-9])*$</pattern>
+    <pattern>^arn:aws(-[\w]+)*:sagemaker:.+:[0-9]{12}:image/[a-zA-Z0-9]([-.]?[a-zA-Z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ImageVersion.ImageVersionArn</property>
@@ -8894,7 +8894,7 @@
     <property>Amazon.SageMaker.Model.InferenceRecommendationsJob.ModelPackageVersionArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(-cn|-us-gov)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:model-package/[\S]{1,2048}$</pattern>
+    <pattern>^arn:aws(-cn|-us-gov|-iso-f)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:model-package/[\S]{1,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.InferenceRecommendationsJob.RoleArn</property>
@@ -9432,7 +9432,7 @@
     <property>Amazon.SageMaker.Model.ModelPackage.ModelPackageArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(-cn|-us-gov)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:model-package/[\S]{1,2048}$</pattern>
+    <pattern>^arn:aws(-cn|-us-gov|-iso-f)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:model-package/[\S]{1,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ModelPackage.ModelPackageDescription</property>
@@ -9496,7 +9496,7 @@
     <property>Amazon.SageMaker.Model.ModelPackageGroup.ModelPackageGroupArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(-cn|-us-gov)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:model-package-group/[\S]{1,2048}$</pattern>
+    <pattern>^arn:aws(-cn|-us-gov|-iso-f)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:model-package-group/[\S]{1,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ModelPackageGroup.ModelPackageGroupDescription</property>
@@ -9513,7 +9513,7 @@
     <property>Amazon.SageMaker.Model.ModelPackageGroupSummary.ModelPackageGroupArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(-cn|-us-gov)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:model-package-group/[\S]{1,2048}$</pattern>
+    <pattern>^arn:aws(-cn|-us-gov|-iso-f)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:model-package-group/[\S]{1,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ModelPackageGroupSummary.ModelPackageGroupDescription</property>
@@ -9547,7 +9547,7 @@
     <property>Amazon.SageMaker.Model.ModelPackageSummary.ModelPackageArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(-cn|-us-gov)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:model-package/[\S]{1,2048}$</pattern>
+    <pattern>^arn:aws(-cn|-us-gov|-iso-f)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:model-package/[\S]{1,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ModelPackageSummary.ModelPackageDescription</property>
@@ -10574,7 +10574,7 @@
     <property>Amazon.SageMaker.Model.Project.ProjectArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(-cn|-us-gov)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:project/[\S]{1,2048}$</pattern>
+    <pattern>^arn:aws(-cn|-us-gov|-iso-f)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:project/[\S]{1,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.Project.ProjectDescription</property>
@@ -10597,7 +10597,7 @@
     <property>Amazon.SageMaker.Model.ProjectSummary.ProjectArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(-cn|-us-gov)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:project/[\S]{1,2048}$</pattern>
+    <pattern>^arn:aws(-cn|-us-gov|-iso-f)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:project/[\S]{1,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ProjectSummary.ProjectDescription</property>
@@ -10705,7 +10705,7 @@
     <property>Amazon.SageMaker.Model.RecommendationJobInputConfig.ModelPackageVersionArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(-cn|-us-gov)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:model-package/[\S]{1,2048}$</pattern>
+    <pattern>^arn:aws(-cn|-us-gov|-iso-f)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:model-package/[\S]{1,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.RecommendationJobInputConfig.VolumeKmsKeyId</property>
@@ -10851,12 +10851,12 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ResourceSpec.LifecycleConfigArn</property>
     <max>256</max>
-    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:studio-lifecycle-config/.*</pattern>
+    <pattern>^(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:studio-lifecycle-config/.*|None)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ResourceSpec.SageMakerImageArn</property>
     <max>256</max>
-    <pattern>^arn:aws(-[\w]+)*:sagemaker:.+:[0-9]{12}:image/[a-z0-9]([-.]?[a-z0-9])*$</pattern>
+    <pattern>^arn:aws(-[\w]+)*:sagemaker:.+:[0-9]{12}:image/[a-zA-Z0-9]([-.]?[a-zA-Z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ResourceSpec.SageMakerImageVersionAlias</property>
@@ -11053,7 +11053,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.StudioLifecycleConfigDetails.StudioLifecycleConfigArn</property>
     <max>256</max>
-    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:studio-lifecycle-config/.*</pattern>
+    <pattern>^(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:studio-lifecycle-config/.*|None)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.StudioLifecycleConfigDetails.StudioLifecycleConfigName</property>

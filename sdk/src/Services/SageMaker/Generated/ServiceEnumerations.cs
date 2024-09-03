@@ -2657,6 +2657,60 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type AutoMountHomeEFS.
+    /// </summary>
+    public class AutoMountHomeEFS : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DefaultAsDomain for AutoMountHomeEFS
+        /// </summary>
+        public static readonly AutoMountHomeEFS DefaultAsDomain = new AutoMountHomeEFS("DefaultAsDomain");
+        /// <summary>
+        /// Constant Disabled for AutoMountHomeEFS
+        /// </summary>
+        public static readonly AutoMountHomeEFS Disabled = new AutoMountHomeEFS("Disabled");
+        /// <summary>
+        /// Constant Enabled for AutoMountHomeEFS
+        /// </summary>
+        public static readonly AutoMountHomeEFS Enabled = new AutoMountHomeEFS("Enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutoMountHomeEFS(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutoMountHomeEFS FindValue(string value)
+        {
+            return FindValue<AutoMountHomeEFS>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutoMountHomeEFS(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AutotuneMode.
     /// </summary>
     public class AutotuneMode : ConstantClass
