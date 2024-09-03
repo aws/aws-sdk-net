@@ -3755,6 +3755,10 @@
     <max>5000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.AcceptedAssetScope.AssetId</property>
+    <pattern>^[a-zA-Z0-9_-]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.AssetFilterSummary.AssetId</property>
     <pattern>^[a-zA-Z0-9_-]{1,36}$</pattern>
   </property-value-rule>
@@ -3888,6 +3892,10 @@
     <property>Amazon.DataZone.Model.AssetRevision.Revision</property>
     <min>1</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.AssetScope.AssetId</property>
+    <pattern>^[a-zA-Z0-9_-]{1,36}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.AssetTargetNameMap.AssetId</property>

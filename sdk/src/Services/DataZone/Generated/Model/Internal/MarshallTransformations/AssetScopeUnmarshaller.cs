@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SubscribedAsset Object
+    /// Response Unmarshaller for AssetScope Object
     /// </summary>  
-    public class SubscribedAssetUnmarshaller : IUnmarshaller<SubscribedAsset, XmlUnmarshallerContext>, IUnmarshaller<SubscribedAsset, JsonUnmarshallerContext>
+    public class AssetScopeUnmarshaller : IUnmarshaller<AssetScope, XmlUnmarshallerContext>, IUnmarshaller<AssetScope, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SubscribedAsset IUnmarshaller<SubscribedAsset, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AssetScope IUnmarshaller<AssetScope, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public SubscribedAsset Unmarshall(JsonUnmarshallerContext context)
+        public AssetScope Unmarshall(JsonUnmarshallerContext context)
         {
-            SubscribedAsset unmarshalledObject = new SubscribedAsset();
+            AssetScope unmarshalledObject = new AssetScope();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -72,34 +72,16 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     unmarshalledObject.AssetId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("assetRevision", targetDepth))
+                if (context.TestExpression("errorMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AssetRevision = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ErrorMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("assetScope", targetDepth))
+                if (context.TestExpression("filterIds", targetDepth))
                 {
-                    var unmarshaller = AssetScopeUnmarshaller.Instance;
-                    unmarshalledObject.AssetScope = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("failureCause", targetDepth))
-                {
-                    var unmarshaller = FailureCauseUnmarshaller.Instance;
-                    unmarshalledObject.FailureCause = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("failureTimestamp", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.FailureTimestamp = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("grantedTimestamp", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.GrantedTimestamp = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.FilterIds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))
@@ -108,23 +90,17 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("targetName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TargetName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
             return unmarshalledObject;
         }
 
 
-        private static SubscribedAssetUnmarshaller _instance = new SubscribedAssetUnmarshaller();        
+        private static AssetScopeUnmarshaller _instance = new AssetScopeUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SubscribedAssetUnmarshaller Instance
+        public static AssetScopeUnmarshaller Instance
         {
             get
             {
