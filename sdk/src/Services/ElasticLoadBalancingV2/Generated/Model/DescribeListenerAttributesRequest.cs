@@ -30,28 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
-    /// This is the response object from the ModifyTargetGroupAttributes operation.
+    /// Container for the parameters to the DescribeListenerAttributes operation.
+    /// Describes the attributes for the specified listener.
     /// </summary>
-    public partial class ModifyTargetGroupAttributesResponse : AmazonWebServiceResponse
+    public partial class DescribeListenerAttributesRequest : AmazonElasticLoadBalancingV2Request
     {
-        private List<TargetGroupAttribute> _attributes = AWSConfigs.InitializeCollections ? new List<TargetGroupAttribute>() : null;
+        private string _listenerArn;
 
         /// <summary>
-        /// Gets and sets the property Attributes. 
+        /// Gets and sets the property ListenerArn. 
         /// <para>
-        /// Information about the target group attributes.
+        /// The Amazon Resource Name (ARN) of the listener.
         /// </para>
         /// </summary>
-        public List<TargetGroupAttribute> Attributes
+        [AWSProperty(Required=true)]
+        public string ListenerArn
         {
-            get { return this._attributes; }
-            set { this._attributes = value; }
+            get { return this._listenerArn; }
+            set { this._listenerArn = value; }
         }
 
-        // Check to see if Attributes property is set
-        internal bool IsSetAttributes()
+        // Check to see if ListenerArn property is set
+        internal bool IsSetListenerArn()
         {
-            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._listenerArn != null;
         }
 
     }

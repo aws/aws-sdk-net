@@ -30,22 +30,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
-    /// Container for the parameters to the ModifyTargetGroupAttributes operation.
-    /// Modifies the specified attributes of the specified target group.
+    /// This is the response object from the ModifyListenerAttributes operation.
     /// </summary>
-    public partial class ModifyTargetGroupAttributesRequest : AmazonElasticLoadBalancingV2Request
+    public partial class ModifyListenerAttributesResponse : AmazonWebServiceResponse
     {
-        private List<TargetGroupAttribute> _attributes = AWSConfigs.InitializeCollections ? new List<TargetGroupAttribute>() : null;
-        private string _targetGroupArn;
+        private List<ListenerAttribute> _attributes = AWSConfigs.InitializeCollections ? new List<ListenerAttribute>() : null;
 
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// The target group attributes.
+        /// Information about the listener attributes.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public List<TargetGroupAttribute> Attributes
+        public List<ListenerAttribute> Attributes
         {
             get { return this._attributes; }
             set { this._attributes = value; }
@@ -55,25 +52,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         internal bool IsSetAttributes()
         {
             return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
-        /// <summary>
-        /// Gets and sets the property TargetGroupArn. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the target group.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string TargetGroupArn
-        {
-            get { return this._targetGroupArn; }
-            set { this._targetGroupArn = value; }
-        }
-
-        // Check to see if TargetGroupArn property is set
-        internal bool IsSetTargetGroupArn()
-        {
-            return this._targetGroupArn != null;
         }
 
     }

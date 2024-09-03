@@ -1191,6 +1191,49 @@ namespace Amazon.ElasticLoadBalancingV2
 
         #endregion
         
+        #region  DescribeListenerAttributes
+
+
+        /// <summary>
+        /// Describes the attributes for the specified listener.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeListenerAttributes service method.</param>
+        /// 
+        /// <returns>The response from the DescribeListenerAttributes service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.ListenerNotFoundException">
+        /// The specified listener does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListenerAttributes">REST API Reference for DescribeListenerAttributes Operation</seealso>
+        DescribeListenerAttributesResponse DescribeListenerAttributes(DescribeListenerAttributesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeListenerAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeListenerAttributes operation on AmazonElasticLoadBalancingV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeListenerAttributes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListenerAttributes">REST API Reference for DescribeListenerAttributes Operation</seealso>
+        IAsyncResult BeginDescribeListenerAttributes(DescribeListenerAttributesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeListenerAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeListenerAttributes.</param>
+        /// 
+        /// <returns>Returns a  DescribeListenerAttributesResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListenerAttributes">REST API Reference for DescribeListenerAttributes Operation</seealso>
+        DescribeListenerAttributesResponse EndDescribeListenerAttributes(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeListenerCertificates
 
 
@@ -2113,6 +2156,52 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <returns>Returns a  ModifyListenerResult from ElasticLoadBalancingV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyListener">REST API Reference for ModifyListener Operation</seealso>
         ModifyListenerResponse EndModifyListener(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ModifyListenerAttributes
+
+
+        /// <summary>
+        /// Modifies the specified attributes of the specified listener.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyListenerAttributes service method.</param>
+        /// 
+        /// <returns>The response from the ModifyListenerAttributes service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.InvalidConfigurationRequestException">
+        /// The requested configuration is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.ListenerNotFoundException">
+        /// The specified listener does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyListenerAttributes">REST API Reference for ModifyListenerAttributes Operation</seealso>
+        ModifyListenerAttributesResponse ModifyListenerAttributes(ModifyListenerAttributesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyListenerAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyListenerAttributes operation on AmazonElasticLoadBalancingV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyListenerAttributes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyListenerAttributes">REST API Reference for ModifyListenerAttributes Operation</seealso>
+        IAsyncResult BeginModifyListenerAttributes(ModifyListenerAttributesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyListenerAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyListenerAttributes.</param>
+        /// 
+        /// <returns>Returns a  ModifyListenerAttributesResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyListenerAttributes">REST API Reference for ModifyListenerAttributes Operation</seealso>
+        ModifyListenerAttributesResponse EndModifyListenerAttributes(IAsyncResult asyncResult);
 
         #endregion
         

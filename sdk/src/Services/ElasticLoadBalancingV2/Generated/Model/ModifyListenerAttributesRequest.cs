@@ -30,22 +30,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
-    /// Container for the parameters to the ModifyTargetGroupAttributes operation.
-    /// Modifies the specified attributes of the specified target group.
+    /// Container for the parameters to the ModifyListenerAttributes operation.
+    /// Modifies the specified attributes of the specified listener.
     /// </summary>
-    public partial class ModifyTargetGroupAttributesRequest : AmazonElasticLoadBalancingV2Request
+    public partial class ModifyListenerAttributesRequest : AmazonElasticLoadBalancingV2Request
     {
-        private List<TargetGroupAttribute> _attributes = AWSConfigs.InitializeCollections ? new List<TargetGroupAttribute>() : null;
-        private string _targetGroupArn;
+        private List<ListenerAttribute> _attributes = AWSConfigs.InitializeCollections ? new List<ListenerAttribute>() : null;
+        private string _listenerArn;
 
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// The target group attributes.
+        /// The listener attributes.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public List<TargetGroupAttribute> Attributes
+        public List<ListenerAttribute> Attributes
         {
             get { return this._attributes; }
             set { this._attributes = value; }
@@ -58,22 +58,22 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TargetGroupArn. 
+        /// Gets and sets the property ListenerArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the target group.
+        /// The Amazon Resource Name (ARN) of the listener.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string TargetGroupArn
+        public string ListenerArn
         {
-            get { return this._targetGroupArn; }
-            set { this._targetGroupArn = value; }
+            get { return this._listenerArn; }
+            set { this._listenerArn = value; }
         }
 
-        // Check to see if TargetGroupArn property is set
-        internal bool IsSetTargetGroupArn()
+        // Check to see if ListenerArn property is set
+        internal bool IsSetListenerArn()
         {
-            return this._targetGroupArn != null;
+            return this._listenerArn != null;
         }
 
     }

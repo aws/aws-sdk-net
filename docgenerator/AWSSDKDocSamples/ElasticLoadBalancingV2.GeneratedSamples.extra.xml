@@ -249,6 +249,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.ElasticLoadBalancingV2.IAmazonElasticLoadBalancingV2.DescribeListenerAttributes(Amazon.ElasticLoadBalancingV2.Model.DescribeListenerAttributesRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancingV2.AmazonElasticLoadBalancingV2Client.DescribeListenerAttributes(Amazon.ElasticLoadBalancingV2.Model.DescribeListenerAttributesRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancingV2.Model.DescribeListenerAttributesRequest" />
+            <member name="T:Amazon.ElasticLoadBalancingV2.Model.DescribeListenerAttributesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the attributes of the specified listener.
+                </para>
+                <code
+                    title="Describe listener attributes"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancingV2\ElasticLoadBalancingV2.GeneratedSamples.cs"
+                    region="describe-listener-attributes-1724874395194" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ElasticLoadBalancingV2.IAmazonElasticLoadBalancingV2.DescribeListeners(Amazon.ElasticLoadBalancingV2.Model.DescribeListenersRequest)" />
             <member name="M:Amazon.ElasticLoadBalancingV2.AmazonElasticLoadBalancingV2Client.DescribeListeners(Amazon.ElasticLoadBalancingV2.Model.DescribeListenersRequest)" />
             <member name="T:Amazon.ElasticLoadBalancingV2.Model.DescribeListenersRequest" />
