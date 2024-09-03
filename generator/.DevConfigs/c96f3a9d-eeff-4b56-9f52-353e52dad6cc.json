@@ -1,0 +1,9 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "Fix #3173. Add DynamicallyAccessedMembers to ConstantClass in Net8 to remove trim warnings."
+      ],
+      "type": "patch",
+      "updateMinimum": true
+    }
+  }
