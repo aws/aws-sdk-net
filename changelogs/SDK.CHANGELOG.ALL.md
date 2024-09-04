@@ -1,3 +1,21 @@
+### 3.7.879.0 (2024-09-04 18:20 UTC)
+* AppSync (3.7.401.0)
+	* Adds new logging levels (INFO and DEBUG) for additional log output control
+* BedrockAgent (3.7.402.0)
+	* Add support for user metadata inside PromptVariant.
+* CloudWatchLogs (3.7.403.0)
+	* Update to support new APIs for delivery of logs from AWS services.
+* Finspace (3.7.400.14)
+	* Updates Finspace documentation for smaller instances.
+* FIS (3.7.402.0)
+	* This release adds safety levers, a new mechanism to stop all running experiments and prevent new experiments from starting.
+* S3Control (3.7.401.0)
+	* Amazon Simple Storage Service /S3 Access Grants / Features : This release launches new Access Grants API - ListCallerAccessGrants.
+* Core 3.7.400.14
+	* Updating endpoints.json file.
+	* Updating partitions.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.878.0 (2024-09-03 18:19 UTC)
 * Connect (3.7.403.0)
 	* Release ReplicaConfiguration as part of DescribeInstance
