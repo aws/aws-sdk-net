@@ -52,6 +52,11 @@ namespace Amazon.S3Control.Model
         IListAccessPointsForObjectLambdaPaginator ListAccessPointsForObjectLambda(ListAccessPointsForObjectLambdaRequest request);
 
         /// <summary>
+        /// Paginator for ListCallerAccessGrants operation
+        ///</summary>
+        IListCallerAccessGrantsPaginator ListCallerAccessGrants(ListCallerAccessGrantsRequest request);
+
+        /// <summary>
         /// Paginator for ListJobs operation
         ///</summary>
         IListJobsPaginator ListJobs(ListJobsRequest request);

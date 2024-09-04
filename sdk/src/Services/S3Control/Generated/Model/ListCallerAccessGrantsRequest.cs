@@ -30,21 +30,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListAccessGrantsInstances operation.
-    /// Returns a list of S3 Access Grants instances. An S3 Access Grants instance serves
-    /// as a logical grouping for your individual access grants. You can only have one S3
-    /// Access Grants instance per Region per account.
+    /// Container for the parameters to the ListCallerAccessGrants operation.
+    /// Returns a list of the access grants that were given to the caller using S3 Access
+    /// Grants and that allow the caller to access the S3 data of the Amazon Web Services
+    /// account specified in the request.
     /// 
     ///  <dl> <dt>Permissions</dt> <dd> 
     /// <para>
-    /// You must have the <c>s3:ListAccessGrantsInstances</c> permission to use this operation.
+    /// You must have the <c>s3:ListCallerAccessGrants</c> permission to use this operation.
     /// 
     /// </para>
     ///  </dd> </dl>
     /// </summary>
-    public partial class ListAccessGrantsInstancesRequest : AmazonS3ControlRequest
+    public partial class ListCallerAccessGrantsRequest : AmazonS3ControlRequest
     {
         private string _accountId;
+        private bool? _allowedByApplication;
+        private string _grantScope;
         private int? _maxResults;
         private string _nextToken;
 
@@ -68,10 +70,51 @@ namespace Amazon.S3Control.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AllowedByApplication. 
+        /// <para>
+        /// If this optional parameter is passed in the request, a filter is applied to the results.
+        /// The results will include only the access grants for the caller's Identity Center application
+        /// or for any other applications (<c>ALL</c>).
+        /// </para>
+        /// </summary>
+        public bool AllowedByApplication
+        {
+            get { return this._allowedByApplication.GetValueOrDefault(); }
+            set { this._allowedByApplication = value; }
+        }
+
+        // Check to see if AllowedByApplication property is set
+        internal bool IsSetAllowedByApplication()
+        {
+            return this._allowedByApplication.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GrantScope. 
+        /// <para>
+        /// The S3 path of the data that you would like to access. Must start with <c>s3://</c>.
+        /// You can optionally pass only the beginning characters of a path, and S3 Access Grants
+        /// will search for all applicable grants for the path fragment. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2000)]
+        public string GrantScope
+        {
+            get { return this._grantScope; }
+            set { this._grantScope = value; }
+        }
+
+        // Check to see if GrantScope property is set
+        internal bool IsSetGrantScope()
+        {
+            return this._grantScope != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of access grants that you would like returned in the <c>List Access
-        /// Grants</c> response. If the results include the pagination token <c>NextToken</c>,
+        /// The maximum number of access grants that you would like returned in the <c>List Caller
+        /// Access Grants</c> response. If the results include the pagination token <c>NextToken</c>,
         /// make another call using the <c>NextToken</c> to determine if there are more results.
         /// </para>
         /// </summary>
@@ -92,8 +135,7 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// A pagination token to request the next page of results. Pass this value into a subsequent
-        /// <c>List Access Grants Instances</c> request in order to retrieve the next page of
-        /// results.
+        /// <c>List Caller Access Grants</c> request in order to retrieve the next page of results.
         /// </para>
         /// </summary>
         public string NextToken

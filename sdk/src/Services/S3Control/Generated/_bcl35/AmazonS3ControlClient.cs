@@ -3082,7 +3082,12 @@ namespace Amazon.S3Control
         /// You must have the <c>s3:GetAccessGrantsInstance</c> permission to use this operation.
         /// 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <note> 
+        /// <para>
+        ///  <c>GetAccessGrantsInstance</c> is not supported for cross-account access. You can
+        /// only call the API from the account that owns the S3 Access Grants instance.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccessGrantsInstance service method.</param>
         /// 
@@ -5669,6 +5674,69 @@ namespace Amazon.S3Control
         public virtual ListAccessPointsForObjectLambdaResponse EndListAccessPointsForObjectLambda(IAsyncResult asyncResult)
         {
             return EndInvoke<ListAccessPointsForObjectLambdaResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListCallerAccessGrants
+
+        /// <summary>
+        /// Returns a list of the access grants that were given to the caller using S3 Access
+        /// Grants and that allow the caller to access the S3 data of the Amazon Web Services
+        /// account specified in the request.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3:ListCallerAccessGrants</c> permission to use this operation.
+        /// 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCallerAccessGrants service method.</param>
+        /// 
+        /// <returns>The response from the ListCallerAccessGrants service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListCallerAccessGrants">REST API Reference for ListCallerAccessGrants Operation</seealso>
+        public virtual ListCallerAccessGrantsResponse ListCallerAccessGrants(ListCallerAccessGrantsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCallerAccessGrantsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCallerAccessGrantsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCallerAccessGrantsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCallerAccessGrants operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCallerAccessGrants operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCallerAccessGrants
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListCallerAccessGrants">REST API Reference for ListCallerAccessGrants Operation</seealso>
+        public virtual IAsyncResult BeginListCallerAccessGrants(ListCallerAccessGrantsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCallerAccessGrantsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCallerAccessGrantsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCallerAccessGrants operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCallerAccessGrants.</param>
+        /// 
+        /// <returns>Returns a  ListCallerAccessGrantsResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListCallerAccessGrants">REST API Reference for ListCallerAccessGrants Operation</seealso>
+        public virtual ListCallerAccessGrantsResponse EndListCallerAccessGrants(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListCallerAccessGrantsResponse>(asyncResult);
         }
 
         #endregion

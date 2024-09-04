@@ -44,7 +44,8 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property MatchAnyPrefix. 
         /// <para>
         /// If provided, the generated manifest includes objects where the specified string appears
-        /// at the start of the object key string.
+        /// at the start of the object key string. Each KeyNameConstraint filter accepts an array
+        /// of strings with a length of 1 string.
         /// </para>
         /// </summary>
         public List<string> MatchAnyPrefix
@@ -63,7 +64,8 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property MatchAnySubstring. 
         /// <para>
         /// If provided, the generated manifest includes objects where the specified string appears
-        /// anywhere within the object key string.
+        /// anywhere within the object key string. Each KeyNameConstraint filter accepts an array
+        /// of strings with a length of 1 string.
         /// </para>
         /// </summary>
         public List<string> MatchAnySubstring
@@ -82,7 +84,8 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property MatchAnySuffix. 
         /// <para>
         /// If provided, the generated manifest includes objects where the specified string appears
-        /// at the end of the object key string.
+        /// at the end of the object key string. Each KeyNameConstraint filter accepts an array
+        /// of strings with a length of 1 string.
         /// </para>
         /// </summary>
         public List<string> MatchAnySuffix

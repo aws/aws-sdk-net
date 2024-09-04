@@ -34,18 +34,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ListAccessGrantsInstanceEntry Object
+    /// Response Unmarshaller for ListCallerAccessGrantsEntry Object
     /// </summary>  
-    public class ListAccessGrantsInstanceEntryUnmarshaller : IUnmarshaller<ListAccessGrantsInstanceEntry, XmlUnmarshallerContext>, IUnmarshaller<ListAccessGrantsInstanceEntry, JsonUnmarshallerContext>
+    public class ListCallerAccessGrantsEntryUnmarshaller : IUnmarshaller<ListCallerAccessGrantsEntry, XmlUnmarshallerContext>, IUnmarshaller<ListCallerAccessGrantsEntry, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ListAccessGrantsInstanceEntry Unmarshall(XmlUnmarshallerContext context)
+        public ListCallerAccessGrantsEntry Unmarshall(XmlUnmarshallerContext context)
         {
-            ListAccessGrantsInstanceEntry unmarshalledObject = new ListAccessGrantsInstanceEntry();
+            ListCallerAccessGrantsEntry unmarshalledObject = new ListCallerAccessGrantsEntry();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -56,40 +56,22 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("AccessGrantsInstanceArn", targetDepth))
+                    if (context.TestExpression("ApplicationArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.AccessGrantsInstanceArn = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ApplicationArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("AccessGrantsInstanceId", targetDepth))
+                    if (context.TestExpression("GrantScope", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.AccessGrantsInstanceId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.GrantScope = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("CreatedAt", targetDepth))
-                    {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
-                        unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("IdentityCenterApplicationArn", targetDepth))
+                    if (context.TestExpression("Permission", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.IdentityCenterApplicationArn = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("IdentityCenterArn", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.IdentityCenterArn = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("IdentityCenterInstanceArn", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.IdentityCenterInstanceArn = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Permission = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -106,17 +88,17 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ListAccessGrantsInstanceEntry Unmarshall(JsonUnmarshallerContext context)
+        public ListCallerAccessGrantsEntry Unmarshall(JsonUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
-        private static ListAccessGrantsInstanceEntryUnmarshaller _instance = new ListAccessGrantsInstanceEntryUnmarshaller();        
+        private static ListCallerAccessGrantsEntryUnmarshaller _instance = new ListCallerAccessGrantsEntryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListAccessGrantsInstanceEntryUnmarshaller Instance
+        public static ListCallerAccessGrantsEntryUnmarshaller Instance
         {
             get
             {
