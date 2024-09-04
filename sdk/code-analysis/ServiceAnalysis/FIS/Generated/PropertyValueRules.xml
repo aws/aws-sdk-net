@@ -88,6 +88,11 @@
     <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FIS.Model.GetSafetyLeverRequest.Id</property>
+    <max>64</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FIS.Model.GetTargetAccountConfigurationRequest.AccountId</property>
     <min>12</min>
     <max>48</max>
@@ -290,6 +295,11 @@
     <property>Amazon.FIS.Model.UpdateExperimentTemplateRequest.RoleArn</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.UpdateSafetyLeverStateRequest.Id</property>
+    <max>64</max>
     <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -658,6 +668,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ResolvedTarget.TargetName</property>
+    <max>64</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.SafetyLever.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.SafetyLever.Id</property>
     <max>64</max>
     <pattern>[\S]+</pattern>
   </property-value-rule>

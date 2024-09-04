@@ -259,6 +259,10 @@ namespace Amazon.FIS
     {
 
         /// <summary>
+        /// Constant Cancelled for ExperimentStatus
+        /// </summary>
+        public static readonly ExperimentStatus Cancelled = new ExperimentStatus("cancelled");
+        /// <summary>
         /// Constant Completed for ExperimentStatus
         /// </summary>
         public static readonly ExperimentStatus Completed = new ExperimentStatus("completed");
@@ -316,6 +320,110 @@ namespace Amazon.FIS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ExperimentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SafetyLeverStatus.
+    /// </summary>
+    public class SafetyLeverStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disengaged for SafetyLeverStatus
+        /// </summary>
+        public static readonly SafetyLeverStatus Disengaged = new SafetyLeverStatus("disengaged");
+        /// <summary>
+        /// Constant Engaged for SafetyLeverStatus
+        /// </summary>
+        public static readonly SafetyLeverStatus Engaged = new SafetyLeverStatus("engaged");
+        /// <summary>
+        /// Constant Engaging for SafetyLeverStatus
+        /// </summary>
+        public static readonly SafetyLeverStatus Engaging = new SafetyLeverStatus("engaging");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SafetyLeverStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SafetyLeverStatus FindValue(string value)
+        {
+            return FindValue<SafetyLeverStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SafetyLeverStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SafetyLeverStatusInput.
+    /// </summary>
+    public class SafetyLeverStatusInput : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disengaged for SafetyLeverStatusInput
+        /// </summary>
+        public static readonly SafetyLeverStatusInput Disengaged = new SafetyLeverStatusInput("disengaged");
+        /// <summary>
+        /// Constant Engaged for SafetyLeverStatusInput
+        /// </summary>
+        public static readonly SafetyLeverStatusInput Engaged = new SafetyLeverStatusInput("engaged");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SafetyLeverStatusInput(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SafetyLeverStatusInput FindValue(string value)
+        {
+            return FindValue<SafetyLeverStatusInput>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SafetyLeverStatusInput(string value)
         {
             return FindValue(value);
         }
