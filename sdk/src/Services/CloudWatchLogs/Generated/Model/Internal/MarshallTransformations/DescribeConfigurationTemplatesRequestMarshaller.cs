@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateDelivery Request Marshaller
+    /// DescribeConfigurationTemplates Request Marshaller
     /// </summary>       
-    public class CreateDeliveryRequestMarshaller : IMarshaller<IRequest, CreateDeliveryRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DescribeConfigurationTemplatesRequestMarshaller : IMarshaller<IRequest, DescribeConfigurationTemplatesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateDeliveryRequest)input);
+            return this.Marshall((DescribeConfigurationTemplatesRequest)input);
         }
 
         /// <summary>
@@ -53,10 +53,10 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateDeliveryRequest publicRequest)
+        public IRequest Marshall(DescribeConfigurationTemplatesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatchLogs");
-            string target = "Logs_20140328.CreateDelivery";
+            string target = "Logs_20140328.DescribeConfigurationTemplates";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-03-28";
@@ -69,58 +69,55 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeliveryDestinationArn())
+                if(publicRequest.IsSetDeliveryDestinationTypes())
                 {
-                    context.Writer.WritePropertyName("deliveryDestinationArn");
-                    context.Writer.Write(publicRequest.DeliveryDestinationArn);
-                }
-
-                if(publicRequest.IsSetDeliverySourceName())
-                {
-                    context.Writer.WritePropertyName("deliverySourceName");
-                    context.Writer.Write(publicRequest.DeliverySourceName);
-                }
-
-                if(publicRequest.IsSetFieldDelimiter())
-                {
-                    context.Writer.WritePropertyName("fieldDelimiter");
-                    context.Writer.Write(publicRequest.FieldDelimiter);
-                }
-
-                if(publicRequest.IsSetRecordFields())
-                {
-                    context.Writer.WritePropertyName("recordFields");
+                    context.Writer.WritePropertyName("deliveryDestinationTypes");
                     context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRecordFieldsListValue in publicRequest.RecordFields)
+                    foreach(var publicRequestDeliveryDestinationTypesListValue in publicRequest.DeliveryDestinationTypes)
                     {
-                            context.Writer.Write(publicRequestRecordFieldsListValue);
+                            context.Writer.Write(publicRequestDeliveryDestinationTypesListValue);
                     }
                     context.Writer.WriteArrayEnd();
                 }
 
-                if(publicRequest.IsSetS3DeliveryConfiguration())
+                if(publicRequest.IsSetLimit())
                 {
-                    context.Writer.WritePropertyName("s3DeliveryConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = S3DeliveryConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.S3DeliveryConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("limit");
+                    context.Writer.Write(publicRequest.Limit);
                 }
 
-                if(publicRequest.IsSetTags())
+                if(publicRequest.IsSetLogTypes())
                 {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    context.Writer.WritePropertyName("logTypes");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestLogTypesListValue in publicRequest.LogTypes)
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                            context.Writer.Write(publicRequestLogTypesListValue);
                     }
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetNextToken())
+                {
+                    context.Writer.WritePropertyName("nextToken");
+                    context.Writer.Write(publicRequest.NextToken);
+                }
+
+                if(publicRequest.IsSetResourceTypes())
+                {
+                    context.Writer.WritePropertyName("resourceTypes");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestResourceTypesListValue in publicRequest.ResourceTypes)
+                    {
+                            context.Writer.Write(publicRequestResourceTypesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetService())
+                {
+                    context.Writer.WritePropertyName("service");
+                    context.Writer.Write(publicRequest.Service);
                 }
 
                 writer.WriteObjectEnd();
@@ -131,9 +128,9 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateDeliveryRequestMarshaller _instance = new CreateDeliveryRequestMarshaller();        
+        private static DescribeConfigurationTemplatesRequestMarshaller _instance = new DescribeConfigurationTemplatesRequestMarshaller();        
 
-        internal static CreateDeliveryRequestMarshaller GetInstance()
+        internal static DescribeConfigurationTemplatesRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -141,7 +138,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateDeliveryRequestMarshaller Instance
+        public static DescribeConfigurationTemplatesRequestMarshaller Instance
         {
             get
             {

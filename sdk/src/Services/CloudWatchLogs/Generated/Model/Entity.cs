@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// Reserved for future use.
+    /// Reserved for internal use.
     /// </summary>
     public partial class Entity
     {
@@ -40,7 +40,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// Reserved for future use.
+        /// Reserved for internal use.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
@@ -59,7 +59,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property KeyAttributes. 
         /// <para>
-        /// Reserved for future use.
+        /// Reserved for internal use.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=3)]

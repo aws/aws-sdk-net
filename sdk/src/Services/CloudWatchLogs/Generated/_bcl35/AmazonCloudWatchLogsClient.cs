@@ -2194,6 +2194,74 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
         
+        #region  DescribeConfigurationTemplates
+
+        /// <summary>
+        /// Use this operation to return the valid and default values that are used when creating
+        /// delivery sources, delivery destinations, and deliveries. For more information about
+        /// deliveries, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateDelivery.html">CreateDelivery</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationTemplates service method.</param>
+        /// 
+        /// <returns>The response from the DescribeConfigurationTemplates service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeConfigurationTemplates">REST API Reference for DescribeConfigurationTemplates Operation</seealso>
+        public virtual DescribeConfigurationTemplatesResponse DescribeConfigurationTemplates(DescribeConfigurationTemplatesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConfigurationTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConfigurationTemplatesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeConfigurationTemplatesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeConfigurationTemplates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationTemplates operation on AmazonCloudWatchLogsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeConfigurationTemplates
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeConfigurationTemplates">REST API Reference for DescribeConfigurationTemplates Operation</seealso>
+        public virtual IAsyncResult BeginDescribeConfigurationTemplates(DescribeConfigurationTemplatesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConfigurationTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConfigurationTemplatesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeConfigurationTemplates operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeConfigurationTemplates.</param>
+        /// 
+        /// <returns>Returns a  DescribeConfigurationTemplatesResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeConfigurationTemplates">REST API Reference for DescribeConfigurationTemplates Operation</seealso>
+        public virtual DescribeConfigurationTemplatesResponse EndDescribeConfigurationTemplates(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeConfigurationTemplatesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeDeliveries
 
         /// <summary>
@@ -6432,6 +6500,80 @@ namespace Amazon.CloudWatchLogs
         public virtual UpdateAnomalyResponse EndUpdateAnomaly(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateAnomalyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateDeliveryConfiguration
+
+        /// <summary>
+        /// Use this operation to update the configuration of a <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_Delivery.html">delivery</a>
+        /// to change either the S3 path pattern or the format of the delivered logs. You can't
+        /// use this operation to change the source or destination of the delivery.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDeliveryConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDeliveryConfiguration service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ConflictException">
+        /// This operation attempted to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UpdateDeliveryConfiguration">REST API Reference for UpdateDeliveryConfiguration Operation</seealso>
+        public virtual UpdateDeliveryConfigurationResponse UpdateDeliveryConfiguration(UpdateDeliveryConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDeliveryConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDeliveryConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDeliveryConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDeliveryConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDeliveryConfiguration operation on AmazonCloudWatchLogsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDeliveryConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UpdateDeliveryConfiguration">REST API Reference for UpdateDeliveryConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginUpdateDeliveryConfiguration(UpdateDeliveryConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDeliveryConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDeliveryConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateDeliveryConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDeliveryConfiguration.</param>
+        /// 
+        /// <returns>Returns a  UpdateDeliveryConfigurationResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UpdateDeliveryConfiguration">REST API Reference for UpdateDeliveryConfiguration Operation</seealso>
+        public virtual UpdateDeliveryConfigurationResponse EndUpdateDeliveryConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateDeliveryConfigurationResponse>(asyncResult);
         }
 
         #endregion

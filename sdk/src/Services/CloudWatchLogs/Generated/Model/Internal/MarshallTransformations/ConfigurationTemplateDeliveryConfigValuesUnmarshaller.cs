@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Delivery Object
+    /// Response Unmarshaller for ConfigurationTemplateDeliveryConfigValues Object
     /// </summary>  
-    public class DeliveryUnmarshaller : IUnmarshaller<Delivery, XmlUnmarshallerContext>, IUnmarshaller<Delivery, JsonUnmarshallerContext>
+    public class ConfigurationTemplateDeliveryConfigValuesUnmarshaller : IUnmarshaller<ConfigurationTemplateDeliveryConfigValues, XmlUnmarshallerContext>, IUnmarshaller<ConfigurationTemplateDeliveryConfigValues, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Delivery IUnmarshaller<Delivery, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ConfigurationTemplateDeliveryConfigValues IUnmarshaller<ConfigurationTemplateDeliveryConfigValues, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public Delivery Unmarshall(JsonUnmarshallerContext context)
+        public ConfigurationTemplateDeliveryConfigValues Unmarshall(JsonUnmarshallerContext context)
         {
-            Delivery unmarshalledObject = new Delivery();
+            ConfigurationTemplateDeliveryConfigValues unmarshalledObject = new ConfigurationTemplateDeliveryConfigValues();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,40 +66,10 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("arn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("deliveryDestinationArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeliveryDestinationArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("deliveryDestinationType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeliveryDestinationType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("deliverySourceName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeliverySourceName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("fieldDelimiter", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FieldDelimiter = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("id", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("recordFields", targetDepth))
@@ -114,23 +84,17 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     unmarshalledObject.S3DeliveryConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("tags", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
             return unmarshalledObject;
         }
 
 
-        private static DeliveryUnmarshaller _instance = new DeliveryUnmarshaller();        
+        private static ConfigurationTemplateDeliveryConfigValuesUnmarshaller _instance = new ConfigurationTemplateDeliveryConfigValuesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeliveryUnmarshaller Instance
+        public static ConfigurationTemplateDeliveryConfigValuesUnmarshaller Instance
         {
             get
             {

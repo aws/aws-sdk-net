@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateDelivery Request Marshaller
+    /// UpdateDeliveryConfiguration Request Marshaller
     /// </summary>       
-    public class CreateDeliveryRequestMarshaller : IMarshaller<IRequest, CreateDeliveryRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateDeliveryConfigurationRequestMarshaller : IMarshaller<IRequest, UpdateDeliveryConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateDeliveryRequest)input);
+            return this.Marshall((UpdateDeliveryConfigurationRequest)input);
         }
 
         /// <summary>
@@ -53,10 +53,10 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateDeliveryRequest publicRequest)
+        public IRequest Marshall(UpdateDeliveryConfigurationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatchLogs");
-            string target = "Logs_20140328.CreateDelivery";
+            string target = "Logs_20140328.UpdateDeliveryConfiguration";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-03-28";
@@ -69,22 +69,16 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeliveryDestinationArn())
-                {
-                    context.Writer.WritePropertyName("deliveryDestinationArn");
-                    context.Writer.Write(publicRequest.DeliveryDestinationArn);
-                }
-
-                if(publicRequest.IsSetDeliverySourceName())
-                {
-                    context.Writer.WritePropertyName("deliverySourceName");
-                    context.Writer.Write(publicRequest.DeliverySourceName);
-                }
-
                 if(publicRequest.IsSetFieldDelimiter())
                 {
                     context.Writer.WritePropertyName("fieldDelimiter");
                     context.Writer.Write(publicRequest.FieldDelimiter);
+                }
+
+                if(publicRequest.IsSetId())
+                {
+                    context.Writer.WritePropertyName("id");
+                    context.Writer.Write(publicRequest.Id);
                 }
 
                 if(publicRequest.IsSetRecordFields())
@@ -109,20 +103,6 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
@@ -131,9 +111,9 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateDeliveryRequestMarshaller _instance = new CreateDeliveryRequestMarshaller();        
+        private static UpdateDeliveryConfigurationRequestMarshaller _instance = new UpdateDeliveryConfigurationRequestMarshaller();        
 
-        internal static CreateDeliveryRequestMarshaller GetInstance()
+        internal static UpdateDeliveryConfigurationRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -141,7 +121,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateDeliveryRequestMarshaller Instance
+        public static UpdateDeliveryConfigurationRequestMarshaller Instance
         {
             get
             {

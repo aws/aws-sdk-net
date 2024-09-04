@@ -52,7 +52,10 @@ namespace Amazon.CloudWatchLogs.Model
         private string _deliveryDestinationArn;
         private DeliveryDestinationType _deliveryDestinationType;
         private string _deliverySourceName;
+        private string _fieldDelimiter;
         private string _id;
+        private List<string> _recordFields = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private S3DeliveryConfiguration _s3DeliveryConfiguration;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -130,6 +133,26 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FieldDelimiter. 
+        /// <para>
+        /// The field delimiter that is used between record fields when the final output format
+        /// of a delivery is in <c>Plain</c>, <c>W3C</c>, or <c>Raw</c> format.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=5)]
+        public string FieldDelimiter
+        {
+            get { return this._fieldDelimiter; }
+            set { this._fieldDelimiter = value; }
+        }
+
+        // Check to see if FieldDelimiter property is set
+        internal bool IsSetFieldDelimiter()
+        {
+            return this._fieldDelimiter != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
         /// The unique ID that identifies this delivery in your account.
@@ -146,6 +169,44 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecordFields. 
+        /// <para>
+        /// The record fields used in this delivery.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=128)]
+        public List<string> RecordFields
+        {
+            get { return this._recordFields; }
+            set { this._recordFields = value; }
+        }
+
+        // Check to see if RecordFields property is set
+        internal bool IsSetRecordFields()
+        {
+            return this._recordFields != null && (this._recordFields.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3DeliveryConfiguration. 
+        /// <para>
+        /// This structure contains delivery configurations that apply only when the delivery
+        /// destination resource is an S3 bucket.
+        /// </para>
+        /// </summary>
+        public S3DeliveryConfiguration S3DeliveryConfiguration
+        {
+            get { return this._s3DeliveryConfiguration; }
+            set { this._s3DeliveryConfiguration = value; }
+        }
+
+        // Check to see if S3DeliveryConfiguration property is set
+        internal bool IsSetS3DeliveryConfiguration()
+        {
+            return this._s3DeliveryConfiguration != null;
         }
 
         /// <summary>

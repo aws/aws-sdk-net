@@ -30,30 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// Reserved for internal use.
+    /// This is the response object from the UpdateDeliveryConfiguration operation.
     /// </summary>
-    public partial class RejectedEntityInfo
+    public partial class UpdateDeliveryConfigurationResponse : AmazonWebServiceResponse
     {
-        private EntityRejectionErrorType _errorType;
-
-        /// <summary>
-        /// Gets and sets the property ErrorType. 
-        /// <para>
-        /// Reserved for internal use.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public EntityRejectionErrorType ErrorType
-        {
-            get { return this._errorType; }
-            set { this._errorType = value; }
-        }
-
-        // Check to see if ErrorType property is set
-        internal bool IsSetErrorType()
-        {
-            return this._errorType != null;
-        }
 
     }
 }

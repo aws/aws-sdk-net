@@ -73,7 +73,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property RejectedEntityInfo. 
         /// <para>
-        /// Reserved for future use.
+        /// Reserved for internal use.
         /// </para>
         /// </summary>
         public RejectedEntityInfo RejectedEntityInfo
