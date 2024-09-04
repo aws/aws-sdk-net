@@ -52,8 +52,8 @@ namespace Amazon.BedrockAgent.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// You can get the ARN of a model with the action. Standard model usage charges apply
-    /// for the foundation model parsing strategy.
+    /// You can get the ARN of a model with the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListFoundationModels.html">ListFoundationModels</a>
+    /// action. Standard model usage charges apply for the foundation model parsing strategy.
     /// </para>
     /// </summary>
     public partial class ParsingConfiguration

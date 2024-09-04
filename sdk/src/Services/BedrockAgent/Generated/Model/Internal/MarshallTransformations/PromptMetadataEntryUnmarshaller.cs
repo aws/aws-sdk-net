@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PromptVariant Object
+    /// Response Unmarshaller for PromptMetadataEntry Object
     /// </summary>  
-    public class PromptVariantUnmarshaller : IUnmarshaller<PromptVariant, XmlUnmarshallerContext>, IUnmarshaller<PromptVariant, JsonUnmarshallerContext>
+    public class PromptMetadataEntryUnmarshaller : IUnmarshaller<PromptMetadataEntry, XmlUnmarshallerContext>, IUnmarshaller<PromptMetadataEntry, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PromptVariant IUnmarshaller<PromptVariant, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PromptMetadataEntry IUnmarshaller<PromptMetadataEntry, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public PromptVariant Unmarshall(JsonUnmarshallerContext context)
+        public PromptMetadataEntry Unmarshall(JsonUnmarshallerContext context)
         {
-            PromptVariant unmarshalledObject = new PromptVariant();
+            PromptMetadataEntry unmarshalledObject = new PromptMetadataEntry();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,40 +66,16 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("inferenceConfiguration", targetDepth))
-                {
-                    var unmarshaller = PromptInferenceConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.InferenceConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("metadata", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<PromptMetadataEntry, PromptMetadataEntryUnmarshaller>(PromptMetadataEntryUnmarshaller.Instance);
-                    unmarshalledObject.Metadata = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("modelId", targetDepth))
+                if (context.TestExpression("key", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ModelId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Key = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("value", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("templateConfiguration", targetDepth))
-                {
-                    var unmarshaller = PromptTemplateConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.TemplateConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("templateType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TemplateType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -107,12 +83,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         }
 
 
-        private static PromptVariantUnmarshaller _instance = new PromptVariantUnmarshaller();        
+        private static PromptMetadataEntryUnmarshaller _instance = new PromptMetadataEntryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PromptVariantUnmarshaller Instance
+        public static PromptMetadataEntryUnmarshaller Instance
         {
             get
             {
