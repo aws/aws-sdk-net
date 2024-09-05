@@ -33,14 +33,13 @@ namespace Amazon.ApplicationSignals.Model
     /// Use this structure to specify the information for the metric that a period-based SLO
     /// will monitor.
     /// </summary>
-    public partial class ServiceLevelIndicatorMetricConfig
+    public partial class RequestBasedServiceLevelIndicatorMetricConfig
     {
         private Dictionary<string, string> _keyAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
-        private List<MetricDataQuery> _metricDataQueries = AWSConfigs.InitializeCollections ? new List<MetricDataQuery>() : null;
         private ServiceLevelIndicatorMetricType _metricType;
+        private MonitoredRequestCountMetricDataQueries _monitoredRequestCountMetric;
         private string _operationName;
-        private int? _periodSeconds;
-        private string _statistic;
+        private List<MetricDataQuery> _totalRequestCountMetric = AWSConfigs.InitializeCollections ? new List<MetricDataQuery>() : null;
 
         /// <summary>
         /// Gets and sets the property KeyAttributes. 
@@ -93,25 +92,6 @@ namespace Amazon.ApplicationSignals.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MetricDataQueries. 
-        /// <para>
-        /// If this SLO monitors a CloudWatch metric or the result of a CloudWatch metric math
-        /// expression, use this structure to specify that metric or expression. 
-        /// </para>
-        /// </summary>
-        public List<MetricDataQuery> MetricDataQueries
-        {
-            get { return this._metricDataQueries; }
-            set { this._metricDataQueries = value; }
-        }
-
-        // Check to see if MetricDataQueries property is set
-        internal bool IsSetMetricDataQueries()
-        {
-            return this._metricDataQueries != null && (this._metricDataQueries.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
-        /// <summary>
         /// Gets and sets the property MetricType. 
         /// <para>
         /// If the SLO is to monitor either the <c>LATENCY</c> or <c>AVAILABILITY</c> metric that
@@ -129,6 +109,28 @@ namespace Amazon.ApplicationSignals.Model
         internal bool IsSetMetricType()
         {
             return this._metricType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MonitoredRequestCountMetric. 
+        /// <para>
+        /// Use this structure to define the metric that you want to use as the "good request"
+        /// or "bad request" value for a request-based SLO. This value observed for the metric
+        /// defined in <c>TotalRequestCountMetric</c> will be divided by the number found for
+        /// <c>MonitoredRequestCountMetric</c> to determine the percentage of successful requests
+        /// that this SLO tracks.
+        /// </para>
+        /// </summary>
+        public MonitoredRequestCountMetricDataQueries MonitoredRequestCountMetric
+        {
+            get { return this._monitoredRequestCountMetric; }
+            set { this._monitoredRequestCountMetric = value; }
+        }
+
+        // Check to see if MonitoredRequestCountMetric property is set
+        internal bool IsSetMonitoredRequestCountMetric()
+        {
+            return this._monitoredRequestCountMetric != null;
         }
 
         /// <summary>
@@ -152,45 +154,23 @@ namespace Amazon.ApplicationSignals.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PeriodSeconds. 
+        /// Gets and sets the property TotalRequestCountMetric. 
         /// <para>
-        /// The number of seconds to use as the period for SLO evaluation. Your application's
-        /// performance is compared to the SLI during each period. For each period, the application
-        /// is determined to have either achieved or not achieved the necessary performance.
+        /// Use this structure to define the metric that you want to use as the "total requests"
+        /// number for a request-based SLO. This result will be divided by the "good request"
+        /// or "bad request" value defined in <c>MonitoredRequestCountMetric</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=60, Max=900)]
-        public int PeriodSeconds
+        public List<MetricDataQuery> TotalRequestCountMetric
         {
-            get { return this._periodSeconds.GetValueOrDefault(); }
-            set { this._periodSeconds = value; }
+            get { return this._totalRequestCountMetric; }
+            set { this._totalRequestCountMetric = value; }
         }
 
-        // Check to see if PeriodSeconds property is set
-        internal bool IsSetPeriodSeconds()
+        // Check to see if TotalRequestCountMetric property is set
+        internal bool IsSetTotalRequestCountMetric()
         {
-            return this._periodSeconds.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Statistic. 
-        /// <para>
-        /// The statistic to use for comparison to the threshold. It can be any CloudWatch statistic
-        /// or extended statistic. For more information about statistics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html">CloudWatch
-        /// statistics definitions</a>.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=20)]
-        public string Statistic
-        {
-            get { return this._statistic; }
-            set { this._statistic = value; }
-        }
-
-        // Check to see if Statistic property is set
-        internal bool IsSetStatistic()
-        {
-            return this._statistic != null;
+            return this._totalRequestCountMetric != null && (this._totalRequestCountMetric.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

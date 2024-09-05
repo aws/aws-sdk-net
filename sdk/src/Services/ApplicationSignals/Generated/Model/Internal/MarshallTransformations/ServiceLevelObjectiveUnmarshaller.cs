@@ -84,6 +84,12 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EvaluationType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EvaluationType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Goal", targetDepth))
                 {
                     var unmarshaller = GoalUnmarshaller.Instance;
@@ -100,6 +106,12 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RequestBasedSli", targetDepth))
+                {
+                    var unmarshaller = RequestBasedServiceLevelIndicatorUnmarshaller.Instance;
+                    unmarshalledObject.RequestBasedSli = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Sli", targetDepth))

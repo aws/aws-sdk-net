@@ -36,11 +36,15 @@ namespace Amazon.ApplicationSignals.Model
     {
         private string _arn;
         private double? _attainment;
+        private int? _budgetRequestsRemaining;
         private int? _budgetSecondsRemaining;
         private ServiceLevelObjectiveBudgetStatus _budgetStatus;
+        private EvaluationType _evaluationType;
         private Goal _goal;
         private string _name;
+        private RequestBasedServiceLevelIndicator _requestBasedSli;
         private ServiceLevelIndicator _sli;
+        private int? _totalBudgetRequests;
         private int? _totalBudgetSeconds;
 
         /// <summary>
@@ -65,8 +69,19 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property Attainment. 
         /// <para>
-        /// A number between 0 and 100 that represents the percentage of time periods that the
+        /// A number between 0 and 100 that represents the success percentage of your application
+        /// compared to the goal set by the SLO.
+        /// </para>
+        ///  
+        /// <para>
+        /// If this is a period-based SLO, the number is the percentage of time periods that the
         /// service has attained the SLO's attainment goal, as of the time of the request.
+        /// </para>
+        ///  
+        /// <para>
+        /// If this is a request-based SLO, the number is the number of successful requests divided
+        /// by the number of total requests, multiplied by 100, during the time range that you
+        /// specified in your request.
         /// </para>
         /// </summary>
         public double Attainment
@@ -82,11 +97,40 @@ namespace Amazon.ApplicationSignals.Model
         }
 
         /// <summary>
+        /// Gets and sets the property BudgetRequestsRemaining. 
+        /// <para>
+        /// This field is displayed only for request-based SLOs. It displays the number of failed
+        /// requests that can be tolerated before any more successful requests occur, and still
+        /// have the application meet its SLO goal.
+        /// </para>
+        ///  
+        /// <para>
+        /// This number can go up and down between different reports, based on both how many successful
+        /// requests and how many failed requests occur in that time.
+        /// </para>
+        /// </summary>
+        public int BudgetRequestsRemaining
+        {
+            get { return this._budgetRequestsRemaining.GetValueOrDefault(); }
+            set { this._budgetRequestsRemaining = value; }
+        }
+
+        // Check to see if BudgetRequestsRemaining property is set
+        internal bool IsSetBudgetRequestsRemaining()
+        {
+            return this._budgetRequestsRemaining.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property BudgetSecondsRemaining. 
         /// <para>
         /// The budget amount remaining before the SLO status becomes <c>BREACHING</c>, at the
         /// time specified in the <c>Timestemp</c> parameter of the request. If this value is
         /// negative, then the SLO is already in <c>BREACHING</c> status.
+        /// </para>
+        ///  
+        /// <para>
+        ///  This field is included only if the SLO is a period-based SLO.
         /// </para>
         /// </summary>
         public int BudgetSecondsRemaining
@@ -123,7 +167,7 @@ namespace Amazon.ApplicationSignals.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>INSUFFICIENT_DATA</c> means that the specifed start and end times were before
+        ///  <c>INSUFFICIENT_DATA</c> means that the specified start and end times were before
         /// the SLO was created, or that attainment data is missing.
         /// </para>
         ///  </li> </ul>
@@ -139,6 +183,24 @@ namespace Amazon.ApplicationSignals.Model
         internal bool IsSetBudgetStatus()
         {
             return this._budgetStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EvaluationType. 
+        /// <para>
+        /// Displays whether this budget report is for a period-based SLO or a request-based SLO.
+        /// </para>
+        /// </summary>
+        public EvaluationType EvaluationType
+        {
+            get { return this._evaluationType; }
+            set { this._evaluationType = value; }
+        }
+
+        // Check to see if EvaluationType property is set
+        internal bool IsSetEvaluationType()
+        {
+            return this._evaluationType != null;
         }
 
         /// <summary>
@@ -176,6 +238,21 @@ namespace Amazon.ApplicationSignals.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RequestBasedSli.
+        /// </summary>
+        public RequestBasedServiceLevelIndicator RequestBasedSli
+        {
+            get { return this._requestBasedSli; }
+            set { this._requestBasedSli = value; }
+        }
+
+        // Check to see if RequestBasedSli property is set
+        internal bool IsSetRequestBasedSli()
+        {
+            return this._requestBasedSli != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Sli. 
         /// <para>
         /// A structure that contains information about the performance metric that this SLO monitors.
@@ -194,9 +271,38 @@ namespace Amazon.ApplicationSignals.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TotalBudgetRequests. 
+        /// <para>
+        /// This field is displayed only for request-based SLOs. It displays the total number
+        /// of failed requests that can be tolerated during the time range between the start of
+        /// the interval and the time stamp supplied in the budget report request. It is based
+        /// on the total number of requests that occurred, and the percentage specified in the
+        /// attainment goal. If the number of failed requests matches this number or is higher,
+        /// then this SLO is currently breaching.
+        /// </para>
+        ///  
+        /// <para>
+        /// This number can go up and down between reports with different time stamps, based on
+        /// both how many total requests occur.
+        /// </para>
+        /// </summary>
+        public int TotalBudgetRequests
+        {
+            get { return this._totalBudgetRequests.GetValueOrDefault(); }
+            set { this._totalBudgetRequests = value; }
+        }
+
+        // Check to see if TotalBudgetRequests property is set
+        internal bool IsSetTotalBudgetRequests()
+        {
+            return this._totalBudgetRequests.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property TotalBudgetSeconds. 
         /// <para>
-        /// The total number of seconds in the error budget for the interval.
+        /// The total number of seconds in the error budget for the interval. This field is included
+        /// only if the SLO is a period-based SLO.
         /// </para>
         /// </summary>
         public int TotalBudgetSeconds

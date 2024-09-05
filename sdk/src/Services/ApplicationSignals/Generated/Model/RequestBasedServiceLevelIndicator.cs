@@ -30,22 +30,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationSignals.Model
 {
     /// <summary>
-    /// This structure specifies the information about the service and the performance metric
-    /// that a period-based SLO is to monitor.
+    /// This structure contains information about the performance metric that a request-based
+    /// SLO monitors.
     /// </summary>
-    public partial class ServiceLevelIndicatorConfig
+    public partial class RequestBasedServiceLevelIndicator
     {
         private ServiceLevelIndicatorComparisonOperator _comparisonOperator;
         private double? _metricThreshold;
-        private ServiceLevelIndicatorMetricConfig _sliMetricConfig;
+        private RequestBasedServiceLevelIndicatorMetric _requestBasedSliMetric;
 
         /// <summary>
         /// Gets and sets the property ComparisonOperator. 
         /// <para>
-        /// The arithmetic operation to use when comparing the specified metric to the threshold.
+        /// The arithmetic operation used when comparing the specified metric to the threshold.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ServiceLevelIndicatorComparisonOperator ComparisonOperator
         {
             get { return this._comparisonOperator; }
@@ -61,12 +60,10 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property MetricThreshold. 
         /// <para>
-        /// This parameter is used only when a request-based SLO tracks the <c>Latency</c> metric.
-        /// Specify the threshold value that the observed <c>Latency</c> metric values are to
-        /// be compared to.
+        /// This value is the threshold that the observed metric values of the SLI metric are
+        /// compared to.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public double MetricThreshold
         {
             get { return this._metricThreshold.GetValueOrDefault(); }
@@ -80,22 +77,22 @@ namespace Amazon.ApplicationSignals.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SliMetricConfig. 
+        /// Gets and sets the property RequestBasedSliMetric. 
         /// <para>
-        /// Use this structure to specify the metric to be used for the SLO.
+        /// A structure that contains information about the metric that the SLO monitors. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public ServiceLevelIndicatorMetricConfig SliMetricConfig
+        public RequestBasedServiceLevelIndicatorMetric RequestBasedSliMetric
         {
-            get { return this._sliMetricConfig; }
-            set { this._sliMetricConfig = value; }
+            get { return this._requestBasedSliMetric; }
+            set { this._requestBasedSliMetric = value; }
         }
 
-        // Check to see if SliMetricConfig property is set
-        internal bool IsSetSliMetricConfig()
+        // Check to see if RequestBasedSliMetric property is set
+        internal bool IsSetRequestBasedSliMetric()
         {
-            return this._sliMetricConfig != null;
+            return this._requestBasedSliMetric != null;
         }
 
     }

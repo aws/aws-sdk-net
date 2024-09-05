@@ -97,7 +97,7 @@ namespace Amazon.ApplicationSignals.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Applciation attributes contain information about the application.
+        /// Application attributes contain information about the application.
         /// </para>
         ///  <ul> <li> 
         /// <para>

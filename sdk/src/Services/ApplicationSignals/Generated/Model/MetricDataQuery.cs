@@ -68,7 +68,7 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The ID of the account where this metric is located. If you are performing this operatiion
+        /// The ID of the account where this metric is located. If you are performing this operation
         /// in a monitoring account, use this to specify which source account to retrieve this
         /// metric from.
         /// </para>
