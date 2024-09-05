@@ -46,7 +46,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             GetStorageLensConfigurationResponse response = new GetStorageLensConfigurationResponse();
-            context.AllowEmptyElementLookup.Add("SSE-S3");
             UnmarshallResult(context,response);
             
             return response;
