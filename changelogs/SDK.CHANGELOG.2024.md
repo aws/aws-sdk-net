@@ -1,3 +1,20 @@
+### 3.7.880.0 (2024-09-05 18:17 UTC)
+* ApplicationSignals (3.7.402.0)
+	* Amazon CloudWatch Application Signals now supports creating Service Level Objectives using a new calculation type. Users can now create SLOs which are configured with request-based SLIs to help meet their specific business requirements.
+* CodePipeline (3.7.401.13)
+	* Updates to add recent notes to APIs and to replace example S3 bucket names globally.
+* Connect (3.7.404.0)
+	* Amazon Connect Custom Vocabulary now supports Catalan (Spain), Danish (Denmark), Dutch (Netherlands), Finnish (Finland), Indonesian (Indonesia), Malay (Malaysia), Norwegian Bokmal (Norway), Polish (Poland), Swedish (Sweden), and Tagalog/Filipino (Philippines).
+* GameLift (3.7.401.0)
+	* Amazon GameLift provides additional events for tracking the fleet creation process.
+* KinesisAnalyticsV2 (3.7.401.0)
+	* Support for Flink 1.20 in Managed Service for Apache Flink
+* SageMaker (3.7.405.0)
+	* Amazon SageMaker now supports idle shutdown of JupyterLab and CodeEditor applications on SageMaker Studio.
+* Core 3.7.400.15
+	* Fix #3173. Add DynamicallyAccessedMembers to ConstantClass in Net8 to remove trim warnings.
+	* All services packages updated to require new Core
+
 ### 3.7.879.0 (2024-09-04 18:20 UTC)
 * AppSync (3.7.401.0)
 	* Adds new logging levels (INFO and DEBUG) for additional log output control
