@@ -7249,7 +7249,7 @@
     <property>Amazon.SageMaker.Model.ClusterInstanceGroupDetails.ExecutionRole</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
+    <pattern>^arn:aws[a-z\-]*:iam::\d{12}:role/[\w+=,.@-]{1,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ClusterInstanceGroupDetails.InstanceGroupName</property>
@@ -7270,7 +7270,7 @@
     <property>Amazon.SageMaker.Model.ClusterInstanceGroupSpecification.ExecutionRole</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
+    <pattern>^arn:aws[a-z\-]*:iam::\d{12}:role/[\w+=,.@-]{1,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ClusterInstanceGroupSpecification.InstanceCount</property>
@@ -8698,6 +8698,21 @@
     <min>1</min>
     <max>2048</max>
     <pattern>arn:aws[a-z\-]*:secretsmanager:[a-z0-9\-]*:[0-9]{12}:secret:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.IdleSettings.IdleTimeoutInMinutes</property>
+    <min>60</min>
+    <max>525600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.IdleSettings.MaxIdleTimeoutInMinutes</property>
+    <min>60</min>
+    <max>525600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.IdleSettings.MinIdleTimeoutInMinutes</property>
+    <min>60</min>
+    <max>525600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.Image.Description</property>
@@ -11023,6 +11038,11 @@
     <property>Amazon.SageMaker.Model.SpaceDetails.SpaceName</property>
     <max>63</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.SpaceIdleSettings.IdleTimeoutInMinutes</property>
+    <min>60</min>
+    <max>525600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.Stairs.DurationInSeconds</property>

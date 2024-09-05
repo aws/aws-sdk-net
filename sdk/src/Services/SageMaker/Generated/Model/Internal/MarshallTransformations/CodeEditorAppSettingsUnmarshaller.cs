@@ -66,6 +66,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AppLifecycleManagement", targetDepth))
+                {
+                    var unmarshaller = AppLifecycleManagementUnmarshaller.Instance;
+                    unmarshalledObject.AppLifecycleManagement = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CustomImages", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<CustomImage, CustomImageUnmarshaller>(CustomImageUnmarshaller.Instance);

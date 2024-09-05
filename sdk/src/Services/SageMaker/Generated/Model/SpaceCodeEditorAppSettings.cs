@@ -34,7 +34,27 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class SpaceCodeEditorAppSettings
     {
+        private SpaceAppLifecycleManagement _appLifecycleManagement;
         private ResourceSpec _defaultResourceSpec;
+
+        /// <summary>
+        /// Gets and sets the property AppLifecycleManagement. 
+        /// <para>
+        /// Settings that are used to configure and manage the lifecycle of CodeEditor applications
+        /// in a space.
+        /// </para>
+        /// </summary>
+        public SpaceAppLifecycleManagement AppLifecycleManagement
+        {
+            get { return this._appLifecycleManagement; }
+            set { this._appLifecycleManagement = value; }
+        }
+
+        // Check to see if AppLifecycleManagement property is set
+        internal bool IsSetAppLifecycleManagement()
+        {
+            return this._appLifecycleManagement != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DefaultResourceSpec.

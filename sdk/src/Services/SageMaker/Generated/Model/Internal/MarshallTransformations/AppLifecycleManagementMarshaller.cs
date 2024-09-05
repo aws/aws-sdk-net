@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SpaceCodeEditorAppSettings Marshaller
+    /// AppLifecycleManagement Marshaller
     /// </summary>
-    public class SpaceCodeEditorAppSettingsMarshaller : IRequestMarshaller<SpaceCodeEditorAppSettings, JsonMarshallerContext> 
+    public class AppLifecycleManagementMarshaller : IRequestMarshaller<AppLifecycleManagement, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,28 +44,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SpaceCodeEditorAppSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(AppLifecycleManagement requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAppLifecycleManagement())
+            if(requestObject.IsSetIdleSettings())
             {
-                context.Writer.WritePropertyName("AppLifecycleManagement");
+                context.Writer.WritePropertyName("IdleSettings");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = SpaceAppLifecycleManagementMarshaller.Instance;
-                marshaller.Marshall(requestObject.AppLifecycleManagement, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetDefaultResourceSpec())
-            {
-                context.Writer.WritePropertyName("DefaultResourceSpec");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ResourceSpecMarshaller.Instance;
-                marshaller.Marshall(requestObject.DefaultResourceSpec, context);
+                var marshaller = IdleSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.IdleSettings, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -75,7 +64,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static SpaceCodeEditorAppSettingsMarshaller Instance = new SpaceCodeEditorAppSettingsMarshaller();
+        public readonly static AppLifecycleManagementMarshaller Instance = new AppLifecycleManagementMarshaller();
 
     }
 }

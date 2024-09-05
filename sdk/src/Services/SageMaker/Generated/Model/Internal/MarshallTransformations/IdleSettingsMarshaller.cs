@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SpaceCodeEditorAppSettings Marshaller
+    /// IdleSettings Marshaller
     /// </summary>
-    public class SpaceCodeEditorAppSettingsMarshaller : IRequestMarshaller<SpaceCodeEditorAppSettings, JsonMarshallerContext> 
+    public class IdleSettingsMarshaller : IRequestMarshaller<IdleSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,30 +44,32 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SpaceCodeEditorAppSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(IdleSettings requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAppLifecycleManagement())
+            if(requestObject.IsSetIdleTimeoutInMinutes())
             {
-                context.Writer.WritePropertyName("AppLifecycleManagement");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = SpaceAppLifecycleManagementMarshaller.Instance;
-                marshaller.Marshall(requestObject.AppLifecycleManagement, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("IdleTimeoutInMinutes");
+                context.Writer.Write(requestObject.IdleTimeoutInMinutes);
             }
 
-            if(requestObject.IsSetDefaultResourceSpec())
+            if(requestObject.IsSetLifecycleManagement())
             {
-                context.Writer.WritePropertyName("DefaultResourceSpec");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("LifecycleManagement");
+                context.Writer.Write(requestObject.LifecycleManagement);
+            }
 
-                var marshaller = ResourceSpecMarshaller.Instance;
-                marshaller.Marshall(requestObject.DefaultResourceSpec, context);
+            if(requestObject.IsSetMaxIdleTimeoutInMinutes())
+            {
+                context.Writer.WritePropertyName("MaxIdleTimeoutInMinutes");
+                context.Writer.Write(requestObject.MaxIdleTimeoutInMinutes);
+            }
 
-                context.Writer.WriteObjectEnd();
+            if(requestObject.IsSetMinIdleTimeoutInMinutes())
+            {
+                context.Writer.WritePropertyName("MinIdleTimeoutInMinutes");
+                context.Writer.Write(requestObject.MinIdleTimeoutInMinutes);
             }
 
         }
@@ -75,7 +77,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static SpaceCodeEditorAppSettingsMarshaller Instance = new SpaceCodeEditorAppSettingsMarshaller();
+        public readonly static IdleSettingsMarshaller Instance = new IdleSettingsMarshaller();
 
     }
 }

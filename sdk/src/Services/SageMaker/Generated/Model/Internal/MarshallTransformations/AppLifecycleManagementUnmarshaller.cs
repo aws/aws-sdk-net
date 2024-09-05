@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SpaceJupyterLabAppSettings Object
+    /// Response Unmarshaller for AppLifecycleManagement Object
     /// </summary>  
-    public class SpaceJupyterLabAppSettingsUnmarshaller : IUnmarshaller<SpaceJupyterLabAppSettings, XmlUnmarshallerContext>, IUnmarshaller<SpaceJupyterLabAppSettings, JsonUnmarshallerContext>
+    public class AppLifecycleManagementUnmarshaller : IUnmarshaller<AppLifecycleManagement, XmlUnmarshallerContext>, IUnmarshaller<AppLifecycleManagement, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SpaceJupyterLabAppSettings IUnmarshaller<SpaceJupyterLabAppSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AppLifecycleManagement IUnmarshaller<AppLifecycleManagement, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public SpaceJupyterLabAppSettings Unmarshall(JsonUnmarshallerContext context)
+        public AppLifecycleManagement Unmarshall(JsonUnmarshallerContext context)
         {
-            SpaceJupyterLabAppSettings unmarshalledObject = new SpaceJupyterLabAppSettings();
+            AppLifecycleManagement unmarshalledObject = new AppLifecycleManagement();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,10 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AppLifecycleManagement", targetDepth))
+                if (context.TestExpression("IdleSettings", targetDepth))
                 {
-                    var unmarshaller = SpaceAppLifecycleManagementUnmarshaller.Instance;
-                    unmarshalledObject.AppLifecycleManagement = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("CodeRepositories", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<CodeRepository, CodeRepositoryUnmarshaller>(CodeRepositoryUnmarshaller.Instance);
-                    unmarshalledObject.CodeRepositories = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DefaultResourceSpec", targetDepth))
-                {
-                    var unmarshaller = ResourceSpecUnmarshaller.Instance;
-                    unmarshalledObject.DefaultResourceSpec = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IdleSettingsUnmarshaller.Instance;
+                    unmarshalledObject.IdleSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +77,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static SpaceJupyterLabAppSettingsUnmarshaller _instance = new SpaceJupyterLabAppSettingsUnmarshaller();        
+        private static AppLifecycleManagementUnmarshaller _instance = new AppLifecycleManagementUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SpaceJupyterLabAppSettingsUnmarshaller Instance
+        public static AppLifecycleManagementUnmarshaller Instance
         {
             get
             {
