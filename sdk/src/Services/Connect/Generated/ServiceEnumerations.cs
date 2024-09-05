@@ -6587,6 +6587,14 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly VocabularyLanguageCode ArAE = new VocabularyLanguageCode("ar-AE");
         /// <summary>
+        /// Constant CaES for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode CaES = new VocabularyLanguageCode("ca-ES");
+        /// <summary>
+        /// Constant DaDK for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode DaDK = new VocabularyLanguageCode("da-DK");
+        /// <summary>
         /// Constant DeCH for VocabularyLanguageCode
         /// </summary>
         public static readonly VocabularyLanguageCode DeCH = new VocabularyLanguageCode("de-CH");
@@ -6639,6 +6647,10 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly VocabularyLanguageCode EsUS = new VocabularyLanguageCode("es-US");
         /// <summary>
+        /// Constant FiFI for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode FiFI = new VocabularyLanguageCode("fi-FI");
+        /// <summary>
         /// Constant FrCA for VocabularyLanguageCode
         /// </summary>
         public static readonly VocabularyLanguageCode FrCA = new VocabularyLanguageCode("fr-CA");
@@ -6650,6 +6662,10 @@ namespace Amazon.Connect
         /// Constant HiIN for VocabularyLanguageCode
         /// </summary>
         public static readonly VocabularyLanguageCode HiIN = new VocabularyLanguageCode("hi-IN");
+        /// <summary>
+        /// Constant IdID for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode IdID = new VocabularyLanguageCode("id-ID");
         /// <summary>
         /// Constant ItIT for VocabularyLanguageCode
         /// </summary>
@@ -6663,6 +6679,22 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly VocabularyLanguageCode KoKR = new VocabularyLanguageCode("ko-KR");
         /// <summary>
+        /// Constant MsMY for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode MsMY = new VocabularyLanguageCode("ms-MY");
+        /// <summary>
+        /// Constant NlNL for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode NlNL = new VocabularyLanguageCode("nl-NL");
+        /// <summary>
+        /// Constant NoNO for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode NoNO = new VocabularyLanguageCode("no-NO");
+        /// <summary>
+        /// Constant PlPL for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode PlPL = new VocabularyLanguageCode("pl-PL");
+        /// <summary>
         /// Constant PtBR for VocabularyLanguageCode
         /// </summary>
         public static readonly VocabularyLanguageCode PtBR = new VocabularyLanguageCode("pt-BR");
@@ -6670,6 +6702,14 @@ namespace Amazon.Connect
         /// Constant PtPT for VocabularyLanguageCode
         /// </summary>
         public static readonly VocabularyLanguageCode PtPT = new VocabularyLanguageCode("pt-PT");
+        /// <summary>
+        /// Constant SvSE for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode SvSE = new VocabularyLanguageCode("sv-SE");
+        /// <summary>
+        /// Constant TlPH for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode TlPH = new VocabularyLanguageCode("tl-PH");
         /// <summary>
         /// Constant ZhCN for VocabularyLanguageCode
         /// </summary>
