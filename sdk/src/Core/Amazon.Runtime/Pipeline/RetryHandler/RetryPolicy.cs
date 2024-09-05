@@ -425,6 +425,7 @@ namespace Amazon.Runtime
             var isHead =
                 executionContext.RequestContext.Request != null &&
                 string.Equals(executionContext.RequestContext.Request.HttpMethod, "HEAD", StringComparison.Ordinal);
+            // ase.ErrorCode == null represents the case where it is a head request and there is no error code on the exception
             var isPossibleClockSkewErrorCode =
                 ase != null &&
                 (ase.ErrorCode == null || possibleClockSkewErrorCodes.Contains(ase.ErrorCode));
