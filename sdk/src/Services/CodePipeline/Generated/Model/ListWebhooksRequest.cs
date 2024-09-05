@@ -34,6 +34,12 @@ namespace Amazon.CodePipeline.Model
     /// Gets a listing of all the webhooks in this Amazon Web Services Region for this account.
     /// The output lists all webhooks and includes the webhook URL and ARN and the configuration
     /// for each webhook.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// If a secret token was provided, it will be redacted in the response.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListWebhooksRequest : AmazonCodePipelineRequest
     {

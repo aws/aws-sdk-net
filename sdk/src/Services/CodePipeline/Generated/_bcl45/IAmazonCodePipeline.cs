@@ -2077,6 +2077,12 @@ namespace Amazon.CodePipeline
         /// Gets a listing of all the webhooks in this Amazon Web Services Region for this account.
         /// The output lists all webhooks and includes the webhook URL and ARN and the configuration
         /// for each webhook.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If a secret token was provided, it will be redacted in the response.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListWebhooks service method.</param>
         /// 
@@ -2097,6 +2103,12 @@ namespace Amazon.CodePipeline
         /// Gets a listing of all the webhooks in this Amazon Web Services Region for this account.
         /// The output lists all webhooks and includes the webhook URL and ARN and the configuration
         /// for each webhook.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If a secret token was provided, it will be redacted in the response.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListWebhooks service method.</param>
         /// <param name="cancellationToken">
@@ -2751,6 +2763,22 @@ namespace Amazon.CodePipeline
         /// and filtering requirements supplied when defining the webhook. RegisterWebhookWithThirdParty
         /// and DeregisterWebhookWithThirdParty APIs can be used to automatically configure supported
         /// third parties to call the generated webhook URL.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// When creating CodePipeline webhooks, do not use your own credentials or reuse the
+        /// same secret token across multiple webhooks. For optimal security, generate a unique
+        /// secret token for each webhook you create. The secret token is an arbitrary string
+        /// that you provide, which GitHub uses to compute and sign the webhook payloads sent
+        /// to CodePipeline, for protecting the integrity and authenticity of the webhook payloads.
+        /// Using your own credentials or reusing the same token across multiple webhooks can
+        /// lead to security vulnerabilities.
+        /// </para>
+        ///  </important> <note> 
+        /// <para>
+        /// If a secret token was provided, it will be redacted in the response.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutWebhook service method.</param>
         /// 
@@ -2793,6 +2821,22 @@ namespace Amazon.CodePipeline
         /// and filtering requirements supplied when defining the webhook. RegisterWebhookWithThirdParty
         /// and DeregisterWebhookWithThirdParty APIs can be used to automatically configure supported
         /// third parties to call the generated webhook URL.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// When creating CodePipeline webhooks, do not use your own credentials or reuse the
+        /// same secret token across multiple webhooks. For optimal security, generate a unique
+        /// secret token for each webhook you create. The secret token is an arbitrary string
+        /// that you provide, which GitHub uses to compute and sign the webhook payloads sent
+        /// to CodePipeline, for protecting the integrity and authenticity of the webhook payloads.
+        /// Using your own credentials or reusing the same token across multiple webhooks can
+        /// lead to security vulnerabilities.
+        /// </para>
+        ///  </important> <note> 
+        /// <para>
+        /// If a secret token was provided, it will be redacted in the response.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutWebhook service method.</param>
         /// <param name="cancellationToken">
