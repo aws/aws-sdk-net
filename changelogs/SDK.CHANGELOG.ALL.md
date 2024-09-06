@@ -1,3 +1,11 @@
+### 3.7.881.0 (2024-09-06 18:13 UTC)
+* QApps (3.7.401.0)
+	* Adds UpdateLibraryItemMetadata api to change status of app for admin verification feature and returns isVerified field in any api returning the app or library item.
+* Core 3.7.400.16
+	* Fixes #3463 where repeated retries were happening on error codes that weren't necessarily clockskew related.
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.880.0 (2024-09-05 18:17 UTC)
 * ApplicationSignals (3.7.402.0)
 	* Amazon CloudWatch Application Signals now supports creating Service Level Objectives using a new calculation type. Users can now create SLOs which are configured with request-based SLIs to help meet their specific business requirements.
