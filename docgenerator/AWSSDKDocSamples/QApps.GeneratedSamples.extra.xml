@@ -401,6 +401,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.QApps.IAmazonQApps.UpdateLibraryItemMetadata(Amazon.QApps.Model.UpdateLibraryItemMetadataRequest)" />
+            <member name="M:Amazon.QApps.AmazonQAppsClient.UpdateLibraryItemMetadata(Amazon.QApps.Model.UpdateLibraryItemMetadataRequest)" />
+            <member name="T:Amazon.QApps.Model.UpdateLibraryItemMetadataRequest" />
+            <member name="T:Amazon.QApps.Model.UpdateLibraryItemMetadataResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update a library item to be verified"
+                    source=".\AWSSDKDocSamples\QApps\QApps.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.QApps.IAmazonQApps.UpdateQApp(Amazon.QApps.Model.UpdateQAppRequest)" />
             <member name="M:Amazon.QApps.AmazonQAppsClient.UpdateQApp(Amazon.QApps.Model.UpdateQAppRequest)" />
             <member name="T:Amazon.QApps.Model.UpdateQAppRequest" />

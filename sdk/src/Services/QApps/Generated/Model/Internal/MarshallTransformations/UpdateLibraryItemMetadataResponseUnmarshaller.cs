@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QApps.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateLibraryItem operation
+    /// Response Unmarshaller for UpdateLibraryItemMetadata operation
     /// </summary>  
-    public class CreateLibraryItemResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdateLibraryItemMetadataResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,61 +46,8 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateLibraryItemResponse response = new CreateLibraryItemResponse();
+            UpdateLibraryItemMetadataResponse response = new UpdateLibraryItemMetadataResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("createdAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreatedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("createdBy", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.CreatedBy = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("isVerified", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.IsVerified = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("libraryItemId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.LibraryItemId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ratingCount", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    response.RatingCount = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("updatedAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.UpdatedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("updatedBy", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.UpdatedBy = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -127,6 +74,10 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                {
+                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -134,10 +85,6 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceQuotaExceededException"))
-                {
-                    return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
@@ -155,9 +102,9 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
             return new AmazonQAppsException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateLibraryItemResponseUnmarshaller _instance = new CreateLibraryItemResponseUnmarshaller();        
+        private static UpdateLibraryItemMetadataResponseUnmarshaller _instance = new UpdateLibraryItemMetadataResponseUnmarshaller();        
 
-        internal static CreateLibraryItemResponseUnmarshaller GetInstance()
+        internal static UpdateLibraryItemMetadataResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -165,7 +112,7 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateLibraryItemResponseUnmarshaller Instance
+        public static UpdateLibraryItemMetadataResponseUnmarshaller Instance
         {
             get
             {

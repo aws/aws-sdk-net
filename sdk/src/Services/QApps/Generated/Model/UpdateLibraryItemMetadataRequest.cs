@@ -30,34 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QApps.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateLibraryItem operation.
-    /// Updates the library item for an Amazon Q App.
+    /// Container for the parameters to the UpdateLibraryItemMetadata operation.
+    /// Updates the verification status of a library item for an Amazon Q App.
     /// </summary>
-    public partial class UpdateLibraryItemRequest : AmazonQAppsRequest
+    public partial class UpdateLibraryItemMetadataRequest : AmazonQAppsRequest
     {
-        private List<string> _categories = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _instanceId;
+        private bool? _isVerified;
         private string _libraryItemId;
-        private LibraryItemStatus _status;
-
-        /// <summary>
-        /// Gets and sets the property Categories. 
-        /// <para>
-        /// The new categories to associate with the library item.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0, Max=3)]
-        public List<string> Categories
-        {
-            get { return this._categories; }
-            set { this._categories = value; }
-        }
-
-        // Check to see if Categories property is set
-        internal bool IsSetCategories()
-        {
-            return this._categories != null && (this._categories.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
 
         /// <summary>
         /// Gets and sets the property InstanceId. 
@@ -79,9 +59,27 @@ namespace Amazon.QApps.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IsVerified. 
+        /// <para>
+        /// The verification status of the library item
+        /// </para>
+        /// </summary>
+        public bool IsVerified
+        {
+            get { return this._isVerified.GetValueOrDefault(); }
+            set { this._isVerified = value; }
+        }
+
+        // Check to see if IsVerified property is set
+        internal bool IsSetIsVerified()
+        {
+            return this._isVerified.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property LibraryItemId. 
         /// <para>
-        /// The unique identifier of the library item to update.
+        /// The unique identifier of the updated library item.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -95,24 +93,6 @@ namespace Amazon.QApps.Model
         internal bool IsSetLibraryItemId()
         {
             return this._libraryItemId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Status. 
-        /// <para>
-        /// The new status to set for the library item, such as "Published" or "Hidden".
-        /// </para>
-        /// </summary>
-        public LibraryItemStatus Status
-        {
-            get { return this._status; }
-            set { this._status = value; }
-        }
-
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
-        {
-            return this._status != null;
         }
 
     }

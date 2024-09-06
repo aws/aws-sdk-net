@@ -38,12 +38,25 @@ namespace Amazon.QApps
     ///
     /// The Amazon Q Apps feature capability within Amazon Q Business allows web experience
     /// users to create lightweight, purpose-built AI apps to fulfill specific tasks from
-    /// within their web experience. For example, users can create an Q Appthat exclusively
+    /// within their web experience. For example, users can create a Q App that exclusively
     /// generates marketing-related content to improve your marketing team's productivity
-    /// or a Q App for marketing content-generation like writing customer emails and creating
-    /// promotional content using a certain style of voice, tone, and branding. For more information,
-    /// see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/purpose-built-qapps.html">Amazon
-    /// Q App</a> in the <i>Amazon Q Business User Guide</i>.
+    /// or a Q App for writing customer emails and creating promotional content using a certain
+    /// style of voice, tone, and branding. For more information on the capabilities, see
+    /// <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/deploy-experience-iam-role.html#q-apps-actions">Amazon
+    /// Q Apps capabilities</a> in the <i>Amazon Q Business User Guide</i>. 
+    /// 
+    ///  
+    /// <para>
+    /// For an overview of the Amazon Q App APIs, see <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_Operations_QApps.html">Overview
+    /// of Amazon Q Apps API operations</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For information about the IAM access control permissions you need to use the Amazon
+    /// Q Apps API, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/deploy-experience-iam-role.html">
+    /// IAM role for the Amazon Q Business web experience including Amazon Q Apps</a> in the
+    /// <i>Amazon Q Business User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class AmazonQAppsClient : AmazonServiceClient, IAmazonQApps
     {
@@ -282,6 +295,10 @@ namespace Amazon.QApps
         /// <returns>The response from the AssociateLibraryItemReview service method, as returned by QApps.</returns>
         /// <exception cref="Amazon.QApps.Model.AccessDeniedException">
         /// The client is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ConflictException">
+        /// The requested operation could not be completed due to a conflict with the current
+        /// state of the resource.
         /// </exception>
         /// <exception cref="Amazon.QApps.Model.InternalServerException">
         /// An internal service error occurred while processing the request.
@@ -753,6 +770,10 @@ namespace Amazon.QApps
         /// <returns>The response from the DisassociateLibraryItemReview service method, as returned by QApps.</returns>
         /// <exception cref="Amazon.QApps.Model.AccessDeniedException">
         /// The client is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ConflictException">
+        /// The requested operation could not be completed due to a conflict with the current
+        /// state of the resource.
         /// </exception>
         /// <exception cref="Amazon.QApps.Model.InternalServerException">
         /// An internal service error occurred while processing the request.
@@ -1800,13 +1821,17 @@ namespace Amazon.QApps
         #region  UpdateLibraryItem
 
         /// <summary>
-        /// Updates the metadata and status of a library item for an Amazon Q App.
+        /// Updates the library item for an Amazon Q App.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLibraryItem service method.</param>
         /// 
         /// <returns>The response from the UpdateLibraryItem service method, as returned by QApps.</returns>
         /// <exception cref="Amazon.QApps.Model.AccessDeniedException">
         /// The client is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ConflictException">
+        /// The requested operation could not be completed due to a conflict with the current
+        /// state of the resource.
         /// </exception>
         /// <exception cref="Amazon.QApps.Model.InternalServerException">
         /// An internal service error occurred while processing the request.
@@ -1866,6 +1891,83 @@ namespace Amazon.QApps
         public virtual UpdateLibraryItemResponse EndUpdateLibraryItem(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateLibraryItemResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateLibraryItemMetadata
+
+        /// <summary>
+        /// Updates the verification status of a library item for an Amazon Q App.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLibraryItemMetadata service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLibraryItemMetadata service method, as returned by QApps.</returns>
+        /// <exception cref="Amazon.QApps.Model.AccessDeniedException">
+        /// The client is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ConflictException">
+        /// The requested operation could not be completed due to a conflict with the current
+        /// state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.InternalServerException">
+        /// An internal service error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ThrottlingException">
+        /// The requested operation could not be completed because too many requests were sent
+        /// at once. Wait a bit and try again later.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.UnauthorizedException">
+        /// The client is not authenticated or authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/UpdateLibraryItemMetadata">REST API Reference for UpdateLibraryItemMetadata Operation</seealso>
+        public virtual UpdateLibraryItemMetadataResponse UpdateLibraryItemMetadata(UpdateLibraryItemMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLibraryItemMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLibraryItemMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateLibraryItemMetadataResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateLibraryItemMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLibraryItemMetadata operation on AmazonQAppsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateLibraryItemMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/UpdateLibraryItemMetadata">REST API Reference for UpdateLibraryItemMetadata Operation</seealso>
+        public virtual IAsyncResult BeginUpdateLibraryItemMetadata(UpdateLibraryItemMetadataRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLibraryItemMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLibraryItemMetadataResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateLibraryItemMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateLibraryItemMetadata.</param>
+        /// 
+        /// <returns>Returns a  UpdateLibraryItemMetadataResult from QApps.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/UpdateLibraryItemMetadata">REST API Reference for UpdateLibraryItemMetadata Operation</seealso>
+        public virtual UpdateLibraryItemMetadataResponse EndUpdateLibraryItemMetadata(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateLibraryItemMetadataResponse>(asyncResult);
         }
 
         #endregion
