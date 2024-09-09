@@ -30,34 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kafka.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetBootstrapBrokers operation.
-    /// A list of brokers that a client application can use to bootstrap. This list doesn't
-    /// necessarily include all of the brokers in the cluster. The following Python 3.6 example
-    /// shows how you can use the Amazon Resource Name (ARN) of a cluster to get its bootstrap
-    /// brokers. If you don't know the ARN of your cluster, you can use the <c>ListClusters</c>
-    /// operation to get the ARNs of all the clusters in this account and Region.
+    /// Configuration for specifying replicated topic names should be the same as their corresponding
+    /// upstream topics or prefixed with source cluster alias.
     /// </summary>
-    public partial class GetBootstrapBrokersRequest : AmazonKafkaRequest
+    public partial class ReplicationTopicNameConfiguration
     {
-        private string _clusterArn;
+        private ReplicationTopicNameConfigurationType _type;
 
         /// <summary>
-        /// Gets and sets the property ClusterArn.             
+        /// Gets and sets the property Type. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that uniquely identifies the cluster.
+        /// The type of replicated topic name.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string ClusterArn
+        public ReplicationTopicNameConfigurationType Type
         {
-            get { return this._clusterArn; }
-            set { this._clusterArn = value; }
+            get { return this._type; }
+            set { this._type = value; }
         }
 
-        // Check to see if ClusterArn property is set
-        internal bool IsSetClusterArn()
+        // Check to see if Type property is set
+        internal bool IsSetType()
         {
-            return this._clusterArn != null;
+            return this._type != null;
         }
 
     }

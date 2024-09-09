@@ -77,6 +77,17 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetTopicNameConfiguration())
+            {
+                context.Writer.WritePropertyName("topicNameConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ReplicationTopicNameConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.TopicNameConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTopicsToExclude())
             {
                 context.Writer.WritePropertyName("topicsToExclude");
