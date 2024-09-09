@@ -98,6 +98,11 @@ namespace Amazon.SageMakerRuntime.Model.Internal.MarshallTransformations
                 request.Headers["X-Amzn-SageMaker-Inference-Id"] = publicRequest.InferenceId;
             }
         
+            if (publicRequest.IsSetSessionId()) 
+            {
+                request.Headers["X-Amzn-SageMaker-Session-Id"] = publicRequest.SessionId;
+            }
+        
             if (publicRequest.IsSetTargetContainerHostname()) 
             {
                 request.Headers["X-Amzn-SageMaker-Target-Container-Hostname"] = publicRequest.TargetContainerHostname;
