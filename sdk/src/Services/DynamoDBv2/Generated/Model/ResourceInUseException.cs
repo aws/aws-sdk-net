@@ -30,9 +30,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// The operation conflicts with the resource's availability. For example, you attempted
-    /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
-    /// state.
+    /// The operation conflicts with the resource's availability. For example:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// You attempted to recreate an existing table.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// You tried to delete a table currently in the <c>CREATING</c> state.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// You tried to update a resource that was already being updated.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// When appropriate, wait for the ongoing update to complete and attempt the request
+    /// again.
+    /// </para>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
