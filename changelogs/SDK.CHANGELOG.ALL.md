@@ -1,3 +1,20 @@
+### 3.7.882.0 (2024-09-09 18:22 UTC)
+* DynamoDBv2 (3.7.400.17)
+	* Doc-only update for DynamoDB. Added information about async behavior for TagResource and UntagResource APIs and updated the description of ResourceInUseException.
+* ElasticLoadBalancingV2 (3.7.403.0)
+	* Add paginators for the ELBv2 DescribeListenerCertificates and DescribeRules APIs. Fix broken waiter for the ELBv2 DescribeLoadBalancers API.
+* IVSRealTime (3.7.401.0)
+	* IVS Real-Time now offers customers the ability to broadcast to Stages using RTMP(S).
+* Kafka (3.7.401.0)
+	* Amazon MSK Replicator can now replicate data to identically named topics between MSK clusters within the same AWS Region or across different AWS Regions.
+* SageMaker (3.7.406.0)
+	* Amazon Sagemaker supports orchestrating SageMaker HyperPod clusters with Amazon EKS
+* SageMakerRuntime (3.7.401.0)
+	* AWS SageMaker Runtime feature: Add sticky routing to support stateful inference models.
+* Core 3.7.400.17
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.881.0 (2024-09-06 18:13 UTC)
 * QApps (3.7.401.0)
 	* Adds UpdateLibraryItemMetadata api to change status of app for admin verification feature and returns isVerified field in any api returning the app or library item.
