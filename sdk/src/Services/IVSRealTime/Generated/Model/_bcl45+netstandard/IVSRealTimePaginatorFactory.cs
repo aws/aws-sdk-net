@@ -53,6 +53,14 @@ namespace Amazon.IVSRealTime.Model
         }
 
         /// <summary>
+        /// Paginator for ListIngestConfigurations operation
+        ///</summary>
+        public IListIngestConfigurationsPaginator ListIngestConfigurations(ListIngestConfigurationsRequest request) 
+        {
+            return new ListIngestConfigurationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListParticipantEvents operation
         ///</summary>
         public IListParticipantEventsPaginator ListParticipantEvents(ListParticipantEventsRequest request) 

@@ -30,19 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IVSRealTime.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteStage operation.
-    /// Shuts down and deletes the specified stage (disconnecting all participants). This
-    /// operation also removes the <c>stageArn</c> from the associated <a>IngestConfiguration</a>,
-    /// if there are participants using the IngestConfiguration to publish to the stage.
+    /// Container for the parameters to the DeleteIngestConfiguration operation.
+    /// Deletes a specified IngestConfiguration, so it can no longer be used to broadcast.
+    /// An IngestConfiguration cannot be deleted if the publisher is actively streaming to
+    /// a stage, unless <c>force</c> is set to <c>true</c>.
     /// </summary>
-    public partial class DeleteStageRequest : AmazonIVSRealTimeRequest
+    public partial class DeleteIngestConfigurationRequest : AmazonIVSRealTimeRequest
     {
         private string _arn;
+        private bool? _force;
 
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// ARN of the stage to be deleted.
+        /// ARN of the IngestConfiguration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -56,6 +57,26 @@ namespace Amazon.IVSRealTime.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Force. 
+        /// <para>
+        /// Optional field to force deletion of the IngestConfiguration. If this is set to <c>true</c>
+        /// when a participant is actively publishing, the participant is disconnected from the
+        /// stage, followed by deletion of the IngestConfiguration. Default: <c>false</c>.
+        /// </para>
+        /// </summary>
+        public bool Force
+        {
+            get { return this._force.GetValueOrDefault(); }
+            set { this._force = value; }
+        }
+
+        // Check to see if Force property is set
+        internal bool IsSetForce()
+        {
+            return this._force.HasValue; 
         }
 
     }

@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StageEndpoints Object
+    /// Response Unmarshaller for IngestConfigurationSummary Object
     /// </summary>  
-    public class StageEndpointsUnmarshaller : IUnmarshaller<StageEndpoints, XmlUnmarshallerContext>, IUnmarshaller<StageEndpoints, JsonUnmarshallerContext>
+    public class IngestConfigurationSummaryUnmarshaller : IUnmarshaller<IngestConfigurationSummary, XmlUnmarshallerContext>, IUnmarshaller<IngestConfigurationSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        StageEndpoints IUnmarshaller<StageEndpoints, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        IngestConfigurationSummary IUnmarshaller<IngestConfigurationSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public StageEndpoints Unmarshall(JsonUnmarshallerContext context)
+        public IngestConfigurationSummary Unmarshall(JsonUnmarshallerContext context)
         {
-            StageEndpoints unmarshalledObject = new StageEndpoints();
+            IngestConfigurationSummary unmarshalledObject = new IngestConfigurationSummary();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,46 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("events", targetDepth))
+                if (context.TestExpression("arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Events = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("rtmp", targetDepth))
+                if (context.TestExpression("ingestProtocol", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Rtmp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IngestProtocol = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("rtmps", targetDepth))
+                if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Rtmps = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("whip", targetDepth))
+                if (context.TestExpression("participantId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Whip = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ParticipantId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("stageArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StageArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("state", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("userId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UserId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +113,12 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         }
 
 
-        private static StageEndpointsUnmarshaller _instance = new StageEndpointsUnmarshaller();        
+        private static IngestConfigurationSummaryUnmarshaller _instance = new IngestConfigurationSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StageEndpointsUnmarshaller Instance
+        public static IngestConfigurationSummaryUnmarshaller Instance
         {
             get
             {

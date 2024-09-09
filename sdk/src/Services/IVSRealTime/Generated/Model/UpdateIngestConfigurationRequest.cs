@@ -30,19 +30,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IVSRealTime.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteStage operation.
-    /// Shuts down and deletes the specified stage (disconnecting all participants). This
-    /// operation also removes the <c>stageArn</c> from the associated <a>IngestConfiguration</a>,
-    /// if there are participants using the IngestConfiguration to publish to the stage.
+    /// Container for the parameters to the UpdateIngestConfiguration operation.
+    /// Updates a specified IngestConfiguration. Only the stage ARN attached to the IngestConfiguration
+    /// can be updated. An IngestConfiguration that is active cannot be updated.
     /// </summary>
-    public partial class DeleteStageRequest : AmazonIVSRealTimeRequest
+    public partial class UpdateIngestConfigurationRequest : AmazonIVSRealTimeRequest
     {
         private string _arn;
+        private string _stageArn;
 
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// ARN of the stage to be deleted.
+        /// ARN of the IngestConfiguration, for which the related stage ARN needs to be updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -56,6 +56,25 @@ namespace Amazon.IVSRealTime.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StageArn. 
+        /// <para>
+        /// Stage ARN that needs to be updated.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=128)]
+        public string StageArn
+        {
+            get { return this._stageArn; }
+            set { this._stageArn = value; }
+        }
+
+        // Check to see if StageArn property is set
+        internal bool IsSetStageArn()
+        {
+            return this._stageArn != null;
         }
 
     }

@@ -61,7 +61,7 @@ namespace Amazon.IVSRealTime
     ///  <ul> <li> 
     /// <para>
     ///  <b>Composition process</b> — Composites participants of a stage into a single video
-    /// and forwards it to a set of outputs (e.g., IVS channels). Composition endpoints support
+    /// and forwards it to a set of outputs (e.g., IVS channels). Composition operations support
     /// this process.
     /// </para>
     ///  </li> <li> 
@@ -82,10 +82,10 @@ namespace Amazon.IVSRealTime
     /// <para>
     /// A <i>tag</i> is a metadata label that you assign to an AWS resource. A tag comprises
     /// a <i>key</i> and a <i>value</i>, both set by you. For example, you might set a tag
-    /// as <c>topic:nature</c> to label a particular video category. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-    /// AWS Resources</a> for more information, including restrictions that apply to tags
-    /// and "Tag naming limits and requirements"; Amazon IVS stages has no service-specific
-    /// constraints beyond what is documented there.
+    /// as <c>topic:nature</c> to label a particular video category. See <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html">Best
+    /// practices and strategies</a> in <i>Tagging AWS Resources and Tag Editor</i> for details,
+    /// including restrictions that apply to tags and "Tag naming limits and requirements";
+    /// Amazon IVS stages has no service-specific constraints beyond what is documented there.
     /// </para>
     ///  
     /// <para>
@@ -96,7 +96,7 @@ namespace Amazon.IVSRealTime
     /// </para>
     ///  
     /// <para>
-    /// The Amazon IVS real-time API has these tag-related endpoints: <a>TagResource</a>,
+    /// The Amazon IVS real-time API has these tag-related operations: <a>TagResource</a>,
     /// <a>UntagResource</a>, and <a>ListTagsForResource</a>. The following resource supports
     /// tagging: Stage.
     /// </para>
@@ -176,6 +176,59 @@ namespace Amazon.IVSRealTime
         /// <returns>Returns a  CreateEncoderConfigurationResult from IVSRealTime.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/CreateEncoderConfiguration">REST API Reference for CreateEncoderConfiguration Operation</seealso>
         CreateEncoderConfigurationResponse EndCreateEncoderConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateIngestConfiguration
+
+
+        /// <summary>
+        /// Creates a new IngestConfiguration resource, used to specify the ingest protocol for
+        /// a stage.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIngestConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the CreateIngestConfiguration service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/CreateIngestConfiguration">REST API Reference for CreateIngestConfiguration Operation</seealso>
+        CreateIngestConfigurationResponse CreateIngestConfiguration(CreateIngestConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateIngestConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateIngestConfiguration operation on AmazonIVSRealTimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateIngestConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/CreateIngestConfiguration">REST API Reference for CreateIngestConfiguration Operation</seealso>
+        IAsyncResult BeginCreateIngestConfiguration(CreateIngestConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateIngestConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateIngestConfiguration.</param>
+        /// 
+        /// <returns>Returns a  CreateIngestConfigurationResult from IVSRealTime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/CreateIngestConfiguration">REST API Reference for CreateIngestConfiguration Operation</seealso>
+        CreateIngestConfigurationResponse EndCreateIngestConfiguration(IAsyncResult asyncResult);
 
         #endregion
         
@@ -415,6 +468,63 @@ namespace Amazon.IVSRealTime
 
         #endregion
         
+        #region  DeleteIngestConfiguration
+
+
+        /// <summary>
+        /// Deletes a specified IngestConfiguration, so it can no longer be used to broadcast.
+        /// An IngestConfiguration cannot be deleted if the publisher is actively streaming to
+        /// a stage, unless <c>force</c> is set to <c>true</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIngestConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteIngestConfiguration service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/DeleteIngestConfiguration">REST API Reference for DeleteIngestConfiguration Operation</seealso>
+        DeleteIngestConfigurationResponse DeleteIngestConfiguration(DeleteIngestConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteIngestConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIngestConfiguration operation on AmazonIVSRealTimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteIngestConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/DeleteIngestConfiguration">REST API Reference for DeleteIngestConfiguration Operation</seealso>
+        IAsyncResult BeginDeleteIngestConfiguration(DeleteIngestConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteIngestConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteIngestConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteIngestConfigurationResult from IVSRealTime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/DeleteIngestConfiguration">REST API Reference for DeleteIngestConfiguration Operation</seealso>
+        DeleteIngestConfigurationResponse EndDeleteIngestConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeletePublicKey
 
 
@@ -475,7 +585,9 @@ namespace Amazon.IVSRealTime
 
 
         /// <summary>
-        /// Shuts down and deletes the specified stage (disconnecting all participants).
+        /// Shuts down and deletes the specified stage (disconnecting all participants). This
+        /// operation also removes the <c>stageArn</c> from the associated <a>IngestConfiguration</a>,
+        /// if there are participants using the IngestConfiguration to publish to the stage.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteStage service method.</param>
         /// 
@@ -596,8 +708,9 @@ namespace Amazon.IVSRealTime
 
 
         /// <summary>
-        /// Disconnects a specified participant and revokes the participant permanently from a
-        /// specified stage.
+        /// Disconnects a specified participant from a specified stage. If the participant is
+        /// publishing using an <a>IngestConfiguration</a>, DisconnectParticipant also updates
+        /// the <c>stageArn</c> in the IngestConfiguration to be an empty string.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisconnectParticipant service method.</param>
         /// 
@@ -758,6 +871,55 @@ namespace Amazon.IVSRealTime
         /// <returns>Returns a  GetEncoderConfigurationResult from IVSRealTime.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetEncoderConfiguration">REST API Reference for GetEncoderConfiguration Operation</seealso>
         GetEncoderConfigurationResponse EndGetEncoderConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetIngestConfiguration
+
+
+        /// <summary>
+        /// Gets information about the specified IngestConfiguration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIngestConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetIngestConfiguration service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetIngestConfiguration">REST API Reference for GetIngestConfiguration Operation</seealso>
+        GetIngestConfigurationResponse GetIngestConfiguration(GetIngestConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetIngestConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetIngestConfiguration operation on AmazonIVSRealTimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIngestConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetIngestConfiguration">REST API Reference for GetIngestConfiguration Operation</seealso>
+        IAsyncResult BeginGetIngestConfiguration(GetIngestConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetIngestConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIngestConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetIngestConfigurationResult from IVSRealTime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetIngestConfiguration">REST API Reference for GetIngestConfiguration Operation</seealso>
+        GetIngestConfigurationResponse EndGetIngestConfiguration(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1182,6 +1344,53 @@ namespace Amazon.IVSRealTime
 
         #endregion
         
+        #region  ListIngestConfigurations
+
+
+        /// <summary>
+        /// Lists all IngestConfigurations in your account, in the AWS region where the API request
+        /// is processed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIngestConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListIngestConfigurations service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListIngestConfigurations">REST API Reference for ListIngestConfigurations Operation</seealso>
+        ListIngestConfigurationsResponse ListIngestConfigurations(ListIngestConfigurationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListIngestConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListIngestConfigurations operation on AmazonIVSRealTimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListIngestConfigurations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListIngestConfigurations">REST API Reference for ListIngestConfigurations Operation</seealso>
+        IAsyncResult BeginListIngestConfigurations(ListIngestConfigurationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListIngestConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListIngestConfigurations.</param>
+        /// 
+        /// <returns>Returns a  ListIngestConfigurationsResult from IVSRealTime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListIngestConfigurations">REST API Reference for ListIngestConfigurations Operation</seealso>
+        ListIngestConfigurationsResponse EndListIngestConfigurations(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListParticipantEvents
 
 
@@ -1530,7 +1739,7 @@ namespace Amazon.IVSRealTime
         /// 
         ///  
         /// <para>
-        /// A Composition is an ephemeral resource that exists after this endpoint returns successfully.
+        /// A Composition is an ephemeral resource that exists after this operation returns successfully.
         /// Composition stops and the resource is deleted:
         /// </para>
         ///  <ul> <li> 
@@ -1765,6 +1974,62 @@ namespace Amazon.IVSRealTime
         /// <returns>Returns a  UntagResourceResult from IVSRealTime.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateIngestConfiguration
+
+
+        /// <summary>
+        /// Updates a specified IngestConfiguration. Only the stage ARN attached to the IngestConfiguration
+        /// can be updated. An IngestConfiguration that is active cannot be updated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIngestConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateIngestConfiguration service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/UpdateIngestConfiguration">REST API Reference for UpdateIngestConfiguration Operation</seealso>
+        UpdateIngestConfigurationResponse UpdateIngestConfiguration(UpdateIngestConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateIngestConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIngestConfiguration operation on AmazonIVSRealTimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateIngestConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/UpdateIngestConfiguration">REST API Reference for UpdateIngestConfiguration Operation</seealso>
+        IAsyncResult BeginUpdateIngestConfiguration(UpdateIngestConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateIngestConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateIngestConfiguration.</param>
+        /// 
+        /// <returns>Returns a  UpdateIngestConfigurationResult from IVSRealTime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/UpdateIngestConfiguration">REST API Reference for UpdateIngestConfiguration Operation</seealso>
+        UpdateIngestConfigurationResponse EndUpdateIngestConfiguration(IAsyncResult asyncResult);
 
         #endregion
         

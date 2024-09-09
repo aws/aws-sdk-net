@@ -30,33 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IVSRealTime.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteStage operation.
-    /// Shuts down and deletes the specified stage (disconnecting all participants). This
-    /// operation also removes the <c>stageArn</c> from the associated <a>IngestConfiguration</a>,
-    /// if there are participants using the IngestConfiguration to publish to the stage.
+    /// This is the response object from the DeleteIngestConfiguration operation.
     /// </summary>
-    public partial class DeleteStageRequest : AmazonIVSRealTimeRequest
+    public partial class DeleteIngestConfigurationResponse : AmazonWebServiceResponse
     {
-        private string _arn;
-
-        /// <summary>
-        /// Gets and sets the property Arn. 
-        /// <para>
-        /// ARN of the stage to be deleted.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
-        public string Arn
-        {
-            get { return this._arn; }
-            set { this._arn = value; }
-        }
-
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
-        {
-            return this._arn != null;
-        }
 
     }
 }
