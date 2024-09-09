@@ -2059,6 +2059,16 @@
                 }
               ]
             },
+            "eu-central-2": {
+              "variants": [
+                {
+                  "hostname": "appmesh.eu-central-2.api.aws",
+                  "tags": [
+                    "dualstack"
+                  ]
+                }
+              ]
+            },
             "eu-north-1": {
               "variants": [
                 {
@@ -2073,6 +2083,16 @@
               "variants": [
                 {
                   "hostname": "appmesh.eu-south-1.api.aws",
+                  "tags": [
+                    "dualstack"
+                  ]
+                }
+              ]
+            },
+            "eu-south-2": {
+              "variants": [
+                {
+                  "hostname": "appmesh.eu-south-2.api.aws",
                   "tags": [
                     "dualstack"
                   ]
