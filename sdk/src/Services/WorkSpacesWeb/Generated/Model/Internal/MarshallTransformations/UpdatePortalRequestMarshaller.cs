@@ -64,39 +64,42 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                 throw new AmazonWorkSpacesWebException("Request object does not have required field PortalArn set");
             request.AddPathResource("{portalArn+}", StringUtils.FromString(publicRequest.PortalArn.TrimStart('/')));
             request.ResourcePath = "/portals/{portalArn+}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAuthenticationType())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("authenticationType");
-                    context.Writer.Write(publicRequest.AuthenticationType);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAuthenticationType())
+                    {
+                        context.Writer.WritePropertyName("authenticationType");
+                        context.Writer.Write(publicRequest.AuthenticationType);
+                    }
+
+                    if(publicRequest.IsSetDisplayName())
+                    {
+                        context.Writer.WritePropertyName("displayName");
+                        context.Writer.Write(publicRequest.DisplayName);
+                    }
+
+                    if(publicRequest.IsSetInstanceType())
+                    {
+                        context.Writer.WritePropertyName("instanceType");
+                        context.Writer.Write(publicRequest.InstanceType);
+                    }
+
+                    if(publicRequest.IsSetMaxConcurrentSessions())
+                    {
+                        context.Writer.WritePropertyName("maxConcurrentSessions");
+                        context.Writer.Write(publicRequest.MaxConcurrentSessions.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDisplayName())
-                {
-                    context.Writer.WritePropertyName("displayName");
-                    context.Writer.Write(publicRequest.DisplayName);
-                }
-
-                if(publicRequest.IsSetInstanceType())
-                {
-                    context.Writer.WritePropertyName("instanceType");
-                    context.Writer.Write(publicRequest.InstanceType);
-                }
-
-                if(publicRequest.IsSetMaxConcurrentSessions())
-                {
-                    context.Writer.WritePropertyName("maxConcurrentSessions");
-                    context.Writer.Write(publicRequest.MaxConcurrentSessions.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

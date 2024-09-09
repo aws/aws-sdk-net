@@ -63,33 +63,36 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetExpiresInSeconds())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ExpiresInSeconds");
-                    context.Writer.Write(publicRequest.ExpiresInSeconds.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetExpiresInSeconds())
+                    {
+                        context.Writer.WritePropertyName("ExpiresInSeconds");
+                        context.Writer.Write(publicRequest.ExpiresInSeconds.Value);
+                    }
+
+                    if(publicRequest.IsSetSessionExpirationDurationInSeconds())
+                    {
+                        context.Writer.WritePropertyName("SessionExpirationDurationInSeconds");
+                        context.Writer.Write(publicRequest.SessionExpirationDurationInSeconds.Value);
+                    }
+
+                    if(publicRequest.IsSetTrackingServerName())
+                    {
+                        context.Writer.WritePropertyName("TrackingServerName");
+                        context.Writer.Write(publicRequest.TrackingServerName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSessionExpirationDurationInSeconds())
-                {
-                    context.Writer.WritePropertyName("SessionExpirationDurationInSeconds");
-                    context.Writer.Write(publicRequest.SessionExpirationDurationInSeconds.Value);
-                }
-
-                if(publicRequest.IsSetTrackingServerName())
-                {
-                    context.Writer.WritePropertyName("TrackingServerName");
-                    context.Writer.Write(publicRequest.TrackingServerName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

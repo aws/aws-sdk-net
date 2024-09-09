@@ -64,19 +64,22 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 throw new AmazonPinpointException("Request object does not have required field ApplicationId set");
             request.AddPathResource("{application-id}", StringUtils.FromString(publicRequest.ApplicationId));
             request.ResourcePath = "/v1/apps/{application-id}/channels/adm";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                var context = new JsonMarshallerContext(request, writer);
-                context.Writer.WriteObjectStart();
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                {
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    var context = new JsonMarshallerContext(request, writer);
+                    context.Writer.WriteObjectStart();
 
-                var marshaller = ADMChannelRequestMarshaller.Instance;
-                marshaller.Marshall(publicRequest.ADMChannelRequest, context);
+                    var marshaller = ADMChannelRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ADMChannelRequest, context);
 
-                context.Writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                    context.Writer.WriteObjectEnd();
+                }
+
+                request.Content = memoryStream.ToArray();
             }
 
 

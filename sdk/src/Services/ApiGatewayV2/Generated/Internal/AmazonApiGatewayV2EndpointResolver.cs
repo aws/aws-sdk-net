@@ -18,6 +18,8 @@
  */
 
 using System;
+using System.Linq;
+using System.Collections.Generic;
 using Amazon.ApiGatewayV2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;

@@ -61,6 +61,12 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                         unmarshalledObject.BucketName = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("IamRoleArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.IamRoleArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("KmsKeyArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

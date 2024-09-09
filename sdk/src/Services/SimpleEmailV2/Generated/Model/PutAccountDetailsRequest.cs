@@ -135,7 +135,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// A description of the types of email that you plan to send.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=5000)]
+        [AWSProperty(Sensitive=true, Max=5000)]
         public string UseCaseDescription
         {
             get { return this._useCaseDescription; }

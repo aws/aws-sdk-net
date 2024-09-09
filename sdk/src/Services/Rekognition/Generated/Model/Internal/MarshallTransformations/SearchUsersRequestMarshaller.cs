@@ -63,52 +63,55 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCollectionId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CollectionId");
-                    context.Writer.Write(publicRequest.CollectionId);
-                }
-
-                if(publicRequest.IsSetFaceId())
-                {
-                    context.Writer.WritePropertyName("FaceId");
-                    context.Writer.Write(publicRequest.FaceId);
-                }
-
-                if(publicRequest.IsSetMaxUsers())
-                {
-                    context.Writer.WritePropertyName("MaxUsers");
-                    context.Writer.Write(publicRequest.MaxUsers.Value);
-                }
-
-                if(publicRequest.IsSetUserId())
-                {
-                    context.Writer.WritePropertyName("UserId");
-                    context.Writer.Write(publicRequest.UserId);
-                }
-
-                if(publicRequest.IsSetUserMatchThreshold())
-                {
-                    context.Writer.WritePropertyName("UserMatchThreshold");
-                    if(StringUtils.IsSpecialFloatValue(publicRequest.UserMatchThreshold.Value))
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCollectionId())
                     {
-                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.UserMatchThreshold.Value));
+                        context.Writer.WritePropertyName("CollectionId");
+                        context.Writer.Write(publicRequest.CollectionId);
                     }
-                    else
+
+                    if(publicRequest.IsSetFaceId())
                     {
-                        context.Writer.Write(publicRequest.UserMatchThreshold.Value);
+                        context.Writer.WritePropertyName("FaceId");
+                        context.Writer.Write(publicRequest.FaceId);
                     }
+
+                    if(publicRequest.IsSetMaxUsers())
+                    {
+                        context.Writer.WritePropertyName("MaxUsers");
+                        context.Writer.Write(publicRequest.MaxUsers.Value);
+                    }
+
+                    if(publicRequest.IsSetUserId())
+                    {
+                        context.Writer.WritePropertyName("UserId");
+                        context.Writer.Write(publicRequest.UserId);
+                    }
+
+                    if(publicRequest.IsSetUserMatchThreshold())
+                    {
+                        context.Writer.WritePropertyName("UserMatchThreshold");
+                        if(StringUtils.IsSpecialFloatValue(publicRequest.UserMatchThreshold.Value))
+                        {
+                            context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.UserMatchThreshold.Value));
+                        }
+                        else
+                        {
+                            context.Writer.Write(publicRequest.UserMatchThreshold.Value);
+                        }
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

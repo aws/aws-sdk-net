@@ -63,49 +63,52 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetS3Destination())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("S3Destination");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetS3Destination())
+                    {
+                        context.Writer.WritePropertyName("S3Destination");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = ResourceDataSyncS3DestinationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.S3Destination, context);
+                        var marshaller = ResourceDataSyncS3DestinationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.S3Destination, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSyncName())
+                    {
+                        context.Writer.WritePropertyName("SyncName");
+                        context.Writer.Write(publicRequest.SyncName);
+                    }
+
+                    if(publicRequest.IsSetSyncSource())
+                    {
+                        context.Writer.WritePropertyName("SyncSource");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ResourceDataSyncSourceMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SyncSource, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSyncType())
+                    {
+                        context.Writer.WritePropertyName("SyncType");
+                        context.Writer.Write(publicRequest.SyncType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSyncName())
-                {
-                    context.Writer.WritePropertyName("SyncName");
-                    context.Writer.Write(publicRequest.SyncName);
-                }
-
-                if(publicRequest.IsSetSyncSource())
-                {
-                    context.Writer.WritePropertyName("SyncSource");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ResourceDataSyncSourceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SyncSource, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSyncType())
-                {
-                    context.Writer.WritePropertyName("SyncType");
-                    context.Writer.Write(publicRequest.SyncType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

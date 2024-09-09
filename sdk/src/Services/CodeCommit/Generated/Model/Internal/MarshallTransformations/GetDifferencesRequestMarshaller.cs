@@ -63,57 +63,60 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAfterCommitSpecifier())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("afterCommitSpecifier");
-                    context.Writer.Write(publicRequest.AfterCommitSpecifier);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAfterCommitSpecifier())
+                    {
+                        context.Writer.WritePropertyName("afterCommitSpecifier");
+                        context.Writer.Write(publicRequest.AfterCommitSpecifier);
+                    }
+
+                    if(publicRequest.IsSetAfterPath())
+                    {
+                        context.Writer.WritePropertyName("afterPath");
+                        context.Writer.Write(publicRequest.AfterPath);
+                    }
+
+                    if(publicRequest.IsSetBeforeCommitSpecifier())
+                    {
+                        context.Writer.WritePropertyName("beforeCommitSpecifier");
+                        context.Writer.Write(publicRequest.BeforeCommitSpecifier);
+                    }
+
+                    if(publicRequest.IsSetBeforePath())
+                    {
+                        context.Writer.WritePropertyName("beforePath");
+                        context.Writer.Write(publicRequest.BeforePath);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetRepositoryName())
+                    {
+                        context.Writer.WritePropertyName("repositoryName");
+                        context.Writer.Write(publicRequest.RepositoryName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetAfterPath())
-                {
-                    context.Writer.WritePropertyName("afterPath");
-                    context.Writer.Write(publicRequest.AfterPath);
-                }
-
-                if(publicRequest.IsSetBeforeCommitSpecifier())
-                {
-                    context.Writer.WritePropertyName("beforeCommitSpecifier");
-                    context.Writer.Write(publicRequest.BeforeCommitSpecifier);
-                }
-
-                if(publicRequest.IsSetBeforePath())
-                {
-                    context.Writer.WritePropertyName("beforePath");
-                    context.Writer.Write(publicRequest.BeforePath);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetRepositoryName())
-                {
-                    context.Writer.WritePropertyName("repositoryName");
-                    context.Writer.Write(publicRequest.RepositoryName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

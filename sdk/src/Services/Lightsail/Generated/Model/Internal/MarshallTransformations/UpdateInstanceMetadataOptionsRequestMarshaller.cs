@@ -63,45 +63,48 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetHttpEndpoint())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("httpEndpoint");
-                    context.Writer.Write(publicRequest.HttpEndpoint);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetHttpEndpoint())
+                    {
+                        context.Writer.WritePropertyName("httpEndpoint");
+                        context.Writer.Write(publicRequest.HttpEndpoint);
+                    }
+
+                    if(publicRequest.IsSetHttpProtocolIpv6())
+                    {
+                        context.Writer.WritePropertyName("httpProtocolIpv6");
+                        context.Writer.Write(publicRequest.HttpProtocolIpv6);
+                    }
+
+                    if(publicRequest.IsSetHttpPutResponseHopLimit())
+                    {
+                        context.Writer.WritePropertyName("httpPutResponseHopLimit");
+                        context.Writer.Write(publicRequest.HttpPutResponseHopLimit.Value);
+                    }
+
+                    if(publicRequest.IsSetHttpTokens())
+                    {
+                        context.Writer.WritePropertyName("httpTokens");
+                        context.Writer.Write(publicRequest.HttpTokens);
+                    }
+
+                    if(publicRequest.IsSetInstanceName())
+                    {
+                        context.Writer.WritePropertyName("instanceName");
+                        context.Writer.Write(publicRequest.InstanceName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetHttpProtocolIpv6())
-                {
-                    context.Writer.WritePropertyName("httpProtocolIpv6");
-                    context.Writer.Write(publicRequest.HttpProtocolIpv6);
-                }
-
-                if(publicRequest.IsSetHttpPutResponseHopLimit())
-                {
-                    context.Writer.WritePropertyName("httpPutResponseHopLimit");
-                    context.Writer.Write(publicRequest.HttpPutResponseHopLimit.Value);
-                }
-
-                if(publicRequest.IsSetHttpTokens())
-                {
-                    context.Writer.WritePropertyName("httpTokens");
-                    context.Writer.Write(publicRequest.HttpTokens);
-                }
-
-                if(publicRequest.IsSetInstanceName())
-                {
-                    context.Writer.WritePropertyName("instanceName");
-                    context.Writer.Write(publicRequest.InstanceName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

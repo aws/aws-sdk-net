@@ -63,45 +63,48 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAssessmentTemplateArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("assessmentTemplateArn");
-                    context.Writer.Write(publicRequest.AssessmentTemplateArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAssessmentTemplateArn())
+                    {
+                        context.Writer.WritePropertyName("assessmentTemplateArn");
+                        context.Writer.Write(publicRequest.AssessmentTemplateArn);
+                    }
+
+                    if(publicRequest.IsSetLocale())
+                    {
+                        context.Writer.WritePropertyName("locale");
+                        context.Writer.Write(publicRequest.Locale);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetPreviewToken())
+                    {
+                        context.Writer.WritePropertyName("previewToken");
+                        context.Writer.Write(publicRequest.PreviewToken);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetLocale())
-                {
-                    context.Writer.WritePropertyName("locale");
-                    context.Writer.Write(publicRequest.Locale);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetPreviewToken())
-                {
-                    context.Writer.WritePropertyName("previewToken");
-                    context.Writer.Write(publicRequest.PreviewToken);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

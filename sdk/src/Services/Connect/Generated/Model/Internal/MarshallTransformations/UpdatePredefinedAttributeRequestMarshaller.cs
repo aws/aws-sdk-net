@@ -67,26 +67,29 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field Name set");
             request.AddPathResource("{Name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/predefined-attributes/{InstanceId}/{Name}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetValues())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Values");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetValues())
+                    {
+                        context.Writer.WritePropertyName("Values");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = PredefinedAttributeValuesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Values, context);
+                        var marshaller = PredefinedAttributeValuesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Values, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -64,19 +64,22 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field RuleName set");
             request.AddPathResource("{ruleName}", StringUtils.FromString(publicRequest.RuleName));
             request.ResourcePath = "/rules/{ruleName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                var context = new JsonMarshallerContext(request, writer);
-                context.Writer.WriteObjectStart();
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                {
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    var context = new JsonMarshallerContext(request, writer);
+                    context.Writer.WriteObjectStart();
 
-                var marshaller = TopicRulePayloadMarshaller.Instance;
-                marshaller.Marshall(publicRequest.TopicRulePayload, context);
+                    var marshaller = TopicRulePayloadMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TopicRulePayload, context);
 
-                context.Writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                    context.Writer.WriteObjectEnd();
+                }
+
+                request.Content = memoryStream.ToArray();
             }
 
         

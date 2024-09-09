@@ -64,65 +64,68 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetClientId())
                 request.Parameters.Add("clientId", StringUtils.FromString(publicRequest.ClientId));
             request.ResourcePath = "/test-authorization";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAuthInfos())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("authInfos");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAuthInfosListValue in publicRequest.AuthInfos)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAuthInfos())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("authInfos");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAuthInfosListValue in publicRequest.AuthInfos)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = AuthInfoMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAuthInfosListValue, context);
+                            var marshaller = AuthInfoMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAuthInfosListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetCognitoIdentityPoolId())
-                {
-                    context.Writer.WritePropertyName("cognitoIdentityPoolId");
-                    context.Writer.Write(publicRequest.CognitoIdentityPoolId);
-                }
-
-                if(publicRequest.IsSetPolicyNamesToAdd())
-                {
-                    context.Writer.WritePropertyName("policyNamesToAdd");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPolicyNamesToAddListValue in publicRequest.PolicyNamesToAdd)
+                    if(publicRequest.IsSetCognitoIdentityPoolId())
                     {
-                            context.Writer.Write(publicRequestPolicyNamesToAddListValue);
+                        context.Writer.WritePropertyName("cognitoIdentityPoolId");
+                        context.Writer.Write(publicRequest.CognitoIdentityPoolId);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetPolicyNamesToSkip())
-                {
-                    context.Writer.WritePropertyName("policyNamesToSkip");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPolicyNamesToSkipListValue in publicRequest.PolicyNamesToSkip)
+                    if(publicRequest.IsSetPolicyNamesToAdd())
                     {
-                            context.Writer.Write(publicRequestPolicyNamesToSkipListValue);
+                        context.Writer.WritePropertyName("policyNamesToAdd");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPolicyNamesToAddListValue in publicRequest.PolicyNamesToAdd)
+                        {
+                                context.Writer.Write(publicRequestPolicyNamesToAddListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetPolicyNamesToSkip())
+                    {
+                        context.Writer.WritePropertyName("policyNamesToSkip");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPolicyNamesToSkipListValue in publicRequest.PolicyNamesToSkip)
+                        {
+                                context.Writer.Write(publicRequestPolicyNamesToSkipListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetPrincipal())
+                    {
+                        context.Writer.WritePropertyName("principal");
+                        context.Writer.Write(publicRequest.Principal);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPrincipal())
-                {
-                    context.Writer.WritePropertyName("principal");
-                    context.Writer.Write(publicRequest.Principal);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             request.UseQueryString = true;

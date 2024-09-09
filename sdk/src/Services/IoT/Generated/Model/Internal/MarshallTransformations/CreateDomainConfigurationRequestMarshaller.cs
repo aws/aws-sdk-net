@@ -64,93 +64,96 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field DomainConfigurationName set");
             request.AddPathResource("{domainConfigurationName}", StringUtils.FromString(publicRequest.DomainConfigurationName));
             request.ResourcePath = "/domainConfigurations/{domainConfigurationName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAuthorizerConfig())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("authorizerConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AuthorizerConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AuthorizerConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDomainName())
-                {
-                    context.Writer.WritePropertyName("domainName");
-                    context.Writer.Write(publicRequest.DomainName);
-                }
-
-                if(publicRequest.IsSetServerCertificateArns())
-                {
-                    context.Writer.WritePropertyName("serverCertificateArns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestServerCertificateArnsListValue in publicRequest.ServerCertificateArns)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAuthorizerConfig())
                     {
-                            context.Writer.Write(publicRequestServerCertificateArnsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetServerCertificateConfig())
-                {
-                    context.Writer.WritePropertyName("serverCertificateConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ServerCertificateConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ServerCertificateConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetServiceType())
-                {
-                    context.Writer.WritePropertyName("serviceType");
-                    context.Writer.Write(publicRequest.ServiceType);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                    {
+                        context.Writer.WritePropertyName("authorizerConfig");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = AuthorizerConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AuthorizerConfig, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDomainName())
+                    {
+                        context.Writer.WritePropertyName("domainName");
+                        context.Writer.Write(publicRequest.DomainName);
+                    }
+
+                    if(publicRequest.IsSetServerCertificateArns())
+                    {
+                        context.Writer.WritePropertyName("serverCertificateArns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestServerCertificateArnsListValue in publicRequest.ServerCertificateArns)
+                        {
+                                context.Writer.Write(publicRequestServerCertificateArnsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetServerCertificateConfig())
+                    {
+                        context.Writer.WritePropertyName("serverCertificateConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ServerCertificateConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ServerCertificateConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetServiceType())
+                    {
+                        context.Writer.WritePropertyName("serviceType");
+                        context.Writer.Write(publicRequest.ServiceType);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTlsConfig())
+                    {
+                        context.Writer.WritePropertyName("tlsConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TlsConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TlsConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetValidationCertificateArn())
+                    {
+                        context.Writer.WritePropertyName("validationCertificateArn");
+                        context.Writer.Write(publicRequest.ValidationCertificateArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTlsConfig())
-                {
-                    context.Writer.WritePropertyName("tlsConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TlsConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TlsConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetValidationCertificateArn())
-                {
-                    context.Writer.WritePropertyName("validationCertificateArn");
-                    context.Writer.Write(publicRequest.ValidationCertificateArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

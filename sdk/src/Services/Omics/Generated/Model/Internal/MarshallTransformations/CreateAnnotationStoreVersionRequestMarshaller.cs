@@ -64,52 +64,55 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 throw new AmazonOmicsException("Request object does not have required field Name set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/annotationStore/{name}/version";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetVersionName())
+                    {
+                        context.Writer.WritePropertyName("versionName");
+                        context.Writer.Write(publicRequest.VersionName);
+                    }
+
+                    if(publicRequest.IsSetVersionOptions())
+                    {
+                        context.Writer.WritePropertyName("versionOptions");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = VersionOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.VersionOptions, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetVersionName())
-                {
-                    context.Writer.WritePropertyName("versionName");
-                    context.Writer.Write(publicRequest.VersionName);
-                }
-
-                if(publicRequest.IsSetVersionOptions())
-                {
-                    context.Writer.WritePropertyName("versionOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = VersionOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.VersionOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

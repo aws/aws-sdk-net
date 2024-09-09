@@ -18,6 +18,7 @@
  */
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.OpenSearchServerless.Endpoints;
 using Amazon.OpenSearchServerless.Internal;
@@ -399,21 +400,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         public void Missing_region_Test()
         {
             var parameters = new OpenSearchServerlessEndpointParameters();
-            var endpoint = new AmazonOpenSearchServerlessEndpointProvider().ResolveEndpoint(parameters);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("OpenSearchServerless")]
-        [Description("Partition doesn't support DualStack")]
-        [ExpectedException(typeof(AmazonClientException), @"DualStack is enabled but this partition does not support DualStack")]
-        public void Partition_doesnt_support_DualStack_Test()
-        {
-            var parameters = new OpenSearchServerlessEndpointParameters();
-            parameters["Region"] = "us-isob-east-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = true;
             var endpoint = new AmazonOpenSearchServerlessEndpointProvider().ResolveEndpoint(parameters);
         }
 

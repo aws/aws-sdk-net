@@ -61,68 +61,71 @@ namespace Amazon.KinesisVideoArchivedMedia.Model.Internal.MarshallTransformation
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/getDASHStreamingSessionURL";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDASHFragmentSelector())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DASHFragmentSelector");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDASHFragmentSelector())
+                    {
+                        context.Writer.WritePropertyName("DASHFragmentSelector");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = DASHFragmentSelectorMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DASHFragmentSelector, context);
+                        var marshaller = DASHFragmentSelectorMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DASHFragmentSelector, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDisplayFragmentNumber())
+                    {
+                        context.Writer.WritePropertyName("DisplayFragmentNumber");
+                        context.Writer.Write(publicRequest.DisplayFragmentNumber);
+                    }
+
+                    if(publicRequest.IsSetDisplayFragmentTimestamp())
+                    {
+                        context.Writer.WritePropertyName("DisplayFragmentTimestamp");
+                        context.Writer.Write(publicRequest.DisplayFragmentTimestamp);
+                    }
+
+                    if(publicRequest.IsSetExpires())
+                    {
+                        context.Writer.WritePropertyName("Expires");
+                        context.Writer.Write(publicRequest.Expires.Value);
+                    }
+
+                    if(publicRequest.IsSetMaxManifestFragmentResults())
+                    {
+                        context.Writer.WritePropertyName("MaxManifestFragmentResults");
+                        context.Writer.Write(publicRequest.MaxManifestFragmentResults.Value);
+                    }
+
+                    if(publicRequest.IsSetPlaybackMode())
+                    {
+                        context.Writer.WritePropertyName("PlaybackMode");
+                        context.Writer.Write(publicRequest.PlaybackMode);
+                    }
+
+                    if(publicRequest.IsSetStreamARN())
+                    {
+                        context.Writer.WritePropertyName("StreamARN");
+                        context.Writer.Write(publicRequest.StreamARN);
+                    }
+
+                    if(publicRequest.IsSetStreamName())
+                    {
+                        context.Writer.WritePropertyName("StreamName");
+                        context.Writer.Write(publicRequest.StreamName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDisplayFragmentNumber())
-                {
-                    context.Writer.WritePropertyName("DisplayFragmentNumber");
-                    context.Writer.Write(publicRequest.DisplayFragmentNumber);
-                }
-
-                if(publicRequest.IsSetDisplayFragmentTimestamp())
-                {
-                    context.Writer.WritePropertyName("DisplayFragmentTimestamp");
-                    context.Writer.Write(publicRequest.DisplayFragmentTimestamp);
-                }
-
-                if(publicRequest.IsSetExpires())
-                {
-                    context.Writer.WritePropertyName("Expires");
-                    context.Writer.Write(publicRequest.Expires.Value);
-                }
-
-                if(publicRequest.IsSetMaxManifestFragmentResults())
-                {
-                    context.Writer.WritePropertyName("MaxManifestFragmentResults");
-                    context.Writer.Write(publicRequest.MaxManifestFragmentResults.Value);
-                }
-
-                if(publicRequest.IsSetPlaybackMode())
-                {
-                    context.Writer.WritePropertyName("PlaybackMode");
-                    context.Writer.Write(publicRequest.PlaybackMode);
-                }
-
-                if(publicRequest.IsSetStreamARN())
-                {
-                    context.Writer.WritePropertyName("StreamARN");
-                    context.Writer.Write(publicRequest.StreamARN);
-                }
-
-                if(publicRequest.IsSetStreamName())
-                {
-                    context.Writer.WritePropertyName("StreamName");
-                    context.Writer.Write(publicRequest.StreamName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

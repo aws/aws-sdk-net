@@ -2682,34 +2682,27 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Initiates the copy of an AMI. You can copy an AMI from one Region to another, or from
-        /// a Region to an Outpost. You can't copy an AMI from an Outpost to a Region, from one
-        /// Outpost to another, or within the same Outpost. To copy an AMI to another partition,
+        /// Initiates an AMI copy operation. You can copy an AMI from one Region to another, or
+        /// from a Region to an Outpost. You can't copy an AMI from an Outpost to a Region, from
+        /// one Outpost to another, or within the same Outpost. To copy an AMI to another partition,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateStoreImageTask.html">CreateStoreImageTask</a>.
         /// 
         ///  
         /// <para>
-        /// To copy an AMI from one Region to another, specify the source Region using the <b>SourceRegion</b>
-        /// parameter, and specify the destination Region using its endpoint. Copies of encrypted
-        /// backing snapshots for the AMI are encrypted. Copies of unencrypted backing snapshots
-        /// remain unencrypted, unless you set <c>Encrypted</c> during the copy operation. You
-        /// cannot create an unencrypted copy of an encrypted backing snapshot.
+        /// When you copy an AMI from one Region to another, the destination Region is the current
+        /// Region.
         /// </para>
         ///  
         /// <para>
-        /// To copy an AMI from a Region to an Outpost, specify the source Region using the <b>SourceRegion</b>
-        /// parameter, and specify the ARN of the destination Outpost using <b>DestinationOutpostArn</b>.
-        /// Backing snapshots copied to an Outpost are encrypted by default using the default
-        /// encryption key for the Region, or a different key that you specify in the request
-        /// using <b>KmsKeyId</b>. Outposts do not support unencrypted snapshots. For more information,
-        /// <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">
-        /// Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.
+        /// When you copy an AMI from a Region to an Outpost, specify the ARN of the Outpost as
+        /// the destination. Backing snapshots copied to an Outpost are encrypted by default using
+        /// the default encryption key for the Region or the key that you specify. Outposts do
+        /// not support unencrypted snapshots.
         /// </para>
         ///  
         /// <para>
-        /// For more information about the prerequisites and limits when copying an AMI, see <a
-        /// href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copy an
-        /// AMI</a> in the <i>Amazon EC2 User Guide</i>.
+        /// For information about the prerequisites when copying an AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copy
+        /// an AMI</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyImage service method.</param>
@@ -2856,6 +2849,43 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = CreateCapacityReservationResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateCapacityReservationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateCapacityReservationBySplitting
+
+        internal virtual CreateCapacityReservationBySplittingResponse CreateCapacityReservationBySplitting(CreateCapacityReservationBySplittingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCapacityReservationBySplittingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCapacityReservationBySplittingResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCapacityReservationBySplittingResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Create a new Capacity Reservation by splitting the available capacity of the source
+        /// Capacity Reservation. The new Capacity Reservation will have the same attributes as
+        /// the source Capacity Reservation except for tags. The source Capacity Reservation must
+        /// be <c>active</c> and owned by your Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCapacityReservationBySplitting service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCapacityReservationBySplitting service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservationBySplitting">REST API Reference for CreateCapacityReservationBySplitting Operation</seealso>
+        public virtual Task<CreateCapacityReservationBySplittingResponse> CreateCapacityReservationBySplittingAsync(CreateCapacityReservationBySplittingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCapacityReservationBySplittingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCapacityReservationBySplittingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateCapacityReservationBySplittingResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -8198,7 +8228,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// If you attempt to delete a security group that is associated with an instance or network
-        /// interface or is referenced by another security group, the operation fails with <c>DependencyViolation</c>.
+        /// interface or is referenced by another security group in the same VPC, the operation
+        /// fails with <c>DependencyViolation</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSecurityGroup service method.</param>
@@ -10014,7 +10045,7 @@ namespace Amazon.EC2
         /// During those seven days, the source account can view the pending transfer by using
         /// this action. After seven days, the transfer expires and ownership of the Elastic IP
         /// address returns to the source account. Accepted transfers are visible to the source
-        /// account for three days after the transfers have been accepted.
+        /// account for 14 days after the transfers have been accepted.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAddressTransfers service method.</param>
@@ -15356,9 +15387,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the stale security group rules for security groups in a specified VPC. Rules
-        /// are stale when they reference a deleted security group in the same VPC or peered VPC.
-        /// Rules can also be stale if they reference a security group in a peer VPC for which
-        /// the VPC peering connection has been deleted.
+        /// are stale when they reference a deleted security group in a peered VPC. Rules can
+        /// also be stale if they reference a security group in a peer VPC for which the VPC peering
+        /// connection has been deleted.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStaleSecurityGroups service method.</param>
         /// <param name="cancellationToken">
@@ -17932,13 +17963,20 @@ namespace Amazon.EC2
         /// for the specified Amazon Web Services Region. After you disable block public access
         /// for snapshots in a Region, users can publicly share snapshots in that Region.
         /// 
-        ///  
+        ///  <important> 
         /// <para>
-        /// If block public access is enabled in <c>block-all-sharing</c> mode, and you disable
-        /// block public access, all snapshots that were previously publicly shared are no longer
-        /// treated as private and they become publicly accessible again.
+        /// Enabling block public access for snapshots in <i>block-all-sharing</i> mode does not
+        /// change the permissions for snapshots that are already publicly shared. Instead, it
+        /// prevents these snapshots from be publicly visible and publicly accessible. Therefore,
+        /// the attributes for these snapshots still indicate that they are publicly shared, even
+        /// though they are not publicly available.
         /// </para>
         ///  
+        /// <para>
+        /// If you disable block public access , these snapshots will become publicly available
+        /// again.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/block-public-access-snapshots.html">
         /// Block public access for snapshots</a> in the <i>Amazon EBS User Guide</i> .
@@ -19252,13 +19290,20 @@ namespace Amazon.EC2
         /// in that Region. Snapshots that are already publicly shared are either treated as private
         /// or they remain publicly shared, depending on the <b>State</b> that you specify.
         /// 
-        ///  
+        ///  <important> 
         /// <para>
-        /// If block public access is enabled in <c>block-all-sharing</c> mode, and you change
-        /// the mode to <c>block-new-sharing</c>, all snapshots that were previously publicly
-        /// shared are no longer treated as private and they become publicly accessible again.
+        /// Enabling block public access for snapshots in <i>block all sharing</i> mode does not
+        /// change the permissions for snapshots that are already publicly shared. Instead, it
+        /// prevents these snapshots from be publicly visible and publicly accessible. Therefore,
+        /// the attributes for these snapshots still indicate that they are publicly shared, even
+        /// though they are not publicly available.
         /// </para>
         ///  
+        /// <para>
+        /// If you later disable block public access or change the mode to <i>block new sharing</i>,
+        /// these snapshots will become publicly available again.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/block-public-access-snapshots.html">
         /// Block public access for snapshots</a> in the <i>Amazon EBS User Guide</i>.
@@ -22027,11 +22072,13 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies a Capacity Reservation's capacity and the conditions under which it is to
-        /// be released. You cannot change a Capacity Reservation's instance type, EBS optimization,
-        /// instance store settings, platform, Availability Zone, or instance eligibility. If
-        /// you need to modify any of these attributes, we recommend that you cancel the Capacity
-        /// Reservation, and then create a new one with the required attributes.
+        /// Modifies a Capacity Reservation's capacity, instance eligibility, and the conditions
+        /// under which it is to be released. You can't modify a Capacity Reservation's instance
+        /// type, EBS optimization, platform, instance store settings, Availability Zone, or tenancy.
+        /// If you need to modify any of these attributes, we recommend that you cancel the Capacity
+        /// Reservation, and then create a new one with the required attributes. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-modify.html">Modify
+        /// an active Capacity Reservation</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyCapacityReservation service method.</param>
         /// <param name="cancellationToken">
@@ -24879,6 +24926,69 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = MoveByoipCidrToIpamResponseUnmarshaller.Instance;
 
             return InvokeAsync<MoveByoipCidrToIpamResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  MoveCapacityReservationInstances
+
+        internal virtual MoveCapacityReservationInstancesResponse MoveCapacityReservationInstances(MoveCapacityReservationInstancesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = MoveCapacityReservationInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = MoveCapacityReservationInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<MoveCapacityReservationInstancesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Move available capacity from a source Capacity Reservation to a destination Capacity
+        /// Reservation. The source Capacity Reservation and the destination Capacity Reservation
+        /// must be <c>active</c>, owned by your Amazon Web Services account, and share the following:
+        /// 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Instance type
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Platform
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Availability Zone
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tenancy
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Placement group
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Capacity Reservation end time - <c>At specific time</c> or <c>Manually</c>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the MoveCapacityReservationInstances service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the MoveCapacityReservationInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MoveCapacityReservationInstances">REST API Reference for MoveCapacityReservationInstances Operation</seealso>
+        public virtual Task<MoveCapacityReservationInstancesResponse> MoveCapacityReservationInstancesAsync(MoveCapacityReservationInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = MoveCapacityReservationInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = MoveCapacityReservationInstancesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<MoveCapacityReservationInstancesResponse>(request, options, cancellationToken);
         }
 
         #endregion

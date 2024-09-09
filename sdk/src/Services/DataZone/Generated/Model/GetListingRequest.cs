@@ -31,7 +31,8 @@ namespace Amazon.DataZone.Model
 {
     /// <summary>
     /// Container for the parameters to the GetListing operation.
-    /// Gets a listing (a record of an asset at a given time).
+    /// Gets a listing (a record of an asset at a given time). If you specify a listing version,
+    /// only details that are specific to that version are returned.
     /// </summary>
     public partial class GetListingRequest : AmazonDataZoneRequest
     {

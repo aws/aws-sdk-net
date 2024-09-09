@@ -64,21 +64,24 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field InstanceId set");
             request.AddPathResource("{InstanceId}", StringUtils.FromString(publicRequest.InstanceId));
             request.ResourcePath = "/instance/{InstanceId}/security-key";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetKey())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Key");
-                    context.Writer.Write(publicRequest.Key);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetKey())
+                    {
+                        context.Writer.WritePropertyName("Key");
+                        context.Writer.Write(publicRequest.Key);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

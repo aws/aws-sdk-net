@@ -63,44 +63,47 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCatalogId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CatalogId");
-                    context.Writer.Write(publicRequest.CatalogId);
-                }
-
-                if(publicRequest.IsSetColumnNames())
-                {
-                    context.Writer.WritePropertyName("ColumnNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestColumnNamesListValue in publicRequest.ColumnNames)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCatalogId())
                     {
-                            context.Writer.Write(publicRequestColumnNamesListValue);
+                        context.Writer.WritePropertyName("CatalogId");
+                        context.Writer.Write(publicRequest.CatalogId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetColumnNames())
+                    {
+                        context.Writer.WritePropertyName("ColumnNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestColumnNamesListValue in publicRequest.ColumnNames)
+                        {
+                                context.Writer.Write(publicRequestColumnNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetDatabaseName())
+                    {
+                        context.Writer.WritePropertyName("DatabaseName");
+                        context.Writer.Write(publicRequest.DatabaseName);
+                    }
+
+                    if(publicRequest.IsSetTableName())
+                    {
+                        context.Writer.WritePropertyName("TableName");
+                        context.Writer.Write(publicRequest.TableName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDatabaseName())
-                {
-                    context.Writer.WritePropertyName("DatabaseName");
-                    context.Writer.Write(publicRequest.DatabaseName);
-                }
-
-                if(publicRequest.IsSetTableName())
-                {
-                    context.Writer.WritePropertyName("TableName");
-                    context.Writer.Write(publicRequest.TableName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

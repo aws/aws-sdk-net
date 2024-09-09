@@ -64,54 +64,57 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 throw new AmazonIoTSiteWiseException("Request object does not have required field AccessPolicyId set");
             request.AddPathResource("{accessPolicyId}", StringUtils.FromString(publicRequest.AccessPolicyId));
             request.ResourcePath = "/access-policies/{accessPolicyId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccessPolicyIdentity())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("accessPolicyIdentity");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccessPolicyIdentity())
+                    {
+                        context.Writer.WritePropertyName("accessPolicyIdentity");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = IdentityMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AccessPolicyIdentity, context);
+                        var marshaller = IdentityMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AccessPolicyIdentity, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetAccessPolicyPermission())
+                    {
+                        context.Writer.WritePropertyName("accessPolicyPermission");
+                        context.Writer.Write(publicRequest.AccessPolicyPermission);
+                    }
+
+                    if(publicRequest.IsSetAccessPolicyResource())
+                    {
+                        context.Writer.WritePropertyName("accessPolicyResource");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ResourceMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AccessPolicyResource, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetAccessPolicyPermission())
-                {
-                    context.Writer.WritePropertyName("accessPolicyPermission");
-                    context.Writer.Write(publicRequest.AccessPolicyPermission);
-                }
-
-                if(publicRequest.IsSetAccessPolicyResource())
-                {
-                    context.Writer.WritePropertyName("accessPolicyResource");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ResourceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AccessPolicyResource, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

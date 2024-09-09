@@ -63,70 +63,73 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAdaptersConfig())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AdaptersConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AdaptersConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AdaptersConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDocument())
-                {
-                    context.Writer.WritePropertyName("Document");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DocumentMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Document, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetFeatureTypes())
-                {
-                    context.Writer.WritePropertyName("FeatureTypes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFeatureTypesListValue in publicRequest.FeatureTypes)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAdaptersConfig())
                     {
-                            context.Writer.Write(publicRequestFeatureTypesListValue);
+                        context.Writer.WritePropertyName("AdaptersConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AdaptersConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AdaptersConfig, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDocument())
+                    {
+                        context.Writer.WritePropertyName("Document");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DocumentMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Document, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetFeatureTypes())
+                    {
+                        context.Writer.WritePropertyName("FeatureTypes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFeatureTypesListValue in publicRequest.FeatureTypes)
+                        {
+                                context.Writer.Write(publicRequestFeatureTypesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetHumanLoopConfig())
+                    {
+                        context.Writer.WritePropertyName("HumanLoopConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = HumanLoopConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.HumanLoopConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetQueriesConfig())
+                    {
+                        context.Writer.WritePropertyName("QueriesConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = QueriesConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.QueriesConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetHumanLoopConfig())
-                {
-                    context.Writer.WritePropertyName("HumanLoopConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = HumanLoopConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.HumanLoopConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetQueriesConfig())
-                {
-                    context.Writer.WritePropertyName("QueriesConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = QueriesConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.QueriesConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

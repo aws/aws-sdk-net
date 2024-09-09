@@ -63,44 +63,47 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApplicationId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ApplicationId");
-                    context.Writer.Write(publicRequest.ApplicationId);
-                }
-
-                if(publicRequest.IsSetAssociatedResourceTypes())
-                {
-                    context.Writer.WritePropertyName("AssociatedResourceTypes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAssociatedResourceTypesListValue in publicRequest.AssociatedResourceTypes)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApplicationId())
                     {
-                            context.Writer.Write(publicRequestAssociatedResourceTypesListValue);
+                        context.Writer.WritePropertyName("ApplicationId");
+                        context.Writer.Write(publicRequest.ApplicationId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetAssociatedResourceTypes())
+                    {
+                        context.Writer.WritePropertyName("AssociatedResourceTypes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAssociatedResourceTypesListValue in publicRequest.AssociatedResourceTypes)
+                        {
+                                context.Writer.Write(publicRequestAssociatedResourceTypesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

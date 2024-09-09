@@ -67,21 +67,24 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                 throw new AmazonWellArchitectedException("Request object does not have required field WorkloadId set");
             request.AddPathResource("{WorkloadId}", StringUtils.FromString(publicRequest.WorkloadId));
             request.ResourcePath = "/workloads/{WorkloadId}/shares/{ShareId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetPermissionType())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("PermissionType");
-                    context.Writer.Write(publicRequest.PermissionType);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetPermissionType())
+                    {
+                        context.Writer.WritePropertyName("PermissionType");
+                        context.Writer.Write(publicRequest.PermissionType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

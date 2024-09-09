@@ -61,46 +61,49 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             request.HttpMethod = "PATCH";
 
             request.ResourcePath = "/securityControl/update";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLastUpdateReason())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("LastUpdateReason");
-                    context.Writer.Write(publicRequest.LastUpdateReason);
-                }
-
-                if(publicRequest.IsSetParameters())
-                {
-                    context.Writer.WritePropertyName("Parameters");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestParametersKvp in publicRequest.Parameters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetLastUpdateReason())
                     {
-                        context.Writer.WritePropertyName(publicRequestParametersKvp.Key);
-                        var publicRequestParametersValue = publicRequestParametersKvp.Value;
+                        context.Writer.WritePropertyName("LastUpdateReason");
+                        context.Writer.Write(publicRequest.LastUpdateReason);
+                    }
 
+                    if(publicRequest.IsSetParameters())
+                    {
+                        context.Writer.WritePropertyName("Parameters");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestParametersKvp in publicRequest.Parameters)
+                        {
+                            context.Writer.WritePropertyName(publicRequestParametersKvp.Key);
+                            var publicRequestParametersValue = publicRequestParametersKvp.Value;
 
-                        var marshaller = ParameterConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestParametersValue, context);
+                            context.Writer.WriteObjectStart();
 
+                            var marshaller = ParameterConfigurationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestParametersValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetSecurityControlId())
+                    {
+                        context.Writer.WritePropertyName("SecurityControlId");
+                        context.Writer.Write(publicRequest.SecurityControlId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSecurityControlId())
-                {
-                    context.Writer.WritePropertyName("SecurityControlId");
-                    context.Writer.Write(publicRequest.SecurityControlId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

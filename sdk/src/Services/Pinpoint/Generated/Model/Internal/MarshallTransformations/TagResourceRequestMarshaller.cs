@@ -64,19 +64,22 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 throw new AmazonPinpointException("Request object does not have required field ResourceArn set");
             request.AddPathResource("{resource-arn}", StringUtils.FromString(publicRequest.ResourceArn));
             request.ResourcePath = "/v1/tags/{resource-arn}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                var context = new JsonMarshallerContext(request, writer);
-                context.Writer.WriteObjectStart();
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                {
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    var context = new JsonMarshallerContext(request, writer);
+                    context.Writer.WriteObjectStart();
 
-                var marshaller = TagsModelMarshaller.Instance;
-                marshaller.Marshall(publicRequest.TagsModel, context);
+                    var marshaller = TagsModelMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TagsModel, context);
 
-                context.Writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                    context.Writer.WriteObjectEnd();
+                }
+
+                request.Content = memoryStream.ToArray();
             }
 
 

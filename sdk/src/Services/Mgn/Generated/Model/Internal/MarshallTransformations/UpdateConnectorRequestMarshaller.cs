@@ -61,38 +61,41 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/UpdateConnector";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConnectorID())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("connectorID");
-                    context.Writer.Write(publicRequest.ConnectorID);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConnectorID())
+                    {
+                        context.Writer.WritePropertyName("connectorID");
+                        context.Writer.Write(publicRequest.ConnectorID);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetSsmCommandConfig())
+                    {
+                        context.Writer.WritePropertyName("ssmCommandConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ConnectorSsmCommandConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SsmCommandConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetSsmCommandConfig())
-                {
-                    context.Writer.WritePropertyName("ssmCommandConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ConnectorSsmCommandConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SsmCommandConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

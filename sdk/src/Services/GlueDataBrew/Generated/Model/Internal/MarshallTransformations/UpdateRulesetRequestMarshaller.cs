@@ -64,37 +64,40 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                 throw new AmazonGlueDataBrewException("Request object does not have required field Name set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/rulesets/{name}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetRules())
-                {
-                    context.Writer.WritePropertyName("Rules");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRulesListValue in publicRequest.Rules)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RuleMarshaller.Instance;
-                        marshaller.Marshall(publicRequestRulesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetRules())
+                    {
+                        context.Writer.WritePropertyName("Rules");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRulesListValue in publicRequest.Rules)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = RuleMarshaller.Instance;
+                            marshaller.Marshall(publicRequestRulesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

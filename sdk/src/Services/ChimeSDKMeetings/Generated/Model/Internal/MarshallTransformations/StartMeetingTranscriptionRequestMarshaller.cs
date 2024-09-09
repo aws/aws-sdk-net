@@ -65,26 +65,29 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
                 throw new AmazonChimeSDKMeetingsException("Request object does not have required field MeetingId set");
             request.AddPathResource("{MeetingId}", StringUtils.FromString(publicRequest.MeetingId));
             request.ResourcePath = "/meetings/{MeetingId}/transcription";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetTranscriptionConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("TranscriptionConfiguration");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetTranscriptionConfiguration())
+                    {
+                        context.Writer.WritePropertyName("TranscriptionConfiguration");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = TranscriptionConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TranscriptionConfiguration, context);
+                        var marshaller = TranscriptionConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TranscriptionConfiguration, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -269,6 +269,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         if(publicRequest.Operation.LambdaInvoke.IsSetInvocationSchemaVersion())
                             xmlWriter.WriteElementString("InvocationSchemaVersion", StringUtils.FromString(publicRequest.Operation.LambdaInvoke.InvocationSchemaVersion));
 
+                        if (publicRequest.Operation.LambdaInvoke.IsSetUserArguments())
+                        {
                             xmlWriter.WriteStartElement("UserArguments");
                             foreach (var kvp in publicRequest.Operation.LambdaInvoke.UserArguments)
                             {
@@ -279,6 +281,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteEndElement();
                             }
                             xmlWriter.WriteEndElement();
+                        }
                         xmlWriter.WriteEndElement();
                     }
                     if (publicRequest.Operation.S3DeleteObjectTagging != null)
@@ -439,6 +442,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             if(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.IsSetSSEAlgorithm())
                                 xmlWriter.WriteElementString("SSEAlgorithm", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.SSEAlgorithm));
 
+                            if (publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.IsSetUserMetadata())
+                            {
                                 xmlWriter.WriteStartElement("UserMetadata");
                                 foreach (var kvp in publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.UserMetadata)
                                 {
@@ -449,6 +454,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteEndElement();
                                 }
                                 xmlWriter.WriteEndElement();
+                            }
                             xmlWriter.WriteEndElement();
                         }
                         var publicRequestOperationS3PutObjectCopyNewObjectTagging = publicRequest.Operation.S3PutObjectCopy.NewObjectTagging;

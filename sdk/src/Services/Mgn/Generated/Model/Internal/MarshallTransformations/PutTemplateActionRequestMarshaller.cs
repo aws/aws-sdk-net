@@ -61,130 +61,133 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/PutTemplateAction";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetActionID())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("actionID");
-                    context.Writer.Write(publicRequest.ActionID);
-                }
-
-                if(publicRequest.IsSetActionName())
-                {
-                    context.Writer.WritePropertyName("actionName");
-                    context.Writer.Write(publicRequest.ActionName);
-                }
-
-                if(publicRequest.IsSetActive())
-                {
-                    context.Writer.WritePropertyName("active");
-                    context.Writer.Write(publicRequest.Active.Value);
-                }
-
-                if(publicRequest.IsSetCategory())
-                {
-                    context.Writer.WritePropertyName("category");
-                    context.Writer.Write(publicRequest.Category);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetDocumentIdentifier())
-                {
-                    context.Writer.WritePropertyName("documentIdentifier");
-                    context.Writer.Write(publicRequest.DocumentIdentifier);
-                }
-
-                if(publicRequest.IsSetDocumentVersion())
-                {
-                    context.Writer.WritePropertyName("documentVersion");
-                    context.Writer.Write(publicRequest.DocumentVersion);
-                }
-
-                if(publicRequest.IsSetExternalParameters())
-                {
-                    context.Writer.WritePropertyName("externalParameters");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestExternalParametersKvp in publicRequest.ExternalParameters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetActionID())
                     {
-                        context.Writer.WritePropertyName(publicRequestExternalParametersKvp.Key);
-                        var publicRequestExternalParametersValue = publicRequestExternalParametersKvp.Value;
-
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SsmExternalParameterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestExternalParametersValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("actionID");
+                        context.Writer.Write(publicRequest.ActionID);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetLaunchConfigurationTemplateID())
-                {
-                    context.Writer.WritePropertyName("launchConfigurationTemplateID");
-                    context.Writer.Write(publicRequest.LaunchConfigurationTemplateID);
-                }
-
-                if(publicRequest.IsSetMustSucceedForCutover())
-                {
-                    context.Writer.WritePropertyName("mustSucceedForCutover");
-                    context.Writer.Write(publicRequest.MustSucceedForCutover.Value);
-                }
-
-                if(publicRequest.IsSetOperatingSystem())
-                {
-                    context.Writer.WritePropertyName("operatingSystem");
-                    context.Writer.Write(publicRequest.OperatingSystem);
-                }
-
-                if(publicRequest.IsSetOrder())
-                {
-                    context.Writer.WritePropertyName("order");
-                    context.Writer.Write(publicRequest.Order.Value);
-                }
-
-                if(publicRequest.IsSetParameters())
-                {
-                    context.Writer.WritePropertyName("parameters");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestParametersKvp in publicRequest.Parameters)
+                    if(publicRequest.IsSetActionName())
                     {
-                        context.Writer.WritePropertyName(publicRequestParametersKvp.Key);
-                        var publicRequestParametersValue = publicRequestParametersKvp.Value;
+                        context.Writer.WritePropertyName("actionName");
+                        context.Writer.Write(publicRequest.ActionName);
+                    }
 
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestParametersValueListValue in publicRequestParametersValue)
+                    if(publicRequest.IsSetActive())
+                    {
+                        context.Writer.WritePropertyName("active");
+                        context.Writer.Write(publicRequest.Active.Value);
+                    }
+
+                    if(publicRequest.IsSetCategory())
+                    {
+                        context.Writer.WritePropertyName("category");
+                        context.Writer.Write(publicRequest.Category);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetDocumentIdentifier())
+                    {
+                        context.Writer.WritePropertyName("documentIdentifier");
+                        context.Writer.Write(publicRequest.DocumentIdentifier);
+                    }
+
+                    if(publicRequest.IsSetDocumentVersion())
+                    {
+                        context.Writer.WritePropertyName("documentVersion");
+                        context.Writer.Write(publicRequest.DocumentVersion);
+                    }
+
+                    if(publicRequest.IsSetExternalParameters())
+                    {
+                        context.Writer.WritePropertyName("externalParameters");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestExternalParametersKvp in publicRequest.ExternalParameters)
                         {
+                            context.Writer.WritePropertyName(publicRequestExternalParametersKvp.Key);
+                            var publicRequestExternalParametersValue = publicRequestExternalParametersKvp.Value;
+
                             context.Writer.WriteObjectStart();
 
-                            var marshaller = SsmParameterStoreParameterMarshaller.Instance;
-                            marshaller.Marshall(publicRequestParametersValueListValue, context);
+                            var marshaller = SsmExternalParameterMarshaller.Instance;
+                            marshaller.Marshall(publicRequestExternalParametersValue, context);
 
                             context.Writer.WriteObjectEnd();
                         }
-                        context.Writer.WriteArrayEnd();
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetLaunchConfigurationTemplateID())
+                    {
+                        context.Writer.WritePropertyName("launchConfigurationTemplateID");
+                        context.Writer.Write(publicRequest.LaunchConfigurationTemplateID);
+                    }
+
+                    if(publicRequest.IsSetMustSucceedForCutover())
+                    {
+                        context.Writer.WritePropertyName("mustSucceedForCutover");
+                        context.Writer.Write(publicRequest.MustSucceedForCutover.Value);
+                    }
+
+                    if(publicRequest.IsSetOperatingSystem())
+                    {
+                        context.Writer.WritePropertyName("operatingSystem");
+                        context.Writer.Write(publicRequest.OperatingSystem);
+                    }
+
+                    if(publicRequest.IsSetOrder())
+                    {
+                        context.Writer.WritePropertyName("order");
+                        context.Writer.Write(publicRequest.Order.Value);
+                    }
+
+                    if(publicRequest.IsSetParameters())
+                    {
+                        context.Writer.WritePropertyName("parameters");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestParametersKvp in publicRequest.Parameters)
+                        {
+                            context.Writer.WritePropertyName(publicRequestParametersKvp.Key);
+                            var publicRequestParametersValue = publicRequestParametersKvp.Value;
+
+                            context.Writer.WriteArrayStart();
+                            foreach(var publicRequestParametersValueListValue in publicRequestParametersValue)
+                            {
+                                context.Writer.WriteObjectStart();
+
+                                var marshaller = SsmParameterStoreParameterMarshaller.Instance;
+                                marshaller.Marshall(publicRequestParametersValueListValue, context);
+
+                                context.Writer.WriteObjectEnd();
+                            }
+                            context.Writer.WriteArrayEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTimeoutSeconds())
+                    {
+                        context.Writer.WritePropertyName("timeoutSeconds");
+                        context.Writer.Write(publicRequest.TimeoutSeconds.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTimeoutSeconds())
-                {
-                    context.Writer.WritePropertyName("timeoutSeconds");
-                    context.Writer.Write(publicRequest.TimeoutSeconds.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

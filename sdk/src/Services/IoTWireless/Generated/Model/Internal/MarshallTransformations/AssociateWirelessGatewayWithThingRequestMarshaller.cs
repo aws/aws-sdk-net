@@ -64,21 +64,24 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 throw new AmazonIoTWirelessException("Request object does not have required field Id set");
             request.AddPathResource("{Id}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = "/wireless-gateways/{Id}/thing";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetThingArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ThingArn");
-                    context.Writer.Write(publicRequest.ThingArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetThingArn())
+                    {
+                        context.Writer.WritePropertyName("ThingArn");
+                        context.Writer.Write(publicRequest.ThingArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

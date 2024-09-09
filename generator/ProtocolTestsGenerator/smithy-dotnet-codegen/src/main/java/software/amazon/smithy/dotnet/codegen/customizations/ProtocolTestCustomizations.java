@@ -94,14 +94,8 @@ public final class ProtocolTestCustomizations {
     public static final List<String> VNextTests = Arrays.asList(
             // The tests below change the response and are breaking changes. We'll have to fix in V4.
             "XmlNamespaceSimpleScalarProperties",
-            "XmlEmptySelfClosedStrings",
-            "XmlEmptySelfClosedBlobs",
             "HttpPayloadTraitsWithNoBlobBody",
             "RestJsonHttpPayloadTraitsWithNoBlobBody",
-            "QueryXmlEmptySelfClosedBlobs",
-            "QuerySimpleScalarProperties",
-            "Ec2XmlEmptySelfClosedBlobs",
-            "Ec2SimpleScalarProperties",
             "SimpleScalarPropertiesPureWhiteSpace",
             //The tests below require a change in how empty collections are handled. These will be handled in vNext
             "XmlEmptyLists",

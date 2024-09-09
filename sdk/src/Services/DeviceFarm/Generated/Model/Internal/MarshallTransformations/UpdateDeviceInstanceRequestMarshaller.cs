@@ -63,38 +63,41 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("arn");
-                    context.Writer.Write(publicRequest.Arn);
-                }
-
-                if(publicRequest.IsSetLabels())
-                {
-                    context.Writer.WritePropertyName("labels");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLabelsListValue in publicRequest.Labels)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetArn())
                     {
-                            context.Writer.Write(publicRequestLabelsListValue);
+                        context.Writer.WritePropertyName("arn");
+                        context.Writer.Write(publicRequest.Arn);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetLabels())
+                    {
+                        context.Writer.WritePropertyName("labels");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLabelsListValue in publicRequest.Labels)
+                        {
+                                context.Writer.Write(publicRequestLabelsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetProfileArn())
+                    {
+                        context.Writer.WritePropertyName("profileArn");
+                        context.Writer.Write(publicRequest.ProfileArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetProfileArn())
-                {
-                    context.Writer.WritePropertyName("profileArn");
-                    context.Writer.Write(publicRequest.ProfileArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

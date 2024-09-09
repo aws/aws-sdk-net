@@ -63,56 +63,59 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientRequestToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientRequestToken())
+                    {
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(publicRequest.ClientRequestToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientRequestToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetKmsKeyId())
+                    {
+                        context.Writer.WritePropertyName("KmsKeyId");
+                        context.Writer.Write(publicRequest.KmsKeyId);
+                    }
+
+                    if(publicRequest.IsSetSecretBinary())
+                    {
+                        context.Writer.WritePropertyName("SecretBinary");
+                        context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.SecretBinary));
+                    }
+
+                    if(publicRequest.IsSetSecretId())
+                    {
+                        context.Writer.WritePropertyName("SecretId");
+                        context.Writer.Write(publicRequest.SecretId);
+                    }
+
+                    if(publicRequest.IsSetSecretString())
+                    {
+                        context.Writer.WritePropertyName("SecretString");
+                        context.Writer.Write(publicRequest.SecretString);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetKmsKeyId())
-                {
-                    context.Writer.WritePropertyName("KmsKeyId");
-                    context.Writer.Write(publicRequest.KmsKeyId);
-                }
-
-                if(publicRequest.IsSetSecretBinary())
-                {
-                    context.Writer.WritePropertyName("SecretBinary");
-                    context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.SecretBinary));
-                }
-
-                if(publicRequest.IsSetSecretId())
-                {
-                    context.Writer.WritePropertyName("SecretId");
-                    context.Writer.Write(publicRequest.SecretId);
-                }
-
-                if(publicRequest.IsSetSecretString())
-                {
-                    context.Writer.WritePropertyName("SecretString");
-                    context.Writer.Write(publicRequest.SecretString);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

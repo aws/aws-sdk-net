@@ -61,129 +61,132 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/UpdateImagePipeline";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetContainerRecipeArn())
-                {
-                    context.Writer.WritePropertyName("containerRecipeArn");
-                    context.Writer.Write(publicRequest.ContainerRecipeArn);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetDistributionConfigurationArn())
-                {
-                    context.Writer.WritePropertyName("distributionConfigurationArn");
-                    context.Writer.Write(publicRequest.DistributionConfigurationArn);
-                }
-
-                if(publicRequest.IsSetEnhancedImageMetadataEnabled())
-                {
-                    context.Writer.WritePropertyName("enhancedImageMetadataEnabled");
-                    context.Writer.Write(publicRequest.EnhancedImageMetadataEnabled.Value);
-                }
-
-                if(publicRequest.IsSetExecutionRole())
-                {
-                    context.Writer.WritePropertyName("executionRole");
-                    context.Writer.Write(publicRequest.ExecutionRole);
-                }
-
-                if(publicRequest.IsSetImagePipelineArn())
-                {
-                    context.Writer.WritePropertyName("imagePipelineArn");
-                    context.Writer.Write(publicRequest.ImagePipelineArn);
-                }
-
-                if(publicRequest.IsSetImageRecipeArn())
-                {
-                    context.Writer.WritePropertyName("imageRecipeArn");
-                    context.Writer.Write(publicRequest.ImageRecipeArn);
-                }
-
-                if(publicRequest.IsSetImageScanningConfiguration())
-                {
-                    context.Writer.WritePropertyName("imageScanningConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ImageScanningConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ImageScanningConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetImageTestsConfiguration())
-                {
-                    context.Writer.WritePropertyName("imageTestsConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ImageTestsConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ImageTestsConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetInfrastructureConfigurationArn())
-                {
-                    context.Writer.WritePropertyName("infrastructureConfigurationArn");
-                    context.Writer.Write(publicRequest.InfrastructureConfigurationArn);
-                }
-
-                if(publicRequest.IsSetSchedule())
-                {
-                    context.Writer.WritePropertyName("schedule");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ScheduleMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Schedule, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetStatus())
-                {
-                    context.Writer.WritePropertyName("status");
-                    context.Writer.Write(publicRequest.Status);
-                }
-
-                if(publicRequest.IsSetWorkflows())
-                {
-                    context.Writer.WritePropertyName("workflows");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestWorkflowsListValue in publicRequest.Workflows)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetContainerRecipeArn())
+                    {
+                        context.Writer.WritePropertyName("containerRecipeArn");
+                        context.Writer.Write(publicRequest.ContainerRecipeArn);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetDistributionConfigurationArn())
+                    {
+                        context.Writer.WritePropertyName("distributionConfigurationArn");
+                        context.Writer.Write(publicRequest.DistributionConfigurationArn);
+                    }
+
+                    if(publicRequest.IsSetEnhancedImageMetadataEnabled())
+                    {
+                        context.Writer.WritePropertyName("enhancedImageMetadataEnabled");
+                        context.Writer.Write(publicRequest.EnhancedImageMetadataEnabled.Value);
+                    }
+
+                    if(publicRequest.IsSetExecutionRole())
+                    {
+                        context.Writer.WritePropertyName("executionRole");
+                        context.Writer.Write(publicRequest.ExecutionRole);
+                    }
+
+                    if(publicRequest.IsSetImagePipelineArn())
+                    {
+                        context.Writer.WritePropertyName("imagePipelineArn");
+                        context.Writer.Write(publicRequest.ImagePipelineArn);
+                    }
+
+                    if(publicRequest.IsSetImageRecipeArn())
+                    {
+                        context.Writer.WritePropertyName("imageRecipeArn");
+                        context.Writer.Write(publicRequest.ImageRecipeArn);
+                    }
+
+                    if(publicRequest.IsSetImageScanningConfiguration())
+                    {
+                        context.Writer.WritePropertyName("imageScanningConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = WorkflowConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestWorkflowsListValue, context);
+                        var marshaller = ImageScanningConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ImageScanningConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetImageTestsConfiguration())
+                    {
+                        context.Writer.WritePropertyName("imageTestsConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ImageTestsConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ImageTestsConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetInfrastructureConfigurationArn())
+                    {
+                        context.Writer.WritePropertyName("infrastructureConfigurationArn");
+                        context.Writer.Write(publicRequest.InfrastructureConfigurationArn);
+                    }
+
+                    if(publicRequest.IsSetSchedule())
+                    {
+                        context.Writer.WritePropertyName("schedule");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ScheduleMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Schedule, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetStatus())
+                    {
+                        context.Writer.WritePropertyName("status");
+                        context.Writer.Write(publicRequest.Status);
+                    }
+
+                    if(publicRequest.IsSetWorkflows())
+                    {
+                        context.Writer.WritePropertyName("workflows");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestWorkflowsListValue in publicRequest.Workflows)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = WorkflowConfigurationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestWorkflowsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

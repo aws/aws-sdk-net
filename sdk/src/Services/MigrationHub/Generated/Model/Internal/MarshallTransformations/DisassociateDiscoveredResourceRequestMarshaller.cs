@@ -63,39 +63,42 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConfigurationId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ConfigurationId");
-                    context.Writer.Write(publicRequest.ConfigurationId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConfigurationId())
+                    {
+                        context.Writer.WritePropertyName("ConfigurationId");
+                        context.Writer.Write(publicRequest.ConfigurationId);
+                    }
+
+                    if(publicRequest.IsSetDryRun())
+                    {
+                        context.Writer.WritePropertyName("DryRun");
+                        context.Writer.Write(publicRequest.DryRun.Value);
+                    }
+
+                    if(publicRequest.IsSetMigrationTaskName())
+                    {
+                        context.Writer.WritePropertyName("MigrationTaskName");
+                        context.Writer.Write(publicRequest.MigrationTaskName);
+                    }
+
+                    if(publicRequest.IsSetProgressUpdateStream())
+                    {
+                        context.Writer.WritePropertyName("ProgressUpdateStream");
+                        context.Writer.Write(publicRequest.ProgressUpdateStream);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDryRun())
-                {
-                    context.Writer.WritePropertyName("DryRun");
-                    context.Writer.Write(publicRequest.DryRun.Value);
-                }
-
-                if(publicRequest.IsSetMigrationTaskName())
-                {
-                    context.Writer.WritePropertyName("MigrationTaskName");
-                    context.Writer.Write(publicRequest.MigrationTaskName);
-                }
-
-                if(publicRequest.IsSetProgressUpdateStream())
-                {
-                    context.Writer.WritePropertyName("ProgressUpdateStream");
-                    context.Writer.Write(publicRequest.ProgressUpdateStream);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,61 +63,64 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetId())
-                {
-                    context.Writer.WritePropertyName("Id");
-                    context.Writer.Write(publicRequest.Id);
-                }
-
-                if(publicRequest.IsSetLockToken())
-                {
-                    context.Writer.WritePropertyName("LockToken");
-                    context.Writer.Write(publicRequest.LockToken);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetRegularExpressionList())
-                {
-                    context.Writer.WritePropertyName("RegularExpressionList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRegularExpressionListListValue in publicRequest.RegularExpressionList)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RegexMarshaller.Instance;
-                        marshaller.Marshall(publicRequestRegularExpressionListListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetId())
+                    {
+                        context.Writer.WritePropertyName("Id");
+                        context.Writer.Write(publicRequest.Id);
+                    }
+
+                    if(publicRequest.IsSetLockToken())
+                    {
+                        context.Writer.WritePropertyName("LockToken");
+                        context.Writer.Write(publicRequest.LockToken);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetRegularExpressionList())
+                    {
+                        context.Writer.WritePropertyName("RegularExpressionList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRegularExpressionListListValue in publicRequest.RegularExpressionList)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = RegexMarshaller.Instance;
+                            marshaller.Marshall(publicRequestRegularExpressionListListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetScope())
+                    {
+                        context.Writer.WritePropertyName("Scope");
+                        context.Writer.Write(publicRequest.Scope);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetScope())
-                {
-                    context.Writer.WritePropertyName("Scope");
-                    context.Writer.Write(publicRequest.Scope);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -67,54 +67,57 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                 throw new AmazonQBusinessException("Request object does not have required field IndexId set");
             request.AddPathResource("{indexId}", StringUtils.FromString(publicRequest.IndexId));
             request.ResourcePath = "/applications/{applicationId}/indices/{indexId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCapacityConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("capacityConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = IndexCapacityConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CapacityConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetDisplayName())
-                {
-                    context.Writer.WritePropertyName("displayName");
-                    context.Writer.Write(publicRequest.DisplayName);
-                }
-
-                if(publicRequest.IsSetDocumentAttributeConfigurations())
-                {
-                    context.Writer.WritePropertyName("documentAttributeConfigurations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDocumentAttributeConfigurationsListValue in publicRequest.DocumentAttributeConfigurations)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCapacityConfiguration())
                     {
+                        context.Writer.WritePropertyName("capacityConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = DocumentAttributeConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestDocumentAttributeConfigurationsListValue, context);
+                        var marshaller = IndexCapacityConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CapacityConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetDisplayName())
+                    {
+                        context.Writer.WritePropertyName("displayName");
+                        context.Writer.Write(publicRequest.DisplayName);
+                    }
+
+                    if(publicRequest.IsSetDocumentAttributeConfigurations())
+                    {
+                        context.Writer.WritePropertyName("documentAttributeConfigurations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDocumentAttributeConfigurationsListValue in publicRequest.DocumentAttributeConfigurations)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = DocumentAttributeConfigurationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestDocumentAttributeConfigurationsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -138,6 +138,10 @@
     <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.CreateEventSourceMappingRequest.KMSKeyArn</property>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|()</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.CreateEventSourceMappingRequest.MaximumBatchingWindowInSeconds</property>
     <min>0</min>
     <max>300</max>
@@ -174,6 +178,10 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateEventSourceMappingResponse.FunctionArn</property>
     <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.CreateEventSourceMappingResponse.KMSKeyArn</property>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|()</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateEventSourceMappingResponse.MaximumBatchingWindowInSeconds</property>
@@ -345,6 +353,10 @@
     <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.DeleteEventSourceMappingResponse.KMSKeyArn</property>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|()</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.DeleteEventSourceMappingResponse.MaximumBatchingWindowInSeconds</property>
     <min>0</min>
     <max>300</max>
@@ -485,6 +497,10 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetEventSourceMappingResponse.FunctionArn</property>
     <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.GetEventSourceMappingResponse.KMSKeyArn</property>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|()</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetEventSourceMappingResponse.MaximumBatchingWindowInSeconds</property>
@@ -642,6 +658,12 @@
     <property>Amazon.Lambda.Model.GetFunctionEventInvokeConfigResponse.MaximumRetryAttempts</property>
     <min>0</min>
     <max>2</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.GetFunctionRecursionConfigRequest.FunctionName</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetFunctionUrlConfigRequest.FunctionName</property>
@@ -1119,6 +1141,12 @@
     <max>2</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.PutFunctionRecursionConfigRequest.FunctionName</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.PutProvisionedConcurrencyConfigRequest.FunctionName</property>
     <min>1</min>
     <max>140</max>
@@ -1278,6 +1306,10 @@
     <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.UpdateEventSourceMappingRequest.KMSKeyArn</property>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|()</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateEventSourceMappingRequest.MaximumBatchingWindowInSeconds</property>
     <min>0</min>
     <max>300</max>
@@ -1314,6 +1346,10 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateEventSourceMappingResponse.FunctionArn</property>
     <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.UpdateEventSourceMappingResponse.KMSKeyArn</property>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|()</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateEventSourceMappingResponse.MaximumBatchingWindowInSeconds</property>
@@ -1626,6 +1662,18 @@
     <property>Amazon.Lambda.Model.Filter.Pattern</property>
     <min>0</min>
     <max>4096</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.FilterCriteriaError.ErrorCode</property>
+    <min>10</min>
+    <max>50</max>
+    <pattern>[A-Za-z]+Exception</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.FilterCriteriaError.Message</property>
+    <min>10</min>
+    <max>2048</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>

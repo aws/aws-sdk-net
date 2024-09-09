@@ -37,6 +37,11 @@ namespace Amazon.DataZone.Model
         IListAssetRevisionsPaginator ListAssetRevisions(ListAssetRevisionsRequest request);
 
         /// <summary>
+        /// Paginator for ListDataProductRevisions operation
+        ///</summary>
+        IListDataProductRevisionsPaginator ListDataProductRevisions(ListDataProductRevisionsRequest request);
+
+        /// <summary>
         /// Paginator for ListDataSourceRunActivities operation
         ///</summary>
         IListDataSourceRunActivitiesPaginator ListDataSourceRunActivities(ListDataSourceRunActivitiesRequest request);

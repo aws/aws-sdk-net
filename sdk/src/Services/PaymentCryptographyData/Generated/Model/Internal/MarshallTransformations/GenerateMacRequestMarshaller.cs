@@ -61,44 +61,47 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/mac/generate";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetGenerationAttributes())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("GenerationAttributes");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetGenerationAttributes())
+                    {
+                        context.Writer.WritePropertyName("GenerationAttributes");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = MacAttributesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.GenerationAttributes, context);
+                        var marshaller = MacAttributesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.GenerationAttributes, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetKeyIdentifier())
+                    {
+                        context.Writer.WritePropertyName("KeyIdentifier");
+                        context.Writer.Write(publicRequest.KeyIdentifier);
+                    }
+
+                    if(publicRequest.IsSetMacLength())
+                    {
+                        context.Writer.WritePropertyName("MacLength");
+                        context.Writer.Write(publicRequest.MacLength.Value);
+                    }
+
+                    if(publicRequest.IsSetMessageData())
+                    {
+                        context.Writer.WritePropertyName("MessageData");
+                        context.Writer.Write(publicRequest.MessageData);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetKeyIdentifier())
-                {
-                    context.Writer.WritePropertyName("KeyIdentifier");
-                    context.Writer.Write(publicRequest.KeyIdentifier);
-                }
-
-                if(publicRequest.IsSetMacLength())
-                {
-                    context.Writer.WritePropertyName("MacLength");
-                    context.Writer.Write(publicRequest.MacLength.Value);
-                }
-
-                if(publicRequest.IsSetMessageData())
-                {
-                    context.Writer.WritePropertyName("MessageData");
-                    context.Writer.Write(publicRequest.MessageData);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -67,49 +67,52 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 throw new AmazonAPIGatewayException("Request object does not have required field RestApiId set");
             request.AddPathResource("{restapi_id}", StringUtils.FromString(publicRequest.RestApiId));
             request.ResourcePath = "/restapis/{restapi_id}/gatewayresponses/{response_type}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetResponseParameters())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("responseParameters");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestResponseParametersKvp in publicRequest.ResponseParameters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetResponseParameters())
                     {
-                        context.Writer.WritePropertyName(publicRequestResponseParametersKvp.Key);
-                        var publicRequestResponseParametersValue = publicRequestResponseParametersKvp.Value;
+                        context.Writer.WritePropertyName("responseParameters");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestResponseParametersKvp in publicRequest.ResponseParameters)
+                        {
+                            context.Writer.WritePropertyName(publicRequestResponseParametersKvp.Key);
+                            var publicRequestResponseParametersValue = publicRequestResponseParametersKvp.Value;
 
-                            context.Writer.Write(publicRequestResponseParametersValue);
+                                context.Writer.Write(publicRequestResponseParametersValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetResponseTemplates())
-                {
-                    context.Writer.WritePropertyName("responseTemplates");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestResponseTemplatesKvp in publicRequest.ResponseTemplates)
+                    if(publicRequest.IsSetResponseTemplates())
                     {
-                        context.Writer.WritePropertyName(publicRequestResponseTemplatesKvp.Key);
-                        var publicRequestResponseTemplatesValue = publicRequestResponseTemplatesKvp.Value;
+                        context.Writer.WritePropertyName("responseTemplates");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestResponseTemplatesKvp in publicRequest.ResponseTemplates)
+                        {
+                            context.Writer.WritePropertyName(publicRequestResponseTemplatesKvp.Key);
+                            var publicRequestResponseTemplatesValue = publicRequestResponseTemplatesKvp.Value;
 
-                            context.Writer.Write(publicRequestResponseTemplatesValue);
+                                context.Writer.Write(publicRequestResponseTemplatesValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetStatusCode())
+                    {
+                        context.Writer.WritePropertyName("statusCode");
+                        context.Writer.Write(publicRequest.StatusCode);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetStatusCode())
-                {
-                    context.Writer.WritePropertyName("statusCode");
-                    context.Writer.Write(publicRequest.StatusCode);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

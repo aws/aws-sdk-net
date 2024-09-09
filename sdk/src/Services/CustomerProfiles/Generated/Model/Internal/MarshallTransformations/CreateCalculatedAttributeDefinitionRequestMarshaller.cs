@@ -67,69 +67,72 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 throw new AmazonCustomerProfilesException("Request object does not have required field DomainName set");
             request.AddPathResource("{DomainName}", StringUtils.FromString(publicRequest.DomainName));
             request.ResourcePath = "/domains/{DomainName}/calculated-attributes/{CalculatedAttributeName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAttributeDetails())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AttributeDetails");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AttributeDetailsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AttributeDetails, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetConditions())
-                {
-                    context.Writer.WritePropertyName("Conditions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ConditionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Conditions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetDisplayName())
-                {
-                    context.Writer.WritePropertyName("DisplayName");
-                    context.Writer.Write(publicRequest.DisplayName);
-                }
-
-                if(publicRequest.IsSetStatistic())
-                {
-                    context.Writer.WritePropertyName("Statistic");
-                    context.Writer.Write(publicRequest.Statistic);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAttributeDetails())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
+                        context.Writer.WritePropertyName("AttributeDetails");
+                        context.Writer.WriteObjectStart();
 
-                            context.Writer.Write(publicRequestTagsValue);
+                        var marshaller = AttributeDetailsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AttributeDetails, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetConditions())
+                    {
+                        context.Writer.WritePropertyName("Conditions");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ConditionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Conditions, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetDisplayName())
+                    {
+                        context.Writer.WritePropertyName("DisplayName");
+                        context.Writer.Write(publicRequest.DisplayName);
+                    }
+
+                    if(publicRequest.IsSetStatistic())
+                    {
+                        context.Writer.WritePropertyName("Statistic");
+                        context.Writer.Write(publicRequest.Statistic);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

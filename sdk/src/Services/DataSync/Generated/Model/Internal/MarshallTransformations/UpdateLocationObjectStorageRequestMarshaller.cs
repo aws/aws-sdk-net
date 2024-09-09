@@ -63,68 +63,71 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccessKey())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AccessKey");
-                    context.Writer.Write(publicRequest.AccessKey);
-                }
-
-                if(publicRequest.IsSetAgentArns())
-                {
-                    context.Writer.WritePropertyName("AgentArns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAgentArnsListValue in publicRequest.AgentArns)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccessKey())
                     {
-                            context.Writer.Write(publicRequestAgentArnsListValue);
+                        context.Writer.WritePropertyName("AccessKey");
+                        context.Writer.Write(publicRequest.AccessKey);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetAgentArns())
+                    {
+                        context.Writer.WritePropertyName("AgentArns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAgentArnsListValue in publicRequest.AgentArns)
+                        {
+                                context.Writer.Write(publicRequestAgentArnsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetLocationArn())
+                    {
+                        context.Writer.WritePropertyName("LocationArn");
+                        context.Writer.Write(publicRequest.LocationArn);
+                    }
+
+                    if(publicRequest.IsSetSecretKey())
+                    {
+                        context.Writer.WritePropertyName("SecretKey");
+                        context.Writer.Write(publicRequest.SecretKey);
+                    }
+
+                    if(publicRequest.IsSetServerCertificate())
+                    {
+                        context.Writer.WritePropertyName("ServerCertificate");
+                        context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.ServerCertificate));
+                    }
+
+                    if(publicRequest.IsSetServerPort())
+                    {
+                        context.Writer.WritePropertyName("ServerPort");
+                        context.Writer.Write(publicRequest.ServerPort.Value);
+                    }
+
+                    if(publicRequest.IsSetServerProtocol())
+                    {
+                        context.Writer.WritePropertyName("ServerProtocol");
+                        context.Writer.Write(publicRequest.ServerProtocol);
+                    }
+
+                    if(publicRequest.IsSetSubdirectory())
+                    {
+                        context.Writer.WritePropertyName("Subdirectory");
+                        context.Writer.Write(publicRequest.Subdirectory);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetLocationArn())
-                {
-                    context.Writer.WritePropertyName("LocationArn");
-                    context.Writer.Write(publicRequest.LocationArn);
-                }
-
-                if(publicRequest.IsSetSecretKey())
-                {
-                    context.Writer.WritePropertyName("SecretKey");
-                    context.Writer.Write(publicRequest.SecretKey);
-                }
-
-                if(publicRequest.IsSetServerCertificate())
-                {
-                    context.Writer.WritePropertyName("ServerCertificate");
-                    context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.ServerCertificate));
-                }
-
-                if(publicRequest.IsSetServerPort())
-                {
-                    context.Writer.WritePropertyName("ServerPort");
-                    context.Writer.Write(publicRequest.ServerPort.Value);
-                }
-
-                if(publicRequest.IsSetServerProtocol())
-                {
-                    context.Writer.WritePropertyName("ServerProtocol");
-                    context.Writer.Write(publicRequest.ServerProtocol);
-                }
-
-                if(publicRequest.IsSetSubdirectory())
-                {
-                    context.Writer.WritePropertyName("Subdirectory");
-                    context.Writer.Write(publicRequest.Subdirectory);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

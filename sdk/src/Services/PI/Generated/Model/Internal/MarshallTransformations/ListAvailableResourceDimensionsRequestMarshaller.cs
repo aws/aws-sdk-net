@@ -63,61 +63,64 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAuthorizedActions())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AuthorizedActions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAuthorizedActionsListValue in publicRequest.AuthorizedActions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAuthorizedActions())
                     {
-                            context.Writer.Write(publicRequestAuthorizedActionsListValue);
+                        context.Writer.WritePropertyName("AuthorizedActions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAuthorizedActionsListValue in publicRequest.AuthorizedActions)
+                        {
+                                context.Writer.Write(publicRequestAuthorizedActionsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetIdentifier())
-                {
-                    context.Writer.WritePropertyName("Identifier");
-                    context.Writer.Write(publicRequest.Identifier);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetMetrics())
-                {
-                    context.Writer.WritePropertyName("Metrics");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMetricsListValue in publicRequest.Metrics)
+                    if(publicRequest.IsSetIdentifier())
                     {
-                            context.Writer.Write(publicRequestMetricsListValue);
+                        context.Writer.WritePropertyName("Identifier");
+                        context.Writer.Write(publicRequest.Identifier);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetMetrics())
+                    {
+                        context.Writer.WritePropertyName("Metrics");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMetricsListValue in publicRequest.Metrics)
+                        {
+                                context.Writer.Write(publicRequestMetricsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetServiceType())
+                    {
+                        context.Writer.WritePropertyName("ServiceType");
+                        context.Writer.Write(publicRequest.ServiceType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetServiceType())
-                {
-                    context.Writer.WritePropertyName("ServiceType");
-                    context.Writer.Write(publicRequest.ServiceType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

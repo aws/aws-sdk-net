@@ -61,127 +61,130 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/guardrails";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBlockedInputMessaging())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("blockedInputMessaging");
-                    context.Writer.Write(publicRequest.BlockedInputMessaging);
-                }
-
-                if(publicRequest.IsSetBlockedOutputsMessaging())
-                {
-                    context.Writer.WritePropertyName("blockedOutputsMessaging");
-                    context.Writer.Write(publicRequest.BlockedOutputsMessaging);
-                }
-
-                if(publicRequest.IsSetClientRequestToken())
-                {
-                    context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetContentPolicyConfig())
-                {
-                    context.Writer.WritePropertyName("contentPolicyConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = GuardrailContentPolicyConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ContentPolicyConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetContextualGroundingPolicyConfig())
-                {
-                    context.Writer.WritePropertyName("contextualGroundingPolicyConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = GuardrailContextualGroundingPolicyConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ContextualGroundingPolicyConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetKmsKeyId())
-                {
-                    context.Writer.WritePropertyName("kmsKeyId");
-                    context.Writer.Write(publicRequest.KmsKeyId);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetSensitiveInformationPolicyConfig())
-                {
-                    context.Writer.WritePropertyName("sensitiveInformationPolicyConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = GuardrailSensitiveInformationPolicyConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SensitiveInformationPolicyConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBlockedInputMessaging())
                     {
+                        context.Writer.WritePropertyName("blockedInputMessaging");
+                        context.Writer.Write(publicRequest.BlockedInputMessaging);
+                    }
+
+                    if(publicRequest.IsSetBlockedOutputsMessaging())
+                    {
+                        context.Writer.WritePropertyName("blockedOutputsMessaging");
+                        context.Writer.Write(publicRequest.BlockedOutputsMessaging);
+                    }
+
+                    if(publicRequest.IsSetClientRequestToken())
+                    {
+                        context.Writer.WritePropertyName("clientRequestToken");
+                        context.Writer.Write(publicRequest.ClientRequestToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientRequestToken()))
+                    {
+                        context.Writer.WritePropertyName("clientRequestToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetContentPolicyConfig())
+                    {
+                        context.Writer.WritePropertyName("contentPolicyConfig");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = GuardrailContentPolicyConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ContentPolicyConfig, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetContextualGroundingPolicyConfig())
+                    {
+                        context.Writer.WritePropertyName("contextualGroundingPolicyConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = GuardrailContextualGroundingPolicyConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ContextualGroundingPolicyConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetKmsKeyId())
+                    {
+                        context.Writer.WritePropertyName("kmsKeyId");
+                        context.Writer.Write(publicRequest.KmsKeyId);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetSensitiveInformationPolicyConfig())
+                    {
+                        context.Writer.WritePropertyName("sensitiveInformationPolicyConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = GuardrailSensitiveInformationPolicyConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SensitiveInformationPolicyConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTopicPolicyConfig())
+                    {
+                        context.Writer.WritePropertyName("topicPolicyConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = GuardrailTopicPolicyConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TopicPolicyConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetWordPolicyConfig())
+                    {
+                        context.Writer.WritePropertyName("wordPolicyConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = GuardrailWordPolicyConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.WordPolicyConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTopicPolicyConfig())
-                {
-                    context.Writer.WritePropertyName("topicPolicyConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = GuardrailTopicPolicyConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TopicPolicyConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetWordPolicyConfig())
-                {
-                    context.Writer.WritePropertyName("wordPolicyConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = GuardrailWordPolicyConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.WordPolicyConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

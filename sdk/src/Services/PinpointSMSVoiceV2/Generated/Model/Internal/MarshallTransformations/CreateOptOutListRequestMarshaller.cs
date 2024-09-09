@@ -63,48 +63,51 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetOptOutListName())
-                {
-                    context.Writer.WritePropertyName("OptOutListName");
-                    context.Writer.Write(publicRequest.OptOutListName);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetOptOutListName())
+                    {
+                        context.Writer.WritePropertyName("OptOutListName");
+                        context.Writer.Write(publicRequest.OptOutListName);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

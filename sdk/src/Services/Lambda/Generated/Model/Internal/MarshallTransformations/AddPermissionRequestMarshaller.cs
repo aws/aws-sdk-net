@@ -67,69 +67,72 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetQualifier())
                 request.Parameters.Add("Qualifier", StringUtils.FromString(publicRequest.Qualifier));
             request.ResourcePath = "/2015-03-31/functions/{FunctionName}/policy";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAction())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Action");
-                    context.Writer.Write(publicRequest.Action);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAction())
+                    {
+                        context.Writer.WritePropertyName("Action");
+                        context.Writer.Write(publicRequest.Action);
+                    }
+
+                    if(publicRequest.IsSetEventSourceToken())
+                    {
+                        context.Writer.WritePropertyName("EventSourceToken");
+                        context.Writer.Write(publicRequest.EventSourceToken);
+                    }
+
+                    if(publicRequest.IsSetFunctionUrlAuthType())
+                    {
+                        context.Writer.WritePropertyName("FunctionUrlAuthType");
+                        context.Writer.Write(publicRequest.FunctionUrlAuthType);
+                    }
+
+                    if(publicRequest.IsSetPrincipal())
+                    {
+                        context.Writer.WritePropertyName("Principal");
+                        context.Writer.Write(publicRequest.Principal);
+                    }
+
+                    if(publicRequest.IsSetPrincipalOrgID())
+                    {
+                        context.Writer.WritePropertyName("PrincipalOrgID");
+                        context.Writer.Write(publicRequest.PrincipalOrgID);
+                    }
+
+                    if(publicRequest.IsSetRevisionId())
+                    {
+                        context.Writer.WritePropertyName("RevisionId");
+                        context.Writer.Write(publicRequest.RevisionId);
+                    }
+
+                    if(publicRequest.IsSetSourceAccount())
+                    {
+                        context.Writer.WritePropertyName("SourceAccount");
+                        context.Writer.Write(publicRequest.SourceAccount);
+                    }
+
+                    if(publicRequest.IsSetSourceArn())
+                    {
+                        context.Writer.WritePropertyName("SourceArn");
+                        context.Writer.Write(publicRequest.SourceArn);
+                    }
+
+                    if(publicRequest.IsSetStatementId())
+                    {
+                        context.Writer.WritePropertyName("StatementId");
+                        context.Writer.Write(publicRequest.StatementId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEventSourceToken())
-                {
-                    context.Writer.WritePropertyName("EventSourceToken");
-                    context.Writer.Write(publicRequest.EventSourceToken);
-                }
-
-                if(publicRequest.IsSetFunctionUrlAuthType())
-                {
-                    context.Writer.WritePropertyName("FunctionUrlAuthType");
-                    context.Writer.Write(publicRequest.FunctionUrlAuthType);
-                }
-
-                if(publicRequest.IsSetPrincipal())
-                {
-                    context.Writer.WritePropertyName("Principal");
-                    context.Writer.Write(publicRequest.Principal);
-                }
-
-                if(publicRequest.IsSetPrincipalOrgID())
-                {
-                    context.Writer.WritePropertyName("PrincipalOrgID");
-                    context.Writer.Write(publicRequest.PrincipalOrgID);
-                }
-
-                if(publicRequest.IsSetRevisionId())
-                {
-                    context.Writer.WritePropertyName("RevisionId");
-                    context.Writer.Write(publicRequest.RevisionId);
-                }
-
-                if(publicRequest.IsSetSourceAccount())
-                {
-                    context.Writer.WritePropertyName("SourceAccount");
-                    context.Writer.Write(publicRequest.SourceAccount);
-                }
-
-                if(publicRequest.IsSetSourceArn())
-                {
-                    context.Writer.WritePropertyName("SourceArn");
-                    context.Writer.Write(publicRequest.SourceArn);
-                }
-
-                if(publicRequest.IsSetStatementId())
-                {
-                    context.Writer.WritePropertyName("StatementId");
-                    context.Writer.Write(publicRequest.StatementId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             request.UseQueryString = true;

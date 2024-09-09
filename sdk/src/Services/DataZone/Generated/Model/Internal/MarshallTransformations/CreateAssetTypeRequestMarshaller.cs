@@ -64,52 +64,55 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 throw new AmazonDataZoneException("Request object does not have required field DomainIdentifier set");
             request.AddPathResource("{domainIdentifier}", StringUtils.FromString(publicRequest.DomainIdentifier));
             request.ResourcePath = "/v2/domains/{domainIdentifier}/asset-types";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetFormsInput())
-                {
-                    context.Writer.WritePropertyName("formsInput");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestFormsInputKvp in publicRequest.FormsInput)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
-                        context.Writer.WritePropertyName(publicRequestFormsInputKvp.Key);
-                        var publicRequestFormsInputValue = publicRequestFormsInputKvp.Value;
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
 
+                    if(publicRequest.IsSetFormsInput())
+                    {
+                        context.Writer.WritePropertyName("formsInput");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestFormsInputKvp in publicRequest.FormsInput)
+                        {
+                            context.Writer.WritePropertyName(publicRequestFormsInputKvp.Key);
+                            var publicRequestFormsInputValue = publicRequestFormsInputKvp.Value;
 
-                        var marshaller = FormEntryInputMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFormsInputValue, context);
+                            context.Writer.WriteObjectStart();
 
+                            var marshaller = FormEntryInputMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFormsInputValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetOwningProjectIdentifier())
+                    {
+                        context.Writer.WritePropertyName("owningProjectIdentifier");
+                        context.Writer.Write(publicRequest.OwningProjectIdentifier);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetOwningProjectIdentifier())
-                {
-                    context.Writer.WritePropertyName("owningProjectIdentifier");
-                    context.Writer.Write(publicRequest.OwningProjectIdentifier);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

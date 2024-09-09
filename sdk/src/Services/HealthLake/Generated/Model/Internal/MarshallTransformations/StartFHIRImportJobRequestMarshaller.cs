@@ -63,66 +63,69 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetDataAccessRoleArn())
+                    {
+                        context.Writer.WritePropertyName("DataAccessRoleArn");
+                        context.Writer.Write(publicRequest.DataAccessRoleArn);
+                    }
+
+                    if(publicRequest.IsSetDatastoreId())
+                    {
+                        context.Writer.WritePropertyName("DatastoreId");
+                        context.Writer.Write(publicRequest.DatastoreId);
+                    }
+
+                    if(publicRequest.IsSetInputDataConfig())
+                    {
+                        context.Writer.WritePropertyName("InputDataConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = InputDataConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.InputDataConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetJobName())
+                    {
+                        context.Writer.WritePropertyName("JobName");
+                        context.Writer.Write(publicRequest.JobName);
+                    }
+
+                    if(publicRequest.IsSetJobOutputDataConfig())
+                    {
+                        context.Writer.WritePropertyName("JobOutputDataConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = OutputDataConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.JobOutputDataConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDataAccessRoleArn())
-                {
-                    context.Writer.WritePropertyName("DataAccessRoleArn");
-                    context.Writer.Write(publicRequest.DataAccessRoleArn);
-                }
-
-                if(publicRequest.IsSetDatastoreId())
-                {
-                    context.Writer.WritePropertyName("DatastoreId");
-                    context.Writer.Write(publicRequest.DatastoreId);
-                }
-
-                if(publicRequest.IsSetInputDataConfig())
-                {
-                    context.Writer.WritePropertyName("InputDataConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = InputDataConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.InputDataConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetJobName())
-                {
-                    context.Writer.WritePropertyName("JobName");
-                    context.Writer.Write(publicRequest.JobName);
-                }
-
-                if(publicRequest.IsSetJobOutputDataConfig())
-                {
-                    context.Writer.WritePropertyName("JobOutputDataConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OutputDataConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.JobOutputDataConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

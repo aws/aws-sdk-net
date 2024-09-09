@@ -61,80 +61,83 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/import/annotation";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAnnotationFields())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("annotationFields");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestAnnotationFieldsKvp in publicRequest.AnnotationFields)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAnnotationFields())
                     {
-                        context.Writer.WritePropertyName(publicRequestAnnotationFieldsKvp.Key);
-                        var publicRequestAnnotationFieldsValue = publicRequestAnnotationFieldsKvp.Value;
+                        context.Writer.WritePropertyName("annotationFields");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestAnnotationFieldsKvp in publicRequest.AnnotationFields)
+                        {
+                            context.Writer.WritePropertyName(publicRequestAnnotationFieldsKvp.Key);
+                            var publicRequestAnnotationFieldsValue = publicRequestAnnotationFieldsKvp.Value;
 
-                            context.Writer.Write(publicRequestAnnotationFieldsValue);
+                                context.Writer.Write(publicRequestAnnotationFieldsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetDestinationName())
-                {
-                    context.Writer.WritePropertyName("destinationName");
-                    context.Writer.Write(publicRequest.DestinationName);
-                }
-
-                if(publicRequest.IsSetFormatOptions())
-                {
-                    context.Writer.WritePropertyName("formatOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = FormatOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.FormatOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetItems())
-                {
-                    context.Writer.WritePropertyName("items");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestItemsListValue in publicRequest.Items)
+                    if(publicRequest.IsSetDestinationName())
                     {
+                        context.Writer.WritePropertyName("destinationName");
+                        context.Writer.Write(publicRequest.DestinationName);
+                    }
+
+                    if(publicRequest.IsSetFormatOptions())
+                    {
+                        context.Writer.WritePropertyName("formatOptions");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = AnnotationImportItemSourceMarshaller.Instance;
-                        marshaller.Marshall(publicRequestItemsListValue, context);
+                        var marshaller = FormatOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.FormatOptions, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetItems())
+                    {
+                        context.Writer.WritePropertyName("items");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestItemsListValue in publicRequest.Items)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = AnnotationImportItemSourceMarshaller.Instance;
+                            marshaller.Marshall(publicRequestItemsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("roleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    if(publicRequest.IsSetRunLeftNormalization())
+                    {
+                        context.Writer.WritePropertyName("runLeftNormalization");
+                        context.Writer.Write(publicRequest.RunLeftNormalization.Value);
+                    }
+
+                    if(publicRequest.IsSetVersionName())
+                    {
+                        context.Writer.WritePropertyName("versionName");
+                        context.Writer.Write(publicRequest.VersionName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("roleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetRunLeftNormalization())
-                {
-                    context.Writer.WritePropertyName("runLeftNormalization");
-                    context.Writer.Write(publicRequest.RunLeftNormalization.Value);
-                }
-
-                if(publicRequest.IsSetVersionName())
-                {
-                    context.Writer.WritePropertyName("versionName");
-                    context.Writer.Write(publicRequest.VersionName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

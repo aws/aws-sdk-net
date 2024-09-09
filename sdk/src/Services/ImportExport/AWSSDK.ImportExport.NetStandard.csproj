@@ -20,8 +20,7 @@
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
     <SignAssembly>true</SignAssembly>
-	  <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 
     <NoWarn>CA1822</NoWarn>
   </PropertyGroup>

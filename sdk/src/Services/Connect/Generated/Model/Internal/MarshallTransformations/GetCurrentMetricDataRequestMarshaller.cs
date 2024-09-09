@@ -64,81 +64,84 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field InstanceId set");
             request.AddPathResource("{InstanceId}", StringUtils.FromString(publicRequest.InstanceId));
             request.ResourcePath = "/metrics/current/{InstanceId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCurrentMetrics())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CurrentMetrics");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCurrentMetricsListValue in publicRequest.CurrentMetrics)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCurrentMetrics())
                     {
+                        context.Writer.WritePropertyName("CurrentMetrics");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCurrentMetricsListValue in publicRequest.CurrentMetrics)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = CurrentMetricMarshaller.Instance;
+                            marshaller.Marshall(publicRequestCurrentMetricsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetFilters())
+                    {
+                        context.Writer.WritePropertyName("Filters");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = CurrentMetricMarshaller.Instance;
-                        marshaller.Marshall(publicRequestCurrentMetricsListValue, context);
+                        var marshaller = FiltersMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Filters, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetFilters())
-                {
-                    context.Writer.WritePropertyName("Filters");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = FiltersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Filters, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetGroupings())
-                {
-                    context.Writer.WritePropertyName("Groupings");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestGroupingsListValue in publicRequest.Groupings)
+                    if(publicRequest.IsSetGroupings())
                     {
-                            context.Writer.Write(publicRequestGroupingsListValue);
+                        context.Writer.WritePropertyName("Groupings");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestGroupingsListValue in publicRequest.Groupings)
+                        {
+                                context.Writer.Write(publicRequestGroupingsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetSortCriteria())
-                {
-                    context.Writer.WritePropertyName("SortCriteria");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSortCriteriaListValue in publicRequest.SortCriteria)
+                    if(publicRequest.IsSetMaxResults())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = CurrentMetricSortCriteriaMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSortCriteriaListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetSortCriteria())
+                    {
+                        context.Writer.WritePropertyName("SortCriteria");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSortCriteriaListValue in publicRequest.SortCriteria)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = CurrentMetricSortCriteriaMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSortCriteriaListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

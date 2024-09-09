@@ -63,37 +63,40 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLanguageCode())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("LanguageCode");
-                    context.Writer.Write(publicRequest.LanguageCode);
-                }
-
-                if(publicRequest.IsSetTextSegments())
-                {
-                    context.Writer.WritePropertyName("TextSegments");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTextSegmentsListValue in publicRequest.TextSegments)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetLanguageCode())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TextSegmentMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTextSegmentsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("LanguageCode");
+                        context.Writer.Write(publicRequest.LanguageCode);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTextSegments())
+                    {
+                        context.Writer.WritePropertyName("TextSegments");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTextSegmentsListValue in publicRequest.TextSegments)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TextSegmentMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTextSegmentsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

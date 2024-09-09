@@ -61,63 +61,66 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/update-pricing-rule";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Arn");
-                    context.Writer.Write(publicRequest.Arn);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetModifierPercentage())
-                {
-                    context.Writer.WritePropertyName("ModifierPercentage");
-                    if(StringUtils.IsSpecialDoubleValue(publicRequest.ModifierPercentage.Value))
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetArn())
                     {
-                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.ModifierPercentage.Value));
+                        context.Writer.WritePropertyName("Arn");
+                        context.Writer.Write(publicRequest.Arn);
                     }
-                    else
+
+                    if(publicRequest.IsSetDescription())
                     {
-                        context.Writer.Write(publicRequest.ModifierPercentage.Value);
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
                     }
+
+                    if(publicRequest.IsSetModifierPercentage())
+                    {
+                        context.Writer.WritePropertyName("ModifierPercentage");
+                        if(StringUtils.IsSpecialDoubleValue(publicRequest.ModifierPercentage.Value))
+                        {
+                            context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.ModifierPercentage.Value));
+                        }
+                        else
+                        {
+                            context.Writer.Write(publicRequest.ModifierPercentage.Value);
+                        }
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetTiering())
+                    {
+                        context.Writer.WritePropertyName("Tiering");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = UpdateTieringInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Tiering, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetType())
+                    {
+                        context.Writer.WritePropertyName("Type");
+                        context.Writer.Write(publicRequest.Type);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetTiering())
-                {
-                    context.Writer.WritePropertyName("Tiering");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UpdateTieringInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Tiering, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetType())
-                {
-                    context.Writer.WritePropertyName("Type");
-                    context.Writer.Write(publicRequest.Type);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

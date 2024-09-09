@@ -270,8 +270,6 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* Initial release of Amazon CodeGuru Security APIs
 * [AWSSDK.CodePipeline](https://www.nuget.org/packages/AWSSDK.CodePipeline/)
 	* AWS CodePipeline is a continuous delivery service for fast and reliable application updates.
-* [AWSSDK.CodeStar](https://www.nuget.org/packages/AWSSDK.CodeStar/)
-	* AWS CodeStar is a cloud-based service for creating, managing, and working with software development projects on AWS. An AWS CodeStar project creates and integrates AWS services for your project development toolchain. AWS CodeStar also manages the permissions required for project users.
 * [AWSSDK.CodeStarconnections](https://www.nuget.org/packages/AWSSDK.CodeStarconnections/)
 	* Public beta for Bitbucket Cloud support in AWS CodePipeline through integration with AWS CodeStar connections.
 * [AWSSDK.CodeStarNotifications](https://www.nuget.org/packages/AWSSDK.CodeStarNotifications/)

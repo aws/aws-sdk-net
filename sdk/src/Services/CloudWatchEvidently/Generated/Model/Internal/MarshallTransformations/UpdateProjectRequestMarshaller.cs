@@ -64,32 +64,35 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
                 throw new AmazonCloudWatchEvidentlyException("Request object does not have required field Project set");
             request.AddPathResource("{project}", StringUtils.FromString(publicRequest.Project));
             request.ResourcePath = "/projects/{project}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAppConfigResource())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("appConfigResource");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAppConfigResource())
+                    {
+                        context.Writer.WritePropertyName("appConfigResource");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = ProjectAppConfigResourceConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AppConfigResource, context);
+                        var marshaller = ProjectAppConfigResourceConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AppConfigResource, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

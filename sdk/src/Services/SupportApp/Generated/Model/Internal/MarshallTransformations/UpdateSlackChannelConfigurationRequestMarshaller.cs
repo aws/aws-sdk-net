@@ -61,63 +61,66 @@ namespace Amazon.SupportApp.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/control/update-slack-channel-configuration";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetChannelId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("channelId");
-                    context.Writer.Write(publicRequest.ChannelId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetChannelId())
+                    {
+                        context.Writer.WritePropertyName("channelId");
+                        context.Writer.Write(publicRequest.ChannelId);
+                    }
+
+                    if(publicRequest.IsSetChannelName())
+                    {
+                        context.Writer.WritePropertyName("channelName");
+                        context.Writer.Write(publicRequest.ChannelName);
+                    }
+
+                    if(publicRequest.IsSetChannelRoleArn())
+                    {
+                        context.Writer.WritePropertyName("channelRoleArn");
+                        context.Writer.Write(publicRequest.ChannelRoleArn);
+                    }
+
+                    if(publicRequest.IsSetNotifyOnAddCorrespondenceToCase())
+                    {
+                        context.Writer.WritePropertyName("notifyOnAddCorrespondenceToCase");
+                        context.Writer.Write(publicRequest.NotifyOnAddCorrespondenceToCase.Value);
+                    }
+
+                    if(publicRequest.IsSetNotifyOnCaseSeverity())
+                    {
+                        context.Writer.WritePropertyName("notifyOnCaseSeverity");
+                        context.Writer.Write(publicRequest.NotifyOnCaseSeverity);
+                    }
+
+                    if(publicRequest.IsSetNotifyOnCreateOrReopenCase())
+                    {
+                        context.Writer.WritePropertyName("notifyOnCreateOrReopenCase");
+                        context.Writer.Write(publicRequest.NotifyOnCreateOrReopenCase.Value);
+                    }
+
+                    if(publicRequest.IsSetNotifyOnResolveCase())
+                    {
+                        context.Writer.WritePropertyName("notifyOnResolveCase");
+                        context.Writer.Write(publicRequest.NotifyOnResolveCase.Value);
+                    }
+
+                    if(publicRequest.IsSetTeamId())
+                    {
+                        context.Writer.WritePropertyName("teamId");
+                        context.Writer.Write(publicRequest.TeamId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetChannelName())
-                {
-                    context.Writer.WritePropertyName("channelName");
-                    context.Writer.Write(publicRequest.ChannelName);
-                }
-
-                if(publicRequest.IsSetChannelRoleArn())
-                {
-                    context.Writer.WritePropertyName("channelRoleArn");
-                    context.Writer.Write(publicRequest.ChannelRoleArn);
-                }
-
-                if(publicRequest.IsSetNotifyOnAddCorrespondenceToCase())
-                {
-                    context.Writer.WritePropertyName("notifyOnAddCorrespondenceToCase");
-                    context.Writer.Write(publicRequest.NotifyOnAddCorrespondenceToCase.Value);
-                }
-
-                if(publicRequest.IsSetNotifyOnCaseSeverity())
-                {
-                    context.Writer.WritePropertyName("notifyOnCaseSeverity");
-                    context.Writer.Write(publicRequest.NotifyOnCaseSeverity);
-                }
-
-                if(publicRequest.IsSetNotifyOnCreateOrReopenCase())
-                {
-                    context.Writer.WritePropertyName("notifyOnCreateOrReopenCase");
-                    context.Writer.Write(publicRequest.NotifyOnCreateOrReopenCase.Value);
-                }
-
-                if(publicRequest.IsSetNotifyOnResolveCase())
-                {
-                    context.Writer.WritePropertyName("notifyOnResolveCase");
-                    context.Writer.Write(publicRequest.NotifyOnResolveCase.Value);
-                }
-
-                if(publicRequest.IsSetTeamId())
-                {
-                    context.Writer.WritePropertyName("teamId");
-                    context.Writer.Write(publicRequest.TeamId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

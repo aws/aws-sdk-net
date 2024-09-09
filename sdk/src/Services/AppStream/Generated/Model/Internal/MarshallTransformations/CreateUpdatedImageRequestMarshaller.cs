@@ -63,59 +63,62 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDryRun())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("dryRun");
-                    context.Writer.Write(publicRequest.DryRun.Value);
-                }
-
-                if(publicRequest.IsSetExistingImageName())
-                {
-                    context.Writer.WritePropertyName("existingImageName");
-                    context.Writer.Write(publicRequest.ExistingImageName);
-                }
-
-                if(publicRequest.IsSetNewImageDescription())
-                {
-                    context.Writer.WritePropertyName("newImageDescription");
-                    context.Writer.Write(publicRequest.NewImageDescription);
-                }
-
-                if(publicRequest.IsSetNewImageDisplayName())
-                {
-                    context.Writer.WritePropertyName("newImageDisplayName");
-                    context.Writer.Write(publicRequest.NewImageDisplayName);
-                }
-
-                if(publicRequest.IsSetNewImageName())
-                {
-                    context.Writer.WritePropertyName("newImageName");
-                    context.Writer.Write(publicRequest.NewImageName);
-                }
-
-                if(publicRequest.IsSetNewImageTags())
-                {
-                    context.Writer.WritePropertyName("newImageTags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestNewImageTagsKvp in publicRequest.NewImageTags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDryRun())
                     {
-                        context.Writer.WritePropertyName(publicRequestNewImageTagsKvp.Key);
-                        var publicRequestNewImageTagsValue = publicRequestNewImageTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestNewImageTagsValue);
+                        context.Writer.WritePropertyName("dryRun");
+                        context.Writer.Write(publicRequest.DryRun.Value);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetExistingImageName())
+                    {
+                        context.Writer.WritePropertyName("existingImageName");
+                        context.Writer.Write(publicRequest.ExistingImageName);
+                    }
+
+                    if(publicRequest.IsSetNewImageDescription())
+                    {
+                        context.Writer.WritePropertyName("newImageDescription");
+                        context.Writer.Write(publicRequest.NewImageDescription);
+                    }
+
+                    if(publicRequest.IsSetNewImageDisplayName())
+                    {
+                        context.Writer.WritePropertyName("newImageDisplayName");
+                        context.Writer.Write(publicRequest.NewImageDisplayName);
+                    }
+
+                    if(publicRequest.IsSetNewImageName())
+                    {
+                        context.Writer.WritePropertyName("newImageName");
+                        context.Writer.Write(publicRequest.NewImageName);
+                    }
+
+                    if(publicRequest.IsSetNewImageTags())
+                    {
+                        context.Writer.WritePropertyName("newImageTags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestNewImageTagsKvp in publicRequest.NewImageTags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestNewImageTagsKvp.Key);
+                            var publicRequestNewImageTagsValue = publicRequestNewImageTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestNewImageTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -61,56 +61,59 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v2/email/account/details";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAdditionalContactEmailAddresses())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AdditionalContactEmailAddresses");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAdditionalContactEmailAddressesListValue in publicRequest.AdditionalContactEmailAddresses)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAdditionalContactEmailAddresses())
                     {
-                            context.Writer.Write(publicRequestAdditionalContactEmailAddressesListValue);
+                        context.Writer.WritePropertyName("AdditionalContactEmailAddresses");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAdditionalContactEmailAddressesListValue in publicRequest.AdditionalContactEmailAddresses)
+                        {
+                                context.Writer.Write(publicRequestAdditionalContactEmailAddressesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetContactLanguage())
+                    {
+                        context.Writer.WritePropertyName("ContactLanguage");
+                        context.Writer.Write(publicRequest.ContactLanguage);
+                    }
+
+                    if(publicRequest.IsSetMailType())
+                    {
+                        context.Writer.WritePropertyName("MailType");
+                        context.Writer.Write(publicRequest.MailType);
+                    }
+
+                    if(publicRequest.IsSetProductionAccessEnabled())
+                    {
+                        context.Writer.WritePropertyName("ProductionAccessEnabled");
+                        context.Writer.Write(publicRequest.ProductionAccessEnabled.Value);
+                    }
+
+                    if(publicRequest.IsSetUseCaseDescription())
+                    {
+                        context.Writer.WritePropertyName("UseCaseDescription");
+                        context.Writer.Write(publicRequest.UseCaseDescription);
+                    }
+
+                    if(publicRequest.IsSetWebsiteURL())
+                    {
+                        context.Writer.WritePropertyName("WebsiteURL");
+                        context.Writer.Write(publicRequest.WebsiteURL);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetContactLanguage())
-                {
-                    context.Writer.WritePropertyName("ContactLanguage");
-                    context.Writer.Write(publicRequest.ContactLanguage);
-                }
-
-                if(publicRequest.IsSetMailType())
-                {
-                    context.Writer.WritePropertyName("MailType");
-                    context.Writer.Write(publicRequest.MailType);
-                }
-
-                if(publicRequest.IsSetProductionAccessEnabled())
-                {
-                    context.Writer.WritePropertyName("ProductionAccessEnabled");
-                    context.Writer.Write(publicRequest.ProductionAccessEnabled.Value);
-                }
-
-                if(publicRequest.IsSetUseCaseDescription())
-                {
-                    context.Writer.WritePropertyName("UseCaseDescription");
-                    context.Writer.Write(publicRequest.UseCaseDescription);
-                }
-
-                if(publicRequest.IsSetWebsiteURL())
-                {
-                    context.Writer.WritePropertyName("WebsiteURL");
-                    context.Writer.Write(publicRequest.WebsiteURL);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

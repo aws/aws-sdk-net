@@ -61,69 +61,72 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/ml/endpoints";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("id");
-                    context.Writer.Write(publicRequest.Id);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetId())
+                    {
+                        context.Writer.WritePropertyName("id");
+                        context.Writer.Write(publicRequest.Id);
+                    }
+
+                    if(publicRequest.IsSetInstanceCount())
+                    {
+                        context.Writer.WritePropertyName("instanceCount");
+                        context.Writer.Write(publicRequest.InstanceCount.Value);
+                    }
+
+                    if(publicRequest.IsSetInstanceType())
+                    {
+                        context.Writer.WritePropertyName("instanceType");
+                        context.Writer.Write(publicRequest.InstanceType);
+                    }
+
+                    if(publicRequest.IsSetMlModelTrainingJobId())
+                    {
+                        context.Writer.WritePropertyName("mlModelTrainingJobId");
+                        context.Writer.Write(publicRequest.MlModelTrainingJobId);
+                    }
+
+                    if(publicRequest.IsSetMlModelTransformJobId())
+                    {
+                        context.Writer.WritePropertyName("mlModelTransformJobId");
+                        context.Writer.Write(publicRequest.MlModelTransformJobId);
+                    }
+
+                    if(publicRequest.IsSetModelName())
+                    {
+                        context.Writer.WritePropertyName("modelName");
+                        context.Writer.Write(publicRequest.ModelName);
+                    }
+
+                    if(publicRequest.IsSetNeptuneIamRoleArn())
+                    {
+                        context.Writer.WritePropertyName("neptuneIamRoleArn");
+                        context.Writer.Write(publicRequest.NeptuneIamRoleArn);
+                    }
+
+                    if(publicRequest.IsSetUpdate())
+                    {
+                        context.Writer.WritePropertyName("update");
+                        context.Writer.Write(publicRequest.Update.Value);
+                    }
+
+                    if(publicRequest.IsSetVolumeEncryptionKMSKey())
+                    {
+                        context.Writer.WritePropertyName("volumeEncryptionKMSKey");
+                        context.Writer.Write(publicRequest.VolumeEncryptionKMSKey);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetInstanceCount())
-                {
-                    context.Writer.WritePropertyName("instanceCount");
-                    context.Writer.Write(publicRequest.InstanceCount.Value);
-                }
-
-                if(publicRequest.IsSetInstanceType())
-                {
-                    context.Writer.WritePropertyName("instanceType");
-                    context.Writer.Write(publicRequest.InstanceType);
-                }
-
-                if(publicRequest.IsSetMlModelTrainingJobId())
-                {
-                    context.Writer.WritePropertyName("mlModelTrainingJobId");
-                    context.Writer.Write(publicRequest.MlModelTrainingJobId);
-                }
-
-                if(publicRequest.IsSetMlModelTransformJobId())
-                {
-                    context.Writer.WritePropertyName("mlModelTransformJobId");
-                    context.Writer.Write(publicRequest.MlModelTransformJobId);
-                }
-
-                if(publicRequest.IsSetModelName())
-                {
-                    context.Writer.WritePropertyName("modelName");
-                    context.Writer.Write(publicRequest.ModelName);
-                }
-
-                if(publicRequest.IsSetNeptuneIamRoleArn())
-                {
-                    context.Writer.WritePropertyName("neptuneIamRoleArn");
-                    context.Writer.Write(publicRequest.NeptuneIamRoleArn);
-                }
-
-                if(publicRequest.IsSetUpdate())
-                {
-                    context.Writer.WritePropertyName("update");
-                    context.Writer.Write(publicRequest.Update.Value);
-                }
-
-                if(publicRequest.IsSetVolumeEncryptionKMSKey())
-                {
-                    context.Writer.WritePropertyName("volumeEncryptionKMSKey");
-                    context.Writer.Write(publicRequest.VolumeEncryptionKMSKey);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

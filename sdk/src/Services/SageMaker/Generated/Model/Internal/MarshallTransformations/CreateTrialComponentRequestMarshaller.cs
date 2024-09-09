@@ -63,134 +63,137 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDisplayName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DisplayName");
-                    context.Writer.Write(publicRequest.DisplayName);
-                }
-
-                if(publicRequest.IsSetEndTime())
-                {
-                    context.Writer.WritePropertyName("EndTime");
-                    context.Writer.Write(publicRequest.EndTime.Value);
-                }
-
-                if(publicRequest.IsSetInputArtifacts())
-                {
-                    context.Writer.WritePropertyName("InputArtifacts");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestInputArtifactsKvp in publicRequest.InputArtifacts)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDisplayName())
                     {
-                        context.Writer.WritePropertyName(publicRequestInputArtifactsKvp.Key);
-                        var publicRequestInputArtifactsValue = publicRequestInputArtifactsKvp.Value;
+                        context.Writer.WritePropertyName("DisplayName");
+                        context.Writer.Write(publicRequest.DisplayName);
+                    }
 
+                    if(publicRequest.IsSetEndTime())
+                    {
+                        context.Writer.WritePropertyName("EndTime");
+                        context.Writer.Write(publicRequest.EndTime.Value);
+                    }
+
+                    if(publicRequest.IsSetInputArtifacts())
+                    {
+                        context.Writer.WritePropertyName("InputArtifacts");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestInputArtifactsKvp in publicRequest.InputArtifacts)
+                        {
+                            context.Writer.WritePropertyName(publicRequestInputArtifactsKvp.Key);
+                            var publicRequestInputArtifactsValue = publicRequestInputArtifactsKvp.Value;
+
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TrialComponentArtifactMarshaller.Instance;
+                            marshaller.Marshall(publicRequestInputArtifactsValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetMetadataProperties())
+                    {
+                        context.Writer.WritePropertyName("MetadataProperties");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TrialComponentArtifactMarshaller.Instance;
-                        marshaller.Marshall(publicRequestInputArtifactsValue, context);
+                        var marshaller = MetadataPropertiesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.MetadataProperties, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetMetadataProperties())
-                {
-                    context.Writer.WritePropertyName("MetadataProperties");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MetadataPropertiesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.MetadataProperties, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOutputArtifacts())
-                {
-                    context.Writer.WritePropertyName("OutputArtifacts");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestOutputArtifactsKvp in publicRequest.OutputArtifacts)
+                    if(publicRequest.IsSetOutputArtifacts())
                     {
-                        context.Writer.WritePropertyName(publicRequestOutputArtifactsKvp.Key);
-                        var publicRequestOutputArtifactsValue = publicRequestOutputArtifactsKvp.Value;
+                        context.Writer.WritePropertyName("OutputArtifacts");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestOutputArtifactsKvp in publicRequest.OutputArtifacts)
+                        {
+                            context.Writer.WritePropertyName(publicRequestOutputArtifactsKvp.Key);
+                            var publicRequestOutputArtifactsValue = publicRequestOutputArtifactsKvp.Value;
 
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TrialComponentArtifactMarshaller.Instance;
+                            marshaller.Marshall(publicRequestOutputArtifactsValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetParameters())
+                    {
+                        context.Writer.WritePropertyName("Parameters");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestParametersKvp in publicRequest.Parameters)
+                        {
+                            context.Writer.WritePropertyName(publicRequestParametersKvp.Key);
+                            var publicRequestParametersValue = publicRequestParametersKvp.Value;
+
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TrialComponentParameterValueMarshaller.Instance;
+                            marshaller.Marshall(publicRequestParametersValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetStartTime())
+                    {
+                        context.Writer.WritePropertyName("StartTime");
+                        context.Writer.Write(publicRequest.StartTime.Value);
+                    }
+
+                    if(publicRequest.IsSetStatus())
+                    {
+                        context.Writer.WritePropertyName("Status");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TrialComponentArtifactMarshaller.Instance;
-                        marshaller.Marshall(publicRequestOutputArtifactsValue, context);
+                        var marshaller = TrialComponentStatusMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Status, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetParameters())
-                {
-                    context.Writer.WritePropertyName("Parameters");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestParametersKvp in publicRequest.Parameters)
+                    if(publicRequest.IsSetTags())
                     {
-                        context.Writer.WritePropertyName(publicRequestParametersKvp.Key);
-                        var publicRequestParametersValue = publicRequestParametersKvp.Value;
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        context.Writer.WriteObjectStart();
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
 
-                        var marshaller = TrialComponentParameterValueMarshaller.Instance;
-                        marshaller.Marshall(publicRequestParametersValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetStartTime())
-                {
-                    context.Writer.WritePropertyName("StartTime");
-                    context.Writer.Write(publicRequest.StartTime.Value);
-                }
-
-                if(publicRequest.IsSetStatus())
-                {
-                    context.Writer.WritePropertyName("Status");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TrialComponentStatusMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Status, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetTrialComponentName())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("TrialComponentName");
+                        context.Writer.Write(publicRequest.TrialComponentName);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTrialComponentName())
-                {
-                    context.Writer.WritePropertyName("TrialComponentName");
-                    context.Writer.Write(publicRequest.TrialComponentName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

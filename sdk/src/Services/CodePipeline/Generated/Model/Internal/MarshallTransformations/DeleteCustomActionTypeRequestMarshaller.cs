@@ -63,33 +63,36 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCategory())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("category");
-                    context.Writer.Write(publicRequest.Category);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCategory())
+                    {
+                        context.Writer.WritePropertyName("category");
+                        context.Writer.Write(publicRequest.Category);
+                    }
+
+                    if(publicRequest.IsSetProvider())
+                    {
+                        context.Writer.WritePropertyName("provider");
+                        context.Writer.Write(publicRequest.Provider);
+                    }
+
+                    if(publicRequest.IsSetVersion())
+                    {
+                        context.Writer.WritePropertyName("version");
+                        context.Writer.Write(publicRequest.Version);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetProvider())
-                {
-                    context.Writer.WritePropertyName("provider");
-                    context.Writer.Write(publicRequest.Provider);
-                }
-
-                if(publicRequest.IsSetVersion())
-                {
-                    context.Writer.WritePropertyName("version");
-                    context.Writer.Write(publicRequest.Version);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

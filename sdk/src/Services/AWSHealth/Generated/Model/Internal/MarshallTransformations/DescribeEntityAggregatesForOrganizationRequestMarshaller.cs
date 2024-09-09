@@ -63,37 +63,40 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAwsAccountIds())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("awsAccountIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAwsAccountIdsListValue in publicRequest.AwsAccountIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAwsAccountIds())
                     {
-                            context.Writer.Write(publicRequestAwsAccountIdsListValue);
+                        context.Writer.WritePropertyName("awsAccountIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAwsAccountIdsListValue in publicRequest.AwsAccountIds)
+                        {
+                                context.Writer.Write(publicRequestAwsAccountIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetEventArns())
+                    {
+                        context.Writer.WritePropertyName("eventArns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestEventArnsListValue in publicRequest.EventArns)
+                        {
+                                context.Writer.Write(publicRequestEventArnsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEventArns())
-                {
-                    context.Writer.WritePropertyName("eventArns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEventArnsListValue in publicRequest.EventArns)
-                    {
-                            context.Writer.Write(publicRequestEventArnsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

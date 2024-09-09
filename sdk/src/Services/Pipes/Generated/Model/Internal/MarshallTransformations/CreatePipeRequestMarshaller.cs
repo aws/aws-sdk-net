@@ -64,109 +64,112 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
                 throw new AmazonPipesException("Request object does not have required field Name set");
             request.AddPathResource("{Name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/v1/pipes/{Name}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetDesiredState())
-                {
-                    context.Writer.WritePropertyName("DesiredState");
-                    context.Writer.Write(publicRequest.DesiredState);
-                }
-
-                if(publicRequest.IsSetEnrichment())
-                {
-                    context.Writer.WritePropertyName("Enrichment");
-                    context.Writer.Write(publicRequest.Enrichment);
-                }
-
-                if(publicRequest.IsSetEnrichmentParameters())
-                {
-                    context.Writer.WritePropertyName("EnrichmentParameters");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PipeEnrichmentParametersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EnrichmentParameters, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetLogConfiguration())
-                {
-                    context.Writer.WritePropertyName("LogConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PipeLogConfigurationParametersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LogConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("RoleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetSource())
-                {
-                    context.Writer.WritePropertyName("Source");
-                    context.Writer.Write(publicRequest.Source);
-                }
-
-                if(publicRequest.IsSetSourceParameters())
-                {
-                    context.Writer.WritePropertyName("SourceParameters");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PipeSourceParametersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SourceParameters, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetDesiredState())
+                    {
+                        context.Writer.WritePropertyName("DesiredState");
+                        context.Writer.Write(publicRequest.DesiredState);
+                    }
+
+                    if(publicRequest.IsSetEnrichment())
+                    {
+                        context.Writer.WritePropertyName("Enrichment");
+                        context.Writer.Write(publicRequest.Enrichment);
+                    }
+
+                    if(publicRequest.IsSetEnrichmentParameters())
+                    {
+                        context.Writer.WritePropertyName("EnrichmentParameters");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PipeEnrichmentParametersMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EnrichmentParameters, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetLogConfiguration())
+                    {
+                        context.Writer.WritePropertyName("LogConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PipeLogConfigurationParametersMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.LogConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("RoleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    if(publicRequest.IsSetSource())
+                    {
+                        context.Writer.WritePropertyName("Source");
+                        context.Writer.Write(publicRequest.Source);
+                    }
+
+                    if(publicRequest.IsSetSourceParameters())
+                    {
+                        context.Writer.WritePropertyName("SourceParameters");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PipeSourceParametersMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SourceParameters, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTarget())
+                    {
+                        context.Writer.WritePropertyName("Target");
+                        context.Writer.Write(publicRequest.Target);
+                    }
+
+                    if(publicRequest.IsSetTargetParameters())
+                    {
+                        context.Writer.WritePropertyName("TargetParameters");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PipeTargetParametersMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TargetParameters, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTarget())
-                {
-                    context.Writer.WritePropertyName("Target");
-                    context.Writer.Write(publicRequest.Target);
-                }
-
-                if(publicRequest.IsSetTargetParameters())
-                {
-                    context.Writer.WritePropertyName("TargetParameters");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PipeTargetParametersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TargetParameters, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

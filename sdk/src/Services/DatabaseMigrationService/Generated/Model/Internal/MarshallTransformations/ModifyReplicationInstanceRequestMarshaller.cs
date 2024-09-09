@@ -63,92 +63,95 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAllocatedStorage())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AllocatedStorage");
-                    context.Writer.Write(publicRequest.AllocatedStorage.Value);
-                }
-
-                if(publicRequest.IsSetAllowMajorVersionUpgrade())
-                {
-                    context.Writer.WritePropertyName("AllowMajorVersionUpgrade");
-                    context.Writer.Write(publicRequest.AllowMajorVersionUpgrade.Value);
-                }
-
-                if(publicRequest.IsSetApplyImmediately())
-                {
-                    context.Writer.WritePropertyName("ApplyImmediately");
-                    context.Writer.Write(publicRequest.ApplyImmediately.Value);
-                }
-
-                if(publicRequest.IsSetAutoMinorVersionUpgrade())
-                {
-                    context.Writer.WritePropertyName("AutoMinorVersionUpgrade");
-                    context.Writer.Write(publicRequest.AutoMinorVersionUpgrade.Value);
-                }
-
-                if(publicRequest.IsSetEngineVersion())
-                {
-                    context.Writer.WritePropertyName("EngineVersion");
-                    context.Writer.Write(publicRequest.EngineVersion);
-                }
-
-                if(publicRequest.IsSetMultiAZ())
-                {
-                    context.Writer.WritePropertyName("MultiAZ");
-                    context.Writer.Write(publicRequest.MultiAZ.Value);
-                }
-
-                if(publicRequest.IsSetNetworkType())
-                {
-                    context.Writer.WritePropertyName("NetworkType");
-                    context.Writer.Write(publicRequest.NetworkType);
-                }
-
-                if(publicRequest.IsSetPreferredMaintenanceWindow())
-                {
-                    context.Writer.WritePropertyName("PreferredMaintenanceWindow");
-                    context.Writer.Write(publicRequest.PreferredMaintenanceWindow);
-                }
-
-                if(publicRequest.IsSetReplicationInstanceArn())
-                {
-                    context.Writer.WritePropertyName("ReplicationInstanceArn");
-                    context.Writer.Write(publicRequest.ReplicationInstanceArn);
-                }
-
-                if(publicRequest.IsSetReplicationInstanceClass())
-                {
-                    context.Writer.WritePropertyName("ReplicationInstanceClass");
-                    context.Writer.Write(publicRequest.ReplicationInstanceClass);
-                }
-
-                if(publicRequest.IsSetReplicationInstanceIdentifier())
-                {
-                    context.Writer.WritePropertyName("ReplicationInstanceIdentifier");
-                    context.Writer.Write(publicRequest.ReplicationInstanceIdentifier);
-                }
-
-                if(publicRequest.IsSetVpcSecurityGroupIds())
-                {
-                    context.Writer.WritePropertyName("VpcSecurityGroupIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestVpcSecurityGroupIdsListValue in publicRequest.VpcSecurityGroupIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAllocatedStorage())
                     {
-                            context.Writer.Write(publicRequestVpcSecurityGroupIdsListValue);
+                        context.Writer.WritePropertyName("AllocatedStorage");
+                        context.Writer.Write(publicRequest.AllocatedStorage.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetAllowMajorVersionUpgrade())
+                    {
+                        context.Writer.WritePropertyName("AllowMajorVersionUpgrade");
+                        context.Writer.Write(publicRequest.AllowMajorVersionUpgrade.Value);
+                    }
+
+                    if(publicRequest.IsSetApplyImmediately())
+                    {
+                        context.Writer.WritePropertyName("ApplyImmediately");
+                        context.Writer.Write(publicRequest.ApplyImmediately.Value);
+                    }
+
+                    if(publicRequest.IsSetAutoMinorVersionUpgrade())
+                    {
+                        context.Writer.WritePropertyName("AutoMinorVersionUpgrade");
+                        context.Writer.Write(publicRequest.AutoMinorVersionUpgrade.Value);
+                    }
+
+                    if(publicRequest.IsSetEngineVersion())
+                    {
+                        context.Writer.WritePropertyName("EngineVersion");
+                        context.Writer.Write(publicRequest.EngineVersion);
+                    }
+
+                    if(publicRequest.IsSetMultiAZ())
+                    {
+                        context.Writer.WritePropertyName("MultiAZ");
+                        context.Writer.Write(publicRequest.MultiAZ.Value);
+                    }
+
+                    if(publicRequest.IsSetNetworkType())
+                    {
+                        context.Writer.WritePropertyName("NetworkType");
+                        context.Writer.Write(publicRequest.NetworkType);
+                    }
+
+                    if(publicRequest.IsSetPreferredMaintenanceWindow())
+                    {
+                        context.Writer.WritePropertyName("PreferredMaintenanceWindow");
+                        context.Writer.Write(publicRequest.PreferredMaintenanceWindow);
+                    }
+
+                    if(publicRequest.IsSetReplicationInstanceArn())
+                    {
+                        context.Writer.WritePropertyName("ReplicationInstanceArn");
+                        context.Writer.Write(publicRequest.ReplicationInstanceArn);
+                    }
+
+                    if(publicRequest.IsSetReplicationInstanceClass())
+                    {
+                        context.Writer.WritePropertyName("ReplicationInstanceClass");
+                        context.Writer.Write(publicRequest.ReplicationInstanceClass);
+                    }
+
+                    if(publicRequest.IsSetReplicationInstanceIdentifier())
+                    {
+                        context.Writer.WritePropertyName("ReplicationInstanceIdentifier");
+                        context.Writer.Write(publicRequest.ReplicationInstanceIdentifier);
+                    }
+
+                    if(publicRequest.IsSetVpcSecurityGroupIds())
+                    {
+                        context.Writer.WritePropertyName("VpcSecurityGroupIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestVpcSecurityGroupIdsListValue in publicRequest.VpcSecurityGroupIds)
+                        {
+                                context.Writer.Write(publicRequestVpcSecurityGroupIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

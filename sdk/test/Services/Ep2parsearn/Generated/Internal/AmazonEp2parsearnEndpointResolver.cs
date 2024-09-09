@@ -18,6 +18,8 @@
  */
 
 using System;
+using System.Linq;
+using System.Collections.Generic;
 using Amazon.Ep2parsearn.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;

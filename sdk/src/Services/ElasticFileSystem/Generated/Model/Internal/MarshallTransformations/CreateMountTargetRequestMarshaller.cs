@@ -61,44 +61,47 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/2015-02-01/mount-targets";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFileSystemId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("FileSystemId");
-                    context.Writer.Write(publicRequest.FileSystemId);
-                }
-
-                if(publicRequest.IsSetIpAddress())
-                {
-                    context.Writer.WritePropertyName("IpAddress");
-                    context.Writer.Write(publicRequest.IpAddress);
-                }
-
-                if(publicRequest.IsSetSecurityGroups())
-                {
-                    context.Writer.WritePropertyName("SecurityGroups");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSecurityGroupsListValue in publicRequest.SecurityGroups)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFileSystemId())
                     {
-                            context.Writer.Write(publicRequestSecurityGroupsListValue);
+                        context.Writer.WritePropertyName("FileSystemId");
+                        context.Writer.Write(publicRequest.FileSystemId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetIpAddress())
+                    {
+                        context.Writer.WritePropertyName("IpAddress");
+                        context.Writer.Write(publicRequest.IpAddress);
+                    }
+
+                    if(publicRequest.IsSetSecurityGroups())
+                    {
+                        context.Writer.WritePropertyName("SecurityGroups");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSecurityGroupsListValue in publicRequest.SecurityGroups)
+                        {
+                                context.Writer.Write(publicRequestSecurityGroupsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSubnetId())
+                    {
+                        context.Writer.WritePropertyName("SubnetId");
+                        context.Writer.Write(publicRequest.SubnetId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSubnetId())
-                {
-                    context.Writer.WritePropertyName("SubnetId");
-                    context.Writer.Write(publicRequest.SubnetId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

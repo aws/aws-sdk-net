@@ -61,39 +61,42 @@ namespace Amazon.AppConfigData.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/configurationsessions";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApplicationIdentifier())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ApplicationIdentifier");
-                    context.Writer.Write(publicRequest.ApplicationIdentifier);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApplicationIdentifier())
+                    {
+                        context.Writer.WritePropertyName("ApplicationIdentifier");
+                        context.Writer.Write(publicRequest.ApplicationIdentifier);
+                    }
+
+                    if(publicRequest.IsSetConfigurationProfileIdentifier())
+                    {
+                        context.Writer.WritePropertyName("ConfigurationProfileIdentifier");
+                        context.Writer.Write(publicRequest.ConfigurationProfileIdentifier);
+                    }
+
+                    if(publicRequest.IsSetEnvironmentIdentifier())
+                    {
+                        context.Writer.WritePropertyName("EnvironmentIdentifier");
+                        context.Writer.Write(publicRequest.EnvironmentIdentifier);
+                    }
+
+                    if(publicRequest.IsSetRequiredMinimumPollIntervalInSeconds())
+                    {
+                        context.Writer.WritePropertyName("RequiredMinimumPollIntervalInSeconds");
+                        context.Writer.Write(publicRequest.RequiredMinimumPollIntervalInSeconds.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetConfigurationProfileIdentifier())
-                {
-                    context.Writer.WritePropertyName("ConfigurationProfileIdentifier");
-                    context.Writer.Write(publicRequest.ConfigurationProfileIdentifier);
-                }
-
-                if(publicRequest.IsSetEnvironmentIdentifier())
-                {
-                    context.Writer.WritePropertyName("EnvironmentIdentifier");
-                    context.Writer.Write(publicRequest.EnvironmentIdentifier);
-                }
-
-                if(publicRequest.IsSetRequiredMinimumPollIntervalInSeconds())
-                {
-                    context.Writer.WritePropertyName("RequiredMinimumPollIntervalInSeconds");
-                    context.Writer.Write(publicRequest.RequiredMinimumPollIntervalInSeconds.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

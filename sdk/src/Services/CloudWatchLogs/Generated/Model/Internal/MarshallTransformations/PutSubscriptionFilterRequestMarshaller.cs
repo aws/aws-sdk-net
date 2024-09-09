@@ -63,51 +63,54 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDestinationArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("destinationArn");
-                    context.Writer.Write(publicRequest.DestinationArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDestinationArn())
+                    {
+                        context.Writer.WritePropertyName("destinationArn");
+                        context.Writer.Write(publicRequest.DestinationArn);
+                    }
+
+                    if(publicRequest.IsSetDistribution())
+                    {
+                        context.Writer.WritePropertyName("distribution");
+                        context.Writer.Write(publicRequest.Distribution);
+                    }
+
+                    if(publicRequest.IsSetFilterName())
+                    {
+                        context.Writer.WritePropertyName("filterName");
+                        context.Writer.Write(publicRequest.FilterName);
+                    }
+
+                    if(publicRequest.IsSetFilterPattern())
+                    {
+                        context.Writer.WritePropertyName("filterPattern");
+                        context.Writer.Write(publicRequest.FilterPattern);
+                    }
+
+                    if(publicRequest.IsSetLogGroupName())
+                    {
+                        context.Writer.WritePropertyName("logGroupName");
+                        context.Writer.Write(publicRequest.LogGroupName);
+                    }
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("roleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDistribution())
-                {
-                    context.Writer.WritePropertyName("distribution");
-                    context.Writer.Write(publicRequest.Distribution);
-                }
-
-                if(publicRequest.IsSetFilterName())
-                {
-                    context.Writer.WritePropertyName("filterName");
-                    context.Writer.Write(publicRequest.FilterName);
-                }
-
-                if(publicRequest.IsSetFilterPattern())
-                {
-                    context.Writer.WritePropertyName("filterPattern");
-                    context.Writer.Write(publicRequest.FilterPattern);
-                }
-
-                if(publicRequest.IsSetLogGroupName())
-                {
-                    context.Writer.WritePropertyName("logGroupName");
-                    context.Writer.Write(publicRequest.LogGroupName);
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("roleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

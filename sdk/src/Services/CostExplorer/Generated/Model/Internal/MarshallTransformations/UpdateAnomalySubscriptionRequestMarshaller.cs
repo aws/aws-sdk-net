@@ -63,84 +63,87 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFrequency())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Frequency");
-                    context.Writer.Write(publicRequest.Frequency);
-                }
-
-                if(publicRequest.IsSetMonitorArnList())
-                {
-                    context.Writer.WritePropertyName("MonitorArnList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMonitorArnListListValue in publicRequest.MonitorArnList)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFrequency())
                     {
-                            context.Writer.Write(publicRequestMonitorArnListListValue);
+                        context.Writer.WritePropertyName("Frequency");
+                        context.Writer.Write(publicRequest.Frequency);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetSubscribers())
-                {
-                    context.Writer.WritePropertyName("Subscribers");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSubscribersListValue in publicRequest.Subscribers)
+                    if(publicRequest.IsSetMonitorArnList())
                     {
+                        context.Writer.WritePropertyName("MonitorArnList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMonitorArnListListValue in publicRequest.MonitorArnList)
+                        {
+                                context.Writer.Write(publicRequestMonitorArnListListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSubscribers())
+                    {
+                        context.Writer.WritePropertyName("Subscribers");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSubscribersListValue in publicRequest.Subscribers)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = SubscriberMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSubscribersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSubscriptionArn())
+                    {
+                        context.Writer.WritePropertyName("SubscriptionArn");
+                        context.Writer.Write(publicRequest.SubscriptionArn);
+                    }
+
+                    if(publicRequest.IsSetSubscriptionName())
+                    {
+                        context.Writer.WritePropertyName("SubscriptionName");
+                        context.Writer.Write(publicRequest.SubscriptionName);
+                    }
+
+                    if(publicRequest.IsSetThreshold())
+                    {
+                        context.Writer.WritePropertyName("Threshold");
+                        if(StringUtils.IsSpecialDoubleValue(publicRequest.Threshold.Value))
+                        {
+                            context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.Threshold.Value));
+                        }
+                        else
+                        {
+                            context.Writer.Write(publicRequest.Threshold.Value);
+                        }
+                    }
+
+                    if(publicRequest.IsSetThresholdExpression())
+                    {
+                        context.Writer.WritePropertyName("ThresholdExpression");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = SubscriberMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSubscribersListValue, context);
+                        var marshaller = ExpressionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ThresholdExpression, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSubscriptionArn())
-                {
-                    context.Writer.WritePropertyName("SubscriptionArn");
-                    context.Writer.Write(publicRequest.SubscriptionArn);
-                }
-
-                if(publicRequest.IsSetSubscriptionName())
-                {
-                    context.Writer.WritePropertyName("SubscriptionName");
-                    context.Writer.Write(publicRequest.SubscriptionName);
-                }
-
-                if(publicRequest.IsSetThreshold())
-                {
-                    context.Writer.WritePropertyName("Threshold");
-                    if(StringUtils.IsSpecialDoubleValue(publicRequest.Threshold.Value))
-                    {
-                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.Threshold.Value));
-                    }
-                    else
-                    {
-                        context.Writer.Write(publicRequest.Threshold.Value);
-                    }
-                }
-
-                if(publicRequest.IsSetThresholdExpression())
-                {
-                    context.Writer.WritePropertyName("ThresholdExpression");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ExpressionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ThresholdExpression, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

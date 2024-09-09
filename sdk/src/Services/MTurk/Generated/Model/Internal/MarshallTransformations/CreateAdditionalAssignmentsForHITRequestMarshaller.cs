@@ -63,33 +63,36 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetHITId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("HITId");
-                    context.Writer.Write(publicRequest.HITId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetHITId())
+                    {
+                        context.Writer.WritePropertyName("HITId");
+                        context.Writer.Write(publicRequest.HITId);
+                    }
+
+                    if(publicRequest.IsSetNumberOfAdditionalAssignments())
+                    {
+                        context.Writer.WritePropertyName("NumberOfAdditionalAssignments");
+                        context.Writer.Write(publicRequest.NumberOfAdditionalAssignments.Value);
+                    }
+
+                    if(publicRequest.IsSetUniqueRequestToken())
+                    {
+                        context.Writer.WritePropertyName("UniqueRequestToken");
+                        context.Writer.Write(publicRequest.UniqueRequestToken);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetNumberOfAdditionalAssignments())
-                {
-                    context.Writer.WritePropertyName("NumberOfAdditionalAssignments");
-                    context.Writer.Write(publicRequest.NumberOfAdditionalAssignments.Value);
-                }
-
-                if(publicRequest.IsSetUniqueRequestToken())
-                {
-                    context.Writer.WritePropertyName("UniqueRequestToken");
-                    context.Writer.Write(publicRequest.UniqueRequestToken);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

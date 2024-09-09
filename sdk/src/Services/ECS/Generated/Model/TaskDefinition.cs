@@ -113,6 +113,11 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
+        /// If you use the EC2 launch type, this field is optional. Supported values are between
+        /// <c>128</c> CPU units (<c>0.125</c> vCPUs) and <c>10240</c> CPU units (<c>10</c> vCPUs).
+        /// </para>
+        ///  
+        /// <para>
         /// The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.
         /// </para>
         ///  <ul> <li> 
@@ -210,11 +215,9 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property ExecutionRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS
-        /// container agent permission to make Amazon Web Services API calls on your behalf. The
-        /// task execution IAM role is required depending on the requirements of your task. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
-        /// ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service Developer
-        /// Guide</i>.
+        /// container agent permission to make Amazon Web Services API calls on your behalf. For
+        /// informationabout the required IAM roles for Amazon ECS, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security-ecs-iam-role-overview.html">IAM
+        /// roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public string ExecutionRoleArn
@@ -284,14 +287,12 @@ namespace Amazon.ECS.Model
         /// If <c>none</c> is specified, then IPC resources within the containers of a task are
         /// private and not shared with other containers in a task or on the container instance.
         /// If no value is specified, then the IPC resource namespace sharing depends on the Docker
-        /// daemon setting on the container instance. For more information, see <a href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC
-        /// settings</a> in the <i>Docker run reference</i>.
+        /// daemon setting on the container instance.
         /// </para>
         ///  
         /// <para>
         /// If the <c>host</c> IPC mode is used, be aware that there is a heightened risk of undesired
-        /// IPC namespace expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker
-        /// security</a>.
+        /// IPC namespace expose.
         /// </para>
         ///  
         /// <para>
@@ -436,19 +437,15 @@ namespace Amazon.ECS.Model
         ///  </important> 
         /// <para>
         /// If the network mode is <c>awsvpc</c>, the task is allocated an elastic network interface,
-        /// and you must specify a <a>NetworkConfiguration</a> value when you create a service
-        /// or run a task with the task definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+        /// and you must specify a <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_NetworkConfiguration.html">NetworkConfiguration</a>
+        /// value when you create a service or run a task with the task definition. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
         /// Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// If the network mode is <c>host</c>, you cannot run multiple instantiations of the
         /// same task on a single container instance when port mappings are used.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
-        /// settings</a> in the <i>Docker run reference</i>.
         /// </para>
         /// </summary>
         public NetworkMode NetworkMode
@@ -484,15 +481,12 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If no value is specified, the default is a private namespace for each container. For
-        /// more information, see <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID
-        /// settings</a> in the <i>Docker run reference</i>.
+        /// If no value is specified, the default is a private namespace for each container.
         /// </para>
         ///  
         /// <para>
         /// If the <c>host</c> PID mode is used, there's a heightened risk of undesired process
-        /// namespace exposure. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker
-        /// security</a>.
+        /// namespace exposure.
         /// </para>
         ///  <note> 
         /// <para>
@@ -610,9 +604,9 @@ namespace Amazon.ECS.Model
         /// The container instance attributes required by your task. When an Amazon EC2 instance
         /// is registered to your cluster, the Amazon ECS container agent assigns some standard
         /// attributes to the instance. You can apply custom attributes. These are specified as
-        /// key-value pairs using the Amazon ECS console or the <a>PutAttributes</a> API. These
-        /// attributes are used when determining task placement for tasks hosted on Amazon EC2
-        /// instances. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
+        /// key-value pairs using the Amazon ECS console or the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAttributes.html">PutAttributes</a>
+        /// API. These attributes are used when determining task placement for tasks hosted on
+        /// Amazon EC2 instances. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
         /// in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  <note> 
@@ -741,15 +735,9 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The short name or full Amazon Resource Name (ARN) of the Identity and Access Management
         /// role that grants containers in the task permission to call Amazon Web Services APIs
-        /// on your behalf. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">Amazon
-        /// ECS Task Role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
-        /// IAM roles for tasks on Windows require that the <c>-EnableTaskIAMRole</c> option is
-        /// set when you launch the Amazon ECS-optimized Windows AMI. Your containers must also
-        /// run some configuration code to use the feature. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows
-        /// IAM roles for tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// on your behalf. For informationabout the required IAM roles for Amazon ECS, see <a
+        /// href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security-ecs-iam-role-overview.html">IAM
+        /// roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public string TaskRoleArn

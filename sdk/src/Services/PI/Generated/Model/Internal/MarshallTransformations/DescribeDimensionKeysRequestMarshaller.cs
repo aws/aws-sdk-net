@@ -63,110 +63,113 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAdditionalMetrics())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AdditionalMetrics");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAdditionalMetricsListValue in publicRequest.AdditionalMetrics)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAdditionalMetrics())
                     {
-                            context.Writer.Write(publicRequestAdditionalMetricsListValue);
+                        context.Writer.WritePropertyName("AdditionalMetrics");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAdditionalMetricsListValue in publicRequest.AdditionalMetrics)
+                        {
+                                context.Writer.Write(publicRequestAdditionalMetricsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetEndTime())
-                {
-                    context.Writer.WritePropertyName("EndTime");
-                    context.Writer.Write(publicRequest.EndTime.Value);
-                }
-
-                if(publicRequest.IsSetFilter())
-                {
-                    context.Writer.WritePropertyName("Filter");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestFilterKvp in publicRequest.Filter)
+                    if(publicRequest.IsSetEndTime())
                     {
-                        context.Writer.WritePropertyName(publicRequestFilterKvp.Key);
-                        var publicRequestFilterValue = publicRequestFilterKvp.Value;
-
-                            context.Writer.Write(publicRequestFilterValue);
+                        context.Writer.WritePropertyName("EndTime");
+                        context.Writer.Write(publicRequest.EndTime.Value);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetFilter())
+                    {
+                        context.Writer.WritePropertyName("Filter");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestFilterKvp in publicRequest.Filter)
+                        {
+                            context.Writer.WritePropertyName(publicRequestFilterKvp.Key);
+                            var publicRequestFilterValue = publicRequestFilterKvp.Value;
+
+                                context.Writer.Write(publicRequestFilterValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetGroupBy())
+                    {
+                        context.Writer.WritePropertyName("GroupBy");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DimensionGroupMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.GroupBy, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetIdentifier())
+                    {
+                        context.Writer.WritePropertyName("Identifier");
+                        context.Writer.Write(publicRequest.Identifier);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetMetric())
+                    {
+                        context.Writer.WritePropertyName("Metric");
+                        context.Writer.Write(publicRequest.Metric);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetPartitionBy())
+                    {
+                        context.Writer.WritePropertyName("PartitionBy");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DimensionGroupMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.PartitionBy, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetPeriodInSeconds())
+                    {
+                        context.Writer.WritePropertyName("PeriodInSeconds");
+                        context.Writer.Write(publicRequest.PeriodInSeconds.Value);
+                    }
+
+                    if(publicRequest.IsSetServiceType())
+                    {
+                        context.Writer.WritePropertyName("ServiceType");
+                        context.Writer.Write(publicRequest.ServiceType);
+                    }
+
+                    if(publicRequest.IsSetStartTime())
+                    {
+                        context.Writer.WritePropertyName("StartTime");
+                        context.Writer.Write(publicRequest.StartTime.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetGroupBy())
-                {
-                    context.Writer.WritePropertyName("GroupBy");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DimensionGroupMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.GroupBy, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetIdentifier())
-                {
-                    context.Writer.WritePropertyName("Identifier");
-                    context.Writer.Write(publicRequest.Identifier);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetMetric())
-                {
-                    context.Writer.WritePropertyName("Metric");
-                    context.Writer.Write(publicRequest.Metric);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetPartitionBy())
-                {
-                    context.Writer.WritePropertyName("PartitionBy");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DimensionGroupMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PartitionBy, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPeriodInSeconds())
-                {
-                    context.Writer.WritePropertyName("PeriodInSeconds");
-                    context.Writer.Write(publicRequest.PeriodInSeconds.Value);
-                }
-
-                if(publicRequest.IsSetServiceType())
-                {
-                    context.Writer.WritePropertyName("ServiceType");
-                    context.Writer.Write(publicRequest.ServiceType);
-                }
-
-                if(publicRequest.IsSetStartTime())
-                {
-                    context.Writer.WritePropertyName("StartTime");
-                    context.Writer.Write(publicRequest.StartTime.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

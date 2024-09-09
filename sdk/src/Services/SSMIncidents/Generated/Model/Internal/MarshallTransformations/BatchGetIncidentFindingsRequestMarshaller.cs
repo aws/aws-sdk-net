@@ -61,32 +61,35 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/batchGetIncidentFindings";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFindingIds())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("findingIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFindingIdsListValue in publicRequest.FindingIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFindingIds())
                     {
-                            context.Writer.Write(publicRequestFindingIdsListValue);
+                        context.Writer.WritePropertyName("findingIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFindingIdsListValue in publicRequest.FindingIds)
+                        {
+                                context.Writer.Write(publicRequestFindingIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetIncidentRecordArn())
+                    {
+                        context.Writer.WritePropertyName("incidentRecordArn");
+                        context.Writer.Write(publicRequest.IncidentRecordArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetIncidentRecordArn())
-                {
-                    context.Writer.WritePropertyName("incidentRecordArn");
-                    context.Writer.Write(publicRequest.IncidentRecordArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

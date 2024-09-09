@@ -63,50 +63,53 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetScriptId())
+                    {
+                        context.Writer.WritePropertyName("ScriptId");
+                        context.Writer.Write(publicRequest.ScriptId);
+                    }
+
+                    if(publicRequest.IsSetStorageLocation())
+                    {
+                        context.Writer.WritePropertyName("StorageLocation");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = S3LocationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.StorageLocation, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetVersion())
+                    {
+                        context.Writer.WritePropertyName("Version");
+                        context.Writer.Write(publicRequest.Version);
+                    }
+
+                    if(publicRequest.IsSetZipFile())
+                    {
+                        context.Writer.WritePropertyName("ZipFile");
+                        context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.ZipFile));
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetScriptId())
-                {
-                    context.Writer.WritePropertyName("ScriptId");
-                    context.Writer.Write(publicRequest.ScriptId);
-                }
-
-                if(publicRequest.IsSetStorageLocation())
-                {
-                    context.Writer.WritePropertyName("StorageLocation");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = S3LocationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.StorageLocation, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetVersion())
-                {
-                    context.Writer.WritePropertyName("Version");
-                    context.Writer.Write(publicRequest.Version);
-                }
-
-                if(publicRequest.IsSetZipFile())
-                {
-                    context.Writer.WritePropertyName("ZipFile");
-                    context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.ZipFile));
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

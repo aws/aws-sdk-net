@@ -67,59 +67,62 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetMeshOwner())
                 request.Parameters.Add("meshOwner", StringUtils.FromString(publicRequest.MeshOwner));
             request.ResourcePath = "/v20190125/meshes/{meshName}/virtualServices";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetSpec())
-                {
-                    context.Writer.WritePropertyName("spec");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = VirtualServiceSpecMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Spec, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetSpec())
+                    {
+                        context.Writer.WritePropertyName("spec");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagRefMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = VirtualServiceSpecMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Spec, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagRefMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetVirtualServiceName())
+                    {
+                        context.Writer.WritePropertyName("virtualServiceName");
+                        context.Writer.Write(publicRequest.VirtualServiceName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetVirtualServiceName())
-                {
-                    context.Writer.WritePropertyName("virtualServiceName");
-                    context.Writer.Write(publicRequest.VirtualServiceName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             request.UseQueryString = true;

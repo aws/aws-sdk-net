@@ -63,32 +63,35 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetNotification())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Notification");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetNotification())
+                    {
+                        context.Writer.WritePropertyName("Notification");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = NotificationSpecificationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Notification, context);
+                        var marshaller = NotificationSpecificationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Notification, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTestEventType())
+                    {
+                        context.Writer.WritePropertyName("TestEventType");
+                        context.Writer.Write(publicRequest.TestEventType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTestEventType())
-                {
-                    context.Writer.WritePropertyName("TestEventType");
-                    context.Writer.Write(publicRequest.TestEventType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

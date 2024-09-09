@@ -61,54 +61,57 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/metadata-transfer-jobs";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetDestination())
-                {
-                    context.Writer.WritePropertyName("destination");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DestinationConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Destination, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMetadataTransferJobId())
-                {
-                    context.Writer.WritePropertyName("metadataTransferJobId");
-                    context.Writer.Write(publicRequest.MetadataTransferJobId);
-                }
-
-                if(publicRequest.IsSetSources())
-                {
-                    context.Writer.WritePropertyName("sources");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSourcesListValue in publicRequest.Sources)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetDestination())
+                    {
+                        context.Writer.WritePropertyName("destination");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = SourceConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSourcesListValue, context);
+                        var marshaller = DestinationConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Destination, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetMetadataTransferJobId())
+                    {
+                        context.Writer.WritePropertyName("metadataTransferJobId");
+                        context.Writer.Write(publicRequest.MetadataTransferJobId);
+                    }
+
+                    if(publicRequest.IsSetSources())
+                    {
+                        context.Writer.WritePropertyName("sources");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSourcesListValue in publicRequest.Sources)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = SourceConfigurationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSourcesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

@@ -61,68 +61,71 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/profiles";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientRequestToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetProfileDescription())
-                {
-                    context.Writer.WritePropertyName("ProfileDescription");
-                    context.Writer.Write(publicRequest.ProfileDescription);
-                }
-
-                if(publicRequest.IsSetProfileName())
-                {
-                    context.Writer.WritePropertyName("ProfileName");
-                    context.Writer.Write(publicRequest.ProfileName);
-                }
-
-                if(publicRequest.IsSetProfileQuestions())
-                {
-                    context.Writer.WritePropertyName("ProfileQuestions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestProfileQuestionsListValue in publicRequest.ProfileQuestions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientRequestToken())
                     {
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(publicRequest.ClientRequestToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientRequestToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetProfileDescription())
+                    {
+                        context.Writer.WritePropertyName("ProfileDescription");
+                        context.Writer.Write(publicRequest.ProfileDescription);
+                    }
+
+                    if(publicRequest.IsSetProfileName())
+                    {
+                        context.Writer.WritePropertyName("ProfileName");
+                        context.Writer.Write(publicRequest.ProfileName);
+                    }
+
+                    if(publicRequest.IsSetProfileQuestions())
+                    {
+                        context.Writer.WritePropertyName("ProfileQuestions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestProfileQuestionsListValue in publicRequest.ProfileQuestions)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ProfileQuestionUpdateMarshaller.Instance;
+                            marshaller.Marshall(publicRequestProfileQuestionsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
 
-                        var marshaller = ProfileQuestionUpdateMarshaller.Instance;
-                        marshaller.Marshall(publicRequestProfileQuestionsListValue, context);
-
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

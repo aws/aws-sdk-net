@@ -70,101 +70,104 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 throw new AmazonAppSyncException("Request object does not have required field TypeName set");
             request.AddPathResource("{typeName}", StringUtils.FromString(publicRequest.TypeName));
             request.ResourcePath = "/v1/apis/{apiId}/types/{typeName}/resolvers/{fieldName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCachingConfig())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("cachingConfig");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCachingConfig())
+                    {
+                        context.Writer.WritePropertyName("cachingConfig");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = CachingConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CachingConfig, context);
+                        var marshaller = CachingConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CachingConfig, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetCode())
+                    {
+                        context.Writer.WritePropertyName("code");
+                        context.Writer.Write(publicRequest.Code);
+                    }
+
+                    if(publicRequest.IsSetDataSourceName())
+                    {
+                        context.Writer.WritePropertyName("dataSourceName");
+                        context.Writer.Write(publicRequest.DataSourceName);
+                    }
+
+                    if(publicRequest.IsSetKind())
+                    {
+                        context.Writer.WritePropertyName("kind");
+                        context.Writer.Write(publicRequest.Kind);
+                    }
+
+                    if(publicRequest.IsSetMaxBatchSize())
+                    {
+                        context.Writer.WritePropertyName("maxBatchSize");
+                        context.Writer.Write(publicRequest.MaxBatchSize.Value);
+                    }
+
+                    if(publicRequest.IsSetMetricsConfig())
+                    {
+                        context.Writer.WritePropertyName("metricsConfig");
+                        context.Writer.Write(publicRequest.MetricsConfig);
+                    }
+
+                    if(publicRequest.IsSetPipelineConfig())
+                    {
+                        context.Writer.WritePropertyName("pipelineConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PipelineConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.PipelineConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRequestMappingTemplate())
+                    {
+                        context.Writer.WritePropertyName("requestMappingTemplate");
+                        context.Writer.Write(publicRequest.RequestMappingTemplate);
+                    }
+
+                    if(publicRequest.IsSetResponseMappingTemplate())
+                    {
+                        context.Writer.WritePropertyName("responseMappingTemplate");
+                        context.Writer.Write(publicRequest.ResponseMappingTemplate);
+                    }
+
+                    if(publicRequest.IsSetRuntime())
+                    {
+                        context.Writer.WritePropertyName("runtime");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AppSyncRuntimeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Runtime, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSyncConfig())
+                    {
+                        context.Writer.WritePropertyName("syncConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SyncConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SyncConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCode())
-                {
-                    context.Writer.WritePropertyName("code");
-                    context.Writer.Write(publicRequest.Code);
-                }
-
-                if(publicRequest.IsSetDataSourceName())
-                {
-                    context.Writer.WritePropertyName("dataSourceName");
-                    context.Writer.Write(publicRequest.DataSourceName);
-                }
-
-                if(publicRequest.IsSetKind())
-                {
-                    context.Writer.WritePropertyName("kind");
-                    context.Writer.Write(publicRequest.Kind);
-                }
-
-                if(publicRequest.IsSetMaxBatchSize())
-                {
-                    context.Writer.WritePropertyName("maxBatchSize");
-                    context.Writer.Write(publicRequest.MaxBatchSize.Value);
-                }
-
-                if(publicRequest.IsSetMetricsConfig())
-                {
-                    context.Writer.WritePropertyName("metricsConfig");
-                    context.Writer.Write(publicRequest.MetricsConfig);
-                }
-
-                if(publicRequest.IsSetPipelineConfig())
-                {
-                    context.Writer.WritePropertyName("pipelineConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PipelineConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PipelineConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRequestMappingTemplate())
-                {
-                    context.Writer.WritePropertyName("requestMappingTemplate");
-                    context.Writer.Write(publicRequest.RequestMappingTemplate);
-                }
-
-                if(publicRequest.IsSetResponseMappingTemplate())
-                {
-                    context.Writer.WritePropertyName("responseMappingTemplate");
-                    context.Writer.Write(publicRequest.ResponseMappingTemplate);
-                }
-
-                if(publicRequest.IsSetRuntime())
-                {
-                    context.Writer.WritePropertyName("runtime");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AppSyncRuntimeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Runtime, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSyncConfig())
-                {
-                    context.Writer.WritePropertyName("syncConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SyncConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SyncConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

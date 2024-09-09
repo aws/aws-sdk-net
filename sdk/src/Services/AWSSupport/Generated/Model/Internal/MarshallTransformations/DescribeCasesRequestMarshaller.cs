@@ -63,74 +63,77 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAfterTime())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("afterTime");
-                    context.Writer.Write(publicRequest.AfterTime);
-                }
-
-                if(publicRequest.IsSetBeforeTime())
-                {
-                    context.Writer.WritePropertyName("beforeTime");
-                    context.Writer.Write(publicRequest.BeforeTime);
-                }
-
-                if(publicRequest.IsSetCaseIdList())
-                {
-                    context.Writer.WritePropertyName("caseIdList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCaseIdListListValue in publicRequest.CaseIdList)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAfterTime())
                     {
-                            context.Writer.Write(publicRequestCaseIdListListValue);
+                        context.Writer.WritePropertyName("afterTime");
+                        context.Writer.Write(publicRequest.AfterTime);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetBeforeTime())
+                    {
+                        context.Writer.WritePropertyName("beforeTime");
+                        context.Writer.Write(publicRequest.BeforeTime);
+                    }
+
+                    if(publicRequest.IsSetCaseIdList())
+                    {
+                        context.Writer.WritePropertyName("caseIdList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCaseIdListListValue in publicRequest.CaseIdList)
+                        {
+                                context.Writer.Write(publicRequestCaseIdListListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetDisplayId())
+                    {
+                        context.Writer.WritePropertyName("displayId");
+                        context.Writer.Write(publicRequest.DisplayId);
+                    }
+
+                    if(publicRequest.IsSetIncludeCommunications())
+                    {
+                        context.Writer.WritePropertyName("includeCommunications");
+                        context.Writer.Write(publicRequest.IncludeCommunications.Value);
+                    }
+
+                    if(publicRequest.IsSetIncludeResolvedCases())
+                    {
+                        context.Writer.WritePropertyName("includeResolvedCases");
+                        context.Writer.Write(publicRequest.IncludeResolvedCases.Value);
+                    }
+
+                    if(publicRequest.IsSetLanguage())
+                    {
+                        context.Writer.WritePropertyName("language");
+                        context.Writer.Write(publicRequest.Language);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDisplayId())
-                {
-                    context.Writer.WritePropertyName("displayId");
-                    context.Writer.Write(publicRequest.DisplayId);
-                }
-
-                if(publicRequest.IsSetIncludeCommunications())
-                {
-                    context.Writer.WritePropertyName("includeCommunications");
-                    context.Writer.Write(publicRequest.IncludeCommunications.Value);
-                }
-
-                if(publicRequest.IsSetIncludeResolvedCases())
-                {
-                    context.Writer.WritePropertyName("includeResolvedCases");
-                    context.Writer.Write(publicRequest.IncludeResolvedCases.Value);
-                }
-
-                if(publicRequest.IsSetLanguage())
-                {
-                    context.Writer.WritePropertyName("language");
-                    context.Writer.Write(publicRequest.Language);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

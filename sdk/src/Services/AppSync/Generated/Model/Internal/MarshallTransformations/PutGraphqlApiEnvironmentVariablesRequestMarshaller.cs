@@ -64,29 +64,32 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 throw new AmazonAppSyncException("Request object does not have required field ApiId set");
             request.AddPathResource("{apiId}", StringUtils.FromString(publicRequest.ApiId));
             request.ResourcePath = "/v1/apis/{apiId}/environmentVariables";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEnvironmentVariables())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("environmentVariables");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestEnvironmentVariablesKvp in publicRequest.EnvironmentVariables)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEnvironmentVariables())
                     {
-                        context.Writer.WritePropertyName(publicRequestEnvironmentVariablesKvp.Key);
-                        var publicRequestEnvironmentVariablesValue = publicRequestEnvironmentVariablesKvp.Value;
+                        context.Writer.WritePropertyName("environmentVariables");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestEnvironmentVariablesKvp in publicRequest.EnvironmentVariables)
+                        {
+                            context.Writer.WritePropertyName(publicRequestEnvironmentVariablesKvp.Key);
+                            var publicRequestEnvironmentVariablesValue = publicRequestEnvironmentVariablesKvp.Value;
 
-                            context.Writer.Write(publicRequestEnvironmentVariablesValue);
+                                context.Writer.Write(publicRequestEnvironmentVariablesValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

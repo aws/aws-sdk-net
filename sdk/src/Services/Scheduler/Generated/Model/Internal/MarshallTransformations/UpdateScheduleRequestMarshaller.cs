@@ -64,102 +64,105 @@ namespace Amazon.Scheduler.Model.Internal.MarshallTransformations
                 throw new AmazonSchedulerException("Request object does not have required field Name set");
             request.AddPathResource("{Name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/schedules/{Name}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetActionAfterCompletion())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ActionAfterCompletion");
-                    context.Writer.Write(publicRequest.ActionAfterCompletion);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetActionAfterCompletion())
+                    {
+                        context.Writer.WritePropertyName("ActionAfterCompletion");
+                        context.Writer.Write(publicRequest.ActionAfterCompletion);
+                    }
+
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetEndDate())
+                    {
+                        context.Writer.WritePropertyName("EndDate");
+                        context.Writer.Write(publicRequest.EndDate.Value);
+                    }
+
+                    if(publicRequest.IsSetFlexibleTimeWindow())
+                    {
+                        context.Writer.WritePropertyName("FlexibleTimeWindow");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = FlexibleTimeWindowMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.FlexibleTimeWindow, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetGroupName())
+                    {
+                        context.Writer.WritePropertyName("GroupName");
+                        context.Writer.Write(publicRequest.GroupName);
+                    }
+
+                    if(publicRequest.IsSetKmsKeyArn())
+                    {
+                        context.Writer.WritePropertyName("KmsKeyArn");
+                        context.Writer.Write(publicRequest.KmsKeyArn);
+                    }
+
+                    if(publicRequest.IsSetScheduleExpression())
+                    {
+                        context.Writer.WritePropertyName("ScheduleExpression");
+                        context.Writer.Write(publicRequest.ScheduleExpression);
+                    }
+
+                    if(publicRequest.IsSetScheduleExpressionTimezone())
+                    {
+                        context.Writer.WritePropertyName("ScheduleExpressionTimezone");
+                        context.Writer.Write(publicRequest.ScheduleExpressionTimezone);
+                    }
+
+                    if(publicRequest.IsSetStartDate())
+                    {
+                        context.Writer.WritePropertyName("StartDate");
+                        context.Writer.Write(publicRequest.StartDate.Value);
+                    }
+
+                    if(publicRequest.IsSetState())
+                    {
+                        context.Writer.WritePropertyName("State");
+                        context.Writer.Write(publicRequest.State);
+                    }
+
+                    if(publicRequest.IsSetTarget())
+                    {
+                        context.Writer.WritePropertyName("Target");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TargetMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Target, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetEndDate())
-                {
-                    context.Writer.WritePropertyName("EndDate");
-                    context.Writer.Write(publicRequest.EndDate.Value);
-                }
-
-                if(publicRequest.IsSetFlexibleTimeWindow())
-                {
-                    context.Writer.WritePropertyName("FlexibleTimeWindow");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = FlexibleTimeWindowMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.FlexibleTimeWindow, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetGroupName())
-                {
-                    context.Writer.WritePropertyName("GroupName");
-                    context.Writer.Write(publicRequest.GroupName);
-                }
-
-                if(publicRequest.IsSetKmsKeyArn())
-                {
-                    context.Writer.WritePropertyName("KmsKeyArn");
-                    context.Writer.Write(publicRequest.KmsKeyArn);
-                }
-
-                if(publicRequest.IsSetScheduleExpression())
-                {
-                    context.Writer.WritePropertyName("ScheduleExpression");
-                    context.Writer.Write(publicRequest.ScheduleExpression);
-                }
-
-                if(publicRequest.IsSetScheduleExpressionTimezone())
-                {
-                    context.Writer.WritePropertyName("ScheduleExpressionTimezone");
-                    context.Writer.Write(publicRequest.ScheduleExpressionTimezone);
-                }
-
-                if(publicRequest.IsSetStartDate())
-                {
-                    context.Writer.WritePropertyName("StartDate");
-                    context.Writer.Write(publicRequest.StartDate.Value);
-                }
-
-                if(publicRequest.IsSetState())
-                {
-                    context.Writer.WritePropertyName("State");
-                    context.Writer.Write(publicRequest.State);
-                }
-
-                if(publicRequest.IsSetTarget())
-                {
-                    context.Writer.WritePropertyName("Target");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TargetMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Target, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

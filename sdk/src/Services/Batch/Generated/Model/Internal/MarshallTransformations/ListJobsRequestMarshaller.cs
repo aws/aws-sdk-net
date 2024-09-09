@@ -61,67 +61,70 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v1/listjobs";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetArrayJobId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("arrayJobId");
-                    context.Writer.Write(publicRequest.ArrayJobId);
-                }
-
-                if(publicRequest.IsSetFilters())
-                {
-                    context.Writer.WritePropertyName("filters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFiltersListValue in publicRequest.Filters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetArrayJobId())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = KeyValuesPairMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFiltersListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("arrayJobId");
+                        context.Writer.Write(publicRequest.ArrayJobId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetFilters())
+                    {
+                        context.Writer.WritePropertyName("filters");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFiltersListValue in publicRequest.Filters)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = KeyValuesPairMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFiltersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetJobQueue())
+                    {
+                        context.Writer.WritePropertyName("jobQueue");
+                        context.Writer.Write(publicRequest.JobQueue);
+                    }
+
+                    if(publicRequest.IsSetJobStatus())
+                    {
+                        context.Writer.WritePropertyName("jobStatus");
+                        context.Writer.Write(publicRequest.JobStatus);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetMultiNodeJobId())
+                    {
+                        context.Writer.WritePropertyName("multiNodeJobId");
+                        context.Writer.Write(publicRequest.MultiNodeJobId);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetJobQueue())
-                {
-                    context.Writer.WritePropertyName("jobQueue");
-                    context.Writer.Write(publicRequest.JobQueue);
-                }
-
-                if(publicRequest.IsSetJobStatus())
-                {
-                    context.Writer.WritePropertyName("jobStatus");
-                    context.Writer.Write(publicRequest.JobStatus);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetMultiNodeJobId())
-                {
-                    context.Writer.WritePropertyName("multiNodeJobId");
-                    context.Writer.Write(publicRequest.MultiNodeJobId);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

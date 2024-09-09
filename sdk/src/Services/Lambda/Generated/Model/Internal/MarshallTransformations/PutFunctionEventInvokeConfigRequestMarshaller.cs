@@ -67,38 +67,41 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetQualifier())
                 request.Parameters.Add("Qualifier", StringUtils.FromString(publicRequest.Qualifier));
             request.ResourcePath = "/2019-09-25/functions/{FunctionName}/event-invoke-config";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDestinationConfig())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DestinationConfig");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDestinationConfig())
+                    {
+                        context.Writer.WritePropertyName("DestinationConfig");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = DestinationConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DestinationConfig, context);
+                        var marshaller = DestinationConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DestinationConfig, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetMaximumEventAgeInSeconds())
+                    {
+                        context.Writer.WritePropertyName("MaximumEventAgeInSeconds");
+                        context.Writer.Write(publicRequest.MaximumEventAgeInSeconds.Value);
+                    }
+
+                    if(publicRequest.IsSetMaximumRetryAttempts())
+                    {
+                        context.Writer.WritePropertyName("MaximumRetryAttempts");
+                        context.Writer.Write(publicRequest.MaximumRetryAttempts.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMaximumEventAgeInSeconds())
-                {
-                    context.Writer.WritePropertyName("MaximumEventAgeInSeconds");
-                    context.Writer.Write(publicRequest.MaximumEventAgeInSeconds.Value);
-                }
-
-                if(publicRequest.IsSetMaximumRetryAttempts())
-                {
-                    context.Writer.WritePropertyName("MaximumRetryAttempts");
-                    context.Writer.Write(publicRequest.MaximumRetryAttempts.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             request.UseQueryString = true;

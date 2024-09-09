@@ -32,7 +32,7 @@ namespace Amazon.Bedrock.Model
     /// <summary>
     /// Contains the ARN of the Amazon Bedrock models specified in your model evaluation job.
     /// Each Amazon Bedrock model supports different <c>inferenceParams</c>. To learn more
-    /// about supported inference parameters for Amazon Bedrock models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-prompt-datasets-custom.html">Inference
+    /// about supported inference parameters for Amazon Bedrock models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference
     /// parameters for foundation models</a>.
     /// 
     ///  

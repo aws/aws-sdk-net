@@ -64,54 +64,57 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 throw new AmazonGuardDutyException("Request object does not have required field DetectorId set");
             request.AddPathResource("{detectorId}", StringUtils.FromString(publicRequest.DetectorId));
             request.ResourcePath = "/detector/{detectorId}/admin";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAutoEnable())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("autoEnable");
-                    context.Writer.Write(publicRequest.AutoEnable.Value);
-                }
-
-                if(publicRequest.IsSetAutoEnableOrganizationMembers())
-                {
-                    context.Writer.WritePropertyName("autoEnableOrganizationMembers");
-                    context.Writer.Write(publicRequest.AutoEnableOrganizationMembers);
-                }
-
-                if(publicRequest.IsSetDataSources())
-                {
-                    context.Writer.WritePropertyName("dataSources");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OrganizationDataSourceConfigurationsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DataSources, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetFeatures())
-                {
-                    context.Writer.WritePropertyName("features");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFeaturesListValue in publicRequest.Features)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAutoEnable())
                     {
+                        context.Writer.WritePropertyName("autoEnable");
+                        context.Writer.Write(publicRequest.AutoEnable.Value);
+                    }
+
+                    if(publicRequest.IsSetAutoEnableOrganizationMembers())
+                    {
+                        context.Writer.WritePropertyName("autoEnableOrganizationMembers");
+                        context.Writer.Write(publicRequest.AutoEnableOrganizationMembers);
+                    }
+
+                    if(publicRequest.IsSetDataSources())
+                    {
+                        context.Writer.WritePropertyName("dataSources");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = OrganizationFeatureConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFeaturesListValue, context);
+                        var marshaller = OrganizationDataSourceConfigurationsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DataSources, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetFeatures())
+                    {
+                        context.Writer.WritePropertyName("features");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFeaturesListValue in publicRequest.Features)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = OrganizationFeatureConfigurationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFeaturesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -979,6 +979,52 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  BatchPutDataQualityStatisticAnnotation
+
+        internal virtual BatchPutDataQualityStatisticAnnotationResponse BatchPutDataQualityStatisticAnnotation(BatchPutDataQualityStatisticAnnotationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchPutDataQualityStatisticAnnotationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchPutDataQualityStatisticAnnotationResponseUnmarshaller.Instance;
+
+            return Invoke<BatchPutDataQualityStatisticAnnotationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Annotate datapoints over time for a specific data quality statistic.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchPutDataQualityStatisticAnnotation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchPutDataQualityStatisticAnnotation service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchPutDataQualityStatisticAnnotation">REST API Reference for BatchPutDataQualityStatisticAnnotation Operation</seealso>
+        public virtual Task<BatchPutDataQualityStatisticAnnotationResponse> BatchPutDataQualityStatisticAnnotationAsync(BatchPutDataQualityStatisticAnnotationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchPutDataQualityStatisticAnnotationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchPutDataQualityStatisticAnnotationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchPutDataQualityStatisticAnnotationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchStopJobRun
 
         internal virtual BatchStopJobRunResponse BatchStopJobRun(BatchStopJobRunRequest request)
@@ -4797,6 +4843,99 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  GetDataQualityModel
+
+        internal virtual GetDataQualityModelResponse GetDataQualityModel(GetDataQualityModelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataQualityModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataQualityModelResponseUnmarshaller.Instance;
+
+            return Invoke<GetDataQualityModelResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieve the training status of the model along with more information (CompletedOn,
+        /// StartedOn, FailureReason).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataQualityModel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDataQualityModel service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityModel">REST API Reference for GetDataQualityModel Operation</seealso>
+        public virtual Task<GetDataQualityModelResponse> GetDataQualityModelAsync(GetDataQualityModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataQualityModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataQualityModelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDataQualityModelResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDataQualityModelResult
+
+        internal virtual GetDataQualityModelResultResponse GetDataQualityModelResult(GetDataQualityModelResultRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataQualityModelResultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataQualityModelResultResponseUnmarshaller.Instance;
+
+            return Invoke<GetDataQualityModelResultResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieve a statistic's predictions for a given Profile ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataQualityModelResult service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDataQualityModelResult service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityModelResult">REST API Reference for GetDataQualityModelResult Operation</seealso>
+        public virtual Task<GetDataQualityModelResultResponse> GetDataQualityModelResultAsync(GetDataQualityModelResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataQualityModelResultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataQualityModelResultResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDataQualityModelResultResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetDataQualityResult
 
         internal virtual GetDataQualityResultResponse GetDataQualityResult(GetDataQualityResultRequest request)
@@ -7707,6 +7846,89 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  ListDataQualityStatisticAnnotations
+
+        internal virtual ListDataQualityStatisticAnnotationsResponse ListDataQualityStatisticAnnotations(ListDataQualityStatisticAnnotationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataQualityStatisticAnnotationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataQualityStatisticAnnotationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDataQualityStatisticAnnotationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieve annotations for a data quality statistic.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataQualityStatisticAnnotations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDataQualityStatisticAnnotations service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityStatisticAnnotations">REST API Reference for ListDataQualityStatisticAnnotations Operation</seealso>
+        public virtual Task<ListDataQualityStatisticAnnotationsResponse> ListDataQualityStatisticAnnotationsAsync(ListDataQualityStatisticAnnotationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataQualityStatisticAnnotationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataQualityStatisticAnnotationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDataQualityStatisticAnnotationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDataQualityStatistics
+
+        internal virtual ListDataQualityStatisticsResponse ListDataQualityStatistics(ListDataQualityStatisticsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataQualityStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataQualityStatisticsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDataQualityStatisticsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a list of data quality statistics.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataQualityStatistics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDataQualityStatistics service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityStatistics">REST API Reference for ListDataQualityStatistics Operation</seealso>
+        public virtual Task<ListDataQualityStatisticsResponse> ListDataQualityStatisticsAsync(ListDataQualityStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataQualityStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataQualityStatisticsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDataQualityStatisticsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListDevEndpoints
 
         internal virtual ListDevEndpointsResponse ListDevEndpoints(ListDevEndpointsRequest request)
@@ -8342,6 +8564,49 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = PutDataCatalogEncryptionSettingsResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutDataCatalogEncryptionSettingsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutDataQualityProfileAnnotation
+
+        internal virtual PutDataQualityProfileAnnotationResponse PutDataQualityProfileAnnotation(PutDataQualityProfileAnnotationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutDataQualityProfileAnnotationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutDataQualityProfileAnnotationResponseUnmarshaller.Instance;
+
+            return Invoke<PutDataQualityProfileAnnotationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Annotate all datapoints for a Profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutDataQualityProfileAnnotation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutDataQualityProfileAnnotation service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutDataQualityProfileAnnotation">REST API Reference for PutDataQualityProfileAnnotation Operation</seealso>
+        public virtual Task<PutDataQualityProfileAnnotationResponse> PutDataQualityProfileAnnotationAsync(PutDataQualityProfileAnnotationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutDataQualityProfileAnnotationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutDataQualityProfileAnnotationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutDataQualityProfileAnnotationResponse>(request, options, cancellationToken);
         }
 
         #endregion

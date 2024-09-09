@@ -64,37 +64,40 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
                 throw new AmazonCognitoSyncException("Request object does not have required field IdentityPoolId set");
             request.AddPathResource("{IdentityPoolId}", StringUtils.FromString(publicRequest.IdentityPoolId));
             request.ResourcePath = "/identitypools/{IdentityPoolId}/configuration";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCognitoStreams())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CognitoStreams");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCognitoStreams())
+                    {
+                        context.Writer.WritePropertyName("CognitoStreams");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = CognitoStreamsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CognitoStreams, context);
+                        var marshaller = CognitoStreamsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CognitoStreams, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetPushSync())
+                    {
+                        context.Writer.WritePropertyName("PushSync");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PushSyncMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.PushSync, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPushSync())
-                {
-                    context.Writer.WritePropertyName("PushSync");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PushSyncMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PushSync, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

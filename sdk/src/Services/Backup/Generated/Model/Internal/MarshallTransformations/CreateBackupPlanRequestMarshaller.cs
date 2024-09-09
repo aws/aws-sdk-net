@@ -61,46 +61,49 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/backup/plans/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBackupPlan())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("BackupPlan");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = BackupPlanInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.BackupPlan, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetBackupPlanTags())
-                {
-                    context.Writer.WritePropertyName("BackupPlanTags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestBackupPlanTagsKvp in publicRequest.BackupPlanTags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBackupPlan())
                     {
-                        context.Writer.WritePropertyName(publicRequestBackupPlanTagsKvp.Key);
-                        var publicRequestBackupPlanTagsValue = publicRequestBackupPlanTagsKvp.Value;
+                        context.Writer.WritePropertyName("BackupPlan");
+                        context.Writer.WriteObjectStart();
 
-                            context.Writer.Write(publicRequestBackupPlanTagsValue);
+                        var marshaller = BackupPlanInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.BackupPlan, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetBackupPlanTags())
+                    {
+                        context.Writer.WritePropertyName("BackupPlanTags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestBackupPlanTagsKvp in publicRequest.BackupPlanTags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestBackupPlanTagsKvp.Key);
+                            var publicRequestBackupPlanTagsValue = publicRequestBackupPlanTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestBackupPlanTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetCreatorRequestId())
+                    {
+                        context.Writer.WritePropertyName("CreatorRequestId");
+                        context.Writer.Write(publicRequest.CreatorRequestId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCreatorRequestId())
-                {
-                    context.Writer.WritePropertyName("CreatorRequestId");
-                    context.Writer.Write(publicRequest.CreatorRequestId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

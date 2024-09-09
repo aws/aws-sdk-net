@@ -43,7 +43,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (string.IsNullOrEmpty(getObjectAclRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "GetACLRequest.BucketName");
-            //Not checking if Key is null or empty because GetAcl allows to query for both a Bucket or an Object. TODO: deprecate GetACL and create two separate operations
+            //Not checking if Key is null or empty because GetAcl allows to query for both a Bucket or an Object.
             request.AddPathResource("{Key+}", S3Transforms.ToStringValue(getObjectAclRequest.Key));
             request.ResourcePath = "/{Key+}";
 

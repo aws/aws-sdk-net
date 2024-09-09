@@ -63,56 +63,59 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDryRun())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DryRun");
-                    context.Writer.Write(publicRequest.DryRun.Value);
-                }
-
-                if(publicRequest.IsSetGrantTokens())
-                {
-                    context.Writer.WritePropertyName("GrantTokens");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestGrantTokensListValue in publicRequest.GrantTokens)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDryRun())
                     {
-                            context.Writer.Write(publicRequestGrantTokensListValue);
+                        context.Writer.WritePropertyName("DryRun");
+                        context.Writer.Write(publicRequest.DryRun.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetGrantTokens())
+                    {
+                        context.Writer.WritePropertyName("GrantTokens");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestGrantTokensListValue in publicRequest.GrantTokens)
+                        {
+                                context.Writer.Write(publicRequestGrantTokensListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetKeyId())
+                    {
+                        context.Writer.WritePropertyName("KeyId");
+                        context.Writer.Write(publicRequest.KeyId);
+                    }
+
+                    if(publicRequest.IsSetMessage())
+                    {
+                        context.Writer.WritePropertyName("Message");
+                        context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.Message));
+                    }
+
+                    if(publicRequest.IsSetMessageType())
+                    {
+                        context.Writer.WritePropertyName("MessageType");
+                        context.Writer.Write(publicRequest.MessageType);
+                    }
+
+                    if(publicRequest.IsSetSigningAlgorithm())
+                    {
+                        context.Writer.WritePropertyName("SigningAlgorithm");
+                        context.Writer.Write(publicRequest.SigningAlgorithm);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetKeyId())
-                {
-                    context.Writer.WritePropertyName("KeyId");
-                    context.Writer.Write(publicRequest.KeyId);
-                }
-
-                if(publicRequest.IsSetMessage())
-                {
-                    context.Writer.WritePropertyName("Message");
-                    context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.Message));
-                }
-
-                if(publicRequest.IsSetMessageType())
-                {
-                    context.Writer.WritePropertyName("MessageType");
-                    context.Writer.Write(publicRequest.MessageType);
-                }
-
-                if(publicRequest.IsSetSigningAlgorithm())
-                {
-                    context.Writer.WritePropertyName("SigningAlgorithm");
-                    context.Writer.Write(publicRequest.SigningAlgorithm);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

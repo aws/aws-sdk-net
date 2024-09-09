@@ -64,77 +64,80 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 throw new AmazonBedrockAgentException("Request object does not have required field KnowledgeBaseId set");
             request.AddPathResource("{knowledgeBaseId}", StringUtils.FromString(publicRequest.KnowledgeBaseId));
             request.ResourcePath = "/knowledgebases/{knowledgeBaseId}/datasources/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetDataDeletionPolicy())
+                    {
+                        context.Writer.WritePropertyName("dataDeletionPolicy");
+                        context.Writer.Write(publicRequest.DataDeletionPolicy);
+                    }
+
+                    if(publicRequest.IsSetDataSourceConfiguration())
+                    {
+                        context.Writer.WritePropertyName("dataSourceConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DataSourceConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DataSourceConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetServerSideEncryptionConfiguration())
+                    {
+                        context.Writer.WritePropertyName("serverSideEncryptionConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ServerSideEncryptionConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ServerSideEncryptionConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetVectorIngestionConfiguration())
+                    {
+                        context.Writer.WritePropertyName("vectorIngestionConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = VectorIngestionConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.VectorIngestionConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDataDeletionPolicy())
-                {
-                    context.Writer.WritePropertyName("dataDeletionPolicy");
-                    context.Writer.Write(publicRequest.DataDeletionPolicy);
-                }
-
-                if(publicRequest.IsSetDataSourceConfiguration())
-                {
-                    context.Writer.WritePropertyName("dataSourceConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DataSourceConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DataSourceConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetServerSideEncryptionConfiguration())
-                {
-                    context.Writer.WritePropertyName("serverSideEncryptionConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ServerSideEncryptionConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ServerSideEncryptionConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetVectorIngestionConfiguration())
-                {
-                    context.Writer.WritePropertyName("vectorIngestionConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = VectorIngestionConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.VectorIngestionConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

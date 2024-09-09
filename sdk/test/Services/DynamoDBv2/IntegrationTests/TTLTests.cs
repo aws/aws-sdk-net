@@ -77,7 +77,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             ApproximatelyEqual(EpochDate, docV2["NonEpochDate1"].AsDateTime());
             ApproximatelyEqual(EpochDate, docV2["NonEpochDate1"].AsDateTime());
 
-            var epochTable = Context.GetTargetTable<EpochEmployee>();
+            var epochTable = Context.GetTargetTable<EpochEmployee>() as Table; // Do an explicit cast since we want to access internal methods.
             var epochAttributes = epochTable.GetStoreAsEpoch().ToList();
             Assert.AreNotEqual(0, epochAttributes.Count);
 
@@ -88,7 +88,67 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.IsNotNull(epochMap["NonEpochDate2"].S);
         }
 
-        public void TestStoreAsEpoch(Table hashRangeTable, Table numericHashRangeTable)
+        public void TestStoreAsAnnotatedEpoch()
+        {
+            var numericEmployee = new AnnotatedNumEpochEmployee
+            {
+                Name = "Bob",
+                Age = 45,
+                CreationTime = EpochDate,
+                EpochDate2 = EpochDate,
+                NonEpochDate1 = EpochDate,
+                NonEpochDate2 = EpochDate
+            };
+            AnnotatedEpochEmployee employee = numericEmployee;
+
+            Context.Save(employee);
+            var storedEmployee = Context.Load<AnnotatedEpochEmployee>(employee.CreationTime, employee.Name);
+            Assert.IsNotNull(storedEmployee);
+            ApproximatelyEqual(EpochDate, storedEmployee.CreationTime);
+            storedEmployee = Context.Load<AnnotatedEpochEmployee>(employee);
+            Assert.IsNotNull(storedEmployee);
+            ApproximatelyEqual(EpochDate, storedEmployee.CreationTime);
+
+
+            Context.Save(numericEmployee);
+            var storedNumericEmployee = Context.Load<AnnotatedNumEpochEmployee>(employee.CreationTime, employee.Name);
+            Assert.IsNotNull(storedNumericEmployee);
+            ApproximatelyEqual(EpochDate, storedNumericEmployee.CreationTime);
+            storedNumericEmployee = Context.Load<AnnotatedNumEpochEmployee>(numericEmployee);
+            Assert.IsNotNull(storedNumericEmployee);
+            ApproximatelyEqual(EpochDate, storedNumericEmployee.CreationTime);
+
+
+            var doc = Context.ToDocument(employee);
+            ApproximatelyEqual(EpochDate, doc["CreationTime"].AsDateTime());
+            ApproximatelyEqual(EpochDate, doc["EpochDate2"].AsDateTime());
+            ApproximatelyEqual(EpochDate, doc["NonEpochDate1"].AsDateTime());
+            ApproximatelyEqual(EpochDate, doc["NonEpochDate1"].AsDateTime());
+
+            var docV1 = doc.ForceConversion(DynamoDBEntryConversion.V1);
+            ApproximatelyEqual(EpochDate, docV1["CreationTime"].AsDateTime());
+            ApproximatelyEqual(EpochDate, docV1["EpochDate2"].AsDateTime());
+            ApproximatelyEqual(EpochDate, docV1["NonEpochDate1"].AsDateTime());
+            ApproximatelyEqual(EpochDate, docV1["NonEpochDate1"].AsDateTime());
+
+            var docV2 = doc.ForceConversion(DynamoDBEntryConversion.V1);
+            ApproximatelyEqual(EpochDate, docV2["CreationTime"].AsDateTime());
+            ApproximatelyEqual(EpochDate, docV2["EpochDate2"].AsDateTime());
+            ApproximatelyEqual(EpochDate, docV2["NonEpochDate1"].AsDateTime());
+            ApproximatelyEqual(EpochDate, docV2["NonEpochDate1"].AsDateTime());
+
+            var epochTable = Context.GetTargetTable<AnnotatedEpochEmployee>() as Table;
+            var epochAttributes = epochTable.GetStoreAsEpoch().ToList();
+            Assert.AreNotEqual(0, epochAttributes.Count);
+
+            var epochMap = epochTable.ToAttributeMap(doc);
+            Assert.IsNotNull(epochMap["CreationTime"].N);
+            Assert.IsNotNull(epochMap["EpochDate2"].N);
+            Assert.IsNotNull(epochMap["NonEpochDate1"].S);
+            Assert.IsNotNull(epochMap["NonEpochDate2"].S);
+        }
+
+        public void TestStoreAsEpoch(ITable hashRangeTable, ITable numericHashRangeTable)
         {
             // verify conversions
             var e1 = DateTimeToEpochSeconds((Primitive) EpochDate, "test") as Primitive;
@@ -106,14 +166,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             {
                 AttributesToStoreAsEpoch = new List<string> { "CreationTime", "EpochDate2" }
             };
-            var epochTable = Table.LoadTable(Client, config);
+#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
+            var epochTable = Table.LoadTable(Client, config) as Table; // Do an explicit cast since we want to access internal methods.
+#pragma warning restore CS0618 // Re-enable the warning
             CollectionAssert.AreEqual(config.AttributesToStoreAsEpoch, epochTable.GetStoreAsEpoch().ToList());
 
             config = new TableConfig(numericHashRangeTable.TableName)
             {
                 AttributesToStoreAsEpoch = new List<string> { "CreationTime", "EpochDate2" }
             };
+#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
             var numericEpochTable = Table.LoadTable(Client, config);
+#pragma warning restore CS0618 // Re-enable the warning
             CollectionAssert.AreEqual(config.AttributesToStoreAsEpoch, epochTable.GetStoreAsEpoch().ToList());
 
             // verify ToAttributeMap calls
@@ -258,7 +322,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             doc["NonEpochDate"] = EpochDate;
             return doc;
         }
-        private static void TestWrittenData(Primitive hash, Primitive range, Table hashRangeTable, Table epochTable, bool checkForConditionalUpdate = false)
+        private static void TestWrittenData(Primitive hash, Primitive range, ITable hashRangeTable, ITable epochTable, bool checkForConditionalUpdate = false)
         {
             if (hashRangeTable != null)
             {

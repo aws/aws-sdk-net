@@ -63,92 +63,95 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAgentVersion())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AgentVersion");
-                    context.Writer.Write(publicRequest.AgentVersion);
-                }
-
-                if(publicRequest.IsSetAmiId())
-                {
-                    context.Writer.WritePropertyName("AmiId");
-                    context.Writer.Write(publicRequest.AmiId);
-                }
-
-                if(publicRequest.IsSetArchitecture())
-                {
-                    context.Writer.WritePropertyName("Architecture");
-                    context.Writer.Write(publicRequest.Architecture);
-                }
-
-                if(publicRequest.IsSetAutoScalingType())
-                {
-                    context.Writer.WritePropertyName("AutoScalingType");
-                    context.Writer.Write(publicRequest.AutoScalingType);
-                }
-
-                if(publicRequest.IsSetEbsOptimized())
-                {
-                    context.Writer.WritePropertyName("EbsOptimized");
-                    context.Writer.Write(publicRequest.EbsOptimized.Value);
-                }
-
-                if(publicRequest.IsSetHostname())
-                {
-                    context.Writer.WritePropertyName("Hostname");
-                    context.Writer.Write(publicRequest.Hostname);
-                }
-
-                if(publicRequest.IsSetInstallUpdatesOnBoot())
-                {
-                    context.Writer.WritePropertyName("InstallUpdatesOnBoot");
-                    context.Writer.Write(publicRequest.InstallUpdatesOnBoot.Value);
-                }
-
-                if(publicRequest.IsSetInstanceId())
-                {
-                    context.Writer.WritePropertyName("InstanceId");
-                    context.Writer.Write(publicRequest.InstanceId);
-                }
-
-                if(publicRequest.IsSetInstanceType())
-                {
-                    context.Writer.WritePropertyName("InstanceType");
-                    context.Writer.Write(publicRequest.InstanceType);
-                }
-
-                if(publicRequest.IsSetLayerIds())
-                {
-                    context.Writer.WritePropertyName("LayerIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLayerIdsListValue in publicRequest.LayerIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAgentVersion())
                     {
-                            context.Writer.Write(publicRequestLayerIdsListValue);
+                        context.Writer.WritePropertyName("AgentVersion");
+                        context.Writer.Write(publicRequest.AgentVersion);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetAmiId())
+                    {
+                        context.Writer.WritePropertyName("AmiId");
+                        context.Writer.Write(publicRequest.AmiId);
+                    }
+
+                    if(publicRequest.IsSetArchitecture())
+                    {
+                        context.Writer.WritePropertyName("Architecture");
+                        context.Writer.Write(publicRequest.Architecture);
+                    }
+
+                    if(publicRequest.IsSetAutoScalingType())
+                    {
+                        context.Writer.WritePropertyName("AutoScalingType");
+                        context.Writer.Write(publicRequest.AutoScalingType);
+                    }
+
+                    if(publicRequest.IsSetEbsOptimized())
+                    {
+                        context.Writer.WritePropertyName("EbsOptimized");
+                        context.Writer.Write(publicRequest.EbsOptimized.Value);
+                    }
+
+                    if(publicRequest.IsSetHostname())
+                    {
+                        context.Writer.WritePropertyName("Hostname");
+                        context.Writer.Write(publicRequest.Hostname);
+                    }
+
+                    if(publicRequest.IsSetInstallUpdatesOnBoot())
+                    {
+                        context.Writer.WritePropertyName("InstallUpdatesOnBoot");
+                        context.Writer.Write(publicRequest.InstallUpdatesOnBoot.Value);
+                    }
+
+                    if(publicRequest.IsSetInstanceId())
+                    {
+                        context.Writer.WritePropertyName("InstanceId");
+                        context.Writer.Write(publicRequest.InstanceId);
+                    }
+
+                    if(publicRequest.IsSetInstanceType())
+                    {
+                        context.Writer.WritePropertyName("InstanceType");
+                        context.Writer.Write(publicRequest.InstanceType);
+                    }
+
+                    if(publicRequest.IsSetLayerIds())
+                    {
+                        context.Writer.WritePropertyName("LayerIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLayerIdsListValue in publicRequest.LayerIds)
+                        {
+                                context.Writer.Write(publicRequestLayerIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetOs())
+                    {
+                        context.Writer.WritePropertyName("Os");
+                        context.Writer.Write(publicRequest.Os);
+                    }
+
+                    if(publicRequest.IsSetSshKeyName())
+                    {
+                        context.Writer.WritePropertyName("SshKeyName");
+                        context.Writer.Write(publicRequest.SshKeyName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetOs())
-                {
-                    context.Writer.WritePropertyName("Os");
-                    context.Writer.Write(publicRequest.Os);
-                }
-
-                if(publicRequest.IsSetSshKeyName())
-                {
-                    context.Writer.WritePropertyName("SshKeyName");
-                    context.Writer.Write(publicRequest.SshKeyName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

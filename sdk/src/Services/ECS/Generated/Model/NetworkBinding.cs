@@ -32,7 +32,7 @@ namespace Amazon.ECS.Model
     /// <summary>
     /// Details on the network bindings between a container and its host container instance.
     /// After a task reaches the <c>RUNNING</c> status, manual and automatic host and container
-    /// port assignments are visible in the <c>networkBindings</c> section of <a>DescribeTasks</a>
+    /// port assignments are visible in the <c>networkBindings</c> section of <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html">DescribeTasks</a>
     /// API responses.
     /// </summary>
     public partial class NetworkBinding

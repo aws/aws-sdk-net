@@ -63,55 +63,58 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDestinations())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Destinations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDestinationsListValue in publicRequest.Destinations)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDestinations())
                     {
-                            context.Writer.Write(publicRequestDestinationsListValue);
+                        context.Writer.WritePropertyName("Destinations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDestinationsListValue in publicRequest.Destinations)
+                        {
+                                context.Writer.Write(publicRequestDestinationsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetEndEventTime())
+                    {
+                        context.Writer.WritePropertyName("EndEventTime");
+                        context.Writer.Write(publicRequest.EndEventTime.Value);
+                    }
+
+                    if(publicRequest.IsSetImportId())
+                    {
+                        context.Writer.WritePropertyName("ImportId");
+                        context.Writer.Write(publicRequest.ImportId);
+                    }
+
+                    if(publicRequest.IsSetImportSource())
+                    {
+                        context.Writer.WritePropertyName("ImportSource");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ImportSourceMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ImportSource, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetStartEventTime())
+                    {
+                        context.Writer.WritePropertyName("StartEventTime");
+                        context.Writer.Write(publicRequest.StartEventTime.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEndEventTime())
-                {
-                    context.Writer.WritePropertyName("EndEventTime");
-                    context.Writer.Write(publicRequest.EndEventTime.Value);
-                }
-
-                if(publicRequest.IsSetImportId())
-                {
-                    context.Writer.WritePropertyName("ImportId");
-                    context.Writer.Write(publicRequest.ImportId);
-                }
-
-                if(publicRequest.IsSetImportSource())
-                {
-                    context.Writer.WritePropertyName("ImportSource");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ImportSourceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ImportSource, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetStartEventTime())
-                {
-                    context.Writer.WritePropertyName("StartEventTime");
-                    context.Writer.Write(publicRequest.StartEventTime.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

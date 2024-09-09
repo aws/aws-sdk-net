@@ -63,44 +63,47 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConfigurationAggregatorName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ConfigurationAggregatorName");
-                    context.Writer.Write(publicRequest.ConfigurationAggregatorName);
-                }
-
-                if(publicRequest.IsSetLimit())
-                {
-                    context.Writer.WritePropertyName("Limit");
-                    context.Writer.Write(publicRequest.Limit.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetUpdateStatus())
-                {
-                    context.Writer.WritePropertyName("UpdateStatus");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestUpdateStatusListValue in publicRequest.UpdateStatus)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConfigurationAggregatorName())
                     {
-                            context.Writer.Write(publicRequestUpdateStatusListValue);
+                        context.Writer.WritePropertyName("ConfigurationAggregatorName");
+                        context.Writer.Write(publicRequest.ConfigurationAggregatorName);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetLimit())
+                    {
+                        context.Writer.WritePropertyName("Limit");
+                        context.Writer.Write(publicRequest.Limit.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetUpdateStatus())
+                    {
+                        context.Writer.WritePropertyName("UpdateStatus");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestUpdateStatusListValue in publicRequest.UpdateStatus)
+                        {
+                                context.Writer.Write(publicRequestUpdateStatusListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

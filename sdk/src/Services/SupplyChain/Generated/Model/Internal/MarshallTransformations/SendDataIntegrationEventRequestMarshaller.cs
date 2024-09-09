@@ -64,50 +64,53 @@ namespace Amazon.SupplyChain.Model.Internal.MarshallTransformations
                 throw new AmazonSupplyChainException("Request object does not have required field InstanceId set");
             request.AddPathResource("{instanceId}", StringUtils.FromString(publicRequest.InstanceId));
             request.ResourcePath = "/api-data/data-integration/instance/{instanceId}/data-integration-events";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetData())
+                    {
+                        context.Writer.WritePropertyName("data");
+                        context.Writer.Write(publicRequest.Data);
+                    }
+
+                    if(publicRequest.IsSetEventGroupId())
+                    {
+                        context.Writer.WritePropertyName("eventGroupId");
+                        context.Writer.Write(publicRequest.EventGroupId);
+                    }
+
+                    if(publicRequest.IsSetEventTimestamp())
+                    {
+                        context.Writer.WritePropertyName("eventTimestamp");
+                        context.Writer.Write(publicRequest.EventTimestamp.Value);
+                    }
+
+                    if(publicRequest.IsSetEventType())
+                    {
+                        context.Writer.WritePropertyName("eventType");
+                        context.Writer.Write(publicRequest.EventType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetData())
-                {
-                    context.Writer.WritePropertyName("data");
-                    context.Writer.Write(publicRequest.Data);
-                }
-
-                if(publicRequest.IsSetEventGroupId())
-                {
-                    context.Writer.WritePropertyName("eventGroupId");
-                    context.Writer.Write(publicRequest.EventGroupId);
-                }
-
-                if(publicRequest.IsSetEventTimestamp())
-                {
-                    context.Writer.WritePropertyName("eventTimestamp");
-                    context.Writer.Write(publicRequest.EventTimestamp.Value);
-                }
-
-                if(publicRequest.IsSetEventType())
-                {
-                    context.Writer.WritePropertyName("eventType");
-                    context.Writer.Write(publicRequest.EventType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

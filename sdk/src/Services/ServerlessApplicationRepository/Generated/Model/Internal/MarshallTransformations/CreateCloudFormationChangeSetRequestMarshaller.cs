@@ -64,127 +64,130 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
                 throw new AmazonServerlessApplicationRepositoryException("Request object does not have required field ApplicationId set");
             request.AddPathResource("{applicationId}", StringUtils.FromString(publicRequest.ApplicationId));
             request.ResourcePath = "/applications/{applicationId}/changesets";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCapabilities())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("capabilities");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCapabilitiesListValue in publicRequest.Capabilities)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCapabilities())
                     {
-                            context.Writer.Write(publicRequestCapabilitiesListValue);
+                        context.Writer.WritePropertyName("capabilities");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCapabilitiesListValue in publicRequest.Capabilities)
+                        {
+                                context.Writer.Write(publicRequestCapabilitiesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetChangeSetName())
-                {
-                    context.Writer.WritePropertyName("changeSetName");
-                    context.Writer.Write(publicRequest.ChangeSetName);
-                }
-
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetNotificationArns())
-                {
-                    context.Writer.WritePropertyName("notificationArns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestNotificationArnsListValue in publicRequest.NotificationArns)
+                    if(publicRequest.IsSetChangeSetName())
                     {
-                            context.Writer.Write(publicRequestNotificationArnsListValue);
+                        context.Writer.WritePropertyName("changeSetName");
+                        context.Writer.Write(publicRequest.ChangeSetName);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetParameterOverrides())
-                {
-                    context.Writer.WritePropertyName("parameterOverrides");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestParameterOverridesListValue in publicRequest.ParameterOverrides)
+                    if(publicRequest.IsSetClientToken())
                     {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetNotificationArns())
+                    {
+                        context.Writer.WritePropertyName("notificationArns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestNotificationArnsListValue in publicRequest.NotificationArns)
+                        {
+                                context.Writer.Write(publicRequestNotificationArnsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetParameterOverrides())
+                    {
+                        context.Writer.WritePropertyName("parameterOverrides");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestParameterOverridesListValue in publicRequest.ParameterOverrides)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ParameterValueMarshaller.Instance;
+                            marshaller.Marshall(publicRequestParameterOverridesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetResourceTypes())
+                    {
+                        context.Writer.WritePropertyName("resourceTypes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestResourceTypesListValue in publicRequest.ResourceTypes)
+                        {
+                                context.Writer.Write(publicRequestResourceTypesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetRollbackConfiguration())
+                    {
+                        context.Writer.WritePropertyName("rollbackConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = ParameterValueMarshaller.Instance;
-                        marshaller.Marshall(publicRequestParameterOverridesListValue, context);
+                        var marshaller = RollbackConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RollbackConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetResourceTypes())
-                {
-                    context.Writer.WritePropertyName("resourceTypes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestResourceTypesListValue in publicRequest.ResourceTypes)
+                    if(publicRequest.IsSetSemanticVersion())
                     {
-                            context.Writer.Write(publicRequestResourceTypesListValue);
+                        context.Writer.WritePropertyName("semanticVersion");
+                        context.Writer.Write(publicRequest.SemanticVersion);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetRollbackConfiguration())
-                {
-                    context.Writer.WritePropertyName("rollbackConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RollbackConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RollbackConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSemanticVersion())
-                {
-                    context.Writer.WritePropertyName("semanticVersion");
-                    context.Writer.Write(publicRequest.SemanticVersion);
-                }
-
-                if(publicRequest.IsSetStackName())
-                {
-                    context.Writer.WritePropertyName("stackName");
-                    context.Writer.Write(publicRequest.StackName);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetStackName())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("stackName");
+                        context.Writer.Write(publicRequest.StackName);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTemplateId())
+                    {
+                        context.Writer.WritePropertyName("templateId");
+                        context.Writer.Write(publicRequest.TemplateId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTemplateId())
-                {
-                    context.Writer.WritePropertyName("templateId");
-                    context.Writer.Write(publicRequest.TemplateId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

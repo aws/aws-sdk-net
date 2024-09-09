@@ -67,60 +67,63 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 throw new AmazonApiGatewayV2Exception("Request object does not have required field RouteId set");
             request.AddPathResource("{routeId}", StringUtils.FromString(publicRequest.RouteId));
             request.ResourcePath = "/v2/apis/{apiId}/routes/{routeId}/routeresponses";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetModelSelectionExpression())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("modelSelectionExpression");
-                    context.Writer.Write(publicRequest.ModelSelectionExpression);
-                }
-
-                if(publicRequest.IsSetResponseModels())
-                {
-                    context.Writer.WritePropertyName("responseModels");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestResponseModelsKvp in publicRequest.ResponseModels)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetModelSelectionExpression())
                     {
-                        context.Writer.WritePropertyName(publicRequestResponseModelsKvp.Key);
-                        var publicRequestResponseModelsValue = publicRequestResponseModelsKvp.Value;
-
-                            context.Writer.Write(publicRequestResponseModelsValue);
+                        context.Writer.WritePropertyName("modelSelectionExpression");
+                        context.Writer.Write(publicRequest.ModelSelectionExpression);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetResponseParameters())
-                {
-                    context.Writer.WritePropertyName("responseParameters");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestResponseParametersKvp in publicRequest.ResponseParameters)
+                    if(publicRequest.IsSetResponseModels())
                     {
-                        context.Writer.WritePropertyName(publicRequestResponseParametersKvp.Key);
-                        var publicRequestResponseParametersValue = publicRequestResponseParametersKvp.Value;
-
+                        context.Writer.WritePropertyName("responseModels");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestResponseModelsKvp in publicRequest.ResponseModels)
+                        {
+                            context.Writer.WritePropertyName(publicRequestResponseModelsKvp.Key);
+                            var publicRequestResponseModelsValue = publicRequestResponseModelsKvp.Value;
 
-                        var marshaller = ParameterConstraintsMarshaller.Instance;
-                        marshaller.Marshall(publicRequestResponseParametersValue, context);
-
+                                context.Writer.Write(publicRequestResponseModelsValue);
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetResponseParameters())
+                    {
+                        context.Writer.WritePropertyName("responseParameters");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestResponseParametersKvp in publicRequest.ResponseParameters)
+                        {
+                            context.Writer.WritePropertyName(publicRequestResponseParametersKvp.Key);
+                            var publicRequestResponseParametersValue = publicRequestResponseParametersKvp.Value;
+
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ParameterConstraintsMarshaller.Instance;
+                            marshaller.Marshall(publicRequestResponseParametersValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRouteResponseKey())
+                    {
+                        context.Writer.WritePropertyName("routeResponseKey");
+                        context.Writer.Write(publicRequest.RouteResponseKey);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRouteResponseKey())
-                {
-                    context.Writer.WritePropertyName("routeResponseKey");
-                    context.Writer.Write(publicRequest.RouteResponseKey);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

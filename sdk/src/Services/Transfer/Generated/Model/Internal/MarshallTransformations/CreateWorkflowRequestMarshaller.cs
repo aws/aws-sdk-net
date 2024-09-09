@@ -63,69 +63,72 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetOnExceptionSteps())
-                {
-                    context.Writer.WritePropertyName("OnExceptionSteps");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestOnExceptionStepsListValue in publicRequest.OnExceptionSteps)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = WorkflowStepMarshaller.Instance;
-                        marshaller.Marshall(publicRequestOnExceptionStepsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetSteps())
-                {
-                    context.Writer.WritePropertyName("Steps");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestStepsListValue in publicRequest.Steps)
+                    if(publicRequest.IsSetOnExceptionSteps())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("OnExceptionSteps");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestOnExceptionStepsListValue in publicRequest.OnExceptionSteps)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = WorkflowStepMarshaller.Instance;
-                        marshaller.Marshall(publicRequestStepsListValue, context);
+                            var marshaller = WorkflowStepMarshaller.Instance;
+                            marshaller.Marshall(publicRequestOnExceptionStepsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetSteps())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("Steps");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestStepsListValue in publicRequest.Steps)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                            var marshaller = WorkflowStepMarshaller.Instance;
+                            marshaller.Marshall(publicRequestStepsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

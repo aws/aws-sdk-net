@@ -70,35 +70,38 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetForce())
                 request.Parameters.Add("force", StringUtils.FromBool(publicRequest.Force));
             request.ResourcePath = "/things/{thingName}/jobs/{jobId}/cancel";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetExpectedVersion())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("expectedVersion");
-                    context.Writer.Write(publicRequest.ExpectedVersion.Value);
-                }
-
-                if(publicRequest.IsSetStatusDetails())
-                {
-                    context.Writer.WritePropertyName("statusDetails");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestStatusDetailsKvp in publicRequest.StatusDetails)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetExpectedVersion())
                     {
-                        context.Writer.WritePropertyName(publicRequestStatusDetailsKvp.Key);
-                        var publicRequestStatusDetailsValue = publicRequestStatusDetailsKvp.Value;
-
-                            context.Writer.Write(publicRequestStatusDetailsValue);
+                        context.Writer.WritePropertyName("expectedVersion");
+                        context.Writer.Write(publicRequest.ExpectedVersion.Value);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetStatusDetails())
+                    {
+                        context.Writer.WritePropertyName("statusDetails");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestStatusDetailsKvp in publicRequest.StatusDetails)
+                        {
+                            context.Writer.WritePropertyName(publicRequestStatusDetailsKvp.Key);
+                            var publicRequestStatusDetailsValue = publicRequestStatusDetailsKvp.Value;
+
+                                context.Writer.Write(publicRequestStatusDetailsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             request.UseQueryString = true;

@@ -63,50 +63,53 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccountId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AccountId");
-                    context.Writer.Write(publicRequest.AccountId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccountId())
+                    {
+                        context.Writer.WritePropertyName("AccountId");
+                        context.Writer.Write(publicRequest.AccountId);
+                    }
+
+                    if(publicRequest.IsSetBudgetName())
+                    {
+                        context.Writer.WritePropertyName("BudgetName");
+                        context.Writer.Write(publicRequest.BudgetName);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetTimePeriod())
+                    {
+                        context.Writer.WritePropertyName("TimePeriod");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TimePeriodMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TimePeriod, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetBudgetName())
-                {
-                    context.Writer.WritePropertyName("BudgetName");
-                    context.Writer.Write(publicRequest.BudgetName);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetTimePeriod())
-                {
-                    context.Writer.WritePropertyName("TimePeriod");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TimePeriodMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TimePeriod, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

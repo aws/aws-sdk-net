@@ -67,27 +67,30 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
                 throw new AmazonLookoutforVisionException("Request object does not have required field ProjectName set");
             request.AddPathResource("{projectName}", StringUtils.FromString(publicRequest.ProjectName));
             request.ResourcePath = "/2020-11-20/projects/{projectName}/models/{modelVersion}/start";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMaxInferenceUnits())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("MaxInferenceUnits");
-                    context.Writer.Write(publicRequest.MaxInferenceUnits.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMaxInferenceUnits())
+                    {
+                        context.Writer.WritePropertyName("MaxInferenceUnits");
+                        context.Writer.Write(publicRequest.MaxInferenceUnits.Value);
+                    }
+
+                    if(publicRequest.IsSetMinInferenceUnits())
+                    {
+                        context.Writer.WritePropertyName("MinInferenceUnits");
+                        context.Writer.Write(publicRequest.MinInferenceUnits.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMinInferenceUnits())
-                {
-                    context.Writer.WritePropertyName("MinInferenceUnits");
-                    context.Writer.Write(publicRequest.MinInferenceUnits.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

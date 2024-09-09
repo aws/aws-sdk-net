@@ -63,38 +63,41 @@ namespace Amazon.CloudHSM.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetHapgArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("HapgArn");
-                    context.Writer.Write(publicRequest.HapgArn);
-                }
-
-                if(publicRequest.IsSetLabel())
-                {
-                    context.Writer.WritePropertyName("Label");
-                    context.Writer.Write(publicRequest.Label);
-                }
-
-                if(publicRequest.IsSetPartitionSerialList())
-                {
-                    context.Writer.WritePropertyName("PartitionSerialList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPartitionSerialListListValue in publicRequest.PartitionSerialList)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetHapgArn())
                     {
-                            context.Writer.Write(publicRequestPartitionSerialListListValue);
+                        context.Writer.WritePropertyName("HapgArn");
+                        context.Writer.Write(publicRequest.HapgArn);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetLabel())
+                    {
+                        context.Writer.WritePropertyName("Label");
+                        context.Writer.Write(publicRequest.Label);
+                    }
+
+                    if(publicRequest.IsSetPartitionSerialList())
+                    {
+                        context.Writer.WritePropertyName("PartitionSerialList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPartitionSerialListListValue in publicRequest.PartitionSerialList)
+                        {
+                                context.Writer.Write(publicRequestPartitionSerialListListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

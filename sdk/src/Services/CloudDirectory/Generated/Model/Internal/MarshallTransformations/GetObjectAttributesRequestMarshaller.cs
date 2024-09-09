@@ -61,48 +61,51 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/amazonclouddirectory/2017-01-11/object/attributes/get";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAttributeNames())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AttributeNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAttributeNamesListValue in publicRequest.AttributeNames)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAttributeNames())
                     {
-                            context.Writer.Write(publicRequestAttributeNamesListValue);
+                        context.Writer.WritePropertyName("AttributeNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAttributeNamesListValue in publicRequest.AttributeNames)
+                        {
+                                context.Writer.Write(publicRequestAttributeNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetObjectReference())
+                    {
+                        context.Writer.WritePropertyName("ObjectReference");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ObjectReferenceMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ObjectReference, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSchemaFacet())
+                    {
+                        context.Writer.WritePropertyName("SchemaFacet");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SchemaFacetMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SchemaFacet, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetObjectReference())
-                {
-                    context.Writer.WritePropertyName("ObjectReference");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ObjectReferenceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ObjectReference, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSchemaFacet())
-                {
-                    context.Writer.WritePropertyName("SchemaFacet");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SchemaFacetMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SchemaFacet, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

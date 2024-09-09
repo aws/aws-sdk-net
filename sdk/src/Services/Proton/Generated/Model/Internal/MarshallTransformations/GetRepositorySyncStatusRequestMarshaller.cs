@@ -63,39 +63,42 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBranch())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("branch");
-                    context.Writer.Write(publicRequest.Branch);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBranch())
+                    {
+                        context.Writer.WritePropertyName("branch");
+                        context.Writer.Write(publicRequest.Branch);
+                    }
+
+                    if(publicRequest.IsSetRepositoryName())
+                    {
+                        context.Writer.WritePropertyName("repositoryName");
+                        context.Writer.Write(publicRequest.RepositoryName);
+                    }
+
+                    if(publicRequest.IsSetRepositoryProvider())
+                    {
+                        context.Writer.WritePropertyName("repositoryProvider");
+                        context.Writer.Write(publicRequest.RepositoryProvider);
+                    }
+
+                    if(publicRequest.IsSetSyncType())
+                    {
+                        context.Writer.WritePropertyName("syncType");
+                        context.Writer.Write(publicRequest.SyncType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRepositoryName())
-                {
-                    context.Writer.WritePropertyName("repositoryName");
-                    context.Writer.Write(publicRequest.RepositoryName);
-                }
-
-                if(publicRequest.IsSetRepositoryProvider())
-                {
-                    context.Writer.WritePropertyName("repositoryProvider");
-                    context.Writer.Write(publicRequest.RepositoryProvider);
-                }
-
-                if(publicRequest.IsSetSyncType())
-                {
-                    context.Writer.WritePropertyName("syncType");
-                    context.Writer.Write(publicRequest.SyncType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -151,6 +151,15 @@ namespace Amazon.EC2.Model
         /// Indicates whether DNS queries made to the Amazon-provided DNS Resolver in this subnet
         /// should return synthetic IPv6 addresses for IPv4-only destinations.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You must first configure a NAT gateway in a public subnet (separate from the subnet
+        /// containing the IPv6-only workloads). For example, the subnet containing the NAT gateway
+        /// should have a <c>0.0.0.0/0</c> route pointing to the internet gateway. For more information,
+        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-nat64-dns64.html#nat-gateway-nat64-dns64-walkthrough">Configure
+        /// DNS64 and NAT64</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool? EnableDns64
         {

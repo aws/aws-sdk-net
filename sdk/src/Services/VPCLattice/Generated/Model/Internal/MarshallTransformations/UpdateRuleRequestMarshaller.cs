@@ -70,43 +70,46 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                 throw new AmazonVPCLatticeException("Request object does not have required field ServiceIdentifier set");
             request.AddPathResource("{serviceIdentifier}", StringUtils.FromString(publicRequest.ServiceIdentifier));
             request.ResourcePath = "/services/{serviceIdentifier}/listeners/{listenerIdentifier}/rules/{ruleIdentifier}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAction())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("action");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAction())
+                    {
+                        context.Writer.WritePropertyName("action");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = RuleActionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Action, context);
+                        var marshaller = RuleActionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Action, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetMatch())
+                    {
+                        context.Writer.WritePropertyName("match");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RuleMatchMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Match, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetPriority())
+                    {
+                        context.Writer.WritePropertyName("priority");
+                        context.Writer.Write(publicRequest.Priority.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMatch())
-                {
-                    context.Writer.WritePropertyName("match");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RuleMatchMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Match, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPriority())
-                {
-                    context.Writer.WritePropertyName("priority");
-                    context.Writer.Write(publicRequest.Priority.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

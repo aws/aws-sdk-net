@@ -63,89 +63,92 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAddOns())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("addOns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAddOnsListValue in publicRequest.AddOns)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAddOns())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("addOns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAddOnsListValue in publicRequest.AddOns)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = AddOnRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAddOnsListValue, context);
+                            var marshaller = AddOnRequestMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAddOnsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetAvailabilityZone())
-                {
-                    context.Writer.WritePropertyName("availabilityZone");
-                    context.Writer.Write(publicRequest.AvailabilityZone);
-                }
-
-                if(publicRequest.IsSetDiskName())
-                {
-                    context.Writer.WritePropertyName("diskName");
-                    context.Writer.Write(publicRequest.DiskName);
-                }
-
-                if(publicRequest.IsSetDiskSnapshotName())
-                {
-                    context.Writer.WritePropertyName("diskSnapshotName");
-                    context.Writer.Write(publicRequest.DiskSnapshotName);
-                }
-
-                if(publicRequest.IsSetRestoreDate())
-                {
-                    context.Writer.WritePropertyName("restoreDate");
-                    context.Writer.Write(publicRequest.RestoreDate);
-                }
-
-                if(publicRequest.IsSetSizeInGb())
-                {
-                    context.Writer.WritePropertyName("sizeInGb");
-                    context.Writer.Write(publicRequest.SizeInGb.Value);
-                }
-
-                if(publicRequest.IsSetSourceDiskName())
-                {
-                    context.Writer.WritePropertyName("sourceDiskName");
-                    context.Writer.Write(publicRequest.SourceDiskName);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetAvailabilityZone())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("availabilityZone");
+                        context.Writer.Write(publicRequest.AvailabilityZone);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDiskName())
+                    {
+                        context.Writer.WritePropertyName("diskName");
+                        context.Writer.Write(publicRequest.DiskName);
+                    }
+
+                    if(publicRequest.IsSetDiskSnapshotName())
+                    {
+                        context.Writer.WritePropertyName("diskSnapshotName");
+                        context.Writer.Write(publicRequest.DiskSnapshotName);
+                    }
+
+                    if(publicRequest.IsSetRestoreDate())
+                    {
+                        context.Writer.WritePropertyName("restoreDate");
+                        context.Writer.Write(publicRequest.RestoreDate);
+                    }
+
+                    if(publicRequest.IsSetSizeInGb())
+                    {
+                        context.Writer.WritePropertyName("sizeInGb");
+                        context.Writer.Write(publicRequest.SizeInGb.Value);
+                    }
+
+                    if(publicRequest.IsSetSourceDiskName())
+                    {
+                        context.Writer.WritePropertyName("sourceDiskName");
+                        context.Writer.Write(publicRequest.SourceDiskName);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetUseLatestRestorableAutoSnapshot())
+                    {
+                        context.Writer.WritePropertyName("useLatestRestorableAutoSnapshot");
+                        context.Writer.Write(publicRequest.UseLatestRestorableAutoSnapshot.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetUseLatestRestorableAutoSnapshot())
-                {
-                    context.Writer.WritePropertyName("useLatestRestorableAutoSnapshot");
-                    context.Writer.Write(publicRequest.UseLatestRestorableAutoSnapshot.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

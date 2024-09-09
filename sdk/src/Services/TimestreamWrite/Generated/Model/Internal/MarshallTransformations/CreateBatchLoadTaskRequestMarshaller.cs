@@ -63,77 +63,80 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetDataModelConfiguration())
+                    {
+                        context.Writer.WritePropertyName("DataModelConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DataModelConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DataModelConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDataSourceConfiguration())
+                    {
+                        context.Writer.WritePropertyName("DataSourceConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DataSourceConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DataSourceConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRecordVersion())
+                    {
+                        context.Writer.WritePropertyName("RecordVersion");
+                        context.Writer.Write(publicRequest.RecordVersion.Value);
+                    }
+
+                    if(publicRequest.IsSetReportConfiguration())
+                    {
+                        context.Writer.WritePropertyName("ReportConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ReportConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ReportConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTargetDatabaseName())
+                    {
+                        context.Writer.WritePropertyName("TargetDatabaseName");
+                        context.Writer.Write(publicRequest.TargetDatabaseName);
+                    }
+
+                    if(publicRequest.IsSetTargetTableName())
+                    {
+                        context.Writer.WritePropertyName("TargetTableName");
+                        context.Writer.Write(publicRequest.TargetTableName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDataModelConfiguration())
-                {
-                    context.Writer.WritePropertyName("DataModelConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DataModelConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DataModelConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDataSourceConfiguration())
-                {
-                    context.Writer.WritePropertyName("DataSourceConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DataSourceConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DataSourceConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRecordVersion())
-                {
-                    context.Writer.WritePropertyName("RecordVersion");
-                    context.Writer.Write(publicRequest.RecordVersion.Value);
-                }
-
-                if(publicRequest.IsSetReportConfiguration())
-                {
-                    context.Writer.WritePropertyName("ReportConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ReportConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ReportConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTargetDatabaseName())
-                {
-                    context.Writer.WritePropertyName("TargetDatabaseName");
-                    context.Writer.Write(publicRequest.TargetDatabaseName);
-                }
-
-                if(publicRequest.IsSetTargetTableName())
-                {
-                    context.Writer.WritePropertyName("TargetTableName");
-                    context.Writer.Write(publicRequest.TargetTableName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

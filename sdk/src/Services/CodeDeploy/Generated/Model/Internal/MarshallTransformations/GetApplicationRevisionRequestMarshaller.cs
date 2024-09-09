@@ -63,32 +63,35 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApplicationName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("applicationName");
-                    context.Writer.Write(publicRequest.ApplicationName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApplicationName())
+                    {
+                        context.Writer.WritePropertyName("applicationName");
+                        context.Writer.Write(publicRequest.ApplicationName);
+                    }
+
+                    if(publicRequest.IsSetRevision())
+                    {
+                        context.Writer.WritePropertyName("revision");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RevisionLocationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Revision, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRevision())
-                {
-                    context.Writer.WritePropertyName("revision");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RevisionLocationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Revision, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,33 +63,36 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetContributorInsightsAction())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ContributorInsightsAction");
-                    context.Writer.Write(publicRequest.ContributorInsightsAction);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetContributorInsightsAction())
+                    {
+                        context.Writer.WritePropertyName("ContributorInsightsAction");
+                        context.Writer.Write(publicRequest.ContributorInsightsAction);
+                    }
+
+                    if(publicRequest.IsSetIndexName())
+                    {
+                        context.Writer.WritePropertyName("IndexName");
+                        context.Writer.Write(publicRequest.IndexName);
+                    }
+
+                    if(publicRequest.IsSetTableName())
+                    {
+                        context.Writer.WritePropertyName("TableName");
+                        context.Writer.Write(publicRequest.TableName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetIndexName())
-                {
-                    context.Writer.WritePropertyName("IndexName");
-                    context.Writer.Write(publicRequest.IndexName);
-                }
-
-                if(publicRequest.IsSetTableName())
-                {
-                    context.Writer.WritePropertyName("TableName");
-                    context.Writer.Write(publicRequest.TableName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

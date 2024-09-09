@@ -63,27 +63,30 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetIdentityPoolId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("IdentityPoolId");
-                    context.Writer.Write(publicRequest.IdentityPoolId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetIdentityPoolId())
+                    {
+                        context.Writer.WritePropertyName("IdentityPoolId");
+                        context.Writer.Write(publicRequest.IdentityPoolId);
+                    }
+
+                    if(publicRequest.IsSetIdentityProviderName())
+                    {
+                        context.Writer.WritePropertyName("IdentityProviderName");
+                        context.Writer.Write(publicRequest.IdentityProviderName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetIdentityProviderName())
-                {
-                    context.Writer.WritePropertyName("IdentityProviderName");
-                    context.Writer.Write(publicRequest.IdentityProviderName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

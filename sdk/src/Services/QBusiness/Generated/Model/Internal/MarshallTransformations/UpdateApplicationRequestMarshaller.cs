@@ -64,72 +64,86 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                 throw new AmazonQBusinessException("Request object does not have required field ApplicationId set");
             request.AddPathResource("{applicationId}", StringUtils.FromString(publicRequest.ApplicationId));
             request.ResourcePath = "/applications/{applicationId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAttachmentsConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("attachmentsConfiguration");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAttachmentsConfiguration())
+                    {
+                        context.Writer.WritePropertyName("attachmentsConfiguration");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = AttachmentsConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AttachmentsConfiguration, context);
+                        var marshaller = AttachmentsConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AttachmentsConfiguration, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetAutoSubscriptionConfiguration())
+                    {
+                        context.Writer.WritePropertyName("autoSubscriptionConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AutoSubscriptionConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AutoSubscriptionConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetDisplayName())
+                    {
+                        context.Writer.WritePropertyName("displayName");
+                        context.Writer.Write(publicRequest.DisplayName);
+                    }
+
+                    if(publicRequest.IsSetIdentityCenterInstanceArn())
+                    {
+                        context.Writer.WritePropertyName("identityCenterInstanceArn");
+                        context.Writer.Write(publicRequest.IdentityCenterInstanceArn);
+                    }
+
+                    if(publicRequest.IsSetPersonalizationConfiguration())
+                    {
+                        context.Writer.WritePropertyName("personalizationConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PersonalizationConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.PersonalizationConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetQAppsConfiguration())
+                    {
+                        context.Writer.WritePropertyName("qAppsConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = QAppsConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.QAppsConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("roleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetDisplayName())
-                {
-                    context.Writer.WritePropertyName("displayName");
-                    context.Writer.Write(publicRequest.DisplayName);
-                }
-
-                if(publicRequest.IsSetIdentityCenterInstanceArn())
-                {
-                    context.Writer.WritePropertyName("identityCenterInstanceArn");
-                    context.Writer.Write(publicRequest.IdentityCenterInstanceArn);
-                }
-
-                if(publicRequest.IsSetPersonalizationConfiguration())
-                {
-                    context.Writer.WritePropertyName("personalizationConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PersonalizationConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PersonalizationConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetQAppsConfiguration())
-                {
-                    context.Writer.WritePropertyName("qAppsConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = QAppsConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.QAppsConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("roleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

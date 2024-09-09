@@ -61,62 +61,65 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/TraceSummaries";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEndTime())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("EndTime");
-                    context.Writer.Write(publicRequest.EndTime.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEndTime())
+                    {
+                        context.Writer.WritePropertyName("EndTime");
+                        context.Writer.Write(publicRequest.EndTime.Value);
+                    }
+
+                    if(publicRequest.IsSetFilterExpression())
+                    {
+                        context.Writer.WritePropertyName("FilterExpression");
+                        context.Writer.Write(publicRequest.FilterExpression);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetSampling())
+                    {
+                        context.Writer.WritePropertyName("Sampling");
+                        context.Writer.Write(publicRequest.Sampling.Value);
+                    }
+
+                    if(publicRequest.IsSetSamplingStrategy())
+                    {
+                        context.Writer.WritePropertyName("SamplingStrategy");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SamplingStrategyMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SamplingStrategy, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetStartTime())
+                    {
+                        context.Writer.WritePropertyName("StartTime");
+                        context.Writer.Write(publicRequest.StartTime.Value);
+                    }
+
+                    if(publicRequest.IsSetTimeRangeType())
+                    {
+                        context.Writer.WritePropertyName("TimeRangeType");
+                        context.Writer.Write(publicRequest.TimeRangeType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetFilterExpression())
-                {
-                    context.Writer.WritePropertyName("FilterExpression");
-                    context.Writer.Write(publicRequest.FilterExpression);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetSampling())
-                {
-                    context.Writer.WritePropertyName("Sampling");
-                    context.Writer.Write(publicRequest.Sampling.Value);
-                }
-
-                if(publicRequest.IsSetSamplingStrategy())
-                {
-                    context.Writer.WritePropertyName("SamplingStrategy");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SamplingStrategyMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SamplingStrategy, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetStartTime())
-                {
-                    context.Writer.WritePropertyName("StartTime");
-                    context.Writer.Write(publicRequest.StartTime.Value);
-                }
-
-                if(publicRequest.IsSetTimeRangeType())
-                {
-                    context.Writer.WritePropertyName("TimeRangeType");
-                    context.Writer.Write(publicRequest.TimeRangeType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

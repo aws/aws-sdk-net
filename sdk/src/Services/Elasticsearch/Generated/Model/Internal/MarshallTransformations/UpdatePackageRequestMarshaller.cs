@@ -61,44 +61,47 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/2015-01-01/packages/update";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCommitMessage())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CommitMessage");
-                    context.Writer.Write(publicRequest.CommitMessage);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCommitMessage())
+                    {
+                        context.Writer.WritePropertyName("CommitMessage");
+                        context.Writer.Write(publicRequest.CommitMessage);
+                    }
+
+                    if(publicRequest.IsSetPackageDescription())
+                    {
+                        context.Writer.WritePropertyName("PackageDescription");
+                        context.Writer.Write(publicRequest.PackageDescription);
+                    }
+
+                    if(publicRequest.IsSetPackageID())
+                    {
+                        context.Writer.WritePropertyName("PackageID");
+                        context.Writer.Write(publicRequest.PackageID);
+                    }
+
+                    if(publicRequest.IsSetPackageSource())
+                    {
+                        context.Writer.WritePropertyName("PackageSource");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PackageSourceMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.PackageSource, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPackageDescription())
-                {
-                    context.Writer.WritePropertyName("PackageDescription");
-                    context.Writer.Write(publicRequest.PackageDescription);
-                }
-
-                if(publicRequest.IsSetPackageID())
-                {
-                    context.Writer.WritePropertyName("PackageID");
-                    context.Writer.Write(publicRequest.PackageID);
-                }
-
-                if(publicRequest.IsSetPackageSource())
-                {
-                    context.Writer.WritePropertyName("PackageSource");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PackageSourceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PackageSource, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

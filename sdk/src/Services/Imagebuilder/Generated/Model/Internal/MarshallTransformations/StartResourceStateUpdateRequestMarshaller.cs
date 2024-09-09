@@ -61,77 +61,80 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/StartResourceStateUpdate";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetExclusionRules())
+                    {
+                        context.Writer.WritePropertyName("exclusionRules");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ResourceStateUpdateExclusionRulesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ExclusionRules, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetExecutionRole())
+                    {
+                        context.Writer.WritePropertyName("executionRole");
+                        context.Writer.Write(publicRequest.ExecutionRole);
+                    }
+
+                    if(publicRequest.IsSetIncludeResources())
+                    {
+                        context.Writer.WritePropertyName("includeResources");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ResourceStateUpdateIncludeResourcesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.IncludeResources, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetResourceArn())
+                    {
+                        context.Writer.WritePropertyName("resourceArn");
+                        context.Writer.Write(publicRequest.ResourceArn);
+                    }
+
+                    if(publicRequest.IsSetState())
+                    {
+                        context.Writer.WritePropertyName("state");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ResourceStateMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.State, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetUpdateAt())
+                    {
+                        context.Writer.WritePropertyName("updateAt");
+                        context.Writer.Write(publicRequest.UpdateAt.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetExclusionRules())
-                {
-                    context.Writer.WritePropertyName("exclusionRules");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ResourceStateUpdateExclusionRulesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ExclusionRules, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetExecutionRole())
-                {
-                    context.Writer.WritePropertyName("executionRole");
-                    context.Writer.Write(publicRequest.ExecutionRole);
-                }
-
-                if(publicRequest.IsSetIncludeResources())
-                {
-                    context.Writer.WritePropertyName("includeResources");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ResourceStateUpdateIncludeResourcesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.IncludeResources, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetResourceArn())
-                {
-                    context.Writer.WritePropertyName("resourceArn");
-                    context.Writer.Write(publicRequest.ResourceArn);
-                }
-
-                if(publicRequest.IsSetState())
-                {
-                    context.Writer.WritePropertyName("state");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ResourceStateMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.State, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetUpdateAt())
-                {
-                    context.Writer.WritePropertyName("updateAt");
-                    context.Writer.Write(publicRequest.UpdateAt.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

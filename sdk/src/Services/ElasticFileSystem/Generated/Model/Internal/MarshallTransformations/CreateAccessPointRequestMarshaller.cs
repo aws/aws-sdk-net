@@ -61,70 +61,73 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/2015-02-01/access-points";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetFileSystemId())
-                {
-                    context.Writer.WritePropertyName("FileSystemId");
-                    context.Writer.Write(publicRequest.FileSystemId);
-                }
-
-                if(publicRequest.IsSetPosixUser())
-                {
-                    context.Writer.WritePropertyName("PosixUser");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PosixUserMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PosixUser, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRootDirectory())
-                {
-                    context.Writer.WritePropertyName("RootDirectory");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RootDirectoryMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RootDirectory, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetFileSystemId())
+                    {
+                        context.Writer.WritePropertyName("FileSystemId");
+                        context.Writer.Write(publicRequest.FileSystemId);
+                    }
+
+                    if(publicRequest.IsSetPosixUser())
+                    {
+                        context.Writer.WritePropertyName("PosixUser");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = PosixUserMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.PosixUser, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetRootDirectory())
+                    {
+                        context.Writer.WritePropertyName("RootDirectory");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RootDirectoryMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RootDirectory, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

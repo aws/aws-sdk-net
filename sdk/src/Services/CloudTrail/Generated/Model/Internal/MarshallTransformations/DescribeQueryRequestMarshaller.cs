@@ -63,33 +63,36 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEventDataStore())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("EventDataStore");
-                    context.Writer.Write(publicRequest.EventDataStore);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEventDataStore())
+                    {
+                        context.Writer.WritePropertyName("EventDataStore");
+                        context.Writer.Write(publicRequest.EventDataStore);
+                    }
+
+                    if(publicRequest.IsSetQueryAlias())
+                    {
+                        context.Writer.WritePropertyName("QueryAlias");
+                        context.Writer.Write(publicRequest.QueryAlias);
+                    }
+
+                    if(publicRequest.IsSetQueryId())
+                    {
+                        context.Writer.WritePropertyName("QueryId");
+                        context.Writer.Write(publicRequest.QueryId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetQueryAlias())
-                {
-                    context.Writer.WritePropertyName("QueryAlias");
-                    context.Writer.Write(publicRequest.QueryAlias);
-                }
-
-                if(publicRequest.IsSetQueryId())
-                {
-                    context.Writer.WritePropertyName("QueryId");
-                    context.Writer.Write(publicRequest.QueryId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

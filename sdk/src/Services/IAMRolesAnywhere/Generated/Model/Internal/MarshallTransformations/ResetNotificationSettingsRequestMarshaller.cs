@@ -61,37 +61,40 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
             request.HttpMethod = "PATCH";
 
             request.ResourcePath = "/reset-notifications-settings";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetNotificationSettingKeys())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("notificationSettingKeys");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestNotificationSettingKeysListValue in publicRequest.NotificationSettingKeys)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetNotificationSettingKeys())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("notificationSettingKeys");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestNotificationSettingKeysListValue in publicRequest.NotificationSettingKeys)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = NotificationSettingKeyMarshaller.Instance;
-                        marshaller.Marshall(publicRequestNotificationSettingKeysListValue, context);
+                            var marshaller = NotificationSettingKeyMarshaller.Instance;
+                            marshaller.Marshall(publicRequestNotificationSettingKeysListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTrustAnchorId())
+                    {
+                        context.Writer.WritePropertyName("trustAnchorId");
+                        context.Writer.Write(publicRequest.TrustAnchorId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTrustAnchorId())
-                {
-                    context.Writer.WritePropertyName("trustAnchorId");
-                    context.Writer.Write(publicRequest.TrustAnchorId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

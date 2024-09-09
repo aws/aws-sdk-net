@@ -67,32 +67,35 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                 throw new AmazonNetworkManagerException("Request object does not have required field SiteId set");
             request.AddPathResource("{siteId}", StringUtils.FromString(publicRequest.SiteId));
             request.ResourcePath = "/global-networks/{globalNetworkId}/sites/{siteId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetLocation())
+                    {
+                        context.Writer.WritePropertyName("Location");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LocationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Location, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetLocation())
-                {
-                    context.Writer.WritePropertyName("Location");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LocationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Location, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

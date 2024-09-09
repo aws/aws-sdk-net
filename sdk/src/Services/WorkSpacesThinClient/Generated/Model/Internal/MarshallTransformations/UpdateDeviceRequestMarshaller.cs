@@ -64,33 +64,36 @@ namespace Amazon.WorkSpacesThinClient.Model.Internal.MarshallTransformations
                 throw new AmazonWorkSpacesThinClientException("Request object does not have required field Id set");
             request.AddPathResource("{id}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = "/devices/{id}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDesiredSoftwareSetId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("desiredSoftwareSetId");
-                    context.Writer.Write(publicRequest.DesiredSoftwareSetId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDesiredSoftwareSetId())
+                    {
+                        context.Writer.WritePropertyName("desiredSoftwareSetId");
+                        context.Writer.Write(publicRequest.DesiredSoftwareSetId);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetSoftwareSetUpdateSchedule())
+                    {
+                        context.Writer.WritePropertyName("softwareSetUpdateSchedule");
+                        context.Writer.Write(publicRequest.SoftwareSetUpdateSchedule);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetSoftwareSetUpdateSchedule())
-                {
-                    context.Writer.WritePropertyName("softwareSetUpdateSchedule");
-                    context.Writer.Write(publicRequest.SoftwareSetUpdateSchedule);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

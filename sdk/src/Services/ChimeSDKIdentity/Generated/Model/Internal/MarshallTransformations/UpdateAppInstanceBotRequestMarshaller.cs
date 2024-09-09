@@ -64,38 +64,41 @@ namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
                 throw new AmazonChimeSDKIdentityException("Request object does not have required field AppInstanceBotArn set");
             request.AddPathResource("{appInstanceBotArn}", StringUtils.FromString(publicRequest.AppInstanceBotArn));
             request.ResourcePath = "/app-instance-bots/{appInstanceBotArn}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Configuration");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConfiguration())
+                    {
+                        context.Writer.WritePropertyName("Configuration");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = ConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Configuration, context);
+                        var marshaller = ConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Configuration, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetMetadata())
+                    {
+                        context.Writer.WritePropertyName("Metadata");
+                        context.Writer.Write(publicRequest.Metadata);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMetadata())
-                {
-                    context.Writer.WritePropertyName("Metadata");
-                    context.Writer.Write(publicRequest.Metadata);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

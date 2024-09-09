@@ -63,73 +63,76 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetArtifactStoreUri())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ArtifactStoreUri");
-                    context.Writer.Write(publicRequest.ArtifactStoreUri);
-                }
-
-                if(publicRequest.IsSetAutomaticModelRegistration())
-                {
-                    context.Writer.WritePropertyName("AutomaticModelRegistration");
-                    context.Writer.Write(publicRequest.AutomaticModelRegistration.Value);
-                }
-
-                if(publicRequest.IsSetMlflowVersion())
-                {
-                    context.Writer.WritePropertyName("MlflowVersion");
-                    context.Writer.Write(publicRequest.MlflowVersion);
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("RoleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetArtifactStoreUri())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("ArtifactStoreUri");
+                        context.Writer.Write(publicRequest.ArtifactStoreUri);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetAutomaticModelRegistration())
+                    {
+                        context.Writer.WritePropertyName("AutomaticModelRegistration");
+                        context.Writer.Write(publicRequest.AutomaticModelRegistration.Value);
+                    }
+
+                    if(publicRequest.IsSetMlflowVersion())
+                    {
+                        context.Writer.WritePropertyName("MlflowVersion");
+                        context.Writer.Write(publicRequest.MlflowVersion);
+                    }
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("RoleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTrackingServerName())
+                    {
+                        context.Writer.WritePropertyName("TrackingServerName");
+                        context.Writer.Write(publicRequest.TrackingServerName);
+                    }
+
+                    if(publicRequest.IsSetTrackingServerSize())
+                    {
+                        context.Writer.WritePropertyName("TrackingServerSize");
+                        context.Writer.Write(publicRequest.TrackingServerSize);
+                    }
+
+                    if(publicRequest.IsSetWeeklyMaintenanceWindowStart())
+                    {
+                        context.Writer.WritePropertyName("WeeklyMaintenanceWindowStart");
+                        context.Writer.Write(publicRequest.WeeklyMaintenanceWindowStart);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTrackingServerName())
-                {
-                    context.Writer.WritePropertyName("TrackingServerName");
-                    context.Writer.Write(publicRequest.TrackingServerName);
-                }
-
-                if(publicRequest.IsSetTrackingServerSize())
-                {
-                    context.Writer.WritePropertyName("TrackingServerSize");
-                    context.Writer.Write(publicRequest.TrackingServerSize);
-                }
-
-                if(publicRequest.IsSetWeeklyMaintenanceWindowStart())
-                {
-                    context.Writer.WritePropertyName("WeeklyMaintenanceWindowStart");
-                    context.Writer.Write(publicRequest.WeeklyMaintenanceWindowStart);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

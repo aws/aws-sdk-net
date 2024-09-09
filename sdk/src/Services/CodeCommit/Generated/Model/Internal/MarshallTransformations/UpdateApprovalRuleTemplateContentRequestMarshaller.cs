@@ -63,33 +63,36 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApprovalRuleTemplateName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("approvalRuleTemplateName");
-                    context.Writer.Write(publicRequest.ApprovalRuleTemplateName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApprovalRuleTemplateName())
+                    {
+                        context.Writer.WritePropertyName("approvalRuleTemplateName");
+                        context.Writer.Write(publicRequest.ApprovalRuleTemplateName);
+                    }
+
+                    if(publicRequest.IsSetExistingRuleContentSha256())
+                    {
+                        context.Writer.WritePropertyName("existingRuleContentSha256");
+                        context.Writer.Write(publicRequest.ExistingRuleContentSha256);
+                    }
+
+                    if(publicRequest.IsSetNewRuleContent())
+                    {
+                        context.Writer.WritePropertyName("newRuleContent");
+                        context.Writer.Write(publicRequest.NewRuleContent);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetExistingRuleContentSha256())
-                {
-                    context.Writer.WritePropertyName("existingRuleContentSha256");
-                    context.Writer.Write(publicRequest.ExistingRuleContentSha256);
-                }
-
-                if(publicRequest.IsSetNewRuleContent())
-                {
-                    context.Writer.WritePropertyName("newRuleContent");
-                    context.Writer.Write(publicRequest.NewRuleContent);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

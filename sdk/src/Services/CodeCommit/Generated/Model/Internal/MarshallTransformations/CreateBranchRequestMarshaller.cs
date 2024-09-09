@@ -63,33 +63,36 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBranchName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("branchName");
-                    context.Writer.Write(publicRequest.BranchName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBranchName())
+                    {
+                        context.Writer.WritePropertyName("branchName");
+                        context.Writer.Write(publicRequest.BranchName);
+                    }
+
+                    if(publicRequest.IsSetCommitId())
+                    {
+                        context.Writer.WritePropertyName("commitId");
+                        context.Writer.Write(publicRequest.CommitId);
+                    }
+
+                    if(publicRequest.IsSetRepositoryName())
+                    {
+                        context.Writer.WritePropertyName("repositoryName");
+                        context.Writer.Write(publicRequest.RepositoryName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCommitId())
-                {
-                    context.Writer.WritePropertyName("commitId");
-                    context.Writer.Write(publicRequest.CommitId);
-                }
-
-                if(publicRequest.IsSetRepositoryName())
-                {
-                    context.Writer.WritePropertyName("repositoryName");
-                    context.Writer.Write(publicRequest.RepositoryName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -64,122 +64,125 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                 throw new AmazonNetworkManagerException("Request object does not have required field GlobalNetworkId set");
             request.AddPathResource("{globalNetworkId}", StringUtils.FromString(publicRequest.GlobalNetworkId));
             request.ResourcePath = "/global-networks/{globalNetworkId}/network-routes";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDestinationFilters())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DestinationFilters");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestDestinationFiltersKvp in publicRequest.DestinationFilters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDestinationFilters())
                     {
-                        context.Writer.WritePropertyName(publicRequestDestinationFiltersKvp.Key);
-                        var publicRequestDestinationFiltersValue = publicRequestDestinationFiltersKvp.Value;
-
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestDestinationFiltersValueListValue in publicRequestDestinationFiltersValue)
+                        context.Writer.WritePropertyName("DestinationFilters");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestDestinationFiltersKvp in publicRequest.DestinationFilters)
                         {
-                                context.Writer.Write(publicRequestDestinationFiltersValueListValue);
+                            context.Writer.WritePropertyName(publicRequestDestinationFiltersKvp.Key);
+                            var publicRequestDestinationFiltersValue = publicRequestDestinationFiltersKvp.Value;
+
+                            context.Writer.WriteArrayStart();
+                            foreach(var publicRequestDestinationFiltersValueListValue in publicRequestDestinationFiltersValue)
+                            {
+                                    context.Writer.Write(publicRequestDestinationFiltersValueListValue);
+                            }
+                            context.Writer.WriteArrayEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetExactCidrMatches())
+                    {
+                        context.Writer.WritePropertyName("ExactCidrMatches");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestExactCidrMatchesListValue in publicRequest.ExactCidrMatches)
+                        {
+                                context.Writer.Write(publicRequestExactCidrMatchesListValue);
                         }
                         context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetExactCidrMatches())
-                {
-                    context.Writer.WritePropertyName("ExactCidrMatches");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestExactCidrMatchesListValue in publicRequest.ExactCidrMatches)
+                    if(publicRequest.IsSetLongestPrefixMatches())
                     {
-                            context.Writer.Write(publicRequestExactCidrMatchesListValue);
+                        context.Writer.WritePropertyName("LongestPrefixMatches");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLongestPrefixMatchesListValue in publicRequest.LongestPrefixMatches)
+                        {
+                                context.Writer.Write(publicRequestLongestPrefixMatchesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetLongestPrefixMatches())
-                {
-                    context.Writer.WritePropertyName("LongestPrefixMatches");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLongestPrefixMatchesListValue in publicRequest.LongestPrefixMatches)
+                    if(publicRequest.IsSetPrefixListIds())
                     {
-                            context.Writer.Write(publicRequestLongestPrefixMatchesListValue);
+                        context.Writer.WritePropertyName("PrefixListIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPrefixListIdsListValue in publicRequest.PrefixListIds)
+                        {
+                                context.Writer.Write(publicRequestPrefixListIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetPrefixListIds())
-                {
-                    context.Writer.WritePropertyName("PrefixListIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPrefixListIdsListValue in publicRequest.PrefixListIds)
+                    if(publicRequest.IsSetRouteTableIdentifier())
                     {
-                            context.Writer.Write(publicRequestPrefixListIdsListValue);
+                        context.Writer.WritePropertyName("RouteTableIdentifier");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RouteTableIdentifierMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RouteTableIdentifier, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetRouteTableIdentifier())
-                {
-                    context.Writer.WritePropertyName("RouteTableIdentifier");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RouteTableIdentifierMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RouteTableIdentifier, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetStates())
-                {
-                    context.Writer.WritePropertyName("States");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestStatesListValue in publicRequest.States)
+                    if(publicRequest.IsSetStates())
                     {
-                            context.Writer.Write(publicRequestStatesListValue);
+                        context.Writer.WritePropertyName("States");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestStatesListValue in publicRequest.States)
+                        {
+                                context.Writer.Write(publicRequestStatesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetSubnetOfMatches())
-                {
-                    context.Writer.WritePropertyName("SubnetOfMatches");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSubnetOfMatchesListValue in publicRequest.SubnetOfMatches)
+                    if(publicRequest.IsSetSubnetOfMatches())
                     {
-                            context.Writer.Write(publicRequestSubnetOfMatchesListValue);
+                        context.Writer.WritePropertyName("SubnetOfMatches");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSubnetOfMatchesListValue in publicRequest.SubnetOfMatches)
+                        {
+                                context.Writer.Write(publicRequestSubnetOfMatchesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetSupernetOfMatches())
-                {
-                    context.Writer.WritePropertyName("SupernetOfMatches");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSupernetOfMatchesListValue in publicRequest.SupernetOfMatches)
+                    if(publicRequest.IsSetSupernetOfMatches())
                     {
-                            context.Writer.Write(publicRequestSupernetOfMatchesListValue);
+                        context.Writer.WritePropertyName("SupernetOfMatches");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSupernetOfMatchesListValue in publicRequest.SupernetOfMatches)
+                        {
+                                context.Writer.Write(publicRequestSupernetOfMatchesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTypes())
-                {
-                    context.Writer.WritePropertyName("Types");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTypesListValue in publicRequest.Types)
+                    if(publicRequest.IsSetTypes())
                     {
-                            context.Writer.Write(publicRequestTypesListValue);
+                        context.Writer.WritePropertyName("Types");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTypesListValue in publicRequest.Types)
+                        {
+                                context.Writer.Write(publicRequestTypesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

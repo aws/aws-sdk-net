@@ -61,39 +61,42 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/ListCompositions";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFilterByEncoderConfigurationArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("filterByEncoderConfigurationArn");
-                    context.Writer.Write(publicRequest.FilterByEncoderConfigurationArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFilterByEncoderConfigurationArn())
+                    {
+                        context.Writer.WritePropertyName("filterByEncoderConfigurationArn");
+                        context.Writer.Write(publicRequest.FilterByEncoderConfigurationArn);
+                    }
+
+                    if(publicRequest.IsSetFilterByStageArn())
+                    {
+                        context.Writer.WritePropertyName("filterByStageArn");
+                        context.Writer.Write(publicRequest.FilterByStageArn);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetFilterByStageArn())
-                {
-                    context.Writer.WritePropertyName("filterByStageArn");
-                    context.Writer.Write(publicRequest.FilterByStageArn);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

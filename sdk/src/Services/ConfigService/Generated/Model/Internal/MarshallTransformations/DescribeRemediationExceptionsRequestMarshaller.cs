@@ -63,49 +63,52 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConfigRuleName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ConfigRuleName");
-                    context.Writer.Write(publicRequest.ConfigRuleName);
-                }
-
-                if(publicRequest.IsSetLimit())
-                {
-                    context.Writer.WritePropertyName("Limit");
-                    context.Writer.Write(publicRequest.Limit.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetResourceKeys())
-                {
-                    context.Writer.WritePropertyName("ResourceKeys");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestResourceKeysListValue in publicRequest.ResourceKeys)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConfigRuleName())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RemediationExceptionResourceKeyMarshaller.Instance;
-                        marshaller.Marshall(publicRequestResourceKeysListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("ConfigRuleName");
+                        context.Writer.Write(publicRequest.ConfigRuleName);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetLimit())
+                    {
+                        context.Writer.WritePropertyName("Limit");
+                        context.Writer.Write(publicRequest.Limit.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetResourceKeys())
+                    {
+                        context.Writer.WritePropertyName("ResourceKeys");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestResourceKeysListValue in publicRequest.ResourceKeys)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = RemediationExceptionResourceKeyMarshaller.Instance;
+                            marshaller.Marshall(publicRequestResourceKeysListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

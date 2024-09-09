@@ -64,31 +64,34 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 throw new AmazonMediaConnectException("Request object does not have required field FlowArn set");
             request.AddPathResource("{flowArn}", StringUtils.FromString(publicRequest.FlowArn));
             request.ResourcePath = "/v1/flows/{flowArn}/entitlements";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEntitlements())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("entitlements");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEntitlementsListValue in publicRequest.Entitlements)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEntitlements())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("entitlements");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestEntitlementsListValue in publicRequest.Entitlements)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = GrantEntitlementRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequestEntitlementsListValue, context);
+                            var marshaller = GrantEntitlementRequestMarshaller.Instance;
+                            marshaller.Marshall(publicRequestEntitlementsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

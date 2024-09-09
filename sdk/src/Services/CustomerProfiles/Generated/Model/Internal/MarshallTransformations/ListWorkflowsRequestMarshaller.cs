@@ -70,39 +70,42 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("next-token", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/domains/{DomainName}/workflows";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetQueryEndDate())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("QueryEndDate");
-                    context.Writer.Write(publicRequest.QueryEndDate.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetQueryEndDate())
+                    {
+                        context.Writer.WritePropertyName("QueryEndDate");
+                        context.Writer.Write(publicRequest.QueryEndDate.Value);
+                    }
+
+                    if(publicRequest.IsSetQueryStartDate())
+                    {
+                        context.Writer.WritePropertyName("QueryStartDate");
+                        context.Writer.Write(publicRequest.QueryStartDate.Value);
+                    }
+
+                    if(publicRequest.IsSetStatus())
+                    {
+                        context.Writer.WritePropertyName("Status");
+                        context.Writer.Write(publicRequest.Status);
+                    }
+
+                    if(publicRequest.IsSetWorkflowType())
+                    {
+                        context.Writer.WritePropertyName("WorkflowType");
+                        context.Writer.Write(publicRequest.WorkflowType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetQueryStartDate())
-                {
-                    context.Writer.WritePropertyName("QueryStartDate");
-                    context.Writer.Write(publicRequest.QueryStartDate.Value);
-                }
-
-                if(publicRequest.IsSetStatus())
-                {
-                    context.Writer.WritePropertyName("Status");
-                    context.Writer.Write(publicRequest.Status);
-                }
-
-                if(publicRequest.IsSetWorkflowType())
-                {
-                    context.Writer.WritePropertyName("WorkflowType");
-                    context.Writer.Write(publicRequest.WorkflowType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             request.UseQueryString = true;

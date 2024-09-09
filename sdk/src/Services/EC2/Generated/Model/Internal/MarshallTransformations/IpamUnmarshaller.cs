@@ -73,6 +73,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("enablePrivateGua", targetDepth))
+                    {
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
+                        unmarshalledObject.EnablePrivateGua = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ipamArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

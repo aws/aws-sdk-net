@@ -258,6 +258,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.ResourceRequirements = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("restartPolicy", targetDepth))
+                {
+                    var unmarshaller = ContainerRestartPolicyUnmarshaller.Instance;
+                    unmarshalledObject.RestartPolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("secrets", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Secret, SecretUnmarshaller>(SecretUnmarshaller.Instance);

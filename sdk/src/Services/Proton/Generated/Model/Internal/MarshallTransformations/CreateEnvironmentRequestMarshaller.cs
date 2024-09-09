@@ -63,102 +63,105 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCodebuildRoleArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("codebuildRoleArn");
-                    context.Writer.Write(publicRequest.CodebuildRoleArn);
-                }
-
-                if(publicRequest.IsSetComponentRoleArn())
-                {
-                    context.Writer.WritePropertyName("componentRoleArn");
-                    context.Writer.Write(publicRequest.ComponentRoleArn);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetEnvironmentAccountConnectionId())
-                {
-                    context.Writer.WritePropertyName("environmentAccountConnectionId");
-                    context.Writer.Write(publicRequest.EnvironmentAccountConnectionId);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetProtonServiceRoleArn())
-                {
-                    context.Writer.WritePropertyName("protonServiceRoleArn");
-                    context.Writer.Write(publicRequest.ProtonServiceRoleArn);
-                }
-
-                if(publicRequest.IsSetProvisioningRepository())
-                {
-                    context.Writer.WritePropertyName("provisioningRepository");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RepositoryBranchInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ProvisioningRepository, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSpec())
-                {
-                    context.Writer.WritePropertyName("spec");
-                    context.Writer.Write(publicRequest.Spec);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCodebuildRoleArn())
                     {
+                        context.Writer.WritePropertyName("codebuildRoleArn");
+                        context.Writer.Write(publicRequest.CodebuildRoleArn);
+                    }
+
+                    if(publicRequest.IsSetComponentRoleArn())
+                    {
+                        context.Writer.WritePropertyName("componentRoleArn");
+                        context.Writer.Write(publicRequest.ComponentRoleArn);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetEnvironmentAccountConnectionId())
+                    {
+                        context.Writer.WritePropertyName("environmentAccountConnectionId");
+                        context.Writer.Write(publicRequest.EnvironmentAccountConnectionId);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetProtonServiceRoleArn())
+                    {
+                        context.Writer.WritePropertyName("protonServiceRoleArn");
+                        context.Writer.Write(publicRequest.ProtonServiceRoleArn);
+                    }
+
+                    if(publicRequest.IsSetProvisioningRepository())
+                    {
+                        context.Writer.WritePropertyName("provisioningRepository");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = RepositoryBranchInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ProvisioningRepository, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetSpec())
+                    {
+                        context.Writer.WritePropertyName("spec");
+                        context.Writer.Write(publicRequest.Spec);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTemplateMajorVersion())
+                    {
+                        context.Writer.WritePropertyName("templateMajorVersion");
+                        context.Writer.Write(publicRequest.TemplateMajorVersion);
+                    }
+
+                    if(publicRequest.IsSetTemplateMinorVersion())
+                    {
+                        context.Writer.WritePropertyName("templateMinorVersion");
+                        context.Writer.Write(publicRequest.TemplateMinorVersion);
+                    }
+
+                    if(publicRequest.IsSetTemplateName())
+                    {
+                        context.Writer.WritePropertyName("templateName");
+                        context.Writer.Write(publicRequest.TemplateName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTemplateMajorVersion())
-                {
-                    context.Writer.WritePropertyName("templateMajorVersion");
-                    context.Writer.Write(publicRequest.TemplateMajorVersion);
-                }
-
-                if(publicRequest.IsSetTemplateMinorVersion())
-                {
-                    context.Writer.WritePropertyName("templateMinorVersion");
-                    context.Writer.Write(publicRequest.TemplateMinorVersion);
-                }
-
-                if(publicRequest.IsSetTemplateName())
-                {
-                    context.Writer.WritePropertyName("templateName");
-                    context.Writer.Write(publicRequest.TemplateName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

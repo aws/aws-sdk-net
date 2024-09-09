@@ -34,7 +34,26 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class RegisteredUserConsoleFeatureConfigurations
     {
+        private SharedViewConfigurations _sharedView;
         private StatePersistenceConfigurations _statePersistence;
+
+        /// <summary>
+        /// Gets and sets the property SharedView. 
+        /// <para>
+        /// The shared view settings of an embedded dashboard.
+        /// </para>
+        /// </summary>
+        public SharedViewConfigurations SharedView
+        {
+            get { return this._sharedView; }
+            set { this._sharedView = value; }
+        }
+
+        // Check to see if SharedView property is set
+        internal bool IsSetSharedView()
+        {
+            return this._sharedView != null;
+        }
 
         /// <summary>
         /// Gets and sets the property StatePersistence. 

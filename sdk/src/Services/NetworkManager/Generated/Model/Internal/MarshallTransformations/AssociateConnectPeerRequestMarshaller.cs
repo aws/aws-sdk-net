@@ -64,33 +64,36 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                 throw new AmazonNetworkManagerException("Request object does not have required field GlobalNetworkId set");
             request.AddPathResource("{globalNetworkId}", StringUtils.FromString(publicRequest.GlobalNetworkId));
             request.ResourcePath = "/global-networks/{globalNetworkId}/connect-peer-associations";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConnectPeerId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ConnectPeerId");
-                    context.Writer.Write(publicRequest.ConnectPeerId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConnectPeerId())
+                    {
+                        context.Writer.WritePropertyName("ConnectPeerId");
+                        context.Writer.Write(publicRequest.ConnectPeerId);
+                    }
+
+                    if(publicRequest.IsSetDeviceId())
+                    {
+                        context.Writer.WritePropertyName("DeviceId");
+                        context.Writer.Write(publicRequest.DeviceId);
+                    }
+
+                    if(publicRequest.IsSetLinkId())
+                    {
+                        context.Writer.WritePropertyName("LinkId");
+                        context.Writer.Write(publicRequest.LinkId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDeviceId())
-                {
-                    context.Writer.WritePropertyName("DeviceId");
-                    context.Writer.Write(publicRequest.DeviceId);
-                }
-
-                if(publicRequest.IsSetLinkId())
-                {
-                    context.Writer.WritePropertyName("LinkId");
-                    context.Writer.Write(publicRequest.LinkId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

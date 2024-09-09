@@ -64,31 +64,34 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                 throw new AmazonGreengrassException("Request object does not have required field CoreDefinitionId set");
             request.AddPathResource("{CoreDefinitionId}", StringUtils.FromString(publicRequest.CoreDefinitionId));
             request.ResourcePath = "/greengrass/definition/cores/{CoreDefinitionId}/versions";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCores())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Cores");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCoresListValue in publicRequest.Cores)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCores())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("Cores");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCoresListValue in publicRequest.Cores)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = CoreMarshaller.Instance;
-                        marshaller.Marshall(publicRequestCoresListValue, context);
+                            var marshaller = CoreMarshaller.Instance;
+                            marshaller.Marshall(publicRequestCoresListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

@@ -61,26 +61,29 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/logging/modelinvocations";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLoggingConfig())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("loggingConfig");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetLoggingConfig())
+                    {
+                        context.Writer.WritePropertyName("loggingConfig");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = LoggingConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LoggingConfig, context);
+                        var marshaller = LoggingConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.LoggingConfig, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

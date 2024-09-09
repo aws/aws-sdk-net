@@ -41,8 +41,6 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         /// <summary>
         /// Serializes simple scalar properties
         /// </summary>
-        // This test requires a breaking change, and will be addressed in V4
-        [Ignore]
         [TestMethod]
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]

@@ -71,6 +71,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
+                if(publicRequest.IsSetEnablePrivateGua())
+                {
+                    request.Parameters.Add("EnablePrivateGua", StringUtils.FromBool(publicRequest.EnablePrivateGua));
+                }
                 if(publicRequest.IsSetOperatingRegions())
                 {
                     int publicRequestlistValueIndex = 1;

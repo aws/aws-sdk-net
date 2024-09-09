@@ -63,39 +63,42 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetPolicyName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("PolicyName");
-                    context.Writer.Write(publicRequest.PolicyName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetPolicyName())
+                    {
+                        context.Writer.WritePropertyName("PolicyName");
+                        context.Writer.Write(publicRequest.PolicyName);
+                    }
+
+                    if(publicRequest.IsSetResourceId())
+                    {
+                        context.Writer.WritePropertyName("ResourceId");
+                        context.Writer.Write(publicRequest.ResourceId);
+                    }
+
+                    if(publicRequest.IsSetScalableDimension())
+                    {
+                        context.Writer.WritePropertyName("ScalableDimension");
+                        context.Writer.Write(publicRequest.ScalableDimension);
+                    }
+
+                    if(publicRequest.IsSetServiceNamespace())
+                    {
+                        context.Writer.WritePropertyName("ServiceNamespace");
+                        context.Writer.Write(publicRequest.ServiceNamespace);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetResourceId())
-                {
-                    context.Writer.WritePropertyName("ResourceId");
-                    context.Writer.Write(publicRequest.ResourceId);
-                }
-
-                if(publicRequest.IsSetScalableDimension())
-                {
-                    context.Writer.WritePropertyName("ScalableDimension");
-                    context.Writer.Write(publicRequest.ScalableDimension);
-                }
-
-                if(publicRequest.IsSetServiceNamespace())
-                {
-                    context.Writer.WritePropertyName("ServiceNamespace");
-                    context.Writer.Write(publicRequest.ServiceNamespace);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

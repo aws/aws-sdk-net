@@ -63,111 +63,114 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAcceptLanguage())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AcceptLanguage");
-                    context.Writer.Write(publicRequest.AcceptLanguage);
-                }
-
-                if(publicRequest.IsSetIdempotencyToken())
-                {
-                    context.Writer.WritePropertyName("IdempotencyToken");
-                    context.Writer.Write(publicRequest.IdempotencyToken);
-                }
-
-                else if(!(publicRequest.IsSetIdempotencyToken()))
-                {
-                    context.Writer.WritePropertyName("IdempotencyToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetNotificationArns())
-                {
-                    context.Writer.WritePropertyName("NotificationArns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestNotificationArnsListValue in publicRequest.NotificationArns)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAcceptLanguage())
                     {
-                            context.Writer.Write(publicRequestNotificationArnsListValue);
+                        context.Writer.WritePropertyName("AcceptLanguage");
+                        context.Writer.Write(publicRequest.AcceptLanguage);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetPathId())
-                {
-                    context.Writer.WritePropertyName("PathId");
-                    context.Writer.Write(publicRequest.PathId);
-                }
-
-                if(publicRequest.IsSetPlanName())
-                {
-                    context.Writer.WritePropertyName("PlanName");
-                    context.Writer.Write(publicRequest.PlanName);
-                }
-
-                if(publicRequest.IsSetPlanType())
-                {
-                    context.Writer.WritePropertyName("PlanType");
-                    context.Writer.Write(publicRequest.PlanType);
-                }
-
-                if(publicRequest.IsSetProductId())
-                {
-                    context.Writer.WritePropertyName("ProductId");
-                    context.Writer.Write(publicRequest.ProductId);
-                }
-
-                if(publicRequest.IsSetProvisionedProductName())
-                {
-                    context.Writer.WritePropertyName("ProvisionedProductName");
-                    context.Writer.Write(publicRequest.ProvisionedProductName);
-                }
-
-                if(publicRequest.IsSetProvisioningArtifactId())
-                {
-                    context.Writer.WritePropertyName("ProvisioningArtifactId");
-                    context.Writer.Write(publicRequest.ProvisioningArtifactId);
-                }
-
-                if(publicRequest.IsSetProvisioningParameters())
-                {
-                    context.Writer.WritePropertyName("ProvisioningParameters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestProvisioningParametersListValue in publicRequest.ProvisioningParameters)
+                    if(publicRequest.IsSetIdempotencyToken())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = UpdateProvisioningParameterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestProvisioningParametersListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("IdempotencyToken");
+                        context.Writer.Write(publicRequest.IdempotencyToken);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    else if(!(publicRequest.IsSetIdempotencyToken()))
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("IdempotencyToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
                     }
-                    context.Writer.WriteArrayEnd();
+                    if(publicRequest.IsSetNotificationArns())
+                    {
+                        context.Writer.WritePropertyName("NotificationArns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestNotificationArnsListValue in publicRequest.NotificationArns)
+                        {
+                                context.Writer.Write(publicRequestNotificationArnsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetPathId())
+                    {
+                        context.Writer.WritePropertyName("PathId");
+                        context.Writer.Write(publicRequest.PathId);
+                    }
+
+                    if(publicRequest.IsSetPlanName())
+                    {
+                        context.Writer.WritePropertyName("PlanName");
+                        context.Writer.Write(publicRequest.PlanName);
+                    }
+
+                    if(publicRequest.IsSetPlanType())
+                    {
+                        context.Writer.WritePropertyName("PlanType");
+                        context.Writer.Write(publicRequest.PlanType);
+                    }
+
+                    if(publicRequest.IsSetProductId())
+                    {
+                        context.Writer.WritePropertyName("ProductId");
+                        context.Writer.Write(publicRequest.ProductId);
+                    }
+
+                    if(publicRequest.IsSetProvisionedProductName())
+                    {
+                        context.Writer.WritePropertyName("ProvisionedProductName");
+                        context.Writer.Write(publicRequest.ProvisionedProductName);
+                    }
+
+                    if(publicRequest.IsSetProvisioningArtifactId())
+                    {
+                        context.Writer.WritePropertyName("ProvisioningArtifactId");
+                        context.Writer.Write(publicRequest.ProvisioningArtifactId);
+                    }
+
+                    if(publicRequest.IsSetProvisioningParameters())
+                    {
+                        context.Writer.WritePropertyName("ProvisioningParameters");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestProvisioningParametersListValue in publicRequest.ProvisioningParameters)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = UpdateProvisioningParameterMarshaller.Instance;
+                            marshaller.Marshall(publicRequestProvisioningParametersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

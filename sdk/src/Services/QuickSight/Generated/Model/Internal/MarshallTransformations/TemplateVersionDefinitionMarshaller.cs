@@ -150,6 +150,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetQueryExecutionOptions())
+            {
+                context.Writer.WritePropertyName("QueryExecutionOptions");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = QueryExecutionOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.QueryExecutionOptions, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSheets())
             {
                 context.Writer.WritePropertyName("Sheets");

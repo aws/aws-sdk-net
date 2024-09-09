@@ -64,54 +64,57 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
                 throw new AmazonRecycleBinException("Request object does not have required field Identifier set");
             request.AddPathResource("{identifier}", StringUtils.FromString(publicRequest.Identifier));
             request.ResourcePath = "/rules/{identifier}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetResourceTags())
-                {
-                    context.Writer.WritePropertyName("ResourceTags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestResourceTagsListValue in publicRequest.ResourceTags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetResourceTags())
+                    {
+                        context.Writer.WritePropertyName("ResourceTags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestResourceTagsListValue in publicRequest.ResourceTags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ResourceTagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestResourceTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetResourceType())
+                    {
+                        context.Writer.WritePropertyName("ResourceType");
+                        context.Writer.Write(publicRequest.ResourceType);
+                    }
+
+                    if(publicRequest.IsSetRetentionPeriod())
+                    {
+                        context.Writer.WritePropertyName("RetentionPeriod");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = ResourceTagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestResourceTagsListValue, context);
+                        var marshaller = RetentionPeriodMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RetentionPeriod, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetResourceType())
-                {
-                    context.Writer.WritePropertyName("ResourceType");
-                    context.Writer.Write(publicRequest.ResourceType);
-                }
-
-                if(publicRequest.IsSetRetentionPeriod())
-                {
-                    context.Writer.WritePropertyName("RetentionPeriod");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RetentionPeriodMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RetentionPeriod, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

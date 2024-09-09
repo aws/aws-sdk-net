@@ -61,7 +61,6 @@
                 "Custom\\Runtime\\EventStreams\\test_vectors\\*",
                 "Custom\\Runtime\\TestEndpoints\\*.json",
                 "Custom\\TestTools\\ComparerTest.json",
-                "..\\Services\\CloudFront\\UnitTests\\Custom\\EmbeddedResource\\sample.rsa.private.key.txt"
             ],
             "packageReferences": [
                 {

@@ -63,110 +63,113 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetEdition())
-                {
-                    context.Writer.WritePropertyName("Edition");
-                    context.Writer.Write(publicRequest.Edition);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("RoleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetServerSideEncryptionConfiguration())
-                {
-                    context.Writer.WritePropertyName("ServerSideEncryptionConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ServerSideEncryptionConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ServerSideEncryptionConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetEdition())
+                    {
+                        context.Writer.WritePropertyName("Edition");
+                        context.Writer.Write(publicRequest.Edition);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("RoleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    if(publicRequest.IsSetServerSideEncryptionConfiguration())
+                    {
+                        context.Writer.WritePropertyName("ServerSideEncryptionConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = ServerSideEncryptionConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ServerSideEncryptionConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetUserContextPolicy())
-                {
-                    context.Writer.WritePropertyName("UserContextPolicy");
-                    context.Writer.Write(publicRequest.UserContextPolicy);
-                }
-
-                if(publicRequest.IsSetUserGroupResolutionConfiguration())
-                {
-                    context.Writer.WritePropertyName("UserGroupResolutionConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UserGroupResolutionConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.UserGroupResolutionConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetUserTokenConfigurations())
-                {
-                    context.Writer.WritePropertyName("UserTokenConfigurations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestUserTokenConfigurationsListValue in publicRequest.UserTokenConfigurations)
+                    if(publicRequest.IsSetTags())
                     {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetUserContextPolicy())
+                    {
+                        context.Writer.WritePropertyName("UserContextPolicy");
+                        context.Writer.Write(publicRequest.UserContextPolicy);
+                    }
+
+                    if(publicRequest.IsSetUserGroupResolutionConfiguration())
+                    {
+                        context.Writer.WritePropertyName("UserGroupResolutionConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = UserTokenConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestUserTokenConfigurationsListValue, context);
+                        var marshaller = UserGroupResolutionConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.UserGroupResolutionConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetUserTokenConfigurations())
+                    {
+                        context.Writer.WritePropertyName("UserTokenConfigurations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestUserTokenConfigurationsListValue in publicRequest.UserTokenConfigurations)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = UserTokenConfigurationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestUserTokenConfigurationsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

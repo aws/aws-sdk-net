@@ -63,57 +63,60 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCollectionId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CollectionId");
-                    context.Writer.Write(publicRequest.CollectionId);
-                }
-
-                if(publicRequest.IsSetImage())
-                {
-                    context.Writer.WritePropertyName("Image");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ImageMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Image, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMaxUsers())
-                {
-                    context.Writer.WritePropertyName("MaxUsers");
-                    context.Writer.Write(publicRequest.MaxUsers.Value);
-                }
-
-                if(publicRequest.IsSetQualityFilter())
-                {
-                    context.Writer.WritePropertyName("QualityFilter");
-                    context.Writer.Write(publicRequest.QualityFilter);
-                }
-
-                if(publicRequest.IsSetUserMatchThreshold())
-                {
-                    context.Writer.WritePropertyName("UserMatchThreshold");
-                    if(StringUtils.IsSpecialFloatValue(publicRequest.UserMatchThreshold.Value))
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCollectionId())
                     {
-                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.UserMatchThreshold.Value));
+                        context.Writer.WritePropertyName("CollectionId");
+                        context.Writer.Write(publicRequest.CollectionId);
                     }
-                    else
+
+                    if(publicRequest.IsSetImage())
                     {
-                        context.Writer.Write(publicRequest.UserMatchThreshold.Value);
+                        context.Writer.WritePropertyName("Image");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ImageMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Image, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
+
+                    if(publicRequest.IsSetMaxUsers())
+                    {
+                        context.Writer.WritePropertyName("MaxUsers");
+                        context.Writer.Write(publicRequest.MaxUsers.Value);
+                    }
+
+                    if(publicRequest.IsSetQualityFilter())
+                    {
+                        context.Writer.WritePropertyName("QualityFilter");
+                        context.Writer.Write(publicRequest.QualityFilter);
+                    }
+
+                    if(publicRequest.IsSetUserMatchThreshold())
+                    {
+                        context.Writer.WritePropertyName("UserMatchThreshold");
+                        if(StringUtils.IsSpecialFloatValue(publicRequest.UserMatchThreshold.Value))
+                        {
+                            context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.UserMatchThreshold.Value));
+                        }
+                        else
+                        {
+                            context.Writer.Write(publicRequest.UserMatchThreshold.Value);
+                        }
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

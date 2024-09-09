@@ -67,76 +67,79 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetExpectedRevisionId())
                 request.Parameters.Add("expectedRevisionId", StringUtils.FromString(publicRequest.ExpectedRevisionId));
             request.ResourcePath = "/policy/{resourceArn}/statements/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAction())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("action");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestActionListValue in publicRequest.Action)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAction())
                     {
-                            context.Writer.Write(publicRequestActionListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetCondition())
-                {
-                    context.Writer.WritePropertyName("condition");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestConditionKvp in publicRequest.Condition)
-                    {
-                        context.Writer.WritePropertyName(publicRequestConditionKvp.Key);
-                        var publicRequestConditionValue = publicRequestConditionKvp.Value;
-
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestConditionValueKvp in publicRequestConditionValue)
+                        context.Writer.WritePropertyName("action");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestActionListValue in publicRequest.Action)
                         {
-                            context.Writer.WritePropertyName(publicRequestConditionValueKvp.Key);
-                            var publicRequestConditionValueValue = publicRequestConditionValueKvp.Value;
+                                context.Writer.Write(publicRequestActionListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
 
-                                context.Writer.Write(publicRequestConditionValueValue);
+                    if(publicRequest.IsSetCondition())
+                    {
+                        context.Writer.WritePropertyName("condition");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestConditionKvp in publicRequest.Condition)
+                        {
+                            context.Writer.WritePropertyName(publicRequestConditionKvp.Key);
+                            var publicRequestConditionValue = publicRequestConditionKvp.Value;
+
+                            context.Writer.WriteObjectStart();
+                            foreach (var publicRequestConditionValueKvp in publicRequestConditionValue)
+                            {
+                                context.Writer.WritePropertyName(publicRequestConditionValueKvp.Key);
+                                var publicRequestConditionValueValue = publicRequestConditionValueKvp.Value;
+
+                                    context.Writer.Write(publicRequestConditionValueValue);
+                            }
+                            context.Writer.WriteObjectEnd();
                         }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetEffect())
-                {
-                    context.Writer.WritePropertyName("effect");
-                    context.Writer.Write(publicRequest.Effect);
-                }
-
-                if(publicRequest.IsSetPrincipal())
-                {
-                    context.Writer.WritePropertyName("principal");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPrincipalListValue in publicRequest.Principal)
+                    if(publicRequest.IsSetEffect())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = PrincipalMarshaller.Instance;
-                        marshaller.Marshall(publicRequestPrincipalListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("effect");
+                        context.Writer.Write(publicRequest.Effect);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetPrincipal())
+                    {
+                        context.Writer.WritePropertyName("principal");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPrincipalListValue in publicRequest.Principal)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = PrincipalMarshaller.Instance;
+                            marshaller.Marshall(publicRequestPrincipalListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetStatementId())
+                    {
+                        context.Writer.WritePropertyName("statementId");
+                        context.Writer.Write(publicRequest.StatementId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetStatementId())
-                {
-                    context.Writer.WritePropertyName("statementId");
-                    context.Writer.Write(publicRequest.StatementId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             request.UseQueryString = true;

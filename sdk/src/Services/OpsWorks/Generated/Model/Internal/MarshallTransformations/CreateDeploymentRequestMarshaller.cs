@@ -63,72 +63,75 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAppId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AppId");
-                    context.Writer.Write(publicRequest.AppId);
-                }
-
-                if(publicRequest.IsSetCommand())
-                {
-                    context.Writer.WritePropertyName("Command");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DeploymentCommandMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Command, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetComment())
-                {
-                    context.Writer.WritePropertyName("Comment");
-                    context.Writer.Write(publicRequest.Comment);
-                }
-
-                if(publicRequest.IsSetCustomJson())
-                {
-                    context.Writer.WritePropertyName("CustomJson");
-                    context.Writer.Write(publicRequest.CustomJson);
-                }
-
-                if(publicRequest.IsSetInstanceIds())
-                {
-                    context.Writer.WritePropertyName("InstanceIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestInstanceIdsListValue in publicRequest.InstanceIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAppId())
                     {
-                            context.Writer.Write(publicRequestInstanceIdsListValue);
+                        context.Writer.WritePropertyName("AppId");
+                        context.Writer.Write(publicRequest.AppId);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetLayerIds())
-                {
-                    context.Writer.WritePropertyName("LayerIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLayerIdsListValue in publicRequest.LayerIds)
+                    if(publicRequest.IsSetCommand())
                     {
-                            context.Writer.Write(publicRequestLayerIdsListValue);
+                        context.Writer.WritePropertyName("Command");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DeploymentCommandMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Command, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetComment())
+                    {
+                        context.Writer.WritePropertyName("Comment");
+                        context.Writer.Write(publicRequest.Comment);
+                    }
+
+                    if(publicRequest.IsSetCustomJson())
+                    {
+                        context.Writer.WritePropertyName("CustomJson");
+                        context.Writer.Write(publicRequest.CustomJson);
+                    }
+
+                    if(publicRequest.IsSetInstanceIds())
+                    {
+                        context.Writer.WritePropertyName("InstanceIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestInstanceIdsListValue in publicRequest.InstanceIds)
+                        {
+                                context.Writer.Write(publicRequestInstanceIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetLayerIds())
+                    {
+                        context.Writer.WritePropertyName("LayerIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLayerIdsListValue in publicRequest.LayerIds)
+                        {
+                                context.Writer.Write(publicRequestLayerIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetStackId())
+                    {
+                        context.Writer.WritePropertyName("StackId");
+                        context.Writer.Write(publicRequest.StackId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetStackId())
-                {
-                    context.Writer.WritePropertyName("StackId");
-                    context.Writer.Write(publicRequest.StackId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

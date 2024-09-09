@@ -63,27 +63,30 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCostCategoryArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CostCategoryArn");
-                    context.Writer.Write(publicRequest.CostCategoryArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCostCategoryArn())
+                    {
+                        context.Writer.WritePropertyName("CostCategoryArn");
+                        context.Writer.Write(publicRequest.CostCategoryArn);
+                    }
+
+                    if(publicRequest.IsSetEffectiveOn())
+                    {
+                        context.Writer.WritePropertyName("EffectiveOn");
+                        context.Writer.Write(publicRequest.EffectiveOn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEffectiveOn())
-                {
-                    context.Writer.WritePropertyName("EffectiveOn");
-                    context.Writer.Write(publicRequest.EffectiveOn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

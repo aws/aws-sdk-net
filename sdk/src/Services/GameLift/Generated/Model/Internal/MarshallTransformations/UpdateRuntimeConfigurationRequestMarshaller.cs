@@ -63,32 +63,35 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFleetId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("FleetId");
-                    context.Writer.Write(publicRequest.FleetId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFleetId())
+                    {
+                        context.Writer.WritePropertyName("FleetId");
+                        context.Writer.Write(publicRequest.FleetId);
+                    }
+
+                    if(publicRequest.IsSetRuntimeConfiguration())
+                    {
+                        context.Writer.WritePropertyName("RuntimeConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RuntimeConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RuntimeConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRuntimeConfiguration())
-                {
-                    context.Writer.WritePropertyName("RuntimeConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RuntimeConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RuntimeConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

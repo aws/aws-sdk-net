@@ -63,27 +63,30 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMaxQueryTCU())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("MaxQueryTCU");
-                    context.Writer.Write(publicRequest.MaxQueryTCU.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMaxQueryTCU())
+                    {
+                        context.Writer.WritePropertyName("MaxQueryTCU");
+                        context.Writer.Write(publicRequest.MaxQueryTCU.Value);
+                    }
+
+                    if(publicRequest.IsSetQueryPricingModel())
+                    {
+                        context.Writer.WritePropertyName("QueryPricingModel");
+                        context.Writer.Write(publicRequest.QueryPricingModel);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetQueryPricingModel())
-                {
-                    context.Writer.WritePropertyName("QueryPricingModel");
-                    context.Writer.Write(publicRequest.QueryPricingModel);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

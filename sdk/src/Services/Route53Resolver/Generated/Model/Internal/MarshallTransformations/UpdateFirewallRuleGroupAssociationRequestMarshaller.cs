@@ -63,39 +63,42 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFirewallRuleGroupAssociationId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("FirewallRuleGroupAssociationId");
-                    context.Writer.Write(publicRequest.FirewallRuleGroupAssociationId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFirewallRuleGroupAssociationId())
+                    {
+                        context.Writer.WritePropertyName("FirewallRuleGroupAssociationId");
+                        context.Writer.Write(publicRequest.FirewallRuleGroupAssociationId);
+                    }
+
+                    if(publicRequest.IsSetMutationProtection())
+                    {
+                        context.Writer.WritePropertyName("MutationProtection");
+                        context.Writer.Write(publicRequest.MutationProtection);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetPriority())
+                    {
+                        context.Writer.WritePropertyName("Priority");
+                        context.Writer.Write(publicRequest.Priority.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMutationProtection())
-                {
-                    context.Writer.WritePropertyName("MutationProtection");
-                    context.Writer.Write(publicRequest.MutationProtection);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetPriority())
-                {
-                    context.Writer.WritePropertyName("Priority");
-                    context.Writer.Write(publicRequest.Priority.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

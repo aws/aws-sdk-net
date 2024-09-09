@@ -64,142 +64,145 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                 throw new AmazonLexModelBuildingServiceException("Request object does not have required field Name set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/bots/{name}/versions/$LATEST";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAbortStatement())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("abortStatement");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = StatementMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AbortStatement, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetChecksum())
-                {
-                    context.Writer.WritePropertyName("checksum");
-                    context.Writer.Write(publicRequest.Checksum);
-                }
-
-                if(publicRequest.IsSetChildDirected())
-                {
-                    context.Writer.WritePropertyName("childDirected");
-                    context.Writer.Write(publicRequest.ChildDirected.Value);
-                }
-
-                if(publicRequest.IsSetClarificationPrompt())
-                {
-                    context.Writer.WritePropertyName("clarificationPrompt");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PromptMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ClarificationPrompt, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetCreateVersion())
-                {
-                    context.Writer.WritePropertyName("createVersion");
-                    context.Writer.Write(publicRequest.CreateVersion.Value);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetDetectSentiment())
-                {
-                    context.Writer.WritePropertyName("detectSentiment");
-                    context.Writer.Write(publicRequest.DetectSentiment.Value);
-                }
-
-                if(publicRequest.IsSetEnableModelImprovements())
-                {
-                    context.Writer.WritePropertyName("enableModelImprovements");
-                    context.Writer.Write(publicRequest.EnableModelImprovements.Value);
-                }
-
-                if(publicRequest.IsSetIdleSessionTTLInSeconds())
-                {
-                    context.Writer.WritePropertyName("idleSessionTTLInSeconds");
-                    context.Writer.Write(publicRequest.IdleSessionTTLInSeconds.Value);
-                }
-
-                if(publicRequest.IsSetIntents())
-                {
-                    context.Writer.WritePropertyName("intents");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestIntentsListValue in publicRequest.Intents)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAbortStatement())
                     {
+                        context.Writer.WritePropertyName("abortStatement");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = IntentMarshaller.Instance;
-                        marshaller.Marshall(publicRequestIntentsListValue, context);
+                        var marshaller = StatementMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AbortStatement, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetLocale())
-                {
-                    context.Writer.WritePropertyName("locale");
-                    context.Writer.Write(publicRequest.Locale);
-                }
-
-                if(publicRequest.IsSetNluIntentConfidenceThreshold())
-                {
-                    context.Writer.WritePropertyName("nluIntentConfidenceThreshold");
-                    if(StringUtils.IsSpecialDoubleValue(publicRequest.NluIntentConfidenceThreshold.Value))
+                    if(publicRequest.IsSetChecksum())
                     {
-                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.NluIntentConfidenceThreshold.Value));
+                        context.Writer.WritePropertyName("checksum");
+                        context.Writer.Write(publicRequest.Checksum);
                     }
-                    else
+
+                    if(publicRequest.IsSetChildDirected())
                     {
-                        context.Writer.Write(publicRequest.NluIntentConfidenceThreshold.Value);
+                        context.Writer.WritePropertyName("childDirected");
+                        context.Writer.Write(publicRequest.ChildDirected.Value);
                     }
-                }
 
-                if(publicRequest.IsSetProcessBehavior())
-                {
-                    context.Writer.WritePropertyName("processBehavior");
-                    context.Writer.Write(publicRequest.ProcessBehavior);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetClarificationPrompt())
                     {
+                        context.Writer.WritePropertyName("clarificationPrompt");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = PromptMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ClarificationPrompt, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetCreateVersion())
+                    {
+                        context.Writer.WritePropertyName("createVersion");
+                        context.Writer.Write(publicRequest.CreateVersion.Value);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetDetectSentiment())
+                    {
+                        context.Writer.WritePropertyName("detectSentiment");
+                        context.Writer.Write(publicRequest.DetectSentiment.Value);
+                    }
+
+                    if(publicRequest.IsSetEnableModelImprovements())
+                    {
+                        context.Writer.WritePropertyName("enableModelImprovements");
+                        context.Writer.Write(publicRequest.EnableModelImprovements.Value);
+                    }
+
+                    if(publicRequest.IsSetIdleSessionTTLInSeconds())
+                    {
+                        context.Writer.WritePropertyName("idleSessionTTLInSeconds");
+                        context.Writer.Write(publicRequest.IdleSessionTTLInSeconds.Value);
+                    }
+
+                    if(publicRequest.IsSetIntents())
+                    {
+                        context.Writer.WritePropertyName("intents");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestIntentsListValue in publicRequest.Intents)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = IntentMarshaller.Instance;
+                            marshaller.Marshall(publicRequestIntentsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetLocale())
+                    {
+                        context.Writer.WritePropertyName("locale");
+                        context.Writer.Write(publicRequest.Locale);
+                    }
+
+                    if(publicRequest.IsSetNluIntentConfidenceThreshold())
+                    {
+                        context.Writer.WritePropertyName("nluIntentConfidenceThreshold");
+                        if(StringUtils.IsSpecialDoubleValue(publicRequest.NluIntentConfidenceThreshold.Value))
+                        {
+                            context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.NluIntentConfidenceThreshold.Value));
+                        }
+                        else
+                        {
+                            context.Writer.Write(publicRequest.NluIntentConfidenceThreshold.Value);
+                        }
+                    }
+
+                    if(publicRequest.IsSetProcessBehavior())
+                    {
+                        context.Writer.WritePropertyName("processBehavior");
+                        context.Writer.Write(publicRequest.ProcessBehavior);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetVoiceId())
+                    {
+                        context.Writer.WritePropertyName("voiceId");
+                        context.Writer.Write(publicRequest.VoiceId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetVoiceId())
-                {
-                    context.Writer.WritePropertyName("voiceId");
-                    context.Writer.Write(publicRequest.VoiceId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

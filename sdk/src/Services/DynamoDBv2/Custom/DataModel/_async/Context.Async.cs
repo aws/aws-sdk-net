@@ -16,12 +16,9 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.DynamoDBv2.DocumentModel;
-using Amazon.DynamoDBv2.Model;
-using Amazon.Runtime.Internal;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -197,31 +194,14 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region BatchGet async
 
-        /// <summary>
-        /// Issues a batch-get request with multiple batches.
-        /// 
-        /// Results are stored in the individual batches.
-        /// </summary>
-        /// <param name="batches">
-        /// Configured BatchGet objects
-        /// </param>
-        public Task ExecuteBatchGetAsync(params BatchGet[] batches)
+        /// <inheritdoc/>
+        public Task ExecuteBatchGetAsync(params IBatchGet[] batches)
         {
             return ExecuteBatchGetAsync(batches, default(CancellationToken));
         }
 
-        /// <summary>
-        /// Issues a batch-get request with multiple batches.
-        /// 
-        /// Results are stored in the individual batches.
-        /// </summary>
-        /// <param name="batches">
-        /// Configured BatchGet objects
-        /// </param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        public Task ExecuteBatchGetAsync(BatchGet[] batches, CancellationToken cancellationToken = default(CancellationToken))
+        /// <inheritdoc/>
+        public Task ExecuteBatchGetAsync(IBatchGet[] batches, CancellationToken cancellationToken = default(CancellationToken))
         {
             MultiTableBatchGet superBatch = new MultiTableBatchGet(batches);
             return superBatch.ExecuteAsync(cancellationToken);
@@ -231,16 +211,8 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region BatchWrite async
 
-        /// <summary>
-        /// Issues a batch-write request with multiple batches.
-        /// </summary>
-        /// <param name="batches">
-        /// Configured BatchWrite objects
-        /// </param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        public Task ExecuteBatchWriteAsync(BatchWrite[] batches, CancellationToken cancellationToken = default(CancellationToken))
+        /// <inheritdoc/>
+        public Task ExecuteBatchWriteAsync(IBatchWrite[] batches, CancellationToken cancellationToken = default(CancellationToken))
         {
             MultiTableBatchWrite superBatch = new MultiTableBatchWrite(batches);
             return superBatch.ExecuteAsync(cancellationToken);
@@ -250,14 +222,8 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region TransactGet async
 
-        /// <summary>
-        /// Issues a transactional get request with multiple TransactGet objects.
-        /// Results are stored in the individual TransactGet objects.
-        /// </summary>
-        /// <param name="transactionParts">Configured TransactGet objects.</param>
-        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
-        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task ExecuteTransactGetAsync(TransactGet[] transactionParts, CancellationToken cancellationToken = default(CancellationToken))
+        /// <inheritdoc/>
+        public Task ExecuteTransactGetAsync(ITransactGet[] transactionParts, CancellationToken cancellationToken = default(CancellationToken))
         {
             MultiTableTransactGet transaction = new MultiTableTransactGet(transactionParts);
             return transaction.ExecuteAsync(cancellationToken);
@@ -267,13 +233,8 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region TransactWrite async
 
-        /// <summary>
-        /// Issues a transactional write request with multiple TransactWrite objects.
-        /// </summary>
-        /// <param name="transactionParts">Configured TransactWrite objects.</param>
-        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
-        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task ExecuteTransactWriteAsync(TransactWrite[] transactionParts, CancellationToken cancellationToken = default(CancellationToken))
+        /// <inheritdoc/>
+        public Task ExecuteTransactWriteAsync(ITransactWrite[] transactionParts, CancellationToken cancellationToken = default(CancellationToken))
         {
             MultiTableTransactWrite transaction = new MultiTableTransactWrite(transactionParts);
             return transaction.ExecuteAsync(cancellationToken);
@@ -284,7 +245,7 @@ namespace Amazon.DynamoDBv2.DataModel
         #region Scan async
 
         /// <inheritdoc/>
-        public AsyncSearch<T> ScanAsync<T>(IEnumerable<ScanCondition> conditions)
+        public IAsyncSearch<T> ScanAsync<T>(IEnumerable<ScanCondition> conditions)
         {
             var scan = ConvertScan<T>(conditions, null);
             return FromSearchAsync<T>(scan);
@@ -292,21 +253,21 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <inheritdoc/>
         [Obsolete("Use the ScanAsync overload that takes ScanConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to ScanAsync.")]
-        public AsyncSearch<T> ScanAsync<T>(IEnumerable<ScanCondition> conditions, DynamoDBOperationConfig operationConfig = null)
+        public IAsyncSearch<T> ScanAsync<T>(IEnumerable<ScanCondition> conditions, DynamoDBOperationConfig operationConfig = null)
         {
             var scan = ConvertScan<T>(conditions, operationConfig);
             return FromSearchAsync<T>(scan);
         }
 
         /// <inheritdoc/>
-        public AsyncSearch<T> ScanAsync<T>(IEnumerable<ScanCondition> conditions, ScanConfig scanConfig)
+        public IAsyncSearch<T> ScanAsync<T>(IEnumerable<ScanCondition> conditions, ScanConfig scanConfig)
         {
             var scan = ConvertScan<T>(conditions, scanConfig?.ToDynamoDBOperationConfig());
             return FromSearchAsync<T>(scan);
         }
 
         /// <inheritdoc/>
-        public AsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanConfig)
+        public IAsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanConfig)
         {
             if (scanConfig == null) throw new ArgumentNullException("scanConfig");
 
@@ -316,7 +277,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <inheritdoc/>
         [Obsolete("Use the FromScanAsync overload that takes ScanConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to FromScanAsync.")]
-        public AsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanConfig, DynamoDBOperationConfig operationConfig = null)
+        public IAsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanConfig, DynamoDBOperationConfig operationConfig = null)
         {
             if (scanConfig == null) throw new ArgumentNullException("scanConfig");
 
@@ -325,7 +286,7 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
-        public AsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanConfig, FromScanConfig fromScanConfig)
+        public IAsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanConfig, FromScanConfig fromScanConfig)
         {
             if (scanConfig == null) throw new ArgumentNullException("scanConfig");
 
@@ -338,7 +299,7 @@ namespace Amazon.DynamoDBv2.DataModel
         #region Query async
 
         /// <inheritdoc/>
-        public AsyncSearch<T> QueryAsync<T>(object hashKeyValue)
+        public IAsyncSearch<T> QueryAsync<T>(object hashKeyValue)
         {
             var query = ConvertQueryByValue<T>(hashKeyValue, null, null);
             return FromSearchAsync<T>(query);
@@ -346,21 +307,21 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <inheritdoc/>
         [Obsolete("Use the QueryAsync overload that takes QueryConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to QueryAsync.")]
-        public AsyncSearch<T> QueryAsync<T>(object hashKeyValue, DynamoDBOperationConfig operationConfig = null)
+        public IAsyncSearch<T> QueryAsync<T>(object hashKeyValue, DynamoDBOperationConfig operationConfig = null)
         {
             var query = ConvertQueryByValue<T>(hashKeyValue, null, operationConfig);
             return FromSearchAsync<T>(query);
         }
 
         /// <inheritdoc/>
-        public AsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryConfig queryConfig)
+        public IAsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryConfig queryConfig)
         {
             var query = ConvertQueryByValue<T>(hashKeyValue, null, queryConfig?.ToDynamoDBOperationConfig());
             return FromSearchAsync<T>(query);
         }
 
         /// <inheritdoc/>
-        public AsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values)
+        public IAsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values)
         {
             if (values == null)
                 throw new ArgumentNullException("values");
@@ -371,7 +332,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <inheritdoc/>
         [Obsolete("Use the QueryAsync overload that takes QueryConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to QueryAsync.")]
-        public AsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, DynamoDBOperationConfig operationConfig = null)
+        public IAsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, DynamoDBOperationConfig operationConfig = null)
         {
             if (values == null)
                 throw new ArgumentNullException("values");
@@ -381,7 +342,7 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
-        public AsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, QueryConfig queryConfig)
+        public IAsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, QueryConfig queryConfig)
         {
             if (values == null)
                 throw new ArgumentNullException("values");
@@ -391,7 +352,7 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
-        public AsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryConfig)
+        public IAsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryConfig)
         {
             if (queryConfig == null) throw new ArgumentNullException("queryConfig");
 
@@ -401,7 +362,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <inheritdoc/>
         [Obsolete("Use the FromQueryAsync overload that takes QueryConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to FromQueryAsync.")]
-        public AsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryConfig, DynamoDBOperationConfig operationConfig = null)
+        public IAsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryConfig, DynamoDBOperationConfig operationConfig = null)
         {
             if (queryConfig == null) throw new ArgumentNullException("queryConfig");
 
@@ -410,7 +371,7 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
-        public AsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryConfig, FromQueryConfig fromQueryConfig)
+        public IAsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryConfig, FromQueryConfig fromQueryConfig)
         {
             if (queryConfig == null) throw new ArgumentNullException("queryConfig");
 

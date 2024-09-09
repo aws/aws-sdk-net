@@ -63,68 +63,71 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetEntityId())
+                    {
+                        context.Writer.WritePropertyName("EntityId");
+                        context.Writer.Write(publicRequest.EntityId);
+                    }
+
+                    if(publicRequest.IsSetKmsKeyArn())
+                    {
+                        context.Writer.WritePropertyName("KmsKeyArn");
+                        context.Writer.Write(publicRequest.KmsKeyArn);
+                    }
+
+                    if(publicRequest.IsSetOrganizationId())
+                    {
+                        context.Writer.WritePropertyName("OrganizationId");
+                        context.Writer.Write(publicRequest.OrganizationId);
+                    }
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("RoleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    if(publicRequest.IsSetS3BucketName())
+                    {
+                        context.Writer.WritePropertyName("S3BucketName");
+                        context.Writer.Write(publicRequest.S3BucketName);
+                    }
+
+                    if(publicRequest.IsSetS3Prefix())
+                    {
+                        context.Writer.WritePropertyName("S3Prefix");
+                        context.Writer.Write(publicRequest.S3Prefix);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetEntityId())
-                {
-                    context.Writer.WritePropertyName("EntityId");
-                    context.Writer.Write(publicRequest.EntityId);
-                }
-
-                if(publicRequest.IsSetKmsKeyArn())
-                {
-                    context.Writer.WritePropertyName("KmsKeyArn");
-                    context.Writer.Write(publicRequest.KmsKeyArn);
-                }
-
-                if(publicRequest.IsSetOrganizationId())
-                {
-                    context.Writer.WritePropertyName("OrganizationId");
-                    context.Writer.Write(publicRequest.OrganizationId);
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("RoleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetS3BucketName())
-                {
-                    context.Writer.WritePropertyName("S3BucketName");
-                    context.Writer.Write(publicRequest.S3BucketName);
-                }
-
-                if(publicRequest.IsSetS3Prefix())
-                {
-                    context.Writer.WritePropertyName("S3Prefix");
-                    context.Writer.Write(publicRequest.S3Prefix);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

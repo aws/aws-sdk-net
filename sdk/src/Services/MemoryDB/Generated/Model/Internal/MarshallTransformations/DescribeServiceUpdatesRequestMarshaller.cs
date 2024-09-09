@@ -63,55 +63,58 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClusterNames())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClusterNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestClusterNamesListValue in publicRequest.ClusterNames)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClusterNames())
                     {
-                            context.Writer.Write(publicRequestClusterNamesListValue);
+                        context.Writer.WritePropertyName("ClusterNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestClusterNamesListValue in publicRequest.ClusterNames)
+                        {
+                                context.Writer.Write(publicRequestClusterNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetServiceUpdateName())
-                {
-                    context.Writer.WritePropertyName("ServiceUpdateName");
-                    context.Writer.Write(publicRequest.ServiceUpdateName);
-                }
-
-                if(publicRequest.IsSetStatus())
-                {
-                    context.Writer.WritePropertyName("Status");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestStatusListValue in publicRequest.Status)
+                    if(publicRequest.IsSetMaxResults())
                     {
-                            context.Writer.Write(publicRequestStatusListValue);
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetServiceUpdateName())
+                    {
+                        context.Writer.WritePropertyName("ServiceUpdateName");
+                        context.Writer.Write(publicRequest.ServiceUpdateName);
+                    }
+
+                    if(publicRequest.IsSetStatus())
+                    {
+                        context.Writer.WritePropertyName("Status");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestStatusListValue in publicRequest.Status)
+                        {
+                                context.Writer.Write(publicRequestStatusListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

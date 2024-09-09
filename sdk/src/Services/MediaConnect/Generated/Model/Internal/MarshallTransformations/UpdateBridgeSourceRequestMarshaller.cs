@@ -67,37 +67,40 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 throw new AmazonMediaConnectException("Request object does not have required field SourceName set");
             request.AddPathResource("{sourceName}", StringUtils.FromString(publicRequest.SourceName));
             request.ResourcePath = "/v1/bridges/{bridgeArn}/sources/{sourceName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFlowSource())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("flowSource");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFlowSource())
+                    {
+                        context.Writer.WritePropertyName("flowSource");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = UpdateBridgeFlowSourceRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.FlowSource, context);
+                        var marshaller = UpdateBridgeFlowSourceRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.FlowSource, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetNetworkSource())
+                    {
+                        context.Writer.WritePropertyName("networkSource");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = UpdateBridgeNetworkSourceRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.NetworkSource, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetNetworkSource())
-                {
-                    context.Writer.WritePropertyName("networkSource");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UpdateBridgeNetworkSourceRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.NetworkSource, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

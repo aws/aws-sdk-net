@@ -63,54 +63,57 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetChangeToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ChangeToken");
-                    context.Writer.Write(publicRequest.ChangeToken);
-                }
-
-                if(publicRequest.IsSetDefaultAction())
-                {
-                    context.Writer.WritePropertyName("DefaultAction");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = WafActionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DefaultAction, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetUpdates())
-                {
-                    context.Writer.WritePropertyName("Updates");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestUpdatesListValue in publicRequest.Updates)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetChangeToken())
                     {
+                        context.Writer.WritePropertyName("ChangeToken");
+                        context.Writer.Write(publicRequest.ChangeToken);
+                    }
+
+                    if(publicRequest.IsSetDefaultAction())
+                    {
+                        context.Writer.WritePropertyName("DefaultAction");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = WebACLUpdateMarshaller.Instance;
-                        marshaller.Marshall(publicRequestUpdatesListValue, context);
+                        var marshaller = WafActionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DefaultAction, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetUpdates())
+                    {
+                        context.Writer.WritePropertyName("Updates");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestUpdatesListValue in publicRequest.Updates)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = WebACLUpdateMarshaller.Instance;
+                            marshaller.Marshall(publicRequestUpdatesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetWebACLId())
+                    {
+                        context.Writer.WritePropertyName("WebACLId");
+                        context.Writer.Write(publicRequest.WebACLId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetWebACLId())
-                {
-                    context.Writer.WritePropertyName("WebACLId");
-                    context.Writer.Write(publicRequest.WebACLId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

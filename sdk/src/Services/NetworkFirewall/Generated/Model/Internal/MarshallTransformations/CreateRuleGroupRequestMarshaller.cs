@@ -63,106 +63,109 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAnalyzeRuleGroup())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AnalyzeRuleGroup");
-                    context.Writer.Write(publicRequest.AnalyzeRuleGroup.Value);
-                }
-
-                if(publicRequest.IsSetCapacity())
-                {
-                    context.Writer.WritePropertyName("Capacity");
-                    context.Writer.Write(publicRequest.Capacity.Value);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetDryRun())
-                {
-                    context.Writer.WritePropertyName("DryRun");
-                    context.Writer.Write(publicRequest.DryRun.Value);
-                }
-
-                if(publicRequest.IsSetEncryptionConfiguration())
-                {
-                    context.Writer.WritePropertyName("EncryptionConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EncryptionConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRuleGroup())
-                {
-                    context.Writer.WritePropertyName("RuleGroup");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RuleGroupMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RuleGroup, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRuleGroupName())
-                {
-                    context.Writer.WritePropertyName("RuleGroupName");
-                    context.Writer.Write(publicRequest.RuleGroupName);
-                }
-
-                if(publicRequest.IsSetRules())
-                {
-                    context.Writer.WritePropertyName("Rules");
-                    context.Writer.Write(publicRequest.Rules);
-                }
-
-                if(publicRequest.IsSetSourceMetadata())
-                {
-                    context.Writer.WritePropertyName("SourceMetadata");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SourceMetadataMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SourceMetadata, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAnalyzeRuleGroup())
                     {
+                        context.Writer.WritePropertyName("AnalyzeRuleGroup");
+                        context.Writer.Write(publicRequest.AnalyzeRuleGroup.Value);
+                    }
+
+                    if(publicRequest.IsSetCapacity())
+                    {
+                        context.Writer.WritePropertyName("Capacity");
+                        context.Writer.Write(publicRequest.Capacity.Value);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetDryRun())
+                    {
+                        context.Writer.WritePropertyName("DryRun");
+                        context.Writer.Write(publicRequest.DryRun.Value);
+                    }
+
+                    if(publicRequest.IsSetEncryptionConfiguration())
+                    {
+                        context.Writer.WritePropertyName("EncryptionConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = EncryptionConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetRuleGroup())
+                    {
+                        context.Writer.WritePropertyName("RuleGroup");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RuleGroupMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RuleGroup, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRuleGroupName())
+                    {
+                        context.Writer.WritePropertyName("RuleGroupName");
+                        context.Writer.Write(publicRequest.RuleGroupName);
+                    }
+
+                    if(publicRequest.IsSetRules())
+                    {
+                        context.Writer.WritePropertyName("Rules");
+                        context.Writer.Write(publicRequest.Rules);
+                    }
+
+                    if(publicRequest.IsSetSourceMetadata())
+                    {
+                        context.Writer.WritePropertyName("SourceMetadata");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SourceMetadataMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SourceMetadata, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetType())
+                    {
+                        context.Writer.WritePropertyName("Type");
+                        context.Writer.Write(publicRequest.Type);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetType())
-                {
-                    context.Writer.WritePropertyName("Type");
-                    context.Writer.Write(publicRequest.Type);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

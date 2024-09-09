@@ -63,49 +63,52 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLabelsInputConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("LabelsInputConfiguration");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetLabelsInputConfiguration())
+                    {
+                        context.Writer.WritePropertyName("LabelsInputConfiguration");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = LabelsInputConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LabelsInputConfiguration, context);
+                        var marshaller = LabelsInputConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.LabelsInputConfiguration, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetModelDiagnosticsOutputConfiguration())
+                    {
+                        context.Writer.WritePropertyName("ModelDiagnosticsOutputConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ModelDiagnosticsOutputConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ModelDiagnosticsOutputConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetModelName())
+                    {
+                        context.Writer.WritePropertyName("ModelName");
+                        context.Writer.Write(publicRequest.ModelName);
+                    }
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("RoleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetModelDiagnosticsOutputConfiguration())
-                {
-                    context.Writer.WritePropertyName("ModelDiagnosticsOutputConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ModelDiagnosticsOutputConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ModelDiagnosticsOutputConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetModelName())
-                {
-                    context.Writer.WritePropertyName("ModelName");
-                    context.Writer.Write(publicRequest.ModelName);
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("RoleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

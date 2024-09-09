@@ -61,140 +61,143 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v1/flows";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAvailabilityZone())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("availabilityZone");
-                    context.Writer.Write(publicRequest.AvailabilityZone);
-                }
-
-                if(publicRequest.IsSetEntitlements())
-                {
-                    context.Writer.WritePropertyName("entitlements");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEntitlementsListValue in publicRequest.Entitlements)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAvailabilityZone())
                     {
+                        context.Writer.WritePropertyName("availabilityZone");
+                        context.Writer.Write(publicRequest.AvailabilityZone);
+                    }
+
+                    if(publicRequest.IsSetEntitlements())
+                    {
+                        context.Writer.WritePropertyName("entitlements");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestEntitlementsListValue in publicRequest.Entitlements)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = GrantEntitlementRequestMarshaller.Instance;
+                            marshaller.Marshall(publicRequestEntitlementsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetMaintenance())
+                    {
+                        context.Writer.WritePropertyName("maintenance");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = GrantEntitlementRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequestEntitlementsListValue, context);
+                        var marshaller = AddMaintenanceMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Maintenance, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetMaintenance())
-                {
-                    context.Writer.WritePropertyName("maintenance");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AddMaintenanceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Maintenance, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMediaStreams())
-                {
-                    context.Writer.WritePropertyName("mediaStreams");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMediaStreamsListValue in publicRequest.MediaStreams)
+                    if(publicRequest.IsSetMediaStreams())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("mediaStreams");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMediaStreamsListValue in publicRequest.MediaStreams)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = AddMediaStreamRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequestMediaStreamsListValue, context);
+                            var marshaller = AddMediaStreamRequestMarshaller.Instance;
+                            marshaller.Marshall(publicRequestMediaStreamsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetOutputs())
-                {
-                    context.Writer.WritePropertyName("outputs");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestOutputsListValue in publicRequest.Outputs)
+                    if(publicRequest.IsSetName())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AddOutputRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequestOutputsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetSource())
-                {
-                    context.Writer.WritePropertyName("source");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SetSourceRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Source, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSourceFailoverConfig())
-                {
-                    context.Writer.WritePropertyName("sourceFailoverConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = FailoverConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SourceFailoverConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSources())
-                {
-                    context.Writer.WritePropertyName("sources");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSourcesListValue in publicRequest.Sources)
+                    if(publicRequest.IsSetOutputs())
                     {
+                        context.Writer.WritePropertyName("outputs");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestOutputsListValue in publicRequest.Outputs)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = AddOutputRequestMarshaller.Instance;
+                            marshaller.Marshall(publicRequestOutputsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSource())
+                    {
+                        context.Writer.WritePropertyName("source");
                         context.Writer.WriteObjectStart();
 
                         var marshaller = SetSourceRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSourcesListValue, context);
+                        marshaller.Marshall(publicRequest.Source, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetVpcInterfaces())
-                {
-                    context.Writer.WritePropertyName("vpcInterfaces");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestVpcInterfacesListValue in publicRequest.VpcInterfaces)
+                    if(publicRequest.IsSetSourceFailoverConfig())
                     {
+                        context.Writer.WritePropertyName("sourceFailoverConfig");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = VpcInterfaceRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequestVpcInterfacesListValue, context);
+                        var marshaller = FailoverConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SourceFailoverConfig, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetSources())
+                    {
+                        context.Writer.WritePropertyName("sources");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSourcesListValue in publicRequest.Sources)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = SetSourceRequestMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSourcesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetVpcInterfaces())
+                    {
+                        context.Writer.WritePropertyName("vpcInterfaces");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestVpcInterfacesListValue in publicRequest.VpcInterfaces)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = VpcInterfaceRequestMarshaller.Instance;
+                            marshaller.Marshall(publicRequestVpcInterfacesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the customer-profiles-2020-08-15.normal.json service model.
  */
 
+using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 

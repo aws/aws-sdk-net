@@ -67,26 +67,29 @@ namespace Amazon.AppFabric.Model.Internal.MarshallTransformations
                 throw new AmazonAppFabricException("Request object does not have required field AppBundleIdentifier set");
             request.AddPathResource("{appBundleIdentifier}", StringUtils.FromString(publicRequest.AppBundleIdentifier));
             request.ResourcePath = "/appbundles/{appBundleIdentifier}/appauthorizations/{appAuthorizationIdentifier}/connect";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAuthRequest())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("authRequest");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAuthRequest())
+                    {
+                        context.Writer.WritePropertyName("authRequest");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = AuthRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AuthRequest, context);
+                        var marshaller = AuthRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AuthRequest, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

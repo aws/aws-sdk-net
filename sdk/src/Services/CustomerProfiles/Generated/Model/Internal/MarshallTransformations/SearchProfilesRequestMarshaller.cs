@@ -70,54 +70,57 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("next-token", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/domains/{DomainName}/profiles/search";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAdditionalSearchKeys())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AdditionalSearchKeys");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAdditionalSearchKeysListValue in publicRequest.AdditionalSearchKeys)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAdditionalSearchKeys())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("AdditionalSearchKeys");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAdditionalSearchKeysListValue in publicRequest.AdditionalSearchKeys)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = AdditionalSearchKeyMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAdditionalSearchKeysListValue, context);
+                            var marshaller = AdditionalSearchKeyMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAdditionalSearchKeysListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetKeyName())
-                {
-                    context.Writer.WritePropertyName("KeyName");
-                    context.Writer.Write(publicRequest.KeyName);
-                }
-
-                if(publicRequest.IsSetLogicalOperator())
-                {
-                    context.Writer.WritePropertyName("LogicalOperator");
-                    context.Writer.Write(publicRequest.LogicalOperator);
-                }
-
-                if(publicRequest.IsSetValues())
-                {
-                    context.Writer.WritePropertyName("Values");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestValuesListValue in publicRequest.Values)
+                    if(publicRequest.IsSetKeyName())
                     {
-                            context.Writer.Write(publicRequestValuesListValue);
+                        context.Writer.WritePropertyName("KeyName");
+                        context.Writer.Write(publicRequest.KeyName);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetLogicalOperator())
+                    {
+                        context.Writer.WritePropertyName("LogicalOperator");
+                        context.Writer.Write(publicRequest.LogicalOperator);
+                    }
+
+                    if(publicRequest.IsSetValues())
+                    {
+                        context.Writer.WritePropertyName("Values");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestValuesListValue in publicRequest.Values)
+                        {
+                                context.Writer.Write(publicRequestValuesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             request.UseQueryString = true;

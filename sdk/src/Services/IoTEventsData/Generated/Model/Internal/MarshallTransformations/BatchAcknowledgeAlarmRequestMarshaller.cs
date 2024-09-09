@@ -61,31 +61,34 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/alarms/acknowledge";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAcknowledgeActionRequests())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("acknowledgeActionRequests");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAcknowledgeActionRequestsListValue in publicRequest.AcknowledgeActionRequests)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAcknowledgeActionRequests())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("acknowledgeActionRequests");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAcknowledgeActionRequestsListValue in publicRequest.AcknowledgeActionRequests)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = AcknowledgeAlarmActionRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAcknowledgeActionRequestsListValue, context);
+                            var marshaller = AcknowledgeAlarmActionRequestMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAcknowledgeActionRequestsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

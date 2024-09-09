@@ -61,37 +61,40 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/v1/datalake";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConfigurations())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("configurations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestConfigurationsListValue in publicRequest.Configurations)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConfigurations())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("configurations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestConfigurationsListValue in publicRequest.Configurations)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = DataLakeConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestConfigurationsListValue, context);
+                            var marshaller = DataLakeConfigurationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestConfigurationsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetMetaStoreManagerRoleArn())
+                    {
+                        context.Writer.WritePropertyName("metaStoreManagerRoleArn");
+                        context.Writer.Write(publicRequest.MetaStoreManagerRoleArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMetaStoreManagerRoleArn())
-                {
-                    context.Writer.WritePropertyName("metaStoreManagerRoleArn");
-                    context.Writer.Write(publicRequest.MetaStoreManagerRoleArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -64,43 +64,46 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 throw new AmazonCustomerProfilesException("Request object does not have required field DomainName set");
             request.AddPathResource("{DomainName}", StringUtils.FromString(publicRequest.DomainName));
             request.ResourcePath = "/domains/{DomainName}/profiles/objects/merge";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFieldSourceProfileIds())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("FieldSourceProfileIds");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = FieldSourceProfileIdsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.FieldSourceProfileIds, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMainProfileId())
-                {
-                    context.Writer.WritePropertyName("MainProfileId");
-                    context.Writer.Write(publicRequest.MainProfileId);
-                }
-
-                if(publicRequest.IsSetProfileIdsToBeMerged())
-                {
-                    context.Writer.WritePropertyName("ProfileIdsToBeMerged");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestProfileIdsToBeMergedListValue in publicRequest.ProfileIdsToBeMerged)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFieldSourceProfileIds())
                     {
-                            context.Writer.Write(publicRequestProfileIdsToBeMergedListValue);
+                        context.Writer.WritePropertyName("FieldSourceProfileIds");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = FieldSourceProfileIdsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.FieldSourceProfileIds, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetMainProfileId())
+                    {
+                        context.Writer.WritePropertyName("MainProfileId");
+                        context.Writer.Write(publicRequest.MainProfileId);
+                    }
+
+                    if(publicRequest.IsSetProfileIdsToBeMerged())
+                    {
+                        context.Writer.WritePropertyName("ProfileIdsToBeMerged");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestProfileIdsToBeMergedListValue in publicRequest.ProfileIdsToBeMerged)
+                        {
+                                context.Writer.Write(publicRequestProfileIdsToBeMergedListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -61,55 +61,58 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/UpdateTableStorageOptimizer";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCatalogId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CatalogId");
-                    context.Writer.Write(publicRequest.CatalogId);
-                }
-
-                if(publicRequest.IsSetDatabaseName())
-                {
-                    context.Writer.WritePropertyName("DatabaseName");
-                    context.Writer.Write(publicRequest.DatabaseName);
-                }
-
-                if(publicRequest.IsSetStorageOptimizerConfig())
-                {
-                    context.Writer.WritePropertyName("StorageOptimizerConfig");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestStorageOptimizerConfigKvp in publicRequest.StorageOptimizerConfig)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCatalogId())
                     {
-                        context.Writer.WritePropertyName(publicRequestStorageOptimizerConfigKvp.Key);
-                        var publicRequestStorageOptimizerConfigValue = publicRequestStorageOptimizerConfigKvp.Value;
+                        context.Writer.WritePropertyName("CatalogId");
+                        context.Writer.Write(publicRequest.CatalogId);
+                    }
 
+                    if(publicRequest.IsSetDatabaseName())
+                    {
+                        context.Writer.WritePropertyName("DatabaseName");
+                        context.Writer.Write(publicRequest.DatabaseName);
+                    }
+
+                    if(publicRequest.IsSetStorageOptimizerConfig())
+                    {
+                        context.Writer.WritePropertyName("StorageOptimizerConfig");
                         context.Writer.WriteObjectStart();
-                        foreach (var publicRequestStorageOptimizerConfigValueKvp in publicRequestStorageOptimizerConfigValue)
+                        foreach (var publicRequestStorageOptimizerConfigKvp in publicRequest.StorageOptimizerConfig)
                         {
-                            context.Writer.WritePropertyName(publicRequestStorageOptimizerConfigValueKvp.Key);
-                            var publicRequestStorageOptimizerConfigValueValue = publicRequestStorageOptimizerConfigValueKvp.Value;
+                            context.Writer.WritePropertyName(publicRequestStorageOptimizerConfigKvp.Key);
+                            var publicRequestStorageOptimizerConfigValue = publicRequestStorageOptimizerConfigKvp.Value;
 
-                                context.Writer.Write(publicRequestStorageOptimizerConfigValueValue);
+                            context.Writer.WriteObjectStart();
+                            foreach (var publicRequestStorageOptimizerConfigValueKvp in publicRequestStorageOptimizerConfigValue)
+                            {
+                                context.Writer.WritePropertyName(publicRequestStorageOptimizerConfigValueKvp.Key);
+                                var publicRequestStorageOptimizerConfigValueValue = publicRequestStorageOptimizerConfigValueKvp.Value;
+
+                                    context.Writer.Write(publicRequestStorageOptimizerConfigValueValue);
+                            }
+                            context.Writer.WriteObjectEnd();
                         }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetTableName())
+                    {
+                        context.Writer.WritePropertyName("TableName");
+                        context.Writer.Write(publicRequest.TableName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTableName())
-                {
-                    context.Writer.WritePropertyName("TableName");
-                    context.Writer.Write(publicRequest.TableName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

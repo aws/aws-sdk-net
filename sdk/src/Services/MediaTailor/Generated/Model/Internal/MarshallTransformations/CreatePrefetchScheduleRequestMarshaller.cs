@@ -67,43 +67,46 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 throw new AmazonMediaTailorException("Request object does not have required field PlaybackConfigurationName set");
             request.AddPathResource("{PlaybackConfigurationName}", StringUtils.FromString(publicRequest.PlaybackConfigurationName));
             request.ResourcePath = "/prefetchSchedule/{PlaybackConfigurationName}/{Name}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConsumption())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Consumption");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConsumption())
+                    {
+                        context.Writer.WritePropertyName("Consumption");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = PrefetchConsumptionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Consumption, context);
+                        var marshaller = PrefetchConsumptionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Consumption, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRetrieval())
+                    {
+                        context.Writer.WritePropertyName("Retrieval");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PrefetchRetrievalMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Retrieval, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetStreamId())
+                    {
+                        context.Writer.WritePropertyName("StreamId");
+                        context.Writer.Write(publicRequest.StreamId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRetrieval())
-                {
-                    context.Writer.WritePropertyName("Retrieval");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PrefetchRetrievalMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Retrieval, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetStreamId())
-                {
-                    context.Writer.WritePropertyName("StreamId");
-                    context.Writer.Write(publicRequest.StreamId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

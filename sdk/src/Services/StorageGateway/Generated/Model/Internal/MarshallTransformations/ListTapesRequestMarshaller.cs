@@ -63,38 +63,41 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLimit())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Limit");
-                    context.Writer.Write(publicRequest.Limit.Value);
-                }
-
-                if(publicRequest.IsSetMarker())
-                {
-                    context.Writer.WritePropertyName("Marker");
-                    context.Writer.Write(publicRequest.Marker);
-                }
-
-                if(publicRequest.IsSetTapeARNs())
-                {
-                    context.Writer.WritePropertyName("TapeARNs");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTapeARNsListValue in publicRequest.TapeARNs)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetLimit())
                     {
-                            context.Writer.Write(publicRequestTapeARNsListValue);
+                        context.Writer.WritePropertyName("Limit");
+                        context.Writer.Write(publicRequest.Limit.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetMarker())
+                    {
+                        context.Writer.WritePropertyName("Marker");
+                        context.Writer.Write(publicRequest.Marker);
+                    }
+
+                    if(publicRequest.IsSetTapeARNs())
+                    {
+                        context.Writer.WritePropertyName("TapeARNs");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTapeARNsListValue in publicRequest.TapeARNs)
+                        {
+                                context.Writer.Write(publicRequestTapeARNsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

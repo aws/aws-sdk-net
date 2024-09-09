@@ -67,73 +67,76 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
                 throw new AmazonAppConfigException("Request object does not have required field EnvironmentId set");
             request.AddPathResource("{EnvironmentId}", StringUtils.FromString(publicRequest.EnvironmentId));
             request.ResourcePath = "/applications/{ApplicationId}/environments/{EnvironmentId}/deployments";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConfigurationProfileId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ConfigurationProfileId");
-                    context.Writer.Write(publicRequest.ConfigurationProfileId);
-                }
-
-                if(publicRequest.IsSetConfigurationVersion())
-                {
-                    context.Writer.WritePropertyName("ConfigurationVersion");
-                    context.Writer.Write(publicRequest.ConfigurationVersion);
-                }
-
-                if(publicRequest.IsSetDeploymentStrategyId())
-                {
-                    context.Writer.WritePropertyName("DeploymentStrategyId");
-                    context.Writer.Write(publicRequest.DeploymentStrategyId);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetDynamicExtensionParameters())
-                {
-                    context.Writer.WritePropertyName("DynamicExtensionParameters");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestDynamicExtensionParametersKvp in publicRequest.DynamicExtensionParameters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConfigurationProfileId())
                     {
-                        context.Writer.WritePropertyName(publicRequestDynamicExtensionParametersKvp.Key);
-                        var publicRequestDynamicExtensionParametersValue = publicRequestDynamicExtensionParametersKvp.Value;
-
-                            context.Writer.Write(publicRequestDynamicExtensionParametersValue);
+                        context.Writer.WritePropertyName("ConfigurationProfileId");
+                        context.Writer.Write(publicRequest.ConfigurationProfileId);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetKmsKeyIdentifier())
-                {
-                    context.Writer.WritePropertyName("KmsKeyIdentifier");
-                    context.Writer.Write(publicRequest.KmsKeyIdentifier);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetConfigurationVersion())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("ConfigurationVersion");
+                        context.Writer.Write(publicRequest.ConfigurationVersion);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetDeploymentStrategyId())
+                    {
+                        context.Writer.WritePropertyName("DeploymentStrategyId");
+                        context.Writer.Write(publicRequest.DeploymentStrategyId);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetDynamicExtensionParameters())
+                    {
+                        context.Writer.WritePropertyName("DynamicExtensionParameters");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestDynamicExtensionParametersKvp in publicRequest.DynamicExtensionParameters)
+                        {
+                            context.Writer.WritePropertyName(publicRequestDynamicExtensionParametersKvp.Key);
+                            var publicRequestDynamicExtensionParametersValue = publicRequestDynamicExtensionParametersKvp.Value;
+
+                                context.Writer.Write(publicRequestDynamicExtensionParametersValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetKmsKeyIdentifier())
+                    {
+                        context.Writer.WritePropertyName("KmsKeyIdentifier");
+                        context.Writer.Write(publicRequest.KmsKeyIdentifier);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

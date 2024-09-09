@@ -63,27 +63,30 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCollectionDurationMinutes())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CollectionDurationMinutes");
-                    context.Writer.Write(publicRequest.CollectionDurationMinutes.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCollectionDurationMinutes())
+                    {
+                        context.Writer.WritePropertyName("CollectionDurationMinutes");
+                        context.Writer.Write(publicRequest.CollectionDurationMinutes.Value);
+                    }
+
+                    if(publicRequest.IsSetDiscoveryJobArn())
+                    {
+                        context.Writer.WritePropertyName("DiscoveryJobArn");
+                        context.Writer.Write(publicRequest.DiscoveryJobArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDiscoveryJobArn())
-                {
-                    context.Writer.WritePropertyName("DiscoveryJobArn");
-                    context.Writer.Write(publicRequest.DiscoveryJobArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

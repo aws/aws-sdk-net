@@ -53,6 +53,14 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
+        /// Paginator for ListDataProductRevisions operation
+        ///</summary>
+        public IListDataProductRevisionsPaginator ListDataProductRevisions(ListDataProductRevisionsRequest request) 
+        {
+            return new ListDataProductRevisionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDataSourceRunActivities operation
         ///</summary>
         public IListDataSourceRunActivitiesPaginator ListDataSourceRunActivities(ListDataSourceRunActivitiesRequest request) 

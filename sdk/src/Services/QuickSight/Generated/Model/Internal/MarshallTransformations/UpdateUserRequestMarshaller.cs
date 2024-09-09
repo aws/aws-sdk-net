@@ -70,57 +70,60 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field UserName set");
             request.AddPathResource("{UserName}", StringUtils.FromString(publicRequest.UserName));
             request.ResourcePath = "/accounts/{AwsAccountId}/namespaces/{Namespace}/users/{UserName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCustomFederationProviderUrl())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CustomFederationProviderUrl");
-                    context.Writer.Write(publicRequest.CustomFederationProviderUrl);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCustomFederationProviderUrl())
+                    {
+                        context.Writer.WritePropertyName("CustomFederationProviderUrl");
+                        context.Writer.Write(publicRequest.CustomFederationProviderUrl);
+                    }
+
+                    if(publicRequest.IsSetCustomPermissionsName())
+                    {
+                        context.Writer.WritePropertyName("CustomPermissionsName");
+                        context.Writer.Write(publicRequest.CustomPermissionsName);
+                    }
+
+                    if(publicRequest.IsSetEmail())
+                    {
+                        context.Writer.WritePropertyName("Email");
+                        context.Writer.Write(publicRequest.Email);
+                    }
+
+                    if(publicRequest.IsSetExternalLoginFederationProviderType())
+                    {
+                        context.Writer.WritePropertyName("ExternalLoginFederationProviderType");
+                        context.Writer.Write(publicRequest.ExternalLoginFederationProviderType);
+                    }
+
+                    if(publicRequest.IsSetExternalLoginId())
+                    {
+                        context.Writer.WritePropertyName("ExternalLoginId");
+                        context.Writer.Write(publicRequest.ExternalLoginId);
+                    }
+
+                    if(publicRequest.IsSetRole())
+                    {
+                        context.Writer.WritePropertyName("Role");
+                        context.Writer.Write(publicRequest.Role);
+                    }
+
+                    if(publicRequest.IsSetUnapplyCustomPermissions())
+                    {
+                        context.Writer.WritePropertyName("UnapplyCustomPermissions");
+                        context.Writer.Write(publicRequest.UnapplyCustomPermissions.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCustomPermissionsName())
-                {
-                    context.Writer.WritePropertyName("CustomPermissionsName");
-                    context.Writer.Write(publicRequest.CustomPermissionsName);
-                }
-
-                if(publicRequest.IsSetEmail())
-                {
-                    context.Writer.WritePropertyName("Email");
-                    context.Writer.Write(publicRequest.Email);
-                }
-
-                if(publicRequest.IsSetExternalLoginFederationProviderType())
-                {
-                    context.Writer.WritePropertyName("ExternalLoginFederationProviderType");
-                    context.Writer.Write(publicRequest.ExternalLoginFederationProviderType);
-                }
-
-                if(publicRequest.IsSetExternalLoginId())
-                {
-                    context.Writer.WritePropertyName("ExternalLoginId");
-                    context.Writer.Write(publicRequest.ExternalLoginId);
-                }
-
-                if(publicRequest.IsSetRole())
-                {
-                    context.Writer.WritePropertyName("Role");
-                    context.Writer.Write(publicRequest.Role);
-                }
-
-                if(publicRequest.IsSetUnapplyCustomPermissions())
-                {
-                    context.Writer.WritePropertyName("UnapplyCustomPermissions");
-                    context.Writer.Write(publicRequest.UnapplyCustomPermissions.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

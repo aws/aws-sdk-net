@@ -63,32 +63,35 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApprovalRuleTemplateName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("approvalRuleTemplateName");
-                    context.Writer.Write(publicRequest.ApprovalRuleTemplateName);
-                }
-
-                if(publicRequest.IsSetRepositoryNames())
-                {
-                    context.Writer.WritePropertyName("repositoryNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRepositoryNamesListValue in publicRequest.RepositoryNames)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApprovalRuleTemplateName())
                     {
-                            context.Writer.Write(publicRequestRepositoryNamesListValue);
+                        context.Writer.WritePropertyName("approvalRuleTemplateName");
+                        context.Writer.Write(publicRequest.ApprovalRuleTemplateName);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetRepositoryNames())
+                    {
+                        context.Writer.WritePropertyName("repositoryNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRepositoryNamesListValue in publicRequest.RepositoryNames)
+                        {
+                                context.Writer.Write(publicRequestRepositoryNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

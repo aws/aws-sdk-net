@@ -63,27 +63,30 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetRotationId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("RotationId");
-                    context.Writer.Write(publicRequest.RotationId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetRotationId())
+                    {
+                        context.Writer.WritePropertyName("RotationId");
+                        context.Writer.Write(publicRequest.RotationId);
+                    }
+
+                    if(publicRequest.IsSetRotationOverrideId())
+                    {
+                        context.Writer.WritePropertyName("RotationOverrideId");
+                        context.Writer.Write(publicRequest.RotationOverrideId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRotationOverrideId())
-                {
-                    context.Writer.WritePropertyName("RotationOverrideId");
-                    context.Writer.Write(publicRequest.RotationOverrideId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -65,43 +65,46 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                 throw new AmazonChimeSDKMessagingException("Request object does not have required field ChannelArn set");
             request.AddPathResource("{channelArn}", StringUtils.FromString(publicRequest.ChannelArn));
             request.ResourcePath = "/channels/{channelArn}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCallbackId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CallbackId");
-                    context.Writer.Write(publicRequest.CallbackId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCallbackId())
+                    {
+                        context.Writer.WritePropertyName("CallbackId");
+                        context.Writer.Write(publicRequest.CallbackId);
+                    }
+
+                    else if(!(publicRequest.IsSetCallbackId()))
+                    {
+                        context.Writer.WritePropertyName("CallbackId");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetChannelMessage())
+                    {
+                        context.Writer.WritePropertyName("ChannelMessage");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ChannelMessageCallbackMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ChannelMessage, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDeleteResource())
+                    {
+                        context.Writer.WritePropertyName("DeleteResource");
+                        context.Writer.Write(publicRequest.DeleteResource.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                else if(!(publicRequest.IsSetCallbackId()))
-                {
-                    context.Writer.WritePropertyName("CallbackId");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetChannelMessage())
-                {
-                    context.Writer.WritePropertyName("ChannelMessage");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ChannelMessageCallbackMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ChannelMessage, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDeleteResource())
-                {
-                    context.Writer.WritePropertyName("DeleteResource");
-                    context.Writer.Write(publicRequest.DeleteResource.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

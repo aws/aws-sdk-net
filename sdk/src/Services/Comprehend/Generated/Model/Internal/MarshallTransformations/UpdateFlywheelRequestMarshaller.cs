@@ -63,44 +63,47 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetActiveModelArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ActiveModelArn");
-                    context.Writer.Write(publicRequest.ActiveModelArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetActiveModelArn())
+                    {
+                        context.Writer.WritePropertyName("ActiveModelArn");
+                        context.Writer.Write(publicRequest.ActiveModelArn);
+                    }
+
+                    if(publicRequest.IsSetDataAccessRoleArn())
+                    {
+                        context.Writer.WritePropertyName("DataAccessRoleArn");
+                        context.Writer.Write(publicRequest.DataAccessRoleArn);
+                    }
+
+                    if(publicRequest.IsSetDataSecurityConfig())
+                    {
+                        context.Writer.WritePropertyName("DataSecurityConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = UpdateDataSecurityConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DataSecurityConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetFlywheelArn())
+                    {
+                        context.Writer.WritePropertyName("FlywheelArn");
+                        context.Writer.Write(publicRequest.FlywheelArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDataAccessRoleArn())
-                {
-                    context.Writer.WritePropertyName("DataAccessRoleArn");
-                    context.Writer.Write(publicRequest.DataAccessRoleArn);
-                }
-
-                if(publicRequest.IsSetDataSecurityConfig())
-                {
-                    context.Writer.WritePropertyName("DataSecurityConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UpdateDataSecurityConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DataSecurityConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetFlywheelArn())
-                {
-                    context.Writer.WritePropertyName("FlywheelArn");
-                    context.Writer.Write(publicRequest.FlywheelArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

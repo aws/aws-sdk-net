@@ -64,21 +64,24 @@ namespace Amazon.ARCZonalShift.Model.Internal.MarshallTransformations
                 throw new AmazonARCZonalShiftException("Request object does not have required field ResourceIdentifier set");
             request.AddPathResource("{resourceIdentifier}", StringUtils.FromString(publicRequest.ResourceIdentifier));
             request.ResourcePath = "/managedresources/{resourceIdentifier}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetZonalAutoshiftStatus())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("zonalAutoshiftStatus");
-                    context.Writer.Write(publicRequest.ZonalAutoshiftStatus);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetZonalAutoshiftStatus())
+                    {
+                        context.Writer.WritePropertyName("zonalAutoshiftStatus");
+                        context.Writer.Write(publicRequest.ZonalAutoshiftStatus);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

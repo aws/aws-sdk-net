@@ -63,54 +63,57 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApplicationSource())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ApplicationSource");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ApplicationSourceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ApplicationSource, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetScalingInstructions())
-                {
-                    context.Writer.WritePropertyName("ScalingInstructions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestScalingInstructionsListValue in publicRequest.ScalingInstructions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApplicationSource())
                     {
+                        context.Writer.WritePropertyName("ApplicationSource");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = ScalingInstructionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestScalingInstructionsListValue, context);
+                        var marshaller = ApplicationSourceMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ApplicationSource, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetScalingInstructions())
+                    {
+                        context.Writer.WritePropertyName("ScalingInstructions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestScalingInstructionsListValue in publicRequest.ScalingInstructions)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ScalingInstructionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestScalingInstructionsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetScalingPlanName())
+                    {
+                        context.Writer.WritePropertyName("ScalingPlanName");
+                        context.Writer.Write(publicRequest.ScalingPlanName);
+                    }
+
+                    if(publicRequest.IsSetScalingPlanVersion())
+                    {
+                        context.Writer.WritePropertyName("ScalingPlanVersion");
+                        context.Writer.Write(publicRequest.ScalingPlanVersion.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetScalingPlanName())
-                {
-                    context.Writer.WritePropertyName("ScalingPlanName");
-                    context.Writer.Write(publicRequest.ScalingPlanName);
-                }
-
-                if(publicRequest.IsSetScalingPlanVersion())
-                {
-                    context.Writer.WritePropertyName("ScalingPlanVersion");
-                    context.Writer.Write(publicRequest.ScalingPlanVersion.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

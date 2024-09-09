@@ -63,27 +63,30 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFlywheelArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("FlywheelArn");
-                    context.Writer.Write(publicRequest.FlywheelArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFlywheelArn())
+                    {
+                        context.Writer.WritePropertyName("FlywheelArn");
+                        context.Writer.Write(publicRequest.FlywheelArn);
+                    }
+
+                    if(publicRequest.IsSetFlywheelIterationId())
+                    {
+                        context.Writer.WritePropertyName("FlywheelIterationId");
+                        context.Writer.Write(publicRequest.FlywheelIterationId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetFlywheelIterationId())
-                {
-                    context.Writer.WritePropertyName("FlywheelIterationId");
-                    context.Writer.Write(publicRequest.FlywheelIterationId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

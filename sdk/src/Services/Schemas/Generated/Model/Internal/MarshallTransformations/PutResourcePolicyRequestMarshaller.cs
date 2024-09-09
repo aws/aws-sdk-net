@@ -64,27 +64,30 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetRegistryName())
                 request.Parameters.Add("registryName", StringUtils.FromString(publicRequest.RegistryName));
             request.ResourcePath = "/v1/policy";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetPolicy())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Policy");
-                    context.Writer.Write(publicRequest.Policy);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetPolicy())
+                    {
+                        context.Writer.WritePropertyName("Policy");
+                        context.Writer.Write(publicRequest.Policy);
+                    }
+
+                    if(publicRequest.IsSetRevisionId())
+                    {
+                        context.Writer.WritePropertyName("RevisionId");
+                        context.Writer.Write(publicRequest.RevisionId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRevisionId())
-                {
-                    context.Writer.WritePropertyName("RevisionId");
-                    context.Writer.Write(publicRequest.RevisionId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             request.UseQueryString = true;

@@ -61,33 +61,36 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/resource/scan";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAnalyzerArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("analyzerArn");
-                    context.Writer.Write(publicRequest.AnalyzerArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAnalyzerArn())
+                    {
+                        context.Writer.WritePropertyName("analyzerArn");
+                        context.Writer.Write(publicRequest.AnalyzerArn);
+                    }
+
+                    if(publicRequest.IsSetResourceArn())
+                    {
+                        context.Writer.WritePropertyName("resourceArn");
+                        context.Writer.Write(publicRequest.ResourceArn);
+                    }
+
+                    if(publicRequest.IsSetResourceOwnerAccount())
+                    {
+                        context.Writer.WritePropertyName("resourceOwnerAccount");
+                        context.Writer.Write(publicRequest.ResourceOwnerAccount);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetResourceArn())
-                {
-                    context.Writer.WritePropertyName("resourceArn");
-                    context.Writer.Write(publicRequest.ResourceArn);
-                }
-
-                if(publicRequest.IsSetResourceOwnerAccount())
-                {
-                    context.Writer.WritePropertyName("resourceOwnerAccount");
-                    context.Writer.Write(publicRequest.ResourceOwnerAccount);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

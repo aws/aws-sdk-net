@@ -61,50 +61,53 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/backend";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAppId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("appId");
-                    context.Writer.Write(publicRequest.AppId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAppId())
+                    {
+                        context.Writer.WritePropertyName("appId");
+                        context.Writer.Write(publicRequest.AppId);
+                    }
+
+                    if(publicRequest.IsSetAppName())
+                    {
+                        context.Writer.WritePropertyName("appName");
+                        context.Writer.Write(publicRequest.AppName);
+                    }
+
+                    if(publicRequest.IsSetBackendEnvironmentName())
+                    {
+                        context.Writer.WritePropertyName("backendEnvironmentName");
+                        context.Writer.Write(publicRequest.BackendEnvironmentName);
+                    }
+
+                    if(publicRequest.IsSetResourceConfig())
+                    {
+                        context.Writer.WritePropertyName("resourceConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ResourceConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ResourceConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetResourceName())
+                    {
+                        context.Writer.WritePropertyName("resourceName");
+                        context.Writer.Write(publicRequest.ResourceName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetAppName())
-                {
-                    context.Writer.WritePropertyName("appName");
-                    context.Writer.Write(publicRequest.AppName);
-                }
-
-                if(publicRequest.IsSetBackendEnvironmentName())
-                {
-                    context.Writer.WritePropertyName("backendEnvironmentName");
-                    context.Writer.Write(publicRequest.BackendEnvironmentName);
-                }
-
-                if(publicRequest.IsSetResourceConfig())
-                {
-                    context.Writer.WritePropertyName("resourceConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ResourceConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ResourceConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetResourceName())
-                {
-                    context.Writer.WritePropertyName("resourceName");
-                    context.Writer.Write(publicRequest.ResourceName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

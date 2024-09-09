@@ -61,50 +61,53 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/describe-connector-profiles";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConnectorLabel())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("connectorLabel");
-                    context.Writer.Write(publicRequest.ConnectorLabel);
-                }
-
-                if(publicRequest.IsSetConnectorProfileNames())
-                {
-                    context.Writer.WritePropertyName("connectorProfileNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestConnectorProfileNamesListValue in publicRequest.ConnectorProfileNames)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConnectorLabel())
                     {
-                            context.Writer.Write(publicRequestConnectorProfileNamesListValue);
+                        context.Writer.WritePropertyName("connectorLabel");
+                        context.Writer.Write(publicRequest.ConnectorLabel);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetConnectorProfileNames())
+                    {
+                        context.Writer.WritePropertyName("connectorProfileNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestConnectorProfileNamesListValue in publicRequest.ConnectorProfileNames)
+                        {
+                                context.Writer.Write(publicRequestConnectorProfileNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetConnectorType())
+                    {
+                        context.Writer.WritePropertyName("connectorType");
+                        context.Writer.Write(publicRequest.ConnectorType);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetConnectorType())
-                {
-                    context.Writer.WritePropertyName("connectorType");
-                    context.Writer.Write(publicRequest.ConnectorType);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

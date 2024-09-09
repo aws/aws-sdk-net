@@ -67,92 +67,95 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field TemplateId set");
             request.AddPathResource("{TemplateId}", StringUtils.FromString(publicRequest.TemplateId));
             request.ResourcePath = "/accounts/{AwsAccountId}/templates/{TemplateId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDefinition())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Definition");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TemplateVersionDefinitionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Definition, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetPermissions())
-                {
-                    context.Writer.WritePropertyName("Permissions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPermissionsListValue in publicRequest.Permissions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDefinition())
                     {
+                        context.Writer.WritePropertyName("Definition");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = ResourcePermissionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestPermissionsListValue, context);
+                        var marshaller = TemplateVersionDefinitionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Definition, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetSourceEntity())
-                {
-                    context.Writer.WritePropertyName("SourceEntity");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TemplateSourceEntityMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SourceEntity, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetName())
                     {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetPermissions())
+                    {
+                        context.Writer.WritePropertyName("Permissions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPermissionsListValue in publicRequest.Permissions)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ResourcePermissionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestPermissionsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSourceEntity())
+                    {
+                        context.Writer.WritePropertyName("SourceEntity");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = TemplateSourceEntityMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SourceEntity, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetValidationStrategy())
+                    {
+                        context.Writer.WritePropertyName("ValidationStrategy");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ValidationStrategyMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ValidationStrategy, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetVersionDescription())
+                    {
+                        context.Writer.WritePropertyName("VersionDescription");
+                        context.Writer.Write(publicRequest.VersionDescription);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetValidationStrategy())
-                {
-                    context.Writer.WritePropertyName("ValidationStrategy");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ValidationStrategyMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ValidationStrategy, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetVersionDescription())
-                {
-                    context.Writer.WritePropertyName("VersionDescription");
-                    context.Writer.Write(publicRequest.VersionDescription);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

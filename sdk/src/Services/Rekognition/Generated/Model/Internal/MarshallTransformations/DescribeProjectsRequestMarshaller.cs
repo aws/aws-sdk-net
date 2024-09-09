@@ -63,49 +63,52 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFeatures())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Features");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFeaturesListValue in publicRequest.Features)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFeatures())
                     {
-                            context.Writer.Write(publicRequestFeaturesListValue);
+                        context.Writer.WritePropertyName("Features");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFeaturesListValue in publicRequest.Features)
+                        {
+                                context.Writer.Write(publicRequestFeaturesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetProjectNames())
-                {
-                    context.Writer.WritePropertyName("ProjectNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestProjectNamesListValue in publicRequest.ProjectNames)
+                    if(publicRequest.IsSetMaxResults())
                     {
-                            context.Writer.Write(publicRequestProjectNamesListValue);
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetProjectNames())
+                    {
+                        context.Writer.WritePropertyName("ProjectNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestProjectNamesListValue in publicRequest.ProjectNames)
+                        {
+                                context.Writer.Write(publicRequestProjectNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

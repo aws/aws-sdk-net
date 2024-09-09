@@ -63,94 +63,97 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetDisassociateWhenNotFound())
-                {
-                    context.Writer.WritePropertyName("DisassociateWhenNotFound");
-                    context.Writer.Write(publicRequest.DisassociateWhenNotFound.Value);
-                }
-
-                if(publicRequest.IsSetLicenseCount())
-                {
-                    context.Writer.WritePropertyName("LicenseCount");
-                    context.Writer.Write(publicRequest.LicenseCount.Value);
-                }
-
-                if(publicRequest.IsSetLicenseCountHardLimit())
-                {
-                    context.Writer.WritePropertyName("LicenseCountHardLimit");
-                    context.Writer.Write(publicRequest.LicenseCountHardLimit.Value);
-                }
-
-                if(publicRequest.IsSetLicenseCountingType())
-                {
-                    context.Writer.WritePropertyName("LicenseCountingType");
-                    context.Writer.Write(publicRequest.LicenseCountingType);
-                }
-
-                if(publicRequest.IsSetLicenseRules())
-                {
-                    context.Writer.WritePropertyName("LicenseRules");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLicenseRulesListValue in publicRequest.LicenseRules)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
-                            context.Writer.Write(publicRequestLicenseRulesListValue);
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetProductInformationList())
-                {
-                    context.Writer.WritePropertyName("ProductInformationList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestProductInformationListListValue in publicRequest.ProductInformationList)
+                    if(publicRequest.IsSetDisassociateWhenNotFound())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ProductInformationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestProductInformationListListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("DisassociateWhenNotFound");
+                        context.Writer.Write(publicRequest.DisassociateWhenNotFound.Value);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetLicenseCount())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("LicenseCount");
+                        context.Writer.Write(publicRequest.LicenseCount.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetLicenseCountHardLimit())
+                    {
+                        context.Writer.WritePropertyName("LicenseCountHardLimit");
+                        context.Writer.Write(publicRequest.LicenseCountHardLimit.Value);
+                    }
+
+                    if(publicRequest.IsSetLicenseCountingType())
+                    {
+                        context.Writer.WritePropertyName("LicenseCountingType");
+                        context.Writer.Write(publicRequest.LicenseCountingType);
+                    }
+
+                    if(publicRequest.IsSetLicenseRules())
+                    {
+                        context.Writer.WritePropertyName("LicenseRules");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLicenseRulesListValue in publicRequest.LicenseRules)
+                        {
+                                context.Writer.Write(publicRequestLicenseRulesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetProductInformationList())
+                    {
+                        context.Writer.WritePropertyName("ProductInformationList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestProductInformationListListValue in publicRequest.ProductInformationList)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ProductInformationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestProductInformationListListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

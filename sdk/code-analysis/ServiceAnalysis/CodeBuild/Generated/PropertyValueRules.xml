@@ -9,6 +9,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeBuild.Model.CreateFleetRequest.ImageId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeBuild.Model.CreateFleetRequest.Name</property>
     <min>2</min>
     <max>128</max>
@@ -306,6 +310,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeBuild.Model.UpdateFleetRequest.ImageId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeBuild.Model.UpdateProjectRequest.Description</property>
     <min>0</min>
     <max>255</max>
@@ -508,6 +516,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.Fleet.Id</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.Fleet.ImageId</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>

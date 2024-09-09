@@ -63,60 +63,63 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetComputePlatform())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("computePlatform");
-                    context.Writer.Write(publicRequest.ComputePlatform);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetComputePlatform())
+                    {
+                        context.Writer.WritePropertyName("computePlatform");
+                        context.Writer.Write(publicRequest.ComputePlatform);
+                    }
+
+                    if(publicRequest.IsSetDeploymentConfigName())
+                    {
+                        context.Writer.WritePropertyName("deploymentConfigName");
+                        context.Writer.Write(publicRequest.DeploymentConfigName);
+                    }
+
+                    if(publicRequest.IsSetMinimumHealthyHosts())
+                    {
+                        context.Writer.WritePropertyName("minimumHealthyHosts");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MinimumHealthyHostsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.MinimumHealthyHosts, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTrafficRoutingConfig())
+                    {
+                        context.Writer.WritePropertyName("trafficRoutingConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TrafficRoutingConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TrafficRoutingConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetZonalConfig())
+                    {
+                        context.Writer.WritePropertyName("zonalConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ZonalConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ZonalConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDeploymentConfigName())
-                {
-                    context.Writer.WritePropertyName("deploymentConfigName");
-                    context.Writer.Write(publicRequest.DeploymentConfigName);
-                }
-
-                if(publicRequest.IsSetMinimumHealthyHosts())
-                {
-                    context.Writer.WritePropertyName("minimumHealthyHosts");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MinimumHealthyHostsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.MinimumHealthyHosts, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTrafficRoutingConfig())
-                {
-                    context.Writer.WritePropertyName("trafficRoutingConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TrafficRoutingConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TrafficRoutingConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetZonalConfig())
-                {
-                    context.Writer.WritePropertyName("zonalConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ZonalConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ZonalConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

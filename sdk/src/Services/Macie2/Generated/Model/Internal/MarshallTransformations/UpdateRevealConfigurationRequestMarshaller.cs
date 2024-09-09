@@ -61,37 +61,40 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/reveal-configuration";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("configuration");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConfiguration())
+                    {
+                        context.Writer.WritePropertyName("configuration");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = RevealConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Configuration, context);
+                        var marshaller = RevealConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Configuration, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRetrievalConfiguration())
+                    {
+                        context.Writer.WritePropertyName("retrievalConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = UpdateRetrievalConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RetrievalConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRetrievalConfiguration())
-                {
-                    context.Writer.WritePropertyName("retrievalConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UpdateRetrievalConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RetrievalConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

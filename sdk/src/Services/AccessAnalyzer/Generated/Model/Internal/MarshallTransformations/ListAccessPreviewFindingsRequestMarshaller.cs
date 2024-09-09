@@ -64,52 +64,55 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
                 throw new AmazonAccessAnalyzerException("Request object does not have required field AccessPreviewId set");
             request.AddPathResource("{accessPreviewId}", StringUtils.FromString(publicRequest.AccessPreviewId));
             request.ResourcePath = "/access-preview/{accessPreviewId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAnalyzerArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("analyzerArn");
-                    context.Writer.Write(publicRequest.AnalyzerArn);
-                }
-
-                if(publicRequest.IsSetFilter())
-                {
-                    context.Writer.WritePropertyName("filter");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestFilterKvp in publicRequest.Filter)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAnalyzerArn())
                     {
-                        context.Writer.WritePropertyName(publicRequestFilterKvp.Key);
-                        var publicRequestFilterValue = publicRequestFilterKvp.Value;
+                        context.Writer.WritePropertyName("analyzerArn");
+                        context.Writer.Write(publicRequest.AnalyzerArn);
+                    }
 
+                    if(publicRequest.IsSetFilter())
+                    {
+                        context.Writer.WritePropertyName("filter");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestFilterKvp in publicRequest.Filter)
+                        {
+                            context.Writer.WritePropertyName(publicRequestFilterKvp.Key);
+                            var publicRequestFilterValue = publicRequestFilterKvp.Value;
 
-                        var marshaller = CriterionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFilterValue, context);
+                            context.Writer.WriteObjectStart();
 
+                            var marshaller = CriterionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFilterValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

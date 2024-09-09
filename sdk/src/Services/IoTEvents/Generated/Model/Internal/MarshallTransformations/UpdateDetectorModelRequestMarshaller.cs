@@ -64,44 +64,47 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
                 throw new AmazonIoTEventsException("Request object does not have required field DetectorModelName set");
             request.AddPathResource("{detectorModelName}", StringUtils.FromString(publicRequest.DetectorModelName));
             request.ResourcePath = "/detector-models/{detectorModelName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDetectorModelDefinition())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("detectorModelDefinition");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDetectorModelDefinition())
+                    {
+                        context.Writer.WritePropertyName("detectorModelDefinition");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = DetectorModelDefinitionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DetectorModelDefinition, context);
+                        var marshaller = DetectorModelDefinitionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DetectorModelDefinition, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDetectorModelDescription())
+                    {
+                        context.Writer.WritePropertyName("detectorModelDescription");
+                        context.Writer.Write(publicRequest.DetectorModelDescription);
+                    }
+
+                    if(publicRequest.IsSetEvaluationMethod())
+                    {
+                        context.Writer.WritePropertyName("evaluationMethod");
+                        context.Writer.Write(publicRequest.EvaluationMethod);
+                    }
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("roleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDetectorModelDescription())
-                {
-                    context.Writer.WritePropertyName("detectorModelDescription");
-                    context.Writer.Write(publicRequest.DetectorModelDescription);
-                }
-
-                if(publicRequest.IsSetEvaluationMethod())
-                {
-                    context.Writer.WritePropertyName("evaluationMethod");
-                    context.Writer.Write(publicRequest.EvaluationMethod);
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("roleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

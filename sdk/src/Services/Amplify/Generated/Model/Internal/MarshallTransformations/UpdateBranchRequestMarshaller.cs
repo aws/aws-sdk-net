@@ -67,124 +67,127 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 throw new AmazonAmplifyException("Request object does not have required field BranchName set");
             request.AddPathResource("{branchName}", StringUtils.FromString(publicRequest.BranchName));
             request.ResourcePath = "/apps/{appId}/branches/{branchName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBackend())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("backend");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = BackendMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Backend, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetBackendEnvironmentArn())
-                {
-                    context.Writer.WritePropertyName("backendEnvironmentArn");
-                    context.Writer.Write(publicRequest.BackendEnvironmentArn);
-                }
-
-                if(publicRequest.IsSetBasicAuthCredentials())
-                {
-                    context.Writer.WritePropertyName("basicAuthCredentials");
-                    context.Writer.Write(publicRequest.BasicAuthCredentials);
-                }
-
-                if(publicRequest.IsSetBuildSpec())
-                {
-                    context.Writer.WritePropertyName("buildSpec");
-                    context.Writer.Write(publicRequest.BuildSpec);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetDisplayName())
-                {
-                    context.Writer.WritePropertyName("displayName");
-                    context.Writer.Write(publicRequest.DisplayName);
-                }
-
-                if(publicRequest.IsSetEnableAutoBuild())
-                {
-                    context.Writer.WritePropertyName("enableAutoBuild");
-                    context.Writer.Write(publicRequest.EnableAutoBuild.Value);
-                }
-
-                if(publicRequest.IsSetEnableBasicAuth())
-                {
-                    context.Writer.WritePropertyName("enableBasicAuth");
-                    context.Writer.Write(publicRequest.EnableBasicAuth.Value);
-                }
-
-                if(publicRequest.IsSetEnableNotification())
-                {
-                    context.Writer.WritePropertyName("enableNotification");
-                    context.Writer.Write(publicRequest.EnableNotification.Value);
-                }
-
-                if(publicRequest.IsSetEnablePerformanceMode())
-                {
-                    context.Writer.WritePropertyName("enablePerformanceMode");
-                    context.Writer.Write(publicRequest.EnablePerformanceMode.Value);
-                }
-
-                if(publicRequest.IsSetEnablePullRequestPreview())
-                {
-                    context.Writer.WritePropertyName("enablePullRequestPreview");
-                    context.Writer.Write(publicRequest.EnablePullRequestPreview.Value);
-                }
-
-                if(publicRequest.IsSetEnvironmentVariables())
-                {
-                    context.Writer.WritePropertyName("environmentVariables");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestEnvironmentVariablesKvp in publicRequest.EnvironmentVariables)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBackend())
                     {
-                        context.Writer.WritePropertyName(publicRequestEnvironmentVariablesKvp.Key);
-                        var publicRequestEnvironmentVariablesValue = publicRequestEnvironmentVariablesKvp.Value;
+                        context.Writer.WritePropertyName("backend");
+                        context.Writer.WriteObjectStart();
 
-                            context.Writer.Write(publicRequestEnvironmentVariablesValue);
+                        var marshaller = BackendMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Backend, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetBackendEnvironmentArn())
+                    {
+                        context.Writer.WritePropertyName("backendEnvironmentArn");
+                        context.Writer.Write(publicRequest.BackendEnvironmentArn);
+                    }
+
+                    if(publicRequest.IsSetBasicAuthCredentials())
+                    {
+                        context.Writer.WritePropertyName("basicAuthCredentials");
+                        context.Writer.Write(publicRequest.BasicAuthCredentials);
+                    }
+
+                    if(publicRequest.IsSetBuildSpec())
+                    {
+                        context.Writer.WritePropertyName("buildSpec");
+                        context.Writer.Write(publicRequest.BuildSpec);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetDisplayName())
+                    {
+                        context.Writer.WritePropertyName("displayName");
+                        context.Writer.Write(publicRequest.DisplayName);
+                    }
+
+                    if(publicRequest.IsSetEnableAutoBuild())
+                    {
+                        context.Writer.WritePropertyName("enableAutoBuild");
+                        context.Writer.Write(publicRequest.EnableAutoBuild.Value);
+                    }
+
+                    if(publicRequest.IsSetEnableBasicAuth())
+                    {
+                        context.Writer.WritePropertyName("enableBasicAuth");
+                        context.Writer.Write(publicRequest.EnableBasicAuth.Value);
+                    }
+
+                    if(publicRequest.IsSetEnableNotification())
+                    {
+                        context.Writer.WritePropertyName("enableNotification");
+                        context.Writer.Write(publicRequest.EnableNotification.Value);
+                    }
+
+                    if(publicRequest.IsSetEnablePerformanceMode())
+                    {
+                        context.Writer.WritePropertyName("enablePerformanceMode");
+                        context.Writer.Write(publicRequest.EnablePerformanceMode.Value);
+                    }
+
+                    if(publicRequest.IsSetEnablePullRequestPreview())
+                    {
+                        context.Writer.WritePropertyName("enablePullRequestPreview");
+                        context.Writer.Write(publicRequest.EnablePullRequestPreview.Value);
+                    }
+
+                    if(publicRequest.IsSetEnvironmentVariables())
+                    {
+                        context.Writer.WritePropertyName("environmentVariables");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestEnvironmentVariablesKvp in publicRequest.EnvironmentVariables)
+                        {
+                            context.Writer.WritePropertyName(publicRequestEnvironmentVariablesKvp.Key);
+                            var publicRequestEnvironmentVariablesValue = publicRequestEnvironmentVariablesKvp.Value;
+
+                                context.Writer.Write(publicRequestEnvironmentVariablesValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetFramework())
+                    {
+                        context.Writer.WritePropertyName("framework");
+                        context.Writer.Write(publicRequest.Framework);
+                    }
+
+                    if(publicRequest.IsSetPullRequestEnvironmentName())
+                    {
+                        context.Writer.WritePropertyName("pullRequestEnvironmentName");
+                        context.Writer.Write(publicRequest.PullRequestEnvironmentName);
+                    }
+
+                    if(publicRequest.IsSetStage())
+                    {
+                        context.Writer.WritePropertyName("stage");
+                        context.Writer.Write(publicRequest.Stage);
+                    }
+
+                    if(publicRequest.IsSetTtl())
+                    {
+                        context.Writer.WritePropertyName("ttl");
+                        context.Writer.Write(publicRequest.Ttl);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetFramework())
-                {
-                    context.Writer.WritePropertyName("framework");
-                    context.Writer.Write(publicRequest.Framework);
-                }
-
-                if(publicRequest.IsSetPullRequestEnvironmentName())
-                {
-                    context.Writer.WritePropertyName("pullRequestEnvironmentName");
-                    context.Writer.Write(publicRequest.PullRequestEnvironmentName);
-                }
-
-                if(publicRequest.IsSetStage())
-                {
-                    context.Writer.WritePropertyName("stage");
-                    context.Writer.Write(publicRequest.Stage);
-                }
-
-                if(publicRequest.IsSetTtl())
-                {
-                    context.Writer.WritePropertyName("ttl");
-                    context.Writer.Write(publicRequest.Ttl);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

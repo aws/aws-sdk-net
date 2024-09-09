@@ -61,61 +61,64 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/update-billing-group";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccountGrouping())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AccountGrouping");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccountGrouping())
+                    {
+                        context.Writer.WritePropertyName("AccountGrouping");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = UpdateBillingGroupAccountGroupingMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AccountGrouping, context);
+                        var marshaller = UpdateBillingGroupAccountGroupingMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AccountGrouping, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetArn())
+                    {
+                        context.Writer.WritePropertyName("Arn");
+                        context.Writer.Write(publicRequest.Arn);
+                    }
+
+                    if(publicRequest.IsSetComputationPreference())
+                    {
+                        context.Writer.WritePropertyName("ComputationPreference");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ComputationPreferenceMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ComputationPreference, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetStatus())
+                    {
+                        context.Writer.WritePropertyName("Status");
+                        context.Writer.Write(publicRequest.Status);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetArn())
-                {
-                    context.Writer.WritePropertyName("Arn");
-                    context.Writer.Write(publicRequest.Arn);
-                }
-
-                if(publicRequest.IsSetComputationPreference())
-                {
-                    context.Writer.WritePropertyName("ComputationPreference");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ComputationPreferenceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ComputationPreference, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetStatus())
-                {
-                    context.Writer.WritePropertyName("Status");
-                    context.Writer.Write(publicRequest.Status);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

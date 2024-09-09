@@ -63,43 +63,46 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMaxResults())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetVmServerAddressList())
-                {
-                    context.Writer.WritePropertyName("vmServerAddressList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestVmServerAddressListListValue in publicRequest.VmServerAddressList)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMaxResults())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = VmServerAddressMarshaller.Instance;
-                        marshaller.Marshall(publicRequestVmServerAddressListListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetVmServerAddressList())
+                    {
+                        context.Writer.WritePropertyName("vmServerAddressList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestVmServerAddressListListValue in publicRequest.VmServerAddressList)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = VmServerAddressMarshaller.Instance;
+                            marshaller.Marshall(publicRequestVmServerAddressListListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

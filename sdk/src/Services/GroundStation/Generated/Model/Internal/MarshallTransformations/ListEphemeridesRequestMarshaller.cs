@@ -67,44 +67,47 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/ephemerides";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEndTime())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("endTime");
-                    context.Writer.Write(publicRequest.EndTime.Value);
-                }
-
-                if(publicRequest.IsSetSatelliteId())
-                {
-                    context.Writer.WritePropertyName("satelliteId");
-                    context.Writer.Write(publicRequest.SatelliteId);
-                }
-
-                if(publicRequest.IsSetStartTime())
-                {
-                    context.Writer.WritePropertyName("startTime");
-                    context.Writer.Write(publicRequest.StartTime.Value);
-                }
-
-                if(publicRequest.IsSetStatusList())
-                {
-                    context.Writer.WritePropertyName("statusList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestStatusListListValue in publicRequest.StatusList)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEndTime())
                     {
-                            context.Writer.Write(publicRequestStatusListListValue);
+                        context.Writer.WritePropertyName("endTime");
+                        context.Writer.Write(publicRequest.EndTime.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetSatelliteId())
+                    {
+                        context.Writer.WritePropertyName("satelliteId");
+                        context.Writer.Write(publicRequest.SatelliteId);
+                    }
+
+                    if(publicRequest.IsSetStartTime())
+                    {
+                        context.Writer.WritePropertyName("startTime");
+                        context.Writer.Write(publicRequest.StartTime.Value);
+                    }
+
+                    if(publicRequest.IsSetStatusList())
+                    {
+                        context.Writer.WritePropertyName("statusList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestStatusListListValue in publicRequest.StatusList)
+                        {
+                                context.Writer.Write(publicRequestStatusListListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             request.UseQueryString = true;

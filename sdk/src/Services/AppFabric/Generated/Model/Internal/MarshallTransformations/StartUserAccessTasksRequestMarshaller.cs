@@ -61,27 +61,30 @@ namespace Amazon.AppFabric.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/useraccess/start";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAppBundleIdentifier())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("appBundleIdentifier");
-                    context.Writer.Write(publicRequest.AppBundleIdentifier);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAppBundleIdentifier())
+                    {
+                        context.Writer.WritePropertyName("appBundleIdentifier");
+                        context.Writer.Write(publicRequest.AppBundleIdentifier);
+                    }
+
+                    if(publicRequest.IsSetEmail())
+                    {
+                        context.Writer.WritePropertyName("email");
+                        context.Writer.Write(publicRequest.Email);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEmail())
-                {
-                    context.Writer.WritePropertyName("email");
-                    context.Writer.Write(publicRequest.Email);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

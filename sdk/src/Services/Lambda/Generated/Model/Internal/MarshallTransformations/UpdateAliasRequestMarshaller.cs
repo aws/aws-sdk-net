@@ -67,44 +67,47 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 throw new AmazonLambdaException("Request object does not have required field Name set");
             request.AddPathResource("{Name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/2015-03-31/functions/{FunctionName}/aliases/{Name}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetFunctionVersion())
+                    {
+                        context.Writer.WritePropertyName("FunctionVersion");
+                        context.Writer.Write(publicRequest.FunctionVersion);
+                    }
+
+                    if(publicRequest.IsSetRevisionId())
+                    {
+                        context.Writer.WritePropertyName("RevisionId");
+                        context.Writer.Write(publicRequest.RevisionId);
+                    }
+
+                    if(publicRequest.IsSetRoutingConfig())
+                    {
+                        context.Writer.WritePropertyName("RoutingConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AliasRoutingConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RoutingConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetFunctionVersion())
-                {
-                    context.Writer.WritePropertyName("FunctionVersion");
-                    context.Writer.Write(publicRequest.FunctionVersion);
-                }
-
-                if(publicRequest.IsSetRevisionId())
-                {
-                    context.Writer.WritePropertyName("RevisionId");
-                    context.Writer.Write(publicRequest.RevisionId);
-                }
-
-                if(publicRequest.IsSetRoutingConfig())
-                {
-                    context.Writer.WritePropertyName("RoutingConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AliasRoutingConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RoutingConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -61,110 +61,136 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/applications";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAttachmentsConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("attachmentsConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AttachmentsConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AttachmentsConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetDisplayName())
-                {
-                    context.Writer.WritePropertyName("displayName");
-                    context.Writer.Write(publicRequest.DisplayName);
-                }
-
-                if(publicRequest.IsSetEncryptionConfiguration())
-                {
-                    context.Writer.WritePropertyName("encryptionConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EncryptionConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetIdentityCenterInstanceArn())
-                {
-                    context.Writer.WritePropertyName("identityCenterInstanceArn");
-                    context.Writer.Write(publicRequest.IdentityCenterInstanceArn);
-                }
-
-                if(publicRequest.IsSetPersonalizationConfiguration())
-                {
-                    context.Writer.WritePropertyName("personalizationConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PersonalizationConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PersonalizationConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetQAppsConfiguration())
-                {
-                    context.Writer.WritePropertyName("qAppsConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = QAppsConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.QAppsConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("roleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAttachmentsConfiguration())
                     {
+                        context.Writer.WritePropertyName("attachmentsConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = AttachmentsConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AttachmentsConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetClientIdsForOIDC())
+                    {
+                        context.Writer.WritePropertyName("clientIdsForOIDC");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestClientIdsForOIDCListValue in publicRequest.ClientIdsForOIDC)
+                        {
+                                context.Writer.Write(publicRequestClientIdsForOIDCListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetDisplayName())
+                    {
+                        context.Writer.WritePropertyName("displayName");
+                        context.Writer.Write(publicRequest.DisplayName);
+                    }
+
+                    if(publicRequest.IsSetEncryptionConfiguration())
+                    {
+                        context.Writer.WritePropertyName("encryptionConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EncryptionConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetIamIdentityProviderArn())
+                    {
+                        context.Writer.WritePropertyName("iamIdentityProviderArn");
+                        context.Writer.Write(publicRequest.IamIdentityProviderArn);
+                    }
+
+                    if(publicRequest.IsSetIdentityCenterInstanceArn())
+                    {
+                        context.Writer.WritePropertyName("identityCenterInstanceArn");
+                        context.Writer.Write(publicRequest.IdentityCenterInstanceArn);
+                    }
+
+                    if(publicRequest.IsSetIdentityType())
+                    {
+                        context.Writer.WritePropertyName("identityType");
+                        context.Writer.Write(publicRequest.IdentityType);
+                    }
+
+                    if(publicRequest.IsSetPersonalizationConfiguration())
+                    {
+                        context.Writer.WritePropertyName("personalizationConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PersonalizationConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.PersonalizationConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetQAppsConfiguration())
+                    {
+                        context.Writer.WritePropertyName("qAppsConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = QAppsConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.QAppsConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("roleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

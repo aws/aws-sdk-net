@@ -63,32 +63,35 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetKeys())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Keys");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestKeysListValue in publicRequest.Keys)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetKeys())
                     {
-                            context.Writer.Write(publicRequestKeysListValue);
+                        context.Writer.WritePropertyName("Keys");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestKeysListValue in publicRequest.Keys)
+                        {
+                                context.Writer.Write(publicRequestKeysListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetResourceArn())
+                    {
+                        context.Writer.WritePropertyName("ResourceArn");
+                        context.Writer.Write(publicRequest.ResourceArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetResourceArn())
-                {
-                    context.Writer.WritePropertyName("ResourceArn");
-                    context.Writer.Write(publicRequest.ResourceArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

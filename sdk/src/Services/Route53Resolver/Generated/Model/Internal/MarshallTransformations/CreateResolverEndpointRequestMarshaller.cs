@@ -63,105 +63,108 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCreatorRequestId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CreatorRequestId");
-                    context.Writer.Write(publicRequest.CreatorRequestId);
-                }
-
-                if(publicRequest.IsSetDirection())
-                {
-                    context.Writer.WritePropertyName("Direction");
-                    context.Writer.Write(publicRequest.Direction);
-                }
-
-                if(publicRequest.IsSetIpAddresses())
-                {
-                    context.Writer.WritePropertyName("IpAddresses");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestIpAddressesListValue in publicRequest.IpAddresses)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCreatorRequestId())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = IpAddressRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequestIpAddressesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("CreatorRequestId");
+                        context.Writer.Write(publicRequest.CreatorRequestId);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetOutpostArn())
-                {
-                    context.Writer.WritePropertyName("OutpostArn");
-                    context.Writer.Write(publicRequest.OutpostArn);
-                }
-
-                if(publicRequest.IsSetPreferredInstanceType())
-                {
-                    context.Writer.WritePropertyName("PreferredInstanceType");
-                    context.Writer.Write(publicRequest.PreferredInstanceType);
-                }
-
-                if(publicRequest.IsSetProtocols())
-                {
-                    context.Writer.WritePropertyName("Protocols");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestProtocolsListValue in publicRequest.Protocols)
+                    if(publicRequest.IsSetDirection())
                     {
-                            context.Writer.Write(publicRequestProtocolsListValue);
+                        context.Writer.WritePropertyName("Direction");
+                        context.Writer.Write(publicRequest.Direction);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetResolverEndpointType())
-                {
-                    context.Writer.WritePropertyName("ResolverEndpointType");
-                    context.Writer.Write(publicRequest.ResolverEndpointType);
-                }
-
-                if(publicRequest.IsSetSecurityGroupIds())
-                {
-                    context.Writer.WritePropertyName("SecurityGroupIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSecurityGroupIdsListValue in publicRequest.SecurityGroupIds)
+                    if(publicRequest.IsSetIpAddresses())
                     {
-                            context.Writer.Write(publicRequestSecurityGroupIdsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
+                        context.Writer.WritePropertyName("IpAddresses");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestIpAddressesListValue in publicRequest.IpAddresses)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                            var marshaller = IpAddressRequestMarshaller.Instance;
+                            marshaller.Marshall(publicRequestIpAddressesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetOutpostArn())
+                    {
+                        context.Writer.WritePropertyName("OutpostArn");
+                        context.Writer.Write(publicRequest.OutpostArn);
+                    }
+
+                    if(publicRequest.IsSetPreferredInstanceType())
+                    {
+                        context.Writer.WritePropertyName("PreferredInstanceType");
+                        context.Writer.Write(publicRequest.PreferredInstanceType);
+                    }
+
+                    if(publicRequest.IsSetProtocols())
+                    {
+                        context.Writer.WritePropertyName("Protocols");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestProtocolsListValue in publicRequest.Protocols)
+                        {
+                                context.Writer.Write(publicRequestProtocolsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetResolverEndpointType())
+                    {
+                        context.Writer.WritePropertyName("ResolverEndpointType");
+                        context.Writer.Write(publicRequest.ResolverEndpointType);
+                    }
+
+                    if(publicRequest.IsSetSecurityGroupIds())
+                    {
+                        context.Writer.WritePropertyName("SecurityGroupIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSecurityGroupIdsListValue in publicRequest.SecurityGroupIds)
+                        {
+                                context.Writer.Write(publicRequestSecurityGroupIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

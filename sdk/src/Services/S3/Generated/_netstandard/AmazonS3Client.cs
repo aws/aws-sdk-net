@@ -315,7 +315,15 @@ namespace Amazon.S3
         /// storage, you should call the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
         /// API operation and ensure that the parts list is empty.
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
+        /// <para>
+        ///  <b>Directory buckets</b> - If multipart uploads in a directory bucket are in progress,
+        /// you can't delete the bucket until all the in-progress multipart uploads are aborted
+        /// or completed. To delete these in-progress multipart uploads, use the <c>ListMultipartUploads</c>
+        /// operation to list the in-progress multipart uploads in the bucket and use the <c>AbortMultupartUpload</c>
+        /// operation to abort all the in-progress multipart uploads. 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
@@ -323,7 +331,7 @@ namespace Amazon.S3
         /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
         /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
         ///  <b>General purpose bucket permissions</b> - For information about permissions required
         /// to use the multipart upload, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
@@ -413,7 +421,15 @@ namespace Amazon.S3
         /// storage, you should call the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
         /// API operation and ensure that the parts list is empty.
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
+        /// <para>
+        ///  <b>Directory buckets</b> - If multipart uploads in a directory bucket are in progress,
+        /// you can't delete the bucket until all the in-progress multipart uploads are aborted
+        /// or completed. To delete these in-progress multipart uploads, use the <c>ListMultipartUploads</c>
+        /// operation to list the in-progress multipart uploads in the bucket and use the <c>AbortMultupartUpload</c>
+        /// operation to abort all the in-progress multipart uploads. 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
@@ -421,7 +437,7 @@ namespace Amazon.S3
         /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
         /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
         ///  <b>General purpose bucket permissions</b> - For information about permissions required
         /// to use the multipart upload, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
@@ -587,6 +603,13 @@ namespace Amazon.S3
         /// about authorization, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
         /// <c>CreateSession</c> </a>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  If you provide an <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_Checksum.html">additional
+        /// checksum value</a> in your <c>MultipartUpload</c> requests and the object is encrypted
+        /// with Key Management Service, you must have permission to use the <c>kms:Decrypt</c>
+        /// action for the <c>CompleteMultipartUpload</c> request to succeed.
+        /// </para>
         ///  </li> </ul> </dd> <dt>Special errors</dt> <dd> <ul> <li> 
         /// <para>
         /// Error Code: <c>EntityTooSmall</c> 
@@ -721,7 +744,12 @@ namespace Amazon.S3
         /// You can copy individual objects between general purpose buckets, between directory
         /// buckets, and between general purpose buckets and directory buckets.
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// Amazon S3 supports copy operations using Multi-Region Access Points only as a destination
+        /// when using the Multi-Region Access Point ARN. 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
@@ -729,7 +757,13 @@ namespace Amazon.S3
         /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
         /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note> 
+        ///  </li> <li> 
+        /// <para>
+        /// VPC endpoints don't support cross-Region requests (including copies). If you're using
+        /// VPC endpoints, your source and destination buckets should be in the same Amazon Web
+        /// Services Region as your VPC endpoint.
+        /// </para>
+        ///  </li> </ul> </note> 
         /// <para>
         /// Both the Region that you want to copy the object from and the Region that you want
         /// to copy the object to must be enabled for your account. For more information about
@@ -918,7 +952,12 @@ namespace Amazon.S3
         /// You can copy individual objects between general purpose buckets, between directory
         /// buckets, and between general purpose buckets and directory buckets.
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// Amazon S3 supports copy operations using Multi-Region Access Points only as a destination
+        /// when using the Multi-Region Access Point ARN. 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
@@ -926,7 +965,13 @@ namespace Amazon.S3
         /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
         /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note> 
+        ///  </li> <li> 
+        /// <para>
+        /// VPC endpoints don't support cross-Region requests (including copies). If you're using
+        /// VPC endpoints, your source and destination buckets should be in the same Amazon Web
+        /// Services Region as your VPC endpoint.
+        /// </para>
+        ///  </li> </ul> </note> 
         /// <para>
         /// Both the Region that you want to copy the object from and the Region that you want
         /// to copy the object to must be enabled for your account. For more information about
@@ -1118,7 +1163,12 @@ namespace Amazon.S3
         /// You can copy individual objects between general purpose buckets, between directory
         /// buckets, and between general purpose buckets and directory buckets.
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// Amazon S3 supports copy operations using Multi-Region Access Points only as a destination
+        /// when using the Multi-Region Access Point ARN. 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
@@ -1126,7 +1176,13 @@ namespace Amazon.S3
         /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
         /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note> 
+        ///  </li> <li> 
+        /// <para>
+        /// VPC endpoints don't support cross-Region requests (including copies). If you're using
+        /// VPC endpoints, your source and destination buckets should be in the same Amazon Web
+        /// Services Region as your VPC endpoint.
+        /// </para>
+        ///  </li> </ul> </note> 
         /// <para>
         /// Both the Region that you want to copy the object from and the Region that you want
         /// to copy the object to must be enabled for your account. For more information about
@@ -1387,13 +1443,23 @@ namespace Amazon.S3
         /// If the destination bucket is a general purpose bucket, you must have the <b> <c>s3:PutObject</c>
         /// </b> permission to write the object copy to the destination bucket. 
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> <li> 
         /// <para>
-        /// For information about permissions required to use the multipart upload API, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
+        /// To perform a multipart upload with encryption using an Key Management Service key,
+        /// the requester must have permission to the <c>kms:Decrypt</c> and <c>kms:GenerateDataKey</c>
+        /// actions on the key. The requester must also have permissions for the <c>kms:GenerateDataKey</c>
+        /// action for the <c>CreateMultipartUpload</c> API. Then, the requester needs permissions
+        /// for the <c>kms:Decrypt</c> action on the <c>UploadPart</c> and <c>UploadPartCopy</c>
+        /// APIs. These permissions are required because Amazon S3 must decrypt and read data
+        /// from the encrypted file parts before it completes the multipart upload. For more information
+        /// about KMS permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">Protecting
+        /// data using server-side encryption with KMS</a> in the <i>Amazon S3 User Guide</i>.
+        /// For information about the permissions required to use the multipart upload API, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
+        /// upload and permissions</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
         /// upload API and permissions</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </li> <li> 
+        ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <b>Directory bucket permissions</b> - You must have permissions in a bucket policy
         /// or an IAM identity-based policy based on the source and destination bucket types in
@@ -1603,13 +1669,23 @@ namespace Amazon.S3
         /// If the destination bucket is a general purpose bucket, you must have the <b> <c>s3:PutObject</c>
         /// </b> permission to write the object copy to the destination bucket. 
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> <li> 
         /// <para>
-        /// For information about permissions required to use the multipart upload API, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
+        /// To perform a multipart upload with encryption using an Key Management Service key,
+        /// the requester must have permission to the <c>kms:Decrypt</c> and <c>kms:GenerateDataKey</c>
+        /// actions on the key. The requester must also have permissions for the <c>kms:GenerateDataKey</c>
+        /// action for the <c>CreateMultipartUpload</c> API. Then, the requester needs permissions
+        /// for the <c>kms:Decrypt</c> action on the <c>UploadPart</c> and <c>UploadPartCopy</c>
+        /// APIs. These permissions are required because Amazon S3 must decrypt and read data
+        /// from the encrypted file parts before it completes the multipart upload. For more information
+        /// about KMS permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">Protecting
+        /// data using server-side encryption with KMS</a> in the <i>Amazon S3 User Guide</i>.
+        /// For information about the permissions required to use the multipart upload API, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
+        /// upload and permissions</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
         /// upload API and permissions</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </li> <li> 
+        ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <b>Directory bucket permissions</b> - You must have permissions in a bucket policy
         /// or an IAM identity-based policy based on the source and destination bucket types in
@@ -1822,13 +1898,23 @@ namespace Amazon.S3
         /// If the destination bucket is a general purpose bucket, you must have the <b> <c>s3:PutObject</c>
         /// </b> permission to write the object copy to the destination bucket. 
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> <li> 
         /// <para>
-        /// For information about permissions required to use the multipart upload API, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
+        /// To perform a multipart upload with encryption using an Key Management Service key,
+        /// the requester must have permission to the <c>kms:Decrypt</c> and <c>kms:GenerateDataKey</c>
+        /// actions on the key. The requester must also have permissions for the <c>kms:GenerateDataKey</c>
+        /// action for the <c>CreateMultipartUpload</c> API. Then, the requester needs permissions
+        /// for the <c>kms:Decrypt</c> action on the <c>UploadPart</c> and <c>UploadPartCopy</c>
+        /// APIs. These permissions are required because Amazon S3 must decrypt and read data
+        /// from the encrypted file parts before it completes the multipart upload. For more information
+        /// about KMS permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">Protecting
+        /// data using server-side encryption with KMS</a> in the <i>Amazon S3 User Guide</i>.
+        /// For information about the permissions required to use the multipart upload API, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
+        /// upload and permissions</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
         /// upload API and permissions</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </li> <li> 
+        ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <b>Directory bucket permissions</b> - You must have permissions in a bucket policy
         /// or an IAM identity-based policy based on the source and destination bucket types in
@@ -4138,144 +4224,6 @@ namespace Amazon.S3
 
         #endregion
         
-        #region  GetACL
-
-        internal virtual GetACLResponse GetACL(GetACLRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = GetACLRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = GetACLResponseUnmarshaller.Instance;
-
-            return Invoke<GetACLResponse>(request, options);
-        }
-
-
-        /// <summary>
-        /// <note> 
-        /// <para>
-        /// This operation is not supported by directory buckets.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// This implementation of the <c>GET</c> action uses the <c>acl</c> subresource to return
-        /// the access control list (ACL) of a bucket. To use <c>GET</c> to return the ACL of
-        /// the bucket, you must have the <c>READ_ACP</c> access to the bucket. If <c>READ_ACP</c>
-        /// permission is granted to the anonymous user, you can return the ACL of the bucket
-        /// without using an authorization header.
-        /// </para>
-        ///  
-        /// <para>
-        /// When you use this API operation with an access point, provide the alias of the access
-        /// point in place of the bucket name.
-        /// </para>
-        ///  
-        /// <para>
-        /// When you use this API operation with an Object Lambda access point, provide the alias
-        /// of the Object Lambda access point in place of the bucket name. If the Object Lambda
-        /// access point alias in a request is not valid, the error code <c>InvalidAccessPointAliasError</c>
-        /// is returned. For more information about <c>InvalidAccessPointAliasError</c>, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
-        /// of Error Codes</a>.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// If your bucket uses the bucket owner enforced setting for S3 Object Ownership, requests
-        /// to read ACLs are still supported and return the <c>bucket-owner-full-control</c> ACL
-        /// with the owner being the account that created the bucket. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">
-        /// Controlling object ownership and disabling ACLs</a> in the <i>Amazon S3 User Guide</i>.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// The following operations are related to <c>GetBucketAcl</c>:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html">ListObjects</a>
-        /// 
-        /// </para>
-        ///  </li> </ul>
-        /// </summary>
-        /// <param name="bucketName">Specifies the S3 bucket whose ACL is being requested. When you use this API operation with an access point, provide the alias of the access point in place of the bucket name. When you use this API operation with an Object Lambda access point, provide the alias of the Object Lambda access point in place of the bucket name. If the Object Lambda access point alias in a request is not valid, the error code <c>InvalidAccessPointAliasError</c> is returned. For more information about <c>InvalidAccessPointAliasError</c>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List of Error Codes</a>.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the GetACL service method, as returned by S3.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAcl">REST API Reference for GetACL Operation</seealso>
-        public virtual Task<GetACLResponse> GetACLAsync(string bucketName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = new GetACLRequest();
-            request.BucketName = bucketName;
-            return GetACLAsync(request, cancellationToken);
-        }
-
-
-
-        /// <summary>
-        /// <note> 
-        /// <para>
-        /// This operation is not supported by directory buckets.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// This implementation of the <c>GET</c> action uses the <c>acl</c> subresource to return
-        /// the access control list (ACL) of a bucket. To use <c>GET</c> to return the ACL of
-        /// the bucket, you must have the <c>READ_ACP</c> access to the bucket. If <c>READ_ACP</c>
-        /// permission is granted to the anonymous user, you can return the ACL of the bucket
-        /// without using an authorization header.
-        /// </para>
-        ///  
-        /// <para>
-        /// When you use this API operation with an access point, provide the alias of the access
-        /// point in place of the bucket name.
-        /// </para>
-        ///  
-        /// <para>
-        /// When you use this API operation with an Object Lambda access point, provide the alias
-        /// of the Object Lambda access point in place of the bucket name. If the Object Lambda
-        /// access point alias in a request is not valid, the error code <c>InvalidAccessPointAliasError</c>
-        /// is returned. For more information about <c>InvalidAccessPointAliasError</c>, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
-        /// of Error Codes</a>.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// If your bucket uses the bucket owner enforced setting for S3 Object Ownership, requests
-        /// to read ACLs are still supported and return the <c>bucket-owner-full-control</c> ACL
-        /// with the owner being the account that created the bucket. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">
-        /// Controlling object ownership and disabling ACLs</a> in the <i>Amazon S3 User Guide</i>.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// The following operations are related to <c>GetBucketAcl</c>:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html">ListObjects</a>
-        /// 
-        /// </para>
-        ///  </li> </ul>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the GetACL service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the GetACL service method, as returned by S3.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAcl">REST API Reference for GetACL Operation</seealso>
-        public virtual Task<GetACLResponse> GetACLAsync(GetACLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = GetACLRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = GetACLResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetACLResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
         #region  GetBucketAccelerateConfiguration
 
         internal virtual GetBucketAccelerateConfigurationResponse GetBucketAccelerateConfiguration(GetBucketAccelerateConfigurationRequest request)
@@ -4414,6 +4362,83 @@ namespace Amazon.S3
             options.ResponseUnmarshaller = GetBucketAccelerateConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetBucketAccelerateConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetBucketAcl
+
+        internal virtual GetBucketAclResponse GetBucketAcl(GetBucketAclRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBucketAclRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBucketAclResponseUnmarshaller.Instance;
+
+            return Invoke<GetBucketAclResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// This implementation of the <c>GET</c> action uses the <c>acl</c> subresource to return
+        /// the access control list (ACL) of a bucket. To use <c>GET</c> to return the ACL of
+        /// the bucket, you must have the <c>READ_ACP</c> access to the bucket. If <c>READ_ACP</c>
+        /// permission is granted to the anonymous user, you can return the ACL of the bucket
+        /// without using an authorization header.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you use this API operation with an access point, provide the alias of the access
+        /// point in place of the bucket name.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you use this API operation with an Object Lambda access point, provide the alias
+        /// of the Object Lambda access point in place of the bucket name. If the Object Lambda
+        /// access point alias in a request is not valid, the error code <c>InvalidAccessPointAliasError</c>
+        /// is returned. For more information about <c>InvalidAccessPointAliasError</c>, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
+        /// of Error Codes</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If your bucket uses the bucket owner enforced setting for S3 Object Ownership, requests
+        /// to read ACLs are still supported and return the <c>bucket-owner-full-control</c> ACL
+        /// with the owner being the account that created the bucket. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">
+        /// Controlling object ownership and disabling ACLs</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The following operations are related to <c>GetBucketAcl</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html">ListObjects</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketAcl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetBucketAcl service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAcl">REST API Reference for GetBucketAcl Operation</seealso>
+        public virtual Task<GetBucketAclResponse> GetBucketAclAsync(GetBucketAclRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBucketAclRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBucketAclResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetBucketAclResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6912,6 +6937,93 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  GetObjectAcl
+
+        internal virtual GetObjectAclResponse GetObjectAcl(GetObjectAclRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetObjectAclRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetObjectAclResponseUnmarshaller.Instance;
+
+            return Invoke<GetObjectAclResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Returns the access control list (ACL) of an object. To use this operation, you must
+        /// have <c>s3:GetObjectAcl</c> permissions or <c>READ_ACP</c> access to the object. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#acl-access-policy-permission-mapping">Mapping
+        /// of ACL permissions and access policy permissions</a> in the <i>Amazon S3 User Guide</i>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// This functionality is not supported for Amazon S3 on Outposts.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, GET returns ACL information about the current version of an object. To
+        /// return ACL information about a different version, use the versionId subresource.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If your bucket uses the bucket owner enforced setting for S3 Object Ownership, requests
+        /// to read ACLs are still supported and return the <c>bucket-owner-full-control</c> ACL
+        /// with the owner being the account that created the bucket. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">
+        /// Controlling object ownership and disabling ACLs</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The following operations are related to <c>GetObjectAcl</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAttributes.html">GetObjectAttributes</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectAcl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetObjectAcl service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectAcl">REST API Reference for GetObjectAcl Operation</seealso>
+        public virtual Task<GetObjectAclResponse> GetObjectAclAsync(GetObjectAclRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetObjectAclRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetObjectAclResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetObjectAclResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetObjectAttributes
 
         internal virtual GetObjectAttributesResponse GetObjectAttributes(GetObjectAttributesRequest request)
@@ -7265,7 +7377,7 @@ namespace Amazon.S3
         /// The <c>HEAD</c> operation retrieves metadata from an object without returning the
         /// object itself. This operation is useful if you're interested only in an object's metadata.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
         /// A <c>HEAD</c> request has the same options as a <c>GET</c> operation on an object.
         /// The response is identical to the <c>GET</c> response except that there is no response
@@ -7274,20 +7386,12 @@ namespace Amazon.S3
         /// <c>405 Method Not Allowed</c>, <c>412 Precondition Failed</c>, or <c>304 Not Modified</c>.
         /// It's not possible to retrieve the exact exception of these error codes.
         /// </para>
-        ///  
+        ///  </note> 
         /// <para>
         /// Request headers are limited to 8 KB in size. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTCommonRequestHeaders.html">Common
         /// Request Headers</a>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
-        /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
-        /// </para>
-        ///  </note> <dl> <dt>Permissions</dt> <dd>  <ul> <li> 
+        ///  <dl> <dt>Permissions</dt> <dd>  <ul> <li> 
         /// <para>
         ///  <b>General purpose bucket permissions</b> - To use <c>HEAD</c>, you must have the
         /// <c>s3:GetObject</c> permission. You need the relevant read object (or version) permission
@@ -7391,7 +7495,14 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
         /// </para>
-        ///  </dd> </dl> 
+        ///  <note> 
+        /// <para>
+        /// For directory buckets, you must make requests for this API operation to the Zonal
+        /// endpoint. These endpoints support virtual-hosted-style requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </note> </dd> </dl> 
         /// <para>
         /// The following actions are related to <c>HeadObject</c>:
         /// </para>
@@ -7428,7 +7539,7 @@ namespace Amazon.S3
         /// The <c>HEAD</c> operation retrieves metadata from an object without returning the
         /// object itself. This operation is useful if you're interested only in an object's metadata.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
         /// A <c>HEAD</c> request has the same options as a <c>GET</c> operation on an object.
         /// The response is identical to the <c>GET</c> response except that there is no response
@@ -7437,20 +7548,12 @@ namespace Amazon.S3
         /// <c>405 Method Not Allowed</c>, <c>412 Precondition Failed</c>, or <c>304 Not Modified</c>.
         /// It's not possible to retrieve the exact exception of these error codes.
         /// </para>
-        ///  
+        ///  </note> 
         /// <para>
         /// Request headers are limited to 8 KB in size. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTCommonRequestHeaders.html">Common
         /// Request Headers</a>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
-        /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
-        /// </para>
-        ///  </note> <dl> <dt>Permissions</dt> <dd>  <ul> <li> 
+        ///  <dl> <dt>Permissions</dt> <dd>  <ul> <li> 
         /// <para>
         ///  <b>General purpose bucket permissions</b> - To use <c>HEAD</c>, you must have the
         /// <c>s3:GetObject</c> permission. You need the relevant read object (or version) permission
@@ -7554,7 +7657,14 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
         /// </para>
-        ///  </dd> </dl> 
+        ///  <note> 
+        /// <para>
+        /// For directory buckets, you must make requests for this API operation to the Zonal
+        /// endpoint. These endpoints support virtual-hosted-style requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </note> </dd> </dl> 
         /// <para>
         /// The following actions are related to <c>HeadObject</c>:
         /// </para>
@@ -7594,7 +7704,7 @@ namespace Amazon.S3
         /// The <c>HEAD</c> operation retrieves metadata from an object without returning the
         /// object itself. This operation is useful if you're interested only in an object's metadata.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
         /// A <c>HEAD</c> request has the same options as a <c>GET</c> operation on an object.
         /// The response is identical to the <c>GET</c> response except that there is no response
@@ -7603,20 +7713,12 @@ namespace Amazon.S3
         /// <c>405 Method Not Allowed</c>, <c>412 Precondition Failed</c>, or <c>304 Not Modified</c>.
         /// It's not possible to retrieve the exact exception of these error codes.
         /// </para>
-        ///  
+        ///  </note> 
         /// <para>
         /// Request headers are limited to 8 KB in size. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTCommonRequestHeaders.html">Common
         /// Request Headers</a>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
-        /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
-        /// </para>
-        ///  </note> <dl> <dt>Permissions</dt> <dd>  <ul> <li> 
+        ///  <dl> <dt>Permissions</dt> <dd>  <ul> <li> 
         /// <para>
         ///  <b>General purpose bucket permissions</b> - To use <c>HEAD</c>, you must have the
         /// <c>s3:GetObject</c> permission. You need the relevant read object (or version) permission
@@ -7720,7 +7822,14 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
         /// </para>
-        ///  </dd> </dl> 
+        ///  <note> 
+        /// <para>
+        /// For directory buckets, you must make requests for this API operation to the Zonal
+        /// endpoint. These endpoints support virtual-hosted-style requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </note> </dd> </dl> 
         /// <para>
         /// The following actions are related to <c>HeadObject</c>:
         /// </para>
@@ -8107,32 +8216,25 @@ namespace Amazon.S3
         /// to access it. The action returns a <c>200 OK</c> if the bucket exists and you have
         /// permission to access it.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
         /// If the bucket does not exist or you do not have permission to access it, the <c>HEAD</c>
         /// request returns a generic <c>400 Bad Request</c>, <c>403 Forbidden</c> or <c>404 Not
         /// Found</c> code. A message body is not included, so you cannot determine the exception
         /// beyond these HTTP response codes.
         /// </para>
-        ///  <note> 
-        /// <para>
-        ///  <b>Directory buckets </b> - You must make requests for this API operation to the
-        /// Zonal endpoint. These endpoints support virtual-hosted-style requests in the format
-        /// <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
-        /// Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
-        /// </para>
         ///  </note> <dl> <dt>Authentication and authorization</dt> <dd> 
         /// <para>
-        /// All <c>HeadBucket</c> requests must be authenticated and signed by using IAM credentials
-        /// (access key ID and secret access key for the IAM identities). All headers with the
-        /// <c>x-amz-</c> prefix, including <c>x-amz-copy-source</c>, must be signed. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST
+        ///  <b>General purpose buckets</b> - Request to public buckets that grant the s3:ListBucket
+        /// permission publicly do not need to be signed. All other <c>HeadBucket</c> requests
+        /// must be authenticated and signed by using IAM credentials (access key ID and secret
+        /// access key for the IAM identities). All headers with the <c>x-amz-</c> prefix, including
+        /// <c>x-amz-copy-source</c>, must be signed. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST
         /// Authentication</a>.
         /// </para>
         ///  
         /// <para>
-        ///  <b>Directory bucket</b> - You must use IAM credentials to authenticate and authorize
+        ///  <b>Directory buckets</b> - You must use IAM credentials to authenticate and authorize
         /// your access to the <c>HeadBucket</c> API operation, instead of using the temporary
         /// security credentials through the <c>CreateSession</c> API operation.
         /// </para>
@@ -8166,7 +8268,14 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
         /// </para>
-        ///  </dd> </dl>
+        ///  <note> 
+        /// <para>
+        /// You must make requests for this API operation to the Zonal endpoint. These endpoints
+        /// support virtual-hosted-style requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        /// Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </note> </dd> </dl>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the HeadBucket service method.</param>
         /// <param name="cancellationToken">
@@ -8245,17 +8354,14 @@ namespace Amazon.S3
         /// </para>
         ///  </dd> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
-        ///  <b>General purpose bucket permissions</b> - For information about the permissions
-        /// required to use the multipart upload API, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
-        /// upload and permissions</a> in the <i>Amazon S3 User Guide</i>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// To perform a multipart upload with encryption by using an Amazon Web Services KMS
-        /// key, the requester must have permission to the <c>kms:Decrypt</c> and <c>kms:GenerateDataKey*</c>
-        /// actions on the key. These permissions are required because Amazon S3 must decrypt
-        /// and read data from the encrypted file parts before it completes the multipart upload.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
+        ///  <b>General purpose bucket permissions</b> - To perform a multipart upload with encryption
+        /// using an Key Management Service (KMS) KMS key, the requester must have permission
+        /// to the <c>kms:Decrypt</c> and <c>kms:GenerateDataKey</c> actions on the key. The requester
+        /// must also have permissions for the <c>kms:GenerateDataKey</c> action for the <c>CreateMultipartUpload</c>
+        /// API. Then, the requester needs permissions for the <c>kms:Decrypt</c> action on the
+        /// <c>UploadPart</c> and <c>UploadPartCopy</c> APIs. These permissions are required because
+        /// Amazon S3 must decrypt and read data from the encrypted file parts before it completes
+        /// the multipart upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
         /// upload API and permissions</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">Protecting
         /// data using server-side encryption with Amazon Web Services KMS</a> in the <i>Amazon
         /// S3 User Guide</i>.
@@ -8484,17 +8590,14 @@ namespace Amazon.S3
         /// </para>
         ///  </dd> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
-        ///  <b>General purpose bucket permissions</b> - For information about the permissions
-        /// required to use the multipart upload API, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
-        /// upload and permissions</a> in the <i>Amazon S3 User Guide</i>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// To perform a multipart upload with encryption by using an Amazon Web Services KMS
-        /// key, the requester must have permission to the <c>kms:Decrypt</c> and <c>kms:GenerateDataKey*</c>
-        /// actions on the key. These permissions are required because Amazon S3 must decrypt
-        /// and read data from the encrypted file parts before it completes the multipart upload.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
+        ///  <b>General purpose bucket permissions</b> - To perform a multipart upload with encryption
+        /// using an Key Management Service (KMS) KMS key, the requester must have permission
+        /// to the <c>kms:Decrypt</c> and <c>kms:GenerateDataKey</c> actions on the key. The requester
+        /// must also have permissions for the <c>kms:GenerateDataKey</c> action for the <c>CreateMultipartUpload</c>
+        /// API. Then, the requester needs permissions for the <c>kms:Decrypt</c> action on the
+        /// <c>UploadPart</c> and <c>UploadPartCopy</c> APIs. These permissions are required because
+        /// Amazon S3 must decrypt and read data from the encrypted file parts before it completes
+        /// the multipart upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
         /// upload API and permissions</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">Protecting
         /// data using server-side encryption with Amazon Web Services KMS</a> in the <i>Amazon
         /// S3 User Guide</i>.
@@ -9177,7 +9280,9 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - If multipart uploads in a directory bucket are in progress,
         /// you can't delete the bucket until all the in-progress multipart uploads are aborted
-        /// or completed. 
+        /// or completed. To delete these in-progress multipart uploads, use the <c>ListMultipartUploads</c>
+        /// operation to list the in-progress multipart uploads in the bucket and use the <c>AbortMultupartUpload</c>
+        /// operation to abort all the in-progress multipart uploads. 
         /// </para>
         ///  </note> 
         /// <para>
@@ -9316,7 +9421,9 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - If multipart uploads in a directory bucket are in progress,
         /// you can't delete the bucket until all the in-progress multipart uploads are aborted
-        /// or completed. 
+        /// or completed. To delete these in-progress multipart uploads, use the <c>ListMultipartUploads</c>
+        /// operation to list the in-progress multipart uploads in the bucket and use the <c>AbortMultupartUpload</c>
+        /// operation to abort all the in-progress multipart uploads. 
         /// </para>
         ///  </note> 
         /// <para>
@@ -9458,7 +9565,9 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - If multipart uploads in a directory bucket are in progress,
         /// you can't delete the bucket until all the in-progress multipart uploads are aborted
-        /// or completed. 
+        /// or completed. To delete these in-progress multipart uploads, use the <c>ListMultipartUploads</c>
+        /// operation to list the in-progress multipart uploads in the bucket and use the <c>AbortMultupartUpload</c>
+        /// operation to abort all the in-progress multipart uploads. 
         /// </para>
         ///  </note> 
         /// <para>
@@ -9823,7 +9932,17 @@ namespace Amazon.S3
         /// object keys programmatically</a> in the <i>Amazon S3 User Guide</i>. To get a list
         /// of your buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html">ListBuckets</a>.
         /// 
-        ///  <note> 
+        ///  <note> <ul> <li> 
+        /// <para>
+        ///  <b>General purpose bucket</b> - For general purpose buckets, <c>ListObjectsV2</c>
+        /// doesn't return prefixes that are related only to in-progress multipart uploads.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Directory buckets</b> - For directory buckets, <c>ListObjectsV2</c> response includes
+        /// the prefixes that are related only to in-progress multipart uploads. 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
@@ -9831,7 +9950,7 @@ namespace Amazon.S3
         /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
         /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
         ///  <b>General purpose bucket permissions</b> - To use this operation, you must have
         /// READ access to the bucket. You must have permission to perform the <c>s3:ListBucket</c>
@@ -10380,284 +10499,6 @@ namespace Amazon.S3
 
         #endregion
         
-        #region  PutACL
-
-        internal virtual PutACLResponse PutACL(PutACLRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = PutACLRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = PutACLResponseUnmarshaller.Instance;
-
-            return Invoke<PutACLResponse>(request, options);
-        }
-
-
-
-        /// <summary>
-        /// <note> 
-        /// <para>
-        /// This operation is not supported by directory buckets.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// Sets the permissions on an existing bucket using access control lists (ACL). For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
-        /// ACLs</a>. To set the ACL of a bucket, you must have the <c>WRITE_ACP</c> permission.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can use one of the following two ways to set a bucket's permissions:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Specify the ACL in the request body
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Specify permissions using request headers
-        /// </para>
-        ///  </li> </ul> <note> 
-        /// <para>
-        /// You cannot specify access permission using both the body and the request headers.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// Depending on your application needs, you may choose to set the ACL on a bucket using
-        /// either the request body or the headers. For example, if you have an existing application
-        /// that updates a bucket ACL using the request body, then you can continue to use that
-        /// approach.
-        /// </para>
-        ///  <important> 
-        /// <para>
-        /// If your bucket uses the bucket owner enforced setting for S3 Object Ownership, ACLs
-        /// are disabled and no longer affect permissions. You must use policies to grant access
-        /// to your bucket and the objects in it. Requests to set ACLs or update ACLs fail and
-        /// return the <c>AccessControlListNotSupported</c> error code. Requests to read ACLs
-        /// are still supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling
-        /// object ownership</a> in the <i>Amazon S3 User Guide</i>.
-        /// </para>
-        ///  </important> <dl> <dt>Permissions</dt> <dd> 
-        /// <para>
-        /// You can set access permissions by using one of the following methods:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Specify a canned ACL with the <c>x-amz-acl</c> request header. Amazon S3 supports
-        /// a set of predefined ACLs, known as <i>canned ACLs</i>. Each canned ACL has a predefined
-        /// set of grantees and permissions. Specify the canned ACL name as the value of <c>x-amz-acl</c>.
-        /// If you use this header, you cannot use other access control-specific headers in your
-        /// request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
-        /// ACL</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Specify access permissions explicitly with the <c>x-amz-grant-read</c>, <c>x-amz-grant-read-acp</c>,
-        /// <c>x-amz-grant-write-acp</c>, and <c>x-amz-grant-full-control</c> headers. When using
-        /// these headers, you specify explicit access permissions and grantees (Amazon Web Services
-        /// accounts or Amazon S3 groups) who will receive the permission. If you use these ACL-specific
-        /// headers, you cannot use the <c>x-amz-acl</c> header to set a canned ACL. These parameters
-        /// map to the set of permissions that Amazon S3 supports in an ACL. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
-        /// Control List (ACL) Overview</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// You specify each grantee as a type=value pair, where the type is one of the following:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>id</c> – if the value specified is the canonical user ID of an Amazon Web Services
-        /// account
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>uri</c> – if you are granting permissions to a predefined group
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>emailAddress</c> – if the value specified is the email address of an Amazon Web
-        /// Services account
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// Using email addresses to specify a grantee is only supported in the following Amazon
-        /// Web Services Regions: 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// US East (N. Virginia)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// US West (N. California)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  US West (Oregon)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  Asia Pacific (Singapore)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Asia Pacific (Sydney)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Asia Pacific (Tokyo)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Europe (Ireland)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// South America (São Paulo)
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
-        /// and Endpoints</a> in the Amazon Web Services General Reference.
-        /// </para>
-        ///  </note> </li> </ul> 
-        /// <para>
-        /// For example, the following <c>x-amz-grant-write</c> header grants create, overwrite,
-        /// and delete objects permission to LogDelivery group predefined by Amazon S3 and two
-        /// Amazon Web Services accounts identified by their email addresses.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>x-amz-grant-write: uri="http://acs.amazonaws.com/groups/s3/LogDelivery", id="111122223333",
-        /// id="555566667777" </c> 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// You can use either a canned ACL or specify access permissions explicitly. You cannot
-        /// do both.
-        /// </para>
-        ///  </dd> <dt>Grantee Values</dt> <dd> 
-        /// <para>
-        /// You can specify the person (grantee) to whom you're assigning access rights (using
-        /// request elements) in the following ways:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// By the person's ID:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>&lt;Grantee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CanonicalUser"&gt;&lt;ID&gt;&lt;&gt;ID&lt;&gt;&lt;/ID&gt;&lt;DisplayName&gt;&lt;&gt;GranteesEmail&lt;&gt;&lt;/DisplayName&gt;
-        /// &lt;/Grantee&gt;</c> 
-        /// </para>
-        ///  
-        /// <para>
-        /// DisplayName is optional and ignored in the request
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// By URI:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>&lt;Grantee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Group"&gt;&lt;URI&gt;&lt;&gt;http://acs.amazonaws.com/groups/global/AuthenticatedUsers&lt;&gt;&lt;/URI&gt;&lt;/Grantee&gt;</c>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// By Email address:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>&lt;Grantee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="AmazonCustomerByEmail"&gt;&lt;EmailAddress&gt;&lt;&gt;Grantees@email.com&lt;&gt;&lt;/EmailAddress&gt;&amp;&lt;/Grantee&gt;</c>
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// The grantee is resolved to the CanonicalUser and, in a response to a GET Object acl
-        /// request, appears as the CanonicalUser. 
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// Using email addresses to specify a grantee is only supported in the following Amazon
-        /// Web Services Regions: 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// US East (N. Virginia)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// US West (N. California)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  US West (Oregon)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  Asia Pacific (Singapore)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Asia Pacific (Sydney)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Asia Pacific (Tokyo)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Europe (Ireland)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// South America (São Paulo)
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
-        /// and Endpoints</a> in the Amazon Web Services General Reference.
-        /// </para>
-        ///  </note> </li> </ul> </dd> </dl> 
-        /// <para>
-        /// The following operations are related to <c>PutBucketAcl</c>:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>
-        /// 
-        /// </para>
-        ///  </li> </ul>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the PutACL service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the PutACL service method, as returned by S3.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAcl">REST API Reference for PutACL Operation</seealso>
-        public virtual Task<PutACLResponse> PutACLAsync(PutACLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = PutACLRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = PutACLResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutACLResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
         #region  PutBucket
 
         internal virtual PutBucketResponse PutBucket(PutBucketRequest request)
@@ -11083,6 +10924,284 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  PutBucketAcl
+
+        internal virtual PutBucketAclResponse PutBucketAcl(PutBucketAclRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutBucketAclRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBucketAclResponseUnmarshaller.Instance;
+
+            return Invoke<PutBucketAclResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Sets the permissions on an existing bucket using access control lists (ACL). For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
+        /// ACLs</a>. To set the ACL of a bucket, you must have the <c>WRITE_ACP</c> permission.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use one of the following two ways to set a bucket's permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Specify the ACL in the request body
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specify permissions using request headers
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// You cannot specify access permission using both the body and the request headers.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Depending on your application needs, you may choose to set the ACL on a bucket using
+        /// either the request body or the headers. For example, if you have an existing application
+        /// that updates a bucket ACL using the request body, then you can continue to use that
+        /// approach.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// If your bucket uses the bucket owner enforced setting for S3 Object Ownership, ACLs
+        /// are disabled and no longer affect permissions. You must use policies to grant access
+        /// to your bucket and the objects in it. Requests to set ACLs or update ACLs fail and
+        /// return the <c>AccessControlListNotSupported</c> error code. Requests to read ACLs
+        /// are still supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling
+        /// object ownership</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </important> <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You can set access permissions by using one of the following methods:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Specify a canned ACL with the <c>x-amz-acl</c> request header. Amazon S3 supports
+        /// a set of predefined ACLs, known as <i>canned ACLs</i>. Each canned ACL has a predefined
+        /// set of grantees and permissions. Specify the canned ACL name as the value of <c>x-amz-acl</c>.
+        /// If you use this header, you cannot use other access control-specific headers in your
+        /// request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
+        /// ACL</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specify access permissions explicitly with the <c>x-amz-grant-read</c>, <c>x-amz-grant-read-acp</c>,
+        /// <c>x-amz-grant-write-acp</c>, and <c>x-amz-grant-full-control</c> headers. When using
+        /// these headers, you specify explicit access permissions and grantees (Amazon Web Services
+        /// accounts or Amazon S3 groups) who will receive the permission. If you use these ACL-specific
+        /// headers, you cannot use the <c>x-amz-acl</c> header to set a canned ACL. These parameters
+        /// map to the set of permissions that Amazon S3 supports in an ACL. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
+        /// Control List (ACL) Overview</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You specify each grantee as a type=value pair, where the type is one of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>id</c> – if the value specified is the canonical user ID of an Amazon Web Services
+        /// account
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>uri</c> – if you are granting permissions to a predefined group
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>emailAddress</c> – if the value specified is the email address of an Amazon Web
+        /// Services account
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Using email addresses to specify a grantee is only supported in the following Amazon
+        /// Web Services Regions: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// US East (N. Virginia)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// US West (N. California)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  US West (Oregon)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Asia Pacific (Singapore)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Asia Pacific (Sydney)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Asia Pacific (Tokyo)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Europe (Ireland)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// South America (São Paulo)
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
+        /// and Endpoints</a> in the Amazon Web Services General Reference.
+        /// </para>
+        ///  </note> </li> </ul> 
+        /// <para>
+        /// For example, the following <c>x-amz-grant-write</c> header grants create, overwrite,
+        /// and delete objects permission to LogDelivery group predefined by Amazon S3 and two
+        /// Amazon Web Services accounts identified by their email addresses.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>x-amz-grant-write: uri="http://acs.amazonaws.com/groups/s3/LogDelivery", id="111122223333",
+        /// id="555566667777" </c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can use either a canned ACL or specify access permissions explicitly. You cannot
+        /// do both.
+        /// </para>
+        ///  </dd> <dt>Grantee Values</dt> <dd> 
+        /// <para>
+        /// You can specify the person (grantee) to whom you're assigning access rights (using
+        /// request elements) in the following ways:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// By the person's ID:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>&lt;Grantee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CanonicalUser"&gt;&lt;ID&gt;&lt;&gt;ID&lt;&gt;&lt;/ID&gt;&lt;DisplayName&gt;&lt;&gt;GranteesEmail&lt;&gt;&lt;/DisplayName&gt;
+        /// &lt;/Grantee&gt;</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// DisplayName is optional and ignored in the request
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// By URI:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>&lt;Grantee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Group"&gt;&lt;URI&gt;&lt;&gt;http://acs.amazonaws.com/groups/global/AuthenticatedUsers&lt;&gt;&lt;/URI&gt;&lt;/Grantee&gt;</c>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// By Email address:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>&lt;Grantee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="AmazonCustomerByEmail"&gt;&lt;EmailAddress&gt;&lt;&gt;Grantees@email.com&lt;&gt;&lt;/EmailAddress&gt;&amp;&lt;/Grantee&gt;</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The grantee is resolved to the CanonicalUser and, in a response to a GET Object acl
+        /// request, appears as the CanonicalUser. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Using email addresses to specify a grantee is only supported in the following Amazon
+        /// Web Services Regions: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// US East (N. Virginia)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// US West (N. California)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  US West (Oregon)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Asia Pacific (Singapore)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Asia Pacific (Sydney)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Asia Pacific (Tokyo)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Europe (Ireland)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// South America (São Paulo)
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
+        /// and Endpoints</a> in the Amazon Web Services General Reference.
+        /// </para>
+        ///  </note> </li> </ul> </dd> </dl> 
+        /// <para>
+        /// The following operations are related to <c>PutBucketAcl</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketAcl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutBucketAcl service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAcl">REST API Reference for PutBucketAcl Operation</seealso>
+        public virtual Task<PutBucketAclResponse> PutBucketAclAsync(PutBucketAclRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutBucketAclRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBucketAclResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutBucketAclResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutBucketAnalyticsConfiguration
 
         internal virtual PutBucketAnalyticsConfigurationResponse PutBucketAnalyticsConfiguration(PutBucketAnalyticsConfigurationRequest request)
@@ -11251,7 +11370,14 @@ namespace Amazon.S3
         /// </para>
         ///  <important> 
         /// <para>
-        /// This action requires Amazon Web Services Signature Version 4. For more information,
+        /// If you're specifying a customer managed KMS key, we recommend using a fully qualified
+        /// KMS key ARN. If you use a KMS key alias instead, then KMS resolves the key within
+        /// the requester’s account. This behavior can result in data that's encrypted with a
+        /// KMS key that belongs to the requester, and not the bucket owner.
+        /// </para>
+        ///  
+        /// <para>
+        /// Also, this action requires Amazon Web Services Signature Version 4. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">
         /// Authenticating Requests (Amazon Web Services Signature Version 4)</a>. 
         /// </para>
@@ -12740,6 +12866,13 @@ namespace Amazon.S3
         /// <para>
         /// This operation is not supported by directory buckets.
         /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// When you enable versioning on a bucket for the first time, it might take a short amount
+        /// of time for the change to be fully propagated. We recommend that you wait for 15 minutes
+        /// after enabling versioning before issuing write operations (<c>PUT</c> or <c>DELETE</c>)
+        /// on objects in the bucket. 
+        /// </para>
         ///  </note> 
         /// <para>
         /// Sets the versioning state of an existing bucket.
@@ -13732,6 +13865,274 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  PutObjectAcl
+
+        internal virtual PutObjectAclResponse PutObjectAcl(PutObjectAclRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutObjectAclRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutObjectAclResponseUnmarshaller.Instance;
+
+            return Invoke<PutObjectAclResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Uses the <c>acl</c> subresource to set the access control list (ACL) permissions for
+        /// a new or existing object in an S3 bucket. You must have the <c>WRITE_ACP</c> permission
+        /// to set the ACL of an object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions">What
+        /// permissions can I grant?</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This functionality is not supported for Amazon S3 on Outposts.
+        /// </para>
+        ///  
+        /// <para>
+        /// Depending on your application needs, you can choose to set the ACL on an object using
+        /// either the request body or the headers. For example, if you have an existing application
+        /// that updates a bucket ACL using the request body, you can continue to use that approach.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
+        /// Control List (ACL) Overview</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// If your bucket uses the bucket owner enforced setting for S3 Object Ownership, ACLs
+        /// are disabled and no longer affect permissions. You must use policies to grant access
+        /// to your bucket and the objects in it. Requests to set ACLs or update ACLs fail and
+        /// return the <c>AccessControlListNotSupported</c> error code. Requests to read ACLs
+        /// are still supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling
+        /// object ownership</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </important> <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You can set access permissions using one of the following methods:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Specify a canned ACL with the <c>x-amz-acl</c> request header. Amazon S3 supports
+        /// a set of predefined ACLs, known as canned ACLs. Each canned ACL has a predefined set
+        /// of grantees and permissions. Specify the canned ACL name as the value of <c>x-amz-ac</c>l.
+        /// If you use this header, you cannot use other access control-specific headers in your
+        /// request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
+        /// ACL</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specify access permissions explicitly with the <c>x-amz-grant-read</c>, <c>x-amz-grant-read-acp</c>,
+        /// <c>x-amz-grant-write-acp</c>, and <c>x-amz-grant-full-control</c> headers. When using
+        /// these headers, you specify explicit access permissions and grantees (Amazon Web Services
+        /// accounts or Amazon S3 groups) who will receive the permission. If you use these ACL-specific
+        /// headers, you cannot use <c>x-amz-acl</c> header to set a canned ACL. These parameters
+        /// map to the set of permissions that Amazon S3 supports in an ACL. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
+        /// Control List (ACL) Overview</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You specify each grantee as a type=value pair, where the type is one of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>id</c> – if the value specified is the canonical user ID of an Amazon Web Services
+        /// account
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>uri</c> – if you are granting permissions to a predefined group
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>emailAddress</c> – if the value specified is the email address of an Amazon Web
+        /// Services account
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Using email addresses to specify a grantee is only supported in the following Amazon
+        /// Web Services Regions: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// US East (N. Virginia)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// US West (N. California)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  US West (Oregon)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Asia Pacific (Singapore)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Asia Pacific (Sydney)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Asia Pacific (Tokyo)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Europe (Ireland)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// South America (São Paulo)
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
+        /// and Endpoints</a> in the Amazon Web Services General Reference.
+        /// </para>
+        ///  </note> </li> </ul> 
+        /// <para>
+        /// For example, the following <c>x-amz-grant-read</c> header grants list objects permission
+        /// to the two Amazon Web Services accounts identified by their email addresses.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>x-amz-grant-read: emailAddress="xyz@amazon.com", emailAddress="abc@amazon.com"
+        /// </c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can use either a canned ACL or specify access permissions explicitly. You cannot
+        /// do both.
+        /// </para>
+        ///  </dd> <dt>Grantee Values</dt> <dd> 
+        /// <para>
+        /// You can specify the person (grantee) to whom you're assigning access rights (using
+        /// request elements) in the following ways:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// By the person's ID:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>&lt;Grantee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CanonicalUser"&gt;&lt;ID&gt;&lt;&gt;ID&lt;&gt;&lt;/ID&gt;&lt;DisplayName&gt;&lt;&gt;GranteesEmail&lt;&gt;&lt;/DisplayName&gt;
+        /// &lt;/Grantee&gt;</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// DisplayName is optional and ignored in the request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// By URI:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>&lt;Grantee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Group"&gt;&lt;URI&gt;&lt;&gt;http://acs.amazonaws.com/groups/global/AuthenticatedUsers&lt;&gt;&lt;/URI&gt;&lt;/Grantee&gt;</c>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// By Email address:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>&lt;Grantee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="AmazonCustomerByEmail"&gt;&lt;EmailAddress&gt;&lt;&gt;Grantees@email.com&lt;&gt;&lt;/EmailAddress&gt;lt;/Grantee&gt;</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The grantee is resolved to the CanonicalUser and, in a response to a GET Object acl
+        /// request, appears as the CanonicalUser.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Using email addresses to specify a grantee is only supported in the following Amazon
+        /// Web Services Regions: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// US East (N. Virginia)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// US West (N. California)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  US West (Oregon)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Asia Pacific (Singapore)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Asia Pacific (Sydney)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Asia Pacific (Tokyo)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Europe (Ireland)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// South America (São Paulo)
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
+        /// and Endpoints</a> in the Amazon Web Services General Reference.
+        /// </para>
+        ///  </note> </li> </ul> </dd> <dt>Versioning</dt> <dd> 
+        /// <para>
+        /// The ACL of an object is set at the object version level. By default, PUT sets the
+        /// ACL of the current version of an object. To set the ACL of a different version, use
+        /// the <c>versionId</c> subresource.
+        /// </para>
+        ///  </dd> </dl> 
+        /// <para>
+        /// The following operations are related to <c>PutObjectAcl</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutObjectAcl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutObjectAcl service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectAcl">REST API Reference for PutObjectAcl Operation</seealso>
+        public virtual Task<PutObjectAclResponse> PutObjectAclAsync(PutObjectAclRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutObjectAclRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutObjectAclResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutObjectAclResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutObjectLegalHold
 
         internal virtual PutObjectLegalHoldResponse PutObjectLegalHold(PutObjectLegalHoldRequest request)
@@ -14094,7 +14495,14 @@ namespace Amazon.S3
         /// <para>
         /// This operation is not supported by directory buckets.
         /// </para>
-        ///  </note> 
+        ///  </note> <important> 
+        /// <para>
+        /// The <c>SELECT</c> job type for the RestoreObject operation is no longer available
+        /// to new customers. Existing customers of Amazon S3 Select can continue to use the feature
+        /// as usual. <a href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn
+        /// more</a> 
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Restores an archived copy of an object back into Amazon S3
         /// </para>
@@ -14323,7 +14731,14 @@ namespace Amazon.S3
         /// <para>
         /// This operation is not supported by directory buckets.
         /// </para>
-        ///  </note> 
+        ///  </note> <important> 
+        /// <para>
+        /// The <c>SELECT</c> job type for the RestoreObject operation is no longer available
+        /// to new customers. Existing customers of Amazon S3 Select can continue to use the feature
+        /// as usual. <a href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn
+        /// more</a> 
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Restores an archived copy of an object back into Amazon S3
         /// </para>
@@ -14554,7 +14969,14 @@ namespace Amazon.S3
         /// <para>
         /// This operation is not supported by directory buckets.
         /// </para>
-        ///  </note> 
+        ///  </note> <important> 
+        /// <para>
+        /// The <c>SELECT</c> job type for the RestoreObject operation is no longer available
+        /// to new customers. Existing customers of Amazon S3 Select can continue to use the feature
+        /// as usual. <a href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn
+        /// more</a> 
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Restores an archived copy of an object back into Amazon S3
         /// </para>
@@ -14785,7 +15207,14 @@ namespace Amazon.S3
         /// <para>
         /// This operation is not supported by directory buckets.
         /// </para>
-        ///  </note> 
+        ///  </note> <important> 
+        /// <para>
+        /// The <c>SELECT</c> job type for the RestoreObject operation is no longer available
+        /// to new customers. Existing customers of Amazon S3 Select can continue to use the feature
+        /// as usual. <a href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn
+        /// more</a> 
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Restores an archived copy of an object back into Amazon S3
         /// </para>
@@ -15019,7 +15448,14 @@ namespace Amazon.S3
         /// <para>
         /// This operation is not supported by directory buckets.
         /// </para>
-        ///  </note> 
+        ///  </note> <important> 
+        /// <para>
+        /// The <c>SELECT</c> job type for the RestoreObject operation is no longer available
+        /// to new customers. Existing customers of Amazon S3 Select can continue to use the feature
+        /// as usual. <a href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn
+        /// more</a> 
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Restores an archived copy of an object back into Amazon S3
         /// </para>
@@ -15262,7 +15698,13 @@ namespace Amazon.S3
         /// <para>
         /// This operation is not supported by directory buckets.
         /// </para>
-        ///  </note> 
+        ///  </note> <important> 
+        /// <para>
+        /// The SelectObjectContent operation is no longer available to new customers. Existing
+        /// customers of Amazon S3 Select can continue to use the operation as usual. <a href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn
+        /// more</a> 
+        /// </para>
+        ///  </important> 
         /// <para>
         /// This action filters the contents of an Amazon S3 object based on a simple structured
         /// query language (SQL) statement. In the request, along with the SQL expression, you
@@ -15467,9 +15909,23 @@ namespace Amazon.S3
         /// </para>
         ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
-        ///  <b>General purpose bucket permissions</b> - For information on the permissions required
-        /// to use the multipart upload API, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
-        /// Upload and Permissions</a> in the <i>Amazon S3 User Guide</i>.
+        ///  <b>General purpose bucket permissions</b> - To perform a multipart upload with encryption
+        /// using an Key Management Service key, the requester must have permission to the <c>kms:Decrypt</c>
+        /// and <c>kms:GenerateDataKey</c> actions on the key. The requester must also have permissions
+        /// for the <c>kms:GenerateDataKey</c> action for the <c>CreateMultipartUpload</c> API.
+        /// Then, the requester needs permissions for the <c>kms:Decrypt</c> action on the <c>UploadPart</c>
+        /// and <c>UploadPartCopy</c> APIs.
+        /// </para>
+        ///  
+        /// <para>
+        /// These permissions are required because Amazon S3 must decrypt and read data from the
+        /// encrypted file parts before it completes the multipart upload. For more information
+        /// about KMS permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">Protecting
+        /// data using server-side encryption with KMS</a> in the <i>Amazon S3 User Guide</i>.
+        /// For information about the permissions required to use the multipart upload API, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
+        /// upload and permissions</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
+        /// upload API and permissions</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>

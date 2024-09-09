@@ -64,31 +64,34 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 throw new AmazonLocationServiceException("Request object does not have required field TrackerName set");
             request.AddPathResource("{TrackerName}", StringUtils.FromString(publicRequest.TrackerName));
             request.ResourcePath = "/tracking/v0/trackers/{TrackerName}/positions";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetUpdates())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Updates");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestUpdatesListValue in publicRequest.Updates)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetUpdates())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("Updates");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestUpdatesListValue in publicRequest.Updates)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = DevicePositionUpdateMarshaller.Instance;
-                        marshaller.Marshall(publicRequestUpdatesListValue, context);
+                            var marshaller = DevicePositionUpdateMarshaller.Instance;
+                            marshaller.Marshall(publicRequestUpdatesListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

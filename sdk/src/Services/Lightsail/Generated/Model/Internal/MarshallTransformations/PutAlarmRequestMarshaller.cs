@@ -63,98 +63,101 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAlarmName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("alarmName");
-                    context.Writer.Write(publicRequest.AlarmName);
-                }
-
-                if(publicRequest.IsSetComparisonOperator())
-                {
-                    context.Writer.WritePropertyName("comparisonOperator");
-                    context.Writer.Write(publicRequest.ComparisonOperator);
-                }
-
-                if(publicRequest.IsSetContactProtocols())
-                {
-                    context.Writer.WritePropertyName("contactProtocols");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestContactProtocolsListValue in publicRequest.ContactProtocols)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAlarmName())
                     {
-                            context.Writer.Write(publicRequestContactProtocolsListValue);
+                        context.Writer.WritePropertyName("alarmName");
+                        context.Writer.Write(publicRequest.AlarmName);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDatapointsToAlarm())
-                {
-                    context.Writer.WritePropertyName("datapointsToAlarm");
-                    context.Writer.Write(publicRequest.DatapointsToAlarm.Value);
-                }
-
-                if(publicRequest.IsSetEvaluationPeriods())
-                {
-                    context.Writer.WritePropertyName("evaluationPeriods");
-                    context.Writer.Write(publicRequest.EvaluationPeriods.Value);
-                }
-
-                if(publicRequest.IsSetMetricName())
-                {
-                    context.Writer.WritePropertyName("metricName");
-                    context.Writer.Write(publicRequest.MetricName);
-                }
-
-                if(publicRequest.IsSetMonitoredResourceName())
-                {
-                    context.Writer.WritePropertyName("monitoredResourceName");
-                    context.Writer.Write(publicRequest.MonitoredResourceName);
-                }
-
-                if(publicRequest.IsSetNotificationEnabled())
-                {
-                    context.Writer.WritePropertyName("notificationEnabled");
-                    context.Writer.Write(publicRequest.NotificationEnabled.Value);
-                }
-
-                if(publicRequest.IsSetNotificationTriggers())
-                {
-                    context.Writer.WritePropertyName("notificationTriggers");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestNotificationTriggersListValue in publicRequest.NotificationTriggers)
+                    if(publicRequest.IsSetComparisonOperator())
                     {
-                            context.Writer.Write(publicRequestNotificationTriggersListValue);
+                        context.Writer.WritePropertyName("comparisonOperator");
+                        context.Writer.Write(publicRequest.ComparisonOperator);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetThreshold())
-                {
-                    context.Writer.WritePropertyName("threshold");
-                    if(StringUtils.IsSpecialDoubleValue(publicRequest.Threshold.Value))
+                    if(publicRequest.IsSetContactProtocols())
                     {
-                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.Threshold.Value));
+                        context.Writer.WritePropertyName("contactProtocols");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestContactProtocolsListValue in publicRequest.ContactProtocols)
+                        {
+                                context.Writer.Write(publicRequestContactProtocolsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    else
+
+                    if(publicRequest.IsSetDatapointsToAlarm())
                     {
-                        context.Writer.Write(publicRequest.Threshold.Value);
+                        context.Writer.WritePropertyName("datapointsToAlarm");
+                        context.Writer.Write(publicRequest.DatapointsToAlarm.Value);
                     }
+
+                    if(publicRequest.IsSetEvaluationPeriods())
+                    {
+                        context.Writer.WritePropertyName("evaluationPeriods");
+                        context.Writer.Write(publicRequest.EvaluationPeriods.Value);
+                    }
+
+                    if(publicRequest.IsSetMetricName())
+                    {
+                        context.Writer.WritePropertyName("metricName");
+                        context.Writer.Write(publicRequest.MetricName);
+                    }
+
+                    if(publicRequest.IsSetMonitoredResourceName())
+                    {
+                        context.Writer.WritePropertyName("monitoredResourceName");
+                        context.Writer.Write(publicRequest.MonitoredResourceName);
+                    }
+
+                    if(publicRequest.IsSetNotificationEnabled())
+                    {
+                        context.Writer.WritePropertyName("notificationEnabled");
+                        context.Writer.Write(publicRequest.NotificationEnabled.Value);
+                    }
+
+                    if(publicRequest.IsSetNotificationTriggers())
+                    {
+                        context.Writer.WritePropertyName("notificationTriggers");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestNotificationTriggersListValue in publicRequest.NotificationTriggers)
+                        {
+                                context.Writer.Write(publicRequestNotificationTriggersListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetThreshold())
+                    {
+                        context.Writer.WritePropertyName("threshold");
+                        if(StringUtils.IsSpecialDoubleValue(publicRequest.Threshold.Value))
+                        {
+                            context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.Threshold.Value));
+                        }
+                        else
+                        {
+                            context.Writer.Write(publicRequest.Threshold.Value);
+                        }
+                    }
+
+                    if(publicRequest.IsSetTreatMissingData())
+                    {
+                        context.Writer.WritePropertyName("treatMissingData");
+                        context.Writer.Write(publicRequest.TreatMissingData);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTreatMissingData())
-                {
-                    context.Writer.WritePropertyName("treatMissingData");
-                    context.Writer.Write(publicRequest.TreatMissingData);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

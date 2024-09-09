@@ -63,33 +63,36 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFleetId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("FleetId");
-                    context.Writer.Write(publicRequest.FleetId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFleetId())
+                    {
+                        context.Writer.WritePropertyName("FleetId");
+                        context.Writer.Write(publicRequest.FleetId);
+                    }
+
+                    if(publicRequest.IsSetPeerVpcAwsAccountId())
+                    {
+                        context.Writer.WritePropertyName("PeerVpcAwsAccountId");
+                        context.Writer.Write(publicRequest.PeerVpcAwsAccountId);
+                    }
+
+                    if(publicRequest.IsSetPeerVpcId())
+                    {
+                        context.Writer.WritePropertyName("PeerVpcId");
+                        context.Writer.Write(publicRequest.PeerVpcId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPeerVpcAwsAccountId())
-                {
-                    context.Writer.WritePropertyName("PeerVpcAwsAccountId");
-                    context.Writer.Write(publicRequest.PeerVpcAwsAccountId);
-                }
-
-                if(publicRequest.IsSetPeerVpcId())
-                {
-                    context.Writer.WritePropertyName("PeerVpcId");
-                    context.Writer.Write(publicRequest.PeerVpcId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

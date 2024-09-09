@@ -63,33 +63,36 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetIgnoreUnsupportedType())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("IgnoreUnsupportedType");
-                    context.Writer.Write(publicRequest.IgnoreUnsupportedType.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetIgnoreUnsupportedType())
+                    {
+                        context.Writer.WritePropertyName("IgnoreUnsupportedType");
+                        context.Writer.Write(publicRequest.IgnoreUnsupportedType.Value);
+                    }
+
+                    if(publicRequest.IsSetS3BucketName())
+                    {
+                        context.Writer.WritePropertyName("S3BucketName");
+                        context.Writer.Write(publicRequest.S3BucketName);
+                    }
+
+                    if(publicRequest.IsSetWebACLId())
+                    {
+                        context.Writer.WritePropertyName("WebACLId");
+                        context.Writer.Write(publicRequest.WebACLId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetS3BucketName())
-                {
-                    context.Writer.WritePropertyName("S3BucketName");
-                    context.Writer.Write(publicRequest.S3BucketName);
-                }
-
-                if(publicRequest.IsSetWebACLId())
-                {
-                    context.Writer.WritePropertyName("WebACLId");
-                    context.Writer.Write(publicRequest.WebACLId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

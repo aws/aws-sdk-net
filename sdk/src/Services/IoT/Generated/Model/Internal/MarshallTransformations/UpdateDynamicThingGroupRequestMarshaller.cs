@@ -64,50 +64,53 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field ThingGroupName set");
             request.AddPathResource("{thingGroupName}", StringUtils.FromString(publicRequest.ThingGroupName));
             request.ResourcePath = "/dynamic-thing-groups/{thingGroupName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetExpectedVersion())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("expectedVersion");
-                    context.Writer.Write(publicRequest.ExpectedVersion.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetExpectedVersion())
+                    {
+                        context.Writer.WritePropertyName("expectedVersion");
+                        context.Writer.Write(publicRequest.ExpectedVersion.Value);
+                    }
+
+                    if(publicRequest.IsSetIndexName())
+                    {
+                        context.Writer.WritePropertyName("indexName");
+                        context.Writer.Write(publicRequest.IndexName);
+                    }
+
+                    if(publicRequest.IsSetQueryString())
+                    {
+                        context.Writer.WritePropertyName("queryString");
+                        context.Writer.Write(publicRequest.QueryString);
+                    }
+
+                    if(publicRequest.IsSetQueryVersion())
+                    {
+                        context.Writer.WritePropertyName("queryVersion");
+                        context.Writer.Write(publicRequest.QueryVersion);
+                    }
+
+                    if(publicRequest.IsSetThingGroupProperties())
+                    {
+                        context.Writer.WritePropertyName("thingGroupProperties");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ThingGroupPropertiesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ThingGroupProperties, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetIndexName())
-                {
-                    context.Writer.WritePropertyName("indexName");
-                    context.Writer.Write(publicRequest.IndexName);
-                }
-
-                if(publicRequest.IsSetQueryString())
-                {
-                    context.Writer.WritePropertyName("queryString");
-                    context.Writer.Write(publicRequest.QueryString);
-                }
-
-                if(publicRequest.IsSetQueryVersion())
-                {
-                    context.Writer.WritePropertyName("queryVersion");
-                    context.Writer.Write(publicRequest.QueryVersion);
-                }
-
-                if(publicRequest.IsSetThingGroupProperties())
-                {
-                    context.Writer.WritePropertyName("thingGroupProperties");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ThingGroupPropertiesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ThingGroupProperties, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

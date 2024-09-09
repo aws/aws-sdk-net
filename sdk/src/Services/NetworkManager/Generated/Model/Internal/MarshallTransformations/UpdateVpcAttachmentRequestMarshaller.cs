@@ -64,48 +64,51 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                 throw new AmazonNetworkManagerException("Request object does not have required field AttachmentId set");
             request.AddPathResource("{attachmentId}", StringUtils.FromString(publicRequest.AttachmentId));
             request.ResourcePath = "/vpc-attachments/{attachmentId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAddSubnetArns())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AddSubnetArns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAddSubnetArnsListValue in publicRequest.AddSubnetArns)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAddSubnetArns())
                     {
-                            context.Writer.Write(publicRequestAddSubnetArnsListValue);
+                        context.Writer.WritePropertyName("AddSubnetArns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAddSubnetArnsListValue in publicRequest.AddSubnetArns)
+                        {
+                                context.Writer.Write(publicRequestAddSubnetArnsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetOptions())
-                {
-                    context.Writer.WritePropertyName("Options");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = VpcOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Options, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRemoveSubnetArns())
-                {
-                    context.Writer.WritePropertyName("RemoveSubnetArns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRemoveSubnetArnsListValue in publicRequest.RemoveSubnetArns)
+                    if(publicRequest.IsSetOptions())
                     {
-                            context.Writer.Write(publicRequestRemoveSubnetArnsListValue);
+                        context.Writer.WritePropertyName("Options");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = VpcOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Options, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetRemoveSubnetArns())
+                    {
+                        context.Writer.WritePropertyName("RemoveSubnetArns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRemoveSubnetArnsListValue in publicRequest.RemoveSubnetArns)
+                        {
+                                context.Writer.Write(publicRequestRemoveSubnetArnsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

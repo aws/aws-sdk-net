@@ -63,69 +63,72 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCluster())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("cluster");
-                    context.Writer.Write(publicRequest.Cluster);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCluster())
+                    {
+                        context.Writer.WritePropertyName("cluster");
+                        context.Writer.Write(publicRequest.Cluster);
+                    }
+
+                    if(publicRequest.IsSetContainerInstance())
+                    {
+                        context.Writer.WritePropertyName("containerInstance");
+                        context.Writer.Write(publicRequest.ContainerInstance);
+                    }
+
+                    if(publicRequest.IsSetDesiredStatus())
+                    {
+                        context.Writer.WritePropertyName("desiredStatus");
+                        context.Writer.Write(publicRequest.DesiredStatus);
+                    }
+
+                    if(publicRequest.IsSetFamily())
+                    {
+                        context.Writer.WritePropertyName("family");
+                        context.Writer.Write(publicRequest.Family);
+                    }
+
+                    if(publicRequest.IsSetLaunchType())
+                    {
+                        context.Writer.WritePropertyName("launchType");
+                        context.Writer.Write(publicRequest.LaunchType);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetServiceName())
+                    {
+                        context.Writer.WritePropertyName("serviceName");
+                        context.Writer.Write(publicRequest.ServiceName);
+                    }
+
+                    if(publicRequest.IsSetStartedBy())
+                    {
+                        context.Writer.WritePropertyName("startedBy");
+                        context.Writer.Write(publicRequest.StartedBy);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetContainerInstance())
-                {
-                    context.Writer.WritePropertyName("containerInstance");
-                    context.Writer.Write(publicRequest.ContainerInstance);
-                }
-
-                if(publicRequest.IsSetDesiredStatus())
-                {
-                    context.Writer.WritePropertyName("desiredStatus");
-                    context.Writer.Write(publicRequest.DesiredStatus);
-                }
-
-                if(publicRequest.IsSetFamily())
-                {
-                    context.Writer.WritePropertyName("family");
-                    context.Writer.Write(publicRequest.Family);
-                }
-
-                if(publicRequest.IsSetLaunchType())
-                {
-                    context.Writer.WritePropertyName("launchType");
-                    context.Writer.Write(publicRequest.LaunchType);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetServiceName())
-                {
-                    context.Writer.WritePropertyName("serviceName");
-                    context.Writer.Write(publicRequest.ServiceName);
-                }
-
-                if(publicRequest.IsSetStartedBy())
-                {
-                    context.Writer.WritePropertyName("startedBy");
-                    context.Writer.Write(publicRequest.StartedBy);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

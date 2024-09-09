@@ -61,39 +61,42 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/billing-groups/addThingToBillingGroup";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBillingGroupArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("billingGroupArn");
-                    context.Writer.Write(publicRequest.BillingGroupArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBillingGroupArn())
+                    {
+                        context.Writer.WritePropertyName("billingGroupArn");
+                        context.Writer.Write(publicRequest.BillingGroupArn);
+                    }
+
+                    if(publicRequest.IsSetBillingGroupName())
+                    {
+                        context.Writer.WritePropertyName("billingGroupName");
+                        context.Writer.Write(publicRequest.BillingGroupName);
+                    }
+
+                    if(publicRequest.IsSetThingArn())
+                    {
+                        context.Writer.WritePropertyName("thingArn");
+                        context.Writer.Write(publicRequest.ThingArn);
+                    }
+
+                    if(publicRequest.IsSetThingName())
+                    {
+                        context.Writer.WritePropertyName("thingName");
+                        context.Writer.Write(publicRequest.ThingName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetBillingGroupName())
-                {
-                    context.Writer.WritePropertyName("billingGroupName");
-                    context.Writer.Write(publicRequest.BillingGroupName);
-                }
-
-                if(publicRequest.IsSetThingArn())
-                {
-                    context.Writer.WritePropertyName("thingArn");
-                    context.Writer.Write(publicRequest.ThingArn);
-                }
-
-                if(publicRequest.IsSetThingName())
-                {
-                    context.Writer.WritePropertyName("thingName");
-                    context.Writer.Write(publicRequest.ThingName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

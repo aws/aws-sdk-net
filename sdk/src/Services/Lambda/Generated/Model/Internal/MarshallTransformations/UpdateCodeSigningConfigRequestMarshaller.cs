@@ -64,43 +64,46 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 throw new AmazonLambdaException("Request object does not have required field CodeSigningConfigArn set");
             request.AddPathResource("{CodeSigningConfigArn}", StringUtils.FromString(publicRequest.CodeSigningConfigArn));
             request.ResourcePath = "/2020-04-22/code-signing-configs/{CodeSigningConfigArn}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAllowedPublishers())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AllowedPublishers");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAllowedPublishers())
+                    {
+                        context.Writer.WritePropertyName("AllowedPublishers");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = AllowedPublishersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AllowedPublishers, context);
+                        var marshaller = AllowedPublishersMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AllowedPublishers, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetCodeSigningPolicies())
+                    {
+                        context.Writer.WritePropertyName("CodeSigningPolicies");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CodeSigningPoliciesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CodeSigningPolicies, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCodeSigningPolicies())
-                {
-                    context.Writer.WritePropertyName("CodeSigningPolicies");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CodeSigningPoliciesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CodeSigningPolicies, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

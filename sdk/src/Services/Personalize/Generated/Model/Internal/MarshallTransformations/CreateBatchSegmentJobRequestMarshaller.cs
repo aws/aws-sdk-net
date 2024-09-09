@@ -63,83 +63,86 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFilterArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("filterArn");
-                    context.Writer.Write(publicRequest.FilterArn);
-                }
-
-                if(publicRequest.IsSetJobInput())
-                {
-                    context.Writer.WritePropertyName("jobInput");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = BatchSegmentJobInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.JobInput, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetJobName())
-                {
-                    context.Writer.WritePropertyName("jobName");
-                    context.Writer.Write(publicRequest.JobName);
-                }
-
-                if(publicRequest.IsSetJobOutput())
-                {
-                    context.Writer.WritePropertyName("jobOutput");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = BatchSegmentJobOutputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.JobOutput, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetNumResults())
-                {
-                    context.Writer.WritePropertyName("numResults");
-                    context.Writer.Write(publicRequest.NumResults.Value);
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("roleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetSolutionVersionArn())
-                {
-                    context.Writer.WritePropertyName("solutionVersionArn");
-                    context.Writer.Write(publicRequest.SolutionVersionArn);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFilterArn())
                     {
+                        context.Writer.WritePropertyName("filterArn");
+                        context.Writer.Write(publicRequest.FilterArn);
+                    }
+
+                    if(publicRequest.IsSetJobInput())
+                    {
+                        context.Writer.WritePropertyName("jobInput");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = BatchSegmentJobInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.JobInput, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetJobName())
+                    {
+                        context.Writer.WritePropertyName("jobName");
+                        context.Writer.Write(publicRequest.JobName);
+                    }
+
+                    if(publicRequest.IsSetJobOutput())
+                    {
+                        context.Writer.WritePropertyName("jobOutput");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = BatchSegmentJobOutputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.JobOutput, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetNumResults())
+                    {
+                        context.Writer.WritePropertyName("numResults");
+                        context.Writer.Write(publicRequest.NumResults.Value);
+                    }
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("roleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    if(publicRequest.IsSetSolutionVersionArn())
+                    {
+                        context.Writer.WritePropertyName("solutionVersionArn");
+                        context.Writer.Write(publicRequest.SolutionVersionArn);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,56 +63,59 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDataProviderIdentifier())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DataProviderIdentifier");
-                    context.Writer.Write(publicRequest.DataProviderIdentifier);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDataProviderIdentifier())
+                    {
+                        context.Writer.WritePropertyName("DataProviderIdentifier");
+                        context.Writer.Write(publicRequest.DataProviderIdentifier);
+                    }
+
+                    if(publicRequest.IsSetDataProviderName())
+                    {
+                        context.Writer.WritePropertyName("DataProviderName");
+                        context.Writer.Write(publicRequest.DataProviderName);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetEngine())
+                    {
+                        context.Writer.WritePropertyName("Engine");
+                        context.Writer.Write(publicRequest.Engine);
+                    }
+
+                    if(publicRequest.IsSetExactSettings())
+                    {
+                        context.Writer.WritePropertyName("ExactSettings");
+                        context.Writer.Write(publicRequest.ExactSettings.Value);
+                    }
+
+                    if(publicRequest.IsSetSettings())
+                    {
+                        context.Writer.WritePropertyName("Settings");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DataProviderSettingsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Settings, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDataProviderName())
-                {
-                    context.Writer.WritePropertyName("DataProviderName");
-                    context.Writer.Write(publicRequest.DataProviderName);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetEngine())
-                {
-                    context.Writer.WritePropertyName("Engine");
-                    context.Writer.Write(publicRequest.Engine);
-                }
-
-                if(publicRequest.IsSetExactSettings())
-                {
-                    context.Writer.WritePropertyName("ExactSettings");
-                    context.Writer.Write(publicRequest.ExactSettings.Value);
-                }
-
-                if(publicRequest.IsSetSettings())
-                {
-                    context.Writer.WritePropertyName("Settings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DataProviderSettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Settings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -64,21 +64,24 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
                 throw new AmazonChimeSDKVoiceException("Request object does not have required field VoiceProfileId set");
             request.AddPathResource("{VoiceProfileId}", StringUtils.FromString(publicRequest.VoiceProfileId));
             request.ResourcePath = "/voice-profiles/{VoiceProfileId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetSpeakerSearchTaskId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("SpeakerSearchTaskId");
-                    context.Writer.Write(publicRequest.SpeakerSearchTaskId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetSpeakerSearchTaskId())
+                    {
+                        context.Writer.WritePropertyName("SpeakerSearchTaskId");
+                        context.Writer.Write(publicRequest.SpeakerSearchTaskId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

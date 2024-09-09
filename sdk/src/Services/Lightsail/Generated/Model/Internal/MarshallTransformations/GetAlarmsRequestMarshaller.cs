@@ -63,33 +63,36 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAlarmName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("alarmName");
-                    context.Writer.Write(publicRequest.AlarmName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAlarmName())
+                    {
+                        context.Writer.WritePropertyName("alarmName");
+                        context.Writer.Write(publicRequest.AlarmName);
+                    }
+
+                    if(publicRequest.IsSetMonitoredResourceName())
+                    {
+                        context.Writer.WritePropertyName("monitoredResourceName");
+                        context.Writer.Write(publicRequest.MonitoredResourceName);
+                    }
+
+                    if(publicRequest.IsSetPageToken())
+                    {
+                        context.Writer.WritePropertyName("pageToken");
+                        context.Writer.Write(publicRequest.PageToken);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMonitoredResourceName())
-                {
-                    context.Writer.WritePropertyName("monitoredResourceName");
-                    context.Writer.Write(publicRequest.MonitoredResourceName);
-                }
-
-                if(publicRequest.IsSetPageToken())
-                {
-                    context.Writer.WritePropertyName("pageToken");
-                    context.Writer.Write(publicRequest.PageToken);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

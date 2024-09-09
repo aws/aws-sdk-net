@@ -43,6 +43,12 @@ namespace Amazon.Deadline.Model
         /// <para>
         /// The budget action description.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// This field can store any content. Escape or encode this content before displaying
+        /// it on a webpage or any other system that might interpret the content of this field.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=100)]
         public string Description

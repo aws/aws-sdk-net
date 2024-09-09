@@ -63,66 +63,69 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApplications())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Applications");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestApplicationsListValue in publicRequest.Applications)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApplications())
                     {
-                            context.Writer.Write(publicRequestApplicationsListValue);
+                        context.Writer.WritePropertyName("Applications");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestApplicationsListValue in publicRequest.Applications)
+                        {
+                                context.Writer.Write(publicRequestApplicationsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetEc2ImageId())
-                {
-                    context.Writer.WritePropertyName("Ec2ImageId");
-                    context.Writer.Write(publicRequest.Ec2ImageId);
-                }
-
-                if(publicRequest.IsSetImageDescription())
-                {
-                    context.Writer.WritePropertyName("ImageDescription");
-                    context.Writer.Write(publicRequest.ImageDescription);
-                }
-
-                if(publicRequest.IsSetImageName())
-                {
-                    context.Writer.WritePropertyName("ImageName");
-                    context.Writer.Write(publicRequest.ImageName);
-                }
-
-                if(publicRequest.IsSetIngestionProcess())
-                {
-                    context.Writer.WritePropertyName("IngestionProcess");
-                    context.Writer.Write(publicRequest.IngestionProcess);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetEc2ImageId())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("Ec2ImageId");
+                        context.Writer.Write(publicRequest.Ec2ImageId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetImageDescription())
+                    {
+                        context.Writer.WritePropertyName("ImageDescription");
+                        context.Writer.Write(publicRequest.ImageDescription);
+                    }
+
+                    if(publicRequest.IsSetImageName())
+                    {
+                        context.Writer.WritePropertyName("ImageName");
+                        context.Writer.Write(publicRequest.ImageName);
+                    }
+
+                    if(publicRequest.IsSetIngestionProcess())
+                    {
+                        context.Writer.WritePropertyName("IngestionProcess");
+                        context.Writer.Write(publicRequest.IngestionProcess);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

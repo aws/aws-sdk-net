@@ -1,0 +1,9 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "Update XML handling to be able to unmarshall self closing XML elements."
+      ],
+      "type": "patch",
+      "updateMinimum": true
+    }
+  }

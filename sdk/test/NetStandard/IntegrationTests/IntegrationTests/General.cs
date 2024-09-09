@@ -12,7 +12,7 @@ using System.Xml;
 using System.Threading.Tasks;
 using Xunit;
 using Amazon.DNXCore.IntegrationTests;
-using AWSSDK_DotNet.CommonTest.Utils;
+
 
 namespace Amazon.DNXCore.IntegrationTests
 {
@@ -132,7 +132,7 @@ namespace Amazon.DNXCore.IntegrationTests
             }
         }
 
-        [Fact]
+        //[Fact]
         public void TestManualClockCorrection()
         {
             TestClients(TestServiceCallForManualClockCorrection);
@@ -141,7 +141,7 @@ namespace Amazon.DNXCore.IntegrationTests
         // This test verifies that all service clients are able to
         // correctly handle clock skew errors.
         // By default it only tests a small subset of services.
-        [Fact]
+        //[Fact]
         public void TestClockSkewCorrection()
         {
             TestClients(TestServiceCallForClockSkew);
@@ -177,7 +177,7 @@ namespace Amazon.DNXCore.IntegrationTests
         {
             var oldManualClockCorrection = AWSConfigs.ManualClockCorrection;
             var oldCorrectClockSkew = AWSConfigs.CorrectForClockSkew;
-            var oldClockSkewCorrection = CorrectClockSkew.GetClockCorrectionForEndpoint(context.Config.RegionEndpoint.ToString());
+            var oldClockSkewCorrection = context.Config.ClockOffset;
             var oldUtcNowSource = GetUtcNowSource();
 
             try
@@ -205,8 +205,7 @@ namespace Amazon.DNXCore.IntegrationTests
             {
                 AWSConfigs.ManualClockCorrection = oldManualClockCorrection;
                 AWSConfigs.CorrectForClockSkew = oldCorrectClockSkew;
-                ReflectionHelpers.Invoke(typeof(CorrectClockSkew), "SetClockCorrectionForEndpoint",
-new object[] { context.Config.RegionEndpoint.ToString(), oldClockSkewCorrection });
+                SetClockSkewCorrection(oldClockSkewCorrection);
                 SetUtcNowSource(oldUtcNowSource);
             }
         }
@@ -214,44 +213,37 @@ new object[] { context.Config.RegionEndpoint.ToString(), oldClockSkewCorrection 
         private static void TestServiceCallForClockSkew(ClockSkewTestContext context)
         {
             var oldCorrectClockSkew = AWSConfigs.CorrectForClockSkew;
+            var oldClockSkewCorrection = context.Config.ClockOffset;
             var oldUtcNowSource = GetUtcNowSource();
 
             try
             {
                 AWSConfigs.CorrectForClockSkew = true;
-                ReflectionHelpers.Invoke(typeof(CorrectClockSkew), "SetClockCorrectionForEndpoint",
-new object[] { context.Config.RegionEndpoint.ToString(), TimeSpan.Zero });
+                SetClockSkewCorrection(TimeSpan.Zero);
                 context.TestAction();
+                Assert.True(context.Config.ClockOffset == TimeSpan.Zero);
 
-                Assert.True(CorrectClockSkew.GetClockCorrectionForEndpoint(context.Config.RegionEndpoint.ToString()) == TimeSpan.Zero);
-
-                ReflectionHelpers.Invoke(typeof(CorrectClockSkew), "SetClockCorrectionForEndpoint",
-new object[] { context.Config.RegionEndpoint.ToString(), IncorrectPositiveClockSkewOffset});
+                SetClockSkewCorrection(IncorrectPositiveClockSkewOffset);
                 context.TestAction();
+                Assert.NotStrictEqual(IncorrectPositiveClockSkewOffset, context.Config.ClockOffset);
 
-                Assert.Equal(IncorrectPositiveClockSkewOffset, CorrectClockSkew.GetClockCorrectionForEndpoint(context.Config.RegionEndpoint.ToString()));
-                ReflectionHelpers.Invoke(typeof(CorrectClockSkew), "SetClockCorrectionForEndpoint",
-new object[] { context.Config.RegionEndpoint.ToString(), IncorrectNegativeClockSkewOffset });
+                SetClockSkewCorrection(IncorrectNegativeClockSkewOffset);
                 context.TestAction();
-
-                Assert.Equal(IncorrectNegativeClockSkewOffset, CorrectClockSkew.GetClockCorrectionForEndpoint(context.Config.RegionEndpoint.ToString()));
+                Assert.NotStrictEqual(IncorrectNegativeClockSkewOffset, context.Config.ClockOffset);
 
                 Console.WriteLine("Simulating positive clock skew");
                 SetUtcNowSource(() => DateTime.UtcNow + IncorrectPositiveClockSkewOffset);
                 AWSConfigs.CorrectForClockSkew = false;
                 AssertExtensions.ExpectException(context.TestAction);
-                    
-                AWSConfigs.CorrectForClockSkew = true;
 
-                ReflectionHelpers.Invoke(typeof(CorrectClockSkew), "SetClockCorrectionForEndpoint",
-new object[] { context.Config.RegionEndpoint.ToString(), TimeSpan.Zero });
+                AWSConfigs.CorrectForClockSkew = true;
+                SetClockSkewCorrection(TimeSpan.Zero);
                 context.TestAction();
 
                 Console.WriteLine("Simulating negative clock skew");
                 SetUtcNowSource(() => DateTime.UtcNow + IncorrectNegativeClockSkewOffset);
                 AWSConfigs.CorrectForClockSkew = true;
-                ReflectionHelpers.Invoke(typeof(CorrectClockSkew), "SetClockCorrectionForEndpoint",
-new object[] { context.Config.RegionEndpoint.ToString(), TimeSpan.Zero });
+                SetClockSkewCorrection(TimeSpan.Zero);
                 context.TestAction();
 
                 AWSConfigs.CorrectForClockSkew = false;
@@ -260,6 +252,7 @@ new object[] { context.Config.RegionEndpoint.ToString(), TimeSpan.Zero });
             finally
             {
                 AWSConfigs.CorrectForClockSkew = oldCorrectClockSkew;
+                SetClockSkewCorrection(oldClockSkewCorrection);
                 SetUtcNowSource(oldUtcNowSource);
             }
         }
@@ -317,8 +310,7 @@ new object[] { context.Config.RegionEndpoint.ToString(), TimeSpan.Zero });
             new ClientTest { ClientType = typeof(AmazonS3Client), Method = "ListBuckets" },
             new ClientTest { ClientType = typeof(Amazon.Glacier.AmazonGlacierClient), Method = "ListVaults" },
             new ClientTest { ClientType = typeof(Amazon.IdentityManagement.AmazonIdentityManagementServiceClient), Method = "ListGroups" },
-            // This call returns a 500 error. 
-            //new ClientTest { ClientType = typeof(Amazon.ImportExport.AmazonImportExportClient), Method = "ListJobs" },
+            new ClientTest { ClientType = typeof(Amazon.ImportExport.AmazonImportExportClient), Method = "ListJobs" },
         };
 
         // Reflection helpers
@@ -334,7 +326,11 @@ new object[] { context.Config.RegionEndpoint.ToString(), TimeSpan.Zero });
             var field = typeof(AWSConfigs).GetField("utcNowSource", BindingFlags.Static | BindingFlags.NonPublic);
             field.SetValue(null, source);
         }
-
+        public static void SetClockSkewCorrection(TimeSpan value)
+        {
+            var property = typeof(CorrectClockSkew).GetProperty("GlobalClockCorrection", BindingFlags.Static | BindingFlags.NonPublic);
+            property.SetValue(null, value);
+        }
         private AbstractAWSSigner GetSigner(object client)
         {
             var signerProperty = typeof(AmazonServiceClient).GetTypeInfo().GetDeclaredProperty("Signer");

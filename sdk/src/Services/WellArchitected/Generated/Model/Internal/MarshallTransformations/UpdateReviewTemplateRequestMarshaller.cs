@@ -64,55 +64,58 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                 throw new AmazonWellArchitectedException("Request object does not have required field TemplateArn set");
             request.AddPathResource("{TemplateArn}", StringUtils.FromString(publicRequest.TemplateArn));
             request.ResourcePath = "/reviewTemplates/{TemplateArn}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetLensesToAssociate())
-                {
-                    context.Writer.WritePropertyName("LensesToAssociate");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLensesToAssociateListValue in publicRequest.LensesToAssociate)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
-                            context.Writer.Write(publicRequestLensesToAssociateListValue);
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetLensesToDisassociate())
-                {
-                    context.Writer.WritePropertyName("LensesToDisassociate");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLensesToDisassociateListValue in publicRequest.LensesToDisassociate)
+                    if(publicRequest.IsSetLensesToAssociate())
                     {
-                            context.Writer.Write(publicRequestLensesToDisassociateListValue);
+                        context.Writer.WritePropertyName("LensesToAssociate");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLensesToAssociateListValue in publicRequest.LensesToAssociate)
+                        {
+                                context.Writer.Write(publicRequestLensesToAssociateListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetLensesToDisassociate())
+                    {
+                        context.Writer.WritePropertyName("LensesToDisassociate");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLensesToDisassociateListValue in publicRequest.LensesToDisassociate)
+                        {
+                                context.Writer.Write(publicRequestLensesToDisassociateListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetNotes())
+                    {
+                        context.Writer.WritePropertyName("Notes");
+                        context.Writer.Write(publicRequest.Notes);
+                    }
+
+                    if(publicRequest.IsSetTemplateName())
+                    {
+                        context.Writer.WritePropertyName("TemplateName");
+                        context.Writer.Write(publicRequest.TemplateName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetNotes())
-                {
-                    context.Writer.WritePropertyName("Notes");
-                    context.Writer.Write(publicRequest.Notes);
-                }
-
-                if(publicRequest.IsSetTemplateName())
-                {
-                    context.Writer.WritePropertyName("TemplateName");
-                    context.Writer.Write(publicRequest.TemplateName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

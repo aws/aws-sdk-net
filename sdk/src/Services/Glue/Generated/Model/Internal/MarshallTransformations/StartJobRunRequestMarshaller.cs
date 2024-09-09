@@ -63,101 +63,110 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAllocatedCapacity())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AllocatedCapacity");
-                    context.Writer.Write(publicRequest.AllocatedCapacity.Value);
-                }
-
-                if(publicRequest.IsSetArguments())
-                {
-                    context.Writer.WritePropertyName("Arguments");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestArgumentsKvp in publicRequest.Arguments)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAllocatedCapacity())
                     {
-                        context.Writer.WritePropertyName(publicRequestArgumentsKvp.Key);
-                        var publicRequestArgumentsValue = publicRequestArgumentsKvp.Value;
-
-                            context.Writer.Write(publicRequestArgumentsValue);
+                        context.Writer.WritePropertyName("AllocatedCapacity");
+                        context.Writer.Write(publicRequest.AllocatedCapacity.Value);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetExecutionClass())
-                {
-                    context.Writer.WritePropertyName("ExecutionClass");
-                    context.Writer.Write(publicRequest.ExecutionClass);
-                }
-
-                if(publicRequest.IsSetJobName())
-                {
-                    context.Writer.WritePropertyName("JobName");
-                    context.Writer.Write(publicRequest.JobName);
-                }
-
-                if(publicRequest.IsSetJobRunId())
-                {
-                    context.Writer.WritePropertyName("JobRunId");
-                    context.Writer.Write(publicRequest.JobRunId);
-                }
-
-                if(publicRequest.IsSetMaxCapacity())
-                {
-                    context.Writer.WritePropertyName("MaxCapacity");
-                    if(StringUtils.IsSpecialDoubleValue(publicRequest.MaxCapacity.Value))
+                    if(publicRequest.IsSetArguments())
                     {
-                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.MaxCapacity.Value));
+                        context.Writer.WritePropertyName("Arguments");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestArgumentsKvp in publicRequest.Arguments)
+                        {
+                            context.Writer.WritePropertyName(publicRequestArgumentsKvp.Key);
+                            var publicRequestArgumentsValue = publicRequestArgumentsKvp.Value;
+
+                                context.Writer.Write(publicRequestArgumentsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    else
+
+                    if(publicRequest.IsSetExecutionClass())
                     {
-                        context.Writer.Write(publicRequest.MaxCapacity.Value);
+                        context.Writer.WritePropertyName("ExecutionClass");
+                        context.Writer.Write(publicRequest.ExecutionClass);
                     }
+
+                    if(publicRequest.IsSetJobName())
+                    {
+                        context.Writer.WritePropertyName("JobName");
+                        context.Writer.Write(publicRequest.JobName);
+                    }
+
+                    if(publicRequest.IsSetJobRunId())
+                    {
+                        context.Writer.WritePropertyName("JobRunId");
+                        context.Writer.Write(publicRequest.JobRunId);
+                    }
+
+                    if(publicRequest.IsSetJobRunQueuingEnabled())
+                    {
+                        context.Writer.WritePropertyName("JobRunQueuingEnabled");
+                        context.Writer.Write(publicRequest.JobRunQueuingEnabled.Value);
+                    }
+
+                    if(publicRequest.IsSetMaxCapacity())
+                    {
+                        context.Writer.WritePropertyName("MaxCapacity");
+                        if(StringUtils.IsSpecialDoubleValue(publicRequest.MaxCapacity.Value))
+                        {
+                            context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.MaxCapacity.Value));
+                        }
+                        else
+                        {
+                            context.Writer.Write(publicRequest.MaxCapacity.Value);
+                        }
+                    }
+
+                    if(publicRequest.IsSetNotificationProperty())
+                    {
+                        context.Writer.WritePropertyName("NotificationProperty");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = NotificationPropertyMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.NotificationProperty, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetNumberOfWorkers())
+                    {
+                        context.Writer.WritePropertyName("NumberOfWorkers");
+                        context.Writer.Write(publicRequest.NumberOfWorkers.Value);
+                    }
+
+                    if(publicRequest.IsSetSecurityConfiguration())
+                    {
+                        context.Writer.WritePropertyName("SecurityConfiguration");
+                        context.Writer.Write(publicRequest.SecurityConfiguration);
+                    }
+
+                    if(publicRequest.IsSetTimeout())
+                    {
+                        context.Writer.WritePropertyName("Timeout");
+                        context.Writer.Write(publicRequest.Timeout.Value);
+                    }
+
+                    if(publicRequest.IsSetWorkerType())
+                    {
+                        context.Writer.WritePropertyName("WorkerType");
+                        context.Writer.Write(publicRequest.WorkerType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetNotificationProperty())
-                {
-                    context.Writer.WritePropertyName("NotificationProperty");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = NotificationPropertyMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.NotificationProperty, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetNumberOfWorkers())
-                {
-                    context.Writer.WritePropertyName("NumberOfWorkers");
-                    context.Writer.Write(publicRequest.NumberOfWorkers.Value);
-                }
-
-                if(publicRequest.IsSetSecurityConfiguration())
-                {
-                    context.Writer.WritePropertyName("SecurityConfiguration");
-                    context.Writer.Write(publicRequest.SecurityConfiguration);
-                }
-
-                if(publicRequest.IsSetTimeout())
-                {
-                    context.Writer.WritePropertyName("Timeout");
-                    context.Writer.Write(publicRequest.Timeout.Value);
-                }
-
-                if(publicRequest.IsSetWorkerType())
-                {
-                    context.Writer.WritePropertyName("WorkerType");
-                    context.Writer.Write(publicRequest.WorkerType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

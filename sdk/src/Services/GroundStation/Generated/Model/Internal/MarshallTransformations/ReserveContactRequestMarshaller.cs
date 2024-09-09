@@ -61,59 +61,62 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/contact";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEndTime())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("endTime");
-                    context.Writer.Write(publicRequest.EndTime.Value);
-                }
-
-                if(publicRequest.IsSetGroundStation())
-                {
-                    context.Writer.WritePropertyName("groundStation");
-                    context.Writer.Write(publicRequest.GroundStation);
-                }
-
-                if(publicRequest.IsSetMissionProfileArn())
-                {
-                    context.Writer.WritePropertyName("missionProfileArn");
-                    context.Writer.Write(publicRequest.MissionProfileArn);
-                }
-
-                if(publicRequest.IsSetSatelliteArn())
-                {
-                    context.Writer.WritePropertyName("satelliteArn");
-                    context.Writer.Write(publicRequest.SatelliteArn);
-                }
-
-                if(publicRequest.IsSetStartTime())
-                {
-                    context.Writer.WritePropertyName("startTime");
-                    context.Writer.Write(publicRequest.StartTime.Value);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEndTime())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("endTime");
+                        context.Writer.Write(publicRequest.EndTime.Value);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetGroundStation())
+                    {
+                        context.Writer.WritePropertyName("groundStation");
+                        context.Writer.Write(publicRequest.GroundStation);
+                    }
+
+                    if(publicRequest.IsSetMissionProfileArn())
+                    {
+                        context.Writer.WritePropertyName("missionProfileArn");
+                        context.Writer.Write(publicRequest.MissionProfileArn);
+                    }
+
+                    if(publicRequest.IsSetSatelliteArn())
+                    {
+                        context.Writer.WritePropertyName("satelliteArn");
+                        context.Writer.Write(publicRequest.SatelliteArn);
+                    }
+
+                    if(publicRequest.IsSetStartTime())
+                    {
+                        context.Writer.WritePropertyName("startTime");
+                        context.Writer.Write(publicRequest.StartTime.Value);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

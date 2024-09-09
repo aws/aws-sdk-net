@@ -70,6 +70,18 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     response.AttachmentsConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("autoSubscriptionConfiguration", targetDepth))
+                {
+                    var unmarshaller = AutoSubscriptionConfigurationUnmarshaller.Instance;
+                    response.AutoSubscriptionConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("clientIdsForOIDC", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.ClientIdsForOIDC = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
@@ -100,10 +112,22 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     response.Error = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("iamIdentityProviderArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.IamIdentityProviderArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("identityCenterApplicationArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.IdentityCenterApplicationArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("identityType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.IdentityType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("personalizationConfiguration", targetDepth))

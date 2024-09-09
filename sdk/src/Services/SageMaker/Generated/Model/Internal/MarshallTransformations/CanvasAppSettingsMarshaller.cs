@@ -59,6 +59,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetEmrServerlessSettings())
+            {
+                context.Writer.WritePropertyName("EmrServerlessSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EmrServerlessSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.EmrServerlessSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetGenerativeAiSettings())
             {
                 context.Writer.WritePropertyName("GenerativeAiSettings");

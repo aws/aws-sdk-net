@@ -67,26 +67,29 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field UserId set");
             request.AddPathResource("{UserId}", StringUtils.FromString(publicRequest.UserId));
             request.ResourcePath = "/users/{InstanceId}/{UserId}/security-profiles";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetSecurityProfileIds())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("SecurityProfileIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSecurityProfileIdsListValue in publicRequest.SecurityProfileIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetSecurityProfileIds())
                     {
-                            context.Writer.Write(publicRequestSecurityProfileIdsListValue);
+                        context.Writer.WritePropertyName("SecurityProfileIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSecurityProfileIdsListValue in publicRequest.SecurityProfileIds)
+                        {
+                                context.Writer.Write(publicRequestSecurityProfileIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

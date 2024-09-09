@@ -63,32 +63,35 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetItems())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Items");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestItemsListValue in publicRequest.Items)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetItems())
                     {
-                            context.Writer.Write(publicRequestItemsListValue);
+                        context.Writer.WritePropertyName("Items");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestItemsListValue in publicRequest.Items)
+                        {
+                                context.Writer.Write(publicRequestItemsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetResourceSetIdentifier())
+                    {
+                        context.Writer.WritePropertyName("ResourceSetIdentifier");
+                        context.Writer.Write(publicRequest.ResourceSetIdentifier);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetResourceSetIdentifier())
-                {
-                    context.Writer.WritePropertyName("ResourceSetIdentifier");
-                    context.Writer.Write(publicRequest.ResourceSetIdentifier);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

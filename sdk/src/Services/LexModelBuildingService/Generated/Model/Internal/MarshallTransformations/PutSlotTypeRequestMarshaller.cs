@@ -64,77 +64,80 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                 throw new AmazonLexModelBuildingServiceException("Request object does not have required field Name set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/slottypes/{name}/versions/$LATEST";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetChecksum())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("checksum");
-                    context.Writer.Write(publicRequest.Checksum);
-                }
-
-                if(publicRequest.IsSetCreateVersion())
-                {
-                    context.Writer.WritePropertyName("createVersion");
-                    context.Writer.Write(publicRequest.CreateVersion.Value);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetEnumerationValues())
-                {
-                    context.Writer.WritePropertyName("enumerationValues");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEnumerationValuesListValue in publicRequest.EnumerationValues)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetChecksum())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EnumerationValueMarshaller.Instance;
-                        marshaller.Marshall(publicRequestEnumerationValuesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("checksum");
+                        context.Writer.Write(publicRequest.Checksum);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetParentSlotTypeSignature())
-                {
-                    context.Writer.WritePropertyName("parentSlotTypeSignature");
-                    context.Writer.Write(publicRequest.ParentSlotTypeSignature);
-                }
-
-                if(publicRequest.IsSetSlotTypeConfigurations())
-                {
-                    context.Writer.WritePropertyName("slotTypeConfigurations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSlotTypeConfigurationsListValue in publicRequest.SlotTypeConfigurations)
+                    if(publicRequest.IsSetCreateVersion())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SlotTypeConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSlotTypeConfigurationsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("createVersion");
+                        context.Writer.Write(publicRequest.CreateVersion.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetEnumerationValues())
+                    {
+                        context.Writer.WritePropertyName("enumerationValues");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestEnumerationValuesListValue in publicRequest.EnumerationValues)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = EnumerationValueMarshaller.Instance;
+                            marshaller.Marshall(publicRequestEnumerationValuesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetParentSlotTypeSignature())
+                    {
+                        context.Writer.WritePropertyName("parentSlotTypeSignature");
+                        context.Writer.Write(publicRequest.ParentSlotTypeSignature);
+                    }
+
+                    if(publicRequest.IsSetSlotTypeConfigurations())
+                    {
+                        context.Writer.WritePropertyName("slotTypeConfigurations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSlotTypeConfigurationsListValue in publicRequest.SlotTypeConfigurations)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = SlotTypeConfigurationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSlotTypeConfigurationsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetValueSelectionStrategy())
+                    {
+                        context.Writer.WritePropertyName("valueSelectionStrategy");
+                        context.Writer.Write(publicRequest.ValueSelectionStrategy);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetValueSelectionStrategy())
-                {
-                    context.Writer.WritePropertyName("valueSelectionStrategy");
-                    context.Writer.Write(publicRequest.ValueSelectionStrategy);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

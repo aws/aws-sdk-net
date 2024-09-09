@@ -63,33 +63,36 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetNextToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetProjectName())
+                    {
+                        context.Writer.WritePropertyName("projectName");
+                        context.Writer.Write(publicRequest.ProjectName);
+                    }
+
+                    if(publicRequest.IsSetSortOrder())
+                    {
+                        context.Writer.WritePropertyName("sortOrder");
+                        context.Writer.Write(publicRequest.SortOrder);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetProjectName())
-                {
-                    context.Writer.WritePropertyName("projectName");
-                    context.Writer.Write(publicRequest.ProjectName);
-                }
-
-                if(publicRequest.IsSetSortOrder())
-                {
-                    context.Writer.WritePropertyName("sortOrder");
-                    context.Writer.Write(publicRequest.SortOrder);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -64,92 +64,95 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field InstanceId set");
             request.AddPathResource("{InstanceId}", StringUtils.FromString(publicRequest.InstanceId));
             request.ResourcePath = "/users/{InstanceId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDirectoryUserId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DirectoryUserId");
-                    context.Writer.Write(publicRequest.DirectoryUserId);
-                }
-
-                if(publicRequest.IsSetHierarchyGroupId())
-                {
-                    context.Writer.WritePropertyName("HierarchyGroupId");
-                    context.Writer.Write(publicRequest.HierarchyGroupId);
-                }
-
-                if(publicRequest.IsSetIdentityInfo())
-                {
-                    context.Writer.WritePropertyName("IdentityInfo");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UserIdentityInfoMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.IdentityInfo, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPassword())
-                {
-                    context.Writer.WritePropertyName("Password");
-                    context.Writer.Write(publicRequest.Password);
-                }
-
-                if(publicRequest.IsSetPhoneConfig())
-                {
-                    context.Writer.WritePropertyName("PhoneConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UserPhoneConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PhoneConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRoutingProfileId())
-                {
-                    context.Writer.WritePropertyName("RoutingProfileId");
-                    context.Writer.Write(publicRequest.RoutingProfileId);
-                }
-
-                if(publicRequest.IsSetSecurityProfileIds())
-                {
-                    context.Writer.WritePropertyName("SecurityProfileIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSecurityProfileIdsListValue in publicRequest.SecurityProfileIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDirectoryUserId())
                     {
-                            context.Writer.Write(publicRequestSecurityProfileIdsListValue);
+                        context.Writer.WritePropertyName("DirectoryUserId");
+                        context.Writer.Write(publicRequest.DirectoryUserId);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetHierarchyGroupId())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("HierarchyGroupId");
+                        context.Writer.Write(publicRequest.HierarchyGroupId);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetIdentityInfo())
+                    {
+                        context.Writer.WritePropertyName("IdentityInfo");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = UserIdentityInfoMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.IdentityInfo, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetPassword())
+                    {
+                        context.Writer.WritePropertyName("Password");
+                        context.Writer.Write(publicRequest.Password);
+                    }
+
+                    if(publicRequest.IsSetPhoneConfig())
+                    {
+                        context.Writer.WritePropertyName("PhoneConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = UserPhoneConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.PhoneConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRoutingProfileId())
+                    {
+                        context.Writer.WritePropertyName("RoutingProfileId");
+                        context.Writer.Write(publicRequest.RoutingProfileId);
+                    }
+
+                    if(publicRequest.IsSetSecurityProfileIds())
+                    {
+                        context.Writer.WritePropertyName("SecurityProfileIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSecurityProfileIdsListValue in publicRequest.SecurityProfileIds)
+                        {
+                                context.Writer.Write(publicRequestSecurityProfileIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetUsername())
+                    {
+                        context.Writer.WritePropertyName("Username");
+                        context.Writer.Write(publicRequest.Username);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetUsername())
-                {
-                    context.Writer.WritePropertyName("Username");
-                    context.Writer.Write(publicRequest.Username);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -61,37 +61,40 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/put-group-configuration";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Configuration");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestConfigurationListValue in publicRequest.Configuration)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConfiguration())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("Configuration");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestConfigurationListValue in publicRequest.Configuration)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = GroupConfigurationItemMarshaller.Instance;
-                        marshaller.Marshall(publicRequestConfigurationListValue, context);
+                            var marshaller = GroupConfigurationItemMarshaller.Instance;
+                            marshaller.Marshall(publicRequestConfigurationListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetGroup())
+                    {
+                        context.Writer.WritePropertyName("Group");
+                        context.Writer.Write(publicRequest.Group);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetGroup())
-                {
-                    context.Writer.WritePropertyName("Group");
-                    context.Writer.Write(publicRequest.Group);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

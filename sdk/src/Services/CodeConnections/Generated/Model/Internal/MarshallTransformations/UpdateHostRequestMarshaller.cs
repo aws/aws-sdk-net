@@ -63,38 +63,41 @@ namespace Amazon.CodeConnections.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetHostArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("HostArn");
-                    context.Writer.Write(publicRequest.HostArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetHostArn())
+                    {
+                        context.Writer.WritePropertyName("HostArn");
+                        context.Writer.Write(publicRequest.HostArn);
+                    }
+
+                    if(publicRequest.IsSetProviderEndpoint())
+                    {
+                        context.Writer.WritePropertyName("ProviderEndpoint");
+                        context.Writer.Write(publicRequest.ProviderEndpoint);
+                    }
+
+                    if(publicRequest.IsSetVpcConfiguration())
+                    {
+                        context.Writer.WritePropertyName("VpcConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = VpcConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.VpcConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetProviderEndpoint())
-                {
-                    context.Writer.WritePropertyName("ProviderEndpoint");
-                    context.Writer.Write(publicRequest.ProviderEndpoint);
-                }
-
-                if(publicRequest.IsSetVpcConfiguration())
-                {
-                    context.Writer.WritePropertyName("VpcConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = VpcConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.VpcConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

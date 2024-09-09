@@ -61,38 +61,41 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/catalog.createItem";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAppId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("appId");
-                    context.Writer.Write(publicRequest.AppId);
-                }
-
-                if(publicRequest.IsSetAppVersion())
-                {
-                    context.Writer.WritePropertyName("appVersion");
-                    context.Writer.Write(publicRequest.AppVersion.Value);
-                }
-
-                if(publicRequest.IsSetCategories())
-                {
-                    context.Writer.WritePropertyName("categories");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCategoriesListValue in publicRequest.Categories)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAppId())
                     {
-                            context.Writer.Write(publicRequestCategoriesListValue);
+                        context.Writer.WritePropertyName("appId");
+                        context.Writer.Write(publicRequest.AppId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetAppVersion())
+                    {
+                        context.Writer.WritePropertyName("appVersion");
+                        context.Writer.Write(publicRequest.AppVersion.Value);
+                    }
+
+                    if(publicRequest.IsSetCategories())
+                    {
+                        context.Writer.WritePropertyName("categories");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCategoriesListValue in publicRequest.Categories)
+                        {
+                                context.Writer.Write(publicRequestCategoriesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

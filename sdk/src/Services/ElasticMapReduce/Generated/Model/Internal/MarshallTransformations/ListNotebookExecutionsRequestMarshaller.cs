@@ -63,51 +63,54 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEditorId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("EditorId");
-                    context.Writer.Write(publicRequest.EditorId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEditorId())
+                    {
+                        context.Writer.WritePropertyName("EditorId");
+                        context.Writer.Write(publicRequest.EditorId);
+                    }
+
+                    if(publicRequest.IsSetExecutionEngineId())
+                    {
+                        context.Writer.WritePropertyName("ExecutionEngineId");
+                        context.Writer.Write(publicRequest.ExecutionEngineId);
+                    }
+
+                    if(publicRequest.IsSetFrom())
+                    {
+                        context.Writer.WritePropertyName("From");
+                        context.Writer.Write(publicRequest.From.Value);
+                    }
+
+                    if(publicRequest.IsSetMarker())
+                    {
+                        context.Writer.WritePropertyName("Marker");
+                        context.Writer.Write(publicRequest.Marker);
+                    }
+
+                    if(publicRequest.IsSetStatus())
+                    {
+                        context.Writer.WritePropertyName("Status");
+                        context.Writer.Write(publicRequest.Status);
+                    }
+
+                    if(publicRequest.IsSetTo())
+                    {
+                        context.Writer.WritePropertyName("To");
+                        context.Writer.Write(publicRequest.To.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetExecutionEngineId())
-                {
-                    context.Writer.WritePropertyName("ExecutionEngineId");
-                    context.Writer.Write(publicRequest.ExecutionEngineId);
-                }
-
-                if(publicRequest.IsSetFrom())
-                {
-                    context.Writer.WritePropertyName("From");
-                    context.Writer.Write(publicRequest.From.Value);
-                }
-
-                if(publicRequest.IsSetMarker())
-                {
-                    context.Writer.WritePropertyName("Marker");
-                    context.Writer.Write(publicRequest.Marker);
-                }
-
-                if(publicRequest.IsSetStatus())
-                {
-                    context.Writer.WritePropertyName("Status");
-                    context.Writer.Write(publicRequest.Status);
-                }
-
-                if(publicRequest.IsSetTo())
-                {
-                    context.Writer.WritePropertyName("To");
-                    context.Writer.Write(publicRequest.To.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

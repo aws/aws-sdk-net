@@ -63,138 +63,141 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCommand())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Command");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SessionCommandMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Command, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetConnections())
-                {
-                    context.Writer.WritePropertyName("Connections");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ConnectionsListMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Connections, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDefaultArguments())
-                {
-                    context.Writer.WritePropertyName("DefaultArguments");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestDefaultArgumentsKvp in publicRequest.DefaultArguments)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCommand())
                     {
-                        context.Writer.WritePropertyName(publicRequestDefaultArgumentsKvp.Key);
-                        var publicRequestDefaultArgumentsValue = publicRequestDefaultArgumentsKvp.Value;
+                        context.Writer.WritePropertyName("Command");
+                        context.Writer.WriteObjectStart();
 
-                            context.Writer.Write(publicRequestDefaultArgumentsValue);
+                        var marshaller = SessionCommandMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Command, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetGlueVersion())
-                {
-                    context.Writer.WritePropertyName("GlueVersion");
-                    context.Writer.Write(publicRequest.GlueVersion);
-                }
-
-                if(publicRequest.IsSetId())
-                {
-                    context.Writer.WritePropertyName("Id");
-                    context.Writer.Write(publicRequest.Id);
-                }
-
-                if(publicRequest.IsSetIdleTimeout())
-                {
-                    context.Writer.WritePropertyName("IdleTimeout");
-                    context.Writer.Write(publicRequest.IdleTimeout.Value);
-                }
-
-                if(publicRequest.IsSetMaxCapacity())
-                {
-                    context.Writer.WritePropertyName("MaxCapacity");
-                    if(StringUtils.IsSpecialDoubleValue(publicRequest.MaxCapacity.Value))
+                    if(publicRequest.IsSetConnections())
                     {
-                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.MaxCapacity.Value));
+                        context.Writer.WritePropertyName("Connections");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ConnectionsListMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Connections, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    else
+
+                    if(publicRequest.IsSetDefaultArguments())
                     {
-                        context.Writer.Write(publicRequest.MaxCapacity.Value);
+                        context.Writer.WritePropertyName("DefaultArguments");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestDefaultArgumentsKvp in publicRequest.DefaultArguments)
+                        {
+                            context.Writer.WritePropertyName(publicRequestDefaultArgumentsKvp.Key);
+                            var publicRequestDefaultArgumentsValue = publicRequestDefaultArgumentsKvp.Value;
+
+                                context.Writer.Write(publicRequestDefaultArgumentsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                }
 
-                if(publicRequest.IsSetNumberOfWorkers())
-                {
-                    context.Writer.WritePropertyName("NumberOfWorkers");
-                    context.Writer.Write(publicRequest.NumberOfWorkers.Value);
-                }
-
-                if(publicRequest.IsSetRequestOrigin())
-                {
-                    context.Writer.WritePropertyName("RequestOrigin");
-                    context.Writer.Write(publicRequest.RequestOrigin);
-                }
-
-                if(publicRequest.IsSetRole())
-                {
-                    context.Writer.WritePropertyName("Role");
-                    context.Writer.Write(publicRequest.Role);
-                }
-
-                if(publicRequest.IsSetSecurityConfiguration())
-                {
-                    context.Writer.WritePropertyName("SecurityConfiguration");
-                    context.Writer.Write(publicRequest.SecurityConfiguration);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetDescription())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetGlueVersion())
+                    {
+                        context.Writer.WritePropertyName("GlueVersion");
+                        context.Writer.Write(publicRequest.GlueVersion);
+                    }
+
+                    if(publicRequest.IsSetId())
+                    {
+                        context.Writer.WritePropertyName("Id");
+                        context.Writer.Write(publicRequest.Id);
+                    }
+
+                    if(publicRequest.IsSetIdleTimeout())
+                    {
+                        context.Writer.WritePropertyName("IdleTimeout");
+                        context.Writer.Write(publicRequest.IdleTimeout.Value);
+                    }
+
+                    if(publicRequest.IsSetMaxCapacity())
+                    {
+                        context.Writer.WritePropertyName("MaxCapacity");
+                        if(StringUtils.IsSpecialDoubleValue(publicRequest.MaxCapacity.Value))
+                        {
+                            context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.MaxCapacity.Value));
+                        }
+                        else
+                        {
+                            context.Writer.Write(publicRequest.MaxCapacity.Value);
+                        }
+                    }
+
+                    if(publicRequest.IsSetNumberOfWorkers())
+                    {
+                        context.Writer.WritePropertyName("NumberOfWorkers");
+                        context.Writer.Write(publicRequest.NumberOfWorkers.Value);
+                    }
+
+                    if(publicRequest.IsSetRequestOrigin())
+                    {
+                        context.Writer.WritePropertyName("RequestOrigin");
+                        context.Writer.Write(publicRequest.RequestOrigin);
+                    }
+
+                    if(publicRequest.IsSetRole())
+                    {
+                        context.Writer.WritePropertyName("Role");
+                        context.Writer.Write(publicRequest.Role);
+                    }
+
+                    if(publicRequest.IsSetSecurityConfiguration())
+                    {
+                        context.Writer.WritePropertyName("SecurityConfiguration");
+                        context.Writer.Write(publicRequest.SecurityConfiguration);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTimeout())
+                    {
+                        context.Writer.WritePropertyName("Timeout");
+                        context.Writer.Write(publicRequest.Timeout.Value);
+                    }
+
+                    if(publicRequest.IsSetWorkerType())
+                    {
+                        context.Writer.WritePropertyName("WorkerType");
+                        context.Writer.Write(publicRequest.WorkerType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTimeout())
-                {
-                    context.Writer.WritePropertyName("Timeout");
-                    context.Writer.Write(publicRequest.Timeout.Value);
-                }
-
-                if(publicRequest.IsSetWorkerType())
-                {
-                    context.Writer.WritePropertyName("WorkerType");
-                    context.Writer.Write(publicRequest.WorkerType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

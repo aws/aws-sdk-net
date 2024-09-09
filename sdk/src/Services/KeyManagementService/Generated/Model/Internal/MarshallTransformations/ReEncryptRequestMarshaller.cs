@@ -63,90 +63,93 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCiphertextBlob())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CiphertextBlob");
-                    context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.CiphertextBlob));
-                }
-
-                if(publicRequest.IsSetDestinationEncryptionAlgorithm())
-                {
-                    context.Writer.WritePropertyName("DestinationEncryptionAlgorithm");
-                    context.Writer.Write(publicRequest.DestinationEncryptionAlgorithm);
-                }
-
-                if(publicRequest.IsSetDestinationEncryptionContext())
-                {
-                    context.Writer.WritePropertyName("DestinationEncryptionContext");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestDestinationEncryptionContextKvp in publicRequest.DestinationEncryptionContext)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCiphertextBlob())
                     {
-                        context.Writer.WritePropertyName(publicRequestDestinationEncryptionContextKvp.Key);
-                        var publicRequestDestinationEncryptionContextValue = publicRequestDestinationEncryptionContextKvp.Value;
-
-                            context.Writer.Write(publicRequestDestinationEncryptionContextValue);
+                        context.Writer.WritePropertyName("CiphertextBlob");
+                        context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.CiphertextBlob));
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetDestinationKeyId())
-                {
-                    context.Writer.WritePropertyName("DestinationKeyId");
-                    context.Writer.Write(publicRequest.DestinationKeyId);
-                }
-
-                if(publicRequest.IsSetDryRun())
-                {
-                    context.Writer.WritePropertyName("DryRun");
-                    context.Writer.Write(publicRequest.DryRun.Value);
-                }
-
-                if(publicRequest.IsSetGrantTokens())
-                {
-                    context.Writer.WritePropertyName("GrantTokens");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestGrantTokensListValue in publicRequest.GrantTokens)
+                    if(publicRequest.IsSetDestinationEncryptionAlgorithm())
                     {
-                            context.Writer.Write(publicRequestGrantTokensListValue);
+                        context.Writer.WritePropertyName("DestinationEncryptionAlgorithm");
+                        context.Writer.Write(publicRequest.DestinationEncryptionAlgorithm);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetSourceEncryptionAlgorithm())
-                {
-                    context.Writer.WritePropertyName("SourceEncryptionAlgorithm");
-                    context.Writer.Write(publicRequest.SourceEncryptionAlgorithm);
-                }
-
-                if(publicRequest.IsSetSourceEncryptionContext())
-                {
-                    context.Writer.WritePropertyName("SourceEncryptionContext");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestSourceEncryptionContextKvp in publicRequest.SourceEncryptionContext)
+                    if(publicRequest.IsSetDestinationEncryptionContext())
                     {
-                        context.Writer.WritePropertyName(publicRequestSourceEncryptionContextKvp.Key);
-                        var publicRequestSourceEncryptionContextValue = publicRequestSourceEncryptionContextKvp.Value;
+                        context.Writer.WritePropertyName("DestinationEncryptionContext");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestDestinationEncryptionContextKvp in publicRequest.DestinationEncryptionContext)
+                        {
+                            context.Writer.WritePropertyName(publicRequestDestinationEncryptionContextKvp.Key);
+                            var publicRequestDestinationEncryptionContextValue = publicRequestDestinationEncryptionContextKvp.Value;
 
-                            context.Writer.Write(publicRequestSourceEncryptionContextValue);
+                                context.Writer.Write(publicRequestDestinationEncryptionContextValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetDestinationKeyId())
+                    {
+                        context.Writer.WritePropertyName("DestinationKeyId");
+                        context.Writer.Write(publicRequest.DestinationKeyId);
+                    }
+
+                    if(publicRequest.IsSetDryRun())
+                    {
+                        context.Writer.WritePropertyName("DryRun");
+                        context.Writer.Write(publicRequest.DryRun.Value);
+                    }
+
+                    if(publicRequest.IsSetGrantTokens())
+                    {
+                        context.Writer.WritePropertyName("GrantTokens");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestGrantTokensListValue in publicRequest.GrantTokens)
+                        {
+                                context.Writer.Write(publicRequestGrantTokensListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSourceEncryptionAlgorithm())
+                    {
+                        context.Writer.WritePropertyName("SourceEncryptionAlgorithm");
+                        context.Writer.Write(publicRequest.SourceEncryptionAlgorithm);
+                    }
+
+                    if(publicRequest.IsSetSourceEncryptionContext())
+                    {
+                        context.Writer.WritePropertyName("SourceEncryptionContext");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestSourceEncryptionContextKvp in publicRequest.SourceEncryptionContext)
+                        {
+                            context.Writer.WritePropertyName(publicRequestSourceEncryptionContextKvp.Key);
+                            var publicRequestSourceEncryptionContextValue = publicRequestSourceEncryptionContextKvp.Value;
+
+                                context.Writer.Write(publicRequestSourceEncryptionContextValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSourceKeyId())
+                    {
+                        context.Writer.WritePropertyName("SourceKeyId");
+                        context.Writer.Write(publicRequest.SourceKeyId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSourceKeyId())
-                {
-                    context.Writer.WritePropertyName("SourceKeyId");
-                    context.Writer.Write(publicRequest.SourceKeyId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

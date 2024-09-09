@@ -63,32 +63,35 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBackupRetentionPolicy())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("BackupRetentionPolicy");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBackupRetentionPolicy())
+                    {
+                        context.Writer.WritePropertyName("BackupRetentionPolicy");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = BackupRetentionPolicyMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.BackupRetentionPolicy, context);
+                        var marshaller = BackupRetentionPolicyMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.BackupRetentionPolicy, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetClusterId())
+                    {
+                        context.Writer.WritePropertyName("ClusterId");
+                        context.Writer.Write(publicRequest.ClusterId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetClusterId())
-                {
-                    context.Writer.WritePropertyName("ClusterId");
-                    context.Writer.Write(publicRequest.ClusterId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

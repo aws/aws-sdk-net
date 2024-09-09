@@ -63,150 +63,153 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAssociationConfig())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AssociationConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AssociationConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AssociationConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetCaptchaConfig())
-                {
-                    context.Writer.WritePropertyName("CaptchaConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CaptchaConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CaptchaConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetChallengeConfig())
-                {
-                    context.Writer.WritePropertyName("ChallengeConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ChallengeConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ChallengeConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetCustomResponseBodies())
-                {
-                    context.Writer.WritePropertyName("CustomResponseBodies");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestCustomResponseBodiesKvp in publicRequest.CustomResponseBodies)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAssociationConfig())
                     {
-                        context.Writer.WritePropertyName(publicRequestCustomResponseBodiesKvp.Key);
-                        var publicRequestCustomResponseBodiesValue = publicRequestCustomResponseBodiesKvp.Value;
-
+                        context.Writer.WritePropertyName("AssociationConfig");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = CustomResponseBodyMarshaller.Instance;
-                        marshaller.Marshall(publicRequestCustomResponseBodiesValue, context);
+                        var marshaller = AssociationConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AssociationConfig, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetDefaultAction())
-                {
-                    context.Writer.WritePropertyName("DefaultAction");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DefaultActionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DefaultAction, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetRules())
-                {
-                    context.Writer.WritePropertyName("Rules");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRulesListValue in publicRequest.Rules)
+                    if(publicRequest.IsSetCaptchaConfig())
                     {
+                        context.Writer.WritePropertyName("CaptchaConfig");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = RuleMarshaller.Instance;
-                        marshaller.Marshall(publicRequestRulesListValue, context);
+                        var marshaller = CaptchaConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CaptchaConfig, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetScope())
-                {
-                    context.Writer.WritePropertyName("Scope");
-                    context.Writer.Write(publicRequest.Scope);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetChallengeConfig())
                     {
+                        context.Writer.WritePropertyName("ChallengeConfig");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = ChallengeConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ChallengeConfig, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTokenDomains())
-                {
-                    context.Writer.WritePropertyName("TokenDomains");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTokenDomainsListValue in publicRequest.TokenDomains)
+                    if(publicRequest.IsSetCustomResponseBodies())
                     {
-                            context.Writer.Write(publicRequestTokenDomainsListValue);
+                        context.Writer.WritePropertyName("CustomResponseBodies");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestCustomResponseBodiesKvp in publicRequest.CustomResponseBodies)
+                        {
+                            context.Writer.WritePropertyName(publicRequestCustomResponseBodiesKvp.Key);
+                            var publicRequestCustomResponseBodiesValue = publicRequestCustomResponseBodiesKvp.Value;
+
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = CustomResponseBodyMarshaller.Instance;
+                            marshaller.Marshall(publicRequestCustomResponseBodiesValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDefaultAction())
+                    {
+                        context.Writer.WritePropertyName("DefaultAction");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DefaultActionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DefaultAction, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetRules())
+                    {
+                        context.Writer.WritePropertyName("Rules");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRulesListValue in publicRequest.Rules)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = RuleMarshaller.Instance;
+                            marshaller.Marshall(publicRequestRulesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetScope())
+                    {
+                        context.Writer.WritePropertyName("Scope");
+                        context.Writer.Write(publicRequest.Scope);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTokenDomains())
+                    {
+                        context.Writer.WritePropertyName("TokenDomains");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTokenDomainsListValue in publicRequest.TokenDomains)
+                        {
+                                context.Writer.Write(publicRequestTokenDomainsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetVisibilityConfig())
+                    {
+                        context.Writer.WritePropertyName("VisibilityConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = VisibilityConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.VisibilityConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetVisibilityConfig())
-                {
-                    context.Writer.WritePropertyName("VisibilityConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = VisibilityConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.VisibilityConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

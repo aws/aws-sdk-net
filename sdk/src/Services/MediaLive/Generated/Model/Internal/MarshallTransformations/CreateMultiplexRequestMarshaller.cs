@@ -61,68 +61,71 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/prod/multiplexes";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAvailabilityZones())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("availabilityZones");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAvailabilityZonesListValue in publicRequest.AvailabilityZones)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAvailabilityZones())
                     {
-                            context.Writer.Write(publicRequestAvailabilityZonesListValue);
+                        context.Writer.WritePropertyName("availabilityZones");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAvailabilityZonesListValue in publicRequest.AvailabilityZones)
+                        {
+                                context.Writer.Write(publicRequestAvailabilityZonesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetMultiplexSettings())
-                {
-                    context.Writer.WritePropertyName("multiplexSettings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MultiplexSettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.MultiplexSettings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetRequestId())
-                {
-                    context.Writer.WritePropertyName("requestId");
-                    context.Writer.Write(publicRequest.RequestId);
-                }
-
-                else if(!(publicRequest.IsSetRequestId()))
-                {
-                    context.Writer.WritePropertyName("requestId");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetMultiplexSettings())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
+                        context.Writer.WritePropertyName("multiplexSettings");
+                        context.Writer.WriteObjectStart();
 
-                            context.Writer.Write(publicRequestTagsValue);
+                        var marshaller = MultiplexSettingsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.MultiplexSettings, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetRequestId())
+                    {
+                        context.Writer.WritePropertyName("requestId");
+                        context.Writer.Write(publicRequest.RequestId);
+                    }
+
+                    else if(!(publicRequest.IsSetRequestId()))
+                    {
+                        context.Writer.WritePropertyName("requestId");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

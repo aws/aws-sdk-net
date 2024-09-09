@@ -64,82 +64,85 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
                 throw new AmazonSignerException("Request object does not have required field ProfileName set");
             request.AddPathResource("{profileName}", StringUtils.FromString(publicRequest.ProfileName));
             request.ResourcePath = "/signing-profiles/{profileName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetOverrides())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("overrides");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SigningPlatformOverridesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Overrides, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPlatformId())
-                {
-                    context.Writer.WritePropertyName("platformId");
-                    context.Writer.Write(publicRequest.PlatformId);
-                }
-
-                if(publicRequest.IsSetSignatureValidityPeriod())
-                {
-                    context.Writer.WritePropertyName("signatureValidityPeriod");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SignatureValidityPeriodMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SignatureValidityPeriod, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSigningMaterial())
-                {
-                    context.Writer.WritePropertyName("signingMaterial");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SigningMaterialMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SigningMaterial, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSigningParameters())
-                {
-                    context.Writer.WritePropertyName("signingParameters");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestSigningParametersKvp in publicRequest.SigningParameters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetOverrides())
                     {
-                        context.Writer.WritePropertyName(publicRequestSigningParametersKvp.Key);
-                        var publicRequestSigningParametersValue = publicRequestSigningParametersKvp.Value;
+                        context.Writer.WritePropertyName("overrides");
+                        context.Writer.WriteObjectStart();
 
-                            context.Writer.Write(publicRequestSigningParametersValue);
+                        var marshaller = SigningPlatformOverridesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Overrides, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetPlatformId())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("platformId");
+                        context.Writer.Write(publicRequest.PlatformId);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetSignatureValidityPeriod())
+                    {
+                        context.Writer.WritePropertyName("signatureValidityPeriod");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SignatureValidityPeriodMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SignatureValidityPeriod, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSigningMaterial())
+                    {
+                        context.Writer.WritePropertyName("signingMaterial");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SigningMaterialMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SigningMaterial, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSigningParameters())
+                    {
+                        context.Writer.WritePropertyName("signingParameters");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestSigningParametersKvp in publicRequest.SigningParameters)
+                        {
+                            context.Writer.WritePropertyName(publicRequestSigningParametersKvp.Key);
+                            var publicRequestSigningParametersValue = publicRequestSigningParametersKvp.Value;
+
+                                context.Writer.Write(publicRequestSigningParametersValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

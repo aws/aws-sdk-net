@@ -63,79 +63,82 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEndTime())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("EndTime");
-                    context.Writer.Write(publicRequest.EndTime.Value);
-                }
-
-                if(publicRequest.IsSetIdentifier())
-                {
-                    context.Writer.WritePropertyName("Identifier");
-                    context.Writer.Write(publicRequest.Identifier);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetMetricQueries())
-                {
-                    context.Writer.WritePropertyName("MetricQueries");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMetricQueriesListValue in publicRequest.MetricQueries)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEndTime())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = MetricQueryMarshaller.Instance;
-                        marshaller.Marshall(publicRequestMetricQueriesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("EndTime");
+                        context.Writer.Write(publicRequest.EndTime.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetIdentifier())
+                    {
+                        context.Writer.WritePropertyName("Identifier");
+                        context.Writer.Write(publicRequest.Identifier);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetMetricQueries())
+                    {
+                        context.Writer.WritePropertyName("MetricQueries");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMetricQueriesListValue in publicRequest.MetricQueries)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = MetricQueryMarshaller.Instance;
+                            marshaller.Marshall(publicRequestMetricQueriesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetPeriodAlignment())
+                    {
+                        context.Writer.WritePropertyName("PeriodAlignment");
+                        context.Writer.Write(publicRequest.PeriodAlignment);
+                    }
+
+                    if(publicRequest.IsSetPeriodInSeconds())
+                    {
+                        context.Writer.WritePropertyName("PeriodInSeconds");
+                        context.Writer.Write(publicRequest.PeriodInSeconds.Value);
+                    }
+
+                    if(publicRequest.IsSetServiceType())
+                    {
+                        context.Writer.WritePropertyName("ServiceType");
+                        context.Writer.Write(publicRequest.ServiceType);
+                    }
+
+                    if(publicRequest.IsSetStartTime())
+                    {
+                        context.Writer.WritePropertyName("StartTime");
+                        context.Writer.Write(publicRequest.StartTime.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetPeriodAlignment())
-                {
-                    context.Writer.WritePropertyName("PeriodAlignment");
-                    context.Writer.Write(publicRequest.PeriodAlignment);
-                }
-
-                if(publicRequest.IsSetPeriodInSeconds())
-                {
-                    context.Writer.WritePropertyName("PeriodInSeconds");
-                    context.Writer.Write(publicRequest.PeriodInSeconds.Value);
-                }
-
-                if(publicRequest.IsSetServiceType())
-                {
-                    context.Writer.WritePropertyName("ServiceType");
-                    context.Writer.Write(publicRequest.ServiceType);
-                }
-
-                if(publicRequest.IsSetStartTime())
-                {
-                    context.Writer.WritePropertyName("StartTime");
-                    context.Writer.Write(publicRequest.StartTime.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

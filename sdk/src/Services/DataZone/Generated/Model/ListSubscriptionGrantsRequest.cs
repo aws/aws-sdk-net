@@ -39,6 +39,7 @@ namespace Amazon.DataZone.Model
         private string _environmentId;
         private int? _maxResults;
         private string _nextToken;
+        private string _owningProjectId;
         private SortKey _sortBy;
         private SortOrder _sortOrder;
         private string _subscribedListingId;
@@ -125,6 +126,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwningProjectId. 
+        /// <para>
+        /// The ID of the owning project of the subscription grants.
+        /// </para>
+        /// </summary>
+        public string OwningProjectId
+        {
+            get { return this._owningProjectId; }
+            set { this._owningProjectId = value; }
+        }
+
+        // Check to see if OwningProjectId property is set
+        internal bool IsSetOwningProjectId()
+        {
+            return this._owningProjectId != null;
         }
 
         /// <summary>

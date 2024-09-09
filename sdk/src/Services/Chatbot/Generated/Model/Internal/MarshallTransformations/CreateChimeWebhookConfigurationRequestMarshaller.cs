@@ -61,72 +61,75 @@ namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/create-chime-webhook-configuration";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConfigurationName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ConfigurationName");
-                    context.Writer.Write(publicRequest.ConfigurationName);
-                }
-
-                if(publicRequest.IsSetIamRoleArn())
-                {
-                    context.Writer.WritePropertyName("IamRoleArn");
-                    context.Writer.Write(publicRequest.IamRoleArn);
-                }
-
-                if(publicRequest.IsSetLoggingLevel())
-                {
-                    context.Writer.WritePropertyName("LoggingLevel");
-                    context.Writer.Write(publicRequest.LoggingLevel);
-                }
-
-                if(publicRequest.IsSetSnsTopicArns())
-                {
-                    context.Writer.WritePropertyName("SnsTopicArns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSnsTopicArnsListValue in publicRequest.SnsTopicArns)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConfigurationName())
                     {
-                            context.Writer.Write(publicRequestSnsTopicArnsListValue);
+                        context.Writer.WritePropertyName("ConfigurationName");
+                        context.Writer.Write(publicRequest.ConfigurationName);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetIamRoleArn())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("IamRoleArn");
+                        context.Writer.Write(publicRequest.IamRoleArn);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetLoggingLevel())
+                    {
+                        context.Writer.WritePropertyName("LoggingLevel");
+                        context.Writer.Write(publicRequest.LoggingLevel);
+                    }
+
+                    if(publicRequest.IsSetSnsTopicArns())
+                    {
+                        context.Writer.WritePropertyName("SnsTopicArns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSnsTopicArnsListValue in publicRequest.SnsTopicArns)
+                        {
+                                context.Writer.Write(publicRequestSnsTopicArnsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetWebhookDescription())
+                    {
+                        context.Writer.WritePropertyName("WebhookDescription");
+                        context.Writer.Write(publicRequest.WebhookDescription);
+                    }
+
+                    if(publicRequest.IsSetWebhookUrl())
+                    {
+                        context.Writer.WritePropertyName("WebhookUrl");
+                        context.Writer.Write(publicRequest.WebhookUrl);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetWebhookDescription())
-                {
-                    context.Writer.WritePropertyName("WebhookDescription");
-                    context.Writer.Write(publicRequest.WebhookDescription);
-                }
-
-                if(publicRequest.IsSetWebhookUrl())
-                {
-                    context.Writer.WritePropertyName("WebhookUrl");
-                    context.Writer.Write(publicRequest.WebhookUrl);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

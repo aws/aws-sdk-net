@@ -64,21 +64,24 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 throw new AmazonOpenSearchServiceException("Request object does not have required field DomainName set");
             request.AddPathResource("{DomainName}", StringUtils.FromString(publicRequest.DomainName));
             request.ResourcePath = "/2021-01-01/opensearch/domain/{DomainName}/authorizeVpcEndpointAccess";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccount())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Account");
-                    context.Writer.Write(publicRequest.Account);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccount())
+                    {
+                        context.Writer.WritePropertyName("Account");
+                        context.Writer.Write(publicRequest.Account);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

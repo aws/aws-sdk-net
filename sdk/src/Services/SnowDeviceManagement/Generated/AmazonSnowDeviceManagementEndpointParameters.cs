@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the snow-device-management-2021-08-04.normal.json service model.
  */
 
+using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 

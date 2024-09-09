@@ -64,26 +64,29 @@ namespace Amazon.Route53RecoveryReadiness.Model.Internal.MarshallTransformations
                 throw new AmazonRoute53RecoveryReadinessException("Request object does not have required field CellName set");
             request.AddPathResource("{cellName}", StringUtils.FromString(publicRequest.CellName));
             request.ResourcePath = "/cells/{cellName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCells())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("cells");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCellsListValue in publicRequest.Cells)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCells())
                     {
-                            context.Writer.Write(publicRequestCellsListValue);
+                        context.Writer.WritePropertyName("cells");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCellsListValue in publicRequest.Cells)
+                        {
+                                context.Writer.Write(publicRequestCellsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

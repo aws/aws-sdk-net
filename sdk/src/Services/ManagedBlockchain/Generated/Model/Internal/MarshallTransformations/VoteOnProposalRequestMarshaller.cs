@@ -67,27 +67,30 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
                 throw new AmazonManagedBlockchainException("Request object does not have required field ProposalId set");
             request.AddPathResource("{proposalId}", StringUtils.FromString(publicRequest.ProposalId));
             request.ResourcePath = "/networks/{networkId}/proposals/{proposalId}/votes";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetVote())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Vote");
-                    context.Writer.Write(publicRequest.Vote);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetVote())
+                    {
+                        context.Writer.WritePropertyName("Vote");
+                        context.Writer.Write(publicRequest.Vote);
+                    }
+
+                    if(publicRequest.IsSetVoterMemberId())
+                    {
+                        context.Writer.WritePropertyName("VoterMemberId");
+                        context.Writer.Write(publicRequest.VoterMemberId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetVoterMemberId())
-                {
-                    context.Writer.WritePropertyName("VoterMemberId");
-                    context.Writer.Write(publicRequest.VoterMemberId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,61 +63,64 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetContactId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ContactId");
-                    context.Writer.Write(publicRequest.ContactId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetContactId())
+                    {
+                        context.Writer.WritePropertyName("ContactId");
+                        context.Writer.Write(publicRequest.ContactId);
+                    }
+
+                    if(publicRequest.IsSetDeferActivation())
+                    {
+                        context.Writer.WritePropertyName("DeferActivation");
+                        context.Writer.Write(publicRequest.DeferActivation.Value);
+                    }
+
+                    if(publicRequest.IsSetDeliveryAddress())
+                    {
+                        context.Writer.WritePropertyName("DeliveryAddress");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ContactChannelAddressMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DeliveryAddress, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetIdempotencyToken())
+                    {
+                        context.Writer.WritePropertyName("IdempotencyToken");
+                        context.Writer.Write(publicRequest.IdempotencyToken);
+                    }
+
+                    else if(!(publicRequest.IsSetIdempotencyToken()))
+                    {
+                        context.Writer.WritePropertyName("IdempotencyToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetType())
+                    {
+                        context.Writer.WritePropertyName("Type");
+                        context.Writer.Write(publicRequest.Type);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDeferActivation())
-                {
-                    context.Writer.WritePropertyName("DeferActivation");
-                    context.Writer.Write(publicRequest.DeferActivation.Value);
-                }
-
-                if(publicRequest.IsSetDeliveryAddress())
-                {
-                    context.Writer.WritePropertyName("DeliveryAddress");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ContactChannelAddressMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DeliveryAddress, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetIdempotencyToken())
-                {
-                    context.Writer.WritePropertyName("IdempotencyToken");
-                    context.Writer.Write(publicRequest.IdempotencyToken);
-                }
-
-                else if(!(publicRequest.IsSetIdempotencyToken()))
-                {
-                    context.Writer.WritePropertyName("IdempotencyToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetType())
-                {
-                    context.Writer.WritePropertyName("Type");
-                    context.Writer.Write(publicRequest.Type);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

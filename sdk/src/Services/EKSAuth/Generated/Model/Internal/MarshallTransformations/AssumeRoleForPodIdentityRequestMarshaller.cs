@@ -64,21 +64,24 @@ namespace Amazon.EKSAuth.Model.Internal.MarshallTransformations
                 throw new AmazonEKSAuthException("Request object does not have required field ClusterName set");
             request.AddPathResource("{clusterName}", StringUtils.FromString(publicRequest.ClusterName));
             request.ResourcePath = "/clusters/{clusterName}/assume-role-for-pod-identity";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("token");
-                    context.Writer.Write(publicRequest.Token);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetToken())
+                    {
+                        context.Writer.WritePropertyName("token");
+                        context.Writer.Write(publicRequest.Token);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

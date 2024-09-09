@@ -61,76 +61,79 @@ namespace Amazon.SagemakerEdgeManager.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/SendHeartbeat";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAgentMetrics())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AgentMetrics");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAgentMetricsListValue in publicRequest.AgentMetrics)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAgentMetrics())
                     {
+                        context.Writer.WritePropertyName("AgentMetrics");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAgentMetricsListValue in publicRequest.AgentMetrics)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = EdgeMetricMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAgentMetricsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetAgentVersion())
+                    {
+                        context.Writer.WritePropertyName("AgentVersion");
+                        context.Writer.Write(publicRequest.AgentVersion);
+                    }
+
+                    if(publicRequest.IsSetDeploymentResult())
+                    {
+                        context.Writer.WritePropertyName("DeploymentResult");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = EdgeMetricMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAgentMetricsListValue, context);
+                        var marshaller = DeploymentResultMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DeploymentResult, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetAgentVersion())
-                {
-                    context.Writer.WritePropertyName("AgentVersion");
-                    context.Writer.Write(publicRequest.AgentVersion);
-                }
-
-                if(publicRequest.IsSetDeploymentResult())
-                {
-                    context.Writer.WritePropertyName("DeploymentResult");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DeploymentResultMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DeploymentResult, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDeviceFleetName())
-                {
-                    context.Writer.WritePropertyName("DeviceFleetName");
-                    context.Writer.Write(publicRequest.DeviceFleetName);
-                }
-
-                if(publicRequest.IsSetDeviceName())
-                {
-                    context.Writer.WritePropertyName("DeviceName");
-                    context.Writer.Write(publicRequest.DeviceName);
-                }
-
-                if(publicRequest.IsSetModels())
-                {
-                    context.Writer.WritePropertyName("Models");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestModelsListValue in publicRequest.Models)
+                    if(publicRequest.IsSetDeviceFleetName())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ModelMarshaller.Instance;
-                        marshaller.Marshall(publicRequestModelsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("DeviceFleetName");
+                        context.Writer.Write(publicRequest.DeviceFleetName);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDeviceName())
+                    {
+                        context.Writer.WritePropertyName("DeviceName");
+                        context.Writer.Write(publicRequest.DeviceName);
+                    }
+
+                    if(publicRequest.IsSetModels())
+                    {
+                        context.Writer.WritePropertyName("Models");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestModelsListValue in publicRequest.Models)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ModelMarshaller.Instance;
+                            marshaller.Marshall(publicRequestModelsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

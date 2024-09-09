@@ -63,51 +63,54 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetRestoreDate())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("restoreDate");
-                    context.Writer.Write(publicRequest.RestoreDate);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetRestoreDate())
+                    {
+                        context.Writer.WritePropertyName("restoreDate");
+                        context.Writer.Write(publicRequest.RestoreDate);
+                    }
+
+                    if(publicRequest.IsSetSourceRegion())
+                    {
+                        context.Writer.WritePropertyName("sourceRegion");
+                        context.Writer.Write(publicRequest.SourceRegion);
+                    }
+
+                    if(publicRequest.IsSetSourceResourceName())
+                    {
+                        context.Writer.WritePropertyName("sourceResourceName");
+                        context.Writer.Write(publicRequest.SourceResourceName);
+                    }
+
+                    if(publicRequest.IsSetSourceSnapshotName())
+                    {
+                        context.Writer.WritePropertyName("sourceSnapshotName");
+                        context.Writer.Write(publicRequest.SourceSnapshotName);
+                    }
+
+                    if(publicRequest.IsSetTargetSnapshotName())
+                    {
+                        context.Writer.WritePropertyName("targetSnapshotName");
+                        context.Writer.Write(publicRequest.TargetSnapshotName);
+                    }
+
+                    if(publicRequest.IsSetUseLatestRestorableAutoSnapshot())
+                    {
+                        context.Writer.WritePropertyName("useLatestRestorableAutoSnapshot");
+                        context.Writer.Write(publicRequest.UseLatestRestorableAutoSnapshot.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSourceRegion())
-                {
-                    context.Writer.WritePropertyName("sourceRegion");
-                    context.Writer.Write(publicRequest.SourceRegion);
-                }
-
-                if(publicRequest.IsSetSourceResourceName())
-                {
-                    context.Writer.WritePropertyName("sourceResourceName");
-                    context.Writer.Write(publicRequest.SourceResourceName);
-                }
-
-                if(publicRequest.IsSetSourceSnapshotName())
-                {
-                    context.Writer.WritePropertyName("sourceSnapshotName");
-                    context.Writer.Write(publicRequest.SourceSnapshotName);
-                }
-
-                if(publicRequest.IsSetTargetSnapshotName())
-                {
-                    context.Writer.WritePropertyName("targetSnapshotName");
-                    context.Writer.Write(publicRequest.TargetSnapshotName);
-                }
-
-                if(publicRequest.IsSetUseLatestRestorableAutoSnapshot())
-                {
-                    context.Writer.WritePropertyName("useLatestRestorableAutoSnapshot");
-                    context.Writer.Write(publicRequest.UseLatestRestorableAutoSnapshot.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

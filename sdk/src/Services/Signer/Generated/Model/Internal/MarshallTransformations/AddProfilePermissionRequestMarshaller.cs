@@ -64,45 +64,48 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
                 throw new AmazonSignerException("Request object does not have required field ProfileName set");
             request.AddPathResource("{profileName}", StringUtils.FromString(publicRequest.ProfileName));
             request.ResourcePath = "/signing-profiles/{profileName}/permissions";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAction())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("action");
-                    context.Writer.Write(publicRequest.Action);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAction())
+                    {
+                        context.Writer.WritePropertyName("action");
+                        context.Writer.Write(publicRequest.Action);
+                    }
+
+                    if(publicRequest.IsSetPrincipal())
+                    {
+                        context.Writer.WritePropertyName("principal");
+                        context.Writer.Write(publicRequest.Principal);
+                    }
+
+                    if(publicRequest.IsSetProfileVersion())
+                    {
+                        context.Writer.WritePropertyName("profileVersion");
+                        context.Writer.Write(publicRequest.ProfileVersion);
+                    }
+
+                    if(publicRequest.IsSetRevisionId())
+                    {
+                        context.Writer.WritePropertyName("revisionId");
+                        context.Writer.Write(publicRequest.RevisionId);
+                    }
+
+                    if(publicRequest.IsSetStatementId())
+                    {
+                        context.Writer.WritePropertyName("statementId");
+                        context.Writer.Write(publicRequest.StatementId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPrincipal())
-                {
-                    context.Writer.WritePropertyName("principal");
-                    context.Writer.Write(publicRequest.Principal);
-                }
-
-                if(publicRequest.IsSetProfileVersion())
-                {
-                    context.Writer.WritePropertyName("profileVersion");
-                    context.Writer.Write(publicRequest.ProfileVersion);
-                }
-
-                if(publicRequest.IsSetRevisionId())
-                {
-                    context.Writer.WritePropertyName("revisionId");
-                    context.Writer.Write(publicRequest.RevisionId);
-                }
-
-                if(publicRequest.IsSetStatementId())
-                {
-                    context.Writer.WritePropertyName("statementId");
-                    context.Writer.Write(publicRequest.StatementId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

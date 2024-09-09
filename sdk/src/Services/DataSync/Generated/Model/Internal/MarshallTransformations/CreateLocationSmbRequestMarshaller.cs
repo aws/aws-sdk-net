@@ -63,83 +63,86 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAgentArns())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AgentArns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAgentArnsListValue in publicRequest.AgentArns)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAgentArns())
                     {
-                            context.Writer.Write(publicRequestAgentArnsListValue);
+                        context.Writer.WritePropertyName("AgentArns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAgentArnsListValue in publicRequest.AgentArns)
+                        {
+                                context.Writer.Write(publicRequestAgentArnsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDomain())
-                {
-                    context.Writer.WritePropertyName("Domain");
-                    context.Writer.Write(publicRequest.Domain);
-                }
-
-                if(publicRequest.IsSetMountOptions())
-                {
-                    context.Writer.WritePropertyName("MountOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SmbMountOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.MountOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPassword())
-                {
-                    context.Writer.WritePropertyName("Password");
-                    context.Writer.Write(publicRequest.Password);
-                }
-
-                if(publicRequest.IsSetServerHostname())
-                {
-                    context.Writer.WritePropertyName("ServerHostname");
-                    context.Writer.Write(publicRequest.ServerHostname);
-                }
-
-                if(publicRequest.IsSetSubdirectory())
-                {
-                    context.Writer.WritePropertyName("Subdirectory");
-                    context.Writer.Write(publicRequest.Subdirectory);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetDomain())
                     {
+                        context.Writer.WritePropertyName("Domain");
+                        context.Writer.Write(publicRequest.Domain);
+                    }
+
+                    if(publicRequest.IsSetMountOptions())
+                    {
+                        context.Writer.WritePropertyName("MountOptions");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagListEntryMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = SmbMountOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.MountOptions, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetPassword())
+                    {
+                        context.Writer.WritePropertyName("Password");
+                        context.Writer.Write(publicRequest.Password);
+                    }
+
+                    if(publicRequest.IsSetServerHostname())
+                    {
+                        context.Writer.WritePropertyName("ServerHostname");
+                        context.Writer.Write(publicRequest.ServerHostname);
+                    }
+
+                    if(publicRequest.IsSetSubdirectory())
+                    {
+                        context.Writer.WritePropertyName("Subdirectory");
+                        context.Writer.Write(publicRequest.Subdirectory);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagListEntryMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetUser())
+                    {
+                        context.Writer.WritePropertyName("User");
+                        context.Writer.Write(publicRequest.User);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetUser())
-                {
-                    context.Writer.WritePropertyName("User");
-                    context.Writer.Write(publicRequest.User);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

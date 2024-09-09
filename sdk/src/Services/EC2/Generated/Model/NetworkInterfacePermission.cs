@@ -62,7 +62,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AwsService. 
         /// <para>
-        /// The Amazon Web Service.
+        /// The Amazon Web Services service.
         /// </para>
         /// </summary>
         public string AwsService

@@ -64,64 +64,67 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
                 throw new AmazonQLDBException("Request object does not have required field LedgerName set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.LedgerName));
             request.ResourcePath = "/ledgers/{name}/journal-kinesis-streams";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetExclusiveEndTime())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ExclusiveEndTime");
-                    context.Writer.Write(publicRequest.ExclusiveEndTime.Value);
-                }
-
-                if(publicRequest.IsSetInclusiveStartTime())
-                {
-                    context.Writer.WritePropertyName("InclusiveStartTime");
-                    context.Writer.Write(publicRequest.InclusiveStartTime.Value);
-                }
-
-                if(publicRequest.IsSetKinesisConfiguration())
-                {
-                    context.Writer.WritePropertyName("KinesisConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = KinesisConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.KinesisConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("RoleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetStreamName())
-                {
-                    context.Writer.WritePropertyName("StreamName");
-                    context.Writer.Write(publicRequest.StreamName);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetExclusiveEndTime())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("ExclusiveEndTime");
+                        context.Writer.Write(publicRequest.ExclusiveEndTime.Value);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetInclusiveStartTime())
+                    {
+                        context.Writer.WritePropertyName("InclusiveStartTime");
+                        context.Writer.Write(publicRequest.InclusiveStartTime.Value);
+                    }
+
+                    if(publicRequest.IsSetKinesisConfiguration())
+                    {
+                        context.Writer.WritePropertyName("KinesisConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = KinesisConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.KinesisConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("RoleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    if(publicRequest.IsSetStreamName())
+                    {
+                        context.Writer.WritePropertyName("StreamName");
+                        context.Writer.Write(publicRequest.StreamName);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

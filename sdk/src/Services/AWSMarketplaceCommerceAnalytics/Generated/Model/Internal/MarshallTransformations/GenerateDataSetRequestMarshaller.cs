@@ -63,65 +63,68 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model.Internal.MarshallTransfor
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCustomerDefinedValues())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("customerDefinedValues");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestCustomerDefinedValuesKvp in publicRequest.CustomerDefinedValues)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCustomerDefinedValues())
                     {
-                        context.Writer.WritePropertyName(publicRequestCustomerDefinedValuesKvp.Key);
-                        var publicRequestCustomerDefinedValuesValue = publicRequestCustomerDefinedValuesKvp.Value;
+                        context.Writer.WritePropertyName("customerDefinedValues");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestCustomerDefinedValuesKvp in publicRequest.CustomerDefinedValues)
+                        {
+                            context.Writer.WritePropertyName(publicRequestCustomerDefinedValuesKvp.Key);
+                            var publicRequestCustomerDefinedValuesValue = publicRequestCustomerDefinedValuesKvp.Value;
 
-                            context.Writer.Write(publicRequestCustomerDefinedValuesValue);
+                                context.Writer.Write(publicRequestCustomerDefinedValuesValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetDataSetPublicationDate())
+                    {
+                        context.Writer.WritePropertyName("dataSetPublicationDate");
+                        context.Writer.Write(publicRequest.DataSetPublicationDate.Value);
+                    }
+
+                    if(publicRequest.IsSetDataSetType())
+                    {
+                        context.Writer.WritePropertyName("dataSetType");
+                        context.Writer.Write(publicRequest.DataSetType);
+                    }
+
+                    if(publicRequest.IsSetDestinationS3BucketName())
+                    {
+                        context.Writer.WritePropertyName("destinationS3BucketName");
+                        context.Writer.Write(publicRequest.DestinationS3BucketName);
+                    }
+
+                    if(publicRequest.IsSetDestinationS3Prefix())
+                    {
+                        context.Writer.WritePropertyName("destinationS3Prefix");
+                        context.Writer.Write(publicRequest.DestinationS3Prefix);
+                    }
+
+                    if(publicRequest.IsSetRoleNameArn())
+                    {
+                        context.Writer.WritePropertyName("roleNameArn");
+                        context.Writer.Write(publicRequest.RoleNameArn);
+                    }
+
+                    if(publicRequest.IsSetSnsTopicArn())
+                    {
+                        context.Writer.WritePropertyName("snsTopicArn");
+                        context.Writer.Write(publicRequest.SnsTopicArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDataSetPublicationDate())
-                {
-                    context.Writer.WritePropertyName("dataSetPublicationDate");
-                    context.Writer.Write(publicRequest.DataSetPublicationDate.Value);
-                }
-
-                if(publicRequest.IsSetDataSetType())
-                {
-                    context.Writer.WritePropertyName("dataSetType");
-                    context.Writer.Write(publicRequest.DataSetType);
-                }
-
-                if(publicRequest.IsSetDestinationS3BucketName())
-                {
-                    context.Writer.WritePropertyName("destinationS3BucketName");
-                    context.Writer.Write(publicRequest.DestinationS3BucketName);
-                }
-
-                if(publicRequest.IsSetDestinationS3Prefix())
-                {
-                    context.Writer.WritePropertyName("destinationS3Prefix");
-                    context.Writer.Write(publicRequest.DestinationS3Prefix);
-                }
-
-                if(publicRequest.IsSetRoleNameArn())
-                {
-                    context.Writer.WritePropertyName("roleNameArn");
-                    context.Writer.Write(publicRequest.RoleNameArn);
-                }
-
-                if(publicRequest.IsSetSnsTopicArn())
-                {
-                    context.Writer.WritePropertyName("snsTopicArn");
-                    context.Writer.Write(publicRequest.SnsTopicArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

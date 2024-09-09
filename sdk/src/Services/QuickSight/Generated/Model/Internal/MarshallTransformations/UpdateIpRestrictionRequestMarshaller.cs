@@ -64,63 +64,66 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field AwsAccountId set");
             request.AddPathResource("{AwsAccountId}", StringUtils.FromString(publicRequest.AwsAccountId));
             request.ResourcePath = "/accounts/{AwsAccountId}/ip-restriction";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEnabled())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Enabled");
-                    context.Writer.Write(publicRequest.Enabled.Value);
-                }
-
-                if(publicRequest.IsSetIpRestrictionRuleMap())
-                {
-                    context.Writer.WritePropertyName("IpRestrictionRuleMap");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestIpRestrictionRuleMapKvp in publicRequest.IpRestrictionRuleMap)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEnabled())
                     {
-                        context.Writer.WritePropertyName(publicRequestIpRestrictionRuleMapKvp.Key);
-                        var publicRequestIpRestrictionRuleMapValue = publicRequestIpRestrictionRuleMapKvp.Value;
-
-                            context.Writer.Write(publicRequestIpRestrictionRuleMapValue);
+                        context.Writer.WritePropertyName("Enabled");
+                        context.Writer.Write(publicRequest.Enabled.Value);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetVpcEndpointIdRestrictionRuleMap())
-                {
-                    context.Writer.WritePropertyName("VpcEndpointIdRestrictionRuleMap");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestVpcEndpointIdRestrictionRuleMapKvp in publicRequest.VpcEndpointIdRestrictionRuleMap)
+                    if(publicRequest.IsSetIpRestrictionRuleMap())
                     {
-                        context.Writer.WritePropertyName(publicRequestVpcEndpointIdRestrictionRuleMapKvp.Key);
-                        var publicRequestVpcEndpointIdRestrictionRuleMapValue = publicRequestVpcEndpointIdRestrictionRuleMapKvp.Value;
+                        context.Writer.WritePropertyName("IpRestrictionRuleMap");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestIpRestrictionRuleMapKvp in publicRequest.IpRestrictionRuleMap)
+                        {
+                            context.Writer.WritePropertyName(publicRequestIpRestrictionRuleMapKvp.Key);
+                            var publicRequestIpRestrictionRuleMapValue = publicRequestIpRestrictionRuleMapKvp.Value;
 
-                            context.Writer.Write(publicRequestVpcEndpointIdRestrictionRuleMapValue);
+                                context.Writer.Write(publicRequestIpRestrictionRuleMapValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetVpcIdRestrictionRuleMap())
-                {
-                    context.Writer.WritePropertyName("VpcIdRestrictionRuleMap");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestVpcIdRestrictionRuleMapKvp in publicRequest.VpcIdRestrictionRuleMap)
+                    if(publicRequest.IsSetVpcEndpointIdRestrictionRuleMap())
                     {
-                        context.Writer.WritePropertyName(publicRequestVpcIdRestrictionRuleMapKvp.Key);
-                        var publicRequestVpcIdRestrictionRuleMapValue = publicRequestVpcIdRestrictionRuleMapKvp.Value;
+                        context.Writer.WritePropertyName("VpcEndpointIdRestrictionRuleMap");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestVpcEndpointIdRestrictionRuleMapKvp in publicRequest.VpcEndpointIdRestrictionRuleMap)
+                        {
+                            context.Writer.WritePropertyName(publicRequestVpcEndpointIdRestrictionRuleMapKvp.Key);
+                            var publicRequestVpcEndpointIdRestrictionRuleMapValue = publicRequestVpcEndpointIdRestrictionRuleMapKvp.Value;
 
-                            context.Writer.Write(publicRequestVpcIdRestrictionRuleMapValue);
+                                context.Writer.Write(publicRequestVpcEndpointIdRestrictionRuleMapValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetVpcIdRestrictionRuleMap())
+                    {
+                        context.Writer.WritePropertyName("VpcIdRestrictionRuleMap");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestVpcIdRestrictionRuleMapKvp in publicRequest.VpcIdRestrictionRuleMap)
+                        {
+                            context.Writer.WritePropertyName(publicRequestVpcIdRestrictionRuleMapKvp.Key);
+                            var publicRequestVpcIdRestrictionRuleMapValue = publicRequestVpcIdRestrictionRuleMapKvp.Value;
+
+                                context.Writer.Write(publicRequestVpcIdRestrictionRuleMapValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

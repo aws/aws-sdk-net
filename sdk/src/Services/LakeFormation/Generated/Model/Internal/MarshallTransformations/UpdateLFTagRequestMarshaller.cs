@@ -61,49 +61,52 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/UpdateLFTag";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCatalogId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CatalogId");
-                    context.Writer.Write(publicRequest.CatalogId);
-                }
-
-                if(publicRequest.IsSetTagKey())
-                {
-                    context.Writer.WritePropertyName("TagKey");
-                    context.Writer.Write(publicRequest.TagKey);
-                }
-
-                if(publicRequest.IsSetTagValuesToAdd())
-                {
-                    context.Writer.WritePropertyName("TagValuesToAdd");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagValuesToAddListValue in publicRequest.TagValuesToAdd)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCatalogId())
                     {
-                            context.Writer.Write(publicRequestTagValuesToAddListValue);
+                        context.Writer.WritePropertyName("CatalogId");
+                        context.Writer.Write(publicRequest.CatalogId);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTagValuesToDelete())
-                {
-                    context.Writer.WritePropertyName("TagValuesToDelete");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagValuesToDeleteListValue in publicRequest.TagValuesToDelete)
+                    if(publicRequest.IsSetTagKey())
                     {
-                            context.Writer.Write(publicRequestTagValuesToDeleteListValue);
+                        context.Writer.WritePropertyName("TagKey");
+                        context.Writer.Write(publicRequest.TagKey);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTagValuesToAdd())
+                    {
+                        context.Writer.WritePropertyName("TagValuesToAdd");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagValuesToAddListValue in publicRequest.TagValuesToAdd)
+                        {
+                                context.Writer.Write(publicRequestTagValuesToAddListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTagValuesToDelete())
+                    {
+                        context.Writer.WritePropertyName("TagValuesToDelete");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagValuesToDeleteListValue in publicRequest.TagValuesToDelete)
+                        {
+                                context.Writer.Write(publicRequestTagValuesToDeleteListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

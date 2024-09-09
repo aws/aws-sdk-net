@@ -64,66 +64,69 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                 throw new AmazonCleanRoomsMLException("Request object does not have required field ConfiguredAudienceModelArn set");
             request.AddPathResource("{configuredAudienceModelArn}", StringUtils.FromString(publicRequest.ConfiguredAudienceModelArn));
             request.ResourcePath = "/configured-audience-model/{configuredAudienceModelArn}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAudienceModelArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("audienceModelArn");
-                    context.Writer.Write(publicRequest.AudienceModelArn);
-                }
-
-                if(publicRequest.IsSetAudienceSizeConfig())
-                {
-                    context.Writer.WritePropertyName("audienceSizeConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AudienceSizeConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AudienceSizeConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetMinMatchingSeedSize())
-                {
-                    context.Writer.WritePropertyName("minMatchingSeedSize");
-                    context.Writer.Write(publicRequest.MinMatchingSeedSize.Value);
-                }
-
-                if(publicRequest.IsSetOutputConfig())
-                {
-                    context.Writer.WritePropertyName("outputConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ConfiguredAudienceModelOutputConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OutputConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSharedAudienceMetrics())
-                {
-                    context.Writer.WritePropertyName("sharedAudienceMetrics");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSharedAudienceMetricsListValue in publicRequest.SharedAudienceMetrics)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAudienceModelArn())
                     {
-                            context.Writer.Write(publicRequestSharedAudienceMetricsListValue);
+                        context.Writer.WritePropertyName("audienceModelArn");
+                        context.Writer.Write(publicRequest.AudienceModelArn);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetAudienceSizeConfig())
+                    {
+                        context.Writer.WritePropertyName("audienceSizeConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AudienceSizeConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AudienceSizeConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetMinMatchingSeedSize())
+                    {
+                        context.Writer.WritePropertyName("minMatchingSeedSize");
+                        context.Writer.Write(publicRequest.MinMatchingSeedSize.Value);
+                    }
+
+                    if(publicRequest.IsSetOutputConfig())
+                    {
+                        context.Writer.WritePropertyName("outputConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ConfiguredAudienceModelOutputConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OutputConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSharedAudienceMetrics())
+                    {
+                        context.Writer.WritePropertyName("sharedAudienceMetrics");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSharedAudienceMetricsListValue in publicRequest.SharedAudienceMetrics)
+                        {
+                                context.Writer.Write(publicRequestSharedAudienceMetricsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

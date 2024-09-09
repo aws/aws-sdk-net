@@ -63,39 +63,42 @@ namespace Amazon.EC2InstanceConnect.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAvailabilityZone())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AvailabilityZone");
-                    context.Writer.Write(publicRequest.AvailabilityZone);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAvailabilityZone())
+                    {
+                        context.Writer.WritePropertyName("AvailabilityZone");
+                        context.Writer.Write(publicRequest.AvailabilityZone);
+                    }
+
+                    if(publicRequest.IsSetInstanceId())
+                    {
+                        context.Writer.WritePropertyName("InstanceId");
+                        context.Writer.Write(publicRequest.InstanceId);
+                    }
+
+                    if(publicRequest.IsSetInstanceOSUser())
+                    {
+                        context.Writer.WritePropertyName("InstanceOSUser");
+                        context.Writer.Write(publicRequest.InstanceOSUser);
+                    }
+
+                    if(publicRequest.IsSetSSHPublicKey())
+                    {
+                        context.Writer.WritePropertyName("SSHPublicKey");
+                        context.Writer.Write(publicRequest.SSHPublicKey);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetInstanceId())
-                {
-                    context.Writer.WritePropertyName("InstanceId");
-                    context.Writer.Write(publicRequest.InstanceId);
-                }
-
-                if(publicRequest.IsSetInstanceOSUser())
-                {
-                    context.Writer.WritePropertyName("InstanceOSUser");
-                    context.Writer.Write(publicRequest.InstanceOSUser);
-                }
-
-                if(publicRequest.IsSetSSHPublicKey())
-                {
-                    context.Writer.WritePropertyName("SSHPublicKey");
-                    context.Writer.Write(publicRequest.SSHPublicKey);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

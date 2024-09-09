@@ -61,57 +61,60 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/JsonTimestamps";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDateTime())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("dateTime");
-                    context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.DateTime));
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDateTime())
+                    {
+                        context.Writer.WritePropertyName("dateTime");
+                        context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.DateTime));
+                    }
+
+                    if(publicRequest.IsSetDateTimeOnTarget())
+                    {
+                        context.Writer.WritePropertyName("dateTimeOnTarget");
+                        context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.DateTimeOnTarget));
+                    }
+
+                    if(publicRequest.IsSetEpochSeconds())
+                    {
+                        context.Writer.WritePropertyName("epochSeconds");
+                        context.Writer.Write(publicRequest.EpochSeconds.Value);
+                    }
+
+                    if(publicRequest.IsSetEpochSecondsOnTarget())
+                    {
+                        context.Writer.WritePropertyName("epochSecondsOnTarget");
+                        context.Writer.Write(publicRequest.EpochSecondsOnTarget.Value);
+                    }
+
+                    if(publicRequest.IsSetHttpDate())
+                    {
+                        context.Writer.WritePropertyName("httpDate");
+                        context.Writer.Write(StringUtils.FromDateTimeToRFC822(publicRequest.HttpDate));
+                    }
+
+                    if(publicRequest.IsSetHttpDateOnTarget())
+                    {
+                        context.Writer.WritePropertyName("httpDateOnTarget");
+                        context.Writer.Write(StringUtils.FromDateTimeToRFC822(publicRequest.HttpDateOnTarget));
+                    }
+
+                    if(publicRequest.IsSetNormal())
+                    {
+                        context.Writer.WritePropertyName("normal");
+                        context.Writer.Write(publicRequest.Normal.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDateTimeOnTarget())
-                {
-                    context.Writer.WritePropertyName("dateTimeOnTarget");
-                    context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.DateTimeOnTarget));
-                }
-
-                if(publicRequest.IsSetEpochSeconds())
-                {
-                    context.Writer.WritePropertyName("epochSeconds");
-                    context.Writer.Write(publicRequest.EpochSeconds.Value);
-                }
-
-                if(publicRequest.IsSetEpochSecondsOnTarget())
-                {
-                    context.Writer.WritePropertyName("epochSecondsOnTarget");
-                    context.Writer.Write(publicRequest.EpochSecondsOnTarget.Value);
-                }
-
-                if(publicRequest.IsSetHttpDate())
-                {
-                    context.Writer.WritePropertyName("httpDate");
-                    context.Writer.Write(StringUtils.FromDateTimeToRFC822(publicRequest.HttpDate));
-                }
-
-                if(publicRequest.IsSetHttpDateOnTarget())
-                {
-                    context.Writer.WritePropertyName("httpDateOnTarget");
-                    context.Writer.Write(StringUtils.FromDateTimeToRFC822(publicRequest.HttpDateOnTarget));
-                }
-
-                if(publicRequest.IsSetNormal())
-                {
-                    context.Writer.WritePropertyName("normal");
-                    context.Writer.Write(publicRequest.Normal.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

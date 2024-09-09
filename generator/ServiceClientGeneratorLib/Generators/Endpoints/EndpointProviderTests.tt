@@ -9,6 +9,7 @@
 #>
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 using Amazon.Runtime;
 using <#=this.Config.Namespace#>.Endpoints;
 using <#=this.Config.Namespace#>.Internal;

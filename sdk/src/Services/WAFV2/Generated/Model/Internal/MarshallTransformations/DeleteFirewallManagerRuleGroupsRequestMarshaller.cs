@@ -63,27 +63,30 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetWebACLArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("WebACLArn");
-                    context.Writer.Write(publicRequest.WebACLArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetWebACLArn())
+                    {
+                        context.Writer.WritePropertyName("WebACLArn");
+                        context.Writer.Write(publicRequest.WebACLArn);
+                    }
+
+                    if(publicRequest.IsSetWebACLLockToken())
+                    {
+                        context.Writer.WritePropertyName("WebACLLockToken");
+                        context.Writer.Write(publicRequest.WebACLLockToken);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetWebACLLockToken())
-                {
-                    context.Writer.WritePropertyName("WebACLLockToken");
-                    context.Writer.Write(publicRequest.WebACLLockToken);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

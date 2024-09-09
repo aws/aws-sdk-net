@@ -61,69 +61,72 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/testsetgenerations";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetGenerationDataSource())
-                {
-                    context.Writer.WritePropertyName("generationDataSource");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TestSetGenerationDataSourceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.GenerationDataSource, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("roleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetStorageLocation())
-                {
-                    context.Writer.WritePropertyName("storageLocation");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TestSetStorageLocationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.StorageLocation, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTestSetName())
-                {
-                    context.Writer.WritePropertyName("testSetName");
-                    context.Writer.Write(publicRequest.TestSetName);
-                }
-
-                if(publicRequest.IsSetTestSetTags())
-                {
-                    context.Writer.WritePropertyName("testSetTags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTestSetTagsKvp in publicRequest.TestSetTags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
-                        context.Writer.WritePropertyName(publicRequestTestSetTagsKvp.Key);
-                        var publicRequestTestSetTagsValue = publicRequestTestSetTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTestSetTagsValue);
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetGenerationDataSource())
+                    {
+                        context.Writer.WritePropertyName("generationDataSource");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TestSetGenerationDataSourceMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.GenerationDataSource, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("roleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    if(publicRequest.IsSetStorageLocation())
+                    {
+                        context.Writer.WritePropertyName("storageLocation");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TestSetStorageLocationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.StorageLocation, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTestSetName())
+                    {
+                        context.Writer.WritePropertyName("testSetName");
+                        context.Writer.Write(publicRequest.TestSetName);
+                    }
+
+                    if(publicRequest.IsSetTestSetTags())
+                    {
+                        context.Writer.WritePropertyName("testSetTags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTestSetTagsKvp in publicRequest.TestSetTags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTestSetTagsKvp.Key);
+                            var publicRequestTestSetTagsValue = publicRequestTestSetTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTestSetTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

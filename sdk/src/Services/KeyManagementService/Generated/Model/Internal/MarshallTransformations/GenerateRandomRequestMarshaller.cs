@@ -63,38 +63,41 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCustomKeyStoreId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CustomKeyStoreId");
-                    context.Writer.Write(publicRequest.CustomKeyStoreId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCustomKeyStoreId())
+                    {
+                        context.Writer.WritePropertyName("CustomKeyStoreId");
+                        context.Writer.Write(publicRequest.CustomKeyStoreId);
+                    }
+
+                    if(publicRequest.IsSetNumberOfBytes())
+                    {
+                        context.Writer.WritePropertyName("NumberOfBytes");
+                        context.Writer.Write(publicRequest.NumberOfBytes.Value);
+                    }
+
+                    if(publicRequest.IsSetRecipient())
+                    {
+                        context.Writer.WritePropertyName("Recipient");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RecipientInfoMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Recipient, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetNumberOfBytes())
-                {
-                    context.Writer.WritePropertyName("NumberOfBytes");
-                    context.Writer.Write(publicRequest.NumberOfBytes.Value);
-                }
-
-                if(publicRequest.IsSetRecipient())
-                {
-                    context.Writer.WritePropertyName("Recipient");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RecipientInfoMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Recipient, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

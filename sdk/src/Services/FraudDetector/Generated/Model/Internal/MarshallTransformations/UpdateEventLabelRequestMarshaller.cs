@@ -63,39 +63,42 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAssignedLabel())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("assignedLabel");
-                    context.Writer.Write(publicRequest.AssignedLabel);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAssignedLabel())
+                    {
+                        context.Writer.WritePropertyName("assignedLabel");
+                        context.Writer.Write(publicRequest.AssignedLabel);
+                    }
+
+                    if(publicRequest.IsSetEventId())
+                    {
+                        context.Writer.WritePropertyName("eventId");
+                        context.Writer.Write(publicRequest.EventId);
+                    }
+
+                    if(publicRequest.IsSetEventTypeName())
+                    {
+                        context.Writer.WritePropertyName("eventTypeName");
+                        context.Writer.Write(publicRequest.EventTypeName);
+                    }
+
+                    if(publicRequest.IsSetLabelTimestamp())
+                    {
+                        context.Writer.WritePropertyName("labelTimestamp");
+                        context.Writer.Write(publicRequest.LabelTimestamp);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEventId())
-                {
-                    context.Writer.WritePropertyName("eventId");
-                    context.Writer.Write(publicRequest.EventId);
-                }
-
-                if(publicRequest.IsSetEventTypeName())
-                {
-                    context.Writer.WritePropertyName("eventTypeName");
-                    context.Writer.Write(publicRequest.EventTypeName);
-                }
-
-                if(publicRequest.IsSetLabelTimestamp())
-                {
-                    context.Writer.WritePropertyName("labelTimestamp");
-                    context.Writer.Write(publicRequest.LabelTimestamp);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

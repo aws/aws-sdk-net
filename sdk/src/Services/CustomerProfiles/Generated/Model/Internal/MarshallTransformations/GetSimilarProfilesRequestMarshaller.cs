@@ -70,33 +70,36 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("next-token", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/domains/{DomainName}/matches";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMatchType())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("MatchType");
-                    context.Writer.Write(publicRequest.MatchType);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMatchType())
+                    {
+                        context.Writer.WritePropertyName("MatchType");
+                        context.Writer.Write(publicRequest.MatchType);
+                    }
+
+                    if(publicRequest.IsSetSearchKey())
+                    {
+                        context.Writer.WritePropertyName("SearchKey");
+                        context.Writer.Write(publicRequest.SearchKey);
+                    }
+
+                    if(publicRequest.IsSetSearchValue())
+                    {
+                        context.Writer.WritePropertyName("SearchValue");
+                        context.Writer.Write(publicRequest.SearchValue);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSearchKey())
-                {
-                    context.Writer.WritePropertyName("SearchKey");
-                    context.Writer.Write(publicRequest.SearchKey);
-                }
-
-                if(publicRequest.IsSetSearchValue())
-                {
-                    context.Writer.WritePropertyName("SearchValue");
-                    context.Writer.Write(publicRequest.SearchValue);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             request.UseQueryString = true;

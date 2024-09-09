@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the iotevents-2018-07-27.normal.json service model.
  */
 
+using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 

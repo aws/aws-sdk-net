@@ -64,86 +64,89 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                 throw new AmazonQBusinessException("Request object does not have required field ApplicationId set");
             request.AddPathResource("{applicationId}", StringUtils.FromString(publicRequest.ApplicationId));
             request.ResourcePath = "/applications/{applicationId}/chatcontrols";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBlockedPhrasesConfigurationUpdate())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("blockedPhrasesConfigurationUpdate");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = BlockedPhrasesConfigurationUpdateMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.BlockedPhrasesConfigurationUpdate, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetCreatorModeConfiguration())
-                {
-                    context.Writer.WritePropertyName("creatorModeConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CreatorModeConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CreatorModeConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetResponseScope())
-                {
-                    context.Writer.WritePropertyName("responseScope");
-                    context.Writer.Write(publicRequest.ResponseScope);
-                }
-
-                if(publicRequest.IsSetTopicConfigurationsToCreateOrUpdate())
-                {
-                    context.Writer.WritePropertyName("topicConfigurationsToCreateOrUpdate");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTopicConfigurationsToCreateOrUpdateListValue in publicRequest.TopicConfigurationsToCreateOrUpdate)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBlockedPhrasesConfigurationUpdate())
                     {
+                        context.Writer.WritePropertyName("blockedPhrasesConfigurationUpdate");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TopicConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTopicConfigurationsToCreateOrUpdateListValue, context);
+                        var marshaller = BlockedPhrasesConfigurationUpdateMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.BlockedPhrasesConfigurationUpdate, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTopicConfigurationsToDelete())
-                {
-                    context.Writer.WritePropertyName("topicConfigurationsToDelete");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTopicConfigurationsToDeleteListValue in publicRequest.TopicConfigurationsToDelete)
+                    if(publicRequest.IsSetClientToken())
                     {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetCreatorModeConfiguration())
+                    {
+                        context.Writer.WritePropertyName("creatorModeConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TopicConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTopicConfigurationsToDeleteListValue, context);
+                        var marshaller = CreatorModeConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CreatorModeConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetResponseScope())
+                    {
+                        context.Writer.WritePropertyName("responseScope");
+                        context.Writer.Write(publicRequest.ResponseScope);
+                    }
+
+                    if(publicRequest.IsSetTopicConfigurationsToCreateOrUpdate())
+                    {
+                        context.Writer.WritePropertyName("topicConfigurationsToCreateOrUpdate");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTopicConfigurationsToCreateOrUpdateListValue in publicRequest.TopicConfigurationsToCreateOrUpdate)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TopicConfigurationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTopicConfigurationsToCreateOrUpdateListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTopicConfigurationsToDelete())
+                    {
+                        context.Writer.WritePropertyName("topicConfigurationsToDelete");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTopicConfigurationsToDeleteListValue in publicRequest.TopicConfigurationsToDelete)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TopicConfigurationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTopicConfigurationsToDeleteListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,166 +63,169 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAlarmConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AlarmConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AlarmConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AlarmConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetCloudWatchOutputConfig())
-                {
-                    context.Writer.WritePropertyName("CloudWatchOutputConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CloudWatchOutputConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CloudWatchOutputConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetComment())
-                {
-                    context.Writer.WritePropertyName("Comment");
-                    context.Writer.Write(publicRequest.Comment);
-                }
-
-                if(publicRequest.IsSetDocumentHash())
-                {
-                    context.Writer.WritePropertyName("DocumentHash");
-                    context.Writer.Write(publicRequest.DocumentHash);
-                }
-
-                if(publicRequest.IsSetDocumentHashType())
-                {
-                    context.Writer.WritePropertyName("DocumentHashType");
-                    context.Writer.Write(publicRequest.DocumentHashType);
-                }
-
-                if(publicRequest.IsSetDocumentName())
-                {
-                    context.Writer.WritePropertyName("DocumentName");
-                    context.Writer.Write(publicRequest.DocumentName);
-                }
-
-                if(publicRequest.IsSetDocumentVersion())
-                {
-                    context.Writer.WritePropertyName("DocumentVersion");
-                    context.Writer.Write(publicRequest.DocumentVersion);
-                }
-
-                if(publicRequest.IsSetInstanceIds())
-                {
-                    context.Writer.WritePropertyName("InstanceIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestInstanceIdsListValue in publicRequest.InstanceIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAlarmConfiguration())
                     {
-                            context.Writer.Write(publicRequestInstanceIdsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetMaxConcurrency())
-                {
-                    context.Writer.WritePropertyName("MaxConcurrency");
-                    context.Writer.Write(publicRequest.MaxConcurrency);
-                }
-
-                if(publicRequest.IsSetMaxErrors())
-                {
-                    context.Writer.WritePropertyName("MaxErrors");
-                    context.Writer.Write(publicRequest.MaxErrors);
-                }
-
-                if(publicRequest.IsSetNotificationConfig())
-                {
-                    context.Writer.WritePropertyName("NotificationConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = NotificationConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.NotificationConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOutputS3BucketName())
-                {
-                    context.Writer.WritePropertyName("OutputS3BucketName");
-                    context.Writer.Write(publicRequest.OutputS3BucketName);
-                }
-
-                if(publicRequest.IsSetOutputS3KeyPrefix())
-                {
-                    context.Writer.WritePropertyName("OutputS3KeyPrefix");
-                    context.Writer.Write(publicRequest.OutputS3KeyPrefix);
-                }
-
-                if(publicRequest.IsSetOutputS3Region())
-                {
-                    context.Writer.WritePropertyName("OutputS3Region");
-                    context.Writer.Write(publicRequest.OutputS3Region);
-                }
-
-                if(publicRequest.IsSetParameters())
-                {
-                    context.Writer.WritePropertyName("Parameters");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestParametersKvp in publicRequest.Parameters)
-                    {
-                        context.Writer.WritePropertyName(publicRequestParametersKvp.Key);
-                        var publicRequestParametersValue = publicRequestParametersKvp.Value;
-
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestParametersValueListValue in publicRequestParametersValue)
-                        {
-                                context.Writer.Write(publicRequestParametersValueListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetServiceRoleArn())
-                {
-                    context.Writer.WritePropertyName("ServiceRoleArn");
-                    context.Writer.Write(publicRequest.ServiceRoleArn);
-                }
-
-                if(publicRequest.IsSetTargets())
-                {
-                    context.Writer.WritePropertyName("Targets");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTargetsListValue in publicRequest.Targets)
-                    {
+                        context.Writer.WritePropertyName("AlarmConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TargetMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTargetsListValue, context);
+                        var marshaller = AlarmConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AlarmConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetCloudWatchOutputConfig())
+                    {
+                        context.Writer.WritePropertyName("CloudWatchOutputConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CloudWatchOutputConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CloudWatchOutputConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetComment())
+                    {
+                        context.Writer.WritePropertyName("Comment");
+                        context.Writer.Write(publicRequest.Comment);
+                    }
+
+                    if(publicRequest.IsSetDocumentHash())
+                    {
+                        context.Writer.WritePropertyName("DocumentHash");
+                        context.Writer.Write(publicRequest.DocumentHash);
+                    }
+
+                    if(publicRequest.IsSetDocumentHashType())
+                    {
+                        context.Writer.WritePropertyName("DocumentHashType");
+                        context.Writer.Write(publicRequest.DocumentHashType);
+                    }
+
+                    if(publicRequest.IsSetDocumentName())
+                    {
+                        context.Writer.WritePropertyName("DocumentName");
+                        context.Writer.Write(publicRequest.DocumentName);
+                    }
+
+                    if(publicRequest.IsSetDocumentVersion())
+                    {
+                        context.Writer.WritePropertyName("DocumentVersion");
+                        context.Writer.Write(publicRequest.DocumentVersion);
+                    }
+
+                    if(publicRequest.IsSetInstanceIds())
+                    {
+                        context.Writer.WritePropertyName("InstanceIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestInstanceIdsListValue in publicRequest.InstanceIds)
+                        {
+                                context.Writer.Write(publicRequestInstanceIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetMaxConcurrency())
+                    {
+                        context.Writer.WritePropertyName("MaxConcurrency");
+                        context.Writer.Write(publicRequest.MaxConcurrency);
+                    }
+
+                    if(publicRequest.IsSetMaxErrors())
+                    {
+                        context.Writer.WritePropertyName("MaxErrors");
+                        context.Writer.Write(publicRequest.MaxErrors);
+                    }
+
+                    if(publicRequest.IsSetNotificationConfig())
+                    {
+                        context.Writer.WritePropertyName("NotificationConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = NotificationConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.NotificationConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetOutputS3BucketName())
+                    {
+                        context.Writer.WritePropertyName("OutputS3BucketName");
+                        context.Writer.Write(publicRequest.OutputS3BucketName);
+                    }
+
+                    if(publicRequest.IsSetOutputS3KeyPrefix())
+                    {
+                        context.Writer.WritePropertyName("OutputS3KeyPrefix");
+                        context.Writer.Write(publicRequest.OutputS3KeyPrefix);
+                    }
+
+                    if(publicRequest.IsSetOutputS3Region())
+                    {
+                        context.Writer.WritePropertyName("OutputS3Region");
+                        context.Writer.Write(publicRequest.OutputS3Region);
+                    }
+
+                    if(publicRequest.IsSetParameters())
+                    {
+                        context.Writer.WritePropertyName("Parameters");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestParametersKvp in publicRequest.Parameters)
+                        {
+                            context.Writer.WritePropertyName(publicRequestParametersKvp.Key);
+                            var publicRequestParametersValue = publicRequestParametersKvp.Value;
+
+                            context.Writer.WriteArrayStart();
+                            foreach(var publicRequestParametersValueListValue in publicRequestParametersValue)
+                            {
+                                    context.Writer.Write(publicRequestParametersValueListValue);
+                            }
+                            context.Writer.WriteArrayEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetServiceRoleArn())
+                    {
+                        context.Writer.WritePropertyName("ServiceRoleArn");
+                        context.Writer.Write(publicRequest.ServiceRoleArn);
+                    }
+
+                    if(publicRequest.IsSetTargets())
+                    {
+                        context.Writer.WritePropertyName("Targets");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTargetsListValue in publicRequest.Targets)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TargetMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTargetsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTimeoutSeconds())
+                    {
+                        context.Writer.WritePropertyName("TimeoutSeconds");
+                        context.Writer.Write(publicRequest.TimeoutSeconds.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTimeoutSeconds())
-                {
-                    context.Writer.WritePropertyName("TimeoutSeconds");
-                    context.Writer.Write(publicRequest.TimeoutSeconds.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

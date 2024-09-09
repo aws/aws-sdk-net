@@ -63,38 +63,41 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetImagePermissions())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ImagePermissions");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetImagePermissions())
+                    {
+                        context.Writer.WritePropertyName("ImagePermissions");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = ImagePermissionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ImagePermissions, context);
+                        var marshaller = ImagePermissionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ImagePermissions, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetSharedAccountId())
+                    {
+                        context.Writer.WritePropertyName("SharedAccountId");
+                        context.Writer.Write(publicRequest.SharedAccountId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetSharedAccountId())
-                {
-                    context.Writer.WritePropertyName("SharedAccountId");
-                    context.Writer.Write(publicRequest.SharedAccountId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

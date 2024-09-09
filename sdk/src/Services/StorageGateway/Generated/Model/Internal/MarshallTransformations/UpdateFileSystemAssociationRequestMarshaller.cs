@@ -63,50 +63,53 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAuditDestinationARN())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AuditDestinationARN");
-                    context.Writer.Write(publicRequest.AuditDestinationARN);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAuditDestinationARN())
+                    {
+                        context.Writer.WritePropertyName("AuditDestinationARN");
+                        context.Writer.Write(publicRequest.AuditDestinationARN);
+                    }
+
+                    if(publicRequest.IsSetCacheAttributes())
+                    {
+                        context.Writer.WritePropertyName("CacheAttributes");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CacheAttributesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CacheAttributes, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetFileSystemAssociationARN())
+                    {
+                        context.Writer.WritePropertyName("FileSystemAssociationARN");
+                        context.Writer.Write(publicRequest.FileSystemAssociationARN);
+                    }
+
+                    if(publicRequest.IsSetPassword())
+                    {
+                        context.Writer.WritePropertyName("Password");
+                        context.Writer.Write(publicRequest.Password);
+                    }
+
+                    if(publicRequest.IsSetUserName())
+                    {
+                        context.Writer.WritePropertyName("UserName");
+                        context.Writer.Write(publicRequest.UserName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCacheAttributes())
-                {
-                    context.Writer.WritePropertyName("CacheAttributes");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CacheAttributesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CacheAttributes, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetFileSystemAssociationARN())
-                {
-                    context.Writer.WritePropertyName("FileSystemAssociationARN");
-                    context.Writer.Write(publicRequest.FileSystemAssociationARN);
-                }
-
-                if(publicRequest.IsSetPassword())
-                {
-                    context.Writer.WritePropertyName("Password");
-                    context.Writer.Write(publicRequest.Password);
-                }
-
-                if(publicRequest.IsSetUserName())
-                {
-                    context.Writer.WritePropertyName("UserName");
-                    context.Writer.Write(publicRequest.UserName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

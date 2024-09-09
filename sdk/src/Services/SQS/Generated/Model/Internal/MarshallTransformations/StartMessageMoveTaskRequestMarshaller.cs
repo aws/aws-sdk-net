@@ -63,33 +63,36 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDestinationArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DestinationArn");
-                    context.Writer.Write(publicRequest.DestinationArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDestinationArn())
+                    {
+                        context.Writer.WritePropertyName("DestinationArn");
+                        context.Writer.Write(publicRequest.DestinationArn);
+                    }
+
+                    if(publicRequest.IsSetMaxNumberOfMessagesPerSecond())
+                    {
+                        context.Writer.WritePropertyName("MaxNumberOfMessagesPerSecond");
+                        context.Writer.Write(publicRequest.MaxNumberOfMessagesPerSecond.Value);
+                    }
+
+                    if(publicRequest.IsSetSourceArn())
+                    {
+                        context.Writer.WritePropertyName("SourceArn");
+                        context.Writer.Write(publicRequest.SourceArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMaxNumberOfMessagesPerSecond())
-                {
-                    context.Writer.WritePropertyName("MaxNumberOfMessagesPerSecond");
-                    context.Writer.Write(publicRequest.MaxNumberOfMessagesPerSecond.Value);
-                }
-
-                if(publicRequest.IsSetSourceArn())
-                {
-                    context.Writer.WritePropertyName("SourceArn");
-                    context.Writer.Write(publicRequest.SourceArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

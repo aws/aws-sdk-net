@@ -63,59 +63,62 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAddMetrics())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("addMetrics");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAddMetricsListValue in publicRequest.AddMetrics)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAddMetrics())
                     {
+                        context.Writer.WritePropertyName("addMetrics");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAddMetricsListValue in publicRequest.AddMetrics)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = MetricAttributeMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAddMetricsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetMetricAttributionArn())
+                    {
+                        context.Writer.WritePropertyName("metricAttributionArn");
+                        context.Writer.Write(publicRequest.MetricAttributionArn);
+                    }
+
+                    if(publicRequest.IsSetMetricsOutputConfig())
+                    {
+                        context.Writer.WritePropertyName("metricsOutputConfig");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = MetricAttributeMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAddMetricsListValue, context);
+                        var marshaller = MetricAttributionOutputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.MetricsOutputConfig, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetMetricAttributionArn())
-                {
-                    context.Writer.WritePropertyName("metricAttributionArn");
-                    context.Writer.Write(publicRequest.MetricAttributionArn);
-                }
-
-                if(publicRequest.IsSetMetricsOutputConfig())
-                {
-                    context.Writer.WritePropertyName("metricsOutputConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MetricAttributionOutputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.MetricsOutputConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRemoveMetrics())
-                {
-                    context.Writer.WritePropertyName("removeMetrics");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRemoveMetricsListValue in publicRequest.RemoveMetrics)
+                    if(publicRequest.IsSetRemoveMetrics())
                     {
-                            context.Writer.Write(publicRequestRemoveMetricsListValue);
+                        context.Writer.WritePropertyName("removeMetrics");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRemoveMetricsListValue in publicRequest.RemoveMetrics)
+                        {
+                                context.Writer.Write(publicRequestRemoveMetricsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

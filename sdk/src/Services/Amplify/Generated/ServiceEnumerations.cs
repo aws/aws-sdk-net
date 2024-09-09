@@ -25,6 +25,56 @@ namespace Amazon.Amplify
 {
 
     /// <summary>
+    /// Constants used for properties of type CacheConfigType.
+    /// </summary>
+    public class CacheConfigType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AMPLIFY_MANAGED for CacheConfigType
+        /// </summary>
+        public static readonly CacheConfigType AMPLIFY_MANAGED = new CacheConfigType("AMPLIFY_MANAGED");
+        /// <summary>
+        /// Constant AMPLIFY_MANAGED_NO_COOKIES for CacheConfigType
+        /// </summary>
+        public static readonly CacheConfigType AMPLIFY_MANAGED_NO_COOKIES = new CacheConfigType("AMPLIFY_MANAGED_NO_COOKIES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CacheConfigType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CacheConfigType FindValue(string value)
+        {
+            return FindValue<CacheConfigType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CacheConfigType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CertificateType.
     /// </summary>
     public class CertificateType : ConstantClass

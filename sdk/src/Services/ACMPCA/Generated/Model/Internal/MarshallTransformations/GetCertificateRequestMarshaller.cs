@@ -63,27 +63,30 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCertificateArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CertificateArn");
-                    context.Writer.Write(publicRequest.CertificateArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCertificateArn())
+                    {
+                        context.Writer.WritePropertyName("CertificateArn");
+                        context.Writer.Write(publicRequest.CertificateArn);
+                    }
+
+                    if(publicRequest.IsSetCertificateAuthorityArn())
+                    {
+                        context.Writer.WritePropertyName("CertificateAuthorityArn");
+                        context.Writer.Write(publicRequest.CertificateAuthorityArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCertificateAuthorityArn())
-                {
-                    context.Writer.WritePropertyName("CertificateAuthorityArn");
-                    context.Writer.Write(publicRequest.CertificateAuthorityArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

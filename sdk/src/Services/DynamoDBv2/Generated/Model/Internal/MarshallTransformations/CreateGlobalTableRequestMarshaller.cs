@@ -63,37 +63,40 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetGlobalTableName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("GlobalTableName");
-                    context.Writer.Write(publicRequest.GlobalTableName);
-                }
-
-                if(publicRequest.IsSetReplicationGroup())
-                {
-                    context.Writer.WritePropertyName("ReplicationGroup");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestReplicationGroupListValue in publicRequest.ReplicationGroup)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetGlobalTableName())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ReplicaMarshaller.Instance;
-                        marshaller.Marshall(publicRequestReplicationGroupListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("GlobalTableName");
+                        context.Writer.Write(publicRequest.GlobalTableName);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetReplicationGroup())
+                    {
+                        context.Writer.WritePropertyName("ReplicationGroup");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestReplicationGroupListValue in publicRequest.ReplicationGroup)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ReplicaMarshaller.Instance;
+                            marshaller.Marshall(publicRequestReplicationGroupListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

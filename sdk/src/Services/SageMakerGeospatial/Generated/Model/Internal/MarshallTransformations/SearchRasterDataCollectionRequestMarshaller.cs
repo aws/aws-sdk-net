@@ -61,38 +61,41 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/search-raster-data-collection";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Arn");
-                    context.Writer.Write(publicRequest.Arn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetArn())
+                    {
+                        context.Writer.WritePropertyName("Arn");
+                        context.Writer.Write(publicRequest.Arn);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetRasterDataCollectionQuery())
+                    {
+                        context.Writer.WritePropertyName("RasterDataCollectionQuery");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RasterDataCollectionQueryWithBandFilterInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RasterDataCollectionQuery, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetRasterDataCollectionQuery())
-                {
-                    context.Writer.WritePropertyName("RasterDataCollectionQuery");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RasterDataCollectionQueryWithBandFilterInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RasterDataCollectionQuery, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

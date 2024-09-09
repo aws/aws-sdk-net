@@ -70,26 +70,29 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 throw new AmazonDeadlineException("Request object does not have required field QueueId set");
             request.AddPathResource("{queueId}", StringUtils.FromString(publicRequest.QueueId));
             request.ResourcePath = "/2023-10-12/farms/{farmId}/queues/{queueId}/jobs/{jobId}/template";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetTargetS3Location())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("targetS3Location");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetTargetS3Location())
+                    {
+                        context.Writer.WritePropertyName("targetS3Location");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = S3LocationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TargetS3Location, context);
+                        var marshaller = S3LocationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TargetS3Location, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

@@ -61,38 +61,41 @@ namespace Amazon.LicenseManagerLinuxSubscriptions.Model.Internal.MarshallTransfo
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/subscription/UpdateServiceSettings";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAllowUpdate())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AllowUpdate");
-                    context.Writer.Write(publicRequest.AllowUpdate.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAllowUpdate())
+                    {
+                        context.Writer.WritePropertyName("AllowUpdate");
+                        context.Writer.Write(publicRequest.AllowUpdate.Value);
+                    }
+
+                    if(publicRequest.IsSetLinuxSubscriptionsDiscovery())
+                    {
+                        context.Writer.WritePropertyName("LinuxSubscriptionsDiscovery");
+                        context.Writer.Write(publicRequest.LinuxSubscriptionsDiscovery);
+                    }
+
+                    if(publicRequest.IsSetLinuxSubscriptionsDiscoverySettings())
+                    {
+                        context.Writer.WritePropertyName("LinuxSubscriptionsDiscoverySettings");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LinuxSubscriptionsDiscoverySettingsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.LinuxSubscriptionsDiscoverySettings, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetLinuxSubscriptionsDiscovery())
-                {
-                    context.Writer.WritePropertyName("LinuxSubscriptionsDiscovery");
-                    context.Writer.Write(publicRequest.LinuxSubscriptionsDiscovery);
-                }
-
-                if(publicRequest.IsSetLinuxSubscriptionsDiscoverySettings())
-                {
-                    context.Writer.WritePropertyName("LinuxSubscriptionsDiscoverySettings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LinuxSubscriptionsDiscoverySettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LinuxSubscriptionsDiscoverySettings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

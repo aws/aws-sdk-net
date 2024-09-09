@@ -61,108 +61,111 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/prod/cloudwatch-alarm-templates";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetComparisonOperator())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("comparisonOperator");
-                    context.Writer.Write(publicRequest.ComparisonOperator);
-                }
-
-                if(publicRequest.IsSetDatapointsToAlarm())
-                {
-                    context.Writer.WritePropertyName("datapointsToAlarm");
-                    context.Writer.Write(publicRequest.DatapointsToAlarm.Value);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetEvaluationPeriods())
-                {
-                    context.Writer.WritePropertyName("evaluationPeriods");
-                    context.Writer.Write(publicRequest.EvaluationPeriods.Value);
-                }
-
-                if(publicRequest.IsSetGroupIdentifier())
-                {
-                    context.Writer.WritePropertyName("groupIdentifier");
-                    context.Writer.Write(publicRequest.GroupIdentifier);
-                }
-
-                if(publicRequest.IsSetMetricName())
-                {
-                    context.Writer.WritePropertyName("metricName");
-                    context.Writer.Write(publicRequest.MetricName);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetPeriod())
-                {
-                    context.Writer.WritePropertyName("period");
-                    context.Writer.Write(publicRequest.Period.Value);
-                }
-
-                if(publicRequest.IsSetStatistic())
-                {
-                    context.Writer.WritePropertyName("statistic");
-                    context.Writer.Write(publicRequest.Statistic);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetComparisonOperator())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("comparisonOperator");
+                        context.Writer.Write(publicRequest.ComparisonOperator);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetTargetResourceType())
-                {
-                    context.Writer.WritePropertyName("targetResourceType");
-                    context.Writer.Write(publicRequest.TargetResourceType);
-                }
-
-                if(publicRequest.IsSetThreshold())
-                {
-                    context.Writer.WritePropertyName("threshold");
-                    if(StringUtils.IsSpecialDoubleValue(publicRequest.Threshold.Value))
+                    if(publicRequest.IsSetDatapointsToAlarm())
                     {
-                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.Threshold.Value));
+                        context.Writer.WritePropertyName("datapointsToAlarm");
+                        context.Writer.Write(publicRequest.DatapointsToAlarm.Value);
                     }
-                    else
+
+                    if(publicRequest.IsSetDescription())
                     {
-                        context.Writer.Write(publicRequest.Threshold.Value);
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
                     }
+
+                    if(publicRequest.IsSetEvaluationPeriods())
+                    {
+                        context.Writer.WritePropertyName("evaluationPeriods");
+                        context.Writer.Write(publicRequest.EvaluationPeriods.Value);
+                    }
+
+                    if(publicRequest.IsSetGroupIdentifier())
+                    {
+                        context.Writer.WritePropertyName("groupIdentifier");
+                        context.Writer.Write(publicRequest.GroupIdentifier);
+                    }
+
+                    if(publicRequest.IsSetMetricName())
+                    {
+                        context.Writer.WritePropertyName("metricName");
+                        context.Writer.Write(publicRequest.MetricName);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetPeriod())
+                    {
+                        context.Writer.WritePropertyName("period");
+                        context.Writer.Write(publicRequest.Period.Value);
+                    }
+
+                    if(publicRequest.IsSetStatistic())
+                    {
+                        context.Writer.WritePropertyName("statistic");
+                        context.Writer.Write(publicRequest.Statistic);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTargetResourceType())
+                    {
+                        context.Writer.WritePropertyName("targetResourceType");
+                        context.Writer.Write(publicRequest.TargetResourceType);
+                    }
+
+                    if(publicRequest.IsSetThreshold())
+                    {
+                        context.Writer.WritePropertyName("threshold");
+                        if(StringUtils.IsSpecialDoubleValue(publicRequest.Threshold.Value))
+                        {
+                            context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.Threshold.Value));
+                        }
+                        else
+                        {
+                            context.Writer.Write(publicRequest.Threshold.Value);
+                        }
+                    }
+
+                    if(publicRequest.IsSetTreatMissingData())
+                    {
+                        context.Writer.WritePropertyName("treatMissingData");
+                        context.Writer.Write(publicRequest.TreatMissingData);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTreatMissingData())
-                {
-                    context.Writer.WritePropertyName("treatMissingData");
-                    context.Writer.Write(publicRequest.TreatMissingData);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

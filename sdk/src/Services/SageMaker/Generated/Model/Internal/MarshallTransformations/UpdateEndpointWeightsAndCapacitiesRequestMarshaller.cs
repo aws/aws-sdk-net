@@ -63,37 +63,40 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDesiredWeightsAndCapacities())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DesiredWeightsAndCapacities");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDesiredWeightsAndCapacitiesListValue in publicRequest.DesiredWeightsAndCapacities)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDesiredWeightsAndCapacities())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("DesiredWeightsAndCapacities");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDesiredWeightsAndCapacitiesListValue in publicRequest.DesiredWeightsAndCapacities)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = DesiredWeightAndCapacityMarshaller.Instance;
-                        marshaller.Marshall(publicRequestDesiredWeightsAndCapacitiesListValue, context);
+                            var marshaller = DesiredWeightAndCapacityMarshaller.Instance;
+                            marshaller.Marshall(publicRequestDesiredWeightsAndCapacitiesListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetEndpointName())
+                    {
+                        context.Writer.WritePropertyName("EndpointName");
+                        context.Writer.Write(publicRequest.EndpointName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEndpointName())
-                {
-                    context.Writer.WritePropertyName("EndpointName");
-                    context.Writer.Write(publicRequest.EndpointName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

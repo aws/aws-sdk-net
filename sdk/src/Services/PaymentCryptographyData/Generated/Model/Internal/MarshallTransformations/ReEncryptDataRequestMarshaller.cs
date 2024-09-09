@@ -64,71 +64,74 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
                 throw new AmazonPaymentCryptographyDataException("Request object does not have required field IncomingKeyIdentifier set");
             request.AddPathResource("{IncomingKeyIdentifier}", StringUtils.FromString(publicRequest.IncomingKeyIdentifier));
             request.ResourcePath = "/keys/{IncomingKeyIdentifier}/reencrypt";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCipherText())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CipherText");
-                    context.Writer.Write(publicRequest.CipherText);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCipherText())
+                    {
+                        context.Writer.WritePropertyName("CipherText");
+                        context.Writer.Write(publicRequest.CipherText);
+                    }
+
+                    if(publicRequest.IsSetIncomingEncryptionAttributes())
+                    {
+                        context.Writer.WritePropertyName("IncomingEncryptionAttributes");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ReEncryptionAttributesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.IncomingEncryptionAttributes, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetIncomingWrappedKey())
+                    {
+                        context.Writer.WritePropertyName("IncomingWrappedKey");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = WrappedKeyMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.IncomingWrappedKey, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetOutgoingEncryptionAttributes())
+                    {
+                        context.Writer.WritePropertyName("OutgoingEncryptionAttributes");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ReEncryptionAttributesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OutgoingEncryptionAttributes, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetOutgoingKeyIdentifier())
+                    {
+                        context.Writer.WritePropertyName("OutgoingKeyIdentifier");
+                        context.Writer.Write(publicRequest.OutgoingKeyIdentifier);
+                    }
+
+                    if(publicRequest.IsSetOutgoingWrappedKey())
+                    {
+                        context.Writer.WritePropertyName("OutgoingWrappedKey");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = WrappedKeyMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OutgoingWrappedKey, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetIncomingEncryptionAttributes())
-                {
-                    context.Writer.WritePropertyName("IncomingEncryptionAttributes");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ReEncryptionAttributesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.IncomingEncryptionAttributes, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetIncomingWrappedKey())
-                {
-                    context.Writer.WritePropertyName("IncomingWrappedKey");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = WrappedKeyMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.IncomingWrappedKey, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOutgoingEncryptionAttributes())
-                {
-                    context.Writer.WritePropertyName("OutgoingEncryptionAttributes");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ReEncryptionAttributesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OutgoingEncryptionAttributes, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOutgoingKeyIdentifier())
-                {
-                    context.Writer.WritePropertyName("OutgoingKeyIdentifier");
-                    context.Writer.Write(publicRequest.OutgoingKeyIdentifier);
-                }
-
-                if(publicRequest.IsSetOutgoingWrappedKey())
-                {
-                    context.Writer.WritePropertyName("OutgoingWrappedKey");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = WrappedKeyMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OutgoingWrappedKey, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

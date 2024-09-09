@@ -61,55 +61,58 @@ namespace Amazon.Private5G.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v1/network-resources/update";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCommitmentConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("commitmentConfiguration");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCommitmentConfiguration())
+                    {
+                        context.Writer.WritePropertyName("commitmentConfiguration");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = CommitmentConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CommitmentConfiguration, context);
+                        var marshaller = CommitmentConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CommitmentConfiguration, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetNetworkResourceArn())
+                    {
+                        context.Writer.WritePropertyName("networkResourceArn");
+                        context.Writer.Write(publicRequest.NetworkResourceArn);
+                    }
+
+                    if(publicRequest.IsSetReturnReason())
+                    {
+                        context.Writer.WritePropertyName("returnReason");
+                        context.Writer.Write(publicRequest.ReturnReason);
+                    }
+
+                    if(publicRequest.IsSetShippingAddress())
+                    {
+                        context.Writer.WritePropertyName("shippingAddress");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AddressMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ShippingAddress, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetUpdateType())
+                    {
+                        context.Writer.WritePropertyName("updateType");
+                        context.Writer.Write(publicRequest.UpdateType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetNetworkResourceArn())
-                {
-                    context.Writer.WritePropertyName("networkResourceArn");
-                    context.Writer.Write(publicRequest.NetworkResourceArn);
-                }
-
-                if(publicRequest.IsSetReturnReason())
-                {
-                    context.Writer.WritePropertyName("returnReason");
-                    context.Writer.Write(publicRequest.ReturnReason);
-                }
-
-                if(publicRequest.IsSetShippingAddress())
-                {
-                    context.Writer.WritePropertyName("shippingAddress");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AddressMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ShippingAddress, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetUpdateType())
-                {
-                    context.Writer.WritePropertyName("updateType");
-                    context.Writer.Write(publicRequest.UpdateType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

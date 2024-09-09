@@ -63,32 +63,35 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCatalogId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CatalogId");
-                    context.Writer.Write(publicRequest.CatalogId);
-                }
-
-                if(publicRequest.IsSetConnectionNameList())
-                {
-                    context.Writer.WritePropertyName("ConnectionNameList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestConnectionNameListListValue in publicRequest.ConnectionNameList)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCatalogId())
                     {
-                            context.Writer.Write(publicRequestConnectionNameListListValue);
+                        context.Writer.WritePropertyName("CatalogId");
+                        context.Writer.Write(publicRequest.CatalogId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetConnectionNameList())
+                    {
+                        context.Writer.WritePropertyName("ConnectionNameList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestConnectionNameListListValue in publicRequest.ConnectionNameList)
+                        {
+                                context.Writer.Write(publicRequestConnectionNameListListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

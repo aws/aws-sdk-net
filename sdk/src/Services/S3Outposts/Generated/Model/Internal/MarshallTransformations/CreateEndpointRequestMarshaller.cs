@@ -61,45 +61,48 @@ namespace Amazon.S3Outposts.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/S3Outposts/CreateEndpoint";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccessType())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AccessType");
-                    context.Writer.Write(publicRequest.AccessType);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccessType())
+                    {
+                        context.Writer.WritePropertyName("AccessType");
+                        context.Writer.Write(publicRequest.AccessType);
+                    }
+
+                    if(publicRequest.IsSetCustomerOwnedIpv4Pool())
+                    {
+                        context.Writer.WritePropertyName("CustomerOwnedIpv4Pool");
+                        context.Writer.Write(publicRequest.CustomerOwnedIpv4Pool);
+                    }
+
+                    if(publicRequest.IsSetOutpostId())
+                    {
+                        context.Writer.WritePropertyName("OutpostId");
+                        context.Writer.Write(publicRequest.OutpostId);
+                    }
+
+                    if(publicRequest.IsSetSecurityGroupId())
+                    {
+                        context.Writer.WritePropertyName("SecurityGroupId");
+                        context.Writer.Write(publicRequest.SecurityGroupId);
+                    }
+
+                    if(publicRequest.IsSetSubnetId())
+                    {
+                        context.Writer.WritePropertyName("SubnetId");
+                        context.Writer.Write(publicRequest.SubnetId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCustomerOwnedIpv4Pool())
-                {
-                    context.Writer.WritePropertyName("CustomerOwnedIpv4Pool");
-                    context.Writer.Write(publicRequest.CustomerOwnedIpv4Pool);
-                }
-
-                if(publicRequest.IsSetOutpostId())
-                {
-                    context.Writer.WritePropertyName("OutpostId");
-                    context.Writer.Write(publicRequest.OutpostId);
-                }
-
-                if(publicRequest.IsSetSecurityGroupId())
-                {
-                    context.Writer.WritePropertyName("SecurityGroupId");
-                    context.Writer.Write(publicRequest.SecurityGroupId);
-                }
-
-                if(publicRequest.IsSetSubnetId())
-                {
-                    context.Writer.WritePropertyName("SubnetId");
-                    context.Writer.Write(publicRequest.SubnetId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

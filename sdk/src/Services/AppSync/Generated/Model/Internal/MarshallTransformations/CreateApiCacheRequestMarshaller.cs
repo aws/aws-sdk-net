@@ -64,51 +64,54 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 throw new AmazonAppSyncException("Request object does not have required field ApiId set");
             request.AddPathResource("{apiId}", StringUtils.FromString(publicRequest.ApiId));
             request.ResourcePath = "/v1/apis/{apiId}/ApiCaches";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApiCachingBehavior())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("apiCachingBehavior");
-                    context.Writer.Write(publicRequest.ApiCachingBehavior);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApiCachingBehavior())
+                    {
+                        context.Writer.WritePropertyName("apiCachingBehavior");
+                        context.Writer.Write(publicRequest.ApiCachingBehavior);
+                    }
+
+                    if(publicRequest.IsSetAtRestEncryptionEnabled())
+                    {
+                        context.Writer.WritePropertyName("atRestEncryptionEnabled");
+                        context.Writer.Write(publicRequest.AtRestEncryptionEnabled.Value);
+                    }
+
+                    if(publicRequest.IsSetHealthMetricsConfig())
+                    {
+                        context.Writer.WritePropertyName("healthMetricsConfig");
+                        context.Writer.Write(publicRequest.HealthMetricsConfig);
+                    }
+
+                    if(publicRequest.IsSetTransitEncryptionEnabled())
+                    {
+                        context.Writer.WritePropertyName("transitEncryptionEnabled");
+                        context.Writer.Write(publicRequest.TransitEncryptionEnabled.Value);
+                    }
+
+                    if(publicRequest.IsSetTtl())
+                    {
+                        context.Writer.WritePropertyName("ttl");
+                        context.Writer.Write(publicRequest.Ttl.Value);
+                    }
+
+                    if(publicRequest.IsSetType())
+                    {
+                        context.Writer.WritePropertyName("type");
+                        context.Writer.Write(publicRequest.Type);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetAtRestEncryptionEnabled())
-                {
-                    context.Writer.WritePropertyName("atRestEncryptionEnabled");
-                    context.Writer.Write(publicRequest.AtRestEncryptionEnabled.Value);
-                }
-
-                if(publicRequest.IsSetHealthMetricsConfig())
-                {
-                    context.Writer.WritePropertyName("healthMetricsConfig");
-                    context.Writer.Write(publicRequest.HealthMetricsConfig);
-                }
-
-                if(publicRequest.IsSetTransitEncryptionEnabled())
-                {
-                    context.Writer.WritePropertyName("transitEncryptionEnabled");
-                    context.Writer.Write(publicRequest.TransitEncryptionEnabled.Value);
-                }
-
-                if(publicRequest.IsSetTtl())
-                {
-                    context.Writer.WritePropertyName("ttl");
-                    context.Writer.Write(publicRequest.Ttl.Value);
-                }
-
-                if(publicRequest.IsSetType())
-                {
-                    context.Writer.WritePropertyName("type");
-                    context.Writer.Write(publicRequest.Type);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

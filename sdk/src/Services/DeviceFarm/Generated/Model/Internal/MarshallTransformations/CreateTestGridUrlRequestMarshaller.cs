@@ -63,27 +63,30 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetExpiresInSeconds())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("expiresInSeconds");
-                    context.Writer.Write(publicRequest.ExpiresInSeconds.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetExpiresInSeconds())
+                    {
+                        context.Writer.WritePropertyName("expiresInSeconds");
+                        context.Writer.Write(publicRequest.ExpiresInSeconds.Value);
+                    }
+
+                    if(publicRequest.IsSetProjectArn())
+                    {
+                        context.Writer.WritePropertyName("projectArn");
+                        context.Writer.Write(publicRequest.ProjectArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetProjectArn())
-                {
-                    context.Writer.WritePropertyName("projectArn");
-                    context.Writer.Write(publicRequest.ProjectArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

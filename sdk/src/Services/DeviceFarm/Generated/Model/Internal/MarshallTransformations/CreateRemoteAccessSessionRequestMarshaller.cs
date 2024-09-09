@@ -63,92 +63,95 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientId");
-                    context.Writer.Write(publicRequest.ClientId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientId())
+                    {
+                        context.Writer.WritePropertyName("clientId");
+                        context.Writer.Write(publicRequest.ClientId);
+                    }
+
+                    if(publicRequest.IsSetConfiguration())
+                    {
+                        context.Writer.WritePropertyName("configuration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CreateRemoteAccessSessionConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Configuration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDeviceArn())
+                    {
+                        context.Writer.WritePropertyName("deviceArn");
+                        context.Writer.Write(publicRequest.DeviceArn);
+                    }
+
+                    if(publicRequest.IsSetInstanceArn())
+                    {
+                        context.Writer.WritePropertyName("instanceArn");
+                        context.Writer.Write(publicRequest.InstanceArn);
+                    }
+
+                    if(publicRequest.IsSetInteractionMode())
+                    {
+                        context.Writer.WritePropertyName("interactionMode");
+                        context.Writer.Write(publicRequest.InteractionMode);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetProjectArn())
+                    {
+                        context.Writer.WritePropertyName("projectArn");
+                        context.Writer.Write(publicRequest.ProjectArn);
+                    }
+
+                    if(publicRequest.IsSetRemoteDebugEnabled())
+                    {
+                        context.Writer.WritePropertyName("remoteDebugEnabled");
+                        context.Writer.Write(publicRequest.RemoteDebugEnabled.Value);
+                    }
+
+                    if(publicRequest.IsSetRemoteRecordAppArn())
+                    {
+                        context.Writer.WritePropertyName("remoteRecordAppArn");
+                        context.Writer.Write(publicRequest.RemoteRecordAppArn);
+                    }
+
+                    if(publicRequest.IsSetRemoteRecordEnabled())
+                    {
+                        context.Writer.WritePropertyName("remoteRecordEnabled");
+                        context.Writer.Write(publicRequest.RemoteRecordEnabled.Value);
+                    }
+
+                    if(publicRequest.IsSetSkipAppResign())
+                    {
+                        context.Writer.WritePropertyName("skipAppResign");
+                        context.Writer.Write(publicRequest.SkipAppResign.Value);
+                    }
+
+                    if(publicRequest.IsSetSshPublicKey())
+                    {
+                        context.Writer.WritePropertyName("sshPublicKey");
+                        context.Writer.Write(publicRequest.SshPublicKey);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetConfiguration())
-                {
-                    context.Writer.WritePropertyName("configuration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CreateRemoteAccessSessionConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Configuration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDeviceArn())
-                {
-                    context.Writer.WritePropertyName("deviceArn");
-                    context.Writer.Write(publicRequest.DeviceArn);
-                }
-
-                if(publicRequest.IsSetInstanceArn())
-                {
-                    context.Writer.WritePropertyName("instanceArn");
-                    context.Writer.Write(publicRequest.InstanceArn);
-                }
-
-                if(publicRequest.IsSetInteractionMode())
-                {
-                    context.Writer.WritePropertyName("interactionMode");
-                    context.Writer.Write(publicRequest.InteractionMode);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetProjectArn())
-                {
-                    context.Writer.WritePropertyName("projectArn");
-                    context.Writer.Write(publicRequest.ProjectArn);
-                }
-
-                if(publicRequest.IsSetRemoteDebugEnabled())
-                {
-                    context.Writer.WritePropertyName("remoteDebugEnabled");
-                    context.Writer.Write(publicRequest.RemoteDebugEnabled.Value);
-                }
-
-                if(publicRequest.IsSetRemoteRecordAppArn())
-                {
-                    context.Writer.WritePropertyName("remoteRecordAppArn");
-                    context.Writer.Write(publicRequest.RemoteRecordAppArn);
-                }
-
-                if(publicRequest.IsSetRemoteRecordEnabled())
-                {
-                    context.Writer.WritePropertyName("remoteRecordEnabled");
-                    context.Writer.Write(publicRequest.RemoteRecordEnabled.Value);
-                }
-
-                if(publicRequest.IsSetSkipAppResign())
-                {
-                    context.Writer.WritePropertyName("skipAppResign");
-                    context.Writer.Write(publicRequest.SkipAppResign.Value);
-                }
-
-                if(publicRequest.IsSetSshPublicKey())
-                {
-                    context.Writer.WritePropertyName("sshPublicKey");
-                    context.Writer.Write(publicRequest.SshPublicKey);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

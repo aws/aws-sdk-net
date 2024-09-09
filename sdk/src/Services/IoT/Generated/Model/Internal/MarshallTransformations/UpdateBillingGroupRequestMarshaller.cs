@@ -64,32 +64,35 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field BillingGroupName set");
             request.AddPathResource("{billingGroupName}", StringUtils.FromString(publicRequest.BillingGroupName));
             request.ResourcePath = "/billing-groups/{billingGroupName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBillingGroupProperties())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("billingGroupProperties");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBillingGroupProperties())
+                    {
+                        context.Writer.WritePropertyName("billingGroupProperties");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = BillingGroupPropertiesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.BillingGroupProperties, context);
+                        var marshaller = BillingGroupPropertiesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.BillingGroupProperties, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetExpectedVersion())
+                    {
+                        context.Writer.WritePropertyName("expectedVersion");
+                        context.Writer.Write(publicRequest.ExpectedVersion.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetExpectedVersion())
-                {
-                    context.Writer.WritePropertyName("expectedVersion");
-                    context.Writer.Write(publicRequest.ExpectedVersion.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

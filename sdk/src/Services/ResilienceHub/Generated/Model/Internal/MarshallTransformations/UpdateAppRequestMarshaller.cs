@@ -61,72 +61,75 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/update-app";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAppArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("appArn");
-                    context.Writer.Write(publicRequest.AppArn);
-                }
-
-                if(publicRequest.IsSetAssessmentSchedule())
-                {
-                    context.Writer.WritePropertyName("assessmentSchedule");
-                    context.Writer.Write(publicRequest.AssessmentSchedule);
-                }
-
-                if(publicRequest.IsSetClearResiliencyPolicyArn())
-                {
-                    context.Writer.WritePropertyName("clearResiliencyPolicyArn");
-                    context.Writer.Write(publicRequest.ClearResiliencyPolicyArn.Value);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetEventSubscriptions())
-                {
-                    context.Writer.WritePropertyName("eventSubscriptions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEventSubscriptionsListValue in publicRequest.EventSubscriptions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAppArn())
                     {
+                        context.Writer.WritePropertyName("appArn");
+                        context.Writer.Write(publicRequest.AppArn);
+                    }
+
+                    if(publicRequest.IsSetAssessmentSchedule())
+                    {
+                        context.Writer.WritePropertyName("assessmentSchedule");
+                        context.Writer.Write(publicRequest.AssessmentSchedule);
+                    }
+
+                    if(publicRequest.IsSetClearResiliencyPolicyArn())
+                    {
+                        context.Writer.WritePropertyName("clearResiliencyPolicyArn");
+                        context.Writer.Write(publicRequest.ClearResiliencyPolicyArn.Value);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetEventSubscriptions())
+                    {
+                        context.Writer.WritePropertyName("eventSubscriptions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestEventSubscriptionsListValue in publicRequest.EventSubscriptions)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = EventSubscriptionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestEventSubscriptionsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetPermissionModel())
+                    {
+                        context.Writer.WritePropertyName("permissionModel");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = EventSubscriptionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestEventSubscriptionsListValue, context);
+                        var marshaller = PermissionModelMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.PermissionModel, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetPolicyArn())
+                    {
+                        context.Writer.WritePropertyName("policyArn");
+                        context.Writer.Write(publicRequest.PolicyArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPermissionModel())
-                {
-                    context.Writer.WritePropertyName("permissionModel");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PermissionModelMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PermissionModel, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPolicyArn())
-                {
-                    context.Writer.WritePropertyName("policyArn");
-                    context.Writer.Write(publicRequest.PolicyArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

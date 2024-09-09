@@ -63,43 +63,46 @@ namespace Amazon.OpsWorksCM.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetExportAttributeName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ExportAttributeName");
-                    context.Writer.Write(publicRequest.ExportAttributeName);
-                }
-
-                if(publicRequest.IsSetInputAttributes())
-                {
-                    context.Writer.WritePropertyName("InputAttributes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestInputAttributesListValue in publicRequest.InputAttributes)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetExportAttributeName())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EngineAttributeMarshaller.Instance;
-                        marshaller.Marshall(publicRequestInputAttributesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("ExportAttributeName");
+                        context.Writer.Write(publicRequest.ExportAttributeName);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetInputAttributes())
+                    {
+                        context.Writer.WritePropertyName("InputAttributes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestInputAttributesListValue in publicRequest.InputAttributes)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = EngineAttributeMarshaller.Instance;
+                            marshaller.Marshall(publicRequestInputAttributesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetServerName())
+                    {
+                        context.Writer.WritePropertyName("ServerName");
+                        context.Writer.Write(publicRequest.ServerName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetServerName())
-                {
-                    context.Writer.WritePropertyName("ServerName");
-                    context.Writer.Write(publicRequest.ServerName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

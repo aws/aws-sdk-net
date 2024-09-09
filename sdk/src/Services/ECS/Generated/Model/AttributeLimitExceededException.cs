@@ -31,8 +31,8 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// You can apply up to 10 custom attributes for each resource. You can view the attributes
-    /// of a resource with <a>ListAttributes</a>. You can remove existing attributes on a
-    /// resource with <a>DeleteAttributes</a>.
+    /// of a resource with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListAttributes.html">ListAttributes</a>.
+    /// You can remove existing attributes on a resource with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteAttributes.html">DeleteAttributes</a>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

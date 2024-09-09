@@ -63,140 +63,143 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDataPreProcessingConfiguration())
-                {
-                    context.Writer.WritePropertyName("DataPreProcessingConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DataPreProcessingConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DataPreProcessingConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDatasetName())
-                {
-                    context.Writer.WritePropertyName("DatasetName");
-                    context.Writer.Write(publicRequest.DatasetName);
-                }
-
-                if(publicRequest.IsSetDatasetSchema())
-                {
-                    context.Writer.WritePropertyName("DatasetSchema");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DatasetSchemaMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DatasetSchema, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEvaluationDataEndTime())
-                {
-                    context.Writer.WritePropertyName("EvaluationDataEndTime");
-                    context.Writer.Write(publicRequest.EvaluationDataEndTime.Value);
-                }
-
-                if(publicRequest.IsSetEvaluationDataStartTime())
-                {
-                    context.Writer.WritePropertyName("EvaluationDataStartTime");
-                    context.Writer.Write(publicRequest.EvaluationDataStartTime.Value);
-                }
-
-                if(publicRequest.IsSetLabelsInputConfiguration())
-                {
-                    context.Writer.WritePropertyName("LabelsInputConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LabelsInputConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LabelsInputConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetModelDiagnosticsOutputConfiguration())
-                {
-                    context.Writer.WritePropertyName("ModelDiagnosticsOutputConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ModelDiagnosticsOutputConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ModelDiagnosticsOutputConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetModelName())
-                {
-                    context.Writer.WritePropertyName("ModelName");
-                    context.Writer.Write(publicRequest.ModelName);
-                }
-
-                if(publicRequest.IsSetOffCondition())
-                {
-                    context.Writer.WritePropertyName("OffCondition");
-                    context.Writer.Write(publicRequest.OffCondition);
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("RoleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetServerSideKmsKeyId())
-                {
-                    context.Writer.WritePropertyName("ServerSideKmsKeyId");
-                    context.Writer.Write(publicRequest.ServerSideKmsKeyId);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetDataPreProcessingConfiguration())
+                    {
+                        context.Writer.WritePropertyName("DataPreProcessingConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = DataPreProcessingConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DataPreProcessingConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDatasetName())
+                    {
+                        context.Writer.WritePropertyName("DatasetName");
+                        context.Writer.Write(publicRequest.DatasetName);
+                    }
+
+                    if(publicRequest.IsSetDatasetSchema())
+                    {
+                        context.Writer.WritePropertyName("DatasetSchema");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DatasetSchemaMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DatasetSchema, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetEvaluationDataEndTime())
+                    {
+                        context.Writer.WritePropertyName("EvaluationDataEndTime");
+                        context.Writer.Write(publicRequest.EvaluationDataEndTime.Value);
+                    }
+
+                    if(publicRequest.IsSetEvaluationDataStartTime())
+                    {
+                        context.Writer.WritePropertyName("EvaluationDataStartTime");
+                        context.Writer.Write(publicRequest.EvaluationDataStartTime.Value);
+                    }
+
+                    if(publicRequest.IsSetLabelsInputConfiguration())
+                    {
+                        context.Writer.WritePropertyName("LabelsInputConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LabelsInputConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.LabelsInputConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetModelDiagnosticsOutputConfiguration())
+                    {
+                        context.Writer.WritePropertyName("ModelDiagnosticsOutputConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ModelDiagnosticsOutputConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ModelDiagnosticsOutputConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetModelName())
+                    {
+                        context.Writer.WritePropertyName("ModelName");
+                        context.Writer.Write(publicRequest.ModelName);
+                    }
+
+                    if(publicRequest.IsSetOffCondition())
+                    {
+                        context.Writer.WritePropertyName("OffCondition");
+                        context.Writer.Write(publicRequest.OffCondition);
+                    }
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("RoleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    if(publicRequest.IsSetServerSideKmsKeyId())
+                    {
+                        context.Writer.WritePropertyName("ServerSideKmsKeyId");
+                        context.Writer.Write(publicRequest.ServerSideKmsKeyId);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTrainingDataEndTime())
+                    {
+                        context.Writer.WritePropertyName("TrainingDataEndTime");
+                        context.Writer.Write(publicRequest.TrainingDataEndTime.Value);
+                    }
+
+                    if(publicRequest.IsSetTrainingDataStartTime())
+                    {
+                        context.Writer.WritePropertyName("TrainingDataStartTime");
+                        context.Writer.Write(publicRequest.TrainingDataStartTime.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTrainingDataEndTime())
-                {
-                    context.Writer.WritePropertyName("TrainingDataEndTime");
-                    context.Writer.Write(publicRequest.TrainingDataEndTime.Value);
-                }
-
-                if(publicRequest.IsSetTrainingDataStartTime())
-                {
-                    context.Writer.WritePropertyName("TrainingDataStartTime");
-                    context.Writer.Write(publicRequest.TrainingDataStartTime.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

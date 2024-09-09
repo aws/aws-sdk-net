@@ -63,59 +63,62 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCsvClassifier())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CsvClassifier");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCsvClassifier())
+                    {
+                        context.Writer.WritePropertyName("CsvClassifier");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = UpdateCsvClassifierRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CsvClassifier, context);
+                        var marshaller = UpdateCsvClassifierRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CsvClassifier, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetGrokClassifier())
+                    {
+                        context.Writer.WritePropertyName("GrokClassifier");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = UpdateGrokClassifierRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.GrokClassifier, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetJsonClassifier())
+                    {
+                        context.Writer.WritePropertyName("JsonClassifier");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = UpdateJsonClassifierRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.JsonClassifier, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetXMLClassifier())
+                    {
+                        context.Writer.WritePropertyName("XMLClassifier");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = UpdateXMLClassifierRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.XMLClassifier, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetGrokClassifier())
-                {
-                    context.Writer.WritePropertyName("GrokClassifier");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UpdateGrokClassifierRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.GrokClassifier, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetJsonClassifier())
-                {
-                    context.Writer.WritePropertyName("JsonClassifier");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UpdateJsonClassifierRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.JsonClassifier, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetXMLClassifier())
-                {
-                    context.Writer.WritePropertyName("XMLClassifier");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UpdateXMLClassifierRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.XMLClassifier, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

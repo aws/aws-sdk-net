@@ -63,68 +63,71 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetContactId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ContactId");
-                    context.Writer.Write(publicRequest.ContactId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetContactId())
+                    {
+                        context.Writer.WritePropertyName("ContactId");
+                        context.Writer.Write(publicRequest.ContactId);
+                    }
+
+                    if(publicRequest.IsSetContent())
+                    {
+                        context.Writer.WritePropertyName("Content");
+                        context.Writer.Write(publicRequest.Content);
+                    }
+
+                    if(publicRequest.IsSetIdempotencyToken())
+                    {
+                        context.Writer.WritePropertyName("IdempotencyToken");
+                        context.Writer.Write(publicRequest.IdempotencyToken);
+                    }
+
+                    else if(!(publicRequest.IsSetIdempotencyToken()))
+                    {
+                        context.Writer.WritePropertyName("IdempotencyToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetIncidentId())
+                    {
+                        context.Writer.WritePropertyName("IncidentId");
+                        context.Writer.Write(publicRequest.IncidentId);
+                    }
+
+                    if(publicRequest.IsSetPublicContent())
+                    {
+                        context.Writer.WritePropertyName("PublicContent");
+                        context.Writer.Write(publicRequest.PublicContent);
+                    }
+
+                    if(publicRequest.IsSetPublicSubject())
+                    {
+                        context.Writer.WritePropertyName("PublicSubject");
+                        context.Writer.Write(publicRequest.PublicSubject);
+                    }
+
+                    if(publicRequest.IsSetSender())
+                    {
+                        context.Writer.WritePropertyName("Sender");
+                        context.Writer.Write(publicRequest.Sender);
+                    }
+
+                    if(publicRequest.IsSetSubject())
+                    {
+                        context.Writer.WritePropertyName("Subject");
+                        context.Writer.Write(publicRequest.Subject);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetContent())
-                {
-                    context.Writer.WritePropertyName("Content");
-                    context.Writer.Write(publicRequest.Content);
-                }
-
-                if(publicRequest.IsSetIdempotencyToken())
-                {
-                    context.Writer.WritePropertyName("IdempotencyToken");
-                    context.Writer.Write(publicRequest.IdempotencyToken);
-                }
-
-                else if(!(publicRequest.IsSetIdempotencyToken()))
-                {
-                    context.Writer.WritePropertyName("IdempotencyToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetIncidentId())
-                {
-                    context.Writer.WritePropertyName("IncidentId");
-                    context.Writer.Write(publicRequest.IncidentId);
-                }
-
-                if(publicRequest.IsSetPublicContent())
-                {
-                    context.Writer.WritePropertyName("PublicContent");
-                    context.Writer.Write(publicRequest.PublicContent);
-                }
-
-                if(publicRequest.IsSetPublicSubject())
-                {
-                    context.Writer.WritePropertyName("PublicSubject");
-                    context.Writer.Write(publicRequest.PublicSubject);
-                }
-
-                if(publicRequest.IsSetSender())
-                {
-                    context.Writer.WritePropertyName("Sender");
-                    context.Writer.Write(publicRequest.Sender);
-                }
-
-                if(publicRequest.IsSetSubject())
-                {
-                    context.Writer.WritePropertyName("Subject");
-                    context.Writer.Write(publicRequest.Subject);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

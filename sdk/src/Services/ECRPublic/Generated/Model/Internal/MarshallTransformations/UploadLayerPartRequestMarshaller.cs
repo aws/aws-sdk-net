@@ -63,51 +63,54 @@ namespace Amazon.ECRPublic.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLayerPartBlob())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("layerPartBlob");
-                    context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.LayerPartBlob));
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetLayerPartBlob())
+                    {
+                        context.Writer.WritePropertyName("layerPartBlob");
+                        context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.LayerPartBlob));
+                    }
+
+                    if(publicRequest.IsSetPartFirstByte())
+                    {
+                        context.Writer.WritePropertyName("partFirstByte");
+                        context.Writer.Write(publicRequest.PartFirstByte.Value);
+                    }
+
+                    if(publicRequest.IsSetPartLastByte())
+                    {
+                        context.Writer.WritePropertyName("partLastByte");
+                        context.Writer.Write(publicRequest.PartLastByte.Value);
+                    }
+
+                    if(publicRequest.IsSetRegistryId())
+                    {
+                        context.Writer.WritePropertyName("registryId");
+                        context.Writer.Write(publicRequest.RegistryId);
+                    }
+
+                    if(publicRequest.IsSetRepositoryName())
+                    {
+                        context.Writer.WritePropertyName("repositoryName");
+                        context.Writer.Write(publicRequest.RepositoryName);
+                    }
+
+                    if(publicRequest.IsSetUploadId())
+                    {
+                        context.Writer.WritePropertyName("uploadId");
+                        context.Writer.Write(publicRequest.UploadId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPartFirstByte())
-                {
-                    context.Writer.WritePropertyName("partFirstByte");
-                    context.Writer.Write(publicRequest.PartFirstByte.Value);
-                }
-
-                if(publicRequest.IsSetPartLastByte())
-                {
-                    context.Writer.WritePropertyName("partLastByte");
-                    context.Writer.Write(publicRequest.PartLastByte.Value);
-                }
-
-                if(publicRequest.IsSetRegistryId())
-                {
-                    context.Writer.WritePropertyName("registryId");
-                    context.Writer.Write(publicRequest.RegistryId);
-                }
-
-                if(publicRequest.IsSetRepositoryName())
-                {
-                    context.Writer.WritePropertyName("repositoryName");
-                    context.Writer.Write(publicRequest.RepositoryName);
-                }
-
-                if(publicRequest.IsSetUploadId())
-                {
-                    context.Writer.WritePropertyName("uploadId");
-                    context.Writer.Write(publicRequest.UploadId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

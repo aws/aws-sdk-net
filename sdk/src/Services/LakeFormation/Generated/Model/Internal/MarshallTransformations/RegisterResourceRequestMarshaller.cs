@@ -61,45 +61,48 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/RegisterResource";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetHybridAccessEnabled())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("HybridAccessEnabled");
-                    context.Writer.Write(publicRequest.HybridAccessEnabled.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetHybridAccessEnabled())
+                    {
+                        context.Writer.WritePropertyName("HybridAccessEnabled");
+                        context.Writer.Write(publicRequest.HybridAccessEnabled.Value);
+                    }
+
+                    if(publicRequest.IsSetResourceArn())
+                    {
+                        context.Writer.WritePropertyName("ResourceArn");
+                        context.Writer.Write(publicRequest.ResourceArn);
+                    }
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("RoleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    if(publicRequest.IsSetUseServiceLinkedRole())
+                    {
+                        context.Writer.WritePropertyName("UseServiceLinkedRole");
+                        context.Writer.Write(publicRequest.UseServiceLinkedRole.Value);
+                    }
+
+                    if(publicRequest.IsSetWithFederation())
+                    {
+                        context.Writer.WritePropertyName("WithFederation");
+                        context.Writer.Write(publicRequest.WithFederation.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetResourceArn())
-                {
-                    context.Writer.WritePropertyName("ResourceArn");
-                    context.Writer.Write(publicRequest.ResourceArn);
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("RoleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetUseServiceLinkedRole())
-                {
-                    context.Writer.WritePropertyName("UseServiceLinkedRole");
-                    context.Writer.Write(publicRequest.UseServiceLinkedRole.Value);
-                }
-
-                if(publicRequest.IsSetWithFederation())
-                {
-                    context.Writer.WritePropertyName("WithFederation");
-                    context.Writer.Write(publicRequest.WithFederation.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

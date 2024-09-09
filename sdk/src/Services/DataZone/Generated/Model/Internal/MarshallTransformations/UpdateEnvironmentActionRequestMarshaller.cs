@@ -70,38 +70,41 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 throw new AmazonDataZoneException("Request object does not have required field Identifier set");
             request.AddPathResource("{identifier}", StringUtils.FromString(publicRequest.Identifier));
             request.ResourcePath = "/v2/domains/{domainIdentifier}/environments/{environmentIdentifier}/actions/{identifier}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetParameters())
+                    {
+                        context.Writer.WritePropertyName("parameters");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ActionParametersMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Parameters, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetParameters())
-                {
-                    context.Writer.WritePropertyName("parameters");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ActionParametersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Parameters, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

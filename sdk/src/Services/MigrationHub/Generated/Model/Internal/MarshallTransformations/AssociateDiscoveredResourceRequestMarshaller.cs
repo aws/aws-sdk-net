@@ -63,44 +63,47 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDiscoveredResource())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DiscoveredResource");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDiscoveredResource())
+                    {
+                        context.Writer.WritePropertyName("DiscoveredResource");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = DiscoveredResourceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DiscoveredResource, context);
+                        var marshaller = DiscoveredResourceMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DiscoveredResource, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDryRun())
+                    {
+                        context.Writer.WritePropertyName("DryRun");
+                        context.Writer.Write(publicRequest.DryRun.Value);
+                    }
+
+                    if(publicRequest.IsSetMigrationTaskName())
+                    {
+                        context.Writer.WritePropertyName("MigrationTaskName");
+                        context.Writer.Write(publicRequest.MigrationTaskName);
+                    }
+
+                    if(publicRequest.IsSetProgressUpdateStream())
+                    {
+                        context.Writer.WritePropertyName("ProgressUpdateStream");
+                        context.Writer.Write(publicRequest.ProgressUpdateStream);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDryRun())
-                {
-                    context.Writer.WritePropertyName("DryRun");
-                    context.Writer.Write(publicRequest.DryRun.Value);
-                }
-
-                if(publicRequest.IsSetMigrationTaskName())
-                {
-                    context.Writer.WritePropertyName("MigrationTaskName");
-                    context.Writer.Write(publicRequest.MigrationTaskName);
-                }
-
-                if(publicRequest.IsSetProgressUpdateStream())
-                {
-                    context.Writer.WritePropertyName("ProgressUpdateStream");
-                    context.Writer.Write(publicRequest.ProgressUpdateStream);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

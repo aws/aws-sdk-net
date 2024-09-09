@@ -61,72 +61,75 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/imports/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBotId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("botId");
-                    context.Writer.Write(publicRequest.BotId);
-                }
-
-                if(publicRequest.IsSetBotVersion())
-                {
-                    context.Writer.WritePropertyName("botVersion");
-                    context.Writer.Write(publicRequest.BotVersion);
-                }
-
-                if(publicRequest.IsSetFilters())
-                {
-                    context.Writer.WritePropertyName("filters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFiltersListValue in publicRequest.Filters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBotId())
                     {
+                        context.Writer.WritePropertyName("botId");
+                        context.Writer.Write(publicRequest.BotId);
+                    }
+
+                    if(publicRequest.IsSetBotVersion())
+                    {
+                        context.Writer.WritePropertyName("botVersion");
+                        context.Writer.Write(publicRequest.BotVersion);
+                    }
+
+                    if(publicRequest.IsSetFilters())
+                    {
+                        context.Writer.WritePropertyName("filters");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFiltersListValue in publicRequest.Filters)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ImportFilterMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFiltersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetLocaleId())
+                    {
+                        context.Writer.WritePropertyName("localeId");
+                        context.Writer.Write(publicRequest.LocaleId);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetSortBy())
+                    {
+                        context.Writer.WritePropertyName("sortBy");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = ImportFilterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFiltersListValue, context);
+                        var marshaller = ImportSortByMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SortBy, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetLocaleId())
-                {
-                    context.Writer.WritePropertyName("localeId");
-                    context.Writer.Write(publicRequest.LocaleId);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetSortBy())
-                {
-                    context.Writer.WritePropertyName("sortBy");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ImportSortByMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SortBy, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

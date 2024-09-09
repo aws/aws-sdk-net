@@ -61,66 +61,69 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/configuration/account/storage";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDisassociatedDataStorage())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("disassociatedDataStorage");
-                    context.Writer.Write(publicRequest.DisassociatedDataStorage);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDisassociatedDataStorage())
+                    {
+                        context.Writer.WritePropertyName("disassociatedDataStorage");
+                        context.Writer.Write(publicRequest.DisassociatedDataStorage);
+                    }
+
+                    if(publicRequest.IsSetMultiLayerStorage())
+                    {
+                        context.Writer.WritePropertyName("multiLayerStorage");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MultiLayerStorageMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.MultiLayerStorage, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRetentionPeriod())
+                    {
+                        context.Writer.WritePropertyName("retentionPeriod");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RetentionPeriodMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RetentionPeriod, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetStorageType())
+                    {
+                        context.Writer.WritePropertyName("storageType");
+                        context.Writer.Write(publicRequest.StorageType);
+                    }
+
+                    if(publicRequest.IsSetWarmTier())
+                    {
+                        context.Writer.WritePropertyName("warmTier");
+                        context.Writer.Write(publicRequest.WarmTier);
+                    }
+
+                    if(publicRequest.IsSetWarmTierRetentionPeriod())
+                    {
+                        context.Writer.WritePropertyName("warmTierRetentionPeriod");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = WarmTierRetentionPeriodMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.WarmTierRetentionPeriod, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMultiLayerStorage())
-                {
-                    context.Writer.WritePropertyName("multiLayerStorage");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MultiLayerStorageMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.MultiLayerStorage, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRetentionPeriod())
-                {
-                    context.Writer.WritePropertyName("retentionPeriod");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RetentionPeriodMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RetentionPeriod, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetStorageType())
-                {
-                    context.Writer.WritePropertyName("storageType");
-                    context.Writer.Write(publicRequest.StorageType);
-                }
-
-                if(publicRequest.IsSetWarmTier())
-                {
-                    context.Writer.WritePropertyName("warmTier");
-                    context.Writer.Write(publicRequest.WarmTier);
-                }
-
-                if(publicRequest.IsSetWarmTierRetentionPeriod())
-                {
-                    context.Writer.WritePropertyName("warmTierRetentionPeriod");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = WarmTierRetentionPeriodMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.WarmTierRetentionPeriod, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

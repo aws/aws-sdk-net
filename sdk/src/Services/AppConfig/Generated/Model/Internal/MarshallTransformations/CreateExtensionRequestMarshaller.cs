@@ -61,84 +61,87 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/extensions";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetActions())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Actions");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestActionsKvp in publicRequest.Actions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetActions())
                     {
-                        context.Writer.WritePropertyName(publicRequestActionsKvp.Key);
-                        var publicRequestActionsValue = publicRequestActionsKvp.Value;
-
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestActionsValueListValue in publicRequestActionsValue)
+                        context.Writer.WritePropertyName("Actions");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestActionsKvp in publicRequest.Actions)
                         {
+                            context.Writer.WritePropertyName(publicRequestActionsKvp.Key);
+                            var publicRequestActionsValue = publicRequestActionsKvp.Value;
+
+                            context.Writer.WriteArrayStart();
+                            foreach(var publicRequestActionsValueListValue in publicRequestActionsValue)
+                            {
+                                context.Writer.WriteObjectStart();
+
+                                var marshaller = ActionMarshaller.Instance;
+                                marshaller.Marshall(publicRequestActionsValueListValue, context);
+
+                                context.Writer.WriteObjectEnd();
+                            }
+                            context.Writer.WriteArrayEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetParameters())
+                    {
+                        context.Writer.WritePropertyName("Parameters");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestParametersKvp in publicRequest.Parameters)
+                        {
+                            context.Writer.WritePropertyName(publicRequestParametersKvp.Key);
+                            var publicRequestParametersValue = publicRequestParametersKvp.Value;
+
                             context.Writer.WriteObjectStart();
 
-                            var marshaller = ActionMarshaller.Instance;
-                            marshaller.Marshall(publicRequestActionsValueListValue, context);
+                            var marshaller = ParameterMarshaller.Instance;
+                            marshaller.Marshall(publicRequestParametersValue, context);
 
                             context.Writer.WriteObjectEnd();
                         }
-                        context.Writer.WriteArrayEnd();
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetParameters())
-                {
-                    context.Writer.WritePropertyName("Parameters");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestParametersKvp in publicRequest.Parameters)
-                    {
-                        context.Writer.WritePropertyName(publicRequestParametersKvp.Key);
-                        var publicRequestParametersValue = publicRequestParametersKvp.Value;
-
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ParameterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestParametersValue, context);
-
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetTags())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
 
-                            context.Writer.Write(publicRequestTagsValue);
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

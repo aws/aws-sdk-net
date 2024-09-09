@@ -63,65 +63,68 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDestinationPhoneNumbers())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DestinationPhoneNumbers");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDestinationPhoneNumbersListValue in publicRequest.DestinationPhoneNumbers)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDestinationPhoneNumbers())
                     {
-                            context.Writer.Write(publicRequestDestinationPhoneNumbersListValue);
+                        context.Writer.WritePropertyName("DestinationPhoneNumbers");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDestinationPhoneNumbersListValue in publicRequest.DestinationPhoneNumbers)
+                        {
+                                context.Writer.Write(publicRequestDestinationPhoneNumbersListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetFilters())
-                {
-                    context.Writer.WritePropertyName("Filters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFiltersListValue in publicRequest.Filters)
+                    if(publicRequest.IsSetFilters())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("Filters");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFiltersListValue in publicRequest.Filters)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = VerifiedDestinationNumberFilterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFiltersListValue, context);
+                            var marshaller = VerifiedDestinationNumberFilterMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFiltersListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetVerifiedDestinationNumberIds())
-                {
-                    context.Writer.WritePropertyName("VerifiedDestinationNumberIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestVerifiedDestinationNumberIdsListValue in publicRequest.VerifiedDestinationNumberIds)
+                    if(publicRequest.IsSetMaxResults())
                     {
-                            context.Writer.Write(publicRequestVerifiedDestinationNumberIdsListValue);
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetVerifiedDestinationNumberIds())
+                    {
+                        context.Writer.WritePropertyName("VerifiedDestinationNumberIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestVerifiedDestinationNumberIdsListValue in publicRequest.VerifiedDestinationNumberIds)
+                        {
+                                context.Writer.Write(publicRequestVerifiedDestinationNumberIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

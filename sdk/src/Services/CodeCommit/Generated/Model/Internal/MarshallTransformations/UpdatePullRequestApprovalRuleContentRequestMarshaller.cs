@@ -63,39 +63,42 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApprovalRuleName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("approvalRuleName");
-                    context.Writer.Write(publicRequest.ApprovalRuleName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApprovalRuleName())
+                    {
+                        context.Writer.WritePropertyName("approvalRuleName");
+                        context.Writer.Write(publicRequest.ApprovalRuleName);
+                    }
+
+                    if(publicRequest.IsSetExistingRuleContentSha256())
+                    {
+                        context.Writer.WritePropertyName("existingRuleContentSha256");
+                        context.Writer.Write(publicRequest.ExistingRuleContentSha256);
+                    }
+
+                    if(publicRequest.IsSetNewRuleContent())
+                    {
+                        context.Writer.WritePropertyName("newRuleContent");
+                        context.Writer.Write(publicRequest.NewRuleContent);
+                    }
+
+                    if(publicRequest.IsSetPullRequestId())
+                    {
+                        context.Writer.WritePropertyName("pullRequestId");
+                        context.Writer.Write(publicRequest.PullRequestId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetExistingRuleContentSha256())
-                {
-                    context.Writer.WritePropertyName("existingRuleContentSha256");
-                    context.Writer.Write(publicRequest.ExistingRuleContentSha256);
-                }
-
-                if(publicRequest.IsSetNewRuleContent())
-                {
-                    context.Writer.WritePropertyName("newRuleContent");
-                    context.Writer.Write(publicRequest.NewRuleContent);
-                }
-
-                if(publicRequest.IsSetPullRequestId())
-                {
-                    context.Writer.WritePropertyName("pullRequestId");
-                    context.Writer.Write(publicRequest.PullRequestId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

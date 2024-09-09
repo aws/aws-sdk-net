@@ -70,70 +70,73 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetPartnerType())
                 request.Parameters.Add("partnerType", StringUtils.FromString(publicRequest.PartnerType));
             request.ResourcePath = "/event-configurations/{Identifier}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConnectionStatus())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ConnectionStatus");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConnectionStatus())
+                    {
+                        context.Writer.WritePropertyName("ConnectionStatus");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = ConnectionStatusEventConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ConnectionStatus, context);
+                        var marshaller = ConnectionStatusEventConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ConnectionStatus, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDeviceRegistrationState())
+                    {
+                        context.Writer.WritePropertyName("DeviceRegistrationState");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DeviceRegistrationStateEventConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DeviceRegistrationState, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetJoin())
+                    {
+                        context.Writer.WritePropertyName("Join");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = JoinEventConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Join, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetMessageDeliveryStatus())
+                    {
+                        context.Writer.WritePropertyName("MessageDeliveryStatus");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MessageDeliveryStatusEventConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.MessageDeliveryStatus, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetProximity())
+                    {
+                        context.Writer.WritePropertyName("Proximity");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ProximityEventConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Proximity, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDeviceRegistrationState())
-                {
-                    context.Writer.WritePropertyName("DeviceRegistrationState");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DeviceRegistrationStateEventConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DeviceRegistrationState, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetJoin())
-                {
-                    context.Writer.WritePropertyName("Join");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = JoinEventConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Join, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMessageDeliveryStatus())
-                {
-                    context.Writer.WritePropertyName("MessageDeliveryStatus");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MessageDeliveryStatusEventConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.MessageDeliveryStatus, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetProximity())
-                {
-                    context.Writer.WritePropertyName("Proximity");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ProximityEventConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Proximity, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             request.UseQueryString = true;

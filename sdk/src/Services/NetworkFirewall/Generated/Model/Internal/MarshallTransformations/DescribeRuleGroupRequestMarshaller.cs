@@ -63,39 +63,42 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAnalyzeRuleGroup())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AnalyzeRuleGroup");
-                    context.Writer.Write(publicRequest.AnalyzeRuleGroup.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAnalyzeRuleGroup())
+                    {
+                        context.Writer.WritePropertyName("AnalyzeRuleGroup");
+                        context.Writer.Write(publicRequest.AnalyzeRuleGroup.Value);
+                    }
+
+                    if(publicRequest.IsSetRuleGroupArn())
+                    {
+                        context.Writer.WritePropertyName("RuleGroupArn");
+                        context.Writer.Write(publicRequest.RuleGroupArn);
+                    }
+
+                    if(publicRequest.IsSetRuleGroupName())
+                    {
+                        context.Writer.WritePropertyName("RuleGroupName");
+                        context.Writer.Write(publicRequest.RuleGroupName);
+                    }
+
+                    if(publicRequest.IsSetType())
+                    {
+                        context.Writer.WritePropertyName("Type");
+                        context.Writer.Write(publicRequest.Type);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRuleGroupArn())
-                {
-                    context.Writer.WritePropertyName("RuleGroupArn");
-                    context.Writer.Write(publicRequest.RuleGroupArn);
-                }
-
-                if(publicRequest.IsSetRuleGroupName())
-                {
-                    context.Writer.WritePropertyName("RuleGroupName");
-                    context.Writer.Write(publicRequest.RuleGroupName);
-                }
-
-                if(publicRequest.IsSetType())
-                {
-                    context.Writer.WritePropertyName("Type");
-                    context.Writer.Write(publicRequest.Type);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

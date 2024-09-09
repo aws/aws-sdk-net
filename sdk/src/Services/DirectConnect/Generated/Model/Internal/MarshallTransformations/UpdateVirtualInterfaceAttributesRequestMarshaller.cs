@@ -63,39 +63,42 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEnableSiteLink())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("enableSiteLink");
-                    context.Writer.Write(publicRequest.EnableSiteLink.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEnableSiteLink())
+                    {
+                        context.Writer.WritePropertyName("enableSiteLink");
+                        context.Writer.Write(publicRequest.EnableSiteLink.Value);
+                    }
+
+                    if(publicRequest.IsSetMtu())
+                    {
+                        context.Writer.WritePropertyName("mtu");
+                        context.Writer.Write(publicRequest.Mtu.Value);
+                    }
+
+                    if(publicRequest.IsSetVirtualInterfaceId())
+                    {
+                        context.Writer.WritePropertyName("virtualInterfaceId");
+                        context.Writer.Write(publicRequest.VirtualInterfaceId);
+                    }
+
+                    if(publicRequest.IsSetVirtualInterfaceName())
+                    {
+                        context.Writer.WritePropertyName("virtualInterfaceName");
+                        context.Writer.Write(publicRequest.VirtualInterfaceName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMtu())
-                {
-                    context.Writer.WritePropertyName("mtu");
-                    context.Writer.Write(publicRequest.Mtu.Value);
-                }
-
-                if(publicRequest.IsSetVirtualInterfaceId())
-                {
-                    context.Writer.WritePropertyName("virtualInterfaceId");
-                    context.Writer.Write(publicRequest.VirtualInterfaceId);
-                }
-
-                if(publicRequest.IsSetVirtualInterfaceName())
-                {
-                    context.Writer.WritePropertyName("virtualInterfaceName");
-                    context.Writer.Write(publicRequest.VirtualInterfaceName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

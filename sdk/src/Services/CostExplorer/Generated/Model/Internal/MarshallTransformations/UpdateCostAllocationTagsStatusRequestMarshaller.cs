@@ -63,31 +63,34 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCostAllocationTagsStatus())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CostAllocationTagsStatus");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCostAllocationTagsStatusListValue in publicRequest.CostAllocationTagsStatus)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCostAllocationTagsStatus())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("CostAllocationTagsStatus");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCostAllocationTagsStatusListValue in publicRequest.CostAllocationTagsStatus)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = CostAllocationTagStatusEntryMarshaller.Instance;
-                        marshaller.Marshall(publicRequestCostAllocationTagsStatusListValue, context);
+                            var marshaller = CostAllocationTagStatusEntryMarshaller.Instance;
+                            marshaller.Marshall(publicRequestCostAllocationTagsStatusListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

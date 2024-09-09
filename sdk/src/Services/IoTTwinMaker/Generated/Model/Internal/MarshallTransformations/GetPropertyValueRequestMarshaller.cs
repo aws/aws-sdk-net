@@ -64,79 +64,82 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                 throw new AmazonIoTTwinMakerException("Request object does not have required field WorkspaceId set");
             request.AddPathResource("{workspaceId}", StringUtils.FromString(publicRequest.WorkspaceId));
             request.ResourcePath = "/workspaces/{workspaceId}/entity-properties/value";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetComponentName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("componentName");
-                    context.Writer.Write(publicRequest.ComponentName);
-                }
-
-                if(publicRequest.IsSetComponentPath())
-                {
-                    context.Writer.WritePropertyName("componentPath");
-                    context.Writer.Write(publicRequest.ComponentPath);
-                }
-
-                if(publicRequest.IsSetComponentTypeId())
-                {
-                    context.Writer.WritePropertyName("componentTypeId");
-                    context.Writer.Write(publicRequest.ComponentTypeId);
-                }
-
-                if(publicRequest.IsSetEntityId())
-                {
-                    context.Writer.WritePropertyName("entityId");
-                    context.Writer.Write(publicRequest.EntityId);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetPropertyGroupName())
-                {
-                    context.Writer.WritePropertyName("propertyGroupName");
-                    context.Writer.Write(publicRequest.PropertyGroupName);
-                }
-
-                if(publicRequest.IsSetSelectedProperties())
-                {
-                    context.Writer.WritePropertyName("selectedProperties");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSelectedPropertiesListValue in publicRequest.SelectedProperties)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetComponentName())
                     {
-                            context.Writer.Write(publicRequestSelectedPropertiesListValue);
+                        context.Writer.WritePropertyName("componentName");
+                        context.Writer.Write(publicRequest.ComponentName);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetComponentPath())
+                    {
+                        context.Writer.WritePropertyName("componentPath");
+                        context.Writer.Write(publicRequest.ComponentPath);
+                    }
+
+                    if(publicRequest.IsSetComponentTypeId())
+                    {
+                        context.Writer.WritePropertyName("componentTypeId");
+                        context.Writer.Write(publicRequest.ComponentTypeId);
+                    }
+
+                    if(publicRequest.IsSetEntityId())
+                    {
+                        context.Writer.WritePropertyName("entityId");
+                        context.Writer.Write(publicRequest.EntityId);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetPropertyGroupName())
+                    {
+                        context.Writer.WritePropertyName("propertyGroupName");
+                        context.Writer.Write(publicRequest.PropertyGroupName);
+                    }
+
+                    if(publicRequest.IsSetSelectedProperties())
+                    {
+                        context.Writer.WritePropertyName("selectedProperties");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSelectedPropertiesListValue in publicRequest.SelectedProperties)
+                        {
+                                context.Writer.Write(publicRequestSelectedPropertiesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTabularConditions())
+                    {
+                        context.Writer.WritePropertyName("tabularConditions");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TabularConditionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TabularConditions, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTabularConditions())
-                {
-                    context.Writer.WritePropertyName("tabularConditions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TabularConditionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TabularConditions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

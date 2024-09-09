@@ -64,27 +64,30 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 throw new AmazonLexModelsV2Exception("Request object does not have required field TestSetId set");
             request.AddPathResource("{testSetId}", StringUtils.FromString(publicRequest.TestSetId));
             request.ResourcePath = "/testsets/{testSetId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetTestSetName())
+                    {
+                        context.Writer.WritePropertyName("testSetName");
+                        context.Writer.Write(publicRequest.TestSetName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTestSetName())
-                {
-                    context.Writer.WritePropertyName("testSetName");
-                    context.Writer.Write(publicRequest.TestSetName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

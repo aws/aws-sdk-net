@@ -61,38 +61,41 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/updateImageGenerationConfiguration";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetImageGenerationConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ImageGenerationConfiguration");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetImageGenerationConfiguration())
+                    {
+                        context.Writer.WritePropertyName("ImageGenerationConfiguration");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = ImageGenerationConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ImageGenerationConfiguration, context);
+                        var marshaller = ImageGenerationConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ImageGenerationConfiguration, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetStreamARN())
+                    {
+                        context.Writer.WritePropertyName("StreamARN");
+                        context.Writer.Write(publicRequest.StreamARN);
+                    }
+
+                    if(publicRequest.IsSetStreamName())
+                    {
+                        context.Writer.WritePropertyName("StreamName");
+                        context.Writer.Write(publicRequest.StreamName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetStreamARN())
-                {
-                    context.Writer.WritePropertyName("StreamARN");
-                    context.Writer.Write(publicRequest.StreamARN);
-                }
-
-                if(publicRequest.IsSetStreamName())
-                {
-                    context.Writer.WritePropertyName("StreamName");
-                    context.Writer.Write(publicRequest.StreamName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

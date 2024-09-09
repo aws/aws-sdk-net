@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the cloudhsmv2-2017-04-28.normal.json service model.
  */
 
+using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 

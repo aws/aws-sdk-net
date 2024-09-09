@@ -67,32 +67,35 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                 throw new AmazonWellArchitectedException("Request object does not have required field WorkloadId set");
             request.AddPathResource("{WorkloadId}", StringUtils.FromString(publicRequest.WorkloadId));
             request.ResourcePath = "/workloads/{WorkloadId}/profiles/{ProfileArn}/upgrade";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientRequestToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientRequestToken())
+                    {
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(publicRequest.ClientRequestToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientRequestToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetMilestoneName())
+                    {
+                        context.Writer.WritePropertyName("MilestoneName");
+                        context.Writer.Write(publicRequest.MilestoneName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetMilestoneName())
-                {
-                    context.Writer.WritePropertyName("MilestoneName");
-                    context.Writer.Write(publicRequest.MilestoneName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

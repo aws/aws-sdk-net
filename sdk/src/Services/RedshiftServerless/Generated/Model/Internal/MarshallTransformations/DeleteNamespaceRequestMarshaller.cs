@@ -63,33 +63,36 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFinalSnapshotName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("finalSnapshotName");
-                    context.Writer.Write(publicRequest.FinalSnapshotName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFinalSnapshotName())
+                    {
+                        context.Writer.WritePropertyName("finalSnapshotName");
+                        context.Writer.Write(publicRequest.FinalSnapshotName);
+                    }
+
+                    if(publicRequest.IsSetFinalSnapshotRetentionPeriod())
+                    {
+                        context.Writer.WritePropertyName("finalSnapshotRetentionPeriod");
+                        context.Writer.Write(publicRequest.FinalSnapshotRetentionPeriod.Value);
+                    }
+
+                    if(publicRequest.IsSetNamespaceName())
+                    {
+                        context.Writer.WritePropertyName("namespaceName");
+                        context.Writer.Write(publicRequest.NamespaceName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetFinalSnapshotRetentionPeriod())
-                {
-                    context.Writer.WritePropertyName("finalSnapshotRetentionPeriod");
-                    context.Writer.Write(publicRequest.FinalSnapshotRetentionPeriod.Value);
-                }
-
-                if(publicRequest.IsSetNamespaceName())
-                {
-                    context.Writer.WritePropertyName("namespaceName");
-                    context.Writer.Write(publicRequest.NamespaceName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

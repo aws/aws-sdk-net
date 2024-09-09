@@ -67,77 +67,80 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetKey())
                 request.Parameters.Add("key", StringUtils.FromString(publicRequest.Key));
             request.ResourcePath = "/places/v0/indexes/{IndexName}/search/text";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBiasPosition())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("BiasPosition");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestBiasPositionListValue in publicRequest.BiasPosition)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBiasPosition())
                     {
-                            context.Writer.Write(publicRequestBiasPositionListValue);
+                        context.Writer.WritePropertyName("BiasPosition");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestBiasPositionListValue in publicRequest.BiasPosition)
+                        {
+                                context.Writer.Write(publicRequestBiasPositionListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetFilterBBox())
-                {
-                    context.Writer.WritePropertyName("FilterBBox");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFilterBBoxListValue in publicRequest.FilterBBox)
+                    if(publicRequest.IsSetFilterBBox())
                     {
-                            context.Writer.Write(publicRequestFilterBBoxListValue);
+                        context.Writer.WritePropertyName("FilterBBox");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFilterBBoxListValue in publicRequest.FilterBBox)
+                        {
+                                context.Writer.Write(publicRequestFilterBBoxListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetFilterCategories())
-                {
-                    context.Writer.WritePropertyName("FilterCategories");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFilterCategoriesListValue in publicRequest.FilterCategories)
+                    if(publicRequest.IsSetFilterCategories())
                     {
-                            context.Writer.Write(publicRequestFilterCategoriesListValue);
+                        context.Writer.WritePropertyName("FilterCategories");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFilterCategoriesListValue in publicRequest.FilterCategories)
+                        {
+                                context.Writer.Write(publicRequestFilterCategoriesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetFilterCountries())
-                {
-                    context.Writer.WritePropertyName("FilterCountries");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFilterCountriesListValue in publicRequest.FilterCountries)
+                    if(publicRequest.IsSetFilterCountries())
                     {
-                            context.Writer.Write(publicRequestFilterCountriesListValue);
+                        context.Writer.WritePropertyName("FilterCountries");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFilterCountriesListValue in publicRequest.FilterCountries)
+                        {
+                                context.Writer.Write(publicRequestFilterCountriesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetLanguage())
+                    {
+                        context.Writer.WritePropertyName("Language");
+                        context.Writer.Write(publicRequest.Language);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetText())
+                    {
+                        context.Writer.WritePropertyName("Text");
+                        context.Writer.Write(publicRequest.Text);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetLanguage())
-                {
-                    context.Writer.WritePropertyName("Language");
-                    context.Writer.Write(publicRequest.Language);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetText())
-                {
-                    context.Writer.WritePropertyName("Text");
-                    context.Writer.Write(publicRequest.Text);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             request.UseQueryString = true;

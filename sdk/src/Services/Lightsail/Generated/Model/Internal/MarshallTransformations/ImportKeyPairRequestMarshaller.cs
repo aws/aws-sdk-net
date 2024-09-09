@@ -63,27 +63,30 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetKeyPairName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("keyPairName");
-                    context.Writer.Write(publicRequest.KeyPairName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetKeyPairName())
+                    {
+                        context.Writer.WritePropertyName("keyPairName");
+                        context.Writer.Write(publicRequest.KeyPairName);
+                    }
+
+                    if(publicRequest.IsSetPublicKeyBase64())
+                    {
+                        context.Writer.WritePropertyName("publicKeyBase64");
+                        context.Writer.Write(publicRequest.PublicKeyBase64);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPublicKeyBase64())
-                {
-                    context.Writer.WritePropertyName("publicKeyBase64");
-                    context.Writer.Write(publicRequest.PublicKeyBase64);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

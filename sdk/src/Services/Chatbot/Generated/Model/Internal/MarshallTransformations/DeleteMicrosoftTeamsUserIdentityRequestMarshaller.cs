@@ -61,27 +61,30 @@ namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/delete-ms-teams-user-identity";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetChatConfigurationArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ChatConfigurationArn");
-                    context.Writer.Write(publicRequest.ChatConfigurationArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetChatConfigurationArn())
+                    {
+                        context.Writer.WritePropertyName("ChatConfigurationArn");
+                        context.Writer.Write(publicRequest.ChatConfigurationArn);
+                    }
+
+                    if(publicRequest.IsSetUserId())
+                    {
+                        context.Writer.WritePropertyName("UserId");
+                        context.Writer.Write(publicRequest.UserId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetUserId())
-                {
-                    context.Writer.WritePropertyName("UserId");
-                    context.Writer.Write(publicRequest.UserId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

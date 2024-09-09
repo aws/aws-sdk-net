@@ -63,39 +63,42 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAutoMounting())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("autoMounting");
-                    context.Writer.Write(publicRequest.AutoMounting.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAutoMounting())
+                    {
+                        context.Writer.WritePropertyName("autoMounting");
+                        context.Writer.Write(publicRequest.AutoMounting.Value);
+                    }
+
+                    if(publicRequest.IsSetDiskName())
+                    {
+                        context.Writer.WritePropertyName("diskName");
+                        context.Writer.Write(publicRequest.DiskName);
+                    }
+
+                    if(publicRequest.IsSetDiskPath())
+                    {
+                        context.Writer.WritePropertyName("diskPath");
+                        context.Writer.Write(publicRequest.DiskPath);
+                    }
+
+                    if(publicRequest.IsSetInstanceName())
+                    {
+                        context.Writer.WritePropertyName("instanceName");
+                        context.Writer.Write(publicRequest.InstanceName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDiskName())
-                {
-                    context.Writer.WritePropertyName("diskName");
-                    context.Writer.Write(publicRequest.DiskName);
-                }
-
-                if(publicRequest.IsSetDiskPath())
-                {
-                    context.Writer.WritePropertyName("diskPath");
-                    context.Writer.Write(publicRequest.DiskPath);
-                }
-
-                if(publicRequest.IsSetInstanceName())
-                {
-                    context.Writer.WritePropertyName("instanceName");
-                    context.Writer.Write(publicRequest.InstanceName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

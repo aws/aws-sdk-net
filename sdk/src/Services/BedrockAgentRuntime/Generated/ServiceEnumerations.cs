@@ -25,6 +25,110 @@ namespace Amazon.BedrockAgentRuntime
 {
 
     /// <summary>
+    /// Constants used for properties of type ActionInvocationType.
+    /// </summary>
+    public class ActionInvocationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RESULT for ActionInvocationType
+        /// </summary>
+        public static readonly ActionInvocationType RESULT = new ActionInvocationType("RESULT");
+        /// <summary>
+        /// Constant USER_CONFIRMATION for ActionInvocationType
+        /// </summary>
+        public static readonly ActionInvocationType USER_CONFIRMATION = new ActionInvocationType("USER_CONFIRMATION");
+        /// <summary>
+        /// Constant USER_CONFIRMATION_AND_RESULT for ActionInvocationType
+        /// </summary>
+        public static readonly ActionInvocationType USER_CONFIRMATION_AND_RESULT = new ActionInvocationType("USER_CONFIRMATION_AND_RESULT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ActionInvocationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ActionInvocationType FindValue(string value)
+        {
+            return FindValue<ActionInvocationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ActionInvocationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConfirmationState.
+    /// </summary>
+    public class ConfirmationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONFIRM for ConfirmationState
+        /// </summary>
+        public static readonly ConfirmationState CONFIRM = new ConfirmationState("CONFIRM");
+        /// <summary>
+        /// Constant DENY for ConfirmationState
+        /// </summary>
+        public static readonly ConfirmationState DENY = new ConfirmationState("DENY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConfirmationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfirmationState FindValue(string value)
+        {
+            return FindValue<ConfirmationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfirmationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CreationMode.
     /// </summary>
     public class CreationMode : ConstantClass

@@ -32,6 +32,8 @@
         <run-tests-xunit-DependsOnTargets Condition="'$(run-tests-xunit-DependsOnTargets)'==''">build-test-wrapper;build-test-project</run-tests-xunit-DependsOnTargets>
         <package-netcore-extensions-DependsOnTargets Condition="'$(package-netcore-extensions-DependsOnTargets)'==''">build-extensions</package-netcore-extensions-DependsOnTargets>
         <package-crt-extensions-DependsOnTargets Condition="'$(package-crt-extensions-DependsOnTargets)'==''">build-extensions</package-crt-extensions-DependsOnTargets>
+        <package-cloudfront-extensions-DependsOnTargets Condition="'$(package-cloudfront-extensions-DependsOnTargets)'==''">build-extensions</package-cloudfront-extensions-DependsOnTargets>
+        <package-ec2-extensions-DependsOnTargets Condition="'$(package-ec2-extensions-DependsOnTargets)'==''">build-extensions</package-ec2-extensions-DependsOnTargets>
         <keyscan-DependsOnTargets Condition="'$(keyscan-DependsOnTargets)'==''">build-tools</keyscan-DependsOnTargets>
         <copy-license-and-notice-DependsOnTargets Condition="'$(copy-license-and-notice-DependsOnTargets)'==''">copy-dependencies</copy-license-and-notice-DependsOnTargets>
         <copy-service-models-DependsOnTargets Condition="'$(copy-service-models-DependsOnTargets)'==''">copy-license-and-notice</copy-service-models-DependsOnTargets>
@@ -495,6 +497,16 @@
         <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack ./AWSSDK.Extensions.CrtIntegration.nuspec -BasePath . -OutputDirectory ../../../Deployment/nuget" WorkingDirectory="../extensions/src/AWSSDK.Extensions.CrtIntegration" />
     </Target>
 
+    <Target Name="package-cloudfront-extensions" DependsOnTargets="$(package-cloudfront-extensions-DependsOnTargets)">
+        <MakeDir Directories="../Deployment/nuget" />
+        <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack ./AWSSDK.Extensions.CloudFront.Signers.nuspec -BasePath . -OutputDirectory ../../../Deployment/nuget" WorkingDirectory="../extensions/src/AWSSDK.Extensions.CloudFront.Signers" />
+    </Target>
+
+    <Target Name="package-ec2-extensions" DependsOnTargets="$(package-ec2-extensions-DependsOnTargets)">
+        <MakeDir Directories="../Deployment/nuget" />
+        <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack ./AWSSDK.Extensions.EC2.DecryptPassword.nuspec -BasePath . -OutputDirectory ../../../Deployment/nuget" WorkingDirectory="../extensions/src/AWSSDK.Extensions.EC2.DecryptPassword" />
+    </Target>
+
     <Target Name="copy-assemblies" DependsOnTargets="nuget-pack;build-extensions">
         <Message Text="Collating assemblies for downstream doc generation" />
         <PropertyGroup>
@@ -571,9 +583,11 @@
             <PrivateKeyException Include="sdk/code-analysis/ServiceAnalysis/CertificateManager/Generated/PropertyValueRules.xml" />
             <PrivateKeyException Include="sdk/test/Services/EC2/UnitTests/Custom/PasswordTest.cs" />
             <PrivateKeyException Include="sdk/test/NetStandard/UnitTests/sample.rsa.private.key.txt" />
-            <PrivateKeyException Include="sdk/test/Services/CloudFront/UnitTests/Custom/EmbeddedResource/sample.rsa.private.key.txt" />
             <PrivateKeyException Include="sdk/code-analysis/ServiceAnalysis/WorkLink/Generated/PropertyValueRules.xml" />
             <PrivateKeyException Include="sdk/code-analysis/ServiceAnalysis/OpsWorksCM/Generated/PropertyValueRules.xml" />
+            <PrivateKeyException Include="extensions/test/CloudFront.SignersTests/EmbeddedResource/sample.rsa.private.key.txt"/>
+            <PrivateKeyException Include="extensions/test/EC2.DecryptPasswordTests/PasswordTest.cs"/>
+            <PrivateKeyException Include="extensions/test/CloudFront.SignersTests/URLSignerTest.cs"/>
         </ItemGroup>
 
     <ItemGroup>
@@ -588,7 +602,7 @@
       <FileException Include="sdk/src/Core/bin/Release/net8.0/AWSSDK.Core.xml" />
       <FileException Include="sdk/src/Services/S3/bin/Release/net8.0/AWSSDK.S3.xml" />
       <FileException Include="Deployment/assemblies/net8.0/AWSSDK.Core.xml" />
-      <FileException Include="Deployment/assemblies/net8.0/AWSSDK.S3.xml" />      
+      <FileException Include="Deployment/assemblies/net8.0/AWSSDK.S3.xml" />
     </ItemGroup>
 
         <ItemGroup>

@@ -67,38 +67,41 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetKey())
                 request.Parameters.Add("key", StringUtils.FromString(publicRequest.Key));
             request.ResourcePath = "/places/v0/indexes/{IndexName}/search/position";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLanguage())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Language");
-                    context.Writer.Write(publicRequest.Language);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetPosition())
-                {
-                    context.Writer.WritePropertyName("Position");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPositionListValue in publicRequest.Position)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetLanguage())
                     {
-                            context.Writer.Write(publicRequestPositionListValue);
+                        context.Writer.WritePropertyName("Language");
+                        context.Writer.Write(publicRequest.Language);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetPosition())
+                    {
+                        context.Writer.WritePropertyName("Position");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPositionListValue in publicRequest.Position)
+                        {
+                                context.Writer.Write(publicRequestPositionListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             request.UseQueryString = true;

@@ -61,43 +61,46 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/update-enabled-baseline";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBaselineVersion())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("baselineVersion");
-                    context.Writer.Write(publicRequest.BaselineVersion);
-                }
-
-                if(publicRequest.IsSetEnabledBaselineIdentifier())
-                {
-                    context.Writer.WritePropertyName("enabledBaselineIdentifier");
-                    context.Writer.Write(publicRequest.EnabledBaselineIdentifier);
-                }
-
-                if(publicRequest.IsSetParameters())
-                {
-                    context.Writer.WritePropertyName("parameters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestParametersListValue in publicRequest.Parameters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBaselineVersion())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EnabledBaselineParameterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestParametersListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("baselineVersion");
+                        context.Writer.Write(publicRequest.BaselineVersion);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetEnabledBaselineIdentifier())
+                    {
+                        context.Writer.WritePropertyName("enabledBaselineIdentifier");
+                        context.Writer.Write(publicRequest.EnabledBaselineIdentifier);
+                    }
+
+                    if(publicRequest.IsSetParameters())
+                    {
+                        context.Writer.WritePropertyName("parameters");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestParametersListValue in publicRequest.Parameters)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = EnabledBaselineParameterMarshaller.Instance;
+                            marshaller.Marshall(publicRequestParametersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -18,6 +18,7 @@
  */
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.WorkMailMessageFlow.Endpoints;
 using Amazon.WorkMailMessageFlow.Internal;

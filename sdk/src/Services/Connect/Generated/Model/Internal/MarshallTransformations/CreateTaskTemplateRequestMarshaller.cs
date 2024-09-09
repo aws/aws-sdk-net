@@ -64,88 +64,91 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field InstanceId set");
             request.AddPathResource("{InstanceId}", StringUtils.FromString(publicRequest.InstanceId));
             request.ResourcePath = "/instance/{InstanceId}/task/template";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetConstraints())
-                {
-                    context.Writer.WritePropertyName("Constraints");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TaskTemplateConstraintsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Constraints, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetContactFlowId())
-                {
-                    context.Writer.WritePropertyName("ContactFlowId");
-                    context.Writer.Write(publicRequest.ContactFlowId);
-                }
-
-                if(publicRequest.IsSetDefaults())
-                {
-                    context.Writer.WritePropertyName("Defaults");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TaskTemplateDefaultsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Defaults, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetFields())
-                {
-                    context.Writer.WritePropertyName("Fields");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFieldsListValue in publicRequest.Fields)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetConstraints())
+                    {
+                        context.Writer.WritePropertyName("Constraints");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TaskTemplateFieldMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFieldsListValue, context);
+                        var marshaller = TaskTemplateConstraintsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Constraints, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetContactFlowId())
+                    {
+                        context.Writer.WritePropertyName("ContactFlowId");
+                        context.Writer.Write(publicRequest.ContactFlowId);
+                    }
+
+                    if(publicRequest.IsSetDefaults())
+                    {
+                        context.Writer.WritePropertyName("Defaults");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TaskTemplateDefaultsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Defaults, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetFields())
+                    {
+                        context.Writer.WritePropertyName("Fields");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFieldsListValue in publicRequest.Fields)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TaskTemplateFieldMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFieldsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetStatus())
+                    {
+                        context.Writer.WritePropertyName("Status");
+                        context.Writer.Write(publicRequest.Status);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetStatus())
-                {
-                    context.Writer.WritePropertyName("Status");
-                    context.Writer.Write(publicRequest.Status);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

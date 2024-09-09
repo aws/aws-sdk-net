@@ -63,103 +63,106 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetActions())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Actions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestActionsListValue in publicRequest.Actions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetActions())
                     {
+                        context.Writer.WritePropertyName("Actions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestActionsListValue in publicRequest.Actions)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ActionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestActionsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetEventBatchingCondition())
+                    {
+                        context.Writer.WritePropertyName("EventBatchingCondition");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = ActionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestActionsListValue, context);
+                        var marshaller = EventBatchingConditionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EventBatchingCondition, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetEventBatchingCondition())
-                {
-                    context.Writer.WritePropertyName("EventBatchingCondition");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EventBatchingConditionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EventBatchingCondition, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetPredicate())
-                {
-                    context.Writer.WritePropertyName("Predicate");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PredicateMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Predicate, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSchedule())
-                {
-                    context.Writer.WritePropertyName("Schedule");
-                    context.Writer.Write(publicRequest.Schedule);
-                }
-
-                if(publicRequest.IsSetStartOnCreation())
-                {
-                    context.Writer.WritePropertyName("StartOnCreation");
-                    context.Writer.Write(publicRequest.StartOnCreation.Value);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetName())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetPredicate())
+                    {
+                        context.Writer.WritePropertyName("Predicate");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PredicateMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Predicate, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSchedule())
+                    {
+                        context.Writer.WritePropertyName("Schedule");
+                        context.Writer.Write(publicRequest.Schedule);
+                    }
+
+                    if(publicRequest.IsSetStartOnCreation())
+                    {
+                        context.Writer.WritePropertyName("StartOnCreation");
+                        context.Writer.Write(publicRequest.StartOnCreation.Value);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetType())
+                    {
+                        context.Writer.WritePropertyName("Type");
+                        context.Writer.Write(publicRequest.Type);
+                    }
+
+                    if(publicRequest.IsSetWorkflowName())
+                    {
+                        context.Writer.WritePropertyName("WorkflowName");
+                        context.Writer.Write(publicRequest.WorkflowName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetType())
-                {
-                    context.Writer.WritePropertyName("Type");
-                    context.Writer.Write(publicRequest.Type);
-                }
-
-                if(publicRequest.IsSetWorkflowName())
-                {
-                    context.Writer.WritePropertyName("WorkflowName");
-                    context.Writer.Write(publicRequest.WorkflowName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

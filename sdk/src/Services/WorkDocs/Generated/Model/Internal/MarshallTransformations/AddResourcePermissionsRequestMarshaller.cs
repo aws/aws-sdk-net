@@ -64,42 +64,45 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
                 throw new AmazonWorkDocsException("Request object does not have required field ResourceId set");
             request.AddPathResource("{ResourceId}", StringUtils.FromString(publicRequest.ResourceId));
             request.ResourcePath = "/api/v1/resources/{ResourceId}/permissions";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetNotificationOptions())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("NotificationOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = NotificationOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.NotificationOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPrincipals())
-                {
-                    context.Writer.WritePropertyName("Principals");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPrincipalsListValue in publicRequest.Principals)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetNotificationOptions())
                     {
+                        context.Writer.WritePropertyName("NotificationOptions");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = SharePrincipalMarshaller.Instance;
-                        marshaller.Marshall(publicRequestPrincipalsListValue, context);
+                        var marshaller = NotificationOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.NotificationOptions, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetPrincipals())
+                    {
+                        context.Writer.WritePropertyName("Principals");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPrincipalsListValue in publicRequest.Principals)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = SharePrincipalMarshaller.Instance;
+                            marshaller.Marshall(publicRequestPrincipalsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

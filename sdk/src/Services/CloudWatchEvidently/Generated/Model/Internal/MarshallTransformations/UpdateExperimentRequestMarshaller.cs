@@ -67,88 +67,91 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
                 throw new AmazonCloudWatchEvidentlyException("Request object does not have required field Project set");
             request.AddPathResource("{project}", StringUtils.FromString(publicRequest.Project));
             request.ResourcePath = "/projects/{project}/experiments/{experiment}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetMetricGoals())
-                {
-                    context.Writer.WritePropertyName("metricGoals");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMetricGoalsListValue in publicRequest.MetricGoals)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetMetricGoals())
+                    {
+                        context.Writer.WritePropertyName("metricGoals");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMetricGoalsListValue in publicRequest.MetricGoals)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = MetricGoalConfigMarshaller.Instance;
+                            marshaller.Marshall(publicRequestMetricGoalsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetOnlineAbConfig())
+                    {
+                        context.Writer.WritePropertyName("onlineAbConfig");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = MetricGoalConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequestMetricGoalsListValue, context);
+                        var marshaller = OnlineAbConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OnlineAbConfig, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetOnlineAbConfig())
-                {
-                    context.Writer.WritePropertyName("onlineAbConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OnlineAbConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OnlineAbConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRandomizationSalt())
-                {
-                    context.Writer.WritePropertyName("randomizationSalt");
-                    context.Writer.Write(publicRequest.RandomizationSalt);
-                }
-
-                if(publicRequest.IsSetRemoveSegment())
-                {
-                    context.Writer.WritePropertyName("removeSegment");
-                    context.Writer.Write(publicRequest.RemoveSegment.Value);
-                }
-
-                if(publicRequest.IsSetSamplingRate())
-                {
-                    context.Writer.WritePropertyName("samplingRate");
-                    context.Writer.Write(publicRequest.SamplingRate.Value);
-                }
-
-                if(publicRequest.IsSetSegment())
-                {
-                    context.Writer.WritePropertyName("segment");
-                    context.Writer.Write(publicRequest.Segment);
-                }
-
-                if(publicRequest.IsSetTreatments())
-                {
-                    context.Writer.WritePropertyName("treatments");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTreatmentsListValue in publicRequest.Treatments)
+                    if(publicRequest.IsSetRandomizationSalt())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TreatmentConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTreatmentsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("randomizationSalt");
+                        context.Writer.Write(publicRequest.RandomizationSalt);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetRemoveSegment())
+                    {
+                        context.Writer.WritePropertyName("removeSegment");
+                        context.Writer.Write(publicRequest.RemoveSegment.Value);
+                    }
+
+                    if(publicRequest.IsSetSamplingRate())
+                    {
+                        context.Writer.WritePropertyName("samplingRate");
+                        context.Writer.Write(publicRequest.SamplingRate.Value);
+                    }
+
+                    if(publicRequest.IsSetSegment())
+                    {
+                        context.Writer.WritePropertyName("segment");
+                        context.Writer.Write(publicRequest.Segment);
+                    }
+
+                    if(publicRequest.IsSetTreatments())
+                    {
+                        context.Writer.WritePropertyName("treatments");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTreatmentsListValue in publicRequest.Treatments)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TreatmentConfigMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTreatmentsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

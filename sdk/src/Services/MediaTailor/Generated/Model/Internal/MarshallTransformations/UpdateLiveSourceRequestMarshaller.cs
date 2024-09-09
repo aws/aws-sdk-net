@@ -67,31 +67,34 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 throw new AmazonMediaTailorException("Request object does not have required field SourceLocationName set");
             request.AddPathResource("{SourceLocationName}", StringUtils.FromString(publicRequest.SourceLocationName));
             request.ResourcePath = "/sourceLocation/{SourceLocationName}/liveSource/{LiveSourceName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetHttpPackageConfigurations())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("HttpPackageConfigurations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestHttpPackageConfigurationsListValue in publicRequest.HttpPackageConfigurations)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetHttpPackageConfigurations())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("HttpPackageConfigurations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestHttpPackageConfigurationsListValue in publicRequest.HttpPackageConfigurations)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = HttpPackageConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestHttpPackageConfigurationsListValue, context);
+                            var marshaller = HttpPackageConfigurationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestHttpPackageConfigurationsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

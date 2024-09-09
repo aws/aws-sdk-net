@@ -61,40 +61,43 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/update-app-version";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAdditionalInfo())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("additionalInfo");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestAdditionalInfoKvp in publicRequest.AdditionalInfo)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAdditionalInfo())
                     {
-                        context.Writer.WritePropertyName(publicRequestAdditionalInfoKvp.Key);
-                        var publicRequestAdditionalInfoValue = publicRequestAdditionalInfoKvp.Value;
-
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAdditionalInfoValueListValue in publicRequestAdditionalInfoValue)
+                        context.Writer.WritePropertyName("additionalInfo");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestAdditionalInfoKvp in publicRequest.AdditionalInfo)
                         {
-                                context.Writer.Write(publicRequestAdditionalInfoValueListValue);
+                            context.Writer.WritePropertyName(publicRequestAdditionalInfoKvp.Key);
+                            var publicRequestAdditionalInfoValue = publicRequestAdditionalInfoKvp.Value;
+
+                            context.Writer.WriteArrayStart();
+                            foreach(var publicRequestAdditionalInfoValueListValue in publicRequestAdditionalInfoValue)
+                            {
+                                    context.Writer.Write(publicRequestAdditionalInfoValueListValue);
+                            }
+                            context.Writer.WriteArrayEnd();
                         }
-                        context.Writer.WriteArrayEnd();
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetAppArn())
+                    {
+                        context.Writer.WritePropertyName("appArn");
+                        context.Writer.Write(publicRequest.AppArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetAppArn())
-                {
-                    context.Writer.WritePropertyName("appArn");
-                    context.Writer.Write(publicRequest.AppArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

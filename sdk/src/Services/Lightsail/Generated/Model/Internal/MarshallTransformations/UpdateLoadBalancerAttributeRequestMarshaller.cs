@@ -63,33 +63,36 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAttributeName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("attributeName");
-                    context.Writer.Write(publicRequest.AttributeName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAttributeName())
+                    {
+                        context.Writer.WritePropertyName("attributeName");
+                        context.Writer.Write(publicRequest.AttributeName);
+                    }
+
+                    if(publicRequest.IsSetAttributeValue())
+                    {
+                        context.Writer.WritePropertyName("attributeValue");
+                        context.Writer.Write(publicRequest.AttributeValue);
+                    }
+
+                    if(publicRequest.IsSetLoadBalancerName())
+                    {
+                        context.Writer.WritePropertyName("loadBalancerName");
+                        context.Writer.Write(publicRequest.LoadBalancerName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetAttributeValue())
-                {
-                    context.Writer.WritePropertyName("attributeValue");
-                    context.Writer.Write(publicRequest.AttributeValue);
-                }
-
-                if(publicRequest.IsSetLoadBalancerName())
-                {
-                    context.Writer.WritePropertyName("loadBalancerName");
-                    context.Writer.Write(publicRequest.LoadBalancerName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

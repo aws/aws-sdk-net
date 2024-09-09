@@ -338,7 +338,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ImageId. 
         /// <para>
-        /// The ID of the AMI in the format <c>ami-17characters00000</c>.
+        /// The ID of the AMI in the format <c>ami-0ac394d6a3example</c>.
         /// </para>
         ///  
         /// <para>

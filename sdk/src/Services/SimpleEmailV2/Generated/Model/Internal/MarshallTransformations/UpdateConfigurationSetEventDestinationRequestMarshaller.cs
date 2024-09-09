@@ -67,26 +67,29 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 throw new AmazonSimpleEmailServiceV2Exception("Request object does not have required field EventDestinationName set");
             request.AddPathResource("{EventDestinationName}", StringUtils.FromString(publicRequest.EventDestinationName));
             request.ResourcePath = "/v2/email/configuration-sets/{ConfigurationSetName}/event-destinations/{EventDestinationName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEventDestination())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("EventDestination");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEventDestination())
+                    {
+                        context.Writer.WritePropertyName("EventDestination");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = EventDestinationDefinitionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EventDestination, context);
+                        var marshaller = EventDestinationDefinitionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EventDestination, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the cost-optimization-hub-2022-07-26.normal.json service model.
  */
 
+using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 

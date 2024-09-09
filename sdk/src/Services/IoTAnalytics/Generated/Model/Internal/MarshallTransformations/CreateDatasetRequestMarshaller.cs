@@ -61,123 +61,126 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/datasets";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetActions())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("actions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestActionsListValue in publicRequest.Actions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetActions())
                     {
+                        context.Writer.WritePropertyName("actions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestActionsListValue in publicRequest.Actions)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = DatasetActionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestActionsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetContentDeliveryRules())
+                    {
+                        context.Writer.WritePropertyName("contentDeliveryRules");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestContentDeliveryRulesListValue in publicRequest.ContentDeliveryRules)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = DatasetContentDeliveryRuleMarshaller.Instance;
+                            marshaller.Marshall(publicRequestContentDeliveryRulesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetDatasetName())
+                    {
+                        context.Writer.WritePropertyName("datasetName");
+                        context.Writer.Write(publicRequest.DatasetName);
+                    }
+
+                    if(publicRequest.IsSetLateDataRules())
+                    {
+                        context.Writer.WritePropertyName("lateDataRules");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLateDataRulesListValue in publicRequest.LateDataRules)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = LateDataRuleMarshaller.Instance;
+                            marshaller.Marshall(publicRequestLateDataRulesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetRetentionPeriod())
+                    {
+                        context.Writer.WritePropertyName("retentionPeriod");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = DatasetActionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestActionsListValue, context);
+                        var marshaller = RetentionPeriodMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RetentionPeriod, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetContentDeliveryRules())
-                {
-                    context.Writer.WritePropertyName("contentDeliveryRules");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestContentDeliveryRulesListValue in publicRequest.ContentDeliveryRules)
+                    if(publicRequest.IsSetTags())
                     {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTriggers())
+                    {
+                        context.Writer.WritePropertyName("triggers");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTriggersListValue in publicRequest.Triggers)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = DatasetTriggerMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTriggersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetVersioningConfiguration())
+                    {
+                        context.Writer.WritePropertyName("versioningConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = DatasetContentDeliveryRuleMarshaller.Instance;
-                        marshaller.Marshall(publicRequestContentDeliveryRulesListValue, context);
+                        var marshaller = VersioningConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.VersioningConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDatasetName())
-                {
-                    context.Writer.WritePropertyName("datasetName");
-                    context.Writer.Write(publicRequest.DatasetName);
-                }
-
-                if(publicRequest.IsSetLateDataRules())
-                {
-                    context.Writer.WritePropertyName("lateDataRules");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLateDataRulesListValue in publicRequest.LateDataRules)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = LateDataRuleMarshaller.Instance;
-                        marshaller.Marshall(publicRequestLateDataRulesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetRetentionPeriod())
-                {
-                    context.Writer.WritePropertyName("retentionPeriod");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RetentionPeriodMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RetentionPeriod, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetTriggers())
-                {
-                    context.Writer.WritePropertyName("triggers");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTriggersListValue in publicRequest.Triggers)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DatasetTriggerMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTriggersListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetVersioningConfiguration())
-                {
-                    context.Writer.WritePropertyName("versioningConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = VersioningConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.VersioningConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

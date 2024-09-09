@@ -46,6 +46,7 @@ namespace Amazon.AppStream.Model
         private string _imageArn;
         private List<ResourceError> _imageBuilderErrors = AWSConfigs.InitializeCollections ? new List<ResourceError>() : null;
         private string _instanceType;
+        private LatestAppstreamAgentVersion _latestAppstreamAgentVersion;
         private string _name;
         private NetworkAccessConfiguration _networkAccessConfiguration;
         private PlatformType _platform;
@@ -418,6 +419,25 @@ namespace Amazon.AppStream.Model
         internal bool IsSetInstanceType()
         {
             return this._instanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LatestAppstreamAgentVersion. 
+        /// <para>
+        /// Indicates whether the image builder is using the latest AppStream 2.0 agent version
+        /// or not.
+        /// </para>
+        /// </summary>
+        public LatestAppstreamAgentVersion LatestAppstreamAgentVersion
+        {
+            get { return this._latestAppstreamAgentVersion; }
+            set { this._latestAppstreamAgentVersion = value; }
+        }
+
+        // Check to see if LatestAppstreamAgentVersion property is set
+        internal bool IsSetLatestAppstreamAgentVersion()
+        {
+            return this._latestAppstreamAgentVersion != null;
         }
 
         /// <summary>

@@ -63,84 +63,87 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAddressId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AddressId");
-                    context.Writer.Write(publicRequest.AddressId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAddressId())
+                    {
+                        context.Writer.WritePropertyName("AddressId");
+                        context.Writer.Write(publicRequest.AddressId);
+                    }
+
+                    if(publicRequest.IsSetClusterId())
+                    {
+                        context.Writer.WritePropertyName("ClusterId");
+                        context.Writer.Write(publicRequest.ClusterId);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetForwardingAddressId())
+                    {
+                        context.Writer.WritePropertyName("ForwardingAddressId");
+                        context.Writer.Write(publicRequest.ForwardingAddressId);
+                    }
+
+                    if(publicRequest.IsSetNotification())
+                    {
+                        context.Writer.WritePropertyName("Notification");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = NotificationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Notification, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetOnDeviceServiceConfiguration())
+                    {
+                        context.Writer.WritePropertyName("OnDeviceServiceConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = OnDeviceServiceConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OnDeviceServiceConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetResources())
+                    {
+                        context.Writer.WritePropertyName("Resources");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = JobResourceMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Resources, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRoleARN())
+                    {
+                        context.Writer.WritePropertyName("RoleARN");
+                        context.Writer.Write(publicRequest.RoleARN);
+                    }
+
+                    if(publicRequest.IsSetShippingOption())
+                    {
+                        context.Writer.WritePropertyName("ShippingOption");
+                        context.Writer.Write(publicRequest.ShippingOption);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetClusterId())
-                {
-                    context.Writer.WritePropertyName("ClusterId");
-                    context.Writer.Write(publicRequest.ClusterId);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetForwardingAddressId())
-                {
-                    context.Writer.WritePropertyName("ForwardingAddressId");
-                    context.Writer.Write(publicRequest.ForwardingAddressId);
-                }
-
-                if(publicRequest.IsSetNotification())
-                {
-                    context.Writer.WritePropertyName("Notification");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = NotificationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Notification, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOnDeviceServiceConfiguration())
-                {
-                    context.Writer.WritePropertyName("OnDeviceServiceConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OnDeviceServiceConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OnDeviceServiceConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetResources())
-                {
-                    context.Writer.WritePropertyName("Resources");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = JobResourceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Resources, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRoleARN())
-                {
-                    context.Writer.WritePropertyName("RoleARN");
-                    context.Writer.Write(publicRequest.RoleARN);
-                }
-
-                if(publicRequest.IsSetShippingOption())
-                {
-                    context.Writer.WritePropertyName("ShippingOption");
-                    context.Writer.Write(publicRequest.ShippingOption);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

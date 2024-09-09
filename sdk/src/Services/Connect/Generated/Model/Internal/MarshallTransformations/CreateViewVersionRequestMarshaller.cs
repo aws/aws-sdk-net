@@ -67,27 +67,30 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field ViewId set");
             request.AddPathResource("{ViewId}", StringUtils.FromString(publicRequest.ViewId));
             request.ResourcePath = "/views/{InstanceId}/{ViewId}/versions";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetVersionDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("VersionDescription");
-                    context.Writer.Write(publicRequest.VersionDescription);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetVersionDescription())
+                    {
+                        context.Writer.WritePropertyName("VersionDescription");
+                        context.Writer.Write(publicRequest.VersionDescription);
+                    }
+
+                    if(publicRequest.IsSetViewContentSha256())
+                    {
+                        context.Writer.WritePropertyName("ViewContentSha256");
+                        context.Writer.Write(publicRequest.ViewContentSha256);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetViewContentSha256())
-                {
-                    context.Writer.WritePropertyName("ViewContentSha256");
-                    context.Writer.Write(publicRequest.ViewContentSha256);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

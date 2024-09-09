@@ -67,76 +67,79 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 throw new AmazonDataZoneException("Request object does not have required field EnvironmentBlueprintIdentifier set");
             request.AddPathResource("{environmentBlueprintIdentifier}", StringUtils.FromString(publicRequest.EnvironmentBlueprintIdentifier));
             request.ResourcePath = "/v2/domains/{domainIdentifier}/environment-blueprint-configurations/{environmentBlueprintIdentifier}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEnabledRegions())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("enabledRegions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEnabledRegionsListValue in publicRequest.EnabledRegions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEnabledRegions())
                     {
-                            context.Writer.Write(publicRequestEnabledRegionsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetManageAccessRoleArn())
-                {
-                    context.Writer.WritePropertyName("manageAccessRoleArn");
-                    context.Writer.Write(publicRequest.ManageAccessRoleArn);
-                }
-
-                if(publicRequest.IsSetProvisioningConfigurations())
-                {
-                    context.Writer.WritePropertyName("provisioningConfigurations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestProvisioningConfigurationsListValue in publicRequest.ProvisioningConfigurations)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ProvisioningConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestProvisioningConfigurationsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetProvisioningRoleArn())
-                {
-                    context.Writer.WritePropertyName("provisioningRoleArn");
-                    context.Writer.Write(publicRequest.ProvisioningRoleArn);
-                }
-
-                if(publicRequest.IsSetRegionalParameters())
-                {
-                    context.Writer.WritePropertyName("regionalParameters");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestRegionalParametersKvp in publicRequest.RegionalParameters)
-                    {
-                        context.Writer.WritePropertyName(publicRequestRegionalParametersKvp.Key);
-                        var publicRequestRegionalParametersValue = publicRequestRegionalParametersKvp.Value;
-
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestRegionalParametersValueKvp in publicRequestRegionalParametersValue)
+                        context.Writer.WritePropertyName("enabledRegions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestEnabledRegionsListValue in publicRequest.EnabledRegions)
                         {
-                            context.Writer.WritePropertyName(publicRequestRegionalParametersValueKvp.Key);
-                            var publicRequestRegionalParametersValueValue = publicRequestRegionalParametersValueKvp.Value;
+                                context.Writer.Write(publicRequestEnabledRegionsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
 
-                                context.Writer.Write(publicRequestRegionalParametersValueValue);
+                    if(publicRequest.IsSetManageAccessRoleArn())
+                    {
+                        context.Writer.WritePropertyName("manageAccessRoleArn");
+                        context.Writer.Write(publicRequest.ManageAccessRoleArn);
+                    }
+
+                    if(publicRequest.IsSetProvisioningConfigurations())
+                    {
+                        context.Writer.WritePropertyName("provisioningConfigurations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestProvisioningConfigurationsListValue in publicRequest.ProvisioningConfigurations)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ProvisioningConfigurationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestProvisioningConfigurationsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetProvisioningRoleArn())
+                    {
+                        context.Writer.WritePropertyName("provisioningRoleArn");
+                        context.Writer.Write(publicRequest.ProvisioningRoleArn);
+                    }
+
+                    if(publicRequest.IsSetRegionalParameters())
+                    {
+                        context.Writer.WritePropertyName("regionalParameters");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestRegionalParametersKvp in publicRequest.RegionalParameters)
+                        {
+                            context.Writer.WritePropertyName(publicRequestRegionalParametersKvp.Key);
+                            var publicRequestRegionalParametersValue = publicRequestRegionalParametersKvp.Value;
+
+                            context.Writer.WriteObjectStart();
+                            foreach (var publicRequestRegionalParametersValueKvp in publicRequestRegionalParametersValue)
+                            {
+                                context.Writer.WritePropertyName(publicRequestRegionalParametersValueKvp.Key);
+                                var publicRequestRegionalParametersValueValue = publicRequestRegionalParametersValueKvp.Value;
+
+                                    context.Writer.Write(publicRequestRegionalParametersValueValue);
+                            }
+                            context.Writer.WriteObjectEnd();
                         }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

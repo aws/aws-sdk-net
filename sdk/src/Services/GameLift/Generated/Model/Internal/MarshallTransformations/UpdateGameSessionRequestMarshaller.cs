@@ -63,61 +63,64 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetGameProperties())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("GameProperties");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestGamePropertiesListValue in publicRequest.GameProperties)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetGameProperties())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("GameProperties");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestGamePropertiesListValue in publicRequest.GameProperties)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = GamePropertyMarshaller.Instance;
-                        marshaller.Marshall(publicRequestGamePropertiesListValue, context);
+                            var marshaller = GamePropertyMarshaller.Instance;
+                            marshaller.Marshall(publicRequestGamePropertiesListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetGameSessionId())
+                    {
+                        context.Writer.WritePropertyName("GameSessionId");
+                        context.Writer.Write(publicRequest.GameSessionId);
+                    }
+
+                    if(publicRequest.IsSetMaximumPlayerSessionCount())
+                    {
+                        context.Writer.WritePropertyName("MaximumPlayerSessionCount");
+                        context.Writer.Write(publicRequest.MaximumPlayerSessionCount.Value);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetPlayerSessionCreationPolicy())
+                    {
+                        context.Writer.WritePropertyName("PlayerSessionCreationPolicy");
+                        context.Writer.Write(publicRequest.PlayerSessionCreationPolicy);
+                    }
+
+                    if(publicRequest.IsSetProtectionPolicy())
+                    {
+                        context.Writer.WritePropertyName("ProtectionPolicy");
+                        context.Writer.Write(publicRequest.ProtectionPolicy);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetGameSessionId())
-                {
-                    context.Writer.WritePropertyName("GameSessionId");
-                    context.Writer.Write(publicRequest.GameSessionId);
-                }
-
-                if(publicRequest.IsSetMaximumPlayerSessionCount())
-                {
-                    context.Writer.WritePropertyName("MaximumPlayerSessionCount");
-                    context.Writer.Write(publicRequest.MaximumPlayerSessionCount.Value);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetPlayerSessionCreationPolicy())
-                {
-                    context.Writer.WritePropertyName("PlayerSessionCreationPolicy");
-                    context.Writer.Write(publicRequest.PlayerSessionCreationPolicy);
-                }
-
-                if(publicRequest.IsSetProtectionPolicy())
-                {
-                    context.Writer.WritePropertyName("ProtectionPolicy");
-                    context.Writer.Write(publicRequest.ProtectionPolicy);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

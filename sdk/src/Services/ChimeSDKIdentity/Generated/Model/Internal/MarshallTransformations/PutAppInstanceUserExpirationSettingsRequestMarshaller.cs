@@ -64,26 +64,29 @@ namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
                 throw new AmazonChimeSDKIdentityException("Request object does not have required field AppInstanceUserArn set");
             request.AddPathResource("{appInstanceUserArn}", StringUtils.FromString(publicRequest.AppInstanceUserArn));
             request.ResourcePath = "/app-instance-users/{appInstanceUserArn}/expiration-settings";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetExpirationSettings())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ExpirationSettings");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetExpirationSettings())
+                    {
+                        context.Writer.WritePropertyName("ExpirationSettings");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = ExpirationSettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ExpirationSettings, context);
+                        var marshaller = ExpirationSettingsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ExpirationSettings, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -6,6 +6,8 @@ using System.Reflection;
 
 using Xunit;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon;
 
 
 namespace UnitTests
@@ -26,6 +28,7 @@ namespace UnitTests
             "AuthenticationServiceName",
             "MaxErrorRetry",
             "LogResponse",
+            "ReadEntireResponse",
             "AWSTokenProvider",
             "BufferSize",
             "ProgressUpdateInterval",
@@ -44,6 +47,8 @@ namespace UnitTests
             "MaxConnectionsPerServer",
             "HttpClientCacheSize",
             "ReadWriteTimeout",
+            "CorrectedUtcNow",
+            "ClockOffset",
             "HttpClientFactory",
             "DisableHostPrefixInjection",
             "EndpointDiscoveryEnabled",
@@ -84,5 +89,35 @@ namespace UnitTests
                 "New properties should also be added to AWSSDK.Extensions.NETCore.Setup. In the DefaultClientConfig source file is " +
                 "maintenance information for instructions on how to add new properties to AWSSDK.Extensions.NETCore.Setup.");
         }
+
+#if NET8_0_OR_GREATER
+        [Fact]
+        [Trait("Category", "Core")]
+        public void DisableDangerousDisablePathAndQueryCanonicalizationTest()
+        {
+            AWSConfigs.DisableDangerousDisablePathAndQueryCanonicalization = true;
+            try
+            {
+                var internalRequest = new DefaultRequest(new Amazon.S3.Model.GetObjectRequest
+                {
+                    BucketName = "TheBucket",
+                    Key = "foo/../bar.txt"
+                }, "S3");
+
+                internalRequest.Endpoint = new Uri("https://s3.us-east-1.amazonaws.com/");
+                internalRequest.ResourcePath = "foo/../bar.txt";
+
+                var uri = AmazonServiceClient.ComposeUrl(internalRequest);
+
+                // The GetComponents will throw an exception if the Uri was created with 
+                // DangerousDisablePathAndQueryCanonicalization set to true.
+                Assert.Equal("bar.txt", uri.GetComponents(UriComponents.Path, UriFormat.Unescaped));
+            }
+            finally
+            {
+                AWSConfigs.DisableDangerousDisablePathAndQueryCanonicalization = false;
+            }
+        }
+#endif
     }
 }

@@ -61,71 +61,74 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v1/updatejobqueue";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetComputeEnvironmentOrder())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("computeEnvironmentOrder");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestComputeEnvironmentOrderListValue in publicRequest.ComputeEnvironmentOrder)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetComputeEnvironmentOrder())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("computeEnvironmentOrder");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestComputeEnvironmentOrderListValue in publicRequest.ComputeEnvironmentOrder)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = ComputeEnvironmentOrderMarshaller.Instance;
-                        marshaller.Marshall(publicRequestComputeEnvironmentOrderListValue, context);
+                            var marshaller = ComputeEnvironmentOrderMarshaller.Instance;
+                            marshaller.Marshall(publicRequestComputeEnvironmentOrderListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetJobQueue())
-                {
-                    context.Writer.WritePropertyName("jobQueue");
-                    context.Writer.Write(publicRequest.JobQueue);
-                }
-
-                if(publicRequest.IsSetJobStateTimeLimitActions())
-                {
-                    context.Writer.WritePropertyName("jobStateTimeLimitActions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestJobStateTimeLimitActionsListValue in publicRequest.JobStateTimeLimitActions)
+                    if(publicRequest.IsSetJobQueue())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = JobStateTimeLimitActionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestJobStateTimeLimitActionsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("jobQueue");
+                        context.Writer.Write(publicRequest.JobQueue);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetJobStateTimeLimitActions())
+                    {
+                        context.Writer.WritePropertyName("jobStateTimeLimitActions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestJobStateTimeLimitActionsListValue in publicRequest.JobStateTimeLimitActions)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = JobStateTimeLimitActionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestJobStateTimeLimitActionsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetPriority())
+                    {
+                        context.Writer.WritePropertyName("priority");
+                        context.Writer.Write(publicRequest.Priority.Value);
+                    }
+
+                    if(publicRequest.IsSetSchedulingPolicyArn())
+                    {
+                        context.Writer.WritePropertyName("schedulingPolicyArn");
+                        context.Writer.Write(publicRequest.SchedulingPolicyArn);
+                    }
+
+                    if(publicRequest.IsSetState())
+                    {
+                        context.Writer.WritePropertyName("state");
+                        context.Writer.Write(publicRequest.State);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPriority())
-                {
-                    context.Writer.WritePropertyName("priority");
-                    context.Writer.Write(publicRequest.Priority.Value);
-                }
-
-                if(publicRequest.IsSetSchedulingPolicyArn())
-                {
-                    context.Writer.WritePropertyName("schedulingPolicyArn");
-                    context.Writer.Write(publicRequest.SchedulingPolicyArn);
-                }
-
-                if(publicRequest.IsSetState())
-                {
-                    context.Writer.WritePropertyName("state");
-                    context.Writer.Write(publicRequest.State);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

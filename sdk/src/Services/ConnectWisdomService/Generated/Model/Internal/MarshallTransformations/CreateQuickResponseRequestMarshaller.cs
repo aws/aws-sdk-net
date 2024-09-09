@@ -64,109 +64,112 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
                 throw new AmazonConnectWisdomServiceException("Request object does not have required field KnowledgeBaseId set");
             request.AddPathResource("{knowledgeBaseId}", StringUtils.FromString(publicRequest.KnowledgeBaseId));
             request.ResourcePath = "/knowledgeBases/{knowledgeBaseId}/quickResponses";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetChannels())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("channels");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestChannelsListValue in publicRequest.Channels)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetChannels())
                     {
-                            context.Writer.Write(publicRequestChannelsListValue);
+                        context.Writer.WritePropertyName("channels");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestChannelsListValue in publicRequest.Channels)
+                        {
+                                context.Writer.Write(publicRequestChannelsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetContent())
-                {
-                    context.Writer.WritePropertyName("content");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = QuickResponseDataProviderMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Content, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetContentType())
-                {
-                    context.Writer.WritePropertyName("contentType");
-                    context.Writer.Write(publicRequest.ContentType);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetGroupingConfiguration())
-                {
-                    context.Writer.WritePropertyName("groupingConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = GroupingConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.GroupingConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetIsActive())
-                {
-                    context.Writer.WritePropertyName("isActive");
-                    context.Writer.Write(publicRequest.IsActive.Value);
-                }
-
-                if(publicRequest.IsSetLanguage())
-                {
-                    context.Writer.WritePropertyName("language");
-                    context.Writer.Write(publicRequest.Language);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetShortcutKey())
-                {
-                    context.Writer.WritePropertyName("shortcutKey");
-                    context.Writer.Write(publicRequest.ShortcutKey);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetClientToken())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetContent())
+                    {
+                        context.Writer.WritePropertyName("content");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = QuickResponseDataProviderMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Content, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetContentType())
+                    {
+                        context.Writer.WritePropertyName("contentType");
+                        context.Writer.Write(publicRequest.ContentType);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetGroupingConfiguration())
+                    {
+                        context.Writer.WritePropertyName("groupingConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = GroupingConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.GroupingConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetIsActive())
+                    {
+                        context.Writer.WritePropertyName("isActive");
+                        context.Writer.Write(publicRequest.IsActive.Value);
+                    }
+
+                    if(publicRequest.IsSetLanguage())
+                    {
+                        context.Writer.WritePropertyName("language");
+                        context.Writer.Write(publicRequest.Language);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetShortcutKey())
+                    {
+                        context.Writer.WritePropertyName("shortcutKey");
+                        context.Writer.Write(publicRequest.ShortcutKey);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

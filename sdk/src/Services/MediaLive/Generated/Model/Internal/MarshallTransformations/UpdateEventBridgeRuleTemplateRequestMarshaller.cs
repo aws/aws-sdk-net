@@ -64,55 +64,58 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 throw new AmazonMediaLiveException("Request object does not have required field Identifier set");
             request.AddPathResource("{identifier}", StringUtils.FromString(publicRequest.Identifier));
             request.ResourcePath = "/prod/eventbridge-rule-templates/{identifier}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetEventTargets())
-                {
-                    context.Writer.WritePropertyName("eventTargets");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEventTargetsListValue in publicRequest.EventTargets)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EventBridgeRuleTemplateTargetMarshaller.Instance;
-                        marshaller.Marshall(publicRequestEventTargetsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetEventTargets())
+                    {
+                        context.Writer.WritePropertyName("eventTargets");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestEventTargetsListValue in publicRequest.EventTargets)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = EventBridgeRuleTemplateTargetMarshaller.Instance;
+                            marshaller.Marshall(publicRequestEventTargetsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetEventType())
+                    {
+                        context.Writer.WritePropertyName("eventType");
+                        context.Writer.Write(publicRequest.EventType);
+                    }
+
+                    if(publicRequest.IsSetGroupIdentifier())
+                    {
+                        context.Writer.WritePropertyName("groupIdentifier");
+                        context.Writer.Write(publicRequest.GroupIdentifier);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEventType())
-                {
-                    context.Writer.WritePropertyName("eventType");
-                    context.Writer.Write(publicRequest.EventType);
-                }
-
-                if(publicRequest.IsSetGroupIdentifier())
-                {
-                    context.Writer.WritePropertyName("groupIdentifier");
-                    context.Writer.Write(publicRequest.GroupIdentifier);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

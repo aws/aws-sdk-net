@@ -18,6 +18,7 @@
  */
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.TrustedAdvisor.Endpoints;
 using Amazon.TrustedAdvisor.Internal;

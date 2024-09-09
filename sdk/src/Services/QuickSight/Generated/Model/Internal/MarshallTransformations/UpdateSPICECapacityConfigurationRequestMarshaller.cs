@@ -64,21 +64,24 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field AwsAccountId set");
             request.AddPathResource("{AwsAccountId}", StringUtils.FromString(publicRequest.AwsAccountId));
             request.ResourcePath = "/accounts/{AwsAccountId}/spice-capacity-configuration";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetPurchaseMode())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("PurchaseMode");
-                    context.Writer.Write(publicRequest.PurchaseMode);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetPurchaseMode())
+                    {
+                        context.Writer.WritePropertyName("PurchaseMode");
+                        context.Writer.Write(publicRequest.PurchaseMode);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

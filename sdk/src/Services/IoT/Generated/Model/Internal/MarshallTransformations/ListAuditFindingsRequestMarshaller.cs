@@ -61,68 +61,71 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/audit/findings";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCheckName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("checkName");
-                    context.Writer.Write(publicRequest.CheckName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCheckName())
+                    {
+                        context.Writer.WritePropertyName("checkName");
+                        context.Writer.Write(publicRequest.CheckName);
+                    }
+
+                    if(publicRequest.IsSetEndTime())
+                    {
+                        context.Writer.WritePropertyName("endTime");
+                        context.Writer.Write(publicRequest.EndTime.Value);
+                    }
+
+                    if(publicRequest.IsSetListSuppressedFindings())
+                    {
+                        context.Writer.WritePropertyName("listSuppressedFindings");
+                        context.Writer.Write(publicRequest.ListSuppressedFindings.Value);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetResourceIdentifier())
+                    {
+                        context.Writer.WritePropertyName("resourceIdentifier");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ResourceIdentifierMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ResourceIdentifier, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetStartTime())
+                    {
+                        context.Writer.WritePropertyName("startTime");
+                        context.Writer.Write(publicRequest.StartTime.Value);
+                    }
+
+                    if(publicRequest.IsSetTaskId())
+                    {
+                        context.Writer.WritePropertyName("taskId");
+                        context.Writer.Write(publicRequest.TaskId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEndTime())
-                {
-                    context.Writer.WritePropertyName("endTime");
-                    context.Writer.Write(publicRequest.EndTime.Value);
-                }
-
-                if(publicRequest.IsSetListSuppressedFindings())
-                {
-                    context.Writer.WritePropertyName("listSuppressedFindings");
-                    context.Writer.Write(publicRequest.ListSuppressedFindings.Value);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetResourceIdentifier())
-                {
-                    context.Writer.WritePropertyName("resourceIdentifier");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ResourceIdentifierMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ResourceIdentifier, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetStartTime())
-                {
-                    context.Writer.WritePropertyName("startTime");
-                    context.Writer.Write(publicRequest.StartTime.Value);
-                }
-
-                if(publicRequest.IsSetTaskId())
-                {
-                    context.Writer.WritePropertyName("taskId");
-                    context.Writer.Write(publicRequest.TaskId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

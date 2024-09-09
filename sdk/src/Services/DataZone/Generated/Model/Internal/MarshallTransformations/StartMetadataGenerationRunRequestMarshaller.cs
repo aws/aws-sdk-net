@@ -64,49 +64,52 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 throw new AmazonDataZoneException("Request object does not have required field DomainIdentifier set");
             request.AddPathResource("{domainIdentifier}", StringUtils.FromString(publicRequest.DomainIdentifier));
             request.ResourcePath = "/v2/domains/{domainIdentifier}/metadata-generation-runs";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetOwningProjectIdentifier())
+                    {
+                        context.Writer.WritePropertyName("owningProjectIdentifier");
+                        context.Writer.Write(publicRequest.OwningProjectIdentifier);
+                    }
+
+                    if(publicRequest.IsSetTarget())
+                    {
+                        context.Writer.WritePropertyName("target");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MetadataGenerationRunTargetMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Target, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetType())
+                    {
+                        context.Writer.WritePropertyName("type");
+                        context.Writer.Write(publicRequest.Type);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetOwningProjectIdentifier())
-                {
-                    context.Writer.WritePropertyName("owningProjectIdentifier");
-                    context.Writer.Write(publicRequest.OwningProjectIdentifier);
-                }
-
-                if(publicRequest.IsSetTarget())
-                {
-                    context.Writer.WritePropertyName("target");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MetadataGenerationRunTargetMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Target, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetType())
-                {
-                    context.Writer.WritePropertyName("type");
-                    context.Writer.Write(publicRequest.Type);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

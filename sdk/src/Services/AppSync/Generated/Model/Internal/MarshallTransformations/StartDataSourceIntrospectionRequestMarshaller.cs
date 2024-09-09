@@ -61,26 +61,29 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v1/datasources/introspections";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetRdsDataApiConfig())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("rdsDataApiConfig");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetRdsDataApiConfig())
+                    {
+                        context.Writer.WritePropertyName("rdsDataApiConfig");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = RdsDataApiConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RdsDataApiConfig, context);
+                        var marshaller = RdsDataApiConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RdsDataApiConfig, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

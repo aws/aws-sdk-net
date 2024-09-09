@@ -63,38 +63,41 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetImageScanningConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("imageScanningConfiguration");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetImageScanningConfiguration())
+                    {
+                        context.Writer.WritePropertyName("imageScanningConfiguration");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = ImageScanningConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ImageScanningConfiguration, context);
+                        var marshaller = ImageScanningConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ImageScanningConfiguration, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRegistryId())
+                    {
+                        context.Writer.WritePropertyName("registryId");
+                        context.Writer.Write(publicRequest.RegistryId);
+                    }
+
+                    if(publicRequest.IsSetRepositoryName())
+                    {
+                        context.Writer.WritePropertyName("repositoryName");
+                        context.Writer.Write(publicRequest.RepositoryName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRegistryId())
-                {
-                    context.Writer.WritePropertyName("registryId");
-                    context.Writer.Write(publicRequest.RegistryId);
-                }
-
-                if(publicRequest.IsSetRepositoryName())
-                {
-                    context.Writer.WritePropertyName("repositoryName");
-                    context.Writer.Write(publicRequest.RepositoryName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

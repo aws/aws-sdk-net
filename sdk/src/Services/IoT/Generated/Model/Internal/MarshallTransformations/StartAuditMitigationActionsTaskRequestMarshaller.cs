@@ -64,56 +64,59 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field TaskId set");
             request.AddPathResource("{taskId}", StringUtils.FromString(publicRequest.TaskId));
             request.ResourcePath = "/audit/mitigationactions/tasks/{taskId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAuditCheckToActionsMapping())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("auditCheckToActionsMapping");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestAuditCheckToActionsMappingKvp in publicRequest.AuditCheckToActionsMapping)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAuditCheckToActionsMapping())
                     {
-                        context.Writer.WritePropertyName(publicRequestAuditCheckToActionsMappingKvp.Key);
-                        var publicRequestAuditCheckToActionsMappingValue = publicRequestAuditCheckToActionsMappingKvp.Value;
-
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAuditCheckToActionsMappingValueListValue in publicRequestAuditCheckToActionsMappingValue)
+                        context.Writer.WritePropertyName("auditCheckToActionsMapping");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestAuditCheckToActionsMappingKvp in publicRequest.AuditCheckToActionsMapping)
                         {
-                                context.Writer.Write(publicRequestAuditCheckToActionsMappingValueListValue);
+                            context.Writer.WritePropertyName(publicRequestAuditCheckToActionsMappingKvp.Key);
+                            var publicRequestAuditCheckToActionsMappingValue = publicRequestAuditCheckToActionsMappingKvp.Value;
+
+                            context.Writer.WriteArrayStart();
+                            foreach(var publicRequestAuditCheckToActionsMappingValueListValue in publicRequestAuditCheckToActionsMappingValue)
+                            {
+                                    context.Writer.Write(publicRequestAuditCheckToActionsMappingValueListValue);
+                            }
+                            context.Writer.WriteArrayEnd();
                         }
-                        context.Writer.WriteArrayEnd();
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetClientRequestToken())
+                    {
+                        context.Writer.WritePropertyName("clientRequestToken");
+                        context.Writer.Write(publicRequest.ClientRequestToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientRequestToken()))
+                    {
+                        context.Writer.WritePropertyName("clientRequestToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetTarget())
+                    {
+                        context.Writer.WritePropertyName("target");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AuditMitigationActionsTaskTargetMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Target, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetClientRequestToken())
-                {
-                    context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetTarget())
-                {
-                    context.Writer.WritePropertyName("target");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AuditMitigationActionsTaskTargetMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Target, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

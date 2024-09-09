@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the support-2013-04-15.normal.json service model.
  */
 
+using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 

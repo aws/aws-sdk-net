@@ -63,72 +63,75 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConformancePackInputParameters())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ConformancePackInputParameters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestConformancePackInputParametersListValue in publicRequest.ConformancePackInputParameters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConformancePackInputParameters())
                     {
+                        context.Writer.WritePropertyName("ConformancePackInputParameters");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestConformancePackInputParametersListValue in publicRequest.ConformancePackInputParameters)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ConformancePackInputParameterMarshaller.Instance;
+                            marshaller.Marshall(publicRequestConformancePackInputParametersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetConformancePackName())
+                    {
+                        context.Writer.WritePropertyName("ConformancePackName");
+                        context.Writer.Write(publicRequest.ConformancePackName);
+                    }
+
+                    if(publicRequest.IsSetDeliveryS3Bucket())
+                    {
+                        context.Writer.WritePropertyName("DeliveryS3Bucket");
+                        context.Writer.Write(publicRequest.DeliveryS3Bucket);
+                    }
+
+                    if(publicRequest.IsSetDeliveryS3KeyPrefix())
+                    {
+                        context.Writer.WritePropertyName("DeliveryS3KeyPrefix");
+                        context.Writer.Write(publicRequest.DeliveryS3KeyPrefix);
+                    }
+
+                    if(publicRequest.IsSetTemplateBody())
+                    {
+                        context.Writer.WritePropertyName("TemplateBody");
+                        context.Writer.Write(publicRequest.TemplateBody);
+                    }
+
+                    if(publicRequest.IsSetTemplateS3Uri())
+                    {
+                        context.Writer.WritePropertyName("TemplateS3Uri");
+                        context.Writer.Write(publicRequest.TemplateS3Uri);
+                    }
+
+                    if(publicRequest.IsSetTemplateSSMDocumentDetails())
+                    {
+                        context.Writer.WritePropertyName("TemplateSSMDocumentDetails");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = ConformancePackInputParameterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestConformancePackInputParametersListValue, context);
+                        var marshaller = TemplateSSMDocumentDetailsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TemplateSSMDocumentDetails, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetConformancePackName())
-                {
-                    context.Writer.WritePropertyName("ConformancePackName");
-                    context.Writer.Write(publicRequest.ConformancePackName);
-                }
-
-                if(publicRequest.IsSetDeliveryS3Bucket())
-                {
-                    context.Writer.WritePropertyName("DeliveryS3Bucket");
-                    context.Writer.Write(publicRequest.DeliveryS3Bucket);
-                }
-
-                if(publicRequest.IsSetDeliveryS3KeyPrefix())
-                {
-                    context.Writer.WritePropertyName("DeliveryS3KeyPrefix");
-                    context.Writer.Write(publicRequest.DeliveryS3KeyPrefix);
-                }
-
-                if(publicRequest.IsSetTemplateBody())
-                {
-                    context.Writer.WritePropertyName("TemplateBody");
-                    context.Writer.Write(publicRequest.TemplateBody);
-                }
-
-                if(publicRequest.IsSetTemplateS3Uri())
-                {
-                    context.Writer.WritePropertyName("TemplateS3Uri");
-                    context.Writer.Write(publicRequest.TemplateS3Uri);
-                }
-
-                if(publicRequest.IsSetTemplateSSMDocumentDetails())
-                {
-                    context.Writer.WritePropertyName("TemplateSSMDocumentDetails");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TemplateSSMDocumentDetailsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TemplateSSMDocumentDetails, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

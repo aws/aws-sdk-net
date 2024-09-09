@@ -63,44 +63,47 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDomainId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DomainId");
-                    context.Writer.Write(publicRequest.DomainId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDomainId())
+                    {
+                        context.Writer.WritePropertyName("DomainId");
+                        context.Writer.Write(publicRequest.DomainId);
+                    }
+
+                    if(publicRequest.IsSetSpaceDisplayName())
+                    {
+                        context.Writer.WritePropertyName("SpaceDisplayName");
+                        context.Writer.Write(publicRequest.SpaceDisplayName);
+                    }
+
+                    if(publicRequest.IsSetSpaceName())
+                    {
+                        context.Writer.WritePropertyName("SpaceName");
+                        context.Writer.Write(publicRequest.SpaceName);
+                    }
+
+                    if(publicRequest.IsSetSpaceSettings())
+                    {
+                        context.Writer.WritePropertyName("SpaceSettings");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SpaceSettingsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SpaceSettings, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSpaceDisplayName())
-                {
-                    context.Writer.WritePropertyName("SpaceDisplayName");
-                    context.Writer.Write(publicRequest.SpaceDisplayName);
-                }
-
-                if(publicRequest.IsSetSpaceName())
-                {
-                    context.Writer.WritePropertyName("SpaceName");
-                    context.Writer.Write(publicRequest.SpaceName);
-                }
-
-                if(publicRequest.IsSetSpaceSettings())
-                {
-                    context.Writer.WritePropertyName("SpaceSettings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SpaceSettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SpaceSettings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

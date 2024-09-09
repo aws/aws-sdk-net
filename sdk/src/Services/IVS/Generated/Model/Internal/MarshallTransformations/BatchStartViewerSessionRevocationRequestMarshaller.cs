@@ -61,31 +61,34 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/BatchStartViewerSessionRevocation";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetViewerSessions())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("viewerSessions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestViewerSessionsListValue in publicRequest.ViewerSessions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetViewerSessions())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("viewerSessions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestViewerSessionsListValue in publicRequest.ViewerSessions)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = BatchStartViewerSessionRevocationViewerSessionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestViewerSessionsListValue, context);
+                            var marshaller = BatchStartViewerSessionRevocationViewerSessionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestViewerSessionsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

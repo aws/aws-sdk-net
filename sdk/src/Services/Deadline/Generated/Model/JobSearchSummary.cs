@@ -311,7 +311,7 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property TaskRunStatus. 
         /// <para>
-        /// task run status for the job.
+        /// The task run status for the job.
         /// </para>
         ///  <ul> <li> 
         /// <para>

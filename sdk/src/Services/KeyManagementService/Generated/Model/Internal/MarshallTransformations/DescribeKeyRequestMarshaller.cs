@@ -63,32 +63,35 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetGrantTokens())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("GrantTokens");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestGrantTokensListValue in publicRequest.GrantTokens)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetGrantTokens())
                     {
-                            context.Writer.Write(publicRequestGrantTokensListValue);
+                        context.Writer.WritePropertyName("GrantTokens");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestGrantTokensListValue in publicRequest.GrantTokens)
+                        {
+                                context.Writer.Write(publicRequestGrantTokensListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetKeyId())
+                    {
+                        context.Writer.WritePropertyName("KeyId");
+                        context.Writer.Write(publicRequest.KeyId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetKeyId())
-                {
-                    context.Writer.WritePropertyName("KeyId");
-                    context.Writer.Write(publicRequest.KeyId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

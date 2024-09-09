@@ -63,32 +63,35 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetExclusionArns())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("exclusionArns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestExclusionArnsListValue in publicRequest.ExclusionArns)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetExclusionArns())
                     {
-                            context.Writer.Write(publicRequestExclusionArnsListValue);
+                        context.Writer.WritePropertyName("exclusionArns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestExclusionArnsListValue in publicRequest.ExclusionArns)
+                        {
+                                context.Writer.Write(publicRequestExclusionArnsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetLocale())
+                    {
+                        context.Writer.WritePropertyName("locale");
+                        context.Writer.Write(publicRequest.Locale);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetLocale())
-                {
-                    context.Writer.WritePropertyName("locale");
-                    context.Writer.Write(publicRequest.Locale);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

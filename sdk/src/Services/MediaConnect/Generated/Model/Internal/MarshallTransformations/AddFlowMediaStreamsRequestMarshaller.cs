@@ -64,31 +64,34 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 throw new AmazonMediaConnectException("Request object does not have required field FlowArn set");
             request.AddPathResource("{flowArn}", StringUtils.FromString(publicRequest.FlowArn));
             request.ResourcePath = "/v1/flows/{flowArn}/mediaStreams";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMediaStreams())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("mediaStreams");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMediaStreamsListValue in publicRequest.MediaStreams)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMediaStreams())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("mediaStreams");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMediaStreamsListValue in publicRequest.MediaStreams)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = AddMediaStreamRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequestMediaStreamsListValue, context);
+                            var marshaller = AddMediaStreamRequestMarshaller.Instance;
+                            marshaller.Marshall(publicRequestMediaStreamsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

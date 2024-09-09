@@ -61,77 +61,80 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/GetTemporaryGlueTableCredentials";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAuditContext())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AuditContext");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AuditContextMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AuditContext, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDurationSeconds())
-                {
-                    context.Writer.WritePropertyName("DurationSeconds");
-                    context.Writer.Write(publicRequest.DurationSeconds.Value);
-                }
-
-                if(publicRequest.IsSetPermissions())
-                {
-                    context.Writer.WritePropertyName("Permissions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPermissionsListValue in publicRequest.Permissions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAuditContext())
                     {
-                            context.Writer.Write(publicRequestPermissionsListValue);
+                        context.Writer.WritePropertyName("AuditContext");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AuditContextMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AuditContext, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetQuerySessionContext())
-                {
-                    context.Writer.WritePropertyName("QuerySessionContext");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = QuerySessionContextMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.QuerySessionContext, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetS3Path())
-                {
-                    context.Writer.WritePropertyName("S3Path");
-                    context.Writer.Write(publicRequest.S3Path);
-                }
-
-                if(publicRequest.IsSetSupportedPermissionTypes())
-                {
-                    context.Writer.WritePropertyName("SupportedPermissionTypes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSupportedPermissionTypesListValue in publicRequest.SupportedPermissionTypes)
+                    if(publicRequest.IsSetDurationSeconds())
                     {
-                            context.Writer.Write(publicRequestSupportedPermissionTypesListValue);
+                        context.Writer.WritePropertyName("DurationSeconds");
+                        context.Writer.Write(publicRequest.DurationSeconds.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetPermissions())
+                    {
+                        context.Writer.WritePropertyName("Permissions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPermissionsListValue in publicRequest.Permissions)
+                        {
+                                context.Writer.Write(publicRequestPermissionsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetQuerySessionContext())
+                    {
+                        context.Writer.WritePropertyName("QuerySessionContext");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = QuerySessionContextMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.QuerySessionContext, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetS3Path())
+                    {
+                        context.Writer.WritePropertyName("S3Path");
+                        context.Writer.Write(publicRequest.S3Path);
+                    }
+
+                    if(publicRequest.IsSetSupportedPermissionTypes())
+                    {
+                        context.Writer.WritePropertyName("SupportedPermissionTypes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSupportedPermissionTypesListValue in publicRequest.SupportedPermissionTypes)
+                        {
+                                context.Writer.Write(publicRequestSupportedPermissionTypesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTableArn())
+                    {
+                        context.Writer.WritePropertyName("TableArn");
+                        context.Writer.Write(publicRequest.TableArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTableArn())
-                {
-                    context.Writer.WritePropertyName("TableArn");
-                    context.Writer.Write(publicRequest.TableArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

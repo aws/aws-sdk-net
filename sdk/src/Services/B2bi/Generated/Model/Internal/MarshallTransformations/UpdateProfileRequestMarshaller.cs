@@ -63,45 +63,48 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBusinessName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("businessName");
-                    context.Writer.Write(publicRequest.BusinessName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBusinessName())
+                    {
+                        context.Writer.WritePropertyName("businessName");
+                        context.Writer.Write(publicRequest.BusinessName);
+                    }
+
+                    if(publicRequest.IsSetEmail())
+                    {
+                        context.Writer.WritePropertyName("email");
+                        context.Writer.Write(publicRequest.Email);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetPhone())
+                    {
+                        context.Writer.WritePropertyName("phone");
+                        context.Writer.Write(publicRequest.Phone);
+                    }
+
+                    if(publicRequest.IsSetProfileId())
+                    {
+                        context.Writer.WritePropertyName("profileId");
+                        context.Writer.Write(publicRequest.ProfileId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEmail())
-                {
-                    context.Writer.WritePropertyName("email");
-                    context.Writer.Write(publicRequest.Email);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetPhone())
-                {
-                    context.Writer.WritePropertyName("phone");
-                    context.Writer.Write(publicRequest.Phone);
-                }
-
-                if(publicRequest.IsSetProfileId())
-                {
-                    context.Writer.WritePropertyName("profileId");
-                    context.Writer.Write(publicRequest.ProfileId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

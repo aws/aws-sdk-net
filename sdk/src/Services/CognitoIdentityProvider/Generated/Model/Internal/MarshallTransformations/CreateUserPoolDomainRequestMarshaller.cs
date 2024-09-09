@@ -63,38 +63,41 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCustomDomainConfig())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CustomDomainConfig");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCustomDomainConfig())
+                    {
+                        context.Writer.WritePropertyName("CustomDomainConfig");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = CustomDomainConfigTypeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CustomDomainConfig, context);
+                        var marshaller = CustomDomainConfigTypeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CustomDomainConfig, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDomain())
+                    {
+                        context.Writer.WritePropertyName("Domain");
+                        context.Writer.Write(publicRequest.Domain);
+                    }
+
+                    if(publicRequest.IsSetUserPoolId())
+                    {
+                        context.Writer.WritePropertyName("UserPoolId");
+                        context.Writer.Write(publicRequest.UserPoolId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDomain())
-                {
-                    context.Writer.WritePropertyName("Domain");
-                    context.Writer.Write(publicRequest.Domain);
-                }
-
-                if(publicRequest.IsSetUserPoolId())
-                {
-                    context.Writer.WritePropertyName("UserPoolId");
-                    context.Writer.Write(publicRequest.UserPoolId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

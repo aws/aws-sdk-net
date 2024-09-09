@@ -325,6 +325,21 @@
     <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ECR.Model.GetAccountSettingRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.GetAccountSettingResponse.Name</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.GetAccountSettingResponse.Value</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ECR.Model.GetDownloadUrlForLayerRequest.LayerDigest</property>
     <pattern>[a-zA-Z0-9-_+.]+:[a-fA-F0-9]+</pattern>
   </property-value-rule>
@@ -467,6 +482,16 @@
     <min>2</min>
     <max>256</max>
     <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.PutAccountSettingRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.PutAccountSettingResponse.Name</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.PutImageRequest.ImageManifest</property>

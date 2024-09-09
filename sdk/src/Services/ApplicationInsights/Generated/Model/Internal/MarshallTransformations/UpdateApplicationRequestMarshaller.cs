@@ -63,57 +63,60 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAttachMissingPermission())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AttachMissingPermission");
-                    context.Writer.Write(publicRequest.AttachMissingPermission.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAttachMissingPermission())
+                    {
+                        context.Writer.WritePropertyName("AttachMissingPermission");
+                        context.Writer.Write(publicRequest.AttachMissingPermission.Value);
+                    }
+
+                    if(publicRequest.IsSetAutoConfigEnabled())
+                    {
+                        context.Writer.WritePropertyName("AutoConfigEnabled");
+                        context.Writer.Write(publicRequest.AutoConfigEnabled.Value);
+                    }
+
+                    if(publicRequest.IsSetCWEMonitorEnabled())
+                    {
+                        context.Writer.WritePropertyName("CWEMonitorEnabled");
+                        context.Writer.Write(publicRequest.CWEMonitorEnabled.Value);
+                    }
+
+                    if(publicRequest.IsSetOpsCenterEnabled())
+                    {
+                        context.Writer.WritePropertyName("OpsCenterEnabled");
+                        context.Writer.Write(publicRequest.OpsCenterEnabled.Value);
+                    }
+
+                    if(publicRequest.IsSetOpsItemSNSTopicArn())
+                    {
+                        context.Writer.WritePropertyName("OpsItemSNSTopicArn");
+                        context.Writer.Write(publicRequest.OpsItemSNSTopicArn);
+                    }
+
+                    if(publicRequest.IsSetRemoveSNSTopic())
+                    {
+                        context.Writer.WritePropertyName("RemoveSNSTopic");
+                        context.Writer.Write(publicRequest.RemoveSNSTopic.Value);
+                    }
+
+                    if(publicRequest.IsSetResourceGroupName())
+                    {
+                        context.Writer.WritePropertyName("ResourceGroupName");
+                        context.Writer.Write(publicRequest.ResourceGroupName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetAutoConfigEnabled())
-                {
-                    context.Writer.WritePropertyName("AutoConfigEnabled");
-                    context.Writer.Write(publicRequest.AutoConfigEnabled.Value);
-                }
-
-                if(publicRequest.IsSetCWEMonitorEnabled())
-                {
-                    context.Writer.WritePropertyName("CWEMonitorEnabled");
-                    context.Writer.Write(publicRequest.CWEMonitorEnabled.Value);
-                }
-
-                if(publicRequest.IsSetOpsCenterEnabled())
-                {
-                    context.Writer.WritePropertyName("OpsCenterEnabled");
-                    context.Writer.Write(publicRequest.OpsCenterEnabled.Value);
-                }
-
-                if(publicRequest.IsSetOpsItemSNSTopicArn())
-                {
-                    context.Writer.WritePropertyName("OpsItemSNSTopicArn");
-                    context.Writer.Write(publicRequest.OpsItemSNSTopicArn);
-                }
-
-                if(publicRequest.IsSetRemoveSNSTopic())
-                {
-                    context.Writer.WritePropertyName("RemoveSNSTopic");
-                    context.Writer.Write(publicRequest.RemoveSNSTopic.Value);
-                }
-
-                if(publicRequest.IsSetResourceGroupName())
-                {
-                    context.Writer.WritePropertyName("ResourceGroupName");
-                    context.Writer.Write(publicRequest.ResourceGroupName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

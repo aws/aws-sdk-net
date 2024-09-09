@@ -63,44 +63,47 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCertificateProvider())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("certificateProvider");
-                    context.Writer.Write(publicRequest.CertificateProvider);
-                }
-
-                if(publicRequest.IsSetDomainNames())
-                {
-                    context.Writer.WritePropertyName("domainNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDomainNamesListValue in publicRequest.DomainNames)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCertificateProvider())
                     {
-                            context.Writer.Write(publicRequestDomainNamesListValue);
+                        context.Writer.WritePropertyName("certificateProvider");
+                        context.Writer.Write(publicRequest.CertificateProvider);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDomainNames())
+                    {
+                        context.Writer.WritePropertyName("domainNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDomainNamesListValue in publicRequest.DomainNames)
+                        {
+                                context.Writer.Write(publicRequestDomainNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetEmailAddress())
+                    {
+                        context.Writer.WritePropertyName("emailAddress");
+                        context.Writer.Write(publicRequest.EmailAddress);
+                    }
+
+                    if(publicRequest.IsSetInstanceName())
+                    {
+                        context.Writer.WritePropertyName("instanceName");
+                        context.Writer.Write(publicRequest.InstanceName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEmailAddress())
-                {
-                    context.Writer.WritePropertyName("emailAddress");
-                    context.Writer.Write(publicRequest.EmailAddress);
-                }
-
-                if(publicRequest.IsSetInstanceName())
-                {
-                    context.Writer.WritePropertyName("instanceName");
-                    context.Writer.Write(publicRequest.InstanceName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

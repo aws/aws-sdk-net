@@ -70,33 +70,36 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 request.Parameters.Add("clientToken", System.Guid.NewGuid().ToString());
                 
             request.ResourcePath = "/packages/{packageName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDefaultVersionName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("defaultVersionName");
-                    context.Writer.Write(publicRequest.DefaultVersionName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDefaultVersionName())
+                    {
+                        context.Writer.WritePropertyName("defaultVersionName");
+                        context.Writer.Write(publicRequest.DefaultVersionName);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetUnsetDefaultVersion())
+                    {
+                        context.Writer.WritePropertyName("unsetDefaultVersion");
+                        context.Writer.Write(publicRequest.UnsetDefaultVersion.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetUnsetDefaultVersion())
-                {
-                    context.Writer.WritePropertyName("unsetDefaultVersion");
-                    context.Writer.Write(publicRequest.UnsetDefaultVersion.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             request.UseQueryString = true;

@@ -61,44 +61,47 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/UpdateGroup";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFilterExpression())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("FilterExpression");
-                    context.Writer.Write(publicRequest.FilterExpression);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFilterExpression())
+                    {
+                        context.Writer.WritePropertyName("FilterExpression");
+                        context.Writer.Write(publicRequest.FilterExpression);
+                    }
+
+                    if(publicRequest.IsSetGroupARN())
+                    {
+                        context.Writer.WritePropertyName("GroupARN");
+                        context.Writer.Write(publicRequest.GroupARN);
+                    }
+
+                    if(publicRequest.IsSetGroupName())
+                    {
+                        context.Writer.WritePropertyName("GroupName");
+                        context.Writer.Write(publicRequest.GroupName);
+                    }
+
+                    if(publicRequest.IsSetInsightsConfiguration())
+                    {
+                        context.Writer.WritePropertyName("InsightsConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = InsightsConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.InsightsConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetGroupARN())
-                {
-                    context.Writer.WritePropertyName("GroupARN");
-                    context.Writer.Write(publicRequest.GroupARN);
-                }
-
-                if(publicRequest.IsSetGroupName())
-                {
-                    context.Writer.WritePropertyName("GroupName");
-                    context.Writer.Write(publicRequest.GroupName);
-                }
-
-                if(publicRequest.IsSetInsightsConfiguration())
-                {
-                    context.Writer.WritePropertyName("InsightsConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = InsightsConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.InsightsConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

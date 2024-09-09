@@ -36,6 +36,7 @@ namespace Amazon.Glue.Model
     {
         private string _description;
         private Dictionary<string, double> _evaluatedMetrics = AWSConfigs.InitializeCollections ? new Dictionary<string, double>() : null;
+        private string _evaluatedRule;
         private string _evaluationMessage;
         private string _name;
         private DataQualityRuleResultStatus _result;
@@ -46,7 +47,7 @@ namespace Amazon.Glue.Model
         /// A description of the data quality rule.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=0, Max=2048)]
         public string Description
         {
             get { return this._description; }
@@ -65,6 +66,7 @@ namespace Amazon.Glue.Model
         /// A map of metrics associated with the evaluation of the rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, double> EvaluatedMetrics
         {
             get { return this._evaluatedMetrics; }
@@ -78,12 +80,31 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EvaluatedRule. 
+        /// <para>
+        /// The evaluated rule.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=2048)]
+        public string EvaluatedRule
+        {
+            get { return this._evaluatedRule; }
+            set { this._evaluatedRule = value; }
+        }
+
+        // Check to see if EvaluatedRule property is set
+        internal bool IsSetEvaluatedRule()
+        {
+            return this._evaluatedRule != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EvaluationMessage. 
         /// <para>
         /// An evaluation message.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=0, Max=2048)]
         public string EvaluationMessage
         {
             get { return this._evaluationMessage; }

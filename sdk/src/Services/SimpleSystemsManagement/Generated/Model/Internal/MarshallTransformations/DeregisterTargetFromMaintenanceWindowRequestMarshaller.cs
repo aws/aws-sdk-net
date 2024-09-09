@@ -63,33 +63,36 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetSafe())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Safe");
-                    context.Writer.Write(publicRequest.Safe.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetSafe())
+                    {
+                        context.Writer.WritePropertyName("Safe");
+                        context.Writer.Write(publicRequest.Safe.Value);
+                    }
+
+                    if(publicRequest.IsSetWindowId())
+                    {
+                        context.Writer.WritePropertyName("WindowId");
+                        context.Writer.Write(publicRequest.WindowId);
+                    }
+
+                    if(publicRequest.IsSetWindowTargetId())
+                    {
+                        context.Writer.WritePropertyName("WindowTargetId");
+                        context.Writer.Write(publicRequest.WindowTargetId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetWindowId())
-                {
-                    context.Writer.WritePropertyName("WindowId");
-                    context.Writer.Write(publicRequest.WindowId);
-                }
-
-                if(publicRequest.IsSetWindowTargetId())
-                {
-                    context.Writer.WritePropertyName("WindowTargetId");
-                    context.Writer.Write(publicRequest.WindowTargetId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

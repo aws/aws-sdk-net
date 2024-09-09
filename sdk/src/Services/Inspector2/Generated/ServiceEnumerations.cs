@@ -2409,6 +2409,14 @@ namespace Amazon.Inspector2
         /// </summary>
         public static readonly ErrorCode DISASSOCIATE_ALL_MEMBERS = new ErrorCode("DISASSOCIATE_ALL_MEMBERS");
         /// <summary>
+        /// Constant EC2_SSM_ASSOCIATION_VERSION_LIMIT_EXCEEDED for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode EC2_SSM_ASSOCIATION_VERSION_LIMIT_EXCEEDED = new ErrorCode("EC2_SSM_ASSOCIATION_VERSION_LIMIT_EXCEEDED");
+        /// <summary>
+        /// Constant EC2_SSM_RESOURCE_DATA_SYNC_LIMIT_EXCEEDED for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode EC2_SSM_RESOURCE_DATA_SYNC_LIMIT_EXCEEDED = new ErrorCode("EC2_SSM_RESOURCE_DATA_SYNC_LIMIT_EXCEEDED");
+        /// <summary>
         /// Constant ENABLE_IN_PROGRESS for ErrorCode
         /// </summary>
         public static readonly ErrorCode ENABLE_IN_PROGRESS = new ErrorCode("ENABLE_IN_PROGRESS");
@@ -4508,6 +4516,14 @@ namespace Amazon.Inspector2
         /// Constant ACCESS_DENIED for ScanStatusReason
         /// </summary>
         public static readonly ScanStatusReason ACCESS_DENIED = new ScanStatusReason("ACCESS_DENIED");
+        /// <summary>
+        /// Constant AGENTLESS_INSTANCE_COLLECTION_TIME_LIMIT_EXCEEDED for ScanStatusReason
+        /// </summary>
+        public static readonly ScanStatusReason AGENTLESS_INSTANCE_COLLECTION_TIME_LIMIT_EXCEEDED = new ScanStatusReason("AGENTLESS_INSTANCE_COLLECTION_TIME_LIMIT_EXCEEDED");
+        /// <summary>
+        /// Constant AGENTLESS_INSTANCE_STORAGE_LIMIT_EXCEEDED for ScanStatusReason
+        /// </summary>
+        public static readonly ScanStatusReason AGENTLESS_INSTANCE_STORAGE_LIMIT_EXCEEDED = new ScanStatusReason("AGENTLESS_INSTANCE_STORAGE_LIMIT_EXCEEDED");
         /// <summary>
         /// Constant DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED for ScanStatusReason
         /// </summary>

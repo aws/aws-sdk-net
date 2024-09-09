@@ -31,7 +31,19 @@ namespace Amazon.Deadline.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateJob operation.
-    /// Updates a job.
+    /// Updates a job. 
+    /// 
+    ///  
+    /// <para>
+    /// When you change the status of the job to <c>ARCHIVED</c>, the job can't be scheduled
+    /// or archived.
+    /// </para>
+    ///  <important> 
+    /// <para>
+    /// An archived jobs and its steps and tasks are deleted after 120 days. The job can't
+    /// be recovered.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class UpdateJobRequest : AmazonDeadlineRequest
     {
@@ -105,8 +117,15 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property LifecycleStatus. 
         /// <para>
-        /// The status of a job in its lifecycle.
+        /// The status of a job in its lifecycle. When you change the status of the job to <c>ARCHIVED</c>,
+        /// the job can't be scheduled or archived.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// An archived jobs and its steps and tasks are deleted after 120 days. The job can't
+        /// be recovered.
+        /// </para>
+        ///  </important>
         /// </summary>
         public UpdateJobLifecycleStatus LifecycleStatus
         {

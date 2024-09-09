@@ -64,159 +64,162 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                 throw new AmazonMWAAException("Request object does not have required field Name set");
             request.AddPathResource("{Name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/environments/{Name}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAirflowConfigurationOptions())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AirflowConfigurationOptions");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestAirflowConfigurationOptionsKvp in publicRequest.AirflowConfigurationOptions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAirflowConfigurationOptions())
                     {
-                        context.Writer.WritePropertyName(publicRequestAirflowConfigurationOptionsKvp.Key);
-                        var publicRequestAirflowConfigurationOptionsValue = publicRequestAirflowConfigurationOptionsKvp.Value;
+                        context.Writer.WritePropertyName("AirflowConfigurationOptions");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestAirflowConfigurationOptionsKvp in publicRequest.AirflowConfigurationOptions)
+                        {
+                            context.Writer.WritePropertyName(publicRequestAirflowConfigurationOptionsKvp.Key);
+                            var publicRequestAirflowConfigurationOptionsValue = publicRequestAirflowConfigurationOptionsKvp.Value;
 
-                            context.Writer.Write(publicRequestAirflowConfigurationOptionsValue);
+                                context.Writer.Write(publicRequestAirflowConfigurationOptionsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetAirflowVersion())
+                    {
+                        context.Writer.WritePropertyName("AirflowVersion");
+                        context.Writer.Write(publicRequest.AirflowVersion);
+                    }
+
+                    if(publicRequest.IsSetDagS3Path())
+                    {
+                        context.Writer.WritePropertyName("DagS3Path");
+                        context.Writer.Write(publicRequest.DagS3Path);
+                    }
+
+                    if(publicRequest.IsSetEnvironmentClass())
+                    {
+                        context.Writer.WritePropertyName("EnvironmentClass");
+                        context.Writer.Write(publicRequest.EnvironmentClass);
+                    }
+
+                    if(publicRequest.IsSetExecutionRoleArn())
+                    {
+                        context.Writer.WritePropertyName("ExecutionRoleArn");
+                        context.Writer.Write(publicRequest.ExecutionRoleArn);
+                    }
+
+                    if(publicRequest.IsSetLoggingConfiguration())
+                    {
+                        context.Writer.WritePropertyName("LoggingConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LoggingConfigurationInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.LoggingConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetMaxWebservers())
+                    {
+                        context.Writer.WritePropertyName("MaxWebservers");
+                        context.Writer.Write(publicRequest.MaxWebservers.Value);
+                    }
+
+                    if(publicRequest.IsSetMaxWorkers())
+                    {
+                        context.Writer.WritePropertyName("MaxWorkers");
+                        context.Writer.Write(publicRequest.MaxWorkers.Value);
+                    }
+
+                    if(publicRequest.IsSetMinWebservers())
+                    {
+                        context.Writer.WritePropertyName("MinWebservers");
+                        context.Writer.Write(publicRequest.MinWebservers.Value);
+                    }
+
+                    if(publicRequest.IsSetMinWorkers())
+                    {
+                        context.Writer.WritePropertyName("MinWorkers");
+                        context.Writer.Write(publicRequest.MinWorkers.Value);
+                    }
+
+                    if(publicRequest.IsSetNetworkConfiguration())
+                    {
+                        context.Writer.WritePropertyName("NetworkConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = UpdateNetworkConfigurationInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.NetworkConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetPluginsS3ObjectVersion())
+                    {
+                        context.Writer.WritePropertyName("PluginsS3ObjectVersion");
+                        context.Writer.Write(publicRequest.PluginsS3ObjectVersion);
+                    }
+
+                    if(publicRequest.IsSetPluginsS3Path())
+                    {
+                        context.Writer.WritePropertyName("PluginsS3Path");
+                        context.Writer.Write(publicRequest.PluginsS3Path);
+                    }
+
+                    if(publicRequest.IsSetRequirementsS3ObjectVersion())
+                    {
+                        context.Writer.WritePropertyName("RequirementsS3ObjectVersion");
+                        context.Writer.Write(publicRequest.RequirementsS3ObjectVersion);
+                    }
+
+                    if(publicRequest.IsSetRequirementsS3Path())
+                    {
+                        context.Writer.WritePropertyName("RequirementsS3Path");
+                        context.Writer.Write(publicRequest.RequirementsS3Path);
+                    }
+
+                    if(publicRequest.IsSetSchedulers())
+                    {
+                        context.Writer.WritePropertyName("Schedulers");
+                        context.Writer.Write(publicRequest.Schedulers.Value);
+                    }
+
+                    if(publicRequest.IsSetSourceBucketArn())
+                    {
+                        context.Writer.WritePropertyName("SourceBucketArn");
+                        context.Writer.Write(publicRequest.SourceBucketArn);
+                    }
+
+                    if(publicRequest.IsSetStartupScriptS3ObjectVersion())
+                    {
+                        context.Writer.WritePropertyName("StartupScriptS3ObjectVersion");
+                        context.Writer.Write(publicRequest.StartupScriptS3ObjectVersion);
+                    }
+
+                    if(publicRequest.IsSetStartupScriptS3Path())
+                    {
+                        context.Writer.WritePropertyName("StartupScriptS3Path");
+                        context.Writer.Write(publicRequest.StartupScriptS3Path);
+                    }
+
+                    if(publicRequest.IsSetWebserverAccessMode())
+                    {
+                        context.Writer.WritePropertyName("WebserverAccessMode");
+                        context.Writer.Write(publicRequest.WebserverAccessMode);
+                    }
+
+                    if(publicRequest.IsSetWeeklyMaintenanceWindowStart())
+                    {
+                        context.Writer.WritePropertyName("WeeklyMaintenanceWindowStart");
+                        context.Writer.Write(publicRequest.WeeklyMaintenanceWindowStart);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetAirflowVersion())
-                {
-                    context.Writer.WritePropertyName("AirflowVersion");
-                    context.Writer.Write(publicRequest.AirflowVersion);
-                }
-
-                if(publicRequest.IsSetDagS3Path())
-                {
-                    context.Writer.WritePropertyName("DagS3Path");
-                    context.Writer.Write(publicRequest.DagS3Path);
-                }
-
-                if(publicRequest.IsSetEnvironmentClass())
-                {
-                    context.Writer.WritePropertyName("EnvironmentClass");
-                    context.Writer.Write(publicRequest.EnvironmentClass);
-                }
-
-                if(publicRequest.IsSetExecutionRoleArn())
-                {
-                    context.Writer.WritePropertyName("ExecutionRoleArn");
-                    context.Writer.Write(publicRequest.ExecutionRoleArn);
-                }
-
-                if(publicRequest.IsSetLoggingConfiguration())
-                {
-                    context.Writer.WritePropertyName("LoggingConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LoggingConfigurationInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LoggingConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMaxWebservers())
-                {
-                    context.Writer.WritePropertyName("MaxWebservers");
-                    context.Writer.Write(publicRequest.MaxWebservers.Value);
-                }
-
-                if(publicRequest.IsSetMaxWorkers())
-                {
-                    context.Writer.WritePropertyName("MaxWorkers");
-                    context.Writer.Write(publicRequest.MaxWorkers.Value);
-                }
-
-                if(publicRequest.IsSetMinWebservers())
-                {
-                    context.Writer.WritePropertyName("MinWebservers");
-                    context.Writer.Write(publicRequest.MinWebservers.Value);
-                }
-
-                if(publicRequest.IsSetMinWorkers())
-                {
-                    context.Writer.WritePropertyName("MinWorkers");
-                    context.Writer.Write(publicRequest.MinWorkers.Value);
-                }
-
-                if(publicRequest.IsSetNetworkConfiguration())
-                {
-                    context.Writer.WritePropertyName("NetworkConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UpdateNetworkConfigurationInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.NetworkConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPluginsS3ObjectVersion())
-                {
-                    context.Writer.WritePropertyName("PluginsS3ObjectVersion");
-                    context.Writer.Write(publicRequest.PluginsS3ObjectVersion);
-                }
-
-                if(publicRequest.IsSetPluginsS3Path())
-                {
-                    context.Writer.WritePropertyName("PluginsS3Path");
-                    context.Writer.Write(publicRequest.PluginsS3Path);
-                }
-
-                if(publicRequest.IsSetRequirementsS3ObjectVersion())
-                {
-                    context.Writer.WritePropertyName("RequirementsS3ObjectVersion");
-                    context.Writer.Write(publicRequest.RequirementsS3ObjectVersion);
-                }
-
-                if(publicRequest.IsSetRequirementsS3Path())
-                {
-                    context.Writer.WritePropertyName("RequirementsS3Path");
-                    context.Writer.Write(publicRequest.RequirementsS3Path);
-                }
-
-                if(publicRequest.IsSetSchedulers())
-                {
-                    context.Writer.WritePropertyName("Schedulers");
-                    context.Writer.Write(publicRequest.Schedulers.Value);
-                }
-
-                if(publicRequest.IsSetSourceBucketArn())
-                {
-                    context.Writer.WritePropertyName("SourceBucketArn");
-                    context.Writer.Write(publicRequest.SourceBucketArn);
-                }
-
-                if(publicRequest.IsSetStartupScriptS3ObjectVersion())
-                {
-                    context.Writer.WritePropertyName("StartupScriptS3ObjectVersion");
-                    context.Writer.Write(publicRequest.StartupScriptS3ObjectVersion);
-                }
-
-                if(publicRequest.IsSetStartupScriptS3Path())
-                {
-                    context.Writer.WritePropertyName("StartupScriptS3Path");
-                    context.Writer.Write(publicRequest.StartupScriptS3Path);
-                }
-
-                if(publicRequest.IsSetWebserverAccessMode())
-                {
-                    context.Writer.WritePropertyName("WebserverAccessMode");
-                    context.Writer.Write(publicRequest.WebserverAccessMode);
-                }
-
-                if(publicRequest.IsSetWeeklyMaintenanceWindowStart())
-                {
-                    context.Writer.WritePropertyName("WeeklyMaintenanceWindowStart");
-                    context.Writer.Write(publicRequest.WeeklyMaintenanceWindowStart);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

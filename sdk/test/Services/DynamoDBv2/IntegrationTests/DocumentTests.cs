@@ -26,9 +26,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 // Clear tables
                 CleanupTables();
 
-                Table hashTable;
-                Table hashRangeTable;
-                Table numericHashRangeTable;
+                ITable hashTable;
+                ITable hashRangeTable;
+                ITable numericHashRangeTable;
 
                 // Load tables using provided conversion schema
                 LoadTables(conversion, out hashTable, out hashRangeTable, out numericHashRangeTable);
@@ -161,13 +161,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             }
         }
 
-        private void TestAsDateTimeUtc(Table numericHashRangeTable)
+        private void TestAsDateTimeUtc(ITable numericHashRangeTable)
         {
             var config = new TableConfig(numericHashRangeTable.TableName)
             {
                 AttributesToStoreAsEpoch = new List<string> { "CreationTime", "EpochDate2" }
             };
+#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
             var numericEpochTable = Table.LoadTable(Client, config);
+#pragma warning restore CS0618 // Re-enable the warning
 
             // Capture current time
             var currTime = DateTime.Now;
@@ -189,7 +191,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             ApproximatelyEqual(currTimeUtc, storedDoc["NonEpochDate"].AsDateTimeUtc());
         }
 
-        private void TestEmptyString(Table hashTable)
+        private void TestEmptyString(ITable hashTable)
         {
             var companyInfo = new DynamoDBList();
             companyInfo.Add(string.Empty);
@@ -222,7 +224,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual(string.Empty, savedProduct["Map"].AsDocument()["Position"].AsString());
         }
 
-        private void TestPagination(Table hashRangeTable)
+        private void TestPagination(ITable hashRangeTable)
         {
             var itemCount = 10;
             var batchWrite = hashRangeTable.CreateBatchWrite();
@@ -294,7 +296,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             }
         }
 
-        private static int VerifyPagination(Search search, List<string> tokens)
+        private static int VerifyPagination(ISearch search, List<string> tokens)
         {
             int count = 0;
             do
@@ -314,7 +316,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             return count;
         }
 
-        private void TestEmptyCollections(Table hashTable)
+        private void TestEmptyCollections(ITable hashTable)
         {
             Document doc = new Document();
             doc["Id"] = 1;
@@ -337,7 +339,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual(0, listEntry.AsDynamoDBList().Entries.Count);
         }
 
-        private void TestHashTable(Table hashTable, DynamoDBEntryConversion conversion)
+        private void TestHashTable(ITable hashTable, DynamoDBEntryConversion conversion)
         {
             // Put an item
             Document doc = new Document();
@@ -562,7 +564,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             items = hashTable.Scan(new ScanFilter()).GetRemaining();
             Assert.AreEqual(0, items.Count);
         }
-        private void TestHashRangeTable(Table hashRangeTable, DynamoDBEntryConversion conversion)
+        private void TestHashRangeTable(ITable hashRangeTable, DynamoDBEntryConversion conversion)
         {
             // Put an item
             Document doc1 = new Document();
@@ -775,7 +777,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             }).GetRemaining();
             Assert.AreEqual(1, items.Count);
         }
-        private void TestLargeBatchOperations(Table hashTable)
+        private void TestLargeBatchOperations(ITable hashTable)
         {
             int itemCount = 30;
             int itemSize = 40 * 1024;
@@ -823,7 +825,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual(0, items.Count);
         }
 
-        private void TestMultiTableDocumentBatchWrite(Table hashTable, Table hashRangeTable)
+        private void TestMultiTableDocumentBatchWrite(ITable hashTable, ITable hashRangeTable)
         {
             var multiTableDocumentBatchWrite = new MultiTableDocumentBatchWrite();
 
@@ -834,7 +836,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             doc1b["Id"] = 5102;
             doc1b["Data"] = Guid.NewGuid().ToString();
             {
-                var writer = new DocumentBatchWrite(hashTable);
+                var writer = hashTable.CreateBatchWrite();
                 writer.AddDocumentToPut(doc1a);
                 writer.AddDocumentToPut(doc1b);
                 multiTableDocumentBatchWrite.AddBatch(writer);
@@ -847,7 +849,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             doc2b["Id"] = 5202;
             doc2b["Data"] = Guid.NewGuid().ToString();
             {
-                var writer = new DocumentBatchWrite(hashTable);
+                var writer = hashTable.CreateBatchWrite();
                 writer.AddDocumentToPut(doc2a);
                 writer.AddDocumentToPut(doc2b);
                 multiTableDocumentBatchWrite.AddBatch(writer);
@@ -859,7 +861,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             doc3a["Job"] = "Retired";
             doc3a["Data"] = Guid.NewGuid().ToString();
             {
-                var writer = new DocumentBatchWrite(hashRangeTable);
+                var writer = hashRangeTable.CreateBatchWrite();
                 writer.AddDocumentToPut(doc3a);
                 multiTableDocumentBatchWrite.AddBatch(writer);
             }
@@ -886,7 +888,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             multiTableDocumentBatchWrite = new MultiTableDocumentBatchWrite();
             {
-                var deleteWriter = new DocumentBatchWrite(hashTable);
+                var deleteWriter = hashTable.CreateBatchWrite();
                 deleteWriter.AddItemToDelete(doc1a);
                 deleteWriter.AddItemToDelete(doc1b);
                 deleteWriter.AddItemToDelete(doc2a);
@@ -894,14 +896,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 multiTableDocumentBatchWrite.AddBatch(deleteWriter);
             }
             {
-                var deleteWriter = new DocumentBatchWrite(hashRangeTable);
+                var deleteWriter = hashRangeTable.CreateBatchWrite();
                 deleteWriter.AddItemToDelete(doc3a);
                 multiTableDocumentBatchWrite.AddBatch(deleteWriter);
             }
             multiTableDocumentBatchWrite.Execute();
         }
 
-        private void TestMultiTableDocumentTransactWrite(Table hashTable, Table hashRangeTable, DynamoDBEntryConversion conversion)
+        private void TestMultiTableDocumentTransactWrite(ITable hashTable, ITable hashRangeTable, DynamoDBEntryConversion conversion)
         {
             // Test multi-table transactional put
             var multiTableDocumentTransactWrite = new MultiTableDocumentTransactWrite();
@@ -923,7 +925,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             };
 
             {
-                var transactWrite = new DocumentTransactWrite(hashTable);
+                var transactWrite = hashTable.CreateTransactWrite();
                 transactWrite.AddDocumentToPut(hDoc1);
                 transactWrite.AddDocumentToPut(hDoc2);
                 multiTableDocumentTransactWrite.AddTransactionPart(transactWrite);
@@ -948,7 +950,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             };
 
             {
-                var transactWrite = new DocumentTransactWrite(hashRangeTable);
+                var transactWrite = hashRangeTable.CreateTransactWrite();
                 transactWrite.AddDocumentToPut(hrDoc1);
                 transactWrite.AddDocumentToPut(hrDoc2);
                 multiTableDocumentTransactWrite.AddTransactionPart(transactWrite);
@@ -959,12 +961,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             {
                 var multiTableDocumentTransactGet = new MultiTableDocumentTransactGet();
 
-                var hTransactGet = new DocumentTransactGet(hashTable);
+                var hTransactGet = hashTable.CreateTransactGet();
                 hTransactGet.AddKey(hashKey: 6001);
                 hTransactGet.AddKey(hashKey: 6002);
                 multiTableDocumentTransactGet.AddTransactionPart(hTransactGet);
 
-                var hrTransactGet = new DocumentTransactGet(hashRangeTable);
+                var hrTransactGet = hashRangeTable.CreateTransactGet();
                 hrTransactGet.AddKey(hashKey: "Alan", rangeKey: 30);
                 hrTransactGet.AddKey(hashKey: "Diane", rangeKey: 40);
                 multiTableDocumentTransactGet.AddTransactionPart(hrTransactGet);
@@ -982,7 +984,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             multiTableDocumentTransactWrite = new MultiTableDocumentTransactWrite();
 
             {
-                var transactWrite = new DocumentTransactWrite(hashTable);
+                var transactWrite = hashTable.CreateTransactWrite();
                 transactWrite.AddDocumentToUpdate(new Document
                 {
                     ["Price"] = 1001,
@@ -997,7 +999,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             }
 
             {
-                var transactWrite = new DocumentTransactWrite(hashRangeTable);
+                var transactWrite = hashRangeTable.CreateTransactWrite();
                 transactWrite.AddDocumentToUpdate(new Document
                 {
                     ["Score"] = 101,
@@ -1016,12 +1018,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             {
                 var multiTableDocumentTransactGet = new MultiTableDocumentTransactGet();
 
-                var hTransactGet = new DocumentTransactGet(hashTable);
+                var hTransactGet = hashTable.CreateTransactGet();
                 hTransactGet.AddKey(key: new Document { ["Id"] = 6001 });
                 hTransactGet.AddKey(key: new Document { ["Id"] = 6002 });
                 multiTableDocumentTransactGet.AddTransactionPart(hTransactGet);
 
-                var hrTransactGet = new DocumentTransactGet(hashRangeTable);
+                var hrTransactGet = hashRangeTable.CreateTransactGet();
                 hrTransactGet.AddKey(key: new Document { ["Name"] = "Alan", ["Age"] = 30 });
                 hrTransactGet.AddKey(key: new Document { ["Name"] = "Diane", ["Age"] = 40 });
                 multiTableDocumentTransactGet.AddTransactionPart(hrTransactGet);
@@ -1051,14 +1053,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             multiTableDocumentTransactWrite = new MultiTableDocumentTransactWrite();
 
             {
-                var transactWrite = new DocumentTransactWrite(hashTable);
+                var transactWrite = hashTable.CreateTransactWrite();
                 transactWrite.AddKeyToDelete(hashKey: 6001);
                 transactWrite.AddKeyToDelete(key: new Document { ["Id"] = 6002 });
                 multiTableDocumentTransactWrite.AddTransactionPart(transactWrite);
             }
 
             {
-                var transactWrite = new DocumentTransactWrite(hashRangeTable);
+                var transactWrite = hashRangeTable.CreateTransactWrite();
                 transactWrite.AddKeyToDelete(hashKey: "Alan", rangeKey: 30);
                 transactWrite.AddKeyToDelete(new Document { ["Name"] = "Diane", ["Age"] = 40 });
                 multiTableDocumentTransactWrite.AddTransactionPart(transactWrite);
@@ -1069,12 +1071,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             {
                 var multiTableDocumentTransactGet = new MultiTableDocumentTransactGet();
 
-                var hTransactGet = new DocumentTransactGet(hashTable);
+                var hTransactGet = hashTable.CreateTransactGet();
                 hTransactGet.AddKey(hashKey: 6001);
                 hTransactGet.AddKey(hashKey: 6002);
                 multiTableDocumentTransactGet.AddTransactionPart(hTransactGet);
 
-                var hrTransactGet = new DocumentTransactGet(hashRangeTable);
+                var hrTransactGet = hashRangeTable.CreateTransactGet();
                 hrTransactGet.AddKey(hashKey: "Alan", rangeKey: 30);
                 hrTransactGet.AddKey(hashKey: "Diane", rangeKey: 40);
                 multiTableDocumentTransactGet.AddTransactionPart(hrTransactGet);
@@ -1085,7 +1087,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             }
         }
 
-        private void TestExpressionsOnDelete(Table hashTable)
+        private void TestExpressionsOnDelete(ITable hashTable)
         {
             Document doc1 = new Document();
             doc1["Id"] = 13;
@@ -1105,7 +1107,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.IsTrue(hashTable.TryDeleteItem(doc1, config));
         }
 
-        private void TestExpressionsOnTransactWrite(Table hashTable, DynamoDBEntryConversion conversion)
+        private void TestExpressionsOnTransactWrite(ITable hashTable, DynamoDBEntryConversion conversion)
         {
             var doc1 = new Document
             {
@@ -1627,7 +1629,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             }
         }
 
-        private void TestExpressionsOnQuery(Table hashRangeTable)
+        private void TestExpressionsOnQuery(ITable hashRangeTable)
         {
             Document doc1 = new Document();
             doc1["Name"] = "Gunnar";
@@ -1666,7 +1668,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             hashRangeTable.DeleteItem(doc2);
         }
 
-        private void TestExpressionsOnScan(Table hashRangeTable)
+        private void TestExpressionsOnScan(ITable hashRangeTable)
         {
             ClearTable(hashRangeTableName);
 
@@ -1706,7 +1708,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             hashRangeTable.DeleteItem(doc2);
         }
 
-        private void TestExpressionPut(Table hashTable)
+        private void TestExpressionPut(ITable hashTable)
         {
             Document doc = new Document();
 
@@ -1749,7 +1751,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             hashTable.DeleteItem(doc);
         }
 
-        private void TestExpressionUpdate(Table hashTable)
+        private void TestExpressionUpdate(ITable hashTable)
         {
             Document doc = new Document();
 
@@ -1808,7 +1810,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 return true;
             return docA.Equals(docB);
         }
-        private void LoadTables(DynamoDBEntryConversion conversion, out Table hashTable, out Table hashRangeTable, out Table numericHashRangeTable)
+        private void LoadTables(DynamoDBEntryConversion conversion, out ITable hashTable, out ITable hashRangeTable, out ITable numericHashRangeTable)
         {
             TableCache.Clear();
 
@@ -1816,9 +1818,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             {
                 // Load table using TryLoadTable API
                 hashTable = null;
+#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
                 Assert.IsFalse(Table.TryLoadTable(Client, "FakeHashTableThatShouldNotExist", conversion, true, out hashTable));
+#pragma warning restore CS0618 // Re-enable the warning
                 Assert.AreEqual(0, counter.ResponseCount);
+#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
                 Assert.IsTrue(Table.TryLoadTable(Client, hashTableName, conversion, true, out hashTable));
+#pragma warning restore CS0618 // Re-enable the warning
                 Assert.AreEqual(1, counter.ResponseCount);
 
                 Assert.IsNotNull(hashTable);
@@ -1832,10 +1838,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Assert.AreEqual(0, hashTable.LocalSecondaryIndexes.Count);
                 Assert.AreEqual(0, hashTable.LocalSecondaryIndexNames.Count);
 
+#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
                 // Load table using LoadTable API (may throw an exception)
                 AssertExtensions.ExpectException(() => Table.LoadTable(Client, "FakeHashRangeTableThatShouldNotExist", conversion, true));
+#pragma warning restore CS0618 // Re-enable the warning
                 Assert.AreEqual(1, counter.ResponseCount);
+#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
                 hashRangeTable = Table.LoadTable(Client, hashRangeTableName, conversion, true);
+#pragma warning restore CS0618 // Re-enable the warning
                 Assert.AreEqual(2, counter.ResponseCount);
                 Assert.IsNotNull(hashRangeTable);
                 Assert.AreEqual(hashRangeTableName, hashRangeTable.TableName);
@@ -1849,7 +1859,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Assert.AreEqual(2, hashRangeTable.LocalSecondaryIndexes["LocalIndex"].KeySchema.Count);
                 Assert.AreEqual(1, hashRangeTable.LocalSecondaryIndexNames.Count);
 
+#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
                 numericHashRangeTable = Table.LoadTable(Client, numericHashRangeTableName, conversion, true);
+#pragma warning restore CS0618 // Re-enable the warning
                 Assert.AreEqual(1, numericHashRangeTable.HashKeys.Count);
                 Assert.AreEqual(1, numericHashRangeTable.RangeKeys.Count);
                 Assert.AreEqual(2, numericHashRangeTable.Keys.Count);

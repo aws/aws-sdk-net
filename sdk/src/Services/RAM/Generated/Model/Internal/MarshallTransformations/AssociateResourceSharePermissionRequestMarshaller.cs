@@ -61,45 +61,48 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/associateresourcesharepermission";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    if(publicRequest.IsSetPermissionArn())
+                    {
+                        context.Writer.WritePropertyName("permissionArn");
+                        context.Writer.Write(publicRequest.PermissionArn);
+                    }
+
+                    if(publicRequest.IsSetPermissionVersion())
+                    {
+                        context.Writer.WritePropertyName("permissionVersion");
+                        context.Writer.Write(publicRequest.PermissionVersion.Value);
+                    }
+
+                    if(publicRequest.IsSetReplace())
+                    {
+                        context.Writer.WritePropertyName("replace");
+                        context.Writer.Write(publicRequest.Replace.Value);
+                    }
+
+                    if(publicRequest.IsSetResourceShareArn())
+                    {
+                        context.Writer.WritePropertyName("resourceShareArn");
+                        context.Writer.Write(publicRequest.ResourceShareArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPermissionArn())
-                {
-                    context.Writer.WritePropertyName("permissionArn");
-                    context.Writer.Write(publicRequest.PermissionArn);
-                }
-
-                if(publicRequest.IsSetPermissionVersion())
-                {
-                    context.Writer.WritePropertyName("permissionVersion");
-                    context.Writer.Write(publicRequest.PermissionVersion.Value);
-                }
-
-                if(publicRequest.IsSetReplace())
-                {
-                    context.Writer.WritePropertyName("replace");
-                    context.Writer.Write(publicRequest.Replace.Value);
-                }
-
-                if(publicRequest.IsSetResourceShareArn())
-                {
-                    context.Writer.WritePropertyName("resourceShareArn");
-                    context.Writer.Write(publicRequest.ResourceShareArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -61,62 +61,65 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v2/domainnames";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDomainName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("domainName");
-                    context.Writer.Write(publicRequest.DomainName);
-                }
-
-                if(publicRequest.IsSetDomainNameConfigurations())
-                {
-                    context.Writer.WritePropertyName("domainNameConfigurations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDomainNameConfigurationsListValue in publicRequest.DomainNameConfigurations)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDomainName())
                     {
+                        context.Writer.WritePropertyName("domainName");
+                        context.Writer.Write(publicRequest.DomainName);
+                    }
+
+                    if(publicRequest.IsSetDomainNameConfigurations())
+                    {
+                        context.Writer.WritePropertyName("domainNameConfigurations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDomainNameConfigurationsListValue in publicRequest.DomainNameConfigurations)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = DomainNameConfigurationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestDomainNameConfigurationsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetMutualTlsAuthentication())
+                    {
+                        context.Writer.WritePropertyName("mutualTlsAuthentication");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = DomainNameConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestDomainNameConfigurationsListValue, context);
+                        var marshaller = MutualTlsAuthenticationInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.MutualTlsAuthentication, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetMutualTlsAuthentication())
-                {
-                    context.Writer.WritePropertyName("mutualTlsAuthentication");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MutualTlsAuthenticationInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.MutualTlsAuthentication, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetTags())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
 
-                            context.Writer.Write(publicRequestTagsValue);
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

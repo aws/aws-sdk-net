@@ -64,72 +64,75 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                 throw new AmazonIoTTwinMakerException("Request object does not have required field WorkspaceId set");
             request.AddPathResource("{workspaceId}", StringUtils.FromString(publicRequest.WorkspaceId));
             request.ResourcePath = "/workspaces/{workspaceId}/scenes";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCapabilities())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("capabilities");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCapabilitiesListValue in publicRequest.Capabilities)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCapabilities())
                     {
-                            context.Writer.Write(publicRequestCapabilitiesListValue);
+                        context.Writer.WritePropertyName("capabilities");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCapabilitiesListValue in publicRequest.Capabilities)
+                        {
+                                context.Writer.Write(publicRequestCapabilitiesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetContentLocation())
-                {
-                    context.Writer.WritePropertyName("contentLocation");
-                    context.Writer.Write(publicRequest.ContentLocation);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetSceneId())
-                {
-                    context.Writer.WritePropertyName("sceneId");
-                    context.Writer.Write(publicRequest.SceneId);
-                }
-
-                if(publicRequest.IsSetSceneMetadata())
-                {
-                    context.Writer.WritePropertyName("sceneMetadata");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestSceneMetadataKvp in publicRequest.SceneMetadata)
+                    if(publicRequest.IsSetContentLocation())
                     {
-                        context.Writer.WritePropertyName(publicRequestSceneMetadataKvp.Key);
-                        var publicRequestSceneMetadataValue = publicRequestSceneMetadataKvp.Value;
-
-                            context.Writer.Write(publicRequestSceneMetadataValue);
+                        context.Writer.WritePropertyName("contentLocation");
+                        context.Writer.Write(publicRequest.ContentLocation);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetDescription())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetSceneId())
+                    {
+                        context.Writer.WritePropertyName("sceneId");
+                        context.Writer.Write(publicRequest.SceneId);
+                    }
+
+                    if(publicRequest.IsSetSceneMetadata())
+                    {
+                        context.Writer.WritePropertyName("sceneMetadata");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestSceneMetadataKvp in publicRequest.SceneMetadata)
+                        {
+                            context.Writer.WritePropertyName(publicRequestSceneMetadataKvp.Key);
+                            var publicRequestSceneMetadataValue = publicRequestSceneMetadataKvp.Value;
+
+                                context.Writer.Write(publicRequestSceneMetadataValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

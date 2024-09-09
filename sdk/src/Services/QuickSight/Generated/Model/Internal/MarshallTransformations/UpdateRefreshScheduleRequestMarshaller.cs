@@ -67,26 +67,29 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field DataSetId set");
             request.AddPathResource("{DataSetId}", StringUtils.FromString(publicRequest.DataSetId));
             request.ResourcePath = "/accounts/{AwsAccountId}/data-sets/{DataSetId}/refresh-schedules";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetSchedule())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Schedule");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetSchedule())
+                    {
+                        context.Writer.WritePropertyName("Schedule");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = RefreshScheduleMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Schedule, context);
+                        var marshaller = RefreshScheduleMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Schedule, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

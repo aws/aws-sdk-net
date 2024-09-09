@@ -61,33 +61,36 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/update-landingzone";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLandingZoneIdentifier())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("landingZoneIdentifier");
-                    context.Writer.Write(publicRequest.LandingZoneIdentifier);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetLandingZoneIdentifier())
+                    {
+                        context.Writer.WritePropertyName("landingZoneIdentifier");
+                        context.Writer.Write(publicRequest.LandingZoneIdentifier);
+                    }
+
+                    if(publicRequest.IsSetManifest())
+                    {
+                        context.Writer.WritePropertyName("manifest");
+                        Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, publicRequest.Manifest);
+                    }
+
+                    if(publicRequest.IsSetVersion())
+                    {
+                        context.Writer.WritePropertyName("version");
+                        context.Writer.Write(publicRequest.Version);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetManifest())
-                {
-                    context.Writer.WritePropertyName("manifest");
-                    Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, publicRequest.Manifest);
-                }
-
-                if(publicRequest.IsSetVersion())
-                {
-                    context.Writer.WritePropertyName("version");
-                    context.Writer.Write(publicRequest.Version);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

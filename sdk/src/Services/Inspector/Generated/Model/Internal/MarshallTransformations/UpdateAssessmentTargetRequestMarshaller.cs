@@ -63,33 +63,36 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAssessmentTargetArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("assessmentTargetArn");
-                    context.Writer.Write(publicRequest.AssessmentTargetArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAssessmentTargetArn())
+                    {
+                        context.Writer.WritePropertyName("assessmentTargetArn");
+                        context.Writer.Write(publicRequest.AssessmentTargetArn);
+                    }
+
+                    if(publicRequest.IsSetAssessmentTargetName())
+                    {
+                        context.Writer.WritePropertyName("assessmentTargetName");
+                        context.Writer.Write(publicRequest.AssessmentTargetName);
+                    }
+
+                    if(publicRequest.IsSetResourceGroupArn())
+                    {
+                        context.Writer.WritePropertyName("resourceGroupArn");
+                        context.Writer.Write(publicRequest.ResourceGroupArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetAssessmentTargetName())
-                {
-                    context.Writer.WritePropertyName("assessmentTargetName");
-                    context.Writer.Write(publicRequest.AssessmentTargetName);
-                }
-
-                if(publicRequest.IsSetResourceGroupArn())
-                {
-                    context.Writer.WritePropertyName("resourceGroupArn");
-                    context.Writer.Write(publicRequest.ResourceGroupArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

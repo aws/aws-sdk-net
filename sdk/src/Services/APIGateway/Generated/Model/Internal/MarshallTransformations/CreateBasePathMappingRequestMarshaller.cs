@@ -64,33 +64,36 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 throw new AmazonAPIGatewayException("Request object does not have required field DomainName set");
             request.AddPathResource("{domain_name}", StringUtils.FromString(publicRequest.DomainName));
             request.ResourcePath = "/domainnames/{domain_name}/basepathmappings";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBasePath())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("basePath");
-                    context.Writer.Write(publicRequest.BasePath);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBasePath())
+                    {
+                        context.Writer.WritePropertyName("basePath");
+                        context.Writer.Write(publicRequest.BasePath);
+                    }
+
+                    if(publicRequest.IsSetRestApiId())
+                    {
+                        context.Writer.WritePropertyName("restApiId");
+                        context.Writer.Write(publicRequest.RestApiId);
+                    }
+
+                    if(publicRequest.IsSetStage())
+                    {
+                        context.Writer.WritePropertyName("stage");
+                        context.Writer.Write(publicRequest.Stage);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRestApiId())
-                {
-                    context.Writer.WritePropertyName("restApiId");
-                    context.Writer.Write(publicRequest.RestApiId);
-                }
-
-                if(publicRequest.IsSetStage())
-                {
-                    context.Writer.WritePropertyName("stage");
-                    context.Writer.Write(publicRequest.Stage);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,45 +63,48 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEnableHybrid())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("EnableHybrid");
-                    context.Writer.Write(publicRequest.EnableHybrid);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEnableHybrid())
+                    {
+                        context.Writer.WritePropertyName("EnableHybrid");
+                        context.Writer.Write(publicRequest.EnableHybrid);
+                    }
+
+                    if(publicRequest.IsSetPolicyExistsCondition())
+                    {
+                        context.Writer.WritePropertyName("PolicyExistsCondition");
+                        context.Writer.Write(publicRequest.PolicyExistsCondition);
+                    }
+
+                    if(publicRequest.IsSetPolicyHashCondition())
+                    {
+                        context.Writer.WritePropertyName("PolicyHashCondition");
+                        context.Writer.Write(publicRequest.PolicyHashCondition);
+                    }
+
+                    if(publicRequest.IsSetPolicyInJson())
+                    {
+                        context.Writer.WritePropertyName("PolicyInJson");
+                        context.Writer.Write(publicRequest.PolicyInJson);
+                    }
+
+                    if(publicRequest.IsSetResourceArn())
+                    {
+                        context.Writer.WritePropertyName("ResourceArn");
+                        context.Writer.Write(publicRequest.ResourceArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPolicyExistsCondition())
-                {
-                    context.Writer.WritePropertyName("PolicyExistsCondition");
-                    context.Writer.Write(publicRequest.PolicyExistsCondition);
-                }
-
-                if(publicRequest.IsSetPolicyHashCondition())
-                {
-                    context.Writer.WritePropertyName("PolicyHashCondition");
-                    context.Writer.Write(publicRequest.PolicyHashCondition);
-                }
-
-                if(publicRequest.IsSetPolicyInJson())
-                {
-                    context.Writer.WritePropertyName("PolicyInJson");
-                    context.Writer.Write(publicRequest.PolicyInJson);
-                }
-
-                if(publicRequest.IsSetResourceArn())
-                {
-                    context.Writer.WritePropertyName("ResourceArn");
-                    context.Writer.Write(publicRequest.ResourceArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

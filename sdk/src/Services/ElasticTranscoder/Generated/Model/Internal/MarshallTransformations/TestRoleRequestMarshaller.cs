@@ -61,44 +61,47 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/2012-09-25/roleTests";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetInputBucket())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("InputBucket");
-                    context.Writer.Write(publicRequest.InputBucket);
-                }
-
-                if(publicRequest.IsSetOutputBucket())
-                {
-                    context.Writer.WritePropertyName("OutputBucket");
-                    context.Writer.Write(publicRequest.OutputBucket);
-                }
-
-                if(publicRequest.IsSetRole())
-                {
-                    context.Writer.WritePropertyName("Role");
-                    context.Writer.Write(publicRequest.Role);
-                }
-
-                if(publicRequest.IsSetTopics())
-                {
-                    context.Writer.WritePropertyName("Topics");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTopicsListValue in publicRequest.Topics)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetInputBucket())
                     {
-                            context.Writer.Write(publicRequestTopicsListValue);
+                        context.Writer.WritePropertyName("InputBucket");
+                        context.Writer.Write(publicRequest.InputBucket);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetOutputBucket())
+                    {
+                        context.Writer.WritePropertyName("OutputBucket");
+                        context.Writer.Write(publicRequest.OutputBucket);
+                    }
+
+                    if(publicRequest.IsSetRole())
+                    {
+                        context.Writer.WritePropertyName("Role");
+                        context.Writer.Write(publicRequest.Role);
+                    }
+
+                    if(publicRequest.IsSetTopics())
+                    {
+                        context.Writer.WritePropertyName("Topics");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTopicsListValue in publicRequest.Topics)
+                        {
+                                context.Writer.Write(publicRequestTopicsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

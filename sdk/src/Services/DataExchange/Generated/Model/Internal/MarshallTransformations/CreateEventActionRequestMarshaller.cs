@@ -61,37 +61,40 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v1/event-actions";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAction())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Action");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAction())
+                    {
+                        context.Writer.WritePropertyName("Action");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = ActionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Action, context);
+                        var marshaller = ActionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Action, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetEvent())
+                    {
+                        context.Writer.WritePropertyName("Event");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EventMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Event, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEvent())
-                {
-                    context.Writer.WritePropertyName("Event");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EventMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Event, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

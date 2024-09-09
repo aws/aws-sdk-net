@@ -61,31 +61,34 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/configurationPolicyAssociation/batchget";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConfigurationPolicyAssociationIdentifiers())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ConfigurationPolicyAssociationIdentifiers");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestConfigurationPolicyAssociationIdentifiersListValue in publicRequest.ConfigurationPolicyAssociationIdentifiers)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConfigurationPolicyAssociationIdentifiers())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("ConfigurationPolicyAssociationIdentifiers");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestConfigurationPolicyAssociationIdentifiersListValue in publicRequest.ConfigurationPolicyAssociationIdentifiers)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = ConfigurationPolicyAssociationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestConfigurationPolicyAssociationIdentifiersListValue, context);
+                            var marshaller = ConfigurationPolicyAssociationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestConfigurationPolicyAssociationIdentifiersListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

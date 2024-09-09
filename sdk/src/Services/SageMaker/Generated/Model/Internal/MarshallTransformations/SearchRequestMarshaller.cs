@@ -63,78 +63,81 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCrossAccountFilterOption())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CrossAccountFilterOption");
-                    context.Writer.Write(publicRequest.CrossAccountFilterOption);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetResource())
-                {
-                    context.Writer.WritePropertyName("Resource");
-                    context.Writer.Write(publicRequest.Resource);
-                }
-
-                if(publicRequest.IsSetSearchExpression())
-                {
-                    context.Writer.WritePropertyName("SearchExpression");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SearchExpressionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SearchExpression, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSortBy())
-                {
-                    context.Writer.WritePropertyName("SortBy");
-                    context.Writer.Write(publicRequest.SortBy);
-                }
-
-                if(publicRequest.IsSetSortOrder())
-                {
-                    context.Writer.WritePropertyName("SortOrder");
-                    context.Writer.Write(publicRequest.SortOrder);
-                }
-
-                if(publicRequest.IsSetVisibilityConditions())
-                {
-                    context.Writer.WritePropertyName("VisibilityConditions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestVisibilityConditionsListValue in publicRequest.VisibilityConditions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCrossAccountFilterOption())
                     {
+                        context.Writer.WritePropertyName("CrossAccountFilterOption");
+                        context.Writer.Write(publicRequest.CrossAccountFilterOption);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetResource())
+                    {
+                        context.Writer.WritePropertyName("Resource");
+                        context.Writer.Write(publicRequest.Resource);
+                    }
+
+                    if(publicRequest.IsSetSearchExpression())
+                    {
+                        context.Writer.WritePropertyName("SearchExpression");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = VisibilityConditionsMarshaller.Instance;
-                        marshaller.Marshall(publicRequestVisibilityConditionsListValue, context);
+                        var marshaller = SearchExpressionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SearchExpression, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetSortBy())
+                    {
+                        context.Writer.WritePropertyName("SortBy");
+                        context.Writer.Write(publicRequest.SortBy);
+                    }
+
+                    if(publicRequest.IsSetSortOrder())
+                    {
+                        context.Writer.WritePropertyName("SortOrder");
+                        context.Writer.Write(publicRequest.SortOrder);
+                    }
+
+                    if(publicRequest.IsSetVisibilityConditions())
+                    {
+                        context.Writer.WritePropertyName("VisibilityConditions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestVisibilityConditionsListValue in publicRequest.VisibilityConditions)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = VisibilityConditionsMarshaller.Instance;
+                            marshaller.Marshall(publicRequestVisibilityConditionsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -64,86 +64,104 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 throw new AmazonIoTSiteWiseException("Request object does not have required field AssetModelId set");
             request.AddPathResource("{assetModelId}", StringUtils.FromString(publicRequest.AssetModelId));
             request.ResourcePath = "/asset-models/{assetModelId}/composite-models";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAssetModelCompositeModelDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("assetModelCompositeModelDescription");
-                    context.Writer.Write(publicRequest.AssetModelCompositeModelDescription);
-                }
-
-                if(publicRequest.IsSetAssetModelCompositeModelExternalId())
-                {
-                    context.Writer.WritePropertyName("assetModelCompositeModelExternalId");
-                    context.Writer.Write(publicRequest.AssetModelCompositeModelExternalId);
-                }
-
-                if(publicRequest.IsSetAssetModelCompositeModelId())
-                {
-                    context.Writer.WritePropertyName("assetModelCompositeModelId");
-                    context.Writer.Write(publicRequest.AssetModelCompositeModelId);
-                }
-
-                if(publicRequest.IsSetAssetModelCompositeModelName())
-                {
-                    context.Writer.WritePropertyName("assetModelCompositeModelName");
-                    context.Writer.Write(publicRequest.AssetModelCompositeModelName);
-                }
-
-                if(publicRequest.IsSetAssetModelCompositeModelProperties())
-                {
-                    context.Writer.WritePropertyName("assetModelCompositeModelProperties");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAssetModelCompositeModelPropertiesListValue in publicRequest.AssetModelCompositeModelProperties)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAssetModelCompositeModelDescription())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AssetModelPropertyDefinitionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAssetModelCompositeModelPropertiesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("assetModelCompositeModelDescription");
+                        context.Writer.Write(publicRequest.AssetModelCompositeModelDescription);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetAssetModelCompositeModelExternalId())
+                    {
+                        context.Writer.WritePropertyName("assetModelCompositeModelExternalId");
+                        context.Writer.Write(publicRequest.AssetModelCompositeModelExternalId);
+                    }
+
+                    if(publicRequest.IsSetAssetModelCompositeModelId())
+                    {
+                        context.Writer.WritePropertyName("assetModelCompositeModelId");
+                        context.Writer.Write(publicRequest.AssetModelCompositeModelId);
+                    }
+
+                    if(publicRequest.IsSetAssetModelCompositeModelName())
+                    {
+                        context.Writer.WritePropertyName("assetModelCompositeModelName");
+                        context.Writer.Write(publicRequest.AssetModelCompositeModelName);
+                    }
+
+                    if(publicRequest.IsSetAssetModelCompositeModelProperties())
+                    {
+                        context.Writer.WritePropertyName("assetModelCompositeModelProperties");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAssetModelCompositeModelPropertiesListValue in publicRequest.AssetModelCompositeModelProperties)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = AssetModelPropertyDefinitionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAssetModelCompositeModelPropertiesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetAssetModelCompositeModelType())
+                    {
+                        context.Writer.WritePropertyName("assetModelCompositeModelType");
+                        context.Writer.Write(publicRequest.AssetModelCompositeModelType);
+                    }
+
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetComposedAssetModelId())
+                    {
+                        context.Writer.WritePropertyName("composedAssetModelId");
+                        context.Writer.Write(publicRequest.ComposedAssetModelId);
+                    }
+
+                    if(publicRequest.IsSetParentAssetModelCompositeModelId())
+                    {
+                        context.Writer.WritePropertyName("parentAssetModelCompositeModelId");
+                        context.Writer.Write(publicRequest.ParentAssetModelCompositeModelId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetAssetModelCompositeModelType())
-                {
-                    context.Writer.WritePropertyName("assetModelCompositeModelType");
-                    context.Writer.Write(publicRequest.AssetModelCompositeModelType);
-                }
-
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetComposedAssetModelId())
-                {
-                    context.Writer.WritePropertyName("composedAssetModelId");
-                    context.Writer.Write(publicRequest.ComposedAssetModelId);
-                }
-
-                if(publicRequest.IsSetParentAssetModelCompositeModelId())
-                {
-                    context.Writer.WritePropertyName("parentAssetModelCompositeModelId");
-                    context.Writer.Write(publicRequest.ParentAssetModelCompositeModelId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
+        
+            if (publicRequest.IsSetIfMatch()) 
+            {
+                request.Headers["If-Match"] = publicRequest.IfMatch;
+            }
+        
+            if (publicRequest.IsSetIfNoneMatch()) 
+            {
+                request.Headers["If-None-Match"] = publicRequest.IfNoneMatch;
+            }
+        
+            if (publicRequest.IsSetMatchForVersionType()) 
+            {
+                request.Headers["Match-For-Version-Type"] = publicRequest.MatchForVersionType;
+            }
             
             request.HostPrefix = $"api.";
 

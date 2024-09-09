@@ -61,55 +61,58 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/metadata-transfer-jobs-list";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDestinationType())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("destinationType");
-                    context.Writer.Write(publicRequest.DestinationType);
-                }
-
-                if(publicRequest.IsSetFilters())
-                {
-                    context.Writer.WritePropertyName("filters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFiltersListValue in publicRequest.Filters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDestinationType())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ListMetadataTransferJobsFilterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFiltersListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("destinationType");
+                        context.Writer.Write(publicRequest.DestinationType);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetFilters())
+                    {
+                        context.Writer.WritePropertyName("filters");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFiltersListValue in publicRequest.Filters)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ListMetadataTransferJobsFilterMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFiltersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetSourceType())
+                    {
+                        context.Writer.WritePropertyName("sourceType");
+                        context.Writer.Write(publicRequest.SourceType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetSourceType())
-                {
-                    context.Writer.WritePropertyName("sourceType");
-                    context.Writer.Write(publicRequest.SourceType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

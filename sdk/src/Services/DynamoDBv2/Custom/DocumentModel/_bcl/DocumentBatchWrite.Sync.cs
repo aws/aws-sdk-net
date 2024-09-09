@@ -13,54 +13,45 @@
  * permissions and limitations under the License.
  */
 
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Net;
-using Amazon.DynamoDBv2.Model;
-using Amazon.Runtime;
-
 namespace Amazon.DynamoDBv2.DocumentModel
 {
-    /// <summary>
-    /// Class for putting and/or deleting a batch of items in a single DynamoDB table.
-    /// </summary>
-    public partial class DocumentBatchWrite
+    public partial interface IDocumentBatchWrite
     {
-        #region Public methods
-
         /// <summary>
         /// Executes a server call to batch-put/delete the item specified.
         /// 
         /// If more than 25 put/delete operations are specified, calls of up to 25
         /// put/delete items will be made until all items are processed.
         /// </summary>
+        void Execute();
+    }
+
+    public partial class DocumentBatchWrite : IDocumentBatchWrite
+    {
+        /// <inheritdoc/>
         public void Execute()
         {
             ExecuteHelper();
         }
-
-        #endregion
     }
 
-    /// <summary>
-    /// Class for putting and/or deleting a batch of items in multiple DynamoDB tables.
-    /// </summary>
-    public partial class MultiTableDocumentBatchWrite
+    public partial interface IMultiTableDocumentBatchWrite
     {
-        #region Public methods
-
         /// <summary>
         /// Executes a multi-table batch put/delete against all configured batches.
-        /// 
+        ///
         /// If more than 25 put/delete operations are specified, calls of up to 25
         /// put/delete items will be made until all items are processed.
         /// </summary>
+        void Execute();
+    }
+
+    public partial class MultiTableDocumentBatchWrite : IMultiTableDocumentBatchWrite
+    {
+        /// <inheritdoc/>
         public void Execute()
         {
             ExecuteHelper();
         }
-
-        #endregion
     }
 }

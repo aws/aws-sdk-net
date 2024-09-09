@@ -67,21 +67,24 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
                 throw new AmazonAmplifyBackendException("Request object does not have required field BackendEnvironmentName set");
             request.AddPathResource("{backendEnvironmentName}", StringUtils.FromString(publicRequest.BackendEnvironmentName));
             request.ResourcePath = "/backend/{appId}/environments/{backendEnvironmentName}/clone";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetTargetEnvironmentName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("targetEnvironmentName");
-                    context.Writer.Write(publicRequest.TargetEnvironmentName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetTargetEnvironmentName())
+                    {
+                        context.Writer.WritePropertyName("targetEnvironmentName");
+                        context.Writer.Write(publicRequest.TargetEnvironmentName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

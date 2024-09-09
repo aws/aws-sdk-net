@@ -61,38 +61,41 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/cis/scan/report/get";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetReportFormat())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("reportFormat");
-                    context.Writer.Write(publicRequest.ReportFormat);
-                }
-
-                if(publicRequest.IsSetScanArn())
-                {
-                    context.Writer.WritePropertyName("scanArn");
-                    context.Writer.Write(publicRequest.ScanArn);
-                }
-
-                if(publicRequest.IsSetTargetAccounts())
-                {
-                    context.Writer.WritePropertyName("targetAccounts");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTargetAccountsListValue in publicRequest.TargetAccounts)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetReportFormat())
                     {
-                            context.Writer.Write(publicRequestTargetAccountsListValue);
+                        context.Writer.WritePropertyName("reportFormat");
+                        context.Writer.Write(publicRequest.ReportFormat);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetScanArn())
+                    {
+                        context.Writer.WritePropertyName("scanArn");
+                        context.Writer.Write(publicRequest.ScanArn);
+                    }
+
+                    if(publicRequest.IsSetTargetAccounts())
+                    {
+                        context.Writer.WritePropertyName("targetAccounts");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTargetAccountsListValue in publicRequest.TargetAccounts)
+                        {
+                                context.Writer.Write(publicRequestTargetAccountsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

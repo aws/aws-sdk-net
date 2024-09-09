@@ -64,35 +64,38 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
                 throw new AmazonCodeGuruProfilerException("Request object does not have required field ProfilingGroupName set");
             request.AddPathResource("{profilingGroupName}", StringUtils.FromString(publicRequest.ProfilingGroupName));
             request.ResourcePath = "/profilingGroups/{profilingGroupName}/configureAgent";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFleetInstanceId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("fleetInstanceId");
-                    context.Writer.Write(publicRequest.FleetInstanceId);
-                }
-
-                if(publicRequest.IsSetMetadata())
-                {
-                    context.Writer.WritePropertyName("metadata");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestMetadataKvp in publicRequest.Metadata)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFleetInstanceId())
                     {
-                        context.Writer.WritePropertyName(publicRequestMetadataKvp.Key);
-                        var publicRequestMetadataValue = publicRequestMetadataKvp.Value;
-
-                            context.Writer.Write(publicRequestMetadataValue);
+                        context.Writer.WritePropertyName("fleetInstanceId");
+                        context.Writer.Write(publicRequest.FleetInstanceId);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetMetadata())
+                    {
+                        context.Writer.WritePropertyName("metadata");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestMetadataKvp in publicRequest.Metadata)
+                        {
+                            context.Writer.WritePropertyName(publicRequestMetadataKvp.Key);
+                            var publicRequestMetadataValue = publicRequestMetadataKvp.Value;
+
+                                context.Writer.Write(publicRequestMetadataValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -121,6 +121,10 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                                 {
                                     request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "S3Action" + "." + "BucketName", StringUtils.FromString(publicRequestRulelistValue.S3Action.BucketName));
                                 }
+                                if(publicRequestRulelistValue.S3Action.IsSetIamRoleArn())
+                                {
+                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "S3Action" + "." + "IamRoleArn", StringUtils.FromString(publicRequestRulelistValue.S3Action.IamRoleArn));
+                                }
                                 if(publicRequestRulelistValue.S3Action.IsSetKmsKeyArn())
                                 {
                                     request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "S3Action" + "." + "KmsKeyArn", StringUtils.FromString(publicRequestRulelistValue.S3Action.KmsKeyArn));

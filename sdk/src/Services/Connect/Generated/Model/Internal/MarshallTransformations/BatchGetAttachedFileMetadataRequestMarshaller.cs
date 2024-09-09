@@ -67,26 +67,29 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetAssociatedResourceArn())
                 request.Parameters.Add("associatedResourceArn", StringUtils.FromString(publicRequest.AssociatedResourceArn));
             request.ResourcePath = "/attached-files/{InstanceId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFileIds())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("FileIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFileIdsListValue in publicRequest.FileIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFileIds())
                     {
-                            context.Writer.Write(publicRequestFileIdsListValue);
+                        context.Writer.WritePropertyName("FileIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFileIdsListValue in publicRequest.FileIds)
+                        {
+                                context.Writer.Write(publicRequestFileIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             request.UseQueryString = true;

@@ -63,27 +63,30 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFirewallPolicyArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("FirewallPolicyArn");
-                    context.Writer.Write(publicRequest.FirewallPolicyArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFirewallPolicyArn())
+                    {
+                        context.Writer.WritePropertyName("FirewallPolicyArn");
+                        context.Writer.Write(publicRequest.FirewallPolicyArn);
+                    }
+
+                    if(publicRequest.IsSetFirewallPolicyName())
+                    {
+                        context.Writer.WritePropertyName("FirewallPolicyName");
+                        context.Writer.Write(publicRequest.FirewallPolicyName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetFirewallPolicyName())
-                {
-                    context.Writer.WritePropertyName("FirewallPolicyName");
-                    context.Writer.Write(publicRequest.FirewallPolicyName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -61,63 +61,66 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/finding";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAnalyzerArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("analyzerArn");
-                    context.Writer.Write(publicRequest.AnalyzerArn);
-                }
-
-                if(publicRequest.IsSetFilter())
-                {
-                    context.Writer.WritePropertyName("filter");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestFilterKvp in publicRequest.Filter)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAnalyzerArn())
                     {
-                        context.Writer.WritePropertyName(publicRequestFilterKvp.Key);
-                        var publicRequestFilterValue = publicRequestFilterKvp.Value;
+                        context.Writer.WritePropertyName("analyzerArn");
+                        context.Writer.Write(publicRequest.AnalyzerArn);
+                    }
 
+                    if(publicRequest.IsSetFilter())
+                    {
+                        context.Writer.WritePropertyName("filter");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestFilterKvp in publicRequest.Filter)
+                        {
+                            context.Writer.WritePropertyName(publicRequestFilterKvp.Key);
+                            var publicRequestFilterValue = publicRequestFilterKvp.Value;
+
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = CriterionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFilterValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetSort())
+                    {
+                        context.Writer.WritePropertyName("sort");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = CriterionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFilterValue, context);
+                        var marshaller = SortCriteriaMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Sort, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetSort())
-                {
-                    context.Writer.WritePropertyName("sort");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SortCriteriaMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Sort, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

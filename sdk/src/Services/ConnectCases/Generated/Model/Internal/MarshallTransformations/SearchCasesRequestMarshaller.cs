@@ -64,76 +64,79 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
                 throw new AmazonConnectCasesException("Request object does not have required field DomainId set");
             request.AddPathResource("{domainId}", StringUtils.FromString(publicRequest.DomainId));
             request.ResourcePath = "/domains/{domainId}/cases-search";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFields())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("fields");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFieldsListValue in publicRequest.Fields)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFields())
                     {
+                        context.Writer.WritePropertyName("fields");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFieldsListValue in publicRequest.Fields)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = FieldIdentifierMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFieldsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetFilter())
+                    {
+                        context.Writer.WritePropertyName("filter");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = FieldIdentifierMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFieldsListValue, context);
+                        var marshaller = CaseFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Filter, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetFilter())
-                {
-                    context.Writer.WritePropertyName("filter");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CaseFilterMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Filter, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetSearchTerm())
-                {
-                    context.Writer.WritePropertyName("searchTerm");
-                    context.Writer.Write(publicRequest.SearchTerm);
-                }
-
-                if(publicRequest.IsSetSorts())
-                {
-                    context.Writer.WritePropertyName("sorts");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSortsListValue in publicRequest.Sorts)
+                    if(publicRequest.IsSetMaxResults())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SortMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSortsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetSearchTerm())
+                    {
+                        context.Writer.WritePropertyName("searchTerm");
+                        context.Writer.Write(publicRequest.SearchTerm);
+                    }
+
+                    if(publicRequest.IsSetSorts())
+                    {
+                        context.Writer.WritePropertyName("sorts");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSortsListValue in publicRequest.Sorts)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = SortMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSortsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

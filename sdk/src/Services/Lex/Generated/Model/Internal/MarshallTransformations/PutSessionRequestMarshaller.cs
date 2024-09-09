@@ -70,72 +70,75 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
                 throw new AmazonLexException("Request object does not have required field UserId set");
             request.AddPathResource("{userId}", StringUtils.FromString(publicRequest.UserId));
             request.ResourcePath = "/bot/{botName}/alias/{botAlias}/user/{userId}/session";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetActiveContexts())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("activeContexts");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestActiveContextsListValue in publicRequest.ActiveContexts)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetActiveContexts())
                     {
+                        context.Writer.WritePropertyName("activeContexts");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestActiveContextsListValue in publicRequest.ActiveContexts)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ActiveContextMarshaller.Instance;
+                            marshaller.Marshall(publicRequestActiveContextsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetDialogAction())
+                    {
+                        context.Writer.WritePropertyName("dialogAction");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = ActiveContextMarshaller.Instance;
-                        marshaller.Marshall(publicRequestActiveContextsListValue, context);
+                        var marshaller = DialogActionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DialogAction, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDialogAction())
-                {
-                    context.Writer.WritePropertyName("dialogAction");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DialogActionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DialogAction, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRecentIntentSummaryView())
-                {
-                    context.Writer.WritePropertyName("recentIntentSummaryView");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRecentIntentSummaryViewListValue in publicRequest.RecentIntentSummaryView)
+                    if(publicRequest.IsSetRecentIntentSummaryView())
                     {
+                        context.Writer.WritePropertyName("recentIntentSummaryView");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRecentIntentSummaryViewListValue in publicRequest.RecentIntentSummaryView)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = IntentSummaryMarshaller.Instance;
+                            marshaller.Marshall(publicRequestRecentIntentSummaryViewListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSessionAttributes())
+                    {
+                        context.Writer.WritePropertyName("sessionAttributes");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestSessionAttributesKvp in publicRequest.SessionAttributes)
+                        {
+                            context.Writer.WritePropertyName(publicRequestSessionAttributesKvp.Key);
+                            var publicRequestSessionAttributesValue = publicRequestSessionAttributesKvp.Value;
 
-                        var marshaller = IntentSummaryMarshaller.Instance;
-                        marshaller.Marshall(publicRequestRecentIntentSummaryViewListValue, context);
-
+                                context.Writer.Write(publicRequestSessionAttributesValue);
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSessionAttributes())
-                {
-                    context.Writer.WritePropertyName("sessionAttributes");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestSessionAttributesKvp in publicRequest.SessionAttributes)
-                    {
-                        context.Writer.WritePropertyName(publicRequestSessionAttributesKvp.Key);
-                        var publicRequestSessionAttributesValue = publicRequestSessionAttributesKvp.Value;
-
-                            context.Writer.Write(publicRequestSessionAttributesValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

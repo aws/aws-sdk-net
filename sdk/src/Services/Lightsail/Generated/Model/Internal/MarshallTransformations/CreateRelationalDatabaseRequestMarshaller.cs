@@ -63,91 +63,94 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAvailabilityZone())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("availabilityZone");
-                    context.Writer.Write(publicRequest.AvailabilityZone);
-                }
-
-                if(publicRequest.IsSetMasterDatabaseName())
-                {
-                    context.Writer.WritePropertyName("masterDatabaseName");
-                    context.Writer.Write(publicRequest.MasterDatabaseName);
-                }
-
-                if(publicRequest.IsSetMasterUsername())
-                {
-                    context.Writer.WritePropertyName("masterUsername");
-                    context.Writer.Write(publicRequest.MasterUsername);
-                }
-
-                if(publicRequest.IsSetMasterUserPassword())
-                {
-                    context.Writer.WritePropertyName("masterUserPassword");
-                    context.Writer.Write(publicRequest.MasterUserPassword);
-                }
-
-                if(publicRequest.IsSetPreferredBackupWindow())
-                {
-                    context.Writer.WritePropertyName("preferredBackupWindow");
-                    context.Writer.Write(publicRequest.PreferredBackupWindow);
-                }
-
-                if(publicRequest.IsSetPreferredMaintenanceWindow())
-                {
-                    context.Writer.WritePropertyName("preferredMaintenanceWindow");
-                    context.Writer.Write(publicRequest.PreferredMaintenanceWindow);
-                }
-
-                if(publicRequest.IsSetPubliclyAccessible())
-                {
-                    context.Writer.WritePropertyName("publiclyAccessible");
-                    context.Writer.Write(publicRequest.PubliclyAccessible.Value);
-                }
-
-                if(publicRequest.IsSetRelationalDatabaseBlueprintId())
-                {
-                    context.Writer.WritePropertyName("relationalDatabaseBlueprintId");
-                    context.Writer.Write(publicRequest.RelationalDatabaseBlueprintId);
-                }
-
-                if(publicRequest.IsSetRelationalDatabaseBundleId())
-                {
-                    context.Writer.WritePropertyName("relationalDatabaseBundleId");
-                    context.Writer.Write(publicRequest.RelationalDatabaseBundleId);
-                }
-
-                if(publicRequest.IsSetRelationalDatabaseName())
-                {
-                    context.Writer.WritePropertyName("relationalDatabaseName");
-                    context.Writer.Write(publicRequest.RelationalDatabaseName);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAvailabilityZone())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("availabilityZone");
+                        context.Writer.Write(publicRequest.AvailabilityZone);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetMasterDatabaseName())
+                    {
+                        context.Writer.WritePropertyName("masterDatabaseName");
+                        context.Writer.Write(publicRequest.MasterDatabaseName);
+                    }
+
+                    if(publicRequest.IsSetMasterUsername())
+                    {
+                        context.Writer.WritePropertyName("masterUsername");
+                        context.Writer.Write(publicRequest.MasterUsername);
+                    }
+
+                    if(publicRequest.IsSetMasterUserPassword())
+                    {
+                        context.Writer.WritePropertyName("masterUserPassword");
+                        context.Writer.Write(publicRequest.MasterUserPassword);
+                    }
+
+                    if(publicRequest.IsSetPreferredBackupWindow())
+                    {
+                        context.Writer.WritePropertyName("preferredBackupWindow");
+                        context.Writer.Write(publicRequest.PreferredBackupWindow);
+                    }
+
+                    if(publicRequest.IsSetPreferredMaintenanceWindow())
+                    {
+                        context.Writer.WritePropertyName("preferredMaintenanceWindow");
+                        context.Writer.Write(publicRequest.PreferredMaintenanceWindow);
+                    }
+
+                    if(publicRequest.IsSetPubliclyAccessible())
+                    {
+                        context.Writer.WritePropertyName("publiclyAccessible");
+                        context.Writer.Write(publicRequest.PubliclyAccessible.Value);
+                    }
+
+                    if(publicRequest.IsSetRelationalDatabaseBlueprintId())
+                    {
+                        context.Writer.WritePropertyName("relationalDatabaseBlueprintId");
+                        context.Writer.Write(publicRequest.RelationalDatabaseBlueprintId);
+                    }
+
+                    if(publicRequest.IsSetRelationalDatabaseBundleId())
+                    {
+                        context.Writer.WritePropertyName("relationalDatabaseBundleId");
+                        context.Writer.Write(publicRequest.RelationalDatabaseBundleId);
+                    }
+
+                    if(publicRequest.IsSetRelationalDatabaseName())
+                    {
+                        context.Writer.WritePropertyName("relationalDatabaseName");
+                        context.Writer.Write(publicRequest.RelationalDatabaseName);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

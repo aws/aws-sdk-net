@@ -352,8 +352,6 @@ namespace Amazon.Runtime.Internal.Transform
         private string nodeContent = String.Empty;
         private bool disposed = false;
         private bool currentlyProcessingEmptyElement;
-        private bool processEmptyElements = false; //Flip to true in v4
-
 
         public Stream Stream
         {
@@ -362,11 +360,6 @@ namespace Amazon.Runtime.Internal.Transform
                 return streamReader.BaseStream;
             }
         }
-
-        /// <summary>
-        /// Lookup of element names that are not skipped if empty within the XML response structure.
-        /// </summary>
-        public HashSet<string> AllowEmptyElementLookup { get; private set; }
 
         /// <remarks>
         /// Despite Microsoft's recommendation to use XmlReader for .NET Framework 2.0 or greater 
@@ -451,7 +444,6 @@ namespace Amazon.Runtime.Internal.Transform
             this.WebResponseData = responseData;
             this.MaintainResponseBody = maintainResponseBody;
             this.IsException = isException;
-            this.AllowEmptyElementLookup = new HashSet<string>();
         }
 
         #endregion
@@ -494,11 +486,6 @@ namespace Amazon.Runtime.Internal.Transform
                 if (nodesToSkip.Contains(XmlReader.NodeType))
                     XmlReader.Read();
 
-                while (XmlReader.IsEmptyElement && !AllowEmptyElementLookup.Contains(XmlReader.LocalName) && !processEmptyElements)
-                {
-                    XmlReader.Read();
-                }
-
                 if (currentlyProcessingEmptyElement)
                 {
                     nodeType = XmlNodeType.EndElement;
@@ -507,7 +494,7 @@ namespace Amazon.Runtime.Internal.Transform
                     XmlReader.Read();
                     currentlyProcessingEmptyElement = false;
                 }
-                else if(XmlReader.IsEmptyElement && (AllowEmptyElementLookup.Contains(XmlReader.LocalName) || processEmptyElements))
+                else if(XmlReader.IsEmptyElement)
                 {
                     //This is a shorthand form of an empty element <element /> and we want to allow it
                     nodeType = XmlNodeType.Element;

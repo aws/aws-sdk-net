@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the opsworkscm-2016-11-01.normal.json service model.
  */
 
+using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 

@@ -67,55 +67,58 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field InstanceId set");
             request.AddPathResource("{InstanceId}", StringUtils.FromString(publicRequest.InstanceId));
             request.ResourcePath = "/authentication-profiles/{InstanceId}/{AuthenticationProfileId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAllowedIps())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AllowedIps");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAllowedIpsListValue in publicRequest.AllowedIps)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAllowedIps())
                     {
-                            context.Writer.Write(publicRequestAllowedIpsListValue);
+                        context.Writer.WritePropertyName("AllowedIps");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAllowedIpsListValue in publicRequest.AllowedIps)
+                        {
+                                context.Writer.Write(publicRequestAllowedIpsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetBlockedIps())
-                {
-                    context.Writer.WritePropertyName("BlockedIps");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestBlockedIpsListValue in publicRequest.BlockedIps)
+                    if(publicRequest.IsSetBlockedIps())
                     {
-                            context.Writer.Write(publicRequestBlockedIpsListValue);
+                        context.Writer.WritePropertyName("BlockedIps");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestBlockedIpsListValue in publicRequest.BlockedIps)
+                        {
+                                context.Writer.Write(publicRequestBlockedIpsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetPeriodicSessionDuration())
+                    {
+                        context.Writer.WritePropertyName("PeriodicSessionDuration");
+                        context.Writer.Write(publicRequest.PeriodicSessionDuration.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetPeriodicSessionDuration())
-                {
-                    context.Writer.WritePropertyName("PeriodicSessionDuration");
-                    context.Writer.Write(publicRequest.PeriodicSessionDuration.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,99 +63,102 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEnhancedInfrastructureMetrics())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("enhancedInfrastructureMetrics");
-                    context.Writer.Write(publicRequest.EnhancedInfrastructureMetrics);
-                }
-
-                if(publicRequest.IsSetExternalMetricsPreference())
-                {
-                    context.Writer.WritePropertyName("externalMetricsPreference");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ExternalMetricsPreferenceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ExternalMetricsPreference, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetInferredWorkloadTypes())
-                {
-                    context.Writer.WritePropertyName("inferredWorkloadTypes");
-                    context.Writer.Write(publicRequest.InferredWorkloadTypes);
-                }
-
-                if(publicRequest.IsSetLookBackPeriod())
-                {
-                    context.Writer.WritePropertyName("lookBackPeriod");
-                    context.Writer.Write(publicRequest.LookBackPeriod);
-                }
-
-                if(publicRequest.IsSetPreferredResources())
-                {
-                    context.Writer.WritePropertyName("preferredResources");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPreferredResourcesListValue in publicRequest.PreferredResources)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEnhancedInfrastructureMetrics())
                     {
+                        context.Writer.WritePropertyName("enhancedInfrastructureMetrics");
+                        context.Writer.Write(publicRequest.EnhancedInfrastructureMetrics);
+                    }
+
+                    if(publicRequest.IsSetExternalMetricsPreference())
+                    {
+                        context.Writer.WritePropertyName("externalMetricsPreference");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = PreferredResourceMarshaller.Instance;
-                        marshaller.Marshall(publicRequestPreferredResourcesListValue, context);
+                        var marshaller = ExternalMetricsPreferenceMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ExternalMetricsPreference, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetResourceType())
-                {
-                    context.Writer.WritePropertyName("resourceType");
-                    context.Writer.Write(publicRequest.ResourceType);
-                }
-
-                if(publicRequest.IsSetSavingsEstimationMode())
-                {
-                    context.Writer.WritePropertyName("savingsEstimationMode");
-                    context.Writer.Write(publicRequest.SavingsEstimationMode);
-                }
-
-                if(publicRequest.IsSetScope())
-                {
-                    context.Writer.WritePropertyName("scope");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ScopeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Scope, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetUtilizationPreferences())
-                {
-                    context.Writer.WritePropertyName("utilizationPreferences");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestUtilizationPreferencesListValue in publicRequest.UtilizationPreferences)
+                    if(publicRequest.IsSetInferredWorkloadTypes())
                     {
+                        context.Writer.WritePropertyName("inferredWorkloadTypes");
+                        context.Writer.Write(publicRequest.InferredWorkloadTypes);
+                    }
+
+                    if(publicRequest.IsSetLookBackPeriod())
+                    {
+                        context.Writer.WritePropertyName("lookBackPeriod");
+                        context.Writer.Write(publicRequest.LookBackPeriod);
+                    }
+
+                    if(publicRequest.IsSetPreferredResources())
+                    {
+                        context.Writer.WritePropertyName("preferredResources");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPreferredResourcesListValue in publicRequest.PreferredResources)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = PreferredResourceMarshaller.Instance;
+                            marshaller.Marshall(publicRequestPreferredResourcesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetResourceType())
+                    {
+                        context.Writer.WritePropertyName("resourceType");
+                        context.Writer.Write(publicRequest.ResourceType);
+                    }
+
+                    if(publicRequest.IsSetSavingsEstimationMode())
+                    {
+                        context.Writer.WritePropertyName("savingsEstimationMode");
+                        context.Writer.Write(publicRequest.SavingsEstimationMode);
+                    }
+
+                    if(publicRequest.IsSetScope())
+                    {
+                        context.Writer.WritePropertyName("scope");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = UtilizationPreferenceMarshaller.Instance;
-                        marshaller.Marshall(publicRequestUtilizationPreferencesListValue, context);
+                        var marshaller = ScopeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Scope, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetUtilizationPreferences())
+                    {
+                        context.Writer.WritePropertyName("utilizationPreferences");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestUtilizationPreferencesListValue in publicRequest.UtilizationPreferences)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = UtilizationPreferenceMarshaller.Instance;
+                            marshaller.Marshall(publicRequestUtilizationPreferencesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

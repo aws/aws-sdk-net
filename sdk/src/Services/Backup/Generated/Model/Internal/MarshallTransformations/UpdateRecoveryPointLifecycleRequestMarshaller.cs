@@ -67,26 +67,29 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 throw new AmazonBackupException("Request object does not have required field RecoveryPointArn set");
             request.AddPathResource("{recoveryPointArn}", StringUtils.FromString(publicRequest.RecoveryPointArn));
             request.ResourcePath = "/backup-vaults/{backupVaultName}/recovery-points/{recoveryPointArn}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLifecycle())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Lifecycle");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetLifecycle())
+                    {
+                        context.Writer.WritePropertyName("Lifecycle");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = LifecycleMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Lifecycle, context);
+                        var marshaller = LifecycleMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Lifecycle, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

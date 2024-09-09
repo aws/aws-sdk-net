@@ -64,55 +64,58 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
                 throw new AmazonChimeSDKVoiceException("Request object does not have required field SipMediaApplicationId set");
             request.AddPathResource("{sipMediaApplicationId}", StringUtils.FromString(publicRequest.SipMediaApplicationId));
             request.ResourcePath = "/sip-media-applications/{sipMediaApplicationId}/calls";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetArgumentsMap())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ArgumentsMap");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestArgumentsMapKvp in publicRequest.ArgumentsMap)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetArgumentsMap())
                     {
-                        context.Writer.WritePropertyName(publicRequestArgumentsMapKvp.Key);
-                        var publicRequestArgumentsMapValue = publicRequestArgumentsMapKvp.Value;
+                        context.Writer.WritePropertyName("ArgumentsMap");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestArgumentsMapKvp in publicRequest.ArgumentsMap)
+                        {
+                            context.Writer.WritePropertyName(publicRequestArgumentsMapKvp.Key);
+                            var publicRequestArgumentsMapValue = publicRequestArgumentsMapKvp.Value;
 
-                            context.Writer.Write(publicRequestArgumentsMapValue);
+                                context.Writer.Write(publicRequestArgumentsMapValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetFromPhoneNumber())
-                {
-                    context.Writer.WritePropertyName("FromPhoneNumber");
-                    context.Writer.Write(publicRequest.FromPhoneNumber);
-                }
-
-                if(publicRequest.IsSetSipHeaders())
-                {
-                    context.Writer.WritePropertyName("SipHeaders");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestSipHeadersKvp in publicRequest.SipHeaders)
+                    if(publicRequest.IsSetFromPhoneNumber())
                     {
-                        context.Writer.WritePropertyName(publicRequestSipHeadersKvp.Key);
-                        var publicRequestSipHeadersValue = publicRequestSipHeadersKvp.Value;
-
-                            context.Writer.Write(publicRequestSipHeadersValue);
+                        context.Writer.WritePropertyName("FromPhoneNumber");
+                        context.Writer.Write(publicRequest.FromPhoneNumber);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetSipHeaders())
+                    {
+                        context.Writer.WritePropertyName("SipHeaders");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestSipHeadersKvp in publicRequest.SipHeaders)
+                        {
+                            context.Writer.WritePropertyName(publicRequestSipHeadersKvp.Key);
+                            var publicRequestSipHeadersValue = publicRequestSipHeadersKvp.Value;
+
+                                context.Writer.Write(publicRequestSipHeadersValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetToPhoneNumber())
+                    {
+                        context.Writer.WritePropertyName("ToPhoneNumber");
+                        context.Writer.Write(publicRequest.ToPhoneNumber);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetToPhoneNumber())
-                {
-                    context.Writer.WritePropertyName("ToPhoneNumber");
-                    context.Writer.Write(publicRequest.ToPhoneNumber);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,55 +63,58 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetComputerAttributes())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ComputerAttributes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestComputerAttributesListValue in publicRequest.ComputerAttributes)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetComputerAttributes())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("ComputerAttributes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestComputerAttributesListValue in publicRequest.ComputerAttributes)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = AttributeMarshaller.Instance;
-                        marshaller.Marshall(publicRequestComputerAttributesListValue, context);
+                            var marshaller = AttributeMarshaller.Instance;
+                            marshaller.Marshall(publicRequestComputerAttributesListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetComputerName())
+                    {
+                        context.Writer.WritePropertyName("ComputerName");
+                        context.Writer.Write(publicRequest.ComputerName);
+                    }
+
+                    if(publicRequest.IsSetDirectoryId())
+                    {
+                        context.Writer.WritePropertyName("DirectoryId");
+                        context.Writer.Write(publicRequest.DirectoryId);
+                    }
+
+                    if(publicRequest.IsSetOrganizationalUnitDistinguishedName())
+                    {
+                        context.Writer.WritePropertyName("OrganizationalUnitDistinguishedName");
+                        context.Writer.Write(publicRequest.OrganizationalUnitDistinguishedName);
+                    }
+
+                    if(publicRequest.IsSetPassword())
+                    {
+                        context.Writer.WritePropertyName("Password");
+                        context.Writer.Write(publicRequest.Password);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetComputerName())
-                {
-                    context.Writer.WritePropertyName("ComputerName");
-                    context.Writer.Write(publicRequest.ComputerName);
-                }
-
-                if(publicRequest.IsSetDirectoryId())
-                {
-                    context.Writer.WritePropertyName("DirectoryId");
-                    context.Writer.Write(publicRequest.DirectoryId);
-                }
-
-                if(publicRequest.IsSetOrganizationalUnitDistinguishedName())
-                {
-                    context.Writer.WritePropertyName("OrganizationalUnitDistinguishedName");
-                    context.Writer.Write(publicRequest.OrganizationalUnitDistinguishedName);
-                }
-
-                if(publicRequest.IsSetPassword())
-                {
-                    context.Writer.WritePropertyName("Password");
-                    context.Writer.Write(publicRequest.Password);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

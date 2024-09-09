@@ -5,8 +5,7 @@
     "CoreVersion"       : "4.0.0.0",
     "OverrideCoreVersion" : "4.0",
     "DefaultToPreview"    : true,
-    "PreviewLabel"        : "preview",
-    "DefaultAssemblyVersion" : "4.0",
+    "PreviewLabel"        : "preview.2",
     "ServiceVersions"     : {
         "CloudHSM" : {
             "Version" : "4.0.0.0",
@@ -765,14 +764,6 @@
             "InPreview"               : false
         },
         "ResourceGroupsTaggingAPI"        : {
-            "Version" : "4.0.0.0",
-            "AssemblyVersionOverride" : "4.0",
-            "Dependencies"            : {
-                "Core" : "4.0.0.0"
-            },
-            "InPreview"               : false
-        },
-        "CodeStar"                        : {
             "Version" : "4.0.0.0",
             "AssemblyVersionOverride" : "4.0",
             "Dependencies"            : {
@@ -3100,5 +3091,6 @@
             },
             "InPreview"               : false
         }
-    }
+    },
+    "DefaultAssemblyVersion" : "4.0"
 }

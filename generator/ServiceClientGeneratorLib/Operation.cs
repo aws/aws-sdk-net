@@ -1048,5 +1048,29 @@ namespace ServiceClientGenerator
             }
         }
 
+        /// <summary>
+        /// Gets list of operation context parameters, used on operation to drive endpoint resolution
+        /// </summary>
+        public List<OperationContextParameter> OperationContextParameters
+        {
+            get
+            {
+                var result = new List<OperationContextParameter>();
+                var parameters = data.SafeGet("operationContextParams");
+                if (parameters != null)
+                {
+                    foreach (var param in parameters.GetMap())
+                    {
+                        result.Add(new OperationContextParameter
+                        {
+                            name = param.Key,
+                            path = param.Value["path"].CastToString()
+                        });
+                    }
+                }
+                return result;
+            }
+        }
+
     }
 }

@@ -63,138 +63,141 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAgentVersion())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AgentVersion");
-                    context.Writer.Write(publicRequest.AgentVersion);
-                }
-
-                if(publicRequest.IsSetAmiId())
-                {
-                    context.Writer.WritePropertyName("AmiId");
-                    context.Writer.Write(publicRequest.AmiId);
-                }
-
-                if(publicRequest.IsSetArchitecture())
-                {
-                    context.Writer.WritePropertyName("Architecture");
-                    context.Writer.Write(publicRequest.Architecture);
-                }
-
-                if(publicRequest.IsSetAutoScalingType())
-                {
-                    context.Writer.WritePropertyName("AutoScalingType");
-                    context.Writer.Write(publicRequest.AutoScalingType);
-                }
-
-                if(publicRequest.IsSetAvailabilityZone())
-                {
-                    context.Writer.WritePropertyName("AvailabilityZone");
-                    context.Writer.Write(publicRequest.AvailabilityZone);
-                }
-
-                if(publicRequest.IsSetBlockDeviceMappings())
-                {
-                    context.Writer.WritePropertyName("BlockDeviceMappings");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestBlockDeviceMappingsListValue in publicRequest.BlockDeviceMappings)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAgentVersion())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = BlockDeviceMappingMarshaller.Instance;
-                        marshaller.Marshall(publicRequestBlockDeviceMappingsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("AgentVersion");
+                        context.Writer.Write(publicRequest.AgentVersion);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetEbsOptimized())
-                {
-                    context.Writer.WritePropertyName("EbsOptimized");
-                    context.Writer.Write(publicRequest.EbsOptimized.Value);
-                }
-
-                if(publicRequest.IsSetHostname())
-                {
-                    context.Writer.WritePropertyName("Hostname");
-                    context.Writer.Write(publicRequest.Hostname);
-                }
-
-                if(publicRequest.IsSetInstallUpdatesOnBoot())
-                {
-                    context.Writer.WritePropertyName("InstallUpdatesOnBoot");
-                    context.Writer.Write(publicRequest.InstallUpdatesOnBoot.Value);
-                }
-
-                if(publicRequest.IsSetInstanceType())
-                {
-                    context.Writer.WritePropertyName("InstanceType");
-                    context.Writer.Write(publicRequest.InstanceType);
-                }
-
-                if(publicRequest.IsSetLayerIds())
-                {
-                    context.Writer.WritePropertyName("LayerIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLayerIdsListValue in publicRequest.LayerIds)
+                    if(publicRequest.IsSetAmiId())
                     {
-                            context.Writer.Write(publicRequestLayerIdsListValue);
+                        context.Writer.WritePropertyName("AmiId");
+                        context.Writer.Write(publicRequest.AmiId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetArchitecture())
+                    {
+                        context.Writer.WritePropertyName("Architecture");
+                        context.Writer.Write(publicRequest.Architecture);
+                    }
+
+                    if(publicRequest.IsSetAutoScalingType())
+                    {
+                        context.Writer.WritePropertyName("AutoScalingType");
+                        context.Writer.Write(publicRequest.AutoScalingType);
+                    }
+
+                    if(publicRequest.IsSetAvailabilityZone())
+                    {
+                        context.Writer.WritePropertyName("AvailabilityZone");
+                        context.Writer.Write(publicRequest.AvailabilityZone);
+                    }
+
+                    if(publicRequest.IsSetBlockDeviceMappings())
+                    {
+                        context.Writer.WritePropertyName("BlockDeviceMappings");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestBlockDeviceMappingsListValue in publicRequest.BlockDeviceMappings)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = BlockDeviceMappingMarshaller.Instance;
+                            marshaller.Marshall(publicRequestBlockDeviceMappingsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetEbsOptimized())
+                    {
+                        context.Writer.WritePropertyName("EbsOptimized");
+                        context.Writer.Write(publicRequest.EbsOptimized.Value);
+                    }
+
+                    if(publicRequest.IsSetHostname())
+                    {
+                        context.Writer.WritePropertyName("Hostname");
+                        context.Writer.Write(publicRequest.Hostname);
+                    }
+
+                    if(publicRequest.IsSetInstallUpdatesOnBoot())
+                    {
+                        context.Writer.WritePropertyName("InstallUpdatesOnBoot");
+                        context.Writer.Write(publicRequest.InstallUpdatesOnBoot.Value);
+                    }
+
+                    if(publicRequest.IsSetInstanceType())
+                    {
+                        context.Writer.WritePropertyName("InstanceType");
+                        context.Writer.Write(publicRequest.InstanceType);
+                    }
+
+                    if(publicRequest.IsSetLayerIds())
+                    {
+                        context.Writer.WritePropertyName("LayerIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLayerIdsListValue in publicRequest.LayerIds)
+                        {
+                                context.Writer.Write(publicRequestLayerIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetOs())
+                    {
+                        context.Writer.WritePropertyName("Os");
+                        context.Writer.Write(publicRequest.Os);
+                    }
+
+                    if(publicRequest.IsSetRootDeviceType())
+                    {
+                        context.Writer.WritePropertyName("RootDeviceType");
+                        context.Writer.Write(publicRequest.RootDeviceType);
+                    }
+
+                    if(publicRequest.IsSetSshKeyName())
+                    {
+                        context.Writer.WritePropertyName("SshKeyName");
+                        context.Writer.Write(publicRequest.SshKeyName);
+                    }
+
+                    if(publicRequest.IsSetStackId())
+                    {
+                        context.Writer.WritePropertyName("StackId");
+                        context.Writer.Write(publicRequest.StackId);
+                    }
+
+                    if(publicRequest.IsSetSubnetId())
+                    {
+                        context.Writer.WritePropertyName("SubnetId");
+                        context.Writer.Write(publicRequest.SubnetId);
+                    }
+
+                    if(publicRequest.IsSetTenancy())
+                    {
+                        context.Writer.WritePropertyName("Tenancy");
+                        context.Writer.Write(publicRequest.Tenancy);
+                    }
+
+                    if(publicRequest.IsSetVirtualizationType())
+                    {
+                        context.Writer.WritePropertyName("VirtualizationType");
+                        context.Writer.Write(publicRequest.VirtualizationType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetOs())
-                {
-                    context.Writer.WritePropertyName("Os");
-                    context.Writer.Write(publicRequest.Os);
-                }
-
-                if(publicRequest.IsSetRootDeviceType())
-                {
-                    context.Writer.WritePropertyName("RootDeviceType");
-                    context.Writer.Write(publicRequest.RootDeviceType);
-                }
-
-                if(publicRequest.IsSetSshKeyName())
-                {
-                    context.Writer.WritePropertyName("SshKeyName");
-                    context.Writer.Write(publicRequest.SshKeyName);
-                }
-
-                if(publicRequest.IsSetStackId())
-                {
-                    context.Writer.WritePropertyName("StackId");
-                    context.Writer.Write(publicRequest.StackId);
-                }
-
-                if(publicRequest.IsSetSubnetId())
-                {
-                    context.Writer.WritePropertyName("SubnetId");
-                    context.Writer.Write(publicRequest.SubnetId);
-                }
-
-                if(publicRequest.IsSetTenancy())
-                {
-                    context.Writer.WritePropertyName("Tenancy");
-                    context.Writer.Write(publicRequest.Tenancy);
-                }
-
-                if(publicRequest.IsSetVirtualizationType())
-                {
-                    context.Writer.WritePropertyName("VirtualizationType");
-                    context.Writer.Write(publicRequest.VirtualizationType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

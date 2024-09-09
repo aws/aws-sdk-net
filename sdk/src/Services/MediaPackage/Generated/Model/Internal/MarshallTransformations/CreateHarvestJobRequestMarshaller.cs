@@ -61,50 +61,53 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/harvest_jobs";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEndTime())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("endTime");
-                    context.Writer.Write(publicRequest.EndTime);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEndTime())
+                    {
+                        context.Writer.WritePropertyName("endTime");
+                        context.Writer.Write(publicRequest.EndTime);
+                    }
+
+                    if(publicRequest.IsSetId())
+                    {
+                        context.Writer.WritePropertyName("id");
+                        context.Writer.Write(publicRequest.Id);
+                    }
+
+                    if(publicRequest.IsSetOriginEndpointId())
+                    {
+                        context.Writer.WritePropertyName("originEndpointId");
+                        context.Writer.Write(publicRequest.OriginEndpointId);
+                    }
+
+                    if(publicRequest.IsSetS3Destination())
+                    {
+                        context.Writer.WritePropertyName("s3Destination");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = S3DestinationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.S3Destination, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetStartTime())
+                    {
+                        context.Writer.WritePropertyName("startTime");
+                        context.Writer.Write(publicRequest.StartTime);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetId())
-                {
-                    context.Writer.WritePropertyName("id");
-                    context.Writer.Write(publicRequest.Id);
-                }
-
-                if(publicRequest.IsSetOriginEndpointId())
-                {
-                    context.Writer.WritePropertyName("originEndpointId");
-                    context.Writer.Write(publicRequest.OriginEndpointId);
-                }
-
-                if(publicRequest.IsSetS3Destination())
-                {
-                    context.Writer.WritePropertyName("s3Destination");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = S3DestinationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.S3Destination, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetStartTime())
-                {
-                    context.Writer.WritePropertyName("startTime");
-                    context.Writer.Write(publicRequest.StartTime);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

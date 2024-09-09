@@ -61,61 +61,64 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/audit/suppressions/create";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCheckName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("checkName");
-                    context.Writer.Write(publicRequest.CheckName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCheckName())
+                    {
+                        context.Writer.WritePropertyName("checkName");
+                        context.Writer.Write(publicRequest.CheckName);
+                    }
+
+                    if(publicRequest.IsSetClientRequestToken())
+                    {
+                        context.Writer.WritePropertyName("clientRequestToken");
+                        context.Writer.Write(publicRequest.ClientRequestToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientRequestToken()))
+                    {
+                        context.Writer.WritePropertyName("clientRequestToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetExpirationDate())
+                    {
+                        context.Writer.WritePropertyName("expirationDate");
+                        context.Writer.Write(publicRequest.ExpirationDate.Value);
+                    }
+
+                    if(publicRequest.IsSetResourceIdentifier())
+                    {
+                        context.Writer.WritePropertyName("resourceIdentifier");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ResourceIdentifierMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ResourceIdentifier, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSuppressIndefinitely())
+                    {
+                        context.Writer.WritePropertyName("suppressIndefinitely");
+                        context.Writer.Write(publicRequest.SuppressIndefinitely.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetClientRequestToken())
-                {
-                    context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetExpirationDate())
-                {
-                    context.Writer.WritePropertyName("expirationDate");
-                    context.Writer.Write(publicRequest.ExpirationDate.Value);
-                }
-
-                if(publicRequest.IsSetResourceIdentifier())
-                {
-                    context.Writer.WritePropertyName("resourceIdentifier");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ResourceIdentifierMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ResourceIdentifier, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSuppressIndefinitely())
-                {
-                    context.Writer.WritePropertyName("suppressIndefinitely");
-                    context.Writer.Write(publicRequest.SuppressIndefinitely.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

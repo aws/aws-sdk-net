@@ -63,49 +63,52 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAddAllowedPrefixesToDirectConnectGateway())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("addAllowedPrefixesToDirectConnectGateway");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAddAllowedPrefixesToDirectConnectGatewayListValue in publicRequest.AddAllowedPrefixesToDirectConnectGateway)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAddAllowedPrefixesToDirectConnectGateway())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("addAllowedPrefixesToDirectConnectGateway");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAddAllowedPrefixesToDirectConnectGatewayListValue in publicRequest.AddAllowedPrefixesToDirectConnectGateway)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = RouteFilterPrefixMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAddAllowedPrefixesToDirectConnectGatewayListValue, context);
+                            var marshaller = RouteFilterPrefixMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAddAllowedPrefixesToDirectConnectGatewayListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDirectConnectGatewayId())
+                    {
+                        context.Writer.WritePropertyName("directConnectGatewayId");
+                        context.Writer.Write(publicRequest.DirectConnectGatewayId);
+                    }
+
+                    if(publicRequest.IsSetGatewayId())
+                    {
+                        context.Writer.WritePropertyName("gatewayId");
+                        context.Writer.Write(publicRequest.GatewayId);
+                    }
+
+                    if(publicRequest.IsSetVirtualGatewayId())
+                    {
+                        context.Writer.WritePropertyName("virtualGatewayId");
+                        context.Writer.Write(publicRequest.VirtualGatewayId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDirectConnectGatewayId())
-                {
-                    context.Writer.WritePropertyName("directConnectGatewayId");
-                    context.Writer.Write(publicRequest.DirectConnectGatewayId);
-                }
-
-                if(publicRequest.IsSetGatewayId())
-                {
-                    context.Writer.WritePropertyName("gatewayId");
-                    context.Writer.Write(publicRequest.GatewayId);
-                }
-
-                if(publicRequest.IsSetVirtualGatewayId())
-                {
-                    context.Writer.WritePropertyName("virtualGatewayId");
-                    context.Writer.Write(publicRequest.VirtualGatewayId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

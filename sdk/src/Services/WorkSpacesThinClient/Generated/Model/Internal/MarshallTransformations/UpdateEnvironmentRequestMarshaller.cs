@@ -64,76 +64,79 @@ namespace Amazon.WorkSpacesThinClient.Model.Internal.MarshallTransformations
                 throw new AmazonWorkSpacesThinClientException("Request object does not have required field Id set");
             request.AddPathResource("{id}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = "/environments/{id}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDesiredSoftwareSetId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("desiredSoftwareSetId");
-                    context.Writer.Write(publicRequest.DesiredSoftwareSetId);
-                }
-
-                if(publicRequest.IsSetDesktopArn())
-                {
-                    context.Writer.WritePropertyName("desktopArn");
-                    context.Writer.Write(publicRequest.DesktopArn);
-                }
-
-                if(publicRequest.IsSetDesktopEndpoint())
-                {
-                    context.Writer.WritePropertyName("desktopEndpoint");
-                    context.Writer.Write(publicRequest.DesktopEndpoint);
-                }
-
-                if(publicRequest.IsSetDeviceCreationTags())
-                {
-                    context.Writer.WritePropertyName("deviceCreationTags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestDeviceCreationTagsKvp in publicRequest.DeviceCreationTags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDesiredSoftwareSetId())
                     {
-                        context.Writer.WritePropertyName(publicRequestDeviceCreationTagsKvp.Key);
-                        var publicRequestDeviceCreationTagsValue = publicRequestDeviceCreationTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestDeviceCreationTagsValue);
+                        context.Writer.WritePropertyName("desiredSoftwareSetId");
+                        context.Writer.Write(publicRequest.DesiredSoftwareSetId);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetDesktopArn())
+                    {
+                        context.Writer.WritePropertyName("desktopArn");
+                        context.Writer.Write(publicRequest.DesktopArn);
+                    }
+
+                    if(publicRequest.IsSetDesktopEndpoint())
+                    {
+                        context.Writer.WritePropertyName("desktopEndpoint");
+                        context.Writer.Write(publicRequest.DesktopEndpoint);
+                    }
+
+                    if(publicRequest.IsSetDeviceCreationTags())
+                    {
+                        context.Writer.WritePropertyName("deviceCreationTags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestDeviceCreationTagsKvp in publicRequest.DeviceCreationTags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestDeviceCreationTagsKvp.Key);
+                            var publicRequestDeviceCreationTagsValue = publicRequestDeviceCreationTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestDeviceCreationTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetMaintenanceWindow())
+                    {
+                        context.Writer.WritePropertyName("maintenanceWindow");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MaintenanceWindowMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.MaintenanceWindow, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetSoftwareSetUpdateMode())
+                    {
+                        context.Writer.WritePropertyName("softwareSetUpdateMode");
+                        context.Writer.Write(publicRequest.SoftwareSetUpdateMode);
+                    }
+
+                    if(publicRequest.IsSetSoftwareSetUpdateSchedule())
+                    {
+                        context.Writer.WritePropertyName("softwareSetUpdateSchedule");
+                        context.Writer.Write(publicRequest.SoftwareSetUpdateSchedule);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMaintenanceWindow())
-                {
-                    context.Writer.WritePropertyName("maintenanceWindow");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MaintenanceWindowMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.MaintenanceWindow, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetSoftwareSetUpdateMode())
-                {
-                    context.Writer.WritePropertyName("softwareSetUpdateMode");
-                    context.Writer.Write(publicRequest.SoftwareSetUpdateMode);
-                }
-
-                if(publicRequest.IsSetSoftwareSetUpdateSchedule())
-                {
-                    context.Writer.WritePropertyName("softwareSetUpdateSchedule");
-                    context.Writer.Write(publicRequest.SoftwareSetUpdateSchedule);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

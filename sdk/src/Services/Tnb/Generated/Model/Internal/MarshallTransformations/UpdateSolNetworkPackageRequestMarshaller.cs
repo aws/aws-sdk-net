@@ -64,21 +64,24 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
                 throw new AmazonTnbException("Request object does not have required field NsdInfoId set");
             request.AddPathResource("{nsdInfoId}", StringUtils.FromString(publicRequest.NsdInfoId));
             request.ResourcePath = "/sol/nsd/v1/ns_descriptors/{nsdInfoId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetNsdOperationalState())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("nsdOperationalState");
-                    context.Writer.Write(publicRequest.NsdOperationalState);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetNsdOperationalState())
+                    {
+                        context.Writer.WritePropertyName("nsdOperationalState");
+                        context.Writer.Write(publicRequest.NsdOperationalState);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

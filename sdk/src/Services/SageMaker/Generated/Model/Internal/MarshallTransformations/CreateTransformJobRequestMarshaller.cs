@@ -63,152 +63,155 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBatchStrategy())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("BatchStrategy");
-                    context.Writer.Write(publicRequest.BatchStrategy);
-                }
-
-                if(publicRequest.IsSetDataCaptureConfig())
-                {
-                    context.Writer.WritePropertyName("DataCaptureConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = BatchDataCaptureConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DataCaptureConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDataProcessing())
-                {
-                    context.Writer.WritePropertyName("DataProcessing");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DataProcessingMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DataProcessing, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEnvironment())
-                {
-                    context.Writer.WritePropertyName("Environment");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestEnvironmentKvp in publicRequest.Environment)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBatchStrategy())
                     {
-                        context.Writer.WritePropertyName(publicRequestEnvironmentKvp.Key);
-                        var publicRequestEnvironmentValue = publicRequestEnvironmentKvp.Value;
-
-                            context.Writer.Write(publicRequestEnvironmentValue);
+                        context.Writer.WritePropertyName("BatchStrategy");
+                        context.Writer.Write(publicRequest.BatchStrategy);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetExperimentConfig())
-                {
-                    context.Writer.WritePropertyName("ExperimentConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ExperimentConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ExperimentConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMaxConcurrentTransforms())
-                {
-                    context.Writer.WritePropertyName("MaxConcurrentTransforms");
-                    context.Writer.Write(publicRequest.MaxConcurrentTransforms.Value);
-                }
-
-                if(publicRequest.IsSetMaxPayloadInMB())
-                {
-                    context.Writer.WritePropertyName("MaxPayloadInMB");
-                    context.Writer.Write(publicRequest.MaxPayloadInMB.Value);
-                }
-
-                if(publicRequest.IsSetModelClientConfig())
-                {
-                    context.Writer.WritePropertyName("ModelClientConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ModelClientConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ModelClientConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetModelName())
-                {
-                    context.Writer.WritePropertyName("ModelName");
-                    context.Writer.Write(publicRequest.ModelName);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetDataCaptureConfig())
                     {
+                        context.Writer.WritePropertyName("DataCaptureConfig");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = BatchDataCaptureConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DataCaptureConfig, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDataProcessing())
+                    {
+                        context.Writer.WritePropertyName("DataProcessing");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DataProcessingMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DataProcessing, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetEnvironment())
+                    {
+                        context.Writer.WritePropertyName("Environment");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestEnvironmentKvp in publicRequest.Environment)
+                        {
+                            context.Writer.WritePropertyName(publicRequestEnvironmentKvp.Key);
+                            var publicRequestEnvironmentValue = publicRequestEnvironmentKvp.Value;
+
+                                context.Writer.Write(publicRequestEnvironmentValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetExperimentConfig())
+                    {
+                        context.Writer.WritePropertyName("ExperimentConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ExperimentConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ExperimentConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetMaxConcurrentTransforms())
+                    {
+                        context.Writer.WritePropertyName("MaxConcurrentTransforms");
+                        context.Writer.Write(publicRequest.MaxConcurrentTransforms.Value);
+                    }
+
+                    if(publicRequest.IsSetMaxPayloadInMB())
+                    {
+                        context.Writer.WritePropertyName("MaxPayloadInMB");
+                        context.Writer.Write(publicRequest.MaxPayloadInMB.Value);
+                    }
+
+                    if(publicRequest.IsSetModelClientConfig())
+                    {
+                        context.Writer.WritePropertyName("ModelClientConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ModelClientConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ModelClientConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetModelName())
+                    {
+                        context.Writer.WritePropertyName("ModelName");
+                        context.Writer.Write(publicRequest.ModelName);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTransformInput())
+                    {
+                        context.Writer.WritePropertyName("TransformInput");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TransformInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TransformInput, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTransformJobName())
+                    {
+                        context.Writer.WritePropertyName("TransformJobName");
+                        context.Writer.Write(publicRequest.TransformJobName);
+                    }
+
+                    if(publicRequest.IsSetTransformOutput())
+                    {
+                        context.Writer.WritePropertyName("TransformOutput");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TransformOutputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TransformOutput, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTransformResources())
+                    {
+                        context.Writer.WritePropertyName("TransformResources");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TransformResourcesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TransformResources, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTransformInput())
-                {
-                    context.Writer.WritePropertyName("TransformInput");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TransformInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TransformInput, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTransformJobName())
-                {
-                    context.Writer.WritePropertyName("TransformJobName");
-                    context.Writer.Write(publicRequest.TransformJobName);
-                }
-
-                if(publicRequest.IsSetTransformOutput())
-                {
-                    context.Writer.WritePropertyName("TransformOutput");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TransformOutputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TransformOutput, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTransformResources())
-                {
-                    context.Writer.WritePropertyName("TransformResources");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TransformResourcesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TransformResources, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

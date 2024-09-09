@@ -63,39 +63,42 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApplicationId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ApplicationId");
-                    context.Writer.Write(publicRequest.ApplicationId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApplicationId())
+                    {
+                        context.Writer.WritePropertyName("ApplicationId");
+                        context.Writer.Write(publicRequest.ApplicationId);
+                    }
+
+                    if(publicRequest.IsSetDryRun())
+                    {
+                        context.Writer.WritePropertyName("DryRun");
+                        context.Writer.Write(publicRequest.DryRun.Value);
+                    }
+
+                    if(publicRequest.IsSetStatus())
+                    {
+                        context.Writer.WritePropertyName("Status");
+                        context.Writer.Write(publicRequest.Status);
+                    }
+
+                    if(publicRequest.IsSetUpdateDateTime())
+                    {
+                        context.Writer.WritePropertyName("UpdateDateTime");
+                        context.Writer.Write(publicRequest.UpdateDateTime.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDryRun())
-                {
-                    context.Writer.WritePropertyName("DryRun");
-                    context.Writer.Write(publicRequest.DryRun.Value);
-                }
-
-                if(publicRequest.IsSetStatus())
-                {
-                    context.Writer.WritePropertyName("Status");
-                    context.Writer.Write(publicRequest.Status);
-                }
-
-                if(publicRequest.IsSetUpdateDateTime())
-                {
-                    context.Writer.WritePropertyName("UpdateDateTime");
-                    context.Writer.Write(publicRequest.UpdateDateTime.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

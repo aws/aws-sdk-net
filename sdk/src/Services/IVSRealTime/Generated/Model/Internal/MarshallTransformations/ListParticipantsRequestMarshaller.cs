@@ -61,63 +61,66 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/ListParticipants";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFilterByPublished())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("filterByPublished");
-                    context.Writer.Write(publicRequest.FilterByPublished.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFilterByPublished())
+                    {
+                        context.Writer.WritePropertyName("filterByPublished");
+                        context.Writer.Write(publicRequest.FilterByPublished.Value);
+                    }
+
+                    if(publicRequest.IsSetFilterByRecordingState())
+                    {
+                        context.Writer.WritePropertyName("filterByRecordingState");
+                        context.Writer.Write(publicRequest.FilterByRecordingState);
+                    }
+
+                    if(publicRequest.IsSetFilterByState())
+                    {
+                        context.Writer.WritePropertyName("filterByState");
+                        context.Writer.Write(publicRequest.FilterByState);
+                    }
+
+                    if(publicRequest.IsSetFilterByUserId())
+                    {
+                        context.Writer.WritePropertyName("filterByUserId");
+                        context.Writer.Write(publicRequest.FilterByUserId);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetSessionId())
+                    {
+                        context.Writer.WritePropertyName("sessionId");
+                        context.Writer.Write(publicRequest.SessionId);
+                    }
+
+                    if(publicRequest.IsSetStageArn())
+                    {
+                        context.Writer.WritePropertyName("stageArn");
+                        context.Writer.Write(publicRequest.StageArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetFilterByRecordingState())
-                {
-                    context.Writer.WritePropertyName("filterByRecordingState");
-                    context.Writer.Write(publicRequest.FilterByRecordingState);
-                }
-
-                if(publicRequest.IsSetFilterByState())
-                {
-                    context.Writer.WritePropertyName("filterByState");
-                    context.Writer.Write(publicRequest.FilterByState);
-                }
-
-                if(publicRequest.IsSetFilterByUserId())
-                {
-                    context.Writer.WritePropertyName("filterByUserId");
-                    context.Writer.Write(publicRequest.FilterByUserId);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetSessionId())
-                {
-                    context.Writer.WritePropertyName("sessionId");
-                    context.Writer.Write(publicRequest.SessionId);
-                }
-
-                if(publicRequest.IsSetStageArn())
-                {
-                    context.Writer.WritePropertyName("stageArn");
-                    context.Writer.Write(publicRequest.StageArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

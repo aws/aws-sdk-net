@@ -61,117 +61,126 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/importtasks";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeletionProtection())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("deletionProtection");
-                    context.Writer.Write(publicRequest.DeletionProtection.Value);
-                }
-
-                if(publicRequest.IsSetFailOnError())
-                {
-                    context.Writer.WritePropertyName("failOnError");
-                    context.Writer.Write(publicRequest.FailOnError.Value);
-                }
-
-                if(publicRequest.IsSetFormat())
-                {
-                    context.Writer.WritePropertyName("format");
-                    context.Writer.Write(publicRequest.Format);
-                }
-
-                if(publicRequest.IsSetGraphName())
-                {
-                    context.Writer.WritePropertyName("graphName");
-                    context.Writer.Write(publicRequest.GraphName);
-                }
-
-                if(publicRequest.IsSetImportOptions())
-                {
-                    context.Writer.WritePropertyName("importOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ImportOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ImportOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetKmsKeyIdentifier())
-                {
-                    context.Writer.WritePropertyName("kmsKeyIdentifier");
-                    context.Writer.Write(publicRequest.KmsKeyIdentifier);
-                }
-
-                if(publicRequest.IsSetMaxProvisionedMemory())
-                {
-                    context.Writer.WritePropertyName("maxProvisionedMemory");
-                    context.Writer.Write(publicRequest.MaxProvisionedMemory.Value);
-                }
-
-                if(publicRequest.IsSetMinProvisionedMemory())
-                {
-                    context.Writer.WritePropertyName("minProvisionedMemory");
-                    context.Writer.Write(publicRequest.MinProvisionedMemory.Value);
-                }
-
-                if(publicRequest.IsSetPublicConnectivity())
-                {
-                    context.Writer.WritePropertyName("publicConnectivity");
-                    context.Writer.Write(publicRequest.PublicConnectivity.Value);
-                }
-
-                if(publicRequest.IsSetReplicaCount())
-                {
-                    context.Writer.WritePropertyName("replicaCount");
-                    context.Writer.Write(publicRequest.ReplicaCount.Value);
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("roleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetSource())
-                {
-                    context.Writer.WritePropertyName("source");
-                    context.Writer.Write(publicRequest.Source);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBlankNodeHandling())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("blankNodeHandling");
+                        context.Writer.Write(publicRequest.BlankNodeHandling);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetDeletionProtection())
+                    {
+                        context.Writer.WritePropertyName("deletionProtection");
+                        context.Writer.Write(publicRequest.DeletionProtection.Value);
+                    }
+
+                    if(publicRequest.IsSetFailOnError())
+                    {
+                        context.Writer.WritePropertyName("failOnError");
+                        context.Writer.Write(publicRequest.FailOnError.Value);
+                    }
+
+                    if(publicRequest.IsSetFormat())
+                    {
+                        context.Writer.WritePropertyName("format");
+                        context.Writer.Write(publicRequest.Format);
+                    }
+
+                    if(publicRequest.IsSetGraphName())
+                    {
+                        context.Writer.WritePropertyName("graphName");
+                        context.Writer.Write(publicRequest.GraphName);
+                    }
+
+                    if(publicRequest.IsSetImportOptions())
+                    {
+                        context.Writer.WritePropertyName("importOptions");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ImportOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ImportOptions, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetKmsKeyIdentifier())
+                    {
+                        context.Writer.WritePropertyName("kmsKeyIdentifier");
+                        context.Writer.Write(publicRequest.KmsKeyIdentifier);
+                    }
+
+                    if(publicRequest.IsSetMaxProvisionedMemory())
+                    {
+                        context.Writer.WritePropertyName("maxProvisionedMemory");
+                        context.Writer.Write(publicRequest.MaxProvisionedMemory.Value);
+                    }
+
+                    if(publicRequest.IsSetMinProvisionedMemory())
+                    {
+                        context.Writer.WritePropertyName("minProvisionedMemory");
+                        context.Writer.Write(publicRequest.MinProvisionedMemory.Value);
+                    }
+
+                    if(publicRequest.IsSetPublicConnectivity())
+                    {
+                        context.Writer.WritePropertyName("publicConnectivity");
+                        context.Writer.Write(publicRequest.PublicConnectivity.Value);
+                    }
+
+                    if(publicRequest.IsSetReplicaCount())
+                    {
+                        context.Writer.WritePropertyName("replicaCount");
+                        context.Writer.Write(publicRequest.ReplicaCount.Value);
+                    }
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("roleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    if(publicRequest.IsSetSource())
+                    {
+                        context.Writer.WritePropertyName("source");
+                        context.Writer.Write(publicRequest.Source);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetVectorSearchConfiguration())
+                    {
+                        context.Writer.WritePropertyName("vectorSearchConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = VectorSearchConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.VectorSearchConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetVectorSearchConfiguration())
-                {
-                    context.Writer.WritePropertyName("vectorSearchConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = VectorSearchConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.VectorSearchConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

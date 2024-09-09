@@ -64,83 +64,86 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 throw new AmazonMediaConvertException("Request object does not have required field Name set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/2017-08-29/jobTemplates/{name}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccelerationSettings())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("accelerationSettings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AccelerationSettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AccelerationSettings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetCategory())
-                {
-                    context.Writer.WritePropertyName("category");
-                    context.Writer.Write(publicRequest.Category);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetHopDestinations())
-                {
-                    context.Writer.WritePropertyName("hopDestinations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestHopDestinationsListValue in publicRequest.HopDestinations)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccelerationSettings())
                     {
+                        context.Writer.WritePropertyName("accelerationSettings");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = HopDestinationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestHopDestinationsListValue, context);
+                        var marshaller = AccelerationSettingsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AccelerationSettings, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetCategory())
+                    {
+                        context.Writer.WritePropertyName("category");
+                        context.Writer.Write(publicRequest.Category);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetHopDestinations())
+                    {
+                        context.Writer.WritePropertyName("hopDestinations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestHopDestinationsListValue in publicRequest.HopDestinations)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = HopDestinationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestHopDestinationsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetPriority())
+                    {
+                        context.Writer.WritePropertyName("priority");
+                        context.Writer.Write(publicRequest.Priority.Value);
+                    }
+
+                    if(publicRequest.IsSetQueue())
+                    {
+                        context.Writer.WritePropertyName("queue");
+                        context.Writer.Write(publicRequest.Queue);
+                    }
+
+                    if(publicRequest.IsSetSettings())
+                    {
+                        context.Writer.WritePropertyName("settings");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = JobTemplateSettingsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Settings, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetStatusUpdateInterval())
+                    {
+                        context.Writer.WritePropertyName("statusUpdateInterval");
+                        context.Writer.Write(publicRequest.StatusUpdateInterval);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPriority())
-                {
-                    context.Writer.WritePropertyName("priority");
-                    context.Writer.Write(publicRequest.Priority.Value);
-                }
-
-                if(publicRequest.IsSetQueue())
-                {
-                    context.Writer.WritePropertyName("queue");
-                    context.Writer.Write(publicRequest.Queue);
-                }
-
-                if(publicRequest.IsSetSettings())
-                {
-                    context.Writer.WritePropertyName("settings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = JobTemplateSettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Settings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetStatusUpdateInterval())
-                {
-                    context.Writer.WritePropertyName("statusUpdateInterval");
-                    context.Writer.Write(publicRequest.StatusUpdateInterval);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

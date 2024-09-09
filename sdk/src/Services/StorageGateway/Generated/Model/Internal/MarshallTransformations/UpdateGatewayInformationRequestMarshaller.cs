@@ -63,45 +63,48 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCloudWatchLogGroupARN())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CloudWatchLogGroupARN");
-                    context.Writer.Write(publicRequest.CloudWatchLogGroupARN);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCloudWatchLogGroupARN())
+                    {
+                        context.Writer.WritePropertyName("CloudWatchLogGroupARN");
+                        context.Writer.Write(publicRequest.CloudWatchLogGroupARN);
+                    }
+
+                    if(publicRequest.IsSetGatewayARN())
+                    {
+                        context.Writer.WritePropertyName("GatewayARN");
+                        context.Writer.Write(publicRequest.GatewayARN);
+                    }
+
+                    if(publicRequest.IsSetGatewayCapacity())
+                    {
+                        context.Writer.WritePropertyName("GatewayCapacity");
+                        context.Writer.Write(publicRequest.GatewayCapacity);
+                    }
+
+                    if(publicRequest.IsSetGatewayName())
+                    {
+                        context.Writer.WritePropertyName("GatewayName");
+                        context.Writer.Write(publicRequest.GatewayName);
+                    }
+
+                    if(publicRequest.IsSetGatewayTimezone())
+                    {
+                        context.Writer.WritePropertyName("GatewayTimezone");
+                        context.Writer.Write(publicRequest.GatewayTimezone);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetGatewayARN())
-                {
-                    context.Writer.WritePropertyName("GatewayARN");
-                    context.Writer.Write(publicRequest.GatewayARN);
-                }
-
-                if(publicRequest.IsSetGatewayCapacity())
-                {
-                    context.Writer.WritePropertyName("GatewayCapacity");
-                    context.Writer.Write(publicRequest.GatewayCapacity);
-                }
-
-                if(publicRequest.IsSetGatewayName())
-                {
-                    context.Writer.WritePropertyName("GatewayName");
-                    context.Writer.Write(publicRequest.GatewayName);
-                }
-
-                if(publicRequest.IsSetGatewayTimezone())
-                {
-                    context.Writer.WritePropertyName("GatewayTimezone");
-                    context.Writer.Write(publicRequest.GatewayTimezone);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

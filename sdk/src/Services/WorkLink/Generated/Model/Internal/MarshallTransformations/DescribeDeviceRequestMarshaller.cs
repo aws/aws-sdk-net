@@ -61,27 +61,30 @@ namespace Amazon.WorkLink.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/describeDevice";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeviceId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DeviceId");
-                    context.Writer.Write(publicRequest.DeviceId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDeviceId())
+                    {
+                        context.Writer.WritePropertyName("DeviceId");
+                        context.Writer.Write(publicRequest.DeviceId);
+                    }
+
+                    if(publicRequest.IsSetFleetArn())
+                    {
+                        context.Writer.WritePropertyName("FleetArn");
+                        context.Writer.Write(publicRequest.FleetArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetFleetArn())
-                {
-                    context.Writer.WritePropertyName("FleetArn");
-                    context.Writer.Write(publicRequest.FleetArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

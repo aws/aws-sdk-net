@@ -80,6 +80,9 @@ namespace Amazon
 
         // Deprecated configs
         internal static string _awsRegion = GetConfig(AWSRegionKey);
+        internal static LoggingOptions _logging = GetLoggingSetting();
+        internal static ResponseLoggingOption _responseLogging = GetConfigEnum<ResponseLoggingOption>(ResponseLoggingKey);
+        internal static bool _logMetrics = GetConfigBool(LogMetricsKey);
         internal static string _awsProfileName = GetConfig(AWSProfileNameKey);
         internal static string _awsAccountsLocation = GetConfig(AWSProfilesLocationKey);
         internal static bool _useSdkCache = GetConfigBool(UseSdkCacheKey, defaultValue: true);
@@ -92,6 +95,10 @@ namespace Amazon
 #pragma warning disable 414
         private static bool configPresent = true;
 #pragma warning restore 414
+
+#if NET8_0_OR_GREATER
+        internal static bool _disableDangerousDisablePathAndQueryCanonicalization = GetConfigBool(DisableDangerousDisablePathAndQueryCanonicalizationKey, defaultValue: false);
+#endif
 
         // New config section
         private static RootConfig _rootConfig = new RootConfig();
@@ -120,12 +127,32 @@ namespace Amazon
         /// by determining the correct server time and reissuing the
         /// request with the correct time.
         /// Default value of this field is True.
+        /// <seealso cref="ClockOffset"/> will be updated with the calculated
+        /// offset even if this field is set to false, though requests
+        /// will not be corrected or retried.
         /// Ignored if <seealso cref="ManualClockCorrection"/> is set.
         /// </summary>
         public static bool CorrectForClockSkew
         {
             get { return _rootConfig.CorrectForClockSkew; }
             set { _rootConfig.CorrectForClockSkew = value; }
+        }
+
+        /// <summary>
+        /// The calculated clock skew correction, if there is one.
+        /// This field will be set if a service call resulted in an exception
+        /// and the SDK has determined that there is a difference between local
+        /// and server times.
+        /// 
+        /// If <seealso cref="CorrectForClockSkew"/> is set to true, this
+        /// value will be set to the correction, but it will not be used by the
+        /// SDK and clock skew errors will not be retried.
+        /// </summary>
+        [Obsolete("This value is deprecated in favor of IClientConfig.ClockOffset, use CorrectClockSkew.GetClockCorrectionForEndpoint(string endpoint) instead.")]
+        public static TimeSpan ClockOffset
+        {
+            get;
+            internal set;
         }
         #endregion
 
@@ -192,6 +219,7 @@ namespace Amazon
 
         /// <summary>
         /// Key for the AWSProfilesLocation property.
+        /// <seealso cref="Amazon.AWSConfigs.LogMetrics"/>
         /// </summary>
         public const string AWSProfilesLocationKey = "AWSProfilesLocation";
 
@@ -220,6 +248,110 @@ namespace Amazon
 
         #endregion
 
+        #region Logging
+
+        /// <summary>
+        /// Key for the Logging property.
+        /// <seealso cref="Amazon.AWSConfigs.Logging"/>
+        /// </summary>
+        public const string LoggingKey = "AWSLogging";
+
+        /// <summary>
+        /// Configures how the SDK should log events, if at all.
+        /// Changes to this setting will only take effect in newly-constructed clients.
+        /// 
+        /// The setting can be configured through App.config, for example:
+        /// <code>
+        /// &lt;appSettings&gt;
+        ///   &lt;add key="AWSLogging" value="log4net"/&gt;
+        /// &lt;/appSettings&gt;
+        /// </code>
+        /// </summary>
+        [Obsolete("This property is obsolete. Use LoggingConfig.LogTo instead.")]
+        public static LoggingOptions Logging
+        {
+            get { return _rootConfig.Logging.LogTo; }
+            set { _rootConfig.Logging.LogTo = value; }
+        }
+
+        private static LoggingOptions GetLoggingSetting()
+        {
+            string value = GetConfig(LoggingKey);
+            if (string.IsNullOrEmpty(value))
+                return LoggingOptions.None;
+
+            string[] settings = value.Split(validSeparators, StringSplitOptions.RemoveEmptyEntries);
+            if (settings == null || settings.Length == 0)
+                return LoggingOptions.None;
+
+            LoggingOptions totalSetting = LoggingOptions.None;
+            foreach (string setting in settings)
+            {
+                LoggingOptions l = ParseEnum<LoggingOptions>(setting);
+                totalSetting |= l;
+            }
+            return totalSetting;
+        }
+
+        #endregion
+
+        #region Response Logging
+
+        /// <summary>
+        /// Key for the ResponseLogging property.
+        /// 
+        /// <seealso cref="Amazon.AWSConfigs.ResponseLogging"/>
+        /// </summary>
+        public const string ResponseLoggingKey = "AWSResponseLogging";
+
+        /// <summary>
+        /// Configures when the SDK should log service responses.
+        /// Changes to this setting will take effect immediately.
+        /// 
+        /// The setting can be configured through App.config, for example:
+        /// <code>
+        /// &lt;appSettings&gt;
+        ///   &lt;add key="AWSResponseLogging" value="OnError"/&gt;
+        /// &lt;/appSettings&gt;
+        /// </code>
+        /// </summary>
+        [Obsolete("This property is obsolete. Use LoggingConfig.LogResponses instead.")]
+        public static ResponseLoggingOption ResponseLogging
+        {
+            get { return _rootConfig.Logging.LogResponses; }
+            set { _rootConfig.Logging.LogResponses = value; }
+        }
+
+        #endregion
+
+        #region Log Metrics
+
+        /// <summary>
+        /// Key for the LogMetrics property.
+        /// <seealso cref="Amazon.AWSConfigs.LogMetrics"/>
+        /// </summary>
+        public const string LogMetricsKey = "AWSLogMetrics";
+
+        /// <summary>
+        /// Configures if the SDK should log performance metrics.
+        /// This setting configures the default LogMetrics property for all clients/configs.
+        /// Changes to this setting will only take effect in newly-constructed clients.
+        /// 
+        /// The setting can be configured through App.config, for example:
+        /// <code>
+        /// &lt;appSettings&gt;
+        ///   &lt;add key="AWSLogMetrics" value="true"/&gt;
+        /// &lt;/appSettings&gt;
+        /// </code>
+        /// </summary>
+        [Obsolete("This property is obsolete. Use LoggingConfig.LogMetrics instead.")]
+        public static bool LogMetrics
+        {
+            get { return _rootConfig.Logging.LogMetrics; }
+            set { _rootConfig.Logging.LogMetrics = value; }
+        }
+
+        #endregion
 
         #region SDK Cache
 
@@ -273,6 +405,32 @@ namespace Amazon
             set { _rootConfig.InitializeCollections = value; }
         }
         #endregion
+
+        #region Disable DangerousDisablePathAndQueryCanonicalization
+#if NET8_0_OR_GREATER
+        /// <summary>
+        /// Key for the DisableDangerousDisablePathAndQueryCanonicalization property.
+        /// <seealso cref="Amazon.AWSConfigs.InitializeCollections"/>
+        /// </summary>
+        public const string DisableDangerousDisablePathAndQueryCanonicalizationKey = "AWSDisableDangerousDisablePathAndQueryCanonicalization";
+
+        /// <summary>
+        /// Starting with .NET 8 the AWS SDK for .NET uses the DangerousDisablePathAndQueryCanonicalization setting when creating Uri instances.
+        /// This prevents the .NET Uri class from altering the resource path of the URI for paths like S3 object keys. For 
+        /// example if an S3 object key was "foo/../bar.txt" without enabling DangerousDisablePathAndQueryCanonicalization the
+        /// .NET Uri class would change the resource path to "bar.txt".
+        /// 
+        /// Using Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory for mock testing throws an exception when the 
+        /// DangerousDisablePathAndQueryCanonicalization is enabled. To continue using WebApplicationFactory with the SDK
+        /// this property can be set to true to prevent the SDK from using the DangerousDisablePathAndQueryCanonicalization flag.
+        /// </summary>
+        public static bool DisableDangerousDisablePathAndQueryCanonicalization
+        {
+            get { return _rootConfig.DisableDangerousDisablePathAndQueryCanonicalization; }
+            set { _rootConfig.DisableDangerousDisablePathAndQueryCanonicalization = value; }
+        }
+#endif
+#endregion
 
         #region AWS Config Sections
 

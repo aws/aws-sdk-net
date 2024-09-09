@@ -63,67 +63,70 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClusterId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClusterId");
-                    context.Writer.Write(publicRequest.ClusterId);
-                }
-
-                if(publicRequest.IsSetInstanceFleetId())
-                {
-                    context.Writer.WritePropertyName("InstanceFleetId");
-                    context.Writer.Write(publicRequest.InstanceFleetId);
-                }
-
-                if(publicRequest.IsSetInstanceFleetType())
-                {
-                    context.Writer.WritePropertyName("InstanceFleetType");
-                    context.Writer.Write(publicRequest.InstanceFleetType);
-                }
-
-                if(publicRequest.IsSetInstanceGroupId())
-                {
-                    context.Writer.WritePropertyName("InstanceGroupId");
-                    context.Writer.Write(publicRequest.InstanceGroupId);
-                }
-
-                if(publicRequest.IsSetInstanceGroupTypes())
-                {
-                    context.Writer.WritePropertyName("InstanceGroupTypes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestInstanceGroupTypesListValue in publicRequest.InstanceGroupTypes)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClusterId())
                     {
-                            context.Writer.Write(publicRequestInstanceGroupTypesListValue);
+                        context.Writer.WritePropertyName("ClusterId");
+                        context.Writer.Write(publicRequest.ClusterId);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetInstanceStates())
-                {
-                    context.Writer.WritePropertyName("InstanceStates");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestInstanceStatesListValue in publicRequest.InstanceStates)
+                    if(publicRequest.IsSetInstanceFleetId())
                     {
-                            context.Writer.Write(publicRequestInstanceStatesListValue);
+                        context.Writer.WritePropertyName("InstanceFleetId");
+                        context.Writer.Write(publicRequest.InstanceFleetId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetInstanceFleetType())
+                    {
+                        context.Writer.WritePropertyName("InstanceFleetType");
+                        context.Writer.Write(publicRequest.InstanceFleetType);
+                    }
+
+                    if(publicRequest.IsSetInstanceGroupId())
+                    {
+                        context.Writer.WritePropertyName("InstanceGroupId");
+                        context.Writer.Write(publicRequest.InstanceGroupId);
+                    }
+
+                    if(publicRequest.IsSetInstanceGroupTypes())
+                    {
+                        context.Writer.WritePropertyName("InstanceGroupTypes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestInstanceGroupTypesListValue in publicRequest.InstanceGroupTypes)
+                        {
+                                context.Writer.Write(publicRequestInstanceGroupTypesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetInstanceStates())
+                    {
+                        context.Writer.WritePropertyName("InstanceStates");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestInstanceStatesListValue in publicRequest.InstanceStates)
+                        {
+                                context.Writer.Write(publicRequestInstanceStatesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetMarker())
+                    {
+                        context.Writer.WritePropertyName("Marker");
+                        context.Writer.Write(publicRequest.Marker);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMarker())
-                {
-                    context.Writer.WritePropertyName("Marker");
-                    context.Writer.Write(publicRequest.Marker);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

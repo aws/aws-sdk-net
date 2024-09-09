@@ -61,66 +61,69 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/createTimelineEvent";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetEventData())
-                {
-                    context.Writer.WritePropertyName("eventData");
-                    context.Writer.Write(publicRequest.EventData);
-                }
-
-                if(publicRequest.IsSetEventReferences())
-                {
-                    context.Writer.WritePropertyName("eventReferences");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEventReferencesListValue in publicRequest.EventReferences)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EventReferenceMarshaller.Instance;
-                        marshaller.Marshall(publicRequestEventReferencesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetEventData())
+                    {
+                        context.Writer.WritePropertyName("eventData");
+                        context.Writer.Write(publicRequest.EventData);
+                    }
+
+                    if(publicRequest.IsSetEventReferences())
+                    {
+                        context.Writer.WritePropertyName("eventReferences");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestEventReferencesListValue in publicRequest.EventReferences)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = EventReferenceMarshaller.Instance;
+                            marshaller.Marshall(publicRequestEventReferencesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetEventTime())
+                    {
+                        context.Writer.WritePropertyName("eventTime");
+                        context.Writer.Write(publicRequest.EventTime.Value);
+                    }
+
+                    if(publicRequest.IsSetEventType())
+                    {
+                        context.Writer.WritePropertyName("eventType");
+                        context.Writer.Write(publicRequest.EventType);
+                    }
+
+                    if(publicRequest.IsSetIncidentRecordArn())
+                    {
+                        context.Writer.WritePropertyName("incidentRecordArn");
+                        context.Writer.Write(publicRequest.IncidentRecordArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEventTime())
-                {
-                    context.Writer.WritePropertyName("eventTime");
-                    context.Writer.Write(publicRequest.EventTime.Value);
-                }
-
-                if(publicRequest.IsSetEventType())
-                {
-                    context.Writer.WritePropertyName("eventType");
-                    context.Writer.Write(publicRequest.EventType);
-                }
-
-                if(publicRequest.IsSetIncidentRecordArn())
-                {
-                    context.Writer.WritePropertyName("incidentRecordArn");
-                    context.Writer.Write(publicRequest.IncidentRecordArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

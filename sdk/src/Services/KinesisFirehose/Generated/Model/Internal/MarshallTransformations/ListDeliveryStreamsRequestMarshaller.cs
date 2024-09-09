@@ -63,33 +63,36 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeliveryStreamType())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DeliveryStreamType");
-                    context.Writer.Write(publicRequest.DeliveryStreamType);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDeliveryStreamType())
+                    {
+                        context.Writer.WritePropertyName("DeliveryStreamType");
+                        context.Writer.Write(publicRequest.DeliveryStreamType);
+                    }
+
+                    if(publicRequest.IsSetExclusiveStartDeliveryStreamName())
+                    {
+                        context.Writer.WritePropertyName("ExclusiveStartDeliveryStreamName");
+                        context.Writer.Write(publicRequest.ExclusiveStartDeliveryStreamName);
+                    }
+
+                    if(publicRequest.IsSetLimit())
+                    {
+                        context.Writer.WritePropertyName("Limit");
+                        context.Writer.Write(publicRequest.Limit.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetExclusiveStartDeliveryStreamName())
-                {
-                    context.Writer.WritePropertyName("ExclusiveStartDeliveryStreamName");
-                    context.Writer.Write(publicRequest.ExclusiveStartDeliveryStreamName);
-                }
-
-                if(publicRequest.IsSetLimit())
-                {
-                    context.Writer.WritePropertyName("Limit");
-                    context.Writer.Write(publicRequest.Limit.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

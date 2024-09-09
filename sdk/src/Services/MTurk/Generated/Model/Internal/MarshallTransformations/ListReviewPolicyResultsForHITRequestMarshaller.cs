@@ -63,56 +63,59 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetHITId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("HITId");
-                    context.Writer.Write(publicRequest.HITId);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetPolicyLevels())
-                {
-                    context.Writer.WritePropertyName("PolicyLevels");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPolicyLevelsListValue in publicRequest.PolicyLevels)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetHITId())
                     {
-                            context.Writer.Write(publicRequestPolicyLevelsListValue);
+                        context.Writer.WritePropertyName("HITId");
+                        context.Writer.Write(publicRequest.HITId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetPolicyLevels())
+                    {
+                        context.Writer.WritePropertyName("PolicyLevels");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPolicyLevelsListValue in publicRequest.PolicyLevels)
+                        {
+                                context.Writer.Write(publicRequestPolicyLevelsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetRetrieveActions())
+                    {
+                        context.Writer.WritePropertyName("RetrieveActions");
+                        context.Writer.Write(publicRequest.RetrieveActions.Value);
+                    }
+
+                    if(publicRequest.IsSetRetrieveResults())
+                    {
+                        context.Writer.WritePropertyName("RetrieveResults");
+                        context.Writer.Write(publicRequest.RetrieveResults.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRetrieveActions())
-                {
-                    context.Writer.WritePropertyName("RetrieveActions");
-                    context.Writer.Write(publicRequest.RetrieveActions.Value);
-                }
-
-                if(publicRequest.IsSetRetrieveResults())
-                {
-                    context.Writer.WritePropertyName("RetrieveResults");
-                    context.Writer.Write(publicRequest.RetrieveResults.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

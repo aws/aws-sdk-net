@@ -63,35 +63,38 @@ namespace Amazon.BCMDataExports.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetTableName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("TableName");
-                    context.Writer.Write(publicRequest.TableName);
-                }
-
-                if(publicRequest.IsSetTableProperties())
-                {
-                    context.Writer.WritePropertyName("TableProperties");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTablePropertiesKvp in publicRequest.TableProperties)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetTableName())
                     {
-                        context.Writer.WritePropertyName(publicRequestTablePropertiesKvp.Key);
-                        var publicRequestTablePropertiesValue = publicRequestTablePropertiesKvp.Value;
-
-                            context.Writer.Write(publicRequestTablePropertiesValue);
+                        context.Writer.WritePropertyName("TableName");
+                        context.Writer.Write(publicRequest.TableName);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetTableProperties())
+                    {
+                        context.Writer.WritePropertyName("TableProperties");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTablePropertiesKvp in publicRequest.TableProperties)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTablePropertiesKvp.Key);
+                            var publicRequestTablePropertiesValue = publicRequestTablePropertiesKvp.Value;
+
+                                context.Writer.Write(publicRequestTablePropertiesValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

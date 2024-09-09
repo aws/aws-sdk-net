@@ -64,21 +64,24 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                 throw new AmazonVPCLatticeException("Request object does not have required field ResourceArn set");
             request.AddPathResource("{resourceArn}", StringUtils.FromString(publicRequest.ResourceArn));
             request.ResourcePath = "/resourcepolicy/{resourceArn}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetPolicy())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("policy");
-                    context.Writer.Write(publicRequest.Policy);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetPolicy())
+                    {
+                        context.Writer.WritePropertyName("policy");
+                        context.Writer.Write(publicRequest.Policy);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

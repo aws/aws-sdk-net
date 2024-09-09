@@ -63,53 +63,56 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFleetId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("FleetId");
-                    context.Writer.Write(publicRequest.FleetId);
-                }
-
-                if(publicRequest.IsSetInboundPermissionAuthorizations())
-                {
-                    context.Writer.WritePropertyName("InboundPermissionAuthorizations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestInboundPermissionAuthorizationsListValue in publicRequest.InboundPermissionAuthorizations)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFleetId())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = IpPermissionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestInboundPermissionAuthorizationsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("FleetId");
+                        context.Writer.Write(publicRequest.FleetId);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetInboundPermissionRevocations())
-                {
-                    context.Writer.WritePropertyName("InboundPermissionRevocations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestInboundPermissionRevocationsListValue in publicRequest.InboundPermissionRevocations)
+                    if(publicRequest.IsSetInboundPermissionAuthorizations())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("InboundPermissionAuthorizations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestInboundPermissionAuthorizationsListValue in publicRequest.InboundPermissionAuthorizations)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = IpPermissionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestInboundPermissionRevocationsListValue, context);
+                            var marshaller = IpPermissionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestInboundPermissionAuthorizationsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetInboundPermissionRevocations())
+                    {
+                        context.Writer.WritePropertyName("InboundPermissionRevocations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestInboundPermissionRevocationsListValue in publicRequest.InboundPermissionRevocations)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = IpPermissionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestInboundPermissionRevocationsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -64,31 +64,34 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
                 throw new AmazonEntityResolutionException("Request object does not have required field WorkflowName set");
             request.AddPathResource("{workflowName}", StringUtils.FromString(publicRequest.WorkflowName));
             request.ResourcePath = "/idmappingworkflows/{workflowName}/jobs";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetOutputSourceConfig())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("outputSourceConfig");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestOutputSourceConfigListValue in publicRequest.OutputSourceConfig)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetOutputSourceConfig())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("outputSourceConfig");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestOutputSourceConfigListValue in publicRequest.OutputSourceConfig)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = IdMappingJobOutputSourceMarshaller.Instance;
-                        marshaller.Marshall(publicRequestOutputSourceConfigListValue, context);
+                            var marshaller = IdMappingJobOutputSourceMarshaller.Instance;
+                            marshaller.Marshall(publicRequestOutputSourceConfigListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

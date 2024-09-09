@@ -34,7 +34,64 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class AnonymousUserDashboardEmbeddingConfiguration
     {
+        private List<string> _disabledFeatures = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _enabledFeatures = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private AnonymousUserDashboardFeatureConfigurations _featureConfigurations;
         private string _initialDashboardId;
+
+        /// <summary>
+        /// Gets and sets the property DisabledFeatures. 
+        /// <para>
+        /// A list of all disabled features of a specified anonymous dashboard.
+        /// </para>
+        /// </summary>
+        public List<string> DisabledFeatures
+        {
+            get { return this._disabledFeatures; }
+            set { this._disabledFeatures = value; }
+        }
+
+        // Check to see if DisabledFeatures property is set
+        internal bool IsSetDisabledFeatures()
+        {
+            return this._disabledFeatures != null && (this._disabledFeatures.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnabledFeatures. 
+        /// <para>
+        /// A list of all enabled features of a specified anonymous dashboard.
+        /// </para>
+        /// </summary>
+        public List<string> EnabledFeatures
+        {
+            get { return this._enabledFeatures; }
+            set { this._enabledFeatures = value; }
+        }
+
+        // Check to see if EnabledFeatures property is set
+        internal bool IsSetEnabledFeatures()
+        {
+            return this._enabledFeatures != null && (this._enabledFeatures.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FeatureConfigurations. 
+        /// <para>
+        /// The feature configuration for an embedded dashboard.
+        /// </para>
+        /// </summary>
+        public AnonymousUserDashboardFeatureConfigurations FeatureConfigurations
+        {
+            get { return this._featureConfigurations; }
+            set { this._featureConfigurations = value; }
+        }
+
+        // Check to see if FeatureConfigurations property is set
+        internal bool IsSetFeatureConfigurations()
+        {
+            return this._featureConfigurations != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InitialDashboardId. 

@@ -61,43 +61,46 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/sbomexport/create";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetReportFormat())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("reportFormat");
-                    context.Writer.Write(publicRequest.ReportFormat);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetReportFormat())
+                    {
+                        context.Writer.WritePropertyName("reportFormat");
+                        context.Writer.Write(publicRequest.ReportFormat);
+                    }
+
+                    if(publicRequest.IsSetResourceFilterCriteria())
+                    {
+                        context.Writer.WritePropertyName("resourceFilterCriteria");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ResourceFilterCriteriaMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ResourceFilterCriteria, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetS3Destination())
+                    {
+                        context.Writer.WritePropertyName("s3Destination");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DestinationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.S3Destination, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetResourceFilterCriteria())
-                {
-                    context.Writer.WritePropertyName("resourceFilterCriteria");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ResourceFilterCriteriaMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ResourceFilterCriteria, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetS3Destination())
-                {
-                    context.Writer.WritePropertyName("s3Destination");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DestinationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.S3Destination, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,44 +63,47 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMaxResults())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetMonitorArn())
-                {
-                    context.Writer.WritePropertyName("MonitorArn");
-                    context.Writer.Write(publicRequest.MonitorArn);
-                }
-
-                if(publicRequest.IsSetNextPageToken())
-                {
-                    context.Writer.WritePropertyName("NextPageToken");
-                    context.Writer.Write(publicRequest.NextPageToken);
-                }
-
-                if(publicRequest.IsSetSubscriptionArnList())
-                {
-                    context.Writer.WritePropertyName("SubscriptionArnList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSubscriptionArnListListValue in publicRequest.SubscriptionArnList)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMaxResults())
                     {
-                            context.Writer.Write(publicRequestSubscriptionArnListListValue);
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetMonitorArn())
+                    {
+                        context.Writer.WritePropertyName("MonitorArn");
+                        context.Writer.Write(publicRequest.MonitorArn);
+                    }
+
+                    if(publicRequest.IsSetNextPageToken())
+                    {
+                        context.Writer.WritePropertyName("NextPageToken");
+                        context.Writer.Write(publicRequest.NextPageToken);
+                    }
+
+                    if(publicRequest.IsSetSubscriptionArnList())
+                    {
+                        context.Writer.WritePropertyName("SubscriptionArnList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSubscriptionArnListListValue in publicRequest.SubscriptionArnList)
+                        {
+                                context.Writer.Write(publicRequestSubscriptionArnListListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

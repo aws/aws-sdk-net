@@ -67,27 +67,30 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 throw new AmazonChimeException("Request object does not have required field MessageId set");
             request.AddPathResource("{messageId}", StringUtils.FromString(publicRequest.MessageId));
             request.ResourcePath = "/channels/{channelArn}/messages/{messageId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetContent())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Content");
-                    context.Writer.Write(publicRequest.Content);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetContent())
+                    {
+                        context.Writer.WritePropertyName("Content");
+                        context.Writer.Write(publicRequest.Content);
+                    }
+
+                    if(publicRequest.IsSetMetadata())
+                    {
+                        context.Writer.WritePropertyName("Metadata");
+                        context.Writer.Write(publicRequest.Metadata);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMetadata())
-                {
-                    context.Writer.WritePropertyName("Metadata");
-                    context.Writer.Write(publicRequest.Metadata);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

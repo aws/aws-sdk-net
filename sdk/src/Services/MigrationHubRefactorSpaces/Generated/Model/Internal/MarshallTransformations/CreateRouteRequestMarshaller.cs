@@ -67,74 +67,77 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
                 throw new AmazonMigrationHubRefactorSpacesException("Request object does not have required field EnvironmentIdentifier set");
             request.AddPathResource("{EnvironmentIdentifier}", StringUtils.FromString(publicRequest.EnvironmentIdentifier));
             request.ResourcePath = "/environments/{EnvironmentIdentifier}/applications/{ApplicationIdentifier}/routes";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDefaultRoute())
-                {
-                    context.Writer.WritePropertyName("DefaultRoute");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DefaultRouteInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DefaultRoute, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRouteType())
-                {
-                    context.Writer.WritePropertyName("RouteType");
-                    context.Writer.Write(publicRequest.RouteType);
-                }
-
-                if(publicRequest.IsSetServiceIdentifier())
-                {
-                    context.Writer.WritePropertyName("ServiceIdentifier");
-                    context.Writer.Write(publicRequest.ServiceIdentifier);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetDefaultRoute())
+                    {
+                        context.Writer.WritePropertyName("DefaultRoute");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DefaultRouteInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DefaultRoute, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRouteType())
+                    {
+                        context.Writer.WritePropertyName("RouteType");
+                        context.Writer.Write(publicRequest.RouteType);
+                    }
+
+                    if(publicRequest.IsSetServiceIdentifier())
+                    {
+                        context.Writer.WritePropertyName("ServiceIdentifier");
+                        context.Writer.Write(publicRequest.ServiceIdentifier);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetUriPathRoute())
+                    {
+                        context.Writer.WritePropertyName("UriPathRoute");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = UriPathRouteInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.UriPathRoute, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetUriPathRoute())
-                {
-                    context.Writer.WritePropertyName("UriPathRoute");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UriPathRouteInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.UriPathRoute, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

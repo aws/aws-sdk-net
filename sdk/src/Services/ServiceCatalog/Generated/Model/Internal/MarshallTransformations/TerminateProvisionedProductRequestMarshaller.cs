@@ -63,56 +63,59 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAcceptLanguage())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AcceptLanguage");
-                    context.Writer.Write(publicRequest.AcceptLanguage);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAcceptLanguage())
+                    {
+                        context.Writer.WritePropertyName("AcceptLanguage");
+                        context.Writer.Write(publicRequest.AcceptLanguage);
+                    }
+
+                    if(publicRequest.IsSetIgnoreErrors())
+                    {
+                        context.Writer.WritePropertyName("IgnoreErrors");
+                        context.Writer.Write(publicRequest.IgnoreErrors.Value);
+                    }
+
+                    if(publicRequest.IsSetProvisionedProductId())
+                    {
+                        context.Writer.WritePropertyName("ProvisionedProductId");
+                        context.Writer.Write(publicRequest.ProvisionedProductId);
+                    }
+
+                    if(publicRequest.IsSetProvisionedProductName())
+                    {
+                        context.Writer.WritePropertyName("ProvisionedProductName");
+                        context.Writer.Write(publicRequest.ProvisionedProductName);
+                    }
+
+                    if(publicRequest.IsSetRetainPhysicalResources())
+                    {
+                        context.Writer.WritePropertyName("RetainPhysicalResources");
+                        context.Writer.Write(publicRequest.RetainPhysicalResources.Value);
+                    }
+
+                    if(publicRequest.IsSetTerminateToken())
+                    {
+                        context.Writer.WritePropertyName("TerminateToken");
+                        context.Writer.Write(publicRequest.TerminateToken);
+                    }
+
+                    else if(!(publicRequest.IsSetTerminateToken()))
+                    {
+                        context.Writer.WritePropertyName("TerminateToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetIgnoreErrors())
-                {
-                    context.Writer.WritePropertyName("IgnoreErrors");
-                    context.Writer.Write(publicRequest.IgnoreErrors.Value);
-                }
-
-                if(publicRequest.IsSetProvisionedProductId())
-                {
-                    context.Writer.WritePropertyName("ProvisionedProductId");
-                    context.Writer.Write(publicRequest.ProvisionedProductId);
-                }
-
-                if(publicRequest.IsSetProvisionedProductName())
-                {
-                    context.Writer.WritePropertyName("ProvisionedProductName");
-                    context.Writer.Write(publicRequest.ProvisionedProductName);
-                }
-
-                if(publicRequest.IsSetRetainPhysicalResources())
-                {
-                    context.Writer.WritePropertyName("RetainPhysicalResources");
-                    context.Writer.Write(publicRequest.RetainPhysicalResources.Value);
-                }
-
-                if(publicRequest.IsSetTerminateToken())
-                {
-                    context.Writer.WritePropertyName("TerminateToken");
-                    context.Writer.Write(publicRequest.TerminateToken);
-                }
-
-                else if(!(publicRequest.IsSetTerminateToken()))
-                {
-                    context.Writer.WritePropertyName("TerminateToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

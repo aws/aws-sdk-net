@@ -63,162 +63,165 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCertificate())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Certificate");
-                    context.Writer.Write(publicRequest.Certificate);
-                }
-
-                if(publicRequest.IsSetDomain())
-                {
-                    context.Writer.WritePropertyName("Domain");
-                    context.Writer.Write(publicRequest.Domain);
-                }
-
-                if(publicRequest.IsSetEndpointDetails())
-                {
-                    context.Writer.WritePropertyName("EndpointDetails");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EndpointDetailsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EndpointDetails, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEndpointType())
-                {
-                    context.Writer.WritePropertyName("EndpointType");
-                    context.Writer.Write(publicRequest.EndpointType);
-                }
-
-                if(publicRequest.IsSetHostKey())
-                {
-                    context.Writer.WritePropertyName("HostKey");
-                    context.Writer.Write(publicRequest.HostKey);
-                }
-
-                if(publicRequest.IsSetIdentityProviderDetails())
-                {
-                    context.Writer.WritePropertyName("IdentityProviderDetails");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = IdentityProviderDetailsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.IdentityProviderDetails, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetIdentityProviderType())
-                {
-                    context.Writer.WritePropertyName("IdentityProviderType");
-                    context.Writer.Write(publicRequest.IdentityProviderType);
-                }
-
-                if(publicRequest.IsSetLoggingRole())
-                {
-                    context.Writer.WritePropertyName("LoggingRole");
-                    context.Writer.Write(publicRequest.LoggingRole);
-                }
-
-                if(publicRequest.IsSetPostAuthenticationLoginBanner())
-                {
-                    context.Writer.WritePropertyName("PostAuthenticationLoginBanner");
-                    context.Writer.Write(publicRequest.PostAuthenticationLoginBanner);
-                }
-
-                if(publicRequest.IsSetPreAuthenticationLoginBanner())
-                {
-                    context.Writer.WritePropertyName("PreAuthenticationLoginBanner");
-                    context.Writer.Write(publicRequest.PreAuthenticationLoginBanner);
-                }
-
-                if(publicRequest.IsSetProtocolDetails())
-                {
-                    context.Writer.WritePropertyName("ProtocolDetails");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ProtocolDetailsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ProtocolDetails, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetProtocols())
-                {
-                    context.Writer.WritePropertyName("Protocols");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestProtocolsListValue in publicRequest.Protocols)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCertificate())
                     {
-                            context.Writer.Write(publicRequestProtocolsListValue);
+                        context.Writer.WritePropertyName("Certificate");
+                        context.Writer.Write(publicRequest.Certificate);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetS3StorageOptions())
-                {
-                    context.Writer.WritePropertyName("S3StorageOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = S3StorageOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.S3StorageOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSecurityPolicyName())
-                {
-                    context.Writer.WritePropertyName("SecurityPolicyName");
-                    context.Writer.Write(publicRequest.SecurityPolicyName);
-                }
-
-                if(publicRequest.IsSetStructuredLogDestinations())
-                {
-                    context.Writer.WritePropertyName("StructuredLogDestinations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestStructuredLogDestinationsListValue in publicRequest.StructuredLogDestinations)
+                    if(publicRequest.IsSetDomain())
                     {
-                            context.Writer.Write(publicRequestStructuredLogDestinationsListValue);
+                        context.Writer.WritePropertyName("Domain");
+                        context.Writer.Write(publicRequest.Domain);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetEndpointDetails())
                     {
+                        context.Writer.WritePropertyName("EndpointDetails");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = EndpointDetailsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EndpointDetails, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetEndpointType())
+                    {
+                        context.Writer.WritePropertyName("EndpointType");
+                        context.Writer.Write(publicRequest.EndpointType);
+                    }
+
+                    if(publicRequest.IsSetHostKey())
+                    {
+                        context.Writer.WritePropertyName("HostKey");
+                        context.Writer.Write(publicRequest.HostKey);
+                    }
+
+                    if(publicRequest.IsSetIdentityProviderDetails())
+                    {
+                        context.Writer.WritePropertyName("IdentityProviderDetails");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = IdentityProviderDetailsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.IdentityProviderDetails, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetIdentityProviderType())
+                    {
+                        context.Writer.WritePropertyName("IdentityProviderType");
+                        context.Writer.Write(publicRequest.IdentityProviderType);
+                    }
+
+                    if(publicRequest.IsSetLoggingRole())
+                    {
+                        context.Writer.WritePropertyName("LoggingRole");
+                        context.Writer.Write(publicRequest.LoggingRole);
+                    }
+
+                    if(publicRequest.IsSetPostAuthenticationLoginBanner())
+                    {
+                        context.Writer.WritePropertyName("PostAuthenticationLoginBanner");
+                        context.Writer.Write(publicRequest.PostAuthenticationLoginBanner);
+                    }
+
+                    if(publicRequest.IsSetPreAuthenticationLoginBanner())
+                    {
+                        context.Writer.WritePropertyName("PreAuthenticationLoginBanner");
+                        context.Writer.Write(publicRequest.PreAuthenticationLoginBanner);
+                    }
+
+                    if(publicRequest.IsSetProtocolDetails())
+                    {
+                        context.Writer.WritePropertyName("ProtocolDetails");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ProtocolDetailsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ProtocolDetails, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetProtocols())
+                    {
+                        context.Writer.WritePropertyName("Protocols");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestProtocolsListValue in publicRequest.Protocols)
+                        {
+                                context.Writer.Write(publicRequestProtocolsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetS3StorageOptions())
+                    {
+                        context.Writer.WritePropertyName("S3StorageOptions");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = S3StorageOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.S3StorageOptions, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSecurityPolicyName())
+                    {
+                        context.Writer.WritePropertyName("SecurityPolicyName");
+                        context.Writer.Write(publicRequest.SecurityPolicyName);
+                    }
+
+                    if(publicRequest.IsSetStructuredLogDestinations())
+                    {
+                        context.Writer.WritePropertyName("StructuredLogDestinations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestStructuredLogDestinationsListValue in publicRequest.StructuredLogDestinations)
+                        {
+                                context.Writer.Write(publicRequestStructuredLogDestinationsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetWorkflowDetails())
+                    {
+                        context.Writer.WritePropertyName("WorkflowDetails");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = WorkflowDetailsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.WorkflowDetails, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetWorkflowDetails())
-                {
-                    context.Writer.WritePropertyName("WorkflowDetails");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = WorkflowDetailsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.WorkflowDetails, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

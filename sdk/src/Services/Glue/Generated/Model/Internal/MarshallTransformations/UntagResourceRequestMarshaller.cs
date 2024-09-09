@@ -63,32 +63,35 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetResourceArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ResourceArn");
-                    context.Writer.Write(publicRequest.ResourceArn);
-                }
-
-                if(publicRequest.IsSetTagsToRemove())
-                {
-                    context.Writer.WritePropertyName("TagsToRemove");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsToRemoveListValue in publicRequest.TagsToRemove)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetResourceArn())
                     {
-                            context.Writer.Write(publicRequestTagsToRemoveListValue);
+                        context.Writer.WritePropertyName("ResourceArn");
+                        context.Writer.Write(publicRequest.ResourceArn);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTagsToRemove())
+                    {
+                        context.Writer.WritePropertyName("TagsToRemove");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsToRemoveListValue in publicRequest.TagsToRemove)
+                        {
+                                context.Writer.Write(publicRequestTagsToRemoveListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

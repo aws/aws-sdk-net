@@ -63,49 +63,52 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientAffinity())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientAffinity");
-                    context.Writer.Write(publicRequest.ClientAffinity);
-                }
-
-                if(publicRequest.IsSetListenerArn())
-                {
-                    context.Writer.WritePropertyName("ListenerArn");
-                    context.Writer.Write(publicRequest.ListenerArn);
-                }
-
-                if(publicRequest.IsSetPortRanges())
-                {
-                    context.Writer.WritePropertyName("PortRanges");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPortRangesListValue in publicRequest.PortRanges)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientAffinity())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = PortRangeMarshaller.Instance;
-                        marshaller.Marshall(publicRequestPortRangesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("ClientAffinity");
+                        context.Writer.Write(publicRequest.ClientAffinity);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetListenerArn())
+                    {
+                        context.Writer.WritePropertyName("ListenerArn");
+                        context.Writer.Write(publicRequest.ListenerArn);
+                    }
+
+                    if(publicRequest.IsSetPortRanges())
+                    {
+                        context.Writer.WritePropertyName("PortRanges");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPortRangesListValue in publicRequest.PortRanges)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = PortRangeMarshaller.Instance;
+                            marshaller.Marshall(publicRequestPortRangesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetProtocol())
+                    {
+                        context.Writer.WritePropertyName("Protocol");
+                        context.Writer.Write(publicRequest.Protocol);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetProtocol())
-                {
-                    context.Writer.WritePropertyName("Protocol");
-                    context.Writer.Write(publicRequest.Protocol);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -61,69 +61,72 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v1/vpc-connection";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAuthentication())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("authentication");
-                    context.Writer.Write(publicRequest.Authentication);
-                }
-
-                if(publicRequest.IsSetClientSubnets())
-                {
-                    context.Writer.WritePropertyName("clientSubnets");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestClientSubnetsListValue in publicRequest.ClientSubnets)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAuthentication())
                     {
-                            context.Writer.Write(publicRequestClientSubnetsListValue);
+                        context.Writer.WritePropertyName("authentication");
+                        context.Writer.Write(publicRequest.Authentication);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetSecurityGroups())
-                {
-                    context.Writer.WritePropertyName("securityGroups");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSecurityGroupsListValue in publicRequest.SecurityGroups)
+                    if(publicRequest.IsSetClientSubnets())
                     {
-                            context.Writer.Write(publicRequestSecurityGroupsListValue);
+                        context.Writer.WritePropertyName("clientSubnets");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestClientSubnetsListValue in publicRequest.ClientSubnets)
+                        {
+                                context.Writer.Write(publicRequestClientSubnetsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetSecurityGroups())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("securityGroups");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSecurityGroupsListValue in publicRequest.SecurityGroups)
+                        {
+                                context.Writer.Write(publicRequestSecurityGroupsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTargetClusterArn())
+                    {
+                        context.Writer.WritePropertyName("targetClusterArn");
+                        context.Writer.Write(publicRequest.TargetClusterArn);
+                    }
+
+                    if(publicRequest.IsSetVpcId())
+                    {
+                        context.Writer.WritePropertyName("vpcId");
+                        context.Writer.Write(publicRequest.VpcId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTargetClusterArn())
-                {
-                    context.Writer.WritePropertyName("targetClusterArn");
-                    context.Writer.Write(publicRequest.TargetClusterArn);
-                }
-
-                if(publicRequest.IsSetVpcId())
-                {
-                    context.Writer.WritePropertyName("vpcId");
-                    context.Writer.Write(publicRequest.VpcId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -64,59 +64,62 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
                 throw new AmazonCloudWatchRUMException("Request object does not have required field Id set");
             request.AddPathResource("{Id}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = "/appmonitors/{Id}/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAppMonitorDetails())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AppMonitorDetails");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AppMonitorDetailsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AppMonitorDetails, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetBatchId())
-                {
-                    context.Writer.WritePropertyName("BatchId");
-                    context.Writer.Write(publicRequest.BatchId);
-                }
-
-                if(publicRequest.IsSetRumEvents())
-                {
-                    context.Writer.WritePropertyName("RumEvents");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRumEventsListValue in publicRequest.RumEvents)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAppMonitorDetails())
                     {
+                        context.Writer.WritePropertyName("AppMonitorDetails");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = RumEventMarshaller.Instance;
-                        marshaller.Marshall(publicRequestRumEventsListValue, context);
+                        var marshaller = AppMonitorDetailsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AppMonitorDetails, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetBatchId())
+                    {
+                        context.Writer.WritePropertyName("BatchId");
+                        context.Writer.Write(publicRequest.BatchId);
+                    }
+
+                    if(publicRequest.IsSetRumEvents())
+                    {
+                        context.Writer.WritePropertyName("RumEvents");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRumEventsListValue in publicRequest.RumEvents)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = RumEventMarshaller.Instance;
+                            marshaller.Marshall(publicRequestRumEventsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetUserDetails())
+                    {
+                        context.Writer.WritePropertyName("UserDetails");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = UserDetailsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.UserDetails, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetUserDetails())
-                {
-                    context.Writer.WritePropertyName("UserDetails");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UserDetailsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.UserDetails, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

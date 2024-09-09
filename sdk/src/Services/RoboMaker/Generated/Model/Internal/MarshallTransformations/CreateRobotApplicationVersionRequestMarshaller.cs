@@ -61,44 +61,47 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/createRobotApplicationVersion";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApplication())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("application");
-                    context.Writer.Write(publicRequest.Application);
-                }
-
-                if(publicRequest.IsSetCurrentRevisionId())
-                {
-                    context.Writer.WritePropertyName("currentRevisionId");
-                    context.Writer.Write(publicRequest.CurrentRevisionId);
-                }
-
-                if(publicRequest.IsSetImageDigest())
-                {
-                    context.Writer.WritePropertyName("imageDigest");
-                    context.Writer.Write(publicRequest.ImageDigest);
-                }
-
-                if(publicRequest.IsSetS3Etags())
-                {
-                    context.Writer.WritePropertyName("s3Etags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestS3EtagsListValue in publicRequest.S3Etags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApplication())
                     {
-                            context.Writer.Write(publicRequestS3EtagsListValue);
+                        context.Writer.WritePropertyName("application");
+                        context.Writer.Write(publicRequest.Application);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetCurrentRevisionId())
+                    {
+                        context.Writer.WritePropertyName("currentRevisionId");
+                        context.Writer.Write(publicRequest.CurrentRevisionId);
+                    }
+
+                    if(publicRequest.IsSetImageDigest())
+                    {
+                        context.Writer.WritePropertyName("imageDigest");
+                        context.Writer.Write(publicRequest.ImageDigest);
+                    }
+
+                    if(publicRequest.IsSetS3Etags())
+                    {
+                        context.Writer.WritePropertyName("s3Etags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestS3EtagsListValue in publicRequest.S3Etags)
+                        {
+                                context.Writer.Write(publicRequestS3EtagsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

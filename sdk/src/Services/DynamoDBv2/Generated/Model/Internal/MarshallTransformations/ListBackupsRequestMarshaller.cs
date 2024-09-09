@@ -63,51 +63,54 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBackupType())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("BackupType");
-                    context.Writer.Write(publicRequest.BackupType);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBackupType())
+                    {
+                        context.Writer.WritePropertyName("BackupType");
+                        context.Writer.Write(publicRequest.BackupType);
+                    }
+
+                    if(publicRequest.IsSetExclusiveStartBackupArn())
+                    {
+                        context.Writer.WritePropertyName("ExclusiveStartBackupArn");
+                        context.Writer.Write(publicRequest.ExclusiveStartBackupArn);
+                    }
+
+                    if(publicRequest.IsSetLimit())
+                    {
+                        context.Writer.WritePropertyName("Limit");
+                        context.Writer.Write(publicRequest.Limit.Value);
+                    }
+
+                    if(publicRequest.IsSetTableName())
+                    {
+                        context.Writer.WritePropertyName("TableName");
+                        context.Writer.Write(publicRequest.TableName);
+                    }
+
+                    if(publicRequest.IsSetTimeRangeLowerBound())
+                    {
+                        context.Writer.WritePropertyName("TimeRangeLowerBound");
+                        context.Writer.Write(publicRequest.TimeRangeLowerBound.Value);
+                    }
+
+                    if(publicRequest.IsSetTimeRangeUpperBound())
+                    {
+                        context.Writer.WritePropertyName("TimeRangeUpperBound");
+                        context.Writer.Write(publicRequest.TimeRangeUpperBound.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetExclusiveStartBackupArn())
-                {
-                    context.Writer.WritePropertyName("ExclusiveStartBackupArn");
-                    context.Writer.Write(publicRequest.ExclusiveStartBackupArn);
-                }
-
-                if(publicRequest.IsSetLimit())
-                {
-                    context.Writer.WritePropertyName("Limit");
-                    context.Writer.Write(publicRequest.Limit.Value);
-                }
-
-                if(publicRequest.IsSetTableName())
-                {
-                    context.Writer.WritePropertyName("TableName");
-                    context.Writer.Write(publicRequest.TableName);
-                }
-
-                if(publicRequest.IsSetTimeRangeLowerBound())
-                {
-                    context.Writer.WritePropertyName("TimeRangeLowerBound");
-                    context.Writer.Write(publicRequest.TimeRangeLowerBound.Value);
-                }
-
-                if(publicRequest.IsSetTimeRangeUpperBound())
-                {
-                    context.Writer.WritePropertyName("TimeRangeUpperBound");
-                    context.Writer.Write(publicRequest.TimeRangeUpperBound.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

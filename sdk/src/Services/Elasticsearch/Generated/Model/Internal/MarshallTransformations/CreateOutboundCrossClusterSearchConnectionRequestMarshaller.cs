@@ -61,43 +61,46 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/2015-01-01/es/ccs/outboundConnection";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConnectionAlias())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ConnectionAlias");
-                    context.Writer.Write(publicRequest.ConnectionAlias);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConnectionAlias())
+                    {
+                        context.Writer.WritePropertyName("ConnectionAlias");
+                        context.Writer.Write(publicRequest.ConnectionAlias);
+                    }
+
+                    if(publicRequest.IsSetDestinationDomainInfo())
+                    {
+                        context.Writer.WritePropertyName("DestinationDomainInfo");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DomainInformationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DestinationDomainInfo, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSourceDomainInfo())
+                    {
+                        context.Writer.WritePropertyName("SourceDomainInfo");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DomainInformationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SourceDomainInfo, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDestinationDomainInfo())
-                {
-                    context.Writer.WritePropertyName("DestinationDomainInfo");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DomainInformationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DestinationDomainInfo, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSourceDomainInfo())
-                {
-                    context.Writer.WritePropertyName("SourceDomainInfo");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DomainInformationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SourceDomainInfo, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,33 +63,36 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetPolicyName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("PolicyName");
-                    context.Writer.Write(publicRequest.PolicyName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetPolicyName())
+                    {
+                        context.Writer.WritePropertyName("PolicyName");
+                        context.Writer.Write(publicRequest.PolicyName);
+                    }
+
+                    if(publicRequest.IsSetPolicyRevisionId())
+                    {
+                        context.Writer.WritePropertyName("PolicyRevisionId");
+                        context.Writer.Write(publicRequest.PolicyRevisionId);
+                    }
+
+                    if(publicRequest.IsSetProjectArn())
+                    {
+                        context.Writer.WritePropertyName("ProjectArn");
+                        context.Writer.Write(publicRequest.ProjectArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPolicyRevisionId())
-                {
-                    context.Writer.WritePropertyName("PolicyRevisionId");
-                    context.Writer.Write(publicRequest.PolicyRevisionId);
-                }
-
-                if(publicRequest.IsSetProjectArn())
-                {
-                    context.Writer.WritePropertyName("ProjectArn");
-                    context.Writer.Write(publicRequest.ProjectArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

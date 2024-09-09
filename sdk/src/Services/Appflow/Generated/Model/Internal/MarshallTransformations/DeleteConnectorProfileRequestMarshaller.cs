@@ -61,27 +61,30 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/delete-connector-profile";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConnectorProfileName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("connectorProfileName");
-                    context.Writer.Write(publicRequest.ConnectorProfileName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConnectorProfileName())
+                    {
+                        context.Writer.WritePropertyName("connectorProfileName");
+                        context.Writer.Write(publicRequest.ConnectorProfileName);
+                    }
+
+                    if(publicRequest.IsSetForceDelete())
+                    {
+                        context.Writer.WritePropertyName("forceDelete");
+                        context.Writer.Write(publicRequest.ForceDelete.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetForceDelete())
-                {
-                    context.Writer.WritePropertyName("forceDelete");
-                    context.Writer.Write(publicRequest.ForceDelete.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

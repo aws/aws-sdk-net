@@ -63,82 +63,85 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAlgorithmDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AlgorithmDescription");
-                    context.Writer.Write(publicRequest.AlgorithmDescription);
-                }
-
-                if(publicRequest.IsSetAlgorithmName())
-                {
-                    context.Writer.WritePropertyName("AlgorithmName");
-                    context.Writer.Write(publicRequest.AlgorithmName);
-                }
-
-                if(publicRequest.IsSetCertifyForMarketplace())
-                {
-                    context.Writer.WritePropertyName("CertifyForMarketplace");
-                    context.Writer.Write(publicRequest.CertifyForMarketplace.Value);
-                }
-
-                if(publicRequest.IsSetInferenceSpecification())
-                {
-                    context.Writer.WritePropertyName("InferenceSpecification");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = InferenceSpecificationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.InferenceSpecification, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAlgorithmDescription())
                     {
+                        context.Writer.WritePropertyName("AlgorithmDescription");
+                        context.Writer.Write(publicRequest.AlgorithmDescription);
+                    }
+
+                    if(publicRequest.IsSetAlgorithmName())
+                    {
+                        context.Writer.WritePropertyName("AlgorithmName");
+                        context.Writer.Write(publicRequest.AlgorithmName);
+                    }
+
+                    if(publicRequest.IsSetCertifyForMarketplace())
+                    {
+                        context.Writer.WritePropertyName("CertifyForMarketplace");
+                        context.Writer.Write(publicRequest.CertifyForMarketplace.Value);
+                    }
+
+                    if(publicRequest.IsSetInferenceSpecification())
+                    {
+                        context.Writer.WritePropertyName("InferenceSpecification");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = InferenceSpecificationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.InferenceSpecification, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTrainingSpecification())
+                    {
+                        context.Writer.WritePropertyName("TrainingSpecification");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TrainingSpecificationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TrainingSpecification, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetValidationSpecification())
+                    {
+                        context.Writer.WritePropertyName("ValidationSpecification");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AlgorithmValidationSpecificationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ValidationSpecification, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTrainingSpecification())
-                {
-                    context.Writer.WritePropertyName("TrainingSpecification");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TrainingSpecificationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TrainingSpecification, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetValidationSpecification())
-                {
-                    context.Writer.WritePropertyName("ValidationSpecification");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AlgorithmValidationSpecificationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ValidationSpecification, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

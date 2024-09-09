@@ -63,50 +63,53 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCalculationConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CalculationConfiguration");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCalculationConfiguration())
+                    {
+                        context.Writer.WritePropertyName("CalculationConfiguration");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = CalculationConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CalculationConfiguration, context);
+                        var marshaller = CalculationConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CalculationConfiguration, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetClientRequestToken())
+                    {
+                        context.Writer.WritePropertyName("ClientRequestToken");
+                        context.Writer.Write(publicRequest.ClientRequestToken);
+                    }
+
+                    if(publicRequest.IsSetCodeBlock())
+                    {
+                        context.Writer.WritePropertyName("CodeBlock");
+                        context.Writer.Write(publicRequest.CodeBlock);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetSessionId())
+                    {
+                        context.Writer.WritePropertyName("SessionId");
+                        context.Writer.Write(publicRequest.SessionId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetClientRequestToken())
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                if(publicRequest.IsSetCodeBlock())
-                {
-                    context.Writer.WritePropertyName("CodeBlock");
-                    context.Writer.Write(publicRequest.CodeBlock);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetSessionId())
-                {
-                    context.Writer.WritePropertyName("SessionId");
-                    context.Writer.Write(publicRequest.SessionId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

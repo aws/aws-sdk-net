@@ -67,33 +67,36 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 throw new AmazonGuardDutyException("Request object does not have required field ThreatIntelSetId set");
             request.AddPathResource("{threatIntelSetId}", StringUtils.FromString(publicRequest.ThreatIntelSetId));
             request.ResourcePath = "/detector/{detectorId}/threatintelset/{threatIntelSetId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetActivate())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("activate");
-                    context.Writer.Write(publicRequest.Activate.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetActivate())
+                    {
+                        context.Writer.WritePropertyName("activate");
+                        context.Writer.Write(publicRequest.Activate.Value);
+                    }
+
+                    if(publicRequest.IsSetLocation())
+                    {
+                        context.Writer.WritePropertyName("location");
+                        context.Writer.Write(publicRequest.Location);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetLocation())
-                {
-                    context.Writer.WritePropertyName("location");
-                    context.Writer.Write(publicRequest.Location);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

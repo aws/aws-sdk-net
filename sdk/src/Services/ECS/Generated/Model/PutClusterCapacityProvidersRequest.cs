@@ -40,9 +40,9 @@ namespace Amazon.ECS.Model
     /// strategy for the cluster. If the specified cluster has existing capacity providers
     /// associated with it, you must specify all existing capacity providers in addition to
     /// any new ones you want to add. Any existing capacity providers that are associated
-    /// with a cluster that are omitted from a <a>PutClusterCapacityProviders</a> API call
-    /// will be disassociated with the cluster. You can only disassociate an existing capacity
-    /// provider from a cluster if it's not being used by any existing tasks.
+    /// with a cluster that are omitted from a <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutClusterCapacityProviders.html">PutClusterCapacityProviders</a>
+    /// API call will be disassociated with the cluster. You can only disassociate an existing
+    /// capacity provider from a cluster if it's not being used by any existing tasks.
     /// </para>
     ///  
     /// <para>
@@ -67,7 +67,7 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// If specifying a capacity provider that uses an Auto Scaling group, the capacity provider
-        /// must already be created. New capacity providers can be created with the <a>CreateCapacityProvider</a>
+        /// must already be created. New capacity providers can be created with the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCapacityProvider.html">CreateCapacityProvider</a>
         /// API operation.
         /// </para>
         ///  
@@ -125,14 +125,14 @@ namespace Amazon.ECS.Model
         /// <para>
         /// A capacity provider strategy consists of one or more capacity providers along with
         /// the <c>base</c> and <c>weight</c> to assign to them. A capacity provider must be associated
-        /// with the cluster to be used in a capacity provider strategy. The <a>PutClusterCapacityProviders</a>
+        /// with the cluster to be used in a capacity provider strategy. The <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutClusterCapacityProviders.html">PutClusterCapacityProviders</a>
         /// API is used to associate a capacity provider with a cluster. Only capacity providers
         /// with an <c>ACTIVE</c> or <c>UPDATING</c> status can be used.
         /// </para>
         ///  
         /// <para>
         /// If specifying a capacity provider that uses an Auto Scaling group, the capacity provider
-        /// must already be created. New capacity providers can be created with the <a>CreateCapacityProvider</a>
+        /// must already be created. New capacity providers can be created with the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCapacityProvider.html">CreateCapacityProvider</a>
         /// API operation.
         /// </para>
         ///  

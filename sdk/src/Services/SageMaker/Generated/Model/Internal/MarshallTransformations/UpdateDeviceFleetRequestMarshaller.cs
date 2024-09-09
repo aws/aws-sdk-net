@@ -63,50 +63,53 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetDeviceFleetName())
+                    {
+                        context.Writer.WritePropertyName("DeviceFleetName");
+                        context.Writer.Write(publicRequest.DeviceFleetName);
+                    }
+
+                    if(publicRequest.IsSetEnableIotRoleAlias())
+                    {
+                        context.Writer.WritePropertyName("EnableIotRoleAlias");
+                        context.Writer.Write(publicRequest.EnableIotRoleAlias.Value);
+                    }
+
+                    if(publicRequest.IsSetOutputConfig())
+                    {
+                        context.Writer.WritePropertyName("OutputConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EdgeOutputConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OutputConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("RoleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDeviceFleetName())
-                {
-                    context.Writer.WritePropertyName("DeviceFleetName");
-                    context.Writer.Write(publicRequest.DeviceFleetName);
-                }
-
-                if(publicRequest.IsSetEnableIotRoleAlias())
-                {
-                    context.Writer.WritePropertyName("EnableIotRoleAlias");
-                    context.Writer.Write(publicRequest.EnableIotRoleAlias.Value);
-                }
-
-                if(publicRequest.IsSetOutputConfig())
-                {
-                    context.Writer.WritePropertyName("OutputConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EdgeOutputConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OutputConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("RoleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

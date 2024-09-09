@@ -64,21 +64,24 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 throw new AmazonLexModelsV2Exception("Request object does not have required field BotId set");
             request.AddPathResource("{botId}", StringUtils.FromString(publicRequest.BotId));
             request.ResourcePath = "/bots/{botId}/replicas/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetReplicaRegion())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("replicaRegion");
-                    context.Writer.Write(publicRequest.ReplicaRegion);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetReplicaRegion())
+                    {
+                        context.Writer.WritePropertyName("replicaRegion");
+                        context.Writer.Write(publicRequest.ReplicaRegion);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

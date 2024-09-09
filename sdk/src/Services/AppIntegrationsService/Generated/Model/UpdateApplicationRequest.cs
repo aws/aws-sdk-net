@@ -31,12 +31,7 @@ namespace Amazon.AppIntegrationsService.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateApplication operation.
-    /// This API is in preview release and subject to change.
-    /// 
-    ///  
-    /// <para>
     /// Updates and persists an Application resource.
-    /// </para>
     /// </summary>
     public partial class UpdateApplicationRequest : AmazonAppIntegrationsServiceRequest
     {

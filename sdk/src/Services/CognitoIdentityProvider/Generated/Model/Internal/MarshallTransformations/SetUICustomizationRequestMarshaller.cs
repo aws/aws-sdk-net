@@ -63,39 +63,42 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientId");
-                    context.Writer.Write(publicRequest.ClientId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientId())
+                    {
+                        context.Writer.WritePropertyName("ClientId");
+                        context.Writer.Write(publicRequest.ClientId);
+                    }
+
+                    if(publicRequest.IsSetCSS())
+                    {
+                        context.Writer.WritePropertyName("CSS");
+                        context.Writer.Write(publicRequest.CSS);
+                    }
+
+                    if(publicRequest.IsSetImageFile())
+                    {
+                        context.Writer.WritePropertyName("ImageFile");
+                        context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.ImageFile));
+                    }
+
+                    if(publicRequest.IsSetUserPoolId())
+                    {
+                        context.Writer.WritePropertyName("UserPoolId");
+                        context.Writer.Write(publicRequest.UserPoolId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCSS())
-                {
-                    context.Writer.WritePropertyName("CSS");
-                    context.Writer.Write(publicRequest.CSS);
-                }
-
-                if(publicRequest.IsSetImageFile())
-                {
-                    context.Writer.WritePropertyName("ImageFile");
-                    context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.ImageFile));
-                }
-
-                if(publicRequest.IsSetUserPoolId())
-                {
-                    context.Writer.WritePropertyName("UserPoolId");
-                    context.Writer.Write(publicRequest.UserPoolId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

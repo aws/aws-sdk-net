@@ -63,33 +63,36 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAverageDownloadRateLimitInBitsPerSec())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AverageDownloadRateLimitInBitsPerSec");
-                    context.Writer.Write(publicRequest.AverageDownloadRateLimitInBitsPerSec.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAverageDownloadRateLimitInBitsPerSec())
+                    {
+                        context.Writer.WritePropertyName("AverageDownloadRateLimitInBitsPerSec");
+                        context.Writer.Write(publicRequest.AverageDownloadRateLimitInBitsPerSec.Value);
+                    }
+
+                    if(publicRequest.IsSetAverageUploadRateLimitInBitsPerSec())
+                    {
+                        context.Writer.WritePropertyName("AverageUploadRateLimitInBitsPerSec");
+                        context.Writer.Write(publicRequest.AverageUploadRateLimitInBitsPerSec.Value);
+                    }
+
+                    if(publicRequest.IsSetGatewayARN())
+                    {
+                        context.Writer.WritePropertyName("GatewayARN");
+                        context.Writer.Write(publicRequest.GatewayARN);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetAverageUploadRateLimitInBitsPerSec())
-                {
-                    context.Writer.WritePropertyName("AverageUploadRateLimitInBitsPerSec");
-                    context.Writer.Write(publicRequest.AverageUploadRateLimitInBitsPerSec.Value);
-                }
-
-                if(publicRequest.IsSetGatewayARN())
-                {
-                    context.Writer.WritePropertyName("GatewayARN");
-                    context.Writer.Write(publicRequest.GatewayARN);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

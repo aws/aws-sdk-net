@@ -61,88 +61,91 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/list-filtered-transaction-events";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAddressIdentifierFilter())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("addressIdentifierFilter");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAddressIdentifierFilter())
+                    {
+                        context.Writer.WritePropertyName("addressIdentifierFilter");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = AddressIdentifierFilterMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AddressIdentifierFilter, context);
+                        var marshaller = AddressIdentifierFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AddressIdentifierFilter, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetConfirmationStatusFilter())
+                    {
+                        context.Writer.WritePropertyName("confirmationStatusFilter");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ConfirmationStatusFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ConfirmationStatusFilter, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNetwork())
+                    {
+                        context.Writer.WritePropertyName("network");
+                        context.Writer.Write(publicRequest.Network);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetSort())
+                    {
+                        context.Writer.WritePropertyName("sort");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ListFilteredTransactionEventsSortMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Sort, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTimeFilter())
+                    {
+                        context.Writer.WritePropertyName("timeFilter");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TimeFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TimeFilter, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetVoutFilter())
+                    {
+                        context.Writer.WritePropertyName("voutFilter");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = VoutFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.VoutFilter, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetConfirmationStatusFilter())
-                {
-                    context.Writer.WritePropertyName("confirmationStatusFilter");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ConfirmationStatusFilterMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ConfirmationStatusFilter, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNetwork())
-                {
-                    context.Writer.WritePropertyName("network");
-                    context.Writer.Write(publicRequest.Network);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetSort())
-                {
-                    context.Writer.WritePropertyName("sort");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ListFilteredTransactionEventsSortMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Sort, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTimeFilter())
-                {
-                    context.Writer.WritePropertyName("timeFilter");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TimeFilterMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TimeFilter, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetVoutFilter())
-                {
-                    context.Writer.WritePropertyName("voutFilter");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = VoutFilterMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.VoutFilter, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

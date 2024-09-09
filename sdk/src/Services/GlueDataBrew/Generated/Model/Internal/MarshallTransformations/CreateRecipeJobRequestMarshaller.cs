@@ -61,148 +61,151 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/recipeJobs";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDatabaseOutputs())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DatabaseOutputs");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDatabaseOutputsListValue in publicRequest.DatabaseOutputs)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDatabaseOutputs())
                     {
+                        context.Writer.WritePropertyName("DatabaseOutputs");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDatabaseOutputsListValue in publicRequest.DatabaseOutputs)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = DatabaseOutputMarshaller.Instance;
+                            marshaller.Marshall(publicRequestDatabaseOutputsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetDataCatalogOutputs())
+                    {
+                        context.Writer.WritePropertyName("DataCatalogOutputs");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDataCatalogOutputsListValue in publicRequest.DataCatalogOutputs)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = DataCatalogOutputMarshaller.Instance;
+                            marshaller.Marshall(publicRequestDataCatalogOutputsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetDatasetName())
+                    {
+                        context.Writer.WritePropertyName("DatasetName");
+                        context.Writer.Write(publicRequest.DatasetName);
+                    }
+
+                    if(publicRequest.IsSetEncryptionKeyArn())
+                    {
+                        context.Writer.WritePropertyName("EncryptionKeyArn");
+                        context.Writer.Write(publicRequest.EncryptionKeyArn);
+                    }
+
+                    if(publicRequest.IsSetEncryptionMode())
+                    {
+                        context.Writer.WritePropertyName("EncryptionMode");
+                        context.Writer.Write(publicRequest.EncryptionMode);
+                    }
+
+                    if(publicRequest.IsSetLogSubscription())
+                    {
+                        context.Writer.WritePropertyName("LogSubscription");
+                        context.Writer.Write(publicRequest.LogSubscription);
+                    }
+
+                    if(publicRequest.IsSetMaxCapacity())
+                    {
+                        context.Writer.WritePropertyName("MaxCapacity");
+                        context.Writer.Write(publicRequest.MaxCapacity.Value);
+                    }
+
+                    if(publicRequest.IsSetMaxRetries())
+                    {
+                        context.Writer.WritePropertyName("MaxRetries");
+                        context.Writer.Write(publicRequest.MaxRetries.Value);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetOutputs())
+                    {
+                        context.Writer.WritePropertyName("Outputs");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestOutputsListValue in publicRequest.Outputs)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = OutputMarshaller.Instance;
+                            marshaller.Marshall(publicRequestOutputsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetProjectName())
+                    {
+                        context.Writer.WritePropertyName("ProjectName");
+                        context.Writer.Write(publicRequest.ProjectName);
+                    }
+
+                    if(publicRequest.IsSetRecipeReference())
+                    {
+                        context.Writer.WritePropertyName("RecipeReference");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = DatabaseOutputMarshaller.Instance;
-                        marshaller.Marshall(publicRequestDatabaseOutputsListValue, context);
+                        var marshaller = RecipeReferenceMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RecipeReference, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDataCatalogOutputs())
-                {
-                    context.Writer.WritePropertyName("DataCatalogOutputs");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDataCatalogOutputsListValue in publicRequest.DataCatalogOutputs)
+                    if(publicRequest.IsSetRoleArn())
                     {
+                        context.Writer.WritePropertyName("RoleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
 
-                        var marshaller = DataCatalogOutputMarshaller.Instance;
-                        marshaller.Marshall(publicRequestDataCatalogOutputsListValue, context);
-
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDatasetName())
-                {
-                    context.Writer.WritePropertyName("DatasetName");
-                    context.Writer.Write(publicRequest.DatasetName);
-                }
-
-                if(publicRequest.IsSetEncryptionKeyArn())
-                {
-                    context.Writer.WritePropertyName("EncryptionKeyArn");
-                    context.Writer.Write(publicRequest.EncryptionKeyArn);
-                }
-
-                if(publicRequest.IsSetEncryptionMode())
-                {
-                    context.Writer.WritePropertyName("EncryptionMode");
-                    context.Writer.Write(publicRequest.EncryptionMode);
-                }
-
-                if(publicRequest.IsSetLogSubscription())
-                {
-                    context.Writer.WritePropertyName("LogSubscription");
-                    context.Writer.Write(publicRequest.LogSubscription);
-                }
-
-                if(publicRequest.IsSetMaxCapacity())
-                {
-                    context.Writer.WritePropertyName("MaxCapacity");
-                    context.Writer.Write(publicRequest.MaxCapacity.Value);
-                }
-
-                if(publicRequest.IsSetMaxRetries())
-                {
-                    context.Writer.WritePropertyName("MaxRetries");
-                    context.Writer.Write(publicRequest.MaxRetries.Value);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetOutputs())
-                {
-                    context.Writer.WritePropertyName("Outputs");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestOutputsListValue in publicRequest.Outputs)
+                    if(publicRequest.IsSetTimeout())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = OutputMarshaller.Instance;
-                        marshaller.Marshall(publicRequestOutputsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("Timeout");
+                        context.Writer.Write(publicRequest.Timeout.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetProjectName())
-                {
-                    context.Writer.WritePropertyName("ProjectName");
-                    context.Writer.Write(publicRequest.ProjectName);
-                }
-
-                if(publicRequest.IsSetRecipeReference())
-                {
-                    context.Writer.WritePropertyName("RecipeReference");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RecipeReferenceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RecipeReference, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("RoleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTimeout())
-                {
-                    context.Writer.WritePropertyName("Timeout");
-                    context.Writer.Write(publicRequest.Timeout.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

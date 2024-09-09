@@ -32,6 +32,13 @@ namespace Amazon.Deadline.Model
     /// <summary>
     /// Container for the parameters to the DeleteQueue operation.
     /// Deletes a queue.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// You can't recover the jobs in a queue if you delete the queue. Deleting the queue
+    /// also deletes the jobs in that queue.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class DeleteQueueRequest : AmazonDeadlineRequest
     {

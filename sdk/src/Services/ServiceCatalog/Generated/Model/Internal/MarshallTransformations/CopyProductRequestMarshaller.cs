@@ -63,80 +63,83 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAcceptLanguage())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AcceptLanguage");
-                    context.Writer.Write(publicRequest.AcceptLanguage);
-                }
-
-                if(publicRequest.IsSetCopyOptions())
-                {
-                    context.Writer.WritePropertyName("CopyOptions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCopyOptionsListValue in publicRequest.CopyOptions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAcceptLanguage())
                     {
-                            context.Writer.Write(publicRequestCopyOptionsListValue);
+                        context.Writer.WritePropertyName("AcceptLanguage");
+                        context.Writer.Write(publicRequest.AcceptLanguage);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetIdempotencyToken())
-                {
-                    context.Writer.WritePropertyName("IdempotencyToken");
-                    context.Writer.Write(publicRequest.IdempotencyToken);
-                }
-
-                else if(!(publicRequest.IsSetIdempotencyToken()))
-                {
-                    context.Writer.WritePropertyName("IdempotencyToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetSourceProductArn())
-                {
-                    context.Writer.WritePropertyName("SourceProductArn");
-                    context.Writer.Write(publicRequest.SourceProductArn);
-                }
-
-                if(publicRequest.IsSetSourceProvisioningArtifactIdentifiers())
-                {
-                    context.Writer.WritePropertyName("SourceProvisioningArtifactIdentifiers");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSourceProvisioningArtifactIdentifiersListValue in publicRequest.SourceProvisioningArtifactIdentifiers)
+                    if(publicRequest.IsSetCopyOptions())
                     {
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestSourceProvisioningArtifactIdentifiersListValueKvp in publicRequestSourceProvisioningArtifactIdentifiersListValue)
+                        context.Writer.WritePropertyName("CopyOptions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCopyOptionsListValue in publicRequest.CopyOptions)
                         {
-                            context.Writer.WritePropertyName(publicRequestSourceProvisioningArtifactIdentifiersListValueKvp.Key);
-                            var publicRequestSourceProvisioningArtifactIdentifiersListValueValue = publicRequestSourceProvisioningArtifactIdentifiersListValueKvp.Value;
-
-                                context.Writer.Write(publicRequestSourceProvisioningArtifactIdentifiersListValueValue);
+                                context.Writer.Write(publicRequestCopyOptionsListValue);
                         }
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetIdempotencyToken())
+                    {
+                        context.Writer.WritePropertyName("IdempotencyToken");
+                        context.Writer.Write(publicRequest.IdempotencyToken);
+                    }
+
+                    else if(!(publicRequest.IsSetIdempotencyToken()))
+                    {
+                        context.Writer.WritePropertyName("IdempotencyToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetSourceProductArn())
+                    {
+                        context.Writer.WritePropertyName("SourceProductArn");
+                        context.Writer.Write(publicRequest.SourceProductArn);
+                    }
+
+                    if(publicRequest.IsSetSourceProvisioningArtifactIdentifiers())
+                    {
+                        context.Writer.WritePropertyName("SourceProvisioningArtifactIdentifiers");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSourceProvisioningArtifactIdentifiersListValue in publicRequest.SourceProvisioningArtifactIdentifiers)
+                        {
+                            context.Writer.WriteObjectStart();
+                            foreach (var publicRequestSourceProvisioningArtifactIdentifiersListValueKvp in publicRequestSourceProvisioningArtifactIdentifiersListValue)
+                            {
+                                context.Writer.WritePropertyName(publicRequestSourceProvisioningArtifactIdentifiersListValueKvp.Key);
+                                var publicRequestSourceProvisioningArtifactIdentifiersListValueValue = publicRequestSourceProvisioningArtifactIdentifiersListValueKvp.Value;
+
+                                    context.Writer.Write(publicRequestSourceProvisioningArtifactIdentifiersListValueValue);
+                            }
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTargetProductId())
+                    {
+                        context.Writer.WritePropertyName("TargetProductId");
+                        context.Writer.Write(publicRequest.TargetProductId);
+                    }
+
+                    if(publicRequest.IsSetTargetProductName())
+                    {
+                        context.Writer.WritePropertyName("TargetProductName");
+                        context.Writer.Write(publicRequest.TargetProductName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTargetProductId())
-                {
-                    context.Writer.WritePropertyName("TargetProductId");
-                    context.Writer.Write(publicRequest.TargetProductId);
-                }
-
-                if(publicRequest.IsSetTargetProductName())
-                {
-                    context.Writer.WritePropertyName("TargetProductName");
-                    context.Writer.Write(publicRequest.TargetProductName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

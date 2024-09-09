@@ -61,49 +61,52 @@ namespace Amazon.AugmentedAIRuntime.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/human-loops";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDataAttributes())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DataAttributes");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDataAttributes())
+                    {
+                        context.Writer.WritePropertyName("DataAttributes");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = HumanLoopDataAttributesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DataAttributes, context);
+                        var marshaller = HumanLoopDataAttributesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DataAttributes, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetFlowDefinitionArn())
+                    {
+                        context.Writer.WritePropertyName("FlowDefinitionArn");
+                        context.Writer.Write(publicRequest.FlowDefinitionArn);
+                    }
+
+                    if(publicRequest.IsSetHumanLoopInput())
+                    {
+                        context.Writer.WritePropertyName("HumanLoopInput");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = HumanLoopInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.HumanLoopInput, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetHumanLoopName())
+                    {
+                        context.Writer.WritePropertyName("HumanLoopName");
+                        context.Writer.Write(publicRequest.HumanLoopName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetFlowDefinitionArn())
-                {
-                    context.Writer.WritePropertyName("FlowDefinitionArn");
-                    context.Writer.Write(publicRequest.FlowDefinitionArn);
-                }
-
-                if(publicRequest.IsSetHumanLoopInput())
-                {
-                    context.Writer.WritePropertyName("HumanLoopInput");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = HumanLoopInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.HumanLoopInput, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetHumanLoopName())
-                {
-                    context.Writer.WritePropertyName("HumanLoopName");
-                    context.Writer.Write(publicRequest.HumanLoopName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

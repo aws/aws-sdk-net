@@ -63,50 +63,53 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAggregation())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Aggregation");
-                    context.Writer.Write(publicRequest.Aggregation);
-                }
-
-                if(publicRequest.IsSetMembers())
-                {
-                    context.Writer.WritePropertyName("Members");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMembersListValue in publicRequest.Members)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAggregation())
                     {
-                            context.Writer.Write(publicRequestMembersListValue);
+                        context.Writer.WritePropertyName("Aggregation");
+                        context.Writer.Write(publicRequest.Aggregation);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetMembers())
+                    {
+                        context.Writer.WritePropertyName("Members");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMembersListValue in publicRequest.Members)
+                        {
+                                context.Writer.Write(publicRequestMembersListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetPattern())
+                    {
+                        context.Writer.WritePropertyName("Pattern");
+                        context.Writer.Write(publicRequest.Pattern);
+                    }
+
+                    if(publicRequest.IsSetProtectionGroupId())
+                    {
+                        context.Writer.WritePropertyName("ProtectionGroupId");
+                        context.Writer.Write(publicRequest.ProtectionGroupId);
+                    }
+
+                    if(publicRequest.IsSetResourceType())
+                    {
+                        context.Writer.WritePropertyName("ResourceType");
+                        context.Writer.Write(publicRequest.ResourceType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPattern())
-                {
-                    context.Writer.WritePropertyName("Pattern");
-                    context.Writer.Write(publicRequest.Pattern);
-                }
-
-                if(publicRequest.IsSetProtectionGroupId())
-                {
-                    context.Writer.WritePropertyName("ProtectionGroupId");
-                    context.Writer.Write(publicRequest.ProtectionGroupId);
-                }
-
-                if(publicRequest.IsSetResourceType())
-                {
-                    context.Writer.WritePropertyName("ResourceType");
-                    context.Writer.Write(publicRequest.ResourceType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

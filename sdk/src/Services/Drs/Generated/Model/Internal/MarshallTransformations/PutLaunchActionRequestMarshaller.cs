@@ -61,94 +61,97 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/PutLaunchAction";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetActionCode())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("actionCode");
-                    context.Writer.Write(publicRequest.ActionCode);
-                }
-
-                if(publicRequest.IsSetActionId())
-                {
-                    context.Writer.WritePropertyName("actionId");
-                    context.Writer.Write(publicRequest.ActionId);
-                }
-
-                if(publicRequest.IsSetActionVersion())
-                {
-                    context.Writer.WritePropertyName("actionVersion");
-                    context.Writer.Write(publicRequest.ActionVersion);
-                }
-
-                if(publicRequest.IsSetActive())
-                {
-                    context.Writer.WritePropertyName("active");
-                    context.Writer.Write(publicRequest.Active.Value);
-                }
-
-                if(publicRequest.IsSetCategory())
-                {
-                    context.Writer.WritePropertyName("category");
-                    context.Writer.Write(publicRequest.Category);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetOptional())
-                {
-                    context.Writer.WritePropertyName("optional");
-                    context.Writer.Write(publicRequest.Optional.Value);
-                }
-
-                if(publicRequest.IsSetOrder())
-                {
-                    context.Writer.WritePropertyName("order");
-                    context.Writer.Write(publicRequest.Order.Value);
-                }
-
-                if(publicRequest.IsSetParameters())
-                {
-                    context.Writer.WritePropertyName("parameters");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestParametersKvp in publicRequest.Parameters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetActionCode())
                     {
-                        context.Writer.WritePropertyName(publicRequestParametersKvp.Key);
-                        var publicRequestParametersValue = publicRequestParametersKvp.Value;
+                        context.Writer.WritePropertyName("actionCode");
+                        context.Writer.Write(publicRequest.ActionCode);
+                    }
 
+                    if(publicRequest.IsSetActionId())
+                    {
+                        context.Writer.WritePropertyName("actionId");
+                        context.Writer.Write(publicRequest.ActionId);
+                    }
+
+                    if(publicRequest.IsSetActionVersion())
+                    {
+                        context.Writer.WritePropertyName("actionVersion");
+                        context.Writer.Write(publicRequest.ActionVersion);
+                    }
+
+                    if(publicRequest.IsSetActive())
+                    {
+                        context.Writer.WritePropertyName("active");
+                        context.Writer.Write(publicRequest.Active.Value);
+                    }
+
+                    if(publicRequest.IsSetCategory())
+                    {
+                        context.Writer.WritePropertyName("category");
+                        context.Writer.Write(publicRequest.Category);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetOptional())
+                    {
+                        context.Writer.WritePropertyName("optional");
+                        context.Writer.Write(publicRequest.Optional.Value);
+                    }
+
+                    if(publicRequest.IsSetOrder())
+                    {
+                        context.Writer.WritePropertyName("order");
+                        context.Writer.Write(publicRequest.Order.Value);
+                    }
+
+                    if(publicRequest.IsSetParameters())
+                    {
+                        context.Writer.WritePropertyName("parameters");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestParametersKvp in publicRequest.Parameters)
+                        {
+                            context.Writer.WritePropertyName(publicRequestParametersKvp.Key);
+                            var publicRequestParametersValue = publicRequestParametersKvp.Value;
 
-                        var marshaller = LaunchActionParameterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestParametersValue, context);
+                            context.Writer.WriteObjectStart();
 
+                            var marshaller = LaunchActionParameterMarshaller.Instance;
+                            marshaller.Marshall(publicRequestParametersValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetResourceId())
+                    {
+                        context.Writer.WritePropertyName("resourceId");
+                        context.Writer.Write(publicRequest.ResourceId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetResourceId())
-                {
-                    context.Writer.WritePropertyName("resourceId");
-                    context.Writer.Write(publicRequest.ResourceId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

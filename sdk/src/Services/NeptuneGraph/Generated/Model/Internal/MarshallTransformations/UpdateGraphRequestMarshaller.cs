@@ -64,33 +64,36 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
                 throw new AmazonNeptuneGraphException("Request object does not have required field GraphIdentifier set");
             request.AddPathResource("{graphIdentifier}", StringUtils.FromString(publicRequest.GraphIdentifier));
             request.ResourcePath = "/graphs/{graphIdentifier}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeletionProtection())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("deletionProtection");
-                    context.Writer.Write(publicRequest.DeletionProtection.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDeletionProtection())
+                    {
+                        context.Writer.WritePropertyName("deletionProtection");
+                        context.Writer.Write(publicRequest.DeletionProtection.Value);
+                    }
+
+                    if(publicRequest.IsSetProvisionedMemory())
+                    {
+                        context.Writer.WritePropertyName("provisionedMemory");
+                        context.Writer.Write(publicRequest.ProvisionedMemory.Value);
+                    }
+
+                    if(publicRequest.IsSetPublicConnectivity())
+                    {
+                        context.Writer.WritePropertyName("publicConnectivity");
+                        context.Writer.Write(publicRequest.PublicConnectivity.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetProvisionedMemory())
-                {
-                    context.Writer.WritePropertyName("provisionedMemory");
-                    context.Writer.Write(publicRequest.ProvisionedMemory.Value);
-                }
-
-                if(publicRequest.IsSetPublicConnectivity())
-                {
-                    context.Writer.WritePropertyName("publicConnectivity");
-                    context.Writer.Write(publicRequest.PublicConnectivity.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

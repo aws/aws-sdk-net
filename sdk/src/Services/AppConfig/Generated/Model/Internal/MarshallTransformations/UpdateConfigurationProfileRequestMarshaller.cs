@@ -67,55 +67,58 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
                 throw new AmazonAppConfigException("Request object does not have required field ConfigurationProfileId set");
             request.AddPathResource("{ConfigurationProfileId}", StringUtils.FromString(publicRequest.ConfigurationProfileId));
             request.ResourcePath = "/applications/{ApplicationId}/configurationprofiles/{ConfigurationProfileId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetKmsKeyIdentifier())
-                {
-                    context.Writer.WritePropertyName("KmsKeyIdentifier");
-                    context.Writer.Write(publicRequest.KmsKeyIdentifier);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetRetrievalRoleArn())
-                {
-                    context.Writer.WritePropertyName("RetrievalRoleArn");
-                    context.Writer.Write(publicRequest.RetrievalRoleArn);
-                }
-
-                if(publicRequest.IsSetValidators())
-                {
-                    context.Writer.WritePropertyName("Validators");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestValidatorsListValue in publicRequest.Validators)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ValidatorMarshaller.Instance;
-                        marshaller.Marshall(publicRequestValidatorsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetKmsKeyIdentifier())
+                    {
+                        context.Writer.WritePropertyName("KmsKeyIdentifier");
+                        context.Writer.Write(publicRequest.KmsKeyIdentifier);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetRetrievalRoleArn())
+                    {
+                        context.Writer.WritePropertyName("RetrievalRoleArn");
+                        context.Writer.Write(publicRequest.RetrievalRoleArn);
+                    }
+
+                    if(publicRequest.IsSetValidators())
+                    {
+                        context.Writer.WritePropertyName("Validators");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestValidatorsListValue in publicRequest.Validators)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ValidatorMarshaller.Instance;
+                            marshaller.Marshall(publicRequestValidatorsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -18,6 +18,8 @@
  */
 
 using System;
+using System.Linq;
+using System.Collections.Generic;
 using Amazon.S3.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -112,6 +114,18 @@ namespace Amazon.S3.Internal
             if (requestContext.Request.RequestName == "GetPreSignedUrlRequest")
             {
                 var request = (GetPreSignedUrlRequest)requestContext.Request.OriginalRequest;
+                result.Bucket = request.BucketName;
+                return result;
+            }
+            if (requestContext.RequestName == "GetACLRequest") {
+                result.UseS3ExpressControlEndpoint = true;
+                var request = (GetACLRequest)requestContext.OriginalRequest;
+                result.Bucket = request.BucketName;
+                return result;
+            }
+            if (requestContext.RequestName == "PutACLRequest") {
+                result.UseS3ExpressControlEndpoint = true;
+                var request = (PutACLRequest)requestContext.OriginalRequest;
                 result.Bucket = request.BucketName;
                 return result;
             }
@@ -249,15 +263,15 @@ namespace Amazon.S3.Internal
                 result.Bucket = request.BucketName;
                 return result;
             }
-            if (requestContext.RequestName == "GetACLRequest") {
-                result.UseS3ExpressControlEndpoint = true;
-                var request = (GetACLRequest)requestContext.OriginalRequest;
-                result.Bucket = request.BucketName;
-                return result;
-            }
             if (requestContext.RequestName == "GetBucketAccelerateConfigurationRequest") {
                 result.UseS3ExpressControlEndpoint = true;
                 var request = (GetBucketAccelerateConfigurationRequest)requestContext.OriginalRequest;
+                result.Bucket = request.BucketName;
+                return result;
+            }
+            if (requestContext.RequestName == "GetBucketAclRequest") {
+                result.UseS3ExpressControlEndpoint = true;
+                var request = (GetBucketAclRequest)requestContext.OriginalRequest;
                 result.Bucket = request.BucketName;
                 return result;
             }
@@ -375,6 +389,12 @@ namespace Amazon.S3.Internal
                 result.Key = request.Key;
                 return result;
             }
+            if (requestContext.RequestName == "GetObjectAclRequest") {
+                var request = (GetObjectAclRequest)requestContext.OriginalRequest;
+                result.Bucket = request.BucketName;
+                result.Key = request.Key;
+                return result;
+            }
             if (requestContext.RequestName == "GetObjectAttributesRequest") {
                 var request = (GetObjectAttributesRequest)requestContext.OriginalRequest;
                 result.Bucket = request.BucketName;
@@ -485,12 +505,6 @@ namespace Amazon.S3.Internal
                 result.Prefix = request.Prefix;
                 return result;
             }
-            if (requestContext.RequestName == "PutACLRequest") {
-                result.UseS3ExpressControlEndpoint = true;
-                var request = (PutACLRequest)requestContext.OriginalRequest;
-                result.Bucket = request.BucketName;
-                return result;
-            }
             if (requestContext.RequestName == "PutBucketRequest") {
                 result.DisableAccessPoints = true;
                 result.UseS3ExpressControlEndpoint = true;
@@ -501,6 +515,12 @@ namespace Amazon.S3.Internal
             if (requestContext.RequestName == "PutBucketAccelerateConfigurationRequest") {
                 result.UseS3ExpressControlEndpoint = true;
                 var request = (PutBucketAccelerateConfigurationRequest)requestContext.OriginalRequest;
+                result.Bucket = request.BucketName;
+                return result;
+            }
+            if (requestContext.RequestName == "PutBucketAclRequest") {
+                result.UseS3ExpressControlEndpoint = true;
+                var request = (PutBucketAclRequest)requestContext.OriginalRequest;
                 result.Bucket = request.BucketName;
                 return result;
             }
@@ -602,6 +622,12 @@ namespace Amazon.S3.Internal
             }
             if (requestContext.RequestName == "PutObjectRequest") {
                 var request = (PutObjectRequest)requestContext.OriginalRequest;
+                result.Bucket = request.BucketName;
+                result.Key = request.Key;
+                return result;
+            }
+            if (requestContext.RequestName == "PutObjectAclRequest") {
+                var request = (PutObjectAclRequest)requestContext.OriginalRequest;
                 result.Bucket = request.BucketName;
                 result.Key = request.Key;
                 return result;

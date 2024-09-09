@@ -64,78 +64,81 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 throw new AmazonDeadlineException("Request object does not have required field FarmId set");
             request.AddPathResource("{farmId}", StringUtils.FromString(publicRequest.FarmId));
             request.ResourcePath = "/2023-10-12/farms/{farmId}/budgets";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetActions())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("actions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestActionsListValue in publicRequest.Actions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetActions())
                     {
+                        context.Writer.WritePropertyName("actions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestActionsListValue in publicRequest.Actions)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = BudgetActionToAddMarshaller.Instance;
+                            marshaller.Marshall(publicRequestActionsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetApproximateDollarLimit())
+                    {
+                        context.Writer.WritePropertyName("approximateDollarLimit");
+                        if(StringUtils.IsSpecialFloatValue(publicRequest.ApproximateDollarLimit.Value))
+                        {
+                            context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.ApproximateDollarLimit.Value));
+                        }
+                        else
+                        {
+                            context.Writer.Write(publicRequest.ApproximateDollarLimit.Value);
+                        }
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetDisplayName())
+                    {
+                        context.Writer.WritePropertyName("displayName");
+                        context.Writer.Write(publicRequest.DisplayName);
+                    }
+
+                    if(publicRequest.IsSetSchedule())
+                    {
+                        context.Writer.WritePropertyName("schedule");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = BudgetActionToAddMarshaller.Instance;
-                        marshaller.Marshall(publicRequestActionsListValue, context);
+                        var marshaller = BudgetScheduleMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Schedule, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetApproximateDollarLimit())
-                {
-                    context.Writer.WritePropertyName("approximateDollarLimit");
-                    if(StringUtils.IsSpecialFloatValue(publicRequest.ApproximateDollarLimit.Value))
+                    if(publicRequest.IsSetUsageTrackingResource())
                     {
-                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.ApproximateDollarLimit.Value));
+                        context.Writer.WritePropertyName("usageTrackingResource");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = UsageTrackingResourceMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.UsageTrackingResource, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    else
-                    {
-                        context.Writer.Write(publicRequest.ApproximateDollarLimit.Value);
-                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetDisplayName())
-                {
-                    context.Writer.WritePropertyName("displayName");
-                    context.Writer.Write(publicRequest.DisplayName);
-                }
-
-                if(publicRequest.IsSetSchedule())
-                {
-                    context.Writer.WritePropertyName("schedule");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = BudgetScheduleMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Schedule, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetUsageTrackingResource())
-                {
-                    context.Writer.WritePropertyName("usageTrackingResource");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UsageTrackingResourceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.UsageTrackingResource, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

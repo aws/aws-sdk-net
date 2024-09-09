@@ -61,57 +61,60 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/emergency-calling/address";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAwsAccountId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AwsAccountId");
-                    context.Writer.Write(publicRequest.AwsAccountId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAwsAccountId())
+                    {
+                        context.Writer.WritePropertyName("AwsAccountId");
+                        context.Writer.Write(publicRequest.AwsAccountId);
+                    }
+
+                    if(publicRequest.IsSetCity())
+                    {
+                        context.Writer.WritePropertyName("City");
+                        context.Writer.Write(publicRequest.City);
+                    }
+
+                    if(publicRequest.IsSetCountry())
+                    {
+                        context.Writer.WritePropertyName("Country");
+                        context.Writer.Write(publicRequest.Country);
+                    }
+
+                    if(publicRequest.IsSetPostalCode())
+                    {
+                        context.Writer.WritePropertyName("PostalCode");
+                        context.Writer.Write(publicRequest.PostalCode);
+                    }
+
+                    if(publicRequest.IsSetState())
+                    {
+                        context.Writer.WritePropertyName("State");
+                        context.Writer.Write(publicRequest.State);
+                    }
+
+                    if(publicRequest.IsSetStreetInfo())
+                    {
+                        context.Writer.WritePropertyName("StreetInfo");
+                        context.Writer.Write(publicRequest.StreetInfo);
+                    }
+
+                    if(publicRequest.IsSetStreetNumber())
+                    {
+                        context.Writer.WritePropertyName("StreetNumber");
+                        context.Writer.Write(publicRequest.StreetNumber);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCity())
-                {
-                    context.Writer.WritePropertyName("City");
-                    context.Writer.Write(publicRequest.City);
-                }
-
-                if(publicRequest.IsSetCountry())
-                {
-                    context.Writer.WritePropertyName("Country");
-                    context.Writer.Write(publicRequest.Country);
-                }
-
-                if(publicRequest.IsSetPostalCode())
-                {
-                    context.Writer.WritePropertyName("PostalCode");
-                    context.Writer.Write(publicRequest.PostalCode);
-                }
-
-                if(publicRequest.IsSetState())
-                {
-                    context.Writer.WritePropertyName("State");
-                    context.Writer.Write(publicRequest.State);
-                }
-
-                if(publicRequest.IsSetStreetInfo())
-                {
-                    context.Writer.WritePropertyName("StreetInfo");
-                    context.Writer.Write(publicRequest.StreetInfo);
-                }
-
-                if(publicRequest.IsSetStreetNumber())
-                {
-                    context.Writer.WritePropertyName("StreetNumber");
-                    context.Writer.Write(publicRequest.StreetNumber);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,38 +63,41 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBundleIds())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("BundleIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestBundleIdsListValue in publicRequest.BundleIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBundleIds())
                     {
-                            context.Writer.Write(publicRequestBundleIdsListValue);
+                        context.Writer.WritePropertyName("BundleIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestBundleIdsListValue in publicRequest.BundleIds)
+                        {
+                                context.Writer.Write(publicRequestBundleIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetOwner())
+                    {
+                        context.Writer.WritePropertyName("Owner");
+                        context.Writer.Write(publicRequest.Owner);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetOwner())
-                {
-                    context.Writer.WritePropertyName("Owner");
-                    context.Writer.Write(publicRequest.Owner);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

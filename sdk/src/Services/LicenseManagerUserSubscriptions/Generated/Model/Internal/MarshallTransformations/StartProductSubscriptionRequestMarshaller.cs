@@ -61,44 +61,47 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/user/StartProductSubscription";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDomain())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Domain");
-                    context.Writer.Write(publicRequest.Domain);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDomain())
+                    {
+                        context.Writer.WritePropertyName("Domain");
+                        context.Writer.Write(publicRequest.Domain);
+                    }
+
+                    if(publicRequest.IsSetIdentityProvider())
+                    {
+                        context.Writer.WritePropertyName("IdentityProvider");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = IdentityProviderMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.IdentityProvider, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetProduct())
+                    {
+                        context.Writer.WritePropertyName("Product");
+                        context.Writer.Write(publicRequest.Product);
+                    }
+
+                    if(publicRequest.IsSetUsername())
+                    {
+                        context.Writer.WritePropertyName("Username");
+                        context.Writer.Write(publicRequest.Username);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetIdentityProvider())
-                {
-                    context.Writer.WritePropertyName("IdentityProvider");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = IdentityProviderMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.IdentityProvider, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetProduct())
-                {
-                    context.Writer.WritePropertyName("Product");
-                    context.Writer.Write(publicRequest.Product);
-                }
-
-                if(publicRequest.IsSetUsername())
-                {
-                    context.Writer.WritePropertyName("Username");
-                    context.Writer.Write(publicRequest.Username);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,64 +63,67 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDryRun())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DryRun");
-                    context.Writer.Write(publicRequest.DryRun.Value);
-                }
-
-                if(publicRequest.IsSetEncryptionAlgorithm())
-                {
-                    context.Writer.WritePropertyName("EncryptionAlgorithm");
-                    context.Writer.Write(publicRequest.EncryptionAlgorithm);
-                }
-
-                if(publicRequest.IsSetEncryptionContext())
-                {
-                    context.Writer.WritePropertyName("EncryptionContext");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestEncryptionContextKvp in publicRequest.EncryptionContext)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDryRun())
                     {
-                        context.Writer.WritePropertyName(publicRequestEncryptionContextKvp.Key);
-                        var publicRequestEncryptionContextValue = publicRequestEncryptionContextKvp.Value;
-
-                            context.Writer.Write(publicRequestEncryptionContextValue);
+                        context.Writer.WritePropertyName("DryRun");
+                        context.Writer.Write(publicRequest.DryRun.Value);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetGrantTokens())
-                {
-                    context.Writer.WritePropertyName("GrantTokens");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestGrantTokensListValue in publicRequest.GrantTokens)
+                    if(publicRequest.IsSetEncryptionAlgorithm())
                     {
-                            context.Writer.Write(publicRequestGrantTokensListValue);
+                        context.Writer.WritePropertyName("EncryptionAlgorithm");
+                        context.Writer.Write(publicRequest.EncryptionAlgorithm);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetEncryptionContext())
+                    {
+                        context.Writer.WritePropertyName("EncryptionContext");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestEncryptionContextKvp in publicRequest.EncryptionContext)
+                        {
+                            context.Writer.WritePropertyName(publicRequestEncryptionContextKvp.Key);
+                            var publicRequestEncryptionContextValue = publicRequestEncryptionContextKvp.Value;
+
+                                context.Writer.Write(publicRequestEncryptionContextValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetGrantTokens())
+                    {
+                        context.Writer.WritePropertyName("GrantTokens");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestGrantTokensListValue in publicRequest.GrantTokens)
+                        {
+                                context.Writer.Write(publicRequestGrantTokensListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetKeyId())
+                    {
+                        context.Writer.WritePropertyName("KeyId");
+                        context.Writer.Write(publicRequest.KeyId);
+                    }
+
+                    if(publicRequest.IsSetPlaintext())
+                    {
+                        context.Writer.WritePropertyName("Plaintext");
+                        context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.Plaintext));
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetKeyId())
-                {
-                    context.Writer.WritePropertyName("KeyId");
-                    context.Writer.Write(publicRequest.KeyId);
-                }
-
-                if(publicRequest.IsSetPlaintext())
-                {
-                    context.Writer.WritePropertyName("Plaintext");
-                    context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.Plaintext));
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

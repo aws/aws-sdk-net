@@ -63,140 +63,143 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDisplayName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DisplayName");
-                    context.Writer.Write(publicRequest.DisplayName);
-                }
-
-                if(publicRequest.IsSetEndTime())
-                {
-                    context.Writer.WritePropertyName("EndTime");
-                    context.Writer.Write(publicRequest.EndTime.Value);
-                }
-
-                if(publicRequest.IsSetInputArtifacts())
-                {
-                    context.Writer.WritePropertyName("InputArtifacts");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestInputArtifactsKvp in publicRequest.InputArtifacts)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDisplayName())
                     {
-                        context.Writer.WritePropertyName(publicRequestInputArtifactsKvp.Key);
-                        var publicRequestInputArtifactsValue = publicRequestInputArtifactsKvp.Value;
+                        context.Writer.WritePropertyName("DisplayName");
+                        context.Writer.Write(publicRequest.DisplayName);
+                    }
 
+                    if(publicRequest.IsSetEndTime())
+                    {
+                        context.Writer.WritePropertyName("EndTime");
+                        context.Writer.Write(publicRequest.EndTime.Value);
+                    }
+
+                    if(publicRequest.IsSetInputArtifacts())
+                    {
+                        context.Writer.WritePropertyName("InputArtifacts");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestInputArtifactsKvp in publicRequest.InputArtifacts)
+                        {
+                            context.Writer.WritePropertyName(publicRequestInputArtifactsKvp.Key);
+                            var publicRequestInputArtifactsValue = publicRequestInputArtifactsKvp.Value;
+
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TrialComponentArtifactMarshaller.Instance;
+                            marshaller.Marshall(publicRequestInputArtifactsValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetInputArtifactsToRemove())
+                    {
+                        context.Writer.WritePropertyName("InputArtifactsToRemove");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestInputArtifactsToRemoveListValue in publicRequest.InputArtifactsToRemove)
+                        {
+                                context.Writer.Write(publicRequestInputArtifactsToRemoveListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetOutputArtifacts())
+                    {
+                        context.Writer.WritePropertyName("OutputArtifacts");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestOutputArtifactsKvp in publicRequest.OutputArtifacts)
+                        {
+                            context.Writer.WritePropertyName(publicRequestOutputArtifactsKvp.Key);
+                            var publicRequestOutputArtifactsValue = publicRequestOutputArtifactsKvp.Value;
+
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TrialComponentArtifactMarshaller.Instance;
+                            marshaller.Marshall(publicRequestOutputArtifactsValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetOutputArtifactsToRemove())
+                    {
+                        context.Writer.WritePropertyName("OutputArtifactsToRemove");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestOutputArtifactsToRemoveListValue in publicRequest.OutputArtifactsToRemove)
+                        {
+                                context.Writer.Write(publicRequestOutputArtifactsToRemoveListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetParameters())
+                    {
+                        context.Writer.WritePropertyName("Parameters");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestParametersKvp in publicRequest.Parameters)
+                        {
+                            context.Writer.WritePropertyName(publicRequestParametersKvp.Key);
+                            var publicRequestParametersValue = publicRequestParametersKvp.Value;
+
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TrialComponentParameterValueMarshaller.Instance;
+                            marshaller.Marshall(publicRequestParametersValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetParametersToRemove())
+                    {
+                        context.Writer.WritePropertyName("ParametersToRemove");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestParametersToRemoveListValue in publicRequest.ParametersToRemove)
+                        {
+                                context.Writer.Write(publicRequestParametersToRemoveListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetStartTime())
+                    {
+                        context.Writer.WritePropertyName("StartTime");
+                        context.Writer.Write(publicRequest.StartTime.Value);
+                    }
+
+                    if(publicRequest.IsSetStatus())
+                    {
+                        context.Writer.WritePropertyName("Status");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TrialComponentArtifactMarshaller.Instance;
-                        marshaller.Marshall(publicRequestInputArtifactsValue, context);
+                        var marshaller = TrialComponentStatusMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Status, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetInputArtifactsToRemove())
-                {
-                    context.Writer.WritePropertyName("InputArtifactsToRemove");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestInputArtifactsToRemoveListValue in publicRequest.InputArtifactsToRemove)
+                    if(publicRequest.IsSetTrialComponentName())
                     {
-                            context.Writer.Write(publicRequestInputArtifactsToRemoveListValue);
+                        context.Writer.WritePropertyName("TrialComponentName");
+                        context.Writer.Write(publicRequest.TrialComponentName);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetOutputArtifacts())
-                {
-                    context.Writer.WritePropertyName("OutputArtifacts");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestOutputArtifactsKvp in publicRequest.OutputArtifacts)
-                    {
-                        context.Writer.WritePropertyName(publicRequestOutputArtifactsKvp.Key);
-                        var publicRequestOutputArtifactsValue = publicRequestOutputArtifactsKvp.Value;
-
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TrialComponentArtifactMarshaller.Instance;
-                        marshaller.Marshall(publicRequestOutputArtifactsValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOutputArtifactsToRemove())
-                {
-                    context.Writer.WritePropertyName("OutputArtifactsToRemove");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestOutputArtifactsToRemoveListValue in publicRequest.OutputArtifactsToRemove)
-                    {
-                            context.Writer.Write(publicRequestOutputArtifactsToRemoveListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetParameters())
-                {
-                    context.Writer.WritePropertyName("Parameters");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestParametersKvp in publicRequest.Parameters)
-                    {
-                        context.Writer.WritePropertyName(publicRequestParametersKvp.Key);
-                        var publicRequestParametersValue = publicRequestParametersKvp.Value;
-
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TrialComponentParameterValueMarshaller.Instance;
-                        marshaller.Marshall(publicRequestParametersValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetParametersToRemove())
-                {
-                    context.Writer.WritePropertyName("ParametersToRemove");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestParametersToRemoveListValue in publicRequest.ParametersToRemove)
-                    {
-                            context.Writer.Write(publicRequestParametersToRemoveListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetStartTime())
-                {
-                    context.Writer.WritePropertyName("StartTime");
-                    context.Writer.Write(publicRequest.StartTime.Value);
-                }
-
-                if(publicRequest.IsSetStatus())
-                {
-                    context.Writer.WritePropertyName("Status");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TrialComponentStatusMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Status, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTrialComponentName())
-                {
-                    context.Writer.WritePropertyName("TrialComponentName");
-                    context.Writer.Write(publicRequest.TrialComponentName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

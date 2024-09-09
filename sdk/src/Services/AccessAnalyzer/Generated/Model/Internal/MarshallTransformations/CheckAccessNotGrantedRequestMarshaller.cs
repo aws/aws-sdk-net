@@ -61,43 +61,46 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/policy/check-access-not-granted";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccess())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("access");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAccessListValue in publicRequest.Access)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccess())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("access");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAccessListValue in publicRequest.Access)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = AccessMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAccessListValue, context);
+                            var marshaller = AccessMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAccessListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetPolicyDocument())
+                    {
+                        context.Writer.WritePropertyName("policyDocument");
+                        context.Writer.Write(publicRequest.PolicyDocument);
+                    }
+
+                    if(publicRequest.IsSetPolicyType())
+                    {
+                        context.Writer.WritePropertyName("policyType");
+                        context.Writer.Write(publicRequest.PolicyType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPolicyDocument())
-                {
-                    context.Writer.WritePropertyName("policyDocument");
-                    context.Writer.Write(publicRequest.PolicyDocument);
-                }
-
-                if(publicRequest.IsSetPolicyType())
-                {
-                    context.Writer.WritePropertyName("policyType");
-                    context.Writer.Write(publicRequest.PolicyType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

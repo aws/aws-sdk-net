@@ -61,54 +61,57 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/findings";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFilters())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Filters");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AwsSecurityFindingFiltersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Filters, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetSortCriteria())
-                {
-                    context.Writer.WritePropertyName("SortCriteria");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSortCriteriaListValue in publicRequest.SortCriteria)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFilters())
                     {
+                        context.Writer.WritePropertyName("Filters");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = SortCriterionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSortCriteriaListValue, context);
+                        var marshaller = AwsSecurityFindingFiltersMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Filters, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetSortCriteria())
+                    {
+                        context.Writer.WritePropertyName("SortCriteria");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSortCriteriaListValue in publicRequest.SortCriteria)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = SortCriterionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSortCriteriaListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

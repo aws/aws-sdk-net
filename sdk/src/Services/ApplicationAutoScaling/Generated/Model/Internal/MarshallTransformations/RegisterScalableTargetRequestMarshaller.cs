@@ -63,76 +63,79 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMaxCapacity())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("MaxCapacity");
-                    context.Writer.Write(publicRequest.MaxCapacity.Value);
-                }
-
-                if(publicRequest.IsSetMinCapacity())
-                {
-                    context.Writer.WritePropertyName("MinCapacity");
-                    context.Writer.Write(publicRequest.MinCapacity.Value);
-                }
-
-                if(publicRequest.IsSetResourceId())
-                {
-                    context.Writer.WritePropertyName("ResourceId");
-                    context.Writer.Write(publicRequest.ResourceId);
-                }
-
-                if(publicRequest.IsSetRoleARN())
-                {
-                    context.Writer.WritePropertyName("RoleARN");
-                    context.Writer.Write(publicRequest.RoleARN);
-                }
-
-                if(publicRequest.IsSetScalableDimension())
-                {
-                    context.Writer.WritePropertyName("ScalableDimension");
-                    context.Writer.Write(publicRequest.ScalableDimension);
-                }
-
-                if(publicRequest.IsSetServiceNamespace())
-                {
-                    context.Writer.WritePropertyName("ServiceNamespace");
-                    context.Writer.Write(publicRequest.ServiceNamespace);
-                }
-
-                if(publicRequest.IsSetSuspendedState())
-                {
-                    context.Writer.WritePropertyName("SuspendedState");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SuspendedStateMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SuspendedState, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMaxCapacity())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("MaxCapacity");
+                        context.Writer.Write(publicRequest.MaxCapacity.Value);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetMinCapacity())
+                    {
+                        context.Writer.WritePropertyName("MinCapacity");
+                        context.Writer.Write(publicRequest.MinCapacity.Value);
+                    }
+
+                    if(publicRequest.IsSetResourceId())
+                    {
+                        context.Writer.WritePropertyName("ResourceId");
+                        context.Writer.Write(publicRequest.ResourceId);
+                    }
+
+                    if(publicRequest.IsSetRoleARN())
+                    {
+                        context.Writer.WritePropertyName("RoleARN");
+                        context.Writer.Write(publicRequest.RoleARN);
+                    }
+
+                    if(publicRequest.IsSetScalableDimension())
+                    {
+                        context.Writer.WritePropertyName("ScalableDimension");
+                        context.Writer.Write(publicRequest.ScalableDimension);
+                    }
+
+                    if(publicRequest.IsSetServiceNamespace())
+                    {
+                        context.Writer.WritePropertyName("ServiceNamespace");
+                        context.Writer.Write(publicRequest.ServiceNamespace);
+                    }
+
+                    if(publicRequest.IsSetSuspendedState())
+                    {
+                        context.Writer.WritePropertyName("SuspendedState");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SuspendedStateMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SuspendedState, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

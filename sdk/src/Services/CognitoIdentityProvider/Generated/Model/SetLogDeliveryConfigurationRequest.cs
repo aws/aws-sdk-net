@@ -31,7 +31,8 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the SetLogDeliveryConfiguration operation.
-    /// Sets up or modifies the detailed activity logging configuration of a user pool.
+    /// Sets up or modifies the logging configuration of a user pool. User pools can export
+    /// user notification logs and advanced security features user activity logs.
     /// </summary>
     public partial class SetLogDeliveryConfigurationRequest : AmazonCognitoIdentityProviderRequest
     {
@@ -41,10 +42,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property LogConfigurations. 
         /// <para>
-        /// A collection of all of the detailed activity logging configurations for a user pool.
+        /// A collection of the logging configurations for a user pool.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=1)]
+        [AWSProperty(Required=true, Min=0, Max=2)]
         public List<LogConfigurationType> LogConfigurations
         {
             get { return this._logConfigurations; }
@@ -60,7 +61,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The ID of the user pool where you want to configure detailed activity logging .
+        /// The ID of the user pool where you want to configure logging.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

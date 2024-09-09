@@ -63,50 +63,53 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetGroup())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Group");
-                    context.Writer.Write(publicRequest.Group);
-                }
-
-                if(publicRequest.IsSetGroupIdentifier())
-                {
-                    context.Writer.WritePropertyName("GroupIdentifier");
-                    context.Writer.Write(publicRequest.GroupIdentifier);
-                }
-
-                if(publicRequest.IsSetIdentifier())
-                {
-                    context.Writer.WritePropertyName("Identifier");
-                    context.Writer.Write(publicRequest.Identifier);
-                }
-
-                if(publicRequest.IsSetRequestedDimensions())
-                {
-                    context.Writer.WritePropertyName("RequestedDimensions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRequestedDimensionsListValue in publicRequest.RequestedDimensions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetGroup())
                     {
-                            context.Writer.Write(publicRequestRequestedDimensionsListValue);
+                        context.Writer.WritePropertyName("Group");
+                        context.Writer.Write(publicRequest.Group);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetGroupIdentifier())
+                    {
+                        context.Writer.WritePropertyName("GroupIdentifier");
+                        context.Writer.Write(publicRequest.GroupIdentifier);
+                    }
+
+                    if(publicRequest.IsSetIdentifier())
+                    {
+                        context.Writer.WritePropertyName("Identifier");
+                        context.Writer.Write(publicRequest.Identifier);
+                    }
+
+                    if(publicRequest.IsSetRequestedDimensions())
+                    {
+                        context.Writer.WritePropertyName("RequestedDimensions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRequestedDimensionsListValue in publicRequest.RequestedDimensions)
+                        {
+                                context.Writer.Write(publicRequestRequestedDimensionsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetServiceType())
+                    {
+                        context.Writer.WritePropertyName("ServiceType");
+                        context.Writer.Write(publicRequest.ServiceType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetServiceType())
-                {
-                    context.Writer.WritePropertyName("ServiceType");
-                    context.Writer.Write(publicRequest.ServiceType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

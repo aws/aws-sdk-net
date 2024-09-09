@@ -64,26 +64,29 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 throw new AmazonKafkaException("Request object does not have required field ClusterArn set");
             request.AddPathResource("{clusterArn}", StringUtils.FromString(publicRequest.ClusterArn));
             request.ResourcePath = "/v1/clusters/{clusterArn}/scram-secrets";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetSecretArnList())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("secretArnList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSecretArnListListValue in publicRequest.SecretArnList)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetSecretArnList())
                     {
-                            context.Writer.Write(publicRequestSecretArnListListValue);
+                        context.Writer.WritePropertyName("secretArnList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSecretArnListListValue in publicRequest.SecretArnList)
+                        {
+                                context.Writer.Write(publicRequestSecretArnListListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

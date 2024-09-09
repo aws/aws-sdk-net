@@ -67,65 +67,68 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field DataSourceId set");
             request.AddPathResource("{DataSourceId}", StringUtils.FromString(publicRequest.DataSourceId));
             request.ResourcePath = "/accounts/{AwsAccountId}/data-sources/{DataSourceId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCredentials())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Credentials");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCredentials())
+                    {
+                        context.Writer.WritePropertyName("Credentials");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = DataSourceCredentialsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Credentials, context);
+                        var marshaller = DataSourceCredentialsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Credentials, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDataSourceParameters())
+                    {
+                        context.Writer.WritePropertyName("DataSourceParameters");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DataSourceParametersMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DataSourceParameters, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetSslProperties())
+                    {
+                        context.Writer.WritePropertyName("SslProperties");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SslPropertiesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SslProperties, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetVpcConnectionProperties())
+                    {
+                        context.Writer.WritePropertyName("VpcConnectionProperties");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = VpcConnectionPropertiesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.VpcConnectionProperties, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDataSourceParameters())
-                {
-                    context.Writer.WritePropertyName("DataSourceParameters");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DataSourceParametersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DataSourceParameters, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetSslProperties())
-                {
-                    context.Writer.WritePropertyName("SslProperties");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SslPropertiesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SslProperties, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetVpcConnectionProperties())
-                {
-                    context.Writer.WritePropertyName("VpcConnectionProperties");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = VpcConnectionPropertiesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.VpcConnectionProperties, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

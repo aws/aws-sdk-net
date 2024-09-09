@@ -64,38 +64,41 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
                 throw new AmazonMainframeModernizationException("Request object does not have required field ApplicationId set");
             request.AddPathResource("{applicationId}", StringUtils.FromString(publicRequest.ApplicationId));
             request.ResourcePath = "/applications/{applicationId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCurrentApplicationVersion())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("currentApplicationVersion");
-                    context.Writer.Write(publicRequest.CurrentApplicationVersion.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCurrentApplicationVersion())
+                    {
+                        context.Writer.WritePropertyName("currentApplicationVersion");
+                        context.Writer.Write(publicRequest.CurrentApplicationVersion.Value);
+                    }
+
+                    if(publicRequest.IsSetDefinition())
+                    {
+                        context.Writer.WritePropertyName("definition");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DefinitionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Definition, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDefinition())
-                {
-                    context.Writer.WritePropertyName("definition");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DefinitionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Definition, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,54 +63,57 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetIngressVpcConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("IngressVpcConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = IngressVpcConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.IngressVpcConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetServiceArn())
-                {
-                    context.Writer.WritePropertyName("ServiceArn");
-                    context.Writer.Write(publicRequest.ServiceArn);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetIngressVpcConfiguration())
                     {
+                        context.Writer.WritePropertyName("IngressVpcConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = IngressVpcConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.IngressVpcConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetServiceArn())
+                    {
+                        context.Writer.WritePropertyName("ServiceArn");
+                        context.Writer.Write(publicRequest.ServiceArn);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetVpcIngressConnectionName())
+                    {
+                        context.Writer.WritePropertyName("VpcIngressConnectionName");
+                        context.Writer.Write(publicRequest.VpcIngressConnectionName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetVpcIngressConnectionName())
-                {
-                    context.Writer.WritePropertyName("VpcIngressConnectionName");
-                    context.Writer.Write(publicRequest.VpcIngressConnectionName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

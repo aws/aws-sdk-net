@@ -64,26 +64,29 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
                 throw new AmazonRecycleBinException("Request object does not have required field Identifier set");
             request.AddPathResource("{identifier}", StringUtils.FromString(publicRequest.Identifier));
             request.ResourcePath = "/rules/{identifier}/lock";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLockConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("LockConfiguration");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetLockConfiguration())
+                    {
+                        context.Writer.WritePropertyName("LockConfiguration");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = LockConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LockConfiguration, context);
+                        var marshaller = LockConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.LockConfiguration, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

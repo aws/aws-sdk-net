@@ -108,6 +108,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("imageId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ImageId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastModified", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

@@ -64,88 +64,91 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 throw new AmazonLexModelsV2Exception("Request object does not have required field BotId set");
             request.AddPathResource("{botId}", StringUtils.FromString(publicRequest.BotId));
             request.ResourcePath = "/bots/{botId}/botaliases/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBotAliasLocaleSettings())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("botAliasLocaleSettings");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestBotAliasLocaleSettingsKvp in publicRequest.BotAliasLocaleSettings)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBotAliasLocaleSettings())
                     {
-                        context.Writer.WritePropertyName(publicRequestBotAliasLocaleSettingsKvp.Key);
-                        var publicRequestBotAliasLocaleSettingsValue = publicRequestBotAliasLocaleSettingsKvp.Value;
+                        context.Writer.WritePropertyName("botAliasLocaleSettings");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestBotAliasLocaleSettingsKvp in publicRequest.BotAliasLocaleSettings)
+                        {
+                            context.Writer.WritePropertyName(publicRequestBotAliasLocaleSettingsKvp.Key);
+                            var publicRequestBotAliasLocaleSettingsValue = publicRequestBotAliasLocaleSettingsKvp.Value;
 
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = BotAliasLocaleSettingsMarshaller.Instance;
+                            marshaller.Marshall(publicRequestBotAliasLocaleSettingsValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetBotAliasName())
+                    {
+                        context.Writer.WritePropertyName("botAliasName");
+                        context.Writer.Write(publicRequest.BotAliasName);
+                    }
+
+                    if(publicRequest.IsSetBotVersion())
+                    {
+                        context.Writer.WritePropertyName("botVersion");
+                        context.Writer.Write(publicRequest.BotVersion);
+                    }
+
+                    if(publicRequest.IsSetConversationLogSettings())
+                    {
+                        context.Writer.WritePropertyName("conversationLogSettings");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = BotAliasLocaleSettingsMarshaller.Instance;
-                        marshaller.Marshall(publicRequestBotAliasLocaleSettingsValue, context);
+                        var marshaller = ConversationLogSettingsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ConversationLogSettings, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetBotAliasName())
-                {
-                    context.Writer.WritePropertyName("botAliasName");
-                    context.Writer.Write(publicRequest.BotAliasName);
-                }
-
-                if(publicRequest.IsSetBotVersion())
-                {
-                    context.Writer.WritePropertyName("botVersion");
-                    context.Writer.Write(publicRequest.BotVersion);
-                }
-
-                if(publicRequest.IsSetConversationLogSettings())
-                {
-                    context.Writer.WritePropertyName("conversationLogSettings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ConversationLogSettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ConversationLogSettings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetSentimentAnalysisSettings())
-                {
-                    context.Writer.WritePropertyName("sentimentAnalysisSettings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SentimentAnalysisSettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SentimentAnalysisSettings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetDescription())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetSentimentAnalysisSettings())
+                    {
+                        context.Writer.WritePropertyName("sentimentAnalysisSettings");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SentimentAnalysisSettingsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SentimentAnalysisSettings, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

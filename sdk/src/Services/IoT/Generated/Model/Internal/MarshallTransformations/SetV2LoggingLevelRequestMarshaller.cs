@@ -61,32 +61,35 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v2LoggingLevel";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLogLevel())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("logLevel");
-                    context.Writer.Write(publicRequest.LogLevel);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetLogLevel())
+                    {
+                        context.Writer.WritePropertyName("logLevel");
+                        context.Writer.Write(publicRequest.LogLevel);
+                    }
+
+                    if(publicRequest.IsSetLogTarget())
+                    {
+                        context.Writer.WritePropertyName("logTarget");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LogTargetMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.LogTarget, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetLogTarget())
-                {
-                    context.Writer.WritePropertyName("logTarget");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LogTargetMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LogTarget, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

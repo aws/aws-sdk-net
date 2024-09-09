@@ -63,65 +63,68 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDestination())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Destination");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DataDestinationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Destination, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetFormat())
-                {
-                    context.Writer.WritePropertyName("Format");
-                    context.Writer.Write(publicRequest.Format);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDestination())
                     {
+                        context.Writer.WritePropertyName("Destination");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = DataDestinationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Destination, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetWhatIfForecastArns())
-                {
-                    context.Writer.WritePropertyName("WhatIfForecastArns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestWhatIfForecastArnsListValue in publicRequest.WhatIfForecastArns)
+                    if(publicRequest.IsSetFormat())
                     {
-                            context.Writer.Write(publicRequestWhatIfForecastArnsListValue);
+                        context.Writer.WritePropertyName("Format");
+                        context.Writer.Write(publicRequest.Format);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetWhatIfForecastArns())
+                    {
+                        context.Writer.WritePropertyName("WhatIfForecastArns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestWhatIfForecastArnsListValue in publicRequest.WhatIfForecastArns)
+                        {
+                                context.Writer.Write(publicRequestWhatIfForecastArnsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetWhatIfForecastExportName())
+                    {
+                        context.Writer.WritePropertyName("WhatIfForecastExportName");
+                        context.Writer.Write(publicRequest.WhatIfForecastExportName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetWhatIfForecastExportName())
-                {
-                    context.Writer.WritePropertyName("WhatIfForecastExportName");
-                    context.Writer.Write(publicRequest.WhatIfForecastExportName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

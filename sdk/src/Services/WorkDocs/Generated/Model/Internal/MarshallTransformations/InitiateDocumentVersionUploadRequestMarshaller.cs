@@ -61,57 +61,60 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/api/v1/documents";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetContentCreatedTimestamp())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ContentCreatedTimestamp");
-                    context.Writer.Write(publicRequest.ContentCreatedTimestamp.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetContentCreatedTimestamp())
+                    {
+                        context.Writer.WritePropertyName("ContentCreatedTimestamp");
+                        context.Writer.Write(publicRequest.ContentCreatedTimestamp.Value);
+                    }
+
+                    if(publicRequest.IsSetContentModifiedTimestamp())
+                    {
+                        context.Writer.WritePropertyName("ContentModifiedTimestamp");
+                        context.Writer.Write(publicRequest.ContentModifiedTimestamp.Value);
+                    }
+
+                    if(publicRequest.IsSetContentType())
+                    {
+                        context.Writer.WritePropertyName("ContentType");
+                        context.Writer.Write(publicRequest.ContentType);
+                    }
+
+                    if(publicRequest.IsSetDocumentSizeInBytes())
+                    {
+                        context.Writer.WritePropertyName("DocumentSizeInBytes");
+                        context.Writer.Write(publicRequest.DocumentSizeInBytes.Value);
+                    }
+
+                    if(publicRequest.IsSetId())
+                    {
+                        context.Writer.WritePropertyName("Id");
+                        context.Writer.Write(publicRequest.Id);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetParentFolderId())
+                    {
+                        context.Writer.WritePropertyName("ParentFolderId");
+                        context.Writer.Write(publicRequest.ParentFolderId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetContentModifiedTimestamp())
-                {
-                    context.Writer.WritePropertyName("ContentModifiedTimestamp");
-                    context.Writer.Write(publicRequest.ContentModifiedTimestamp.Value);
-                }
-
-                if(publicRequest.IsSetContentType())
-                {
-                    context.Writer.WritePropertyName("ContentType");
-                    context.Writer.Write(publicRequest.ContentType);
-                }
-
-                if(publicRequest.IsSetDocumentSizeInBytes())
-                {
-                    context.Writer.WritePropertyName("DocumentSizeInBytes");
-                    context.Writer.Write(publicRequest.DocumentSizeInBytes.Value);
-                }
-
-                if(publicRequest.IsSetId())
-                {
-                    context.Writer.WritePropertyName("Id");
-                    context.Writer.Write(publicRequest.Id);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetParentFolderId())
-                {
-                    context.Writer.WritePropertyName("ParentFolderId");
-                    context.Writer.Write(publicRequest.ParentFolderId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

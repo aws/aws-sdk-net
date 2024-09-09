@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// The specified service wasn't found. You can view your available services with <a>ListServices</a>.
+    /// The specified service wasn't found. You can view your available services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">ListServices</a>.
     /// Amazon ECS services are cluster specific and Region specific.
     /// </summary>
     #if !NETSTANDARD

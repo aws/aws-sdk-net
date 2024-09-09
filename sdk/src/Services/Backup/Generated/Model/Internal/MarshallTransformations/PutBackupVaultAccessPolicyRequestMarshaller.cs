@@ -64,21 +64,24 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 throw new AmazonBackupException("Request object does not have required field BackupVaultName set");
             request.AddPathResource("{backupVaultName}", StringUtils.FromString(publicRequest.BackupVaultName));
             request.ResourcePath = "/backup-vaults/{backupVaultName}/access-policy";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetPolicy())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Policy");
-                    context.Writer.Write(publicRequest.Policy);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetPolicy())
+                    {
+                        context.Writer.WritePropertyName("Policy");
+                        context.Writer.Write(publicRequest.Policy);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -61,31 +61,34 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v2/email/metrics/batch";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetQueries())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Queries");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestQueriesListValue in publicRequest.Queries)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetQueries())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("Queries");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestQueriesListValue in publicRequest.Queries)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = BatchGetMetricDataQueryMarshaller.Instance;
-                        marshaller.Marshall(publicRequestQueriesListValue, context);
+                            var marshaller = BatchGetMetricDataQueryMarshaller.Instance;
+                            marshaller.Marshall(publicRequestQueriesListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

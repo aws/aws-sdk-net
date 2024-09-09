@@ -67,55 +67,58 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                 throw new AmazonQBusinessException("Request object does not have required field PluginId set");
             request.AddPathResource("{pluginId}", StringUtils.FromString(publicRequest.PluginId));
             request.ResourcePath = "/applications/{applicationId}/plugins/{pluginId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAuthConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("authConfiguration");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAuthConfiguration())
+                    {
+                        context.Writer.WritePropertyName("authConfiguration");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = PluginAuthConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AuthConfiguration, context);
+                        var marshaller = PluginAuthConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AuthConfiguration, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetCustomPluginConfiguration())
+                    {
+                        context.Writer.WritePropertyName("customPluginConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CustomPluginConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CustomPluginConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDisplayName())
+                    {
+                        context.Writer.WritePropertyName("displayName");
+                        context.Writer.Write(publicRequest.DisplayName);
+                    }
+
+                    if(publicRequest.IsSetServerUrl())
+                    {
+                        context.Writer.WritePropertyName("serverUrl");
+                        context.Writer.Write(publicRequest.ServerUrl);
+                    }
+
+                    if(publicRequest.IsSetState())
+                    {
+                        context.Writer.WritePropertyName("state");
+                        context.Writer.Write(publicRequest.State);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCustomPluginConfiguration())
-                {
-                    context.Writer.WritePropertyName("customPluginConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CustomPluginConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CustomPluginConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDisplayName())
-                {
-                    context.Writer.WritePropertyName("displayName");
-                    context.Writer.Write(publicRequest.DisplayName);
-                }
-
-                if(publicRequest.IsSetServerUrl())
-                {
-                    context.Writer.WritePropertyName("serverUrl");
-                    context.Writer.Write(publicRequest.ServerUrl);
-                }
-
-                if(publicRequest.IsSetState())
-                {
-                    context.Writer.WritePropertyName("state");
-                    context.Writer.Write(publicRequest.State);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,31 +63,34 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetVehicles())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("vehicles");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestVehiclesListValue in publicRequest.Vehicles)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetVehicles())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("vehicles");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestVehiclesListValue in publicRequest.Vehicles)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = UpdateVehicleRequestItemMarshaller.Instance;
-                        marshaller.Marshall(publicRequestVehiclesListValue, context);
+                            var marshaller = UpdateVehicleRequestItemMarshaller.Instance;
+                            marshaller.Marshall(publicRequestVehiclesListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

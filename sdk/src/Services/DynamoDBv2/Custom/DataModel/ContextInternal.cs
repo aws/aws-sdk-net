@@ -147,6 +147,9 @@ namespace Amazon.DynamoDBv2.DataModel
             return table;
         }
 
+// This is the call we want to avoid with disableFetchingTableMetadata = true, but as long as we still support false, we still need to call the discouraged sync-over-async 'Table.LoadTable(Client, emptyConfig)'
+#pragma warning disable CS0618
+
         // Retrieves Config-less Table from cache or constructs it on cache-miss
         // This Table should not be used for data operations.
         // To use for data operations, Copy with a TableConfig first.
@@ -189,7 +192,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 
                 var emptyConfig = new TableConfig(tableName, conversion: null, consumer: Table.DynamoDBConsumer.DataModel,
                     storeAsEpoch: null, isEmptyStringValueEnabled: false, metadataCachingMode: Config.MetadataCachingMode);
-                table = Table.LoadTable(Client, emptyConfig);
+                table = Table.LoadTable(Client, emptyConfig) as Table;
                 tablesMap[tableName] = table;
 
                 return table;
@@ -202,6 +205,8 @@ namespace Amazon.DynamoDBv2.DataModel
                 }
             }
         }
+
+#pragma warning restore CS0618
 
         /// <summary>
         /// Stores a table in the cache if there is not an existing entry for the given key
@@ -1178,7 +1183,9 @@ namespace Amazon.DynamoDBv2.DataModel
                 IndexName = flatConfig.IndexName,
                 ConsistentRead = flatConfig.ConsistentRead.GetValueOrDefault(false)
             };
-            Search scan = table.Scan(scanConfig);
+
+            // table.Scan() returns the ISearch interface but we explicitly cast it to a Search object since we rely on its internal behavior
+            Search scan = table.Scan(scanConfig) as Search;
             return new ContextSearch(scan, flatConfig);
         }
 
@@ -1187,7 +1194,9 @@ namespace Amazon.DynamoDBv2.DataModel
             DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, Config);
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
             Table table = GetTargetTable(storageConfig, flatConfig);
-            Search search = table.Scan(scanConfig);
+
+            // table.Scan() returns the ISearch interface but we explicitly cast it to a Search object since we rely on its internal behavior
+            Search search = table.Scan(scanConfig) as Search;
             return new ContextSearch(search, flatConfig);
         }
 
@@ -1196,7 +1205,9 @@ namespace Amazon.DynamoDBv2.DataModel
             DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, Config);
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
             Table table = GetTargetTable(storageConfig, flatConfig);
-            Search search = table.Query(queryConfig);
+
+            // table.Query() returns the ISearch interface but we explicitly cast it to a Search object since we rely on its internal behavior
+            Search search = table.Query(queryConfig) as Search;
             return new ContextSearch(search, flatConfig);
         }
 
@@ -1241,7 +1252,9 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 queryConfig.Select = SelectValues.AllProjectedAttributes;
             }
-            Search query = table.Query(queryConfig);
+
+            // table.Query() returns the ISearch interface but we explicitly cast it to a Search object since we rely on its internal behavior
+            Search query = table.Query(queryConfig) as Search;
 
             return new ContextSearch(query, currentConfig);
         }

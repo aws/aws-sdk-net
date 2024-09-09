@@ -64,71 +64,74 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
                 throw new AmazonFinSpaceDataException("Request object does not have required field DatasetId set");
             request.AddPathResource("{datasetId}", StringUtils.FromString(publicRequest.DatasetId));
             request.ResourcePath = "/datasets/{datasetId}/dataviewsv2";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAsOfTimestamp())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("asOfTimestamp");
-                    context.Writer.Write(publicRequest.AsOfTimestamp.Value);
-                }
-
-                if(publicRequest.IsSetAutoUpdate())
-                {
-                    context.Writer.WritePropertyName("autoUpdate");
-                    context.Writer.Write(publicRequest.AutoUpdate.Value);
-                }
-
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDestinationTypeParams())
-                {
-                    context.Writer.WritePropertyName("destinationTypeParams");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DataViewDestinationTypeParamsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DestinationTypeParams, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPartitionColumns())
-                {
-                    context.Writer.WritePropertyName("partitionColumns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPartitionColumnsListValue in publicRequest.PartitionColumns)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAsOfTimestamp())
                     {
-                            context.Writer.Write(publicRequestPartitionColumnsListValue);
+                        context.Writer.WritePropertyName("asOfTimestamp");
+                        context.Writer.Write(publicRequest.AsOfTimestamp.Value);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetSortColumns())
-                {
-                    context.Writer.WritePropertyName("sortColumns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSortColumnsListValue in publicRequest.SortColumns)
+                    if(publicRequest.IsSetAutoUpdate())
                     {
-                            context.Writer.Write(publicRequestSortColumnsListValue);
+                        context.Writer.WritePropertyName("autoUpdate");
+                        context.Writer.Write(publicRequest.AutoUpdate.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetDestinationTypeParams())
+                    {
+                        context.Writer.WritePropertyName("destinationTypeParams");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DataViewDestinationTypeParamsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DestinationTypeParams, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetPartitionColumns())
+                    {
+                        context.Writer.WritePropertyName("partitionColumns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPartitionColumnsListValue in publicRequest.PartitionColumns)
+                        {
+                                context.Writer.Write(publicRequestPartitionColumnsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSortColumns())
+                    {
+                        context.Writer.WritePropertyName("sortColumns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSortColumnsListValue in publicRequest.SortColumns)
+                        {
+                                context.Writer.Write(publicRequestSortColumnsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

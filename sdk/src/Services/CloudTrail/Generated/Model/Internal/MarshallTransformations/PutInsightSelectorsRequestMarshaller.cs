@@ -63,49 +63,52 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEventDataStore())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("EventDataStore");
-                    context.Writer.Write(publicRequest.EventDataStore);
-                }
-
-                if(publicRequest.IsSetInsightsDestination())
-                {
-                    context.Writer.WritePropertyName("InsightsDestination");
-                    context.Writer.Write(publicRequest.InsightsDestination);
-                }
-
-                if(publicRequest.IsSetInsightSelectors())
-                {
-                    context.Writer.WritePropertyName("InsightSelectors");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestInsightSelectorsListValue in publicRequest.InsightSelectors)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEventDataStore())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = InsightSelectorMarshaller.Instance;
-                        marshaller.Marshall(publicRequestInsightSelectorsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("EventDataStore");
+                        context.Writer.Write(publicRequest.EventDataStore);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetInsightsDestination())
+                    {
+                        context.Writer.WritePropertyName("InsightsDestination");
+                        context.Writer.Write(publicRequest.InsightsDestination);
+                    }
+
+                    if(publicRequest.IsSetInsightSelectors())
+                    {
+                        context.Writer.WritePropertyName("InsightSelectors");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestInsightSelectorsListValue in publicRequest.InsightSelectors)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = InsightSelectorMarshaller.Instance;
+                            marshaller.Marshall(publicRequestInsightSelectorsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTrailName())
+                    {
+                        context.Writer.WritePropertyName("TrailName");
+                        context.Writer.Write(publicRequest.TrailName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTrailName())
-                {
-                    context.Writer.WritePropertyName("TrailName");
-                    context.Writer.Write(publicRequest.TrailName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,64 +63,67 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientRequestToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetSourceRevisions())
-                {
-                    context.Writer.WritePropertyName("sourceRevisions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSourceRevisionsListValue in publicRequest.SourceRevisions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientRequestToken())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SourceRevisionOverrideMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSourceRevisionsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("clientRequestToken");
+                        context.Writer.Write(publicRequest.ClientRequestToken);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetVariables())
-                {
-                    context.Writer.WritePropertyName("variables");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestVariablesListValue in publicRequest.Variables)
+                    else if(!(publicRequest.IsSetClientRequestToken()))
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = PipelineVariableMarshaller.Instance;
-                        marshaller.Marshall(publicRequestVariablesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("clientRequestToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
                     }
-                    context.Writer.WriteArrayEnd();
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetSourceRevisions())
+                    {
+                        context.Writer.WritePropertyName("sourceRevisions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSourceRevisionsListValue in publicRequest.SourceRevisions)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = SourceRevisionOverrideMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSourceRevisionsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetVariables())
+                    {
+                        context.Writer.WritePropertyName("variables");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestVariablesListValue in publicRequest.Variables)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = PipelineVariableMarshaller.Instance;
+                            marshaller.Marshall(publicRequestVariablesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

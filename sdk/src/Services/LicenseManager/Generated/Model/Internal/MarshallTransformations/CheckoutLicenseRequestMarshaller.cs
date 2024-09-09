@@ -63,67 +63,70 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBeneficiary())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Beneficiary");
-                    context.Writer.Write(publicRequest.Beneficiary);
-                }
-
-                if(publicRequest.IsSetCheckoutType())
-                {
-                    context.Writer.WritePropertyName("CheckoutType");
-                    context.Writer.Write(publicRequest.CheckoutType);
-                }
-
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                if(publicRequest.IsSetEntitlements())
-                {
-                    context.Writer.WritePropertyName("Entitlements");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEntitlementsListValue in publicRequest.Entitlements)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBeneficiary())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EntitlementDataMarshaller.Instance;
-                        marshaller.Marshall(publicRequestEntitlementsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("Beneficiary");
+                        context.Writer.Write(publicRequest.Beneficiary);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetCheckoutType())
+                    {
+                        context.Writer.WritePropertyName("CheckoutType");
+                        context.Writer.Write(publicRequest.CheckoutType);
+                    }
+
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    if(publicRequest.IsSetEntitlements())
+                    {
+                        context.Writer.WritePropertyName("Entitlements");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestEntitlementsListValue in publicRequest.Entitlements)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = EntitlementDataMarshaller.Instance;
+                            marshaller.Marshall(publicRequestEntitlementsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetKeyFingerprint())
+                    {
+                        context.Writer.WritePropertyName("KeyFingerprint");
+                        context.Writer.Write(publicRequest.KeyFingerprint);
+                    }
+
+                    if(publicRequest.IsSetNodeId())
+                    {
+                        context.Writer.WritePropertyName("NodeId");
+                        context.Writer.Write(publicRequest.NodeId);
+                    }
+
+                    if(publicRequest.IsSetProductSKU())
+                    {
+                        context.Writer.WritePropertyName("ProductSKU");
+                        context.Writer.Write(publicRequest.ProductSKU);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetKeyFingerprint())
-                {
-                    context.Writer.WritePropertyName("KeyFingerprint");
-                    context.Writer.Write(publicRequest.KeyFingerprint);
-                }
-
-                if(publicRequest.IsSetNodeId())
-                {
-                    context.Writer.WritePropertyName("NodeId");
-                    context.Writer.Write(publicRequest.NodeId);
-                }
-
-                if(publicRequest.IsSetProductSKU())
-                {
-                    context.Writer.WritePropertyName("ProductSKU");
-                    context.Writer.Write(publicRequest.ProductSKU);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

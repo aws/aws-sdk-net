@@ -1,3 +1,248 @@
+### 4.0.0.0-preview.2 (2024-08-28 14:45 UTC)
+* DynamoDBv2 (4.0.0.0)
+	* Add the ability to mock DynamoDB operations which now implement interfaces.
+* S3 (4.0.0.0)
+	* Split GetACL into GetBucketAcl and GetObjectAcl
+	* Split PutACL into PutObjectACL and PutBucketACL.
+	* Obsolete PutACL and GetACL. These operations are being split into separate operations, because context parameters that could be used for endpoint resolution were not being copied over due to the two operations being merged into one. These context parameters were not being used currently so there is no effect as of now.
+* Core 4.0.0.0
+	* 4.0.0.0 Preview 2 Release
+	* Add new extension packages for CloudFront Signers and EC2 Decrypt Password to take a dependency on BouncyCastle.Cryptography
+	* All services packages updated to require new Core
+
+### 4.0.0.0-preview (2024-08-15 14:46 UTC)
+
+* AWSSDK.Extensions.NETCore.Setup (4.0.0.0)
+    * `DefaultClientConfig` in `AWSSDK.Extensions.NETCore.Setup` no longer extends from service client config base class `ClientConfig`. The service client config properties have been replicated on `DefaultClientConfig` using nullable value types to allow detecting when a value has been set on `DefaultClientConfig` when copying the values to the service client config being created for the service client.
+	* Package has been marked as trim safe for Native AOT compilation.
+	* Intellisense supported added for editing appsettings.json file.
+* DynamoDBv2 (4.0.0.0)
+    * In DynamoDB's high-level programming model, initializing the `Table` with a mocked `IAmazonDynamoDB` now returns an `InvalidOperationException` instead of a `NullReferenceException` . Async `Table` methods should now work with a mocked client but you may still see exceptions when calling sync methods from .NET/Core/Standard. See [PR #3388](https://github.com/aws/aws-sdk-net/pull/3388), this mostly addresses #1589.
+	* In DynamoDB's object persistence programming model, we've separated the shared `DynamoDBOperationConfig` into new operation-specific objects (`SaveConfig`, `LoadConfig`, `QueryConfig`, etc.). The shared config has grown overtime, and contains properties that don't apply to every operation which can lead to confusion. we've marked the methods that take `DynamoDBOperationConfig` as obsolete. We won't remove them from V4 yet, though may do so in a future version. See [PR #3421](https://github.com/aws/aws-sdk-net/pull/3421)
+	* In DynamoDB's object persistence programming model, we've removed `MetadataCachingMode` and `DisableFetchingTableMetadata` from `DynamoDBOperationConfig`, and did not include these on the new operation-specific configs that were introduced above. These are table-level settings that should be specified on the global `AWSConfigsDynamoDB.Context` or on `DynamoDBContextConfig`. See [PR #3422](https://github.com/aws/aws-sdk-net/pull/3422)
+	* In DynamoDB's object persistence programming model, `DynamoDBOperationConfig` no longer inherits from `DynamoDBContextConfig`. This prevents you from passing a `DynamoDBOperationConfig` in to the constructor for `DynamoDBContext`, where some properties on the operation-specific config (such as `OverrideTableName`) do not apply. See [PR #3422](https://github.com/aws/aws-sdk-net/pull/3422)
+* S3 (4.0.0.0)
+    * S3 service clients configured for `us-east-1` will no longer be able to access buckets in other regions. Buckets musts be accessed with S3 service clients configured for the region the bucket is in. This change avoids surprises in applications using the S3 service client when under the covers it makes multiple AWS requests to access buckets that are not in service clients configured `us-east-1` region.
+	* The S3 encryption client has been removed from the `AWSSDK.S3` package. This client had been marked as obsolete with the encryption client moved to its separate package `Amazon.Extensions.S3.Encryption` package. The following migration guide to transition to the separate package. https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/s3-encryption-migration.html 
+* Core 4.0.0.0
+	* Remove .NET Framework target 3.5
+	* Update .NET Framework 4.5 target to 4.7.2
+	* Properties using value types on classes used for making requests and responses have been changed to use nullable value types. Essentially properties of type `bool` are changed to `bool?`.
+	* Properties using collections on classes used for making requests and responses will now default to `null`. The V3 behavior of initializing collections can be restored by setting the `Amazon.AWSConfigs.InitializeCollections` to `true`. This property also exists in V3 for users that want to try this behavior change before upgrading to V4.
+	* The IAM action identifiers have been removed from the `Amazon.Auth.AccessControlPolicy.ActionIdentifiers` namespace. These identifiers were previously marked as obsolete due to be being out of date with no mechanism to keep them up to date. Code using these `ActionIdentifiers` should be upgrade to use the string value of the IAM action name.
+	* The `DetermineServiceURL` method on the `ClientConfig`, the base class of service client configs like `AmazonS3Config`, was removed. This had been marked obsolete and was tied to an internal endpoint resolution system that was removed in V4. Application code calling this method should switch to using the `DetermineServiceOperationEndpoint` method on the service client.
+	* When using credential providers that rely on Amazon Security Token Service (STS) the calls will always use the regional endpoint. V3 by default used `us-east-1` regardless of the configured region when running in the public partition. As part of this change the `StsRegionalEndpointsValue` enum was removed. Any code using that enum should be removed.
+	* On service client configs the `RetryMode` defaults to `Standard` instead of `Legacy`. The `Legacy` enum value was removed.
+	* On service client configs the `DefaultConfigurationMode` defaults to `Standard` instead of `Legacy`. The `Legacy` enum value was removed.
+	* The System.Buffers, System.Memory and System.Text.Json packages have been added as dependencies for the .NET Framework and .NET Standard targets.
+	* The embedded `endpoints.json` file in AWSSDK.Core was removed. This was a 1 MB json file that was parsed at startup for the SDK to determine the service endpoint for a region. Endpoint resolution has been replaced with a new system that generates rules into each individual service assembly for determining the service endpoints.
+	* Community [PR #3359](https://github.com/aws/aws-sdk-net/pull/3359) Optimize GetExtension execution time on .NET 8. Thanks [Steven Weerdenburg](https://github.com/stevenaw)
+    * Community [PR #3293](https://github.com/aws/aws-sdk-net/pull/3293) improving `AWSSDK.ToHex` performance. Thanks [Steven Weerdenburg](https://github.com/stevenaw)
+    * Community [PR #3292](https://github.com/aws/aws-sdk-net/pull/3292) improving `AWSSDK.CopyTo` performance. Thanks [Daniel Marbach](https://github.com/danielmarbach)
+    * Community [PR #3324](https://github.com/aws/aws-sdk-net/pull/3324) optimizing the AWS SigV4 signer. Thanks [Daniel Marbach](https://github.com/danielmarbach)
+    * Community [PR #3363](https://github.com/aws/aws-sdk-net/pull/3363) improving `AWSSDKUtils.ParameterAsString` performance. Thanks [Daniel Marbach](https://github.com/danielmarbach)
+    * Community [PR #3365](https://github.com/aws/aws-sdk-net/pull/3365) improving `AWSSDKUtils.DetermineService` performance. Thanks [Daniel Marbach](https://github.com/danielmarbach)
+    * Community [PR #3307](https://github.com/aws/aws-sdk-net/pull/3307) Optimizing `AWSSDKUtils.UrlEncode` performance. Thanks [Daniel Marbach](https://github.com/danielmarbach)
+    * Community [PR #3425](https://github.com/aws/aws-sdk-net/pull/3425) Avoid allocating byte[] when converting MemoryStream to String. Thanks [Paulo Morgado](https://github.com/paulomorgado)
+
+### 3.7.873.0 (2024-08-26 18:17 UTC)
+* IoTSiteWise (3.7.401.0)
+	* AWS IoT SiteWise now supports versioning for asset models. It enables users to retrieve active version of their asset model and perform asset model writes with optimistic lock.
+* WorkSpaces (3.7.402.0)
+	* This release adds support for creating and managing directories that use AWS IAM Identity Center as user identity source. Such directories can be used to create non-Active Directory domain joined WorkSpaces Personal.Updated RegisterWorkspaceDirectory and DescribeWorkspaceDirectories APIs.
+
+### 3.7.872.0 (2024-08-23 18:27 UTC)
+* BedrockAgent (3.7.401.0)
+	* Releasing the support for Action User Confirmation.
+* BedrockAgentRuntime (3.7.402.0)
+	* Releasing the support for Action User Confirmation.
+* CodeBuild (3.7.402.4)
+	* Added support for the MAC_ARM environment type for CodeBuild fleets.
+* Organizations (3.7.401.0)
+	* Releasing minor partitional endpoint updates.
+* QBusiness (3.7.401.0)
+	* Amazon QBusiness: Enable support for SAML and OIDC federation through AWS IAM Identity Provider integration.
+* S3Control (3.7.400.12)
+	* Update the `CreateJob` API to only include the `UserArguments` property when populated.
+* SupplyChain (3.7.400.12)
+	* Update API documentation to clarify the event SLA as well as the data model expectations
+
+### 3.7.871.0 (2024-08-22 18:42 UTC)
+* AutoScaling (3.7.401.9)
+	* Amazon EC2 Auto Scaling now provides EBS health check to manage EC2 instance replacement
+* Bedrock (3.7.403.0)
+	* Amazon Bedrock Evaluation BatchDeleteEvaluationJob API allows customers to delete evaluation jobs under terminated evaluation job statuses - Stopped, Failed, or Completed. Customers can submit a batch of 25 evaluation jobs to be deleted at once.
+* EMRContainers (3.7.401.0)
+	* Correct endpoint for FIPS is configured for US Gov Regions.
+* Inspector2 (3.7.402.0)
+	* Add enums for Agentless scan statuses and EC2 enablement error states
+* QuickSight (3.7.402.0)
+	* Explicit query for authors and dashboard viewing sharing for embedded users
+* Route53 (3.7.402.0)
+	* Amazon Route 53 now supports the Asia Pacific (Malaysia) Region (ap-southeast-5) for latency records, geoproximity records, and private DNS for Amazon VPCs in that region.
+* Core 3.7.400.11
+	* Updating endpoints.json file.
+	* Updating partitions.json file.
+	* All services packages updated to require new Core
+
+### 3.7.870.0 (2024-08-21 18:27 UTC)
+* CodeStar (Removed)
+	* AWS CodeStar has been removed from the SDK because it has been discontinued.
+* EC2 (3.7.404.0)
+	* DescribeInstanceStatus now returns health information on EBS volumes attached to Nitro instances
+* EntityResolution (3.7.401.0)
+	* Increase the mapping attributes in Schema to 35.
+* Glue (3.7.405.0)
+	* Add optional field JobRunQueuingEnabled to CreateJob and UpdateJob APIs.
+* Lambda (3.7.402.0)
+	* Release FilterCriteria encryption for Lambda EventSourceMapping,  enabling customers to encrypt their filter criteria using a customer-owned KMS key.
+* SecurityHub (3.7.401.0)
+	* Security Hub documentation and definition updates
+* SimpleEmail (3.7.401.0)
+	* Enable email receiving customers to provide SES with access to their S3 buckets via an IAM role for "Deliver to S3 Action"
+* Core 3.7.400.10
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.869.0 (2024-08-20 18:29 UTC)
+* ECS (3.7.402.3)
+	* Documentation only release to address various tickets
+* OpenSearchServerless (3.7.401.0)
+	* Added FailureCode and FailureMessage to BatchGetCollectionResponse for BatchGetVPCEResponse for non-Active Collection and VPCE.
+* S3 (3.7.402.0)
+	* Amazon Simple Storage Service / Features : Add support for conditional writes for PutObject and CompleteMultipartUpload APIs.
+* Core 3.7.400.9
+	* Support stringArray and OperationContextParams in Endpoint rules
+	* All services packages updated to require new Core
+
+### 3.7.868.0 (2024-08-19 18:18 UTC)
+* Bedrock (3.7.402.0)
+	* Amazon Bedrock Batch Inference/ Model Invocation is a feature which allows customers to asynchronously run inference on a large set of records/files stored in S3.
+* CodeBuild (3.7.402.0)
+	* AWS CodeBuild now supports creating fleets with macOS platform for running builds.
+* Deadline (3.7.401.0)
+	* This release adds additional search fields and provides sorting by multiple fields.
+* Lambda (3.7.401.0)
+	* Release Lambda FunctionRecursiveConfig, enabling customers to turn recursive loop detection on or off on individual functions. This release adds two new APIs, GetFunctionRecursionConfig and PutFunctionRecursionConfig.
+* SsmSap (3.7.401.0)
+	* Add new attributes to the outputs of GetApplication and GetDatabase APIs.
+* Core 3.7.400.8
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.867.0 (2024-08-16 18:17 UTC)
+* Batch (3.7.401.0)
+	* Improvements of integration between AWS Batch and EC2.
+* Inspector2 (3.7.401.0)
+	* Update the correct format of key and values for resource tags
+* QuickSight (3.7.401.0)
+	* Amazon QuickSight launches Customer Managed Key (CMK) encryption for Data Source metadata
+* SageMaker (3.7.403.0)
+	* Introduce Endpoint and EndpointConfig Arns in sagemaker:ListPipelineExecutionSteps API response
+* SimpleEmailV2 (3.7.401.0)
+	* Marking use case description field of account details as deprecated.
+* Core 3.7.400.7
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.866.0 (2024-08-15 18:20 UTC)
+* DocDB (3.7.401.0)
+	* This release adds Global Cluster Failover capability which enables you to change your global cluster's primary AWS region, the region that serves writes, during a regional outage. Performing a failover action preserves your Global Cluster setup.
+* ECS (3.7.402.0)
+	* This release introduces a new ContainerDefinition configuration to support the customer-managed keys for ECS container restart feature.
+* IdentityManagement (3.7.402.0)
+	* Make the LastUsedDate field in the GetAccessKeyLastUsed response optional. This may break customers who only call the API for access keys with a valid LastUsedDate. This fixes a deserialization issue for access keys without a LastUsedDate, because the field was marked as required but could be null.
+* S3 (3.7.401.0)
+	* Amazon Simple Storage Service / Features  : Adds support for pagination in the S3 ListBuckets API.
+* Core 3.7.400.6
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.865.0 (2024-08-14 18:13 UTC)
+* CodeBuild (3.7.401.0)
+	* AWS CodeBuild now supports using Secrets Manager to store git credentials and using multiple source credentials in a single project.
+
+### 3.7.864.0 (2024-08-13 18:17 UTC)
+* Amplify (3.7.401.0)
+	* Add a new field "cacheConfig" that enables users to configure the CDN cache settings for an App
+* AppStream (3.7.402.0)
+	* This release includes following new APIs: CreateThemeForStack, DescribeThemeForStack, UpdateThemeForStack, DeleteThemeForStack to support custom branding programmatically.
+* FIS (3.7.401.0)
+	* This release adds support for additional error information on experiment failure. It adds the error code, location, and account id on relevant failures to the GetExperiment and ListExperiment API responses.
+* Glue (3.7.404.0)
+	* Add AttributesToGet parameter support for Glue GetTables
+* NeptuneGraph (3.7.401.0)
+	* Amazon Neptune Analytics provides a new option for customers to load data into a graph using the RDF (Resource Description Framework) NTRIPLES format. When loading NTRIPLES files, use the value `convertToIri` for the `blankNodeHandling` parameter.
+* Core 3.7.400.5
+	* Add AWSConfigs.DisableDangerousDisablePathAndQueryCanonicalization property for users using the WebApplicationFactory for mock testing.
+	* All services packages updated to require new Core
+
+### 3.7.863.0 (2024-08-12 18:20 UTC)
+* ComputeOptimizer (3.7.400.5)
+	* Doc only update for Compute Optimizer that fixes several customer-reported issues relating to ECS finding classifications
+* ConfigService (3.7.401.0)
+	* Documentation update for the OrganizationConfigRuleName regex pattern.
+* EC2 (3.7.403.0)
+	* This release adds new capabilities to manage On-Demand Capacity Reservations including the ability to split your reservation, move capacity between reservations, and modify the instance eligibility of your reservation.
+* EKS (3.7.402.0)
+	* Added support for new AL2023 GPU AMIs to the supported AMITypes.
+* GroundStation (3.7.400.5)
+	* Updating documentation for OEMEphemeris to link to AWS Ground Station User Guide
+* MediaLive (3.7.401.0)
+	* AWS Elemental MediaLive now supports now supports editing the PID values for a Multiplex.
+* SageMaker (3.7.402.0)
+	* Releasing large data support as part of CreateAutoMLJobV2 in SageMaker Autopilot and CreateDomain API for SageMaker Canvas.
+
+### 3.7.862.0 (2024-08-09 18:42 UTC)
+* CognitoIdentityProvider (3.7.402.1)
+	* Fixed a description of AdvancedSecurityAdditionalFlows in Amazon Cognito user pool configuration.
+* Connect (3.7.402.0)
+	* This release supports adding RoutingCriteria via UpdateContactRoutingData public API.
+* SimpleSystemsManagement (3.7.401.2)
+	* Systems Manager doc-only updates for August 2024.
+* Core 3.7.400.4
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.861.0 (2024-08-08 18:16 UTC)
+* CognitoIdentityProvider (3.7.402.0)
+	* Added support for threat protection for custom authentication in Amazon Cognito user pools.
+* Connect (3.7.401.0)
+	* This release fixes a regression in number of access control tags that are allowed to be added to a security profile in Amazon Connect. You can now add up to four access control tags on a single security profile.
+* EC2 (3.7.402.0)
+	* Launch of private IPv6 addressing for VPCs and Subnets. VPC IPAM supports the planning and monitoring of private IPv6 usage.
+* Glue (3.7.403.0)
+	* This release adds support to retrieve the validation status when creating or updating Glue Data Catalog Views. Also added is support for BasicCatalogTarget partition keys.
+
+### 3.7.860.0 (2024-08-07 18:14 UTC)
+* AppIntegrationsService (3.7.401.0)
+	* Updated CreateDataIntegration and CreateDataIntegrationAssociation API to support bulk data export from Amazon Connect Customer Profiles to the customer S3 bucket.
+* Glue (3.7.402.0)
+	* Introducing AWS Glue Data Quality anomaly detection, a new functionality that uses ML-based solutions to detect data anomalies users have not explicitly defined rules for.
+
+### 3.7.859.0 (2024-08-06 18:16 UTC)
+* BedrockAgentRuntime (3.7.401.0)
+	* Introduce model invocation output traces for orchestration traces, which contain the model's raw response and usage.
+* CognitoIdentityProvider (3.7.401.0)
+	* Advanced security feature updates to include password history and log export for Cognito user pools.
+* CostOptimizationHub (3.7.401.0)
+	* This release adds savings percentage support to the ListRecommendationSummaries API.
+* WorkSpaces (3.7.401.0)
+	* Added support for BYOL_GRAPHICS_G4DN_WSP IngestionProcess
+
+### 3.7.858.0 (2024-08-05 18:19 UTC)
+* DataZone (3.7.402.0)
+	* This releases Data Product feature. Data Products allow grouping data assets into cohesive, self-contained units for ease of publishing for data producers, and ease of finding and accessing for data consumers.
+* ECR (3.7.402.0)
+	* Released two new APIs along with documentation updates. The GetAccountSetting API is used to view the current basic scan type version setting for your registry, while the PutAccountSetting API is used to update the basic scan type version for your registry.
+* KinesisVideoWebRTCStorage (3.7.401.0)
+	* Add JoinStorageSessionAsViewer API
+* PI (3.7.400.3)
+	* Added a description for the Dimension db.sql.tokenized_id on the DimensionGroup data type page.
+* Core 3.7.400.3
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.857.0 (2024-08-02 18:27 UTC)
 * CloudWatch (3.7.401.0)
 	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.

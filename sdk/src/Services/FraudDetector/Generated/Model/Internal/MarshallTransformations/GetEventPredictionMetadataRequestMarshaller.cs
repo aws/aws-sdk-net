@@ -63,45 +63,48 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDetectorId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("detectorId");
-                    context.Writer.Write(publicRequest.DetectorId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDetectorId())
+                    {
+                        context.Writer.WritePropertyName("detectorId");
+                        context.Writer.Write(publicRequest.DetectorId);
+                    }
+
+                    if(publicRequest.IsSetDetectorVersionId())
+                    {
+                        context.Writer.WritePropertyName("detectorVersionId");
+                        context.Writer.Write(publicRequest.DetectorVersionId);
+                    }
+
+                    if(publicRequest.IsSetEventId())
+                    {
+                        context.Writer.WritePropertyName("eventId");
+                        context.Writer.Write(publicRequest.EventId);
+                    }
+
+                    if(publicRequest.IsSetEventTypeName())
+                    {
+                        context.Writer.WritePropertyName("eventTypeName");
+                        context.Writer.Write(publicRequest.EventTypeName);
+                    }
+
+                    if(publicRequest.IsSetPredictionTimestamp())
+                    {
+                        context.Writer.WritePropertyName("predictionTimestamp");
+                        context.Writer.Write(publicRequest.PredictionTimestamp);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDetectorVersionId())
-                {
-                    context.Writer.WritePropertyName("detectorVersionId");
-                    context.Writer.Write(publicRequest.DetectorVersionId);
-                }
-
-                if(publicRequest.IsSetEventId())
-                {
-                    context.Writer.WritePropertyName("eventId");
-                    context.Writer.Write(publicRequest.EventId);
-                }
-
-                if(publicRequest.IsSetEventTypeName())
-                {
-                    context.Writer.WritePropertyName("eventTypeName");
-                    context.Writer.Write(publicRequest.EventTypeName);
-                }
-
-                if(publicRequest.IsSetPredictionTimestamp())
-                {
-                    context.Writer.WritePropertyName("predictionTimestamp");
-                    context.Writer.Write(publicRequest.PredictionTimestamp);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

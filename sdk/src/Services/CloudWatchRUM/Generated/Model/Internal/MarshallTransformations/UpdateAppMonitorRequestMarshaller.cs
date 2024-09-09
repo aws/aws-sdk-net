@@ -64,49 +64,52 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
                 throw new AmazonCloudWatchRUMException("Request object does not have required field Name set");
             request.AddPathResource("{Name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/appmonitor/{Name}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAppMonitorConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AppMonitorConfiguration");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAppMonitorConfiguration())
+                    {
+                        context.Writer.WritePropertyName("AppMonitorConfiguration");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = AppMonitorConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AppMonitorConfiguration, context);
+                        var marshaller = AppMonitorConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AppMonitorConfiguration, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetCustomEvents())
+                    {
+                        context.Writer.WritePropertyName("CustomEvents");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CustomEventsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CustomEvents, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetCwLogEnabled())
+                    {
+                        context.Writer.WritePropertyName("CwLogEnabled");
+                        context.Writer.Write(publicRequest.CwLogEnabled.Value);
+                    }
+
+                    if(publicRequest.IsSetDomain())
+                    {
+                        context.Writer.WritePropertyName("Domain");
+                        context.Writer.Write(publicRequest.Domain);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCustomEvents())
-                {
-                    context.Writer.WritePropertyName("CustomEvents");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CustomEventsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CustomEvents, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetCwLogEnabled())
-                {
-                    context.Writer.WritePropertyName("CwLogEnabled");
-                    context.Writer.Write(publicRequest.CwLogEnabled.Value);
-                }
-
-                if(publicRequest.IsSetDomain())
-                {
-                    context.Writer.WritePropertyName("Domain");
-                    context.Writer.Write(publicRequest.Domain);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

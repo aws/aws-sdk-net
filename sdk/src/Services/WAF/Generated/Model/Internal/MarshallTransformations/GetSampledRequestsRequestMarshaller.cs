@@ -63,44 +63,47 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMaxItems())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("MaxItems");
-                    context.Writer.Write(publicRequest.MaxItems.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMaxItems())
+                    {
+                        context.Writer.WritePropertyName("MaxItems");
+                        context.Writer.Write(publicRequest.MaxItems.Value);
+                    }
+
+                    if(publicRequest.IsSetRuleId())
+                    {
+                        context.Writer.WritePropertyName("RuleId");
+                        context.Writer.Write(publicRequest.RuleId);
+                    }
+
+                    if(publicRequest.IsSetTimeWindow())
+                    {
+                        context.Writer.WritePropertyName("TimeWindow");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TimeWindowMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TimeWindow, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetWebAclId())
+                    {
+                        context.Writer.WritePropertyName("WebAclId");
+                        context.Writer.Write(publicRequest.WebAclId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRuleId())
-                {
-                    context.Writer.WritePropertyName("RuleId");
-                    context.Writer.Write(publicRequest.RuleId);
-                }
-
-                if(publicRequest.IsSetTimeWindow())
-                {
-                    context.Writer.WritePropertyName("TimeWindow");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TimeWindowMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TimeWindow, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetWebAclId())
-                {
-                    context.Writer.WritePropertyName("WebAclId");
-                    context.Writer.Write(publicRequest.WebAclId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

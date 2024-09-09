@@ -63,61 +63,64 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDryRun())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DryRun");
-                    context.Writer.Write(publicRequest.DryRun.Value);
-                }
-
-                if(publicRequest.IsSetProductCode())
-                {
-                    context.Writer.WritePropertyName("ProductCode");
-                    context.Writer.Write(publicRequest.ProductCode);
-                }
-
-                if(publicRequest.IsSetTimestamp())
-                {
-                    context.Writer.WritePropertyName("Timestamp");
-                    context.Writer.Write(publicRequest.Timestamp.Value);
-                }
-
-                if(publicRequest.IsSetUsageAllocations())
-                {
-                    context.Writer.WritePropertyName("UsageAllocations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestUsageAllocationsListValue in publicRequest.UsageAllocations)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDryRun())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = UsageAllocationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestUsageAllocationsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("DryRun");
+                        context.Writer.Write(publicRequest.DryRun.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetProductCode())
+                    {
+                        context.Writer.WritePropertyName("ProductCode");
+                        context.Writer.Write(publicRequest.ProductCode);
+                    }
+
+                    if(publicRequest.IsSetTimestamp())
+                    {
+                        context.Writer.WritePropertyName("Timestamp");
+                        context.Writer.Write(publicRequest.Timestamp.Value);
+                    }
+
+                    if(publicRequest.IsSetUsageAllocations())
+                    {
+                        context.Writer.WritePropertyName("UsageAllocations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestUsageAllocationsListValue in publicRequest.UsageAllocations)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = UsageAllocationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestUsageAllocationsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetUsageDimension())
+                    {
+                        context.Writer.WritePropertyName("UsageDimension");
+                        context.Writer.Write(publicRequest.UsageDimension);
+                    }
+
+                    if(publicRequest.IsSetUsageQuantity())
+                    {
+                        context.Writer.WritePropertyName("UsageQuantity");
+                        context.Writer.Write(publicRequest.UsageQuantity.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetUsageDimension())
-                {
-                    context.Writer.WritePropertyName("UsageDimension");
-                    context.Writer.Write(publicRequest.UsageDimension);
-                }
-
-                if(publicRequest.IsSetUsageQuantity())
-                {
-                    context.Writer.WritePropertyName("UsageQuantity");
-                    context.Writer.Write(publicRequest.UsageQuantity.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

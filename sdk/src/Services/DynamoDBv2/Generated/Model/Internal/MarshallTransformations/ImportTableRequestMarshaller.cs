@@ -63,71 +63,74 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetInputCompressionType())
+                    {
+                        context.Writer.WritePropertyName("InputCompressionType");
+                        context.Writer.Write(publicRequest.InputCompressionType);
+                    }
+
+                    if(publicRequest.IsSetInputFormat())
+                    {
+                        context.Writer.WritePropertyName("InputFormat");
+                        context.Writer.Write(publicRequest.InputFormat);
+                    }
+
+                    if(publicRequest.IsSetInputFormatOptions())
+                    {
+                        context.Writer.WritePropertyName("InputFormatOptions");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = InputFormatOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.InputFormatOptions, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetS3BucketSource())
+                    {
+                        context.Writer.WritePropertyName("S3BucketSource");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = S3BucketSourceMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.S3BucketSource, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTableCreationParameters())
+                    {
+                        context.Writer.WritePropertyName("TableCreationParameters");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TableCreationParametersMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TableCreationParameters, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetInputCompressionType())
-                {
-                    context.Writer.WritePropertyName("InputCompressionType");
-                    context.Writer.Write(publicRequest.InputCompressionType);
-                }
-
-                if(publicRequest.IsSetInputFormat())
-                {
-                    context.Writer.WritePropertyName("InputFormat");
-                    context.Writer.Write(publicRequest.InputFormat);
-                }
-
-                if(publicRequest.IsSetInputFormatOptions())
-                {
-                    context.Writer.WritePropertyName("InputFormatOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = InputFormatOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.InputFormatOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetS3BucketSource())
-                {
-                    context.Writer.WritePropertyName("S3BucketSource");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = S3BucketSourceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.S3BucketSource, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTableCreationParameters())
-                {
-                    context.Writer.WritePropertyName("TableCreationParameters");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TableCreationParametersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TableCreationParameters, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

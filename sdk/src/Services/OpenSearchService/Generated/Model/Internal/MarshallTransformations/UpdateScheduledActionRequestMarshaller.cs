@@ -64,39 +64,42 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 throw new AmazonOpenSearchServiceException("Request object does not have required field DomainName set");
             request.AddPathResource("{DomainName}", StringUtils.FromString(publicRequest.DomainName));
             request.ResourcePath = "/2021-01-01/opensearch/domain/{DomainName}/scheduledAction/update";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetActionID())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ActionID");
-                    context.Writer.Write(publicRequest.ActionID);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetActionID())
+                    {
+                        context.Writer.WritePropertyName("ActionID");
+                        context.Writer.Write(publicRequest.ActionID);
+                    }
+
+                    if(publicRequest.IsSetActionType())
+                    {
+                        context.Writer.WritePropertyName("ActionType");
+                        context.Writer.Write(publicRequest.ActionType);
+                    }
+
+                    if(publicRequest.IsSetDesiredStartTime())
+                    {
+                        context.Writer.WritePropertyName("DesiredStartTime");
+                        context.Writer.Write(publicRequest.DesiredStartTime.Value);
+                    }
+
+                    if(publicRequest.IsSetScheduleAt())
+                    {
+                        context.Writer.WritePropertyName("ScheduleAt");
+                        context.Writer.Write(publicRequest.ScheduleAt);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetActionType())
-                {
-                    context.Writer.WritePropertyName("ActionType");
-                    context.Writer.Write(publicRequest.ActionType);
-                }
-
-                if(publicRequest.IsSetDesiredStartTime())
-                {
-                    context.Writer.WritePropertyName("DesiredStartTime");
-                    context.Writer.Write(publicRequest.DesiredStartTime.Value);
-                }
-
-                if(publicRequest.IsSetScheduleAt())
-                {
-                    context.Writer.WritePropertyName("ScheduleAt");
-                    context.Writer.Write(publicRequest.ScheduleAt);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

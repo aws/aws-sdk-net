@@ -63,69 +63,72 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDiscoveryJobArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DiscoveryJobArn");
-                    context.Writer.Write(publicRequest.DiscoveryJobArn);
-                }
-
-                if(publicRequest.IsSetFilter())
-                {
-                    context.Writer.WritePropertyName("Filter");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestFilterKvp in publicRequest.Filter)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDiscoveryJobArn())
                     {
-                        context.Writer.WritePropertyName(publicRequestFilterKvp.Key);
-                        var publicRequestFilterValue = publicRequestFilterKvp.Value;
+                        context.Writer.WritePropertyName("DiscoveryJobArn");
+                        context.Writer.Write(publicRequest.DiscoveryJobArn);
+                    }
 
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestFilterValueListValue in publicRequestFilterValue)
+                    if(publicRequest.IsSetFilter())
+                    {
+                        context.Writer.WritePropertyName("Filter");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestFilterKvp in publicRequest.Filter)
                         {
-                                context.Writer.Write(publicRequestFilterValueListValue);
+                            context.Writer.WritePropertyName(publicRequestFilterKvp.Key);
+                            var publicRequestFilterValue = publicRequestFilterKvp.Value;
+
+                            context.Writer.WriteArrayStart();
+                            foreach(var publicRequestFilterValueListValue in publicRequestFilterValue)
+                            {
+                                    context.Writer.Write(publicRequestFilterValueListValue);
+                            }
+                            context.Writer.WriteArrayEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetResourceIds())
+                    {
+                        context.Writer.WritePropertyName("ResourceIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestResourceIdsListValue in publicRequest.ResourceIds)
+                        {
+                                context.Writer.Write(publicRequestResourceIdsListValue);
                         }
                         context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetResourceIds())
-                {
-                    context.Writer.WritePropertyName("ResourceIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestResourceIdsListValue in publicRequest.ResourceIds)
+                    if(publicRequest.IsSetResourceType())
                     {
-                            context.Writer.Write(publicRequestResourceIdsListValue);
+                        context.Writer.WritePropertyName("ResourceType");
+                        context.Writer.Write(publicRequest.ResourceType);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetResourceType())
-                {
-                    context.Writer.WritePropertyName("ResourceType");
-                    context.Writer.Write(publicRequest.ResourceType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

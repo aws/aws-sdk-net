@@ -64,70 +64,73 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 throw new AmazonEKSException("Request object does not have required field Name set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/clusters/{name}/update-config";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccessConfig())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("accessConfig");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccessConfig())
+                    {
+                        context.Writer.WritePropertyName("accessConfig");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = UpdateAccessConfigRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AccessConfig, context);
+                        var marshaller = UpdateAccessConfigRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AccessConfig, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetClientRequestToken())
+                    {
+                        context.Writer.WritePropertyName("clientRequestToken");
+                        context.Writer.Write(publicRequest.ClientRequestToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientRequestToken()))
+                    {
+                        context.Writer.WritePropertyName("clientRequestToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetLogging())
+                    {
+                        context.Writer.WritePropertyName("logging");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LoggingMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Logging, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetResourcesVpcConfig())
+                    {
+                        context.Writer.WritePropertyName("resourcesVpcConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = VpcConfigRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ResourcesVpcConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetUpgradePolicy())
+                    {
+                        context.Writer.WritePropertyName("upgradePolicy");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = UpgradePolicyRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.UpgradePolicy, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetClientRequestToken())
-                {
-                    context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetLogging())
-                {
-                    context.Writer.WritePropertyName("logging");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LoggingMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Logging, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetResourcesVpcConfig())
-                {
-                    context.Writer.WritePropertyName("resourcesVpcConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = VpcConfigRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ResourcesVpcConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetUpgradePolicy())
-                {
-                    context.Writer.WritePropertyName("upgradePolicy");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UpgradePolicyRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.UpgradePolicy, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

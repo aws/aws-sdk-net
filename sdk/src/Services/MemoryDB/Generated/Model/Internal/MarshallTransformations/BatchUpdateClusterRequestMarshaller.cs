@@ -63,37 +63,40 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClusterNames())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClusterNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestClusterNamesListValue in publicRequest.ClusterNames)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClusterNames())
                     {
-                            context.Writer.Write(publicRequestClusterNamesListValue);
+                        context.Writer.WritePropertyName("ClusterNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestClusterNamesListValue in publicRequest.ClusterNames)
+                        {
+                                context.Writer.Write(publicRequestClusterNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetServiceUpdate())
+                    {
+                        context.Writer.WritePropertyName("ServiceUpdate");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ServiceUpdateRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ServiceUpdate, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetServiceUpdate())
-                {
-                    context.Writer.WritePropertyName("ServiceUpdate");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ServiceUpdateRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ServiceUpdate, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

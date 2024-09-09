@@ -61,6 +61,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.AssociationId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ipSource", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.IpSource = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ipv6AddressAttribute", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Ipv6AddressAttribute = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ipv6CidrBlock", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

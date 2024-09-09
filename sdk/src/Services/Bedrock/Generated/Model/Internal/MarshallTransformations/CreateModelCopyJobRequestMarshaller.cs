@@ -61,60 +61,63 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/model-copy-jobs";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientRequestToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetModelKmsKeyId())
-                {
-                    context.Writer.WritePropertyName("modelKmsKeyId");
-                    context.Writer.Write(publicRequest.ModelKmsKeyId);
-                }
-
-                if(publicRequest.IsSetSourceModelArn())
-                {
-                    context.Writer.WritePropertyName("sourceModelArn");
-                    context.Writer.Write(publicRequest.SourceModelArn);
-                }
-
-                if(publicRequest.IsSetTargetModelName())
-                {
-                    context.Writer.WritePropertyName("targetModelName");
-                    context.Writer.Write(publicRequest.TargetModelName);
-                }
-
-                if(publicRequest.IsSetTargetModelTags())
-                {
-                    context.Writer.WritePropertyName("targetModelTags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTargetModelTagsListValue in publicRequest.TargetModelTags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientRequestToken())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTargetModelTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("clientRequestToken");
+                        context.Writer.Write(publicRequest.ClientRequestToken);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    else if(!(publicRequest.IsSetClientRequestToken()))
+                    {
+                        context.Writer.WritePropertyName("clientRequestToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetModelKmsKeyId())
+                    {
+                        context.Writer.WritePropertyName("modelKmsKeyId");
+                        context.Writer.Write(publicRequest.ModelKmsKeyId);
+                    }
+
+                    if(publicRequest.IsSetSourceModelArn())
+                    {
+                        context.Writer.WritePropertyName("sourceModelArn");
+                        context.Writer.Write(publicRequest.SourceModelArn);
+                    }
+
+                    if(publicRequest.IsSetTargetModelName())
+                    {
+                        context.Writer.WritePropertyName("targetModelName");
+                        context.Writer.Write(publicRequest.TargetModelName);
+                    }
+
+                    if(publicRequest.IsSetTargetModelTags())
+                    {
+                        context.Writer.WritePropertyName("targetModelTags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTargetModelTagsListValue in publicRequest.TargetModelTags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTargetModelTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

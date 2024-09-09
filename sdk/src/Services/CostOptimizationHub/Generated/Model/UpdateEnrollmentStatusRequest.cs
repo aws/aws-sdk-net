@@ -36,8 +36,8 @@ namespace Amazon.CostOptimizationHub.Model
     /// 
     ///  
     /// <para>
-    /// If the account is a management account of an organization, this action can also be
-    /// used to enroll member accounts of the organization.
+    /// If the account is a management account or delegated administrator of an organization,
+    /// this action can also be used to enroll member accounts of the organization.
     /// </para>
     ///  
     /// <para>
@@ -55,7 +55,7 @@ namespace Amazon.CostOptimizationHub.Model
         /// Gets and sets the property IncludeMemberAccounts. 
         /// <para>
         /// Indicates whether to enroll member accounts of the organization if the account is
-        /// the management account.
+        /// the management account or delegated administrator.
         /// </para>
         /// </summary>
         public bool? IncludeMemberAccounts

@@ -63,93 +63,96 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCreationTimeAfter())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CreationTimeAfter");
-                    context.Writer.Write(publicRequest.CreationTimeAfter.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCreationTimeAfter())
+                    {
+                        context.Writer.WritePropertyName("CreationTimeAfter");
+                        context.Writer.Write(publicRequest.CreationTimeAfter.Value);
+                    }
+
+                    if(publicRequest.IsSetCreationTimeBefore())
+                    {
+                        context.Writer.WritePropertyName("CreationTimeBefore");
+                        context.Writer.Write(publicRequest.CreationTimeBefore.Value);
+                    }
+
+                    if(publicRequest.IsSetEndpointName())
+                    {
+                        context.Writer.WritePropertyName("EndpointName");
+                        context.Writer.Write(publicRequest.EndpointName);
+                    }
+
+                    if(publicRequest.IsSetLastModifiedTimeAfter())
+                    {
+                        context.Writer.WritePropertyName("LastModifiedTimeAfter");
+                        context.Writer.Write(publicRequest.LastModifiedTimeAfter.Value);
+                    }
+
+                    if(publicRequest.IsSetLastModifiedTimeBefore())
+                    {
+                        context.Writer.WritePropertyName("LastModifiedTimeBefore");
+                        context.Writer.Write(publicRequest.LastModifiedTimeBefore.Value);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetMonitoringJobDefinitionName())
+                    {
+                        context.Writer.WritePropertyName("MonitoringJobDefinitionName");
+                        context.Writer.Write(publicRequest.MonitoringJobDefinitionName);
+                    }
+
+                    if(publicRequest.IsSetMonitoringTypeEquals())
+                    {
+                        context.Writer.WritePropertyName("MonitoringTypeEquals");
+                        context.Writer.Write(publicRequest.MonitoringTypeEquals);
+                    }
+
+                    if(publicRequest.IsSetNameContains())
+                    {
+                        context.Writer.WritePropertyName("NameContains");
+                        context.Writer.Write(publicRequest.NameContains);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetSortBy())
+                    {
+                        context.Writer.WritePropertyName("SortBy");
+                        context.Writer.Write(publicRequest.SortBy);
+                    }
+
+                    if(publicRequest.IsSetSortOrder())
+                    {
+                        context.Writer.WritePropertyName("SortOrder");
+                        context.Writer.Write(publicRequest.SortOrder);
+                    }
+
+                    if(publicRequest.IsSetStatusEquals())
+                    {
+                        context.Writer.WritePropertyName("StatusEquals");
+                        context.Writer.Write(publicRequest.StatusEquals);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCreationTimeBefore())
-                {
-                    context.Writer.WritePropertyName("CreationTimeBefore");
-                    context.Writer.Write(publicRequest.CreationTimeBefore.Value);
-                }
-
-                if(publicRequest.IsSetEndpointName())
-                {
-                    context.Writer.WritePropertyName("EndpointName");
-                    context.Writer.Write(publicRequest.EndpointName);
-                }
-
-                if(publicRequest.IsSetLastModifiedTimeAfter())
-                {
-                    context.Writer.WritePropertyName("LastModifiedTimeAfter");
-                    context.Writer.Write(publicRequest.LastModifiedTimeAfter.Value);
-                }
-
-                if(publicRequest.IsSetLastModifiedTimeBefore())
-                {
-                    context.Writer.WritePropertyName("LastModifiedTimeBefore");
-                    context.Writer.Write(publicRequest.LastModifiedTimeBefore.Value);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetMonitoringJobDefinitionName())
-                {
-                    context.Writer.WritePropertyName("MonitoringJobDefinitionName");
-                    context.Writer.Write(publicRequest.MonitoringJobDefinitionName);
-                }
-
-                if(publicRequest.IsSetMonitoringTypeEquals())
-                {
-                    context.Writer.WritePropertyName("MonitoringTypeEquals");
-                    context.Writer.Write(publicRequest.MonitoringTypeEquals);
-                }
-
-                if(publicRequest.IsSetNameContains())
-                {
-                    context.Writer.WritePropertyName("NameContains");
-                    context.Writer.Write(publicRequest.NameContains);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetSortBy())
-                {
-                    context.Writer.WritePropertyName("SortBy");
-                    context.Writer.Write(publicRequest.SortBy);
-                }
-
-                if(publicRequest.IsSetSortOrder())
-                {
-                    context.Writer.WritePropertyName("SortOrder");
-                    context.Writer.Write(publicRequest.SortOrder);
-                }
-
-                if(publicRequest.IsSetStatusEquals())
-                {
-                    context.Writer.WritePropertyName("StatusEquals");
-                    context.Writer.Write(publicRequest.StatusEquals);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -61,67 +61,70 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/phone-number/list";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetInstanceId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("InstanceId");
-                    context.Writer.Write(publicRequest.InstanceId);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetPhoneNumberCountryCodes())
-                {
-                    context.Writer.WritePropertyName("PhoneNumberCountryCodes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPhoneNumberCountryCodesListValue in publicRequest.PhoneNumberCountryCodes)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetInstanceId())
                     {
-                            context.Writer.Write(publicRequestPhoneNumberCountryCodesListValue);
+                        context.Writer.WritePropertyName("InstanceId");
+                        context.Writer.Write(publicRequest.InstanceId);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetPhoneNumberPrefix())
-                {
-                    context.Writer.WritePropertyName("PhoneNumberPrefix");
-                    context.Writer.Write(publicRequest.PhoneNumberPrefix);
-                }
-
-                if(publicRequest.IsSetPhoneNumberTypes())
-                {
-                    context.Writer.WritePropertyName("PhoneNumberTypes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPhoneNumberTypesListValue in publicRequest.PhoneNumberTypes)
+                    if(publicRequest.IsSetMaxResults())
                     {
-                            context.Writer.Write(publicRequestPhoneNumberTypesListValue);
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetPhoneNumberCountryCodes())
+                    {
+                        context.Writer.WritePropertyName("PhoneNumberCountryCodes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPhoneNumberCountryCodesListValue in publicRequest.PhoneNumberCountryCodes)
+                        {
+                                context.Writer.Write(publicRequestPhoneNumberCountryCodesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetPhoneNumberPrefix())
+                    {
+                        context.Writer.WritePropertyName("PhoneNumberPrefix");
+                        context.Writer.Write(publicRequest.PhoneNumberPrefix);
+                    }
+
+                    if(publicRequest.IsSetPhoneNumberTypes())
+                    {
+                        context.Writer.WritePropertyName("PhoneNumberTypes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPhoneNumberTypesListValue in publicRequest.PhoneNumberTypes)
+                        {
+                                context.Writer.Write(publicRequestPhoneNumberTypesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTargetArn())
+                    {
+                        context.Writer.WritePropertyName("TargetArn");
+                        context.Writer.Write(publicRequest.TargetArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTargetArn())
-                {
-                    context.Writer.WritePropertyName("TargetArn");
-                    context.Writer.Write(publicRequest.TargetArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

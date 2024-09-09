@@ -101,7 +101,7 @@ namespace Amazon.DocDB.Model
         /// Pattern: <c>[A-Za-z][0-9A-Za-z-:._]*</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string TargetDbClusterIdentifier
         {
             get { return this._targetDbClusterIdentifier; }

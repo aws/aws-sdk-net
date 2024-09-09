@@ -64,33 +64,36 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                 throw new AmazonGreengrassException("Request object does not have required field GroupId set");
             request.AddPathResource("{GroupId}", StringUtils.FromString(publicRequest.GroupId));
             request.ResourcePath = "/greengrass/groups/{GroupId}/deployments";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeploymentId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DeploymentId");
-                    context.Writer.Write(publicRequest.DeploymentId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDeploymentId())
+                    {
+                        context.Writer.WritePropertyName("DeploymentId");
+                        context.Writer.Write(publicRequest.DeploymentId);
+                    }
+
+                    if(publicRequest.IsSetDeploymentType())
+                    {
+                        context.Writer.WritePropertyName("DeploymentType");
+                        context.Writer.Write(publicRequest.DeploymentType);
+                    }
+
+                    if(publicRequest.IsSetGroupVersionId())
+                    {
+                        context.Writer.WritePropertyName("GroupVersionId");
+                        context.Writer.Write(publicRequest.GroupVersionId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDeploymentType())
-                {
-                    context.Writer.WritePropertyName("DeploymentType");
-                    context.Writer.Write(publicRequest.DeploymentType);
-                }
-
-                if(publicRequest.IsSetGroupVersionId())
-                {
-                    context.Writer.WritePropertyName("GroupVersionId");
-                    context.Writer.Write(publicRequest.GroupVersionId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

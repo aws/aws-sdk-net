@@ -64,27 +64,30 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
                 throw new AmazonSignerException("Request object does not have required field JobId set");
             request.AddPathResource("{jobId}", StringUtils.FromString(publicRequest.JobId));
             request.ResourcePath = "/signing-jobs/{jobId}/revoke";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetJobOwner())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("jobOwner");
-                    context.Writer.Write(publicRequest.JobOwner);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetJobOwner())
+                    {
+                        context.Writer.WritePropertyName("jobOwner");
+                        context.Writer.Write(publicRequest.JobOwner);
+                    }
+
+                    if(publicRequest.IsSetReason())
+                    {
+                        context.Writer.WritePropertyName("reason");
+                        context.Writer.Write(publicRequest.Reason);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetReason())
-                {
-                    context.Writer.WritePropertyName("reason");
-                    context.Writer.Write(publicRequest.Reason);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

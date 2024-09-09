@@ -64,31 +64,34 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field AwsAccountId set");
             request.AddPathResource("{AwsAccountId}", StringUtils.FromString(publicRequest.AwsAccountId));
             request.ResourcePath = "/accounts/{AwsAccountId}/key-registration";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetKeyRegistration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("KeyRegistration");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestKeyRegistrationListValue in publicRequest.KeyRegistration)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetKeyRegistration())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("KeyRegistration");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestKeyRegistrationListValue in publicRequest.KeyRegistration)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = RegisteredCustomerManagedKeyMarshaller.Instance;
-                        marshaller.Marshall(publicRequestKeyRegistrationListValue, context);
+                            var marshaller = RegisteredCustomerManagedKeyMarshaller.Instance;
+                            marshaller.Marshall(publicRequestKeyRegistrationListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

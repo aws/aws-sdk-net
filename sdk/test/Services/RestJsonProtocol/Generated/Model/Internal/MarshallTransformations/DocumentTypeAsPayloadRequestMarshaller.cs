@@ -61,14 +61,17 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/DocumentTypeAsPayload";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                var context = new JsonMarshallerContext(request, writer);
-                Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, publicRequest.DocumentValue);
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                {
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    var context = new JsonMarshallerContext(request, writer);
+                    Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, publicRequest.DocumentValue);
+                }
+
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -64,43 +64,46 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 throw new AmazonDeadlineException("Request object does not have required field FarmId set");
             request.AddPathResource("{farmId}", StringUtils.FromString(publicRequest.FarmId));
             request.ResourcePath = "/2023-10-12/farms/{farmId}/storage-profiles";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDisplayName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("displayName");
-                    context.Writer.Write(publicRequest.DisplayName);
-                }
-
-                if(publicRequest.IsSetFileSystemLocations())
-                {
-                    context.Writer.WritePropertyName("fileSystemLocations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFileSystemLocationsListValue in publicRequest.FileSystemLocations)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDisplayName())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = FileSystemLocationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFileSystemLocationsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("displayName");
+                        context.Writer.Write(publicRequest.DisplayName);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetFileSystemLocations())
+                    {
+                        context.Writer.WritePropertyName("fileSystemLocations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFileSystemLocationsListValue in publicRequest.FileSystemLocations)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = FileSystemLocationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFileSystemLocationsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetOsFamily())
+                    {
+                        context.Writer.WritePropertyName("osFamily");
+                        context.Writer.Write(publicRequest.OsFamily);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetOsFamily())
-                {
-                    context.Writer.WritePropertyName("osFamily");
-                    context.Writer.Write(publicRequest.OsFamily);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

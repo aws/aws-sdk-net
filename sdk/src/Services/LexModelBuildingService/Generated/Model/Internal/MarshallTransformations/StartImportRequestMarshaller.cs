@@ -61,49 +61,52 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/imports/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMergeStrategy())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("mergeStrategy");
-                    context.Writer.Write(publicRequest.MergeStrategy);
-                }
-
-                if(publicRequest.IsSetPayload())
-                {
-                    context.Writer.WritePropertyName("payload");
-                    context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.Payload));
-                }
-
-                if(publicRequest.IsSetResourceType())
-                {
-                    context.Writer.WritePropertyName("resourceType");
-                    context.Writer.Write(publicRequest.ResourceType);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMergeStrategy())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("mergeStrategy");
+                        context.Writer.Write(publicRequest.MergeStrategy);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetPayload())
+                    {
+                        context.Writer.WritePropertyName("payload");
+                        context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.Payload));
+                    }
+
+                    if(publicRequest.IsSetResourceType())
+                    {
+                        context.Writer.WritePropertyName("resourceType");
+                        context.Writer.Write(publicRequest.ResourceType);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

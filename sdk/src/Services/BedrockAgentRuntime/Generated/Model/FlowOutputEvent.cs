@@ -34,7 +34,7 @@ using Amazon.Runtime.EventStreams.Utils;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Contains information about an output from flow invoction.
+    /// Contains information about an output from prompt flow invoction.
     /// 
     ///  
     /// <para>
@@ -57,7 +57,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// The output of the node.
+        /// The content in the output.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -76,7 +76,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property NodeName. 
         /// <para>
-        /// The name of the node to which input was provided.
+        /// The name of the flow output node that the output is from.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -95,7 +95,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property NodeType. 
         /// <para>
-        /// The type of node to which input was provided.
+        /// The type of the node that the output is from.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

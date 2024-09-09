@@ -63,62 +63,65 @@ namespace Amazon.DAX.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClusterName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClusterName");
-                    context.Writer.Write(publicRequest.ClusterName);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetNotificationTopicArn())
-                {
-                    context.Writer.WritePropertyName("NotificationTopicArn");
-                    context.Writer.Write(publicRequest.NotificationTopicArn);
-                }
-
-                if(publicRequest.IsSetNotificationTopicStatus())
-                {
-                    context.Writer.WritePropertyName("NotificationTopicStatus");
-                    context.Writer.Write(publicRequest.NotificationTopicStatus);
-                }
-
-                if(publicRequest.IsSetParameterGroupName())
-                {
-                    context.Writer.WritePropertyName("ParameterGroupName");
-                    context.Writer.Write(publicRequest.ParameterGroupName);
-                }
-
-                if(publicRequest.IsSetPreferredMaintenanceWindow())
-                {
-                    context.Writer.WritePropertyName("PreferredMaintenanceWindow");
-                    context.Writer.Write(publicRequest.PreferredMaintenanceWindow);
-                }
-
-                if(publicRequest.IsSetSecurityGroupIds())
-                {
-                    context.Writer.WritePropertyName("SecurityGroupIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSecurityGroupIdsListValue in publicRequest.SecurityGroupIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClusterName())
                     {
-                            context.Writer.Write(publicRequestSecurityGroupIdsListValue);
+                        context.Writer.WritePropertyName("ClusterName");
+                        context.Writer.Write(publicRequest.ClusterName);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetNotificationTopicArn())
+                    {
+                        context.Writer.WritePropertyName("NotificationTopicArn");
+                        context.Writer.Write(publicRequest.NotificationTopicArn);
+                    }
+
+                    if(publicRequest.IsSetNotificationTopicStatus())
+                    {
+                        context.Writer.WritePropertyName("NotificationTopicStatus");
+                        context.Writer.Write(publicRequest.NotificationTopicStatus);
+                    }
+
+                    if(publicRequest.IsSetParameterGroupName())
+                    {
+                        context.Writer.WritePropertyName("ParameterGroupName");
+                        context.Writer.Write(publicRequest.ParameterGroupName);
+                    }
+
+                    if(publicRequest.IsSetPreferredMaintenanceWindow())
+                    {
+                        context.Writer.WritePropertyName("PreferredMaintenanceWindow");
+                        context.Writer.Write(publicRequest.PreferredMaintenanceWindow);
+                    }
+
+                    if(publicRequest.IsSetSecurityGroupIds())
+                    {
+                        context.Writer.WritePropertyName("SecurityGroupIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSecurityGroupIdsListValue in publicRequest.SecurityGroupIds)
+                        {
+                                context.Writer.Write(publicRequestSecurityGroupIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

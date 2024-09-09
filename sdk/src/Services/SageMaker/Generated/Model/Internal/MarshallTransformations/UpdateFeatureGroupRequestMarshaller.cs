@@ -63,59 +63,62 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFeatureAdditions())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("FeatureAdditions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFeatureAdditionsListValue in publicRequest.FeatureAdditions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFeatureAdditions())
                     {
+                        context.Writer.WritePropertyName("FeatureAdditions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFeatureAdditionsListValue in publicRequest.FeatureAdditions)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = FeatureDefinitionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFeatureAdditionsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetFeatureGroupName())
+                    {
+                        context.Writer.WritePropertyName("FeatureGroupName");
+                        context.Writer.Write(publicRequest.FeatureGroupName);
+                    }
+
+                    if(publicRequest.IsSetOnlineStoreConfig())
+                    {
+                        context.Writer.WritePropertyName("OnlineStoreConfig");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = FeatureDefinitionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFeatureAdditionsListValue, context);
+                        var marshaller = OnlineStoreConfigUpdateMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OnlineStoreConfig, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetThroughputConfig())
+                    {
+                        context.Writer.WritePropertyName("ThroughputConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ThroughputConfigUpdateMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ThroughputConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetFeatureGroupName())
-                {
-                    context.Writer.WritePropertyName("FeatureGroupName");
-                    context.Writer.Write(publicRequest.FeatureGroupName);
-                }
-
-                if(publicRequest.IsSetOnlineStoreConfig())
-                {
-                    context.Writer.WritePropertyName("OnlineStoreConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OnlineStoreConfigUpdateMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OnlineStoreConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetThroughputConfig())
-                {
-                    context.Writer.WritePropertyName("ThroughputConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ThroughputConfigUpdateMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ThroughputConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

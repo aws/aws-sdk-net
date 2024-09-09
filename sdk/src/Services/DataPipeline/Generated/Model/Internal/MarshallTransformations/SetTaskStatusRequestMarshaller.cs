@@ -63,45 +63,48 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetErrorId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("errorId");
-                    context.Writer.Write(publicRequest.ErrorId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetErrorId())
+                    {
+                        context.Writer.WritePropertyName("errorId");
+                        context.Writer.Write(publicRequest.ErrorId);
+                    }
+
+                    if(publicRequest.IsSetErrorMessage())
+                    {
+                        context.Writer.WritePropertyName("errorMessage");
+                        context.Writer.Write(publicRequest.ErrorMessage);
+                    }
+
+                    if(publicRequest.IsSetErrorStackTrace())
+                    {
+                        context.Writer.WritePropertyName("errorStackTrace");
+                        context.Writer.Write(publicRequest.ErrorStackTrace);
+                    }
+
+                    if(publicRequest.IsSetTaskId())
+                    {
+                        context.Writer.WritePropertyName("taskId");
+                        context.Writer.Write(publicRequest.TaskId);
+                    }
+
+                    if(publicRequest.IsSetTaskStatus())
+                    {
+                        context.Writer.WritePropertyName("taskStatus");
+                        context.Writer.Write(publicRequest.TaskStatus);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetErrorMessage())
-                {
-                    context.Writer.WritePropertyName("errorMessage");
-                    context.Writer.Write(publicRequest.ErrorMessage);
-                }
-
-                if(publicRequest.IsSetErrorStackTrace())
-                {
-                    context.Writer.WritePropertyName("errorStackTrace");
-                    context.Writer.Write(publicRequest.ErrorStackTrace);
-                }
-
-                if(publicRequest.IsSetTaskId())
-                {
-                    context.Writer.WritePropertyName("taskId");
-                    context.Writer.Write(publicRequest.TaskId);
-                }
-
-                if(publicRequest.IsSetTaskStatus())
-                {
-                    context.Writer.WritePropertyName("taskStatus");
-                    context.Writer.Write(publicRequest.TaskStatus);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

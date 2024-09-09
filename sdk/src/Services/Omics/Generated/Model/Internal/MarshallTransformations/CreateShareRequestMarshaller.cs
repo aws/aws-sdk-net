@@ -61,33 +61,36 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/share";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetPrincipalSubscriber())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("principalSubscriber");
-                    context.Writer.Write(publicRequest.PrincipalSubscriber);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetPrincipalSubscriber())
+                    {
+                        context.Writer.WritePropertyName("principalSubscriber");
+                        context.Writer.Write(publicRequest.PrincipalSubscriber);
+                    }
+
+                    if(publicRequest.IsSetResourceArn())
+                    {
+                        context.Writer.WritePropertyName("resourceArn");
+                        context.Writer.Write(publicRequest.ResourceArn);
+                    }
+
+                    if(publicRequest.IsSetShareName())
+                    {
+                        context.Writer.WritePropertyName("shareName");
+                        context.Writer.Write(publicRequest.ShareName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetResourceArn())
-                {
-                    context.Writer.WritePropertyName("resourceArn");
-                    context.Writer.Write(publicRequest.ResourceArn);
-                }
-
-                if(publicRequest.IsSetShareName())
-                {
-                    context.Writer.WritePropertyName("shareName");
-                    context.Writer.Write(publicRequest.ShareName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

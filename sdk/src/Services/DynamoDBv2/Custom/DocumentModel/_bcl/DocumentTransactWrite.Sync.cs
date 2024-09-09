@@ -15,41 +15,41 @@
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
-    /// <summary>
-    /// Class for condition checking, putting, updating and/or deleting
-    /// multiple items in a single DynamoDB table in a transaction.
-    /// </summary>
-    public partial class DocumentTransactWrite
+    public partial interface IDocumentTransactWrite
     {
-        #region Public methods
-
         /// <summary>
         /// Executes a server call to condition-check/put/update/delete the items specified in a transaction.
         /// </summary>
+        void Execute();
+    }
+
+    public partial class DocumentTransactWrite : IDocumentTransactWrite
+    {
+        /// <inheritdoc/>
         public void Execute()
         {
             ExecuteHelper();
         }
+    }
 
-        #endregion
+    public partial interface IMultiTableDocumentTransactWrite
+    {
+        /// <summary>
+        /// Executes a multi-table transactional condition-check/put/update/delete against all configured DocumentTransactWrite objects.
+        /// </summary>
+        void Execute();
     }
 
     /// <summary>
     /// Class for condition checking, putting, updating and/or deleting
     /// multiple items in multiple DynamoDB tables in a transaction.
     /// </summary>
-    public partial class MultiTableDocumentTransactWrite
+    public partial class MultiTableDocumentTransactWrite : IMultiTableDocumentTransactWrite
     {
-        #region Public methods
-
-        /// <summary>
-        /// Executes a multi-table transactional condition-check/put/update/delete against all configured DocumentTransactWrite objects.
-        /// </summary>
+        /// <inheritdoc/>
         public void Execute()
         {
             ExecuteHelper();
         }
-
-        #endregion
     }
 }

@@ -63,87 +63,90 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccountIds())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("accountIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAccountIdsListValue in publicRequest.AccountIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccountIds())
                     {
-                            context.Writer.Write(publicRequestAccountIdsListValue);
+                        context.Writer.WritePropertyName("accountIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAccountIdsListValue in publicRequest.AccountIds)
+                        {
+                                context.Writer.Write(publicRequestAccountIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetFieldsToExport())
-                {
-                    context.Writer.WritePropertyName("fieldsToExport");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFieldsToExportListValue in publicRequest.FieldsToExport)
+                    if(publicRequest.IsSetFieldsToExport())
                     {
-                            context.Writer.Write(publicRequestFieldsToExportListValue);
+                        context.Writer.WritePropertyName("fieldsToExport");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFieldsToExportListValue in publicRequest.FieldsToExport)
+                        {
+                                context.Writer.Write(publicRequestFieldsToExportListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetFileFormat())
-                {
-                    context.Writer.WritePropertyName("fileFormat");
-                    context.Writer.Write(publicRequest.FileFormat);
-                }
-
-                if(publicRequest.IsSetFilters())
-                {
-                    context.Writer.WritePropertyName("filters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFiltersListValue in publicRequest.Filters)
+                    if(publicRequest.IsSetFileFormat())
                     {
+                        context.Writer.WritePropertyName("fileFormat");
+                        context.Writer.Write(publicRequest.FileFormat);
+                    }
+
+                    if(publicRequest.IsSetFilters())
+                    {
+                        context.Writer.WritePropertyName("filters");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFiltersListValue in publicRequest.Filters)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = RDSDBRecommendationFilterMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFiltersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetIncludeMemberAccounts())
+                    {
+                        context.Writer.WritePropertyName("includeMemberAccounts");
+                        context.Writer.Write(publicRequest.IncludeMemberAccounts.Value);
+                    }
+
+                    if(publicRequest.IsSetRecommendationPreferences())
+                    {
+                        context.Writer.WritePropertyName("recommendationPreferences");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = RDSDBRecommendationFilterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFiltersListValue, context);
+                        var marshaller = RecommendationPreferencesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RecommendationPreferences, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetS3DestinationConfig())
+                    {
+                        context.Writer.WritePropertyName("s3DestinationConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = S3DestinationConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.S3DestinationConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetIncludeMemberAccounts())
-                {
-                    context.Writer.WritePropertyName("includeMemberAccounts");
-                    context.Writer.Write(publicRequest.IncludeMemberAccounts.Value);
-                }
-
-                if(publicRequest.IsSetRecommendationPreferences())
-                {
-                    context.Writer.WritePropertyName("recommendationPreferences");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RecommendationPreferencesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RecommendationPreferences, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetS3DestinationConfig())
-                {
-                    context.Writer.WritePropertyName("s3DestinationConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = S3DestinationConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.S3DestinationConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

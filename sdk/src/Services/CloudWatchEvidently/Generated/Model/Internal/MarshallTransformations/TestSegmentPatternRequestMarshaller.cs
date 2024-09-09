@@ -61,27 +61,30 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/test-segment-pattern";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetPattern())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("pattern");
-                    context.Writer.Write(publicRequest.Pattern);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetPattern())
+                    {
+                        context.Writer.WritePropertyName("pattern");
+                        context.Writer.Write(publicRequest.Pattern);
+                    }
+
+                    if(publicRequest.IsSetPayload())
+                    {
+                        context.Writer.WritePropertyName("payload");
+                        context.Writer.Write(publicRequest.Payload);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPayload())
-                {
-                    context.Writer.WritePropertyName("payload");
-                    context.Writer.Write(publicRequest.Payload);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

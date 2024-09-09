@@ -64,26 +64,29 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
                 throw new AmazonChimeSDKMediaPipelinesException("Request object does not have required field Identifier set");
             request.AddPathResource("{identifier}", StringUtils.FromString(publicRequest.Identifier));
             request.ResourcePath = "/media-pipeline-kinesis-video-stream-pools/{identifier}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetStreamConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("StreamConfiguration");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetStreamConfiguration())
+                    {
+                        context.Writer.WritePropertyName("StreamConfiguration");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = KinesisVideoStreamConfigurationUpdateMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.StreamConfiguration, context);
+                        var marshaller = KinesisVideoStreamConfigurationUpdateMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.StreamConfiguration, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

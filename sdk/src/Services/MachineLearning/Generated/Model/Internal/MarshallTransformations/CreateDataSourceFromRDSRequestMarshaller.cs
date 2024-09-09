@@ -63,50 +63,53 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetComputeStatistics())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ComputeStatistics");
-                    context.Writer.Write(publicRequest.ComputeStatistics.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetComputeStatistics())
+                    {
+                        context.Writer.WritePropertyName("ComputeStatistics");
+                        context.Writer.Write(publicRequest.ComputeStatistics.Value);
+                    }
+
+                    if(publicRequest.IsSetDataSourceId())
+                    {
+                        context.Writer.WritePropertyName("DataSourceId");
+                        context.Writer.Write(publicRequest.DataSourceId);
+                    }
+
+                    if(publicRequest.IsSetDataSourceName())
+                    {
+                        context.Writer.WritePropertyName("DataSourceName");
+                        context.Writer.Write(publicRequest.DataSourceName);
+                    }
+
+                    if(publicRequest.IsSetRDSData())
+                    {
+                        context.Writer.WritePropertyName("RDSData");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RDSDataSpecMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RDSData, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRoleARN())
+                    {
+                        context.Writer.WritePropertyName("RoleARN");
+                        context.Writer.Write(publicRequest.RoleARN);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDataSourceId())
-                {
-                    context.Writer.WritePropertyName("DataSourceId");
-                    context.Writer.Write(publicRequest.DataSourceId);
-                }
-
-                if(publicRequest.IsSetDataSourceName())
-                {
-                    context.Writer.WritePropertyName("DataSourceName");
-                    context.Writer.Write(publicRequest.DataSourceName);
-                }
-
-                if(publicRequest.IsSetRDSData())
-                {
-                    context.Writer.WritePropertyName("RDSData");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RDSDataSpecMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RDSData, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRoleARN())
-                {
-                    context.Writer.WritePropertyName("RoleARN");
-                    context.Writer.Write(publicRequest.RoleARN);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -61,64 +61,67 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/places/v0/indexes";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDataSource())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DataSource");
-                    context.Writer.Write(publicRequest.DataSource);
-                }
-
-                if(publicRequest.IsSetDataSourceConfiguration())
-                {
-                    context.Writer.WritePropertyName("DataSourceConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DataSourceConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DataSourceConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetIndexName())
-                {
-                    context.Writer.WritePropertyName("IndexName");
-                    context.Writer.Write(publicRequest.IndexName);
-                }
-
-                if(publicRequest.IsSetPricingPlan())
-                {
-                    context.Writer.WritePropertyName("PricingPlan");
-                    context.Writer.Write(publicRequest.PricingPlan);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDataSource())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("DataSource");
+                        context.Writer.Write(publicRequest.DataSource);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetDataSourceConfiguration())
+                    {
+                        context.Writer.WritePropertyName("DataSourceConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DataSourceConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DataSourceConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetIndexName())
+                    {
+                        context.Writer.WritePropertyName("IndexName");
+                        context.Writer.Write(publicRequest.IndexName);
+                    }
+
+                    if(publicRequest.IsSetPricingPlan())
+                    {
+                        context.Writer.WritePropertyName("PricingPlan");
+                        context.Writer.Write(publicRequest.PricingPlan);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

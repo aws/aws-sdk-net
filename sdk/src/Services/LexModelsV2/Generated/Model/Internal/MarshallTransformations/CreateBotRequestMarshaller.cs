@@ -61,100 +61,103 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/bots/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBotMembers())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("botMembers");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestBotMembersListValue in publicRequest.BotMembers)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBotMembers())
                     {
+                        context.Writer.WritePropertyName("botMembers");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestBotMembersListValue in publicRequest.BotMembers)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = BotMemberMarshaller.Instance;
+                            marshaller.Marshall(publicRequestBotMembersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetBotName())
+                    {
+                        context.Writer.WritePropertyName("botName");
+                        context.Writer.Write(publicRequest.BotName);
+                    }
+
+                    if(publicRequest.IsSetBotTags())
+                    {
+                        context.Writer.WritePropertyName("botTags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestBotTagsKvp in publicRequest.BotTags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestBotTagsKvp.Key);
+                            var publicRequestBotTagsValue = publicRequestBotTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestBotTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetBotType())
+                    {
+                        context.Writer.WritePropertyName("botType");
+                        context.Writer.Write(publicRequest.BotType);
+                    }
+
+                    if(publicRequest.IsSetDataPrivacy())
+                    {
+                        context.Writer.WritePropertyName("dataPrivacy");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = BotMemberMarshaller.Instance;
-                        marshaller.Marshall(publicRequestBotMembersListValue, context);
+                        var marshaller = DataPrivacyMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DataPrivacy, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetBotName())
-                {
-                    context.Writer.WritePropertyName("botName");
-                    context.Writer.Write(publicRequest.BotName);
-                }
-
-                if(publicRequest.IsSetBotTags())
-                {
-                    context.Writer.WritePropertyName("botTags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestBotTagsKvp in publicRequest.BotTags)
+                    if(publicRequest.IsSetDescription())
                     {
-                        context.Writer.WritePropertyName(publicRequestBotTagsKvp.Key);
-                        var publicRequestBotTagsValue = publicRequestBotTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestBotTagsValue);
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetBotType())
-                {
-                    context.Writer.WritePropertyName("botType");
-                    context.Writer.Write(publicRequest.BotType);
-                }
-
-                if(publicRequest.IsSetDataPrivacy())
-                {
-                    context.Writer.WritePropertyName("dataPrivacy");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DataPrivacyMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DataPrivacy, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetIdleSessionTTLInSeconds())
-                {
-                    context.Writer.WritePropertyName("idleSessionTTLInSeconds");
-                    context.Writer.Write(publicRequest.IdleSessionTTLInSeconds.Value);
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("roleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetTestBotAliasTags())
-                {
-                    context.Writer.WritePropertyName("testBotAliasTags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTestBotAliasTagsKvp in publicRequest.TestBotAliasTags)
+                    if(publicRequest.IsSetIdleSessionTTLInSeconds())
                     {
-                        context.Writer.WritePropertyName(publicRequestTestBotAliasTagsKvp.Key);
-                        var publicRequestTestBotAliasTagsValue = publicRequestTestBotAliasTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTestBotAliasTagsValue);
+                        context.Writer.WritePropertyName("idleSessionTTLInSeconds");
+                        context.Writer.Write(publicRequest.IdleSessionTTLInSeconds.Value);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("roleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    if(publicRequest.IsSetTestBotAliasTags())
+                    {
+                        context.Writer.WritePropertyName("testBotAliasTags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTestBotAliasTagsKvp in publicRequest.TestBotAliasTags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTestBotAliasTagsKvp.Key);
+                            var publicRequestTestBotAliasTagsValue = publicRequestTestBotAliasTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTestBotAliasTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

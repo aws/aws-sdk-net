@@ -63,44 +63,47 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCreateSnapshotBeforeUpdate())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CreateSnapshotBeforeUpdate");
-                    context.Writer.Write(publicRequest.CreateSnapshotBeforeUpdate.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCreateSnapshotBeforeUpdate())
+                    {
+                        context.Writer.WritePropertyName("CreateSnapshotBeforeUpdate");
+                        context.Writer.Write(publicRequest.CreateSnapshotBeforeUpdate.Value);
+                    }
+
+                    if(publicRequest.IsSetDirectoryId())
+                    {
+                        context.Writer.WritePropertyName("DirectoryId");
+                        context.Writer.Write(publicRequest.DirectoryId);
+                    }
+
+                    if(publicRequest.IsSetOSUpdateSettings())
+                    {
+                        context.Writer.WritePropertyName("OSUpdateSettings");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = OSUpdateSettingsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OSUpdateSettings, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetUpdateType())
+                    {
+                        context.Writer.WritePropertyName("UpdateType");
+                        context.Writer.Write(publicRequest.UpdateType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDirectoryId())
-                {
-                    context.Writer.WritePropertyName("DirectoryId");
-                    context.Writer.Write(publicRequest.DirectoryId);
-                }
-
-                if(publicRequest.IsSetOSUpdateSettings())
-                {
-                    context.Writer.WritePropertyName("OSUpdateSettings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OSUpdateSettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OSUpdateSettings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetUpdateType())
-                {
-                    context.Writer.WritePropertyName("UpdateType");
-                    context.Writer.Write(publicRequest.UpdateType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

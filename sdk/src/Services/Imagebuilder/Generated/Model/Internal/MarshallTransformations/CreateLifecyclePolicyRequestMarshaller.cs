@@ -61,97 +61,100 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/CreateLifecyclePolicy";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetExecutionRole())
-                {
-                    context.Writer.WritePropertyName("executionRole");
-                    context.Writer.Write(publicRequest.ExecutionRole);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetPolicyDetails())
-                {
-                    context.Writer.WritePropertyName("policyDetails");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPolicyDetailsListValue in publicRequest.PolicyDetails)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetExecutionRole())
+                    {
+                        context.Writer.WritePropertyName("executionRole");
+                        context.Writer.Write(publicRequest.ExecutionRole);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetPolicyDetails())
+                    {
+                        context.Writer.WritePropertyName("policyDetails");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPolicyDetailsListValue in publicRequest.PolicyDetails)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = LifecyclePolicyDetailMarshaller.Instance;
+                            marshaller.Marshall(publicRequestPolicyDetailsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetResourceSelection())
+                    {
+                        context.Writer.WritePropertyName("resourceSelection");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = LifecyclePolicyDetailMarshaller.Instance;
-                        marshaller.Marshall(publicRequestPolicyDetailsListValue, context);
+                        var marshaller = LifecyclePolicyResourceSelectionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ResourceSelection, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetResourceSelection())
-                {
-                    context.Writer.WritePropertyName("resourceSelection");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LifecyclePolicyResourceSelectionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ResourceSelection, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetResourceType())
-                {
-                    context.Writer.WritePropertyName("resourceType");
-                    context.Writer.Write(publicRequest.ResourceType);
-                }
-
-                if(publicRequest.IsSetStatus())
-                {
-                    context.Writer.WritePropertyName("status");
-                    context.Writer.Write(publicRequest.Status);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetResourceType())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("resourceType");
+                        context.Writer.Write(publicRequest.ResourceType);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetStatus())
+                    {
+                        context.Writer.WritePropertyName("status");
+                        context.Writer.Write(publicRequest.Status);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

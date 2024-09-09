@@ -67,45 +67,48 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 throw new AmazonMediaTailorException("Request object does not have required field VodSourceName set");
             request.AddPathResource("{VodSourceName}", StringUtils.FromString(publicRequest.VodSourceName));
             request.ResourcePath = "/sourceLocation/{SourceLocationName}/vodSource/{VodSourceName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetHttpPackageConfigurations())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("HttpPackageConfigurations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestHttpPackageConfigurationsListValue in publicRequest.HttpPackageConfigurations)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetHttpPackageConfigurations())
                     {
+                        context.Writer.WritePropertyName("HttpPackageConfigurations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestHttpPackageConfigurationsListValue in publicRequest.HttpPackageConfigurations)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = HttpPackageConfigurationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestHttpPackageConfigurationsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
 
-                        var marshaller = HttpPackageConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestHttpPackageConfigurationsListValue, context);
-
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

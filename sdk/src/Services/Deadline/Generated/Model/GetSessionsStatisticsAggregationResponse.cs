@@ -83,7 +83,15 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the aggregated results.
+        /// The status of the aggregated results. An aggregation may fail or time out if the results
+        /// are too large. If this happens, you can call the <c>StartSessionsStatisticsAggregation</c>
+        /// operation after you reduce the aggregation time frame, reduce the number of queues
+        /// or fleets in the aggregation, or increase the period length.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you call the <c>StartSessionsStatisticsAggregation </c> operation when the status
+        /// is <c>IN_PROGRESS</c>, you will receive a <c>ThrottlingException</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

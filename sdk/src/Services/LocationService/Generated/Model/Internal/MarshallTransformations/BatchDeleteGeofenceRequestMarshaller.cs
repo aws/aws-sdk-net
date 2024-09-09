@@ -64,26 +64,29 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 throw new AmazonLocationServiceException("Request object does not have required field CollectionName set");
             request.AddPathResource("{CollectionName}", StringUtils.FromString(publicRequest.CollectionName));
             request.ResourcePath = "/geofencing/v0/collections/{CollectionName}/delete-geofences";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetGeofenceIds())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("GeofenceIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestGeofenceIdsListValue in publicRequest.GeofenceIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetGeofenceIds())
                     {
-                            context.Writer.Write(publicRequestGeofenceIdsListValue);
+                        context.Writer.WritePropertyName("GeofenceIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestGeofenceIdsListValue in publicRequest.GeofenceIds)
+                        {
+                                context.Writer.Write(publicRequestGeofenceIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

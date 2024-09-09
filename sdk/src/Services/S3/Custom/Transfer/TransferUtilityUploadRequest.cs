@@ -52,6 +52,7 @@ namespace Amazon.S3.Transfer
         private string serverSideEncryptionCustomerProvidedKeyMD5;
         private string serverSideEncryptionKeyManagementServiceKeyId;
         private ChecksumAlgorithm checksumAlgorithm;
+        private string _ifNoneMatch;
 
         private HeadersCollection headersCollection = new HeadersCollection();
         private MetadataCollection metadataCollection = new MetadataCollection();
@@ -625,6 +626,33 @@ namespace Amazon.S3.Transfer
             get { return this.checksumAlgorithm; }
             set { this.checksumAlgorithm = value; }
         }
+
+        /// <summary>
+        /// Gets and sets the property IfNoneMatch used when CompleteMultipartUploadRequest is called to 
+        /// complete the multipart upload.
+        /// <para>Uploads the object only if the object key name does not already exist in the bucket specified. Otherwise, 
+        /// Amazon S3 returns a <code>412 Precondition Failed</code> error.</para> <para>If a conflicting operation occurs 
+        /// during the upload S3 returns a <code>409 ConditionalRequestConflict</code> response. On a 409 failure you should 
+        /// re-initiate the multipart upload with <code>CreateMultipartUpload</code> and re-upload each part.</para> <para>Expects 
+        /// the '*' (asterisk) character.</para> <para>For more information about conditional requests, 
+        /// see <a href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>, or <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/conditional-requests.html">Conditional requests</a> 
+        /// in the <i>Amazon S3 User Guide</i>.</para>
+        /// </summary>
+        public string IfNoneMatch
+        {
+            get { return this._ifNoneMatch; }
+            set { this._ifNoneMatch = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if IfNoneMatch is set.
+        /// </summary>
+        /// <returns>true, if IfNoneMatch property is set.</returns>
+        internal bool IsSetIfNoneMatch()
+        {
+            return !string.IsNullOrEmpty(this._ifNoneMatch);
+        }
+
     }
 
     /// <summary>

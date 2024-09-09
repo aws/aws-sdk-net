@@ -63,44 +63,47 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetComputeStatistics())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ComputeStatistics");
-                    context.Writer.Write(publicRequest.ComputeStatistics.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetComputeStatistics())
+                    {
+                        context.Writer.WritePropertyName("ComputeStatistics");
+                        context.Writer.Write(publicRequest.ComputeStatistics.Value);
+                    }
+
+                    if(publicRequest.IsSetDataSourceId())
+                    {
+                        context.Writer.WritePropertyName("DataSourceId");
+                        context.Writer.Write(publicRequest.DataSourceId);
+                    }
+
+                    if(publicRequest.IsSetDataSourceName())
+                    {
+                        context.Writer.WritePropertyName("DataSourceName");
+                        context.Writer.Write(publicRequest.DataSourceName);
+                    }
+
+                    if(publicRequest.IsSetDataSpec())
+                    {
+                        context.Writer.WritePropertyName("DataSpec");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = S3DataSpecMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DataSpec, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDataSourceId())
-                {
-                    context.Writer.WritePropertyName("DataSourceId");
-                    context.Writer.Write(publicRequest.DataSourceId);
-                }
-
-                if(publicRequest.IsSetDataSourceName())
-                {
-                    context.Writer.WritePropertyName("DataSourceName");
-                    context.Writer.Write(publicRequest.DataSourceName);
-                }
-
-                if(publicRequest.IsSetDataSpec())
-                {
-                    context.Writer.WritePropertyName("DataSpec");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = S3DataSpecMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DataSpec, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

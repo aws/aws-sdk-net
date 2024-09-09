@@ -86,9 +86,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             // Clear tables
             CleanupTables();
 
-            Table hashTable;
-            Table hashRangeTable;
-            Table numericHashRangeTable;
+            ITable hashTable;
+            ITable hashRangeTable;
+            ITable numericHashRangeTable;
 
             // Load tables using provided conversion schema
             LoadTables(DynamoDBEntryConversion.V2, out hashTable, out hashRangeTable, out numericHashRangeTable);
@@ -348,8 +348,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                   }
                 }";
 
-            using (var dbClient = new AmazonDynamoDBClient())
-            using (var context = new DynamoDBContext(dbClient))
+            using (var context = new DynamoDBContextBuilder().Build())
             {
                 var document = Document.FromJson(json);
                 var container = context.FromDocument<DataContainer>(document);

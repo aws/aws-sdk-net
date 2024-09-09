@@ -64,48 +64,51 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
                 throw new AmazonIoTAnalyticsException("Request object does not have required field DatastoreName set");
             request.AddPathResource("{datastoreName}", StringUtils.FromString(publicRequest.DatastoreName));
             request.ResourcePath = "/datastores/{datastoreName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDatastoreStorage())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("datastoreStorage");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDatastoreStorage())
+                    {
+                        context.Writer.WritePropertyName("datastoreStorage");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = DatastoreStorageMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DatastoreStorage, context);
+                        var marshaller = DatastoreStorageMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DatastoreStorage, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetFileFormatConfiguration())
+                    {
+                        context.Writer.WritePropertyName("fileFormatConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = FileFormatConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.FileFormatConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRetentionPeriod())
+                    {
+                        context.Writer.WritePropertyName("retentionPeriod");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RetentionPeriodMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RetentionPeriod, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetFileFormatConfiguration())
-                {
-                    context.Writer.WritePropertyName("fileFormatConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = FileFormatConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.FileFormatConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRetentionPeriod())
-                {
-                    context.Writer.WritePropertyName("retentionPeriod");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RetentionPeriodMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RetentionPeriod, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

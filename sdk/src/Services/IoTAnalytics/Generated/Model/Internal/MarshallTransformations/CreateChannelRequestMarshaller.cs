@@ -61,59 +61,62 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/channels";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetChannelName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("channelName");
-                    context.Writer.Write(publicRequest.ChannelName);
-                }
-
-                if(publicRequest.IsSetChannelStorage())
-                {
-                    context.Writer.WritePropertyName("channelStorage");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ChannelStorageMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ChannelStorage, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRetentionPeriod())
-                {
-                    context.Writer.WritePropertyName("retentionPeriod");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RetentionPeriodMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RetentionPeriod, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetChannelName())
                     {
+                        context.Writer.WritePropertyName("channelName");
+                        context.Writer.Write(publicRequest.ChannelName);
+                    }
+
+                    if(publicRequest.IsSetChannelStorage())
+                    {
+                        context.Writer.WritePropertyName("channelStorage");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = ChannelStorageMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ChannelStorage, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetRetentionPeriod())
+                    {
+                        context.Writer.WritePropertyName("retentionPeriod");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RetentionPeriodMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RetentionPeriod, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -61,42 +61,45 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/greengrass/v2/resolveComponentCandidates";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetComponentCandidates())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("componentCandidates");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestComponentCandidatesListValue in publicRequest.ComponentCandidates)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetComponentCandidates())
                     {
+                        context.Writer.WritePropertyName("componentCandidates");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestComponentCandidatesListValue in publicRequest.ComponentCandidates)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ComponentCandidateMarshaller.Instance;
+                            marshaller.Marshall(publicRequestComponentCandidatesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetPlatform())
+                    {
+                        context.Writer.WritePropertyName("platform");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = ComponentCandidateMarshaller.Instance;
-                        marshaller.Marshall(publicRequestComponentCandidatesListValue, context);
+                        var marshaller = ComponentPlatformMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Platform, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPlatform())
-                {
-                    context.Writer.WritePropertyName("platform");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ComponentPlatformMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Platform, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

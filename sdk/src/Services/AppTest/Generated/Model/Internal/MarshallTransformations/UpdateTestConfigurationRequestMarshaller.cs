@@ -64,62 +64,65 @@ namespace Amazon.AppTest.Model.Internal.MarshallTransformations
                 throw new AmazonAppTestException("Request object does not have required field TestConfigurationId set");
             request.AddPathResource("{testConfigurationId}", StringUtils.FromString(publicRequest.TestConfigurationId));
             request.ResourcePath = "/testconfigurations/{testConfigurationId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetProperties())
-                {
-                    context.Writer.WritePropertyName("properties");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestPropertiesKvp in publicRequest.Properties)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
-                        context.Writer.WritePropertyName(publicRequestPropertiesKvp.Key);
-                        var publicRequestPropertiesValue = publicRequestPropertiesKvp.Value;
-
-                            context.Writer.Write(publicRequestPropertiesValue);
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetResources())
-                {
-                    context.Writer.WritePropertyName("resources");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestResourcesListValue in publicRequest.Resources)
+                    if(publicRequest.IsSetProperties())
                     {
+                        context.Writer.WritePropertyName("properties");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestPropertiesKvp in publicRequest.Properties)
+                        {
+                            context.Writer.WritePropertyName(publicRequestPropertiesKvp.Key);
+                            var publicRequestPropertiesValue = publicRequestPropertiesKvp.Value;
+
+                                context.Writer.Write(publicRequestPropertiesValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetResources())
+                    {
+                        context.Writer.WritePropertyName("resources");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestResourcesListValue in publicRequest.Resources)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ResourceMarshaller.Instance;
+                            marshaller.Marshall(publicRequestResourcesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetServiceSettings())
+                    {
+                        context.Writer.WritePropertyName("serviceSettings");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = ResourceMarshaller.Instance;
-                        marshaller.Marshall(publicRequestResourcesListValue, context);
+                        var marshaller = ServiceSettingsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ServiceSettings, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetServiceSettings())
-                {
-                    context.Writer.WritePropertyName("serviceSettings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ServiceSettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ServiceSettings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

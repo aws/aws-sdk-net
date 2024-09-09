@@ -67,49 +67,52 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
                 throw new AmazonEntityResolutionException("Request object does not have required field StatementId set");
             request.AddPathResource("{statementId}", StringUtils.FromString(publicRequest.StatementId));
             request.ResourcePath = "/policies/{arn}/{statementId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAction())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("action");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestActionListValue in publicRequest.Action)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAction())
                     {
-                            context.Writer.Write(publicRequestActionListValue);
+                        context.Writer.WritePropertyName("action");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestActionListValue in publicRequest.Action)
+                        {
+                                context.Writer.Write(publicRequestActionListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetCondition())
-                {
-                    context.Writer.WritePropertyName("condition");
-                    context.Writer.Write(publicRequest.Condition);
-                }
-
-                if(publicRequest.IsSetEffect())
-                {
-                    context.Writer.WritePropertyName("effect");
-                    context.Writer.Write(publicRequest.Effect);
-                }
-
-                if(publicRequest.IsSetPrincipal())
-                {
-                    context.Writer.WritePropertyName("principal");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPrincipalListValue in publicRequest.Principal)
+                    if(publicRequest.IsSetCondition())
                     {
-                            context.Writer.Write(publicRequestPrincipalListValue);
+                        context.Writer.WritePropertyName("condition");
+                        context.Writer.Write(publicRequest.Condition);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetEffect())
+                    {
+                        context.Writer.WritePropertyName("effect");
+                        context.Writer.Write(publicRequest.Effect);
+                    }
+
+                    if(publicRequest.IsSetPrincipal())
+                    {
+                        context.Writer.WritePropertyName("principal");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPrincipalListValue in publicRequest.Principal)
+                        {
+                                context.Writer.Write(publicRequestPrincipalListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

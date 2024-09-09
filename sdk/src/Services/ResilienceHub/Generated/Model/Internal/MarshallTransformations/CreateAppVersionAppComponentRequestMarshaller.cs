@@ -61,69 +61,72 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/create-app-version-app-component";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAdditionalInfo())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("additionalInfo");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestAdditionalInfoKvp in publicRequest.AdditionalInfo)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAdditionalInfo())
                     {
-                        context.Writer.WritePropertyName(publicRequestAdditionalInfoKvp.Key);
-                        var publicRequestAdditionalInfoValue = publicRequestAdditionalInfoKvp.Value;
-
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAdditionalInfoValueListValue in publicRequestAdditionalInfoValue)
+                        context.Writer.WritePropertyName("additionalInfo");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestAdditionalInfoKvp in publicRequest.AdditionalInfo)
                         {
-                                context.Writer.Write(publicRequestAdditionalInfoValueListValue);
+                            context.Writer.WritePropertyName(publicRequestAdditionalInfoKvp.Key);
+                            var publicRequestAdditionalInfoValue = publicRequestAdditionalInfoKvp.Value;
+
+                            context.Writer.WriteArrayStart();
+                            foreach(var publicRequestAdditionalInfoValueListValue in publicRequestAdditionalInfoValue)
+                            {
+                                    context.Writer.Write(publicRequestAdditionalInfoValueListValue);
+                            }
+                            context.Writer.WriteArrayEnd();
                         }
-                        context.Writer.WriteArrayEnd();
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetAppArn())
+                    {
+                        context.Writer.WritePropertyName("appArn");
+                        context.Writer.Write(publicRequest.AppArn);
+                    }
+
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetId())
+                    {
+                        context.Writer.WritePropertyName("id");
+                        context.Writer.Write(publicRequest.Id);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetType())
+                    {
+                        context.Writer.WritePropertyName("type");
+                        context.Writer.Write(publicRequest.Type);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetAppArn())
-                {
-                    context.Writer.WritePropertyName("appArn");
-                    context.Writer.Write(publicRequest.AppArn);
-                }
-
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetId())
-                {
-                    context.Writer.WritePropertyName("id");
-                    context.Writer.Write(publicRequest.Id);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetType())
-                {
-                    context.Writer.WritePropertyName("type");
-                    context.Writer.Write(publicRequest.Type);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,60 +63,63 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAssessmentTargetArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("assessmentTargetArn");
-                    context.Writer.Write(publicRequest.AssessmentTargetArn);
-                }
-
-                if(publicRequest.IsSetAssessmentTemplateName())
-                {
-                    context.Writer.WritePropertyName("assessmentTemplateName");
-                    context.Writer.Write(publicRequest.AssessmentTemplateName);
-                }
-
-                if(publicRequest.IsSetDurationInSeconds())
-                {
-                    context.Writer.WritePropertyName("durationInSeconds");
-                    context.Writer.Write(publicRequest.DurationInSeconds.Value);
-                }
-
-                if(publicRequest.IsSetRulesPackageArns())
-                {
-                    context.Writer.WritePropertyName("rulesPackageArns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRulesPackageArnsListValue in publicRequest.RulesPackageArns)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAssessmentTargetArn())
                     {
-                            context.Writer.Write(publicRequestRulesPackageArnsListValue);
+                        context.Writer.WritePropertyName("assessmentTargetArn");
+                        context.Writer.Write(publicRequest.AssessmentTargetArn);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetUserAttributesForFindings())
-                {
-                    context.Writer.WritePropertyName("userAttributesForFindings");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestUserAttributesForFindingsListValue in publicRequest.UserAttributesForFindings)
+                    if(publicRequest.IsSetAssessmentTemplateName())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AttributeMarshaller.Instance;
-                        marshaller.Marshall(publicRequestUserAttributesForFindingsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("assessmentTemplateName");
+                        context.Writer.Write(publicRequest.AssessmentTemplateName);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDurationInSeconds())
+                    {
+                        context.Writer.WritePropertyName("durationInSeconds");
+                        context.Writer.Write(publicRequest.DurationInSeconds.Value);
+                    }
+
+                    if(publicRequest.IsSetRulesPackageArns())
+                    {
+                        context.Writer.WritePropertyName("rulesPackageArns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRulesPackageArnsListValue in publicRequest.RulesPackageArns)
+                        {
+                                context.Writer.Write(publicRequestRulesPackageArnsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetUserAttributesForFindings())
+                    {
+                        context.Writer.WritePropertyName("userAttributesForFindings");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestUserAttributesForFindingsListValue in publicRequest.UserAttributesForFindings)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = AttributeMarshaller.Instance;
+                            marshaller.Marshall(publicRequestUserAttributesForFindingsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

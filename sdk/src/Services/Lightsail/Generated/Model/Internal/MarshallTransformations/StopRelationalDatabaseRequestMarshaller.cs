@@ -63,27 +63,30 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetRelationalDatabaseName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("relationalDatabaseName");
-                    context.Writer.Write(publicRequest.RelationalDatabaseName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetRelationalDatabaseName())
+                    {
+                        context.Writer.WritePropertyName("relationalDatabaseName");
+                        context.Writer.Write(publicRequest.RelationalDatabaseName);
+                    }
+
+                    if(publicRequest.IsSetRelationalDatabaseSnapshotName())
+                    {
+                        context.Writer.WritePropertyName("relationalDatabaseSnapshotName");
+                        context.Writer.Write(publicRequest.RelationalDatabaseSnapshotName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRelationalDatabaseSnapshotName())
-                {
-                    context.Writer.WritePropertyName("relationalDatabaseSnapshotName");
-                    context.Writer.Write(publicRequest.RelationalDatabaseSnapshotName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

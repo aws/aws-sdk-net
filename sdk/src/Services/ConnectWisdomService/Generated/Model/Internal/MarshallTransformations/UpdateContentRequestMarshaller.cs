@@ -67,59 +67,62 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
                 throw new AmazonConnectWisdomServiceException("Request object does not have required field KnowledgeBaseId set");
             request.AddPathResource("{knowledgeBaseId}", StringUtils.FromString(publicRequest.KnowledgeBaseId));
             request.ResourcePath = "/knowledgeBases/{knowledgeBaseId}/contents/{contentId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMetadata())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("metadata");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestMetadataKvp in publicRequest.Metadata)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMetadata())
                     {
-                        context.Writer.WritePropertyName(publicRequestMetadataKvp.Key);
-                        var publicRequestMetadataValue = publicRequestMetadataKvp.Value;
+                        context.Writer.WritePropertyName("metadata");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestMetadataKvp in publicRequest.Metadata)
+                        {
+                            context.Writer.WritePropertyName(publicRequestMetadataKvp.Key);
+                            var publicRequestMetadataValue = publicRequestMetadataKvp.Value;
 
-                            context.Writer.Write(publicRequestMetadataValue);
+                                context.Writer.Write(publicRequestMetadataValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetOverrideLinkOutUri())
+                    {
+                        context.Writer.WritePropertyName("overrideLinkOutUri");
+                        context.Writer.Write(publicRequest.OverrideLinkOutUri);
+                    }
+
+                    if(publicRequest.IsSetRemoveOverrideLinkOutUri())
+                    {
+                        context.Writer.WritePropertyName("removeOverrideLinkOutUri");
+                        context.Writer.Write(publicRequest.RemoveOverrideLinkOutUri.Value);
+                    }
+
+                    if(publicRequest.IsSetRevisionId())
+                    {
+                        context.Writer.WritePropertyName("revisionId");
+                        context.Writer.Write(publicRequest.RevisionId);
+                    }
+
+                    if(publicRequest.IsSetTitle())
+                    {
+                        context.Writer.WritePropertyName("title");
+                        context.Writer.Write(publicRequest.Title);
+                    }
+
+                    if(publicRequest.IsSetUploadId())
+                    {
+                        context.Writer.WritePropertyName("uploadId");
+                        context.Writer.Write(publicRequest.UploadId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetOverrideLinkOutUri())
-                {
-                    context.Writer.WritePropertyName("overrideLinkOutUri");
-                    context.Writer.Write(publicRequest.OverrideLinkOutUri);
-                }
-
-                if(publicRequest.IsSetRemoveOverrideLinkOutUri())
-                {
-                    context.Writer.WritePropertyName("removeOverrideLinkOutUri");
-                    context.Writer.Write(publicRequest.RemoveOverrideLinkOutUri.Value);
-                }
-
-                if(publicRequest.IsSetRevisionId())
-                {
-                    context.Writer.WritePropertyName("revisionId");
-                    context.Writer.Write(publicRequest.RevisionId);
-                }
-
-                if(publicRequest.IsSetTitle())
-                {
-                    context.Writer.WritePropertyName("title");
-                    context.Writer.Write(publicRequest.Title);
-                }
-
-                if(publicRequest.IsSetUploadId())
-                {
-                    context.Writer.WritePropertyName("uploadId");
-                    context.Writer.Write(publicRequest.UploadId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

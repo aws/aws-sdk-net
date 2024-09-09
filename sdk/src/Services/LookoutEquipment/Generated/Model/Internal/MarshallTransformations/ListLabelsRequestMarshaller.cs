@@ -63,57 +63,60 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEquipment())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Equipment");
-                    context.Writer.Write(publicRequest.Equipment);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEquipment())
+                    {
+                        context.Writer.WritePropertyName("Equipment");
+                        context.Writer.Write(publicRequest.Equipment);
+                    }
+
+                    if(publicRequest.IsSetFaultCode())
+                    {
+                        context.Writer.WritePropertyName("FaultCode");
+                        context.Writer.Write(publicRequest.FaultCode);
+                    }
+
+                    if(publicRequest.IsSetIntervalEndTime())
+                    {
+                        context.Writer.WritePropertyName("IntervalEndTime");
+                        context.Writer.Write(publicRequest.IntervalEndTime.Value);
+                    }
+
+                    if(publicRequest.IsSetIntervalStartTime())
+                    {
+                        context.Writer.WritePropertyName("IntervalStartTime");
+                        context.Writer.Write(publicRequest.IntervalStartTime.Value);
+                    }
+
+                    if(publicRequest.IsSetLabelGroupName())
+                    {
+                        context.Writer.WritePropertyName("LabelGroupName");
+                        context.Writer.Write(publicRequest.LabelGroupName);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetFaultCode())
-                {
-                    context.Writer.WritePropertyName("FaultCode");
-                    context.Writer.Write(publicRequest.FaultCode);
-                }
-
-                if(publicRequest.IsSetIntervalEndTime())
-                {
-                    context.Writer.WritePropertyName("IntervalEndTime");
-                    context.Writer.Write(publicRequest.IntervalEndTime.Value);
-                }
-
-                if(publicRequest.IsSetIntervalStartTime())
-                {
-                    context.Writer.WritePropertyName("IntervalStartTime");
-                    context.Writer.Write(publicRequest.IntervalStartTime.Value);
-                }
-
-                if(publicRequest.IsSetLabelGroupName())
-                {
-                    context.Writer.WritePropertyName("LabelGroupName");
-                    context.Writer.Write(publicRequest.LabelGroupName);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

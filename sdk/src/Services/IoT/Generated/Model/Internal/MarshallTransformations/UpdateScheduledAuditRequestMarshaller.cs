@@ -64,44 +64,47 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field ScheduledAuditName set");
             request.AddPathResource("{scheduledAuditName}", StringUtils.FromString(publicRequest.ScheduledAuditName));
             request.ResourcePath = "/audit/scheduledaudits/{scheduledAuditName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDayOfMonth())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("dayOfMonth");
-                    context.Writer.Write(publicRequest.DayOfMonth);
-                }
-
-                if(publicRequest.IsSetDayOfWeek())
-                {
-                    context.Writer.WritePropertyName("dayOfWeek");
-                    context.Writer.Write(publicRequest.DayOfWeek);
-                }
-
-                if(publicRequest.IsSetFrequency())
-                {
-                    context.Writer.WritePropertyName("frequency");
-                    context.Writer.Write(publicRequest.Frequency);
-                }
-
-                if(publicRequest.IsSetTargetCheckNames())
-                {
-                    context.Writer.WritePropertyName("targetCheckNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTargetCheckNamesListValue in publicRequest.TargetCheckNames)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDayOfMonth())
                     {
-                            context.Writer.Write(publicRequestTargetCheckNamesListValue);
+                        context.Writer.WritePropertyName("dayOfMonth");
+                        context.Writer.Write(publicRequest.DayOfMonth);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDayOfWeek())
+                    {
+                        context.Writer.WritePropertyName("dayOfWeek");
+                        context.Writer.Write(publicRequest.DayOfWeek);
+                    }
+
+                    if(publicRequest.IsSetFrequency())
+                    {
+                        context.Writer.WritePropertyName("frequency");
+                        context.Writer.Write(publicRequest.Frequency);
+                    }
+
+                    if(publicRequest.IsSetTargetCheckNames())
+                    {
+                        context.Writer.WritePropertyName("targetCheckNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTargetCheckNamesListValue in publicRequest.TargetCheckNames)
+                        {
+                                context.Writer.Write(publicRequestTargetCheckNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

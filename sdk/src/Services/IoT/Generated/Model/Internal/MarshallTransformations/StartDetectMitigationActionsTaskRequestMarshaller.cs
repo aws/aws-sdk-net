@@ -64,71 +64,74 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field TaskId set");
             request.AddPathResource("{taskId}", StringUtils.FromString(publicRequest.TaskId));
             request.ResourcePath = "/detect/mitigationactions/tasks/{taskId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetActions())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("actions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestActionsListValue in publicRequest.Actions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetActions())
                     {
-                            context.Writer.Write(publicRequestActionsListValue);
+                        context.Writer.WritePropertyName("actions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestActionsListValue in publicRequest.Actions)
+                        {
+                                context.Writer.Write(publicRequestActionsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetClientRequestToken())
+                    {
+                        context.Writer.WritePropertyName("clientRequestToken");
+                        context.Writer.Write(publicRequest.ClientRequestToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientRequestToken()))
+                    {
+                        context.Writer.WritePropertyName("clientRequestToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetIncludeOnlyActiveViolations())
+                    {
+                        context.Writer.WritePropertyName("includeOnlyActiveViolations");
+                        context.Writer.Write(publicRequest.IncludeOnlyActiveViolations.Value);
+                    }
+
+                    if(publicRequest.IsSetIncludeSuppressedAlerts())
+                    {
+                        context.Writer.WritePropertyName("includeSuppressedAlerts");
+                        context.Writer.Write(publicRequest.IncludeSuppressedAlerts.Value);
+                    }
+
+                    if(publicRequest.IsSetTarget())
+                    {
+                        context.Writer.WritePropertyName("target");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DetectMitigationActionsTaskTargetMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Target, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetViolationEventOccurrenceRange())
+                    {
+                        context.Writer.WritePropertyName("violationEventOccurrenceRange");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ViolationEventOccurrenceRangeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ViolationEventOccurrenceRange, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetClientRequestToken())
-                {
-                    context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetIncludeOnlyActiveViolations())
-                {
-                    context.Writer.WritePropertyName("includeOnlyActiveViolations");
-                    context.Writer.Write(publicRequest.IncludeOnlyActiveViolations.Value);
-                }
-
-                if(publicRequest.IsSetIncludeSuppressedAlerts())
-                {
-                    context.Writer.WritePropertyName("includeSuppressedAlerts");
-                    context.Writer.Write(publicRequest.IncludeSuppressedAlerts.Value);
-                }
-
-                if(publicRequest.IsSetTarget())
-                {
-                    context.Writer.WritePropertyName("target");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DetectMitigationActionsTaskTargetMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Target, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetViolationEventOccurrenceRange())
-                {
-                    context.Writer.WritePropertyName("violationEventOccurrenceRange");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ViolationEventOccurrenceRangeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ViolationEventOccurrenceRange, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

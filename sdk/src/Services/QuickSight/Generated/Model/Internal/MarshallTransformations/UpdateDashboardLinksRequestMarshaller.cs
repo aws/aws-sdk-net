@@ -67,26 +67,29 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field DashboardId set");
             request.AddPathResource("{DashboardId}", StringUtils.FromString(publicRequest.DashboardId));
             request.ResourcePath = "/accounts/{AwsAccountId}/dashboards/{DashboardId}/linked-entities";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLinkEntities())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("LinkEntities");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLinkEntitiesListValue in publicRequest.LinkEntities)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetLinkEntities())
                     {
-                            context.Writer.Write(publicRequestLinkEntitiesListValue);
+                        context.Writer.WritePropertyName("LinkEntities");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLinkEntitiesListValue in publicRequest.LinkEntities)
+                        {
+                                context.Writer.Write(publicRequestLinkEntitiesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,55 +63,58 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBalancingStrategy())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("BalancingStrategy");
-                    context.Writer.Write(publicRequest.BalancingStrategy);
-                }
-
-                if(publicRequest.IsSetGameServerGroupName())
-                {
-                    context.Writer.WritePropertyName("GameServerGroupName");
-                    context.Writer.Write(publicRequest.GameServerGroupName);
-                }
-
-                if(publicRequest.IsSetGameServerProtectionPolicy())
-                {
-                    context.Writer.WritePropertyName("GameServerProtectionPolicy");
-                    context.Writer.Write(publicRequest.GameServerProtectionPolicy);
-                }
-
-                if(publicRequest.IsSetInstanceDefinitions())
-                {
-                    context.Writer.WritePropertyName("InstanceDefinitions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestInstanceDefinitionsListValue in publicRequest.InstanceDefinitions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBalancingStrategy())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = InstanceDefinitionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestInstanceDefinitionsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("BalancingStrategy");
+                        context.Writer.Write(publicRequest.BalancingStrategy);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetGameServerGroupName())
+                    {
+                        context.Writer.WritePropertyName("GameServerGroupName");
+                        context.Writer.Write(publicRequest.GameServerGroupName);
+                    }
+
+                    if(publicRequest.IsSetGameServerProtectionPolicy())
+                    {
+                        context.Writer.WritePropertyName("GameServerProtectionPolicy");
+                        context.Writer.Write(publicRequest.GameServerProtectionPolicy);
+                    }
+
+                    if(publicRequest.IsSetInstanceDefinitions())
+                    {
+                        context.Writer.WritePropertyName("InstanceDefinitions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestInstanceDefinitionsListValue in publicRequest.InstanceDefinitions)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = InstanceDefinitionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestInstanceDefinitionsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("RoleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("RoleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

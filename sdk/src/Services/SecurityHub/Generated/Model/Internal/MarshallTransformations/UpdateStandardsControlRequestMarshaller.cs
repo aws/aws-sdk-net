@@ -64,27 +64,30 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 throw new AmazonSecurityHubException("Request object does not have required field StandardsControlArn set");
             request.AddPathResource("{StandardsControlArn+}", StringUtils.FromString(publicRequest.StandardsControlArn.TrimStart('/')));
             request.ResourcePath = "/standards/control/{StandardsControlArn+}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetControlStatus())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ControlStatus");
-                    context.Writer.Write(publicRequest.ControlStatus);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetControlStatus())
+                    {
+                        context.Writer.WritePropertyName("ControlStatus");
+                        context.Writer.Write(publicRequest.ControlStatus);
+                    }
+
+                    if(publicRequest.IsSetDisabledReason())
+                    {
+                        context.Writer.WritePropertyName("DisabledReason");
+                        context.Writer.Write(publicRequest.DisabledReason);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDisabledReason())
-                {
-                    context.Writer.WritePropertyName("DisabledReason");
-                    context.Writer.Write(publicRequest.DisabledReason);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -57,7 +57,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the flow alias.
+        /// The Amazon Resource Name (ARN) of the alias.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

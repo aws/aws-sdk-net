@@ -63,27 +63,30 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAPIKey())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("APIKey");
-                    context.Writer.Write(publicRequest.APIKey);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAPIKey())
+                    {
+                        context.Writer.WritePropertyName("APIKey");
+                        context.Writer.Write(publicRequest.APIKey);
+                    }
+
+                    if(publicRequest.IsSetScope())
+                    {
+                        context.Writer.WritePropertyName("Scope");
+                        context.Writer.Write(publicRequest.Scope);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetScope())
-                {
-                    context.Writer.WritePropertyName("Scope");
-                    context.Writer.Write(publicRequest.Scope);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

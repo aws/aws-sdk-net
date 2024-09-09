@@ -63,38 +63,41 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDbParameterGroupIdentifier())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("dbParameterGroupIdentifier");
-                    context.Writer.Write(publicRequest.DbParameterGroupIdentifier);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDbParameterGroupIdentifier())
+                    {
+                        context.Writer.WritePropertyName("dbParameterGroupIdentifier");
+                        context.Writer.Write(publicRequest.DbParameterGroupIdentifier);
+                    }
+
+                    if(publicRequest.IsSetIdentifier())
+                    {
+                        context.Writer.WritePropertyName("identifier");
+                        context.Writer.Write(publicRequest.Identifier);
+                    }
+
+                    if(publicRequest.IsSetLogDeliveryConfiguration())
+                    {
+                        context.Writer.WritePropertyName("logDeliveryConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LogDeliveryConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.LogDeliveryConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetIdentifier())
-                {
-                    context.Writer.WritePropertyName("identifier");
-                    context.Writer.Write(publicRequest.Identifier);
-                }
-
-                if(publicRequest.IsSetLogDeliveryConfiguration())
-                {
-                    context.Writer.WritePropertyName("logDeliveryConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LogDeliveryConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LogDeliveryConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

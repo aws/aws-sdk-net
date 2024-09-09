@@ -61,93 +61,96 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/createresourceshare";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAllowExternalPrincipals())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("allowExternalPrincipals");
-                    context.Writer.Write(publicRequest.AllowExternalPrincipals.Value);
-                }
-
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetPermissionArns())
-                {
-                    context.Writer.WritePropertyName("permissionArns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPermissionArnsListValue in publicRequest.PermissionArns)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAllowExternalPrincipals())
                     {
-                            context.Writer.Write(publicRequestPermissionArnsListValue);
+                        context.Writer.WritePropertyName("allowExternalPrincipals");
+                        context.Writer.Write(publicRequest.AllowExternalPrincipals.Value);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetPrincipals())
-                {
-                    context.Writer.WritePropertyName("principals");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPrincipalsListValue in publicRequest.Principals)
+                    if(publicRequest.IsSetClientToken())
                     {
-                            context.Writer.Write(publicRequestPrincipalsListValue);
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetResourceArns())
-                {
-                    context.Writer.WritePropertyName("resourceArns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestResourceArnsListValue in publicRequest.ResourceArns)
+                    if(publicRequest.IsSetName())
                     {
-                            context.Writer.Write(publicRequestResourceArnsListValue);
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetSources())
-                {
-                    context.Writer.WritePropertyName("sources");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSourcesListValue in publicRequest.Sources)
+                    if(publicRequest.IsSetPermissionArns())
                     {
-                            context.Writer.Write(publicRequestSourcesListValue);
+                        context.Writer.WritePropertyName("permissionArns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPermissionArnsListValue in publicRequest.PermissionArns)
+                        {
+                                context.Writer.Write(publicRequestPermissionArnsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetPrincipals())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("principals");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPrincipalsListValue in publicRequest.Principals)
+                        {
+                                context.Writer.Write(publicRequestPrincipalsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetResourceArns())
+                    {
+                        context.Writer.WritePropertyName("resourceArns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestResourceArnsListValue in publicRequest.ResourceArns)
+                        {
+                                context.Writer.Write(publicRequestResourceArnsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSources())
+                    {
+                        context.Writer.WritePropertyName("sources");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSourcesListValue in publicRequest.Sources)
+                        {
+                                context.Writer.Write(publicRequestSourcesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

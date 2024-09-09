@@ -79,26 +79,29 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetRepository())
                 request.Parameters.Add("repository", StringUtils.FromString(publicRequest.Repository));
             request.ResourcePath = "/v1/package";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetRestrictions())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("restrictions");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetRestrictions())
+                    {
+                        context.Writer.WritePropertyName("restrictions");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = PackageOriginRestrictionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Restrictions, context);
+                        var marshaller = PackageOriginRestrictionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Restrictions, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             request.UseQueryString = true;

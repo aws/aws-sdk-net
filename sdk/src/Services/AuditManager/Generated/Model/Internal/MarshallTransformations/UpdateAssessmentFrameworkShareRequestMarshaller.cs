@@ -64,27 +64,30 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
                 throw new AmazonAuditManagerException("Request object does not have required field RequestId set");
             request.AddPathResource("{requestId}", StringUtils.FromString(publicRequest.RequestId));
             request.ResourcePath = "/assessmentFrameworkShareRequests/{requestId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAction())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("action");
-                    context.Writer.Write(publicRequest.Action);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAction())
+                    {
+                        context.Writer.WritePropertyName("action");
+                        context.Writer.Write(publicRequest.Action);
+                    }
+
+                    if(publicRequest.IsSetRequestType())
+                    {
+                        context.Writer.WritePropertyName("requestType");
+                        context.Writer.Write(publicRequest.RequestType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRequestType())
-                {
-                    context.Writer.WritePropertyName("requestType");
-                    context.Writer.Write(publicRequest.RequestType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

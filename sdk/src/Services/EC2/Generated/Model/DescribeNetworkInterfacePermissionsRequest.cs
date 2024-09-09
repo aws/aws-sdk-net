@@ -62,7 +62,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>network-interface-permission.aws-service</c> - The Amazon Web Service.
+        ///  <c>network-interface-permission.aws-service</c> - The Amazon Web Services service.
         /// </para>
         ///  </li> <li> 
         /// <para>

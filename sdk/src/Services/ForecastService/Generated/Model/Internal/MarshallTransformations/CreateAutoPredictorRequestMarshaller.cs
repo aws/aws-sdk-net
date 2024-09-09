@@ -63,133 +63,136 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDataConfig())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DataConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DataConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DataConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEncryptionConfig())
-                {
-                    context.Writer.WritePropertyName("EncryptionConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EncryptionConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EncryptionConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetExplainPredictor())
-                {
-                    context.Writer.WritePropertyName("ExplainPredictor");
-                    context.Writer.Write(publicRequest.ExplainPredictor.Value);
-                }
-
-                if(publicRequest.IsSetForecastDimensions())
-                {
-                    context.Writer.WritePropertyName("ForecastDimensions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestForecastDimensionsListValue in publicRequest.ForecastDimensions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDataConfig())
                     {
-                            context.Writer.Write(publicRequestForecastDimensionsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetForecastFrequency())
-                {
-                    context.Writer.WritePropertyName("ForecastFrequency");
-                    context.Writer.Write(publicRequest.ForecastFrequency);
-                }
-
-                if(publicRequest.IsSetForecastHorizon())
-                {
-                    context.Writer.WritePropertyName("ForecastHorizon");
-                    context.Writer.Write(publicRequest.ForecastHorizon.Value);
-                }
-
-                if(publicRequest.IsSetForecastTypes())
-                {
-                    context.Writer.WritePropertyName("ForecastTypes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestForecastTypesListValue in publicRequest.ForecastTypes)
-                    {
-                            context.Writer.Write(publicRequestForecastTypesListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetMonitorConfig())
-                {
-                    context.Writer.WritePropertyName("MonitorConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MonitorConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.MonitorConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOptimizationMetric())
-                {
-                    context.Writer.WritePropertyName("OptimizationMetric");
-                    context.Writer.Write(publicRequest.OptimizationMetric);
-                }
-
-                if(publicRequest.IsSetPredictorName())
-                {
-                    context.Writer.WritePropertyName("PredictorName");
-                    context.Writer.Write(publicRequest.PredictorName);
-                }
-
-                if(publicRequest.IsSetReferencePredictorArn())
-                {
-                    context.Writer.WritePropertyName("ReferencePredictorArn");
-                    context.Writer.Write(publicRequest.ReferencePredictorArn);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                    {
+                        context.Writer.WritePropertyName("DataConfig");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = DataConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DataConfig, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetEncryptionConfig())
+                    {
+                        context.Writer.WritePropertyName("EncryptionConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EncryptionConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EncryptionConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetExplainPredictor())
+                    {
+                        context.Writer.WritePropertyName("ExplainPredictor");
+                        context.Writer.Write(publicRequest.ExplainPredictor.Value);
+                    }
+
+                    if(publicRequest.IsSetForecastDimensions())
+                    {
+                        context.Writer.WritePropertyName("ForecastDimensions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestForecastDimensionsListValue in publicRequest.ForecastDimensions)
+                        {
+                                context.Writer.Write(publicRequestForecastDimensionsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetForecastFrequency())
+                    {
+                        context.Writer.WritePropertyName("ForecastFrequency");
+                        context.Writer.Write(publicRequest.ForecastFrequency);
+                    }
+
+                    if(publicRequest.IsSetForecastHorizon())
+                    {
+                        context.Writer.WritePropertyName("ForecastHorizon");
+                        context.Writer.Write(publicRequest.ForecastHorizon.Value);
+                    }
+
+                    if(publicRequest.IsSetForecastTypes())
+                    {
+                        context.Writer.WritePropertyName("ForecastTypes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestForecastTypesListValue in publicRequest.ForecastTypes)
+                        {
+                                context.Writer.Write(publicRequestForecastTypesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetMonitorConfig())
+                    {
+                        context.Writer.WritePropertyName("MonitorConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MonitorConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.MonitorConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetOptimizationMetric())
+                    {
+                        context.Writer.WritePropertyName("OptimizationMetric");
+                        context.Writer.Write(publicRequest.OptimizationMetric);
+                    }
+
+                    if(publicRequest.IsSetPredictorName())
+                    {
+                        context.Writer.WritePropertyName("PredictorName");
+                        context.Writer.Write(publicRequest.PredictorName);
+                    }
+
+                    if(publicRequest.IsSetReferencePredictorArn())
+                    {
+                        context.Writer.WritePropertyName("ReferencePredictorArn");
+                        context.Writer.Write(publicRequest.ReferencePredictorArn);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTimeAlignmentBoundary())
+                    {
+                        context.Writer.WritePropertyName("TimeAlignmentBoundary");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TimeAlignmentBoundaryMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TimeAlignmentBoundary, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTimeAlignmentBoundary())
-                {
-                    context.Writer.WritePropertyName("TimeAlignmentBoundary");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TimeAlignmentBoundaryMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TimeAlignmentBoundary, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

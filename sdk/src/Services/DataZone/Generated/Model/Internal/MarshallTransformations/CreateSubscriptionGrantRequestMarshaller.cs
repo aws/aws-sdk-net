@@ -64,65 +64,68 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 throw new AmazonDataZoneException("Request object does not have required field DomainIdentifier set");
             request.AddPathResource("{domainIdentifier}", StringUtils.FromString(publicRequest.DomainIdentifier));
             request.ResourcePath = "/v2/domains/{domainIdentifier}/subscription-grants";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAssetTargetNames())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("assetTargetNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAssetTargetNamesListValue in publicRequest.AssetTargetNames)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAssetTargetNames())
                     {
+                        context.Writer.WritePropertyName("assetTargetNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAssetTargetNamesListValue in publicRequest.AssetTargetNames)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = AssetTargetNameMapMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAssetTargetNamesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetEnvironmentIdentifier())
+                    {
+                        context.Writer.WritePropertyName("environmentIdentifier");
+                        context.Writer.Write(publicRequest.EnvironmentIdentifier);
+                    }
+
+                    if(publicRequest.IsSetGrantedEntity())
+                    {
+                        context.Writer.WritePropertyName("grantedEntity");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = AssetTargetNameMapMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAssetTargetNamesListValue, context);
+                        var marshaller = GrantedEntityInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.GrantedEntity, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetSubscriptionTargetIdentifier())
+                    {
+                        context.Writer.WritePropertyName("subscriptionTargetIdentifier");
+                        context.Writer.Write(publicRequest.SubscriptionTargetIdentifier);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetEnvironmentIdentifier())
-                {
-                    context.Writer.WritePropertyName("environmentIdentifier");
-                    context.Writer.Write(publicRequest.EnvironmentIdentifier);
-                }
-
-                if(publicRequest.IsSetGrantedEntity())
-                {
-                    context.Writer.WritePropertyName("grantedEntity");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = GrantedEntityInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.GrantedEntity, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSubscriptionTargetIdentifier())
-                {
-                    context.Writer.WritePropertyName("subscriptionTargetIdentifier");
-                    context.Writer.Write(publicRequest.SubscriptionTargetIdentifier);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

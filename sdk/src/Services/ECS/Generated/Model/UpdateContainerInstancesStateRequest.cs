@@ -58,7 +58,7 @@ namespace Amazon.ECS.Model
     /// Service tasks on the container instance that are in the <c>RUNNING</c> state are stopped
     /// and replaced according to the service's deployment configuration parameters, <c>minimumHealthyPercent</c>
     /// and <c>maximumPercent</c>. You can change the deployment configuration of your service
-    /// using <a>UpdateService</a>.
+    /// using <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a>.
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -88,7 +88,7 @@ namespace Amazon.ECS.Model
     ///  
     /// <para>
     /// A container instance has completed draining when it has no more <c>RUNNING</c> tasks.
-    /// You can verify this using <a>ListTasks</a>.
+    /// You can verify this using <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListTasks.html">ListTasks</a>.
     /// </para>
     ///  
     /// <para>

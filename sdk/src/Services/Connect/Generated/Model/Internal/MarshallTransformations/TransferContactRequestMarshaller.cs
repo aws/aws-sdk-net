@@ -61,56 +61,59 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/contact/transfer";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetContactFlowId())
+                    {
+                        context.Writer.WritePropertyName("ContactFlowId");
+                        context.Writer.Write(publicRequest.ContactFlowId);
+                    }
+
+                    if(publicRequest.IsSetContactId())
+                    {
+                        context.Writer.WritePropertyName("ContactId");
+                        context.Writer.Write(publicRequest.ContactId);
+                    }
+
+                    if(publicRequest.IsSetInstanceId())
+                    {
+                        context.Writer.WritePropertyName("InstanceId");
+                        context.Writer.Write(publicRequest.InstanceId);
+                    }
+
+                    if(publicRequest.IsSetQueueId())
+                    {
+                        context.Writer.WritePropertyName("QueueId");
+                        context.Writer.Write(publicRequest.QueueId);
+                    }
+
+                    if(publicRequest.IsSetUserId())
+                    {
+                        context.Writer.WritePropertyName("UserId");
+                        context.Writer.Write(publicRequest.UserId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetContactFlowId())
-                {
-                    context.Writer.WritePropertyName("ContactFlowId");
-                    context.Writer.Write(publicRequest.ContactFlowId);
-                }
-
-                if(publicRequest.IsSetContactId())
-                {
-                    context.Writer.WritePropertyName("ContactId");
-                    context.Writer.Write(publicRequest.ContactId);
-                }
-
-                if(publicRequest.IsSetInstanceId())
-                {
-                    context.Writer.WritePropertyName("InstanceId");
-                    context.Writer.Write(publicRequest.InstanceId);
-                }
-
-                if(publicRequest.IsSetQueueId())
-                {
-                    context.Writer.WritePropertyName("QueueId");
-                    context.Writer.Write(publicRequest.QueueId);
-                }
-
-                if(publicRequest.IsSetUserId())
-                {
-                    context.Writer.WritePropertyName("UserId");
-                    context.Writer.Write(publicRequest.UserId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

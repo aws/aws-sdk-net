@@ -63,61 +63,64 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEndTime())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("EndTime");
-                    context.Writer.Write(publicRequest.EndTime.Value);
-                }
-
-                if(publicRequest.IsSetEventCategory())
-                {
-                    context.Writer.WritePropertyName("EventCategory");
-                    context.Writer.Write(publicRequest.EventCategory);
-                }
-
-                if(publicRequest.IsSetLookupAttributes())
-                {
-                    context.Writer.WritePropertyName("LookupAttributes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLookupAttributesListValue in publicRequest.LookupAttributes)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEndTime())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = LookupAttributeMarshaller.Instance;
-                        marshaller.Marshall(publicRequestLookupAttributesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("EndTime");
+                        context.Writer.Write(publicRequest.EndTime.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetEventCategory())
+                    {
+                        context.Writer.WritePropertyName("EventCategory");
+                        context.Writer.Write(publicRequest.EventCategory);
+                    }
+
+                    if(publicRequest.IsSetLookupAttributes())
+                    {
+                        context.Writer.WritePropertyName("LookupAttributes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLookupAttributesListValue in publicRequest.LookupAttributes)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = LookupAttributeMarshaller.Instance;
+                            marshaller.Marshall(publicRequestLookupAttributesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetStartTime())
+                    {
+                        context.Writer.WritePropertyName("StartTime");
+                        context.Writer.Write(publicRequest.StartTime.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetStartTime())
-                {
-                    context.Writer.WritePropertyName("StartTime");
-                    context.Writer.Write(publicRequest.StartTime.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

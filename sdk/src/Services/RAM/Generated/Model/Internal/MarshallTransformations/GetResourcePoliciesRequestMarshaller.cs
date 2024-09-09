@@ -61,44 +61,47 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/getresourcepolicies";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMaxResults())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetPrincipal())
-                {
-                    context.Writer.WritePropertyName("principal");
-                    context.Writer.Write(publicRequest.Principal);
-                }
-
-                if(publicRequest.IsSetResourceArns())
-                {
-                    context.Writer.WritePropertyName("resourceArns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestResourceArnsListValue in publicRequest.ResourceArns)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMaxResults())
                     {
-                            context.Writer.Write(publicRequestResourceArnsListValue);
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetPrincipal())
+                    {
+                        context.Writer.WritePropertyName("principal");
+                        context.Writer.Write(publicRequest.Principal);
+                    }
+
+                    if(publicRequest.IsSetResourceArns())
+                    {
+                        context.Writer.WritePropertyName("resourceArns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestResourceArnsListValue in publicRequest.ResourceArns)
+                        {
+                                context.Writer.Write(publicRequestResourceArnsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

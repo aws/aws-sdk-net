@@ -67,91 +67,94 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field Namespace set");
             request.AddPathResource("{Namespace}", StringUtils.FromString(publicRequest.Namespace));
             request.ResourcePath = "/accounts/{AwsAccountId}/namespaces/{Namespace}/users";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCustomFederationProviderUrl())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CustomFederationProviderUrl");
-                    context.Writer.Write(publicRequest.CustomFederationProviderUrl);
-                }
-
-                if(publicRequest.IsSetCustomPermissionsName())
-                {
-                    context.Writer.WritePropertyName("CustomPermissionsName");
-                    context.Writer.Write(publicRequest.CustomPermissionsName);
-                }
-
-                if(publicRequest.IsSetEmail())
-                {
-                    context.Writer.WritePropertyName("Email");
-                    context.Writer.Write(publicRequest.Email);
-                }
-
-                if(publicRequest.IsSetExternalLoginFederationProviderType())
-                {
-                    context.Writer.WritePropertyName("ExternalLoginFederationProviderType");
-                    context.Writer.Write(publicRequest.ExternalLoginFederationProviderType);
-                }
-
-                if(publicRequest.IsSetExternalLoginId())
-                {
-                    context.Writer.WritePropertyName("ExternalLoginId");
-                    context.Writer.Write(publicRequest.ExternalLoginId);
-                }
-
-                if(publicRequest.IsSetIamArn())
-                {
-                    context.Writer.WritePropertyName("IamArn");
-                    context.Writer.Write(publicRequest.IamArn);
-                }
-
-                if(publicRequest.IsSetIdentityType())
-                {
-                    context.Writer.WritePropertyName("IdentityType");
-                    context.Writer.Write(publicRequest.IdentityType);
-                }
-
-                if(publicRequest.IsSetSessionName())
-                {
-                    context.Writer.WritePropertyName("SessionName");
-                    context.Writer.Write(publicRequest.SessionName);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCustomFederationProviderUrl())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("CustomFederationProviderUrl");
+                        context.Writer.Write(publicRequest.CustomFederationProviderUrl);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetCustomPermissionsName())
+                    {
+                        context.Writer.WritePropertyName("CustomPermissionsName");
+                        context.Writer.Write(publicRequest.CustomPermissionsName);
+                    }
+
+                    if(publicRequest.IsSetEmail())
+                    {
+                        context.Writer.WritePropertyName("Email");
+                        context.Writer.Write(publicRequest.Email);
+                    }
+
+                    if(publicRequest.IsSetExternalLoginFederationProviderType())
+                    {
+                        context.Writer.WritePropertyName("ExternalLoginFederationProviderType");
+                        context.Writer.Write(publicRequest.ExternalLoginFederationProviderType);
+                    }
+
+                    if(publicRequest.IsSetExternalLoginId())
+                    {
+                        context.Writer.WritePropertyName("ExternalLoginId");
+                        context.Writer.Write(publicRequest.ExternalLoginId);
+                    }
+
+                    if(publicRequest.IsSetIamArn())
+                    {
+                        context.Writer.WritePropertyName("IamArn");
+                        context.Writer.Write(publicRequest.IamArn);
+                    }
+
+                    if(publicRequest.IsSetIdentityType())
+                    {
+                        context.Writer.WritePropertyName("IdentityType");
+                        context.Writer.Write(publicRequest.IdentityType);
+                    }
+
+                    if(publicRequest.IsSetSessionName())
+                    {
+                        context.Writer.WritePropertyName("SessionName");
+                        context.Writer.Write(publicRequest.SessionName);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetUserName())
+                    {
+                        context.Writer.WritePropertyName("UserName");
+                        context.Writer.Write(publicRequest.UserName);
+                    }
+
+                    if(publicRequest.IsSetUserRole())
+                    {
+                        context.Writer.WritePropertyName("UserRole");
+                        context.Writer.Write(publicRequest.UserRole);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetUserName())
-                {
-                    context.Writer.WritePropertyName("UserName");
-                    context.Writer.Write(publicRequest.UserName);
-                }
-
-                if(publicRequest.IsSetUserRole())
-                {
-                    context.Writer.WritePropertyName("UserRole");
-                    context.Writer.Write(publicRequest.UserRole);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

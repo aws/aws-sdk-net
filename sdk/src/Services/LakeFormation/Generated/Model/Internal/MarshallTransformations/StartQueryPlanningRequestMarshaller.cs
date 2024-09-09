@@ -61,32 +61,35 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/StartQueryPlanning";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetQueryPlanningContext())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("QueryPlanningContext");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetQueryPlanningContext())
+                    {
+                        context.Writer.WritePropertyName("QueryPlanningContext");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = QueryPlanningContextMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.QueryPlanningContext, context);
+                        var marshaller = QueryPlanningContextMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.QueryPlanningContext, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetQueryString())
+                    {
+                        context.Writer.WritePropertyName("QueryString");
+                        context.Writer.Write(publicRequest.QueryString);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetQueryString())
-                {
-                    context.Writer.WritePropertyName("QueryString");
-                    context.Writer.Write(publicRequest.QueryString);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

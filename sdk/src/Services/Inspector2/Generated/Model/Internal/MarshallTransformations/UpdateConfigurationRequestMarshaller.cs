@@ -61,37 +61,40 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/configuration/update";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEc2Configuration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ec2Configuration");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEc2Configuration())
+                    {
+                        context.Writer.WritePropertyName("ec2Configuration");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = Ec2ConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Ec2Configuration, context);
+                        var marshaller = Ec2ConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Ec2Configuration, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetEcrConfiguration())
+                    {
+                        context.Writer.WritePropertyName("ecrConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EcrConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EcrConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEcrConfiguration())
-                {
-                    context.Writer.WritePropertyName("ecrConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EcrConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EcrConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

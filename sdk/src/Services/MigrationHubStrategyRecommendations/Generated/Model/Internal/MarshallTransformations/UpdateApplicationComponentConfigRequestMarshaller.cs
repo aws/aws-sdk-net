@@ -61,72 +61,75 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/update-applicationcomponent-config/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApplicationComponentId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("applicationComponentId");
-                    context.Writer.Write(publicRequest.ApplicationComponentId);
-                }
-
-                if(publicRequest.IsSetAppType())
-                {
-                    context.Writer.WritePropertyName("appType");
-                    context.Writer.Write(publicRequest.AppType);
-                }
-
-                if(publicRequest.IsSetConfigureOnly())
-                {
-                    context.Writer.WritePropertyName("configureOnly");
-                    context.Writer.Write(publicRequest.ConfigureOnly.Value);
-                }
-
-                if(publicRequest.IsSetInclusionStatus())
-                {
-                    context.Writer.WritePropertyName("inclusionStatus");
-                    context.Writer.Write(publicRequest.InclusionStatus);
-                }
-
-                if(publicRequest.IsSetSecretsManagerKey())
-                {
-                    context.Writer.WritePropertyName("secretsManagerKey");
-                    context.Writer.Write(publicRequest.SecretsManagerKey);
-                }
-
-                if(publicRequest.IsSetSourceCodeList())
-                {
-                    context.Writer.WritePropertyName("sourceCodeList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSourceCodeListListValue in publicRequest.SourceCodeList)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApplicationComponentId())
                     {
+                        context.Writer.WritePropertyName("applicationComponentId");
+                        context.Writer.Write(publicRequest.ApplicationComponentId);
+                    }
+
+                    if(publicRequest.IsSetAppType())
+                    {
+                        context.Writer.WritePropertyName("appType");
+                        context.Writer.Write(publicRequest.AppType);
+                    }
+
+                    if(publicRequest.IsSetConfigureOnly())
+                    {
+                        context.Writer.WritePropertyName("configureOnly");
+                        context.Writer.Write(publicRequest.ConfigureOnly.Value);
+                    }
+
+                    if(publicRequest.IsSetInclusionStatus())
+                    {
+                        context.Writer.WritePropertyName("inclusionStatus");
+                        context.Writer.Write(publicRequest.InclusionStatus);
+                    }
+
+                    if(publicRequest.IsSetSecretsManagerKey())
+                    {
+                        context.Writer.WritePropertyName("secretsManagerKey");
+                        context.Writer.Write(publicRequest.SecretsManagerKey);
+                    }
+
+                    if(publicRequest.IsSetSourceCodeList())
+                    {
+                        context.Writer.WritePropertyName("sourceCodeList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSourceCodeListListValue in publicRequest.SourceCodeList)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = SourceCodeMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSourceCodeListListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetStrategyOption())
+                    {
+                        context.Writer.WritePropertyName("strategyOption");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = SourceCodeMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSourceCodeListListValue, context);
+                        var marshaller = StrategyOptionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.StrategyOption, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetStrategyOption())
-                {
-                    context.Writer.WritePropertyName("strategyOption");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = StrategyOptionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.StrategyOption, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

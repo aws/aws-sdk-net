@@ -183,7 +183,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the flow version.
+        /// The name of the version.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

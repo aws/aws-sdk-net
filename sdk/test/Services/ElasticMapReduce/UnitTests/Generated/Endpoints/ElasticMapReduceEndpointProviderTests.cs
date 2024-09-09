@@ -18,6 +18,7 @@
  */
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.ElasticMapReduce.Endpoints;
 using Amazon.ElasticMapReduce.Internal;

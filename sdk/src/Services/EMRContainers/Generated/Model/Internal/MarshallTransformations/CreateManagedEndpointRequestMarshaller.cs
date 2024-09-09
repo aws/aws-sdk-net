@@ -64,81 +64,84 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
                 throw new AmazonEMRContainersException("Request object does not have required field VirtualClusterId set");
             request.AddPathResource("{virtualClusterId}", StringUtils.FromString(publicRequest.VirtualClusterId));
             request.ResourcePath = "/virtualclusters/{virtualClusterId}/endpoints";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCertificateArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("certificateArn");
-                    context.Writer.Write(publicRequest.CertificateArn);
-                }
-
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetConfigurationOverrides())
-                {
-                    context.Writer.WritePropertyName("configurationOverrides");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ConfigurationOverridesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ConfigurationOverrides, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetExecutionRoleArn())
-                {
-                    context.Writer.WritePropertyName("executionRoleArn");
-                    context.Writer.Write(publicRequest.ExecutionRoleArn);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetReleaseLabel())
-                {
-                    context.Writer.WritePropertyName("releaseLabel");
-                    context.Writer.Write(publicRequest.ReleaseLabel);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCertificateArn())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("certificateArn");
+                        context.Writer.Write(publicRequest.CertificateArn);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetConfigurationOverrides())
+                    {
+                        context.Writer.WritePropertyName("configurationOverrides");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ConfigurationOverridesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ConfigurationOverrides, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetExecutionRoleArn())
+                    {
+                        context.Writer.WritePropertyName("executionRoleArn");
+                        context.Writer.Write(publicRequest.ExecutionRoleArn);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetReleaseLabel())
+                    {
+                        context.Writer.WritePropertyName("releaseLabel");
+                        context.Writer.Write(publicRequest.ReleaseLabel);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetType())
+                    {
+                        context.Writer.WritePropertyName("type");
+                        context.Writer.Write(publicRequest.Type);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetType())
-                {
-                    context.Writer.WritePropertyName("type");
-                    context.Writer.Write(publicRequest.Type);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

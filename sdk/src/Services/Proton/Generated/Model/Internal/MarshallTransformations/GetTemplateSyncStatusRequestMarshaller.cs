@@ -63,33 +63,36 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetTemplateName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("templateName");
-                    context.Writer.Write(publicRequest.TemplateName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetTemplateName())
+                    {
+                        context.Writer.WritePropertyName("templateName");
+                        context.Writer.Write(publicRequest.TemplateName);
+                    }
+
+                    if(publicRequest.IsSetTemplateType())
+                    {
+                        context.Writer.WritePropertyName("templateType");
+                        context.Writer.Write(publicRequest.TemplateType);
+                    }
+
+                    if(publicRequest.IsSetTemplateVersion())
+                    {
+                        context.Writer.WritePropertyName("templateVersion");
+                        context.Writer.Write(publicRequest.TemplateVersion);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTemplateType())
-                {
-                    context.Writer.WritePropertyName("templateType");
-                    context.Writer.Write(publicRequest.TemplateType);
-                }
-
-                if(publicRequest.IsSetTemplateVersion())
-                {
-                    context.Writer.WritePropertyName("templateVersion");
-                    context.Writer.Write(publicRequest.TemplateVersion);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -61,113 +61,116 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/dataIntegrations";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetFileConfiguration())
-                {
-                    context.Writer.WritePropertyName("FileConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = FileConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.FileConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetKmsKey())
-                {
-                    context.Writer.WritePropertyName("KmsKey");
-                    context.Writer.Write(publicRequest.KmsKey);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetObjectConfiguration())
-                {
-                    context.Writer.WritePropertyName("ObjectConfiguration");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestObjectConfigurationKvp in publicRequest.ObjectConfiguration)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
-                        context.Writer.WritePropertyName(publicRequestObjectConfigurationKvp.Key);
-                        var publicRequestObjectConfigurationValue = publicRequestObjectConfigurationKvp.Value;
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
 
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetFileConfiguration())
+                    {
+                        context.Writer.WritePropertyName("FileConfiguration");
                         context.Writer.WriteObjectStart();
-                        foreach (var publicRequestObjectConfigurationValueKvp in publicRequestObjectConfigurationValue)
-                        {
-                            context.Writer.WritePropertyName(publicRequestObjectConfigurationValueKvp.Key);
-                            var publicRequestObjectConfigurationValueValue = publicRequestObjectConfigurationValueKvp.Value;
 
-                            context.Writer.WriteArrayStart();
-                            foreach(var publicRequestObjectConfigurationValueValueListValue in publicRequestObjectConfigurationValueValue)
+                        var marshaller = FileConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.FileConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetKmsKey())
+                    {
+                        context.Writer.WritePropertyName("KmsKey");
+                        context.Writer.Write(publicRequest.KmsKey);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetObjectConfiguration())
+                    {
+                        context.Writer.WritePropertyName("ObjectConfiguration");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestObjectConfigurationKvp in publicRequest.ObjectConfiguration)
+                        {
+                            context.Writer.WritePropertyName(publicRequestObjectConfigurationKvp.Key);
+                            var publicRequestObjectConfigurationValue = publicRequestObjectConfigurationKvp.Value;
+
+                            context.Writer.WriteObjectStart();
+                            foreach (var publicRequestObjectConfigurationValueKvp in publicRequestObjectConfigurationValue)
                             {
-                                    context.Writer.Write(publicRequestObjectConfigurationValueValueListValue);
+                                context.Writer.WritePropertyName(publicRequestObjectConfigurationValueKvp.Key);
+                                var publicRequestObjectConfigurationValueValue = publicRequestObjectConfigurationValueKvp.Value;
+
+                                context.Writer.WriteArrayStart();
+                                foreach(var publicRequestObjectConfigurationValueValueListValue in publicRequestObjectConfigurationValueValue)
+                                {
+                                        context.Writer.Write(publicRequestObjectConfigurationValueValueListValue);
+                                }
+                                context.Writer.WriteArrayEnd();
                             }
-                            context.Writer.WriteArrayEnd();
+                            context.Writer.WriteObjectEnd();
                         }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetScheduleConfig())
-                {
-                    context.Writer.WritePropertyName("ScheduleConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ScheduleConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ScheduleConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSourceURI())
-                {
-                    context.Writer.WritePropertyName("SourceURI");
-                    context.Writer.Write(publicRequest.SourceURI);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetScheduleConfig())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
+                        context.Writer.WritePropertyName("ScheduleConfig");
+                        context.Writer.WriteObjectStart();
 
-                            context.Writer.Write(publicRequestTagsValue);
+                        var marshaller = ScheduleConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ScheduleConfig, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetSourceURI())
+                    {
+                        context.Writer.WritePropertyName("SourceURI");
+                        context.Writer.Write(publicRequest.SourceURI);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

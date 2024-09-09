@@ -63,45 +63,48 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMaxResults())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetOperatingSystem())
+                    {
+                        context.Writer.WritePropertyName("OperatingSystem");
+                        context.Writer.Write(publicRequest.OperatingSystem);
+                    }
+
+                    if(publicRequest.IsSetPatchSet())
+                    {
+                        context.Writer.WritePropertyName("PatchSet");
+                        context.Writer.Write(publicRequest.PatchSet);
+                    }
+
+                    if(publicRequest.IsSetProperty())
+                    {
+                        context.Writer.WritePropertyName("Property");
+                        context.Writer.Write(publicRequest.Property);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetOperatingSystem())
-                {
-                    context.Writer.WritePropertyName("OperatingSystem");
-                    context.Writer.Write(publicRequest.OperatingSystem);
-                }
-
-                if(publicRequest.IsSetPatchSet())
-                {
-                    context.Writer.WritePropertyName("PatchSet");
-                    context.Writer.Write(publicRequest.PatchSet);
-                }
-
-                if(publicRequest.IsSetProperty())
-                {
-                    context.Writer.WritePropertyName("Property");
-                    context.Writer.Write(publicRequest.Property);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

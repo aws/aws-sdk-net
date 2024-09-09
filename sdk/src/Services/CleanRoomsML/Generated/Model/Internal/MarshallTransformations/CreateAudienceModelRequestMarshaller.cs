@@ -61,65 +61,68 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/audience-model";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetKmsKeyArn())
-                {
-                    context.Writer.WritePropertyName("kmsKeyArn");
-                    context.Writer.Write(publicRequest.KmsKeyArn);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetKmsKeyArn())
+                    {
+                        context.Writer.WritePropertyName("kmsKeyArn");
+                        context.Writer.Write(publicRequest.KmsKeyArn);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTrainingDataEndTime())
+                    {
+                        context.Writer.WritePropertyName("trainingDataEndTime");
+                        context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.TrainingDataEndTime));
+                    }
+
+                    if(publicRequest.IsSetTrainingDatasetArn())
+                    {
+                        context.Writer.WritePropertyName("trainingDatasetArn");
+                        context.Writer.Write(publicRequest.TrainingDatasetArn);
+                    }
+
+                    if(publicRequest.IsSetTrainingDataStartTime())
+                    {
+                        context.Writer.WritePropertyName("trainingDataStartTime");
+                        context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.TrainingDataStartTime));
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTrainingDataEndTime())
-                {
-                    context.Writer.WritePropertyName("trainingDataEndTime");
-                    context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.TrainingDataEndTime));
-                }
-
-                if(publicRequest.IsSetTrainingDatasetArn())
-                {
-                    context.Writer.WritePropertyName("trainingDatasetArn");
-                    context.Writer.Write(publicRequest.TrainingDatasetArn);
-                }
-
-                if(publicRequest.IsSetTrainingDataStartTime())
-                {
-                    context.Writer.WritePropertyName("trainingDataStartTime");
-                    context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.TrainingDataStartTime));
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

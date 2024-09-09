@@ -63,53 +63,56 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDagEdges())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DagEdges");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDagEdgesListValue in publicRequest.DagEdges)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDagEdges())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("DagEdges");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDagEdgesListValue in publicRequest.DagEdges)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = CodeGenEdgeMarshaller.Instance;
-                        marshaller.Marshall(publicRequestDagEdgesListValue, context);
+                            var marshaller = CodeGenEdgeMarshaller.Instance;
+                            marshaller.Marshall(publicRequestDagEdgesListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDagNodes())
-                {
-                    context.Writer.WritePropertyName("DagNodes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDagNodesListValue in publicRequest.DagNodes)
+                    if(publicRequest.IsSetDagNodes())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("DagNodes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDagNodesListValue in publicRequest.DagNodes)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = CodeGenNodeMarshaller.Instance;
-                        marshaller.Marshall(publicRequestDagNodesListValue, context);
+                            var marshaller = CodeGenNodeMarshaller.Instance;
+                            marshaller.Marshall(publicRequestDagNodesListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetLanguage())
+                    {
+                        context.Writer.WritePropertyName("Language");
+                        context.Writer.Write(publicRequest.Language);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetLanguage())
-                {
-                    context.Writer.WritePropertyName("Language");
-                    context.Writer.Write(publicRequest.Language);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

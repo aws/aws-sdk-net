@@ -63,27 +63,30 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDistributionName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("distributionName");
-                    context.Writer.Write(publicRequest.DistributionName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDistributionName())
+                    {
+                        context.Writer.WritePropertyName("distributionName");
+                        context.Writer.Write(publicRequest.DistributionName);
+                    }
+
+                    if(publicRequest.IsSetPageToken())
+                    {
+                        context.Writer.WritePropertyName("pageToken");
+                        context.Writer.Write(publicRequest.PageToken);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPageToken())
-                {
-                    context.Writer.WritePropertyName("pageToken");
-                    context.Writer.Write(publicRequest.PageToken);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

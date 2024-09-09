@@ -61,44 +61,47 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v1/configurations";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetKafkaVersions())
-                {
-                    context.Writer.WritePropertyName("kafkaVersions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestKafkaVersionsListValue in publicRequest.KafkaVersions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
-                            context.Writer.Write(publicRequestKafkaVersionsListValue);
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetKafkaVersions())
+                    {
+                        context.Writer.WritePropertyName("kafkaVersions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestKafkaVersionsListValue in publicRequest.KafkaVersions)
+                        {
+                                context.Writer.Write(publicRequestKafkaVersionsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetServerProperties())
+                    {
+                        context.Writer.WritePropertyName("serverProperties");
+                        context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.ServerProperties));
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetServerProperties())
-                {
-                    context.Writer.WritePropertyName("serverProperties");
-                    context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.ServerProperties));
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

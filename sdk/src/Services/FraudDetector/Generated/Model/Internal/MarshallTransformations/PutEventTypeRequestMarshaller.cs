@@ -63,93 +63,96 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetEntityTypes())
-                {
-                    context.Writer.WritePropertyName("entityTypes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEntityTypesListValue in publicRequest.EntityTypes)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
-                            context.Writer.Write(publicRequestEntityTypesListValue);
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetEventIngestion())
-                {
-                    context.Writer.WritePropertyName("eventIngestion");
-                    context.Writer.Write(publicRequest.EventIngestion);
-                }
-
-                if(publicRequest.IsSetEventOrchestration())
-                {
-                    context.Writer.WritePropertyName("eventOrchestration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EventOrchestrationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EventOrchestration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEventVariables())
-                {
-                    context.Writer.WritePropertyName("eventVariables");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEventVariablesListValue in publicRequest.EventVariables)
+                    if(publicRequest.IsSetEntityTypes())
                     {
-                            context.Writer.Write(publicRequestEventVariablesListValue);
+                        context.Writer.WritePropertyName("entityTypes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestEntityTypesListValue in publicRequest.EntityTypes)
+                        {
+                                context.Writer.Write(publicRequestEntityTypesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetLabels())
-                {
-                    context.Writer.WritePropertyName("labels");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLabelsListValue in publicRequest.Labels)
+                    if(publicRequest.IsSetEventIngestion())
                     {
-                            context.Writer.Write(publicRequestLabelsListValue);
+                        context.Writer.WritePropertyName("eventIngestion");
+                        context.Writer.Write(publicRequest.EventIngestion);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetEventOrchestration())
                     {
+                        context.Writer.WritePropertyName("eventOrchestration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = EventOrchestrationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EventOrchestration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetEventVariables())
+                    {
+                        context.Writer.WritePropertyName("eventVariables");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestEventVariablesListValue in publicRequest.EventVariables)
+                        {
+                                context.Writer.Write(publicRequestEventVariablesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetLabels())
+                    {
+                        context.Writer.WritePropertyName("labels");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLabelsListValue in publicRequest.Labels)
+                        {
+                                context.Writer.Write(publicRequestLabelsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

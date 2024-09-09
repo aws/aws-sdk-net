@@ -14,25 +14,13 @@
  */
 #pragma warning disable 1574
 
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
-using Amazon.DynamoDBv2.Model;
-using Amazon.Runtime;
-using Amazon.Runtime.Internal;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
-    /// <summary>
-    /// Class for putting and/or deleting a batch of items in a single DynamoDB table.
-    /// </summary>
-    public partial class DocumentBatchWrite
+    public partial interface IDocumentBatchWrite
     {
-        #region Public methods
-
         /// <summary>
         /// Executes a server call to batch-put/delete the item specified.
         ///
@@ -41,21 +29,20 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken));
+    }
+
+    public partial class DocumentBatchWrite : IDocumentBatchWrite
+    {
+        /// <inheritdoc/>
         public Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             return ExecuteHelperAsync(cancellationToken);
         }
-
-        #endregion
     }
 
-    /// <summary>
-    /// Class for putting and/or deleting a batch of items in multiple DynamoDB tables.
-    /// </summary>
-    public partial class MultiTableDocumentBatchWrite
+    public partial interface IMultiTableDocumentBatchWrite
     {
-        #region Public methods
-
         /// <summary>
         /// Executes a multi-table batch put/delete against all configured batches.
         ///
@@ -64,11 +51,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken));
+    }
+
+    public partial class MultiTableDocumentBatchWrite : IMultiTableDocumentBatchWrite
+    {
+        /// <inheritdoc/>
         public Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             return ExecuteHelperAsync(cancellationToken);
         }
-
-        #endregion
     }
 }

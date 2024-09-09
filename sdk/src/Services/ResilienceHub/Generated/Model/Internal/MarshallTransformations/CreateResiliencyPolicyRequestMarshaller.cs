@@ -61,83 +61,86 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/create-resiliency-policy";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDataLocationConstraint())
-                {
-                    context.Writer.WritePropertyName("dataLocationConstraint");
-                    context.Writer.Write(publicRequest.DataLocationConstraint);
-                }
-
-                if(publicRequest.IsSetPolicy())
-                {
-                    context.Writer.WritePropertyName("policy");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestPolicyKvp in publicRequest.Policy)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
-                        context.Writer.WritePropertyName(publicRequestPolicyKvp.Key);
-                        var publicRequestPolicyValue = publicRequestPolicyKvp.Value;
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
 
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetDataLocationConstraint())
+                    {
+                        context.Writer.WritePropertyName("dataLocationConstraint");
+                        context.Writer.Write(publicRequest.DataLocationConstraint);
+                    }
+
+                    if(publicRequest.IsSetPolicy())
+                    {
+                        context.Writer.WritePropertyName("policy");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestPolicyKvp in publicRequest.Policy)
+                        {
+                            context.Writer.WritePropertyName(publicRequestPolicyKvp.Key);
+                            var publicRequestPolicyValue = publicRequestPolicyKvp.Value;
 
-                        var marshaller = FailurePolicyMarshaller.Instance;
-                        marshaller.Marshall(publicRequestPolicyValue, context);
+                            context.Writer.WriteObjectStart();
 
+                            var marshaller = FailurePolicyMarshaller.Instance;
+                            marshaller.Marshall(publicRequestPolicyValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetPolicyDescription())
-                {
-                    context.Writer.WritePropertyName("policyDescription");
-                    context.Writer.Write(publicRequest.PolicyDescription);
-                }
-
-                if(publicRequest.IsSetPolicyName())
-                {
-                    context.Writer.WritePropertyName("policyName");
-                    context.Writer.Write(publicRequest.PolicyName);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetPolicyDescription())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("policyDescription");
+                        context.Writer.Write(publicRequest.PolicyDescription);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetPolicyName())
+                    {
+                        context.Writer.WritePropertyName("policyName");
+                        context.Writer.Write(publicRequest.PolicyName);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTier())
+                    {
+                        context.Writer.WritePropertyName("tier");
+                        context.Writer.Write(publicRequest.Tier);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTier())
-                {
-                    context.Writer.WritePropertyName("tier");
-                    context.Writer.Write(publicRequest.Tier);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

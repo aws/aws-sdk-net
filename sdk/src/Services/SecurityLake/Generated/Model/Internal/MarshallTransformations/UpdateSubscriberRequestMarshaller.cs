@@ -64,54 +64,57 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
                 throw new AmazonSecurityLakeException("Request object does not have required field SubscriberId set");
             request.AddPathResource("{subscriberId}", StringUtils.FromString(publicRequest.SubscriberId));
             request.ResourcePath = "/v1/subscribers/{subscriberId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetSources())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("sources");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSourcesListValue in publicRequest.Sources)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetSources())
                     {
+                        context.Writer.WritePropertyName("sources");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSourcesListValue in publicRequest.Sources)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = LogSourceResourceMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSourcesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSubscriberDescription())
+                    {
+                        context.Writer.WritePropertyName("subscriberDescription");
+                        context.Writer.Write(publicRequest.SubscriberDescription);
+                    }
+
+                    if(publicRequest.IsSetSubscriberIdentity())
+                    {
+                        context.Writer.WritePropertyName("subscriberIdentity");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = LogSourceResourceMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSourcesListValue, context);
+                        var marshaller = AwsIdentityMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SubscriberIdentity, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetSubscriberName())
+                    {
+                        context.Writer.WritePropertyName("subscriberName");
+                        context.Writer.Write(publicRequest.SubscriberName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSubscriberDescription())
-                {
-                    context.Writer.WritePropertyName("subscriberDescription");
-                    context.Writer.Write(publicRequest.SubscriberDescription);
-                }
-
-                if(publicRequest.IsSetSubscriberIdentity())
-                {
-                    context.Writer.WritePropertyName("subscriberIdentity");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AwsIdentityMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SubscriberIdentity, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSubscriberName())
-                {
-                    context.Writer.WritePropertyName("subscriberName");
-                    context.Writer.Write(publicRequest.SubscriberName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -64,31 +64,34 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                 throw new AmazonChimeSDKMessagingException("Request object does not have required field AppInstanceArn set");
             request.AddPathResource("{appInstanceArn}", StringUtils.FromString(publicRequest.AppInstanceArn));
             request.ResourcePath = "/app-instances/{appInstanceArn}/streaming-configurations";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetStreamingConfigurations())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("StreamingConfigurations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestStreamingConfigurationsListValue in publicRequest.StreamingConfigurations)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetStreamingConfigurations())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("StreamingConfigurations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestStreamingConfigurationsListValue in publicRequest.StreamingConfigurations)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = StreamingConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestStreamingConfigurationsListValue, context);
+                            var marshaller = StreamingConfigurationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestStreamingConfigurationsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

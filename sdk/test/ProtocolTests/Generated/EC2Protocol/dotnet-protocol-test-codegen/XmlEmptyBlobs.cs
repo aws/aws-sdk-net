@@ -71,8 +71,6 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         /// <summary>
         /// Empty self closed blobs are deserialized as empty string
         /// </summary>
-        // This test requires a breaking change, and will be addressed in V4
-        [Ignore]
         [TestMethod]
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]

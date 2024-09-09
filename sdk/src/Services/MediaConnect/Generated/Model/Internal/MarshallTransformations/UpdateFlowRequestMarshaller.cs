@@ -64,37 +64,40 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 throw new AmazonMediaConnectException("Request object does not have required field FlowArn set");
             request.AddPathResource("{flowArn}", StringUtils.FromString(publicRequest.FlowArn));
             request.ResourcePath = "/v1/flows/{flowArn}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMaintenance())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("maintenance");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMaintenance())
+                    {
+                        context.Writer.WritePropertyName("maintenance");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = UpdateMaintenanceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Maintenance, context);
+                        var marshaller = UpdateMaintenanceMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Maintenance, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSourceFailoverConfig())
+                    {
+                        context.Writer.WritePropertyName("sourceFailoverConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = UpdateFailoverConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SourceFailoverConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSourceFailoverConfig())
-                {
-                    context.Writer.WritePropertyName("sourceFailoverConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UpdateFailoverConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SourceFailoverConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -378,6 +378,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetRestartPolicy())
+            {
+                context.Writer.WritePropertyName("restartPolicy");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ContainerRestartPolicyMarshaller.Instance;
+                marshaller.Marshall(requestObject.RestartPolicy, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSecrets())
             {
                 context.Writer.WritePropertyName("secrets");

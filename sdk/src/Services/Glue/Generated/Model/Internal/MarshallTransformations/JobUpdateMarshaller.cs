@@ -144,6 +144,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.JobMode);
             }
 
+            if(requestObject.IsSetJobRunQueuingEnabled())
+            {
+                context.Writer.WritePropertyName("JobRunQueuingEnabled");
+                context.Writer.Write(requestObject.JobRunQueuingEnabled.Value);
+            }
+
             if(requestObject.IsSetLogUri())
             {
                 context.Writer.WritePropertyName("LogUri");

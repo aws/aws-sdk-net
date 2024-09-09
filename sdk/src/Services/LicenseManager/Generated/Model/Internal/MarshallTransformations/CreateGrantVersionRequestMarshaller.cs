@@ -63,73 +63,76 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAllowedOperations())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AllowedOperations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAllowedOperationsListValue in publicRequest.AllowedOperations)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAllowedOperations())
                     {
-                            context.Writer.Write(publicRequestAllowedOperationsListValue);
+                        context.Writer.WritePropertyName("AllowedOperations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAllowedOperationsListValue in publicRequest.AllowedOperations)
+                        {
+                                context.Writer.Write(publicRequestAllowedOperationsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    if(publicRequest.IsSetGrantArn())
+                    {
+                        context.Writer.WritePropertyName("GrantArn");
+                        context.Writer.Write(publicRequest.GrantArn);
+                    }
+
+                    if(publicRequest.IsSetGrantName())
+                    {
+                        context.Writer.WritePropertyName("GrantName");
+                        context.Writer.Write(publicRequest.GrantName);
+                    }
+
+                    if(publicRequest.IsSetOptions())
+                    {
+                        context.Writer.WritePropertyName("Options");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = OptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Options, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSourceVersion())
+                    {
+                        context.Writer.WritePropertyName("SourceVersion");
+                        context.Writer.Write(publicRequest.SourceVersion);
+                    }
+
+                    if(publicRequest.IsSetStatus())
+                    {
+                        context.Writer.WritePropertyName("Status");
+                        context.Writer.Write(publicRequest.Status);
+                    }
+
+                    if(publicRequest.IsSetStatusReason())
+                    {
+                        context.Writer.WritePropertyName("StatusReason");
+                        context.Writer.Write(publicRequest.StatusReason);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                if(publicRequest.IsSetGrantArn())
-                {
-                    context.Writer.WritePropertyName("GrantArn");
-                    context.Writer.Write(publicRequest.GrantArn);
-                }
-
-                if(publicRequest.IsSetGrantName())
-                {
-                    context.Writer.WritePropertyName("GrantName");
-                    context.Writer.Write(publicRequest.GrantName);
-                }
-
-                if(publicRequest.IsSetOptions())
-                {
-                    context.Writer.WritePropertyName("Options");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Options, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSourceVersion())
-                {
-                    context.Writer.WritePropertyName("SourceVersion");
-                    context.Writer.Write(publicRequest.SourceVersion);
-                }
-
-                if(publicRequest.IsSetStatus())
-                {
-                    context.Writer.WritePropertyName("Status");
-                    context.Writer.Write(publicRequest.Status);
-                }
-
-                if(publicRequest.IsSetStatusReason())
-                {
-                    context.Writer.WritePropertyName("StatusReason");
-                    context.Writer.Write(publicRequest.StatusReason);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

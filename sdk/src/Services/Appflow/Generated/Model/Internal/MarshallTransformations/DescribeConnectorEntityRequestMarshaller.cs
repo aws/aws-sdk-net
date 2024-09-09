@@ -61,39 +61,42 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/describe-connector-entity";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApiVersion())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("apiVersion");
-                    context.Writer.Write(publicRequest.ApiVersion);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApiVersion())
+                    {
+                        context.Writer.WritePropertyName("apiVersion");
+                        context.Writer.Write(publicRequest.ApiVersion);
+                    }
+
+                    if(publicRequest.IsSetConnectorEntityName())
+                    {
+                        context.Writer.WritePropertyName("connectorEntityName");
+                        context.Writer.Write(publicRequest.ConnectorEntityName);
+                    }
+
+                    if(publicRequest.IsSetConnectorProfileName())
+                    {
+                        context.Writer.WritePropertyName("connectorProfileName");
+                        context.Writer.Write(publicRequest.ConnectorProfileName);
+                    }
+
+                    if(publicRequest.IsSetConnectorType())
+                    {
+                        context.Writer.WritePropertyName("connectorType");
+                        context.Writer.Write(publicRequest.ConnectorType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetConnectorEntityName())
-                {
-                    context.Writer.WritePropertyName("connectorEntityName");
-                    context.Writer.Write(publicRequest.ConnectorEntityName);
-                }
-
-                if(publicRequest.IsSetConnectorProfileName())
-                {
-                    context.Writer.WritePropertyName("connectorProfileName");
-                    context.Writer.Write(publicRequest.ConnectorProfileName);
-                }
-
-                if(publicRequest.IsSetConnectorType())
-                {
-                    context.Writer.WritePropertyName("connectorType");
-                    context.Writer.Write(publicRequest.ConnectorType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

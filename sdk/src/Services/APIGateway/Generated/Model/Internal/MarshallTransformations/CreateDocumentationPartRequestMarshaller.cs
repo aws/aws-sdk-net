@@ -64,32 +64,35 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 throw new AmazonAPIGatewayException("Request object does not have required field RestApiId set");
             request.AddPathResource("{restapi_id}", StringUtils.FromString(publicRequest.RestApiId));
             request.ResourcePath = "/restapis/{restapi_id}/documentation/parts";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLocation())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("location");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetLocation())
+                    {
+                        context.Writer.WritePropertyName("location");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = DocumentationPartLocationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Location, context);
+                        var marshaller = DocumentationPartLocationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Location, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetProperties())
+                    {
+                        context.Writer.WritePropertyName("properties");
+                        context.Writer.Write(publicRequest.Properties);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetProperties())
-                {
-                    context.Writer.WritePropertyName("properties");
-                    context.Writer.Write(publicRequest.Properties);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

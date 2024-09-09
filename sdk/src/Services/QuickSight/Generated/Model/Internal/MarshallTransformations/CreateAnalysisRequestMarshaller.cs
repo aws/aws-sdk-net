@@ -67,114 +67,117 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field AwsAccountId set");
             request.AddPathResource("{AwsAccountId}", StringUtils.FromString(publicRequest.AwsAccountId));
             request.ResourcePath = "/accounts/{AwsAccountId}/analyses/{AnalysisId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDefinition())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Definition");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AnalysisDefinitionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Definition, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetFolderArns())
-                {
-                    context.Writer.WritePropertyName("FolderArns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFolderArnsListValue in publicRequest.FolderArns)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDefinition())
                     {
-                            context.Writer.Write(publicRequestFolderArnsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetParameters())
-                {
-                    context.Writer.WritePropertyName("Parameters");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ParametersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Parameters, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPermissions())
-                {
-                    context.Writer.WritePropertyName("Permissions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPermissionsListValue in publicRequest.Permissions)
-                    {
+                        context.Writer.WritePropertyName("Definition");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = ResourcePermissionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestPermissionsListValue, context);
+                        var marshaller = AnalysisDefinitionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Definition, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetSourceEntity())
-                {
-                    context.Writer.WritePropertyName("SourceEntity");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AnalysisSourceEntityMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SourceEntity, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetFolderArns())
                     {
+                        context.Writer.WritePropertyName("FolderArns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFolderArnsListValue in publicRequest.FolderArns)
+                        {
+                                context.Writer.Write(publicRequestFolderArnsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetParameters())
+                    {
+                        context.Writer.WritePropertyName("Parameters");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = ParametersMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Parameters, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetPermissions())
+                    {
+                        context.Writer.WritePropertyName("Permissions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPermissionsListValue in publicRequest.Permissions)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ResourcePermissionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestPermissionsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSourceEntity())
+                    {
+                        context.Writer.WritePropertyName("SourceEntity");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AnalysisSourceEntityMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SourceEntity, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetThemeArn())
+                    {
+                        context.Writer.WritePropertyName("ThemeArn");
+                        context.Writer.Write(publicRequest.ThemeArn);
+                    }
+
+                    if(publicRequest.IsSetValidationStrategy())
+                    {
+                        context.Writer.WritePropertyName("ValidationStrategy");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ValidationStrategyMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ValidationStrategy, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetThemeArn())
-                {
-                    context.Writer.WritePropertyName("ThemeArn");
-                    context.Writer.Write(publicRequest.ThemeArn);
-                }
-
-                if(publicRequest.IsSetValidationStrategy())
-                {
-                    context.Writer.WritePropertyName("ValidationStrategy");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ValidationStrategyMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ValidationStrategy, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

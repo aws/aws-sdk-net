@@ -73,32 +73,35 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetUserId())
                 request.Parameters.Add("userId", StringUtils.FromString(publicRequest.UserId));
             request.ResourcePath = "/applications/{applicationId}/conversations/{conversationId}/messages/{messageId}/feedback";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMessageCopiedAt())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("messageCopiedAt");
-                    context.Writer.Write(publicRequest.MessageCopiedAt.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMessageCopiedAt())
+                    {
+                        context.Writer.WritePropertyName("messageCopiedAt");
+                        context.Writer.Write(publicRequest.MessageCopiedAt.Value);
+                    }
+
+                    if(publicRequest.IsSetMessageUsefulness())
+                    {
+                        context.Writer.WritePropertyName("messageUsefulness");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MessageUsefulnessFeedbackMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.MessageUsefulness, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMessageUsefulness())
-                {
-                    context.Writer.WritePropertyName("messageUsefulness");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MessageUsefulnessFeedbackMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.MessageUsefulness, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             request.UseQueryString = true;

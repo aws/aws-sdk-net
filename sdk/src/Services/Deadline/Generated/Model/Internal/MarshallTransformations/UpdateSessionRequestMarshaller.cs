@@ -73,21 +73,24 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 throw new AmazonDeadlineException("Request object does not have required field SessionId set");
             request.AddPathResource("{sessionId}", StringUtils.FromString(publicRequest.SessionId));
             request.ResourcePath = "/2023-10-12/farms/{farmId}/queues/{queueId}/jobs/{jobId}/sessions/{sessionId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetTargetLifecycleStatus())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("targetLifecycleStatus");
-                    context.Writer.Write(publicRequest.TargetLifecycleStatus);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetTargetLifecycleStatus())
+                    {
+                        context.Writer.WritePropertyName("targetLifecycleStatus");
+                        context.Writer.Write(publicRequest.TargetLifecycleStatus);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

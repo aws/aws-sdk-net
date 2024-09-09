@@ -61,33 +61,36 @@ namespace Amazon.WorkLink.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/updateIdentityProviderConfiguration";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFleetArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("FleetArn");
-                    context.Writer.Write(publicRequest.FleetArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFleetArn())
+                    {
+                        context.Writer.WritePropertyName("FleetArn");
+                        context.Writer.Write(publicRequest.FleetArn);
+                    }
+
+                    if(publicRequest.IsSetIdentityProviderSamlMetadata())
+                    {
+                        context.Writer.WritePropertyName("IdentityProviderSamlMetadata");
+                        context.Writer.Write(publicRequest.IdentityProviderSamlMetadata);
+                    }
+
+                    if(publicRequest.IsSetIdentityProviderType())
+                    {
+                        context.Writer.WritePropertyName("IdentityProviderType");
+                        context.Writer.Write(publicRequest.IdentityProviderType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetIdentityProviderSamlMetadata())
-                {
-                    context.Writer.WritePropertyName("IdentityProviderSamlMetadata");
-                    context.Writer.Write(publicRequest.IdentityProviderSamlMetadata);
-                }
-
-                if(publicRequest.IsSetIdentityProviderType())
-                {
-                    context.Writer.WritePropertyName("IdentityProviderType");
-                    context.Writer.Write(publicRequest.IdentityProviderType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

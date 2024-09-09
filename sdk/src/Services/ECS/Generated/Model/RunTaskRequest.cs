@@ -48,7 +48,7 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  
     /// <para>
-    /// Alternatively, you can use <a>StartTask</a> to use your own scheduler or place tasks
+    /// Alternatively, you can use <c>StartTask</c> to use your own scheduler or place tasks
     /// manually on specific container instances.
     /// </para>
     ///  
@@ -437,7 +437,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// Specifies whether to propagate the tags from the task definition to the task. If no
         /// value is specified, the tags aren't propagated. Tags can only be propagated to the
-        /// task during task creation. To add tags to a task after task creation, use the <a>TagResource</a>
+        /// task during task creation. To add tags to a task after task creation, use the<a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a>
         /// API action.
         /// </para>
         ///  <note> 
@@ -484,9 +484,9 @@ namespace Amazon.ECS.Model
         /// An optional tag specified when a task is started. For example, if you automatically
         /// trigger a task to run a batch process job, you could apply a unique identifier for
         /// that job to your task with the <c>startedBy</c> parameter. You can then identify which
-        /// tasks belong to that job by filtering the results of a <a>ListTasks</a> call with
-        /// the <c>startedBy</c> value. Up to 128 letters (uppercase and lowercase), numbers,
-        /// hyphens (-), and underscores (_) are allowed.
+        /// tasks belong to that job by filtering the results of a <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListTasks.html">ListTasks</a>
+        /// call with the <c>startedBy</c> value. Up to 128 letters (uppercase and lowercase),
+        /// numbers, hyphens (-), forward slash (/), and underscores (_) are allowed.
         /// </para>
         ///  
         /// <para>

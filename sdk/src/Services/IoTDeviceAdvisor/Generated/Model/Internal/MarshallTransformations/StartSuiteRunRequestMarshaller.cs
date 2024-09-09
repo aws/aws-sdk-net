@@ -64,46 +64,49 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
                 throw new AmazonIoTDeviceAdvisorException("Request object does not have required field SuiteDefinitionId set");
             request.AddPathResource("{suiteDefinitionId}", StringUtils.FromString(publicRequest.SuiteDefinitionId));
             request.ResourcePath = "/suiteDefinitions/{suiteDefinitionId}/suiteRuns";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetSuiteDefinitionVersion())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("suiteDefinitionVersion");
-                    context.Writer.Write(publicRequest.SuiteDefinitionVersion);
-                }
-
-                if(publicRequest.IsSetSuiteRunConfiguration())
-                {
-                    context.Writer.WritePropertyName("suiteRunConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SuiteRunConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SuiteRunConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetSuiteDefinitionVersion())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("suiteDefinitionVersion");
+                        context.Writer.Write(publicRequest.SuiteDefinitionVersion);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetSuiteRunConfiguration())
+                    {
+                        context.Writer.WritePropertyName("suiteRunConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SuiteRunConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SuiteRunConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

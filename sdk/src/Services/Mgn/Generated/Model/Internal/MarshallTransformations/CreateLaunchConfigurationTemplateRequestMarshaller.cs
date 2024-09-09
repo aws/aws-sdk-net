@@ -61,127 +61,130 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/CreateLaunchConfigurationTemplate";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAssociatePublicIpAddress())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("associatePublicIpAddress");
-                    context.Writer.Write(publicRequest.AssociatePublicIpAddress.Value);
-                }
-
-                if(publicRequest.IsSetBootMode())
-                {
-                    context.Writer.WritePropertyName("bootMode");
-                    context.Writer.Write(publicRequest.BootMode);
-                }
-
-                if(publicRequest.IsSetCopyPrivateIp())
-                {
-                    context.Writer.WritePropertyName("copyPrivateIp");
-                    context.Writer.Write(publicRequest.CopyPrivateIp.Value);
-                }
-
-                if(publicRequest.IsSetCopyTags())
-                {
-                    context.Writer.WritePropertyName("copyTags");
-                    context.Writer.Write(publicRequest.CopyTags.Value);
-                }
-
-                if(publicRequest.IsSetEnableMapAutoTagging())
-                {
-                    context.Writer.WritePropertyName("enableMapAutoTagging");
-                    context.Writer.Write(publicRequest.EnableMapAutoTagging.Value);
-                }
-
-                if(publicRequest.IsSetLargeVolumeConf())
-                {
-                    context.Writer.WritePropertyName("largeVolumeConf");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LaunchTemplateDiskConfMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LargeVolumeConf, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetLaunchDisposition())
-                {
-                    context.Writer.WritePropertyName("launchDisposition");
-                    context.Writer.Write(publicRequest.LaunchDisposition);
-                }
-
-                if(publicRequest.IsSetLicensing())
-                {
-                    context.Writer.WritePropertyName("licensing");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LicensingMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Licensing, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMapAutoTaggingMpeID())
-                {
-                    context.Writer.WritePropertyName("mapAutoTaggingMpeID");
-                    context.Writer.Write(publicRequest.MapAutoTaggingMpeID);
-                }
-
-                if(publicRequest.IsSetPostLaunchActions())
-                {
-                    context.Writer.WritePropertyName("postLaunchActions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PostLaunchActionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PostLaunchActions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSmallVolumeConf())
-                {
-                    context.Writer.WritePropertyName("smallVolumeConf");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LaunchTemplateDiskConfMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SmallVolumeConf, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSmallVolumeMaxSize())
-                {
-                    context.Writer.WritePropertyName("smallVolumeMaxSize");
-                    context.Writer.Write(publicRequest.SmallVolumeMaxSize.Value);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAssociatePublicIpAddress())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("associatePublicIpAddress");
+                        context.Writer.Write(publicRequest.AssociatePublicIpAddress.Value);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetBootMode())
+                    {
+                        context.Writer.WritePropertyName("bootMode");
+                        context.Writer.Write(publicRequest.BootMode);
+                    }
+
+                    if(publicRequest.IsSetCopyPrivateIp())
+                    {
+                        context.Writer.WritePropertyName("copyPrivateIp");
+                        context.Writer.Write(publicRequest.CopyPrivateIp.Value);
+                    }
+
+                    if(publicRequest.IsSetCopyTags())
+                    {
+                        context.Writer.WritePropertyName("copyTags");
+                        context.Writer.Write(publicRequest.CopyTags.Value);
+                    }
+
+                    if(publicRequest.IsSetEnableMapAutoTagging())
+                    {
+                        context.Writer.WritePropertyName("enableMapAutoTagging");
+                        context.Writer.Write(publicRequest.EnableMapAutoTagging.Value);
+                    }
+
+                    if(publicRequest.IsSetLargeVolumeConf())
+                    {
+                        context.Writer.WritePropertyName("largeVolumeConf");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LaunchTemplateDiskConfMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.LargeVolumeConf, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetLaunchDisposition())
+                    {
+                        context.Writer.WritePropertyName("launchDisposition");
+                        context.Writer.Write(publicRequest.LaunchDisposition);
+                    }
+
+                    if(publicRequest.IsSetLicensing())
+                    {
+                        context.Writer.WritePropertyName("licensing");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LicensingMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Licensing, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetMapAutoTaggingMpeID())
+                    {
+                        context.Writer.WritePropertyName("mapAutoTaggingMpeID");
+                        context.Writer.Write(publicRequest.MapAutoTaggingMpeID);
+                    }
+
+                    if(publicRequest.IsSetPostLaunchActions())
+                    {
+                        context.Writer.WritePropertyName("postLaunchActions");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PostLaunchActionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.PostLaunchActions, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSmallVolumeConf())
+                    {
+                        context.Writer.WritePropertyName("smallVolumeConf");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LaunchTemplateDiskConfMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SmallVolumeConf, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSmallVolumeMaxSize())
+                    {
+                        context.Writer.WritePropertyName("smallVolumeMaxSize");
+                        context.Writer.Write(publicRequest.SmallVolumeMaxSize.Value);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTargetInstanceTypeRightSizingMethod())
+                    {
+                        context.Writer.WritePropertyName("targetInstanceTypeRightSizingMethod");
+                        context.Writer.Write(publicRequest.TargetInstanceTypeRightSizingMethod);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTargetInstanceTypeRightSizingMethod())
-                {
-                    context.Writer.WritePropertyName("targetInstanceTypeRightSizingMethod");
-                    context.Writer.Write(publicRequest.TargetInstanceTypeRightSizingMethod);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

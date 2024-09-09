@@ -18,7 +18,6 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Amazon.DynamoDBv2.Model;
-using Amazon.Runtime;
 using System.Globalization;
 #if AWS_ASYNC_API
 using System.Threading.Tasks;
@@ -28,41 +27,20 @@ using System.Threading;
 namespace Amazon.DynamoDBv2.DocumentModel
 {
     /// <summary>
-    /// Search response object
+    /// Represents the interface for a search response
     /// </summary>
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
-    public partial class Search
+    public partial interface ISearch
     {
-        #region Internal constructors
-
-        internal Search()
-            : this((SearchType)0)
-        {
-        }
-
-        internal Search(SearchType searchMethod)
-        {
-            SearchMethod = searchMethod;
-            Reset();
-        }
-
-        #endregion
-
-
-        #region Public properties
-
         /// <summary>
         /// Name of the table being searched
         /// </summary>
-        public String TableName { get; internal set; }
+        string TableName { get; }
 
         /// <summary>
         /// Whether to collect GetNextSet and GetRemaining results in Matches property.
         /// Default is true. If set to false, Matches will always be empty.
         /// </summary>
-        public bool CollectResults { get; internal set; }
+        bool CollectResults { get; }
 
         /// <summary>
         /// Upper limit on the number of items returned.
@@ -71,77 +49,67 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// 
         /// Maps directly to Limit property on Query and Scan operations.
         /// </summary>
-        public int Limit { get; internal set; }
+        int Limit { get; }
 
         /// <summary>
         /// The key expression that is evaluated for each item of a query.
         /// This applies only to Query operations.
         /// </summary>
-        public Expression KeyExpression { get; set; }
+        Expression KeyExpression { get; set; }
 
         /// <summary>
         /// The filter expression that is evaluated for each item.
         /// This applies to Query and Scan operations.
         /// </summary>
-        public Expression FilterExpression { get; set; }
+        Expression FilterExpression { get; set; }
 
         /// <summary>
         /// Filter for the search operation
         /// This applies to Query and Scan operations.
         /// </summary>
-        public Filter Filter { get; internal set; }
+        Filter Filter { get; }
 
         /// <summary>
         /// Conditional operator for the search operation
         /// </summary>
-        public ConditionalOperatorValues ConditionalOperator { get; internal set; }
+        ConditionalOperatorValues ConditionalOperator { get; }
 
         /// <summary>
         /// List of attribute names to retrieve
         /// </summary>
-        public List<String> AttributesToGet { get; internal set; }
+        List<String> AttributesToGet { get; }
 
         /// <summary>
         /// Flag that, if true, indicates that the search is operating in consistent-read mode
         /// </summary>
-        public bool IsConsistentRead { get; internal set; }
+        bool IsConsistentRead { get; }
 
         /// <summary>
         /// Flag that, if true, indicates that the search is traversing backwards
         /// </summary>
-        public bool IsBackwardSearch { get; internal set; }
+        bool IsBackwardSearch { get; }
 
         /// <summary>
         /// Flag that, if true, indicates that the search is done
         /// </summary>
-        public bool IsDone { get; private set; }
+        bool IsDone { get; }
 
         /// <summary>
         /// Key denoting the starting point of the next set of results
         /// </summary>
-        public Dictionary<string, AttributeValue> NextKey { get; private set; }
+        Dictionary<string, AttributeValue> NextKey { get; }
 
         /// <summary>
         /// Pagination token corresponding to the item where the search operation stopped,
         /// inclusive of the previous result set. Use this value to start a new
         /// operation to resume search from the next item.
         /// </summary>
-        public string PaginationToken
-        {
-            get
-            {
-                return Common.ToPaginationToken(NextKey);
-            }
-            internal set
-            {
-                NextKey = Common.FromPaginationToken(value);
-            }
-        }
+        string PaginationToken { get; }
 
         /// <summary>
         /// List of currently found items
         /// </summary>
-        public List<Document> Matches { get; private set; }
+        List<Document> Matches { get; }
 
         /// <summary>
         /// For parallel <i>Scan</i> requests, <i>TotalSegments</i>represents the total number of segments for a table that is being scanned. Segments
@@ -162,7 +130,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </list>
         /// </para>
         /// </summary>
-        public int TotalSegments { get; set; }
+        int TotalSegments { get; set; }
 
         /// <summary>
         /// For parallel <i>Scan</i> requests, <i>Segment</i> identifies an individual segment to be scanned by an application "worker" (such as a
@@ -182,7 +150,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </list>
         /// </para>
         /// </summary>
-        public int Segment { get; set; }
+        int Segment { get; set; }
 
         /// <summary>
         /// Gets the total number of items that match the search parameters.
@@ -191,16 +159,110 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// Otherwise, makes a call to DynamoDB to find out the number of
         /// matching items, without retrieving the items. Count is then cached.
         /// </summary>
-        public int Count { get { return GetCount(); } }
+        int Count { get; }
 
         /// <summary>
         /// Name of the index to query or scan against.
         /// </summary>
-        public string IndexName { get; internal set; }
+        string IndexName { get; }
 
         /// <summary>
         /// Enum specifying what data to return from query.
         /// </summary>
+        SelectValues Select { get; }
+    }
+
+    /// <summary>
+    /// Search response object
+    /// </summary>
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
+    public partial class Search : ISearch
+    {
+        #region Internal constructors
+
+        internal Search()
+            : this((SearchType)0)
+        {
+        }
+
+        internal Search(SearchType searchMethod)
+        {
+            SearchMethod = searchMethod;
+            Reset();
+        }
+
+        #endregion
+
+
+        #region Public properties
+
+        /// <inheritdoc/>
+        public string TableName { get; internal set; }
+
+        /// <inheritdoc/>
+        public bool CollectResults { get; internal set; }
+
+        /// <inheritdoc/>
+        public int Limit { get; internal set; }
+
+        /// <inheritdoc/>
+        public Expression KeyExpression { get; set; }
+
+        /// <inheritdoc/>
+        public Expression FilterExpression { get; set; }
+
+        /// <inheritdoc/>
+        public Filter Filter { get; internal set; }
+
+        /// <inheritdoc/>
+        public ConditionalOperatorValues ConditionalOperator { get; internal set; }
+
+        /// <inheritdoc/>
+        public List<String> AttributesToGet { get; internal set; }
+
+        /// <inheritdoc/>
+        public bool IsConsistentRead { get; internal set; }
+
+        /// <inheritdoc/>
+        public bool IsBackwardSearch { get; internal set; }
+
+        /// <inheritdoc/>
+        public bool IsDone { get; private set; }
+
+        /// <inheritdoc/>
+        public Dictionary<string, AttributeValue> NextKey { get; private set; }
+
+        /// <inheritdoc/>
+        public string PaginationToken
+        {
+            get
+            {
+                return Common.ToPaginationToken(NextKey);
+            }
+            internal set
+            {
+                NextKey = Common.FromPaginationToken(value);
+            }
+        }
+
+        /// <inheritdoc/>
+        public List<Document> Matches { get; private set; }
+
+        /// <inheritdoc/>
+        public int TotalSegments { get; set; }
+
+        /// <inheritdoc/>
+        public int Segment { get; set; }
+
+        /// <inheritdoc/>
+        public int Count { get { return GetCount(); } }
+
+        /// <inheritdoc/>
+        public string IndexName { get; internal set; }
+
+        /// <inheritdoc/>
         public SelectValues Select { get; internal set; }
 
         #endregion

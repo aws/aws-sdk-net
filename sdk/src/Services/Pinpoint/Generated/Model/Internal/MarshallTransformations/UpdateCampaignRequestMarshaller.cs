@@ -67,19 +67,22 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 throw new AmazonPinpointException("Request object does not have required field CampaignId set");
             request.AddPathResource("{campaign-id}", StringUtils.FromString(publicRequest.CampaignId));
             request.ResourcePath = "/v1/apps/{application-id}/campaigns/{campaign-id}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                var context = new JsonMarshallerContext(request, writer);
-                context.Writer.WriteObjectStart();
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                {
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    var context = new JsonMarshallerContext(request, writer);
+                    context.Writer.WriteObjectStart();
 
-                var marshaller = WriteCampaignRequestMarshaller.Instance;
-                marshaller.Marshall(publicRequest.WriteCampaignRequest, context);
+                    var marshaller = WriteCampaignRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.WriteCampaignRequest, context);
 
-                context.Writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                    context.Writer.WriteObjectEnd();
+                }
+
+                request.Content = memoryStream.ToArray();
             }
 
 

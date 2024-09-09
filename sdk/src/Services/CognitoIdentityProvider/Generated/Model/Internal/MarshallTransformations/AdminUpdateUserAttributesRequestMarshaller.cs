@@ -63,57 +63,60 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientMetadata())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientMetadata");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestClientMetadataKvp in publicRequest.ClientMetadata)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientMetadata())
                     {
-                        context.Writer.WritePropertyName(publicRequestClientMetadataKvp.Key);
-                        var publicRequestClientMetadataValue = publicRequestClientMetadataKvp.Value;
-
-                            context.Writer.Write(publicRequestClientMetadataValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetUserAttributes())
-                {
-                    context.Writer.WritePropertyName("UserAttributes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestUserAttributesListValue in publicRequest.UserAttributes)
-                    {
+                        context.Writer.WritePropertyName("ClientMetadata");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestClientMetadataKvp in publicRequest.ClientMetadata)
+                        {
+                            context.Writer.WritePropertyName(publicRequestClientMetadataKvp.Key);
+                            var publicRequestClientMetadataValue = publicRequestClientMetadataKvp.Value;
 
-                        var marshaller = AttributeTypeMarshaller.Instance;
-                        marshaller.Marshall(publicRequestUserAttributesListValue, context);
-
+                                context.Writer.Write(publicRequestClientMetadataValue);
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetUserAttributes())
+                    {
+                        context.Writer.WritePropertyName("UserAttributes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestUserAttributesListValue in publicRequest.UserAttributes)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = AttributeTypeMarshaller.Instance;
+                            marshaller.Marshall(publicRequestUserAttributesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetUsername())
+                    {
+                        context.Writer.WritePropertyName("Username");
+                        context.Writer.Write(publicRequest.Username);
+                    }
+
+                    if(publicRequest.IsSetUserPoolId())
+                    {
+                        context.Writer.WritePropertyName("UserPoolId");
+                        context.Writer.Write(publicRequest.UserPoolId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetUsername())
-                {
-                    context.Writer.WritePropertyName("Username");
-                    context.Writer.Write(publicRequest.Username);
-                }
-
-                if(publicRequest.IsSetUserPoolId())
-                {
-                    context.Writer.WritePropertyName("UserPoolId");
-                    context.Writer.Write(publicRequest.UserPoolId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

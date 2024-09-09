@@ -63,73 +63,76 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEnabled())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("enabled");
-                    context.Writer.Write(publicRequest.Enabled.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEnabled())
+                    {
+                        context.Writer.WritePropertyName("enabled");
+                        context.Writer.Write(publicRequest.Enabled.Value);
+                    }
+
+                    if(publicRequest.IsSetEndTime())
+                    {
+                        context.Writer.WritePropertyName("endTime");
+                        context.Writer.Write(publicRequest.EndTime.Value);
+                    }
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("roleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    if(publicRequest.IsSetSchedule())
+                    {
+                        context.Writer.WritePropertyName("schedule");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ScheduleMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Schedule, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetScheduledActionDescription())
+                    {
+                        context.Writer.WritePropertyName("scheduledActionDescription");
+                        context.Writer.Write(publicRequest.ScheduledActionDescription);
+                    }
+
+                    if(publicRequest.IsSetScheduledActionName())
+                    {
+                        context.Writer.WritePropertyName("scheduledActionName");
+                        context.Writer.Write(publicRequest.ScheduledActionName);
+                    }
+
+                    if(publicRequest.IsSetStartTime())
+                    {
+                        context.Writer.WritePropertyName("startTime");
+                        context.Writer.Write(publicRequest.StartTime.Value);
+                    }
+
+                    if(publicRequest.IsSetTargetAction())
+                    {
+                        context.Writer.WritePropertyName("targetAction");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TargetActionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TargetAction, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEndTime())
-                {
-                    context.Writer.WritePropertyName("endTime");
-                    context.Writer.Write(publicRequest.EndTime.Value);
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("roleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetSchedule())
-                {
-                    context.Writer.WritePropertyName("schedule");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ScheduleMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Schedule, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetScheduledActionDescription())
-                {
-                    context.Writer.WritePropertyName("scheduledActionDescription");
-                    context.Writer.Write(publicRequest.ScheduledActionDescription);
-                }
-
-                if(publicRequest.IsSetScheduledActionName())
-                {
-                    context.Writer.WritePropertyName("scheduledActionName");
-                    context.Writer.Write(publicRequest.ScheduledActionName);
-                }
-
-                if(publicRequest.IsSetStartTime())
-                {
-                    context.Writer.WritePropertyName("startTime");
-                    context.Writer.Write(publicRequest.StartTime.Value);
-                }
-
-                if(publicRequest.IsSetTargetAction())
-                {
-                    context.Writer.WritePropertyName("targetAction");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TargetActionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TargetAction, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

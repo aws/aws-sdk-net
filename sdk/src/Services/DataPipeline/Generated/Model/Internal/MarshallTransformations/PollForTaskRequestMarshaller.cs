@@ -63,38 +63,41 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetHostname())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("hostname");
-                    context.Writer.Write(publicRequest.Hostname);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetHostname())
+                    {
+                        context.Writer.WritePropertyName("hostname");
+                        context.Writer.Write(publicRequest.Hostname);
+                    }
+
+                    if(publicRequest.IsSetInstanceIdentity())
+                    {
+                        context.Writer.WritePropertyName("instanceIdentity");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = InstanceIdentityMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.InstanceIdentity, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetWorkerGroup())
+                    {
+                        context.Writer.WritePropertyName("workerGroup");
+                        context.Writer.Write(publicRequest.WorkerGroup);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetInstanceIdentity())
-                {
-                    context.Writer.WritePropertyName("instanceIdentity");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = InstanceIdentityMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.InstanceIdentity, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetWorkerGroup())
-                {
-                    context.Writer.WritePropertyName("workerGroup");
-                    context.Writer.Write(publicRequest.WorkerGroup);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,32 +63,35 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCollectionId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CollectionId");
-                    context.Writer.Write(publicRequest.CollectionId);
-                }
-
-                if(publicRequest.IsSetFaceIds())
-                {
-                    context.Writer.WritePropertyName("FaceIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFaceIdsListValue in publicRequest.FaceIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCollectionId())
                     {
-                            context.Writer.Write(publicRequestFaceIdsListValue);
+                        context.Writer.WritePropertyName("CollectionId");
+                        context.Writer.Write(publicRequest.CollectionId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetFaceIds())
+                    {
+                        context.Writer.WritePropertyName("FaceIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFaceIdsListValue in publicRequest.FaceIds)
+                        {
+                                context.Writer.Write(publicRequestFaceIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

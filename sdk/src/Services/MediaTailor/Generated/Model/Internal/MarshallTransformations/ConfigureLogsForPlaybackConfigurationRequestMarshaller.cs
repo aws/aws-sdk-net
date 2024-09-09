@@ -61,27 +61,30 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/configureLogs/playbackConfiguration";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetPercentEnabled())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("PercentEnabled");
-                    context.Writer.Write(publicRequest.PercentEnabled.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetPercentEnabled())
+                    {
+                        context.Writer.WritePropertyName("PercentEnabled");
+                        context.Writer.Write(publicRequest.PercentEnabled.Value);
+                    }
+
+                    if(publicRequest.IsSetPlaybackConfigurationName())
+                    {
+                        context.Writer.WritePropertyName("PlaybackConfigurationName");
+                        context.Writer.Write(publicRequest.PlaybackConfigurationName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetPlaybackConfigurationName())
-                {
-                    context.Writer.WritePropertyName("PlaybackConfigurationName");
-                    context.Writer.Write(publicRequest.PlaybackConfigurationName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

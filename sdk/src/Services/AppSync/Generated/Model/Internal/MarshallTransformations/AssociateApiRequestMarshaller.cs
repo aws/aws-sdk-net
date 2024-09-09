@@ -64,21 +64,24 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 throw new AmazonAppSyncException("Request object does not have required field DomainName set");
             request.AddPathResource("{domainName}", StringUtils.FromString(publicRequest.DomainName));
             request.ResourcePath = "/v1/domainnames/{domainName}/apiassociation";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApiId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("apiId");
-                    context.Writer.Write(publicRequest.ApiId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApiId())
+                    {
+                        context.Writer.WritePropertyName("apiId");
+                        context.Writer.Write(publicRequest.ApiId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

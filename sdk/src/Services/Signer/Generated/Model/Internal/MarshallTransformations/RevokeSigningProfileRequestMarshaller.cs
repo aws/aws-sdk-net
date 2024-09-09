@@ -64,33 +64,36 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
                 throw new AmazonSignerException("Request object does not have required field ProfileName set");
             request.AddPathResource("{profileName}", StringUtils.FromString(publicRequest.ProfileName));
             request.ResourcePath = "/signing-profiles/{profileName}/revoke";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEffectiveTime())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("effectiveTime");
-                    context.Writer.Write(publicRequest.EffectiveTime.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEffectiveTime())
+                    {
+                        context.Writer.WritePropertyName("effectiveTime");
+                        context.Writer.Write(publicRequest.EffectiveTime.Value);
+                    }
+
+                    if(publicRequest.IsSetProfileVersion())
+                    {
+                        context.Writer.WritePropertyName("profileVersion");
+                        context.Writer.Write(publicRequest.ProfileVersion);
+                    }
+
+                    if(publicRequest.IsSetReason())
+                    {
+                        context.Writer.WritePropertyName("reason");
+                        context.Writer.Write(publicRequest.Reason);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetProfileVersion())
-                {
-                    context.Writer.WritePropertyName("profileVersion");
-                    context.Writer.Write(publicRequest.ProfileVersion);
-                }
-
-                if(publicRequest.IsSetReason())
-                {
-                    context.Writer.WritePropertyName("reason");
-                    context.Writer.Write(publicRequest.Reason);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

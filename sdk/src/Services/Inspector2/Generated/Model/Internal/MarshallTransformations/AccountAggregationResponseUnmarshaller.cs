@@ -72,6 +72,18 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                     unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("exploitAvailableCount", targetDepth))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.ExploitAvailableCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("fixAvailableCount", targetDepth))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.FixAvailableCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("severityCounts", targetDepth))
                 {
                     var unmarshaller = SeverityCountsUnmarshaller.Instance;

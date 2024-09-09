@@ -67,56 +67,59 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 throw new AmazonDataZoneException("Request object does not have required field Identifier set");
             request.AddPathResource("{identifier}", StringUtils.FromString(publicRequest.Identifier));
             request.ResourcePath = "/v2/domains/{domainIdentifier}/glossary-terms/{identifier}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetGlossaryIdentifier())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("glossaryIdentifier");
-                    context.Writer.Write(publicRequest.GlossaryIdentifier);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetGlossaryIdentifier())
+                    {
+                        context.Writer.WritePropertyName("glossaryIdentifier");
+                        context.Writer.Write(publicRequest.GlossaryIdentifier);
+                    }
+
+                    if(publicRequest.IsSetLongDescription())
+                    {
+                        context.Writer.WritePropertyName("longDescription");
+                        context.Writer.Write(publicRequest.LongDescription);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetShortDescription())
+                    {
+                        context.Writer.WritePropertyName("shortDescription");
+                        context.Writer.Write(publicRequest.ShortDescription);
+                    }
+
+                    if(publicRequest.IsSetStatus())
+                    {
+                        context.Writer.WritePropertyName("status");
+                        context.Writer.Write(publicRequest.Status);
+                    }
+
+                    if(publicRequest.IsSetTermRelations())
+                    {
+                        context.Writer.WritePropertyName("termRelations");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TermRelationsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TermRelations, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetLongDescription())
-                {
-                    context.Writer.WritePropertyName("longDescription");
-                    context.Writer.Write(publicRequest.LongDescription);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetShortDescription())
-                {
-                    context.Writer.WritePropertyName("shortDescription");
-                    context.Writer.Write(publicRequest.ShortDescription);
-                }
-
-                if(publicRequest.IsSetStatus())
-                {
-                    context.Writer.WritePropertyName("status");
-                    context.Writer.Write(publicRequest.Status);
-                }
-
-                if(publicRequest.IsSetTermRelations())
-                {
-                    context.Writer.WritePropertyName("termRelations");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TermRelationsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TermRelations, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

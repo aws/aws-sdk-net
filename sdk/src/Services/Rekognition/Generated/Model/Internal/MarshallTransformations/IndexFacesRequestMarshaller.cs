@@ -63,61 +63,64 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCollectionId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CollectionId");
-                    context.Writer.Write(publicRequest.CollectionId);
-                }
-
-                if(publicRequest.IsSetDetectionAttributes())
-                {
-                    context.Writer.WritePropertyName("DetectionAttributes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDetectionAttributesListValue in publicRequest.DetectionAttributes)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCollectionId())
                     {
-                            context.Writer.Write(publicRequestDetectionAttributesListValue);
+                        context.Writer.WritePropertyName("CollectionId");
+                        context.Writer.Write(publicRequest.CollectionId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDetectionAttributes())
+                    {
+                        context.Writer.WritePropertyName("DetectionAttributes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDetectionAttributesListValue in publicRequest.DetectionAttributes)
+                        {
+                                context.Writer.Write(publicRequestDetectionAttributesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetExternalImageId())
+                    {
+                        context.Writer.WritePropertyName("ExternalImageId");
+                        context.Writer.Write(publicRequest.ExternalImageId);
+                    }
+
+                    if(publicRequest.IsSetImage())
+                    {
+                        context.Writer.WritePropertyName("Image");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ImageMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Image, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetMaxFaces())
+                    {
+                        context.Writer.WritePropertyName("MaxFaces");
+                        context.Writer.Write(publicRequest.MaxFaces.Value);
+                    }
+
+                    if(publicRequest.IsSetQualityFilter())
+                    {
+                        context.Writer.WritePropertyName("QualityFilter");
+                        context.Writer.Write(publicRequest.QualityFilter);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetExternalImageId())
-                {
-                    context.Writer.WritePropertyName("ExternalImageId");
-                    context.Writer.Write(publicRequest.ExternalImageId);
-                }
-
-                if(publicRequest.IsSetImage())
-                {
-                    context.Writer.WritePropertyName("Image");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ImageMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Image, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMaxFaces())
-                {
-                    context.Writer.WritePropertyName("MaxFaces");
-                    context.Writer.Write(publicRequest.MaxFaces.Value);
-                }
-
-                if(publicRequest.IsSetQualityFilter())
-                {
-                    context.Writer.WritePropertyName("QualityFilter");
-                    context.Writer.Write(publicRequest.QualityFilter);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

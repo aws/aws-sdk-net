@@ -67,49 +67,52 @@ namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetWorkflowId())
                 request.Parameters.Add("workflowId", StringUtils.FromString(publicRequest.WorkflowId));
             request.ResourcePath = "/workflowstepgroup/{id}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetNext())
-                {
-                    context.Writer.WritePropertyName("next");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestNextListValue in publicRequest.Next)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
-                            context.Writer.Write(publicRequestNextListValue);
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetPrevious())
-                {
-                    context.Writer.WritePropertyName("previous");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPreviousListValue in publicRequest.Previous)
+                    if(publicRequest.IsSetName())
                     {
-                            context.Writer.Write(publicRequestPreviousListValue);
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetNext())
+                    {
+                        context.Writer.WritePropertyName("next");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestNextListValue in publicRequest.Next)
+                        {
+                                context.Writer.Write(publicRequestNextListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetPrevious())
+                    {
+                        context.Writer.WritePropertyName("previous");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPreviousListValue in publicRequest.Previous)
+                        {
+                                context.Writer.Write(publicRequestPreviousListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             request.UseQueryString = true;

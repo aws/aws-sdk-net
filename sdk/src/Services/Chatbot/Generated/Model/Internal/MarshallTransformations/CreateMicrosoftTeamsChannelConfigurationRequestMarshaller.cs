@@ -61,107 +61,110 @@ namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/create-ms-teams-channel-configuration";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetChannelId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ChannelId");
-                    context.Writer.Write(publicRequest.ChannelId);
-                }
-
-                if(publicRequest.IsSetChannelName())
-                {
-                    context.Writer.WritePropertyName("ChannelName");
-                    context.Writer.Write(publicRequest.ChannelName);
-                }
-
-                if(publicRequest.IsSetConfigurationName())
-                {
-                    context.Writer.WritePropertyName("ConfigurationName");
-                    context.Writer.Write(publicRequest.ConfigurationName);
-                }
-
-                if(publicRequest.IsSetGuardrailPolicyArns())
-                {
-                    context.Writer.WritePropertyName("GuardrailPolicyArns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestGuardrailPolicyArnsListValue in publicRequest.GuardrailPolicyArns)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetChannelId())
                     {
-                            context.Writer.Write(publicRequestGuardrailPolicyArnsListValue);
+                        context.Writer.WritePropertyName("ChannelId");
+                        context.Writer.Write(publicRequest.ChannelId);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetIamRoleArn())
-                {
-                    context.Writer.WritePropertyName("IamRoleArn");
-                    context.Writer.Write(publicRequest.IamRoleArn);
-                }
-
-                if(publicRequest.IsSetLoggingLevel())
-                {
-                    context.Writer.WritePropertyName("LoggingLevel");
-                    context.Writer.Write(publicRequest.LoggingLevel);
-                }
-
-                if(publicRequest.IsSetSnsTopicArns())
-                {
-                    context.Writer.WritePropertyName("SnsTopicArns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSnsTopicArnsListValue in publicRequest.SnsTopicArns)
+                    if(publicRequest.IsSetChannelName())
                     {
-                            context.Writer.Write(publicRequestSnsTopicArnsListValue);
+                        context.Writer.WritePropertyName("ChannelName");
+                        context.Writer.Write(publicRequest.ChannelName);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetConfigurationName())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("ConfigurationName");
+                        context.Writer.Write(publicRequest.ConfigurationName);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetGuardrailPolicyArns())
+                    {
+                        context.Writer.WritePropertyName("GuardrailPolicyArns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestGuardrailPolicyArnsListValue in publicRequest.GuardrailPolicyArns)
+                        {
+                                context.Writer.Write(publicRequestGuardrailPolicyArnsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetIamRoleArn())
+                    {
+                        context.Writer.WritePropertyName("IamRoleArn");
+                        context.Writer.Write(publicRequest.IamRoleArn);
+                    }
+
+                    if(publicRequest.IsSetLoggingLevel())
+                    {
+                        context.Writer.WritePropertyName("LoggingLevel");
+                        context.Writer.Write(publicRequest.LoggingLevel);
+                    }
+
+                    if(publicRequest.IsSetSnsTopicArns())
+                    {
+                        context.Writer.WritePropertyName("SnsTopicArns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSnsTopicArnsListValue in publicRequest.SnsTopicArns)
+                        {
+                                context.Writer.Write(publicRequestSnsTopicArnsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTeamId())
+                    {
+                        context.Writer.WritePropertyName("TeamId");
+                        context.Writer.Write(publicRequest.TeamId);
+                    }
+
+                    if(publicRequest.IsSetTeamName())
+                    {
+                        context.Writer.WritePropertyName("TeamName");
+                        context.Writer.Write(publicRequest.TeamName);
+                    }
+
+                    if(publicRequest.IsSetTenantId())
+                    {
+                        context.Writer.WritePropertyName("TenantId");
+                        context.Writer.Write(publicRequest.TenantId);
+                    }
+
+                    if(publicRequest.IsSetUserAuthorizationRequired())
+                    {
+                        context.Writer.WritePropertyName("UserAuthorizationRequired");
+                        context.Writer.Write(publicRequest.UserAuthorizationRequired.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTeamId())
-                {
-                    context.Writer.WritePropertyName("TeamId");
-                    context.Writer.Write(publicRequest.TeamId);
-                }
-
-                if(publicRequest.IsSetTeamName())
-                {
-                    context.Writer.WritePropertyName("TeamName");
-                    context.Writer.Write(publicRequest.TeamName);
-                }
-
-                if(publicRequest.IsSetTenantId())
-                {
-                    context.Writer.WritePropertyName("TenantId");
-                    context.Writer.Write(publicRequest.TenantId);
-                }
-
-                if(publicRequest.IsSetUserAuthorizationRequired())
-                {
-                    context.Writer.WritePropertyName("UserAuthorizationRequired");
-                    context.Writer.Write(publicRequest.UserAuthorizationRequired.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

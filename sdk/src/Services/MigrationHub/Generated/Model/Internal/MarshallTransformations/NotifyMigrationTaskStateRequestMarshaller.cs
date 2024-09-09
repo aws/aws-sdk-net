@@ -63,56 +63,59 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDryRun())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DryRun");
-                    context.Writer.Write(publicRequest.DryRun.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDryRun())
+                    {
+                        context.Writer.WritePropertyName("DryRun");
+                        context.Writer.Write(publicRequest.DryRun.Value);
+                    }
+
+                    if(publicRequest.IsSetMigrationTaskName())
+                    {
+                        context.Writer.WritePropertyName("MigrationTaskName");
+                        context.Writer.Write(publicRequest.MigrationTaskName);
+                    }
+
+                    if(publicRequest.IsSetNextUpdateSeconds())
+                    {
+                        context.Writer.WritePropertyName("NextUpdateSeconds");
+                        context.Writer.Write(publicRequest.NextUpdateSeconds.Value);
+                    }
+
+                    if(publicRequest.IsSetProgressUpdateStream())
+                    {
+                        context.Writer.WritePropertyName("ProgressUpdateStream");
+                        context.Writer.Write(publicRequest.ProgressUpdateStream);
+                    }
+
+                    if(publicRequest.IsSetTask())
+                    {
+                        context.Writer.WritePropertyName("Task");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TaskMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Task, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetUpdateDateTime())
+                    {
+                        context.Writer.WritePropertyName("UpdateDateTime");
+                        context.Writer.Write(publicRequest.UpdateDateTime.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMigrationTaskName())
-                {
-                    context.Writer.WritePropertyName("MigrationTaskName");
-                    context.Writer.Write(publicRequest.MigrationTaskName);
-                }
-
-                if(publicRequest.IsSetNextUpdateSeconds())
-                {
-                    context.Writer.WritePropertyName("NextUpdateSeconds");
-                    context.Writer.Write(publicRequest.NextUpdateSeconds.Value);
-                }
-
-                if(publicRequest.IsSetProgressUpdateStream())
-                {
-                    context.Writer.WritePropertyName("ProgressUpdateStream");
-                    context.Writer.Write(publicRequest.ProgressUpdateStream);
-                }
-
-                if(publicRequest.IsSetTask())
-                {
-                    context.Writer.WritePropertyName("Task");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TaskMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Task, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetUpdateDateTime())
-                {
-                    context.Writer.WritePropertyName("UpdateDateTime");
-                    context.Writer.Write(publicRequest.UpdateDateTime.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

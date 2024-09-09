@@ -67,86 +67,89 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
                 throw new AmazonMigrationHubRefactorSpacesException("Request object does not have required field EnvironmentIdentifier set");
             request.AddPathResource("{EnvironmentIdentifier}", StringUtils.FromString(publicRequest.EnvironmentIdentifier));
             request.ResourcePath = "/environments/{EnvironmentIdentifier}/applications/{ApplicationIdentifier}/services";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetEndpointType())
-                {
-                    context.Writer.WritePropertyName("EndpointType");
-                    context.Writer.Write(publicRequest.EndpointType);
-                }
-
-                if(publicRequest.IsSetLambdaEndpoint())
-                {
-                    context.Writer.WritePropertyName("LambdaEndpoint");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LambdaEndpointInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LambdaEndpoint, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetEndpointType())
+                    {
+                        context.Writer.WritePropertyName("EndpointType");
+                        context.Writer.Write(publicRequest.EndpointType);
+                    }
+
+                    if(publicRequest.IsSetLambdaEndpoint())
+                    {
+                        context.Writer.WritePropertyName("LambdaEndpoint");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LambdaEndpointInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.LambdaEndpoint, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetUrlEndpoint())
+                    {
+                        context.Writer.WritePropertyName("UrlEndpoint");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = UrlEndpointInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.UrlEndpoint, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetVpcId())
+                    {
+                        context.Writer.WritePropertyName("VpcId");
+                        context.Writer.Write(publicRequest.VpcId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetUrlEndpoint())
-                {
-                    context.Writer.WritePropertyName("UrlEndpoint");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UrlEndpointInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.UrlEndpoint, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetVpcId())
-                {
-                    context.Writer.WritePropertyName("VpcId");
-                    context.Writer.Write(publicRequest.VpcId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

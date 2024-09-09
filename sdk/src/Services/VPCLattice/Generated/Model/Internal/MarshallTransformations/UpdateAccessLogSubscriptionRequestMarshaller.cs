@@ -64,21 +64,24 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                 throw new AmazonVPCLatticeException("Request object does not have required field AccessLogSubscriptionIdentifier set");
             request.AddPathResource("{accessLogSubscriptionIdentifier}", StringUtils.FromString(publicRequest.AccessLogSubscriptionIdentifier));
             request.ResourcePath = "/accesslogsubscriptions/{accessLogSubscriptionIdentifier}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDestinationArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("destinationArn");
-                    context.Writer.Write(publicRequest.DestinationArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDestinationArn())
+                    {
+                        context.Writer.WritePropertyName("destinationArn");
+                        context.Writer.Write(publicRequest.DestinationArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

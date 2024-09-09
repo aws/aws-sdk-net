@@ -61,49 +61,52 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/amazonclouddirectory/2017-01-11/object/attributes";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFacetFilter())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("FacetFilter");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFacetFilter())
+                    {
+                        context.Writer.WritePropertyName("FacetFilter");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = SchemaFacetMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.FacetFilter, context);
+                        var marshaller = SchemaFacetMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.FacetFilter, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetObjectReference())
+                    {
+                        context.Writer.WritePropertyName("ObjectReference");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ObjectReferenceMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ObjectReference, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetObjectReference())
-                {
-                    context.Writer.WritePropertyName("ObjectReference");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ObjectReferenceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ObjectReference, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

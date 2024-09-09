@@ -61,26 +61,29 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/securityControls/batchGet";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetSecurityControlIds())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("SecurityControlIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSecurityControlIdsListValue in publicRequest.SecurityControlIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetSecurityControlIds())
                     {
-                            context.Writer.Write(publicRequestSecurityControlIdsListValue);
+                        context.Writer.WritePropertyName("SecurityControlIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSecurityControlIdsListValue in publicRequest.SecurityControlIds)
+                        {
+                                context.Writer.Write(publicRequestSecurityControlIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

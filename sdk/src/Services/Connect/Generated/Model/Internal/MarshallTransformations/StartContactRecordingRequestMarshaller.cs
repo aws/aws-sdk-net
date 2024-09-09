@@ -61,44 +61,47 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/contact/start-recording";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetContactId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ContactId");
-                    context.Writer.Write(publicRequest.ContactId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetContactId())
+                    {
+                        context.Writer.WritePropertyName("ContactId");
+                        context.Writer.Write(publicRequest.ContactId);
+                    }
+
+                    if(publicRequest.IsSetInitialContactId())
+                    {
+                        context.Writer.WritePropertyName("InitialContactId");
+                        context.Writer.Write(publicRequest.InitialContactId);
+                    }
+
+                    if(publicRequest.IsSetInstanceId())
+                    {
+                        context.Writer.WritePropertyName("InstanceId");
+                        context.Writer.Write(publicRequest.InstanceId);
+                    }
+
+                    if(publicRequest.IsSetVoiceRecordingConfiguration())
+                    {
+                        context.Writer.WritePropertyName("VoiceRecordingConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = VoiceRecordingConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.VoiceRecordingConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetInitialContactId())
-                {
-                    context.Writer.WritePropertyName("InitialContactId");
-                    context.Writer.Write(publicRequest.InitialContactId);
-                }
-
-                if(publicRequest.IsSetInstanceId())
-                {
-                    context.Writer.WritePropertyName("InstanceId");
-                    context.Writer.Write(publicRequest.InstanceId);
-                }
-
-                if(publicRequest.IsSetVoiceRecordingConfiguration())
-                {
-                    context.Writer.WritePropertyName("VoiceRecordingConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = VoiceRecordingConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.VoiceRecordingConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

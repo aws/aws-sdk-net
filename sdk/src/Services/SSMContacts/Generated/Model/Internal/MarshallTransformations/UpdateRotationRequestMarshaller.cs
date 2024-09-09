@@ -63,55 +63,58 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetContactIds())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ContactIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestContactIdsListValue in publicRequest.ContactIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetContactIds())
                     {
-                            context.Writer.Write(publicRequestContactIdsListValue);
+                        context.Writer.WritePropertyName("ContactIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestContactIdsListValue in publicRequest.ContactIds)
+                        {
+                                context.Writer.Write(publicRequestContactIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetRecurrence())
+                    {
+                        context.Writer.WritePropertyName("Recurrence");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RecurrenceSettingsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Recurrence, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRotationId())
+                    {
+                        context.Writer.WritePropertyName("RotationId");
+                        context.Writer.Write(publicRequest.RotationId);
+                    }
+
+                    if(publicRequest.IsSetStartTime())
+                    {
+                        context.Writer.WritePropertyName("StartTime");
+                        context.Writer.Write(publicRequest.StartTime.Value);
+                    }
+
+                    if(publicRequest.IsSetTimeZoneId())
+                    {
+                        context.Writer.WritePropertyName("TimeZoneId");
+                        context.Writer.Write(publicRequest.TimeZoneId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRecurrence())
-                {
-                    context.Writer.WritePropertyName("Recurrence");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RecurrenceSettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Recurrence, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRotationId())
-                {
-                    context.Writer.WritePropertyName("RotationId");
-                    context.Writer.Write(publicRequest.RotationId);
-                }
-
-                if(publicRequest.IsSetStartTime())
-                {
-                    context.Writer.WritePropertyName("StartTime");
-                    context.Writer.Write(publicRequest.StartTime.Value);
-                }
-
-                if(publicRequest.IsSetTimeZoneId())
-                {
-                    context.Writer.WritePropertyName("TimeZoneId");
-                    context.Writer.Write(publicRequest.TimeZoneId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

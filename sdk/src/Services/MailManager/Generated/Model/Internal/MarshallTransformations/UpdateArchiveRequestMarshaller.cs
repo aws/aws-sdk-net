@@ -63,38 +63,41 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetArchiveId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ArchiveId");
-                    context.Writer.Write(publicRequest.ArchiveId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetArchiveId())
+                    {
+                        context.Writer.WritePropertyName("ArchiveId");
+                        context.Writer.Write(publicRequest.ArchiveId);
+                    }
+
+                    if(publicRequest.IsSetArchiveName())
+                    {
+                        context.Writer.WritePropertyName("ArchiveName");
+                        context.Writer.Write(publicRequest.ArchiveName);
+                    }
+
+                    if(publicRequest.IsSetRetention())
+                    {
+                        context.Writer.WritePropertyName("Retention");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ArchiveRetentionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Retention, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetArchiveName())
-                {
-                    context.Writer.WritePropertyName("ArchiveName");
-                    context.Writer.Write(publicRequest.ArchiveName);
-                }
-
-                if(publicRequest.IsSetRetention())
-                {
-                    context.Writer.WritePropertyName("Retention");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ArchiveRetentionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Retention, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

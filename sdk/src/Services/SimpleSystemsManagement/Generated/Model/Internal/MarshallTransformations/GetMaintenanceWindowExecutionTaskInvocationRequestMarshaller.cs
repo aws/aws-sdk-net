@@ -63,33 +63,36 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetInvocationId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("InvocationId");
-                    context.Writer.Write(publicRequest.InvocationId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetInvocationId())
+                    {
+                        context.Writer.WritePropertyName("InvocationId");
+                        context.Writer.Write(publicRequest.InvocationId);
+                    }
+
+                    if(publicRequest.IsSetTaskId())
+                    {
+                        context.Writer.WritePropertyName("TaskId");
+                        context.Writer.Write(publicRequest.TaskId);
+                    }
+
+                    if(publicRequest.IsSetWindowExecutionId())
+                    {
+                        context.Writer.WritePropertyName("WindowExecutionId");
+                        context.Writer.Write(publicRequest.WindowExecutionId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTaskId())
-                {
-                    context.Writer.WritePropertyName("TaskId");
-                    context.Writer.Write(publicRequest.TaskId);
-                }
-
-                if(publicRequest.IsSetWindowExecutionId())
-                {
-                    context.Writer.WritePropertyName("WindowExecutionId");
-                    context.Writer.Write(publicRequest.WindowExecutionId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

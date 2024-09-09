@@ -61,165 +61,179 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/apps";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccessToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("accessToken");
-                    context.Writer.Write(publicRequest.AccessToken);
-                }
-
-                if(publicRequest.IsSetAutoBranchCreationConfig())
-                {
-                    context.Writer.WritePropertyName("autoBranchCreationConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AutoBranchCreationConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AutoBranchCreationConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetAutoBranchCreationPatterns())
-                {
-                    context.Writer.WritePropertyName("autoBranchCreationPatterns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAutoBranchCreationPatternsListValue in publicRequest.AutoBranchCreationPatterns)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccessToken())
                     {
-                            context.Writer.Write(publicRequestAutoBranchCreationPatternsListValue);
+                        context.Writer.WritePropertyName("accessToken");
+                        context.Writer.Write(publicRequest.AccessToken);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetBasicAuthCredentials())
-                {
-                    context.Writer.WritePropertyName("basicAuthCredentials");
-                    context.Writer.Write(publicRequest.BasicAuthCredentials);
-                }
-
-                if(publicRequest.IsSetBuildSpec())
-                {
-                    context.Writer.WritePropertyName("buildSpec");
-                    context.Writer.Write(publicRequest.BuildSpec);
-                }
-
-                if(publicRequest.IsSetCustomHeaders())
-                {
-                    context.Writer.WritePropertyName("customHeaders");
-                    context.Writer.Write(publicRequest.CustomHeaders);
-                }
-
-                if(publicRequest.IsSetCustomRules())
-                {
-                    context.Writer.WritePropertyName("customRules");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCustomRulesListValue in publicRequest.CustomRules)
+                    if(publicRequest.IsSetAutoBranchCreationConfig())
                     {
+                        context.Writer.WritePropertyName("autoBranchCreationConfig");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = CustomRuleMarshaller.Instance;
-                        marshaller.Marshall(publicRequestCustomRulesListValue, context);
+                        var marshaller = AutoBranchCreationConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AutoBranchCreationConfig, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetEnableAutoBranchCreation())
-                {
-                    context.Writer.WritePropertyName("enableAutoBranchCreation");
-                    context.Writer.Write(publicRequest.EnableAutoBranchCreation.Value);
-                }
-
-                if(publicRequest.IsSetEnableBasicAuth())
-                {
-                    context.Writer.WritePropertyName("enableBasicAuth");
-                    context.Writer.Write(publicRequest.EnableBasicAuth.Value);
-                }
-
-                if(publicRequest.IsSetEnableBranchAutoBuild())
-                {
-                    context.Writer.WritePropertyName("enableBranchAutoBuild");
-                    context.Writer.Write(publicRequest.EnableBranchAutoBuild.Value);
-                }
-
-                if(publicRequest.IsSetEnableBranchAutoDeletion())
-                {
-                    context.Writer.WritePropertyName("enableBranchAutoDeletion");
-                    context.Writer.Write(publicRequest.EnableBranchAutoDeletion.Value);
-                }
-
-                if(publicRequest.IsSetEnvironmentVariables())
-                {
-                    context.Writer.WritePropertyName("environmentVariables");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestEnvironmentVariablesKvp in publicRequest.EnvironmentVariables)
+                    if(publicRequest.IsSetAutoBranchCreationPatterns())
                     {
-                        context.Writer.WritePropertyName(publicRequestEnvironmentVariablesKvp.Key);
-                        var publicRequestEnvironmentVariablesValue = publicRequestEnvironmentVariablesKvp.Value;
-
-                            context.Writer.Write(publicRequestEnvironmentVariablesValue);
+                        context.Writer.WritePropertyName("autoBranchCreationPatterns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAutoBranchCreationPatternsListValue in publicRequest.AutoBranchCreationPatterns)
+                        {
+                                context.Writer.Write(publicRequestAutoBranchCreationPatternsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetIamServiceRoleArn())
-                {
-                    context.Writer.WritePropertyName("iamServiceRoleArn");
-                    context.Writer.Write(publicRequest.IamServiceRoleArn);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetOauthToken())
-                {
-                    context.Writer.WritePropertyName("oauthToken");
-                    context.Writer.Write(publicRequest.OauthToken);
-                }
-
-                if(publicRequest.IsSetPlatform())
-                {
-                    context.Writer.WritePropertyName("platform");
-                    context.Writer.Write(publicRequest.Platform);
-                }
-
-                if(publicRequest.IsSetRepository())
-                {
-                    context.Writer.WritePropertyName("repository");
-                    context.Writer.Write(publicRequest.Repository);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetBasicAuthCredentials())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("basicAuthCredentials");
+                        context.Writer.Write(publicRequest.BasicAuthCredentials);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetBuildSpec())
+                    {
+                        context.Writer.WritePropertyName("buildSpec");
+                        context.Writer.Write(publicRequest.BuildSpec);
+                    }
+
+                    if(publicRequest.IsSetCacheConfig())
+                    {
+                        context.Writer.WritePropertyName("cacheConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CacheConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CacheConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetCustomHeaders())
+                    {
+                        context.Writer.WritePropertyName("customHeaders");
+                        context.Writer.Write(publicRequest.CustomHeaders);
+                    }
+
+                    if(publicRequest.IsSetCustomRules())
+                    {
+                        context.Writer.WritePropertyName("customRules");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCustomRulesListValue in publicRequest.CustomRules)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = CustomRuleMarshaller.Instance;
+                            marshaller.Marshall(publicRequestCustomRulesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetEnableAutoBranchCreation())
+                    {
+                        context.Writer.WritePropertyName("enableAutoBranchCreation");
+                        context.Writer.Write(publicRequest.EnableAutoBranchCreation.Value);
+                    }
+
+                    if(publicRequest.IsSetEnableBasicAuth())
+                    {
+                        context.Writer.WritePropertyName("enableBasicAuth");
+                        context.Writer.Write(publicRequest.EnableBasicAuth.Value);
+                    }
+
+                    if(publicRequest.IsSetEnableBranchAutoBuild())
+                    {
+                        context.Writer.WritePropertyName("enableBranchAutoBuild");
+                        context.Writer.Write(publicRequest.EnableBranchAutoBuild.Value);
+                    }
+
+                    if(publicRequest.IsSetEnableBranchAutoDeletion())
+                    {
+                        context.Writer.WritePropertyName("enableBranchAutoDeletion");
+                        context.Writer.Write(publicRequest.EnableBranchAutoDeletion.Value);
+                    }
+
+                    if(publicRequest.IsSetEnvironmentVariables())
+                    {
+                        context.Writer.WritePropertyName("environmentVariables");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestEnvironmentVariablesKvp in publicRequest.EnvironmentVariables)
+                        {
+                            context.Writer.WritePropertyName(publicRequestEnvironmentVariablesKvp.Key);
+                            var publicRequestEnvironmentVariablesValue = publicRequestEnvironmentVariablesKvp.Value;
+
+                                context.Writer.Write(publicRequestEnvironmentVariablesValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetIamServiceRoleArn())
+                    {
+                        context.Writer.WritePropertyName("iamServiceRoleArn");
+                        context.Writer.Write(publicRequest.IamServiceRoleArn);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetOauthToken())
+                    {
+                        context.Writer.WritePropertyName("oauthToken");
+                        context.Writer.Write(publicRequest.OauthToken);
+                    }
+
+                    if(publicRequest.IsSetPlatform())
+                    {
+                        context.Writer.WritePropertyName("platform");
+                        context.Writer.Write(publicRequest.Platform);
+                    }
+
+                    if(publicRequest.IsSetRepository())
+                    {
+                        context.Writer.WritePropertyName("repository");
+                        context.Writer.Write(publicRequest.Repository);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

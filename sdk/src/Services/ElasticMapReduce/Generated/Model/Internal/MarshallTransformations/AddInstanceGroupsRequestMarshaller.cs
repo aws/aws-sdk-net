@@ -63,37 +63,40 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetInstanceGroups())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("InstanceGroups");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestInstanceGroupsListValue in publicRequest.InstanceGroups)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetInstanceGroups())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("InstanceGroups");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestInstanceGroupsListValue in publicRequest.InstanceGroups)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = InstanceGroupConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequestInstanceGroupsListValue, context);
+                            var marshaller = InstanceGroupConfigMarshaller.Instance;
+                            marshaller.Marshall(publicRequestInstanceGroupsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetJobFlowId())
+                    {
+                        context.Writer.WritePropertyName("JobFlowId");
+                        context.Writer.Write(publicRequest.JobFlowId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetJobFlowId())
-                {
-                    context.Writer.WritePropertyName("JobFlowId");
-                    context.Writer.Write(publicRequest.JobFlowId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

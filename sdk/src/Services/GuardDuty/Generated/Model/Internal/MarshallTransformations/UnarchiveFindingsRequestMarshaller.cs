@@ -64,26 +64,29 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 throw new AmazonGuardDutyException("Request object does not have required field DetectorId set");
             request.AddPathResource("{detectorId}", StringUtils.FromString(publicRequest.DetectorId));
             request.ResourcePath = "/detector/{detectorId}/findings/unarchive";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFindingIds())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("findingIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFindingIdsListValue in publicRequest.FindingIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFindingIds())
                     {
-                            context.Writer.Write(publicRequestFindingIdsListValue);
+                        context.Writer.WritePropertyName("findingIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFindingIdsListValue in publicRequest.FindingIds)
+                        {
+                                context.Writer.Write(publicRequestFindingIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,97 +63,100 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFeatureConfig())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("FeatureConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CustomizationFeatureConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.FeatureConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetKmsKeyId())
-                {
-                    context.Writer.WritePropertyName("KmsKeyId");
-                    context.Writer.Write(publicRequest.KmsKeyId);
-                }
-
-                if(publicRequest.IsSetOutputConfig())
-                {
-                    context.Writer.WritePropertyName("OutputConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OutputConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OutputConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetProjectArn())
-                {
-                    context.Writer.WritePropertyName("ProjectArn");
-                    context.Writer.Write(publicRequest.ProjectArn);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFeatureConfig())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
+                        context.Writer.WritePropertyName("FeatureConfig");
+                        context.Writer.WriteObjectStart();
 
-                            context.Writer.Write(publicRequestTagsValue);
+                        var marshaller = CustomizationFeatureConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.FeatureConfig, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetKmsKeyId())
+                    {
+                        context.Writer.WritePropertyName("KmsKeyId");
+                        context.Writer.Write(publicRequest.KmsKeyId);
+                    }
+
+                    if(publicRequest.IsSetOutputConfig())
+                    {
+                        context.Writer.WritePropertyName("OutputConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = OutputConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OutputConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetProjectArn())
+                    {
+                        context.Writer.WritePropertyName("ProjectArn");
+                        context.Writer.Write(publicRequest.ProjectArn);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTestingData())
+                    {
+                        context.Writer.WritePropertyName("TestingData");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TestingDataMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TestingData, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTrainingData())
+                    {
+                        context.Writer.WritePropertyName("TrainingData");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TrainingDataMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TrainingData, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetVersionDescription())
+                    {
+                        context.Writer.WritePropertyName("VersionDescription");
+                        context.Writer.Write(publicRequest.VersionDescription);
+                    }
+
+                    if(publicRequest.IsSetVersionName())
+                    {
+                        context.Writer.WritePropertyName("VersionName");
+                        context.Writer.Write(publicRequest.VersionName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTestingData())
-                {
-                    context.Writer.WritePropertyName("TestingData");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TestingDataMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TestingData, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTrainingData())
-                {
-                    context.Writer.WritePropertyName("TrainingData");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TrainingDataMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TrainingData, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetVersionDescription())
-                {
-                    context.Writer.WritePropertyName("VersionDescription");
-                    context.Writer.Write(publicRequest.VersionDescription);
-                }
-
-                if(publicRequest.IsSetVersionName())
-                {
-                    context.Writer.WritePropertyName("VersionName");
-                    context.Writer.Write(publicRequest.VersionName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

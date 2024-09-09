@@ -61,33 +61,36 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/invitations/accept";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAdministratorAccountId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("administratorAccountId");
-                    context.Writer.Write(publicRequest.AdministratorAccountId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAdministratorAccountId())
+                    {
+                        context.Writer.WritePropertyName("administratorAccountId");
+                        context.Writer.Write(publicRequest.AdministratorAccountId);
+                    }
+
+                    if(publicRequest.IsSetInvitationId())
+                    {
+                        context.Writer.WritePropertyName("invitationId");
+                        context.Writer.Write(publicRequest.InvitationId);
+                    }
+
+                    if(publicRequest.IsSetMasterAccount())
+                    {
+                        context.Writer.WritePropertyName("masterAccount");
+                        context.Writer.Write(publicRequest.MasterAccount);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetInvitationId())
-                {
-                    context.Writer.WritePropertyName("invitationId");
-                    context.Writer.Write(publicRequest.InvitationId);
-                }
-
-                if(publicRequest.IsSetMasterAccount())
-                {
-                    context.Writer.WritePropertyName("masterAccount");
-                    context.Writer.Write(publicRequest.MasterAccount);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

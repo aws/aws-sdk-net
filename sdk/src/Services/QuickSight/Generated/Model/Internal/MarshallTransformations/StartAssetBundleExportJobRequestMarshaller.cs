@@ -64,78 +64,81 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field AwsAccountId set");
             request.AddPathResource("{AwsAccountId}", StringUtils.FromString(publicRequest.AwsAccountId));
             request.ResourcePath = "/accounts/{AwsAccountId}/asset-bundle-export-jobs/export";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAssetBundleExportJobId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AssetBundleExportJobId");
-                    context.Writer.Write(publicRequest.AssetBundleExportJobId);
-                }
-
-                if(publicRequest.IsSetCloudFormationOverridePropertyConfiguration())
-                {
-                    context.Writer.WritePropertyName("CloudFormationOverridePropertyConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AssetBundleCloudFormationOverridePropertyConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CloudFormationOverridePropertyConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetExportFormat())
-                {
-                    context.Writer.WritePropertyName("ExportFormat");
-                    context.Writer.Write(publicRequest.ExportFormat);
-                }
-
-                if(publicRequest.IsSetIncludeAllDependencies())
-                {
-                    context.Writer.WritePropertyName("IncludeAllDependencies");
-                    context.Writer.Write(publicRequest.IncludeAllDependencies.Value);
-                }
-
-                if(publicRequest.IsSetIncludePermissions())
-                {
-                    context.Writer.WritePropertyName("IncludePermissions");
-                    context.Writer.Write(publicRequest.IncludePermissions.Value);
-                }
-
-                if(publicRequest.IsSetIncludeTags())
-                {
-                    context.Writer.WritePropertyName("IncludeTags");
-                    context.Writer.Write(publicRequest.IncludeTags.Value);
-                }
-
-                if(publicRequest.IsSetResourceArns())
-                {
-                    context.Writer.WritePropertyName("ResourceArns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestResourceArnsListValue in publicRequest.ResourceArns)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAssetBundleExportJobId())
                     {
-                            context.Writer.Write(publicRequestResourceArnsListValue);
+                        context.Writer.WritePropertyName("AssetBundleExportJobId");
+                        context.Writer.Write(publicRequest.AssetBundleExportJobId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetCloudFormationOverridePropertyConfiguration())
+                    {
+                        context.Writer.WritePropertyName("CloudFormationOverridePropertyConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AssetBundleCloudFormationOverridePropertyConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CloudFormationOverridePropertyConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetExportFormat())
+                    {
+                        context.Writer.WritePropertyName("ExportFormat");
+                        context.Writer.Write(publicRequest.ExportFormat);
+                    }
+
+                    if(publicRequest.IsSetIncludeAllDependencies())
+                    {
+                        context.Writer.WritePropertyName("IncludeAllDependencies");
+                        context.Writer.Write(publicRequest.IncludeAllDependencies.Value);
+                    }
+
+                    if(publicRequest.IsSetIncludePermissions())
+                    {
+                        context.Writer.WritePropertyName("IncludePermissions");
+                        context.Writer.Write(publicRequest.IncludePermissions.Value);
+                    }
+
+                    if(publicRequest.IsSetIncludeTags())
+                    {
+                        context.Writer.WritePropertyName("IncludeTags");
+                        context.Writer.Write(publicRequest.IncludeTags.Value);
+                    }
+
+                    if(publicRequest.IsSetResourceArns())
+                    {
+                        context.Writer.WritePropertyName("ResourceArns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestResourceArnsListValue in publicRequest.ResourceArns)
+                        {
+                                context.Writer.Write(publicRequestResourceArnsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetValidationStrategy())
+                    {
+                        context.Writer.WritePropertyName("ValidationStrategy");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AssetBundleExportJobValidationStrategyMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ValidationStrategy, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetValidationStrategy())
-                {
-                    context.Writer.WritePropertyName("ValidationStrategy");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AssetBundleExportJobValidationStrategyMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ValidationStrategy, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

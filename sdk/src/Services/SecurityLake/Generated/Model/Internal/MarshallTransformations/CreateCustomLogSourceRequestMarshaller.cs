@@ -61,49 +61,52 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v1/datalake/logsources/custom";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("configuration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CustomLogSourceConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Configuration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEventClasses())
-                {
-                    context.Writer.WritePropertyName("eventClasses");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEventClassesListValue in publicRequest.EventClasses)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConfiguration())
                     {
-                            context.Writer.Write(publicRequestEventClassesListValue);
+                        context.Writer.WritePropertyName("configuration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CustomLogSourceConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Configuration, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetEventClasses())
+                    {
+                        context.Writer.WritePropertyName("eventClasses");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestEventClassesListValue in publicRequest.EventClasses)
+                        {
+                                context.Writer.Write(publicRequestEventClassesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSourceName())
+                    {
+                        context.Writer.WritePropertyName("sourceName");
+                        context.Writer.Write(publicRequest.SourceName);
+                    }
+
+                    if(publicRequest.IsSetSourceVersion())
+                    {
+                        context.Writer.WritePropertyName("sourceVersion");
+                        context.Writer.Write(publicRequest.SourceVersion);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSourceName())
-                {
-                    context.Writer.WritePropertyName("sourceName");
-                    context.Writer.Write(publicRequest.SourceName);
-                }
-
-                if(publicRequest.IsSetSourceVersion())
-                {
-                    context.Writer.WritePropertyName("sourceVersion");
-                    context.Writer.Write(publicRequest.SourceVersion);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,76 +63,79 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccountIds())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("accountIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAccountIdsListValue in publicRequest.AccountIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccountIds())
                     {
-                            context.Writer.Write(publicRequestAccountIdsListValue);
+                        context.Writer.WritePropertyName("accountIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAccountIdsListValue in publicRequest.AccountIds)
+                        {
+                                context.Writer.Write(publicRequestAccountIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetAutoScalingGroupArns())
-                {
-                    context.Writer.WritePropertyName("autoScalingGroupArns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAutoScalingGroupArnsListValue in publicRequest.AutoScalingGroupArns)
+                    if(publicRequest.IsSetAutoScalingGroupArns())
                     {
-                            context.Writer.Write(publicRequestAutoScalingGroupArnsListValue);
+                        context.Writer.WritePropertyName("autoScalingGroupArns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAutoScalingGroupArnsListValue in publicRequest.AutoScalingGroupArns)
+                        {
+                                context.Writer.Write(publicRequestAutoScalingGroupArnsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetFilters())
-                {
-                    context.Writer.WritePropertyName("filters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFiltersListValue in publicRequest.Filters)
+                    if(publicRequest.IsSetFilters())
                     {
+                        context.Writer.WritePropertyName("filters");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFiltersListValue in publicRequest.Filters)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = FilterMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFiltersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetRecommendationPreferences())
+                    {
+                        context.Writer.WritePropertyName("recommendationPreferences");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = FilterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFiltersListValue, context);
+                        var marshaller = RecommendationPreferencesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RecommendationPreferences, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetRecommendationPreferences())
-                {
-                    context.Writer.WritePropertyName("recommendationPreferences");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RecommendationPreferencesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RecommendationPreferences, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

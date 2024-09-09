@@ -63,97 +63,100 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAlias())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Alias");
-                    context.Writer.Write(publicRequest.Alias);
-                }
-
-                if(publicRequest.IsSetAliasesToAdd())
-                {
-                    context.Writer.WritePropertyName("AliasesToAdd");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAliasesToAddListValue in publicRequest.AliasesToAdd)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAlias())
                     {
-                            context.Writer.Write(publicRequestAliasesToAddListValue);
+                        context.Writer.WritePropertyName("Alias");
+                        context.Writer.Write(publicRequest.Alias);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetAliasesToDelete())
-                {
-                    context.Writer.WritePropertyName("AliasesToDelete");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAliasesToDeleteListValue in publicRequest.AliasesToDelete)
+                    if(publicRequest.IsSetAliasesToAdd())
                     {
-                            context.Writer.Write(publicRequestAliasesToDeleteListValue);
+                        context.Writer.WritePropertyName("AliasesToAdd");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAliasesToAddListValue in publicRequest.AliasesToAdd)
+                        {
+                                context.Writer.Write(publicRequestAliasesToAddListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetAliasesToDelete())
+                    {
+                        context.Writer.WritePropertyName("AliasesToDelete");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAliasesToDeleteListValue in publicRequest.AliasesToDelete)
+                        {
+                                context.Writer.Write(publicRequestAliasesToDeleteListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetHorovod())
+                    {
+                        context.Writer.WritePropertyName("Horovod");
+                        context.Writer.Write(publicRequest.Horovod.Value);
+                    }
+
+                    if(publicRequest.IsSetImageName())
+                    {
+                        context.Writer.WritePropertyName("ImageName");
+                        context.Writer.Write(publicRequest.ImageName);
+                    }
+
+                    if(publicRequest.IsSetJobType())
+                    {
+                        context.Writer.WritePropertyName("JobType");
+                        context.Writer.Write(publicRequest.JobType);
+                    }
+
+                    if(publicRequest.IsSetMLFramework())
+                    {
+                        context.Writer.WritePropertyName("MLFramework");
+                        context.Writer.Write(publicRequest.MLFramework);
+                    }
+
+                    if(publicRequest.IsSetProcessor())
+                    {
+                        context.Writer.WritePropertyName("Processor");
+                        context.Writer.Write(publicRequest.Processor);
+                    }
+
+                    if(publicRequest.IsSetProgrammingLang())
+                    {
+                        context.Writer.WritePropertyName("ProgrammingLang");
+                        context.Writer.Write(publicRequest.ProgrammingLang);
+                    }
+
+                    if(publicRequest.IsSetReleaseNotes())
+                    {
+                        context.Writer.WritePropertyName("ReleaseNotes");
+                        context.Writer.Write(publicRequest.ReleaseNotes);
+                    }
+
+                    if(publicRequest.IsSetVendorGuidance())
+                    {
+                        context.Writer.WritePropertyName("VendorGuidance");
+                        context.Writer.Write(publicRequest.VendorGuidance);
+                    }
+
+                    if(publicRequest.IsSetVersion())
+                    {
+                        context.Writer.WritePropertyName("Version");
+                        context.Writer.Write(publicRequest.Version.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetHorovod())
-                {
-                    context.Writer.WritePropertyName("Horovod");
-                    context.Writer.Write(publicRequest.Horovod.Value);
-                }
-
-                if(publicRequest.IsSetImageName())
-                {
-                    context.Writer.WritePropertyName("ImageName");
-                    context.Writer.Write(publicRequest.ImageName);
-                }
-
-                if(publicRequest.IsSetJobType())
-                {
-                    context.Writer.WritePropertyName("JobType");
-                    context.Writer.Write(publicRequest.JobType);
-                }
-
-                if(publicRequest.IsSetMLFramework())
-                {
-                    context.Writer.WritePropertyName("MLFramework");
-                    context.Writer.Write(publicRequest.MLFramework);
-                }
-
-                if(publicRequest.IsSetProcessor())
-                {
-                    context.Writer.WritePropertyName("Processor");
-                    context.Writer.Write(publicRequest.Processor);
-                }
-
-                if(publicRequest.IsSetProgrammingLang())
-                {
-                    context.Writer.WritePropertyName("ProgrammingLang");
-                    context.Writer.Write(publicRequest.ProgrammingLang);
-                }
-
-                if(publicRequest.IsSetReleaseNotes())
-                {
-                    context.Writer.WritePropertyName("ReleaseNotes");
-                    context.Writer.Write(publicRequest.ReleaseNotes);
-                }
-
-                if(publicRequest.IsSetVendorGuidance())
-                {
-                    context.Writer.WritePropertyName("VendorGuidance");
-                    context.Writer.Write(publicRequest.VendorGuidance);
-                }
-
-                if(publicRequest.IsSetVersion())
-                {
-                    context.Writer.WritePropertyName("Version");
-                    context.Writer.Write(publicRequest.Version.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -61,33 +61,36 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/StartViewerSessionRevocation";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetChannelArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("channelArn");
-                    context.Writer.Write(publicRequest.ChannelArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetChannelArn())
+                    {
+                        context.Writer.WritePropertyName("channelArn");
+                        context.Writer.Write(publicRequest.ChannelArn);
+                    }
+
+                    if(publicRequest.IsSetViewerId())
+                    {
+                        context.Writer.WritePropertyName("viewerId");
+                        context.Writer.Write(publicRequest.ViewerId);
+                    }
+
+                    if(publicRequest.IsSetViewerSessionVersionsLessThanOrEqualTo())
+                    {
+                        context.Writer.WritePropertyName("viewerSessionVersionsLessThanOrEqualTo");
+                        context.Writer.Write(publicRequest.ViewerSessionVersionsLessThanOrEqualTo.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetViewerId())
-                {
-                    context.Writer.WritePropertyName("viewerId");
-                    context.Writer.Write(publicRequest.ViewerId);
-                }
-
-                if(publicRequest.IsSetViewerSessionVersionsLessThanOrEqualTo())
-                {
-                    context.Writer.WritePropertyName("viewerSessionVersionsLessThanOrEqualTo");
-                    context.Writer.Write(publicRequest.ViewerSessionVersionsLessThanOrEqualTo.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

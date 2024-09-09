@@ -64,49 +64,52 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                 throw new AmazonNetworkManagerException("Request object does not have required field GlobalNetworkId set");
             request.AddPathResource("{globalNetworkId}", StringUtils.FromString(publicRequest.GlobalNetworkId));
             request.ResourcePath = "/global-networks/{globalNetworkId}/route-analyses";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDestination())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Destination");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDestination())
+                    {
+                        context.Writer.WritePropertyName("Destination");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = RouteAnalysisEndpointOptionsSpecificationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Destination, context);
+                        var marshaller = RouteAnalysisEndpointOptionsSpecificationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Destination, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetIncludeReturnPath())
+                    {
+                        context.Writer.WritePropertyName("IncludeReturnPath");
+                        context.Writer.Write(publicRequest.IncludeReturnPath.Value);
+                    }
+
+                    if(publicRequest.IsSetSource())
+                    {
+                        context.Writer.WritePropertyName("Source");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RouteAnalysisEndpointOptionsSpecificationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Source, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetUseMiddleboxes())
+                    {
+                        context.Writer.WritePropertyName("UseMiddleboxes");
+                        context.Writer.Write(publicRequest.UseMiddleboxes.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetIncludeReturnPath())
-                {
-                    context.Writer.WritePropertyName("IncludeReturnPath");
-                    context.Writer.Write(publicRequest.IncludeReturnPath.Value);
-                }
-
-                if(publicRequest.IsSetSource())
-                {
-                    context.Writer.WritePropertyName("Source");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RouteAnalysisEndpointOptionsSpecificationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Source, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetUseMiddleboxes())
-                {
-                    context.Writer.WritePropertyName("UseMiddleboxes");
-                    context.Writer.Write(publicRequest.UseMiddleboxes.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

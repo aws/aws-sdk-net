@@ -63,49 +63,52 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccountId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AccountId");
-                    context.Writer.Write(publicRequest.AccountId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccountId())
+                    {
+                        context.Writer.WritePropertyName("AccountId");
+                        context.Writer.Write(publicRequest.AccountId);
+                    }
+
+                    if(publicRequest.IsSetBudgetName())
+                    {
+                        context.Writer.WritePropertyName("BudgetName");
+                        context.Writer.Write(publicRequest.BudgetName);
+                    }
+
+                    if(publicRequest.IsSetNewNotification())
+                    {
+                        context.Writer.WritePropertyName("NewNotification");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = NotificationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.NewNotification, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetOldNotification())
+                    {
+                        context.Writer.WritePropertyName("OldNotification");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = NotificationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OldNotification, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetBudgetName())
-                {
-                    context.Writer.WritePropertyName("BudgetName");
-                    context.Writer.Write(publicRequest.BudgetName);
-                }
-
-                if(publicRequest.IsSetNewNotification())
-                {
-                    context.Writer.WritePropertyName("NewNotification");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = NotificationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.NewNotification, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOldNotification())
-                {
-                    context.Writer.WritePropertyName("OldNotification");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = NotificationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OldNotification, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

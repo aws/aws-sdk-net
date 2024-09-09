@@ -63,32 +63,35 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApplicationConfigurationId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("applicationConfigurationId");
-                    context.Writer.Write(publicRequest.ApplicationConfigurationId);
-                }
-
-                if(publicRequest.IsSetConfigurationIds())
-                {
-                    context.Writer.WritePropertyName("configurationIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestConfigurationIdsListValue in publicRequest.ConfigurationIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApplicationConfigurationId())
                     {
-                            context.Writer.Write(publicRequestConfigurationIdsListValue);
+                        context.Writer.WritePropertyName("applicationConfigurationId");
+                        context.Writer.Write(publicRequest.ApplicationConfigurationId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetConfigurationIds())
+                    {
+                        context.Writer.WritePropertyName("configurationIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestConfigurationIdsListValue in publicRequest.ConfigurationIds)
+                        {
+                                context.Writer.Write(publicRequestConfigurationIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

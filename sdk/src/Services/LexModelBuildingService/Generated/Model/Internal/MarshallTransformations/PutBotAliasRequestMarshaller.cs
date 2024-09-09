@@ -67,60 +67,63 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                 throw new AmazonLexModelBuildingServiceException("Request object does not have required field Name set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/bots/{botName}/aliases/{name}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBotVersion())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("botVersion");
-                    context.Writer.Write(publicRequest.BotVersion);
-                }
-
-                if(publicRequest.IsSetChecksum())
-                {
-                    context.Writer.WritePropertyName("checksum");
-                    context.Writer.Write(publicRequest.Checksum);
-                }
-
-                if(publicRequest.IsSetConversationLogs())
-                {
-                    context.Writer.WritePropertyName("conversationLogs");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ConversationLogsRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ConversationLogs, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBotVersion())
                     {
+                        context.Writer.WritePropertyName("botVersion");
+                        context.Writer.Write(publicRequest.BotVersion);
+                    }
+
+                    if(publicRequest.IsSetChecksum())
+                    {
+                        context.Writer.WritePropertyName("checksum");
+                        context.Writer.Write(publicRequest.Checksum);
+                    }
+
+                    if(publicRequest.IsSetConversationLogs())
+                    {
+                        context.Writer.WritePropertyName("conversationLogs");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = ConversationLogsRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ConversationLogs, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

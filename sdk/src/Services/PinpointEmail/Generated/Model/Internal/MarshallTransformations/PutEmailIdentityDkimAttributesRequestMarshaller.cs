@@ -64,21 +64,24 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
                 throw new AmazonPinpointEmailException("Request object does not have required field EmailIdentity set");
             request.AddPathResource("{EmailIdentity}", StringUtils.FromString(publicRequest.EmailIdentity));
             request.ResourcePath = "/v1/email/identities/{EmailIdentity}/dkim";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetSigningEnabled())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("SigningEnabled");
-                    context.Writer.Write(publicRequest.SigningEnabled.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetSigningEnabled())
+                    {
+                        context.Writer.WritePropertyName("SigningEnabled");
+                        context.Writer.Write(publicRequest.SigningEnabled.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,71 +63,74 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetEventBuses())
-                {
-                    context.Writer.WritePropertyName("EventBuses");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEventBusesListValue in publicRequest.EventBuses)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetEventBuses())
+                    {
+                        context.Writer.WritePropertyName("EventBuses");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestEventBusesListValue in publicRequest.EventBuses)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = EndpointEventBusMarshaller.Instance;
+                            marshaller.Marshall(publicRequestEventBusesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetReplicationConfig())
+                    {
+                        context.Writer.WritePropertyName("ReplicationConfig");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = EndpointEventBusMarshaller.Instance;
-                        marshaller.Marshall(publicRequestEventBusesListValue, context);
+                        var marshaller = ReplicationConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ReplicationConfig, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("RoleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    if(publicRequest.IsSetRoutingConfig())
+                    {
+                        context.Writer.WritePropertyName("RoutingConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RoutingConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RoutingConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetReplicationConfig())
-                {
-                    context.Writer.WritePropertyName("ReplicationConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ReplicationConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ReplicationConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("RoleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetRoutingConfig())
-                {
-                    context.Writer.WritePropertyName("RoutingConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RoutingConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RoutingConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

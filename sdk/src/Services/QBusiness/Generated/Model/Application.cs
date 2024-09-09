@@ -37,6 +37,7 @@ namespace Amazon.QBusiness.Model
         private string _applicationId;
         private DateTime? _createdAt;
         private string _displayName;
+        private IdentityType _identityType;
         private ApplicationStatus _status;
         private DateTime? _updatedAt;
 
@@ -94,6 +95,24 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetDisplayName()
         {
             return this._displayName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdentityType. 
+        /// <para>
+        /// The authentication type being used by a Amazon Q Business application.
+        /// </para>
+        /// </summary>
+        public IdentityType IdentityType
+        {
+            get { return this._identityType; }
+            set { this._identityType = value; }
+        }
+
+        // Check to see if IdentityType property is set
+        internal bool IsSetIdentityType()
+        {
+            return this._identityType != null;
         }
 
         /// <summary>

@@ -61,26 +61,29 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/ec2deepinspectionconfiguration/org/update";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetOrgPackagePaths())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("orgPackagePaths");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestOrgPackagePathsListValue in publicRequest.OrgPackagePaths)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetOrgPackagePaths())
                     {
-                            context.Writer.Write(publicRequestOrgPackagePathsListValue);
+                        context.Writer.WritePropertyName("orgPackagePaths");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestOrgPackagePathsListValue in publicRequest.OrgPackagePaths)
+                        {
+                                context.Writer.Write(publicRequestOrgPackagePathsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

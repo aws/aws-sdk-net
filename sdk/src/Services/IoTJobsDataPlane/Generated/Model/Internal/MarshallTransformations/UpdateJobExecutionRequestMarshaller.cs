@@ -67,65 +67,68 @@ namespace Amazon.IoTJobsDataPlane.Model.Internal.MarshallTransformations
                 throw new AmazonIoTJobsDataPlaneException("Request object does not have required field ThingName set");
             request.AddPathResource("{thingName}", StringUtils.FromString(publicRequest.ThingName));
             request.ResourcePath = "/things/{thingName}/jobs/{jobId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetExecutionNumber())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("executionNumber");
-                    context.Writer.Write(publicRequest.ExecutionNumber.Value);
-                }
-
-                if(publicRequest.IsSetExpectedVersion())
-                {
-                    context.Writer.WritePropertyName("expectedVersion");
-                    context.Writer.Write(publicRequest.ExpectedVersion.Value);
-                }
-
-                if(publicRequest.IsSetIncludeJobDocument())
-                {
-                    context.Writer.WritePropertyName("includeJobDocument");
-                    context.Writer.Write(publicRequest.IncludeJobDocument.Value);
-                }
-
-                if(publicRequest.IsSetIncludeJobExecutionState())
-                {
-                    context.Writer.WritePropertyName("includeJobExecutionState");
-                    context.Writer.Write(publicRequest.IncludeJobExecutionState.Value);
-                }
-
-                if(publicRequest.IsSetStatus())
-                {
-                    context.Writer.WritePropertyName("status");
-                    context.Writer.Write(publicRequest.Status);
-                }
-
-                if(publicRequest.IsSetStatusDetails())
-                {
-                    context.Writer.WritePropertyName("statusDetails");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestStatusDetailsKvp in publicRequest.StatusDetails)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetExecutionNumber())
                     {
-                        context.Writer.WritePropertyName(publicRequestStatusDetailsKvp.Key);
-                        var publicRequestStatusDetailsValue = publicRequestStatusDetailsKvp.Value;
-
-                            context.Writer.Write(publicRequestStatusDetailsValue);
+                        context.Writer.WritePropertyName("executionNumber");
+                        context.Writer.Write(publicRequest.ExecutionNumber.Value);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetExpectedVersion())
+                    {
+                        context.Writer.WritePropertyName("expectedVersion");
+                        context.Writer.Write(publicRequest.ExpectedVersion.Value);
+                    }
+
+                    if(publicRequest.IsSetIncludeJobDocument())
+                    {
+                        context.Writer.WritePropertyName("includeJobDocument");
+                        context.Writer.Write(publicRequest.IncludeJobDocument.Value);
+                    }
+
+                    if(publicRequest.IsSetIncludeJobExecutionState())
+                    {
+                        context.Writer.WritePropertyName("includeJobExecutionState");
+                        context.Writer.Write(publicRequest.IncludeJobExecutionState.Value);
+                    }
+
+                    if(publicRequest.IsSetStatus())
+                    {
+                        context.Writer.WritePropertyName("status");
+                        context.Writer.Write(publicRequest.Status);
+                    }
+
+                    if(publicRequest.IsSetStatusDetails())
+                    {
+                        context.Writer.WritePropertyName("statusDetails");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestStatusDetailsKvp in publicRequest.StatusDetails)
+                        {
+                            context.Writer.WritePropertyName(publicRequestStatusDetailsKvp.Key);
+                            var publicRequestStatusDetailsValue = publicRequestStatusDetailsKvp.Value;
+
+                                context.Writer.Write(publicRequestStatusDetailsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetStepTimeoutInMinutes())
+                    {
+                        context.Writer.WritePropertyName("stepTimeoutInMinutes");
+                        context.Writer.Write(publicRequest.StepTimeoutInMinutes.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetStepTimeoutInMinutes())
-                {
-                    context.Writer.WritePropertyName("stepTimeoutInMinutes");
-                    context.Writer.Write(publicRequest.StepTimeoutInMinutes.Value);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

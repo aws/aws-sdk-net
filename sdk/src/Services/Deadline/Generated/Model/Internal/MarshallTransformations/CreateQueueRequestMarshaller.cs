@@ -64,97 +64,100 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 throw new AmazonDeadlineException("Request object does not have required field FarmId set");
             request.AddPathResource("{farmId}", StringUtils.FromString(publicRequest.FarmId));
             request.ResourcePath = "/2023-10-12/farms/{farmId}/queues";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAllowedStorageProfileIds())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("allowedStorageProfileIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAllowedStorageProfileIdsListValue in publicRequest.AllowedStorageProfileIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAllowedStorageProfileIds())
                     {
-                            context.Writer.Write(publicRequestAllowedStorageProfileIdsListValue);
+                        context.Writer.WritePropertyName("allowedStorageProfileIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAllowedStorageProfileIdsListValue in publicRequest.AllowedStorageProfileIds)
+                        {
+                                context.Writer.Write(publicRequestAllowedStorageProfileIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDefaultBudgetAction())
-                {
-                    context.Writer.WritePropertyName("defaultBudgetAction");
-                    context.Writer.Write(publicRequest.DefaultBudgetAction);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetDisplayName())
-                {
-                    context.Writer.WritePropertyName("displayName");
-                    context.Writer.Write(publicRequest.DisplayName);
-                }
-
-                if(publicRequest.IsSetJobAttachmentSettings())
-                {
-                    context.Writer.WritePropertyName("jobAttachmentSettings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = JobAttachmentSettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.JobAttachmentSettings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetJobRunAsUser())
-                {
-                    context.Writer.WritePropertyName("jobRunAsUser");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = JobRunAsUserMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.JobRunAsUser, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRequiredFileSystemLocationNames())
-                {
-                    context.Writer.WritePropertyName("requiredFileSystemLocationNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRequiredFileSystemLocationNamesListValue in publicRequest.RequiredFileSystemLocationNames)
+                    if(publicRequest.IsSetDefaultBudgetAction())
                     {
-                            context.Writer.Write(publicRequestRequiredFileSystemLocationNamesListValue);
+                        context.Writer.WritePropertyName("defaultBudgetAction");
+                        context.Writer.Write(publicRequest.DefaultBudgetAction);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("roleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetDescription())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetDisplayName())
+                    {
+                        context.Writer.WritePropertyName("displayName");
+                        context.Writer.Write(publicRequest.DisplayName);
+                    }
+
+                    if(publicRequest.IsSetJobAttachmentSettings())
+                    {
+                        context.Writer.WritePropertyName("jobAttachmentSettings");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = JobAttachmentSettingsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.JobAttachmentSettings, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetJobRunAsUser())
+                    {
+                        context.Writer.WritePropertyName("jobRunAsUser");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = JobRunAsUserMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.JobRunAsUser, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRequiredFileSystemLocationNames())
+                    {
+                        context.Writer.WritePropertyName("requiredFileSystemLocationNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRequiredFileSystemLocationNamesListValue in publicRequest.RequiredFileSystemLocationNames)
+                        {
+                                context.Writer.Write(publicRequestRequiredFileSystemLocationNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("roleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

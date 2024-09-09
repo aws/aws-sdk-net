@@ -63,71 +63,74 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCostCategoryArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CostCategoryArn");
-                    context.Writer.Write(publicRequest.CostCategoryArn);
-                }
-
-                if(publicRequest.IsSetDefaultValue())
-                {
-                    context.Writer.WritePropertyName("DefaultValue");
-                    context.Writer.Write(publicRequest.DefaultValue);
-                }
-
-                if(publicRequest.IsSetEffectiveStart())
-                {
-                    context.Writer.WritePropertyName("EffectiveStart");
-                    context.Writer.Write(publicRequest.EffectiveStart);
-                }
-
-                if(publicRequest.IsSetRules())
-                {
-                    context.Writer.WritePropertyName("Rules");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRulesListValue in publicRequest.Rules)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCostCategoryArn())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = CostCategoryRuleMarshaller.Instance;
-                        marshaller.Marshall(publicRequestRulesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("CostCategoryArn");
+                        context.Writer.Write(publicRequest.CostCategoryArn);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetRuleVersion())
-                {
-                    context.Writer.WritePropertyName("RuleVersion");
-                    context.Writer.Write(publicRequest.RuleVersion);
-                }
-
-                if(publicRequest.IsSetSplitChargeRules())
-                {
-                    context.Writer.WritePropertyName("SplitChargeRules");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSplitChargeRulesListValue in publicRequest.SplitChargeRules)
+                    if(publicRequest.IsSetDefaultValue())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = CostCategorySplitChargeRuleMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSplitChargeRulesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("DefaultValue");
+                        context.Writer.Write(publicRequest.DefaultValue);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetEffectiveStart())
+                    {
+                        context.Writer.WritePropertyName("EffectiveStart");
+                        context.Writer.Write(publicRequest.EffectiveStart);
+                    }
+
+                    if(publicRequest.IsSetRules())
+                    {
+                        context.Writer.WritePropertyName("Rules");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRulesListValue in publicRequest.Rules)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = CostCategoryRuleMarshaller.Instance;
+                            marshaller.Marshall(publicRequestRulesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetRuleVersion())
+                    {
+                        context.Writer.WritePropertyName("RuleVersion");
+                        context.Writer.Write(publicRequest.RuleVersion);
+                    }
+
+                    if(publicRequest.IsSetSplitChargeRules())
+                    {
+                        context.Writer.WritePropertyName("SplitChargeRules");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSplitChargeRulesListValue in publicRequest.SplitChargeRules)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = CostCategorySplitChargeRuleMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSplitChargeRulesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -253,6 +253,16 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppStream.Model.CreateThemeForStackRequest.StackName</property>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.CreateThemeForStackRequest.TitleText</property>
+    <min>1</min>
+    <max>300</max>
+    <pattern>^[-@./#&amp;+\w\s]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppStream.Model.CreateUpdatedImageRequest.ExistingImageName</property>
     <pattern>^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$</pattern>
   </property-value-rule>
@@ -331,6 +341,10 @@
   <property-value-rule>
     <property>Amazon.AppStream.Model.DeleteStackRequest.Name</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.DeleteThemeForStackRequest.StackName</property>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.DeleteUserRequest.UserName</property>
@@ -500,6 +514,10 @@
   <property-value-rule>
     <property>Amazon.AppStream.Model.DescribeStacksResponse.NextToken</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.DescribeThemeForStackRequest.StackName</property>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.DescribeUsageReportSubscriptionsRequest.NextToken</property>
@@ -788,6 +806,16 @@
   <property-value-rule>
     <property>Amazon.AppStream.Model.UpdateStackRequest.RedirectURL</property>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.UpdateThemeForStackRequest.StackName</property>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.UpdateThemeForStackRequest.TitleText</property>
+    <min>1</min>
+    <max>300</max>
+    <pattern>^[-@./#&amp;+\w\s]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.AccessEndpoint.VpceId</property>
@@ -1148,6 +1176,35 @@
     <property>Amazon.AppStream.Model.StorageConnector.ResourceIdentifier</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.Theme.StackName</property>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.Theme.ThemeFaviconURL</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.Theme.ThemeOrganizationLogoURL</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.Theme.ThemeTitleText</property>
+    <min>1</min>
+    <max>300</max>
+    <pattern>^[-@./#&amp;+\w\s]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.ThemeFooterLink.DisplayName</property>
+    <min>1</min>
+    <max>300</max>
+    <pattern>^[-@./#&amp;+\w\s]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.ThemeFooterLink.FooterLinkURL</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.UsageReportSubscription.S3BucketName</property>

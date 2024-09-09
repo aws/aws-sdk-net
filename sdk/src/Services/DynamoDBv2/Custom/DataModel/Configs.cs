@@ -13,13 +13,10 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.DynamoDBv2.DocumentModel;
+using Amazon.Util;
 using System;
 using System.Collections.Generic;
-
-using Amazon.DynamoDBv2.DocumentModel;
-using Amazon.DynamoDBv2.Model;
-using System.Globalization;
-using Amazon.Util;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -48,8 +45,8 @@ namespace Amazon.DynamoDBv2.DataModel
     }
 
     /// <summary>
-    /// Configuration object for setting options on the DynamoDBContext.
-    /// and individual operations.
+    /// Configuration object for setting options on the <see cref="DynamoDBContext"/> that
+    /// will apply to all operations that use the context object.
     /// </summary>
 #if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
@@ -69,20 +66,24 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <summary>
-        /// Property that directs DynamoDBContext to use consistent reads.
+        /// Property that directs <see cref="DynamoDBContext"/> to use consistent reads.
         /// If property is not set, behavior defaults to non-consistent reads.
         /// </summary>
+        /// <remarks>
+        /// Refer to the <see href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
+        /// Read Consistency</see> topic in the DynamoDB Developer Guide for more information.
+        /// </remarks>
         public bool? ConsistentRead { get; set; }
 
         /// <summary>
-        /// Property that directs DynamoDBContext to skip version checks
+        /// Property that directs <see cref="DynamoDBContext"/> to skip version checks
         /// when saving or deleting an object with a version attribute.
         /// If property is not set, version checks are performed.
         /// </summary>
         public bool? SkipVersionCheck { get; set; }
 
         /// <summary>
-        /// Property that directs DynamoDBContext to prefix all table names
+        /// Property that directs <see cref="DynamoDBContext"/> to prefix all table names
         /// with a specific string.
         /// If property is null or empty, no prefix is used and default
         /// table names are used.
@@ -102,7 +103,7 @@ namespace Amazon.DynamoDBv2.DataModel
         public MetadataCachingMode? MetadataCachingMode { get; set; }
 
         /// <summary>
-        /// Property that directs DynamoDBContext to ignore null values
+        /// Property that directs <see cref="DynamoDBContext"/> to ignore null values
         /// on attributes during a Save operation.
         /// If the property is false (or not set), null values will be
         /// interpreted as directives to delete the specific attribute.
@@ -110,7 +111,7 @@ namespace Amazon.DynamoDBv2.DataModel
         public bool? IgnoreNullValues { get; set; }
 
         /// <summary>
-        /// Property that directs DynamoDBContext to enable empty string values
+        /// Property that directs <see cref="DynamoDBContext"/> to enable empty string values
         /// on attributes during a Save operation.
         /// If the property is false (or not set), empty string values will be
         /// interpreted as null values.
@@ -138,7 +139,9 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <summary>
         /// If true, all <see cref="DateTime"/> properties are retrieved in UTC timezone while reading data from DynamoDB. Else, the local timezone is used.
         /// </summary>
-        /// <remarks>This setting is only applicable to the high-level library. Service calls made via <see cref="AmazonDynamoDBClient"/> will always return <see cref="DateTime"/> attributes in UTC.</remarks>
+        /// <remarks>This setting is only applicable to the high-level library. 
+        /// Service calls made via <see cref="AmazonDynamoDBClient"/> will always return 
+        /// <see cref="DateTime"/> attributes in UTC.</remarks>
         public bool? RetrieveDateTimeInUtc { get; set; }
     }
 
@@ -150,17 +153,77 @@ namespace Amazon.DynamoDBv2.DataModel
 #if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
-    public class DynamoDBOperationConfig : DynamoDBContextConfig
+    public class DynamoDBOperationConfig
     {
         /// <summary>
-        /// Property that indicates the table to save an object to overriding the DynamoDBTable attribute 
-        /// declared for the type.
+        /// Property that directs <see cref="DynamoDBContext"/> to use consistent reads.
+        /// If property is not set, behavior defaults to non-consistent reads.
         /// </summary>
+        /// <remarks>
+        /// Refer to the <see href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
+        /// Read Consistency</see> topic in the DynamoDB Developer Guide for more information.
+        /// </remarks>
+        public bool? ConsistentRead { get; set; }
+
+        /// <summary>
+        /// Property that directs <see cref="DynamoDBContext"/> to skip version checks
+        /// when saving or deleting an object with a version attribute.
+        /// If property is not set, version checks are performed.
+        /// </summary>
+        public bool? SkipVersionCheck { get; set; }
+
+        /// <summary>
+        /// Indicates which DynamoDB table to use. This overrides the table specified 
+        /// by the <see cref="DynamoDBTableAttribute"/> on the .NET objects that you're saving or loading.
+        /// </summary>
+        /// <remarks>
+        /// If you want to specify this globally instead of for each operation, you can use 
+        /// the <see cref="TableAlias"/> or <see cref="TypeMapping"/> collections 
+        /// on <see cref="AWSConfigsDynamoDB.Context"/>.
+        /// </remarks>
         public string OverrideTableName { get; set; }
 
         /// <summary>
-        /// Property that indicates a query should traverse the index backward.
-        /// If the property is false (or not set), traversal shall be forward.
+        /// Property that directs <see cref="DynamoDBContext"/> to prefix all table names
+        /// with a specific string.
+        /// If property is null or empty, no prefix is used and default
+        /// table names are used.
+        /// </summary>
+        public string TableNamePrefix { get; set; }
+
+        /// <summary>
+        /// Property that directs  <see cref="DynamoDBContext"/> to ignore null values
+        /// on attributes during a Save operation.
+        /// If the property is false (or not set), null values will be
+        /// interpreted as directives to delete the specific attribute.
+        /// </summary>
+        public bool? IgnoreNullValues { get; set; }
+
+        /// <summary>
+        /// Property that directs  <see cref="DynamoDBContext"/> to enable empty string values
+        /// on attributes during a Save operation.
+        /// If the property is false (or not set), empty string values will be
+        /// interpreted as null values.
+        /// </summary>
+        public bool? IsEmptyStringValueEnabled { get; set; }
+
+        /// <summary>
+        /// Conversion specification which controls how conversion between
+        /// .NET and DynamoDB types happens.
+        /// </summary>
+        public DynamoDBEntryConversion Conversion { get; set; }
+
+        /// <summary>
+        /// If true, all <see cref="DateTime"/> properties are retrieved in UTC timezone while reading data from DynamoDB. Else, the local timezone is used.
+        /// </summary>
+        /// <remarks>This setting is only applicable to the high-level library. 
+        /// Service calls made via <see cref="AmazonDynamoDBClient"/> will always return 
+        /// <see cref="DateTime"/> attributes in UTC.</remarks>
+        public bool? RetrieveDateTimeInUtc { get; set; }
+
+        /// <summary>
+        /// Indicates whether a query should traverse the index backwards in descending order by range key value.
+        /// If the property is false (or not set), traversal shall be in ascending order.
         /// </summary>
         public bool? BackwardQuery { get; set; }
 
@@ -171,20 +234,31 @@ namespace Amazon.DynamoDBv2.DataModel
         public string IndexName { get; set; }
 
         /// <summary>
-        /// A logical operator to apply to the filter conditions:
-        /// AND - If all of the conditions evaluate to true, then the entire filter evaluates to true.
-        /// OR - If at least one of the conditions evaluate to true, then the entire filter evaluates to true.
-        /// 
-        /// Default value is AND.
+        /// The logical operator to apply to the filter conditions.
         /// </summary>
+        /// <remarks>
+        /// <list type="bullet">
+        ///     <item>
+        ///         <term><see cref="ConditionalOperatorValues.And" /></term>
+        ///         <definition>If all of the conditions evaluate to true, then the entire filter evaluates to true.</definition>
+        ///     </item>
+        ///     <item>
+        ///         <term><see cref="ConditionalOperatorValues.Or" /></term>
+        ///         <definition>If at least one of the conditions evaluate to true, then the entire filter evaluates to true.</definition>
+        ///     </item>
+        /// </list>
+        /// The default value is <see cref="ConditionalOperatorValues.And" />.
+        /// </remarks>
         public ConditionalOperatorValues ConditionalOperator { get; set; }
 
         /// <summary>
-        /// Query filter for the Query operation operation. Evaluates the query results and returns only
+        /// Query filter for the Query operation. Evaluates the query results and returns only
         /// the matching values. If you specify more than one condition, then by default all of the
-        /// conditions must evaluate to true. To match only some conditions, set ConditionalOperator to Or.
-        /// Note: Conditions must be against non-key properties.
+        /// conditions must evaluate to true. To match only some conditions, set <see cref="ConditionalOperator"/> to <see cref="ConditionalOperatorValues.Or" />.
         /// </summary>
+        /// <remarks>
+        /// Note: Conditions must be against non-key properties.
+        /// </remarks>
         public List<ScanCondition> QueryFilter { get; set; }
 
         /// <summary>
@@ -195,7 +269,9 @@ namespace Amazon.DynamoDBv2.DataModel
             QueryFilter = new List<ScanCondition>();
         }
 
-        // Checks if the IndexName is set on the config
+        /// <summary>
+        /// Checks if the IndexName is set on the config
+        /// </summary>
         internal bool IsIndexOperation { get { return !string.IsNullOrEmpty(IndexName); } }
     }
 
@@ -325,8 +401,7 @@ namespace Amazon.DynamoDBv2.DataModel
             IndexName = null,
             ConditionalOperator = ConditionalOperatorValues.And,
             Conversion = null,
-            IsEmptyStringValueEnabled = null,
-            MetadataCachingMode = null
+            IsEmptyStringValueEnabled = null
         };
         private static DynamoDBContextConfig _emptyContextConfig = new DynamoDBContextConfig
         {
@@ -346,25 +421,31 @@ namespace Amazon.DynamoDBv2.DataModel
             if (contextConfig == null)
                 contextConfig = _emptyContextConfig;
 
+            // These properties can be set at either the operation or context levels
             bool consistentRead = operationConfig.ConsistentRead ?? contextConfig.ConsistentRead ?? false;
             bool skipVersionCheck = operationConfig.SkipVersionCheck ?? contextConfig.SkipVersionCheck ?? false;
             bool ignoreNullValues = operationConfig.IgnoreNullValues ?? contextConfig.IgnoreNullValues ?? false;
-            bool disableFetchingTableMetadata = contextConfig.DisableFetchingTableMetadata ?? false;
             bool retrieveDateTimeInUtc = operationConfig.RetrieveDateTimeInUtc ?? contextConfig.RetrieveDateTimeInUtc ?? false;
-
             bool isEmptyStringValueEnabled = operationConfig.IsEmptyStringValueEnabled ?? contextConfig.IsEmptyStringValueEnabled ?? false;
-            string overrideTableName =
-                !string.IsNullOrEmpty(operationConfig.OverrideTableName) ? operationConfig.OverrideTableName : string.Empty;
+            DynamoDBEntryConversion conversion = operationConfig.Conversion ?? contextConfig.Conversion ?? DynamoDBEntryConversion.CurrentConversion;
             string tableNamePrefix =
                 !string.IsNullOrEmpty(operationConfig.TableNamePrefix) ? operationConfig.TableNamePrefix :
                 !string.IsNullOrEmpty(contextConfig.TableNamePrefix) ? contextConfig.TableNamePrefix : string.Empty;
+
+            // These properties can only be set at the operation level
+            bool disableFetchingTableMetadata = contextConfig.DisableFetchingTableMetadata ?? false;
+            MetadataCachingMode metadataCachingMode = contextConfig.MetadataCachingMode ?? DynamoDBv2.MetadataCachingMode.Default;
+
+            // We don't support overriding the table name at the context level, since a context object can be used with multiple tables.
+            string overrideTableName =
+                !string.IsNullOrEmpty(operationConfig.OverrideTableName) ? operationConfig.OverrideTableName : string.Empty;
+
+            // The rest are related to querying or scanning, so only operation level
             bool backwardQuery = operationConfig.BackwardQuery ?? false;
             string indexName =
                 !string.IsNullOrEmpty(operationConfig.IndexName) ? operationConfig.IndexName : DefaultIndexName;
             List<ScanCondition> queryFilter = operationConfig.QueryFilter ?? new List<ScanCondition>();
             ConditionalOperatorValues conditionalOperator = operationConfig.ConditionalOperator;
-            DynamoDBEntryConversion conversion = operationConfig.Conversion ?? contextConfig.Conversion ?? DynamoDBEntryConversion.CurrentConversion;
-            MetadataCachingMode metadataCachingMode = operationConfig.MetadataCachingMode ?? contextConfig.MetadataCachingMode ?? DynamoDBv2.MetadataCachingMode.Default;
 
             ConsistentRead = consistentRead;
             SkipVersionCheck = skipVersionCheck;

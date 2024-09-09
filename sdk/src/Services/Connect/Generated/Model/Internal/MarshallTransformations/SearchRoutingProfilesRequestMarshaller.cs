@@ -61,55 +61,58 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/search-routing-profiles";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetInstanceId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("InstanceId");
-                    context.Writer.Write(publicRequest.InstanceId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetInstanceId())
+                    {
+                        context.Writer.WritePropertyName("InstanceId");
+                        context.Writer.Write(publicRequest.InstanceId);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetSearchCriteria())
+                    {
+                        context.Writer.WritePropertyName("SearchCriteria");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RoutingProfileSearchCriteriaMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SearchCriteria, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSearchFilter())
+                    {
+                        context.Writer.WritePropertyName("SearchFilter");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RoutingProfileSearchFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SearchFilter, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetSearchCriteria())
-                {
-                    context.Writer.WritePropertyName("SearchCriteria");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RoutingProfileSearchCriteriaMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SearchCriteria, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSearchFilter())
-                {
-                    context.Writer.WritePropertyName("SearchFilter");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RoutingProfileSearchFilterMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SearchFilter, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

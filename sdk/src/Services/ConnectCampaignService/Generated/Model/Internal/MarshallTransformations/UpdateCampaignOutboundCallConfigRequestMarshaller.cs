@@ -64,38 +64,41 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
                 throw new AmazonConnectCampaignServiceException("Request object does not have required field Id set");
             request.AddPathResource("{id}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = "/campaigns/{id}/outbound-call-config";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAnswerMachineDetectionConfig())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("answerMachineDetectionConfig");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAnswerMachineDetectionConfig())
+                    {
+                        context.Writer.WritePropertyName("answerMachineDetectionConfig");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = AnswerMachineDetectionConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AnswerMachineDetectionConfig, context);
+                        var marshaller = AnswerMachineDetectionConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AnswerMachineDetectionConfig, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetConnectContactFlowId())
+                    {
+                        context.Writer.WritePropertyName("connectContactFlowId");
+                        context.Writer.Write(publicRequest.ConnectContactFlowId);
+                    }
+
+                    if(publicRequest.IsSetConnectSourcePhoneNumber())
+                    {
+                        context.Writer.WritePropertyName("connectSourcePhoneNumber");
+                        context.Writer.Write(publicRequest.ConnectSourcePhoneNumber);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetConnectContactFlowId())
-                {
-                    context.Writer.WritePropertyName("connectContactFlowId");
-                    context.Writer.Write(publicRequest.ConnectContactFlowId);
-                }
-
-                if(publicRequest.IsSetConnectSourcePhoneNumber())
-                {
-                    context.Writer.WritePropertyName("connectSourcePhoneNumber");
-                    context.Writer.Write(publicRequest.ConnectSourcePhoneNumber);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -61,41 +61,44 @@ namespace Amazon.Ivschat.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/SendEvent";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAttributes())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("attributes");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestAttributesKvp in publicRequest.Attributes)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAttributes())
                     {
-                        context.Writer.WritePropertyName(publicRequestAttributesKvp.Key);
-                        var publicRequestAttributesValue = publicRequestAttributesKvp.Value;
+                        context.Writer.WritePropertyName("attributes");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestAttributesKvp in publicRequest.Attributes)
+                        {
+                            context.Writer.WritePropertyName(publicRequestAttributesKvp.Key);
+                            var publicRequestAttributesValue = publicRequestAttributesKvp.Value;
 
-                            context.Writer.Write(publicRequestAttributesValue);
+                                context.Writer.Write(publicRequestAttributesValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetEventName())
+                    {
+                        context.Writer.WritePropertyName("eventName");
+                        context.Writer.Write(publicRequest.EventName);
+                    }
+
+                    if(publicRequest.IsSetRoomIdentifier())
+                    {
+                        context.Writer.WritePropertyName("roomIdentifier");
+                        context.Writer.Write(publicRequest.RoomIdentifier);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEventName())
-                {
-                    context.Writer.WritePropertyName("eventName");
-                    context.Writer.Write(publicRequest.EventName);
-                }
-
-                if(publicRequest.IsSetRoomIdentifier())
-                {
-                    context.Writer.WritePropertyName("roomIdentifier");
-                    context.Writer.Write(publicRequest.RoomIdentifier);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

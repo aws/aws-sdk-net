@@ -64,43 +64,46 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 throw new AmazonBedrockAgentRuntimeException("Request object does not have required field KnowledgeBaseId set");
             request.AddPathResource("{knowledgeBaseId}", StringUtils.FromString(publicRequest.KnowledgeBaseId));
             request.ResourcePath = "/knowledgebases/{knowledgeBaseId}/retrieve";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetNextToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetRetrievalConfiguration())
+                    {
+                        context.Writer.WritePropertyName("retrievalConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = KnowledgeBaseRetrievalConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RetrievalConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRetrievalQuery())
+                    {
+                        context.Writer.WritePropertyName("retrievalQuery");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = KnowledgeBaseQueryMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RetrievalQuery, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRetrievalConfiguration())
-                {
-                    context.Writer.WritePropertyName("retrievalConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = KnowledgeBaseRetrievalConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RetrievalConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRetrievalQuery())
-                {
-                    context.Writer.WritePropertyName("retrievalQuery");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = KnowledgeBaseQueryMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RetrievalQuery, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

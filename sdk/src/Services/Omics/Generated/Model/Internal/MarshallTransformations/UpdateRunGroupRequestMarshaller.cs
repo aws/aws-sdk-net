@@ -64,45 +64,48 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 throw new AmazonOmicsException("Request object does not have required field Id set");
             request.AddPathResource("{id}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = "/runGroup/{id}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMaxCpus())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("maxCpus");
-                    context.Writer.Write(publicRequest.MaxCpus.Value);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMaxCpus())
+                    {
+                        context.Writer.WritePropertyName("maxCpus");
+                        context.Writer.Write(publicRequest.MaxCpus.Value);
+                    }
+
+                    if(publicRequest.IsSetMaxDuration())
+                    {
+                        context.Writer.WritePropertyName("maxDuration");
+                        context.Writer.Write(publicRequest.MaxDuration.Value);
+                    }
+
+                    if(publicRequest.IsSetMaxGpus())
+                    {
+                        context.Writer.WritePropertyName("maxGpus");
+                        context.Writer.Write(publicRequest.MaxGpus.Value);
+                    }
+
+                    if(publicRequest.IsSetMaxRuns())
+                    {
+                        context.Writer.WritePropertyName("maxRuns");
+                        context.Writer.Write(publicRequest.MaxRuns.Value);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMaxDuration())
-                {
-                    context.Writer.WritePropertyName("maxDuration");
-                    context.Writer.Write(publicRequest.MaxDuration.Value);
-                }
-
-                if(publicRequest.IsSetMaxGpus())
-                {
-                    context.Writer.WritePropertyName("maxGpus");
-                    context.Writer.Write(publicRequest.MaxGpus.Value);
-                }
-
-                if(publicRequest.IsSetMaxRuns())
-                {
-                    context.Writer.WritePropertyName("maxRuns");
-                    context.Writer.Write(publicRequest.MaxRuns.Value);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

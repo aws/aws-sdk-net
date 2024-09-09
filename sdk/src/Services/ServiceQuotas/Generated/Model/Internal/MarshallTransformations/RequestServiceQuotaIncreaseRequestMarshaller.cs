@@ -63,46 +63,49 @@ namespace Amazon.ServiceQuotas.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetContextId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ContextId");
-                    context.Writer.Write(publicRequest.ContextId);
-                }
-
-                if(publicRequest.IsSetDesiredValue())
-                {
-                    context.Writer.WritePropertyName("DesiredValue");
-                    if(StringUtils.IsSpecialDoubleValue(publicRequest.DesiredValue.Value))
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetContextId())
                     {
-                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.DesiredValue.Value));
+                        context.Writer.WritePropertyName("ContextId");
+                        context.Writer.Write(publicRequest.ContextId);
                     }
-                    else
+
+                    if(publicRequest.IsSetDesiredValue())
                     {
-                        context.Writer.Write(publicRequest.DesiredValue.Value);
+                        context.Writer.WritePropertyName("DesiredValue");
+                        if(StringUtils.IsSpecialDoubleValue(publicRequest.DesiredValue.Value))
+                        {
+                            context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.DesiredValue.Value));
+                        }
+                        else
+                        {
+                            context.Writer.Write(publicRequest.DesiredValue.Value);
+                        }
                     }
+
+                    if(publicRequest.IsSetQuotaCode())
+                    {
+                        context.Writer.WritePropertyName("QuotaCode");
+                        context.Writer.Write(publicRequest.QuotaCode);
+                    }
+
+                    if(publicRequest.IsSetServiceCode())
+                    {
+                        context.Writer.WritePropertyName("ServiceCode");
+                        context.Writer.Write(publicRequest.ServiceCode);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetQuotaCode())
-                {
-                    context.Writer.WritePropertyName("QuotaCode");
-                    context.Writer.Write(publicRequest.QuotaCode);
-                }
-
-                if(publicRequest.IsSetServiceCode())
-                {
-                    context.Writer.WritePropertyName("ServiceCode");
-                    context.Writer.Write(publicRequest.ServiceCode);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -35,7 +35,8 @@ namespace Amazon.Connect.Model
     /// 
     ///  
     /// <para>
-    /// Deletes the Amazon Connect instance.
+    /// Deletes the Amazon Connect instance. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-connect-instance.html">Delete
+    /// your Amazon Connect instance</a> in the <i>Amazon Connect Administrator Guide</i>.
     /// </para>
     ///  
     /// <para>

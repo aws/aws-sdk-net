@@ -61,37 +61,40 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/start-recommendation-report-generation";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetGroupIdFilter())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("groupIdFilter");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestGroupIdFilterListValue in publicRequest.GroupIdFilter)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetGroupIdFilter())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("groupIdFilter");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestGroupIdFilterListValue in publicRequest.GroupIdFilter)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = GroupMarshaller.Instance;
-                        marshaller.Marshall(publicRequestGroupIdFilterListValue, context);
+                            var marshaller = GroupMarshaller.Instance;
+                            marshaller.Marshall(publicRequestGroupIdFilterListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetOutputFormat())
+                    {
+                        context.Writer.WritePropertyName("outputFormat");
+                        context.Writer.Write(publicRequest.OutputFormat);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetOutputFormat())
-                {
-                    context.Writer.WritePropertyName("outputFormat");
-                    context.Writer.Write(publicRequest.OutputFormat);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

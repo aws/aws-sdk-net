@@ -67,26 +67,29 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetResourceType())
                 request.Parameters.Add("resourceType", StringUtils.FromString(publicRequest.ResourceType));
             request.ResourcePath = "/positions/{ResourceIdentifier}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetPosition())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Position");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPositionListValue in publicRequest.Position)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetPosition())
                     {
-                            context.Writer.Write(publicRequestPositionListValue);
+                        context.Writer.WritePropertyName("Position");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPositionListValue in publicRequest.Position)
+                        {
+                                context.Writer.Write(publicRequestPositionListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             request.UseQueryString = true;

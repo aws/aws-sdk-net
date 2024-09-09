@@ -61,75 +61,78 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/CreateAlert";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAction())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Action");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ActionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Action, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetAlertDescription())
-                {
-                    context.Writer.WritePropertyName("AlertDescription");
-                    context.Writer.Write(publicRequest.AlertDescription);
-                }
-
-                if(publicRequest.IsSetAlertFilters())
-                {
-                    context.Writer.WritePropertyName("AlertFilters");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AlertFiltersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AlertFilters, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetAlertName())
-                {
-                    context.Writer.WritePropertyName("AlertName");
-                    context.Writer.Write(publicRequest.AlertName);
-                }
-
-                if(publicRequest.IsSetAlertSensitivityThreshold())
-                {
-                    context.Writer.WritePropertyName("AlertSensitivityThreshold");
-                    context.Writer.Write(publicRequest.AlertSensitivityThreshold.Value);
-                }
-
-                if(publicRequest.IsSetAnomalyDetectorArn())
-                {
-                    context.Writer.WritePropertyName("AnomalyDetectorArn");
-                    context.Writer.Write(publicRequest.AnomalyDetectorArn);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAction())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
+                        context.Writer.WritePropertyName("Action");
+                        context.Writer.WriteObjectStart();
 
-                            context.Writer.Write(publicRequestTagsValue);
+                        var marshaller = ActionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Action, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetAlertDescription())
+                    {
+                        context.Writer.WritePropertyName("AlertDescription");
+                        context.Writer.Write(publicRequest.AlertDescription);
+                    }
+
+                    if(publicRequest.IsSetAlertFilters())
+                    {
+                        context.Writer.WritePropertyName("AlertFilters");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AlertFiltersMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AlertFilters, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetAlertName())
+                    {
+                        context.Writer.WritePropertyName("AlertName");
+                        context.Writer.Write(publicRequest.AlertName);
+                    }
+
+                    if(publicRequest.IsSetAlertSensitivityThreshold())
+                    {
+                        context.Writer.WritePropertyName("AlertSensitivityThreshold");
+                        context.Writer.Write(publicRequest.AlertSensitivityThreshold.Value);
+                    }
+
+                    if(publicRequest.IsSetAnomalyDetectorArn())
+                    {
+                        context.Writer.WritePropertyName("AnomalyDetectorArn");
+                        context.Writer.Write(publicRequest.AnomalyDetectorArn);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

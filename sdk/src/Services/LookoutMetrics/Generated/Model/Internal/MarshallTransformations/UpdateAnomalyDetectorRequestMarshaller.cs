@@ -61,44 +61,47 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/UpdateAnomalyDetector";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAnomalyDetectorArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AnomalyDetectorArn");
-                    context.Writer.Write(publicRequest.AnomalyDetectorArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAnomalyDetectorArn())
+                    {
+                        context.Writer.WritePropertyName("AnomalyDetectorArn");
+                        context.Writer.Write(publicRequest.AnomalyDetectorArn);
+                    }
+
+                    if(publicRequest.IsSetAnomalyDetectorConfig())
+                    {
+                        context.Writer.WritePropertyName("AnomalyDetectorConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AnomalyDetectorConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AnomalyDetectorConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetAnomalyDetectorDescription())
+                    {
+                        context.Writer.WritePropertyName("AnomalyDetectorDescription");
+                        context.Writer.Write(publicRequest.AnomalyDetectorDescription);
+                    }
+
+                    if(publicRequest.IsSetKmsKeyArn())
+                    {
+                        context.Writer.WritePropertyName("KmsKeyArn");
+                        context.Writer.Write(publicRequest.KmsKeyArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetAnomalyDetectorConfig())
-                {
-                    context.Writer.WritePropertyName("AnomalyDetectorConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AnomalyDetectorConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AnomalyDetectorConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetAnomalyDetectorDescription())
-                {
-                    context.Writer.WritePropertyName("AnomalyDetectorDescription");
-                    context.Writer.Write(publicRequest.AnomalyDetectorDescription);
-                }
-
-                if(publicRequest.IsSetKmsKeyArn())
-                {
-                    context.Writer.WritePropertyName("KmsKeyArn");
-                    context.Writer.Write(publicRequest.KmsKeyArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

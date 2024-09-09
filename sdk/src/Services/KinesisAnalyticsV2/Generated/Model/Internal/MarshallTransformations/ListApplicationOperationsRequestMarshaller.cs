@@ -63,45 +63,48 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApplicationName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ApplicationName");
-                    context.Writer.Write(publicRequest.ApplicationName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApplicationName())
+                    {
+                        context.Writer.WritePropertyName("ApplicationName");
+                        context.Writer.Write(publicRequest.ApplicationName);
+                    }
+
+                    if(publicRequest.IsSetLimit())
+                    {
+                        context.Writer.WritePropertyName("Limit");
+                        context.Writer.Write(publicRequest.Limit.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetOperation())
+                    {
+                        context.Writer.WritePropertyName("Operation");
+                        context.Writer.Write(publicRequest.Operation);
+                    }
+
+                    if(publicRequest.IsSetOperationStatus())
+                    {
+                        context.Writer.WritePropertyName("OperationStatus");
+                        context.Writer.Write(publicRequest.OperationStatus);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetLimit())
-                {
-                    context.Writer.WritePropertyName("Limit");
-                    context.Writer.Write(publicRequest.Limit.Value);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetOperation())
-                {
-                    context.Writer.WritePropertyName("Operation");
-                    context.Writer.Write(publicRequest.Operation);
-                }
-
-                if(publicRequest.IsSetOperationStatus())
-                {
-                    context.Writer.WritePropertyName("OperationStatus");
-                    context.Writer.Write(publicRequest.OperationStatus);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

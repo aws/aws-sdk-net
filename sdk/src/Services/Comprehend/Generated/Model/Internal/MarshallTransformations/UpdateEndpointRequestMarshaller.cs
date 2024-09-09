@@ -63,45 +63,48 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDesiredDataAccessRoleArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DesiredDataAccessRoleArn");
-                    context.Writer.Write(publicRequest.DesiredDataAccessRoleArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDesiredDataAccessRoleArn())
+                    {
+                        context.Writer.WritePropertyName("DesiredDataAccessRoleArn");
+                        context.Writer.Write(publicRequest.DesiredDataAccessRoleArn);
+                    }
+
+                    if(publicRequest.IsSetDesiredInferenceUnits())
+                    {
+                        context.Writer.WritePropertyName("DesiredInferenceUnits");
+                        context.Writer.Write(publicRequest.DesiredInferenceUnits.Value);
+                    }
+
+                    if(publicRequest.IsSetDesiredModelArn())
+                    {
+                        context.Writer.WritePropertyName("DesiredModelArn");
+                        context.Writer.Write(publicRequest.DesiredModelArn);
+                    }
+
+                    if(publicRequest.IsSetEndpointArn())
+                    {
+                        context.Writer.WritePropertyName("EndpointArn");
+                        context.Writer.Write(publicRequest.EndpointArn);
+                    }
+
+                    if(publicRequest.IsSetFlywheelArn())
+                    {
+                        context.Writer.WritePropertyName("FlywheelArn");
+                        context.Writer.Write(publicRequest.FlywheelArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDesiredInferenceUnits())
-                {
-                    context.Writer.WritePropertyName("DesiredInferenceUnits");
-                    context.Writer.Write(publicRequest.DesiredInferenceUnits.Value);
-                }
-
-                if(publicRequest.IsSetDesiredModelArn())
-                {
-                    context.Writer.WritePropertyName("DesiredModelArn");
-                    context.Writer.Write(publicRequest.DesiredModelArn);
-                }
-
-                if(publicRequest.IsSetEndpointArn())
-                {
-                    context.Writer.WritePropertyName("EndpointArn");
-                    context.Writer.Write(publicRequest.EndpointArn);
-                }
-
-                if(publicRequest.IsSetFlywheelArn())
-                {
-                    context.Writer.WritePropertyName("FlywheelArn");
-                    context.Writer.Write(publicRequest.FlywheelArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

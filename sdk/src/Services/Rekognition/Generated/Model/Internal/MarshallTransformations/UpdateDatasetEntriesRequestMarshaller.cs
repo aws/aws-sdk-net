@@ -63,32 +63,35 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetChanges())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Changes");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetChanges())
+                    {
+                        context.Writer.WritePropertyName("Changes");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = DatasetChangesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Changes, context);
+                        var marshaller = DatasetChangesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Changes, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDatasetArn())
+                    {
+                        context.Writer.WritePropertyName("DatasetArn");
+                        context.Writer.Write(publicRequest.DatasetArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDatasetArn())
-                {
-                    context.Writer.WritePropertyName("DatasetArn");
-                    context.Writer.Write(publicRequest.DatasetArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

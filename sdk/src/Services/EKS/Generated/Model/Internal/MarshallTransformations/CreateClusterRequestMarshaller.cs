@@ -61,146 +61,149 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/clusters";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccessConfig())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("accessConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CreateAccessConfigRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AccessConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetBootstrapSelfManagedAddons())
-                {
-                    context.Writer.WritePropertyName("bootstrapSelfManagedAddons");
-                    context.Writer.Write(publicRequest.BootstrapSelfManagedAddons.Value);
-                }
-
-                if(publicRequest.IsSetClientRequestToken())
-                {
-                    context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetEncryptionConfig())
-                {
-                    context.Writer.WritePropertyName("encryptionConfig");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEncryptionConfigListValue in publicRequest.EncryptionConfig)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccessConfig())
                     {
+                        context.Writer.WritePropertyName("accessConfig");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = EncryptionConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequestEncryptionConfigListValue, context);
+                        var marshaller = CreateAccessConfigRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AccessConfig, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetKubernetesNetworkConfig())
-                {
-                    context.Writer.WritePropertyName("kubernetesNetworkConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = KubernetesNetworkConfigRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.KubernetesNetworkConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetLogging())
-                {
-                    context.Writer.WritePropertyName("logging");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LoggingMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Logging, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetOutpostConfig())
-                {
-                    context.Writer.WritePropertyName("outpostConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OutpostConfigRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OutpostConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetResourcesVpcConfig())
-                {
-                    context.Writer.WritePropertyName("resourcesVpcConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = VpcConfigRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ResourcesVpcConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("roleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetBootstrapSelfManagedAddons())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("bootstrapSelfManagedAddons");
+                        context.Writer.Write(publicRequest.BootstrapSelfManagedAddons.Value);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetClientRequestToken())
+                    {
+                        context.Writer.WritePropertyName("clientRequestToken");
+                        context.Writer.Write(publicRequest.ClientRequestToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientRequestToken()))
+                    {
+                        context.Writer.WritePropertyName("clientRequestToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetEncryptionConfig())
+                    {
+                        context.Writer.WritePropertyName("encryptionConfig");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestEncryptionConfigListValue in publicRequest.EncryptionConfig)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = EncryptionConfigMarshaller.Instance;
+                            marshaller.Marshall(publicRequestEncryptionConfigListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetKubernetesNetworkConfig())
+                    {
+                        context.Writer.WritePropertyName("kubernetesNetworkConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = KubernetesNetworkConfigRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.KubernetesNetworkConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetLogging())
+                    {
+                        context.Writer.WritePropertyName("logging");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LoggingMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Logging, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetOutpostConfig())
+                    {
+                        context.Writer.WritePropertyName("outpostConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = OutpostConfigRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OutpostConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetResourcesVpcConfig())
+                    {
+                        context.Writer.WritePropertyName("resourcesVpcConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = VpcConfigRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ResourcesVpcConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("roleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetUpgradePolicy())
+                    {
+                        context.Writer.WritePropertyName("upgradePolicy");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = UpgradePolicyRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.UpgradePolicy, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetVersion())
+                    {
+                        context.Writer.WritePropertyName("version");
+                        context.Writer.Write(publicRequest.Version);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetUpgradePolicy())
-                {
-                    context.Writer.WritePropertyName("upgradePolicy");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UpgradePolicyRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.UpgradePolicy, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetVersion())
-                {
-                    context.Writer.WritePropertyName("version");
-                    context.Writer.Write(publicRequest.Version);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

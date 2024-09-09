@@ -63,71 +63,74 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMaxLineCoveragePercentage())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("maxLineCoveragePercentage");
-                    if(StringUtils.IsSpecialDoubleValue(publicRequest.MaxLineCoveragePercentage.Value))
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMaxLineCoveragePercentage())
                     {
-                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.MaxLineCoveragePercentage.Value));
+                        context.Writer.WritePropertyName("maxLineCoveragePercentage");
+                        if(StringUtils.IsSpecialDoubleValue(publicRequest.MaxLineCoveragePercentage.Value))
+                        {
+                            context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.MaxLineCoveragePercentage.Value));
+                        }
+                        else
+                        {
+                            context.Writer.Write(publicRequest.MaxLineCoveragePercentage.Value);
+                        }
                     }
-                    else
+
+                    if(publicRequest.IsSetMaxResults())
                     {
-                        context.Writer.Write(publicRequest.MaxLineCoveragePercentage.Value);
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
                     }
-                }
 
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults.Value);
-                }
-
-                if(publicRequest.IsSetMinLineCoveragePercentage())
-                {
-                    context.Writer.WritePropertyName("minLineCoveragePercentage");
-                    if(StringUtils.IsSpecialDoubleValue(publicRequest.MinLineCoveragePercentage.Value))
+                    if(publicRequest.IsSetMinLineCoveragePercentage())
                     {
-                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.MinLineCoveragePercentage.Value));
+                        context.Writer.WritePropertyName("minLineCoveragePercentage");
+                        if(StringUtils.IsSpecialDoubleValue(publicRequest.MinLineCoveragePercentage.Value))
+                        {
+                            context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.MinLineCoveragePercentage.Value));
+                        }
+                        else
+                        {
+                            context.Writer.Write(publicRequest.MinLineCoveragePercentage.Value);
+                        }
                     }
-                    else
+
+                    if(publicRequest.IsSetNextToken())
                     {
-                        context.Writer.Write(publicRequest.MinLineCoveragePercentage.Value);
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
                     }
+
+                    if(publicRequest.IsSetReportArn())
+                    {
+                        context.Writer.WritePropertyName("reportArn");
+                        context.Writer.Write(publicRequest.ReportArn);
+                    }
+
+                    if(publicRequest.IsSetSortBy())
+                    {
+                        context.Writer.WritePropertyName("sortBy");
+                        context.Writer.Write(publicRequest.SortBy);
+                    }
+
+                    if(publicRequest.IsSetSortOrder())
+                    {
+                        context.Writer.WritePropertyName("sortOrder");
+                        context.Writer.Write(publicRequest.SortOrder);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetReportArn())
-                {
-                    context.Writer.WritePropertyName("reportArn");
-                    context.Writer.Write(publicRequest.ReportArn);
-                }
-
-                if(publicRequest.IsSetSortBy())
-                {
-                    context.Writer.WritePropertyName("sortBy");
-                    context.Writer.Write(publicRequest.SortBy);
-                }
-
-                if(publicRequest.IsSetSortOrder())
-                {
-                    context.Writer.WritePropertyName("sortOrder");
-                    context.Writer.Write(publicRequest.SortOrder);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

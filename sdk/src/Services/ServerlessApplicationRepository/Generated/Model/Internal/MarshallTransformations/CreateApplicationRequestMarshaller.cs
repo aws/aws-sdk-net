@@ -61,110 +61,113 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/applications";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAuthor())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("author");
-                    context.Writer.Write(publicRequest.Author);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetHomePageUrl())
-                {
-                    context.Writer.WritePropertyName("homePageUrl");
-                    context.Writer.Write(publicRequest.HomePageUrl);
-                }
-
-                if(publicRequest.IsSetLabels())
-                {
-                    context.Writer.WritePropertyName("labels");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLabelsListValue in publicRequest.Labels)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAuthor())
                     {
-                            context.Writer.Write(publicRequestLabelsListValue);
+                        context.Writer.WritePropertyName("author");
+                        context.Writer.Write(publicRequest.Author);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetHomePageUrl())
+                    {
+                        context.Writer.WritePropertyName("homePageUrl");
+                        context.Writer.Write(publicRequest.HomePageUrl);
+                    }
+
+                    if(publicRequest.IsSetLabels())
+                    {
+                        context.Writer.WritePropertyName("labels");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLabelsListValue in publicRequest.Labels)
+                        {
+                                context.Writer.Write(publicRequestLabelsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetLicenseBody())
+                    {
+                        context.Writer.WritePropertyName("licenseBody");
+                        context.Writer.Write(publicRequest.LicenseBody);
+                    }
+
+                    if(publicRequest.IsSetLicenseUrl())
+                    {
+                        context.Writer.WritePropertyName("licenseUrl");
+                        context.Writer.Write(publicRequest.LicenseUrl);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetReadmeBody())
+                    {
+                        context.Writer.WritePropertyName("readmeBody");
+                        context.Writer.Write(publicRequest.ReadmeBody);
+                    }
+
+                    if(publicRequest.IsSetReadmeUrl())
+                    {
+                        context.Writer.WritePropertyName("readmeUrl");
+                        context.Writer.Write(publicRequest.ReadmeUrl);
+                    }
+
+                    if(publicRequest.IsSetSemanticVersion())
+                    {
+                        context.Writer.WritePropertyName("semanticVersion");
+                        context.Writer.Write(publicRequest.SemanticVersion);
+                    }
+
+                    if(publicRequest.IsSetSourceCodeArchiveUrl())
+                    {
+                        context.Writer.WritePropertyName("sourceCodeArchiveUrl");
+                        context.Writer.Write(publicRequest.SourceCodeArchiveUrl);
+                    }
+
+                    if(publicRequest.IsSetSourceCodeUrl())
+                    {
+                        context.Writer.WritePropertyName("sourceCodeUrl");
+                        context.Writer.Write(publicRequest.SourceCodeUrl);
+                    }
+
+                    if(publicRequest.IsSetSpdxLicenseId())
+                    {
+                        context.Writer.WritePropertyName("spdxLicenseId");
+                        context.Writer.Write(publicRequest.SpdxLicenseId);
+                    }
+
+                    if(publicRequest.IsSetTemplateBody())
+                    {
+                        context.Writer.WritePropertyName("templateBody");
+                        context.Writer.Write(publicRequest.TemplateBody);
+                    }
+
+                    if(publicRequest.IsSetTemplateUrl())
+                    {
+                        context.Writer.WritePropertyName("templateUrl");
+                        context.Writer.Write(publicRequest.TemplateUrl);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetLicenseBody())
-                {
-                    context.Writer.WritePropertyName("licenseBody");
-                    context.Writer.Write(publicRequest.LicenseBody);
-                }
-
-                if(publicRequest.IsSetLicenseUrl())
-                {
-                    context.Writer.WritePropertyName("licenseUrl");
-                    context.Writer.Write(publicRequest.LicenseUrl);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetReadmeBody())
-                {
-                    context.Writer.WritePropertyName("readmeBody");
-                    context.Writer.Write(publicRequest.ReadmeBody);
-                }
-
-                if(publicRequest.IsSetReadmeUrl())
-                {
-                    context.Writer.WritePropertyName("readmeUrl");
-                    context.Writer.Write(publicRequest.ReadmeUrl);
-                }
-
-                if(publicRequest.IsSetSemanticVersion())
-                {
-                    context.Writer.WritePropertyName("semanticVersion");
-                    context.Writer.Write(publicRequest.SemanticVersion);
-                }
-
-                if(publicRequest.IsSetSourceCodeArchiveUrl())
-                {
-                    context.Writer.WritePropertyName("sourceCodeArchiveUrl");
-                    context.Writer.Write(publicRequest.SourceCodeArchiveUrl);
-                }
-
-                if(publicRequest.IsSetSourceCodeUrl())
-                {
-                    context.Writer.WritePropertyName("sourceCodeUrl");
-                    context.Writer.Write(publicRequest.SourceCodeUrl);
-                }
-
-                if(publicRequest.IsSetSpdxLicenseId())
-                {
-                    context.Writer.WritePropertyName("spdxLicenseId");
-                    context.Writer.Write(publicRequest.SpdxLicenseId);
-                }
-
-                if(publicRequest.IsSetTemplateBody())
-                {
-                    context.Writer.WritePropertyName("templateBody");
-                    context.Writer.Write(publicRequest.TemplateBody);
-                }
-
-                if(publicRequest.IsSetTemplateUrl())
-                {
-                    context.Writer.WritePropertyName("templateUrl");
-                    context.Writer.Write(publicRequest.TemplateUrl);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

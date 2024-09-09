@@ -61,37 +61,40 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/prod/batch/start";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetChannelIds())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("channelIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestChannelIdsListValue in publicRequest.ChannelIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetChannelIds())
                     {
-                            context.Writer.Write(publicRequestChannelIdsListValue);
+                        context.Writer.WritePropertyName("channelIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestChannelIdsListValue in publicRequest.ChannelIds)
+                        {
+                                context.Writer.Write(publicRequestChannelIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetMultiplexIds())
+                    {
+                        context.Writer.WritePropertyName("multiplexIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMultiplexIdsListValue in publicRequest.MultiplexIds)
+                        {
+                                context.Writer.Write(publicRequestMultiplexIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMultiplexIds())
-                {
-                    context.Writer.WritePropertyName("multiplexIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMultiplexIdsListValue in publicRequest.MultiplexIds)
-                    {
-                            context.Writer.Write(publicRequestMultiplexIdsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

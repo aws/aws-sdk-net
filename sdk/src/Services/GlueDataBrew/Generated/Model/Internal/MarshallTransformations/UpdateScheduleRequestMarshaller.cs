@@ -64,32 +64,35 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                 throw new AmazonGlueDataBrewException("Request object does not have required field Name set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/schedules/{name}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCronExpression())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CronExpression");
-                    context.Writer.Write(publicRequest.CronExpression);
-                }
-
-                if(publicRequest.IsSetJobNames())
-                {
-                    context.Writer.WritePropertyName("JobNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestJobNamesListValue in publicRequest.JobNames)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCronExpression())
                     {
-                            context.Writer.Write(publicRequestJobNamesListValue);
+                        context.Writer.WritePropertyName("CronExpression");
+                        context.Writer.Write(publicRequest.CronExpression);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetJobNames())
+                    {
+                        context.Writer.WritePropertyName("JobNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestJobNamesListValue in publicRequest.JobNames)
+                        {
+                                context.Writer.Write(publicRequestJobNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

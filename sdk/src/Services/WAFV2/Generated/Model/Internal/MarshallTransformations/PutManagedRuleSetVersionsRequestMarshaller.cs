@@ -63,64 +63,67 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Id");
-                    context.Writer.Write(publicRequest.Id);
-                }
-
-                if(publicRequest.IsSetLockToken())
-                {
-                    context.Writer.WritePropertyName("LockToken");
-                    context.Writer.Write(publicRequest.LockToken);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetRecommendedVersion())
-                {
-                    context.Writer.WritePropertyName("RecommendedVersion");
-                    context.Writer.Write(publicRequest.RecommendedVersion);
-                }
-
-                if(publicRequest.IsSetScope())
-                {
-                    context.Writer.WritePropertyName("Scope");
-                    context.Writer.Write(publicRequest.Scope);
-                }
-
-                if(publicRequest.IsSetVersionsToPublish())
-                {
-                    context.Writer.WritePropertyName("VersionsToPublish");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestVersionsToPublishKvp in publicRequest.VersionsToPublish)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetId())
                     {
-                        context.Writer.WritePropertyName(publicRequestVersionsToPublishKvp.Key);
-                        var publicRequestVersionsToPublishValue = publicRequestVersionsToPublishKvp.Value;
+                        context.Writer.WritePropertyName("Id");
+                        context.Writer.Write(publicRequest.Id);
+                    }
 
+                    if(publicRequest.IsSetLockToken())
+                    {
+                        context.Writer.WritePropertyName("LockToken");
+                        context.Writer.Write(publicRequest.LockToken);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetRecommendedVersion())
+                    {
+                        context.Writer.WritePropertyName("RecommendedVersion");
+                        context.Writer.Write(publicRequest.RecommendedVersion);
+                    }
+
+                    if(publicRequest.IsSetScope())
+                    {
+                        context.Writer.WritePropertyName("Scope");
+                        context.Writer.Write(publicRequest.Scope);
+                    }
+
+                    if(publicRequest.IsSetVersionsToPublish())
+                    {
+                        context.Writer.WritePropertyName("VersionsToPublish");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestVersionsToPublishKvp in publicRequest.VersionsToPublish)
+                        {
+                            context.Writer.WritePropertyName(publicRequestVersionsToPublishKvp.Key);
+                            var publicRequestVersionsToPublishValue = publicRequestVersionsToPublishKvp.Value;
 
-                        var marshaller = VersionToPublishMarshaller.Instance;
-                        marshaller.Marshall(publicRequestVersionsToPublishValue, context);
+                            context.Writer.WriteObjectStart();
 
+                            var marshaller = VersionToPublishMarshaller.Instance;
+                            marshaller.Marshall(publicRequestVersionsToPublishValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

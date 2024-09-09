@@ -61,77 +61,80 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/CreateChannel";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAuthorized())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("authorized");
-                    context.Writer.Write(publicRequest.Authorized.Value);
-                }
-
-                if(publicRequest.IsSetInsecureIngest())
-                {
-                    context.Writer.WritePropertyName("insecureIngest");
-                    context.Writer.Write(publicRequest.InsecureIngest.Value);
-                }
-
-                if(publicRequest.IsSetLatencyMode())
-                {
-                    context.Writer.WritePropertyName("latencyMode");
-                    context.Writer.Write(publicRequest.LatencyMode);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetPlaybackRestrictionPolicyArn())
-                {
-                    context.Writer.WritePropertyName("playbackRestrictionPolicyArn");
-                    context.Writer.Write(publicRequest.PlaybackRestrictionPolicyArn);
-                }
-
-                if(publicRequest.IsSetPreset())
-                {
-                    context.Writer.WritePropertyName("preset");
-                    context.Writer.Write(publicRequest.Preset);
-                }
-
-                if(publicRequest.IsSetRecordingConfigurationArn())
-                {
-                    context.Writer.WritePropertyName("recordingConfigurationArn");
-                    context.Writer.Write(publicRequest.RecordingConfigurationArn);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAuthorized())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("authorized");
+                        context.Writer.Write(publicRequest.Authorized.Value);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetInsecureIngest())
+                    {
+                        context.Writer.WritePropertyName("insecureIngest");
+                        context.Writer.Write(publicRequest.InsecureIngest.Value);
+                    }
+
+                    if(publicRequest.IsSetLatencyMode())
+                    {
+                        context.Writer.WritePropertyName("latencyMode");
+                        context.Writer.Write(publicRequest.LatencyMode);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetPlaybackRestrictionPolicyArn())
+                    {
+                        context.Writer.WritePropertyName("playbackRestrictionPolicyArn");
+                        context.Writer.Write(publicRequest.PlaybackRestrictionPolicyArn);
+                    }
+
+                    if(publicRequest.IsSetPreset())
+                    {
+                        context.Writer.WritePropertyName("preset");
+                        context.Writer.Write(publicRequest.Preset);
+                    }
+
+                    if(publicRequest.IsSetRecordingConfigurationArn())
+                    {
+                        context.Writer.WritePropertyName("recordingConfigurationArn");
+                        context.Writer.Write(publicRequest.RecordingConfigurationArn);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetType())
+                    {
+                        context.Writer.WritePropertyName("type");
+                        context.Writer.Write(publicRequest.Type);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetType())
-                {
-                    context.Writer.WritePropertyName("type");
-                    context.Writer.Write(publicRequest.Type);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 
