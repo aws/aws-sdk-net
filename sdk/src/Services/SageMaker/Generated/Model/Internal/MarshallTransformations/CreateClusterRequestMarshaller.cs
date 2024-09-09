@@ -91,6 +91,23 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetNodeRecovery())
+                {
+                    context.Writer.WritePropertyName("NodeRecovery");
+                    context.Writer.Write(publicRequest.NodeRecovery);
+                }
+
+                if(publicRequest.IsSetOrchestrator())
+                {
+                    context.Writer.WritePropertyName("Orchestrator");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ClusterOrchestratorMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Orchestrator, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");

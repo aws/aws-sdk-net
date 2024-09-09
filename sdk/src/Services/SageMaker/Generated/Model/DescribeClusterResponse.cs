@@ -40,6 +40,8 @@ namespace Amazon.SageMaker.Model
         private DateTime? _creationTime;
         private string _failureMessage;
         private List<ClusterInstanceGroupDetails> _instanceGroups = AWSConfigs.InitializeCollections ? new List<ClusterInstanceGroupDetails>() : null;
+        private ClusterNodeRecovery _nodeRecovery;
+        private ClusterOrchestrator _orchestrator;
         private VpcConfig _vpcConfig;
 
         /// <summary>
@@ -152,6 +154,42 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetInstanceGroups()
         {
             return this._instanceGroups != null && (this._instanceGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NodeRecovery. 
+        /// <para>
+        /// The node recovery mode configured for the SageMaker HyperPod cluster.
+        /// </para>
+        /// </summary>
+        public ClusterNodeRecovery NodeRecovery
+        {
+            get { return this._nodeRecovery; }
+            set { this._nodeRecovery = value; }
+        }
+
+        // Check to see if NodeRecovery property is set
+        internal bool IsSetNodeRecovery()
+        {
+            return this._nodeRecovery != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Orchestrator. 
+        /// <para>
+        /// The type of orchestrator used for the SageMaker HyperPod cluster. 
+        /// </para>
+        /// </summary>
+        public ClusterOrchestrator Orchestrator
+        {
+            get { return this._orchestrator; }
+            set { this._orchestrator = value; }
+        }
+
+        // Check to see if Orchestrator property is set
+        internal bool IsSetOrchestrator()
+        {
+            return this._orchestrator != null;
         }
 
         /// <summary>

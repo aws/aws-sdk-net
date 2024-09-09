@@ -3627,6 +3627,10 @@ namespace Amazon.SageMaker
     {
 
         /// <summary>
+        /// Constant DeepHealthCheckInProgress for ClusterInstanceStatus
+        /// </summary>
+        public static readonly ClusterInstanceStatus DeepHealthCheckInProgress = new ClusterInstanceStatus("DeepHealthCheckInProgress");
+        /// <summary>
         /// Constant Failure for ClusterInstanceStatus
         /// </summary>
         public static readonly ClusterInstanceStatus Failure = new ClusterInstanceStatus("Failure");
@@ -3870,6 +3874,56 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ClusterInstanceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ClusterNodeRecovery.
+    /// </summary>
+    public class ClusterNodeRecovery : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Automatic for ClusterNodeRecovery
+        /// </summary>
+        public static readonly ClusterNodeRecovery Automatic = new ClusterNodeRecovery("Automatic");
+        /// <summary>
+        /// Constant None for ClusterNodeRecovery
+        /// </summary>
+        public static readonly ClusterNodeRecovery None = new ClusterNodeRecovery("None");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClusterNodeRecovery(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusterNodeRecovery FindValue(string value)
+        {
+            return FindValue<ClusterNodeRecovery>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClusterNodeRecovery(string value)
         {
             return FindValue(value);
         }
@@ -4614,6 +4668,56 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DataSourceName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DeepHealthCheckType.
+    /// </summary>
+    public class DeepHealthCheckType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant InstanceConnectivity for DeepHealthCheckType
+        /// </summary>
+        public static readonly DeepHealthCheckType InstanceConnectivity = new DeepHealthCheckType("InstanceConnectivity");
+        /// <summary>
+        /// Constant InstanceStress for DeepHealthCheckType
+        /// </summary>
+        public static readonly DeepHealthCheckType InstanceStress = new DeepHealthCheckType("InstanceStress");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeepHealthCheckType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeepHealthCheckType FindValue(string value)
+        {
+            return FindValue<DeepHealthCheckType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeepHealthCheckType(string value)
         {
             return FindValue(value);
         }

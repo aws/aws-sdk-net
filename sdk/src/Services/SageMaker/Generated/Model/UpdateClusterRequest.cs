@@ -37,6 +37,7 @@ namespace Amazon.SageMaker.Model
     {
         private string _clusterName;
         private List<ClusterInstanceGroupSpecification> _instanceGroups = AWSConfigs.InitializeCollections ? new List<ClusterInstanceGroupSpecification>() : null;
+        private ClusterNodeRecovery _nodeRecovery;
 
         /// <summary>
         /// Gets and sets the property ClusterName. 
@@ -74,6 +75,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetInstanceGroups()
         {
             return this._instanceGroups != null && (this._instanceGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NodeRecovery. 
+        /// <para>
+        /// The node recovery mode to be applied to the SageMaker HyperPod cluster.
+        /// </para>
+        /// </summary>
+        public ClusterNodeRecovery NodeRecovery
+        {
+            get { return this._nodeRecovery; }
+            set { this._nodeRecovery = value; }
+        }
+
+        // Check to see if NodeRecovery property is set
+        internal bool IsSetNodeRecovery()
+        {
+            return this._nodeRecovery != null;
         }
 
     }
