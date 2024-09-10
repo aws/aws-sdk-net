@@ -1,3 +1,16 @@
+### 3.7.883.0 (2024-09-10 18:29 UTC)
+* ChimeSDKVoice (3.7.400.18)
+	* Documentation-only update that clarifies the ValidateE911Address action of the Amazon Chime SDK Voice APIs.
+* CognitoIdentity (3.7.401.0)
+	* This release adds sensitive trait to some required shapes.
+* Pipes (3.7.401.0)
+	* This release adds support for customer managed KMS keys in Amazon EventBridge Pipe
+* SecurityHub (3.7.401.8)
+	* Documentation update for Security Hub
+* Core 3.7.400.18
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.882.0 (2024-09-09 18:22 UTC)
 * DynamoDBv2 (3.7.400.17)
 	* Doc-only update for DynamoDB. Added information about async behavior for TagResource and UntagResource APIs and updated the description of ResourceInUseException.
