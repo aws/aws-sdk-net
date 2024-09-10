@@ -81,7 +81,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// <summary>
         /// Gets and sets the property VoiceToneAnalysisTaskId. 
         /// <para>
-        /// The ID of the voice tone anlysis task.
+        /// The ID of the voice tone analysis task.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
