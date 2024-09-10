@@ -62,6 +62,7 @@ namespace Amazon.CognitoIdentity.Model
         /// An OpenID token.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Token
         {
             get { return this._token; }
