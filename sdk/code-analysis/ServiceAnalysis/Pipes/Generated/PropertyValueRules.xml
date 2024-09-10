@@ -13,6 +13,12 @@
     <pattern>$|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:(.+)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Pipes.Model.CreatePipeRequest.KmsKeyIdentifier</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>[a-zA-Z0-9_\-/:]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Pipes.Model.CreatePipeRequest.Name</property>
     <min>1</min>
     <max>64</max>
@@ -89,6 +95,12 @@
     <min>0</min>
     <max>1600</max>
     <pattern>$|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:(.+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Pipes.Model.DescribePipeResponse.KmsKeyIdentifier</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>[a-zA-Z0-9_\-/:]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Pipes.Model.DescribePipeResponse.Name</property>
@@ -216,6 +228,12 @@
     <min>0</min>
     <max>1600</max>
     <pattern>$|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:(.+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Pipes.Model.UpdatePipeRequest.KmsKeyIdentifier</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>[a-zA-Z0-9_\-/:]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Pipes.Model.UpdatePipeRequest.Name</property>
