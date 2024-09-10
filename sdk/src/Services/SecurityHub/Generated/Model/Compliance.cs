@@ -30,8 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Contains finding details that are specific to control-based findings. Only returned
-    /// for findings generated from controls.
+    /// This object typically provides details about a control finding, such as applicable
+    /// standards and the status of control checks. While finding providers can add custom
+    /// content in <c>Compliance</c> object fields, they are typically used to review details
+    /// of Security Hub control findings.
     /// </summary>
     public partial class Compliance
     {
@@ -45,7 +47,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AssociatedStandards. 
         /// <para>
-        /// The enabled security standards in which a security control is currently enabled. 
+        /// Typically provides an array of enabled security standards in which a security control
+        /// is currently enabled. 
         /// </para>
         /// </summary>
         public List<AssociatedStandard> AssociatedStandards
@@ -63,8 +66,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property RelatedRequirements. 
         /// <para>
-        /// For a control, the industry or regulatory framework requirements that are related
-        /// to the control. The check for that control is aligned with these requirements.
+        /// Typically provides the industry or regulatory framework requirements that are related
+        /// to a control. The check for that control is aligned with these requirements.
         /// </para>
         ///  
         /// <para>
@@ -86,8 +89,9 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property SecurityControlId. 
         /// <para>
-        ///  The unique identifier of a control across standards. Values for this field typically
-        /// consist of an Amazon Web Servicesservice and a number, such as APIGateway.5. 
+        ///  Typically provides the unique identifier of a control across standards. For Security
+        /// Hub controls, this field consists of an Amazon Web Servicesservice and a unique number,
+        /// such as <c>APIGateway.5</c>. 
         /// </para>
         /// </summary>
         public string SecurityControlId
@@ -105,7 +109,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property SecurityControlParameters. 
         /// <para>
-        ///  An object that includes security control parameter names and values. 
+        ///  Typically an object that includes security control parameter names and values. 
         /// </para>
         /// </summary>
         public List<SecurityControlParameter> SecurityControlParameters
@@ -123,11 +127,11 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The result of a standards check.
+        /// Typically summarizes the result of a control check.
         /// </para>
         ///  
         /// <para>
-        /// The valid values for <c>Status</c> are as follows.
+        /// For Security Hub controls, valid values for <c>Status</c> are as follows.
         /// </para>
         ///  <ul> <li> <ul> <li> 
         /// <para>
@@ -166,9 +170,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property StatusReasons. 
         /// <para>
-        /// For findings generated from controls, a list of reasons behind the value of <c>Status</c>.
-        /// For the list of status reason codes and their meanings, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related
-        /// information in the ASFF</a> in the <i>Security Hub User Guide</i>. 
+        /// Typically used to provide a list of reasons for the value of <c>Status</c>.
         /// </para>
         /// </summary>
         public List<StatusReason> StatusReasons
