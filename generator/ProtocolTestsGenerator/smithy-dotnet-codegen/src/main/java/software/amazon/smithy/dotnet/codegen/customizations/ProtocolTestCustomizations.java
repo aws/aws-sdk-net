@@ -100,14 +100,11 @@ public final class ProtocolTestCustomizations {
             "QueryQueryXmlMapsXmlName",
             "QueryQueryFlattenedXmlMapWithXmlName",
             "QueryQueryFlattenedXmlMapWithXmlNamespace",
+            "RestXmlXmlMapWithXmlNamespace",
             // the .NET SDK will not support these tests as the service should be sending back valid xml in the response even if
             // the response is empty. Net's built-in xml serializer throws an exception if no root element is present.
             "QueryEmptyInputAndEmptyOutput",
             "QueryNoInputAndNoOutput",
-            "QueryNoInputAndOutput",
-            "RestXmlXmlMapWithXmlNamespace",
-            // something in v4 broke the the test below. we should investigate and fix it.
-            "RestJsonNullAndEmptyHeaders",
-            "NullAndEmptyHeaders"
+            "QueryNoInputAndOutput"
     );
 }

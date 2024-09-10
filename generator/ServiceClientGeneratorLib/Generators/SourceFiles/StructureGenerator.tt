@@ -302,6 +302,14 @@ namespace <#=this.Config.Namespace#>.Model
             return this.<#=member.VariableName#>.HasValue; 
 <#
                     }
+                    else if (member.IsList && (member.MarshallLocation == MarshallLocation.Header || member.MarshallLocation == MarshallLocation.Headers))
+                    {
+                    // see protocol test https://github.com/smithy-lang/smithy/blob/8418149c69be6e6847dffae27e802730e8e40d49/smithy-aws-protocol-tests/model/restXml/http-headers.smithy#L369
+                    // null or empty lists in headers should not be sent over the wire
+#>
+            return this.<#=member.VariableName#> != null && this.<#=member.VariableName#>.Count > 0;
+<#
+                    }
                     else if (member.IsMap || member.IsList)
                     {
 #>

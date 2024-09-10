@@ -65,7 +65,7 @@ namespace Amazon.RestXmlProtocol.Model
         // Check to see if HeaderBooleanList property is set
         internal bool IsSetHeaderBooleanList()
         {
-            return this._headerBooleanList != null && (this._headerBooleanList.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._headerBooleanList != null && this._headerBooleanList.Count > 0;
         }
 
         /// <summary>
@@ -125,7 +125,7 @@ namespace Amazon.RestXmlProtocol.Model
         // Check to see if HeaderEnumList property is set
         internal bool IsSetHeaderEnumList()
         {
-            return this._headerEnumList != null && (this._headerEnumList.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._headerEnumList != null && this._headerEnumList.Count > 0;
         }
 
         /// <summary>
@@ -185,7 +185,7 @@ namespace Amazon.RestXmlProtocol.Model
         // Check to see if HeaderIntegerList property is set
         internal bool IsSetHeaderIntegerList()
         {
-            return this._headerIntegerList != null && (this._headerIntegerList.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._headerIntegerList != null && this._headerIntegerList.Count > 0;
         }
 
         /// <summary>
@@ -245,7 +245,7 @@ namespace Amazon.RestXmlProtocol.Model
         // Check to see if HeaderStringList property is set
         internal bool IsSetHeaderStringList()
         {
-            return this._headerStringList != null && (this._headerStringList.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._headerStringList != null && this._headerStringList.Count > 0;
         }
 
         /// <summary>
@@ -260,7 +260,7 @@ namespace Amazon.RestXmlProtocol.Model
         // Check to see if HeaderStringSet property is set
         internal bool IsSetHeaderStringSet()
         {
-            return this._headerStringSet != null && (this._headerStringSet.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._headerStringSet != null && this._headerStringSet.Count > 0;
         }
 
         /// <summary>
@@ -275,7 +275,7 @@ namespace Amazon.RestXmlProtocol.Model
         // Check to see if HeaderTimestampList property is set
         internal bool IsSetHeaderTimestampList()
         {
-            return this._headerTimestampList != null && (this._headerTimestampList.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._headerTimestampList != null && this._headerTimestampList.Count > 0;
         }
 
         /// <summary>
