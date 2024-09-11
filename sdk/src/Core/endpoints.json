@@ -22347,6 +22347,7 @@
             "ap-southeast-2": {},
             "ap-southeast-3": {},
             "ap-southeast-4": {},
+            "ap-southeast-5": {},
             "ca-central-1": {},
             "ca-west-1": {},
             "eu-central-1": {},
@@ -37084,6 +37085,11 @@
             "us-iso-west-1": {}
           }
         },
+        "oam": {
+          "endpoints": {
+            "us-iso-east-1": {}
+          }
+        },
         "outposts": {
           "endpoints": {
             "us-iso-east-1": {}
@@ -37940,6 +37946,11 @@
           }
         },
         "monitoring": {
+          "endpoints": {
+            "us-isob-east-1": {}
+          }
+        },
+        "oam": {
           "endpoints": {
             "us-isob-east-1": {}
           }
