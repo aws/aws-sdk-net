@@ -1,3 +1,22 @@
+### 3.7.884.0 (2024-09-11 18:27 UTC)
+* BedrockAgent (3.7.403.0)
+	* Amazon Bedrock Knowledge Bases now supports using inference profiles to increase throughput and improve resilience.
+* BedrockAgentRuntime (3.7.404.0)
+	* Amazon Bedrock Knowledge Bases now supports using inference profiles to increase throughput and improve resilience.
+* ECR (3.7.403.0)
+	* Added KMS_DSSE to EncryptionType
+* GuardDuty (3.7.401.0)
+	* Add support for new statistic types in GetFindingsStatistics.
+* LexModelsV2 (3.7.402.0)
+	* Support new Polly voice engines in VoiceSettings: long-form and generative
+* MediaLive (3.7.403.0)
+	* Adds AV1 Codec support, SRT ouputs, and MediaLive Anywhere support.
+* S3 (3.7.402.10)
+	* Added support for RequestPayer property in TransferUtility Upload request/commands.
+* Core 3.7.400.19
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.883.0 (2024-09-10 18:29 UTC)
 * ChimeSDKVoice (3.7.400.18)
 	* Documentation-only update that clarifies the ValidateE911Address action of the Amazon Chime SDK Voice APIs.
