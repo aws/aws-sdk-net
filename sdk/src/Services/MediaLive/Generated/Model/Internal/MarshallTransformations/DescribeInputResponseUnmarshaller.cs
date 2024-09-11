@@ -88,6 +88,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     response.InputDevices = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("inputNetworkLocation", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.InputNetworkLocation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("inputPartnerIds", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
@@ -104,6 +110,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<MediaConnectFlow, MediaConnectFlowUnmarshaller>(MediaConnectFlowUnmarshaller.Instance);
                     response.MediaConnectFlows = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("multicastSettings", targetDepth))
+                {
+                    var unmarshaller = MulticastSettingsUnmarshaller.Instance;
+                    response.MulticastSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))

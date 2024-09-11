@@ -34,10 +34,26 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class VideoCodecSettings
     {
+        private Av1Settings _av1Settings;
         private FrameCaptureSettings _frameCaptureSettings;
         private H264Settings _h264Settings;
         private H265Settings _h265Settings;
         private Mpeg2Settings _mpeg2Settings;
+
+        /// <summary>
+        /// Gets and sets the property Av1Settings.
+        /// </summary>
+        public Av1Settings Av1Settings
+        {
+            get { return this._av1Settings; }
+            set { this._av1Settings = value; }
+        }
+
+        // Check to see if Av1Settings property is set
+        internal bool IsSetAv1Settings()
+        {
+            return this._av1Settings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property FrameCaptureSettings.

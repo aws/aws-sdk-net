@@ -136,6 +136,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSrtGroupSettings())
+            {
+                context.Writer.WritePropertyName("srtGroupSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SrtGroupSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.SrtGroupSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetUdpGroupSettings())
             {
                 context.Writer.WritePropertyName("udpGroupSettings");

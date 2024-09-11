@@ -48,6 +48,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAv1Settings())
+            {
+                context.Writer.WritePropertyName("av1Settings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = Av1SettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Av1Settings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetFrameCaptureSettings())
             {
                 context.Writer.WritePropertyName("frameCaptureSettings");

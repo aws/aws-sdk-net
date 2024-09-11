@@ -1,0 +1,178 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the medialive-2017-10-14.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.MediaLive.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+#pragma warning disable CS0612,CS0618
+namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Av1Settings Marshaller
+    /// </summary>
+    public class Av1SettingsMarshaller : IRequestMarshaller<Av1Settings, JsonMarshallerContext> 
+    {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="requestObject"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public void Marshall(Av1Settings requestObject, JsonMarshallerContext context)
+        {
+            if(requestObject == null)
+                return;
+            if(requestObject.IsSetAfdSignaling())
+            {
+                context.Writer.WritePropertyName("afdSignaling");
+                context.Writer.Write(requestObject.AfdSignaling);
+            }
+
+            if(requestObject.IsSetBufSize())
+            {
+                context.Writer.WritePropertyName("bufSize");
+                context.Writer.Write(requestObject.BufSize);
+            }
+
+            if(requestObject.IsSetColorSpaceSettings())
+            {
+                context.Writer.WritePropertyName("colorSpaceSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = Av1ColorSpaceSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ColorSpaceSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetFixedAfd())
+            {
+                context.Writer.WritePropertyName("fixedAfd");
+                context.Writer.Write(requestObject.FixedAfd);
+            }
+
+            if(requestObject.IsSetFramerateDenominator())
+            {
+                context.Writer.WritePropertyName("framerateDenominator");
+                context.Writer.Write(requestObject.FramerateDenominator);
+            }
+
+            if(requestObject.IsSetFramerateNumerator())
+            {
+                context.Writer.WritePropertyName("framerateNumerator");
+                context.Writer.Write(requestObject.FramerateNumerator);
+            }
+
+            if(requestObject.IsSetGopSize())
+            {
+                context.Writer.WritePropertyName("gopSize");
+                if(StringUtils.IsSpecialDoubleValue(requestObject.GopSize))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.GopSize));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.GopSize);
+                }
+            }
+
+            if(requestObject.IsSetGopSizeUnits())
+            {
+                context.Writer.WritePropertyName("gopSizeUnits");
+                context.Writer.Write(requestObject.GopSizeUnits);
+            }
+
+            if(requestObject.IsSetLevel())
+            {
+                context.Writer.WritePropertyName("level");
+                context.Writer.Write(requestObject.Level);
+            }
+
+            if(requestObject.IsSetLookAheadRateControl())
+            {
+                context.Writer.WritePropertyName("lookAheadRateControl");
+                context.Writer.Write(requestObject.LookAheadRateControl);
+            }
+
+            if(requestObject.IsSetMaxBitrate())
+            {
+                context.Writer.WritePropertyName("maxBitrate");
+                context.Writer.Write(requestObject.MaxBitrate);
+            }
+
+            if(requestObject.IsSetMinIInterval())
+            {
+                context.Writer.WritePropertyName("minIInterval");
+                context.Writer.Write(requestObject.MinIInterval);
+            }
+
+            if(requestObject.IsSetParDenominator())
+            {
+                context.Writer.WritePropertyName("parDenominator");
+                context.Writer.Write(requestObject.ParDenominator);
+            }
+
+            if(requestObject.IsSetParNumerator())
+            {
+                context.Writer.WritePropertyName("parNumerator");
+                context.Writer.Write(requestObject.ParNumerator);
+            }
+
+            if(requestObject.IsSetQvbrQualityLevel())
+            {
+                context.Writer.WritePropertyName("qvbrQualityLevel");
+                context.Writer.Write(requestObject.QvbrQualityLevel);
+            }
+
+            if(requestObject.IsSetSceneChangeDetect())
+            {
+                context.Writer.WritePropertyName("sceneChangeDetect");
+                context.Writer.Write(requestObject.SceneChangeDetect);
+            }
+
+            if(requestObject.IsSetTimecodeBurninSettings())
+            {
+                context.Writer.WritePropertyName("timecodeBurninSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TimecodeBurninSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.TimecodeBurninSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+        }
+
+        /// <summary>
+        /// Singleton Marshaller.
+        /// </summary>
+        public readonly static Av1SettingsMarshaller Instance = new Av1SettingsMarshaller();
+
+    }
+}

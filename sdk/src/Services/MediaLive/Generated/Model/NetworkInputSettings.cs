@@ -36,6 +36,7 @@ namespace Amazon.MediaLive.Model
     public partial class NetworkInputSettings
     {
         private HlsInputSettings _hlsInputSettings;
+        private MulticastInputSettings _multicastInputSettings;
         private NetworkInputServerValidation _serverValidation;
 
         /// <summary>
@@ -52,6 +53,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetHlsInputSettings()
         {
             return this._hlsInputSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MulticastInputSettings. Specifies multicast input settings
+        /// when the uri is for a multicast event.
+        /// </summary>
+        public MulticastInputSettings MulticastInputSettings
+        {
+            get { return this._multicastInputSettings; }
+            set { this._multicastInputSettings = value; }
+        }
+
+        // Check to see if MulticastInputSettings property is set
+        internal bool IsSetMulticastInputSettings()
+        {
+            return this._multicastInputSettings != null;
         }
 
         /// <summary>

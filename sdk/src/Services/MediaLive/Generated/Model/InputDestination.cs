@@ -35,6 +35,8 @@ namespace Amazon.MediaLive.Model
     public partial class InputDestination
     {
         private string _ip;
+        private string _network;
+        private List<InputDestinationRoute> _networkRoutes = AWSConfigs.InitializeCollections ? new List<InputDestinationRoute>() : null;
         private string _port;
         private string _url;
         private InputDestinationVpc _vpc;
@@ -53,6 +55,38 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetIp()
         {
             return this._ip != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Network. The ID of the attached network.
+        /// </summary>
+        public string Network
+        {
+            get { return this._network; }
+            set { this._network = value; }
+        }
+
+        // Check to see if Network property is set
+        internal bool IsSetNetwork()
+        {
+            return this._network != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkRoutes. If the push input has an input location
+        /// of ON-PREM it's a requirement to specify what the route of the inputis going to be
+        /// on the customer local network.
+        /// </summary>
+        public List<InputDestinationRoute> NetworkRoutes
+        {
+            get { return this._networkRoutes; }
+            set { this._networkRoutes = value; }
+        }
+
+        // Check to see if NetworkRoutes property is set
+        internal bool IsSetNetworkRoutes()
+        {
+            return this._networkRoutes != null && (this._networkRoutes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
