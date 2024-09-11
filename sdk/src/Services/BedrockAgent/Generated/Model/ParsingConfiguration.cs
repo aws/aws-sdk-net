@@ -38,9 +38,10 @@ namespace Amazon.BedrockAgent.Model
     ///  
     /// <para>
     /// To use a model to parse PDF documents, set the parsing strategy to <c>BEDROCK_FOUNDATION_MODEL</c>
-    /// and specify the model to use by ARN. You can also override the default parsing prompt
-    /// with instructions for how to interpret images and tables in your documents. The following
-    /// models are supported.
+    /// and specify the model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference
+    /// profile</a> to use by ARN. You can also override the default parsing prompt with instructions
+    /// for how to interpret images and tables in your documents. The following models are
+    /// supported.
     /// </para>
     ///  <ul> <li> 
     /// <para>
