@@ -31,7 +31,7 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDetector operation.
-    /// Retrieves an Amazon GuardDuty detector specified by the detectorId.
+    /// Retrieves a GuardDuty detector specified by the detectorId.
     /// 
     ///  
     /// <para>

@@ -43,7 +43,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DetectorId. 
         /// <para>
-        /// The unique ID of the detector the member is associated with.
+        /// The unique ID of the detector that is associated with the member.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]

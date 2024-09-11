@@ -88,8 +88,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DetectorId. 
         /// <para>
-        /// The unique ID of the detector of the GuardDuty account that you want to create an
-        /// IPSet for.
+        /// The unique ID of the detector of the GuardDuty account for which you want to create
+        /// an IPSet.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]

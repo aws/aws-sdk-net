@@ -42,7 +42,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DetectorId. 
         /// <para>
-        /// The ID of the detector to retrieve publishing destinations for.
+        /// The detector ID for which you want to retrieve the publishing destination.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]

@@ -110,8 +110,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DetectorId. 
         /// <para>
-        /// The ID of the detector belonging to the GuardDuty account that you want to create
-        /// a filter for.
+        /// The detector ID associated with the GuardDuty account for which you want to create
+        /// a filter.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]
