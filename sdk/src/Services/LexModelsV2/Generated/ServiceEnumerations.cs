@@ -5487,6 +5487,14 @@ namespace Amazon.LexModelsV2
     {
 
         /// <summary>
+        /// Constant Generative for VoiceEngine
+        /// </summary>
+        public static readonly VoiceEngine Generative = new VoiceEngine("generative");
+        /// <summary>
+        /// Constant LongForm for VoiceEngine
+        /// </summary>
+        public static readonly VoiceEngine LongForm = new VoiceEngine("long-form");
+        /// <summary>
         /// Constant Neural for VoiceEngine
         /// </summary>
         public static readonly VoiceEngine Neural = new VoiceEngine("neural");
