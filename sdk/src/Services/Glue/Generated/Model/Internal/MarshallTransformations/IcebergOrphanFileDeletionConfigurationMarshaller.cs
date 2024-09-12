@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// TableOptimizerConfiguration Marshaller
+    /// IcebergOrphanFileDeletionConfiguration Marshaller
     /// </summary>
-    public class TableOptimizerConfigurationMarshaller : IRequestMarshaller<TableOptimizerConfiguration, JsonMarshallerContext> 
+    public class IcebergOrphanFileDeletionConfigurationMarshaller : IRequestMarshaller<IcebergOrphanFileDeletionConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,42 +44,20 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(TableOptimizerConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(IcebergOrphanFileDeletionConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetEnabled())
+            if(requestObject.IsSetLocation())
             {
-                context.Writer.WritePropertyName("enabled");
-                context.Writer.Write(requestObject.Enabled);
+                context.Writer.WritePropertyName("location");
+                context.Writer.Write(requestObject.Location);
             }
 
-            if(requestObject.IsSetOrphanFileDeletionConfiguration())
+            if(requestObject.IsSetOrphanFileRetentionPeriodInDays())
             {
-                context.Writer.WritePropertyName("orphanFileDeletionConfiguration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = OrphanFileDeletionConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.OrphanFileDeletionConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetRetentionConfiguration())
-            {
-                context.Writer.WritePropertyName("retentionConfiguration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = RetentionConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.RetentionConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetRoleArn())
-            {
-                context.Writer.WritePropertyName("roleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WritePropertyName("orphanFileRetentionPeriodInDays");
+                context.Writer.Write(requestObject.OrphanFileRetentionPeriodInDays);
             }
 
         }
@@ -87,7 +65,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static TableOptimizerConfigurationMarshaller Instance = new TableOptimizerConfigurationMarshaller();
+        public readonly static IcebergOrphanFileDeletionConfigurationMarshaller Instance = new IcebergOrphanFileDeletionConfigurationMarshaller();
 
     }
 }

@@ -30,20 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Metrics for the optimizer run.
-    /// 
-    ///  
-    /// <para>
-    /// This structure is deprecated. See the individual metric members for compaction, retention,
-    /// and orphan file deletion.
-    /// </para>
+    /// Compaction metrics for Iceberg for the optimizer run.
     /// </summary>
-    public partial class RunMetrics
+    public partial class IcebergCompactionMetrics
     {
-        private string _jobDurationInHour;
-        private string _numberOfBytesCompacted;
-        private string _numberOfDpus;
-        private string _numberOfFilesCompacted;
+        private double? _jobDurationInHour;
+        private long? _numberOfBytesCompacted;
+        private int? _numberOfDpus;
+        private long? _numberOfFilesCompacted;
 
         /// <summary>
         /// Gets and sets the property JobDurationInHour. 
@@ -51,16 +45,16 @@ namespace Amazon.Glue.Model
         /// The duration of the job in hours.
         /// </para>
         /// </summary>
-        public string JobDurationInHour
+        public double JobDurationInHour
         {
-            get { return this._jobDurationInHour; }
+            get { return this._jobDurationInHour.GetValueOrDefault(); }
             set { this._jobDurationInHour = value; }
         }
 
         // Check to see if JobDurationInHour property is set
         internal bool IsSetJobDurationInHour()
         {
-            return this._jobDurationInHour != null;
+            return this._jobDurationInHour.HasValue; 
         }
 
         /// <summary>
@@ -69,16 +63,16 @@ namespace Amazon.Glue.Model
         /// The number of bytes removed by the compaction job run.
         /// </para>
         /// </summary>
-        public string NumberOfBytesCompacted
+        public long NumberOfBytesCompacted
         {
-            get { return this._numberOfBytesCompacted; }
+            get { return this._numberOfBytesCompacted.GetValueOrDefault(); }
             set { this._numberOfBytesCompacted = value; }
         }
 
         // Check to see if NumberOfBytesCompacted property is set
         internal bool IsSetNumberOfBytesCompacted()
         {
-            return this._numberOfBytesCompacted != null;
+            return this._numberOfBytesCompacted.HasValue; 
         }
 
         /// <summary>
@@ -87,16 +81,16 @@ namespace Amazon.Glue.Model
         /// The number of DPU hours consumed by the job.
         /// </para>
         /// </summary>
-        public string NumberOfDpus
+        public int NumberOfDpus
         {
-            get { return this._numberOfDpus; }
+            get { return this._numberOfDpus.GetValueOrDefault(); }
             set { this._numberOfDpus = value; }
         }
 
         // Check to see if NumberOfDpus property is set
         internal bool IsSetNumberOfDpus()
         {
-            return this._numberOfDpus != null;
+            return this._numberOfDpus.HasValue; 
         }
 
         /// <summary>
@@ -105,16 +99,16 @@ namespace Amazon.Glue.Model
         /// The number of files removed by the compaction job run.
         /// </para>
         /// </summary>
-        public string NumberOfFilesCompacted
+        public long NumberOfFilesCompacted
         {
-            get { return this._numberOfFilesCompacted; }
+            get { return this._numberOfFilesCompacted.GetValueOrDefault(); }
             set { this._numberOfFilesCompacted = value; }
         }
 
         // Check to see if NumberOfFilesCompacted property is set
         internal bool IsSetNumberOfFilesCompacted()
         {
-            return this._numberOfFilesCompacted != null;
+            return this._numberOfFilesCompacted.HasValue; 
         }
 
     }

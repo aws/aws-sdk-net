@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TableOptimizerConfiguration Object
+    /// Response Unmarshaller for RetentionConfiguration Object
     /// </summary>  
-    public class TableOptimizerConfigurationUnmarshaller : IUnmarshaller<TableOptimizerConfiguration, XmlUnmarshallerContext>, IUnmarshaller<TableOptimizerConfiguration, JsonUnmarshallerContext>
+    public class RetentionConfigurationUnmarshaller : IUnmarshaller<RetentionConfiguration, XmlUnmarshallerContext>, IUnmarshaller<RetentionConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        TableOptimizerConfiguration IUnmarshaller<TableOptimizerConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RetentionConfiguration IUnmarshaller<RetentionConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public TableOptimizerConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public RetentionConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            TableOptimizerConfiguration unmarshalledObject = new TableOptimizerConfiguration();
+            RetentionConfiguration unmarshalledObject = new RetentionConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,10 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("enabled", targetDepth))
+                if (context.TestExpression("icebergConfiguration", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("orphanFileDeletionConfiguration", targetDepth))
-                {
-                    var unmarshaller = OrphanFileDeletionConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.OrphanFileDeletionConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("retentionConfiguration", targetDepth))
-                {
-                    var unmarshaller = RetentionConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.RetentionConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("roleArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IcebergRetentionConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.IcebergConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +77,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         }
 
 
-        private static TableOptimizerConfigurationUnmarshaller _instance = new TableOptimizerConfigurationUnmarshaller();        
+        private static RetentionConfigurationUnmarshaller _instance = new RetentionConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TableOptimizerConfigurationUnmarshaller Instance
+        public static RetentionConfigurationUnmarshaller Instance
         {
             get
             {

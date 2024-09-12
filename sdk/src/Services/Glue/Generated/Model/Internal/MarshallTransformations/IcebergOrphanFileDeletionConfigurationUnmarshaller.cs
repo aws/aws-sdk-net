@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TableOptimizerConfiguration Object
+    /// Response Unmarshaller for IcebergOrphanFileDeletionConfiguration Object
     /// </summary>  
-    public class TableOptimizerConfigurationUnmarshaller : IUnmarshaller<TableOptimizerConfiguration, XmlUnmarshallerContext>, IUnmarshaller<TableOptimizerConfiguration, JsonUnmarshallerContext>
+    public class IcebergOrphanFileDeletionConfigurationUnmarshaller : IUnmarshaller<IcebergOrphanFileDeletionConfiguration, XmlUnmarshallerContext>, IUnmarshaller<IcebergOrphanFileDeletionConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        TableOptimizerConfiguration IUnmarshaller<TableOptimizerConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        IcebergOrphanFileDeletionConfiguration IUnmarshaller<IcebergOrphanFileDeletionConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public TableOptimizerConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public IcebergOrphanFileDeletionConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            TableOptimizerConfiguration unmarshalledObject = new TableOptimizerConfiguration();
+            IcebergOrphanFileDeletionConfiguration unmarshalledObject = new IcebergOrphanFileDeletionConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,16 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("enabled", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("orphanFileDeletionConfiguration", targetDepth))
-                {
-                    var unmarshaller = OrphanFileDeletionConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.OrphanFileDeletionConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("retentionConfiguration", targetDepth))
-                {
-                    var unmarshaller = RetentionConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.RetentionConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("roleArn", targetDepth))
+                if (context.TestExpression("location", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Location = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("orphanFileRetentionPeriodInDays", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.OrphanFileRetentionPeriodInDays = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +83,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         }
 
 
-        private static TableOptimizerConfigurationUnmarshaller _instance = new TableOptimizerConfigurationUnmarshaller();        
+        private static IcebergOrphanFileDeletionConfigurationUnmarshaller _instance = new IcebergOrphanFileDeletionConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TableOptimizerConfigurationUnmarshaller Instance
+        public static IcebergOrphanFileDeletionConfigurationUnmarshaller Instance
         {
             get
             {

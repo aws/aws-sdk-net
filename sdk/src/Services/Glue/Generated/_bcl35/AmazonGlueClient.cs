@@ -1093,8 +1093,20 @@ namespace Amazon.Glue
         /// <param name="request">Container for the necessary parameters to execute the BatchGetTableOptimizer service method.</param>
         /// 
         /// <returns>The response from the BatchGetTableOptimizer service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.InternalServiceException">
         /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetTableOptimizer">REST API Reference for BatchGetTableOptimizer Operation</seealso>
         public virtual BatchGetTableOptimizerResponse BatchGetTableOptimizer(BatchGetTableOptimizerRequest request)
@@ -3197,6 +3209,12 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.InvalidInputException">
         /// The input provided was not valid.
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateTableOptimizer">REST API Reference for CreateTableOptimizer Operation</seealso>
         public virtual CreateTableOptimizerResponse CreateTableOptimizer(CreateTableOptimizerRequest request)
         {
@@ -5040,6 +5058,9 @@ namespace Amazon.Glue
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.InvalidInputException">
         /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteTableOptimizer">REST API Reference for DeleteTableOptimizer Operation</seealso>
         public virtual DeleteTableOptimizerResponse DeleteTableOptimizer(DeleteTableOptimizerRequest request)
@@ -9089,6 +9110,9 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.InvalidInputException">
         /// The input provided was not valid.
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTableOptimizer">REST API Reference for GetTableOptimizer Operation</seealso>
         public virtual GetTableOptimizerResponse GetTableOptimizer(GetTableOptimizerRequest request)
         {
@@ -11628,6 +11652,12 @@ namespace Amazon.Glue
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.InvalidInputException">
         /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListTableOptimizerRuns">REST API Reference for ListTableOptimizerRuns Operation</seealso>
         public virtual ListTableOptimizerRunsResponse ListTableOptimizerRuns(ListTableOptimizerRunsRequest request)
@@ -15621,6 +15651,9 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
         /// Access to a resource was denied.
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
@@ -15629,6 +15662,12 @@ namespace Amazon.Glue
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.InvalidInputException">
         /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateTableOptimizer">REST API Reference for UpdateTableOptimizer Operation</seealso>
         public virtual UpdateTableOptimizerResponse UpdateTableOptimizer(UpdateTableOptimizerRequest request)

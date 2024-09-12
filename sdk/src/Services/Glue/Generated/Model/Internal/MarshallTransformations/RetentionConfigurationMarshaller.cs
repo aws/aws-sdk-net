@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// TableOptimizerConfiguration Marshaller
+    /// RetentionConfiguration Marshaller
     /// </summary>
-    public class TableOptimizerConfigurationMarshaller : IRequestMarshaller<TableOptimizerConfiguration, JsonMarshallerContext> 
+    public class RetentionConfigurationMarshaller : IRequestMarshaller<RetentionConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,42 +44,19 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(TableOptimizerConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(RetentionConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetEnabled())
+            if(requestObject.IsSetIcebergConfiguration())
             {
-                context.Writer.WritePropertyName("enabled");
-                context.Writer.Write(requestObject.Enabled);
-            }
-
-            if(requestObject.IsSetOrphanFileDeletionConfiguration())
-            {
-                context.Writer.WritePropertyName("orphanFileDeletionConfiguration");
+                context.Writer.WritePropertyName("icebergConfiguration");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = OrphanFileDeletionConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.OrphanFileDeletionConfiguration, context);
+                var marshaller = IcebergRetentionConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.IcebergConfiguration, context);
 
                 context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetRetentionConfiguration())
-            {
-                context.Writer.WritePropertyName("retentionConfiguration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = RetentionConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.RetentionConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetRoleArn())
-            {
-                context.Writer.WritePropertyName("roleArn");
-                context.Writer.Write(requestObject.RoleArn);
             }
 
         }
@@ -87,7 +64,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static TableOptimizerConfigurationMarshaller Instance = new TableOptimizerConfigurationMarshaller();
+        public readonly static RetentionConfigurationMarshaller Instance = new RetentionConfigurationMarshaller();
 
     }
 }

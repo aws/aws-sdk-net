@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TableOptimizerConfiguration Object
+    /// Response Unmarshaller for IcebergCompactionMetrics Object
     /// </summary>  
-    public class TableOptimizerConfigurationUnmarshaller : IUnmarshaller<TableOptimizerConfiguration, XmlUnmarshallerContext>, IUnmarshaller<TableOptimizerConfiguration, JsonUnmarshallerContext>
+    public class IcebergCompactionMetricsUnmarshaller : IUnmarshaller<IcebergCompactionMetrics, XmlUnmarshallerContext>, IUnmarshaller<IcebergCompactionMetrics, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        TableOptimizerConfiguration IUnmarshaller<TableOptimizerConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        IcebergCompactionMetrics IUnmarshaller<IcebergCompactionMetrics, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public TableOptimizerConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public IcebergCompactionMetrics Unmarshall(JsonUnmarshallerContext context)
         {
-            TableOptimizerConfiguration unmarshalledObject = new TableOptimizerConfiguration();
+            IcebergCompactionMetrics unmarshalledObject = new IcebergCompactionMetrics();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,28 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("enabled", targetDepth))
+                if (context.TestExpression("JobDurationInHour", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.JobDurationInHour = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("orphanFileDeletionConfiguration", targetDepth))
+                if (context.TestExpression("NumberOfBytesCompacted", targetDepth))
                 {
-                    var unmarshaller = OrphanFileDeletionConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.OrphanFileDeletionConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.NumberOfBytesCompacted = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("retentionConfiguration", targetDepth))
+                if (context.TestExpression("NumberOfDpus", targetDepth))
                 {
-                    var unmarshaller = RetentionConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.RetentionConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.NumberOfDpus = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("roleArn", targetDepth))
+                if (context.TestExpression("NumberOfFilesCompacted", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.NumberOfFilesCompacted = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +95,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         }
 
 
-        private static TableOptimizerConfigurationUnmarshaller _instance = new TableOptimizerConfigurationUnmarshaller();        
+        private static IcebergCompactionMetricsUnmarshaller _instance = new IcebergCompactionMetricsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TableOptimizerConfigurationUnmarshaller Instance
+        public static IcebergCompactionMetricsUnmarshaller Instance
         {
             get
             {

@@ -66,6 +66,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("compactionMetrics", targetDepth))
+                {
+                    var unmarshaller = CompactionMetricsUnmarshaller.Instance;
+                    unmarshalledObject.CompactionMetrics = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("endTimestamp", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -88,6 +94,18 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = RunMetricsUnmarshaller.Instance;
                     unmarshalledObject.Metrics = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("orphanFileDeletionMetrics", targetDepth))
+                {
+                    var unmarshaller = OrphanFileDeletionMetricsUnmarshaller.Instance;
+                    unmarshalledObject.OrphanFileDeletionMetrics = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("retentionMetrics", targetDepth))
+                {
+                    var unmarshaller = RetentionMetricsUnmarshaller.Instance;
+                    unmarshalledObject.RetentionMetrics = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("startTimestamp", targetDepth))
