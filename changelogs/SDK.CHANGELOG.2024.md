@@ -1,3 +1,21 @@
+### 3.7.885.0 (2024-09-12 18:22 UTC)
+* CognitoIdentityProvider (3.7.403.0)
+	* Added email MFA option to user pools with advanced security features.
+* ElasticLoadBalancingV2 (3.7.404.0)
+	* Correct incorrectly mapped error in ELBv2 waiters
+* ElasticMapReduce (3.7.401.0)
+	* Update APIs to allow modification of ODCR options, allocation strategy, and InstanceTypeConfigs on running InstanceFleet clusters.
+* Glue (3.7.406.0)
+	* AWS Glue is introducing two new optimizers for Apache Iceberg tables: snapshot retention and orphan file deletion. Customers can enable these optimizers and customize their configurations to perform daily maintenance tasks on their Iceberg tables based on their specific requirements.
+* MediaConvert (3.7.401.0)
+	* This release includes support for dynamic video overlay workflows, including picture-in-picture and squeezeback
+* RDS (3.7.401.18)
+	* This release adds support for the os-upgrade pending maintenance action for Amazon Aurora DB clusters.
+* StorageGateway (3.7.401.0)
+	* The S3 File Gateway now supports DSSE-KMS encryption. A new parameter EncryptionType is added to these APIs: CreateSmbFileShare, CreateNfsFileShare, UpdateSmbFileShare, UpdateNfsFileShare, DescribeSmbFileShares, DescribeNfsFileShares. Also, in favor of EncryptionType, KmsEncrypted is deprecated.
+* Synthetics (3.7.401.0)
+	* This release introduces two features. The first is tag replication, which allows for the propagation of canary tags onto Synthetics related resources, such as Lambda functions. The second is a limit increase in canary name length, which has now been increased from 21 to 255 characters.
+
 ### 3.7.884.0 (2024-09-11 18:27 UTC)
 * BedrockAgent (3.7.403.0)
 	* Amazon Bedrock Knowledge Bases now supports using inference profiles to increase throughput and improve resilience.
