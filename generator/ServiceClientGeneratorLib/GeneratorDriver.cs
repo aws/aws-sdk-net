@@ -871,8 +871,7 @@ namespace ServiceClientGenerator
             var nugetPackages = new Dictionary<string, string>();
             foreach (var service in manifest.ServiceConfigurations.OrderBy(x => x.ClassName))
             {
-                // Service like DynamoDB streams are included in a parent service.
-                if (service.ParentConfig != null || service.IsTestService)
+                if (service.IsTestService)
                     continue;
 
                 if (string.IsNullOrEmpty(service.Synopsis))
