@@ -194,7 +194,7 @@ namespace Amazon.Synthetics.Model
         /// You cannot change the name of a canary that has already been created.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=21)]
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }

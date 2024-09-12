@@ -43,7 +43,7 @@ namespace Amazon.Synthetics.Model
         /// The name of the canary.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=21)]
+        [AWSProperty(Min=1, Max=255)]
         public string CanaryName
         {
             get { return this._canaryName; }
