@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FileSourceSettings Object
+    /// Response Unmarshaller for VideoOverlayTransition Object
     /// </summary>  
-    public class FileSourceSettingsUnmarshaller : IUnmarshaller<FileSourceSettings, XmlUnmarshallerContext>, IUnmarshaller<FileSourceSettings, JsonUnmarshallerContext>
+    public class VideoOverlayTransitionUnmarshaller : IUnmarshaller<VideoOverlayTransition, XmlUnmarshallerContext>, IUnmarshaller<VideoOverlayTransition, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        FileSourceSettings IUnmarshaller<FileSourceSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        VideoOverlayTransition IUnmarshaller<VideoOverlayTransition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public FileSourceSettings Unmarshall(JsonUnmarshallerContext context)
+        public VideoOverlayTransition Unmarshall(JsonUnmarshallerContext context)
         {
-            FileSourceSettings unmarshalledObject = new FileSourceSettings();
+            VideoOverlayTransition unmarshalledObject = new VideoOverlayTransition();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,46 +66,22 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("byteRateLimit", targetDepth))
+                if (context.TestExpression("endPosition", targetDepth))
+                {
+                    var unmarshaller = VideoOverlayPositionUnmarshaller.Instance;
+                    unmarshalledObject.EndPosition = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("endTimecode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ByteRateLimit = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EndTimecode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("convert608To708", targetDepth))
+                if (context.TestExpression("startTimecode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Convert608To708 = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("convertPaintToPop", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConvertPaintToPop = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("framerate", targetDepth))
-                {
-                    var unmarshaller = CaptionSourceFramerateUnmarshaller.Instance;
-                    unmarshalledObject.Framerate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sourceFile", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceFile = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("timeDelta", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.TimeDelta = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("timeDeltaUnits", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TimeDeltaUnits = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StartTimecode = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -113,12 +89,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         }
 
 
-        private static FileSourceSettingsUnmarshaller _instance = new FileSourceSettingsUnmarshaller();        
+        private static VideoOverlayTransitionUnmarshaller _instance = new VideoOverlayTransitionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FileSourceSettingsUnmarshaller Instance
+        public static VideoOverlayTransitionUnmarshaller Instance
         {
             get
             {

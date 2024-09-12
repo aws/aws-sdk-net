@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for VideoOverlay Object
+    /// Response Unmarshaller for JobEngineVersion Object
     /// </summary>  
-    public class VideoOverlayUnmarshaller : IUnmarshaller<VideoOverlay, XmlUnmarshallerContext>, IUnmarshaller<VideoOverlay, JsonUnmarshallerContext>
+    public class JobEngineVersionUnmarshaller : IUnmarshaller<JobEngineVersion, XmlUnmarshallerContext>, IUnmarshaller<JobEngineVersion, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        VideoOverlay IUnmarshaller<VideoOverlay, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        JobEngineVersion IUnmarshaller<JobEngineVersion, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public VideoOverlay Unmarshall(JsonUnmarshallerContext context)
+        public JobEngineVersion Unmarshall(JsonUnmarshallerContext context)
         {
-            VideoOverlay unmarshalledObject = new VideoOverlay();
+            JobEngineVersion unmarshalledObject = new JobEngineVersion();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,40 +66,16 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("endTimecode", targetDepth))
+                if (context.TestExpression("expirationDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.ExpirationDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("version", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EndTimecode = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("initialPosition", targetDepth))
-                {
-                    var unmarshaller = VideoOverlayPositionUnmarshaller.Instance;
-                    unmarshalledObject.InitialPosition = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("input", targetDepth))
-                {
-                    var unmarshaller = VideoOverlayInputUnmarshaller.Instance;
-                    unmarshalledObject.Input = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("playback", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Playback = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("startTimecode", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StartTimecode = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("transitions", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<VideoOverlayTransition, VideoOverlayTransitionUnmarshaller>(VideoOverlayTransitionUnmarshaller.Instance);
-                    unmarshalledObject.Transitions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Version = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -107,12 +83,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         }
 
 
-        private static VideoOverlayUnmarshaller _instance = new VideoOverlayUnmarshaller();        
+        private static JobEngineVersionUnmarshaller _instance = new JobEngineVersionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VideoOverlayUnmarshaller Instance
+        public static JobEngineVersionUnmarshaller Instance
         {
             get
             {

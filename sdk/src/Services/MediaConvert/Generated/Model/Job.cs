@@ -46,6 +46,8 @@ namespace Amazon.MediaConvert.Model
         private string _errorMessage;
         private List<HopDestination> _hopDestinations = AWSConfigs.InitializeCollections ? new List<HopDestination>() : null;
         private string _id;
+        private string _jobEngineVersionRequested;
+        private string _jobEngineVersionUsed;
         private int? _jobPercentComplete;
         private string _jobTemplate;
         private JobMessages _messages;
@@ -247,6 +249,43 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobEngineVersionRequested. The Job engine version that
+        /// you requested for your job. Valid versions are in a YYYY-MM-DD format.
+        /// </summary>
+        public string JobEngineVersionRequested
+        {
+            get { return this._jobEngineVersionRequested; }
+            set { this._jobEngineVersionRequested = value; }
+        }
+
+        // Check to see if JobEngineVersionRequested property is set
+        internal bool IsSetJobEngineVersionRequested()
+        {
+            return this._jobEngineVersionRequested != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobEngineVersionUsed. The Job engine version that your
+        /// job used. Job engine versions are in a YYYY-MM-DD format. When you request an expired
+        /// version, the response for this property will be empty. Requests to create jobs with
+        /// an expired version result in a regular job, as if no specific Job engine version was
+        /// requested. When you request an invalid version, the response for this property will
+        /// be empty. Requests to create jobs with an invalid version result in a 400 error message,
+        /// and no job is created.
+        /// </summary>
+        public string JobEngineVersionUsed
+        {
+            get { return this._jobEngineVersionUsed; }
+            set { this._jobEngineVersionUsed = value; }
+        }
+
+        // Check to see if JobEngineVersionUsed property is set
+        internal bool IsSetJobEngineVersionUsed()
+        {
+            return this._jobEngineVersionUsed != null;
         }
 
         /// <summary>

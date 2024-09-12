@@ -1641,6 +1641,10 @@ namespace Amazon.MediaConvert
         /// </summary>
         public static readonly AudioDurationCorrection DISABLED = new AudioDurationCorrection("DISABLED");
         /// <summary>
+        /// Constant FORCE for AudioDurationCorrection
+        /// </summary>
+        public static readonly AudioDurationCorrection FORCE = new AudioDurationCorrection("FORCE");
+        /// <summary>
         /// Constant FRAME for AudioDurationCorrection
         /// </summary>
         public static readonly AudioDurationCorrection FRAME = new AudioDurationCorrection("FRAME");
@@ -3632,6 +3636,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CaptionDestinationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CaptionSourceByteRateLimit.
+    /// </summary>
+    public class CaptionSourceByteRateLimit : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for CaptionSourceByteRateLimit
+        /// </summary>
+        public static readonly CaptionSourceByteRateLimit DISABLED = new CaptionSourceByteRateLimit("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for CaptionSourceByteRateLimit
+        /// </summary>
+        public static readonly CaptionSourceByteRateLimit ENABLED = new CaptionSourceByteRateLimit("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CaptionSourceByteRateLimit(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CaptionSourceByteRateLimit FindValue(string value)
+        {
+            return FindValue<CaptionSourceByteRateLimit>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CaptionSourceByteRateLimit(string value)
         {
             return FindValue(value);
         }
@@ -5638,6 +5692,10 @@ namespace Amazon.MediaConvert
         /// Constant MXF for ContainerType
         /// </summary>
         public static readonly ContainerType MXF = new ContainerType("MXF");
+        /// <summary>
+        /// Constant OGG for ContainerType
+        /// </summary>
+        public static readonly ContainerType OGG = new ContainerType("OGG");
         /// <summary>
         /// Constant RAW for ContainerType
         /// </summary>
@@ -10156,6 +10214,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator H264RepeatPps(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type H264SaliencyAwareEncoding.
+    /// </summary>
+    public class H264SaliencyAwareEncoding : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for H264SaliencyAwareEncoding
+        /// </summary>
+        public static readonly H264SaliencyAwareEncoding DISABLED = new H264SaliencyAwareEncoding("DISABLED");
+        /// <summary>
+        /// Constant PREFERRED for H264SaliencyAwareEncoding
+        /// </summary>
+        public static readonly H264SaliencyAwareEncoding PREFERRED = new H264SaliencyAwareEncoding("PREFERRED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public H264SaliencyAwareEncoding(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static H264SaliencyAwareEncoding FindValue(string value)
+        {
+            return FindValue<H264SaliencyAwareEncoding>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator H264SaliencyAwareEncoding(string value)
         {
             return FindValue(value);
         }
@@ -21670,6 +21778,106 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator VideoCodec(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VideoOverlayPlayBackMode.
+    /// </summary>
+    public class VideoOverlayPlayBackMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ONCE for VideoOverlayPlayBackMode
+        /// </summary>
+        public static readonly VideoOverlayPlayBackMode ONCE = new VideoOverlayPlayBackMode("ONCE");
+        /// <summary>
+        /// Constant REPEAT for VideoOverlayPlayBackMode
+        /// </summary>
+        public static readonly VideoOverlayPlayBackMode REPEAT = new VideoOverlayPlayBackMode("REPEAT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VideoOverlayPlayBackMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VideoOverlayPlayBackMode FindValue(string value)
+        {
+            return FindValue<VideoOverlayPlayBackMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VideoOverlayPlayBackMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VideoOverlayUnit.
+    /// </summary>
+    public class VideoOverlayUnit : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PERCENTAGE for VideoOverlayUnit
+        /// </summary>
+        public static readonly VideoOverlayUnit PERCENTAGE = new VideoOverlayUnit("PERCENTAGE");
+        /// <summary>
+        /// Constant PIXELS for VideoOverlayUnit
+        /// </summary>
+        public static readonly VideoOverlayUnit PIXELS = new VideoOverlayUnit("PIXELS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VideoOverlayUnit(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VideoOverlayUnit FindValue(string value)
+        {
+            return FindValue<VideoOverlayUnit>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VideoOverlayUnit(string value)
         {
             return FindValue(value);
         }

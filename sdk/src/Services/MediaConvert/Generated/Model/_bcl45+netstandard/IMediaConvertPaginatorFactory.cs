@@ -52,6 +52,11 @@ namespace Amazon.MediaConvert.Model
         IListQueuesPaginator ListQueues(ListQueuesRequest request);
 
         /// <summary>
+        /// Paginator for ListVersions operation
+        ///</summary>
+        IListVersionsPaginator ListVersions(ListVersionsRequest request);
+
+        /// <summary>
         /// Paginator for SearchJobs operation
         ///</summary>
         ISearchJobsPaginator SearchJobs(SearchJobsRequest request);

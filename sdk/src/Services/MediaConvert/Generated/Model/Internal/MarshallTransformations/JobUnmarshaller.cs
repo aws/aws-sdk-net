@@ -132,6 +132,18 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("jobEngineVersionRequested", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.JobEngineVersionRequested = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("jobEngineVersionUsed", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.JobEngineVersionUsed = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("jobPercentComplete", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

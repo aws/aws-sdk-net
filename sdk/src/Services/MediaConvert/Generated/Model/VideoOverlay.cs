@@ -35,18 +35,21 @@ namespace Amazon.MediaConvert.Model
     public partial class VideoOverlay
     {
         private string _endTimecode;
+        private VideoOverlayPosition _initialPosition;
         private VideoOverlayInput _input;
+        private VideoOverlayPlayBackMode _playback;
         private string _startTimecode;
+        private List<VideoOverlayTransition> _transitions = AWSConfigs.InitializeCollections ? new List<VideoOverlayTransition>() : null;
 
         /// <summary>
-        /// Gets and sets the property EndTimecode. Enter the end timecode in the underlying input
-        /// video for this overlay. Your overlay will be active through this frame. To display
-        /// your video overlay for the duration of the underlying video: Leave blank. Use the
-        /// format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS is the
-        /// second, and FF is the frame number. When entering this value, take into account your
-        /// choice for the underlying Input timecode source. For example, if you have embedded
-        /// timecodes that start at 01:00:00:00 and you want your overlay to end ten minutes into
-        /// the video, enter 01:10:00:00.
+        /// Gets and sets the property EndTimecode. Enter the end timecode in the base input video
+        /// for this overlay. Your overlay will be active through this frame. To display your
+        /// video overlay for the duration of the base input video: Leave blank. Use the format
+        /// HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS isthe second,
+        /// and FF is the frame number. When entering this value, take into account your choice
+        /// for the base input video's timecode source. For example, if you have embedded timecodes
+        /// that start at 01:00:00:00 and you want your overlay to end ten minutes into the video,
+        /// enter 01:10:00:00.
         /// </summary>
         public string EndTimecode
         {
@@ -58,6 +61,25 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetEndTimecode()
         {
             return this._endTimecode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InitialPosition. Specify the Initial position of your video
+        /// overlay. To specify the Initial position of your video overlay, including distance
+        /// from the left or top edge of the base input video's frame, or size: Enter a value
+        /// for X position, Y position, Width, or Height. To use the full frame of the base input
+        /// video: Leave blank.
+        /// </summary>
+        public VideoOverlayPosition InitialPosition
+        {
+            get { return this._initialPosition; }
+            set { this._initialPosition = value; }
+        }
+
+        // Check to see if InitialPosition property is set
+        internal bool IsSetInitialPosition()
+        {
+            return this._initialPosition != null;
         }
 
         /// <summary>
@@ -77,14 +99,33 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StartTimecode. Enter the start timecode in the underlying
-        /// input video for this overlay. Your overlay will be active starting with this frame.
-        /// To display your video overlay starting at the beginning of the underlying video: Leave
-        /// blank. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the
-        /// minute, SS is the second, and FF is the frame number. When entering this value, take
-        /// into account your choice for the underlying Input timecode source. For example, if
-        /// you have embedded timecodes that start at 01:00:00:00 and you want your overlay to
-        /// begin five minutes into the video, enter 01:05:00:00.
+        /// Gets and sets the property Playback. Specify whether your video overlay repeats or
+        /// plays only once. To repeat your video overlay on a loop: Keep the default value, Repeat.
+        /// Your overlay will repeat for the duration of the base input video. To playback your
+        /// video overlay only once: Choose Once. With either option, you can end playback at
+        /// a time that you specify by entering a value for End timecode.
+        /// </summary>
+        public VideoOverlayPlayBackMode Playback
+        {
+            get { return this._playback; }
+            set { this._playback = value; }
+        }
+
+        // Check to see if Playback property is set
+        internal bool IsSetPlayback()
+        {
+            return this._playback != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartTimecode. Enter the start timecode in the base input
+        /// video for this overlay. Your overlay will be active starting with this frame. To display
+        /// your video overlay starting at the beginning of the base input video: Leave blank.
+        /// Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute,
+        /// SS is the second, and FF is the frame number. When entering this value, take into
+        /// account your choice for the base input video's timecode source. For example, if you
+        /// have embedded timecodes that start at 01:00:00:00 and you want your overlay to begin
+        /// five minutes into the video, enter 01:05:00:00.
         /// </summary>
         public string StartTimecode
         {
@@ -96,6 +137,25 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetStartTimecode()
         {
             return this._startTimecode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Transitions. Specify one or more transitions for your video
+        /// overlay. Use Transitions to reposition or resize your overlay over time. To use the
+        /// same position and size for the duration of your video overlay: Leave blank. To specify
+        /// a Transition: Enter a value for Start timecode, End Timecode, X Position, Y Position,
+        /// Width, or Height.
+        /// </summary>
+        public List<VideoOverlayTransition> Transitions
+        {
+            get { return this._transitions; }
+            set { this._transitions = value; }
+        }
+
+        // Check to see if Transitions property is set
+        internal bool IsSetTransitions()
+        {
+            return this._transitions != null && (this._transitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

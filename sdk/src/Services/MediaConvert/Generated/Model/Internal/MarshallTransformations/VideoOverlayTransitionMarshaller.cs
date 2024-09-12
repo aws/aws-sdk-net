@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// VideoOverlay Marshaller
+    /// VideoOverlayTransition Marshaller
     /// </summary>
-    public class VideoOverlayMarshaller : IRequestMarshaller<VideoOverlay, JsonMarshallerContext> 
+    public class VideoOverlayTransitionMarshaller : IRequestMarshaller<VideoOverlayTransition, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,42 +44,25 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(VideoOverlay requestObject, JsonMarshallerContext context)
+        public void Marshall(VideoOverlayTransition requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetEndPosition())
+            {
+                context.Writer.WritePropertyName("endPosition");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = VideoOverlayPositionMarshaller.Instance;
+                marshaller.Marshall(requestObject.EndPosition, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetEndTimecode())
             {
                 context.Writer.WritePropertyName("endTimecode");
                 context.Writer.Write(requestObject.EndTimecode);
-            }
-
-            if(requestObject.IsSetInitialPosition())
-            {
-                context.Writer.WritePropertyName("initialPosition");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = VideoOverlayPositionMarshaller.Instance;
-                marshaller.Marshall(requestObject.InitialPosition, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetInput())
-            {
-                context.Writer.WritePropertyName("input");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = VideoOverlayInputMarshaller.Instance;
-                marshaller.Marshall(requestObject.Input, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetPlayback())
-            {
-                context.Writer.WritePropertyName("playback");
-                context.Writer.Write(requestObject.Playback);
             }
 
             if(requestObject.IsSetStartTimecode())
@@ -88,28 +71,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.StartTimecode);
             }
 
-            if(requestObject.IsSetTransitions())
-            {
-                context.Writer.WritePropertyName("transitions");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectTransitionsListValue in requestObject.Transitions)
-                {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = VideoOverlayTransitionMarshaller.Instance;
-                    marshaller.Marshall(requestObjectTransitionsListValue, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-                context.Writer.WriteArrayEnd();
-            }
-
         }
 
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static VideoOverlayMarshaller Instance = new VideoOverlayMarshaller();
+        public readonly static VideoOverlayTransitionMarshaller Instance = new VideoOverlayTransitionMarshaller();
 
     }
 }

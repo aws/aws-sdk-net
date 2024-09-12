@@ -77,6 +77,14 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
+        /// Paginator for ListVersions operation
+        ///</summary>
+        public IListVersionsPaginator ListVersions(ListVersionsRequest request) 
+        {
+            return new ListVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for SearchJobs operation
         ///</summary>
         public ISearchJobsPaginator SearchJobs(SearchJobsRequest request) 
