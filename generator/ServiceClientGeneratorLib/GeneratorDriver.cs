@@ -1572,20 +1572,25 @@ namespace ServiceClientGenerator
         public static List<EndpointConstant> ExtractEndpoints(GeneratorOptions options, Func<string, string> nameConverter, Func<string, string> codeConverter = null)
         {
             var coreFilesRoot = Utils.PathCombineAlt(options.SdkRootFolder, "src", "Core");
-            var endpointsJsonFile = Utils.PathCombineAlt(coreFilesRoot, "endpoints.json");
+            var partitionsJsonFile = Utils.PathCombineAlt(coreFilesRoot, "partitions.json");
 
-            var endpointsJson = JsonMapper.ToObject(File.ReadAllText(endpointsJsonFile));
+            var partitionsJson = JsonMapper.ToObject(File.ReadAllText(partitionsJsonFile));
             var endpoints = new List<EndpointConstant>();
 
-            foreach (JsonData partition in endpointsJson["partitions"])
+            foreach (JsonData partition in partitionsJson["partitions"])
             {
-                var partitionName = partition["partition"].ToString();
-                var partitionDnsSuffix = partition["dnsSuffix"].ToString();
-                var hostnameTemplate = partition["defaults"]["hostname"].ToString();
+                var partitionName = partition["id"].ToString();
+                var partitionDnsSuffix = partition["outputs"]["dnsSuffix"].ToString();
+                var hostnameTemplate = "{service}.{region}.{dnsSuffix}";
                 var partitionRegionRegex = partition["regionRegex"].ToString();
                 JsonData regions = partition["regions"];
                 foreach (var regionCode in regions.PropertyNames)
                 {
+                    if (regionCode.EndsWith("-global", StringComparison.OrdinalIgnoreCase))
+                    {
+                        continue;
+                    }
+
                     var regionName = regions[regionCode]["description"].ToString();
                     endpoints.Add(new EndpointConstant
                     {
