@@ -1205,11 +1205,6 @@ namespace Amazon.RDS.Model
         /// manually. Specifying <c>SourceRegion</c> autogenerates a presigned URL that is a valid
         /// request for the operation that can run in the source Amazon Web Services Region.
         /// </para>
-        ///  
-        /// <para>
-        ///  <c>SourceRegion</c> isn't supported for SQL Server, because Amazon RDS for SQL Server
-        /// doesn't support cross-Region read replicas.
-        /// </para>
         ///  </note> 
         /// <para>
         /// This setting doesn't apply to RDS Custom DB instances.
