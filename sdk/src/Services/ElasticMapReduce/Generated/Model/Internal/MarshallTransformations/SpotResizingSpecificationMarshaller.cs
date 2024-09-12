@@ -48,6 +48,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAllocationStrategy())
+            {
+                context.Writer.WritePropertyName("AllocationStrategy");
+                context.Writer.Write(requestObject.AllocationStrategy);
+            }
+
             if(requestObject.IsSetTimeoutDurationMinutes())
             {
                 context.Writer.WritePropertyName("TimeoutDurationMinutes");
