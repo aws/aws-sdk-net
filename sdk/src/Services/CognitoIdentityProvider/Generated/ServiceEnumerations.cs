@@ -441,6 +441,10 @@ namespace Amazon.CognitoIdentityProvider
         /// </summary>
         public static readonly ChallengeNameType DEVICE_SRP_AUTH = new ChallengeNameType("DEVICE_SRP_AUTH");
         /// <summary>
+        /// Constant EMAIL_OTP for ChallengeNameType
+        /// </summary>
+        public static readonly ChallengeNameType EMAIL_OTP = new ChallengeNameType("EMAIL_OTP");
+        /// <summary>
         /// Constant MFA_SETUP for ChallengeNameType
         /// </summary>
         public static readonly ChallengeNameType MFA_SETUP = new ChallengeNameType("MFA_SETUP");

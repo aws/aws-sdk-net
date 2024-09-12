@@ -75,6 +75,17 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AccessToken);
                 }
 
+                if(publicRequest.IsSetEmailMfaSettings())
+                {
+                    context.Writer.WritePropertyName("EmailMfaSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EmailMfaSettingsTypeMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EmailMfaSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSMSMfaSettings())
                 {
                     context.Writer.WritePropertyName("SMSMfaSettings");

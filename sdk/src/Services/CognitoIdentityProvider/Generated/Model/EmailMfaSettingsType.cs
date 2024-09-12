@@ -30,14 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The type used for enabling SMS multi-factor authentication (MFA) at the user level.
-    /// Phone numbers don't need to be verified to be used for SMS MFA. If an MFA type is
-    /// activated for a user, the user will be prompted for MFA during all sign-in attempts,
-    /// unless device tracking is turned on and the device has been trusted. If you would
-    /// like MFA to be applied selectively based on the assessed risk level of sign-in attempts,
-    /// deactivate MFA for users and turn on Adaptive Authentication for the user pool.
+    /// User preferences for multi-factor authentication with email messages. Activates or
+    /// deactivates email MFA and sets it as the preferred MFA method when multiple methods
+    /// are available. To activate this setting, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">
+    /// advanced security features</a> must be active in your user pool.
     /// </summary>
-    public partial class SMSMfaSettingsType
+    public partial class EmailMfaSettingsType
     {
         private bool? _enabled;
         private bool? _preferredMfa;
@@ -45,9 +43,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Specifies whether SMS message MFA is activated. If an MFA type is activated for a
-        /// user, the user will be prompted for MFA during all sign-in attempts, unless device
-        /// tracking is turned on and the device has been trusted.
+        /// Specifies whether email message MFA is active for a user. When the value of this parameter
+        /// is <c>Enabled</c>, the user will be prompted for MFA during all sign-in attempts,
+        /// unless device tracking is turned on and the device has been trusted.
         /// </para>
         /// </summary>
         public bool Enabled
@@ -65,7 +63,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property PreferredMfa. 
         /// <para>
-        /// Specifies whether SMS is the preferred MFA method.
+        /// Specifies whether email message MFA is the user's preferred method.
         /// </para>
         /// </summary>
         public bool PreferredMfa

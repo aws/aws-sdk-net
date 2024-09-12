@@ -34,9 +34,30 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class SetUserPoolMfaConfigResponse : AmazonWebServiceResponse
     {
+        private EmailMfaConfigType _emailMfaConfiguration;
         private UserPoolMfaType _mfaConfiguration;
         private SmsMfaConfigType _smsMfaConfiguration;
         private SoftwareTokenMfaConfigType _softwareTokenMfaConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property EmailMfaConfiguration. 
+        /// <para>
+        /// Shows user pool email message configuration for MFA. Includes the subject and body
+        /// of the email message template for MFA messages. To activate this setting, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">
+        /// advanced security features</a> must be active in your user pool.
+        /// </para>
+        /// </summary>
+        public EmailMfaConfigType EmailMfaConfiguration
+        {
+            get { return this._emailMfaConfiguration; }
+            set { this._emailMfaConfiguration = value; }
+        }
+
+        // Check to see if EmailMfaConfiguration property is set
+        internal bool IsSetEmailMfaConfiguration()
+        {
+            return this._emailMfaConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MfaConfiguration. 
@@ -73,7 +94,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property SmsMfaConfiguration. 
         /// <para>
-        /// The SMS text message MFA configuration.
+        /// Shows user pool SMS message configuration for MFA. Includes the message template and
+        /// the SMS message sending configuration for Amazon SNS.
         /// </para>
         /// </summary>
         public SmsMfaConfigType SmsMfaConfiguration
@@ -91,7 +113,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property SoftwareTokenMfaConfiguration. 
         /// <para>
-        /// The software token MFA configuration.
+        /// Shows user pool configuration for time-based one-time password (TOTP) MFA. Includes
+        /// TOTP enabled or disabled state.
         /// </para>
         /// </summary>
         public SoftwareTokenMfaConfigType SoftwareTokenMfaConfiguration
