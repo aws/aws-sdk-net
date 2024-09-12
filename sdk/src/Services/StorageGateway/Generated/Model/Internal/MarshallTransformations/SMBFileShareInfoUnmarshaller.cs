@@ -114,6 +114,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     unmarshalledObject.DefaultStorageClass = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EncryptionType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EncryptionType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FileShareARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
