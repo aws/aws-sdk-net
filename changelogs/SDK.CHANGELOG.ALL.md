@@ -1,3 +1,14 @@
+### 3.7.885.1 (2024-09-13 18:17 UTC)
+* Amplify (3.7.401.15)
+	* Doc only update to Amplify to explain platform setting for Next.js 14 SSG only applications
+* IVS (3.7.400.20)
+	* Updates to all tags descriptions.
+* Ivschat (3.7.400.20)
+	* Updates to all tags descriptions.
+* Core 3.7.400.20
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.885.0 (2024-09-12 18:22 UTC)
 * CognitoIdentityProvider (3.7.403.0)
 	* Added email MFA option to user pools with advanced security features.
