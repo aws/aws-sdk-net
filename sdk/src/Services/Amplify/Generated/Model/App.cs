@@ -435,6 +435,11 @@ namespace Amazon.Amplify.Model
         /// For an app requiring Amplify Hosting's original SSR support only, set the platform
         /// type to <c>WEB_DYNAMIC</c>.
         /// </para>
+        ///  
+        /// <para>
+        /// If you are deploying an SSG only app with Next.js 14 or later, you must use the platform
+        /// type <c>WEB_COMPUTE</c>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public Platform Platform
