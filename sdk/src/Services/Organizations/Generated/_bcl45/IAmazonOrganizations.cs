@@ -991,9 +991,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -1434,9 +1434,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -2004,10 +2004,10 @@ namespace Amazon.Organizations
         /// <para>
         /// You can close only 10% of member accounts, between 10 and 1000, within a rolling 30
         /// day period. This quota is not bound by a calendar month, but starts when you close
-        /// an account. After you reach this limit, you can close additional accounts. For more
+        /// an account. After you reach this limit, you can't close additional accounts. For more
         /// information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing
         /// a member account in your organization</a> and <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas
-        /// for Organizations</a>in the <i>Organizations User Guide</i>. 
+        /// for Organizations</a> in the <i>Organizations User Guide</i>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2276,9 +2276,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -2456,10 +2456,10 @@ namespace Amazon.Organizations
         /// <para>
         /// You can close only 10% of member accounts, between 10 and 1000, within a rolling 30
         /// day period. This quota is not bound by a calendar month, but starts when you close
-        /// an account. After you reach this limit, you can close additional accounts. For more
+        /// an account. After you reach this limit, you can't close additional accounts. For more
         /// information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing
         /// a member account in your organization</a> and <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas
-        /// for Organizations</a>in the <i>Organizations User Guide</i>. 
+        /// for Organizations</a> in the <i>Organizations User Guide</i>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2731,9 +2731,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -2955,10 +2955,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Using <c>CreateAccount</c> to create multiple temporary accounts isn't recommended.
-        /// You can only close an account from the Billing and Cost Management console, and you
-        /// must be signed in as the root user. For information on the requirements and process
-        /// for closing an account, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing
+        /// It isn't recommended to use <c>CreateAccount</c> to create multiple temporary accounts,
+        /// and using the <c>CreateAccount</c> API to close accounts is subject to a 30-day usage
+        /// quota. For information on the requirements and process for closing an account, see
+        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing
         /// a member account in your organization</a> in the <i>Organizations User Guide</i>.
         /// </para>
         ///  </li> </ul> </important> <note> 
@@ -3214,9 +3214,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -3441,10 +3441,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Using <c>CreateAccount</c> to create multiple temporary accounts isn't recommended.
-        /// You can only close an account from the Billing and Cost Management console, and you
-        /// must be signed in as the root user. For information on the requirements and process
-        /// for closing an account, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing
+        /// It isn't recommended to use <c>CreateAccount</c> to create multiple temporary accounts,
+        /// and using the <c>CreateAccount</c> API to close accounts is subject to a 30-day usage
+        /// quota. For information on the requirements and process for closing an account, see
+        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing
         /// a member account in your organization</a> in the <i>Organizations User Guide</i>.
         /// </para>
         ///  </li> </ul> </important> <note> 
@@ -3703,9 +3703,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -4252,9 +4252,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -4801,9 +4801,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -5225,9 +5225,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -5640,9 +5640,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -6052,9 +6052,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -6470,9 +6470,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -6886,9 +6886,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -7314,9 +7314,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -9148,9 +9148,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -9431,9 +9431,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -9739,9 +9739,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -10165,9 +10165,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -11259,9 +11259,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -11678,9 +11678,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -13221,9 +13221,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -13501,9 +13501,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -13803,9 +13803,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -14236,9 +14236,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -14717,9 +14717,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -15185,9 +15185,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -15604,9 +15604,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -16036,9 +16036,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -16736,11 +16736,12 @@ namespace Amazon.Organizations
 
 
         /// <summary>
-        /// Enables the integration of an Amazon Web Services service (the service that is specified
-        /// by <c>ServicePrincipal</c>) with Organizations. When you enable integration, you allow
-        /// the specified service to create a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html">service-linked
-        /// role</a> in all the accounts in your organization. This allows the service to perform
-        /// operations on your behalf in your organization and its accounts.
+        /// Provides an Amazon Web Services service (the service that is specified by <c>ServicePrincipal</c>)
+        /// with permissions to view the structure of an organization, create a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html">service-linked
+        /// role</a> in all the accounts in the organization, and allow the service to perform
+        /// operations on behalf of the organization and its accounts. Establishing these permissions
+        /// can be a first step in enabling the integration of an Amazon Web Services service
+        /// with Organizations.
         /// 
         ///  <important> 
         /// <para>
@@ -17006,9 +17007,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -17156,11 +17157,12 @@ namespace Amazon.Organizations
 
 
         /// <summary>
-        /// Enables the integration of an Amazon Web Services service (the service that is specified
-        /// by <c>ServicePrincipal</c>) with Organizations. When you enable integration, you allow
-        /// the specified service to create a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html">service-linked
-        /// role</a> in all the accounts in your organization. This allows the service to perform
-        /// operations on your behalf in your organization and its accounts.
+        /// Provides an Amazon Web Services service (the service that is specified by <c>ServicePrincipal</c>)
+        /// with permissions to view the structure of an organization, create a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html">service-linked
+        /// role</a> in all the accounts in the organization, and allow the service to perform
+        /// operations on behalf of the organization and its accounts. Establishing these permissions
+        /// can be a first step in enabling the integration of an Amazon Web Services service
+        /// with Organizations.
         /// 
         ///  <important> 
         /// <para>
@@ -17429,9 +17431,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -17845,9 +17847,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -18277,9 +18279,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -18725,9 +18727,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -19233,9 +19235,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -19529,8 +19531,8 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// A newly created account has a waiting period before it can be removed from its organization.
-        /// If you get an error that indicates that a wait period is required, then try again
-        /// in a few days.
+        /// You must wait until at least seven days after the account was created. Invited accounts
+        /// aren't subject to this waiting period.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -19785,9 +19787,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -20004,8 +20006,8 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// A newly created account has a waiting period before it can be removed from its organization.
-        /// If you get an error that indicates that a wait period is required, then try again
-        /// in a few days.
+        /// You must wait until at least seven days after the account was created. Invited accounts
+        /// aren't subject to this waiting period.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -20263,9 +20265,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -21376,9 +21378,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -21783,9 +21785,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -22888,9 +22890,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -23287,9 +23289,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -23695,9 +23697,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -24103,9 +24105,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -28118,9 +28120,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -28519,9 +28521,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -28940,9 +28942,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -29361,9 +29363,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -29798,9 +29800,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -30237,9 +30239,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -30661,9 +30663,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -31083,9 +31085,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -31505,9 +31507,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -31927,9 +31929,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -32680,9 +32682,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -33099,9 +33101,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-        /// period before you can remove it from the organization. If you get an error that indicates
-        /// that a wait period is required, try again in a few days.
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
         /// </para>
         ///  </li> </ul>
         /// </exception>
