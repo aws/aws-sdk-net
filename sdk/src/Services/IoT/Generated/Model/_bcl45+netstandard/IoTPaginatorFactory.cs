@@ -341,6 +341,14 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
+        /// Paginator for ListSbomValidationResults operation
+        ///</summary>
+        public IListSbomValidationResultsPaginator ListSbomValidationResults(ListSbomValidationResultsRequest request) 
+        {
+            return new ListSbomValidationResultsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListScheduledAudits operation
         ///</summary>
         public IListScheduledAuditsPaginator ListScheduledAudits(ListScheduledAuditsRequest request) 

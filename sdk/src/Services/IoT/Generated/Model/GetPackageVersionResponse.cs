@@ -34,6 +34,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class GetPackageVersionResponse : AmazonWebServiceResponse
     {
+        private PackageVersionArtifact _artifact;
         private Dictionary<string, string> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DateTime? _creationDate;
         private string _description;
@@ -41,8 +42,29 @@ namespace Amazon.IoT.Model
         private DateTime? _lastModifiedDate;
         private string _packageName;
         private string _packageVersionArn;
+        private string _recipe;
+        private Sbom _sbom;
+        private SbomValidationStatus _sbomValidationStatus;
         private PackageVersionStatus _status;
         private string _versionName;
+
+        /// <summary>
+        /// Gets and sets the property Artifact. 
+        /// <para>
+        /// The various components that make up a software package version.
+        /// </para>
+        /// </summary>
+        public PackageVersionArtifact Artifact
+        {
+            get { return this._artifact; }
+            set { this._artifact = value; }
+        }
+
+        // Check to see if Artifact property is set
+        internal bool IsSetArtifact()
+        {
+            return this._artifact != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Attributes. 
@@ -173,6 +195,63 @@ namespace Amazon.IoT.Model
         internal bool IsSetPackageVersionArn()
         {
             return this._packageVersionArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Recipe. 
+        /// <para>
+        /// The inline job document associated with a software package version used for a quick
+        /// job deployment via IoT Jobs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Max=3072)]
+        public string Recipe
+        {
+            get { return this._recipe; }
+            set { this._recipe = value; }
+        }
+
+        // Check to see if Recipe property is set
+        internal bool IsSetRecipe()
+        {
+            return this._recipe != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Sbom. 
+        /// <para>
+        /// The software bill of materials for a software package version.
+        /// </para>
+        /// </summary>
+        public Sbom Sbom
+        {
+            get { return this._sbom; }
+            set { this._sbom = value; }
+        }
+
+        // Check to see if Sbom property is set
+        internal bool IsSetSbom()
+        {
+            return this._sbom != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SbomValidationStatus. 
+        /// <para>
+        /// The status of the validation for a new software bill of materials added to a software
+        /// package version.
+        /// </para>
+        /// </summary>
+        public SbomValidationStatus SbomValidationStatus
+        {
+            get { return this._sbomValidationStatus; }
+            set { this._sbomValidationStatus = value; }
+        }
+
+        // Check to see if SbomValidationStatus property is set
+        internal bool IsSetSbomValidationStatus()
+        {
+            return this._sbomValidationStatus != null;
         }
 
         /// <summary>

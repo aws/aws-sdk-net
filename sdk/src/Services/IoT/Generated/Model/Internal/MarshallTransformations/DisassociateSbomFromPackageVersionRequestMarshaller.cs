@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetJobDocument Request Marshaller
+    /// DisassociateSbomFromPackageVersion Request Marshaller
     /// </summary>       
-    public class GetJobDocumentRequestMarshaller : IMarshaller<IRequest, GetJobDocumentRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DisassociateSbomFromPackageVersionRequestMarshaller : IMarshaller<IRequest, DisassociateSbomFromPackageVersionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetJobDocumentRequest)input);
+            return this.Marshall((DisassociateSbomFromPackageVersionRequest)input);
         }
 
         /// <summary>
@@ -53,26 +53,32 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetJobDocumentRequest publicRequest)
+        public IRequest Marshall(DisassociateSbomFromPackageVersionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoT");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";
-            request.HttpMethod = "GET";
+            request.HttpMethod = "DELETE";
 
-            if (!publicRequest.IsSetJobId())
-                throw new AmazonIoTException("Request object does not have required field JobId set");
-            request.AddPathResource("{jobId}", StringUtils.FromString(publicRequest.JobId));
+            if (!publicRequest.IsSetPackageName())
+                throw new AmazonIoTException("Request object does not have required field PackageName set");
+            request.AddPathResource("{packageName}", StringUtils.FromString(publicRequest.PackageName));
+            if (!publicRequest.IsSetVersionName())
+                throw new AmazonIoTException("Request object does not have required field VersionName set");
+            request.AddPathResource("{versionName}", StringUtils.FromString(publicRequest.VersionName));
             
-            if (publicRequest.IsSetBeforeSubstitution())
-                request.Parameters.Add("beforeSubstitution", StringUtils.FromBool(publicRequest.BeforeSubstitution));
-            request.ResourcePath = "/jobs/{jobId}/job-document";
+            if (publicRequest.IsSetClientToken())
+                request.Parameters.Add("clientToken", StringUtils.FromString(publicRequest.ClientToken));
+            else            
+                request.Parameters.Add("clientToken", System.Guid.NewGuid().ToString());
+                
+            request.ResourcePath = "/packages/{packageName}/versions/{versionName}/sbom";
             request.UseQueryString = true;
 
             return request;
         }
-        private static GetJobDocumentRequestMarshaller _instance = new GetJobDocumentRequestMarshaller();        
+        private static DisassociateSbomFromPackageVersionRequestMarshaller _instance = new DisassociateSbomFromPackageVersionRequestMarshaller();        
 
-        internal static GetJobDocumentRequestMarshaller GetInstance()
+        internal static DisassociateSbomFromPackageVersionRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -80,7 +86,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetJobDocumentRequestMarshaller Instance
+        public static DisassociateSbomFromPackageVersionRequestMarshaller Instance
         {
             get
             {

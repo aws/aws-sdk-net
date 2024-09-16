@@ -523,6 +523,85 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  AssociateSbomWithPackageVersion
+
+        /// <summary>
+        /// Associates a software bill of materials (SBOM) with a specific software package version.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AssociateSbomWithPackageVersion</a>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSbomWithPackageVersion service method.</param>
+        /// 
+        /// <returns>The response from the AssociateSbomWithPackageVersion service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.ConflictException">
+        /// A resource with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceQuotaExceededException">
+        /// A limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ValidationException">
+        /// The request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AssociateSbomWithPackageVersion">REST API Reference for AssociateSbomWithPackageVersion Operation</seealso>
+        public virtual AssociateSbomWithPackageVersionResponse AssociateSbomWithPackageVersion(AssociateSbomWithPackageVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateSbomWithPackageVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateSbomWithPackageVersionResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateSbomWithPackageVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateSbomWithPackageVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSbomWithPackageVersion operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateSbomWithPackageVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AssociateSbomWithPackageVersion">REST API Reference for AssociateSbomWithPackageVersion Operation</seealso>
+        public virtual IAsyncResult BeginAssociateSbomWithPackageVersion(AssociateSbomWithPackageVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateSbomWithPackageVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateSbomWithPackageVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateSbomWithPackageVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateSbomWithPackageVersion.</param>
+        /// 
+        /// <returns>Returns a  AssociateSbomWithPackageVersionResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AssociateSbomWithPackageVersion">REST API Reference for AssociateSbomWithPackageVersion Operation</seealso>
+        public virtual AssociateSbomWithPackageVersionResponse EndAssociateSbomWithPackageVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateSbomWithPackageVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  AssociateTargetsWithJob
 
         /// <summary>
@@ -10810,6 +10889,83 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  DisassociateSbomFromPackageVersion
+
+        /// <summary>
+        /// Disassociates a software bill of materials (SBOM) from a specific software package
+        /// version.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DisassociateSbomWithPackageVersion</a>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSbomFromPackageVersion service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateSbomFromPackageVersion service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.ConflictException">
+        /// A resource with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ValidationException">
+        /// The request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DisassociateSbomFromPackageVersion">REST API Reference for DisassociateSbomFromPackageVersion Operation</seealso>
+        public virtual DisassociateSbomFromPackageVersionResponse DisassociateSbomFromPackageVersion(DisassociateSbomFromPackageVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateSbomFromPackageVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateSbomFromPackageVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateSbomFromPackageVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateSbomFromPackageVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSbomFromPackageVersion operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateSbomFromPackageVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DisassociateSbomFromPackageVersion">REST API Reference for DisassociateSbomFromPackageVersion Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateSbomFromPackageVersion(DisassociateSbomFromPackageVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateSbomFromPackageVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateSbomFromPackageVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateSbomFromPackageVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateSbomFromPackageVersion.</param>
+        /// 
+        /// <returns>Returns a  DisassociateSbomFromPackageVersionResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DisassociateSbomFromPackageVersion">REST API Reference for DisassociateSbomFromPackageVersion Operation</seealso>
+        public virtual DisassociateSbomFromPackageVersionResponse EndDisassociateSbomFromPackageVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateSbomFromPackageVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  EnableTopicRule
 
         /// <summary>
@@ -15649,6 +15805,80 @@ namespace Amazon.IoT
         public virtual ListRoleAliasesResponse EndListRoleAliases(IAsyncResult asyncResult)
         {
             return EndInvoke<ListRoleAliasesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListSbomValidationResults
+
+        /// <summary>
+        /// The validation results for all software bill of materials (SBOM) attached to a specific
+        /// software package version.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSbomValidationResults</a>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSbomValidationResults service method.</param>
+        /// 
+        /// <returns>The response from the ListSbomValidationResults service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ValidationException">
+        /// The request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListSbomValidationResults">REST API Reference for ListSbomValidationResults Operation</seealso>
+        public virtual ListSbomValidationResultsResponse ListSbomValidationResults(ListSbomValidationResultsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSbomValidationResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSbomValidationResultsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSbomValidationResultsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSbomValidationResults operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSbomValidationResults operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSbomValidationResults
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListSbomValidationResults">REST API Reference for ListSbomValidationResults Operation</seealso>
+        public virtual IAsyncResult BeginListSbomValidationResults(ListSbomValidationResultsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSbomValidationResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSbomValidationResultsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSbomValidationResults operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSbomValidationResults.</param>
+        /// 
+        /// <returns>Returns a  ListSbomValidationResultsResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListSbomValidationResults">REST API Reference for ListSbomValidationResults Operation</seealso>
+        public virtual ListSbomValidationResultsResponse EndListSbomValidationResults(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListSbomValidationResultsResponse>(asyncResult);
         }
 
         #endregion
@@ -21228,6 +21458,9 @@ namespace Amazon.IoT
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
         /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// A limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
         /// The specified resource does not exist.

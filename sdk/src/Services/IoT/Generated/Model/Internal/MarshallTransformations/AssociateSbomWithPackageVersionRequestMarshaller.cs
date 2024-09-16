@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdatePackageVersion Request Marshaller
+    /// AssociateSbomWithPackageVersion Request Marshaller
     /// </summary>       
-    public class UpdatePackageVersionRequestMarshaller : IMarshaller<IRequest, UpdatePackageVersionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class AssociateSbomWithPackageVersionRequestMarshaller : IMarshaller<IRequest, AssociateSbomWithPackageVersionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdatePackageVersionRequest)input);
+            return this.Marshall((AssociateSbomWithPackageVersionRequest)input);
         }
 
         /// <summary>
@@ -53,12 +53,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdatePackageVersionRequest publicRequest)
+        public IRequest Marshall(AssociateSbomWithPackageVersionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoT");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";
-            request.HttpMethod = "PATCH";
+            request.HttpMethod = "PUT";
 
             if (!publicRequest.IsSetPackageName())
                 throw new AmazonIoTException("Request object does not have required field PackageName set");
@@ -72,54 +72,22 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             else            
                 request.Parameters.Add("clientToken", System.Guid.NewGuid().ToString());
                 
-            request.ResourcePath = "/packages/{packageName}/versions/{versionName}";
+            request.ResourcePath = "/packages/{packageName}/versions/{versionName}/sbom";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAction())
+                if(publicRequest.IsSetSbom())
                 {
-                    context.Writer.WritePropertyName("action");
-                    context.Writer.Write(publicRequest.Action);
-                }
-
-                if(publicRequest.IsSetArtifact())
-                {
-                    context.Writer.WritePropertyName("artifact");
+                    context.Writer.WritePropertyName("sbom");
                     context.Writer.WriteObjectStart();
 
-                    var marshaller = PackageVersionArtifactMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Artifact, context);
+                    var marshaller = SbomMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Sbom, context);
 
                     context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetAttributes())
-                {
-                    context.Writer.WritePropertyName("attributes");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestAttributesKvp in publicRequest.Attributes)
-                    {
-                        context.Writer.WritePropertyName(publicRequestAttributesKvp.Key);
-                        var publicRequestAttributesValue = publicRequestAttributesKvp.Value;
-
-                            context.Writer.Write(publicRequestAttributesValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetRecipe())
-                {
-                    context.Writer.WritePropertyName("recipe");
-                    context.Writer.Write(publicRequest.Recipe);
                 }
 
                 writer.WriteObjectEnd();
@@ -131,9 +99,9 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static UpdatePackageVersionRequestMarshaller _instance = new UpdatePackageVersionRequestMarshaller();        
+        private static AssociateSbomWithPackageVersionRequestMarshaller _instance = new AssociateSbomWithPackageVersionRequestMarshaller();        
 
-        internal static UpdatePackageVersionRequestMarshaller GetInstance()
+        internal static AssociateSbomWithPackageVersionRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -141,7 +109,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdatePackageVersionRequestMarshaller Instance
+        public static AssociateSbomWithPackageVersionRequestMarshaller Instance
         {
             get
             {

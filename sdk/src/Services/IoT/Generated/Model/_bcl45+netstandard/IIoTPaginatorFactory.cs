@@ -217,6 +217,11 @@ namespace Amazon.IoT.Model
         IListRoleAliasesPaginator ListRoleAliases(ListRoleAliasesRequest request);
 
         /// <summary>
+        /// Paginator for ListSbomValidationResults operation
+        ///</summary>
+        IListSbomValidationResultsPaginator ListSbomValidationResults(ListSbomValidationResultsRequest request);
+
+        /// <summary>
         /// Paginator for ListScheduledAudits operation
         ///</summary>
         IListScheduledAuditsPaginator ListScheduledAudits(ListScheduledAuditsRequest request);

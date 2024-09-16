@@ -30,35 +30,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// The server certificate configuration.
+    /// The Amazon S3 location for the software bill of materials associated with a software
+    /// package version.
     /// </summary>
-    public partial class ServerCertificateConfig
+    public partial class Sbom
     {
-        private bool? _enableocspCheck;
+        private S3Location _s3Location;
 
         /// <summary>
-        /// Gets and sets the property EnableOCSPCheck. 
-        /// <para>
-        /// A Boolean value that indicates whether Online Certificate Status Protocol (OCSP) server
-        /// certificate check is enabled or not.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-custom-endpoints-cert-config.html">Configuring
-        /// OCSP server-certificate stapling in domain configuration</a> from Amazon Web Services
-        /// IoT Core Developer Guide.
-        /// </para>
+        /// Gets and sets the property S3Location.
         /// </summary>
-        public bool EnableOCSPCheck
+        public S3Location S3Location
         {
-            get { return this._enableocspCheck.GetValueOrDefault(); }
-            set { this._enableocspCheck = value; }
+            get { return this._s3Location; }
+            set { this._s3Location = value; }
         }
 
-        // Check to see if EnableOCSPCheck property is set
-        internal bool IsSetEnableOCSPCheck()
+        // Check to see if S3Location property is set
+        internal bool IsSetS3Location()
         {
-            return this._enableocspCheck.HasValue; 
+            return this._s3Location != null;
         }
 
     }

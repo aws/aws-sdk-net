@@ -3497,6 +3497,160 @@ namespace Amazon.IoT
 
 
     /// <summary>
+    /// Constants used for properties of type SbomValidationErrorCode.
+    /// </summary>
+    public class SbomValidationErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FILE_SIZE_LIMIT_EXCEEDED for SbomValidationErrorCode
+        /// </summary>
+        public static readonly SbomValidationErrorCode FILE_SIZE_LIMIT_EXCEEDED = new SbomValidationErrorCode("FILE_SIZE_LIMIT_EXCEEDED");
+        /// <summary>
+        /// Constant INCOMPATIBLE_FORMAT for SbomValidationErrorCode
+        /// </summary>
+        public static readonly SbomValidationErrorCode INCOMPATIBLE_FORMAT = new SbomValidationErrorCode("INCOMPATIBLE_FORMAT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SbomValidationErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SbomValidationErrorCode FindValue(string value)
+        {
+            return FindValue<SbomValidationErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SbomValidationErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SbomValidationResult.
+    /// </summary>
+    public class SbomValidationResult : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for SbomValidationResult
+        /// </summary>
+        public static readonly SbomValidationResult FAILED = new SbomValidationResult("FAILED");
+        /// <summary>
+        /// Constant SUCCEEDED for SbomValidationResult
+        /// </summary>
+        public static readonly SbomValidationResult SUCCEEDED = new SbomValidationResult("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SbomValidationResult(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SbomValidationResult FindValue(string value)
+        {
+            return FindValue<SbomValidationResult>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SbomValidationResult(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SbomValidationStatus.
+    /// </summary>
+    public class SbomValidationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for SbomValidationStatus
+        /// </summary>
+        public static readonly SbomValidationStatus FAILED = new SbomValidationStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for SbomValidationStatus
+        /// </summary>
+        public static readonly SbomValidationStatus IN_PROGRESS = new SbomValidationStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant SUCCEEDED for SbomValidationStatus
+        /// </summary>
+        public static readonly SbomValidationStatus SUCCEEDED = new SbomValidationStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SbomValidationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SbomValidationStatus FindValue(string value)
+        {
+            return FindValue<SbomValidationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SbomValidationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ServerCertificateStatus.
     /// </summary>
     public class ServerCertificateStatus : ConstantClass

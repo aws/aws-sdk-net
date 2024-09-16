@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetJobDocument Request Marshaller
+    /// ListSbomValidationResults Request Marshaller
     /// </summary>       
-    public class GetJobDocumentRequestMarshaller : IMarshaller<IRequest, GetJobDocumentRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListSbomValidationResultsRequestMarshaller : IMarshaller<IRequest, ListSbomValidationResultsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetJobDocumentRequest)input);
+            return this.Marshall((ListSbomValidationResultsRequest)input);
         }
 
         /// <summary>
@@ -53,26 +53,35 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetJobDocumentRequest publicRequest)
+        public IRequest Marshall(ListSbomValidationResultsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoT");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";
             request.HttpMethod = "GET";
 
-            if (!publicRequest.IsSetJobId())
-                throw new AmazonIoTException("Request object does not have required field JobId set");
-            request.AddPathResource("{jobId}", StringUtils.FromString(publicRequest.JobId));
+            if (!publicRequest.IsSetPackageName())
+                throw new AmazonIoTException("Request object does not have required field PackageName set");
+            request.AddPathResource("{packageName}", StringUtils.FromString(publicRequest.PackageName));
+            if (!publicRequest.IsSetVersionName())
+                throw new AmazonIoTException("Request object does not have required field VersionName set");
+            request.AddPathResource("{versionName}", StringUtils.FromString(publicRequest.VersionName));
             
-            if (publicRequest.IsSetBeforeSubstitution())
-                request.Parameters.Add("beforeSubstitution", StringUtils.FromBool(publicRequest.BeforeSubstitution));
-            request.ResourcePath = "/jobs/{jobId}/job-document";
+            if (publicRequest.IsSetMaxResults())
+                request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
+            
+            if (publicRequest.IsSetNextToken())
+                request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            
+            if (publicRequest.IsSetValidationResult())
+                request.Parameters.Add("validationResult", StringUtils.FromString(publicRequest.ValidationResult));
+            request.ResourcePath = "/packages/{packageName}/versions/{versionName}/sbom-validation-results";
             request.UseQueryString = true;
 
             return request;
         }
-        private static GetJobDocumentRequestMarshaller _instance = new GetJobDocumentRequestMarshaller();        
+        private static ListSbomValidationResultsRequestMarshaller _instance = new ListSbomValidationResultsRequestMarshaller();        
 
-        internal static GetJobDocumentRequestMarshaller GetInstance()
+        internal static ListSbomValidationResultsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -80,7 +89,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetJobDocumentRequestMarshaller Instance
+        public static ListSbomValidationResultsRequestMarshaller Instance
         {
             get
             {

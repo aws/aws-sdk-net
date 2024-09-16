@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateStream operation
+    /// Response Unmarshaller for ListSbomValidationResults operation
     /// </summary>  
-    public class UpdateStreamResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListSbomValidationResultsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,34 +46,22 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdateStreamResponse response = new UpdateStreamResponse();
+            ListSbomValidationResultsResponse response = new ListSbomValidationResultsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Description = unmarshaller.Unmarshall(context);
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("streamArn", targetDepth))
+                if (context.TestExpression("validationResultSummaries", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.StreamArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("streamId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.StreamId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("streamVersion", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    response.StreamVersion = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<SbomValidationResultSummary, SbomValidationResultSummaryUnmarshaller>(SbomValidationResultSummaryUnmarshaller.Instance);
+                    response.ValidationResultSummaries = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -99,41 +87,29 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InternalFailureException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
-                    return InternalFailureExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
-                {
-                    return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
-                {
-                    return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
-                {
-                    return ServiceUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
                     return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("UnauthorizedException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
                 {
-                    return UnauthorizedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonIoTException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static UpdateStreamResponseUnmarshaller _instance = new UpdateStreamResponseUnmarshaller();        
+        private static ListSbomValidationResultsResponseUnmarshaller _instance = new ListSbomValidationResultsResponseUnmarshaller();        
 
-        internal static UpdateStreamResponseUnmarshaller GetInstance()
+        internal static ListSbomValidationResultsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -141,7 +117,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateStreamResponseUnmarshaller Instance
+        public static ListSbomValidationResultsResponseUnmarshaller Instance
         {
             get
             {
