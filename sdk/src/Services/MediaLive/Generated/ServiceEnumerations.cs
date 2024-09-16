@@ -10733,10 +10733,6 @@ namespace Amazon.MediaLive
         /// </summary>
         public static readonly InputNetworkLocation AWS = new InputNetworkLocation("AWS");
         /// <summary>
-        /// Constant ON_PREMISE for InputNetworkLocation
-        /// </summary>
-        public static readonly InputNetworkLocation ON_PREMISE = new InputNetworkLocation("ON_PREMISE");
-        /// <summary>
         /// Constant ON_PREMISES for InputNetworkLocation
         /// </summary>
         public static readonly InputNetworkLocation ON_PREMISES = new InputNetworkLocation("ON_PREMISES");
