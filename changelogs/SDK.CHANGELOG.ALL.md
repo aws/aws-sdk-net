@@ -1,3 +1,20 @@
+### 3.7.886.0 (2024-09-16 18:27 UTC)
+* Bedrock (3.7.405.0)
+	* This feature adds cross account s3 bucket and VPC support to ModelInvocation jobs. To use a cross account bucket, pass in the accountId of the bucket to s3BucketOwner in the ModelInvocationJobInputDataConfig or ModelInvocationJobOutputDataConfig.
+* IoT (3.7.401.0)
+	* This release adds additional enhancements to AWS IoT Device Management Software Package Catalog and Jobs. It also adds SBOM support in Software Package Version.
+* MediaLive (3.7.404.0)
+	* Removing the ON_PREMISE enum from the input settings field.
+* Organizations (3.7.401.10)
+	* Doc only update for AWS Organizations that fixes several customer-reported issues
+* PcaConnectorScep (3.7.400.21)
+	* This is a general availability (GA) release of Connector for SCEP, a feature of AWS Private CA. Connector for SCEP links your SCEP-enabled and mobile device management systems to AWS Private CA for digital signature installation and certificate management.
+* RDS (3.7.402.0)
+	* Launching Global Cluster tagging.
+* Core 3.7.400.21
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.885.1 (2024-09-13 18:17 UTC)
 * Amplify (3.7.401.15)
 	* Doc only update to Amplify to explain platform setting for Next.js 14 SSG only applications
