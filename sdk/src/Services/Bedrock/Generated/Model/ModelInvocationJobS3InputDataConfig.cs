@@ -30,12 +30,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// Contains the configuration of the S3 location of the output data.
+    /// Contains the configuration of the S3 location of the input data.
     /// </summary>
     public partial class ModelInvocationJobS3InputDataConfig
     {
+        private string _s3BucketOwner;
         private S3InputFormat _s3InputFormat;
         private string _s3Uri;
+
+        /// <summary>
+        /// Gets and sets the property S3BucketOwner. 
+        /// <para>
+        /// The ID of the Amazon Web Services account that owns the S3 bucket containing the input
+        /// data.
+        /// </para>
+        /// </summary>
+        public string S3BucketOwner
+        {
+            get { return this._s3BucketOwner; }
+            set { this._s3BucketOwner = value; }
+        }
+
+        // Check to see if S3BucketOwner property is set
+        internal bool IsSetS3BucketOwner()
+        {
+            return this._s3BucketOwner != null;
+        }
 
         /// <summary>
         /// Gets and sets the property S3InputFormat. 

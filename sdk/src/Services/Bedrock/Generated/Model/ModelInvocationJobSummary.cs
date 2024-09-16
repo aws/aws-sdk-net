@@ -48,6 +48,7 @@ namespace Amazon.Bedrock.Model
         private ModelInvocationJobStatus _status;
         private DateTime? _submitTime;
         private int? _timeoutDurationInHours;
+        private VpcConfig _vpcConfig;
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
@@ -316,6 +317,26 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetTimeoutDurationInHours()
         {
             return this._timeoutDurationInHours.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfig. 
+        /// <para>
+        /// The configuration of the Virtual Private Cloud (VPC) for the data in the batch inference
+        /// job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-vpc">Protect
+        /// batch inference jobs using a VPC</a>.
+        /// </para>
+        /// </summary>
+        public VpcConfig VpcConfig
+        {
+            get { return this._vpcConfig; }
+            set { this._vpcConfig = value; }
+        }
+
+        // Check to see if VpcConfig property is set
+        internal bool IsSetVpcConfig()
+        {
+            return this._vpcConfig != null;
         }
 
     }

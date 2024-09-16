@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// VPC configuration.
+    /// The configuration of a virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/usingVPC.html">Protect
+    /// your data using Amazon Virtual Private Cloud and Amazon Web Services PrivateLink</a>.
     /// </summary>
     public partial class VpcConfig
     {
@@ -40,7 +41,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// VPC configuration security group Ids.
+        /// An array of IDs for each security group in the VPC to use.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]
@@ -59,7 +60,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// VPC configuration subnets.
+        /// An array of IDs for each subnet in the VPC to use.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=16)]

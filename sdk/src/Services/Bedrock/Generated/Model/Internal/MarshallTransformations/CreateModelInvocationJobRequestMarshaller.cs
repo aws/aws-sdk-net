@@ -140,6 +140,17 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.TimeoutDurationInHours);
                 }
 
+                if(publicRequest.IsSetVpcConfig())
+                {
+                    context.Writer.WritePropertyName("vpcConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = VpcConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.VpcConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

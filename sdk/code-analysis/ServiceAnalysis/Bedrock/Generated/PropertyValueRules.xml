@@ -1522,10 +1522,18 @@
     <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9\+\-\.])*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Bedrock.Model.ModelInvocationJobS3InputDataConfig.S3BucketOwner</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Bedrock.Model.ModelInvocationJobS3InputDataConfig.S3Uri</property>
     <min>1</min>
     <max>1024</max>
     <pattern>s3://[a-z0-9][-.a-z0-9]{1,61}(?:/[-!_*'().a-z0-9A-Z]+(?:/[-!_*'().a-z0-9A-Z]+)*)?/?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.ModelInvocationJobS3OutputDataConfig.S3BucketOwner</property>
+    <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.ModelInvocationJobS3OutputDataConfig.S3EncryptionKeyId</property>
