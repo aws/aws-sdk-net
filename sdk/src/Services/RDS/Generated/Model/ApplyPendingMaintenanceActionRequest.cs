@@ -46,33 +46,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>ca-certificate-rotation</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>db-upgrade</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>hardware-maintenance</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>os-upgrade</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>system-update</c> 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For more information about these actions, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#maintenance-actions-aurora">Maintenance
-        /// actions for Amazon Aurora</a> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#maintenance-actions-rds">Maintenance
-        /// actions for Amazon RDS</a>.
+        /// Valid Values: <c>system-update</c>, <c>db-upgrade</c>, <c>hardware-maintenance</c>,
+        /// <c>ca-certificate-rotation</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
