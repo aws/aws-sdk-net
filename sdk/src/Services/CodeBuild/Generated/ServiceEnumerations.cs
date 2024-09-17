@@ -2582,6 +2582,10 @@ namespace Amazon.CodeBuild
         /// Constant GITHUB_ORGANIZATION for WebhookScopeType
         /// </summary>
         public static readonly WebhookScopeType GITHUB_ORGANIZATION = new WebhookScopeType("GITHUB_ORGANIZATION");
+        /// <summary>
+        /// Constant GITLAB_GROUP for WebhookScopeType
+        /// </summary>
+        public static readonly WebhookScopeType GITLAB_GROUP = new WebhookScopeType("GITLAB_GROUP");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
