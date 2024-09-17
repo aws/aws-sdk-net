@@ -448,6 +448,17 @@
     <pattern>(|[a-zA-Z0-9$_-]+)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.DeleteResourcePolicyRequest.ResourceArn</property>
+    <max>256</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_])+)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.DeleteResourcePolicyRequest.RevisionId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.GetAliasRequest.FunctionName</property>
     <min>1</min>
     <max>140</max>
@@ -781,6 +792,28 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetProvisionedConcurrencyConfigResponse.RequestedProvisionedConcurrentExecutions</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.GetPublicAccessBlockConfigRequest.ResourceArn</property>
+    <max>170</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.GetResourcePolicyRequest.ResourceArn</property>
+    <max>256</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_])+)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.GetResourcePolicyResponse.Policy</property>
+    <min>1</min>
+    <max>20480</max>
+    <pattern>[\s\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.GetResourcePolicyResponse.RevisionId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetRuntimeManagementConfigRequest.FunctionName</property>
@@ -1173,6 +1206,40 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.PutProvisionedConcurrencyConfigResponse.RequestedProvisionedConcurrentExecutions</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.PutPublicAccessBlockConfigRequest.ResourceArn</property>
+    <max>170</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.PutResourcePolicyRequest.Policy</property>
+    <min>1</min>
+    <max>20480</max>
+    <pattern>[\s\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.PutResourcePolicyRequest.ResourceArn</property>
+    <max>256</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_])+)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.PutResourcePolicyRequest.RevisionId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.PutResourcePolicyResponse.Policy</property>
+    <min>1</min>
+    <max>20480</max>
+    <pattern>[\s\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.PutResourcePolicyResponse.RevisionId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.PutRuntimeManagementConfigRequest.FunctionName</property>

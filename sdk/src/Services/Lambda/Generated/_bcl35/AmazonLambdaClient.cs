@@ -1886,6 +1886,93 @@ namespace Amazon.Lambda
 
         #endregion
         
+        #region  DeleteResourcePolicy
+
+        /// <summary>
+        /// Deletes a <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based
+        /// policy</a> from a function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.PreconditionFailedException">
+        /// The RevisionId provided does not match the latest RevisionId for the Lambda function
+        /// or alias.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>For AddPermission and RemovePermission API operations:</b> Call <c>GetPolicy</c>
+        /// to retrieve the latest RevisionId for your resource.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>For all other API operations:</b> Call <c>GetFunction</c> or <c>GetAlias</c> to
+        /// retrieve the latest RevisionId for your resource.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteResourcePolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteResourcePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual IAsyncResult BeginDeleteResourcePolicy(DeleteResourcePolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteResourcePolicy.</param>
+        /// 
+        /// <returns>Returns a  DeleteResourcePolicyResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual DeleteResourcePolicyResponse EndDeleteResourcePolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteResourcePolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetAccountSettings
 
         /// <summary>
@@ -3035,6 +3122,141 @@ namespace Amazon.Lambda
         public virtual GetProvisionedConcurrencyConfigResponse EndGetProvisionedConcurrencyConfig(IAsyncResult asyncResult)
         {
             return EndInvoke<GetProvisionedConcurrencyConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetPublicAccessBlockConfig
+
+        /// <summary>
+        /// Retrieve the public-access settings for a function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPublicAccessBlockConfig service method.</param>
+        /// 
+        /// <returns>The response from the GetPublicAccessBlockConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPublicAccessBlockConfig">REST API Reference for GetPublicAccessBlockConfig Operation</seealso>
+        public virtual GetPublicAccessBlockConfigResponse GetPublicAccessBlockConfig(GetPublicAccessBlockConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPublicAccessBlockConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPublicAccessBlockConfigResponseUnmarshaller.Instance;
+
+            return Invoke<GetPublicAccessBlockConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPublicAccessBlockConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPublicAccessBlockConfig operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPublicAccessBlockConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPublicAccessBlockConfig">REST API Reference for GetPublicAccessBlockConfig Operation</seealso>
+        public virtual IAsyncResult BeginGetPublicAccessBlockConfig(GetPublicAccessBlockConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPublicAccessBlockConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPublicAccessBlockConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPublicAccessBlockConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPublicAccessBlockConfig.</param>
+        /// 
+        /// <returns>Returns a  GetPublicAccessBlockConfigResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPublicAccessBlockConfig">REST API Reference for GetPublicAccessBlockConfig Operation</seealso>
+        public virtual GetPublicAccessBlockConfigResponse EndGetPublicAccessBlockConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetPublicAccessBlockConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetResourcePolicy
+
+        /// <summary>
+        /// Retrieves the <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based
+        /// policy</a> attached to a function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetResourcePolicy service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        public virtual GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourcePolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetResourcePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        public virtual IAsyncResult BeginGetResourcePolicy(GetResourcePolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetResourcePolicy.</param>
+        /// 
+        /// <returns>Returns a  GetResourcePolicyResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        public virtual GetResourcePolicyResponse EndGetResourcePolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetResourcePolicyResponse>(asyncResult);
         }
 
         #endregion
@@ -5039,6 +5261,195 @@ namespace Amazon.Lambda
         public virtual PutProvisionedConcurrencyConfigResponse EndPutProvisionedConcurrencyConfig(IAsyncResult asyncResult)
         {
             return EndInvoke<PutProvisionedConcurrencyConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutPublicAccessBlockConfig
+
+        /// <summary>
+        /// Configure your function's public-access settings.
+        /// 
+        ///  
+        /// <para>
+        /// To control public access to a Lambda function, you can choose whether to allow the
+        /// creation of <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based
+        /// policies</a> that allow public access to that function. You can also block public
+        /// access to a function, even if it has an existing resource-based policy that allows
+        /// it.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutPublicAccessBlockConfig service method.</param>
+        /// 
+        /// <returns>The response from the PutPublicAccessBlockConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutPublicAccessBlockConfig">REST API Reference for PutPublicAccessBlockConfig Operation</seealso>
+        public virtual PutPublicAccessBlockConfigResponse PutPublicAccessBlockConfig(PutPublicAccessBlockConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutPublicAccessBlockConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutPublicAccessBlockConfigResponseUnmarshaller.Instance;
+
+            return Invoke<PutPublicAccessBlockConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutPublicAccessBlockConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutPublicAccessBlockConfig operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutPublicAccessBlockConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutPublicAccessBlockConfig">REST API Reference for PutPublicAccessBlockConfig Operation</seealso>
+        public virtual IAsyncResult BeginPutPublicAccessBlockConfig(PutPublicAccessBlockConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutPublicAccessBlockConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutPublicAccessBlockConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutPublicAccessBlockConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutPublicAccessBlockConfig.</param>
+        /// 
+        /// <returns>Returns a  PutPublicAccessBlockConfigResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutPublicAccessBlockConfig">REST API Reference for PutPublicAccessBlockConfig Operation</seealso>
+        public virtual PutPublicAccessBlockConfigResponse EndPutPublicAccessBlockConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutPublicAccessBlockConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutResourcePolicy
+
+        /// <summary>
+        /// Adds a <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based
+        /// policy</a> to a function. You can use resource-based policies to grant access to other
+        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/permissions-function-cross-account.html">Amazon
+        /// Web Services accounts</a>, <a href="https://docs.aws.amazon.com/lambda/latest/dg/permissions-function-organization.html">organizations</a>,
+        /// or <a href="https://docs.aws.amazon.com/lambda/latest/dg/permissions-function-services.html">services</a>.
+        /// Resource-based policies apply to a single function, version, or alias.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Adding a resource-based policy using this API action replaces any existing policy
+        /// you've previously created. This means that if you've previously added resource-based
+        /// permissions to a function using the <a>AddPermission</a> action, those permissions
+        /// will be overwritten by your new policy.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.PolicyLengthExceededException">
+        /// The permissions policy for the resource is too large. For more information, see <a
+        /// href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.PreconditionFailedException">
+        /// The RevisionId provided does not match the latest RevisionId for the Lambda function
+        /// or alias.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>For AddPermission and RemovePermission API operations:</b> Call <c>GetPolicy</c>
+        /// to retrieve the latest RevisionId for your resource.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>For all other API operations:</b> Call <c>GetFunction</c> or <c>GetAlias</c> to
+        /// retrieve the latest RevisionId for your resource.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.PublicPolicyException">
+        /// Lambda prevented your policy from being created because it would grant public access
+        /// to your function. If you intended to create a public policy, use the <a>PutPublicAccessBlockConfig</a>
+        /// API action to configure your function's public-access settings to allow public policies.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutResourcePolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutResourcePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual IAsyncResult BeginPutResourcePolicy(PutResourcePolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutResourcePolicy.</param>
+        /// 
+        /// <returns>Returns a  PutResourcePolicyResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual PutResourcePolicyResponse EndPutResourcePolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutResourcePolicyResponse>(asyncResult);
         }
 
         #endregion
