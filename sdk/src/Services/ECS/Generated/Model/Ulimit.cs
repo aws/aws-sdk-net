@@ -54,7 +54,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property HardLimit. 
         /// <para>
-        /// The hard limit for the <c>ulimit</c> type.
+        /// The hard limit for the <c>ulimit</c> type. The value can be specified in bytes, seconds,
+        /// or as a count, depending on the <c>type</c> of the <c>ulimit</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -92,7 +93,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property SoftLimit. 
         /// <para>
-        /// The soft limit for the <c>ulimit</c> type.
+        /// The soft limit for the <c>ulimit</c> type. The value can be specified in bytes, seconds,
+        /// or as a count, depending on the <c>type</c> of the <c>ulimit</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
