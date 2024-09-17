@@ -1,3 +1,17 @@
+### 3.7.887.0 (2024-09-17 18:21 UTC)
+* CodeBuild (3.7.403.0)
+	* GitLab Enhancements - Add support for Self-Hosted GitLab runners in CodeBuild. Add group webhooks
+* ECR (3.7.404.0)
+	* The `DescribeImageScanning` API now includes `fixAvailable`, `exploitAvailable`, and `fixedInVersion` fields to provide more detailed information about the availability of fixes, exploits, and fixed versions for identified image vulnerabilities.
+* ECS (3.7.402.16)
+	* This is a documentation only release to address various tickets.
+* Lambda (3.7.403.0)
+	* Support for JSON resource-based policies and block public access
+* RDS (3.7.402.1)
+	* Updates Amazon RDS documentation with configuration information about the BYOL model for RDS for Db2.
+* SimpleSystemsManagement (3.7.402.0)
+	* Support for additional levels of cross-account, cross-Region organizational units in Automation. Various documentation updates.
+
 ### 3.7.886.0 (2024-09-16 18:27 UTC)
 * Bedrock (3.7.405.0)
 	* This feature adds cross account s3 bucket and VPC support to ModelInvocation jobs. To use a cross account bucket, pass in the accountId of the bucket to s3BucketOwner in the ModelInvocationJobInputDataConfig or ModelInvocationJobOutputDataConfig.
