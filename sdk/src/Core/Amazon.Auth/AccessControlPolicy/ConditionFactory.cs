@@ -102,7 +102,7 @@ namespace Amazon.Auth.AccessControlPolicy
         /// <summary>
         /// Enumeration of the supported ways an ARN comparison can be evaluated.
         /// </summary>
-        public enum ArnComparisonType 
+        public enum ArnComparisonType
         {
             /// <summary>Exact matching</summary>
             ArnEquals,
@@ -177,7 +177,7 @@ namespace Amazon.Auth.AccessControlPolicy
         /// <summary>
         /// Enumeration of the supported ways a string comparison can be evaluated.
         /// </summary>
-        public enum StringComparisonType 
+        public enum StringComparisonType
         {
             /// <summary>
             /// Case-sensitive exact string matching
@@ -220,9 +220,9 @@ namespace Amazon.Auth.AccessControlPolicy
         /// <param name="type">The type of comparison to perform.</param>
         /// <param name="value">The second ARN to compare against. When using ArnLike or ArnNotLike this may contain the
         ///     multi-character wildcard (*) or the single-character wildcard</param>
-        public static Condition NewCondition(ArnComparisonType type, string key, string value) 
+        public static Condition NewCondition(ArnComparisonType type, string key, string value)
         {
-            return new Condition(type.ToString(), key, value);
+            return new Condition(ToString(type), key, value);
         }
 
         /// <summary>
@@ -234,7 +234,7 @@ namespace Amazon.Auth.AccessControlPolicy
         /// <param name="value">The boolean to compare against.</param>
         public static Condition NewCondition(string key, bool value)
         {
-            return new Condition("Bool", key, value.ToString().ToLowerInvariant());
+            return new Condition("Bool", key, value ? "true" : "false");
         }
 
         /// <summary>
@@ -251,7 +251,7 @@ namespace Amazon.Auth.AccessControlPolicy
         [Obsolete("Invoking this method results in non-UTC DateTimes not being marshalled correctly. Use NewConditionUtc instead.", false)]
         public static Condition NewCondition(DateComparisonType type, DateTime date)
         {
-            return new Condition(type.ToString(), CURRENT_TIME_CONDITION_KEY, date.ToString(AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture));
+            return new Condition(ToString(type), CURRENT_TIME_CONDITION_KEY, date.ToString(AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture));
         }
 
         /// <summary>
@@ -265,7 +265,7 @@ namespace Amazon.Auth.AccessControlPolicy
         /// <param name="date">The date to compare against.</param>
         public static Condition NewConditionUtc(DateComparisonType type, DateTime date)
         {
-            return new Condition(type.ToString(), CURRENT_TIME_CONDITION_KEY, date.ToUniversalTime().ToString(AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture));
+            return new Condition(ToString(type), CURRENT_TIME_CONDITION_KEY, date.ToUniversalTime().ToString(AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture));
         }
 
         /// <summary>
@@ -298,7 +298,7 @@ namespace Amazon.Auth.AccessControlPolicy
         /// <param name="ipAddressRange">The CIDR IP range involved in the policy condition.</param>
         public static Condition NewCondition(IpAddressComparisonType type, string ipAddressRange)
         {
-            return new Condition(type.ToString(), SOURCE_IP_CONDITION_KEY, ipAddressRange);
+            return new Condition(ToString(type), SOURCE_IP_CONDITION_KEY, ipAddressRange);
         }
 
         /// <summary>
@@ -310,7 +310,7 @@ namespace Amazon.Auth.AccessControlPolicy
         /// <param name="value">The second number to compare against.</param>
         public static Condition NewCondition(NumericComparisonType type, string key, string value)
         {
-            return new Condition(type.ToString(), key, value);
+            return new Condition(ToString(type), key, value);
         }
 
         /// <summary>
@@ -329,7 +329,7 @@ namespace Amazon.Auth.AccessControlPolicy
         /// </param>
         public static Condition NewCondition(StringComparisonType type, string key, string value)
         {
-            return new Condition(type.ToString(), key, value);
+            return new Condition(ToString(type), key, value);
         }
 
         /// <summary>
@@ -375,6 +375,99 @@ namespace Amazon.Auth.AccessControlPolicy
         public static Condition NewSecureTransportCondition()
         {
             return NewCondition(SECURE_TRANSPORT_CONDITION_KEY, true);
+        }
+
+        private static string ToString(ArnComparisonType type)
+        {
+            switch (type)
+            {
+                case ArnComparisonType.ArnEquals:
+                    return nameof(ArnComparisonType.ArnEquals);
+                case ArnComparisonType.ArnLike:
+                    return nameof(ArnComparisonType.ArnLike);
+                case ArnComparisonType.ArnNotEquals:
+                    return nameof(ArnComparisonType.ArnNotEquals);
+                case ArnComparisonType.ArnNotLike:
+                    return nameof(ArnComparisonType.ArnNotLike);
+                default:
+                    return type.ToString();
+            }
+        }
+
+        private static string ToString(DateComparisonType type)
+        {
+            switch (type)
+            {
+                case DateComparisonType.DateEquals:
+                    return nameof(DateComparisonType.DateEquals);
+                case DateComparisonType.DateGreaterThan:
+                    return nameof(DateComparisonType.DateGreaterThan);
+                case DateComparisonType.DateGreaterThanEquals:
+                    return nameof(DateComparisonType.DateGreaterThanEquals);
+                case DateComparisonType.DateLessThan:
+                    return nameof(DateComparisonType.DateLessThan);
+                case DateComparisonType.DateLessThanEquals:
+                    return nameof(DateComparisonType.DateLessThanEquals);
+                case DateComparisonType.DateNotEquals:
+                    return nameof(DateComparisonType.DateNotEquals);
+                default:
+                    return type.ToString();
+            }
+        }
+
+        private static string ToString(IpAddressComparisonType type)
+        {
+            switch (type)
+            {
+                case IpAddressComparisonType.IpAddress:
+                    return nameof(IpAddressComparisonType.IpAddress);
+                case IpAddressComparisonType.NotIpAddress:
+                    return nameof(IpAddressComparisonType.NotIpAddress);
+                default:
+                    return type.ToString();
+            }
+        }
+
+        private static string ToString(NumericComparisonType type)
+        {
+            switch (type)
+            {
+                case NumericComparisonType.NumericEquals:
+                    return nameof(NumericComparisonType.NumericEquals);
+                case NumericComparisonType.NumericGreaterThan:
+                    return nameof(NumericComparisonType.NumericGreaterThan);
+                case NumericComparisonType.NumericGreaterThanEquals:
+                    return nameof(NumericComparisonType.NumericGreaterThanEquals);
+                case NumericComparisonType.NumericLessThan:
+                    return nameof(NumericComparisonType.NumericLessThan);
+                case NumericComparisonType.NumericLessThanEquals:
+                    return nameof(NumericComparisonType.NumericLessThanEquals);
+                case NumericComparisonType.NumericNotEquals:
+                    return nameof(NumericComparisonType.NumericNotEquals);
+                default:
+                    return type.ToString();
+            }
+        }
+
+        private static string ToString(StringComparisonType type)
+        {
+            switch (type)
+            {
+                case StringComparisonType.StringEquals:
+                    return nameof(StringComparisonType.StringEquals);
+                case StringComparisonType.StringEqualsIgnoreCase:
+                    return nameof(StringComparisonType.StringEqualsIgnoreCase);
+                case StringComparisonType.StringLike:
+                    return nameof(StringComparisonType.StringLike);
+                case StringComparisonType.StringNotEquals:
+                    return nameof(StringComparisonType.StringNotEquals);
+                case StringComparisonType.StringNotEqualsIgnoreCase:
+                    return nameof(StringComparisonType.StringNotEqualsIgnoreCase);
+                case StringComparisonType.StringNotLike:
+                    return nameof(StringComparisonType.StringNotLike);
+                default:
+                    return type.ToString();
+            }
         }
     }
 }
