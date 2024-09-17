@@ -222,6 +222,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.Target = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TargetLocationsURL", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TargetLocationsURL = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TargetMaps", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Dictionary<string, List<string>>, DictionaryUnmarshaller<string, List<string>, StringUnmarshaller, ListUnmarshaller<string, StringUnmarshaller>>>(new DictionaryUnmarshaller<string, List<string>, StringUnmarshaller, ListUnmarshaller<string, StringUnmarshaller>>(StringUnmarshaller.Instance, new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance)));

@@ -167,6 +167,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetTargetLocationsURL())
+                {
+                    context.Writer.WritePropertyName("TargetLocationsURL");
+                    context.Writer.Write(publicRequest.TargetLocationsURL);
+                }
+
                 if(publicRequest.IsSetTargetMaps())
                 {
                     context.Writer.WritePropertyName("TargetMaps");

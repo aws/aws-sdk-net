@@ -956,9 +956,9 @@ namespace Amazon.SimpleSystemsManagement
         /// Registering these machines with Systems Manager makes it possible to manage them using
         /// Systems Manager capabilities. You use the activation code and ID when installing SSM
         /// Agent on machines in your hybrid environment. For more information about requirements
-        /// for managing on-premises machines using Systems Manager, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
-        /// up Amazon Web Services Systems Manager for hybrid and multicloud environments</a>
-        /// in the <i>Amazon Web Services Systems Manager User Guide</i>. 
+        /// for managing on-premises machines using Systems Manager, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-hybrid-multicloud.html">Using
+        /// Amazon Web Services Systems Manager in hybrid and multicloud environments</a> in the
+        /// <i>Amazon Web Services Systems Manager User Guide</i>. 
         /// 
         ///  <note> 
         /// <para>
@@ -996,9 +996,9 @@ namespace Amazon.SimpleSystemsManagement
         /// Registering these machines with Systems Manager makes it possible to manage them using
         /// Systems Manager capabilities. You use the activation code and ID when installing SSM
         /// Agent on machines in your hybrid environment. For more information about requirements
-        /// for managing on-premises machines using Systems Manager, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
-        /// up Amazon Web Services Systems Manager for hybrid and multicloud environments</a>
-        /// in the <i>Amazon Web Services Systems Manager User Guide</i>. 
+        /// for managing on-premises machines using Systems Manager, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-hybrid-multicloud.html">Using
+        /// Amazon Web Services Systems Manager in hybrid and multicloud environments</a> in the
+        /// <i>Amazon Web Services Systems Manager User Guide</i>. 
         /// 
         ///  <note> 
         /// <para>
@@ -1604,7 +1604,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Creates a Amazon Web Services Systems Manager (SSM document). An SSM document defines
         /// the actions that Systems Manager performs on your managed nodes. For more information
         /// about SSM documents, including information about supported schemas, features, and
-        /// syntax, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">Amazon
+        /// syntax, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents.html">Amazon
         /// Web Services Systems Manager Documents</a> in the <i>Amazon Web Services Systems Manager
         /// User Guide</i>.
         /// </summary>
@@ -1644,7 +1644,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Creates a Amazon Web Services Systems Manager (SSM document). An SSM document defines
         /// the actions that Systems Manager performs on your managed nodes. For more information
         /// about SSM documents, including information about supported schemas, features, and
-        /// syntax, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">Amazon
+        /// syntax, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents.html">Amazon
         /// Web Services Systems Manager Documents</a> in the <i>Amazon Web Services Systems Manager
         /// User Guide</i>.
         /// </summary>
@@ -1684,7 +1684,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Creates a Amazon Web Services Systems Manager (SSM document). An SSM document defines
         /// the actions that Systems Manager performs on your managed nodes. For more information
         /// about SSM documents, including information about supported schemas, features, and
-        /// syntax, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">Amazon
+        /// syntax, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents.html">Amazon
         /// Web Services Systems Manager Documents</a> in the <i>Amazon Web Services Systems Manager
         /// User Guide</i>.
         /// </summary>
@@ -1727,7 +1727,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Creates a Amazon Web Services Systems Manager (SSM document). An SSM document defines
         /// the actions that Systems Manager performs on your managed nodes. For more information
         /// about SSM documents, including information about supported schemas, features, and
-        /// syntax, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">Amazon
+        /// syntax, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents.html">Amazon
         /// Web Services Systems Manager Documents</a> in the <i>Amazon Web Services Systems Manager
         /// User Guide</i>.
         /// </summary>
@@ -2143,8 +2143,8 @@ namespace Amazon.SimpleSystemsManagement
         /// <para>
         /// You can configure Systems Manager Inventory to use the <c>SyncToDestination</c> type
         /// to synchronize Inventory data from multiple Amazon Web Services Regions to a single
-        /// Amazon Simple Storage Service (Amazon S3) bucket. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html">Configuring
-        /// resource data sync for Inventory</a> in the <i>Amazon Web Services Systems Manager
+        /// Amazon Simple Storage Service (Amazon S3) bucket. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/inventory-create-resource-data-sync.html">Creatinga
+        /// a resource data sync for Inventory</a> in the <i>Amazon Web Services Systems Manager
         /// User Guide</i>.
         /// </para>
         ///  
@@ -2207,8 +2207,8 @@ namespace Amazon.SimpleSystemsManagement
         /// <para>
         /// You can configure Systems Manager Inventory to use the <c>SyncToDestination</c> type
         /// to synchronize Inventory data from multiple Amazon Web Services Regions to a single
-        /// Amazon Simple Storage Service (Amazon S3) bucket. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html">Configuring
-        /// resource data sync for Inventory</a> in the <i>Amazon Web Services Systems Manager
+        /// Amazon Simple Storage Service (Amazon S3) bucket. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/inventory-create-resource-data-sync.html">Creatinga
+        /// a resource data sync for Inventory</a> in the <i>Amazon Web Services Systems Manager
         /// User Guide</i>.
         /// </para>
         ///  
@@ -12655,10 +12655,10 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TargetNotConnectedException">
         /// The specified target managed node for the session isn't fully configured for use with
-        /// Session Manager. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started.html">Getting
-        /// started with Session Manager</a> in the <i>Amazon Web Services Systems Manager User
-        /// Guide</i>. This error is also returned if you attempt to start a session on a managed
-        /// node that is located in a different account or Region
+        /// Session Manager. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started.html">Setting
+        /// up Session Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+        /// This error is also returned if you attempt to start a session on a managed node that
+        /// is located in a different account or Region
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartSession">REST API Reference for StartSession Operation</seealso>
         public virtual StartSessionResponse StartSession(StartSessionRequest request)
@@ -12705,10 +12705,10 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TargetNotConnectedException">
         /// The specified target managed node for the session isn't fully configured for use with
-        /// Session Manager. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started.html">Getting
-        /// started with Session Manager</a> in the <i>Amazon Web Services Systems Manager User
-        /// Guide</i>. This error is also returned if you attempt to start a session on a managed
-        /// node that is located in a different account or Region
+        /// Session Manager. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started.html">Setting
+        /// up Session Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+        /// This error is also returned if you attempt to start a session on a managed node that
+        /// is located in a different account or Region
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartSession">REST API Reference for StartSession Operation</seealso>
         public virtual Task<StartSessionResponse> StartSessionAsync(StartSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

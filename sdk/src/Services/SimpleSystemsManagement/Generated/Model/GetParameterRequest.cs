@@ -58,7 +58,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about shared parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sharing.html">Working
+        /// For more information about shared parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working
         /// with shared parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// </para>
         /// </summary>

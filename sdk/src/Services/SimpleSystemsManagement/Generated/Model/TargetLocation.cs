@@ -36,11 +36,16 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class TargetLocation
     {
         private List<string> _accounts = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _excludeAccounts = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _executionRoleName;
+        private bool? _includeChildOrganizationUnits;
         private List<string> _regions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AlarmConfiguration _targetLocationAlarmConfiguration;
         private string _targetLocationMaxConcurrency;
         private string _targetLocationMaxErrors;
+        private List<Target> _targets = AWSConfigs.InitializeCollections ? new List<Target>() : null;
+        private string _targetsMaxConcurrency;
+        private string _targetsMaxErrors;
 
         /// <summary>
         /// Gets and sets the property Accounts. 
@@ -62,6 +67,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExcludeAccounts. 
+        /// <para>
+        /// Amazon Web Services accounts or organizational units to exclude as expanded targets.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5000)]
+        public List<string> ExcludeAccounts
+        {
+            get { return this._excludeAccounts; }
+            set { this._excludeAccounts = value; }
+        }
+
+        // Check to see if ExcludeAccounts property is set
+        internal bool IsSetExcludeAccounts()
+        {
+            return this._excludeAccounts != null && (this._excludeAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property ExecutionRoleName. 
         /// <para>
         /// The Automation execution role used by the currently running Automation. If not specified,
@@ -79,6 +103,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetExecutionRoleName()
         {
             return this._executionRoleName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeChildOrganizationUnits. 
+        /// <para>
+        /// Indicates whether to include child organizational units (OUs) that are children of
+        /// the targeted OUs. The default is <c>false</c>.
+        /// </para>
+        /// </summary>
+        public bool IncludeChildOrganizationUnits
+        {
+            get { return this._includeChildOrganizationUnits.GetValueOrDefault(); }
+            set { this._includeChildOrganizationUnits = value; }
+        }
+
+        // Check to see if IncludeChildOrganizationUnits property is set
+        internal bool IsSetIncludeChildOrganizationUnits()
+        {
+            return this._includeChildOrganizationUnits.HasValue; 
         }
 
         /// <summary>
@@ -153,6 +196,73 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetTargetLocationMaxErrors()
         {
             return this._targetLocationMaxErrors != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Targets. 
+        /// <para>
+        /// A list of key-value mappings to target resources. If you specify values for this data
+        /// type, you must also specify a value for <c>TargetParameterName</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This <c>Targets</c> parameter takes precedence over the <c>StartAutomationExecution:Targets</c>
+        /// parameter if both are supplied.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=5)]
+        public List<Target> Targets
+        {
+            get { return this._targets; }
+            set { this._targets = value; }
+        }
+
+        // Check to see if Targets property is set
+        internal bool IsSetTargets()
+        {
+            return this._targets != null && (this._targets.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetsMaxConcurrency. 
+        /// <para>
+        /// The maximum number of targets allowed to run this task in parallel. This <c>TargetsMaxConcurrency</c>
+        /// takes precedence over the <c>StartAutomationExecution:MaxConcurrency</c> parameter
+        /// if both are supplied.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=7)]
+        public string TargetsMaxConcurrency
+        {
+            get { return this._targetsMaxConcurrency; }
+            set { this._targetsMaxConcurrency = value; }
+        }
+
+        // Check to see if TargetsMaxConcurrency property is set
+        internal bool IsSetTargetsMaxConcurrency()
+        {
+            return this._targetsMaxConcurrency != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetsMaxErrors. 
+        /// <para>
+        /// The maximum number of errors that are allowed before the system stops running the
+        /// automation on additional targets. This <c>TargetsMaxErrors</c> parameter takes precedence
+        /// over the <c>StartAutomationExecution:MaxErrors</c> parameter if both are supplied.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=7)]
+        public string TargetsMaxErrors
+        {
+            get { return this._targetsMaxErrors; }
+            set { this._targetsMaxErrors = value; }
+        }
+
+        // Check to see if TargetsMaxErrors property is set
+        internal bool IsSetTargetsMaxErrors()
+        {
+            return this._targetsMaxErrors != null;
         }
 
     }

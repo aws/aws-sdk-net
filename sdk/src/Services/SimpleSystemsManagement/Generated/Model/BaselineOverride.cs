@@ -67,9 +67,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  
         /// <para>
         /// For information about accepted formats for lists of approved patches and rejected
-        /// patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
-        /// package name formats for approved and rejected patch lists</a> in the <i>Amazon Web
-        /// Services Systems Manager User Guide</i>.
+        /// patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
+        /// name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services
+        /// Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
@@ -165,9 +165,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  
         /// <para>
         /// For information about accepted formats for lists of approved patches and rejected
-        /// patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
-        /// package name formats for approved and rejected patch lists</a> in the <i>Amazon Web
-        /// Services Systems Manager User Guide</i>.
+        /// patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
+        /// name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services
+        /// Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

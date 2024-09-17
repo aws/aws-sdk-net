@@ -85,9 +85,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// For lists of all <c>State</c> values, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-compliance-states.html">Understanding
-        /// patch compliance state values</a> in the <i>Amazon Web Services Systems Manager User
-        /// Guide</i>.
+        /// For lists of all <c>State</c> values, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-compliance-states.html">Patch
+        /// compliance state values</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
