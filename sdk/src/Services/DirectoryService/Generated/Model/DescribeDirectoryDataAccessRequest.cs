@@ -30,18 +30,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// Container for the parameters to the DisableClientAuthentication operation.
-    /// Disables alternative client authentication methods for the specified directory.
+    /// Container for the parameters to the DescribeDirectoryDataAccess operation.
+    /// Obtains status of directory data access enablement through the Directory Service Data
+    /// API for the specified directory.
     /// </summary>
-    public partial class DisableClientAuthenticationRequest : AmazonDirectoryServiceRequest
+    public partial class DescribeDirectoryDataAccessRequest : AmazonDirectoryServiceRequest
     {
         private string _directoryId;
-        private ClientAuthenticationType _type;
 
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// The identifier of the directory 
+        /// The directory identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -55,26 +55,6 @@ namespace Amazon.DirectoryService.Model
         internal bool IsSetDirectoryId()
         {
             return this._directoryId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Type. 
-        /// <para>
-        /// The type of client authentication to disable. Currently the only parameter <c>"SmartCard"</c>
-        /// is supported.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public ClientAuthenticationType Type
-        {
-            get { return this._type; }
-            set { this._type = value; }
-        }
-
-        // Check to see if Type property is set
-        internal bool IsSetType()
-        {
-            return this._type != null;
         }
 
     }

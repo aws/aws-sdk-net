@@ -152,8 +152,8 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property TrustPassword. 
         /// <para>
-        /// The trust password. The must be the same password that was used when creating the
-        /// trust relationship on the external domain.
+        /// The trust password. The trust password must be the same password that was used when
+        /// creating the trust relationship on the external domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
