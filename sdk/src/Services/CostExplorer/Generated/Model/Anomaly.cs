@@ -124,8 +124,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property DimensionValue. 
         /// <para>
-        /// The dimension for the anomaly (for example, an Amazon Web Service in a service monitor).
-        /// 
+        /// The dimension for the anomaly (for example, an Amazon Web Servicesservice in a service
+        /// monitor). 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
