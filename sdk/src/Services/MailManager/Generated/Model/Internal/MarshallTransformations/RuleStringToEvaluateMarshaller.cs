@@ -54,6 +54,12 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Attribute);
             }
 
+            if(requestObject.IsSetMimeHeaderAttribute())
+            {
+                context.Writer.WritePropertyName("MimeHeaderAttribute");
+                context.Writer.Write(requestObject.MimeHeaderAttribute);
+            }
+
         }
 
         /// <summary>

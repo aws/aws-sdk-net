@@ -31,7 +31,7 @@ namespace Amazon.MailManager.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateRuleSet operation.
-    /// &gt;Update attributes of an already provisioned rule set.
+    /// Update attributes of an already provisioned rule set.
     /// </summary>
     public partial class UpdateRuleSetRequest : AmazonMailManagerRequest
     {
