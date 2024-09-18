@@ -124,7 +124,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 #>
 				if(<#=variableName + ".IsSet" + member.PropertyName#>())
 <#+
-WriteXmlAttributeString(level + 1,member,variableName, isPayload: false);
+WriteXmlAttributeString(level + 1, member, variableName, isPayload: false);
 #>
 <#+
 			}
@@ -760,10 +760,11 @@ WriteXmlAttributeString(level + 1, member, variableName, isPayload: true, operat
 		var prefix = "";
 		var localName = "";
 		string ns = member.XmlNamespace;
-		if (member.MarshallName.StartsWith("xsi"))
+		if (member.MarshallName.Contains(":"))
 		{
-			prefix = "xsi";
-			localName = member.MarshallName.Substring(4);
+			var colonIndex = member.MarshallName.IndexOf(":");
+			prefix = member.MarshallName.Substring(0, colonIndex);
+			localName = member.MarshallName.Substring(colonIndex + 1);
 		}
 		else
 		{

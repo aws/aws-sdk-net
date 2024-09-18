@@ -1683,7 +1683,8 @@ this.Write(" = (int)context.ResponseData.StatusCode;\r\n");
 		if (!withPrefix)
 		{
 			var locationNameString = locationName.ToString();
-			return locationNameString.StartsWith("xsi:") ? locationNameString.Substring(4) : locationNameString;
+			int colonIndex = locationNameString.IndexOf(":");
+			return colonIndex != -1 ? locationNameString.Substring(colonIndex + 1) : locationNameString;
 		}
         // the locationName and modeled name must only be different for those members which are marshalled on the body.
         if (!string.Equals(locationName.ToString(), member.ModeledName, StringComparison.Ordinal) || member.MarshallLocation != MarshallLocation.Body)
