@@ -1,3 +1,19 @@
+### 3.7.888.0 (2024-09-18 18:22 UTC)
+* CostExplorer (3.7.401.0)
+	* This release extends the GetReservationPurchaseRecommendation API to support recommendations for Amazon DynamoDB reservations.
+* DirectoryService (3.7.401.0)
+	* Added new APIs for enabling, disabling, and describing access to the AWS Directory Service Data API
+* DirectoryServiceData (3.7.400.0)
+	* Added new AWS Directory Service Data API, enabling you to manage data stored in AWS Directory Service directories. This includes APIs for creating, reading, updating, and deleting directory users, groups, and group memberships.
+* GuardDuty (3.7.402.0)
+	* Add `launchType` and `sourceIPs` fields to GuardDuty findings.
+* MailManager (3.7.401.0)
+	* Introduce a new RuleSet condition evaluation, where customers can set up a StringExpression with a MimeHeader condition. This condition will perform the necessary validation based on the X-header provided by customers.
+* RDS (3.7.402.2)
+	* Updates Amazon RDS documentation with information upgrading snapshots with unsupported engine versions for RDS for MySQL and RDS for PostgreSQL.
+* S3 (3.7.403.0)
+	* Added SSE-KMS support for directory buckets.
+
 ### 3.7.887.0 (2024-09-17 18:21 UTC)
 * CodeBuild (3.7.403.0)
 	* GitLab Enhancements - Add support for Self-Hosted GitLab runners in CodeBuild. Add group webhooks
