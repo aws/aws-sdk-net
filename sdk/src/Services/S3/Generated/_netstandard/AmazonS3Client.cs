@@ -591,6 +591,13 @@ namespace Amazon.S3
         /// to use the multipart upload API, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
         /// Upload and Permissions</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// If you provide an <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_Checksum.html">additional
+        /// checksum value</a> in your <c>MultipartUpload</c> requests and the object is encrypted
+        /// with Key Management Service, you must have permission to use the <c>kms:Decrypt</c>
+        /// action for the <c>CompleteMultipartUpload</c> request to succeed.
+        /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>Directory bucket permissions</b> - To grant access to this API operation on a
@@ -606,12 +613,11 @@ namespace Amazon.S3
         /// about authorization, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
         /// <c>CreateSession</c> </a>.
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        ///  If you provide an <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_Checksum.html">additional
-        /// checksum value</a> in your <c>MultipartUpload</c> requests and the object is encrypted
-        /// with Key Management Service, you must have permission to use the <c>kms:Decrypt</c>
-        /// action for the <c>CompleteMultipartUpload</c> request to succeed.
+        /// If the object is encrypted with SSE-KMS, you must also have the <c>kms:GenerateDataKey</c>
+        /// and <c>kms:Decrypt</c> permissions in IAM identity-based policies and KMS key policies
+        /// for the KMS key.
         /// </para>
         ///  </li> </ul> </dd> <dt>Special errors</dt> <dd> <ul> <li> 
         /// <para>
@@ -842,6 +848,12 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        /// If the object is encrypted with SSE-KMS, you must also have the <c>kms:GenerateDataKey</c>
+        /// and <c>kms:Decrypt</c> permissions in IAM identity-based policies and KMS key policies
+        /// for the KMS key.
+        /// </para>
+        ///  
+        /// <para>
         /// For example policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam-example-bucket-policies.html">Example
         /// bucket policies for S3 Express One Zone</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam-identity-policies.html">Amazon
         /// Web Services Identity and Access Management (IAM) identity-based policies for S3 Express
@@ -1049,6 +1061,12 @@ namespace Amazon.S3
         /// on the copy destination bucket. 
         /// </para>
         ///  </li> </ul> 
+        /// <para>
+        /// If the object is encrypted with SSE-KMS, you must also have the <c>kms:GenerateDataKey</c>
+        /// and <c>kms:Decrypt</c> permissions in IAM identity-based policies and KMS key policies
+        /// for the KMS key.
+        /// </para>
+        ///  
         /// <para>
         /// For example policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam-example-bucket-policies.html">Example
         /// bucket policies for S3 Express One Zone</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam-identity-policies.html">Amazon
@@ -1260,6 +1278,12 @@ namespace Amazon.S3
         /// on the copy destination bucket. 
         /// </para>
         ///  </li> </ul> 
+        /// <para>
+        /// If the object is encrypted with SSE-KMS, you must also have the <c>kms:GenerateDataKey</c>
+        /// and <c>kms:Decrypt</c> permissions in IAM identity-based policies and KMS key policies
+        /// for the KMS key.
+        /// </para>
+        ///  
         /// <para>
         /// For example policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam-example-bucket-policies.html">Example
         /// bucket policies for S3 Express One Zone</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam-identity-policies.html">Amazon
@@ -1485,6 +1509,12 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        /// If the object is encrypted with SSE-KMS, you must also have the <c>kms:GenerateDataKey</c>
+        /// and <c>kms:Decrypt</c> permissions in IAM identity-based policies and KMS key policies
+        /// for the KMS key.
+        /// </para>
+        ///  
+        /// <para>
         /// For example policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam-example-bucket-policies.html">Example
         /// bucket policies for S3 Express One Zone</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam-identity-policies.html">Amazon
         /// Web Services Identity and Access Management (IAM) identity-based policies for S3 Express
@@ -1500,8 +1530,26 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Directory buckets </b> - For directory buckets, only server-side encryption with
-        /// Amazon S3 managed keys (SSE-S3) (<c>AES256</c>) is supported.
+        ///  <b>Directory buckets </b> - For directory buckets, there are only two supported options
+        /// for server-side encryption: server-side encryption with Amazon S3 managed keys (SSE-S3)
+        /// (<c>AES256</c>) and server-side encryption with KMS keys (SSE-KMS) (<c>aws:kms</c>).
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-serv-side-encryption.html">Protecting
+        /// data with server-side encryption</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// For directory buckets, when you perform a <c>CreateMultipartUpload</c> operation and
+        /// an <c>UploadPartCopy</c> operation, the request headers you provide in the <c>CreateMultipartUpload</c>
+        /// request must match the default encryption configuration of the destination bucket.
+        /// 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// S3 Bucket Keys aren't supported, when you copy SSE-KMS encrypted objects from general
+        /// purpose buckets to directory buckets, from directory buckets to general purpose buckets,
+        /// or between directory buckets, through <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>.
+        /// In this case, Amazon S3 makes a call to KMS every time a copy request is made for
+        /// a KMS-encrypted object.
         /// </para>
         ///  </li> </ul> </dd> <dt>Special errors</dt> <dd> <ul> <li> 
         /// <para>
@@ -1709,6 +1757,12 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        /// If the object is encrypted with SSE-KMS, you must also have the <c>kms:GenerateDataKey</c>
+        /// and <c>kms:Decrypt</c> permissions in IAM identity-based policies and KMS key policies
+        /// for the KMS key.
+        /// </para>
+        ///  
+        /// <para>
         /// For example policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam-example-bucket-policies.html">Example
         /// bucket policies for S3 Express One Zone</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam-identity-policies.html">Amazon
         /// Web Services Identity and Access Management (IAM) identity-based policies for S3 Express
@@ -1724,8 +1778,26 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Directory buckets </b> - For directory buckets, only server-side encryption with
-        /// Amazon S3 managed keys (SSE-S3) (<c>AES256</c>) is supported.
+        ///  <b>Directory buckets </b> - For directory buckets, there are only two supported options
+        /// for server-side encryption: server-side encryption with Amazon S3 managed keys (SSE-S3)
+        /// (<c>AES256</c>) and server-side encryption with KMS keys (SSE-KMS) (<c>aws:kms</c>).
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-serv-side-encryption.html">Protecting
+        /// data with server-side encryption</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// For directory buckets, when you perform a <c>CreateMultipartUpload</c> operation and
+        /// an <c>UploadPartCopy</c> operation, the request headers you provide in the <c>CreateMultipartUpload</c>
+        /// request must match the default encryption configuration of the destination bucket.
+        /// 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// S3 Bucket Keys aren't supported, when you copy SSE-KMS encrypted objects from general
+        /// purpose buckets to directory buckets, from directory buckets to general purpose buckets,
+        /// or between directory buckets, through <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>.
+        /// In this case, Amazon S3 makes a call to KMS every time a copy request is made for
+        /// a KMS-encrypted object.
         /// </para>
         ///  </li> </ul> </dd> <dt>Special errors</dt> <dd> <ul> <li> 
         /// <para>
@@ -1936,6 +2008,12 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        /// If the object is encrypted with SSE-KMS, you must also have the <c>kms:GenerateDataKey</c>
+        /// and <c>kms:Decrypt</c> permissions in IAM identity-based policies and KMS key policies
+        /// for the KMS key.
+        /// </para>
+        ///  
+        /// <para>
         /// For example policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam-example-bucket-policies.html">Example
         /// bucket policies for S3 Express One Zone</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam-identity-policies.html">Amazon
         /// Web Services Identity and Access Management (IAM) identity-based policies for S3 Express
@@ -1951,8 +2029,26 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Directory buckets </b> - For directory buckets, only server-side encryption with
-        /// Amazon S3 managed keys (SSE-S3) (<c>AES256</c>) is supported.
+        ///  <b>Directory buckets </b> - For directory buckets, there are only two supported options
+        /// for server-side encryption: server-side encryption with Amazon S3 managed keys (SSE-S3)
+        /// (<c>AES256</c>) and server-side encryption with KMS keys (SSE-KMS) (<c>aws:kms</c>).
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-serv-side-encryption.html">Protecting
+        /// data with server-side encryption</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// For directory buckets, when you perform a <c>CreateMultipartUpload</c> operation and
+        /// an <c>UploadPartCopy</c> operation, the request headers you provide in the <c>CreateMultipartUpload</c>
+        /// request must match the default encryption configuration of the destination bucket.
+        /// 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// S3 Bucket Keys aren't supported, when you copy SSE-KMS encrypted objects from general
+        /// purpose buckets to directory buckets, from directory buckets to general purpose buckets,
+        /// or between directory buckets, through <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>.
+        /// In this case, Amazon S3 makes a call to KMS every time a copy request is made for
+        /// a KMS-encrypted object.
         /// </para>
         ///  </li> </ul> </dd> <dt>Special errors</dt> <dd> <ul> <li> 
         /// <para>
@@ -2052,9 +2148,9 @@ namespace Amazon.S3
 
         /// <summary>
         /// Creates a session that establishes temporary security credentials to support fast
-        /// authentication and authorization for the Zonal endpoint APIs on directory buckets.
-        /// For more information about Zonal endpoint APIs that include the Availability Zone
-        /// in the request endpoint, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-APIs.html">S3
+        /// authentication and authorization for the Zonal endpoint API operations on directory
+        /// buckets. For more information about Zonal endpoint API operations that include the
+        /// Availability Zone in the request endpoint, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-APIs.html">S3
         /// Express One Zone APIs</a> in the <i>Amazon S3 User Guide</i>. 
         /// 
         ///  
@@ -2065,16 +2161,16 @@ namespace Amazon.S3
         /// to make the <c>CreateSession</c> API request on the bucket, which returns temporary
         /// security credentials that include the access key ID, secret access key, session token,
         /// and expiration. These credentials have associated permissions to access the Zonal
-        /// endpoint APIs. After the session is created, you don’t need to use other policies
-        /// to grant permissions to each Zonal endpoint API individually. Instead, in your Zonal
-        /// endpoint API requests, you sign your requests by applying the temporary security credentials
-        /// of the session to the request headers and following the SigV4 protocol for authentication.
-        /// You also apply the session token to the <c>x-amz-s3session-token</c> request header
-        /// for authorization. Temporary security credentials are scoped to the bucket and expire
-        /// after 5 minutes. After the expiration time, any calls that you make with those credentials
-        /// will fail. You must use IAM credentials again to make a <c>CreateSession</c> API request
-        /// that generates a new set of temporary credentials for use. Temporary credentials cannot
-        /// be extended or refreshed beyond the original specified interval.
+        /// endpoint API operations. After the session is created, you don’t need to use other
+        /// policies to grant permissions to each Zonal endpoint API individually. Instead, in
+        /// your Zonal endpoint API requests, you sign your requests by applying the temporary
+        /// security credentials of the session to the request headers and following the SigV4
+        /// protocol for authentication. You also apply the session token to the <c>x-amz-s3session-token</c>
+        /// request header for authorization. Temporary security credentials are scoped to the
+        /// bucket and expire after 5 minutes. After the expiration time, any calls that you make
+        /// with those credentials will fail. You must use IAM credentials again to make a <c>CreateSession</c>
+        /// API request that generates a new set of temporary credentials for use. Temporary credentials
+        /// cannot be extended or refreshed beyond the original specified interval.
         /// </para>
         ///  
         /// <para>
@@ -2093,19 +2189,19 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <c>CopyObject</c> API operation</b> - Unlike other Zonal endpoint APIs, the <c>CopyObject</c>
-        /// API operation doesn't use the temporary security credentials returned from the <c>CreateSession</c>
-        /// API operation for authentication and authorization. For information about authentication
-        /// and authorization of the <c>CopyObject</c> API operation on directory buckets, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a>.
+        ///  <b> <c>CopyObject</c> API operation</b> - Unlike other Zonal endpoint API operations,
+        /// the <c>CopyObject</c> API operation doesn't use the temporary security credentials
+        /// returned from the <c>CreateSession</c> API operation for authentication and authorization.
+        /// For information about authentication and authorization of the <c>CopyObject</c> API
+        /// operation on directory buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <c>HeadBucket</c> API operation</b> - Unlike other Zonal endpoint APIs, the <c>HeadBucket</c>
-        /// API operation doesn't use the temporary security credentials returned from the <c>CreateSession</c>
-        /// API operation for authentication and authorization. For information about authentication
-        /// and authorization of the <c>HeadBucket</c> API operation on directory buckets, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadBucket.html">HeadBucket</a>.
+        ///  <b> <c>HeadBucket</c> API operation</b> - Unlike other Zonal endpoint API operations,
+        /// the <c>HeadBucket</c> API operation doesn't use the temporary security credentials
+        /// returned from the <c>CreateSession</c> API operation for authentication and authorization.
+        /// For information about authentication and authorization of the <c>HeadBucket</c> API
+        /// operation on directory buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadBucket.html">HeadBucket</a>.
         /// </para>
         ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> 
         /// <para>
@@ -2121,10 +2217,75 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// To grant cross-account access to Zonal endpoint APIs, the bucket policy should also
-        /// grant both accounts the <c>s3express:CreateSession</c> permission.
+        /// To grant cross-account access to Zonal endpoint API operations, the bucket policy
+        /// should also grant both accounts the <c>s3express:CreateSession</c> permission.
         /// </para>
-        ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
+        ///  
+        /// <para>
+        /// If you want to encrypt objects with SSE-KMS, you must also have the <c>kms:GenerateDataKey</c>
+        /// and the <c>kms:Decrypt</c> permissions in IAM identity-based policies and KMS key
+        /// policies for the target KMS key.
+        /// </para>
+        ///  </dd> <dt>Encryption</dt> <dd> 
+        /// <para>
+        /// For directory buckets, there are only two supported options for server-side encryption:
+        /// server-side encryption with Amazon S3 managed keys (SSE-S3) (<c>AES256</c>) and server-side
+        /// encryption with KMS keys (SSE-KMS) (<c>aws:kms</c>). We recommend that the bucket's
+        /// default encryption uses the desired encryption configuration and you don't override
+        /// the bucket default encryption in your <c>CreateSession</c> requests or <c>PUT</c>
+        /// object requests. Then, new objects are automatically encrypted with the desired encryption
+        /// settings. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-serv-side-encryption.html">Protecting
+        /// data with server-side encryption</a> in the <i>Amazon S3 User Guide</i>. For more
+        /// information about the encryption overriding behaviors in directory buckets, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-specifying-kms-encryption.html">Specifying
+        /// server-side encryption with KMS for new object uploads</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-differences.html#s3-express-differences-api-operations">Zonal
+        /// endpoint (object-level) API operations</a> except <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a>
+        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>,
+        /// you authenticate and authorize requests through <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">CreateSession</a>
+        /// for low latency. To encrypt new objects in a directory bucket with SSE-KMS, you must
+        /// specify SSE-KMS as the directory bucket's default encryption configuration with a
+        /// KMS key (specifically, a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// managed key</a>). Then, when a session is created for Zonal endpoint API operations,
+        /// new objects are automatically encrypted and decrypted with SSE-KMS and S3 Bucket Keys
+        /// during the session.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  Only 1 <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// managed key</a> is supported per directory bucket for the lifetime of the bucket.
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// Web Services managed key</a> (<c>aws/s3</c>) isn't supported. After you specify SSE-KMS
+        /// as your bucket's default encryption configuration with a customer managed key, you
+        /// can't change the customer managed key for the bucket's SSE-KMS configuration. 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// In the Zonal endpoint API calls (except <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a>
+        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>)
+        /// using the REST API, you can't override the values of the encryption settings (<c>x-amz-server-side-encryption</c>,
+        /// <c>x-amz-server-side-encryption-aws-kms-key-id</c>, <c>x-amz-server-side-encryption-context</c>,
+        /// and <c>x-amz-server-side-encryption-bucket-key-enabled</c>) from the <c>CreateSession</c>
+        /// request. You don't need to explicitly specify these encryption settings values in
+        /// Zonal endpoint API calls, and Amazon S3 will use the encryption settings values from
+        /// the <c>CreateSession</c> request to protect new objects in the directory bucket. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// When you use the CLI or the Amazon Web Services SDKs, for <c>CreateSession</c>, the
+        /// session token refreshes automatically to avoid service interruptions when a session
+        /// expires. The CLI or the Amazon Web Services SDKs use the bucket's default encryption
+        /// configuration for the <c>CreateSession</c> request. It's not supported to override
+        /// the encryption settings values in the <c>CreateSession</c> request. Also, in the Zonal
+        /// endpoint API calls (except <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a>
+        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>),
+        /// it's not supported to override the values of the encryption settings from the <c>CreateSession</c>
+        /// request. 
+        /// </para>
+        ///  </note> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
         ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
         /// </para>
@@ -2391,26 +2552,47 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This operation is not supported by directory buckets.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// This implementation of the DELETE action resets the default encryption for the bucket
-        /// as server-side encryption with Amazon S3 managed keys (SSE-S3). For information about
-        /// the bucket default encryption feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
+        /// as server-side encryption with Amazon S3 managed keys (SSE-S3).
+        /// 
+        ///  <note> <ul> <li> 
+        /// <para>
+        ///  <b>General purpose buckets</b> - For information about the bucket default encryption
+        /// feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
         /// S3 Bucket Default Encryption</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// To use this operation, you must have permissions to perform the <c>s3:PutEncryptionConfiguration</c>
-        /// action. The bucket owner has this permission by default. The bucket owner can grant
-        /// this permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
-        /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
-        /// Access Permissions to your Amazon S3 Resources</a> in the <i>Amazon S3 User Guide</i>.
+        ///  <b>Directory buckets</b> - For directory buckets, there are only two supported options
+        /// for server-side encryption: SSE-S3 and SSE-KMS. For information about the default
+        /// encryption configuration in directory buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-bucket-encryption.html">Setting
+        /// default server-side encryption behavior for directory buckets</a>.
         /// </para>
-        ///  
+        ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        /// <para>
+        ///  <b>General purpose bucket permissions</b> - The <c>s3:PutEncryptionConfiguration</c>
+        /// permission is required in a policy. The bucket owner has this permission by default.
+        /// The bucket owner can grant this permission to others. For more information about permissions,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
+        /// Related to Bucket Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
+        /// Access Permissions to Your Amazon S3 Resources</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Directory bucket permissions</b> - To grant access to this API operation, you
+        /// must have the <c>s3express:PutEncryptionConfiguration</c> permission in an IAM identity-based
+        /// policy instead of a bucket policy. Cross-account access to this API operation isn't
+        /// supported. This operation can only be performed by the Amazon Web Services account
+        /// that owns the resource. For more information about directory bucket policies and permissions,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam.html">Amazon
+        /// Web Services Identity and Access Management (IAM) for S3 Express One Zone</a> in the
+        /// <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
+        /// <para>
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        /// </para>
+        ///  </dd> </dl> 
         /// <para>
         /// The following operations are related to <c>DeleteBucketEncryption</c>:
         /// </para>
@@ -4593,27 +4775,48 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This operation is not supported by directory buckets.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Returns the default encryption configuration for an Amazon S3 bucket. By default,
         /// all buckets have a default encryption configuration that uses server-side encryption
-        /// with Amazon S3 managed keys (SSE-S3). For information about the bucket default encryption
+        /// with Amazon S3 managed keys (SSE-S3). 
+        /// 
+        ///  <note> <ul> <li> 
+        /// <para>
+        ///  <b>General purpose buckets</b> - For information about the bucket default encryption
         /// feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
         /// S3 Bucket Default Encryption</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// To use this operation, you must have permission to perform the <c>s3:GetEncryptionConfiguration</c>
-        /// action. The bucket owner has this permission by default. The bucket owner can grant
-        /// this permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
-        /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
+        ///  <b>Directory buckets</b> - For directory buckets, there are only two supported options
+        /// for server-side encryption: SSE-S3 and SSE-KMS. For information about the default
+        /// encryption configuration in directory buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-bucket-encryption.html">Setting
+        /// default server-side encryption behavior for directory buckets</a>.
+        /// </para>
+        ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        /// <para>
+        ///  <b>General purpose bucket permissions</b> - The <c>s3:GetEncryptionConfiguration</c>
+        /// permission is required in a policy. The bucket owner has this permission by default.
+        /// The bucket owner can grant this permission to others. For more information about permissions,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
+        /// Related to Bucket Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
         /// Access Permissions to Your Amazon S3 Resources</a>.
         /// </para>
-        ///  
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Directory bucket permissions</b> - To grant access to this API operation, you
+        /// must have the <c>s3express:GetEncryptionConfiguration</c> permission in an IAM identity-based
+        /// policy instead of a bucket policy. Cross-account access to this API operation isn't
+        /// supported. This operation can only be performed by the Amazon Web Services account
+        /// that owns the resource. For more information about directory bucket policies and permissions,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam.html">Amazon
+        /// Web Services Identity and Access Management (IAM) for S3 Express One Zone</a> in the
+        /// <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
+        /// <para>
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        /// </para>
+        ///  </dd> </dl> 
         /// <para>
         /// The following operations are related to <c>GetBucketEncryption</c>:
         /// </para>
@@ -6478,6 +6681,12 @@ namespace Amazon.S3
         /// about authorization, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
         /// <c>CreateSession</c> </a>.
         /// </para>
+        ///  
+        /// <para>
+        /// If the object is encrypted using SSE-KMS, you must also have the <c>kms:GenerateDataKey</c>
+        /// and <c>kms:Decrypt</c> permissions in IAM identity-based policies and KMS key policies
+        /// for the KMS key.
+        /// </para>
         ///  </li> </ul> </dd> <dt>Storage classes</dt> <dd> 
         /// <para>
         /// If the object you are retrieving is stored in the S3 Glacier Flexible Retrieval storage
@@ -6504,6 +6713,13 @@ namespace Amazon.S3
         /// Services KMS keys (DSSE-KMS). If you include the header in your <c>GetObject</c> requests
         /// for the object that uses these types of keys, you’ll get an HTTP <c>400 Bad Request</c>
         /// error.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Directory buckets</b> - For directory buckets, there are only two supported options
+        /// for server-side encryption: SSE-S3 and SSE-KMS. SSE-C isn't supported. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-serv-side-encryption.html">Protecting
+        /// data with server-side encryption</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </dd> <dt>Overriding response header values through the request</dt> <dd> 
         /// <para>
@@ -6676,6 +6892,12 @@ namespace Amazon.S3
         /// about authorization, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
         /// <c>CreateSession</c> </a>.
         /// </para>
+        ///  
+        /// <para>
+        /// If the object is encrypted using SSE-KMS, you must also have the <c>kms:GenerateDataKey</c>
+        /// and <c>kms:Decrypt</c> permissions in IAM identity-based policies and KMS key policies
+        /// for the KMS key.
+        /// </para>
         ///  </li> </ul> </dd> <dt>Storage classes</dt> <dd> 
         /// <para>
         /// If the object you are retrieving is stored in the S3 Glacier Flexible Retrieval storage
@@ -6702,6 +6924,13 @@ namespace Amazon.S3
         /// Services KMS keys (DSSE-KMS). If you include the header in your <c>GetObject</c> requests
         /// for the object that uses these types of keys, you’ll get an HTTP <c>400 Bad Request</c>
         /// error.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Directory buckets</b> - For directory buckets, there are only two supported options
+        /// for server-side encryption: SSE-S3 and SSE-KMS. SSE-C isn't supported. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-serv-side-encryption.html">Protecting
+        /// data with server-side encryption</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </dd> <dt>Overriding response header values through the request</dt> <dd> 
         /// <para>
@@ -6877,6 +7106,12 @@ namespace Amazon.S3
         /// about authorization, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
         /// <c>CreateSession</c> </a>.
         /// </para>
+        ///  
+        /// <para>
+        /// If the object is encrypted using SSE-KMS, you must also have the <c>kms:GenerateDataKey</c>
+        /// and <c>kms:Decrypt</c> permissions in IAM identity-based policies and KMS key policies
+        /// for the KMS key.
+        /// </para>
         ///  </li> </ul> </dd> <dt>Storage classes</dt> <dd> 
         /// <para>
         /// If the object you are retrieving is stored in the S3 Glacier Flexible Retrieval storage
@@ -6903,6 +7138,13 @@ namespace Amazon.S3
         /// Services KMS keys (DSSE-KMS). If you include the header in your <c>GetObject</c> requests
         /// for the object that uses these types of keys, you’ll get an HTTP <c>400 Bad Request</c>
         /// error.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Directory buckets</b> - For directory buckets, there are only two supported options
+        /// for server-side encryption: SSE-S3 and SSE-KMS. SSE-C isn't supported. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-serv-side-encryption.html">Protecting
+        /// data with server-side encryption</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </dd> <dt>Overriding response header values through the request</dt> <dd> 
         /// <para>
@@ -7032,8 +7274,8 @@ namespace Amazon.S3
         /// <para>
         ///  <b>General purpose bucket permissions</b> - To use <c>GetObjectAttributes</c>, you
         /// must have READ access to the object. The permissions that you need to use this operation
-        /// with depend on whether the bucket is versioned. If the bucket is versioned, you need
-        /// both the <c>s3:GetObjectVersion</c> and <c>s3:GetObjectVersionAttributes</c> permissions
+        /// depend on whether the bucket is versioned. If the bucket is versioned, you need both
+        /// the <c>s3:GetObjectVersion</c> and <c>s3:GetObjectVersionAttributes</c> permissions
         /// for this operation. If the bucket is not versioned, you need the <c>s3:GetObject</c>
         /// and <c>s3:GetObjectAttributes</c> permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
         /// Permissions in a Policy</a> in the <i>Amazon S3 User Guide</i>. If the object that
@@ -7064,6 +7306,12 @@ namespace Amazon.S3
         /// automatically to avoid service interruptions when a session expires. For more information
         /// about authorization, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
         /// <c>CreateSession</c> </a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the object is encrypted with SSE-KMS, you must also have the <c>kms:GenerateDataKey</c>
+        /// and <c>kms:Decrypt</c> permissions in IAM identity-based policies and KMS key policies
+        /// for the KMS key.
         /// </para>
         ///  </li> </ul> </dd> <dt>Encryption</dt> <dd> <note> 
         /// <para>
@@ -7104,8 +7352,17 @@ namespace Amazon.S3
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <b>Directory bucket permissions</b> - For directory buckets, only server-side encryption
-        /// with Amazon S3 managed keys (SSE-S3) (<c>AES256</c>) is supported.
+        ///  <b>Directory bucket permissions</b> - For directory buckets, there are only two supported
+        /// options for server-side encryption: server-side encryption with Amazon S3 managed
+        /// keys (SSE-S3) (<c>AES256</c>) and server-side encryption with KMS keys (SSE-KMS) (<c>aws:kms</c>).
+        /// We recommend that the bucket's default encryption uses the desired encryption configuration
+        /// and you don't override the bucket default encryption in your <c>CreateSession</c>
+        /// requests or <c>PUT</c> object requests. Then, new objects are automatically encrypted
+        /// with the desired encryption settings. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-serv-side-encryption.html">Protecting
+        /// data with server-side encryption</a> in the <i>Amazon S3 User Guide</i>. For more
+        /// information about the encryption overriding behaviors in directory buckets, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-specifying-kms-encryption.html">Specifying
+        /// server-side encryption with KMS for new object uploads</a>.
         /// </para>
         ///  </note> </dd> <dt>Versioning</dt> <dd> 
         /// <para>
@@ -7401,6 +7658,14 @@ namespace Amazon.S3
         /// about authorization, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
         /// <c>CreateSession</c> </a>.
         /// </para>
+        ///  
+        /// <para>
+        /// If you enable <c>x-amz-checksum-mode</c> in the request and the object is encrypted
+        /// with Amazon Web Services Key Management Service (Amazon Web Services KMS), you must
+        /// also have the <c>kms:GenerateDataKey</c> and <c>kms:Decrypt</c> permissions in IAM
+        /// identity-based policies and KMS key policies for the KMS key to retrieve the checksum
+        /// of the object.
+        /// </para>
         ///  </li> </ul> </dd> <dt>Encryption</dt> <dd> <note> 
         /// <para>
         /// Encryption request headers, like <c>x-amz-server-side-encryption</c>, should not be
@@ -7440,8 +7705,10 @@ namespace Amazon.S3
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <b>Directory bucket permissions</b> - For directory buckets, only server-side encryption
-        /// with Amazon S3 managed keys (SSE-S3) (<c>AES256</c>) is supported.
+        ///  <b>Directory bucket </b> - For directory buckets, there are only two supported options
+        /// for server-side encryption: SSE-S3 and SSE-KMS. SSE-C isn't supported. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-serv-side-encryption.html">Protecting
+        /// data with server-side encryption</a> in the <i>Amazon S3 User Guide</i>. 
         /// </para>
         ///  </note> </dd> <dt>Versioning</dt> <dd> <ul> <li> 
         /// <para>
@@ -7563,6 +7830,14 @@ namespace Amazon.S3
         /// about authorization, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
         /// <c>CreateSession</c> </a>.
         /// </para>
+        ///  
+        /// <para>
+        /// If you enable <c>x-amz-checksum-mode</c> in the request and the object is encrypted
+        /// with Amazon Web Services Key Management Service (Amazon Web Services KMS), you must
+        /// also have the <c>kms:GenerateDataKey</c> and <c>kms:Decrypt</c> permissions in IAM
+        /// identity-based policies and KMS key policies for the KMS key to retrieve the checksum
+        /// of the object.
+        /// </para>
         ///  </li> </ul> </dd> <dt>Encryption</dt> <dd> <note> 
         /// <para>
         /// Encryption request headers, like <c>x-amz-server-side-encryption</c>, should not be
@@ -7602,8 +7877,10 @@ namespace Amazon.S3
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <b>Directory bucket permissions</b> - For directory buckets, only server-side encryption
-        /// with Amazon S3 managed keys (SSE-S3) (<c>AES256</c>) is supported.
+        ///  <b>Directory bucket </b> - For directory buckets, there are only two supported options
+        /// for server-side encryption: SSE-S3 and SSE-KMS. SSE-C isn't supported. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-serv-side-encryption.html">Protecting
+        /// data with server-side encryption</a> in the <i>Amazon S3 User Guide</i>. 
         /// </para>
         ///  </note> </dd> <dt>Versioning</dt> <dd> <ul> <li> 
         /// <para>
@@ -7728,6 +8005,14 @@ namespace Amazon.S3
         /// about authorization, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
         /// <c>CreateSession</c> </a>.
         /// </para>
+        ///  
+        /// <para>
+        /// If you enable <c>x-amz-checksum-mode</c> in the request and the object is encrypted
+        /// with Amazon Web Services Key Management Service (Amazon Web Services KMS), you must
+        /// also have the <c>kms:GenerateDataKey</c> and <c>kms:Decrypt</c> permissions in IAM
+        /// identity-based policies and KMS key policies for the KMS key to retrieve the checksum
+        /// of the object.
+        /// </para>
         ///  </li> </ul> </dd> <dt>Encryption</dt> <dd> <note> 
         /// <para>
         /// Encryption request headers, like <c>x-amz-server-side-encryption</c>, should not be
@@ -7767,8 +8052,10 @@ namespace Amazon.S3
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <b>Directory bucket permissions</b> - For directory buckets, only server-side encryption
-        /// with Amazon S3 managed keys (SSE-S3) (<c>AES256</c>) is supported.
+        ///  <b>Directory bucket </b> - For directory buckets, there are only two supported options
+        /// for server-side encryption: SSE-S3 and SSE-KMS. SSE-C isn't supported. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-serv-side-encryption.html">Protecting
+        /// data with server-side encryption</a> in the <i>Amazon S3 User Guide</i>. 
         /// </para>
         ///  </note> </dd> <dt>Versioning</dt> <dd> <ul> <li> 
         /// <para>
@@ -8460,10 +8747,51 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <b>Directory buckets</b> -For directory buckets, only server-side encryption with
-        /// Amazon S3 managed keys (SSE-S3) (<c>AES256</c>) is supported.
+        ///  <b>Directory buckets</b> - For directory buckets, there are only two supported options
+        /// for server-side encryption: server-side encryption with Amazon S3 managed keys (SSE-S3)
+        /// (<c>AES256</c>) and server-side encryption with KMS keys (SSE-KMS) (<c>aws:kms</c>).
+        /// We recommend that the bucket's default encryption uses the desired encryption configuration
+        /// and you don't override the bucket default encryption in your <c>CreateSession</c>
+        /// requests or <c>PUT</c> object requests. Then, new objects are automatically encrypted
+        /// with the desired encryption settings. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-serv-side-encryption.html">Protecting
+        /// data with server-side encryption</a> in the <i>Amazon S3 User Guide</i>. For more
+        /// information about the encryption overriding behaviors in directory buckets, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-specifying-kms-encryption.html">Specifying
+        /// server-side encryption with KMS for new object uploads</a>.
         /// </para>
-        ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
+        ///  
+        /// <para>
+        /// In the Zonal endpoint API calls (except <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a>
+        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>)
+        /// using the REST API, the encryption request headers must match the encryption settings
+        /// that are specified in the <c>CreateSession</c> request. You can't override the values
+        /// of the encryption settings (<c>x-amz-server-side-encryption</c>, <c>x-amz-server-side-encryption-aws-kms-key-id</c>,
+        /// <c>x-amz-server-side-encryption-context</c>, and <c>x-amz-server-side-encryption-bucket-key-enabled</c>)
+        /// that are specified in the <c>CreateSession</c> request. You don't need to explicitly
+        /// specify these encryption settings values in Zonal endpoint API calls, and Amazon S3
+        /// will use the encryption settings values from the <c>CreateSession</c> request to protect
+        /// new objects in the directory bucket. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// When you use the CLI or the Amazon Web Services SDKs, for <c>CreateSession</c>, the
+        /// session token refreshes automatically to avoid service interruptions when a session
+        /// expires. The CLI or the Amazon Web Services SDKs use the bucket's default encryption
+        /// configuration for the <c>CreateSession</c> request. It's not supported to override
+        /// the encryption settings values in the <c>CreateSession</c> request. So in the Zonal
+        /// endpoint API calls (except <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a>
+        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>),
+        /// the encryption request headers must match the default encryption configuration of
+        /// the directory bucket. 
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// For directory buckets, when you perform a <c>CreateMultipartUpload</c> operation and
+        /// an <c>UploadPartCopy</c> operation, the request headers you provide in the <c>CreateMultipartUpload</c>
+        /// request must match the default encryption configuration of the destination bucket.
+        /// 
+        /// </para>
+        ///  </note> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
         ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
         /// </para>
@@ -8696,10 +9024,51 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <b>Directory buckets</b> -For directory buckets, only server-side encryption with
-        /// Amazon S3 managed keys (SSE-S3) (<c>AES256</c>) is supported.
+        ///  <b>Directory buckets</b> - For directory buckets, there are only two supported options
+        /// for server-side encryption: server-side encryption with Amazon S3 managed keys (SSE-S3)
+        /// (<c>AES256</c>) and server-side encryption with KMS keys (SSE-KMS) (<c>aws:kms</c>).
+        /// We recommend that the bucket's default encryption uses the desired encryption configuration
+        /// and you don't override the bucket default encryption in your <c>CreateSession</c>
+        /// requests or <c>PUT</c> object requests. Then, new objects are automatically encrypted
+        /// with the desired encryption settings. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-serv-side-encryption.html">Protecting
+        /// data with server-side encryption</a> in the <i>Amazon S3 User Guide</i>. For more
+        /// information about the encryption overriding behaviors in directory buckets, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-specifying-kms-encryption.html">Specifying
+        /// server-side encryption with KMS for new object uploads</a>.
         /// </para>
-        ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
+        ///  
+        /// <para>
+        /// In the Zonal endpoint API calls (except <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a>
+        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>)
+        /// using the REST API, the encryption request headers must match the encryption settings
+        /// that are specified in the <c>CreateSession</c> request. You can't override the values
+        /// of the encryption settings (<c>x-amz-server-side-encryption</c>, <c>x-amz-server-side-encryption-aws-kms-key-id</c>,
+        /// <c>x-amz-server-side-encryption-context</c>, and <c>x-amz-server-side-encryption-bucket-key-enabled</c>)
+        /// that are specified in the <c>CreateSession</c> request. You don't need to explicitly
+        /// specify these encryption settings values in Zonal endpoint API calls, and Amazon S3
+        /// will use the encryption settings values from the <c>CreateSession</c> request to protect
+        /// new objects in the directory bucket. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// When you use the CLI or the Amazon Web Services SDKs, for <c>CreateSession</c>, the
+        /// session token refreshes automatically to avoid service interruptions when a session
+        /// expires. The CLI or the Amazon Web Services SDKs use the bucket's default encryption
+        /// configuration for the <c>CreateSession</c> request. It's not supported to override
+        /// the encryption settings values in the <c>CreateSession</c> request. So in the Zonal
+        /// endpoint API calls (except <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a>
+        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>),
+        /// the encryption request headers must match the default encryption configuration of
+        /// the directory bucket. 
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// For directory buckets, when you perform a <c>CreateMultipartUpload</c> operation and
+        /// an <c>UploadPartCopy</c> operation, the request headers you provide in the <c>CreateMultipartUpload</c>
+        /// request must match the default encryption configuration of the destination bucket.
+        /// 
+        /// </para>
+        ///  </note> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
         ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
         /// </para>
@@ -11320,28 +11689,88 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <note> 
+        /// This operation configures default encryption and Amazon S3 Bucket Keys for an existing
+        /// bucket.
+        /// 
+        ///  <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
+        /// API operation to the Regional endpoint. These endpoints support path-style requests
+        /// in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> 
         /// <para>
-        /// This action uses the <c>encryption</c> subresource to configure default encryption
-        /// and Amazon S3 Bucket Keys for an existing bucket.
-        /// </para>
-        ///  
-        /// <para>
         /// By default, all buckets have a default encryption configuration that uses server-side
-        /// encryption with Amazon S3 managed keys (SSE-S3). You can optionally configure default
-        /// encryption for a bucket by using server-side encryption with Key Management Service
-        /// (KMS) keys (SSE-KMS) or dual-layer server-side encryption with Amazon Web Services
-        /// KMS keys (DSSE-KMS). If you specify default encryption by using SSE-KMS, you can also
-        /// configure <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon
-        /// S3 Bucket Keys</a>. If you use PutBucketEncryption to set your <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">default
-        /// bucket encryption</a> to SSE-KMS, you should verify that your KMS key ID is correct.
-        /// Amazon S3 does not validate the KMS key ID provided in PutBucketEncryption requests.
+        /// encryption with Amazon S3 managed keys (SSE-S3).
         /// </para>
-        ///  <important> 
+        ///  <note> <ul> <li> 
+        /// <para>
+        ///  <b>General purpose buckets</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can optionally configure default encryption for a bucket by using server-side
+        /// encryption with Key Management Service (KMS) keys (SSE-KMS) or dual-layer server-side
+        /// encryption with Amazon Web Services KMS keys (DSSE-KMS). If you specify default encryption
+        /// by using SSE-KMS, you can also configure <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon
+        /// S3 Bucket Keys</a>. For information about the bucket default encryption feature, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
+        /// S3 Bucket Default Encryption</a> in the <i>Amazon S3 User Guide</i>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you use PutBucketEncryption to set your <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">default
+        /// bucket encryption</a> to SSE-KMS, you should verify that your KMS key ID is correct.
+        /// Amazon S3 doesn't validate the KMS key ID provided in PutBucketEncryption requests.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <b>Directory buckets </b> - You can optionally configure default encryption for a
+        /// bucket by using server-side encryption with Key Management Service (KMS) keys (SSE-KMS).
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// We recommend that the bucket's default encryption uses the desired encryption configuration
+        /// and you don't override the bucket default encryption in your <c>CreateSession</c>
+        /// requests or <c>PUT</c> object requests. Then, new objects are automatically encrypted
+        /// with the desired encryption settings. For more information about the encryption overriding
+        /// behaviors in directory buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-specifying-kms-encryption.html">Specifying
+        /// server-side encryption with KMS for new object uploads</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your SSE-KMS configuration can only support 1 <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// managed key</a> per directory bucket for the lifetime of the bucket. <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// Web Services managed key</a> (<c>aws/s3</c>) isn't supported. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// S3 Bucket Keys are always enabled for <c>GET</c> and <c>PUT</c> operations in a directory
+        /// bucket and can’t be disabled. S3 Bucket Keys aren't supported, when you copy SSE-KMS
+        /// encrypted objects from general purpose buckets to directory buckets, from directory
+        /// buckets to general purpose buckets, or between directory buckets, through <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a>,
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>,
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-objects-Batch-Ops">the
+        /// Copy operation in Batch Operations</a>, or <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/create-import-job">the
+        /// import jobs</a>. In this case, Amazon S3 makes a call to KMS every time a copy request
+        /// is made for a KMS-encrypted object.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When you specify an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">KMS
+        /// customer managed key</a> for encryption in your directory bucket, only use the key
+        /// ID or key ARN. The key alias format of the KMS key isn't supported.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For directory buckets, if you use PutBucketEncryption to set your <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">default
+        /// bucket encryption</a> to SSE-KMS, Amazon S3 validates the KMS key ID provided in PutBucketEncryption
+        /// requests.
+        /// </para>
+        ///  </li> </ul> </li> </ul> </note> <important> 
         /// <para>
         /// If you're specifying a customer managed KMS key, we recommend using a fully qualified
         /// KMS key ARN. If you use a KMS key alias instead, then KMS resolves the key within
@@ -11354,16 +11783,37 @@ namespace Amazon.S3
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">
         /// Authenticating Requests (Amazon Web Services Signature Version 4)</a>. 
         /// </para>
-        ///  </important> 
+        ///  </important> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
-        /// To use this operation, you must have permission to perform the <c>s3:PutEncryptionConfiguration</c>
-        /// action. The bucket owner has this permission by default. The bucket owner can grant
-        /// this permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
-        /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
+        ///  <b>General purpose bucket permissions</b> - The <c>s3:PutEncryptionConfiguration</c>
+        /// permission is required in a policy. The bucket owner has this permission by default.
+        /// The bucket owner can grant this permission to others. For more information about permissions,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
+        /// Related to Bucket Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
         /// Access Permissions to Your Amazon S3 Resources</a> in the <i>Amazon S3 User Guide</i>.
-        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Directory bucket permissions</b> - To grant access to this API operation, you
+        /// must have the <c>s3express:PutEncryptionConfiguration</c> permission in an IAM identity-based
+        /// policy instead of a bucket policy. Cross-account access to this API operation isn't
+        /// supported. This operation can only be performed by the Amazon Web Services account
+        /// that owns the resource. For more information about directory bucket policies and permissions,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam.html">Amazon
+        /// Web Services Identity and Access Management (IAM) for S3 Express One Zone</a> in the
+        /// <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
+        /// <para>
+        /// To set a directory bucket default encryption with SSE-KMS, you must also have the
+        /// <c>kms:GenerateDataKey</c> and the <c>kms:Decrypt</c> permissions in IAM identity-based
+        /// policies and KMS key policies for the target KMS key.
+        /// </para>
+        ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
+        /// <para>
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        /// </para>
+        ///  </dd> </dl> 
         /// <para>
         /// The following operations are related to <c>PutBucketEncryption</c>:
         /// </para>
@@ -13787,6 +14237,12 @@ namespace Amazon.S3
         /// about authorization, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
         /// <c>CreateSession</c> </a>.
         /// </para>
+        ///  
+        /// <para>
+        /// If the object is encrypted with SSE-KMS, you must also have the <c>kms:GenerateDataKey</c>
+        /// and <c>kms:Decrypt</c> permissions in IAM identity-based policies and KMS key policies
+        /// for the KMS key.
+        /// </para>
         ///  </li> </ul> </dd> <dt>Data integrity with Content-MD5</dt> <dd> <ul> <li> 
         /// <para>
         ///  <b>General purpose bucket</b> - To ensure that data is not corrupted traversing the
@@ -15647,6 +16103,12 @@ namespace Amazon.S3
         /// about authorization, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
         /// <c>CreateSession</c> </a>.
         /// </para>
+        ///  
+        /// <para>
+        /// If the object is encrypted with SSE-KMS, you must also have the <c>kms:GenerateDataKey</c>
+        /// and <c>kms:Decrypt</c> permissions in IAM identity-based policies and KMS key policies
+        /// for the KMS key.
+        /// </para>
         ///  </li> </ul> </dd> <dt>Data integrity</dt> <dd> 
         /// <para>
         ///  <b>General purpose bucket</b> - To ensure that data is not corrupted traversing the
@@ -15702,17 +16164,18 @@ namespace Amazon.S3
         /// <para>
         /// x-amz-server-side-encryption-customer-key-MD5
         /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <b>Directory bucket</b> - For directory buckets, only server-side encryption with
-        /// Amazon S3 managed keys (SSE-S3) (<c>AES256</c>) is supported. 
-        /// </para>
         ///  </li> </ul> 
         /// <para>
         ///  For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
         /// Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </dd> <dt>Special errors</dt> <dd> <ul> <li> 
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Directory buckets </b> - For directory buckets, there are only two supported options
+        /// for server-side encryption: server-side encryption with Amazon S3 managed keys (SSE-S3)
+        /// (<c>AES256</c>) and server-side encryption with KMS keys (SSE-KMS) (<c>aws:kms</c>).
+        /// </para>
+        ///  </li> </ul> </dd> <dt>Special errors</dt> <dd> <ul> <li> 
         /// <para>
         /// Error Code: <c>NoSuchUpload</c> 
         /// </para>

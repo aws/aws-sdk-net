@@ -718,7 +718,12 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ChecksumMode. 
         /// <para>
-        /// This must be enabled to retrieve the checksum.
+        /// To retrieve the checksum, this mode must be enabled.
+        /// </para>
+        /// 
+        /// <para>
+        /// <b>General purpose buckets</b> - In addition, if you enable checksum mode and the object is uploaded with a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_Checksum.html">checksum</a> 
+        /// and encrypted with an Key Management Service (KMS) key, you must have permission to use the <c>kms:Decrypt</c> action to retrieve the checksum.
         /// </para>
         /// </summary>
         public ChecksumMode ChecksumMode

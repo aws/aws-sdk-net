@@ -40,8 +40,8 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property BucketKeyEnabled. 
         /// <para>
-        /// Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption
-        /// with AWS KMS (SSE-KMS).
+        /// Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption 
+        /// with Key Management Service (KMS) keys (SSE-KMS).
         /// </para>
         /// </summary>
         public bool BucketKeyEnabled
@@ -256,8 +256,7 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// <para>
-        /// The server-side encryption algorithm used when storing this object in Amazon S3 (for
-        /// example, AES256, <code>aws:kms</code>).
+        /// The server-side encryption algorithm used when storing this object in Amazon S3 (for example, <c>AES256</c>, <c>aws:kms</c>).
         /// </para>
         /// </summary>
         public ServerSideEncryptionMethod ServerSideEncryptionMethod
@@ -268,11 +267,8 @@ namespace Amazon.S3.Model
 
 
         /// <summary>
-        /// The id of the AWS Key Management Service key that Amazon S3 uses to encrypt and decrypt the object.
         /// <para>
-        /// If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon
-        /// Web Services KMS) symmetric encryption customer managed key that was used for the
-        /// object.
+        /// If present, indicates the ID of the KMS key that was used for object encryption.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

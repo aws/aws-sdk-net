@@ -66,6 +66,24 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 }
             }
 
+            IWebResponseData responseData = context.ResponseData;
+            if (responseData.IsHeaderPresent("x-amz-server-side-encryption"))
+            {
+                response.ServerSideEncryption = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-server-side-encryption"));
+            }
+            if (responseData.IsHeaderPresent("x-amz-server-side-encryption-aws-kms-key-id"))
+            {
+                response.SSEKMSKeyId = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-server-side-encryption-aws-kms-key-id"));
+            }
+            if (responseData.IsHeaderPresent("x-amz-server-side-encryption-context"))
+            {
+                response.SSEKMSEncryptionContext = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-server-side-encryption-context"));
+            }
+            if (responseData.IsHeaderPresent("x-amz-server-side-encryption-bucket-key-enabled"))
+            {
+                response.BucketKeyEnabled = S3Transforms.ToBool(responseData.GetHeaderValue("x-amz-server-side-encryption-bucket-key-enabled"));
+            }
+
             return;
         }
 

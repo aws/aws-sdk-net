@@ -102,8 +102,7 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// <para>
-        /// The server-side encryption algorithm used when storing this object in Amazon S3 (for
-        /// example, AES256, <code>aws:kms</code>).
+        /// The server-side encryption algorithm used when you store this object in Amazon S3 (for example, <c>AES256</c>, <c>aws:kms</c>, <c>aws:kms:dsse</c>).
         /// </para>
         /// </summary>
         public ServerSideEncryptionMethod ServerSideEncryptionMethod
@@ -132,12 +131,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Specifies the AWS KMS Encryption Context to use for object encryption.
-        /// The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.
         /// <para>
-        /// If present, specifies the Amazon Web Services KMS Encryption Context to use for object
-        /// encryption. The value of this header is a base64-encoded UTF-8 string holding JSON
-        /// with the encryption context key-value pairs.
+        /// If present, indicates the Amazon Web Services KMS Encryption Context to use for object encryption. 
+        /// The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -148,11 +144,8 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The id of the AWS Key Management Service key that Amazon S3 uses to encrypt and decrypt the object.
         /// <para>
-        /// If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon
-        /// Web Services KMS) symmetric encryption customer managed key that was used for the
-        /// object.
+        /// If present, indicates the ID of the KMS key that was used for object encryption.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
