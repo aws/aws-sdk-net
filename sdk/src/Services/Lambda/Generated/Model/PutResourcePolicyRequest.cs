@@ -31,13 +31,21 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the PutResourcePolicy operation.
+    /// <note> 
+    /// <para>
+    /// The option to create and modify full JSON resource-based policies, and to use the
+    /// PutResourcePolicy, GetResourcePolicy, and DeleteResourcePolicy APIs, won't be available
+    /// in all Amazon Web Services Regions until September 30, 2024.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Adds a <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based
     /// policy</a> to a function. You can use resource-based policies to grant access to other
     /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/permissions-function-cross-account.html">Amazon
     /// Web Services accounts</a>, <a href="https://docs.aws.amazon.com/lambda/latest/dg/permissions-function-organization.html">organizations</a>,
     /// or <a href="https://docs.aws.amazon.com/lambda/latest/dg/permissions-function-services.html">services</a>.
     /// Resource-based policies apply to a single function, version, or alias.
-    /// 
+    /// </para>
     ///  <important> 
     /// <para>
     /// Adding a resource-based policy using this API action replaces any existing policy

@@ -459,12 +459,11 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Grants an Amazon Web Servicesservice, Amazon Web Services account, or Amazon Web Services
-        /// organization permission to use a function. You can apply the policy at the function
-        /// level, or specify a qualifier to restrict access to a single version or alias. If
-        /// you use a qualifier, the invoker must use the full Amazon Resource Name (ARN) of that
-        /// version or alias to invoke the function. Note: Lambda does not support adding policies
-        /// to version $LATEST.
+        /// Grants a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">principal</a>
+        /// permission to use a function. You can apply the policy at the function level, or specify
+        /// a qualifier to restrict access to a single version or alias. If you use a qualifier,
+        /// the invoker must use the full Amazon Resource Name (ARN) of that version or alias
+        /// to invoke the function. Note: Lambda does not support adding policies to version $LATEST.
         /// 
         ///  
         /// <para>
@@ -513,6 +512,11 @@ namespace Amazon.Lambda
         /// retrieve the latest RevisionId for your resource.
         /// </para>
         ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.PublicPolicyException">
+        /// Lambda prevented your policy from being created because it would grant public access
+        /// to your function. If you intended to create a public policy, use the <a>PutPublicAccessBlockConfig</a>
+        /// API action to configure your function's public-access settings to allow public policies.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -1567,8 +1571,17 @@ namespace Amazon.Lambda
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The option to create and modify full JSON resource-based policies, and to use the
+        /// PutResourcePolicy, GetResourcePolicy, and DeleteResourcePolicy APIs, won't be available
+        /// in all Amazon Web Services Regions until September 30, 2024.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Deletes a <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based
         /// policy</a> from a function.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -2473,7 +2486,16 @@ namespace Amazon.Lambda
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The option to configure public-access settings, and to use the PutPublicAccessBlock
+        /// and GetPublicAccessBlock APIs, won't be available in all Amazon Web Services Regions
+        /// until September 30, 2024.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Retrieve the public-access settings for a function.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPublicAccessBlockConfig service method.</param>
         /// <param name="cancellationToken">
@@ -2520,8 +2542,17 @@ namespace Amazon.Lambda
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The option to create and modify full JSON resource-based policies, and to use the
+        /// PutResourcePolicy, GetResourcePolicy, and DeleteResourcePolicy APIs, won't be available
+        /// in all Amazon Web Services Regions until September 30, 2024.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Retrieves the <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based
         /// policy</a> attached to a function.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -3565,8 +3596,8 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Returns a function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.
-        /// You can also view tags with <a>GetFunction</a>.
+        /// Returns a function, event source mapping, or code signing configuration's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.
+        /// You can also view funciton tags with <a>GetFunction</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTags service method.</param>
         /// <param name="cancellationToken">
@@ -4114,8 +4145,16 @@ namespace Amazon.Lambda
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The option to configure public-access settings, and to use the PutPublicAccessBlock
+        /// and GetPublicAccessBlock APIs, won't be available in all Amazon Web Services Regions
+        /// until September 30, 2024.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Configure your function's public-access settings.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To control public access to a Lambda function, you can choose whether to allow the
@@ -4173,13 +4212,21 @@ namespace Amazon.Lambda
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The option to create and modify full JSON resource-based policies, and to use the
+        /// PutResourcePolicy, GetResourcePolicy, and DeleteResourcePolicy APIs, won't be available
+        /// in all Amazon Web Services Regions until September 30, 2024.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Adds a <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based
         /// policy</a> to a function. You can use resource-based policies to grant access to other
         /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/permissions-function-cross-account.html">Amazon
         /// Web Services accounts</a>, <a href="https://docs.aws.amazon.com/lambda/latest/dg/permissions-function-organization.html">organizations</a>,
         /// or <a href="https://docs.aws.amazon.com/lambda/latest/dg/permissions-function-services.html">services</a>.
         /// Resource-based policies apply to a single function, version, or alias.
-        /// 
+        /// </para>
         ///  <important> 
         /// <para>
         /// Adding a resource-based policy using this API action replaces any existing policy
@@ -4407,6 +4454,11 @@ namespace Amazon.Lambda
         /// </para>
         ///  </li> </ul>
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.PublicPolicyException">
+        /// Lambda prevented your policy from being created because it would grant public access
+        /// to your function. If you intended to create a public policy, use the <a>PutPublicAccessBlockConfig</a>
+        /// API action to configure your function's public-access settings to allow public policies.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
         /// </exception>
@@ -4444,7 +4496,7 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Adds <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>
-        /// to a function.
+        /// to a function, event source mapping, or code signing configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -4495,7 +4547,7 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Removes <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>
-        /// from a function.
+        /// from a function, event source mapping, or code signing configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">

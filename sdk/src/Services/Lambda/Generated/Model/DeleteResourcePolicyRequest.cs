@@ -31,8 +31,17 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteResourcePolicy operation.
+    /// <note> 
+    /// <para>
+    /// The option to create and modify full JSON resource-based policies, and to use the
+    /// PutResourcePolicy, GetResourcePolicy, and DeleteResourcePolicy APIs, won't be available
+    /// in all Amazon Web Services Regions until September 30, 2024.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Deletes a <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based
     /// policy</a> from a function.
+    /// </para>
     /// </summary>
     public partial class DeleteResourcePolicyRequest : AmazonLambdaRequest
     {

@@ -41,6 +41,7 @@ namespace Amazon.Lambda.Model
         private DestinationConfig _destinationConfig;
         private DocumentDBEventSourceConfig _documentDBEventSourceConfig;
         private string _eventSourceArn;
+        private string _eventSourceMappingArn;
         private FilterCriteria _filterCriteria;
         private FilterCriteriaError _filterCriteriaError;
         private string _functionArn;
@@ -189,6 +190,25 @@ namespace Amazon.Lambda.Model
         internal bool IsSetEventSourceArn()
         {
             return this._eventSourceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventSourceMappingArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the event source mapping.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=85, Max=120)]
+        public string EventSourceMappingArn
+        {
+            get { return this._eventSourceMappingArn; }
+            set { this._eventSourceMappingArn = value; }
+        }
+
+        // Check to see if EventSourceMappingArn property is set
+        internal bool IsSetEventSourceMappingArn()
+        {
+            return this._eventSourceMappingArn != null;
         }
 
         /// <summary>

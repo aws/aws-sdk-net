@@ -31,8 +31,8 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTags operation.
-    /// Returns a function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.
-    /// You can also view tags with <a>GetFunction</a>.
+    /// Returns a function, event source mapping, or code signing configuration's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.
+    /// You can also view funciton tags with <a>GetFunction</a>.
     /// </summary>
     public partial class ListTagsRequest : AmazonLambdaRequest
     {
@@ -41,11 +41,11 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Resource. 
         /// <para>
-        /// The function's Amazon Resource Name (ARN). Note: Lambda does not support adding tags
-        /// to aliases or versions.
+        /// The resource's Amazon Resource Name (ARN). Note: Lambda does not support adding tags
+        /// to function aliases or versions.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Resource
         {
             get { return this._resource; }

@@ -31,8 +31,16 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the PutPublicAccessBlockConfig operation.
+    /// <note> 
+    /// <para>
+    /// The option to configure public-access settings, and to use the PutPublicAccessBlock
+    /// and GetPublicAccessBlock APIs, won't be available in all Amazon Web Services Regions
+    /// until September 30, 2024.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Configure your function's public-access settings.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// To control public access to a Lambda function, you can choose whether to allow the

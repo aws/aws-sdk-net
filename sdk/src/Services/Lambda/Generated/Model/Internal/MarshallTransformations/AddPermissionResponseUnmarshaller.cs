@@ -93,6 +93,10 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 {
                     return PreconditionFailedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("PublicPolicyException"))
+                {
+                    return PublicPolicyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceConflictException"))
                 {
                     return ResourceConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
