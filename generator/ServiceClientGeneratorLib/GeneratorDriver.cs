@@ -871,7 +871,7 @@ namespace ServiceClientGenerator
             var nugetPackages = new Dictionary<string, string>();
             foreach (var service in manifest.ServiceConfigurations.OrderBy(x => x.ClassName))
             {
-                if (service.IsTestService)
+                if (service.ParentConfig != null || service.IsTestService)
                     continue;
 
                 if (string.IsNullOrEmpty(service.Synopsis))
