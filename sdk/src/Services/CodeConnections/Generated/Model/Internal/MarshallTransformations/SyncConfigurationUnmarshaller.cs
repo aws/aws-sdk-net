@@ -96,6 +96,12 @@ namespace Amazon.CodeConnections.Model.Internal.MarshallTransformations
                     unmarshalledObject.PublishDeploymentStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PullRequestComment", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PullRequestComment = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RepositoryLinkId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
