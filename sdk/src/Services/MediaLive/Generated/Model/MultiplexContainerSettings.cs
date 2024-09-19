@@ -30,42 +30,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Multiplex Output Settings
+    /// Multiplex Container Settings
     /// </summary>
-    public partial class MultiplexOutputSettings
+    public partial class MultiplexContainerSettings
     {
-        private MultiplexContainerSettings _containerSettings;
-        private OutputLocationRef _destination;
+        private MultiplexM2tsSettings _multiplexM2tsSettings;
 
         /// <summary>
-        /// Gets and sets the property ContainerSettings.
+        /// Gets and sets the property MultiplexM2tsSettings.
         /// </summary>
-        public MultiplexContainerSettings ContainerSettings
+        public MultiplexM2tsSettings MultiplexM2tsSettings
         {
-            get { return this._containerSettings; }
-            set { this._containerSettings = value; }
+            get { return this._multiplexM2tsSettings; }
+            set { this._multiplexM2tsSettings = value; }
         }
 
-        // Check to see if ContainerSettings property is set
-        internal bool IsSetContainerSettings()
+        // Check to see if MultiplexM2tsSettings property is set
+        internal bool IsSetMultiplexM2tsSettings()
         {
-            return this._containerSettings != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Destination. Destination is a Multiplex.
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public OutputLocationRef Destination
-        {
-            get { return this._destination; }
-            set { this._destination = value; }
-        }
-
-        // Check to see if Destination property is set
-        internal bool IsSetDestination()
-        {
-            return this._destination != null;
+            return this._multiplexM2tsSettings != null;
         }
 
     }

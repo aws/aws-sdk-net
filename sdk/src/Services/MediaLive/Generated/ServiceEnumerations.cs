@@ -1753,6 +1753,126 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type BandwidthReductionFilterStrength.
+    /// </summary>
+    public class BandwidthReductionFilterStrength : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTO for BandwidthReductionFilterStrength
+        /// </summary>
+        public static readonly BandwidthReductionFilterStrength AUTO = new BandwidthReductionFilterStrength("AUTO");
+        /// <summary>
+        /// Constant STRENGTH_1 for BandwidthReductionFilterStrength
+        /// </summary>
+        public static readonly BandwidthReductionFilterStrength STRENGTH_1 = new BandwidthReductionFilterStrength("STRENGTH_1");
+        /// <summary>
+        /// Constant STRENGTH_2 for BandwidthReductionFilterStrength
+        /// </summary>
+        public static readonly BandwidthReductionFilterStrength STRENGTH_2 = new BandwidthReductionFilterStrength("STRENGTH_2");
+        /// <summary>
+        /// Constant STRENGTH_3 for BandwidthReductionFilterStrength
+        /// </summary>
+        public static readonly BandwidthReductionFilterStrength STRENGTH_3 = new BandwidthReductionFilterStrength("STRENGTH_3");
+        /// <summary>
+        /// Constant STRENGTH_4 for BandwidthReductionFilterStrength
+        /// </summary>
+        public static readonly BandwidthReductionFilterStrength STRENGTH_4 = new BandwidthReductionFilterStrength("STRENGTH_4");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BandwidthReductionFilterStrength(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BandwidthReductionFilterStrength FindValue(string value)
+        {
+            return FindValue<BandwidthReductionFilterStrength>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BandwidthReductionFilterStrength(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BandwidthReductionPostFilterSharpening.
+    /// </summary>
+    public class BandwidthReductionPostFilterSharpening : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for BandwidthReductionPostFilterSharpening
+        /// </summary>
+        public static readonly BandwidthReductionPostFilterSharpening DISABLED = new BandwidthReductionPostFilterSharpening("DISABLED");
+        /// <summary>
+        /// Constant SHARPENING_1 for BandwidthReductionPostFilterSharpening
+        /// </summary>
+        public static readonly BandwidthReductionPostFilterSharpening SHARPENING_1 = new BandwidthReductionPostFilterSharpening("SHARPENING_1");
+        /// <summary>
+        /// Constant SHARPENING_2 for BandwidthReductionPostFilterSharpening
+        /// </summary>
+        public static readonly BandwidthReductionPostFilterSharpening SHARPENING_2 = new BandwidthReductionPostFilterSharpening("SHARPENING_2");
+        /// <summary>
+        /// Constant SHARPENING_3 for BandwidthReductionPostFilterSharpening
+        /// </summary>
+        public static readonly BandwidthReductionPostFilterSharpening SHARPENING_3 = new BandwidthReductionPostFilterSharpening("SHARPENING_3");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BandwidthReductionPostFilterSharpening(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BandwidthReductionPostFilterSharpening FindValue(string value)
+        {
+            return FindValue<BandwidthReductionPostFilterSharpening>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BandwidthReductionPostFilterSharpening(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BlackoutSlateNetworkEndBlackout.
     /// </summary>
     public class BlackoutSlateNetworkEndBlackout : ConstantClass

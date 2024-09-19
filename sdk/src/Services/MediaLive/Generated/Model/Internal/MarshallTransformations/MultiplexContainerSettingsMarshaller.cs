@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// H265FilterSettings Marshaller
+    /// MultiplexContainerSettings Marshaller
     /// </summary>
-    public class H265FilterSettingsMarshaller : IRequestMarshaller<H265FilterSettings, JsonMarshallerContext> 
+    public class MultiplexContainerSettingsMarshaller : IRequestMarshaller<MultiplexContainerSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,28 +44,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(H265FilterSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(MultiplexContainerSettings requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetBandwidthReductionFilterSettings())
+            if(requestObject.IsSetMultiplexM2tsSettings())
             {
-                context.Writer.WritePropertyName("bandwidthReductionFilterSettings");
+                context.Writer.WritePropertyName("multiplexM2tsSettings");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = BandwidthReductionFilterSettingsMarshaller.Instance;
-                marshaller.Marshall(requestObject.BandwidthReductionFilterSettings, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetTemporalFilterSettings())
-            {
-                context.Writer.WritePropertyName("temporalFilterSettings");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = TemporalFilterSettingsMarshaller.Instance;
-                marshaller.Marshall(requestObject.TemporalFilterSettings, context);
+                var marshaller = MultiplexM2tsSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.MultiplexM2tsSettings, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -75,7 +64,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static H265FilterSettingsMarshaller Instance = new H265FilterSettingsMarshaller();
+        public readonly static MultiplexContainerSettingsMarshaller Instance = new MultiplexContainerSettingsMarshaller();
 
     }
 }

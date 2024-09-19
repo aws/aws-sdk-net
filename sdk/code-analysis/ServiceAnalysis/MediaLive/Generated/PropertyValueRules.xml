@@ -2063,6 +2063,15 @@
     <max>10000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.MultiplexM2tsSettings.AudioFramesPerPes</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.MultiplexM2tsSettings.PcrPeriod</property>
+    <min>0</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.MultiplexMediaConnectOutputDestinationSettings.EntitlementArn</property>
     <min>1</min>
   </property-value-rule>

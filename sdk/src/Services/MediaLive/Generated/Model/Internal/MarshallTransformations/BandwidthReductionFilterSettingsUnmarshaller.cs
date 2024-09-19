@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for H265FilterSettings Object
+    /// Response Unmarshaller for BandwidthReductionFilterSettings Object
     /// </summary>  
-    public class H265FilterSettingsUnmarshaller : IUnmarshaller<H265FilterSettings, XmlUnmarshallerContext>, IUnmarshaller<H265FilterSettings, JsonUnmarshallerContext>
+    public class BandwidthReductionFilterSettingsUnmarshaller : IUnmarshaller<BandwidthReductionFilterSettings, XmlUnmarshallerContext>, IUnmarshaller<BandwidthReductionFilterSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        H265FilterSettings IUnmarshaller<H265FilterSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        BandwidthReductionFilterSettings IUnmarshaller<BandwidthReductionFilterSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public H265FilterSettings Unmarshall(JsonUnmarshallerContext context)
+        public BandwidthReductionFilterSettings Unmarshall(JsonUnmarshallerContext context)
         {
-            H265FilterSettings unmarshalledObject = new H265FilterSettings();
+            BandwidthReductionFilterSettings unmarshalledObject = new BandwidthReductionFilterSettings();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,16 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("bandwidthReductionFilterSettings", targetDepth))
+                if (context.TestExpression("postFilterSharpening", targetDepth))
                 {
-                    var unmarshaller = BandwidthReductionFilterSettingsUnmarshaller.Instance;
-                    unmarshalledObject.BandwidthReductionFilterSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PostFilterSharpening = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("temporalFilterSettings", targetDepth))
+                if (context.TestExpression("strength", targetDepth))
                 {
-                    var unmarshaller = TemporalFilterSettingsUnmarshaller.Instance;
-                    unmarshalledObject.TemporalFilterSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Strength = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +83,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static H265FilterSettingsUnmarshaller _instance = new H265FilterSettingsUnmarshaller();        
+        private static BandwidthReductionFilterSettingsUnmarshaller _instance = new BandwidthReductionFilterSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static H265FilterSettingsUnmarshaller Instance
+        public static BandwidthReductionFilterSettingsUnmarshaller Instance
         {
             get
             {
