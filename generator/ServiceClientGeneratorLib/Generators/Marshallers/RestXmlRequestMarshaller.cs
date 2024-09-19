@@ -361,7 +361,7 @@ this.Write("())\r\n");
         
         #line 126 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 
-WriteXmlAttributeString(level + 1, member, variableName, isPayload: false);
+WriteXmlAttributeString(level, member, variableName, isPayload: false);
 
         
         #line default
@@ -4538,7 +4538,7 @@ this.Write("\t\t\t\t\t}\r\n");
         #line 754 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 
 	// xsi is a common prefix in attributes, but it cannot be included in the local name itself as the xmlWriter class will throw an exception. 
-	// Some services may model the xmlName, with the xsi prefix included like it is here https://github.com/smithy-lang/smithy/blob/main/smithy-aws-protocol-tests/model/restXmlWithNamespace/main.smithy#L147
+	// Some services may model the xmlName, with the xsi prefix included like it is here https://github.com/smithy-lang/smithy/blob/7813acbfee4e90b589996ffcfa02fbe73785f654/smithy-aws-protocol-tests/model/restXmlWithNamespace/main.smithy#L147
 	// In this case, we add xsi to the prefix argument of WriteAttributeString and extract the local name.
 	protected void WriteXmlAttributeString(int level, Member member, string variableName,  bool isPayload, Operation operation = null)
 	{
