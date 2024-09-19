@@ -73,15 +73,17 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (copyObjectRequest.IsSetUnmodifiedSinceDateUtc())
                 request.Headers.Add(HeaderKeys.XAmzCopySourceIfUnmodifiedSinceHeader, S3Transforms.ToStringValue(copyObjectRequest.UnmodifiedSinceDateUtc.Value));
-
-            if (copyObjectRequest.IsSetTagSet())
+            
+            if (copyObjectRequest.IsSetTaggingDirective())
             {
-                request.Headers.Add(S3Constants.AmzHeaderTagging, AmazonS3Util.TagSetToQueryString(copyObjectRequest.TagSet));
-                request.Headers.Add(S3Constants.AmzHeaderTaggingDirective, TaggingDirective.REPLACE.Value);
-            }
-            else
-            {
-                request.Headers.Add(S3Constants.AmzHeaderTaggingDirective, TaggingDirective.COPY.Value);
+                if (copyObjectRequest.TaggingDirective == TaggingDirective.REPLACE)
+                {
+                    if (copyObjectRequest.IsSetTagSet())
+                        request.Headers.Add(S3Constants.AmzHeaderTagging, AmazonS3Util.TagSetToQueryString(copyObjectRequest.TagSet));
+                    request.Headers.Add(S3Constants.AmzHeaderTaggingDirective, TaggingDirective.REPLACE.Value);
+                }
+                else if (copyObjectRequest.TaggingDirective == TaggingDirective.COPY)
+                    request.Headers.Add(S3Constants.AmzHeaderTaggingDirective, TaggingDirective.COPY.Value);
             }
 
             request.Headers.Add(HeaderKeys.XAmzMetadataDirectiveHeader, S3Transforms.ToStringValue(copyObjectRequest.MetadataDirective.ToString()));

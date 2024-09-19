@@ -7,6 +7,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.IO;
 using System.Net;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -15,6 +17,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     {
         private const string testContent = "This is the content body!";
         private const string testKey = "testKey.txt";
+        private const string testKeyWithTag = "testKeyWithTag.txt";
         private const string testKeyWithSlash = "/sourceTestKey.txt";
 
         private string eastBucketName;
@@ -81,6 +84,77 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 DestinationBucket = westBucketName,
                 DestinationKey = testKey
             });
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TestCopyObjectWithTags()
+        {
+            usEastClient.PutObject(new PutObjectRequest
+            {
+                BucketName = eastBucketName,
+                Key = testKeyWithTag,
+                ContentBody = testContent,
+                TagSet = new List<Tag>
+                {
+                    new Tag {Key = "foo", Value = "bar" },
+                    new Tag { Key = "baz", Value = "qux" }
+                }
+            });
+            var response = usEastClient.CopyObject(new CopyObjectRequest
+            {
+                SourceBucket = eastBucketName,
+                SourceKey = testKeyWithTag,
+                DestinationBucket = westBucketName,
+                DestinationKey = testKeyWithTag,
+            });
+            var taggingMetadata = usWestClient.GetObjectTagging(new GetObjectTaggingRequest
+            {
+                BucketName = westBucketName,
+                Key = testKeyWithTag
+            });
+            Assert.IsTrue(taggingMetadata.Tagging.Count == 2);
+            Assert.IsTrue(taggingMetadata.Tagging.Any(tag => tag.Key == "foo" && tag.Value == "bar"));
+            Assert.IsTrue(taggingMetadata.Tagging.Any(tag => tag.Key == "baz" && tag.Value == "qux"));
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TestCopyObjectWithTagsReplace()
+        {
+            usEastClient.PutObject(new PutObjectRequest
+            {
+                BucketName = eastBucketName,
+                Key = testKeyWithTag,
+                ContentBody = testContent,
+                TagSet = new List<Tag>
+                {
+                    new Tag {Key = "foo", Value = "bar" },
+                    new Tag { Key = "baz", Value = "qux" }
+                }
+            });
+            var response = usEastClient.CopyObject(new CopyObjectRequest
+            {
+                SourceBucket = eastBucketName,
+                SourceKey = testKeyWithTag,
+                DestinationBucket = westBucketName,
+                DestinationKey = testKeyWithTag,
+                TaggingDirective = TaggingDirective.REPLACE,
+                TagSet = new List<Tag>
+                {
+                    new Tag {Key = "newtag1", Value = "1" },
+                }
+
+            });
+            var taggingMetadata = usWestClient.GetObjectTagging(new GetObjectTaggingRequest
+            {
+                BucketName = westBucketName,
+                Key = testKeyWithTag
+            });
+            Assert.IsTrue(taggingMetadata.Tagging.Count == 1);
+            Assert.IsFalse(taggingMetadata.Tagging.Any(tag => tag.Key == "foo" && tag.Value == "bar"));
+            Assert.IsFalse(taggingMetadata.Tagging.Any(tag => tag.Key == "baz" && tag.Value == "qux"));
+            Assert.IsTrue(taggingMetadata.Tagging.Any(tag => tag.Key == "newtag1" && tag.Value == "1"));
         }
 
         [DataRow(false, testKey, "/destinationTestKey1.txt", "destinationTestKey1.txt")]

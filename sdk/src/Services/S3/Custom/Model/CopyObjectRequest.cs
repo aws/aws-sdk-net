@@ -243,6 +243,7 @@ namespace Amazon.S3.Model
         private ServerSideEncryptionCustomerMethod copySourceServerSideCustomerEncryption;
         private string copySourceServerSideEncryptionCustomerProvidedKey;
         private string copySourceServerSideEncryptionCustomerProvidedKeyMD5;
+        private TaggingDirective taggingDirective = TaggingDirective.COPY;
 
         private bool disableTrimmingLeadingSlash = false;
 
@@ -1089,6 +1090,29 @@ namespace Amazon.S3.Model
         {
             get { return this.disableTrimmingLeadingSlash; }
             set { this.disableTrimmingLeadingSlash = value; }
+        }
+
+        /// <summary>
+        /// Specifies whether the object tag-set is copied from the source object or replaced with the tag-set that's provided in the request.
+        /// <para>
+        /// The default value is COPY. You can change the value and decide not to send this header at all if you are working with a service that doesn't 
+        /// have an implementation for this header yet.
+        /// </para>
+        /// <para>
+        /// For directory buckets in a CopyObject operation, only the empty tag-set is supported. 
+        /// Any requests that attempt to write non-empty tags into directory buckets will receive a 501 Not Implemented status code.
+        /// </para>
+        /// </summary>
+        public TaggingDirective TaggingDirective
+        {
+            get { return this.taggingDirective; }
+            set { this.taggingDirective = value; }
+        }
+        
+        // Check to see if TaggingDirective property is set
+        internal bool IsSetTaggingDirective()
+        {
+            return this.taggingDirective != null; 
         }
     }
 }
