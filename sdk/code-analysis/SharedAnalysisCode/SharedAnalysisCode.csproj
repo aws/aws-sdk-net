@@ -5,7 +5,14 @@
     <ProjectGuid>16e2a13f-f4f6-4774-a2d8-ad8127e7ee4f</ProjectGuid>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.CodeAnalysis" Version="3.0.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="2.9.8" />
+		<PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.3.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="Resources.Designer.cs" DesignTime="True" AutoGen="True" DependentUpon="Resources.resx" />
+		<EmbeddedResource Update="Resources.resx" Generator="ResXFileCodeGenerator" LastGenOutput="Resources.Designer.cs" />
+	</ItemGroup>
+
 </Project>

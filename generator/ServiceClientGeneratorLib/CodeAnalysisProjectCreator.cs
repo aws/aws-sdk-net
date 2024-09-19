@@ -17,6 +17,7 @@ namespace ServiceClientGenerator
             GenerateAssemblyInfo(codeAnalysisRoot, serviceConfiguration);
             GeneratePropertyValueRules(codeAnalysisRoot, serviceConfiguration);
             GeneratePropertyValueAnalyzer(codeAnalysisRoot, serviceConfiguration);
+            GenerateNullCollectionInitializerAnalyzer(codeAnalysisRoot, serviceConfiguration);
         }
 
         void SetupProjectFile(string codeAnalysisRoot, ServiceConfiguration serviceConfiguration)
@@ -149,6 +150,12 @@ namespace ServiceClientGenerator
             GeneratorDriver.WriteFile(codeAnalysisRoot, "Generated", "PropertyValueAssignmentAnalyzer.cs", text);
         }
 
+        private void GenerateNullCollectionInitializerAnalyzer(string codeAnalysisRoot, ServiceConfiguration serviceConfiguration)
+        {
+            var generator = new NullCollectionInitializerAnalyzer { Config = serviceConfiguration };
+            var text = generator.TransformText();
+            GeneratorDriver.WriteFile(codeAnalysisRoot, "Generated", "NullCollectionInitializerAnalyzer.cs", text);
+        }
 
         private IList<string> GetEmbeddedResources(string codeAnalysisRoot)
         {
