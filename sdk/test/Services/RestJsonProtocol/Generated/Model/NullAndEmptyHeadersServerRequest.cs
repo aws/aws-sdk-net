@@ -81,7 +81,7 @@ namespace Amazon.RestJsonProtocol.Model
         // Check to see if C property is set
         internal bool IsSetC()
         {
-            return this._c != null && (this._c.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._c != null && this._c.Count > 0;
         }
 
     }

@@ -90,8 +90,7 @@ namespace Amazon.RestXmlProtocolNamespace.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("Nested");
                     if(publicRequest.Nested.IsSetAttrField())
-                        xmlWriter.WriteElementString("xsi:someName", StringUtils.FromString(publicRequest.Nested.AttrField));
-
+                        xmlWriter.WriteAttributeString("xsi","someName", "",StringUtils.FromString(publicRequest.Nested.AttrField));
                     xmlWriter.WriteEndElement();
                 }
                 if(publicRequest.IsSetShortValue())

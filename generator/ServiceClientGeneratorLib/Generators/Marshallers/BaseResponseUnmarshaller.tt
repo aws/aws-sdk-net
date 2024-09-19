@@ -384,7 +384,7 @@ using Amazon.Runtime.Internal.Util;
         2. Use the value of the locationName on the member's target if present
         3. Use the name of the member's target
     */
-    protected string DetermineXmlMarshallName(Member member)
+    protected string DetermineXmlMarshallName(Member member, bool withPrefix = true)
     {
         var locationName = member.data[ServiceModel.LocationNameKey];
         if (locationName == null)
@@ -395,6 +395,12 @@ using Amazon.Runtime.Internal.Util;
                 return member.Shape.Name;
             return member.MarshallName;
         }
+		if (!withPrefix)
+		{
+			var locationNameString = locationName.ToString();
+			int colonIndex = locationNameString.IndexOf(":");
+			return colonIndex != -1 ? locationNameString.Substring(colonIndex + 1) : locationNameString;
+		}
         // the locationName and modeled name must only be different for those members which are marshalled on the body.
         if (!string.Equals(locationName.ToString(), member.ModeledName, StringComparison.Ordinal) || member.MarshallLocation != MarshallLocation.Body)
         {

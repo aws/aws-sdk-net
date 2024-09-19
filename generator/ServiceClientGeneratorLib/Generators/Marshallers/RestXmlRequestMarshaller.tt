@@ -123,7 +123,9 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 			{
 #>
 				if(<#=variableName + ".IsSet" + member.PropertyName#>())
-					xmlWriter.WriteAttributeString("<#=member.MarshallName#>", "<#=member.XmlNamespace#>",<#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>));
+<#+
+WriteXmlAttributeString(level, member, variableName, isPayload: false);
+#>
 <#+
 			}
 		}
@@ -164,7 +166,9 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 			{
 #>
 					if(<#=variableName + "." + operation.RequestPayloadMember.PropertyName + ".IsSet" + member.PropertyName#>())
-						xmlWriter.WriteAttributeString("<#=member.MarshallName#>","<#=member.XmlNamespace#>",<#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=operation.RequestPayloadMember.PropertyName#>.<#=member.PropertyName#>));
+<#+
+WriteXmlAttributeString(level + 1, member, variableName, isPayload: true, operation);
+#>
 <#+
 			}
 			level++;
@@ -302,9 +306,19 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 			{
 #>
 <#=new string(' ', level * 4)#>				if(<#=variableName#>.IsSet<#=member.PropertyName#>())
-<#=new string(' ', level * 4)#>					xmlWriter.WriteElementString("<#=member.MarshallName#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#><#=(member.IsNullable ? ".Value" : string.Empty)#>));
-
 <#+
+				if (!member.IsXmlAttribute)
+				{
+#>
+<#=new string(' ', level * 4)#>					xmlWriter.WriteElementString("<#=member.MarshallName#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#><#=(member.IsNullable ? ".Value" : string.Empty)#>));
+<#+
+				}
+#>
+<#+
+				else
+				{
+					WriteXmlAttributeString(level, member, variableName, false);
+				}
 			}
 		}
 	}
@@ -735,5 +749,41 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 #>
 <#=new string(' ', (level) * 4)#>					}
 <#+
+	}
+#>
+<#+
+	// xsi is a common prefix in attributes, but it cannot be included in the local name itself as the xmlWriter class will throw an exception. 
+	// Some services may model the xmlName, with the xsi prefix included like it is here https://github.com/smithy-lang/smithy/blob/7813acbfee4e90b589996ffcfa02fbe73785f654/smithy-aws-protocol-tests/model/restXmlWithNamespace/main.smithy#L147
+	// In this case, we add xsi to the prefix argument of WriteAttributeString and extract the local name.
+	protected void WriteXmlAttributeString(int level, Member member, string variableName,  bool isPayload, Operation operation = null)
+	{
+		var prefix = "";
+		var localName = "";
+		string ns = member.XmlNamespace;
+		if (member.MarshallName.Contains(":"))
+		{
+			var colonIndex = member.MarshallName.IndexOf(":");
+			prefix = member.MarshallName.Substring(0, colonIndex);
+			localName = member.MarshallName.Substring(colonIndex + 1);
+		}
+		else
+		{
+			prefix = member.XmlNamespacePrefix;
+			localName = member.MarshallName;
+		}		
+#>
+<#+
+		if(isPayload)
+		{
+#>
+<#=new string(' ', level * 4)#>					xmlWriter.WriteAttributeString("<#=prefix#>","<#=localName#>","<#=member.XmlNamespace#>",<#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=operation.RequestPayloadMember.PropertyName#>.<#=member.PropertyName#>));
+<#+
+		}
+		else
+		{
+#>
+<#=new string(' ', level * 4)#>					xmlWriter.WriteAttributeString("<#=prefix#>","<#=localName#>", "<#=member.XmlNamespace#>",<#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>));
+<#+
+		}
 	}
 #>

@@ -82,31 +82,36 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 														variableNameFragment + "listValueIndex", 
 														GeneratorHelpers.DetermineAWSQueryListMemberSuffix(this.Operation, member));
 #>
-<#=new string(' ', level * 4)#>                    int <#=variableNameFragment#>listValueIndex = 1;
-<#=new string(' ', level * 4)#>                    foreach(var <#=variableNameFragment#>listValue in <#=variableName#>.<#=member.PropertyName#>)
+<#=new string(' ', level * 4)#>                    if (<#=variableName#>.<#=member.PropertyName#>.Count == 0)
+<#=new string(' ', level * 4)#>                        request.Parameters.Add(<#=context#>, "");
+<#=new string(' ', level * 4)#>                    else
 <#=new string(' ', level * 4)#>                    {
+<#=new string(' ', level * 4)#>                         int <#=variableNameFragment#>listValueIndex = 1;
+<#=new string(' ', level * 4)#>                         foreach(var <#=variableNameFragment#>listValue in <#=variableName#>.<#=member.PropertyName#>)
+<#=new string(' ', level * 4)#>                         {
 <#+
                 if(member.Shape.ListShape.IsStructure)
                 {
-                    ProcessMembers(level + 2, listItemContext, variableNameFragment + "listValue", member.Shape.ListShape.Members);
+                    ProcessMembers(level + 3, listItemContext, variableNameFragment + "listValue", member.Shape.ListShape.Members);
                 }
                 else
                 {
 					if(string.IsNullOrEmpty(member.CustomMarshallerTransformation)) 
 					{
 				#>
-<#=new string(' ', level * 4)#>                        request.Parameters.Add(<#=listItemContext#>, <#=member.Shape.ListShape.PrimitiveMarshaller(MarshallLocation.Body)#>(<#=variableNameFragment#>listValue));
+<#=new string(' ', level * 4)#>                             request.Parameters.Add(<#=listItemContext#>, <#=member.Shape.ListShape.PrimitiveMarshaller(MarshallLocation.Body)#>(<#=variableNameFragment#>listValue));
 <#+
 					}
 					else 
 					{
 				#>
-<#=new string(' ', level * 4)#>                        request.Parameters.Add(<#=listItemContext#>, <#=member.CustomMarshallerTransformation + "(" + variableNameFragment + "listValue)"#>);
+<#=new string(' ', level * 4)#>                             request.Parameters.Add(<#=listItemContext#>, <#=member.CustomMarshallerTransformation + "(" + variableNameFragment + "listValue)"#>);
 <#+					
 					}
                 }
 #>
-<#=new string(' ', level * 4)#>                        <#=variableNameFragment#>listValueIndex++;
+<#=new string(' ', level * 4)#>                             <#=variableNameFragment#>listValueIndex++;
+<#=new string(' ', level * 4)#>                         }
 <#=new string(' ', level * 4)#>                    }
 <#+
             }

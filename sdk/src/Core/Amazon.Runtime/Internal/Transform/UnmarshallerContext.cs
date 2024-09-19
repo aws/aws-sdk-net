@@ -338,7 +338,8 @@ namespace Amazon.Runtime.Internal.Transform
             XmlNodeType.XmlDeclaration,
             XmlNodeType.Comment,
             XmlNodeType.DocumentType,
-            XmlNodeType.CDATA
+            XmlNodeType.CDATA,
+            XmlNodeType.Whitespace
         };
 
         private StreamReader streamReader;
@@ -374,7 +375,7 @@ namespace Amazon.Runtime.Internal.Transform
                 if (_xmlTextReader == null)
                 {
                     _xmlTextReader = new XmlTextReader(streamReader);
-                    _xmlTextReader.WhitespaceHandling = WhitespaceHandling.None;
+                    _xmlTextReader.WhitespaceHandling = WhitespaceHandling.All;
                     _xmlTextReader.DtdProcessing = DtdProcessing.Ignore;
                 }
                 return _xmlTextReader;
@@ -618,7 +619,7 @@ namespace Amazon.Runtime.Internal.Transform
             XmlReader.MoveToElement();
             XmlReader.Read();
 
-            if (XmlReader.NodeType == XmlNodeType.Text)
+            if (XmlReader.NodeType == XmlNodeType.Text || XmlReader.NodeType == XmlNodeType.Whitespace)
                 nodeContent = XmlReader.ReadContentAsString();
             else
                 nodeContent = String.Empty;
