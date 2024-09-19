@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SpekeKeyProvider Object
+    /// Response Unmarshaller for EncryptionContractConfiguration Object
     /// </summary>  
-    public class SpekeKeyProviderUnmarshaller : IUnmarshaller<SpekeKeyProvider, XmlUnmarshallerContext>, IUnmarshaller<SpekeKeyProvider, JsonUnmarshallerContext>
+    public class EncryptionContractConfigurationUnmarshaller : IUnmarshaller<EncryptionContractConfiguration, XmlUnmarshallerContext>, IUnmarshaller<EncryptionContractConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SpekeKeyProvider IUnmarshaller<SpekeKeyProvider, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EncryptionContractConfiguration IUnmarshaller<EncryptionContractConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public SpekeKeyProvider Unmarshall(JsonUnmarshallerContext context)
+        public EncryptionContractConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            SpekeKeyProvider unmarshalledObject = new SpekeKeyProvider();
+            EncryptionContractConfiguration unmarshalledObject = new EncryptionContractConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,16 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("certificateArn", targetDepth))
+                if (context.TestExpression("spekeAudioPreset", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CertificateArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SpekeAudioPreset = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("encryptionContractConfiguration", targetDepth))
-                {
-                    var unmarshaller = EncryptionContractConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionContractConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("resourceId", targetDepth))
+                if (context.TestExpression("spekeVideoPreset", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("systemIds", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SystemIds = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("url", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Url = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SpekeVideoPreset = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +83,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         }
 
 
-        private static SpekeKeyProviderUnmarshaller _instance = new SpekeKeyProviderUnmarshaller();        
+        private static EncryptionContractConfigurationUnmarshaller _instance = new EncryptionContractConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SpekeKeyProviderUnmarshaller Instance
+        public static EncryptionContractConfigurationUnmarshaller Instance
         {
             get
             {

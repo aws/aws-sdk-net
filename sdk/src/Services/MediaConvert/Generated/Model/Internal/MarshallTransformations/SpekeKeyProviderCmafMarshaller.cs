@@ -65,6 +65,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetEncryptionContractConfiguration())
+            {
+                context.Writer.WritePropertyName("encryptionContractConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EncryptionContractConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.EncryptionContractConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetHlsSignaledSystemIds())
             {
                 context.Writer.WritePropertyName("hlsSignaledSystemIds");
