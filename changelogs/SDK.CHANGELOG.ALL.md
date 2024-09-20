@@ -1,3 +1,18 @@
+### 3.7.890.0 (2024-09-20 22:48 UTC)
+* DynamoDBv2 (3.7.401.0)
+	* Generate account endpoint for DynamoDB requests when the account ID is available
+* Neptune (3.7.401.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* SageMaker (3.7.408.0)
+	* Amazon SageMaker now supports using manifest files to specify the location of uncompressed model artifacts within Model Packages
+* SageMakerMetrics (3.7.401.0)
+	* This release introduces support for the SageMaker Metrics BatchGetMetrics API.
+* WorkSpaces (3.7.403.0)
+	* Releasing new ErrorCodes for SysPrep failures during ImageImport and CreateImage process
+* Core 3.7.400.22
+	* Add support for new built-in endpoint parameters
+	* All services packages updated to require new Core
+
 ### 3.7.889.0 (2024-09-19 18:24 UTC)
 * CodeConnections (3.7.401.0)
 	* This release adds the PullRequestComment field to CreateSyncConfiguration API input, UpdateSyncConfiguration API input, GetSyncConfiguration API output and ListSyncConfiguration API output

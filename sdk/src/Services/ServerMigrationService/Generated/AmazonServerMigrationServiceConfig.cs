@@ -32,7 +32,7 @@ namespace Amazon.ServerMigrationService
     public partial class AmazonServerMigrationServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SMS", "3.7.400.21");
+            InternalSDKUtils.BuildUserAgentString("SMS", "3.7.400.22");
 
         private string _userAgent = UserAgentString;
         ///<summary>
