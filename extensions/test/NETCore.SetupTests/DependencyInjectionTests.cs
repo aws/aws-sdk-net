@@ -14,6 +14,48 @@ namespace DependencyInjectionTests
     public class DependencyInjectionTests
     {
         [Fact]
+        public void TryAddDefaultConfigDontOverrideWhenAlreadySetup()
+        {
+            var builder = new ConfigurationBuilder();
+            builder.AddJsonFile("./TestFiles/GetClientConfigSettingsTest.json");
+
+            IConfiguration config = builder.Build();
+
+            ServiceCollection services = new ServiceCollection();
+
+            var mockOptions = Mock.Of<AWSOptions>();
+
+            services.AddDefaultAWSOptions(mockOptions);
+            services.TryAddDefaultAWSOptions(config.GetAWSOptions());
+
+            var serviceProvider = services.BuildServiceProvider();
+
+            var options = serviceProvider.GetService<AWSOptions>();
+            Assert.True(object.ReferenceEquals(options, mockOptions));
+        }
+
+        [Fact]
+        public void TryAddDefaultConfigWithFunctionDontOverrideWhenAlreadySetup()
+        {
+            var builder = new ConfigurationBuilder();
+            builder.AddJsonFile("./TestFiles/GetClientConfigSettingsTest.json");
+
+            IConfiguration config = builder.Build();
+
+            ServiceCollection services = new ServiceCollection();
+
+            var mockOptions = Mock.Of<AWSOptions>();
+
+            services.AddDefaultAWSOptions(mockOptions);
+            services.TryAddDefaultAWSOptions(s => config.GetAWSOptions());
+
+            var serviceProvider = services.BuildServiceProvider();
+
+            var options = serviceProvider.GetService<AWSOptions>();
+            Assert.True(object.ReferenceEquals(options, mockOptions));
+        }
+
+        [Fact]
         public void InjectS3ClientWithDefaultConfig()
         {
             var builder = new ConfigurationBuilder();
