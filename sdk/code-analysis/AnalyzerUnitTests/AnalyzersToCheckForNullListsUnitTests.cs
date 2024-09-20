@@ -26,6 +26,7 @@ namespace AnalyzerUnitTests.Test
                 ExpectedDiagnostics =
                 {
                     new DiagnosticResult("AWSSDK2000", DiagnosticSeverity.Warning)
+                        .WithMessage("The property 'Item' defaults to null in V4 of the AWS SDK for .NET. The collection must be initialized before adding items to it.")
                         .WithSpan(@"Snapshots\ObjectInitializationWithAddList.cs", 13, 17, 15, 18)
                         .WithArguments("Item")
                 },

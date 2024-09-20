@@ -117,15 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CollectionInitializerNullRule.Description" xml:space="preserve">
+  <data name="CollectionInitializerNullRule_Description" xml:space="preserve">
     <value>AWS SDK for .NET collection property is null</value>
     <comment>An optional longer localizable description of the diagnostic.</comment>
   </data>
-  <data name="CollectionInitializerNullRule.MessageFormat" xml:space="preserve">
+  <data name="CollectionInitializerNullRule_MessageFormat" xml:space="preserve">
     <value>The property '{0}' defaults to null in V4 of the AWS SDK for .NET. The collection must be initialized before adding items to it.</value>
     <comment>The format-able message the diagnostic displays.</comment>
   </data>
-  <data name="CollectionInitializerNullRule.Title" xml:space="preserve">
+  <data name="CollectionInitializerNullRule_Title" xml:space="preserve">
     <value>AWS SDK collection property is null</value>
     <comment>The title of the diagnostic.</comment>
   </data>
