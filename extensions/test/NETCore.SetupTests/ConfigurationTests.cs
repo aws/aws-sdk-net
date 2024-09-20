@@ -271,5 +271,30 @@ namespace NETCore.SetupTests
             Assert.Equal(TimeSpan.FromMilliseconds(100), serviceConfig.TimeLength);
             Assert.Equal(TimeSpan.FromMilliseconds(200), serviceConfig.NullableTimeLength);
         }
+
+        [Fact]
+        public void GetCredentials()
+        {
+            var accessKey = Guid.NewGuid().ToString("N");
+            var secretKey = Guid.NewGuid().ToString("N");
+
+            var config = new ConfigurationBuilder()
+                .AddInMemoryCollection(new KeyValuePair<string, string?>[]
+                {
+                    new KeyValuePair<string, string?>("AWS:Credentials:AccessKey", accessKey),
+                    new KeyValuePair<string, string?>("AWS:Credentials:SecretKey", secretKey),
+                })
+                .Build();
+
+            var options = config.GetAWSOptions();
+
+            Assert.NotNull(options);
+            Assert.NotNull(options.Credentials);
+            Assert.IsType<BasicAWSCredentials>(options.Credentials);
+
+            var credentials = options.Credentials.GetCredentials();
+            Assert.Equal(accessKey, credentials.AccessKey);
+            Assert.Equal(secretKey, credentials.SecretKey);
+        }
     }
 }

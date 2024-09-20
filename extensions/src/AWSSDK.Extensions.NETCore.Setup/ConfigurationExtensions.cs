@@ -360,6 +360,13 @@ namespace Microsoft.Extensions.Configuration
                 options.ExternalId = section["ExternalId"];
             }
 
+            var accessKey = section["Credentials:AccessKey"];
+            var secretKey = section["Credentials:SecretKey"];
+            if (!string.IsNullOrEmpty(accessKey) & !string.IsNullOrEmpty(secretKey))
+            {
+                options.Credentials = new BasicAWSCredentials(accessKey, secretKey);
+            }
+
             var loggingSection = section.GetSection(LoggingKey);
             if(loggingSection != null)
             {
