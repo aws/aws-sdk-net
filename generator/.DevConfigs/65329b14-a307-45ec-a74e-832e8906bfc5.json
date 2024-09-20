@@ -1,0 +1,9 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "Add support for new built-in endpoint parameters"
+      ],
+      "type": "patch",
+      "updateMinimum": true
+    }
+  }

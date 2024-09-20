@@ -177,4 +177,25 @@ namespace Amazon.Runtime
         /// </summary>
         ENABLED
     }
+
+    /// <summary>
+    /// Controls whether the resolved endpoint will include the account id. This allows for direct routing of traffic
+    /// to the cell responsible for a given account, which avoids the additional latency of extra backend hops and reduces
+    /// complexity in the routing layer.
+    /// </summary>
+    public enum AccountIdEndpointMode
+    {
+        /// <summary>
+        /// The default value. The endpoint will include the account id if available.
+        /// </summary>
+        PREFERRED,
+        /// <summary>
+        /// The resolved endpoint will need to include the account id.
+        /// </summary>
+        REQUIRED,
+        /// <summary>
+        /// The resolved endpoint will not include the account id.
+        /// </summary>
+        DISABLED
+    }
 }

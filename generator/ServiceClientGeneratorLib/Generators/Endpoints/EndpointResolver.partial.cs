@@ -25,6 +25,8 @@ namespace ServiceClientGenerator.Generators.Endpoints
                 case "AWS::S3::DisableMultiRegionAccessPoints": return "config.DisableMultiregionAccessPoints";
                 case "AWS::S3::UseGlobalEndpoint": return "config.USEast1RegionalEndpointValue == S3UsEast1RegionalEndpointValue.Legacy";
                 case "AWS::STS::UseGlobalEndpoint": return "config.StsRegionalEndpoints == StsRegionalEndpointsValue.Legacy";
+                case "AWS::Auth::AccountId": return "requestContext.ImmutableCredentials.AccountId";
+                case "AWS::Auth::AccountIdEndpointMode": return "config.AccountIdEndpointMode.ToString().ToLower()";
                 default: throw new Exception("Unknown builtIn");
             }
         }
@@ -38,7 +40,15 @@ namespace ServiceClientGenerator.Generators.Endpoints
             var code = new StringBuilder();
             foreach (var param in parameters.Where(c => c.Value.builtIn != null))
             {
-                code.AppendLine($@"{indent}result.{param.Key} = {GetValueSource(param.Value)};");
+                if (param.Value.builtIn == "AWS::Auth::AccountId")
+                {
+                    code.AppendLine($@"{indent}if (requestContext.ImmutableCredentials != null)");
+                    code.AppendLine($@"{innerIndent}result.{param.Key} = {GetValueSource(param.Value)};");
+                }
+                else
+                {
+                    code.AppendLine($@"{indent}result.{param.Key} = {GetValueSource(param.Value)};");
+                }
             }
             return code.ToString();
         }

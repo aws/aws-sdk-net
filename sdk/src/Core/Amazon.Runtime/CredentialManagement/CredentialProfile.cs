@@ -175,6 +175,11 @@ namespace Amazon.Runtime.CredentialManagement
         public string ClientAppId { get; set; }
 
         /// <summary>
+        /// The Account ID endpoint mode as preferred, required, or disabled.
+        /// </summary>
+        public AccountIdEndpointMode? AccountIdEndpointMode { get; set; }
+
+        /// <summary>
         /// An optional dictionary of name-value pairs stored with the CredentialProfile
         /// </summary>
         internal Dictionary<string, string> Properties
@@ -276,6 +281,7 @@ namespace Amazon.Runtime.CredentialManagement
                 "CanCreateAWSCredentials = " + CanCreateAWSCredentials + "," +
                 "RetryMode= " + RetryMode + "," +
                 "MaxAttempts= " + MaxAttempts +
+                "AccountIdEndpointMode= " + AccountIdEndpointMode +
                 "]";
         }
 
