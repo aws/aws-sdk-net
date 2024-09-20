@@ -45,13 +45,31 @@ namespace Amazon.SageMakerMetrics
     public partial interface IAmazonSageMakerMetrics : IAmazonService, IDisposable
     {
                 
+        #region  BatchGetMetrics
+
+
+
+        /// <summary>
+        /// Used to retrieve training metrics from SageMaker.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetMetrics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetMetrics service method, as returned by SageMakerMetrics.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-metrics-2022-09-30/BatchGetMetrics">REST API Reference for BatchGetMetrics Operation</seealso>
+        Task<BatchGetMetricsResponse> BatchGetMetricsAsync(BatchGetMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  BatchPutMetrics
 
 
 
         /// <summary>
         /// Used to ingest training metrics into SageMaker. These metrics can be visualized in
-        /// SageMaker Studio and retrieved with the <c>GetMetrics</c> API.
+        /// SageMaker Studio.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchPutMetrics service method.</param>
         /// <param name="cancellationToken">

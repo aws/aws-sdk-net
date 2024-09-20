@@ -32,7 +32,7 @@ namespace Amazon.SageMakerMetrics.Model
     /// <summary>
     /// Container for the parameters to the BatchPutMetrics operation.
     /// Used to ingest training metrics into SageMaker. These metrics can be visualized in
-    /// SageMaker Studio and retrieved with the <c>GetMetrics</c> API.
+    /// SageMaker Studio.
     /// </summary>
     public partial class BatchPutMetricsRequest : AmazonSageMakerMetricsRequest
     {
@@ -61,7 +61,8 @@ namespace Amazon.SageMakerMetrics.Model
         /// <summary>
         /// Gets and sets the property TrialComponentName. 
         /// <para>
-        /// The name of the Trial Component to associate with the metrics.
+        /// The name of the Trial Component to associate with the metrics. The Trial Component
+        /// name must be entirely lowercase.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=120)]
