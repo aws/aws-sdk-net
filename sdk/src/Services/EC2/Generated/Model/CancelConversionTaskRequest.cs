@@ -35,12 +35,6 @@ namespace Amazon.EC2.Model
     /// The action removes all artifacts of the conversion, including a partially uploaded
     /// volume or instance. If the conversion is complete or is in the process of transferring
     /// the final disk image, the command fails and returns an exception.
-    /// 
-    ///  
-    /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/ec2-cli-vmimport-export.html">Importing
-    /// a Virtual Machine Using the Amazon EC2 CLI</a>.
-    /// </para>
     /// </summary>
     public partial class CancelConversionTaskRequest : AmazonEC2Request
     {

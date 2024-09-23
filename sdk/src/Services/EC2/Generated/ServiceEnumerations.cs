@@ -5599,9 +5599,17 @@ namespace Amazon.EC2
     {
 
         /// <summary>
+        /// Constant None for FleetCapacityReservationUsageStrategy
+        /// </summary>
+        public static readonly FleetCapacityReservationUsageStrategy None = new FleetCapacityReservationUsageStrategy("none");
+        /// <summary>
         /// Constant UseCapacityReservationsFirst for FleetCapacityReservationUsageStrategy
         /// </summary>
         public static readonly FleetCapacityReservationUsageStrategy UseCapacityReservationsFirst = new FleetCapacityReservationUsageStrategy("use-capacity-reservations-first");
+        /// <summary>
+        /// Constant UseCapacityReservationsOnly for FleetCapacityReservationUsageStrategy
+        /// </summary>
+        public static readonly FleetCapacityReservationUsageStrategy UseCapacityReservationsOnly = new FleetCapacityReservationUsageStrategy("use-capacity-reservations-only");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -8932,6 +8940,38 @@ namespace Amazon.EC2
         /// Constant G68xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType G68xlarge = new InstanceType("g6.8xlarge");
+        /// <summary>
+        /// Constant G6e12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G6e12xlarge = new InstanceType("g6e.12xlarge");
+        /// <summary>
+        /// Constant G6e16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G6e16xlarge = new InstanceType("g6e.16xlarge");
+        /// <summary>
+        /// Constant G6e24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G6e24xlarge = new InstanceType("g6e.24xlarge");
+        /// <summary>
+        /// Constant G6e2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G6e2xlarge = new InstanceType("g6e.2xlarge");
+        /// <summary>
+        /// Constant G6e48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G6e48xlarge = new InstanceType("g6e.48xlarge");
+        /// <summary>
+        /// Constant G6e4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G6e4xlarge = new InstanceType("g6e.4xlarge");
+        /// <summary>
+        /// Constant G6e8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G6e8xlarge = new InstanceType("g6e.8xlarge");
+        /// <summary>
+        /// Constant G6eXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G6eXlarge = new InstanceType("g6e.xlarge");
         /// <summary>
         /// Constant G6Xlarge for InstanceType
         /// </summary>
