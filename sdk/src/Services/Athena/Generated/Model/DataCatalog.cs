@@ -41,10 +41,34 @@ namespace Amazon.Athena.Model
     /// </summary>
     public partial class DataCatalog
     {
+        private ConnectionType _connectionType;
         private string _description;
+        private string _error;
         private string _name;
         private Dictionary<string, string> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private DataCatalogStatus _status;
         private DataCatalogType _type;
+
+        /// <summary>
+        /// Gets and sets the property ConnectionType. 
+        /// <para>
+        /// The type of connection for a <c>FEDERATED</c> data catalog (for example, <c>REDSHIFT</c>,
+        /// <c>MYSQL</c>, or <c>SQLSERVER</c>). For information about individual connectors, see
+        /// <a href="https://docs.aws.amazon.com/athena/latest/ug/connectors-available.html">Available
+        /// data source connectors</a>.
+        /// </para>
+        /// </summary>
+        public ConnectionType ConnectionType
+        {
+            get { return this._connectionType; }
+            set { this._connectionType = value; }
+        }
+
+        // Check to see if ConnectionType property is set
+        internal bool IsSetConnectionType()
+        {
+            return this._connectionType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -63,6 +87,24 @@ namespace Amazon.Athena.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Error. 
+        /// <para>
+        /// Text of the error that occurred during data catalog creation or deletion.
+        /// </para>
+        /// </summary>
+        public string Error
+        {
+            get { return this._error; }
+            set { this._error = value; }
+        }
+
+        // Check to see if Error property is set
+        internal bool IsSetError()
+        {
+            return this._error != null;
         }
 
         /// <summary>
@@ -140,6 +182,31 @@ namespace Amazon.Athena.Model
         /// The <c>GLUE</c> data catalog type also applies to the default <c>AwsDataCatalog</c>
         /// that already exists in your account, of which you can have only one and cannot modify.
         /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// The <c>FEDERATED</c> data catalog type uses one of the following parameters, but not
+        /// both. Use <c>connection-arn</c> for an existing Glue connection. Use <c>connection-type</c>
+        /// and <c>connection-properties</c> to specify the configuration setting for a new connection.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>connection-arn:<i>&lt;glue_connection_arn_to_reuse&gt;</i> </c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>connection-type:MYSQL|REDSHIFT|...., connection-properties:"<i>&lt;json_string&gt;</i>"</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// For <i> <c>&lt;json_string&gt;</c> </i>, use escaped JSON text, as in the following
+        /// example.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>"{\"spill_bucket\":\"my_spill\",\"spill_prefix\":\"athena-spill\",\"host\":\"abc12345.snowflakecomputing.com\",\"port\":\"1234\",\"warehouse\":\"DEV_WH\",\"database\":\"TEST\",\"schema\":\"PUBLIC\",\"SecretArn\":\"arn:aws:secretsmanager:ap-south-1:111122223333:secret:snowflake-XHb67j\"}"</c>
+        /// 
+        /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
         public Dictionary<string, string> Parameters
@@ -155,10 +222,87 @@ namespace Amazon.Athena.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the creation or deletion of the data catalog.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>LAMBDA</c>, <c>GLUE</c>, and <c>HIVE</c> data catalog types are created synchronously.
+        /// Their status is either <c>CREATE_COMPLETE</c> or <c>CREATE_FAILED</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <c>FEDERATED</c> data catalog type is created asynchronously.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Data catalog creation status:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CREATE_IN_PROGRESS</c>: Federated data catalog creation in progress.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CREATE_COMPLETE</c>: Data catalog creation complete.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CREATE_FAILED</c>: Data catalog could not be created.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CREATE_FAILED_CLEANUP_IN_PROGRESS</c>: Federated data catalog creation failed
+        /// and is being removed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CREATE_FAILED_CLEANUP_COMPLETE</c>: Federated data catalog creation failed and
+        /// was removed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CREATE_FAILED_CLEANUP_FAILED</c>: Federated data catalog creation failed but could
+        /// not be removed.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Data catalog deletion status:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DELETE_IN_PROGRESS</c>: Federated data catalog deletion in progress.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DELETE_COMPLETE</c>: Federated data catalog deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DELETE_FAILED</c>: Federated data catalog could not be deleted.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public DataCatalogStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of data catalog to create: <c>LAMBDA</c> for a federated catalog, <c>HIVE</c>
-        /// for an external hive metastore, or <c>GLUE</c> for an Glue Data Catalog.
+        /// The type of data catalog to create: <c>LAMBDA</c> for a federated catalog, <c>GLUE</c>
+        /// for an Glue Data Catalog, and <c>HIVE</c> for an external Apache Hive metastore. <c>FEDERATED</c>
+        /// is a federated catalog for which Athena creates the connection and the Lambda function
+        /// for you based on the parameters that you pass.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
