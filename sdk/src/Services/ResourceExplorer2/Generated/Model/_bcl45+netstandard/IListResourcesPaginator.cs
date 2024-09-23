@@ -16,27 +16,24 @@
 /*
  * Do not modify this file. This file is generated from the resource-explorer-2-2022-07-28.normal.json service model.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
-using System.IO;
-using System.Net;
-
 using Amazon.Runtime;
-using Amazon.Runtime.Internal;
 
-#pragma warning disable CS0612,CS0618,CS1570
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ResourceExplorer2.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetAccountLevelServiceConfiguration operation.
-    /// Retrieves the status of your account's Amazon Web Services service access, and validates
-    /// the service linked role required to access the multi-account search feature. Only
-    /// the management account can invoke this API call.
-    /// </summary>
-    public partial class GetAccountLevelServiceConfigurationRequest : AmazonResourceExplorer2Request
+    /// Paginator for the ListResources operation
+    ///</summary>
+    public interface IListResourcesPaginator
     {
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<ListResourcesResponse> Responses { get; }
 
+        /// <summary>
+        /// Enumerable containing all of the Resources
+        /// </summary>
+        IPaginatedEnumerable<Resource> Resources { get; }
     }
 }

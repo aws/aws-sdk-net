@@ -976,8 +976,7 @@ namespace Amazon.ResourceExplorer2
         /// <summary>
         /// Retrieves the status of your account's Amazon Web Services service access, and validates
         /// the service linked role required to access the multi-account search feature. Only
-        /// the management account or a delegated administrator with service access enabled can
-        /// invoke this API call.
+        /// the management account can invoke this API call.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccountLevelServiceConfiguration service method.</param>
         /// 
@@ -1412,6 +1411,85 @@ namespace Amazon.ResourceExplorer2
         public virtual ListIndexesForMembersResponse EndListIndexesForMembers(IAsyncResult asyncResult)
         {
             return EndInvoke<ListIndexesForMembersResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListResources
+
+        /// <summary>
+        /// Returns a list of resources and their details that match the specified criteria. This
+        /// query must use a view. If you don’t explicitly specify a view, then Resource Explorer
+        /// uses the default view for the Amazon Web Services Region in which you call this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResources service method.</param>
+        /// 
+        /// <returns>The response from the ListResources service method, as returned by ResourceExplorer2.</returns>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.AccessDeniedException">
+        /// The credentials that you used to call this operation don't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.InternalServerException">
+        /// The request failed because of internal service error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ResourceNotFoundException">
+        /// You specified a resource that doesn't exist. Check the ID or ARN that you used to
+        /// identity the resource, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ThrottlingException">
+        /// The request failed because you exceeded a rate limit for this operation. For more
+        /// information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas
+        /// for Resource Explorer</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.UnauthorizedException">
+        /// The principal making the request isn't permitted to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ValidationException">
+        /// You provided an invalid value for one of the operation's parameters. Check the syntax
+        /// for the operation, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/ListResources">REST API Reference for ListResources Operation</seealso>
+        public virtual ListResourcesResponse ListResources(ListResourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourcesResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourcesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListResources operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListResources operation on AmazonResourceExplorer2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListResources
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/ListResources">REST API Reference for ListResources Operation</seealso>
+        public virtual IAsyncResult BeginListResources(ListResourcesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourcesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListResources operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListResources.</param>
+        /// 
+        /// <returns>Returns a  ListResourcesResult from ResourceExplorer2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/ListResources">REST API Reference for ListResources Operation</seealso>
+        public virtual ListResourcesResponse EndListResources(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListResourcesResponse>(asyncResult);
         }
 
         #endregion

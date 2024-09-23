@@ -30,36 +30,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResourceExplorer2.Model
 {
     /// <summary>
-    /// Container for the parameters to the Search operation.
-    /// Searches for resources and displays details about all resources that match the specified
-    /// criteria. You must specify a query string.
-    /// 
-    ///  
-    /// <para>
-    /// All search queries must use a view. If you don't explicitly specify a view, then Amazon
-    /// Web Services Resource Explorer uses the default view for the Amazon Web Services Region
-    /// in which you call this operation. The results are the logical intersection of the
-    /// results that match both the <c>QueryString</c> parameter supplied to this operation
-    /// and the <c>SearchFilter</c> parameter attached to the view.
-    /// </para>
-    ///  
-    /// <para>
-    /// For the complete syntax supported by the <c>QueryString</c> parameter, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/APIReference/about-query-syntax.html">Search
-    /// query syntax reference for Resource Explorer</a>.
-    /// </para>
-    ///  
-    /// <para>
-    /// If your search results are empty, or are missing results that you think should be
-    /// there, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/troubleshooting_search.html">Troubleshooting
-    /// Resource Explorer search</a>.
-    /// </para>
+    /// Container for the parameters to the ListResources operation.
+    /// Returns a list of resources and their details that match the specified criteria. This
+    /// query must use a view. If you don’t explicitly specify a view, then Resource Explorer
+    /// uses the default view for the Amazon Web Services Region in which you call this operation.
     /// </summary>
-    public partial class SearchRequest : AmazonResourceExplorer2Request
+    public partial class ListResourcesRequest : AmazonResourceExplorer2Request
     {
+        private SearchFilter _filters;
         private int? _maxResults;
         private string _nextToken;
-        private string _queryString;
         private string _viewArn;
+
+        /// <summary>
+        /// Gets and sets the property Filters.
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public SearchFilter Filters
+        {
+            get { return this._filters; }
+            set { this._filters = value; }
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this._filters != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -116,50 +113,13 @@ namespace Amazon.ResourceExplorer2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property QueryString. 
-        /// <para>
-        /// A string that includes keywords and filters that specify the resources that you want
-        /// to include in the results.
-        /// </para>
-        ///  
-        /// <para>
-        /// For the complete syntax supported by the <c>QueryString</c> parameter, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html">Search
-        /// query syntax reference for Resource Explorer</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// The search is completely case insensitive. You can specify an empty string to return
-        /// all results up to the limit of 1,000 total results.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// The operation can return only the first 1,000 results. If the resource you want is
-        /// not included, then use a different value for <c>QueryString</c> to refine the results.
-        /// </para>
-        ///  </note>
-        /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=1280)]
-        public string QueryString
-        {
-            get { return this._queryString; }
-            set { this._queryString = value; }
-        }
-
-        // Check to see if QueryString property is set
-        internal bool IsSetQueryString()
-        {
-            return this._queryString != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property ViewArn. 
         /// <para>
-        /// Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// resource name (ARN)</a> of the view to use for the query. If you don't specify a value
-        /// for this parameter, then the operation automatically uses the default view for the
-        /// Amazon Web Services Region in which you called this operation. If the Region either
-        /// doesn't have a default view or if you don't have permission to use the default view,
-        /// then the operation fails with a <c>401 Unauthorized</c> exception.
+        /// Specifies the Amazon resource name (ARN) of the view to use for the query. If you
+        /// don't specify a value for this parameter, then the operation automatically uses the
+        /// default view for the Amazon Web Services Region in which you called this operation.
+        /// If the Region either doesn't have a default view or if you don't have permission to
+        /// use the default view, then the operation fails with a 401 Unauthorized exception.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
