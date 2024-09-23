@@ -63,8 +63,9 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property ModelId. 
         /// <para>
-        /// The unique identifier of the model to use to generate a response from the query results.
-        /// Omit this field if you want to return the retrieved results as an array.
+        /// The unique identifier of the model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference
+        /// profile</a> to use to generate a response from the query results. Omit this field
+        /// if you want to return the retrieved results as an array.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
