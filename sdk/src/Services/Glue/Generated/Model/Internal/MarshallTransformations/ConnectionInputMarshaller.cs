@@ -48,6 +48,20 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAthenaProperties())
+            {
+                context.Writer.WritePropertyName("AthenaProperties");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectAthenaPropertiesKvp in requestObject.AthenaProperties)
+                {
+                    context.Writer.WritePropertyName(requestObjectAthenaPropertiesKvp.Key);
+                    var requestObjectAthenaPropertiesValue = requestObjectAthenaPropertiesKvp.Value;
+
+                        context.Writer.Write(requestObjectAthenaPropertiesValue);
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAuthenticationConfiguration())
             {
                 context.Writer.WritePropertyName("AuthenticationConfiguration");

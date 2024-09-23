@@ -34,6 +34,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class ConnectionInput
     {
+        private Dictionary<string, string> _athenaProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private AuthenticationConfigurationInput _authenticationConfiguration;
         private Dictionary<string, string> _connectionProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ConnectionType _connectionType;
@@ -42,6 +43,24 @@ namespace Amazon.Glue.Model
         private string _name;
         private PhysicalConnectionRequirements _physicalConnectionRequirements;
         private bool? _validateCredentials;
+
+        /// <summary>
+        /// Gets and sets the property AthenaProperties. 
+        /// <para>
+        /// This field is not currently used.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> AthenaProperties
+        {
+            get { return this._athenaProperties; }
+            set { this._athenaProperties = value; }
+        }
+
+        // Check to see if AthenaProperties property is set
+        internal bool IsSetAthenaProperties()
+        {
+            return this._athenaProperties != null && (this._athenaProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property AuthenticationConfiguration. 
