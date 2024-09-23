@@ -59,7 +59,7 @@ namespace Amazon.RDS.Model
     /// the engine version of the snapshot. For more information about upgrading a RDS for
     /// MySQL DB snapshot engine version, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/mysql-upgrade-snapshot.html">Upgrading
     /// a MySQL DB snapshot engine version</a>. For more information about upgrading a RDS
-    /// for PostgreSQL DB snapshot engine version, <a href="https://docs.aws.amazon.com/USER_UpgradeDBSnapshot.PostgreSQL.html">Upgrading
+    /// for PostgreSQL DB snapshot engine version, <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBSnapshot.PostgreSQL.html">Upgrading
     /// a PostgreSQL DB snapshot engine version</a>.
     /// </para>
     ///  <note> 

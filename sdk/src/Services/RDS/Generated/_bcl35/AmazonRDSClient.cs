@@ -2581,9 +2581,6 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.
         /// </exception>
-        /// <exception cref="Amazon.RDS.Model.InvalidMaxAcuException">
-        /// The maximum capacity of the DB shard group must be 48-7168 Aurora capacity units (ACUs).
-        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidVPCNetworkStateException">
         /// The DB subnet group doesn't cover all Availability Zones after it's created because
         /// of users' change.
@@ -9552,9 +9549,6 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.
         /// </exception>
-        /// <exception cref="Amazon.RDS.Model.InvalidMaxAcuException">
-        /// The maximum capacity of the DB shard group must be 48-7168 Aurora capacity units (ACUs).
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBShardGroup">REST API Reference for ModifyDBShardGroup Operation</seealso>
         public virtual ModifyDBShardGroupResponse ModifyDBShardGroup(ModifyDBShardGroupRequest request)
         {
@@ -11668,7 +11662,7 @@ namespace Amazon.RDS
         /// the engine version of the snapshot. For more information about upgrading a RDS for
         /// MySQL DB snapshot engine version, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/mysql-upgrade-snapshot.html">Upgrading
         /// a MySQL DB snapshot engine version</a>. For more information about upgrading a RDS
-        /// for PostgreSQL DB snapshot engine version, <a href="https://docs.aws.amazon.com/USER_UpgradeDBSnapshot.PostgreSQL.html">Upgrading
+        /// for PostgreSQL DB snapshot engine version, <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBSnapshot.PostgreSQL.html">Upgrading
         /// a PostgreSQL DB snapshot engine version</a>.
         /// </para>
         ///  <note> 
