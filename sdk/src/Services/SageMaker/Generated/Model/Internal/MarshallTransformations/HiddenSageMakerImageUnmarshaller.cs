@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StudioWebPortalSettings Object
+    /// Response Unmarshaller for HiddenSageMakerImage Object
     /// </summary>  
-    public class StudioWebPortalSettingsUnmarshaller : IUnmarshaller<StudioWebPortalSettings, XmlUnmarshallerContext>, IUnmarshaller<StudioWebPortalSettings, JsonUnmarshallerContext>
+    public class HiddenSageMakerImageUnmarshaller : IUnmarshaller<HiddenSageMakerImage, XmlUnmarshallerContext>, IUnmarshaller<HiddenSageMakerImage, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        StudioWebPortalSettings IUnmarshaller<StudioWebPortalSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        HiddenSageMakerImage IUnmarshaller<HiddenSageMakerImage, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public StudioWebPortalSettings Unmarshall(JsonUnmarshallerContext context)
+        public HiddenSageMakerImage Unmarshall(JsonUnmarshallerContext context)
         {
-            StudioWebPortalSettings unmarshalledObject = new StudioWebPortalSettings();
+            HiddenSageMakerImage unmarshalledObject = new HiddenSageMakerImage();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,16 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("HiddenAppTypes", targetDepth))
+                if (context.TestExpression("SageMakerImageName", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.HiddenAppTypes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SageMakerImageName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("HiddenInstanceTypes", targetDepth))
+                if (context.TestExpression("VersionAliases", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.HiddenInstanceTypes = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("HiddenMlTools", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.HiddenMlTools = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("HiddenSageMakerImageVersionAliases", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<HiddenSageMakerImage, HiddenSageMakerImageUnmarshaller>(HiddenSageMakerImageUnmarshaller.Instance);
-                    unmarshalledObject.HiddenSageMakerImageVersionAliases = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VersionAliases = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +83,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static StudioWebPortalSettingsUnmarshaller _instance = new StudioWebPortalSettingsUnmarshaller();        
+        private static HiddenSageMakerImageUnmarshaller _instance = new HiddenSageMakerImageUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StudioWebPortalSettingsUnmarshaller Instance
+        public static HiddenSageMakerImageUnmarshaller Instance
         {
             get
             {

@@ -59,6 +59,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetHiddenInstanceTypes())
+            {
+                context.Writer.WritePropertyName("HiddenInstanceTypes");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectHiddenInstanceTypesListValue in requestObject.HiddenInstanceTypes)
+                {
+                        context.Writer.Write(requestObjectHiddenInstanceTypesListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetHiddenMlTools())
             {
                 context.Writer.WritePropertyName("HiddenMlTools");
@@ -66,6 +77,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 foreach(var requestObjectHiddenMlToolsListValue in requestObject.HiddenMlTools)
                 {
                         context.Writer.Write(requestObjectHiddenMlToolsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetHiddenSageMakerImageVersionAliases())
+            {
+                context.Writer.WritePropertyName("HiddenSageMakerImageVersionAliases");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectHiddenSageMakerImageVersionAliasesListValue in requestObject.HiddenSageMakerImageVersionAliases)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = HiddenSageMakerImageMarshaller.Instance;
+                    marshaller.Marshall(requestObjectHiddenSageMakerImageVersionAliasesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
                 context.Writer.WriteArrayEnd();
             }
