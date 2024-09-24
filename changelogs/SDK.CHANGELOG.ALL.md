@@ -1,3 +1,18 @@
+### 3.7.892.0 (2024-09-24 19:12 UTC)
+* Bedrock (3.7.406.0)
+	* Add support for Cross Region Inference in Bedrock Model Evaluations.
+* Budgets (3.7.401.0)
+	* Releasing minor partitional endpoint updates
+* Kinesis (3.7.402.0)
+	* This release includes support to add tags when creating a stream
+* PinpointSMSVoiceV2 (3.7.401.0)
+	* AWS End User Messaging SMS-Voice V2 has added support for resource policies. Use the three new APIs to create, view, edit, and delete resource policies.
+* SageMaker (3.7.409.0)
+	* Adding `HiddenInstanceTypes` and `HiddenSageMakerImageVersionAliases` attribute to SageMaker API
+* Core 3.7.400.23
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.891.0 (2024-09-23 18:27 UTC)
 * APIGateway (3.7.400.23)
 	* Documentation updates for Amazon API Gateway
