@@ -35,7 +35,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
     [TestClass]
-    [Ignore("S3 Select is not available to new customers so these tests cannot run on new accounts")]
     public class SelectObjectContentTests : TestBase<AmazonS3Client>
     {
         private static readonly string TestFileKey = "selectobjectcontent_content.txt";
