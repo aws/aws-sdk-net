@@ -212,13 +212,6 @@ namespace ServiceClientGenerator
 
                 string guid = Utils.GetProjectGuid(Utils.PathCombineAlt(unitTestRoot, includePath));
 
-                if (guidSet.Contains(guid))
-                {
-                    // ServiceConfiguration list contains two entries for DynamoDBv2 and DynamoDBStreams
-                    // which resolve to the same project.
-                    continue;
-                }
-
                 references.Add(new ProjectFileCreator.ProjectReference
                 {
                     Name = projectName,

@@ -1,7 +1,7 @@
 {
   "active": true,
   "max-retries": 10,
-  "namespace": "Amazon.DynamoDBv2",
-  "parent-base-name": "DynamoDB",
-  "legacy-service-id": "DynamoDB Streams"
+  "legacy-service-id": "DynamoDB Streams",
+  "generate-client-constructors": true,
+  "synopsis": "Amazon DynamoDB Streams captures a time-ordered sequence of item-level modifications in any DynamoDB table and stores this information in a log for up to 24 hours."
 }

@@ -3090,6 +3090,14 @@
                 "Core" : "4.0.0.0"
             },
             "InPreview"               : false
+        },
+        "DynamoDBStreams"                     : {
+            "Version" : "4.0.0.0",
+            "AssemblyVersionOverride" : "4.0",
+            "Dependencies"            : {
+                "Core" : "4.0.0.0"
+            },
+            "InPreview"               : false
         }
     },
     "DefaultAssemblyVersion" : "4.0"

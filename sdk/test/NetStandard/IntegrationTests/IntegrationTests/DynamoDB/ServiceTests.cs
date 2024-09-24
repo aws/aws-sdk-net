@@ -1011,17 +1011,6 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
             } while (result.LastEvaluatedKey != null && result.LastEvaluatedKey.Count > 0);
         }
 
-        [Fact]
-        [Trait(CategoryAttribute, "DynamoDB")]
-        public async Task TestDynamoDBStreamWithServiceURL()
-        {
-            var config = new AmazonDynamoDBStreamsConfig();
-            config.ServiceURL = "https://streams.dynamodb.us-east-1.amazonaws.com/";
-            using(var client = new AmazonDynamoDBStreamsClient(config))
-            {
-                var response = await client.ListStreamsAsync();
-                Assert.NotNull(response.Streams);
-            }
-        }
+
     }
 }
