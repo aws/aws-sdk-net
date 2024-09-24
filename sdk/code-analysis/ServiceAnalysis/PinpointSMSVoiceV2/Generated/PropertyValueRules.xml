@@ -520,6 +520,23 @@
     <max>100000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DeleteResourcePolicyRequest.ResourceArn</property>
+    <min>20</min>
+    <max>256</max>
+    <pattern>arn:[A-Za-z0-9_:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DeleteResourcePolicyResponse.Policy</property>
+    <min>1</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DeleteResourcePolicyResponse.ResourceArn</property>
+    <min>20</min>
+    <max>256</max>
+    <pattern>arn:[A-Za-z0-9_:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.DeleteTextMessageSpendLimitOverrideResponse.MonthlyLimit</property>
     <min>0</min>
     <max>1000000000</max>
@@ -1030,6 +1047,23 @@
     <pattern>[A-Za-z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.GetResourcePolicyRequest.ResourceArn</property>
+    <min>20</min>
+    <max>256</max>
+    <pattern>arn:[A-Za-z0-9_:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.GetResourcePolicyResponse.Policy</property>
+    <min>1</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.GetResourcePolicyResponse.ResourceArn</property>
+    <min>20</min>
+    <max>256</max>
+    <pattern>arn:[A-Za-z0-9_:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.ListPoolOriginationIdentitiesRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -1185,6 +1219,28 @@
     <property>Amazon.PinpointSMSVoiceV2.Model.PutRegistrationFieldValueResponse.VersionNumber</property>
     <min>1</min>
     <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.PutResourcePolicyRequest.Policy</property>
+    <min>1</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.PutResourcePolicyRequest.ResourceArn</property>
+    <min>20</min>
+    <max>256</max>
+    <pattern>arn:[A-Za-z0-9_:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.PutResourcePolicyResponse.Policy</property>
+    <min>1</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.PutResourcePolicyResponse.ResourceArn</property>
+    <min>20</min>
+    <max>256</max>
+    <pattern>arn:[A-Za-z0-9_:/-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.ReleasePhoneNumberRequest.PhoneNumberId</property>

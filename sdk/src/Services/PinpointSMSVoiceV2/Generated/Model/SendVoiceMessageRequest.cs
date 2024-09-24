@@ -198,6 +198,12 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// The origination identity to use for the voice call. This can be the PhoneNumber, PhoneNumberId,
         /// PhoneNumberArn, PoolId, or PoolArn.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you are using a shared AWS End User Messaging SMS and Voice resource then you must
+        /// use the full Amazon Resource Name(ARN).
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string OriginationIdentity

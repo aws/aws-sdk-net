@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DescribeOptOutLists Request Marshaller
+    /// PutResourcePolicy Request Marshaller
     /// </summary>       
-    public class DescribeOptOutListsRequestMarshaller : IMarshaller<IRequest, DescribeOptOutListsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class PutResourcePolicyRequestMarshaller : IMarshaller<IRequest, PutResourcePolicyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DescribeOptOutListsRequest)input);
+            return this.Marshall((PutResourcePolicyRequest)input);
         }
 
         /// <summary>
@@ -53,10 +53,10 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DescribeOptOutListsRequest publicRequest)
+        public IRequest Marshall(PutResourcePolicyRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.PinpointSMSVoiceV2");
-            string target = "PinpointSMSVoiceV2.DescribeOptOutLists";
+            string target = "PinpointSMSVoiceV2.PutResourcePolicy";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2022-03-31";
@@ -69,33 +69,16 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMaxResults())
+                if(publicRequest.IsSetPolicy())
                 {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.WritePropertyName("Policy");
+                    context.Writer.Write(publicRequest.Policy);
                 }
 
-                if(publicRequest.IsSetNextToken())
+                if(publicRequest.IsSetResourceArn())
                 {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetOptOutListNames())
-                {
-                    context.Writer.WritePropertyName("OptOutListNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestOptOutListNamesListValue in publicRequest.OptOutListNames)
-                    {
-                            context.Writer.Write(publicRequestOptOutListNamesListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetOwner())
-                {
-                    context.Writer.WritePropertyName("Owner");
-                    context.Writer.Write(publicRequest.Owner);
+                    context.Writer.WritePropertyName("ResourceArn");
+                    context.Writer.Write(publicRequest.ResourceArn);
                 }
 
                 writer.WriteObjectEnd();
@@ -106,9 +89,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static DescribeOptOutListsRequestMarshaller _instance = new DescribeOptOutListsRequestMarshaller();        
+        private static PutResourcePolicyRequestMarshaller _instance = new PutResourcePolicyRequestMarshaller();        
 
-        internal static DescribeOptOutListsRequestMarshaller GetInstance()
+        internal static PutResourcePolicyRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -116,7 +99,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeOptOutListsRequestMarshaller Instance
+        public static PutResourcePolicyRequestMarshaller Instance
         {
             get
             {

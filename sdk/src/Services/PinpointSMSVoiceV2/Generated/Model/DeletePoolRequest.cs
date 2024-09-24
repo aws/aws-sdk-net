@@ -55,6 +55,12 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// The PoolId or PoolArn of the pool to delete. You can use <a>DescribePools</a> to find
         /// the values for PoolId and PoolArn .
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you are using a shared AWS End User Messaging SMS and Voice resource then you must
+        /// use the full Amazon Resource Name(ARN).
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string PoolId
