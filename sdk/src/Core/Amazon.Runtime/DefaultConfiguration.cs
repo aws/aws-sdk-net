@@ -78,12 +78,8 @@ namespace Amazon.Runtime
     /// <para />
     /// All options above can be configured by users, and the overridden value will take precedence.
     /// <para />
-    /// <b>Note:</b> for any mode other than <see cref="DefaultConfigurationMode.Legacy"/>, the vended default values
-    /// might change as best practices may evolve. As a result, it is encouraged to perform testing when upgrading the SDK
-    /// if you are using a mode other than <see cref="DefaultConfigurationMode.Legacy"/>.
-    /// <para />
-    /// While the <see cref="DefaultConfigurationMode.Legacy"/> defaults mode is specific to .NET,
-    /// other modes are standardized across all of the AWS SDKs.
+    /// <b>Note:</b> the vended default values might change as best practices may evolve. As a result, it is encouraged to perform 
+    /// testing when upgrading the SDK.
     /// <para />
     /// The defaults mode can be configured:
     /// <list type="number">
