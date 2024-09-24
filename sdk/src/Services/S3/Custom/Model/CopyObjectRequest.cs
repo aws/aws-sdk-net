@@ -243,7 +243,7 @@ namespace Amazon.S3.Model
         private ServerSideEncryptionCustomerMethod copySourceServerSideCustomerEncryption;
         private string copySourceServerSideEncryptionCustomerProvidedKey;
         private string copySourceServerSideEncryptionCustomerProvidedKeyMD5;
-        private TaggingDirective taggingDirective = TaggingDirective.COPY;
+        private TaggingDirective taggingDirective;
 
         private bool disableTrimmingLeadingSlash = false;
 
