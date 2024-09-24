@@ -1703,7 +1703,7 @@ namespace Amazon.S3
     /// <summary>
     /// Specifies whether the object tag-set are copied from the source object or replaced with tag-set provided in the request.
     /// </summary>
-    internal sealed class TaggingDirective : ConstantClass
+    public sealed class TaggingDirective : ConstantClass
     {
         /// <summary>
         /// The object tag-set is copied from the source object.
