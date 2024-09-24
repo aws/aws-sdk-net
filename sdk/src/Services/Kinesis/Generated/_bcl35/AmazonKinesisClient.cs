@@ -421,6 +421,14 @@ namespace Amazon.Kinesis
         /// <para>
         ///  <a>CreateStream</a> has a limit of five transactions per second per account.
         /// </para>
+        ///  
+        /// <para>
+        /// You can add tags to the stream when making a <c>CreateStream</c> request by setting
+        /// the <c>Tags</c> parameter. If you pass <c>Tags</c> parameter, in addition to having
+        /// <c>kinesis:createStream</c> permission, you must also have <c>kinesis:addTagsToStream</c>
+        /// permission for the stream that will be created. Tags will take effect from the <c>CREATING</c>
+        /// status of the stream. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStream service method.</param>
         /// 
@@ -1592,6 +1600,10 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
         /// The requested resource exceeds the maximum number allowed, or the number of concurrent
         /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -2893,7 +2905,7 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// For an example of how to use this operations, see <a href="/streams/latest/dev/building-enhanced-consumers-api.html">Enhanced
+        /// For an example of how to use this operation, see <a href="https://docs.aws.amazon.com/streams/latest/dev/building-enhanced-consumers-api.html">Enhanced
         /// Fan-Out Using the Kinesis Data Streams API</a>.
         /// </para>
         ///  
