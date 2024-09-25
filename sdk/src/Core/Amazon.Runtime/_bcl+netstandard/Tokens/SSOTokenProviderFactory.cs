@@ -19,7 +19,9 @@ using Amazon.Runtime.Internal;
 
 namespace Amazon.Runtime
 {
-    /// <inheritdoc cref="Build"/>
+    /// <summary>
+    /// Interface for a factory that constructs new instances of <see cref="SSOTokenProvider"/>
+    /// </summary>
     public interface ISSOTokenProviderFactory
     {
         /// <summary>
@@ -28,7 +30,9 @@ namespace Amazon.Runtime
         SSOTokenProvider Build(CredentialProfile profile);
     }
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Factory that constructs new new instances of <see cref="SSOTokenProvider"/>
+    /// </summary>
     public class SSOTokenProviderFactory : ISSOTokenProviderFactory
     {
         private readonly ISSOTokenFileCache _ssoTokenFileCache;

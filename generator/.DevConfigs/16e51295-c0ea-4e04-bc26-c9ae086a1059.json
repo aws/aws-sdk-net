@@ -1,0 +1,9 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "Apply missing documentation to some classes in Amazon.Runtime"
+      ],
+      "type": "patch",
+      "updateMinimum": false
+    }
+  }
