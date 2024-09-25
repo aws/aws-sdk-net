@@ -32,7 +32,7 @@ namespace Amazon.CertificateManager
     public partial class AmazonCertificateManagerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ACM", "3.7.400.23");
+            InternalSDKUtils.BuildUserAgentString("ACM", "3.7.400.24");
 
         private string _userAgent = UserAgentString;
         ///<summary>

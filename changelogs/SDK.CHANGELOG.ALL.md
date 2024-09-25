@@ -1,3 +1,14 @@
+### 3.7.892.1 (2024-09-25 18:24 UTC)
+* CloudTrail (3.7.400.24)
+	* Doc-only update for CloudTrail network activity events release (in preview)
+* EC2 (3.7.406.2)
+	* Updates to documentation for the transit gateway security group referencing feature.
+* FSx (3.7.400.24)
+	* Doc-only update to address Lustre S3 hard-coded names.
+* Core 3.7.400.24
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.892.0 (2024-09-24 19:12 UTC)
 * Bedrock (3.7.406.0)
 	* Add support for Cross Region Inference in Bedrock Model Evaluations.
