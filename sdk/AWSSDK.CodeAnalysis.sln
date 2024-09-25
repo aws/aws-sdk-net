@@ -1,785 +1,787 @@
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceAnalysis", "ServiceAnalysis", "{1523203C-CD16-4B4A-8F9D-8ECCA3A327AA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AccessAnalyzer.CodeAnalysis", "code-analysis\ServiceAnalysis\AccessAnalyzer\AWSSDK.AccessAnalyzer.CodeAnalysis.csproj", "{64EADE31-1D27-45F4-8887-67121B348CD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AccessAnalyzer.CodeAnalysis", "code-analysis/ServiceAnalysis/AccessAnalyzer/AWSSDK.AccessAnalyzer.CodeAnalysis.csproj", "{64EADE31-1D27-45F4-8887-67121B348CD4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Account.CodeAnalysis", "code-analysis\ServiceAnalysis\Account\AWSSDK.Account.CodeAnalysis.csproj", "{CF1AA3FA-47AA-4CA2-ABC3-ECBB3FA38242}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Account.CodeAnalysis", "code-analysis/ServiceAnalysis/Account/AWSSDK.Account.CodeAnalysis.csproj", "{CF1AA3FA-47AA-4CA2-ABC3-ECBB3FA38242}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ACMPCA.CodeAnalysis", "code-analysis\ServiceAnalysis\ACMPCA\AWSSDK.ACMPCA.CodeAnalysis.csproj", "{1073C7DB-B519-4074-AF6D-3A881198BB67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ACMPCA.CodeAnalysis", "code-analysis/ServiceAnalysis/ACMPCA/AWSSDK.ACMPCA.CodeAnalysis.csproj", "{1073C7DB-B519-4074-AF6D-3A881198BB67}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Amplify.CodeAnalysis", "code-analysis\ServiceAnalysis\Amplify\AWSSDK.Amplify.CodeAnalysis.csproj", "{FE28FA91-1F9C-417B-844C-AF73189EFA3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Amplify.CodeAnalysis", "code-analysis/ServiceAnalysis/Amplify/AWSSDK.Amplify.CodeAnalysis.csproj", "{FE28FA91-1F9C-417B-844C-AF73189EFA3A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AmplifyBackend.CodeAnalysis", "code-analysis\ServiceAnalysis\AmplifyBackend\AWSSDK.AmplifyBackend.CodeAnalysis.csproj", "{2AEECD2D-ED63-40C2-9419-AF3850254796}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AmplifyBackend.CodeAnalysis", "code-analysis/ServiceAnalysis/AmplifyBackend/AWSSDK.AmplifyBackend.CodeAnalysis.csproj", "{2AEECD2D-ED63-40C2-9419-AF3850254796}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AmplifyUIBuilder.CodeAnalysis", "code-analysis\ServiceAnalysis\AmplifyUIBuilder\AWSSDK.AmplifyUIBuilder.CodeAnalysis.csproj", "{76A8A9AF-0C78-4BC5-886E-87D6C42593E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AmplifyUIBuilder.CodeAnalysis", "code-analysis/ServiceAnalysis/AmplifyUIBuilder/AWSSDK.AmplifyUIBuilder.CodeAnalysis.csproj", "{76A8A9AF-0C78-4BC5-886E-87D6C42593E3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.APIGateway.CodeAnalysis", "code-analysis\ServiceAnalysis\APIGateway\AWSSDK.APIGateway.CodeAnalysis.csproj", "{AFBED677-F602-4CE6-96D0-CE2DF0DA800E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.APIGateway.CodeAnalysis", "code-analysis/ServiceAnalysis/APIGateway/AWSSDK.APIGateway.CodeAnalysis.csproj", "{AFBED677-F602-4CE6-96D0-CE2DF0DA800E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ApiGatewayManagementApi.CodeAnalysis", "code-analysis\ServiceAnalysis\ApiGatewayManagementApi\AWSSDK.ApiGatewayManagementApi.CodeAnalysis.csproj", "{7FA03986-02CE-40A4-A060-3ABD4B3DF4B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ApiGatewayManagementApi.CodeAnalysis", "code-analysis/ServiceAnalysis/ApiGatewayManagementApi/AWSSDK.ApiGatewayManagementApi.CodeAnalysis.csproj", "{7FA03986-02CE-40A4-A060-3ABD4B3DF4B6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ApiGatewayV2.CodeAnalysis", "code-analysis\ServiceAnalysis\ApiGatewayV2\AWSSDK.ApiGatewayV2.CodeAnalysis.csproj", "{28108A37-A81C-46DB-8F49-304B616BB301}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ApiGatewayV2.CodeAnalysis", "code-analysis/ServiceAnalysis/ApiGatewayV2/AWSSDK.ApiGatewayV2.CodeAnalysis.csproj", "{28108A37-A81C-46DB-8F49-304B616BB301}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AppConfig.CodeAnalysis", "code-analysis\ServiceAnalysis\AppConfig\AWSSDK.AppConfig.CodeAnalysis.csproj", "{610DFFBF-9C45-4D0F-8A75-8E8BC205288F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AppConfig.CodeAnalysis", "code-analysis/ServiceAnalysis/AppConfig/AWSSDK.AppConfig.CodeAnalysis.csproj", "{610DFFBF-9C45-4D0F-8A75-8E8BC205288F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AppConfigData.CodeAnalysis", "code-analysis\ServiceAnalysis\AppConfigData\AWSSDK.AppConfigData.CodeAnalysis.csproj", "{684FAC4A-AC97-45E3-B30B-FDADCDF2FC2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AppConfigData.CodeAnalysis", "code-analysis/ServiceAnalysis/AppConfigData/AWSSDK.AppConfigData.CodeAnalysis.csproj", "{684FAC4A-AC97-45E3-B30B-FDADCDF2FC2C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AppFabric.CodeAnalysis", "code-analysis\ServiceAnalysis\AppFabric\AWSSDK.AppFabric.CodeAnalysis.csproj", "{031658D9-9F8F-45A1-9784-B5021A907F00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AppFabric.CodeAnalysis", "code-analysis/ServiceAnalysis/AppFabric/AWSSDK.AppFabric.CodeAnalysis.csproj", "{031658D9-9F8F-45A1-9784-B5021A907F00}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Appflow.CodeAnalysis", "code-analysis\ServiceAnalysis\Appflow\AWSSDK.Appflow.CodeAnalysis.csproj", "{46F6224C-A560-4D5C-A932-0D4A587F205F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Appflow.CodeAnalysis", "code-analysis/ServiceAnalysis/Appflow/AWSSDK.Appflow.CodeAnalysis.csproj", "{46F6224C-A560-4D5C-A932-0D4A587F205F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AppIntegrationsService.CodeAnalysis", "code-analysis\ServiceAnalysis\AppIntegrationsService\AWSSDK.AppIntegrationsService.CodeAnalysis.csproj", "{8881FD55-C6AF-47D1-AF85-7C8D659D8E35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AppIntegrationsService.CodeAnalysis", "code-analysis/ServiceAnalysis/AppIntegrationsService/AWSSDK.AppIntegrationsService.CodeAnalysis.csproj", "{8881FD55-C6AF-47D1-AF85-7C8D659D8E35}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ApplicationAutoScaling.CodeAnalysis", "code-analysis\ServiceAnalysis\ApplicationAutoScaling\AWSSDK.ApplicationAutoScaling.CodeAnalysis.csproj", "{E016F5A7-11FD-4EEC-9FCF-47F95A920CE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ApplicationAutoScaling.CodeAnalysis", "code-analysis/ServiceAnalysis/ApplicationAutoScaling/AWSSDK.ApplicationAutoScaling.CodeAnalysis.csproj", "{E016F5A7-11FD-4EEC-9FCF-47F95A920CE5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ApplicationCostProfiler.CodeAnalysis", "code-analysis\ServiceAnalysis\ApplicationCostProfiler\AWSSDK.ApplicationCostProfiler.CodeAnalysis.csproj", "{6BCAAFDE-31E0-46AD-8004-00ADDF70944E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ApplicationCostProfiler.CodeAnalysis", "code-analysis/ServiceAnalysis/ApplicationCostProfiler/AWSSDK.ApplicationCostProfiler.CodeAnalysis.csproj", "{6BCAAFDE-31E0-46AD-8004-00ADDF70944E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ApplicationDiscoveryService.CodeAnalysis", "code-analysis\ServiceAnalysis\ApplicationDiscoveryService\AWSSDK.ApplicationDiscoveryService.CodeAnalysis.csproj", "{D0A3A036-D542-4A77-8119-8E98B034E211}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ApplicationDiscoveryService.CodeAnalysis", "code-analysis/ServiceAnalysis/ApplicationDiscoveryService/AWSSDK.ApplicationDiscoveryService.CodeAnalysis.csproj", "{D0A3A036-D542-4A77-8119-8E98B034E211}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ApplicationInsights.CodeAnalysis", "code-analysis\ServiceAnalysis\ApplicationInsights\AWSSDK.ApplicationInsights.CodeAnalysis.csproj", "{7B0498BF-BEB6-4EAA-A4DE-BD19F032ACC6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ApplicationInsights.CodeAnalysis", "code-analysis/ServiceAnalysis/ApplicationInsights/AWSSDK.ApplicationInsights.CodeAnalysis.csproj", "{7B0498BF-BEB6-4EAA-A4DE-BD19F032ACC6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ApplicationSignals.CodeAnalysis", "code-analysis\ServiceAnalysis\ApplicationSignals\AWSSDK.ApplicationSignals.CodeAnalysis.csproj", "{8A86B01D-A7BF-478E-A7B4-17D2C907273C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ApplicationSignals.CodeAnalysis", "code-analysis/ServiceAnalysis/ApplicationSignals/AWSSDK.ApplicationSignals.CodeAnalysis.csproj", "{8A86B01D-A7BF-478E-A7B4-17D2C907273C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AppMesh.CodeAnalysis", "code-analysis\ServiceAnalysis\AppMesh\AWSSDK.AppMesh.CodeAnalysis.csproj", "{FAC77777-B66C-4D36-B883-A37A41C40A2D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AppMesh.CodeAnalysis", "code-analysis/ServiceAnalysis/AppMesh/AWSSDK.AppMesh.CodeAnalysis.csproj", "{FAC77777-B66C-4D36-B883-A37A41C40A2D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AppRegistry.CodeAnalysis", "code-analysis\ServiceAnalysis\AppRegistry\AWSSDK.AppRegistry.CodeAnalysis.csproj", "{16CFB3C8-BF63-4517-ADC4-87F48F7D4B22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AppRegistry.CodeAnalysis", "code-analysis/ServiceAnalysis/AppRegistry/AWSSDK.AppRegistry.CodeAnalysis.csproj", "{16CFB3C8-BF63-4517-ADC4-87F48F7D4B22}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AppRunner.CodeAnalysis", "code-analysis\ServiceAnalysis\AppRunner\AWSSDK.AppRunner.CodeAnalysis.csproj", "{5E6B22E5-3140-40A7-A1DC-1EF63F1F4566}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AppRunner.CodeAnalysis", "code-analysis/ServiceAnalysis/AppRunner/AWSSDK.AppRunner.CodeAnalysis.csproj", "{5E6B22E5-3140-40A7-A1DC-1EF63F1F4566}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AppStream.CodeAnalysis", "code-analysis\ServiceAnalysis\AppStream\AWSSDK.AppStream.CodeAnalysis.csproj", "{D26A9B8A-A715-4131-A1C8-9882EA414C4B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AppStream.CodeAnalysis", "code-analysis/ServiceAnalysis/AppStream/AWSSDK.AppStream.CodeAnalysis.csproj", "{D26A9B8A-A715-4131-A1C8-9882EA414C4B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AppSync.CodeAnalysis", "code-analysis\ServiceAnalysis\AppSync\AWSSDK.AppSync.CodeAnalysis.csproj", "{719E2506-84AA-4A01-B4F8-70C9F837C541}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AppSync.CodeAnalysis", "code-analysis/ServiceAnalysis/AppSync/AWSSDK.AppSync.CodeAnalysis.csproj", "{719E2506-84AA-4A01-B4F8-70C9F837C541}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AppTest.CodeAnalysis", "code-analysis\ServiceAnalysis\AppTest\AWSSDK.AppTest.CodeAnalysis.csproj", "{692D6AA8-5272-4043-B1AC-59CD70C8036E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AppTest.CodeAnalysis", "code-analysis/ServiceAnalysis/AppTest/AWSSDK.AppTest.CodeAnalysis.csproj", "{692D6AA8-5272-4043-B1AC-59CD70C8036E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ARCZonalShift.CodeAnalysis", "code-analysis\ServiceAnalysis\ARCZonalShift\AWSSDK.ARCZonalShift.CodeAnalysis.csproj", "{D8589588-8495-44A5-A1BD-121492738707}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ARCZonalShift.CodeAnalysis", "code-analysis/ServiceAnalysis/ARCZonalShift/AWSSDK.ARCZonalShift.CodeAnalysis.csproj", "{D8589588-8495-44A5-A1BD-121492738707}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Artifact.CodeAnalysis", "code-analysis\ServiceAnalysis\Artifact\AWSSDK.Artifact.CodeAnalysis.csproj", "{57218547-C2A7-4302-B1B1-8523084674E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Artifact.CodeAnalysis", "code-analysis/ServiceAnalysis/Artifact/AWSSDK.Artifact.CodeAnalysis.csproj", "{57218547-C2A7-4302-B1B1-8523084674E1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Athena.CodeAnalysis", "code-analysis\ServiceAnalysis\Athena\AWSSDK.Athena.CodeAnalysis.csproj", "{3F35B8E9-41B1-4D5A-8CFA-47B00E4030E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Athena.CodeAnalysis", "code-analysis/ServiceAnalysis/Athena/AWSSDK.Athena.CodeAnalysis.csproj", "{3F35B8E9-41B1-4D5A-8CFA-47B00E4030E3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AuditManager.CodeAnalysis", "code-analysis\ServiceAnalysis\AuditManager\AWSSDK.AuditManager.CodeAnalysis.csproj", "{4D9F6E2D-73AE-4F89-BD08-437993F8CEE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AuditManager.CodeAnalysis", "code-analysis/ServiceAnalysis/AuditManager/AWSSDK.AuditManager.CodeAnalysis.csproj", "{4D9F6E2D-73AE-4F89-BD08-437993F8CEE6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AugmentedAIRuntime.CodeAnalysis", "code-analysis\ServiceAnalysis\AugmentedAIRuntime\AWSSDK.AugmentedAIRuntime.CodeAnalysis.csproj", "{56A7FFCA-113E-4D89-AA75-84718D256F18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AugmentedAIRuntime.CodeAnalysis", "code-analysis/ServiceAnalysis/AugmentedAIRuntime/AWSSDK.AugmentedAIRuntime.CodeAnalysis.csproj", "{56A7FFCA-113E-4D89-AA75-84718D256F18}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AutoScaling.CodeAnalysis", "code-analysis\ServiceAnalysis\AutoScaling\AWSSDK.AutoScaling.CodeAnalysis.csproj", "{5335A609-8A42-4855-94BD-92552BA75D09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AutoScaling.CodeAnalysis", "code-analysis/ServiceAnalysis/AutoScaling/AWSSDK.AutoScaling.CodeAnalysis.csproj", "{5335A609-8A42-4855-94BD-92552BA75D09}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AutoScalingPlans.CodeAnalysis", "code-analysis\ServiceAnalysis\AutoScalingPlans\AWSSDK.AutoScalingPlans.CodeAnalysis.csproj", "{3703D8A2-16B3-4B52-99D4-6BFD08447EDF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AutoScalingPlans.CodeAnalysis", "code-analysis/ServiceAnalysis/AutoScalingPlans/AWSSDK.AutoScalingPlans.CodeAnalysis.csproj", "{3703D8A2-16B3-4B52-99D4-6BFD08447EDF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AWSHealth.CodeAnalysis", "code-analysis\ServiceAnalysis\AWSHealth\AWSSDK.AWSHealth.CodeAnalysis.csproj", "{1873078F-48B5-4954-AD70-4A17CAF0F869}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AWSHealth.CodeAnalysis", "code-analysis/ServiceAnalysis/AWSHealth/AWSSDK.AWSHealth.CodeAnalysis.csproj", "{1873078F-48B5-4954-AD70-4A17CAF0F869}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AWSMarketplaceCommerceAnalytics.CodeAnalysis", "code-analysis\ServiceAnalysis\AWSMarketplaceCommerceAnalytics\AWSSDK.AWSMarketplaceCommerceAnalytics.CodeAnalysis.csproj", "{056F5CEA-BC90-4271-BD54-94C9575384B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AWSMarketplaceCommerceAnalytics.CodeAnalysis", "code-analysis/ServiceAnalysis/AWSMarketplaceCommerceAnalytics/AWSSDK.AWSMarketplaceCommerceAnalytics.CodeAnalysis.csproj", "{056F5CEA-BC90-4271-BD54-94C9575384B9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AWSMarketplaceMetering.CodeAnalysis", "code-analysis\ServiceAnalysis\AWSMarketplaceMetering\AWSSDK.AWSMarketplaceMetering.CodeAnalysis.csproj", "{22743FB3-AB7E-44FF-8D04-376550C88C1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AWSMarketplaceMetering.CodeAnalysis", "code-analysis/ServiceAnalysis/AWSMarketplaceMetering/AWSSDK.AWSMarketplaceMetering.CodeAnalysis.csproj", "{22743FB3-AB7E-44FF-8D04-376550C88C1D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AWSSupport.CodeAnalysis", "code-analysis\ServiceAnalysis\AWSSupport\AWSSDK.AWSSupport.CodeAnalysis.csproj", "{5C0DD501-A99A-4AE0-80F3-07FD91BB4827}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AWSSupport.CodeAnalysis", "code-analysis/ServiceAnalysis/AWSSupport/AWSSDK.AWSSupport.CodeAnalysis.csproj", "{5C0DD501-A99A-4AE0-80F3-07FD91BB4827}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.B2bi.CodeAnalysis", "code-analysis\ServiceAnalysis\B2bi\AWSSDK.B2bi.CodeAnalysis.csproj", "{F3091383-CD67-4E7D-9BF2-F56997E03609}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.B2bi.CodeAnalysis", "code-analysis/ServiceAnalysis/B2bi/AWSSDK.B2bi.CodeAnalysis.csproj", "{F3091383-CD67-4E7D-9BF2-F56997E03609}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Backup.CodeAnalysis", "code-analysis\ServiceAnalysis\Backup\AWSSDK.Backup.CodeAnalysis.csproj", "{83939F73-E4F1-47AE-B04B-133FD3489D32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Backup.CodeAnalysis", "code-analysis/ServiceAnalysis/Backup/AWSSDK.Backup.CodeAnalysis.csproj", "{83939F73-E4F1-47AE-B04B-133FD3489D32}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.BackupGateway.CodeAnalysis", "code-analysis\ServiceAnalysis\BackupGateway\AWSSDK.BackupGateway.CodeAnalysis.csproj", "{5FFE394A-30FB-4A47-BFC8-F3667019CF92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.BackupGateway.CodeAnalysis", "code-analysis/ServiceAnalysis/BackupGateway/AWSSDK.BackupGateway.CodeAnalysis.csproj", "{5FFE394A-30FB-4A47-BFC8-F3667019CF92}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Batch.CodeAnalysis", "code-analysis\ServiceAnalysis\Batch\AWSSDK.Batch.CodeAnalysis.csproj", "{8672DE1E-8F7B-480C-9A87-C75AA468FFEB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Batch.CodeAnalysis", "code-analysis/ServiceAnalysis/Batch/AWSSDK.Batch.CodeAnalysis.csproj", "{8672DE1E-8F7B-480C-9A87-C75AA468FFEB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.BCMDataExports.CodeAnalysis", "code-analysis\ServiceAnalysis\BCMDataExports\AWSSDK.BCMDataExports.CodeAnalysis.csproj", "{BA4FA1FA-B7C0-4C32-8839-A4A1B3E25150}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.BCMDataExports.CodeAnalysis", "code-analysis/ServiceAnalysis/BCMDataExports/AWSSDK.BCMDataExports.CodeAnalysis.csproj", "{BA4FA1FA-B7C0-4C32-8839-A4A1B3E25150}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Bedrock.CodeAnalysis", "code-analysis\ServiceAnalysis\Bedrock\AWSSDK.Bedrock.CodeAnalysis.csproj", "{5795B81D-186A-4F82-871F-9708F6F2B662}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Bedrock.CodeAnalysis", "code-analysis/ServiceAnalysis/Bedrock/AWSSDK.Bedrock.CodeAnalysis.csproj", "{5795B81D-186A-4F82-871F-9708F6F2B662}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.BedrockAgent.CodeAnalysis", "code-analysis\ServiceAnalysis\BedrockAgent\AWSSDK.BedrockAgent.CodeAnalysis.csproj", "{8FBEB2CF-92C4-4CA1-8680-6AEB5EDC494D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.BedrockAgent.CodeAnalysis", "code-analysis/ServiceAnalysis/BedrockAgent/AWSSDK.BedrockAgent.CodeAnalysis.csproj", "{8FBEB2CF-92C4-4CA1-8680-6AEB5EDC494D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.BedrockAgentRuntime.CodeAnalysis", "code-analysis\ServiceAnalysis\BedrockAgentRuntime\AWSSDK.BedrockAgentRuntime.CodeAnalysis.csproj", "{2A307659-111F-49C3-AA53-8FE60DAED5A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.BedrockAgentRuntime.CodeAnalysis", "code-analysis/ServiceAnalysis/BedrockAgentRuntime/AWSSDK.BedrockAgentRuntime.CodeAnalysis.csproj", "{2A307659-111F-49C3-AA53-8FE60DAED5A0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.BedrockRuntime.CodeAnalysis", "code-analysis\ServiceAnalysis\BedrockRuntime\AWSSDK.BedrockRuntime.CodeAnalysis.csproj", "{B90C2613-0461-49A7-9638-ADA3FD68DFD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.BedrockRuntime.CodeAnalysis", "code-analysis/ServiceAnalysis/BedrockRuntime/AWSSDK.BedrockRuntime.CodeAnalysis.csproj", "{B90C2613-0461-49A7-9638-ADA3FD68DFD7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.BillingConductor.CodeAnalysis", "code-analysis\ServiceAnalysis\BillingConductor\AWSSDK.BillingConductor.CodeAnalysis.csproj", "{83B61196-5A40-427D-9C0D-2715909AD303}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.BillingConductor.CodeAnalysis", "code-analysis/ServiceAnalysis/BillingConductor/AWSSDK.BillingConductor.CodeAnalysis.csproj", "{83B61196-5A40-427D-9C0D-2715909AD303}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Braket.CodeAnalysis", "code-analysis\ServiceAnalysis\Braket\AWSSDK.Braket.CodeAnalysis.csproj", "{779E41EE-7E66-4A69-A705-9A583A872184}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Braket.CodeAnalysis", "code-analysis/ServiceAnalysis/Braket/AWSSDK.Braket.CodeAnalysis.csproj", "{779E41EE-7E66-4A69-A705-9A583A872184}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Budgets.CodeAnalysis", "code-analysis\ServiceAnalysis\Budgets\AWSSDK.Budgets.CodeAnalysis.csproj", "{B6A09F41-9D24-45C8-9B66-B22470CD0794}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Budgets.CodeAnalysis", "code-analysis/ServiceAnalysis/Budgets/AWSSDK.Budgets.CodeAnalysis.csproj", "{B6A09F41-9D24-45C8-9B66-B22470CD0794}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CertificateManager.CodeAnalysis", "code-analysis\ServiceAnalysis\CertificateManager\AWSSDK.CertificateManager.CodeAnalysis.csproj", "{7BCBE37C-F6A2-44A2-AAD1-DD17053EA13C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CertificateManager.CodeAnalysis", "code-analysis/ServiceAnalysis/CertificateManager/AWSSDK.CertificateManager.CodeAnalysis.csproj", "{7BCBE37C-F6A2-44A2-AAD1-DD17053EA13C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Chatbot.CodeAnalysis", "code-analysis\ServiceAnalysis\Chatbot\AWSSDK.Chatbot.CodeAnalysis.csproj", "{F4A7C87D-8535-4BC5-97DF-E0CA581A5BCC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Chatbot.CodeAnalysis", "code-analysis/ServiceAnalysis/Chatbot/AWSSDK.Chatbot.CodeAnalysis.csproj", "{F4A7C87D-8535-4BC5-97DF-E0CA581A5BCC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Chime.CodeAnalysis", "code-analysis\ServiceAnalysis\Chime\AWSSDK.Chime.CodeAnalysis.csproj", "{AD325CC4-2ED2-4440-93AC-BD0DE2D866C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Chime.CodeAnalysis", "code-analysis/ServiceAnalysis/Chime/AWSSDK.Chime.CodeAnalysis.csproj", "{AD325CC4-2ED2-4440-93AC-BD0DE2D866C7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ChimeSDKIdentity.CodeAnalysis", "code-analysis\ServiceAnalysis\ChimeSDKIdentity\AWSSDK.ChimeSDKIdentity.CodeAnalysis.csproj", "{D3539FAA-7CBB-4BFE-8F32-56097DB9C7C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ChimeSDKIdentity.CodeAnalysis", "code-analysis/ServiceAnalysis/ChimeSDKIdentity/AWSSDK.ChimeSDKIdentity.CodeAnalysis.csproj", "{D3539FAA-7CBB-4BFE-8F32-56097DB9C7C1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ChimeSDKMediaPipelines.CodeAnalysis", "code-analysis\ServiceAnalysis\ChimeSDKMediaPipelines\AWSSDK.ChimeSDKMediaPipelines.CodeAnalysis.csproj", "{467B3EDB-F8C3-4785-8E04-256224A5023F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ChimeSDKMediaPipelines.CodeAnalysis", "code-analysis/ServiceAnalysis/ChimeSDKMediaPipelines/AWSSDK.ChimeSDKMediaPipelines.CodeAnalysis.csproj", "{467B3EDB-F8C3-4785-8E04-256224A5023F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ChimeSDKMeetings.CodeAnalysis", "code-analysis\ServiceAnalysis\ChimeSDKMeetings\AWSSDK.ChimeSDKMeetings.CodeAnalysis.csproj", "{9D076F08-72A4-4586-816C-B47F4F0D7E66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ChimeSDKMeetings.CodeAnalysis", "code-analysis/ServiceAnalysis/ChimeSDKMeetings/AWSSDK.ChimeSDKMeetings.CodeAnalysis.csproj", "{9D076F08-72A4-4586-816C-B47F4F0D7E66}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ChimeSDKMessaging.CodeAnalysis", "code-analysis\ServiceAnalysis\ChimeSDKMessaging\AWSSDK.ChimeSDKMessaging.CodeAnalysis.csproj", "{CFF95961-210B-4DDE-915B-31EBEDDF8098}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ChimeSDKMessaging.CodeAnalysis", "code-analysis/ServiceAnalysis/ChimeSDKMessaging/AWSSDK.ChimeSDKMessaging.CodeAnalysis.csproj", "{CFF95961-210B-4DDE-915B-31EBEDDF8098}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ChimeSDKVoice.CodeAnalysis", "code-analysis\ServiceAnalysis\ChimeSDKVoice\AWSSDK.ChimeSDKVoice.CodeAnalysis.csproj", "{42A487B0-B057-4921-9A4B-9AC8FA3DD0A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ChimeSDKVoice.CodeAnalysis", "code-analysis/ServiceAnalysis/ChimeSDKVoice/AWSSDK.ChimeSDKVoice.CodeAnalysis.csproj", "{42A487B0-B057-4921-9A4B-9AC8FA3DD0A7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CleanRooms.CodeAnalysis", "code-analysis\ServiceAnalysis\CleanRooms\AWSSDK.CleanRooms.CodeAnalysis.csproj", "{C82E6FE2-6A22-4E02-97BB-19CAC01F6D16}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CleanRooms.CodeAnalysis", "code-analysis/ServiceAnalysis/CleanRooms/AWSSDK.CleanRooms.CodeAnalysis.csproj", "{C82E6FE2-6A22-4E02-97BB-19CAC01F6D16}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CleanRoomsML.CodeAnalysis", "code-analysis\ServiceAnalysis\CleanRoomsML\AWSSDK.CleanRoomsML.CodeAnalysis.csproj", "{1AD417E4-65F2-46DD-B973-962EB07B65BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CleanRoomsML.CodeAnalysis", "code-analysis/ServiceAnalysis/CleanRoomsML/AWSSDK.CleanRoomsML.CodeAnalysis.csproj", "{1AD417E4-65F2-46DD-B973-962EB07B65BA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Cloud9.CodeAnalysis", "code-analysis\ServiceAnalysis\Cloud9\AWSSDK.Cloud9.CodeAnalysis.csproj", "{3566CC31-603D-45F7-A615-37C7963B3753}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Cloud9.CodeAnalysis", "code-analysis/ServiceAnalysis/Cloud9/AWSSDK.Cloud9.CodeAnalysis.csproj", "{3566CC31-603D-45F7-A615-37C7963B3753}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudControlApi.CodeAnalysis", "code-analysis\ServiceAnalysis\CloudControlApi\AWSSDK.CloudControlApi.CodeAnalysis.csproj", "{DB5CBDF3-BD2D-45D1-B9F9-683ED99F9903}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudControlApi.CodeAnalysis", "code-analysis/ServiceAnalysis/CloudControlApi/AWSSDK.CloudControlApi.CodeAnalysis.csproj", "{DB5CBDF3-BD2D-45D1-B9F9-683ED99F9903}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudDirectory.CodeAnalysis", "code-analysis\ServiceAnalysis\CloudDirectory\AWSSDK.CloudDirectory.CodeAnalysis.csproj", "{A6D45725-441D-484C-A98C-88E1C155F25D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudDirectory.CodeAnalysis", "code-analysis/ServiceAnalysis/CloudDirectory/AWSSDK.CloudDirectory.CodeAnalysis.csproj", "{A6D45725-441D-484C-A98C-88E1C155F25D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudFormation.CodeAnalysis", "code-analysis\ServiceAnalysis\CloudFormation\AWSSDK.CloudFormation.CodeAnalysis.csproj", "{57DDC6BD-5400-4A39-8285-620023E590F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudFormation.CodeAnalysis", "code-analysis/ServiceAnalysis/CloudFormation/AWSSDK.CloudFormation.CodeAnalysis.csproj", "{57DDC6BD-5400-4A39-8285-620023E590F3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudFront.CodeAnalysis", "code-analysis\ServiceAnalysis\CloudFront\AWSSDK.CloudFront.CodeAnalysis.csproj", "{5C6DAC1D-C8A6-4614-A68A-B976FFE0B497}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudFront.CodeAnalysis", "code-analysis/ServiceAnalysis/CloudFront/AWSSDK.CloudFront.CodeAnalysis.csproj", "{5C6DAC1D-C8A6-4614-A68A-B976FFE0B497}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudFrontKeyValueStore.CodeAnalysis", "code-analysis\ServiceAnalysis\CloudFrontKeyValueStore\AWSSDK.CloudFrontKeyValueStore.CodeAnalysis.csproj", "{3600D17B-9005-4A59-BA0D-E50343494644}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudFrontKeyValueStore.CodeAnalysis", "code-analysis/ServiceAnalysis/CloudFrontKeyValueStore/AWSSDK.CloudFrontKeyValueStore.CodeAnalysis.csproj", "{3600D17B-9005-4A59-BA0D-E50343494644}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudHSM.CodeAnalysis", "code-analysis\ServiceAnalysis\CloudHSM\AWSSDK.CloudHSM.CodeAnalysis.csproj", "{00F47DE9-4572-4B06-A109-6090C5C60347}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudHSM.CodeAnalysis", "code-analysis/ServiceAnalysis/CloudHSM/AWSSDK.CloudHSM.CodeAnalysis.csproj", "{00F47DE9-4572-4B06-A109-6090C5C60347}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudHSMV2.CodeAnalysis", "code-analysis\ServiceAnalysis\CloudHSMV2\AWSSDK.CloudHSMV2.CodeAnalysis.csproj", "{CCDBB71F-F5D4-49EA-A7E1-D9993E001D80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudHSMV2.CodeAnalysis", "code-analysis/ServiceAnalysis/CloudHSMV2/AWSSDK.CloudHSMV2.CodeAnalysis.csproj", "{CCDBB71F-F5D4-49EA-A7E1-D9993E001D80}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudSearch.CodeAnalysis", "code-analysis\ServiceAnalysis\CloudSearch\AWSSDK.CloudSearch.CodeAnalysis.csproj", "{31CB16DB-FD84-4241-BCEF-5107EAB51F0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudSearch.CodeAnalysis", "code-analysis/ServiceAnalysis/CloudSearch/AWSSDK.CloudSearch.CodeAnalysis.csproj", "{31CB16DB-FD84-4241-BCEF-5107EAB51F0B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudSearchDomain.CodeAnalysis", "code-analysis\ServiceAnalysis\CloudSearchDomain\AWSSDK.CloudSearchDomain.CodeAnalysis.csproj", "{CD1AC11B-0260-4738-800E-A12BC1FC137F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudSearchDomain.CodeAnalysis", "code-analysis/ServiceAnalysis/CloudSearchDomain/AWSSDK.CloudSearchDomain.CodeAnalysis.csproj", "{CD1AC11B-0260-4738-800E-A12BC1FC137F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudTrail.CodeAnalysis", "code-analysis\ServiceAnalysis\CloudTrail\AWSSDK.CloudTrail.CodeAnalysis.csproj", "{C6D853D7-8136-4AC6-8BD1-E43089EB0458}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudTrail.CodeAnalysis", "code-analysis/ServiceAnalysis/CloudTrail/AWSSDK.CloudTrail.CodeAnalysis.csproj", "{C6D853D7-8136-4AC6-8BD1-E43089EB0458}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudTrailData.CodeAnalysis", "code-analysis\ServiceAnalysis\CloudTrailData\AWSSDK.CloudTrailData.CodeAnalysis.csproj", "{A5484965-036F-4ECB-B738-D88AC002AA1C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudTrailData.CodeAnalysis", "code-analysis/ServiceAnalysis/CloudTrailData/AWSSDK.CloudTrailData.CodeAnalysis.csproj", "{A5484965-036F-4ECB-B738-D88AC002AA1C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudWatch.CodeAnalysis", "code-analysis\ServiceAnalysis\CloudWatch\AWSSDK.CloudWatch.CodeAnalysis.csproj", "{FDF13EF0-0743-4F7A-8A02-397B58D45376}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudWatch.CodeAnalysis", "code-analysis/ServiceAnalysis/CloudWatch/AWSSDK.CloudWatch.CodeAnalysis.csproj", "{FDF13EF0-0743-4F7A-8A02-397B58D45376}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudWatchEvents.CodeAnalysis", "code-analysis\ServiceAnalysis\CloudWatchEvents\AWSSDK.CloudWatchEvents.CodeAnalysis.csproj", "{EFFAB166-349C-47BD-9CDC-FD86A0A3E693}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudWatchEvents.CodeAnalysis", "code-analysis/ServiceAnalysis/CloudWatchEvents/AWSSDK.CloudWatchEvents.CodeAnalysis.csproj", "{EFFAB166-349C-47BD-9CDC-FD86A0A3E693}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudWatchEvidently.CodeAnalysis", "code-analysis\ServiceAnalysis\CloudWatchEvidently\AWSSDK.CloudWatchEvidently.CodeAnalysis.csproj", "{94298DB9-FC26-4C9E-BA25-CCB97F9F273A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudWatchEvidently.CodeAnalysis", "code-analysis/ServiceAnalysis/CloudWatchEvidently/AWSSDK.CloudWatchEvidently.CodeAnalysis.csproj", "{94298DB9-FC26-4C9E-BA25-CCB97F9F273A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudWatchLogs.CodeAnalysis", "code-analysis\ServiceAnalysis\CloudWatchLogs\AWSSDK.CloudWatchLogs.CodeAnalysis.csproj", "{169A76D6-4DBA-4B0C-BE8F-8B82BEF20297}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudWatchLogs.CodeAnalysis", "code-analysis/ServiceAnalysis/CloudWatchLogs/AWSSDK.CloudWatchLogs.CodeAnalysis.csproj", "{169A76D6-4DBA-4B0C-BE8F-8B82BEF20297}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudWatchRUM.CodeAnalysis", "code-analysis\ServiceAnalysis\CloudWatchRUM\AWSSDK.CloudWatchRUM.CodeAnalysis.csproj", "{D69A704D-CA5A-4339-BB04-F5842764DF7B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudWatchRUM.CodeAnalysis", "code-analysis/ServiceAnalysis/CloudWatchRUM/AWSSDK.CloudWatchRUM.CodeAnalysis.csproj", "{D69A704D-CA5A-4339-BB04-F5842764DF7B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeArtifact.CodeAnalysis", "code-analysis\ServiceAnalysis\CodeArtifact\AWSSDK.CodeArtifact.CodeAnalysis.csproj", "{A8A9A15A-1C05-45C4-BDA3-D8DAADFF739D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeArtifact.CodeAnalysis", "code-analysis/ServiceAnalysis/CodeArtifact/AWSSDK.CodeArtifact.CodeAnalysis.csproj", "{A8A9A15A-1C05-45C4-BDA3-D8DAADFF739D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeBuild.CodeAnalysis", "code-analysis\ServiceAnalysis\CodeBuild\AWSSDK.CodeBuild.CodeAnalysis.csproj", "{A3A9559C-7BF6-4586-B96F-951BA51C8C18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeBuild.CodeAnalysis", "code-analysis/ServiceAnalysis/CodeBuild/AWSSDK.CodeBuild.CodeAnalysis.csproj", "{A3A9559C-7BF6-4586-B96F-951BA51C8C18}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeCatalyst.CodeAnalysis", "code-analysis\ServiceAnalysis\CodeCatalyst\AWSSDK.CodeCatalyst.CodeAnalysis.csproj", "{DA940715-9EC9-4AC3-8F4F-3D227954CA37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeCatalyst.CodeAnalysis", "code-analysis/ServiceAnalysis/CodeCatalyst/AWSSDK.CodeCatalyst.CodeAnalysis.csproj", "{DA940715-9EC9-4AC3-8F4F-3D227954CA37}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeCommit.CodeAnalysis", "code-analysis\ServiceAnalysis\CodeCommit\AWSSDK.CodeCommit.CodeAnalysis.csproj", "{F8376247-8CAA-4214-B4FD-0415DE378611}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeCommit.CodeAnalysis", "code-analysis/ServiceAnalysis/CodeCommit/AWSSDK.CodeCommit.CodeAnalysis.csproj", "{F8376247-8CAA-4214-B4FD-0415DE378611}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeConnections.CodeAnalysis", "code-analysis\ServiceAnalysis\CodeConnections\AWSSDK.CodeConnections.CodeAnalysis.csproj", "{F26B90E8-D7A3-4519-B562-3627CDAF0D5D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeConnections.CodeAnalysis", "code-analysis/ServiceAnalysis/CodeConnections/AWSSDK.CodeConnections.CodeAnalysis.csproj", "{F26B90E8-D7A3-4519-B562-3627CDAF0D5D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeDeploy.CodeAnalysis", "code-analysis\ServiceAnalysis\CodeDeploy\AWSSDK.CodeDeploy.CodeAnalysis.csproj", "{2BAB296B-D09F-4647-B878-BB34642E9E0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeDeploy.CodeAnalysis", "code-analysis/ServiceAnalysis/CodeDeploy/AWSSDK.CodeDeploy.CodeAnalysis.csproj", "{2BAB296B-D09F-4647-B878-BB34642E9E0D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeGuruProfiler.CodeAnalysis", "code-analysis\ServiceAnalysis\CodeGuruProfiler\AWSSDK.CodeGuruProfiler.CodeAnalysis.csproj", "{477574BD-92D0-4BCE-98D1-4EC715279856}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeGuruProfiler.CodeAnalysis", "code-analysis/ServiceAnalysis/CodeGuruProfiler/AWSSDK.CodeGuruProfiler.CodeAnalysis.csproj", "{477574BD-92D0-4BCE-98D1-4EC715279856}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeGuruReviewer.CodeAnalysis", "code-analysis\ServiceAnalysis\CodeGuruReviewer\AWSSDK.CodeGuruReviewer.CodeAnalysis.csproj", "{F1A2D6CA-C586-40AA-8E90-697D715219D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeGuruReviewer.CodeAnalysis", "code-analysis/ServiceAnalysis/CodeGuruReviewer/AWSSDK.CodeGuruReviewer.CodeAnalysis.csproj", "{F1A2D6CA-C586-40AA-8E90-697D715219D1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeGuruSecurity.CodeAnalysis", "code-analysis\ServiceAnalysis\CodeGuruSecurity\AWSSDK.CodeGuruSecurity.CodeAnalysis.csproj", "{E0B96EC2-6E65-4A80-AC16-6B57C6434E30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeGuruSecurity.CodeAnalysis", "code-analysis/ServiceAnalysis/CodeGuruSecurity/AWSSDK.CodeGuruSecurity.CodeAnalysis.csproj", "{E0B96EC2-6E65-4A80-AC16-6B57C6434E30}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodePipeline.CodeAnalysis", "code-analysis\ServiceAnalysis\CodePipeline\AWSSDK.CodePipeline.CodeAnalysis.csproj", "{ECDB9DA6-F184-479F-B658-1DAD5D9A5BE8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodePipeline.CodeAnalysis", "code-analysis/ServiceAnalysis/CodePipeline/AWSSDK.CodePipeline.CodeAnalysis.csproj", "{ECDB9DA6-F184-479F-B658-1DAD5D9A5BE8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeStarconnections.CodeAnalysis", "code-analysis\ServiceAnalysis\CodeStarconnections\AWSSDK.CodeStarconnections.CodeAnalysis.csproj", "{9F19D6D8-7B75-43AC-8819-74B822450464}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeStarconnections.CodeAnalysis", "code-analysis/ServiceAnalysis/CodeStarconnections/AWSSDK.CodeStarconnections.CodeAnalysis.csproj", "{9F19D6D8-7B75-43AC-8819-74B822450464}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeStarNotifications.CodeAnalysis", "code-analysis\ServiceAnalysis\CodeStarNotifications\AWSSDK.CodeStarNotifications.CodeAnalysis.csproj", "{CE4DF031-5ED7-4F80-9324-93FB2CC5B663}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeStarNotifications.CodeAnalysis", "code-analysis/ServiceAnalysis/CodeStarNotifications/AWSSDK.CodeStarNotifications.CodeAnalysis.csproj", "{CE4DF031-5ED7-4F80-9324-93FB2CC5B663}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CognitoIdentity.CodeAnalysis", "code-analysis\ServiceAnalysis\CognitoIdentity\AWSSDK.CognitoIdentity.CodeAnalysis.csproj", "{C5B93F90-892C-4582-8EFC-F8E04D387348}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CognitoIdentity.CodeAnalysis", "code-analysis/ServiceAnalysis/CognitoIdentity/AWSSDK.CognitoIdentity.CodeAnalysis.csproj", "{C5B93F90-892C-4582-8EFC-F8E04D387348}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CognitoIdentityProvider.CodeAnalysis", "code-analysis\ServiceAnalysis\CognitoIdentityProvider\AWSSDK.CognitoIdentityProvider.CodeAnalysis.csproj", "{7FD5548A-AAE6-42F7-800F-E3E171ECDA83}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CognitoIdentityProvider.CodeAnalysis", "code-analysis/ServiceAnalysis/CognitoIdentityProvider/AWSSDK.CognitoIdentityProvider.CodeAnalysis.csproj", "{7FD5548A-AAE6-42F7-800F-E3E171ECDA83}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CognitoSync.CodeAnalysis", "code-analysis\ServiceAnalysis\CognitoSync\AWSSDK.CognitoSync.CodeAnalysis.csproj", "{9533B3D8-2FE4-4309-8CAB-9D08B240CC32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CognitoSync.CodeAnalysis", "code-analysis/ServiceAnalysis/CognitoSync/AWSSDK.CognitoSync.CodeAnalysis.csproj", "{9533B3D8-2FE4-4309-8CAB-9D08B240CC32}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Comprehend.CodeAnalysis", "code-analysis\ServiceAnalysis\Comprehend\AWSSDK.Comprehend.CodeAnalysis.csproj", "{346CC489-4872-4337-B6F0-AFBE1E402ABE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Comprehend.CodeAnalysis", "code-analysis/ServiceAnalysis/Comprehend/AWSSDK.Comprehend.CodeAnalysis.csproj", "{346CC489-4872-4337-B6F0-AFBE1E402ABE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ComprehendMedical.CodeAnalysis", "code-analysis\ServiceAnalysis\ComprehendMedical\AWSSDK.ComprehendMedical.CodeAnalysis.csproj", "{A82ACE64-D7E1-4E32-AC0C-104A31C08A63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ComprehendMedical.CodeAnalysis", "code-analysis/ServiceAnalysis/ComprehendMedical/AWSSDK.ComprehendMedical.CodeAnalysis.csproj", "{A82ACE64-D7E1-4E32-AC0C-104A31C08A63}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ComputeOptimizer.CodeAnalysis", "code-analysis\ServiceAnalysis\ComputeOptimizer\AWSSDK.ComputeOptimizer.CodeAnalysis.csproj", "{6CE27252-48CA-4251-93D7-9F967936B97F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ComputeOptimizer.CodeAnalysis", "code-analysis/ServiceAnalysis/ComputeOptimizer/AWSSDK.ComputeOptimizer.CodeAnalysis.csproj", "{6CE27252-48CA-4251-93D7-9F967936B97F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ConfigService.CodeAnalysis", "code-analysis\ServiceAnalysis\ConfigService\AWSSDK.ConfigService.CodeAnalysis.csproj", "{07EAA366-F870-45C0-B44D-2915EB06287A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ConfigService.CodeAnalysis", "code-analysis/ServiceAnalysis/ConfigService/AWSSDK.ConfigService.CodeAnalysis.csproj", "{07EAA366-F870-45C0-B44D-2915EB06287A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Connect.CodeAnalysis", "code-analysis\ServiceAnalysis\Connect\AWSSDK.Connect.CodeAnalysis.csproj", "{E51E5A8A-4B72-47BE-B25C-42999CF5D6FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Connect.CodeAnalysis", "code-analysis/ServiceAnalysis/Connect/AWSSDK.Connect.CodeAnalysis.csproj", "{E51E5A8A-4B72-47BE-B25C-42999CF5D6FC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ConnectCampaignService.CodeAnalysis", "code-analysis\ServiceAnalysis\ConnectCampaignService\AWSSDK.ConnectCampaignService.CodeAnalysis.csproj", "{A24C0514-952A-4B14-9DB1-D877EFECA384}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ConnectCampaignService.CodeAnalysis", "code-analysis/ServiceAnalysis/ConnectCampaignService/AWSSDK.ConnectCampaignService.CodeAnalysis.csproj", "{A24C0514-952A-4B14-9DB1-D877EFECA384}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ConnectCases.CodeAnalysis", "code-analysis\ServiceAnalysis\ConnectCases\AWSSDK.ConnectCases.CodeAnalysis.csproj", "{349F5805-E1A7-48F0-A7F2-366D81137AFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ConnectCases.CodeAnalysis", "code-analysis/ServiceAnalysis/ConnectCases/AWSSDK.ConnectCases.CodeAnalysis.csproj", "{349F5805-E1A7-48F0-A7F2-366D81137AFA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ConnectContactLens.CodeAnalysis", "code-analysis\ServiceAnalysis\ConnectContactLens\AWSSDK.ConnectContactLens.CodeAnalysis.csproj", "{D6283E41-B330-46FF-8497-EFB7F15D3222}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ConnectContactLens.CodeAnalysis", "code-analysis/ServiceAnalysis/ConnectContactLens/AWSSDK.ConnectContactLens.CodeAnalysis.csproj", "{D6283E41-B330-46FF-8497-EFB7F15D3222}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ConnectParticipant.CodeAnalysis", "code-analysis\ServiceAnalysis\ConnectParticipant\AWSSDK.ConnectParticipant.CodeAnalysis.csproj", "{9AC947B6-6DC4-4B32-BA81-F7FBFCBE09F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ConnectParticipant.CodeAnalysis", "code-analysis/ServiceAnalysis/ConnectParticipant/AWSSDK.ConnectParticipant.CodeAnalysis.csproj", "{9AC947B6-6DC4-4B32-BA81-F7FBFCBE09F5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ConnectWisdomService.CodeAnalysis", "code-analysis\ServiceAnalysis\ConnectWisdomService\AWSSDK.ConnectWisdomService.CodeAnalysis.csproj", "{5EEDA328-7206-46B2-8940-F0B293B8B379}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ConnectWisdomService.CodeAnalysis", "code-analysis/ServiceAnalysis/ConnectWisdomService/AWSSDK.ConnectWisdomService.CodeAnalysis.csproj", "{5EEDA328-7206-46B2-8940-F0B293B8B379}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ControlCatalog.CodeAnalysis", "code-analysis\ServiceAnalysis\ControlCatalog\AWSSDK.ControlCatalog.CodeAnalysis.csproj", "{0B4CD88C-9EF4-4960-A06D-D3394BF19E5D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ControlCatalog.CodeAnalysis", "code-analysis/ServiceAnalysis/ControlCatalog/AWSSDK.ControlCatalog.CodeAnalysis.csproj", "{0B4CD88C-9EF4-4960-A06D-D3394BF19E5D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ControlTower.CodeAnalysis", "code-analysis\ServiceAnalysis\ControlTower\AWSSDK.ControlTower.CodeAnalysis.csproj", "{E1BE61C0-AB6A-4761-A581-0D976B1D76DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ControlTower.CodeAnalysis", "code-analysis/ServiceAnalysis/ControlTower/AWSSDK.ControlTower.CodeAnalysis.csproj", "{E1BE61C0-AB6A-4761-A581-0D976B1D76DA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CostAndUsageReport.CodeAnalysis", "code-analysis\ServiceAnalysis\CostAndUsageReport\AWSSDK.CostAndUsageReport.CodeAnalysis.csproj", "{8641D3C6-CD01-4447-B6F9-544AB02D0232}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CostAndUsageReport.CodeAnalysis", "code-analysis/ServiceAnalysis/CostAndUsageReport/AWSSDK.CostAndUsageReport.CodeAnalysis.csproj", "{8641D3C6-CD01-4447-B6F9-544AB02D0232}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CostExplorer.CodeAnalysis", "code-analysis\ServiceAnalysis\CostExplorer\AWSSDK.CostExplorer.CodeAnalysis.csproj", "{4DCD9C3E-1F35-4122-8362-E221E0873C1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CostExplorer.CodeAnalysis", "code-analysis/ServiceAnalysis/CostExplorer/AWSSDK.CostExplorer.CodeAnalysis.csproj", "{4DCD9C3E-1F35-4122-8362-E221E0873C1A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CostOptimizationHub.CodeAnalysis", "code-analysis\ServiceAnalysis\CostOptimizationHub\AWSSDK.CostOptimizationHub.CodeAnalysis.csproj", "{AC889338-5B28-4D81-A0F9-D84534098844}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CostOptimizationHub.CodeAnalysis", "code-analysis/ServiceAnalysis/CostOptimizationHub/AWSSDK.CostOptimizationHub.CodeAnalysis.csproj", "{AC889338-5B28-4D81-A0F9-D84534098844}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CustomerProfiles.CodeAnalysis", "code-analysis\ServiceAnalysis\CustomerProfiles\AWSSDK.CustomerProfiles.CodeAnalysis.csproj", "{0BE73AC1-2901-4B9A-BB9E-C0F5AF07EB84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CustomerProfiles.CodeAnalysis", "code-analysis/ServiceAnalysis/CustomerProfiles/AWSSDK.CustomerProfiles.CodeAnalysis.csproj", "{0BE73AC1-2901-4B9A-BB9E-C0F5AF07EB84}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DatabaseMigrationService.CodeAnalysis", "code-analysis\ServiceAnalysis\DatabaseMigrationService\AWSSDK.DatabaseMigrationService.CodeAnalysis.csproj", "{60511AFD-1450-43E9-BD01-D658223C12E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DatabaseMigrationService.CodeAnalysis", "code-analysis/ServiceAnalysis/DatabaseMigrationService/AWSSDK.DatabaseMigrationService.CodeAnalysis.csproj", "{60511AFD-1450-43E9-BD01-D658223C12E0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DataExchange.CodeAnalysis", "code-analysis\ServiceAnalysis\DataExchange\AWSSDK.DataExchange.CodeAnalysis.csproj", "{05C4A24A-0D67-4695-9CC7-491BDB035CED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DataExchange.CodeAnalysis", "code-analysis/ServiceAnalysis/DataExchange/AWSSDK.DataExchange.CodeAnalysis.csproj", "{05C4A24A-0D67-4695-9CC7-491BDB035CED}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DataPipeline.CodeAnalysis", "code-analysis\ServiceAnalysis\DataPipeline\AWSSDK.DataPipeline.CodeAnalysis.csproj", "{3683011B-F96D-4503-8F28-48CC146EA0B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DataPipeline.CodeAnalysis", "code-analysis/ServiceAnalysis/DataPipeline/AWSSDK.DataPipeline.CodeAnalysis.csproj", "{3683011B-F96D-4503-8F28-48CC146EA0B7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DataSync.CodeAnalysis", "code-analysis\ServiceAnalysis\DataSync\AWSSDK.DataSync.CodeAnalysis.csproj", "{C46E60A0-4BF6-4E80-85B8-58AA5F95F96C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DataSync.CodeAnalysis", "code-analysis/ServiceAnalysis/DataSync/AWSSDK.DataSync.CodeAnalysis.csproj", "{C46E60A0-4BF6-4E80-85B8-58AA5F95F96C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DataZone.CodeAnalysis", "code-analysis\ServiceAnalysis\DataZone\AWSSDK.DataZone.CodeAnalysis.csproj", "{1DDBD995-5EE3-4F30-A583-90D4538CA8DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DataZone.CodeAnalysis", "code-analysis/ServiceAnalysis/DataZone/AWSSDK.DataZone.CodeAnalysis.csproj", "{1DDBD995-5EE3-4F30-A583-90D4538CA8DC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DAX.CodeAnalysis", "code-analysis\ServiceAnalysis\DAX\AWSSDK.DAX.CodeAnalysis.csproj", "{E98BB360-1A3E-438A-8C9C-21A0D31D80DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DAX.CodeAnalysis", "code-analysis/ServiceAnalysis/DAX/AWSSDK.DAX.CodeAnalysis.csproj", "{E98BB360-1A3E-438A-8C9C-21A0D31D80DE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Deadline.CodeAnalysis", "code-analysis\ServiceAnalysis\Deadline\AWSSDK.Deadline.CodeAnalysis.csproj", "{0D2BE121-C7BC-4918-A022-DE7449CD6B3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Deadline.CodeAnalysis", "code-analysis/ServiceAnalysis/Deadline/AWSSDK.Deadline.CodeAnalysis.csproj", "{0D2BE121-C7BC-4918-A022-DE7449CD6B3C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Detective.CodeAnalysis", "code-analysis\ServiceAnalysis\Detective\AWSSDK.Detective.CodeAnalysis.csproj", "{B967EBEA-32C3-4867-BF5E-29C3C35AD368}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Detective.CodeAnalysis", "code-analysis/ServiceAnalysis/Detective/AWSSDK.Detective.CodeAnalysis.csproj", "{B967EBEA-32C3-4867-BF5E-29C3C35AD368}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DeviceFarm.CodeAnalysis", "code-analysis\ServiceAnalysis\DeviceFarm\AWSSDK.DeviceFarm.CodeAnalysis.csproj", "{1B5FACCC-9694-4A5A-AA84-6A6ACF9F7904}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DeviceFarm.CodeAnalysis", "code-analysis/ServiceAnalysis/DeviceFarm/AWSSDK.DeviceFarm.CodeAnalysis.csproj", "{1B5FACCC-9694-4A5A-AA84-6A6ACF9F7904}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DevOpsGuru.CodeAnalysis", "code-analysis\ServiceAnalysis\DevOpsGuru\AWSSDK.DevOpsGuru.CodeAnalysis.csproj", "{FE7CB2C6-EE88-4AC8-AE64-9709EFD9F75E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DevOpsGuru.CodeAnalysis", "code-analysis/ServiceAnalysis/DevOpsGuru/AWSSDK.DevOpsGuru.CodeAnalysis.csproj", "{FE7CB2C6-EE88-4AC8-AE64-9709EFD9F75E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DirectConnect.CodeAnalysis", "code-analysis\ServiceAnalysis\DirectConnect\AWSSDK.DirectConnect.CodeAnalysis.csproj", "{10FC5F28-B6FC-4DA8-8408-18139B2C4E7B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DirectConnect.CodeAnalysis", "code-analysis/ServiceAnalysis/DirectConnect/AWSSDK.DirectConnect.CodeAnalysis.csproj", "{10FC5F28-B6FC-4DA8-8408-18139B2C4E7B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DirectoryService.CodeAnalysis", "code-analysis\ServiceAnalysis\DirectoryService\AWSSDK.DirectoryService.CodeAnalysis.csproj", "{54277E79-7D02-4704-A883-51B9D2EA2BC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DirectoryService.CodeAnalysis", "code-analysis/ServiceAnalysis/DirectoryService/AWSSDK.DirectoryService.CodeAnalysis.csproj", "{54277E79-7D02-4704-A883-51B9D2EA2BC9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DLM.CodeAnalysis", "code-analysis\ServiceAnalysis\DLM\AWSSDK.DLM.CodeAnalysis.csproj", "{C9012812-4CFE-45F5-935C-DC554860C5E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DLM.CodeAnalysis", "code-analysis/ServiceAnalysis/DLM/AWSSDK.DLM.CodeAnalysis.csproj", "{C9012812-4CFE-45F5-935C-DC554860C5E1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DocDB.CodeAnalysis", "code-analysis\ServiceAnalysis\DocDB\AWSSDK.DocDB.CodeAnalysis.csproj", "{2639D3F6-28D8-4397-9102-F62B0DB9F79A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DocDB.CodeAnalysis", "code-analysis/ServiceAnalysis/DocDB/AWSSDK.DocDB.CodeAnalysis.csproj", "{2639D3F6-28D8-4397-9102-F62B0DB9F79A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DocDBElastic.CodeAnalysis", "code-analysis\ServiceAnalysis\DocDBElastic\AWSSDK.DocDBElastic.CodeAnalysis.csproj", "{0BB0B4D7-ABB2-42F6-8E7A-7A98D9EDF1BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DocDBElastic.CodeAnalysis", "code-analysis/ServiceAnalysis/DocDBElastic/AWSSDK.DocDBElastic.CodeAnalysis.csproj", "{0BB0B4D7-ABB2-42F6-8E7A-7A98D9EDF1BE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Drs.CodeAnalysis", "code-analysis\ServiceAnalysis\Drs\AWSSDK.Drs.CodeAnalysis.csproj", "{79B56D45-9B73-43E0-A867-851B2ED279B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Drs.CodeAnalysis", "code-analysis/ServiceAnalysis/Drs/AWSSDK.Drs.CodeAnalysis.csproj", "{79B56D45-9B73-43E0-A867-851B2ED279B3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DynamoDBv2.CodeAnalysis", "code-analysis\ServiceAnalysis\DynamoDBv2\AWSSDK.DynamoDBv2.CodeAnalysis.csproj", "{885B2D3E-B214-4F9F-B0F9-D146D9594FE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DynamoDBv2.CodeAnalysis", "code-analysis/ServiceAnalysis/DynamoDBv2/AWSSDK.DynamoDBv2.CodeAnalysis.csproj", "{885B2D3E-B214-4F9F-B0F9-D146D9594FE3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.EBS.CodeAnalysis", "code-analysis\ServiceAnalysis\EBS\AWSSDK.EBS.CodeAnalysis.csproj", "{2D4EB5D2-65E8-41A4-A9EA-02D3C2DC3EAA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.EBS.CodeAnalysis", "code-analysis/ServiceAnalysis/EBS/AWSSDK.EBS.CodeAnalysis.csproj", "{2D4EB5D2-65E8-41A4-A9EA-02D3C2DC3EAA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.EC2.CodeAnalysis", "code-analysis\ServiceAnalysis\EC2\AWSSDK.EC2.CodeAnalysis.csproj", "{6E6E2C5B-5E2D-4094-ACF8-FF4A95F6D018}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.EC2.CodeAnalysis", "code-analysis/ServiceAnalysis/EC2/AWSSDK.EC2.CodeAnalysis.csproj", "{6E6E2C5B-5E2D-4094-ACF8-FF4A95F6D018}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.EC2InstanceConnect.CodeAnalysis", "code-analysis\ServiceAnalysis\EC2InstanceConnect\AWSSDK.EC2InstanceConnect.CodeAnalysis.csproj", "{DD004BF9-D49A-4548-93D0-91ABCC71C92D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.EC2InstanceConnect.CodeAnalysis", "code-analysis/ServiceAnalysis/EC2InstanceConnect/AWSSDK.EC2InstanceConnect.CodeAnalysis.csproj", "{DD004BF9-D49A-4548-93D0-91ABCC71C92D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ECR.CodeAnalysis", "code-analysis\ServiceAnalysis\ECR\AWSSDK.ECR.CodeAnalysis.csproj", "{F5371954-6310-4702-A8C2-EBAE8D4D9556}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ECR.CodeAnalysis", "code-analysis/ServiceAnalysis/ECR/AWSSDK.ECR.CodeAnalysis.csproj", "{F5371954-6310-4702-A8C2-EBAE8D4D9556}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ECRPublic.CodeAnalysis", "code-analysis\ServiceAnalysis\ECRPublic\AWSSDK.ECRPublic.CodeAnalysis.csproj", "{1275E2E6-EACB-499D-AABC-C5382097F19C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ECRPublic.CodeAnalysis", "code-analysis/ServiceAnalysis/ECRPublic/AWSSDK.ECRPublic.CodeAnalysis.csproj", "{1275E2E6-EACB-499D-AABC-C5382097F19C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ECS.CodeAnalysis", "code-analysis\ServiceAnalysis\ECS\AWSSDK.ECS.CodeAnalysis.csproj", "{55B3C3E4-5D68-415D-80A1-BAD78A9FC7B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ECS.CodeAnalysis", "code-analysis/ServiceAnalysis/ECS/AWSSDK.ECS.CodeAnalysis.csproj", "{55B3C3E4-5D68-415D-80A1-BAD78A9FC7B1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.EKS.CodeAnalysis", "code-analysis\ServiceAnalysis\EKS\AWSSDK.EKS.CodeAnalysis.csproj", "{ABF052A8-117B-4F76-85A6-F23925645A81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.EKS.CodeAnalysis", "code-analysis/ServiceAnalysis/EKS/AWSSDK.EKS.CodeAnalysis.csproj", "{ABF052A8-117B-4F76-85A6-F23925645A81}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.EKSAuth.CodeAnalysis", "code-analysis\ServiceAnalysis\EKSAuth\AWSSDK.EKSAuth.CodeAnalysis.csproj", "{6BB07BCD-76DB-4565-B6CD-B2477D924AB2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.EKSAuth.CodeAnalysis", "code-analysis/ServiceAnalysis/EKSAuth/AWSSDK.EKSAuth.CodeAnalysis.csproj", "{6BB07BCD-76DB-4565-B6CD-B2477D924AB2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ElastiCache.CodeAnalysis", "code-analysis\ServiceAnalysis\ElastiCache\AWSSDK.ElastiCache.CodeAnalysis.csproj", "{EFAC0914-BD81-4E00-94D6-1291A211284B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ElastiCache.CodeAnalysis", "code-analysis/ServiceAnalysis/ElastiCache/AWSSDK.ElastiCache.CodeAnalysis.csproj", "{EFAC0914-BD81-4E00-94D6-1291A211284B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ElasticBeanstalk.CodeAnalysis", "code-analysis\ServiceAnalysis\ElasticBeanstalk\AWSSDK.ElasticBeanstalk.CodeAnalysis.csproj", "{8A24620A-5FDF-48E5-8A1C-4CF356B95562}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ElasticBeanstalk.CodeAnalysis", "code-analysis/ServiceAnalysis/ElasticBeanstalk/AWSSDK.ElasticBeanstalk.CodeAnalysis.csproj", "{8A24620A-5FDF-48E5-8A1C-4CF356B95562}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ElasticFileSystem.CodeAnalysis", "code-analysis\ServiceAnalysis\ElasticFileSystem\AWSSDK.ElasticFileSystem.CodeAnalysis.csproj", "{BAFDC761-0BEF-4070-B6EE-C3ABCD87AF1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ElasticFileSystem.CodeAnalysis", "code-analysis/ServiceAnalysis/ElasticFileSystem/AWSSDK.ElasticFileSystem.CodeAnalysis.csproj", "{BAFDC761-0BEF-4070-B6EE-C3ABCD87AF1F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ElasticInference.CodeAnalysis", "code-analysis\ServiceAnalysis\ElasticInference\AWSSDK.ElasticInference.CodeAnalysis.csproj", "{921448C5-FDB1-4CF4-BAE7-E2D439CCDEE8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ElasticInference.CodeAnalysis", "code-analysis/ServiceAnalysis/ElasticInference/AWSSDK.ElasticInference.CodeAnalysis.csproj", "{921448C5-FDB1-4CF4-BAE7-E2D439CCDEE8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ElasticLoadBalancing.CodeAnalysis", "code-analysis\ServiceAnalysis\ElasticLoadBalancing\AWSSDK.ElasticLoadBalancing.CodeAnalysis.csproj", "{4D6BCF8D-4375-4102-A0A8-EC27DCD94059}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ElasticLoadBalancing.CodeAnalysis", "code-analysis/ServiceAnalysis/ElasticLoadBalancing/AWSSDK.ElasticLoadBalancing.CodeAnalysis.csproj", "{4D6BCF8D-4375-4102-A0A8-EC27DCD94059}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ElasticLoadBalancingV2.CodeAnalysis", "code-analysis\ServiceAnalysis\ElasticLoadBalancingV2\AWSSDK.ElasticLoadBalancingV2.CodeAnalysis.csproj", "{396308D4-C22D-47EF-A663-8C9F583D1DE1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ElasticLoadBalancingV2.CodeAnalysis", "code-analysis/ServiceAnalysis/ElasticLoadBalancingV2/AWSSDK.ElasticLoadBalancingV2.CodeAnalysis.csproj", "{396308D4-C22D-47EF-A663-8C9F583D1DE1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ElasticMapReduce.CodeAnalysis", "code-analysis\ServiceAnalysis\ElasticMapReduce\AWSSDK.ElasticMapReduce.CodeAnalysis.csproj", "{63C00B07-E927-4B15-801B-6E1DBEEEA279}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ElasticMapReduce.CodeAnalysis", "code-analysis/ServiceAnalysis/ElasticMapReduce/AWSSDK.ElasticMapReduce.CodeAnalysis.csproj", "{63C00B07-E927-4B15-801B-6E1DBEEEA279}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Elasticsearch.CodeAnalysis", "code-analysis\ServiceAnalysis\Elasticsearch\AWSSDK.Elasticsearch.CodeAnalysis.csproj", "{D1101A58-0D6F-4546-B00D-86B35EC6BBB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Elasticsearch.CodeAnalysis", "code-analysis/ServiceAnalysis/Elasticsearch/AWSSDK.Elasticsearch.CodeAnalysis.csproj", "{D1101A58-0D6F-4546-B00D-86B35EC6BBB1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ElasticTranscoder.CodeAnalysis", "code-analysis\ServiceAnalysis\ElasticTranscoder\AWSSDK.ElasticTranscoder.CodeAnalysis.csproj", "{806022E5-5F4C-49FC-A902-AE2AC19298E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ElasticTranscoder.CodeAnalysis", "code-analysis/ServiceAnalysis/ElasticTranscoder/AWSSDK.ElasticTranscoder.CodeAnalysis.csproj", "{806022E5-5F4C-49FC-A902-AE2AC19298E9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.EMRContainers.CodeAnalysis", "code-analysis\ServiceAnalysis\EMRContainers\AWSSDK.EMRContainers.CodeAnalysis.csproj", "{32155965-B54C-4833-9ACD-7FF1694AA241}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.EMRContainers.CodeAnalysis", "code-analysis/ServiceAnalysis/EMRContainers/AWSSDK.EMRContainers.CodeAnalysis.csproj", "{32155965-B54C-4833-9ACD-7FF1694AA241}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.EMRServerless.CodeAnalysis", "code-analysis\ServiceAnalysis\EMRServerless\AWSSDK.EMRServerless.CodeAnalysis.csproj", "{758C2726-F010-42BE-AB89-27C7CEBC3DA4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.EMRServerless.CodeAnalysis", "code-analysis/ServiceAnalysis/EMRServerless/AWSSDK.EMRServerless.CodeAnalysis.csproj", "{758C2726-F010-42BE-AB89-27C7CEBC3DA4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.EntityResolution.CodeAnalysis", "code-analysis\ServiceAnalysis\EntityResolution\AWSSDK.EntityResolution.CodeAnalysis.csproj", "{859E5826-6136-4C6D-9980-5E587469F108}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.EntityResolution.CodeAnalysis", "code-analysis/ServiceAnalysis/EntityResolution/AWSSDK.EntityResolution.CodeAnalysis.csproj", "{859E5826-6136-4C6D-9980-5E587469F108}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.EventBridge.CodeAnalysis", "code-analysis\ServiceAnalysis\EventBridge\AWSSDK.EventBridge.CodeAnalysis.csproj", "{939272C0-C5BD-4D23-8590-9D0B2D8B4188}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.EventBridge.CodeAnalysis", "code-analysis/ServiceAnalysis/EventBridge/AWSSDK.EventBridge.CodeAnalysis.csproj", "{939272C0-C5BD-4D23-8590-9D0B2D8B4188}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Finspace.CodeAnalysis", "code-analysis\ServiceAnalysis\Finspace\AWSSDK.Finspace.CodeAnalysis.csproj", "{A317696D-8B45-4824-8307-48AD118452D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Finspace.CodeAnalysis", "code-analysis/ServiceAnalysis/Finspace/AWSSDK.Finspace.CodeAnalysis.csproj", "{A317696D-8B45-4824-8307-48AD118452D4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.FinSpaceData.CodeAnalysis", "code-analysis\ServiceAnalysis\FinSpaceData\AWSSDK.FinSpaceData.CodeAnalysis.csproj", "{3C8003FE-42D4-4A87-95DA-E86F486B7FDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.FinSpaceData.CodeAnalysis", "code-analysis/ServiceAnalysis/FinSpaceData/AWSSDK.FinSpaceData.CodeAnalysis.csproj", "{3C8003FE-42D4-4A87-95DA-E86F486B7FDE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.FIS.CodeAnalysis", "code-analysis\ServiceAnalysis\FIS\AWSSDK.FIS.CodeAnalysis.csproj", "{71FCFA5D-9061-4652-B049-407BF89142C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.FIS.CodeAnalysis", "code-analysis/ServiceAnalysis/FIS/AWSSDK.FIS.CodeAnalysis.csproj", "{71FCFA5D-9061-4652-B049-407BF89142C1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.FMS.CodeAnalysis", "code-analysis\ServiceAnalysis\FMS\AWSSDK.FMS.CodeAnalysis.csproj", "{79A65885-29EC-42B6-B0D3-3364D099CE9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.FMS.CodeAnalysis", "code-analysis/ServiceAnalysis/FMS/AWSSDK.FMS.CodeAnalysis.csproj", "{79A65885-29EC-42B6-B0D3-3364D099CE9B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ForecastQueryService.CodeAnalysis", "code-analysis\ServiceAnalysis\ForecastQueryService\AWSSDK.ForecastQueryService.CodeAnalysis.csproj", "{82787CEB-0F2D-4F78-BDE4-67139DBDD0DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ForecastQueryService.CodeAnalysis", "code-analysis/ServiceAnalysis/ForecastQueryService/AWSSDK.ForecastQueryService.CodeAnalysis.csproj", "{82787CEB-0F2D-4F78-BDE4-67139DBDD0DF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ForecastService.CodeAnalysis", "code-analysis\ServiceAnalysis\ForecastService\AWSSDK.ForecastService.CodeAnalysis.csproj", "{8CC17039-1F45-4D27-A275-DCA1220537AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ForecastService.CodeAnalysis", "code-analysis/ServiceAnalysis/ForecastService/AWSSDK.ForecastService.CodeAnalysis.csproj", "{8CC17039-1F45-4D27-A275-DCA1220537AE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.FraudDetector.CodeAnalysis", "code-analysis\ServiceAnalysis\FraudDetector\AWSSDK.FraudDetector.CodeAnalysis.csproj", "{C8FBFFD5-AFA5-498B-B512-9C39CD87761F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.FraudDetector.CodeAnalysis", "code-analysis/ServiceAnalysis/FraudDetector/AWSSDK.FraudDetector.CodeAnalysis.csproj", "{C8FBFFD5-AFA5-498B-B512-9C39CD87761F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.FreeTier.CodeAnalysis", "code-analysis\ServiceAnalysis\FreeTier\AWSSDK.FreeTier.CodeAnalysis.csproj", "{61787494-5764-496E-A9F6-11C1EFEDA5CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.FreeTier.CodeAnalysis", "code-analysis/ServiceAnalysis/FreeTier/AWSSDK.FreeTier.CodeAnalysis.csproj", "{61787494-5764-496E-A9F6-11C1EFEDA5CF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.FSx.CodeAnalysis", "code-analysis\ServiceAnalysis\FSx\AWSSDK.FSx.CodeAnalysis.csproj", "{E5AD79EB-BF89-4954-BEE4-995DF91DAF21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.FSx.CodeAnalysis", "code-analysis/ServiceAnalysis/FSx/AWSSDK.FSx.CodeAnalysis.csproj", "{E5AD79EB-BF89-4954-BEE4-995DF91DAF21}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.GameLift.CodeAnalysis", "code-analysis\ServiceAnalysis\GameLift\AWSSDK.GameLift.CodeAnalysis.csproj", "{45470356-7DDA-4651-8080-A500E6F59934}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.GameLift.CodeAnalysis", "code-analysis/ServiceAnalysis/GameLift/AWSSDK.GameLift.CodeAnalysis.csproj", "{45470356-7DDA-4651-8080-A500E6F59934}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Glacier.CodeAnalysis", "code-analysis\ServiceAnalysis\Glacier\AWSSDK.Glacier.CodeAnalysis.csproj", "{CDE14F2C-15AE-4926-B794-7FCDBC764DA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Glacier.CodeAnalysis", "code-analysis/ServiceAnalysis/Glacier/AWSSDK.Glacier.CodeAnalysis.csproj", "{CDE14F2C-15AE-4926-B794-7FCDBC764DA3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.GlobalAccelerator.CodeAnalysis", "code-analysis\ServiceAnalysis\GlobalAccelerator\AWSSDK.GlobalAccelerator.CodeAnalysis.csproj", "{3F191E2E-6AF3-4B8A-8DDD-42748D885E5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.GlobalAccelerator.CodeAnalysis", "code-analysis/ServiceAnalysis/GlobalAccelerator/AWSSDK.GlobalAccelerator.CodeAnalysis.csproj", "{3F191E2E-6AF3-4B8A-8DDD-42748D885E5C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Glue.CodeAnalysis", "code-analysis\ServiceAnalysis\Glue\AWSSDK.Glue.CodeAnalysis.csproj", "{27740509-BBD9-4E6F-A880-73ADC6B5CEB4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Glue.CodeAnalysis", "code-analysis/ServiceAnalysis/Glue/AWSSDK.Glue.CodeAnalysis.csproj", "{27740509-BBD9-4E6F-A880-73ADC6B5CEB4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.GlueDataBrew.CodeAnalysis", "code-analysis\ServiceAnalysis\GlueDataBrew\AWSSDK.GlueDataBrew.CodeAnalysis.csproj", "{9BBDE0BF-C3FA-4862-9B3B-0DF678722F7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.GlueDataBrew.CodeAnalysis", "code-analysis/ServiceAnalysis/GlueDataBrew/AWSSDK.GlueDataBrew.CodeAnalysis.csproj", "{9BBDE0BF-C3FA-4862-9B3B-0DF678722F7A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Greengrass.CodeAnalysis", "code-analysis\ServiceAnalysis\Greengrass\AWSSDK.Greengrass.CodeAnalysis.csproj", "{30C980A1-7313-47B7-82FB-BB1DDFAD0307}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Greengrass.CodeAnalysis", "code-analysis/ServiceAnalysis/Greengrass/AWSSDK.Greengrass.CodeAnalysis.csproj", "{30C980A1-7313-47B7-82FB-BB1DDFAD0307}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.GreengrassV2.CodeAnalysis", "code-analysis\ServiceAnalysis\GreengrassV2\AWSSDK.GreengrassV2.CodeAnalysis.csproj", "{B7A9791A-E2E3-4336-BCC7-58A45D29F09C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.GreengrassV2.CodeAnalysis", "code-analysis/ServiceAnalysis/GreengrassV2/AWSSDK.GreengrassV2.CodeAnalysis.csproj", "{B7A9791A-E2E3-4336-BCC7-58A45D29F09C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.GroundStation.CodeAnalysis", "code-analysis\ServiceAnalysis\GroundStation\AWSSDK.GroundStation.CodeAnalysis.csproj", "{D75FFB89-ED4B-4EEE-A101-F9FCB00B18D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.GroundStation.CodeAnalysis", "code-analysis/ServiceAnalysis/GroundStation/AWSSDK.GroundStation.CodeAnalysis.csproj", "{D75FFB89-ED4B-4EEE-A101-F9FCB00B18D1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.GuardDuty.CodeAnalysis", "code-analysis\ServiceAnalysis\GuardDuty\AWSSDK.GuardDuty.CodeAnalysis.csproj", "{9E695E0B-766A-40BB-8BBB-0376B3C88E3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.GuardDuty.CodeAnalysis", "code-analysis/ServiceAnalysis/GuardDuty/AWSSDK.GuardDuty.CodeAnalysis.csproj", "{9E695E0B-766A-40BB-8BBB-0376B3C88E3C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.HealthLake.CodeAnalysis", "code-analysis\ServiceAnalysis\HealthLake\AWSSDK.HealthLake.CodeAnalysis.csproj", "{B08CE3C3-4F9A-46C5-B7BB-371C9752CAFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.HealthLake.CodeAnalysis", "code-analysis/ServiceAnalysis/HealthLake/AWSSDK.HealthLake.CodeAnalysis.csproj", "{B08CE3C3-4F9A-46C5-B7BB-371C9752CAFA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IAMRolesAnywhere.CodeAnalysis", "code-analysis\ServiceAnalysis\IAMRolesAnywhere\AWSSDK.IAMRolesAnywhere.CodeAnalysis.csproj", "{213EDD5C-6DB2-491B-B26C-A946922F8007}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IAMRolesAnywhere.CodeAnalysis", "code-analysis/ServiceAnalysis/IAMRolesAnywhere/AWSSDK.IAMRolesAnywhere.CodeAnalysis.csproj", "{213EDD5C-6DB2-491B-B26C-A946922F8007}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IdentityManagement.CodeAnalysis", "code-analysis\ServiceAnalysis\IdentityManagement\AWSSDK.IdentityManagement.CodeAnalysis.csproj", "{75CCB501-0580-46F5-8CFB-705D6D6ECFDF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IdentityManagement.CodeAnalysis", "code-analysis/ServiceAnalysis/IdentityManagement/AWSSDK.IdentityManagement.CodeAnalysis.csproj", "{75CCB501-0580-46F5-8CFB-705D6D6ECFDF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IdentityStore.CodeAnalysis", "code-analysis\ServiceAnalysis\IdentityStore\AWSSDK.IdentityStore.CodeAnalysis.csproj", "{0063AC5D-9334-405B-B80A-55AA1F10FA65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IdentityStore.CodeAnalysis", "code-analysis/ServiceAnalysis/IdentityStore/AWSSDK.IdentityStore.CodeAnalysis.csproj", "{0063AC5D-9334-405B-B80A-55AA1F10FA65}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Imagebuilder.CodeAnalysis", "code-analysis\ServiceAnalysis\Imagebuilder\AWSSDK.Imagebuilder.CodeAnalysis.csproj", "{AB8BE066-398E-4860-9800-540AD8D5FBF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Imagebuilder.CodeAnalysis", "code-analysis/ServiceAnalysis/Imagebuilder/AWSSDK.Imagebuilder.CodeAnalysis.csproj", "{AB8BE066-398E-4860-9800-540AD8D5FBF9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ImportExport.CodeAnalysis", "code-analysis\ServiceAnalysis\ImportExport\AWSSDK.ImportExport.CodeAnalysis.csproj", "{073EC49F-3A05-4377-8DB0-CB545B0D8255}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ImportExport.CodeAnalysis", "code-analysis/ServiceAnalysis/ImportExport/AWSSDK.ImportExport.CodeAnalysis.csproj", "{073EC49F-3A05-4377-8DB0-CB545B0D8255}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Inspector.CodeAnalysis", "code-analysis\ServiceAnalysis\Inspector\AWSSDK.Inspector.CodeAnalysis.csproj", "{46256175-3B48-4E9E-BB03-61D30D0ACC9F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Inspector.CodeAnalysis", "code-analysis/ServiceAnalysis/Inspector/AWSSDK.Inspector.CodeAnalysis.csproj", "{46256175-3B48-4E9E-BB03-61D30D0ACC9F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Inspector2.CodeAnalysis", "code-analysis\ServiceAnalysis\Inspector2\AWSSDK.Inspector2.CodeAnalysis.csproj", "{E3F1E0D8-7798-43A6-ABD8-F20F80BA954E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Inspector2.CodeAnalysis", "code-analysis/ServiceAnalysis/Inspector2/AWSSDK.Inspector2.CodeAnalysis.csproj", "{E3F1E0D8-7798-43A6-ABD8-F20F80BA954E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.InspectorScan.CodeAnalysis", "code-analysis\ServiceAnalysis\InspectorScan\AWSSDK.InspectorScan.CodeAnalysis.csproj", "{45CD3314-4C54-4088-AE1A-D8BEB9B1CC6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.InspectorScan.CodeAnalysis", "code-analysis/ServiceAnalysis/InspectorScan/AWSSDK.InspectorScan.CodeAnalysis.csproj", "{45CD3314-4C54-4088-AE1A-D8BEB9B1CC6F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.InternetMonitor.CodeAnalysis", "code-analysis\ServiceAnalysis\InternetMonitor\AWSSDK.InternetMonitor.CodeAnalysis.csproj", "{1D312186-61AA-4BD3-AAC4-173DF5A8EF4C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.InternetMonitor.CodeAnalysis", "code-analysis/ServiceAnalysis/InternetMonitor/AWSSDK.InternetMonitor.CodeAnalysis.csproj", "{1D312186-61AA-4BD3-AAC4-173DF5A8EF4C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoT.CodeAnalysis", "code-analysis\ServiceAnalysis\IoT\AWSSDK.IoT.CodeAnalysis.csproj", "{35387ADA-E9AE-401A-B7E7-D838BC4FCD73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoT.CodeAnalysis", "code-analysis/ServiceAnalysis/IoT/AWSSDK.IoT.CodeAnalysis.csproj", "{35387ADA-E9AE-401A-B7E7-D838BC4FCD73}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoT1ClickDevicesService.CodeAnalysis", "code-analysis\ServiceAnalysis\IoT1ClickDevicesService\AWSSDK.IoT1ClickDevicesService.CodeAnalysis.csproj", "{43D69BD9-4E04-46BD-915B-9FCEDE6F48FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoT1ClickDevicesService.CodeAnalysis", "code-analysis/ServiceAnalysis/IoT1ClickDevicesService/AWSSDK.IoT1ClickDevicesService.CodeAnalysis.csproj", "{43D69BD9-4E04-46BD-915B-9FCEDE6F48FA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoT1ClickProjects.CodeAnalysis", "code-analysis\ServiceAnalysis\IoT1ClickProjects\AWSSDK.IoT1ClickProjects.CodeAnalysis.csproj", "{8851F971-2487-48C2-A82F-94E7E4483111}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoT1ClickProjects.CodeAnalysis", "code-analysis/ServiceAnalysis/IoT1ClickProjects/AWSSDK.IoT1ClickProjects.CodeAnalysis.csproj", "{8851F971-2487-48C2-A82F-94E7E4483111}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTAnalytics.CodeAnalysis", "code-analysis\ServiceAnalysis\IoTAnalytics\AWSSDK.IoTAnalytics.CodeAnalysis.csproj", "{42CDFA21-D472-4EE0-A39A-087171068780}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTAnalytics.CodeAnalysis", "code-analysis/ServiceAnalysis/IoTAnalytics/AWSSDK.IoTAnalytics.CodeAnalysis.csproj", "{42CDFA21-D472-4EE0-A39A-087171068780}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IotData.CodeAnalysis", "code-analysis\ServiceAnalysis\IotData\AWSSDK.IotData.CodeAnalysis.csproj", "{A9FDDCD4-38EE-4DAF-A89D-F605D917BC05}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IotData.CodeAnalysis", "code-analysis/ServiceAnalysis/IotData/AWSSDK.IotData.CodeAnalysis.csproj", "{A9FDDCD4-38EE-4DAF-A89D-F605D917BC05}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTDeviceAdvisor.CodeAnalysis", "code-analysis\ServiceAnalysis\IoTDeviceAdvisor\AWSSDK.IoTDeviceAdvisor.CodeAnalysis.csproj", "{B657BE29-914F-4778-941B-92B4657F1C56}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTDeviceAdvisor.CodeAnalysis", "code-analysis/ServiceAnalysis/IoTDeviceAdvisor/AWSSDK.IoTDeviceAdvisor.CodeAnalysis.csproj", "{B657BE29-914F-4778-941B-92B4657F1C56}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTEvents.CodeAnalysis", "code-analysis\ServiceAnalysis\IoTEvents\AWSSDK.IoTEvents.CodeAnalysis.csproj", "{3980C0CC-5E69-4E87-80BA-F9CAEBD4DB81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTEvents.CodeAnalysis", "code-analysis/ServiceAnalysis/IoTEvents/AWSSDK.IoTEvents.CodeAnalysis.csproj", "{3980C0CC-5E69-4E87-80BA-F9CAEBD4DB81}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTEventsData.CodeAnalysis", "code-analysis\ServiceAnalysis\IoTEventsData\AWSSDK.IoTEventsData.CodeAnalysis.csproj", "{D014FBA6-A964-4D00-A248-5F518D0B8CC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTEventsData.CodeAnalysis", "code-analysis/ServiceAnalysis/IoTEventsData/AWSSDK.IoTEventsData.CodeAnalysis.csproj", "{D014FBA6-A964-4D00-A248-5F518D0B8CC1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTFleetHub.CodeAnalysis", "code-analysis\ServiceAnalysis\IoTFleetHub\AWSSDK.IoTFleetHub.CodeAnalysis.csproj", "{7473EA8B-E5A7-4964-93AE-21E3935A7490}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTFleetHub.CodeAnalysis", "code-analysis/ServiceAnalysis/IoTFleetHub/AWSSDK.IoTFleetHub.CodeAnalysis.csproj", "{7473EA8B-E5A7-4964-93AE-21E3935A7490}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTFleetWise.CodeAnalysis", "code-analysis\ServiceAnalysis\IoTFleetWise\AWSSDK.IoTFleetWise.CodeAnalysis.csproj", "{8A2B2868-F9D0-4762-8782-04E1259038E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTFleetWise.CodeAnalysis", "code-analysis/ServiceAnalysis/IoTFleetWise/AWSSDK.IoTFleetWise.CodeAnalysis.csproj", "{8A2B2868-F9D0-4762-8782-04E1259038E9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTJobsDataPlane.CodeAnalysis", "code-analysis\ServiceAnalysis\IoTJobsDataPlane\AWSSDK.IoTJobsDataPlane.CodeAnalysis.csproj", "{1FF0B940-2F0B-4D80-90CC-AB3795ACE6E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTJobsDataPlane.CodeAnalysis", "code-analysis/ServiceAnalysis/IoTJobsDataPlane/AWSSDK.IoTJobsDataPlane.CodeAnalysis.csproj", "{1FF0B940-2F0B-4D80-90CC-AB3795ACE6E0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTSecureTunneling.CodeAnalysis", "code-analysis\ServiceAnalysis\IoTSecureTunneling\AWSSDK.IoTSecureTunneling.CodeAnalysis.csproj", "{A91AAA7A-2E05-4F9A-BCDA-0EBDF580147D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTSecureTunneling.CodeAnalysis", "code-analysis/ServiceAnalysis/IoTSecureTunneling/AWSSDK.IoTSecureTunneling.CodeAnalysis.csproj", "{A91AAA7A-2E05-4F9A-BCDA-0EBDF580147D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTSiteWise.CodeAnalysis", "code-analysis\ServiceAnalysis\IoTSiteWise\AWSSDK.IoTSiteWise.CodeAnalysis.csproj", "{33582910-C352-4051-807A-66541519A477}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTSiteWise.CodeAnalysis", "code-analysis/ServiceAnalysis/IoTSiteWise/AWSSDK.IoTSiteWise.CodeAnalysis.csproj", "{33582910-C352-4051-807A-66541519A477}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTThingsGraph.CodeAnalysis", "code-analysis\ServiceAnalysis\IoTThingsGraph\AWSSDK.IoTThingsGraph.CodeAnalysis.csproj", "{E1340219-BBFF-4AFA-AB2E-0AEB09614F70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTThingsGraph.CodeAnalysis", "code-analysis/ServiceAnalysis/IoTThingsGraph/AWSSDK.IoTThingsGraph.CodeAnalysis.csproj", "{E1340219-BBFF-4AFA-AB2E-0AEB09614F70}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTTwinMaker.CodeAnalysis", "code-analysis\ServiceAnalysis\IoTTwinMaker\AWSSDK.IoTTwinMaker.CodeAnalysis.csproj", "{8E3ACC9F-1037-421B-94CD-6C217056D66D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTTwinMaker.CodeAnalysis", "code-analysis/ServiceAnalysis/IoTTwinMaker/AWSSDK.IoTTwinMaker.CodeAnalysis.csproj", "{8E3ACC9F-1037-421B-94CD-6C217056D66D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTWireless.CodeAnalysis", "code-analysis\ServiceAnalysis\IoTWireless\AWSSDK.IoTWireless.CodeAnalysis.csproj", "{81AABF2B-4A9F-4E8D-9E46-56564BD36920}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTWireless.CodeAnalysis", "code-analysis/ServiceAnalysis/IoTWireless/AWSSDK.IoTWireless.CodeAnalysis.csproj", "{81AABF2B-4A9F-4E8D-9E46-56564BD36920}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IVS.CodeAnalysis", "code-analysis\ServiceAnalysis\IVS\AWSSDK.IVS.CodeAnalysis.csproj", "{F432AF25-9775-41B8-A42E-7890CD7189BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IVS.CodeAnalysis", "code-analysis/ServiceAnalysis/IVS/AWSSDK.IVS.CodeAnalysis.csproj", "{F432AF25-9775-41B8-A42E-7890CD7189BB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Ivschat.CodeAnalysis", "code-analysis\ServiceAnalysis\Ivschat\AWSSDK.Ivschat.CodeAnalysis.csproj", "{708C1DF5-2E31-45B3-AE8D-9B95058C4A15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Ivschat.CodeAnalysis", "code-analysis/ServiceAnalysis/Ivschat/AWSSDK.Ivschat.CodeAnalysis.csproj", "{708C1DF5-2E31-45B3-AE8D-9B95058C4A15}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IVSRealTime.CodeAnalysis", "code-analysis\ServiceAnalysis\IVSRealTime\AWSSDK.IVSRealTime.CodeAnalysis.csproj", "{97901FD4-D22D-479A-BEC2-96FD6D948734}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IVSRealTime.CodeAnalysis", "code-analysis/ServiceAnalysis/IVSRealTime/AWSSDK.IVSRealTime.CodeAnalysis.csproj", "{97901FD4-D22D-479A-BEC2-96FD6D948734}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Kafka.CodeAnalysis", "code-analysis\ServiceAnalysis\Kafka\AWSSDK.Kafka.CodeAnalysis.csproj", "{EAAA00EB-81EC-4E9B-9246-D6801277824E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Kafka.CodeAnalysis", "code-analysis/ServiceAnalysis/Kafka/AWSSDK.Kafka.CodeAnalysis.csproj", "{EAAA00EB-81EC-4E9B-9246-D6801277824E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KafkaConnect.CodeAnalysis", "code-analysis\ServiceAnalysis\KafkaConnect\AWSSDK.KafkaConnect.CodeAnalysis.csproj", "{0A2D7D61-54EC-4551-95C2-D00F16EEBA4F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KafkaConnect.CodeAnalysis", "code-analysis/ServiceAnalysis/KafkaConnect/AWSSDK.KafkaConnect.CodeAnalysis.csproj", "{0A2D7D61-54EC-4551-95C2-D00F16EEBA4F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Kendra.CodeAnalysis", "code-analysis\ServiceAnalysis\Kendra\AWSSDK.Kendra.CodeAnalysis.csproj", "{04DE067E-5C75-43C0-88EF-7618FA712B80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Kendra.CodeAnalysis", "code-analysis/ServiceAnalysis/Kendra/AWSSDK.Kendra.CodeAnalysis.csproj", "{04DE067E-5C75-43C0-88EF-7618FA712B80}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KendraRanking.CodeAnalysis", "code-analysis\ServiceAnalysis\KendraRanking\AWSSDK.KendraRanking.CodeAnalysis.csproj", "{AF2D1D42-C3AD-4537-9B4A-26CC4AFC0F74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KendraRanking.CodeAnalysis", "code-analysis/ServiceAnalysis/KendraRanking/AWSSDK.KendraRanking.CodeAnalysis.csproj", "{AF2D1D42-C3AD-4537-9B4A-26CC4AFC0F74}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KeyManagementService.CodeAnalysis", "code-analysis\ServiceAnalysis\KeyManagementService\AWSSDK.KeyManagementService.CodeAnalysis.csproj", "{76145C3D-D380-4BAC-9B92-2DB55ED091C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KeyManagementService.CodeAnalysis", "code-analysis/ServiceAnalysis/KeyManagementService/AWSSDK.KeyManagementService.CodeAnalysis.csproj", "{76145C3D-D380-4BAC-9B92-2DB55ED091C7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Keyspaces.CodeAnalysis", "code-analysis\ServiceAnalysis\Keyspaces\AWSSDK.Keyspaces.CodeAnalysis.csproj", "{B065CF1C-D720-4921-B508-0ACC7842D3EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Keyspaces.CodeAnalysis", "code-analysis/ServiceAnalysis/Keyspaces/AWSSDK.Keyspaces.CodeAnalysis.csproj", "{B065CF1C-D720-4921-B508-0ACC7842D3EF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Kinesis.CodeAnalysis", "code-analysis\ServiceAnalysis\Kinesis\AWSSDK.Kinesis.CodeAnalysis.csproj", "{942BC563-BAFE-4DD5-92C5-BAB2D6420914}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Kinesis.CodeAnalysis", "code-analysis/ServiceAnalysis/Kinesis/AWSSDK.Kinesis.CodeAnalysis.csproj", "{942BC563-BAFE-4DD5-92C5-BAB2D6420914}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KinesisAnalytics.CodeAnalysis", "code-analysis\ServiceAnalysis\KinesisAnalytics\AWSSDK.KinesisAnalytics.CodeAnalysis.csproj", "{C74C49D6-1F1A-40FD-BD42-D19A97E04CD2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KinesisAnalytics.CodeAnalysis", "code-analysis/ServiceAnalysis/KinesisAnalytics/AWSSDK.KinesisAnalytics.CodeAnalysis.csproj", "{C74C49D6-1F1A-40FD-BD42-D19A97E04CD2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KinesisAnalyticsV2.CodeAnalysis", "code-analysis\ServiceAnalysis\KinesisAnalyticsV2\AWSSDK.KinesisAnalyticsV2.CodeAnalysis.csproj", "{1EFDBD02-59C5-44E8-BDBE-DE3B4D1E169C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KinesisAnalyticsV2.CodeAnalysis", "code-analysis/ServiceAnalysis/KinesisAnalyticsV2/AWSSDK.KinesisAnalyticsV2.CodeAnalysis.csproj", "{1EFDBD02-59C5-44E8-BDBE-DE3B4D1E169C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KinesisFirehose.CodeAnalysis", "code-analysis\ServiceAnalysis\KinesisFirehose\AWSSDK.KinesisFirehose.CodeAnalysis.csproj", "{D1D95D12-BB5D-4CA9-927B-28C3F61A8C09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KinesisFirehose.CodeAnalysis", "code-analysis/ServiceAnalysis/KinesisFirehose/AWSSDK.KinesisFirehose.CodeAnalysis.csproj", "{D1D95D12-BB5D-4CA9-927B-28C3F61A8C09}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KinesisVideo.CodeAnalysis", "code-analysis\ServiceAnalysis\KinesisVideo\AWSSDK.KinesisVideo.CodeAnalysis.csproj", "{B5B1210D-D068-4C19-BC05-F90145C00F09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KinesisVideo.CodeAnalysis", "code-analysis/ServiceAnalysis/KinesisVideo/AWSSDK.KinesisVideo.CodeAnalysis.csproj", "{B5B1210D-D068-4C19-BC05-F90145C00F09}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KinesisVideoArchivedMedia.CodeAnalysis", "code-analysis\ServiceAnalysis\KinesisVideoArchivedMedia\AWSSDK.KinesisVideoArchivedMedia.CodeAnalysis.csproj", "{A0C45846-F6C5-436E-B99E-CB2C098C1DAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KinesisVideoArchivedMedia.CodeAnalysis", "code-analysis/ServiceAnalysis/KinesisVideoArchivedMedia/AWSSDK.KinesisVideoArchivedMedia.CodeAnalysis.csproj", "{A0C45846-F6C5-436E-B99E-CB2C098C1DAE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KinesisVideoMedia.CodeAnalysis", "code-analysis\ServiceAnalysis\KinesisVideoMedia\AWSSDK.KinesisVideoMedia.CodeAnalysis.csproj", "{5D09D700-EC7D-474D-89B7-8B5107465971}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KinesisVideoMedia.CodeAnalysis", "code-analysis/ServiceAnalysis/KinesisVideoMedia/AWSSDK.KinesisVideoMedia.CodeAnalysis.csproj", "{5D09D700-EC7D-474D-89B7-8B5107465971}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KinesisVideoSignalingChannels.CodeAnalysis", "code-analysis\ServiceAnalysis\KinesisVideoSignalingChannels\AWSSDK.KinesisVideoSignalingChannels.CodeAnalysis.csproj", "{8085D36E-F3EF-431E-A88D-28E1F5ACC2C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KinesisVideoSignalingChannels.CodeAnalysis", "code-analysis/ServiceAnalysis/KinesisVideoSignalingChannels/AWSSDK.KinesisVideoSignalingChannels.CodeAnalysis.csproj", "{8085D36E-F3EF-431E-A88D-28E1F5ACC2C3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KinesisVideoWebRTCStorage.CodeAnalysis", "code-analysis\ServiceAnalysis\KinesisVideoWebRTCStorage\AWSSDK.KinesisVideoWebRTCStorage.CodeAnalysis.csproj", "{013C9B07-4AAB-4B31-959F-6E7C59132518}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KinesisVideoWebRTCStorage.CodeAnalysis", "code-analysis/ServiceAnalysis/KinesisVideoWebRTCStorage/AWSSDK.KinesisVideoWebRTCStorage.CodeAnalysis.csproj", "{013C9B07-4AAB-4B31-959F-6E7C59132518}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LakeFormation.CodeAnalysis", "code-analysis\ServiceAnalysis\LakeFormation\AWSSDK.LakeFormation.CodeAnalysis.csproj", "{4A33B035-7554-4E19-8765-575FCCD27339}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LakeFormation.CodeAnalysis", "code-analysis/ServiceAnalysis/LakeFormation/AWSSDK.LakeFormation.CodeAnalysis.csproj", "{4A33B035-7554-4E19-8765-575FCCD27339}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Lambda.CodeAnalysis", "code-analysis\ServiceAnalysis\Lambda\AWSSDK.Lambda.CodeAnalysis.csproj", "{9A518CFD-8F2F-4CAB-8869-2FF88A330724}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Lambda.CodeAnalysis", "code-analysis/ServiceAnalysis/Lambda/AWSSDK.Lambda.CodeAnalysis.csproj", "{9A518CFD-8F2F-4CAB-8869-2FF88A330724}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LaunchWizard.CodeAnalysis", "code-analysis\ServiceAnalysis\LaunchWizard\AWSSDK.LaunchWizard.CodeAnalysis.csproj", "{5C87C894-5587-4582-BEFB-5177C93BCC9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LaunchWizard.CodeAnalysis", "code-analysis/ServiceAnalysis/LaunchWizard/AWSSDK.LaunchWizard.CodeAnalysis.csproj", "{5C87C894-5587-4582-BEFB-5177C93BCC9B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Lex.CodeAnalysis", "code-analysis\ServiceAnalysis\Lex\AWSSDK.Lex.CodeAnalysis.csproj", "{DF8A6A02-8D6F-459E-8CA0-6B860F1EACD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Lex.CodeAnalysis", "code-analysis/ServiceAnalysis/Lex/AWSSDK.Lex.CodeAnalysis.csproj", "{DF8A6A02-8D6F-459E-8CA0-6B860F1EACD4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LexModelBuildingService.CodeAnalysis", "code-analysis\ServiceAnalysis\LexModelBuildingService\AWSSDK.LexModelBuildingService.CodeAnalysis.csproj", "{458AB256-523D-4652-AB26-7A0C80B8D6FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LexModelBuildingService.CodeAnalysis", "code-analysis/ServiceAnalysis/LexModelBuildingService/AWSSDK.LexModelBuildingService.CodeAnalysis.csproj", "{458AB256-523D-4652-AB26-7A0C80B8D6FC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LexModelsV2.CodeAnalysis", "code-analysis\ServiceAnalysis\LexModelsV2\AWSSDK.LexModelsV2.CodeAnalysis.csproj", "{5C75ECBA-B923-480A-9C6B-1723119FE89A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LexModelsV2.CodeAnalysis", "code-analysis/ServiceAnalysis/LexModelsV2/AWSSDK.LexModelsV2.CodeAnalysis.csproj", "{5C75ECBA-B923-480A-9C6B-1723119FE89A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LexRuntimeV2.CodeAnalysis", "code-analysis\ServiceAnalysis\LexRuntimeV2\AWSSDK.LexRuntimeV2.CodeAnalysis.csproj", "{70CFCDC3-35CE-4297-95EC-33B8A94D21B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LexRuntimeV2.CodeAnalysis", "code-analysis/ServiceAnalysis/LexRuntimeV2/AWSSDK.LexRuntimeV2.CodeAnalysis.csproj", "{70CFCDC3-35CE-4297-95EC-33B8A94D21B2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LicenseManager.CodeAnalysis", "code-analysis\ServiceAnalysis\LicenseManager\AWSSDK.LicenseManager.CodeAnalysis.csproj", "{9AF53B73-A790-4430-9B55-6957CC650358}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LicenseManager.CodeAnalysis", "code-analysis/ServiceAnalysis/LicenseManager/AWSSDK.LicenseManager.CodeAnalysis.csproj", "{9AF53B73-A790-4430-9B55-6957CC650358}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LicenseManagerLinuxSubscriptions.CodeAnalysis", "code-analysis\ServiceAnalysis\LicenseManagerLinuxSubscriptions\AWSSDK.LicenseManagerLinuxSubscriptions.CodeAnalysis.csproj", "{DADA5E37-7DA9-481A-B29F-2C22CBAC19A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LicenseManagerLinuxSubscriptions.CodeAnalysis", "code-analysis/ServiceAnalysis/LicenseManagerLinuxSubscriptions/AWSSDK.LicenseManagerLinuxSubscriptions.CodeAnalysis.csproj", "{DADA5E37-7DA9-481A-B29F-2C22CBAC19A3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LicenseManagerUserSubscriptions.CodeAnalysis", "code-analysis\ServiceAnalysis\LicenseManagerUserSubscriptions\AWSSDK.LicenseManagerUserSubscriptions.CodeAnalysis.csproj", "{27E80A60-0F0A-4776-9A53-BF48F89192A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LicenseManagerUserSubscriptions.CodeAnalysis", "code-analysis/ServiceAnalysis/LicenseManagerUserSubscriptions/AWSSDK.LicenseManagerUserSubscriptions.CodeAnalysis.csproj", "{27E80A60-0F0A-4776-9A53-BF48F89192A9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Lightsail.CodeAnalysis", "code-analysis\ServiceAnalysis\Lightsail\AWSSDK.Lightsail.CodeAnalysis.csproj", "{33C9A310-95F4-4A30-B411-6E6679034FF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Lightsail.CodeAnalysis", "code-analysis/ServiceAnalysis/Lightsail/AWSSDK.Lightsail.CodeAnalysis.csproj", "{33C9A310-95F4-4A30-B411-6E6679034FF3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LocationService.CodeAnalysis", "code-analysis\ServiceAnalysis\LocationService\AWSSDK.LocationService.CodeAnalysis.csproj", "{083186B8-3B42-407F-9797-A1C9E93A0CDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LocationService.CodeAnalysis", "code-analysis/ServiceAnalysis/LocationService/AWSSDK.LocationService.CodeAnalysis.csproj", "{083186B8-3B42-407F-9797-A1C9E93A0CDE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LookoutEquipment.CodeAnalysis", "code-analysis\ServiceAnalysis\LookoutEquipment\AWSSDK.LookoutEquipment.CodeAnalysis.csproj", "{39D908BB-E21C-48F4-939F-61092E922DFB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LookoutEquipment.CodeAnalysis", "code-analysis/ServiceAnalysis/LookoutEquipment/AWSSDK.LookoutEquipment.CodeAnalysis.csproj", "{39D908BB-E21C-48F4-939F-61092E922DFB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LookoutforVision.CodeAnalysis", "code-analysis\ServiceAnalysis\LookoutforVision\AWSSDK.LookoutforVision.CodeAnalysis.csproj", "{AEAAF64A-F230-4C3C-8AA4-8E2182617E19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LookoutforVision.CodeAnalysis", "code-analysis/ServiceAnalysis/LookoutforVision/AWSSDK.LookoutforVision.CodeAnalysis.csproj", "{AEAAF64A-F230-4C3C-8AA4-8E2182617E19}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LookoutMetrics.CodeAnalysis", "code-analysis\ServiceAnalysis\LookoutMetrics\AWSSDK.LookoutMetrics.CodeAnalysis.csproj", "{4DE72996-4492-40ED-939C-098008D6AF81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LookoutMetrics.CodeAnalysis", "code-analysis/ServiceAnalysis/LookoutMetrics/AWSSDK.LookoutMetrics.CodeAnalysis.csproj", "{4DE72996-4492-40ED-939C-098008D6AF81}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MachineLearning.CodeAnalysis", "code-analysis\ServiceAnalysis\MachineLearning\AWSSDK.MachineLearning.CodeAnalysis.csproj", "{BFEE58EE-DF58-4F52-A99B-01D05FB251AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MachineLearning.CodeAnalysis", "code-analysis/ServiceAnalysis/MachineLearning/AWSSDK.MachineLearning.CodeAnalysis.csproj", "{BFEE58EE-DF58-4F52-A99B-01D05FB251AF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Macie2.CodeAnalysis", "code-analysis\ServiceAnalysis\Macie2\AWSSDK.Macie2.CodeAnalysis.csproj", "{D774395B-8CE5-4430-9EE3-9C6E3D299326}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Macie2.CodeAnalysis", "code-analysis/ServiceAnalysis/Macie2/AWSSDK.Macie2.CodeAnalysis.csproj", "{D774395B-8CE5-4430-9EE3-9C6E3D299326}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MailManager.CodeAnalysis", "code-analysis\ServiceAnalysis\MailManager\AWSSDK.MailManager.CodeAnalysis.csproj", "{FAA3ED17-D02F-4DC9-B8EF-920AF9EB706E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MailManager.CodeAnalysis", "code-analysis/ServiceAnalysis/MailManager/AWSSDK.MailManager.CodeAnalysis.csproj", "{FAA3ED17-D02F-4DC9-B8EF-920AF9EB706E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MainframeModernization.CodeAnalysis", "code-analysis\ServiceAnalysis\MainframeModernization\AWSSDK.MainframeModernization.CodeAnalysis.csproj", "{D8054A77-57C9-4B04-BDAF-D556DAECF775}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MainframeModernization.CodeAnalysis", "code-analysis/ServiceAnalysis/MainframeModernization/AWSSDK.MainframeModernization.CodeAnalysis.csproj", "{D8054A77-57C9-4B04-BDAF-D556DAECF775}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ManagedBlockchain.CodeAnalysis", "code-analysis\ServiceAnalysis\ManagedBlockchain\AWSSDK.ManagedBlockchain.CodeAnalysis.csproj", "{26BEB3CC-1EB9-472C-91F4-F99B549826D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ManagedBlockchain.CodeAnalysis", "code-analysis/ServiceAnalysis/ManagedBlockchain/AWSSDK.ManagedBlockchain.CodeAnalysis.csproj", "{26BEB3CC-1EB9-472C-91F4-F99B549826D9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ManagedBlockchainQuery.CodeAnalysis", "code-analysis\ServiceAnalysis\ManagedBlockchainQuery\AWSSDK.ManagedBlockchainQuery.CodeAnalysis.csproj", "{05C92994-CA01-43ED-9652-90085587376A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ManagedBlockchainQuery.CodeAnalysis", "code-analysis/ServiceAnalysis/ManagedBlockchainQuery/AWSSDK.ManagedBlockchainQuery.CodeAnalysis.csproj", "{05C92994-CA01-43ED-9652-90085587376A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ManagedGrafana.CodeAnalysis", "code-analysis\ServiceAnalysis\ManagedGrafana\AWSSDK.ManagedGrafana.CodeAnalysis.csproj", "{36BCB01F-3F7A-4350-ABA1-74C5D919C04B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ManagedGrafana.CodeAnalysis", "code-analysis/ServiceAnalysis/ManagedGrafana/AWSSDK.ManagedGrafana.CodeAnalysis.csproj", "{36BCB01F-3F7A-4350-ABA1-74C5D919C04B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MarketplaceAgreement.CodeAnalysis", "code-analysis\ServiceAnalysis\MarketplaceAgreement\AWSSDK.MarketplaceAgreement.CodeAnalysis.csproj", "{B6D7B9D4-C0D7-45AB-AED7-868FB4083B43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MarketplaceAgreement.CodeAnalysis", "code-analysis/ServiceAnalysis/MarketplaceAgreement/AWSSDK.MarketplaceAgreement.CodeAnalysis.csproj", "{B6D7B9D4-C0D7-45AB-AED7-868FB4083B43}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MarketplaceCatalog.CodeAnalysis", "code-analysis\ServiceAnalysis\MarketplaceCatalog\AWSSDK.MarketplaceCatalog.CodeAnalysis.csproj", "{D694E48F-C80E-4A41-9C1C-B122507B867A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MarketplaceCatalog.CodeAnalysis", "code-analysis/ServiceAnalysis/MarketplaceCatalog/AWSSDK.MarketplaceCatalog.CodeAnalysis.csproj", "{D694E48F-C80E-4A41-9C1C-B122507B867A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MarketplaceDeployment.CodeAnalysis", "code-analysis\ServiceAnalysis\MarketplaceDeployment\AWSSDK.MarketplaceDeployment.CodeAnalysis.csproj", "{A8DAA3DF-961C-4F82-BF8B-D234FB7362FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MarketplaceDeployment.CodeAnalysis", "code-analysis/ServiceAnalysis/MarketplaceDeployment/AWSSDK.MarketplaceDeployment.CodeAnalysis.csproj", "{A8DAA3DF-961C-4F82-BF8B-D234FB7362FA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MarketplaceEntitlementService.CodeAnalysis", "code-analysis\ServiceAnalysis\MarketplaceEntitlementService\AWSSDK.MarketplaceEntitlementService.CodeAnalysis.csproj", "{6F64993C-B6A3-4AE2-AAB9-DF32B146CDF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MarketplaceEntitlementService.CodeAnalysis", "code-analysis/ServiceAnalysis/MarketplaceEntitlementService/AWSSDK.MarketplaceEntitlementService.CodeAnalysis.csproj", "{6F64993C-B6A3-4AE2-AAB9-DF32B146CDF0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MediaConnect.CodeAnalysis", "code-analysis\ServiceAnalysis\MediaConnect\AWSSDK.MediaConnect.CodeAnalysis.csproj", "{A57D04AE-0BBE-44D8-9621-5D961F1B840B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MediaConnect.CodeAnalysis", "code-analysis/ServiceAnalysis/MediaConnect/AWSSDK.MediaConnect.CodeAnalysis.csproj", "{A57D04AE-0BBE-44D8-9621-5D961F1B840B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MediaConvert.CodeAnalysis", "code-analysis\ServiceAnalysis\MediaConvert\AWSSDK.MediaConvert.CodeAnalysis.csproj", "{E97212ED-F106-472B-972D-469B55D9CA6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MediaConvert.CodeAnalysis", "code-analysis/ServiceAnalysis/MediaConvert/AWSSDK.MediaConvert.CodeAnalysis.csproj", "{E97212ED-F106-472B-972D-469B55D9CA6B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MediaLive.CodeAnalysis", "code-analysis\ServiceAnalysis\MediaLive\AWSSDK.MediaLive.CodeAnalysis.csproj", "{4A7F36E9-4004-4468-A436-21387BDE4F8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MediaLive.CodeAnalysis", "code-analysis/ServiceAnalysis/MediaLive/AWSSDK.MediaLive.CodeAnalysis.csproj", "{4A7F36E9-4004-4468-A436-21387BDE4F8A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MediaPackage.CodeAnalysis", "code-analysis\ServiceAnalysis\MediaPackage\AWSSDK.MediaPackage.CodeAnalysis.csproj", "{A764C0FF-BF39-4035-8752-A86EEF61523E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MediaPackage.CodeAnalysis", "code-analysis/ServiceAnalysis/MediaPackage/AWSSDK.MediaPackage.CodeAnalysis.csproj", "{A764C0FF-BF39-4035-8752-A86EEF61523E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MediaPackageV2.CodeAnalysis", "code-analysis\ServiceAnalysis\MediaPackageV2\AWSSDK.MediaPackageV2.CodeAnalysis.csproj", "{7E88B285-6D88-4BE8-AF57-CC64AF03C04D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MediaPackageV2.CodeAnalysis", "code-analysis/ServiceAnalysis/MediaPackageV2/AWSSDK.MediaPackageV2.CodeAnalysis.csproj", "{7E88B285-6D88-4BE8-AF57-CC64AF03C04D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MediaPackageVod.CodeAnalysis", "code-analysis\ServiceAnalysis\MediaPackageVod\AWSSDK.MediaPackageVod.CodeAnalysis.csproj", "{7145EAD5-BD68-4C29-868F-E561755068E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MediaPackageVod.CodeAnalysis", "code-analysis/ServiceAnalysis/MediaPackageVod/AWSSDK.MediaPackageVod.CodeAnalysis.csproj", "{7145EAD5-BD68-4C29-868F-E561755068E5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MediaStore.CodeAnalysis", "code-analysis\ServiceAnalysis\MediaStore\AWSSDK.MediaStore.CodeAnalysis.csproj", "{13B93373-28D7-4D74-B1CF-ECFA5C419738}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MediaStore.CodeAnalysis", "code-analysis/ServiceAnalysis/MediaStore/AWSSDK.MediaStore.CodeAnalysis.csproj", "{13B93373-28D7-4D74-B1CF-ECFA5C419738}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MediaStoreData.CodeAnalysis", "code-analysis\ServiceAnalysis\MediaStoreData\AWSSDK.MediaStoreData.CodeAnalysis.csproj", "{60901D1B-39D4-4272-9855-71296F4F204F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MediaStoreData.CodeAnalysis", "code-analysis/ServiceAnalysis/MediaStoreData/AWSSDK.MediaStoreData.CodeAnalysis.csproj", "{60901D1B-39D4-4272-9855-71296F4F204F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MediaTailor.CodeAnalysis", "code-analysis\ServiceAnalysis\MediaTailor\AWSSDK.MediaTailor.CodeAnalysis.csproj", "{ABC55026-9712-485F-9999-8833BA451E9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MediaTailor.CodeAnalysis", "code-analysis/ServiceAnalysis/MediaTailor/AWSSDK.MediaTailor.CodeAnalysis.csproj", "{ABC55026-9712-485F-9999-8833BA451E9D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MedicalImaging.CodeAnalysis", "code-analysis\ServiceAnalysis\MedicalImaging\AWSSDK.MedicalImaging.CodeAnalysis.csproj", "{7E12D6BA-AA40-4C0E-B031-08254F37F249}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MedicalImaging.CodeAnalysis", "code-analysis/ServiceAnalysis/MedicalImaging/AWSSDK.MedicalImaging.CodeAnalysis.csproj", "{7E12D6BA-AA40-4C0E-B031-08254F37F249}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MemoryDB.CodeAnalysis", "code-analysis\ServiceAnalysis\MemoryDB\AWSSDK.MemoryDB.CodeAnalysis.csproj", "{4F0AE39E-C0AC-47C7-A3B6-214CD59BD0FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MemoryDB.CodeAnalysis", "code-analysis/ServiceAnalysis/MemoryDB/AWSSDK.MemoryDB.CodeAnalysis.csproj", "{4F0AE39E-C0AC-47C7-A3B6-214CD59BD0FF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Mgn.CodeAnalysis", "code-analysis\ServiceAnalysis\Mgn\AWSSDK.Mgn.CodeAnalysis.csproj", "{98619D2E-9751-49BC-97FA-CC2CCEBEF5A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Mgn.CodeAnalysis", "code-analysis/ServiceAnalysis/Mgn/AWSSDK.Mgn.CodeAnalysis.csproj", "{98619D2E-9751-49BC-97FA-CC2CCEBEF5A6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MigrationHub.CodeAnalysis", "code-analysis\ServiceAnalysis\MigrationHub\AWSSDK.MigrationHub.CodeAnalysis.csproj", "{465B2AFD-0179-4CA1-9AA3-145C5788AEFB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MigrationHub.CodeAnalysis", "code-analysis/ServiceAnalysis/MigrationHub/AWSSDK.MigrationHub.CodeAnalysis.csproj", "{465B2AFD-0179-4CA1-9AA3-145C5788AEFB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MigrationHubConfig.CodeAnalysis", "code-analysis\ServiceAnalysis\MigrationHubConfig\AWSSDK.MigrationHubConfig.CodeAnalysis.csproj", "{8BA725F1-2A4A-492A-9803-8E128983ABEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MigrationHubConfig.CodeAnalysis", "code-analysis/ServiceAnalysis/MigrationHubConfig/AWSSDK.MigrationHubConfig.CodeAnalysis.csproj", "{8BA725F1-2A4A-492A-9803-8E128983ABEF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MigrationHubOrchestrator.CodeAnalysis", "code-analysis\ServiceAnalysis\MigrationHubOrchestrator\AWSSDK.MigrationHubOrchestrator.CodeAnalysis.csproj", "{EC34B9AD-1132-4522-8631-07B8566A020D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MigrationHubOrchestrator.CodeAnalysis", "code-analysis/ServiceAnalysis/MigrationHubOrchestrator/AWSSDK.MigrationHubOrchestrator.CodeAnalysis.csproj", "{EC34B9AD-1132-4522-8631-07B8566A020D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MigrationHubRefactorSpaces.CodeAnalysis", "code-analysis\ServiceAnalysis\MigrationHubRefactorSpaces\AWSSDK.MigrationHubRefactorSpaces.CodeAnalysis.csproj", "{9E0B513E-EDCF-45C7-BCC0-6CCD59F42564}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MigrationHubRefactorSpaces.CodeAnalysis", "code-analysis/ServiceAnalysis/MigrationHubRefactorSpaces/AWSSDK.MigrationHubRefactorSpaces.CodeAnalysis.csproj", "{9E0B513E-EDCF-45C7-BCC0-6CCD59F42564}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MigrationHubStrategyRecommendations.CodeAnalysis", "code-analysis\ServiceAnalysis\MigrationHubStrategyRecommendations\AWSSDK.MigrationHubStrategyRecommendations.CodeAnalysis.csproj", "{27A60892-7646-4606-91DC-17E930FB0F13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MigrationHubStrategyRecommendations.CodeAnalysis", "code-analysis/ServiceAnalysis/MigrationHubStrategyRecommendations/AWSSDK.MigrationHubStrategyRecommendations.CodeAnalysis.csproj", "{27A60892-7646-4606-91DC-17E930FB0F13}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MobileAnalytics.CodeAnalysis", "code-analysis\ServiceAnalysis\MobileAnalytics\AWSSDK.MobileAnalytics.CodeAnalysis.csproj", "{1DEBD742-421A-4D5B-A03D-9CAD38CAEFAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MobileAnalytics.CodeAnalysis", "code-analysis/ServiceAnalysis/MobileAnalytics/AWSSDK.MobileAnalytics.CodeAnalysis.csproj", "{1DEBD742-421A-4D5B-A03D-9CAD38CAEFAB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MQ.CodeAnalysis", "code-analysis\ServiceAnalysis\MQ\AWSSDK.MQ.CodeAnalysis.csproj", "{87FC3858-9C58-4535-B0D8-D61F873CE9C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MQ.CodeAnalysis", "code-analysis/ServiceAnalysis/MQ/AWSSDK.MQ.CodeAnalysis.csproj", "{87FC3858-9C58-4535-B0D8-D61F873CE9C3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MTurk.CodeAnalysis", "code-analysis\ServiceAnalysis\MTurk\AWSSDK.MTurk.CodeAnalysis.csproj", "{4A9F55E5-9F5B-4CA3-BCBE-1BD152F6BCEA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MTurk.CodeAnalysis", "code-analysis/ServiceAnalysis/MTurk/AWSSDK.MTurk.CodeAnalysis.csproj", "{4A9F55E5-9F5B-4CA3-BCBE-1BD152F6BCEA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MWAA.CodeAnalysis", "code-analysis\ServiceAnalysis\MWAA\AWSSDK.MWAA.CodeAnalysis.csproj", "{8805FBEB-EB40-4EE5-AA6C-98F85578FD1C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MWAA.CodeAnalysis", "code-analysis/ServiceAnalysis/MWAA/AWSSDK.MWAA.CodeAnalysis.csproj", "{8805FBEB-EB40-4EE5-AA6C-98F85578FD1C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Neptune.CodeAnalysis", "code-analysis\ServiceAnalysis\Neptune\AWSSDK.Neptune.CodeAnalysis.csproj", "{58F7BFE2-830C-489D-BEE8-58C02C1CFF8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Neptune.CodeAnalysis", "code-analysis/ServiceAnalysis/Neptune/AWSSDK.Neptune.CodeAnalysis.csproj", "{58F7BFE2-830C-489D-BEE8-58C02C1CFF8A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Neptunedata.CodeAnalysis", "code-analysis\ServiceAnalysis\Neptunedata\AWSSDK.Neptunedata.CodeAnalysis.csproj", "{F893BDBE-AB45-4134-A80B-21C52BB799A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Neptunedata.CodeAnalysis", "code-analysis/ServiceAnalysis/Neptunedata/AWSSDK.Neptunedata.CodeAnalysis.csproj", "{F893BDBE-AB45-4134-A80B-21C52BB799A6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.NeptuneGraph.CodeAnalysis", "code-analysis\ServiceAnalysis\NeptuneGraph\AWSSDK.NeptuneGraph.CodeAnalysis.csproj", "{CAD1D997-F745-45E8-A31E-FACD25251493}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.NeptuneGraph.CodeAnalysis", "code-analysis/ServiceAnalysis/NeptuneGraph/AWSSDK.NeptuneGraph.CodeAnalysis.csproj", "{CAD1D997-F745-45E8-A31E-FACD25251493}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.NetworkFirewall.CodeAnalysis", "code-analysis\ServiceAnalysis\NetworkFirewall\AWSSDK.NetworkFirewall.CodeAnalysis.csproj", "{8B7D3321-CC00-4673-975E-571DDB8FFBC6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.NetworkFirewall.CodeAnalysis", "code-analysis/ServiceAnalysis/NetworkFirewall/AWSSDK.NetworkFirewall.CodeAnalysis.csproj", "{8B7D3321-CC00-4673-975E-571DDB8FFBC6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.NetworkManager.CodeAnalysis", "code-analysis\ServiceAnalysis\NetworkManager\AWSSDK.NetworkManager.CodeAnalysis.csproj", "{43F64B0B-FD8E-4C5B-B31C-9FDF68364301}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.NetworkManager.CodeAnalysis", "code-analysis/ServiceAnalysis/NetworkManager/AWSSDK.NetworkManager.CodeAnalysis.csproj", "{43F64B0B-FD8E-4C5B-B31C-9FDF68364301}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.NetworkMonitor.CodeAnalysis", "code-analysis\ServiceAnalysis\NetworkMonitor\AWSSDK.NetworkMonitor.CodeAnalysis.csproj", "{C399C65C-E200-49AD-83D3-18710CC91296}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.NetworkMonitor.CodeAnalysis", "code-analysis/ServiceAnalysis/NetworkMonitor/AWSSDK.NetworkMonitor.CodeAnalysis.csproj", "{C399C65C-E200-49AD-83D3-18710CC91296}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.NimbleStudio.CodeAnalysis", "code-analysis\ServiceAnalysis\NimbleStudio\AWSSDK.NimbleStudio.CodeAnalysis.csproj", "{D34DF54F-B993-4ADB-8FB0-BE4301ABB80A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.NimbleStudio.CodeAnalysis", "code-analysis/ServiceAnalysis/NimbleStudio/AWSSDK.NimbleStudio.CodeAnalysis.csproj", "{D34DF54F-B993-4ADB-8FB0-BE4301ABB80A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.OAM.CodeAnalysis", "code-analysis\ServiceAnalysis\OAM\AWSSDK.OAM.CodeAnalysis.csproj", "{CE46B838-797A-40BD-8460-0858007DE083}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.OAM.CodeAnalysis", "code-analysis/ServiceAnalysis/OAM/AWSSDK.OAM.CodeAnalysis.csproj", "{CE46B838-797A-40BD-8460-0858007DE083}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Omics.CodeAnalysis", "code-analysis\ServiceAnalysis\Omics\AWSSDK.Omics.CodeAnalysis.csproj", "{3EF23EDE-F3BE-4A3A-B93F-231BF110DCCB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Omics.CodeAnalysis", "code-analysis/ServiceAnalysis/Omics/AWSSDK.Omics.CodeAnalysis.csproj", "{3EF23EDE-F3BE-4A3A-B93F-231BF110DCCB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.OpenSearchServerless.CodeAnalysis", "code-analysis\ServiceAnalysis\OpenSearchServerless\AWSSDK.OpenSearchServerless.CodeAnalysis.csproj", "{FF9A7531-1188-43FE-9364-C362AF66BA48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.OpenSearchServerless.CodeAnalysis", "code-analysis/ServiceAnalysis/OpenSearchServerless/AWSSDK.OpenSearchServerless.CodeAnalysis.csproj", "{FF9A7531-1188-43FE-9364-C362AF66BA48}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.OpenSearchService.CodeAnalysis", "code-analysis\ServiceAnalysis\OpenSearchService\AWSSDK.OpenSearchService.CodeAnalysis.csproj", "{39DAFECB-BFC3-4D23-BEAA-0C5235CFA02A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.OpenSearchService.CodeAnalysis", "code-analysis/ServiceAnalysis/OpenSearchService/AWSSDK.OpenSearchService.CodeAnalysis.csproj", "{39DAFECB-BFC3-4D23-BEAA-0C5235CFA02A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.OpsWorks.CodeAnalysis", "code-analysis\ServiceAnalysis\OpsWorks\AWSSDK.OpsWorks.CodeAnalysis.csproj", "{A4E9808D-E63F-4A23-AFAB-6F2B892BE800}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.OpsWorks.CodeAnalysis", "code-analysis/ServiceAnalysis/OpsWorks/AWSSDK.OpsWorks.CodeAnalysis.csproj", "{A4E9808D-E63F-4A23-AFAB-6F2B892BE800}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.OpsWorksCM.CodeAnalysis", "code-analysis\ServiceAnalysis\OpsWorksCM\AWSSDK.OpsWorksCM.CodeAnalysis.csproj", "{475C25CB-7637-468F-840F-7A45C4CBF93E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.OpsWorksCM.CodeAnalysis", "code-analysis/ServiceAnalysis/OpsWorksCM/AWSSDK.OpsWorksCM.CodeAnalysis.csproj", "{475C25CB-7637-468F-840F-7A45C4CBF93E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Organizations.CodeAnalysis", "code-analysis\ServiceAnalysis\Organizations\AWSSDK.Organizations.CodeAnalysis.csproj", "{10373FAB-3A59-4888-A86E-8134207FE450}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Organizations.CodeAnalysis", "code-analysis/ServiceAnalysis/Organizations/AWSSDK.Organizations.CodeAnalysis.csproj", "{10373FAB-3A59-4888-A86E-8134207FE450}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.OSIS.CodeAnalysis", "code-analysis\ServiceAnalysis\OSIS\AWSSDK.OSIS.CodeAnalysis.csproj", "{3A87651B-3584-4B4E-99B3-7188AA432427}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.OSIS.CodeAnalysis", "code-analysis/ServiceAnalysis/OSIS/AWSSDK.OSIS.CodeAnalysis.csproj", "{3A87651B-3584-4B4E-99B3-7188AA432427}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Outposts.CodeAnalysis", "code-analysis\ServiceAnalysis\Outposts\AWSSDK.Outposts.CodeAnalysis.csproj", "{1F501A21-5AB1-453C-BC7D-67B56F5EB3F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Outposts.CodeAnalysis", "code-analysis/ServiceAnalysis/Outposts/AWSSDK.Outposts.CodeAnalysis.csproj", "{1F501A21-5AB1-453C-BC7D-67B56F5EB3F1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Panorama.CodeAnalysis", "code-analysis\ServiceAnalysis\Panorama\AWSSDK.Panorama.CodeAnalysis.csproj", "{0D5E637F-5FB5-45BC-B838-1AC29CC66C60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Panorama.CodeAnalysis", "code-analysis/ServiceAnalysis/Panorama/AWSSDK.Panorama.CodeAnalysis.csproj", "{0D5E637F-5FB5-45BC-B838-1AC29CC66C60}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PaymentCryptography.CodeAnalysis", "code-analysis\ServiceAnalysis\PaymentCryptography\AWSSDK.PaymentCryptography.CodeAnalysis.csproj", "{532AAC0C-6EAD-4529-A072-A13E8162EED7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PaymentCryptography.CodeAnalysis", "code-analysis/ServiceAnalysis/PaymentCryptography/AWSSDK.PaymentCryptography.CodeAnalysis.csproj", "{532AAC0C-6EAD-4529-A072-A13E8162EED7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PaymentCryptographyData.CodeAnalysis", "code-analysis\ServiceAnalysis\PaymentCryptographyData\AWSSDK.PaymentCryptographyData.CodeAnalysis.csproj", "{95C5B87A-C5A2-42C5-BBBC-FC2E9FDA8501}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PaymentCryptographyData.CodeAnalysis", "code-analysis/ServiceAnalysis/PaymentCryptographyData/AWSSDK.PaymentCryptographyData.CodeAnalysis.csproj", "{95C5B87A-C5A2-42C5-BBBC-FC2E9FDA8501}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PcaConnectorAd.CodeAnalysis", "code-analysis\ServiceAnalysis\PcaConnectorAd\AWSSDK.PcaConnectorAd.CodeAnalysis.csproj", "{858CB2A3-A14F-4C55-9690-EA6F497CE017}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PcaConnectorAd.CodeAnalysis", "code-analysis/ServiceAnalysis/PcaConnectorAd/AWSSDK.PcaConnectorAd.CodeAnalysis.csproj", "{858CB2A3-A14F-4C55-9690-EA6F497CE017}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PcaConnectorScep.CodeAnalysis", "code-analysis\ServiceAnalysis\PcaConnectorScep\AWSSDK.PcaConnectorScep.CodeAnalysis.csproj", "{2C220D83-47B9-45D7-A6F1-4AA10E3EAF35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PcaConnectorScep.CodeAnalysis", "code-analysis/ServiceAnalysis/PcaConnectorScep/AWSSDK.PcaConnectorScep.CodeAnalysis.csproj", "{2C220D83-47B9-45D7-A6F1-4AA10E3EAF35}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Personalize.CodeAnalysis", "code-analysis\ServiceAnalysis\Personalize\AWSSDK.Personalize.CodeAnalysis.csproj", "{01150DA6-D796-44CC-BB2B-35CC888338B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Personalize.CodeAnalysis", "code-analysis/ServiceAnalysis/Personalize/AWSSDK.Personalize.CodeAnalysis.csproj", "{01150DA6-D796-44CC-BB2B-35CC888338B8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PersonalizeEvents.CodeAnalysis", "code-analysis\ServiceAnalysis\PersonalizeEvents\AWSSDK.PersonalizeEvents.CodeAnalysis.csproj", "{5405F769-965D-45CE-B651-B0D2ED6C8496}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PersonalizeEvents.CodeAnalysis", "code-analysis/ServiceAnalysis/PersonalizeEvents/AWSSDK.PersonalizeEvents.CodeAnalysis.csproj", "{5405F769-965D-45CE-B651-B0D2ED6C8496}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PersonalizeRuntime.CodeAnalysis", "code-analysis\ServiceAnalysis\PersonalizeRuntime\AWSSDK.PersonalizeRuntime.CodeAnalysis.csproj", "{C0C8C2E0-337C-496B-BBC8-2E34046A1039}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PersonalizeRuntime.CodeAnalysis", "code-analysis/ServiceAnalysis/PersonalizeRuntime/AWSSDK.PersonalizeRuntime.CodeAnalysis.csproj", "{C0C8C2E0-337C-496B-BBC8-2E34046A1039}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PI.CodeAnalysis", "code-analysis\ServiceAnalysis\PI\AWSSDK.PI.CodeAnalysis.csproj", "{61795D0D-90B6-460F-87D5-D2C8347295F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PI.CodeAnalysis", "code-analysis/ServiceAnalysis/PI/AWSSDK.PI.CodeAnalysis.csproj", "{61795D0D-90B6-460F-87D5-D2C8347295F0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Pinpoint.CodeAnalysis", "code-analysis\ServiceAnalysis\Pinpoint\AWSSDK.Pinpoint.CodeAnalysis.csproj", "{E6C75B22-D547-4700-A2E9-BB9151EB4D0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Pinpoint.CodeAnalysis", "code-analysis/ServiceAnalysis/Pinpoint/AWSSDK.Pinpoint.CodeAnalysis.csproj", "{E6C75B22-D547-4700-A2E9-BB9151EB4D0A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PinpointEmail.CodeAnalysis", "code-analysis\ServiceAnalysis\PinpointEmail\AWSSDK.PinpointEmail.CodeAnalysis.csproj", "{1735104C-5F6D-46D6-879E-A99896E9E5D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PinpointEmail.CodeAnalysis", "code-analysis/ServiceAnalysis/PinpointEmail/AWSSDK.PinpointEmail.CodeAnalysis.csproj", "{1735104C-5F6D-46D6-879E-A99896E9E5D7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PinpointSMSVoice.CodeAnalysis", "code-analysis\ServiceAnalysis\PinpointSMSVoice\AWSSDK.PinpointSMSVoice.CodeAnalysis.csproj", "{9FC0FD04-8531-4ED4-B05D-33604EDDCA2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PinpointSMSVoice.CodeAnalysis", "code-analysis/ServiceAnalysis/PinpointSMSVoice/AWSSDK.PinpointSMSVoice.CodeAnalysis.csproj", "{9FC0FD04-8531-4ED4-B05D-33604EDDCA2C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PinpointSMSVoiceV2.CodeAnalysis", "code-analysis\ServiceAnalysis\PinpointSMSVoiceV2\AWSSDK.PinpointSMSVoiceV2.CodeAnalysis.csproj", "{749F9678-8C20-4EDE-8FB9-367849E8866C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PinpointSMSVoiceV2.CodeAnalysis", "code-analysis/ServiceAnalysis/PinpointSMSVoiceV2/AWSSDK.PinpointSMSVoiceV2.CodeAnalysis.csproj", "{749F9678-8C20-4EDE-8FB9-367849E8866C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Pipes.CodeAnalysis", "code-analysis\ServiceAnalysis\Pipes\AWSSDK.Pipes.CodeAnalysis.csproj", "{7D033232-D36C-40AD-9F4B-EA2C980E5F88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Pipes.CodeAnalysis", "code-analysis/ServiceAnalysis/Pipes/AWSSDK.Pipes.CodeAnalysis.csproj", "{7D033232-D36C-40AD-9F4B-EA2C980E5F88}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Polly.CodeAnalysis", "code-analysis\ServiceAnalysis\Polly\AWSSDK.Polly.CodeAnalysis.csproj", "{3D893BFD-952F-490E-A950-7F59E6609344}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Polly.CodeAnalysis", "code-analysis/ServiceAnalysis/Polly/AWSSDK.Polly.CodeAnalysis.csproj", "{3D893BFD-952F-490E-A950-7F59E6609344}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Pricing.CodeAnalysis", "code-analysis\ServiceAnalysis\Pricing\AWSSDK.Pricing.CodeAnalysis.csproj", "{75A49D4B-F3B7-4185-81BC-4F1AA1974BBE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Pricing.CodeAnalysis", "code-analysis/ServiceAnalysis/Pricing/AWSSDK.Pricing.CodeAnalysis.csproj", "{75A49D4B-F3B7-4185-81BC-4F1AA1974BBE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Private5G.CodeAnalysis", "code-analysis\ServiceAnalysis\Private5G\AWSSDK.Private5G.CodeAnalysis.csproj", "{655CAB2F-41A8-45CC-A027-FB7E4D19F70C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Private5G.CodeAnalysis", "code-analysis/ServiceAnalysis/Private5G/AWSSDK.Private5G.CodeAnalysis.csproj", "{655CAB2F-41A8-45CC-A027-FB7E4D19F70C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PrometheusService.CodeAnalysis", "code-analysis\ServiceAnalysis\PrometheusService\AWSSDK.PrometheusService.CodeAnalysis.csproj", "{45941DC4-E121-43D5-8A3D-B2A6D8429943}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PrometheusService.CodeAnalysis", "code-analysis/ServiceAnalysis/PrometheusService/AWSSDK.PrometheusService.CodeAnalysis.csproj", "{45941DC4-E121-43D5-8A3D-B2A6D8429943}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Proton.CodeAnalysis", "code-analysis\ServiceAnalysis\Proton\AWSSDK.Proton.CodeAnalysis.csproj", "{DAE004EE-07C5-4079-AA30-A1A4C990509B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Proton.CodeAnalysis", "code-analysis/ServiceAnalysis/Proton/AWSSDK.Proton.CodeAnalysis.csproj", "{DAE004EE-07C5-4079-AA30-A1A4C990509B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.QApps.CodeAnalysis", "code-analysis\ServiceAnalysis\QApps\AWSSDK.QApps.CodeAnalysis.csproj", "{FE19DEB7-12A7-44F9-BD18-09BB92AF73D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.QApps.CodeAnalysis", "code-analysis/ServiceAnalysis/QApps/AWSSDK.QApps.CodeAnalysis.csproj", "{FE19DEB7-12A7-44F9-BD18-09BB92AF73D7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.QBusiness.CodeAnalysis", "code-analysis\ServiceAnalysis\QBusiness\AWSSDK.QBusiness.CodeAnalysis.csproj", "{E96B230D-9CA5-45DA-8A2C-439E87016C09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.QBusiness.CodeAnalysis", "code-analysis/ServiceAnalysis/QBusiness/AWSSDK.QBusiness.CodeAnalysis.csproj", "{E96B230D-9CA5-45DA-8A2C-439E87016C09}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.QConnect.CodeAnalysis", "code-analysis\ServiceAnalysis\QConnect\AWSSDK.QConnect.CodeAnalysis.csproj", "{63B30B79-3790-49C2-ACAE-67C89307E75A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.QConnect.CodeAnalysis", "code-analysis/ServiceAnalysis/QConnect/AWSSDK.QConnect.CodeAnalysis.csproj", "{63B30B79-3790-49C2-ACAE-67C89307E75A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.QLDB.CodeAnalysis", "code-analysis\ServiceAnalysis\QLDB\AWSSDK.QLDB.CodeAnalysis.csproj", "{41DAC2D4-C9AE-4BFE-9F36-14E9F46D036C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.QLDB.CodeAnalysis", "code-analysis/ServiceAnalysis/QLDB/AWSSDK.QLDB.CodeAnalysis.csproj", "{41DAC2D4-C9AE-4BFE-9F36-14E9F46D036C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.QLDBSession.CodeAnalysis", "code-analysis\ServiceAnalysis\QLDBSession\AWSSDK.QLDBSession.CodeAnalysis.csproj", "{C4A72E0B-0A92-4F6A-A7C4-787F28AA34B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.QLDBSession.CodeAnalysis", "code-analysis/ServiceAnalysis/QLDBSession/AWSSDK.QLDBSession.CodeAnalysis.csproj", "{C4A72E0B-0A92-4F6A-A7C4-787F28AA34B3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.QuickSight.CodeAnalysis", "code-analysis\ServiceAnalysis\QuickSight\AWSSDK.QuickSight.CodeAnalysis.csproj", "{6A71544A-7001-415B-AC66-D8E043280D46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.QuickSight.CodeAnalysis", "code-analysis/ServiceAnalysis/QuickSight/AWSSDK.QuickSight.CodeAnalysis.csproj", "{6A71544A-7001-415B-AC66-D8E043280D46}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.RAM.CodeAnalysis", "code-analysis\ServiceAnalysis\RAM\AWSSDK.RAM.CodeAnalysis.csproj", "{64A21B1D-D698-453A-86EA-B03946763868}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.RAM.CodeAnalysis", "code-analysis/ServiceAnalysis/RAM/AWSSDK.RAM.CodeAnalysis.csproj", "{64A21B1D-D698-453A-86EA-B03946763868}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.RDS.CodeAnalysis", "code-analysis\ServiceAnalysis\RDS\AWSSDK.RDS.CodeAnalysis.csproj", "{DDBAAD72-1716-43CD-843C-B406CA341F12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.RDS.CodeAnalysis", "code-analysis/ServiceAnalysis/RDS/AWSSDK.RDS.CodeAnalysis.csproj", "{DDBAAD72-1716-43CD-843C-B406CA341F12}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.RDSDataService.CodeAnalysis", "code-analysis\ServiceAnalysis\RDSDataService\AWSSDK.RDSDataService.CodeAnalysis.csproj", "{3819AD30-D26D-4F80-823E-119C8FD0EDA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.RDSDataService.CodeAnalysis", "code-analysis/ServiceAnalysis/RDSDataService/AWSSDK.RDSDataService.CodeAnalysis.csproj", "{3819AD30-D26D-4F80-823E-119C8FD0EDA7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.RecycleBin.CodeAnalysis", "code-analysis\ServiceAnalysis\RecycleBin\AWSSDK.RecycleBin.CodeAnalysis.csproj", "{2F9747FB-8C0F-4D4F-84DD-3023140EB137}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.RecycleBin.CodeAnalysis", "code-analysis/ServiceAnalysis/RecycleBin/AWSSDK.RecycleBin.CodeAnalysis.csproj", "{2F9747FB-8C0F-4D4F-84DD-3023140EB137}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Redshift.CodeAnalysis", "code-analysis\ServiceAnalysis\Redshift\AWSSDK.Redshift.CodeAnalysis.csproj", "{CCB1A157-6336-4465-8BAC-6812A705B76E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Redshift.CodeAnalysis", "code-analysis/ServiceAnalysis/Redshift/AWSSDK.Redshift.CodeAnalysis.csproj", "{CCB1A157-6336-4465-8BAC-6812A705B76E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.RedshiftDataAPIService.CodeAnalysis", "code-analysis\ServiceAnalysis\RedshiftDataAPIService\AWSSDK.RedshiftDataAPIService.CodeAnalysis.csproj", "{BA41F83C-C9E4-4878-81F1-321E865DF4CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.RedshiftDataAPIService.CodeAnalysis", "code-analysis/ServiceAnalysis/RedshiftDataAPIService/AWSSDK.RedshiftDataAPIService.CodeAnalysis.csproj", "{BA41F83C-C9E4-4878-81F1-321E865DF4CD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.RedshiftServerless.CodeAnalysis", "code-analysis\ServiceAnalysis\RedshiftServerless\AWSSDK.RedshiftServerless.CodeAnalysis.csproj", "{83CF73CB-24DD-4E73-91AA-63C65A7E0865}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.RedshiftServerless.CodeAnalysis", "code-analysis/ServiceAnalysis/RedshiftServerless/AWSSDK.RedshiftServerless.CodeAnalysis.csproj", "{83CF73CB-24DD-4E73-91AA-63C65A7E0865}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Rekognition.CodeAnalysis", "code-analysis\ServiceAnalysis\Rekognition\AWSSDK.Rekognition.CodeAnalysis.csproj", "{413B40F1-01B7-4290-A8BE-54CBA529A5FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Rekognition.CodeAnalysis", "code-analysis/ServiceAnalysis/Rekognition/AWSSDK.Rekognition.CodeAnalysis.csproj", "{413B40F1-01B7-4290-A8BE-54CBA529A5FE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Repostspace.CodeAnalysis", "code-analysis\ServiceAnalysis\Repostspace\AWSSDK.Repostspace.CodeAnalysis.csproj", "{6C88CB2E-2B80-467A-946C-3EE7F050EE11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Repostspace.CodeAnalysis", "code-analysis/ServiceAnalysis/Repostspace/AWSSDK.Repostspace.CodeAnalysis.csproj", "{6C88CB2E-2B80-467A-946C-3EE7F050EE11}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ResilienceHub.CodeAnalysis", "code-analysis\ServiceAnalysis\ResilienceHub\AWSSDK.ResilienceHub.CodeAnalysis.csproj", "{9BC3A195-E720-4950-AE59-DB98890B168B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ResilienceHub.CodeAnalysis", "code-analysis/ServiceAnalysis/ResilienceHub/AWSSDK.ResilienceHub.CodeAnalysis.csproj", "{9BC3A195-E720-4950-AE59-DB98890B168B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ResourceExplorer2.CodeAnalysis", "code-analysis\ServiceAnalysis\ResourceExplorer2\AWSSDK.ResourceExplorer2.CodeAnalysis.csproj", "{783045D0-74E0-49A2-A1D8-61BFF79B2B35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ResourceExplorer2.CodeAnalysis", "code-analysis/ServiceAnalysis/ResourceExplorer2/AWSSDK.ResourceExplorer2.CodeAnalysis.csproj", "{783045D0-74E0-49A2-A1D8-61BFF79B2B35}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ResourceGroups.CodeAnalysis", "code-analysis\ServiceAnalysis\ResourceGroups\AWSSDK.ResourceGroups.CodeAnalysis.csproj", "{7A1F0C85-BF01-4FF0-9BEF-665FC572608C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ResourceGroups.CodeAnalysis", "code-analysis/ServiceAnalysis/ResourceGroups/AWSSDK.ResourceGroups.CodeAnalysis.csproj", "{7A1F0C85-BF01-4FF0-9BEF-665FC572608C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ResourceGroupsTaggingAPI.CodeAnalysis", "code-analysis\ServiceAnalysis\ResourceGroupsTaggingAPI\AWSSDK.ResourceGroupsTaggingAPI.CodeAnalysis.csproj", "{6C5E5214-C4CF-4B95-9795-414A8805B74C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ResourceGroupsTaggingAPI.CodeAnalysis", "code-analysis/ServiceAnalysis/ResourceGroupsTaggingAPI/AWSSDK.ResourceGroupsTaggingAPI.CodeAnalysis.csproj", "{6C5E5214-C4CF-4B95-9795-414A8805B74C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.RoboMaker.CodeAnalysis", "code-analysis\ServiceAnalysis\RoboMaker\AWSSDK.RoboMaker.CodeAnalysis.csproj", "{39908929-B076-44FC-91D2-DFE0A21B5A07}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.RoboMaker.CodeAnalysis", "code-analysis/ServiceAnalysis/RoboMaker/AWSSDK.RoboMaker.CodeAnalysis.csproj", "{39908929-B076-44FC-91D2-DFE0A21B5A07}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Route53.CodeAnalysis", "code-analysis\ServiceAnalysis\Route53\AWSSDK.Route53.CodeAnalysis.csproj", "{24A64869-D041-41F6-837D-4D8937BA7253}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Route53.CodeAnalysis", "code-analysis/ServiceAnalysis/Route53/AWSSDK.Route53.CodeAnalysis.csproj", "{24A64869-D041-41F6-837D-4D8937BA7253}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Route53Domains.CodeAnalysis", "code-analysis\ServiceAnalysis\Route53Domains\AWSSDK.Route53Domains.CodeAnalysis.csproj", "{3F10D8F8-C535-4123-A2C3-28A5F06B8630}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Route53Domains.CodeAnalysis", "code-analysis/ServiceAnalysis/Route53Domains/AWSSDK.Route53Domains.CodeAnalysis.csproj", "{3F10D8F8-C535-4123-A2C3-28A5F06B8630}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Route53Profiles.CodeAnalysis", "code-analysis\ServiceAnalysis\Route53Profiles\AWSSDK.Route53Profiles.CodeAnalysis.csproj", "{0EBF644F-089C-40A8-90F7-E6382816B168}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Route53Profiles.CodeAnalysis", "code-analysis/ServiceAnalysis/Route53Profiles/AWSSDK.Route53Profiles.CodeAnalysis.csproj", "{0EBF644F-089C-40A8-90F7-E6382816B168}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Route53RecoveryCluster.CodeAnalysis", "code-analysis\ServiceAnalysis\Route53RecoveryCluster\AWSSDK.Route53RecoveryCluster.CodeAnalysis.csproj", "{1B6D6633-DDFA-4C03-B7C9-36105816E004}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Route53RecoveryCluster.CodeAnalysis", "code-analysis/ServiceAnalysis/Route53RecoveryCluster/AWSSDK.Route53RecoveryCluster.CodeAnalysis.csproj", "{1B6D6633-DDFA-4C03-B7C9-36105816E004}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Route53RecoveryControlConfig.CodeAnalysis", "code-analysis\ServiceAnalysis\Route53RecoveryControlConfig\AWSSDK.Route53RecoveryControlConfig.CodeAnalysis.csproj", "{FF31873D-8183-4051-BEAD-A0F276532CC2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Route53RecoveryControlConfig.CodeAnalysis", "code-analysis/ServiceAnalysis/Route53RecoveryControlConfig/AWSSDK.Route53RecoveryControlConfig.CodeAnalysis.csproj", "{FF31873D-8183-4051-BEAD-A0F276532CC2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Route53RecoveryReadiness.CodeAnalysis", "code-analysis\ServiceAnalysis\Route53RecoveryReadiness\AWSSDK.Route53RecoveryReadiness.CodeAnalysis.csproj", "{30A651C1-099D-4F37-B5A7-9F4B4D3814EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Route53RecoveryReadiness.CodeAnalysis", "code-analysis/ServiceAnalysis/Route53RecoveryReadiness/AWSSDK.Route53RecoveryReadiness.CodeAnalysis.csproj", "{30A651C1-099D-4F37-B5A7-9F4B4D3814EB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Route53Resolver.CodeAnalysis", "code-analysis\ServiceAnalysis\Route53Resolver\AWSSDK.Route53Resolver.CodeAnalysis.csproj", "{B90CE7E1-24C8-4371-902E-D68B13913A47}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Route53Resolver.CodeAnalysis", "code-analysis/ServiceAnalysis/Route53Resolver/AWSSDK.Route53Resolver.CodeAnalysis.csproj", "{B90CE7E1-24C8-4371-902E-D68B13913A47}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.S3.CodeAnalysis", "code-analysis\ServiceAnalysis\S3\AWSSDK.S3.CodeAnalysis.csproj", "{FB33E054-70B8-4B2B-B9CE-61C2AC920259}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.S3.CodeAnalysis", "code-analysis/ServiceAnalysis/S3/AWSSDK.S3.CodeAnalysis.csproj", "{FB33E054-70B8-4B2B-B9CE-61C2AC920259}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.S3Control.CodeAnalysis", "code-analysis\ServiceAnalysis\S3Control\AWSSDK.S3Control.CodeAnalysis.csproj", "{D8DE315A-EC9C-41D5-87F9-5C40FBB56FCD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.S3Control.CodeAnalysis", "code-analysis/ServiceAnalysis/S3Control/AWSSDK.S3Control.CodeAnalysis.csproj", "{D8DE315A-EC9C-41D5-87F9-5C40FBB56FCD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.S3Outposts.CodeAnalysis", "code-analysis\ServiceAnalysis\S3Outposts\AWSSDK.S3Outposts.CodeAnalysis.csproj", "{9252CDC4-069F-4025-AE2C-18EE00A73F47}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.S3Outposts.CodeAnalysis", "code-analysis/ServiceAnalysis/S3Outposts/AWSSDK.S3Outposts.CodeAnalysis.csproj", "{9252CDC4-069F-4025-AE2C-18EE00A73F47}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SageMaker.CodeAnalysis", "code-analysis\ServiceAnalysis\SageMaker\AWSSDK.SageMaker.CodeAnalysis.csproj", "{3314BA0F-1C6A-4E4A-80F8-EB858D20D048}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SageMaker.CodeAnalysis", "code-analysis/ServiceAnalysis/SageMaker/AWSSDK.SageMaker.CodeAnalysis.csproj", "{3314BA0F-1C6A-4E4A-80F8-EB858D20D048}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SagemakerEdgeManager.CodeAnalysis", "code-analysis\ServiceAnalysis\SagemakerEdgeManager\AWSSDK.SagemakerEdgeManager.CodeAnalysis.csproj", "{2D75EA51-ED06-449F-A756-12D33C6976E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SagemakerEdgeManager.CodeAnalysis", "code-analysis/ServiceAnalysis/SagemakerEdgeManager/AWSSDK.SagemakerEdgeManager.CodeAnalysis.csproj", "{2D75EA51-ED06-449F-A756-12D33C6976E5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SageMakerFeatureStoreRuntime.CodeAnalysis", "code-analysis\ServiceAnalysis\SageMakerFeatureStoreRuntime\AWSSDK.SageMakerFeatureStoreRuntime.CodeAnalysis.csproj", "{FC99DFC4-831C-4B14-8D6F-6852BE29C478}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SageMakerFeatureStoreRuntime.CodeAnalysis", "code-analysis/ServiceAnalysis/SageMakerFeatureStoreRuntime/AWSSDK.SageMakerFeatureStoreRuntime.CodeAnalysis.csproj", "{FC99DFC4-831C-4B14-8D6F-6852BE29C478}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SageMakerGeospatial.CodeAnalysis", "code-analysis\ServiceAnalysis\SageMakerGeospatial\AWSSDK.SageMakerGeospatial.CodeAnalysis.csproj", "{67B70D70-8A47-49ED-B136-B039E557E6B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SageMakerGeospatial.CodeAnalysis", "code-analysis/ServiceAnalysis/SageMakerGeospatial/AWSSDK.SageMakerGeospatial.CodeAnalysis.csproj", "{67B70D70-8A47-49ED-B136-B039E557E6B6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SageMakerMetrics.CodeAnalysis", "code-analysis\ServiceAnalysis\SageMakerMetrics\AWSSDK.SageMakerMetrics.CodeAnalysis.csproj", "{91868BFD-EEC0-43A0-8982-5CE0FA115DE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SageMakerMetrics.CodeAnalysis", "code-analysis/ServiceAnalysis/SageMakerMetrics/AWSSDK.SageMakerMetrics.CodeAnalysis.csproj", "{91868BFD-EEC0-43A0-8982-5CE0FA115DE0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SageMakerRuntime.CodeAnalysis", "code-analysis\ServiceAnalysis\SageMakerRuntime\AWSSDK.SageMakerRuntime.CodeAnalysis.csproj", "{D706F3A1-9553-4B25-8BEC-7B68DE5360FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SageMakerRuntime.CodeAnalysis", "code-analysis/ServiceAnalysis/SageMakerRuntime/AWSSDK.SageMakerRuntime.CodeAnalysis.csproj", "{D706F3A1-9553-4B25-8BEC-7B68DE5360FD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SavingsPlans.CodeAnalysis", "code-analysis\ServiceAnalysis\SavingsPlans\AWSSDK.SavingsPlans.CodeAnalysis.csproj", "{33B3CEB0-7C8F-442C-BC89-CDCEF81341B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SavingsPlans.CodeAnalysis", "code-analysis/ServiceAnalysis/SavingsPlans/AWSSDK.SavingsPlans.CodeAnalysis.csproj", "{33B3CEB0-7C8F-442C-BC89-CDCEF81341B3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Scheduler.CodeAnalysis", "code-analysis\ServiceAnalysis\Scheduler\AWSSDK.Scheduler.CodeAnalysis.csproj", "{AC147831-C182-4B3B-BBFA-D488BBD94AAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Scheduler.CodeAnalysis", "code-analysis/ServiceAnalysis/Scheduler/AWSSDK.Scheduler.CodeAnalysis.csproj", "{AC147831-C182-4B3B-BBFA-D488BBD94AAF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Schemas.CodeAnalysis", "code-analysis\ServiceAnalysis\Schemas\AWSSDK.Schemas.CodeAnalysis.csproj", "{6A3CAE10-454C-472B-8DA5-87489F700248}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Schemas.CodeAnalysis", "code-analysis/ServiceAnalysis/Schemas/AWSSDK.Schemas.CodeAnalysis.csproj", "{6A3CAE10-454C-472B-8DA5-87489F700248}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SecretsManager.CodeAnalysis", "code-analysis\ServiceAnalysis\SecretsManager\AWSSDK.SecretsManager.CodeAnalysis.csproj", "{D5B9ECA1-A512-4433-8583-38D7C5FE96F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SecretsManager.CodeAnalysis", "code-analysis/ServiceAnalysis/SecretsManager/AWSSDK.SecretsManager.CodeAnalysis.csproj", "{D5B9ECA1-A512-4433-8583-38D7C5FE96F5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SecurityHub.CodeAnalysis", "code-analysis\ServiceAnalysis\SecurityHub\AWSSDK.SecurityHub.CodeAnalysis.csproj", "{4DCAEAD8-9B44-4D60-A9B1-0D5177EA2377}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SecurityHub.CodeAnalysis", "code-analysis/ServiceAnalysis/SecurityHub/AWSSDK.SecurityHub.CodeAnalysis.csproj", "{4DCAEAD8-9B44-4D60-A9B1-0D5177EA2377}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SecurityLake.CodeAnalysis", "code-analysis\ServiceAnalysis\SecurityLake\AWSSDK.SecurityLake.CodeAnalysis.csproj", "{14BDCC58-12D7-4C84-BBEC-253DDCA5A480}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SecurityLake.CodeAnalysis", "code-analysis/ServiceAnalysis/SecurityLake/AWSSDK.SecurityLake.CodeAnalysis.csproj", "{14BDCC58-12D7-4C84-BBEC-253DDCA5A480}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SecurityToken.CodeAnalysis", "code-analysis\ServiceAnalysis\SecurityToken\AWSSDK.SecurityToken.CodeAnalysis.csproj", "{6E01838B-1011-4819-88AF-853B11E43F20}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SecurityToken.CodeAnalysis", "code-analysis/ServiceAnalysis/SecurityToken/AWSSDK.SecurityToken.CodeAnalysis.csproj", "{6E01838B-1011-4819-88AF-853B11E43F20}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ServerlessApplicationRepository.CodeAnalysis", "code-analysis\ServiceAnalysis\ServerlessApplicationRepository\AWSSDK.ServerlessApplicationRepository.CodeAnalysis.csproj", "{99488826-6CBA-4B65-8AA6-2010CC820D84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ServerlessApplicationRepository.CodeAnalysis", "code-analysis/ServiceAnalysis/ServerlessApplicationRepository/AWSSDK.ServerlessApplicationRepository.CodeAnalysis.csproj", "{99488826-6CBA-4B65-8AA6-2010CC820D84}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ServerMigrationService.CodeAnalysis", "code-analysis\ServiceAnalysis\ServerMigrationService\AWSSDK.ServerMigrationService.CodeAnalysis.csproj", "{9666D877-77CE-4E18-B8AB-7DA494412B8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ServerMigrationService.CodeAnalysis", "code-analysis/ServiceAnalysis/ServerMigrationService/AWSSDK.ServerMigrationService.CodeAnalysis.csproj", "{9666D877-77CE-4E18-B8AB-7DA494412B8F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ServiceCatalog.CodeAnalysis", "code-analysis\ServiceAnalysis\ServiceCatalog\AWSSDK.ServiceCatalog.CodeAnalysis.csproj", "{AB07D44F-564C-4626-A665-592885634016}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ServiceCatalog.CodeAnalysis", "code-analysis/ServiceAnalysis/ServiceCatalog/AWSSDK.ServiceCatalog.CodeAnalysis.csproj", "{AB07D44F-564C-4626-A665-592885634016}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ServiceDiscovery.CodeAnalysis", "code-analysis\ServiceAnalysis\ServiceDiscovery\AWSSDK.ServiceDiscovery.CodeAnalysis.csproj", "{5AEAF948-BFC0-497D-A7CD-AFA2A0024588}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ServiceDiscovery.CodeAnalysis", "code-analysis/ServiceAnalysis/ServiceDiscovery/AWSSDK.ServiceDiscovery.CodeAnalysis.csproj", "{5AEAF948-BFC0-497D-A7CD-AFA2A0024588}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ServiceQuotas.CodeAnalysis", "code-analysis\ServiceAnalysis\ServiceQuotas\AWSSDK.ServiceQuotas.CodeAnalysis.csproj", "{FEFA3183-8604-4E09-8896-1AE4E8DCEFC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ServiceQuotas.CodeAnalysis", "code-analysis/ServiceAnalysis/ServiceQuotas/AWSSDK.ServiceQuotas.CodeAnalysis.csproj", "{FEFA3183-8604-4E09-8896-1AE4E8DCEFC3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Shield.CodeAnalysis", "code-analysis\ServiceAnalysis\Shield\AWSSDK.Shield.CodeAnalysis.csproj", "{FD4532BE-EF03-476D-AD3E-3A948BC4F0A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Shield.CodeAnalysis", "code-analysis/ServiceAnalysis/Shield/AWSSDK.Shield.CodeAnalysis.csproj", "{FD4532BE-EF03-476D-AD3E-3A948BC4F0A8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Signer.CodeAnalysis", "code-analysis\ServiceAnalysis\Signer\AWSSDK.Signer.CodeAnalysis.csproj", "{4CC22520-F518-4F44-89BA-3DD21F7AAED2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Signer.CodeAnalysis", "code-analysis/ServiceAnalysis/Signer/AWSSDK.Signer.CodeAnalysis.csproj", "{4CC22520-F518-4F44-89BA-3DD21F7AAED2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SimpleDB.CodeAnalysis", "code-analysis\ServiceAnalysis\SimpleDB\AWSSDK.SimpleDB.CodeAnalysis.csproj", "{F7B7D8B7-0528-4565-B6A4-3918CE2AB65E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SimpleDB.CodeAnalysis", "code-analysis/ServiceAnalysis/SimpleDB/AWSSDK.SimpleDB.CodeAnalysis.csproj", "{F7B7D8B7-0528-4565-B6A4-3918CE2AB65E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SimpleEmail.CodeAnalysis", "code-analysis\ServiceAnalysis\SimpleEmail\AWSSDK.SimpleEmail.CodeAnalysis.csproj", "{04B5B987-C269-4FE3-A572-599A811E57C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SimpleEmail.CodeAnalysis", "code-analysis/ServiceAnalysis/SimpleEmail/AWSSDK.SimpleEmail.CodeAnalysis.csproj", "{04B5B987-C269-4FE3-A572-599A811E57C4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SimpleEmailV2.CodeAnalysis", "code-analysis\ServiceAnalysis\SimpleEmailV2\AWSSDK.SimpleEmailV2.CodeAnalysis.csproj", "{26C99213-2765-410C-ACEC-7B85B8D8554A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SimpleEmailV2.CodeAnalysis", "code-analysis/ServiceAnalysis/SimpleEmailV2/AWSSDK.SimpleEmailV2.CodeAnalysis.csproj", "{26C99213-2765-410C-ACEC-7B85B8D8554A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SimpleNotificationService.CodeAnalysis", "code-analysis\ServiceAnalysis\SimpleNotificationService\AWSSDK.SimpleNotificationService.CodeAnalysis.csproj", "{429269B7-DCF6-4AF7-9049-B5F992E0268E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SimpleNotificationService.CodeAnalysis", "code-analysis/ServiceAnalysis/SimpleNotificationService/AWSSDK.SimpleNotificationService.CodeAnalysis.csproj", "{429269B7-DCF6-4AF7-9049-B5F992E0268E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SimpleSystemsManagement.CodeAnalysis", "code-analysis\ServiceAnalysis\SimpleSystemsManagement\AWSSDK.SimpleSystemsManagement.CodeAnalysis.csproj", "{30037B4B-8863-4CCC-B486-69D5494A38D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SimpleSystemsManagement.CodeAnalysis", "code-analysis/ServiceAnalysis/SimpleSystemsManagement/AWSSDK.SimpleSystemsManagement.CodeAnalysis.csproj", "{30037B4B-8863-4CCC-B486-69D5494A38D7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SimpleWorkflow.CodeAnalysis", "code-analysis\ServiceAnalysis\SimpleWorkflow\AWSSDK.SimpleWorkflow.CodeAnalysis.csproj", "{A4E059F3-7571-4CF5-9724-89DD23D7FA5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SimpleWorkflow.CodeAnalysis", "code-analysis/ServiceAnalysis/SimpleWorkflow/AWSSDK.SimpleWorkflow.CodeAnalysis.csproj", "{A4E059F3-7571-4CF5-9724-89DD23D7FA5A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SimSpaceWeaver.CodeAnalysis", "code-analysis\ServiceAnalysis\SimSpaceWeaver\AWSSDK.SimSpaceWeaver.CodeAnalysis.csproj", "{9E3DB7A3-DB0A-4293-8723-8D86B0D2E1C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SimSpaceWeaver.CodeAnalysis", "code-analysis/ServiceAnalysis/SimSpaceWeaver/AWSSDK.SimSpaceWeaver.CodeAnalysis.csproj", "{9E3DB7A3-DB0A-4293-8723-8D86B0D2E1C3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Snowball.CodeAnalysis", "code-analysis\ServiceAnalysis\Snowball\AWSSDK.Snowball.CodeAnalysis.csproj", "{54A63ED2-11F0-4F76-8F5B-B7016E94AF86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Snowball.CodeAnalysis", "code-analysis/ServiceAnalysis/Snowball/AWSSDK.Snowball.CodeAnalysis.csproj", "{54A63ED2-11F0-4F76-8F5B-B7016E94AF86}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SnowDeviceManagement.CodeAnalysis", "code-analysis\ServiceAnalysis\SnowDeviceManagement\AWSSDK.SnowDeviceManagement.CodeAnalysis.csproj", "{94E03276-400A-4F34-B8D7-53749617D2D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SnowDeviceManagement.CodeAnalysis", "code-analysis/ServiceAnalysis/SnowDeviceManagement/AWSSDK.SnowDeviceManagement.CodeAnalysis.csproj", "{94E03276-400A-4F34-B8D7-53749617D2D1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SQS.CodeAnalysis", "code-analysis\ServiceAnalysis\SQS\AWSSDK.SQS.CodeAnalysis.csproj", "{DC3A5D55-1333-440D-9A0F-CE4841E19E9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SQS.CodeAnalysis", "code-analysis/ServiceAnalysis/SQS/AWSSDK.SQS.CodeAnalysis.csproj", "{DC3A5D55-1333-440D-9A0F-CE4841E19E9A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SSMContacts.CodeAnalysis", "code-analysis\ServiceAnalysis\SSMContacts\AWSSDK.SSMContacts.CodeAnalysis.csproj", "{CE54499E-272A-4063-A7B2-02F090021162}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SSMContacts.CodeAnalysis", "code-analysis/ServiceAnalysis/SSMContacts/AWSSDK.SSMContacts.CodeAnalysis.csproj", "{CE54499E-272A-4063-A7B2-02F090021162}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SSMIncidents.CodeAnalysis", "code-analysis\ServiceAnalysis\SSMIncidents\AWSSDK.SSMIncidents.CodeAnalysis.csproj", "{6680B639-338F-4ACA-8021-D44F72D7187A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SSMIncidents.CodeAnalysis", "code-analysis/ServiceAnalysis/SSMIncidents/AWSSDK.SSMIncidents.CodeAnalysis.csproj", "{6680B639-338F-4ACA-8021-D44F72D7187A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SSMQuickSetup.CodeAnalysis", "code-analysis\ServiceAnalysis\SSMQuickSetup\AWSSDK.SSMQuickSetup.CodeAnalysis.csproj", "{49EC3F75-7A8A-4C35-BEE9-CCE59E548D76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SSMQuickSetup.CodeAnalysis", "code-analysis/ServiceAnalysis/SSMQuickSetup/AWSSDK.SSMQuickSetup.CodeAnalysis.csproj", "{49EC3F75-7A8A-4C35-BEE9-CCE59E548D76}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SsmSap.CodeAnalysis", "code-analysis\ServiceAnalysis\SsmSap\AWSSDK.SsmSap.CodeAnalysis.csproj", "{2E304AFF-34D2-466D-8EFF-8CF29B51061C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SsmSap.CodeAnalysis", "code-analysis/ServiceAnalysis/SsmSap/AWSSDK.SsmSap.CodeAnalysis.csproj", "{2E304AFF-34D2-466D-8EFF-8CF29B51061C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SSO.CodeAnalysis", "code-analysis\ServiceAnalysis\SSO\AWSSDK.SSO.CodeAnalysis.csproj", "{1D5634B9-7F53-48CC-BC00-4CE57AE8457E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SSO.CodeAnalysis", "code-analysis/ServiceAnalysis/SSO/AWSSDK.SSO.CodeAnalysis.csproj", "{1D5634B9-7F53-48CC-BC00-4CE57AE8457E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SSOAdmin.CodeAnalysis", "code-analysis\ServiceAnalysis\SSOAdmin\AWSSDK.SSOAdmin.CodeAnalysis.csproj", "{941EB53D-999B-4EF3-AFAC-09AF610CB312}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SSOAdmin.CodeAnalysis", "code-analysis/ServiceAnalysis/SSOAdmin/AWSSDK.SSOAdmin.CodeAnalysis.csproj", "{941EB53D-999B-4EF3-AFAC-09AF610CB312}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SSOOIDC.CodeAnalysis", "code-analysis\ServiceAnalysis\SSOOIDC\AWSSDK.SSOOIDC.CodeAnalysis.csproj", "{45750F34-213E-4AFD-B98C-20069902DBA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SSOOIDC.CodeAnalysis", "code-analysis/ServiceAnalysis/SSOOIDC/AWSSDK.SSOOIDC.CodeAnalysis.csproj", "{45750F34-213E-4AFD-B98C-20069902DBA3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.StepFunctions.CodeAnalysis", "code-analysis\ServiceAnalysis\StepFunctions\AWSSDK.StepFunctions.CodeAnalysis.csproj", "{630E69FB-6499-4111-A0BF-1B7CCF739D94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.StepFunctions.CodeAnalysis", "code-analysis/ServiceAnalysis/StepFunctions/AWSSDK.StepFunctions.CodeAnalysis.csproj", "{630E69FB-6499-4111-A0BF-1B7CCF739D94}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.StorageGateway.CodeAnalysis", "code-analysis\ServiceAnalysis\StorageGateway\AWSSDK.StorageGateway.CodeAnalysis.csproj", "{EAA89879-58E1-4469-83F2-C6479AEA119E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.StorageGateway.CodeAnalysis", "code-analysis/ServiceAnalysis/StorageGateway/AWSSDK.StorageGateway.CodeAnalysis.csproj", "{EAA89879-58E1-4469-83F2-C6479AEA119E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SupplyChain.CodeAnalysis", "code-analysis\ServiceAnalysis\SupplyChain\AWSSDK.SupplyChain.CodeAnalysis.csproj", "{8D608749-2189-4C56-93B1-3E8ED4C41AD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SupplyChain.CodeAnalysis", "code-analysis/ServiceAnalysis/SupplyChain/AWSSDK.SupplyChain.CodeAnalysis.csproj", "{8D608749-2189-4C56-93B1-3E8ED4C41AD0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SupportApp.CodeAnalysis", "code-analysis\ServiceAnalysis\SupportApp\AWSSDK.SupportApp.CodeAnalysis.csproj", "{933B8B19-E6AA-4CF6-A202-0F9E2CF9579C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SupportApp.CodeAnalysis", "code-analysis/ServiceAnalysis/SupportApp/AWSSDK.SupportApp.CodeAnalysis.csproj", "{933B8B19-E6AA-4CF6-A202-0F9E2CF9579C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Synthetics.CodeAnalysis", "code-analysis\ServiceAnalysis\Synthetics\AWSSDK.Synthetics.CodeAnalysis.csproj", "{87A5016B-5D72-4F13-BE02-E352EC9C6B04}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Synthetics.CodeAnalysis", "code-analysis/ServiceAnalysis/Synthetics/AWSSDK.Synthetics.CodeAnalysis.csproj", "{87A5016B-5D72-4F13-BE02-E352EC9C6B04}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.TaxSettings.CodeAnalysis", "code-analysis\ServiceAnalysis\TaxSettings\AWSSDK.TaxSettings.CodeAnalysis.csproj", "{8988A16B-FA28-4D38-86DC-0FD4DACC3020}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.TaxSettings.CodeAnalysis", "code-analysis/ServiceAnalysis/TaxSettings/AWSSDK.TaxSettings.CodeAnalysis.csproj", "{8988A16B-FA28-4D38-86DC-0FD4DACC3020}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Textract.CodeAnalysis", "code-analysis\ServiceAnalysis\Textract\AWSSDK.Textract.CodeAnalysis.csproj", "{7405B582-7CF7-4142-A230-3E9AA662244F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Textract.CodeAnalysis", "code-analysis/ServiceAnalysis/Textract/AWSSDK.Textract.CodeAnalysis.csproj", "{7405B582-7CF7-4142-A230-3E9AA662244F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.TimestreamInfluxDB.CodeAnalysis", "code-analysis\ServiceAnalysis\TimestreamInfluxDB\AWSSDK.TimestreamInfluxDB.CodeAnalysis.csproj", "{55770DB9-7606-4E57-A29B-74F93D188B33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.TimestreamInfluxDB.CodeAnalysis", "code-analysis/ServiceAnalysis/TimestreamInfluxDB/AWSSDK.TimestreamInfluxDB.CodeAnalysis.csproj", "{55770DB9-7606-4E57-A29B-74F93D188B33}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.TimestreamQuery.CodeAnalysis", "code-analysis\ServiceAnalysis\TimestreamQuery\AWSSDK.TimestreamQuery.CodeAnalysis.csproj", "{69DD9851-0751-4D95-A13E-9B2A98EEC412}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.TimestreamQuery.CodeAnalysis", "code-analysis/ServiceAnalysis/TimestreamQuery/AWSSDK.TimestreamQuery.CodeAnalysis.csproj", "{69DD9851-0751-4D95-A13E-9B2A98EEC412}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.TimestreamWrite.CodeAnalysis", "code-analysis\ServiceAnalysis\TimestreamWrite\AWSSDK.TimestreamWrite.CodeAnalysis.csproj", "{98DF67C0-394D-47FF-82E7-D86EAA973B69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.TimestreamWrite.CodeAnalysis", "code-analysis/ServiceAnalysis/TimestreamWrite/AWSSDK.TimestreamWrite.CodeAnalysis.csproj", "{98DF67C0-394D-47FF-82E7-D86EAA973B69}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Tnb.CodeAnalysis", "code-analysis\ServiceAnalysis\Tnb\AWSSDK.Tnb.CodeAnalysis.csproj", "{FF5B64C8-5A93-4F22-A9A4-7DDD6076E118}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Tnb.CodeAnalysis", "code-analysis/ServiceAnalysis/Tnb/AWSSDK.Tnb.CodeAnalysis.csproj", "{FF5B64C8-5A93-4F22-A9A4-7DDD6076E118}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.TranscribeService.CodeAnalysis", "code-analysis\ServiceAnalysis\TranscribeService\AWSSDK.TranscribeService.CodeAnalysis.csproj", "{1569BF27-B6F7-4B32-BD44-36D1D4E028BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.TranscribeService.CodeAnalysis", "code-analysis/ServiceAnalysis/TranscribeService/AWSSDK.TranscribeService.CodeAnalysis.csproj", "{1569BF27-B6F7-4B32-BD44-36D1D4E028BC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Transfer.CodeAnalysis", "code-analysis\ServiceAnalysis\Transfer\AWSSDK.Transfer.CodeAnalysis.csproj", "{AFC9445E-50F8-4F28-9C86-2396020ED970}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Transfer.CodeAnalysis", "code-analysis/ServiceAnalysis/Transfer/AWSSDK.Transfer.CodeAnalysis.csproj", "{AFC9445E-50F8-4F28-9C86-2396020ED970}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Translate.CodeAnalysis", "code-analysis\ServiceAnalysis\Translate\AWSSDK.Translate.CodeAnalysis.csproj", "{0C6C821A-0A1D-4618-A8A8-38752F65113A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Translate.CodeAnalysis", "code-analysis/ServiceAnalysis/Translate/AWSSDK.Translate.CodeAnalysis.csproj", "{0C6C821A-0A1D-4618-A8A8-38752F65113A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.TrustedAdvisor.CodeAnalysis", "code-analysis\ServiceAnalysis\TrustedAdvisor\AWSSDK.TrustedAdvisor.CodeAnalysis.csproj", "{1552A00A-42A4-4EE4-B5B0-A54D7CFF57BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.TrustedAdvisor.CodeAnalysis", "code-analysis/ServiceAnalysis/TrustedAdvisor/AWSSDK.TrustedAdvisor.CodeAnalysis.csproj", "{1552A00A-42A4-4EE4-B5B0-A54D7CFF57BD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.VerifiedPermissions.CodeAnalysis", "code-analysis\ServiceAnalysis\VerifiedPermissions\AWSSDK.VerifiedPermissions.CodeAnalysis.csproj", "{7FBDC567-0F65-46C8-B196-3C9C47B958E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.VerifiedPermissions.CodeAnalysis", "code-analysis/ServiceAnalysis/VerifiedPermissions/AWSSDK.VerifiedPermissions.CodeAnalysis.csproj", "{7FBDC567-0F65-46C8-B196-3C9C47B958E1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.VoiceID.CodeAnalysis", "code-analysis\ServiceAnalysis\VoiceID\AWSSDK.VoiceID.CodeAnalysis.csproj", "{0C6BDFBF-3A9E-4E72-8D52-0484B38DC018}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.VoiceID.CodeAnalysis", "code-analysis/ServiceAnalysis/VoiceID/AWSSDK.VoiceID.CodeAnalysis.csproj", "{0C6BDFBF-3A9E-4E72-8D52-0484B38DC018}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.VPCLattice.CodeAnalysis", "code-analysis\ServiceAnalysis\VPCLattice\AWSSDK.VPCLattice.CodeAnalysis.csproj", "{2600959F-04B1-4D4E-9C77-E1F5BF8C39FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.VPCLattice.CodeAnalysis", "code-analysis/ServiceAnalysis/VPCLattice/AWSSDK.VPCLattice.CodeAnalysis.csproj", "{2600959F-04B1-4D4E-9C77-E1F5BF8C39FC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WAF.CodeAnalysis", "code-analysis\ServiceAnalysis\WAF\AWSSDK.WAF.CodeAnalysis.csproj", "{010849C1-799E-42A7-B108-984159C002E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WAF.CodeAnalysis", "code-analysis/ServiceAnalysis/WAF/AWSSDK.WAF.CodeAnalysis.csproj", "{010849C1-799E-42A7-B108-984159C002E6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WAFRegional.CodeAnalysis", "code-analysis\ServiceAnalysis\WAFRegional\AWSSDK.WAFRegional.CodeAnalysis.csproj", "{C9140063-D998-4865-A85E-9B67D570678B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WAFRegional.CodeAnalysis", "code-analysis/ServiceAnalysis/WAFRegional/AWSSDK.WAFRegional.CodeAnalysis.csproj", "{C9140063-D998-4865-A85E-9B67D570678B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WAFV2.CodeAnalysis", "code-analysis\ServiceAnalysis\WAFV2\AWSSDK.WAFV2.CodeAnalysis.csproj", "{23480004-2A15-497C-8CCA-21222F1DCB5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WAFV2.CodeAnalysis", "code-analysis/ServiceAnalysis/WAFV2/AWSSDK.WAFV2.CodeAnalysis.csproj", "{23480004-2A15-497C-8CCA-21222F1DCB5F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WellArchitected.CodeAnalysis", "code-analysis\ServiceAnalysis\WellArchitected\AWSSDK.WellArchitected.CodeAnalysis.csproj", "{BDCA2140-D2F2-4C8A-8EEF-DD31603077D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WellArchitected.CodeAnalysis", "code-analysis/ServiceAnalysis/WellArchitected/AWSSDK.WellArchitected.CodeAnalysis.csproj", "{BDCA2140-D2F2-4C8A-8EEF-DD31603077D3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WorkDocs.CodeAnalysis", "code-analysis\ServiceAnalysis\WorkDocs\AWSSDK.WorkDocs.CodeAnalysis.csproj", "{D2D05C00-79A7-47E4-9B77-FE08B1E7FC1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WorkDocs.CodeAnalysis", "code-analysis/ServiceAnalysis/WorkDocs/AWSSDK.WorkDocs.CodeAnalysis.csproj", "{D2D05C00-79A7-47E4-9B77-FE08B1E7FC1D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WorkLink.CodeAnalysis", "code-analysis\ServiceAnalysis\WorkLink\AWSSDK.WorkLink.CodeAnalysis.csproj", "{8484906F-DCA2-4C37-B5A1-D91EADB881D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WorkLink.CodeAnalysis", "code-analysis/ServiceAnalysis/WorkLink/AWSSDK.WorkLink.CodeAnalysis.csproj", "{8484906F-DCA2-4C37-B5A1-D91EADB881D3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WorkMail.CodeAnalysis", "code-analysis\ServiceAnalysis\WorkMail\AWSSDK.WorkMail.CodeAnalysis.csproj", "{1268A2A7-7344-4C80-A985-28B7C8ABEB37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WorkMail.CodeAnalysis", "code-analysis/ServiceAnalysis/WorkMail/AWSSDK.WorkMail.CodeAnalysis.csproj", "{1268A2A7-7344-4C80-A985-28B7C8ABEB37}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WorkMailMessageFlow.CodeAnalysis", "code-analysis\ServiceAnalysis\WorkMailMessageFlow\AWSSDK.WorkMailMessageFlow.CodeAnalysis.csproj", "{96AA8820-0649-4AE3-92C2-C01F7B30E874}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WorkMailMessageFlow.CodeAnalysis", "code-analysis/ServiceAnalysis/WorkMailMessageFlow/AWSSDK.WorkMailMessageFlow.CodeAnalysis.csproj", "{96AA8820-0649-4AE3-92C2-C01F7B30E874}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WorkSpaces.CodeAnalysis", "code-analysis\ServiceAnalysis\WorkSpaces\AWSSDK.WorkSpaces.CodeAnalysis.csproj", "{59D2738F-B594-4863-B5A7-1ACF80A71885}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WorkSpaces.CodeAnalysis", "code-analysis/ServiceAnalysis/WorkSpaces/AWSSDK.WorkSpaces.CodeAnalysis.csproj", "{59D2738F-B594-4863-B5A7-1ACF80A71885}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WorkSpacesThinClient.CodeAnalysis", "code-analysis\ServiceAnalysis\WorkSpacesThinClient\AWSSDK.WorkSpacesThinClient.CodeAnalysis.csproj", "{667D139D-B7A8-4828-BC21-03083A564F18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WorkSpacesThinClient.CodeAnalysis", "code-analysis/ServiceAnalysis/WorkSpacesThinClient/AWSSDK.WorkSpacesThinClient.CodeAnalysis.csproj", "{667D139D-B7A8-4828-BC21-03083A564F18}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WorkSpacesWeb.CodeAnalysis", "code-analysis\ServiceAnalysis\WorkSpacesWeb\AWSSDK.WorkSpacesWeb.CodeAnalysis.csproj", "{4D0C0F30-FEE9-4C5F-AD1B-CABE4E390588}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WorkSpacesWeb.CodeAnalysis", "code-analysis/ServiceAnalysis/WorkSpacesWeb/AWSSDK.WorkSpacesWeb.CodeAnalysis.csproj", "{4D0C0F30-FEE9-4C5F-AD1B-CABE4E390588}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.XRay.CodeAnalysis", "code-analysis\ServiceAnalysis\XRay\AWSSDK.XRay.CodeAnalysis.csproj", "{5D84DBCB-DBE7-41C6-8DC2-D4BC1ABE0BE7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.XRay.CodeAnalysis", "code-analysis/ServiceAnalysis/XRay/AWSSDK.XRay.CodeAnalysis.csproj", "{5D84DBCB-DBE7-41C6-8DC2-D4BC1ABE0BE7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedAnalysisCode", "code-analysis\SharedAnalysisCode\SharedAnalysisCode.csproj", "{16E2A13F-F4F6-4774-A2D8-AD8127E7EE4F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedAnalysisCode", "code-analysis/SharedAnalysisCode/SharedAnalysisCode.csproj", "{16E2A13F-F4F6-4774-A2D8-AD8127E7EE4F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MockAnalyzer", "code-analysis\MockAnalyzer\MockAnalyzer.csproj", "{9BC3B08B-9F09-444E-AD15-67045FA3AF19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MockAnalyzer", "code-analysis/MockAnalyzer/MockAnalyzer.csproj", "{9BC3B08B-9F09-444E-AD15-67045FA3AF19}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnalyzerUnitTests", "code-analysis\AnalyzerUnitTests\AnalyzerUnitTests.csproj", "{FB4B26D0-2E81-4673-9001-D0C859D8CEA1}"
 EndProject
+
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

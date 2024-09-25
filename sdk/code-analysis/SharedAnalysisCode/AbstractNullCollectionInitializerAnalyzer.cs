@@ -12,6 +12,7 @@ namespace Amazon.CodeAnalysis.Shared
 {
     public abstract class AbstractNullCollectionInitializerAnalyzer : DiagnosticAnalyzer
     {
+        // Using the AWSSDK2XXX as the range of diagnostic ids for SDK nullability diagnostic messages
         public const string DiagnosticId = "AWSSDK2000";
 
         private static readonly LocalizableString Title = new LocalizableResourceString(nameof(Resources.CollectionInitializerNullRule_Title), Resources.ResourceManager, typeof(Resources));
