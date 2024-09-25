@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\src\Core\AWSSDK.Core.NetStandard.csproj" />
     <ProjectReference Include="..\..\..\src\Services\*\*.NetStandard.csproj" />
+    <ProjectReference Include="..\Common\AWSSDK.CommonTest.NetStandard.csproj" />
   </ItemGroup>
 
   <ItemGroup>

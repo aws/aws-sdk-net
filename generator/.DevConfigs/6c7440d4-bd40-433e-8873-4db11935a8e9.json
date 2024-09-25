@@ -1,0 +1,25 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "The obsolete `ECSTaskCredentials` class is removed. Please use the `GenericContainerCredentials` provider which also supports EKS Pod Identities.",
+      "The obsolete `StoredProfileAWSCredentials` and `StoredProfileCredentials` is removed. Please use the `NetSDKCredentialsFile` or the `SharedCredentialsFile`.",
+      "The obsolete `HasCachedAccessTokenAvailable` method on the SSOAWSCredentials class is removed.",
+      "The obsolete `EnvironmentAWSCredentials` is removed. Please use `AppConfigAWSCredentials` instead.",
+      "The obsolete `StoredProfileFederatedCredentials` is removed. Please use `FederatedAWSCredentials` instead.",
+      "The obsolete `StoredProfileSAMLCredentials` class in SecurityTokenService is removed. Please use `FederatedAWSCredentials` instead.",
+      "The obsolete `EndpointDiscoveryEnabled` class is removed. Please use the `EnvironmentVariableAWSConfiguration` instead.",
+      "The obsolete `UseSigV4` property on the `AmazonWebServiceRequest` class is removed. `SignatureVersion` will be used directly instead.",
+      "The obsolete `TryGetSection` methods in `ProfileIniFile` that don't take in nested properties is removed. Please use the `TryGetSection` method in `ProfileIniFile` that accounts for nested properties.",
+      "The obsolete `Parameters` dictionary in `WebServiceRequestEventArgs` is obsolete. `ParameteCollection` will be used instead.",
+      "The obsolete `DoesS3BucketExistAsync`(string bucketName) in ICoreAmazonS3 is removed because it always uses HTTP. Please use `Amazon.S3.Util.AmazonS3Util.DoesS3BucketExistV2Async` instead.",
+      "The following methods in `AWSSDKUtils` are removed `ResolveResourcePath`, `ProtectEncodedSlashUrlEncode`, `ConvertToUnixEpochMilliSeconds`",
+      "`EC2_METADATA_SVC`, `EC2_METADATA_ROOT`, `EC2_USERDATA_ROOT`, `EC2_DYNAMICDATA_ROOT`, `EC2_APITOKEN_URL` in `EC2InstanceMetadata` are removed. The fields were marked as obsolete in v3.",
+      "The obsolete `ProfileManager` class in Amazon.Util is removed. Please use the SharedCredentialsFile or the NetSDKCredentialsFile instead.",
+      "The following obsolete properties on `AWSConfigs` are removed: `Logging`, `ResponseLogging`, and `LogMetrics`. Use `LoggingConfig` instead.",
+      "`public static Condition NewCondition(DateComparisonType type, DateTime date)` in `Amazon.Auth/AccessControlPolicy/ConditionFactory` is removed. Please use `NewConditionUtc` instead.",
+      "In the `ClientConfig` class, the obsolete `DetermineDnsSuffix` has been removed. Use the service specific `client.DetermineServiceOperationEndpoint` method instead. The `ReadEntireResponse` property has been removed, use the `AWSConfigs.LoggingConfig.LogResponses` or `ClientConfig.LogResponse` instead."
+    ],
+    "type": "minor",
+    "updateMinimum": true
+  }
+}

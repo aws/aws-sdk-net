@@ -12,7 +12,7 @@ using System.Xml;
 using System.Threading.Tasks;
 using Xunit;
 using Amazon.DNXCore.IntegrationTests;
-
+using AWSSDK_DotNet.CommonTest.Utils;
 
 namespace Amazon.DNXCore.IntegrationTests
 {
@@ -132,7 +132,10 @@ namespace Amazon.DNXCore.IntegrationTests
             }
         }
 
-        //[Fact]
+        // [Fact]
+        // This is commented out because netstandard uses xunit which runs tests in parallel.
+        // When this test is run in parallel with other tests it causes them to fail b/c it changes
+        // the clockskew while those are running.
         public void TestManualClockCorrection()
         {
             TestClients(TestServiceCallForManualClockCorrection);
@@ -141,7 +144,10 @@ namespace Amazon.DNXCore.IntegrationTests
         // This test verifies that all service clients are able to
         // correctly handle clock skew errors.
         // By default it only tests a small subset of services.
-        //[Fact]
+        // This is commented out because netstandard uses xunit which runs tests in parallel.
+        // When this test is run in parallel with other tests it causes them to fail b/c it changes
+        // the clockskew while those are running.
+        // [Fact]
         public void TestClockSkewCorrection()
         {
             TestClients(TestServiceCallForClockSkew);
@@ -310,12 +316,18 @@ namespace Amazon.DNXCore.IntegrationTests
             new ClientTest { ClientType = typeof(AmazonS3Client), Method = "ListBuckets" },
             new ClientTest { ClientType = typeof(Amazon.Glacier.AmazonGlacierClient), Method = "ListVaults" },
             new ClientTest { ClientType = typeof(Amazon.IdentityManagement.AmazonIdentityManagementServiceClient), Method = "ListGroups" },
-            new ClientTest { ClientType = typeof(Amazon.ImportExport.AmazonImportExportClient), Method = "ListJobs" },
+            // This call returns a 500 error. 
+            //new ClientTest { ClientType = typeof(Amazon.ImportExport.AmazonImportExportClient), Method = "ListJobs" },
         };
 
         // Reflection helpers
         public static TimeSpan IncorrectPositiveClockSkewOffset = TimeSpan.FromHours(26);
         public static TimeSpan IncorrectNegativeClockSkewOffset = TimeSpan.FromHours(-1);
+        public static void SetClockSkewCorrection(TimeSpan value)
+        {
+            var property = typeof(CorrectClockSkew).GetProperty("GlobalClockCorrection", BindingFlags.Static | BindingFlags.NonPublic);
+            property.SetValue(null, value);
+        }
         private static Func<DateTime> GetUtcNowSource()
         {
             var field = typeof(AWSConfigs).GetField("utcNowSource", BindingFlags.Static | BindingFlags.NonPublic);
@@ -326,11 +338,7 @@ namespace Amazon.DNXCore.IntegrationTests
             var field = typeof(AWSConfigs).GetField("utcNowSource", BindingFlags.Static | BindingFlags.NonPublic);
             field.SetValue(null, source);
         }
-        public static void SetClockSkewCorrection(TimeSpan value)
-        {
-            var property = typeof(CorrectClockSkew).GetProperty("GlobalClockCorrection", BindingFlags.Static | BindingFlags.NonPublic);
-            property.SetValue(null, value);
-        }
+
         private AbstractAWSSigner GetSigner(object client)
         {
             var signerProperty = typeof(AmazonServiceClient).GetTypeInfo().GetDeclaredProperty("Signer");

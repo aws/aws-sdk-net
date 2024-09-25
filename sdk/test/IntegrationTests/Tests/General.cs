@@ -28,6 +28,7 @@ using Amazon.SecurityToken.SAML;
 using Amazon.DynamoDBv2;
 using Amazon.ElasticTranscoder;
 using System.Threading;
+using AWSSDK_DotNet.CommonTest.Utils;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
@@ -196,16 +197,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
                 var aace = new AdfsAuthenticationControllerException("Message");
                 TestException(aace);
-
-#pragma warning disable 618
-
-                var ccre = new CredentialCallbackRequiredException("Message");
-                TestException(ccre);
-
-                var afe = new AuthenticationFailedException("Message");
-                TestException(afe);
-
-#pragma warning restore 618
 
             }
         }
@@ -820,6 +811,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }
         }
 
+
         // ClientTest helpers
         private void TestClient(Type clientType, string methodName, object request, Action<ClockSkewTestContext> serviceCall)
         {
@@ -860,8 +852,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             new ClientTest { Client = typeof(AmazonS3Client), Method = "ListBuckets" },
             new ClientTest { Client = typeof(Amazon.Glacier.AmazonGlacierClient), Method = "ListVaults" },
             new ClientTest { Client = typeof(Amazon.IdentityManagement.AmazonIdentityManagementServiceClient), Method = "ListGroups" },
-            // ImportExport returns a 500.  Investigating...
-            //new ClientTest { Client = typeof(Amazon.ImportExport.AmazonImportExportClient), Method = "ListJobs" },
         };
 
         // Reflection helpers

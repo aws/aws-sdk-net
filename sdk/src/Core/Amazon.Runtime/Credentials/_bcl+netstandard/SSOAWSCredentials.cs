@@ -233,16 +233,6 @@ namespace Amazon.Runtime
             return await GetSsoRoleCredentialsAsync(sso, token.AccessToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Returns true if there is already a non-expired cached login access token in the token cache.
-        /// </summary>
-        /// <param name="startUrl"></param>
-        /// <returns>Obsolete: ALWAYS RETURNS FALSE</returns>
-        [Obsolete("This method is no longer used or supported and will be removed in a future version.", error: false)]
-        public static bool HasCachedAccessTokenAvailable(string startUrl)
-        {
-            return false;
-        }
 
 #if BCL
         /// <summary>
