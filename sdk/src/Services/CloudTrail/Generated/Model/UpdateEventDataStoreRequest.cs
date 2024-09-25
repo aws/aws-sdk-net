@@ -42,8 +42,8 @@ namespace Amazon.CloudTrail.Model
     ///  
     /// <para>
     /// For event data stores for CloudTrail events, <c>AdvancedEventSelectors</c> includes
-    /// or excludes management or data events in your event data store. For more information
-    /// about <c>AdvancedEventSelectors</c>, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedEventSelector.html">AdvancedEventSelectors</a>.
+    /// or excludes management, data, or network activity events in your event data store.
+    /// For more information about <c>AdvancedEventSelectors</c>, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedEventSelector.html">AdvancedEventSelectors</a>.
     /// </para>
     ///  
     /// <para>
