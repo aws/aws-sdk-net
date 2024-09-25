@@ -322,6 +322,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Update="Generators\CodeAnalysis\NullCollectionInitializerAnalyzer.cs">
+      <DependentUpon>NullCollectionInitializerAnalyzer.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="Generators\SourceFiles\ServiceClientsNetFramework.cs">
       <DependentUpon>ServiceClientsNetFramework.tt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -583,6 +588,10 @@
     <None Update="Generators/Marshallers/RestXmlStructureUnmarshaller.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>RestXmlStructureUnmarshaller.cs</LastGenOutput>
+    </None>
+    <None Update="Generators\CodeAnalysis\NullCollectionInitializerAnalyzer.tt">
+      <LastGenOutput>NullCollectionInitializerAnalyzer.cs</LastGenOutput>
+      <Generator>TextTemplatingFilePreprocessor</Generator>
     </None>
     <None Update="Generators\SourceFiles\ServiceClientsNetFramework.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

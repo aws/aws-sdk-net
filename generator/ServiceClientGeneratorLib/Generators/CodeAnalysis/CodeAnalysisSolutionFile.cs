@@ -19,7 +19,7 @@ namespace ServiceClientGenerator.Generators.CodeAnalysis
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
+    #line 1 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class CodeAnalysisSolutionFile : BaseGenerator
     {
@@ -38,7 +38,7 @@ Project(""{2150E333-8FDC-42A3-9474-1A3956D46DE8}"") = ""ServiceAnalysis"", ""Ser
 EndProject
 ");
             
-            #line 14 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
+            #line 14 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
 
     foreach(var project in (List<CodeAnalysisSolutionCreator.Project>)this.Session["CodeAnalysisProjects"])
     {
@@ -48,28 +48,28 @@ EndProject
             #line hidden
             this.Write("Project(\"{9A19103F-16F7-4668-BE54-9A1E7A4F7556}\") = \"");
             
-            #line 18 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
+            #line 18 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.Name));
             
             #line default
             #line hidden
             this.Write("\", \"");
             
-            #line 18 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
+            #line 18 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectPath));
             
             #line default
             #line hidden
             this.Write("\", \"");
             
-            #line 18 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
+            #line 18 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write("\"\r\nEndProject\r\n");
             
-            #line 20 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
+            #line 20 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
 
     }
 
@@ -80,6 +80,8 @@ EndProject
 EndProject
 Project(""{9A19103F-16F7-4668-BE54-9A1E7A4F7556}"") = ""MockAnalyzer"", ""code-analysis/MockAnalyzer/MockAnalyzer.csproj"", ""{9BC3B08B-9F09-444E-AD15-67045FA3AF19}""
 EndProject
+Project(""{9A19103F-16F7-4668-BE54-9A1E7A4F7556}"") = ""AnalyzerUnitTests"", ""code-analysis\AnalyzerUnitTests\AnalyzerUnitTests.csproj"", ""{FB4B26D0-2E81-4673-9001-D0C859D8CEA1}""
+EndProject
 
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -89,7 +91,7 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 ");
             
-            #line 34 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
+            #line 36 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
 
     foreach(var project in (List<CodeAnalysisSolutionCreator.Project>)this.Session["CodeAnalysisProjects"])
     {
@@ -99,35 +101,35 @@ Global
             #line hidden
             this.Write("\t\t");
             
-            #line 38 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
+            #line 40 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write(".Debug|Any CPU.ActiveCfg = Debug|Any CPU\r\n\t\t");
             
-            #line 39 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
+            #line 41 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write(".Debug|Any CPU.Build.0 = Debug|Any CPU\r\n\t\t");
             
-            #line 40 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
+            #line 42 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write(".Release|Any CPU.ActiveCfg = Release|Any CPU\r\n\t\t");
             
-            #line 41 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
+            #line 43 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write(".Release|Any CPU.Build.0 = Release|Any CPU\r\n");
             
-            #line 42 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
+            #line 44 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
 
     }
 
@@ -142,6 +144,10 @@ Global
 		{9BC3B08B-9F09-444E-AD15-67045FA3AF19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BC3B08B-9F09-444E-AD15-67045FA3AF19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BC3B08B-9F09-444E-AD15-67045FA3AF19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB4B26D0-2E81-4673-9001-D0C859D8CEA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB4B26D0-2E81-4673-9001-D0C859D8CEA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB4B26D0-2E81-4673-9001-D0C859D8CEA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB4B26D0-2E81-4673-9001-D0C859D8CEA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -149,7 +155,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 ");
             
-            #line 58 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
+            #line 64 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
 
     foreach(var project in (List<CodeAnalysisSolutionCreator.Project>)this.Session["CodeAnalysisProjects"])
     {
@@ -159,14 +165,14 @@ Global
             #line hidden
             this.Write("\t\t");
             
-            #line 62 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
+            #line 68 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write(" = {1523203C-CD16-4B4A-8F9D-8ECCA3A327AA}\r\n");
             
-            #line 63 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
+            #line 69 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
 
     }
 
