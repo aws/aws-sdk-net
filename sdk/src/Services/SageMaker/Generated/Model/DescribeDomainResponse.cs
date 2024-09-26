@@ -54,6 +54,7 @@ namespace Amazon.SageMaker.Model
         private string _singleSignOnManagedApplicationInstanceId;
         private DomainStatus _status;
         private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private TagPropagation _tagPropagation;
         private string _url;
         private string _vpcId;
 
@@ -443,6 +444,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetSubnetIds()
         {
             return this._subnetIds != null && (this._subnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagPropagation. 
+        /// <para>
+        /// Indicates whether custom tag propagation is supported for the domain.
+        /// </para>
+        /// </summary>
+        public TagPropagation TagPropagation
+        {
+            get { return this._tagPropagation; }
+            set { this._tagPropagation = value; }
+        }
+
+        // Check to see if TagPropagation property is set
+        internal bool IsSetTagPropagation()
+        {
+            return this._tagPropagation != null;
         }
 
         /// <summary>
