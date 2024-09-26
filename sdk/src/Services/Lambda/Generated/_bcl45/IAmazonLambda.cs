@@ -274,9 +274,9 @@ namespace Amazon.Lambda
         /// <para>
         /// To grant permission to another account, specify the account ID as the <c>Principal</c>.
         /// To grant permission to an organization defined in Organizations, specify the organization
-        /// ID as the <c>PrincipalOrgID</c>. For Amazon Web Servicesservices, the principal is
+        /// ID as the <c>PrincipalOrgID</c>. For Amazon Web Services services, the principal is
         /// a domain-style identifier that the service defines, such as <c>s3.amazonaws.com</c>
-        /// or <c>sns.amazonaws.com</c>. For Amazon Web Servicesservices, you can also specify
+        /// or <c>sns.amazonaws.com</c>. For Amazon Web Services services, you can also specify
         /// the ARN of the associated resource as the <c>SourceArn</c>. If you grant permission
         /// to a service principal without specifying the source, other accounts could potentially
         /// configure resources in their account to invoke your Lambda function.
@@ -315,11 +315,6 @@ namespace Amazon.Lambda
         /// </para>
         ///  </li> </ul>
         /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.PublicPolicyException">
-        /// Lambda prevented your policy from being created because it would grant public access
-        /// to your function. If you intended to create a public policy, use the <a>PutPublicAccessBlockConfig</a>
-        /// API action to configure your function's public-access settings to allow public policies.
-        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
         /// </exception>
@@ -349,9 +344,9 @@ namespace Amazon.Lambda
         /// <para>
         /// To grant permission to another account, specify the account ID as the <c>Principal</c>.
         /// To grant permission to an organization defined in Organizations, specify the organization
-        /// ID as the <c>PrincipalOrgID</c>. For Amazon Web Servicesservices, the principal is
+        /// ID as the <c>PrincipalOrgID</c>. For Amazon Web Services services, the principal is
         /// a domain-style identifier that the service defines, such as <c>s3.amazonaws.com</c>
-        /// or <c>sns.amazonaws.com</c>. For Amazon Web Servicesservices, you can also specify
+        /// or <c>sns.amazonaws.com</c>. For Amazon Web Services services, you can also specify
         /// the ARN of the associated resource as the <c>SourceArn</c>. If you grant permission
         /// to a service principal without specifying the source, other accounts could potentially
         /// configure resources in their account to invoke your Lambda function.
@@ -392,11 +387,6 @@ namespace Amazon.Lambda
         /// retrieve the latest RevisionId for your resource.
         /// </para>
         ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.PublicPolicyException">
-        /// Lambda prevented your policy from being created because it would grant public access
-        /// to your function. If you intended to create a public policy, use the <a>PutPublicAccessBlockConfig</a>
-        /// API action to configure your function's public-access settings to allow public policies.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -836,8 +826,8 @@ namespace Amazon.Lambda
         /// package</a> and an <a href="https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">execution
         /// role</a>. The deployment package is a .zip file archive or container image that contains
         /// your function code. The execution role grants the function permission to use Amazon
-        /// Web Servicesservices, such as Amazon CloudWatch Logs for log streaming and X-Ray for
-        /// request tracing.
+        /// Web Services services, such as Amazon CloudWatch Logs for log streaming and X-Ray
+        /// for request tracing.
         /// 
         ///  
         /// <para>
@@ -892,7 +882,7 @@ namespace Amazon.Lambda
         /// </para>
         ///  
         /// <para>
-        /// If another Amazon Web Services account or an Amazon Web Servicesservice invokes your
+        /// If another Amazon Web Services account or an Amazon Web Services service invokes your
         /// function, use <a>AddPermission</a> to grant permission by creating a resource-based
         /// Identity and Access Management (IAM) policy. You can grant permissions at the function
         /// level, on a version, or on an alias.
@@ -900,7 +890,7 @@ namespace Amazon.Lambda
         ///  
         /// <para>
         /// To invoke your function directly, use <a>Invoke</a>. To invoke your function in response
-        /// to events in other Amazon Web Servicesservices, create an event source mapping (<a>CreateEventSourceMapping</a>),
+        /// to events in other Amazon Web Services services, create an event source mapping (<a>CreateEventSourceMapping</a>),
         /// or configure a function trigger in the other service. For more information, see <a
         /// href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-invocation.html">Invoking
         /// Lambda functions</a>.
@@ -951,8 +941,8 @@ namespace Amazon.Lambda
         /// package</a> and an <a href="https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">execution
         /// role</a>. The deployment package is a .zip file archive or container image that contains
         /// your function code. The execution role grants the function permission to use Amazon
-        /// Web Servicesservices, such as Amazon CloudWatch Logs for log streaming and X-Ray for
-        /// request tracing.
+        /// Web Services services, such as Amazon CloudWatch Logs for log streaming and X-Ray
+        /// for request tracing.
         /// 
         ///  
         /// <para>
@@ -1007,7 +997,7 @@ namespace Amazon.Lambda
         /// </para>
         ///  
         /// <para>
-        /// If another Amazon Web Services account or an Amazon Web Servicesservice invokes your
+        /// If another Amazon Web Services account or an Amazon Web Services service invokes your
         /// function, use <a>AddPermission</a> to grant permission by creating a resource-based
         /// Identity and Access Management (IAM) policy. You can grant permissions at the function
         /// level, on a version, or on an alias.
@@ -1015,7 +1005,7 @@ namespace Amazon.Lambda
         ///  
         /// <para>
         /// To invoke your function directly, use <a>Invoke</a>. To invoke your function in response
-        /// to events in other Amazon Web Servicesservices, create an event source mapping (<a>CreateEventSourceMapping</a>),
+        /// to events in other Amazon Web Services services, create an event source mapping (<a>CreateEventSourceMapping</a>),
         /// or configure a function trigger in the other service. For more information, see <a
         /// href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-invocation.html">Invoking
         /// Lambda functions</a>.
@@ -1329,7 +1319,7 @@ namespace Amazon.Lambda
         ///  
         /// <para>
         /// To delete Lambda event source mappings that invoke a function, use <a>DeleteEventSourceMapping</a>.
-        /// For Amazon Web Servicesservices and resources that invoke your function directly,
+        /// For Amazon Web Services services and resources that invoke your function directly,
         /// delete the trigger in the service where you originally configured it.
         /// </para>
         /// </summary>
@@ -1363,7 +1353,7 @@ namespace Amazon.Lambda
         ///  
         /// <para>
         /// To delete Lambda event source mappings that invoke a function, use <a>DeleteEventSourceMapping</a>.
-        /// For Amazon Web Servicesservices and resources that invoke your function directly,
+        /// For Amazon Web Services services and resources that invoke your function directly,
         /// delete the trigger in the service where you originally configured it.
         /// </para>
         /// </summary>
@@ -1398,7 +1388,7 @@ namespace Amazon.Lambda
         ///  
         /// <para>
         /// To delete Lambda event source mappings that invoke a function, use <a>DeleteEventSourceMapping</a>.
-        /// For Amazon Web Servicesservices and resources that invoke your function directly,
+        /// For Amazon Web Services services and resources that invoke your function directly,
         /// delete the trigger in the service where you originally configured it.
         /// </para>
         /// </summary>
@@ -1436,7 +1426,7 @@ namespace Amazon.Lambda
         ///  
         /// <para>
         /// To delete Lambda event source mappings that invoke a function, use <a>DeleteEventSourceMapping</a>.
-        /// For Amazon Web Servicesservices and resources that invoke your function directly,
+        /// For Amazon Web Services services and resources that invoke your function directly,
         /// delete the trigger in the service where you originally configured it.
         /// </para>
         /// </summary>
@@ -1826,118 +1816,6 @@ namespace Amazon.Lambda
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteProvisionedConcurrencyConfig">REST API Reference for DeleteProvisionedConcurrencyConfig Operation</seealso>
         Task<DeleteProvisionedConcurrencyConfigResponse> DeleteProvisionedConcurrencyConfigAsync(DeleteProvisionedConcurrencyConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-        
-        #region  DeleteResourcePolicy
-
-
-        /// <summary>
-        /// <note> 
-        /// <para>
-        /// The option to create and modify full JSON resource-based policies, and to use the
-        /// PutResourcePolicy, GetResourcePolicy, and DeleteResourcePolicy APIs, won't be available
-        /// in all Amazon Web Services Regions until September 30, 2024.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// Deletes a <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based
-        /// policy</a> from a function.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
-        /// 
-        /// <returns>The response from the DeleteResourcePolicy service method, as returned by Lambda.</returns>
-        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is not valid.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.PreconditionFailedException">
-        /// The RevisionId provided does not match the latest RevisionId for the Lambda function
-        /// or alias.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        ///  <b>For AddPermission and RemovePermission API operations:</b> Call <c>GetPolicy</c>
-        /// to retrieve the latest RevisionId for your resource.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>For all other API operations:</b> Call <c>GetFunction</c> or <c>GetAlias</c> to
-        /// retrieve the latest RevisionId for your resource.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
-        /// The resource already exists, or another operation is in progress.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
-        /// The resource specified in the request does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ServiceException">
-        /// The Lambda service encountered an internal error.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
-        /// quotas</a>.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
-        DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request);
-
-
-
-        /// <summary>
-        /// <note> 
-        /// <para>
-        /// The option to create and modify full JSON resource-based policies, and to use the
-        /// PutResourcePolicy, GetResourcePolicy, and DeleteResourcePolicy APIs, won't be available
-        /// in all Amazon Web Services Regions until September 30, 2024.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// Deletes a <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based
-        /// policy</a> from a function.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the DeleteResourcePolicy service method, as returned by Lambda.</returns>
-        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is not valid.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.PreconditionFailedException">
-        /// The RevisionId provided does not match the latest RevisionId for the Lambda function
-        /// or alias.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        ///  <b>For AddPermission and RemovePermission API operations:</b> Call <c>GetPolicy</c>
-        /// to retrieve the latest RevisionId for your resource.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>For all other API operations:</b> Call <c>GetFunction</c> or <c>GetAlias</c> to
-        /// retrieve the latest RevisionId for your resource.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
-        /// The resource already exists, or another operation is in progress.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
-        /// The resource specified in the request does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ServiceException">
-        /// The Lambda service encountered an internal error.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
-        /// quotas</a>.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
-        Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2946,152 +2824,6 @@ namespace Amazon.Lambda
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetProvisionedConcurrencyConfig">REST API Reference for GetProvisionedConcurrencyConfig Operation</seealso>
         Task<GetProvisionedConcurrencyConfigResponse> GetProvisionedConcurrencyConfigAsync(GetProvisionedConcurrencyConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-        
-        #region  GetPublicAccessBlockConfig
-
-
-        /// <summary>
-        /// <note> 
-        /// <para>
-        /// The option to configure public-access settings, and to use the PutPublicAccessBlock
-        /// and GetPublicAccessBlock APIs, won't be available in all Amazon Web Services Regions
-        /// until September 30, 2024.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// Retrieve the public-access settings for a function.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the GetPublicAccessBlockConfig service method.</param>
-        /// 
-        /// <returns>The response from the GetPublicAccessBlockConfig service method, as returned by Lambda.</returns>
-        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is not valid.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
-        /// The resource specified in the request does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ServiceException">
-        /// The Lambda service encountered an internal error.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
-        /// quotas</a>.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPublicAccessBlockConfig">REST API Reference for GetPublicAccessBlockConfig Operation</seealso>
-        GetPublicAccessBlockConfigResponse GetPublicAccessBlockConfig(GetPublicAccessBlockConfigRequest request);
-
-
-
-        /// <summary>
-        /// <note> 
-        /// <para>
-        /// The option to configure public-access settings, and to use the PutPublicAccessBlock
-        /// and GetPublicAccessBlock APIs, won't be available in all Amazon Web Services Regions
-        /// until September 30, 2024.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// Retrieve the public-access settings for a function.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the GetPublicAccessBlockConfig service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the GetPublicAccessBlockConfig service method, as returned by Lambda.</returns>
-        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is not valid.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
-        /// The resource specified in the request does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ServiceException">
-        /// The Lambda service encountered an internal error.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
-        /// quotas</a>.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPublicAccessBlockConfig">REST API Reference for GetPublicAccessBlockConfig Operation</seealso>
-        Task<GetPublicAccessBlockConfigResponse> GetPublicAccessBlockConfigAsync(GetPublicAccessBlockConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-        
-        #region  GetResourcePolicy
-
-
-        /// <summary>
-        /// <note> 
-        /// <para>
-        /// The option to create and modify full JSON resource-based policies, and to use the
-        /// PutResourcePolicy, GetResourcePolicy, and DeleteResourcePolicy APIs, won't be available
-        /// in all Amazon Web Services Regions until September 30, 2024.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// Retrieves the <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based
-        /// policy</a> attached to a function.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
-        /// 
-        /// <returns>The response from the GetResourcePolicy service method, as returned by Lambda.</returns>
-        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is not valid.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
-        /// The resource specified in the request does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ServiceException">
-        /// The Lambda service encountered an internal error.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
-        /// quotas</a>.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
-        GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request);
-
-
-
-        /// <summary>
-        /// <note> 
-        /// <para>
-        /// The option to create and modify full JSON resource-based policies, and to use the
-        /// PutResourcePolicy, GetResourcePolicy, and DeleteResourcePolicy APIs, won't be available
-        /// in all Amazon Web Services Regions until September 30, 2024.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// Retrieves the <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based
-        /// policy</a> attached to a function.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the GetResourcePolicy service method, as returned by Lambda.</returns>
-        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is not valid.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
-        /// The resource specified in the request does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ServiceException">
-        /// The Lambda service encountered an internal error.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
-        /// quotas</a>.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
-        Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -4519,7 +4251,7 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Returns a function, event source mapping, or code signing configuration's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.
-        /// You can also view funciton tags with <a>GetFunction</a>.
+        /// You can also view function tags with <a>GetFunction</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTags service method.</param>
         /// 
@@ -4544,7 +4276,7 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Returns a function, event source mapping, or code signing configuration's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.
-        /// You can also view funciton tags with <a>GetFunction</a>.
+        /// You can also view function tags with <a>GetFunction</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTags service method.</param>
         /// <param name="cancellationToken">
@@ -5252,256 +4984,6 @@ namespace Amazon.Lambda
 
         #endregion
         
-        #region  PutPublicAccessBlockConfig
-
-
-        /// <summary>
-        /// <note> 
-        /// <para>
-        /// The option to configure public-access settings, and to use the PutPublicAccessBlock
-        /// and GetPublicAccessBlock APIs, won't be available in all Amazon Web Services Regions
-        /// until September 30, 2024.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// Configure your function's public-access settings.
-        /// </para>
-        ///  
-        /// <para>
-        /// To control public access to a Lambda function, you can choose whether to allow the
-        /// creation of <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based
-        /// policies</a> that allow public access to that function. You can also block public
-        /// access to a function, even if it has an existing resource-based policy that allows
-        /// it.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the PutPublicAccessBlockConfig service method.</param>
-        /// 
-        /// <returns>The response from the PutPublicAccessBlockConfig service method, as returned by Lambda.</returns>
-        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is not valid.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
-        /// The resource already exists, or another operation is in progress.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
-        /// The resource specified in the request does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ServiceException">
-        /// The Lambda service encountered an internal error.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
-        /// quotas</a>.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutPublicAccessBlockConfig">REST API Reference for PutPublicAccessBlockConfig Operation</seealso>
-        PutPublicAccessBlockConfigResponse PutPublicAccessBlockConfig(PutPublicAccessBlockConfigRequest request);
-
-
-
-        /// <summary>
-        /// <note> 
-        /// <para>
-        /// The option to configure public-access settings, and to use the PutPublicAccessBlock
-        /// and GetPublicAccessBlock APIs, won't be available in all Amazon Web Services Regions
-        /// until September 30, 2024.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// Configure your function's public-access settings.
-        /// </para>
-        ///  
-        /// <para>
-        /// To control public access to a Lambda function, you can choose whether to allow the
-        /// creation of <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based
-        /// policies</a> that allow public access to that function. You can also block public
-        /// access to a function, even if it has an existing resource-based policy that allows
-        /// it.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the PutPublicAccessBlockConfig service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the PutPublicAccessBlockConfig service method, as returned by Lambda.</returns>
-        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is not valid.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
-        /// The resource already exists, or another operation is in progress.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
-        /// The resource specified in the request does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ServiceException">
-        /// The Lambda service encountered an internal error.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
-        /// quotas</a>.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutPublicAccessBlockConfig">REST API Reference for PutPublicAccessBlockConfig Operation</seealso>
-        Task<PutPublicAccessBlockConfigResponse> PutPublicAccessBlockConfigAsync(PutPublicAccessBlockConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-        
-        #region  PutResourcePolicy
-
-
-        /// <summary>
-        /// <note> 
-        /// <para>
-        /// The option to create and modify full JSON resource-based policies, and to use the
-        /// PutResourcePolicy, GetResourcePolicy, and DeleteResourcePolicy APIs, won't be available
-        /// in all Amazon Web Services Regions until September 30, 2024.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// Adds a <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based
-        /// policy</a> to a function. You can use resource-based policies to grant access to other
-        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/permissions-function-cross-account.html">Amazon
-        /// Web Services accounts</a>, <a href="https://docs.aws.amazon.com/lambda/latest/dg/permissions-function-organization.html">organizations</a>,
-        /// or <a href="https://docs.aws.amazon.com/lambda/latest/dg/permissions-function-services.html">services</a>.
-        /// Resource-based policies apply to a single function, version, or alias.
-        /// </para>
-        ///  <important> 
-        /// <para>
-        /// Adding a resource-based policy using this API action replaces any existing policy
-        /// you've previously created. This means that if you've previously added resource-based
-        /// permissions to a function using the <a>AddPermission</a> action, those permissions
-        /// will be overwritten by your new policy.
-        /// </para>
-        ///  </important>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
-        /// 
-        /// <returns>The response from the PutResourcePolicy service method, as returned by Lambda.</returns>
-        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is not valid.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.PolicyLengthExceededException">
-        /// The permissions policy for the resource is too large. For more information, see <a
-        /// href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
-        /// quotas</a>.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.PreconditionFailedException">
-        /// The RevisionId provided does not match the latest RevisionId for the Lambda function
-        /// or alias.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        ///  <b>For AddPermission and RemovePermission API operations:</b> Call <c>GetPolicy</c>
-        /// to retrieve the latest RevisionId for your resource.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>For all other API operations:</b> Call <c>GetFunction</c> or <c>GetAlias</c> to
-        /// retrieve the latest RevisionId for your resource.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.PublicPolicyException">
-        /// Lambda prevented your policy from being created because it would grant public access
-        /// to your function. If you intended to create a public policy, use the <a>PutPublicAccessBlockConfig</a>
-        /// API action to configure your function's public-access settings to allow public policies.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
-        /// The resource already exists, or another operation is in progress.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
-        /// The resource specified in the request does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ServiceException">
-        /// The Lambda service encountered an internal error.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
-        /// quotas</a>.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
-        PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request);
-
-
-
-        /// <summary>
-        /// <note> 
-        /// <para>
-        /// The option to create and modify full JSON resource-based policies, and to use the
-        /// PutResourcePolicy, GetResourcePolicy, and DeleteResourcePolicy APIs, won't be available
-        /// in all Amazon Web Services Regions until September 30, 2024.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// Adds a <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based
-        /// policy</a> to a function. You can use resource-based policies to grant access to other
-        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/permissions-function-cross-account.html">Amazon
-        /// Web Services accounts</a>, <a href="https://docs.aws.amazon.com/lambda/latest/dg/permissions-function-organization.html">organizations</a>,
-        /// or <a href="https://docs.aws.amazon.com/lambda/latest/dg/permissions-function-services.html">services</a>.
-        /// Resource-based policies apply to a single function, version, or alias.
-        /// </para>
-        ///  <important> 
-        /// <para>
-        /// Adding a resource-based policy using this API action replaces any existing policy
-        /// you've previously created. This means that if you've previously added resource-based
-        /// permissions to a function using the <a>AddPermission</a> action, those permissions
-        /// will be overwritten by your new policy.
-        /// </para>
-        ///  </important>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the PutResourcePolicy service method, as returned by Lambda.</returns>
-        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is not valid.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.PolicyLengthExceededException">
-        /// The permissions policy for the resource is too large. For more information, see <a
-        /// href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
-        /// quotas</a>.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.PreconditionFailedException">
-        /// The RevisionId provided does not match the latest RevisionId for the Lambda function
-        /// or alias.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        ///  <b>For AddPermission and RemovePermission API operations:</b> Call <c>GetPolicy</c>
-        /// to retrieve the latest RevisionId for your resource.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>For all other API operations:</b> Call <c>GetFunction</c> or <c>GetAlias</c> to
-        /// retrieve the latest RevisionId for your resource.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.PublicPolicyException">
-        /// Lambda prevented your policy from being created because it would grant public access
-        /// to your function. If you intended to create a public policy, use the <a>PutPublicAccessBlockConfig</a>
-        /// API action to configure your function's public-access settings to allow public policies.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
-        /// The resource already exists, or another operation is in progress.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
-        /// The resource specified in the request does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ServiceException">
-        /// The Lambda service encountered an internal error.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
-        /// quotas</a>.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
-        Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-        
         #region  PutRuntimeManagementConfig
 
 
@@ -5658,7 +5140,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Revokes function-use permission from an Amazon Web Servicesservice or another Amazon
+        /// Revokes function-use permission from an Amazon Web Services service or another Amazon
         /// Web Services account. You can get the ID of the statement from the output of <a>GetPolicy</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemovePermission service method.</param>
@@ -5683,11 +5165,6 @@ namespace Amazon.Lambda
         /// </para>
         ///  </li> </ul>
         /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.PublicPolicyException">
-        /// Lambda prevented your policy from being created because it would grant public access
-        /// to your function. If you intended to create a public policy, use the <a>PutPublicAccessBlockConfig</a>
-        /// API action to configure your function's public-access settings to allow public policies.
-        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
         /// </exception>
@@ -5704,7 +5181,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Revokes function-use permission from an Amazon Web Servicesservice or another Amazon
+        /// Revokes function-use permission from an Amazon Web Services service or another Amazon
         /// Web Services account. You can get the ID of the statement from the output of <a>GetPolicy</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemovePermission service method.</param>
@@ -5731,11 +5208,6 @@ namespace Amazon.Lambda
         /// retrieve the latest RevisionId for your resource.
         /// </para>
         ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.PublicPolicyException">
-        /// Lambda prevented your policy from being created because it would grant public access
-        /// to your function. If you intended to create a public policy, use the <a>PutPublicAccessBlockConfig</a>
-        /// API action to configure your function's public-access settings to allow public policies.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -6530,7 +6002,8 @@ namespace Amazon.Lambda
         ///  
         /// <para>
         /// To configure function concurrency, use <a>PutFunctionConcurrency</a>. To grant invoke
-        /// permissions to an Amazon Web Services account or Amazon Web Servicesservice, use <a>AddPermission</a>.
+        /// permissions to an Amazon Web Services account or Amazon Web Services service, use
+        /// <a>AddPermission</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFunctionConfiguration service method.</param>
@@ -6607,7 +6080,8 @@ namespace Amazon.Lambda
         ///  
         /// <para>
         /// To configure function concurrency, use <a>PutFunctionConcurrency</a>. To grant invoke
-        /// permissions to an Amazon Web Services account or Amazon Web Servicesservice, use <a>AddPermission</a>.
+        /// permissions to an Amazon Web Services account or Amazon Web Services service, use
+        /// <a>AddPermission</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFunctionConfiguration service method.</param>

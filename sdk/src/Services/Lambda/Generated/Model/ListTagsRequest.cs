@@ -32,7 +32,7 @@ namespace Amazon.Lambda.Model
     /// <summary>
     /// Container for the parameters to the ListTags operation.
     /// Returns a function, event source mapping, or code signing configuration's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.
-    /// You can also view funciton tags with <a>GetFunction</a>.
+    /// You can also view function tags with <a>GetFunction</a>.
     /// </summary>
     public partial class ListTagsRequest : AmazonLambdaRequest
     {
