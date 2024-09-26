@@ -687,8 +687,6 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.WellArchitected.CodeAnalysis" Path="|AWSSDK.WellArchitected.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.WorkDocs.CodeAnalysis" Path="|AWSSDK.WorkDocs.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.WorkDocs.CodeAnalysis" Path="|AWSSDK.WorkDocs.CodeAnalysis|"/>
-    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.WorkLink.CodeAnalysis" Path="|AWSSDK.WorkLink.CodeAnalysis|"/>
-    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.WorkLink.CodeAnalysis" Path="|AWSSDK.WorkLink.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.WorkMail.CodeAnalysis" Path="|AWSSDK.WorkMail.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.WorkMail.CodeAnalysis" Path="|AWSSDK.WorkMail.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.WorkMailMessageFlow.CodeAnalysis" Path="|AWSSDK.WorkMailMessageFlow.CodeAnalysis|"/>
