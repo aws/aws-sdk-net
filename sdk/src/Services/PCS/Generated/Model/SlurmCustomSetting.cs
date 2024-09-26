@@ -41,11 +41,41 @@ namespace Amazon.PCS.Model
         /// Gets and sets the property ParameterName. 
         /// <para>
         /// Amazon Web Services PCS supports configuration of the following Slurm parameters:
-        /// <a href="https://slurm.schedmd.com/slurm.conf.html#OPT_Prolog_1"> <c>Prolog</c> </a>,
-        /// <a href="https://slurm.schedmd.com/slurm.conf.html#OPT_Epilog_1"> <c>Epilog</c> </a>,
-        /// and <a href="https://slurm.schedmd.com/slurm.conf.html#OPT_SelectTypeParameters">
-        /// <c>SelectTypeParameters</c> </a>.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For <b>clusters</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://slurm.schedmd.com/slurm.conf.html#OPT_Prolog_1"> <c>Prolog</c> </a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://slurm.schedmd.com/slurm.conf.html#OPT_Epilog_1"> <c>Epilog</c> </a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://slurm.schedmd.com/slurm.conf.html#OPT_SelectTypeParameters"> <c>SelectTypeParameters</c>
+        /// </a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// For <b>compute node groups</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://slurm.schedmd.com/slurm.conf.html#OPT_Weight"> <c>Weight</c> </a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://slurm.schedmd.com/slurm.conf.html#OPT_Weight"> <c>RealMemory</c>
+        /// </a> 
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ParameterName
