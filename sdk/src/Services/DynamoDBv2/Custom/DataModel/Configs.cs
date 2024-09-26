@@ -186,8 +186,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <summary>
         /// Property that directs <see cref="DynamoDBContext"/> to prefix all table names
         /// with a specific string.
-        /// If property is null or empty, no prefix is used and default
-        /// table names are used.
+        /// If property is null, no prefix is used and default table names are used.
         /// </summary>
         public string TableNamePrefix { get; set; }
 
@@ -428,9 +427,7 @@ namespace Amazon.DynamoDBv2.DataModel
             bool retrieveDateTimeInUtc = operationConfig.RetrieveDateTimeInUtc ?? contextConfig.RetrieveDateTimeInUtc ?? false;
             bool isEmptyStringValueEnabled = operationConfig.IsEmptyStringValueEnabled ?? contextConfig.IsEmptyStringValueEnabled ?? false;
             DynamoDBEntryConversion conversion = operationConfig.Conversion ?? contextConfig.Conversion ?? DynamoDBEntryConversion.CurrentConversion;
-            string tableNamePrefix =
-                !string.IsNullOrEmpty(operationConfig.TableNamePrefix) ? operationConfig.TableNamePrefix :
-                !string.IsNullOrEmpty(contextConfig.TableNamePrefix) ? contextConfig.TableNamePrefix : string.Empty;
+            string tableNamePrefix = operationConfig.TableNamePrefix ?? contextConfig.TableNamePrefix ?? string.Empty;
 
             // These properties can only be set at the operation level
             bool disableFetchingTableMetadata = contextConfig.DisableFetchingTableMetadata ?? false;
