@@ -44,6 +44,8 @@ namespace Amazon.Chatbot.Model
         private string _slackTeamId;
         private string _slackTeamName;
         private List<string> _snsTopicArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _state;
+        private string _stateReason;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private bool? _userAuthorizationRequired;
 
@@ -246,6 +248,44 @@ namespace Amazon.Chatbot.Model
         internal bool IsSetSnsTopicArns()
         {
             return this._snsTopicArns != null && (this._snsTopicArns.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property State. 
+        /// <para>
+        /// Either <c>ENABLED</c> or <c>DISABLED</c>. The resource returns <c>DISABLED</c> if
+        /// the organization's AWS Chatbot policy has explicitly denied that configuration. For
+        /// example, if Amazon Chime is disabled.
+        /// </para>
+        /// </summary>
+        public string State
+        {
+            get { return this._state; }
+            set { this._state = value; }
+        }
+
+        // Check to see if State property is set
+        internal bool IsSetState()
+        {
+            return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateReason. 
+        /// <para>
+        /// Provided if State is <c>DISABLED</c>. Provides context as to why the resource is disabled.
+        /// </para>
+        /// </summary>
+        public string StateReason
+        {
+            get { return this._stateReason; }
+            set { this._stateReason = value; }
+        }
+
+        // Check to see if StateReason property is set
+        internal bool IsSetStateReason()
+        {
+            return this._stateReason != null;
         }
 
         /// <summary>

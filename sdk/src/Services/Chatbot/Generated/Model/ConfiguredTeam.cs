@@ -34,9 +34,49 @@ namespace Amazon.Chatbot.Model
     /// </summary>
     public partial class ConfiguredTeam
     {
+        private string _state;
+        private string _stateReason;
         private string _teamId;
         private string _teamName;
         private string _tenantId;
+
+        /// <summary>
+        /// Gets and sets the property State. 
+        /// <para>
+        /// Either <c>ENABLED</c> or <c>DISABLED</c>. The resource returns <c>DISABLED</c> if
+        /// the organization's AWS Chatbot policy has explicitly denied that configuration. For
+        /// example, if Amazon Chime is disabled.
+        /// </para>
+        /// </summary>
+        public string State
+        {
+            get { return this._state; }
+            set { this._state = value; }
+        }
+
+        // Check to see if State property is set
+        internal bool IsSetState()
+        {
+            return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateReason. 
+        /// <para>
+        /// Provided if State is <c>DISABLED</c>. Provides context as to why the resource is disabled.
+        /// </para>
+        /// </summary>
+        public string StateReason
+        {
+            get { return this._stateReason; }
+            set { this._stateReason = value; }
+        }
+
+        // Check to see if StateReason property is set
+        internal bool IsSetStateReason()
+        {
+            return this._stateReason != null;
+        }
 
         /// <summary>
         /// Gets and sets the property TeamId. 
