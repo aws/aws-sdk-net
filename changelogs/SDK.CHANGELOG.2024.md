@@ -1,3 +1,20 @@
+### 3.7.893.0 (2024-09-26 18:26 UTC)
+* Chatbot (3.7.402.0)
+	* Return State and StateReason fields for Chatbot Channel Configurations.
+* Lambda (3.7.405.0)
+	* Reverting Lambda resource-based policy and block public access APIs.
+* Organizations (3.7.402.0)
+	* Add support for policy operations on the CHATBOT_POLICY policy type.
+* PCS (3.7.400.13)
+	* AWS PCS API documentation - Edited the description of the iamInstanceProfileArn parameter of the CreateComputeNodeGroup and UpdateComputeNodeGroup actions; edited the description of the SlurmCustomSetting data type to list the supported parameters for clusters and compute node groups.
+* RDSDataService (3.7.400.25)
+	* Documentation update for RDS Data API to reflect support for Aurora MySQL Serverless v2 and Provisioned DB clusters.
+* SageMaker (3.7.410.0)
+	* Adding `TagPropagation` attribute to Sagemaker API
+* Core 3.7.400.25
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.892.1 (2024-09-25 18:24 UTC)
 * CloudTrail (3.7.400.24)
 	* Doc-only update for CloudTrail network activity events release (in preview)
