@@ -17,9 +17,41 @@
       "The obsolete `ProfileManager` class in Amazon.Util is removed. Please use the SharedCredentialsFile or the NetSDKCredentialsFile instead.",
       "The following obsolete properties on `AWSConfigs` are removed: `Logging`, `ResponseLogging`, and `LogMetrics`. Use `LoggingConfig` instead.",
       "`public static Condition NewCondition(DateComparisonType type, DateTime date)` in `Amazon.Auth/AccessControlPolicy/ConditionFactory` is removed. Please use `NewConditionUtc` instead.",
-      "In the `ClientConfig` class, the obsolete `DetermineDnsSuffix` has been removed. Use the service specific `client.DetermineServiceOperationEndpoint` method instead. The `ReadEntireResponse` property has been removed, use the `AWSConfigs.LoggingConfig.LogResponses` or `ClientConfig.LogResponse` instead."
+      "In the `ClientConfig` class, the obsolete `DetermineDnsSuffix` has been removed. Use the service specific `client.DetermineServiceOperationEndpoint` method instead. The `ReadEntireResponse` property has been removed, use the `AWSConfigs.LoggingConfig.LogResponses` or `ClientConfig.LogResponse` instead.",
+      "Apply missing documentation to some classes in Amazon.Runtime",
+      "Address protocol tests that are breaking changes.",
+      "Xml Responses that returned pure whitespace in the body of an xml element will now return all the whitespace instead of an empty element.",
+      "If a payload of a response has no data, instead of returning an empty memory stream as the payload we will return null as the payload.",
+      "Unmarshalling an attribute with @xsi as part of the localName was not working, since xsi is a prefix. We will now successfully unmarshall an attribute with a prefix.",
+      "Other non-breaking changes include: We will now not send empty lists over the wire in headers only, since the service rejects these anyways.",
+      "Add code analysis rule when using collection initializers without an object initializer for collection based modeled properties.",
+      "Update XML handling to be able to unmarshall self closing XML elements."
     ],
-    "type": "minor",
     "updateMinimum": true
-  }
+  },
+  "services": [
+    {
+      "serviceName": "DynamoDBv2",
+      "type": "patch",
+      "changeLogMessages": [
+        "Removed DynamoDBStreams from DynamoDB package.",
+        "Allow `TableNamePrefix` to be removed on operation level"
+      ]
+    },
+    {
+      "serviceName": "DynamoDBStreams",
+      "type": "patch",
+      "changeLogMessages": [
+        "Move DynamoDBStreams to its own package."
+      ]
+    },
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "Fix #3125. Expose TaggingDirective, which controls x-amz-tagging-directive as a property on CopyObjectRequest."
+      ]
+    }
+  ],
+  "overrideVersion": "4.0.0.0"
 }

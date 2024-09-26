@@ -1,9 +1,0 @@
-{
-    "core": {
-      "changeLogMessages": [
-        "Add code analysis rule when using collection initializers without an object initializer for collection based modeled properties."
-      ],
-      "type": "patch",
-      "updateMinimum": true
-    }
-  }
