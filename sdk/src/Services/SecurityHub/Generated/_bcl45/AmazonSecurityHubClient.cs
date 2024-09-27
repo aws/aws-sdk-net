@@ -46,7 +46,7 @@ namespace Amazon.SecurityHub
     ///  
     /// <para>
     /// Security Hub collects security data across Amazon Web Services accounts, Amazon Web
-    /// Servicesservices, and supported third-party products and helps you analyze your security
+    /// Services services, and supported third-party products and helps you analyze your security
     /// trends and identify the highest priority security issues.
     /// </para>
     ///  
@@ -63,10 +63,10 @@ namespace Amazon.SecurityHub
     ///  
     /// <para>
     /// In addition to generating control findings, Security Hub also receives findings from
-    /// other Amazon Web Servicesservices, such as Amazon GuardDuty and Amazon Inspector,
+    /// other Amazon Web Services services, such as Amazon GuardDuty and Amazon Inspector,
     /// and supported third-party products. This gives you a single pane of glass into a variety
     /// of security-related issues. You can also send Security Hub findings to other Amazon
-    /// Web Servicesservices and supported third-party products.
+    /// Web Services services and supported third-party products.
     /// </para>
     ///  
     /// <para>
@@ -83,7 +83,7 @@ namespace Amazon.SecurityHub
     /// <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html">
     /// <i>Security Hub User Guide</i> </a>. The user guide explains key concepts and provides
     /// procedures that demonstrate how to use Security Hub features. It also provides information
-    /// about topics such as integrating Security Hub with other Amazon Web Servicesservices.
+    /// about topics such as integrating Security Hub with other Amazon Web Services services.
     /// </para>
     ///  
     /// <para>
@@ -92,7 +92,7 @@ namespace Amazon.SecurityHub
     /// Amazon Web Services provides tools and SDKs that consist of libraries and sample code
     /// for various languages and platforms, such as PowerShell, Java, Go, Python, C++, and
     /// .NET. These tools and SDKs provide convenient, programmatic access to Security Hub
-    /// and other Amazon Web Servicesservices . They also handle tasks such as signing requests,
+    /// and other Amazon Web Services services . They also handle tasks such as signing requests,
     /// managing errors, and retrying requests automatically. For information about installing
     /// and using the Amazon Web Services tools and SDKs, see <a href="http://aws.amazon.com/developer/tools/">Tools
     /// to Build on Amazon Web Services</a>.
@@ -373,9 +373,18 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// We recommend using Organizations instead of Security Hub invitations to manage your
+        /// member accounts. For information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing
+        /// Security Hub administrator and member accounts with Organizations</a> in the <i>Security
+        /// Hub User Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Accepts the invitation to be a member account and be monitored by the Security Hub
         /// administrator account that the invitation was sent from.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// This operation is only used by member accounts that are not added through Organizations.
@@ -419,9 +428,18 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// We recommend using Organizations instead of Security Hub invitations to manage your
+        /// member accounts. For information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing
+        /// Security Hub administrator and member accounts with Organizations</a> in the <i>Security
+        /// Hub User Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Accepts the invitation to be a member account and be monitored by the Security Hub
         /// administrator account that the invitation was sent from.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// This operation is only used by member accounts that are not added through Organizations.
@@ -1489,7 +1507,7 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        /// Updates from <c>BatchUpdateFindings</c> do not affect the value of <c>UpdatedAt</c>
+        /// Updates from <c>BatchUpdateFindings</c> don't affect the value of <c>UpdatedAt</c>
         /// for a finding.
         /// </para>
         ///  
@@ -1578,7 +1596,7 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        /// Updates from <c>BatchUpdateFindings</c> do not affect the value of <c>UpdatedAt</c>
+        /// Updates from <c>BatchUpdateFindings</c> don't affect the value of <c>UpdatedAt</c>
         /// for a finding.
         /// </para>
         ///  
@@ -1997,12 +2015,20 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Used to enable finding aggregation. Must be called from the aggregation Region.
-        /// 
+        /// <note> 
+        /// <para>
+        /// The <i>aggregation Region</i> is now called the <i>home Region</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Used to enable cross-Region aggregation. This operation can be invoked from the home
+        /// Region only.
+        /// </para>
         ///  
         /// <para>
-        /// For more details about cross-Region replication, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-aggregation.html">Configuring
-        /// finding aggregation</a> in the <i>Security Hub User Guide</i>. 
+        /// For information about how cross-Region aggregation works, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-aggregation.html">Understanding
+        /// cross-Region aggregation in Security Hub</a> in the <i>Security Hub User Guide</i>.
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFindingAggregator service method.</param>
@@ -2038,12 +2064,20 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Used to enable finding aggregation. Must be called from the aggregation Region.
-        /// 
+        /// <note> 
+        /// <para>
+        /// The <i>aggregation Region</i> is now called the <i>home Region</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Used to enable cross-Region aggregation. This operation can be invoked from the home
+        /// Region only.
+        /// </para>
         ///  
         /// <para>
-        /// For more details about cross-Region replication, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-aggregation.html">Configuring
-        /// finding aggregation</a> in the <i>Security Hub User Guide</i>. 
+        /// For information about how cross-Region aggregation works, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-aggregation.html">Understanding
+        /// cross-Region aggregation in Security Hub</a> in the <i>Security Hub User Guide</i>.
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFindingAggregator service method.</param>
@@ -2211,7 +2245,7 @@ namespace Amazon.SecurityHub
         /// </para>
         ///  
         /// <para>
-        /// Accounts that are managed using Organizations do not receive an invitation. They automatically
+        /// Accounts that are managed using Organizations don't receive an invitation. They automatically
         /// become a member account in Security Hub.
         /// </para>
         ///  <ul> <li> 
@@ -2311,7 +2345,7 @@ namespace Amazon.SecurityHub
         /// </para>
         ///  
         /// <para>
-        /// Accounts that are managed using Organizations do not receive an invitation. They automatically
+        /// Accounts that are managed using Organizations don't receive an invitation. They automatically
         /// become a member account in Security Hub.
         /// </para>
         ///  <ul> <li> 
@@ -2382,8 +2416,17 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Declines invitations to become a member account.
-        /// 
+        /// <note> 
+        /// <para>
+        /// We recommend using Organizations instead of Security Hub invitations to manage your
+        /// member accounts. For information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing
+        /// Security Hub administrator and member accounts with Organizations</a> in the <i>Security
+        /// Hub User Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Declines invitations to become a Security Hub member account.
+        /// </para>
         ///  
         /// <para>
         /// A prospective member account uses this operation to decline an invitation to become
@@ -2391,8 +2434,8 @@ namespace Amazon.SecurityHub
         /// </para>
         ///  
         /// <para>
-        /// This operation is only called by member accounts that aren't part of an organization.
-        /// Organization accounts don't receive invitations.
+        /// Only member accounts that aren't part of an Amazon Web Services organization should
+        /// use this operation. Organization accounts don't receive invitations.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeclineInvitations service method.</param>
@@ -2423,8 +2466,17 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Declines invitations to become a member account.
-        /// 
+        /// <note> 
+        /// <para>
+        /// We recommend using Organizations instead of Security Hub invitations to manage your
+        /// member accounts. For information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing
+        /// Security Hub administrator and member accounts with Organizations</a> in the <i>Security
+        /// Hub User Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Declines invitations to become a Security Hub member account.
+        /// </para>
         ///  
         /// <para>
         /// A prospective member account uses this operation to decline an invitation to become
@@ -2432,8 +2484,8 @@ namespace Amazon.SecurityHub
         /// </para>
         ///  
         /// <para>
-        /// This operation is only called by member accounts that aren't part of an organization.
-        /// Organization accounts don't receive invitations.
+        /// Only member accounts that aren't part of an Amazon Web Services organization should
+        /// use this operation. Organization accounts don't receive invitations.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeclineInvitations service method.</param>
@@ -2645,14 +2697,21 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Deletes a finding aggregator. When you delete the finding aggregator, you stop finding
-        /// aggregation.
-        /// 
+        /// <note> 
+        /// <para>
+        /// The <i>aggregation Region</i> is now called the <i>home Region</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Deletes a finding aggregator. When you delete the finding aggregator, you stop cross-Region
+        /// aggregation. Finding replication stops occurring from the linked Regions to the home
+        /// Region.
+        /// </para>
         ///  
         /// <para>
-        /// When you stop finding aggregation, findings that were already aggregated to the aggregation
-        /// Region are still visible from the aggregation Region. New findings and finding updates
-        /// are not aggregated. 
+        /// When you stop cross-Region aggregation, findings that were already replicated and
+        /// sent to the home Region are still visible from the home Region. However, new findings
+        /// and finding updates are no longer replicated and sent to the home Region. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFindingAggregator service method.</param>
@@ -2691,14 +2750,21 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Deletes a finding aggregator. When you delete the finding aggregator, you stop finding
-        /// aggregation.
-        /// 
+        /// <note> 
+        /// <para>
+        /// The <i>aggregation Region</i> is now called the <i>home Region</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Deletes a finding aggregator. When you delete the finding aggregator, you stop cross-Region
+        /// aggregation. Finding replication stops occurring from the linked Regions to the home
+        /// Region.
+        /// </para>
         ///  
         /// <para>
-        /// When you stop finding aggregation, findings that were already aggregated to the aggregation
-        /// Region are still visible from the aggregation Region. New findings and finding updates
-        /// are not aggregated. 
+        /// When you stop cross-Region aggregation, findings that were already replicated and
+        /// sent to the home Region are still visible from the home Region. However, new findings
+        /// and finding updates are no longer replicated and sent to the home Region. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFindingAggregator service method.</param>
@@ -2821,18 +2887,27 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Deletes invitations received by the Amazon Web Services account to become a member
-        /// account.
-        /// 
-        ///  
+        /// <note> 
         /// <para>
-        /// A Security Hub administrator account can use this operation to delete invitations
-        /// sent to one or more member accounts.
+        /// We recommend using Organizations instead of Security Hub invitations to manage your
+        /// member accounts. For information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing
+        /// Security Hub administrator and member accounts with Organizations</a> in the <i>Security
+        /// Hub User Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Deletes invitations to become a Security Hub member account.
         /// </para>
         ///  
         /// <para>
-        /// This operation is only used to delete invitations that are sent to member accounts
-        /// that aren't part of an organization. Organization accounts don't receive invitations.
+        /// A Security Hub administrator account can use this operation to delete invitations
+        /// sent to one or more prospective member accounts.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is only used to delete invitations that are sent to prospective member
+        /// accounts that aren't part of an Amazon Web Services organization. Organization accounts
+        /// don't receive invitations.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteInvitations service method.</param>
@@ -2868,18 +2943,27 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Deletes invitations received by the Amazon Web Services account to become a member
-        /// account.
-        /// 
-        ///  
+        /// <note> 
         /// <para>
-        /// A Security Hub administrator account can use this operation to delete invitations
-        /// sent to one or more member accounts.
+        /// We recommend using Organizations instead of Security Hub invitations to manage your
+        /// member accounts. For information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing
+        /// Security Hub administrator and member accounts with Organizations</a> in the <i>Security
+        /// Hub User Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Deletes invitations to become a Security Hub member account.
         /// </para>
         ///  
         /// <para>
-        /// This operation is only used to delete invitations that are sent to member accounts
-        /// that aren't part of an organization. Organization accounts don't receive invitations.
+        /// A Security Hub administrator account can use this operation to delete invitations
+        /// sent to one or more prospective member accounts.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is only used to delete invitations that are sent to prospective member
+        /// accounts that aren't part of an Amazon Web Services organization. Organization accounts
+        /// don't receive invitations.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteInvitations service method.</param>
@@ -3239,7 +3323,7 @@ namespace Amazon.SecurityHub
         /// </para>
         ///  
         /// <para>
-        /// If you do not provide an integration ARN, then the results include all of the available
+        /// If you don't provide an integration ARN, then the results include all of the available
         /// product integrations. 
         /// </para>
         /// </summary>
@@ -3282,7 +3366,7 @@ namespace Amazon.SecurityHub
         /// </para>
         ///  
         /// <para>
-        /// If you do not provide an integration ARN, then the results include all of the available
+        /// If you don't provide an integration ARN, then the results include all of the available
         /// product integrations. 
         /// </para>
         /// </summary>
@@ -4708,7 +4792,16 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Returns the current finding aggregation configuration.
+        /// <note> 
+        /// <para>
+        /// The <i>aggregation Region</i> is now called the <i>home Region</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Returns the current configuration in the calling account for cross-Region aggregation.
+        /// A finding aggregator is a resource that establishes the home Region and any linked
+        /// Regions.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFindingAggregator service method.</param>
         /// 
@@ -4746,7 +4839,16 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Returns the current finding aggregation configuration.
+        /// <note> 
+        /// <para>
+        /// The <i>aggregation Region</i> is now called the <i>home Region</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Returns the current configuration in the calling account for cross-Region aggregation.
+        /// A finding aggregator is a resource that establishes the home Region and any linked
+        /// Regions.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFindingAggregator service method.</param>
         /// <param name="cancellationToken">
@@ -4868,9 +4970,9 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        /// If finding aggregation is enabled, then when you call <c>GetFindings</c> from the
-        /// aggregation Region, the results include all of the matching findings from both the
-        /// aggregation Region and the linked Regions.
+        /// If cross-Region aggregation is enabled, then when you call <c>GetFindings</c> from
+        /// the home Region, the results include all of the matching findings from both the home
+        /// Region and linked Regions.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFindings service method.</param>
@@ -4907,9 +5009,9 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        /// If finding aggregation is enabled, then when you call <c>GetFindings</c> from the
-        /// aggregation Region, the results include all of the matching findings from both the
-        /// aggregation Region and the linked Regions.
+        /// If cross-Region aggregation is enabled, then when you call <c>GetFindings</c> from
+        /// the home Region, the results include all of the matching findings from both the home
+        /// Region and linked Regions.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFindings service method.</param>
@@ -5103,8 +5205,18 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// We recommend using Organizations instead of Security Hub invitations to manage your
+        /// member accounts. For information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing
+        /// Security Hub administrator and member accounts with Organizations</a> in the <i>Security
+        /// Hub User Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Returns the count of all Security Hub membership invitations that were sent to the
-        /// current member account, not including the currently accepted invitation.
+        /// calling member account, not including the currently accepted invitation. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetInvitationsCount service method.</param>
         /// 
@@ -5136,8 +5248,18 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// We recommend using Organizations instead of Security Hub invitations to manage your
+        /// member accounts. For information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing
+        /// Security Hub administrator and member accounts with Organizations</a> in the <i>Security
+        /// Hub User Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Returns the count of all Security Hub membership invitations that were sent to the
-        /// current member account, not including the currently accepted invitation.
+        /// calling member account, not including the currently accepted invitation. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetInvitationsCount service method.</param>
         /// <param name="cancellationToken">
@@ -5473,13 +5595,22 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// We recommend using Organizations instead of Security Hub invitations to manage your
+        /// member accounts. For information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing
+        /// Security Hub administrator and member accounts with Organizations</a> in the <i>Security
+        /// Hub User Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Invites other Amazon Web Services accounts to become member accounts for the Security
         /// Hub administrator account that the invitation is sent from.
-        /// 
+        /// </para>
         ///  
         /// <para>
-        /// This operation is only used to invite accounts that do not belong to an organization.
-        /// Organization accounts do not receive invitations.
+        /// This operation is only used to invite accounts that don't belong to an Amazon Web
+        /// Services organization. Organization accounts don't receive invitations.
         /// </para>
         ///  
         /// <para>
@@ -5489,8 +5620,8 @@ namespace Amazon.SecurityHub
         ///  
         /// <para>
         /// When the account owner enables Security Hub and accepts the invitation to become a
-        /// member account, the administrator account can view the findings generated from the
-        /// member account.
+        /// member account, the administrator account can view the findings generated in the member
+        /// account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InviteMembers service method.</param>
@@ -5526,13 +5657,22 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// We recommend using Organizations instead of Security Hub invitations to manage your
+        /// member accounts. For information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing
+        /// Security Hub administrator and member accounts with Organizations</a> in the <i>Security
+        /// Hub User Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Invites other Amazon Web Services accounts to become member accounts for the Security
         /// Hub administrator account that the invitation is sent from.
-        /// 
+        /// </para>
         ///  
         /// <para>
-        /// This operation is only used to invite accounts that do not belong to an organization.
-        /// Organization accounts do not receive invitations.
+        /// This operation is only used to invite accounts that don't belong to an Amazon Web
+        /// Services organization. Organization accounts don't receive invitations.
         /// </para>
         ///  
         /// <para>
@@ -5542,8 +5682,8 @@ namespace Amazon.SecurityHub
         ///  
         /// <para>
         /// When the account owner enables Security Hub and accepts the invitation to become a
-        /// member account, the administrator account can view the findings generated from the
-        /// member account.
+        /// member account, the administrator account can view the findings generated in the member
+        /// account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InviteMembers service method.</param>
@@ -5890,8 +6030,9 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// If finding aggregation is enabled, then <c>ListFindingAggregators</c> returns the
-        /// ARN of the finding aggregator. You can run this operation from any Region.
+        /// If cross-Region aggregation is enabled, then <c>ListFindingAggregators</c> returns
+        /// the Amazon Resource Name (ARN) of the finding aggregator. You can run this operation
+        /// from any Amazon Web Services Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFindingAggregators service method.</param>
         /// 
@@ -5926,8 +6067,9 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// If finding aggregation is enabled, then <c>ListFindingAggregators</c> returns the
-        /// ARN of the finding aggregator. You can run this operation from any Region.
+        /// If cross-Region aggregation is enabled, then <c>ListFindingAggregators</c> returns
+        /// the Amazon Resource Name (ARN) of the finding aggregator. You can run this operation
+        /// from any Amazon Web Services Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFindingAggregators service method.</param>
         /// <param name="cancellationToken">
@@ -5969,13 +6111,21 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Lists all Security Hub membership invitations that were sent to the current Amazon
-        /// Web Services account.
-        /// 
+        /// <note> 
+        /// <para>
+        /// We recommend using Organizations instead of Security Hub invitations to manage your
+        /// member accounts. For information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing
+        /// Security Hub administrator and member accounts with Organizations</a> in the <i>Security
+        /// Hub User Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Lists all Security Hub membership invitations that were sent to the calling account.
+        /// </para>
         ///  
         /// <para>
-        /// This operation is only used by accounts that are managed by invitation. Accounts that
-        /// are managed using the integration with Organizations do not receive invitations.
+        /// Only accounts that are managed by invitation can use this operation. Accounts that
+        /// are managed using the integration with Organizations don't receive invitations.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInvitations service method.</param>
@@ -6008,13 +6158,21 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Lists all Security Hub membership invitations that were sent to the current Amazon
-        /// Web Services account.
-        /// 
+        /// <note> 
+        /// <para>
+        /// We recommend using Organizations instead of Security Hub invitations to manage your
+        /// member accounts. For information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing
+        /// Security Hub administrator and member accounts with Organizations</a> in the <i>Security
+        /// Hub User Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Lists all Security Hub membership invitations that were sent to the calling account.
+        /// </para>
         ///  
         /// <para>
-        /// This operation is only used by accounts that are managed by invitation. Accounts that
-        /// are managed using the integration with Organizations do not receive invitations.
+        /// Only accounts that are managed by invitation can use this operation. Accounts that
+        /// are managed using the integration with Organizations don't receive invitations.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInvitations service method.</param>
@@ -6879,13 +7037,19 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Updates the finding aggregation configuration. Used to update the Region linking mode
-        /// and the list of included or excluded Regions. You cannot use <c>UpdateFindingAggregator</c>
-        /// to change the aggregation Region.
-        /// 
+        /// <note> 
+        /// <para>
+        /// The <i>aggregation Region</i> is now called the <i>home Region</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Updates cross-Region aggregation settings. You can use this operation to update the
+        /// Region linking mode and the list of included or excluded Amazon Web Services Regions.
+        /// However, you can't use this operation to change the home Region.
+        /// </para>
         ///  
         /// <para>
-        /// You must run <c>UpdateFindingAggregator</c> from the current aggregation Region. 
+        /// You can invoke this operation from the current home Region only. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFindingAggregator service method.</param>
@@ -6924,13 +7088,19 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Updates the finding aggregation configuration. Used to update the Region linking mode
-        /// and the list of included or excluded Regions. You cannot use <c>UpdateFindingAggregator</c>
-        /// to change the aggregation Region.
-        /// 
+        /// <note> 
+        /// <para>
+        /// The <i>aggregation Region</i> is now called the <i>home Region</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Updates cross-Region aggregation settings. You can use this operation to update the
+        /// Region linking mode and the list of included or excluded Amazon Web Services Regions.
+        /// However, you can't use this operation to change the home Region.
+        /// </para>
         ///  
         /// <para>
-        /// You must run <c>UpdateFindingAggregator</c> from the current aggregation Region. 
+        /// You can invoke this operation from the current home Region only. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFindingAggregator service method.</param>

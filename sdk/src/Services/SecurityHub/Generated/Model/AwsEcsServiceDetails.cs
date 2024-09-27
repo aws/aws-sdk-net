@@ -396,7 +396,7 @@ namespace Amazon.SecurityHub.Model
         /// The <c>DAEMON</c> scheduling strategy deploys exactly one task on each active container
         /// instance that meets all of the task placement constraints that are specified in the
         /// cluster. The service scheduler also evaluates the task placement constraints for running
-        /// tasks and stops tasks that do not meet the placement constraints.
+        /// tasks and stops tasks that don't meet the placement constraints.
         /// </para>
         ///  
         /// <para>

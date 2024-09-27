@@ -371,7 +371,7 @@ namespace Amazon.SecurityHub.Model
         ///  
         /// <para>
         /// Contains the Oracle System ID (SID) of the created DB instance. Not shown when the
-        /// returned parameters do not apply to an Oracle DB instance. 
+        /// returned parameters don't apply to an Oracle DB instance. 
         /// </para>
         /// </summary>
         public string DBName
