@@ -51,6 +51,7 @@ namespace Amazon.CustomerProfiles.Model
         private FlowDefinition _flowDefinition;
         private string _objectTypeName;
         private Dictionary<string, string> _objectTypeNames = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private string _roleArn;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _uri;
 
@@ -131,6 +132,26 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetObjectTypeNames()
         {
             return this._objectTypeNames != null && (this._objectTypeNames.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM role. The Integration uses this role to
+        /// make Customer Profiles requests on your behalf.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=512)]
+        public string RoleArn
+        {
+            get { return this._roleArn; }
+            set { this._roleArn = value; }
+        }
+
+        // Check to see if RoleArn property is set
+        internal bool IsSetRoleArn()
+        {
+            return this._roleArn != null;
         }
 
         /// <summary>

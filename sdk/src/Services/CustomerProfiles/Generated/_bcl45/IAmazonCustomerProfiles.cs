@@ -32,7 +32,17 @@ namespace Amazon.CustomerProfiles
     /// <summary>
     /// <para>Interface for accessing CustomerProfiles</para>
     ///
-    /// Amazon Connect Customer Profiles 
+    /// Amazon Connect Customer Profiles <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Customer_Profiles.html">Customer
+    /// Profiles actions</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Customer_Profiles.html">Customer
+    /// Profiles data types</a> 
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// Amazon Connect Customer Profiles is a unified customer profile for your contact center
     /// that has pre-built connectors powered by AppFlow that make it easy to combine customer
