@@ -1,3 +1,18 @@
+### 3.7.894.0 (2024-09-27 18:46 UTC)
+* CustomerProfiles (3.7.401.0)
+	* Introduces optional RoleArn parameter for PutIntegration request and includes RoleArn in the response of PutIntegration, GetIntegration and ListIntegrations
+* QuickSight (3.7.405.0)
+	* Adding personalization in QuickSight data stories. Admins can enable or disable personalization through QuickSight settings.
+* SecurityHub (3.7.401.16)
+	* Documentation updates for AWS Security Hub
+* SimpleEmailV2 (3.7.402.0)
+	* This release adds support for engagement tracking over Https using custom domains.
+* WorkLink (Removed)
+	* Amazon WorkLink has been removed from the SDK.
+* Core 3.7.400.26
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.893.0 (2024-09-26 18:26 UTC)
 * Chatbot (3.7.402.0)
 	* Return State and StateReason fields for Chatbot Channel Configurations.
