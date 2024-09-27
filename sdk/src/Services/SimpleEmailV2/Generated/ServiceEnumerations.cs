@@ -995,6 +995,60 @@ namespace Amazon.SimpleEmailV2
 
 
     /// <summary>
+    /// Constants used for properties of type HttpsPolicy.
+    /// </summary>
+    public class HttpsPolicy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OPTIONAL for HttpsPolicy
+        /// </summary>
+        public static readonly HttpsPolicy OPTIONAL = new HttpsPolicy("OPTIONAL");
+        /// <summary>
+        /// Constant REQUIRE for HttpsPolicy
+        /// </summary>
+        public static readonly HttpsPolicy REQUIRE = new HttpsPolicy("REQUIRE");
+        /// <summary>
+        /// Constant REQUIRE_OPEN_ONLY for HttpsPolicy
+        /// </summary>
+        public static readonly HttpsPolicy REQUIRE_OPEN_ONLY = new HttpsPolicy("REQUIRE_OPEN_ONLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HttpsPolicy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HttpsPolicy FindValue(string value)
+        {
+            return FindValue<HttpsPolicy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HttpsPolicy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IdentityType.
     /// </summary>
     public class IdentityType : ConstantClass

@@ -45,6 +45,7 @@ namespace Amazon.SimpleEmailV2.Model
     public partial class TrackingOptions
     {
         private string _customRedirectDomain;
+        private HttpsPolicy _httpsPolicy;
 
         /// <summary>
         /// Gets and sets the property CustomRedirectDomain. 
@@ -63,6 +64,24 @@ namespace Amazon.SimpleEmailV2.Model
         internal bool IsSetCustomRedirectDomain()
         {
             return this._customRedirectDomain != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HttpsPolicy. 
+        /// <para>
+        /// The https policy to use for tracking open and click events.
+        /// </para>
+        /// </summary>
+        public HttpsPolicy HttpsPolicy
+        {
+            get { return this._httpsPolicy; }
+            set { this._httpsPolicy = value; }
+        }
+
+        // Check to see if HttpsPolicy property is set
+        internal bool IsSetHttpsPolicy()
+        {
+            return this._httpsPolicy != null;
         }
 
     }

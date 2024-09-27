@@ -72,6 +72,12 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.CustomRedirectDomain = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("HttpsPolicy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HttpsPolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
